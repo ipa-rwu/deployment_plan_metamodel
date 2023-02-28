@@ -10,13 +10,13 @@ import org.eclipse.xtext.testing.util.ParseHelper
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.^extension.ExtendWith
-import targetEnvironment.TargetEnviroment
+import targetEnvironment.TargetDeployEnviroment
 
 @ExtendWith(InjectionExtension)
 @InjectWith(TargetEnvironmentInjectorProvider)
 class TargetEnvironmentParsingTest {
 	@Inject
-	ParseHelper<TargetEnviroment> parseHelper
+	ParseHelper<TargetDeployEnviroment> parseHelper
 	
 	@Test
 	def void loadModel() {

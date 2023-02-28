@@ -27,7 +27,7 @@ public class TargetEnvironmentParser extends AbstractAntlrParser {
 
 	@Override 
 	protected String getDefaultRuleName() {
-		return "TargetEnviroment";
+		return "TargetDeployEnviroment";
 	}
 
 	public TargetEnvironmentGrammarAccess getGrammarAccess() {

@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'TargetEnviroment'", "'{'", "'includeDevice'", "','", "'}'", "'configConnection'", "'DeviceInstance'", "'refDeviceType'", "'ConfigConnection'", "'connectDevice'", "'CapabilityProperty'", "'value'", "'kind'", "'AttributeKind'", "'MaximumKind'", "'MinimumKind'", "'SelectionKind'", "'Property'", "'IndirectConnection'", "'properties'", "'DirectConnection'", "'ConnectedDevice'", "'refDevice'", "'refConnection'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'TargetDeployEnviroment'", "'{'", "'includeDevice'", "','", "'}'", "'configConnection'", "'DeviceInstance'", "'refDeviceType'", "'ConfigConnection'", "'connectDevice'", "'CapabilityProperty'", "'value'", "'kind'", "'AttributeKind'", "'MaximumKind'", "'MinimumKind'", "'SelectionKind'", "'Property'", "'IndirectConnection'", "'properties'", "'DirectConnection'", "'ConnectedDevice'", "'refDevice'", "'refConnection'"
     };
     public static final int RULE_STRING=4;
     public static final int RULE_SL_COMMENT=8;
@@ -84,7 +84,7 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
 
         @Override
         protected String getFirstRuleName() {
-        	return "TargetEnviroment";
+        	return "TargetDeployEnviroment";
        	}
 
        	@Override
@@ -95,25 +95,25 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
 
 
 
-    // $ANTLR start "entryRuleTargetEnviroment"
-    // InternalTargetEnvironment.g:64:1: entryRuleTargetEnviroment returns [EObject current=null] : iv_ruleTargetEnviroment= ruleTargetEnviroment EOF ;
-    public final EObject entryRuleTargetEnviroment() throws RecognitionException {
+    // $ANTLR start "entryRuleTargetDeployEnviroment"
+    // InternalTargetEnvironment.g:64:1: entryRuleTargetDeployEnviroment returns [EObject current=null] : iv_ruleTargetDeployEnviroment= ruleTargetDeployEnviroment EOF ;
+    public final EObject entryRuleTargetDeployEnviroment() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleTargetEnviroment = null;
+        EObject iv_ruleTargetDeployEnviroment = null;
 
 
         try {
-            // InternalTargetEnvironment.g:64:57: (iv_ruleTargetEnviroment= ruleTargetEnviroment EOF )
-            // InternalTargetEnvironment.g:65:2: iv_ruleTargetEnviroment= ruleTargetEnviroment EOF
+            // InternalTargetEnvironment.g:64:63: (iv_ruleTargetDeployEnviroment= ruleTargetDeployEnviroment EOF )
+            // InternalTargetEnvironment.g:65:2: iv_ruleTargetDeployEnviroment= ruleTargetDeployEnviroment EOF
             {
-             newCompositeNode(grammarAccess.getTargetEnviromentRule()); 
+             newCompositeNode(grammarAccess.getTargetDeployEnviromentRule()); 
             pushFollow(FOLLOW_1);
-            iv_ruleTargetEnviroment=ruleTargetEnviroment();
+            iv_ruleTargetDeployEnviroment=ruleTargetDeployEnviroment();
 
             state._fsp--;
 
-             current =iv_ruleTargetEnviroment; 
+             current =iv_ruleTargetDeployEnviroment; 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -128,12 +128,12 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
         }
         return current;
     }
-    // $ANTLR end "entryRuleTargetEnviroment"
+    // $ANTLR end "entryRuleTargetDeployEnviroment"
 
 
-    // $ANTLR start "ruleTargetEnviroment"
-    // InternalTargetEnvironment.g:71:1: ruleTargetEnviroment returns [EObject current=null] : ( () otherlv_1= 'TargetEnviroment' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'includeDevice' otherlv_5= '{' ( (lv_includeDevice_6_0= ruleDeviceInstance ) ) (otherlv_7= ',' ( (lv_includeDevice_8_0= ruleDeviceInstance ) ) )* otherlv_9= '}' )? (otherlv_10= 'configConnection' otherlv_11= '{' ( (lv_configConnection_12_0= ruleConfigConnection ) ) (otherlv_13= ',' ( (lv_configConnection_14_0= ruleConfigConnection ) ) )* otherlv_15= '}' )? otherlv_16= '}' ) ;
-    public final EObject ruleTargetEnviroment() throws RecognitionException {
+    // $ANTLR start "ruleTargetDeployEnviroment"
+    // InternalTargetEnvironment.g:71:1: ruleTargetDeployEnviroment returns [EObject current=null] : ( () otherlv_1= 'TargetDeployEnviroment' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'includeDevice' otherlv_5= '{' ( (lv_includeDevice_6_0= ruleDeviceInstance ) ) (otherlv_7= ',' ( (lv_includeDevice_8_0= ruleDeviceInstance ) ) )* otherlv_9= '}' )? (otherlv_10= 'configConnection' otherlv_11= '{' ( (lv_configConnection_12_0= ruleConfigConnection ) ) (otherlv_13= ',' ( (lv_configConnection_14_0= ruleConfigConnection ) ) )* otherlv_15= '}' )? otherlv_16= '}' ) ;
+    public final EObject ruleTargetDeployEnviroment() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_1=null;
@@ -162,18 +162,18 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
         	enterRule();
 
         try {
-            // InternalTargetEnvironment.g:77:2: ( ( () otherlv_1= 'TargetEnviroment' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'includeDevice' otherlv_5= '{' ( (lv_includeDevice_6_0= ruleDeviceInstance ) ) (otherlv_7= ',' ( (lv_includeDevice_8_0= ruleDeviceInstance ) ) )* otherlv_9= '}' )? (otherlv_10= 'configConnection' otherlv_11= '{' ( (lv_configConnection_12_0= ruleConfigConnection ) ) (otherlv_13= ',' ( (lv_configConnection_14_0= ruleConfigConnection ) ) )* otherlv_15= '}' )? otherlv_16= '}' ) )
-            // InternalTargetEnvironment.g:78:2: ( () otherlv_1= 'TargetEnviroment' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'includeDevice' otherlv_5= '{' ( (lv_includeDevice_6_0= ruleDeviceInstance ) ) (otherlv_7= ',' ( (lv_includeDevice_8_0= ruleDeviceInstance ) ) )* otherlv_9= '}' )? (otherlv_10= 'configConnection' otherlv_11= '{' ( (lv_configConnection_12_0= ruleConfigConnection ) ) (otherlv_13= ',' ( (lv_configConnection_14_0= ruleConfigConnection ) ) )* otherlv_15= '}' )? otherlv_16= '}' )
+            // InternalTargetEnvironment.g:77:2: ( ( () otherlv_1= 'TargetDeployEnviroment' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'includeDevice' otherlv_5= '{' ( (lv_includeDevice_6_0= ruleDeviceInstance ) ) (otherlv_7= ',' ( (lv_includeDevice_8_0= ruleDeviceInstance ) ) )* otherlv_9= '}' )? (otherlv_10= 'configConnection' otherlv_11= '{' ( (lv_configConnection_12_0= ruleConfigConnection ) ) (otherlv_13= ',' ( (lv_configConnection_14_0= ruleConfigConnection ) ) )* otherlv_15= '}' )? otherlv_16= '}' ) )
+            // InternalTargetEnvironment.g:78:2: ( () otherlv_1= 'TargetDeployEnviroment' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'includeDevice' otherlv_5= '{' ( (lv_includeDevice_6_0= ruleDeviceInstance ) ) (otherlv_7= ',' ( (lv_includeDevice_8_0= ruleDeviceInstance ) ) )* otherlv_9= '}' )? (otherlv_10= 'configConnection' otherlv_11= '{' ( (lv_configConnection_12_0= ruleConfigConnection ) ) (otherlv_13= ',' ( (lv_configConnection_14_0= ruleConfigConnection ) ) )* otherlv_15= '}' )? otherlv_16= '}' )
             {
-            // InternalTargetEnvironment.g:78:2: ( () otherlv_1= 'TargetEnviroment' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'includeDevice' otherlv_5= '{' ( (lv_includeDevice_6_0= ruleDeviceInstance ) ) (otherlv_7= ',' ( (lv_includeDevice_8_0= ruleDeviceInstance ) ) )* otherlv_9= '}' )? (otherlv_10= 'configConnection' otherlv_11= '{' ( (lv_configConnection_12_0= ruleConfigConnection ) ) (otherlv_13= ',' ( (lv_configConnection_14_0= ruleConfigConnection ) ) )* otherlv_15= '}' )? otherlv_16= '}' )
-            // InternalTargetEnvironment.g:79:3: () otherlv_1= 'TargetEnviroment' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'includeDevice' otherlv_5= '{' ( (lv_includeDevice_6_0= ruleDeviceInstance ) ) (otherlv_7= ',' ( (lv_includeDevice_8_0= ruleDeviceInstance ) ) )* otherlv_9= '}' )? (otherlv_10= 'configConnection' otherlv_11= '{' ( (lv_configConnection_12_0= ruleConfigConnection ) ) (otherlv_13= ',' ( (lv_configConnection_14_0= ruleConfigConnection ) ) )* otherlv_15= '}' )? otherlv_16= '}'
+            // InternalTargetEnvironment.g:78:2: ( () otherlv_1= 'TargetDeployEnviroment' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'includeDevice' otherlv_5= '{' ( (lv_includeDevice_6_0= ruleDeviceInstance ) ) (otherlv_7= ',' ( (lv_includeDevice_8_0= ruleDeviceInstance ) ) )* otherlv_9= '}' )? (otherlv_10= 'configConnection' otherlv_11= '{' ( (lv_configConnection_12_0= ruleConfigConnection ) ) (otherlv_13= ',' ( (lv_configConnection_14_0= ruleConfigConnection ) ) )* otherlv_15= '}' )? otherlv_16= '}' )
+            // InternalTargetEnvironment.g:79:3: () otherlv_1= 'TargetDeployEnviroment' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'includeDevice' otherlv_5= '{' ( (lv_includeDevice_6_0= ruleDeviceInstance ) ) (otherlv_7= ',' ( (lv_includeDevice_8_0= ruleDeviceInstance ) ) )* otherlv_9= '}' )? (otherlv_10= 'configConnection' otherlv_11= '{' ( (lv_configConnection_12_0= ruleConfigConnection ) ) (otherlv_13= ',' ( (lv_configConnection_14_0= ruleConfigConnection ) ) )* otherlv_15= '}' )? otherlv_16= '}'
             {
             // InternalTargetEnvironment.g:79:3: ()
             // InternalTargetEnvironment.g:80:4: 
             {
 
             				current = forceCreateModelElement(
-            					grammarAccess.getTargetEnviromentAccess().getTargetEnviromentAction_0(),
+            					grammarAccess.getTargetDeployEnviromentAccess().getTargetDeployEnviromentAction_0(),
             					current);
             			
 
@@ -181,7 +181,7 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
 
             otherlv_1=(Token)match(input,11,FOLLOW_3); 
 
-            			newLeafNode(otherlv_1, grammarAccess.getTargetEnviromentAccess().getTargetEnviromentKeyword_1());
+            			newLeafNode(otherlv_1, grammarAccess.getTargetDeployEnviromentAccess().getTargetDeployEnviromentKeyword_1());
             		
             // InternalTargetEnvironment.g:90:3: ( (lv_name_2_0= ruleEString ) )
             // InternalTargetEnvironment.g:91:4: (lv_name_2_0= ruleEString )
@@ -190,7 +190,7 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironment.g:92:5: lv_name_2_0= ruleEString
             {
 
-            					newCompositeNode(grammarAccess.getTargetEnviromentAccess().getNameEStringParserRuleCall_2_0());
+            					newCompositeNode(grammarAccess.getTargetDeployEnviromentAccess().getNameEStringParserRuleCall_2_0());
             				
             pushFollow(FOLLOW_4);
             lv_name_2_0=ruleEString();
@@ -199,7 +199,7 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
 
 
             					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getTargetEnviromentRule());
+            						current = createModelElementForParent(grammarAccess.getTargetDeployEnviromentRule());
             					}
             					set(
             						current,
@@ -216,7 +216,7 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
 
             otherlv_3=(Token)match(input,12,FOLLOW_5); 
 
-            			newLeafNode(otherlv_3, grammarAccess.getTargetEnviromentAccess().getLeftCurlyBracketKeyword_3());
+            			newLeafNode(otherlv_3, grammarAccess.getTargetDeployEnviromentAccess().getLeftCurlyBracketKeyword_3());
             		
             // InternalTargetEnvironment.g:113:3: (otherlv_4= 'includeDevice' otherlv_5= '{' ( (lv_includeDevice_6_0= ruleDeviceInstance ) ) (otherlv_7= ',' ( (lv_includeDevice_8_0= ruleDeviceInstance ) ) )* otherlv_9= '}' )?
             int alt2=2;
@@ -231,11 +231,11 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
                     {
                     otherlv_4=(Token)match(input,13,FOLLOW_4); 
 
-                    				newLeafNode(otherlv_4, grammarAccess.getTargetEnviromentAccess().getIncludeDeviceKeyword_4_0());
+                    				newLeafNode(otherlv_4, grammarAccess.getTargetDeployEnviromentAccess().getIncludeDeviceKeyword_4_0());
                     			
                     otherlv_5=(Token)match(input,12,FOLLOW_6); 
 
-                    				newLeafNode(otherlv_5, grammarAccess.getTargetEnviromentAccess().getLeftCurlyBracketKeyword_4_1());
+                    				newLeafNode(otherlv_5, grammarAccess.getTargetDeployEnviromentAccess().getLeftCurlyBracketKeyword_4_1());
                     			
                     // InternalTargetEnvironment.g:122:4: ( (lv_includeDevice_6_0= ruleDeviceInstance ) )
                     // InternalTargetEnvironment.g:123:5: (lv_includeDevice_6_0= ruleDeviceInstance )
@@ -244,7 +244,7 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
                     // InternalTargetEnvironment.g:124:6: lv_includeDevice_6_0= ruleDeviceInstance
                     {
 
-                    						newCompositeNode(grammarAccess.getTargetEnviromentAccess().getIncludeDeviceDeviceInstanceParserRuleCall_4_2_0());
+                    						newCompositeNode(grammarAccess.getTargetDeployEnviromentAccess().getIncludeDeviceDeviceInstanceParserRuleCall_4_2_0());
                     					
                     pushFollow(FOLLOW_7);
                     lv_includeDevice_6_0=ruleDeviceInstance();
@@ -253,7 +253,7 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
 
 
                     						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getTargetEnviromentRule());
+                    							current = createModelElementForParent(grammarAccess.getTargetDeployEnviromentRule());
                     						}
                     						add(
                     							current,
@@ -285,7 +285,7 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
                     	    {
                     	    otherlv_7=(Token)match(input,14,FOLLOW_6); 
 
-                    	    					newLeafNode(otherlv_7, grammarAccess.getTargetEnviromentAccess().getCommaKeyword_4_3_0());
+                    	    					newLeafNode(otherlv_7, grammarAccess.getTargetDeployEnviromentAccess().getCommaKeyword_4_3_0());
                     	    				
                     	    // InternalTargetEnvironment.g:146:5: ( (lv_includeDevice_8_0= ruleDeviceInstance ) )
                     	    // InternalTargetEnvironment.g:147:6: (lv_includeDevice_8_0= ruleDeviceInstance )
@@ -294,7 +294,7 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
                     	    // InternalTargetEnvironment.g:148:7: lv_includeDevice_8_0= ruleDeviceInstance
                     	    {
 
-                    	    							newCompositeNode(grammarAccess.getTargetEnviromentAccess().getIncludeDeviceDeviceInstanceParserRuleCall_4_3_1_0());
+                    	    							newCompositeNode(grammarAccess.getTargetDeployEnviromentAccess().getIncludeDeviceDeviceInstanceParserRuleCall_4_3_1_0());
                     	    						
                     	    pushFollow(FOLLOW_7);
                     	    lv_includeDevice_8_0=ruleDeviceInstance();
@@ -303,7 +303,7 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
 
 
                     	    							if (current==null) {
-                    	    								current = createModelElementForParent(grammarAccess.getTargetEnviromentRule());
+                    	    								current = createModelElementForParent(grammarAccess.getTargetDeployEnviromentRule());
                     	    							}
                     	    							add(
                     	    								current,
@@ -329,7 +329,7 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
 
                     otherlv_9=(Token)match(input,15,FOLLOW_8); 
 
-                    				newLeafNode(otherlv_9, grammarAccess.getTargetEnviromentAccess().getRightCurlyBracketKeyword_4_4());
+                    				newLeafNode(otherlv_9, grammarAccess.getTargetDeployEnviromentAccess().getRightCurlyBracketKeyword_4_4());
                     			
 
                     }
@@ -350,11 +350,11 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
                     {
                     otherlv_10=(Token)match(input,16,FOLLOW_4); 
 
-                    				newLeafNode(otherlv_10, grammarAccess.getTargetEnviromentAccess().getConfigConnectionKeyword_5_0());
+                    				newLeafNode(otherlv_10, grammarAccess.getTargetDeployEnviromentAccess().getConfigConnectionKeyword_5_0());
                     			
                     otherlv_11=(Token)match(input,12,FOLLOW_9); 
 
-                    				newLeafNode(otherlv_11, grammarAccess.getTargetEnviromentAccess().getLeftCurlyBracketKeyword_5_1());
+                    				newLeafNode(otherlv_11, grammarAccess.getTargetDeployEnviromentAccess().getLeftCurlyBracketKeyword_5_1());
                     			
                     // InternalTargetEnvironment.g:180:4: ( (lv_configConnection_12_0= ruleConfigConnection ) )
                     // InternalTargetEnvironment.g:181:5: (lv_configConnection_12_0= ruleConfigConnection )
@@ -363,7 +363,7 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
                     // InternalTargetEnvironment.g:182:6: lv_configConnection_12_0= ruleConfigConnection
                     {
 
-                    						newCompositeNode(grammarAccess.getTargetEnviromentAccess().getConfigConnectionConfigConnectionParserRuleCall_5_2_0());
+                    						newCompositeNode(grammarAccess.getTargetDeployEnviromentAccess().getConfigConnectionConfigConnectionParserRuleCall_5_2_0());
                     					
                     pushFollow(FOLLOW_7);
                     lv_configConnection_12_0=ruleConfigConnection();
@@ -372,7 +372,7 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
 
 
                     						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getTargetEnviromentRule());
+                    							current = createModelElementForParent(grammarAccess.getTargetDeployEnviromentRule());
                     						}
                     						add(
                     							current,
@@ -404,7 +404,7 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
                     	    {
                     	    otherlv_13=(Token)match(input,14,FOLLOW_9); 
 
-                    	    					newLeafNode(otherlv_13, grammarAccess.getTargetEnviromentAccess().getCommaKeyword_5_3_0());
+                    	    					newLeafNode(otherlv_13, grammarAccess.getTargetDeployEnviromentAccess().getCommaKeyword_5_3_0());
                     	    				
                     	    // InternalTargetEnvironment.g:204:5: ( (lv_configConnection_14_0= ruleConfigConnection ) )
                     	    // InternalTargetEnvironment.g:205:6: (lv_configConnection_14_0= ruleConfigConnection )
@@ -413,7 +413,7 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
                     	    // InternalTargetEnvironment.g:206:7: lv_configConnection_14_0= ruleConfigConnection
                     	    {
 
-                    	    							newCompositeNode(grammarAccess.getTargetEnviromentAccess().getConfigConnectionConfigConnectionParserRuleCall_5_3_1_0());
+                    	    							newCompositeNode(grammarAccess.getTargetDeployEnviromentAccess().getConfigConnectionConfigConnectionParserRuleCall_5_3_1_0());
                     	    						
                     	    pushFollow(FOLLOW_7);
                     	    lv_configConnection_14_0=ruleConfigConnection();
@@ -422,7 +422,7 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
 
 
                     	    							if (current==null) {
-                    	    								current = createModelElementForParent(grammarAccess.getTargetEnviromentRule());
+                    	    								current = createModelElementForParent(grammarAccess.getTargetDeployEnviromentRule());
                     	    							}
                     	    							add(
                     	    								current,
@@ -448,7 +448,7 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
 
                     otherlv_15=(Token)match(input,15,FOLLOW_10); 
 
-                    				newLeafNode(otherlv_15, grammarAccess.getTargetEnviromentAccess().getRightCurlyBracketKeyword_5_4());
+                    				newLeafNode(otherlv_15, grammarAccess.getTargetDeployEnviromentAccess().getRightCurlyBracketKeyword_5_4());
                     			
 
                     }
@@ -458,7 +458,7 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
 
             otherlv_16=(Token)match(input,15,FOLLOW_2); 
 
-            			newLeafNode(otherlv_16, grammarAccess.getTargetEnviromentAccess().getRightCurlyBracketKeyword_6());
+            			newLeafNode(otherlv_16, grammarAccess.getTargetDeployEnviromentAccess().getRightCurlyBracketKeyword_6());
             		
 
             }
@@ -479,7 +479,7 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
         }
         return current;
     }
-    // $ANTLR end "ruleTargetEnviroment"
+    // $ANTLR end "ruleTargetDeployEnviroment"
 
 
     // $ANTLR start "entryRuleConnection"

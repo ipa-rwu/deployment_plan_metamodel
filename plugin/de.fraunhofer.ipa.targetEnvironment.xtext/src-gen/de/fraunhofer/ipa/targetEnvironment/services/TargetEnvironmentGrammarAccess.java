@@ -24,11 +24,11 @@ import org.eclipse.xtext.service.GrammarProvider;
 @Singleton
 public class TargetEnvironmentGrammarAccess extends AbstractElementFinder.AbstractGrammarElementFinder {
 	
-	public class TargetEnviromentElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.targetEnvironment.TargetEnvironment.TargetEnviroment");
+	public class TargetDeployEnviromentElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.targetEnvironment.TargetEnvironment.TargetDeployEnviroment");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cTargetEnviromentAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cTargetEnviromentKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Action cTargetDeployEnviromentAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cTargetDeployEnviromentKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
@@ -54,9 +54,9 @@ public class TargetEnvironmentGrammarAccess extends AbstractElementFinder.Abstra
 		private final Keyword cRightCurlyBracketKeyword_5_4 = (Keyword)cGroup_5.eContents().get(4);
 		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
-		//TargetEnviroment returns TargetEnviroment:
-		//    {TargetEnviroment}
-		//    'TargetEnviroment'
+		//TargetDeployEnviroment returns TargetDeployEnviroment:
+		//    {TargetDeployEnviroment}
+		//    'TargetDeployEnviroment'
 		//    name=EString
 		//    '{'
 		//        ('includeDevice' '{' includeDevice+=DeviceInstance ( "," includeDevice+=DeviceInstance)* '}' )?
@@ -64,8 +64,8 @@ public class TargetEnvironmentGrammarAccess extends AbstractElementFinder.Abstra
 		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{TargetEnviroment}
-		//'TargetEnviroment'
+		//{TargetDeployEnviroment}
+		//'TargetDeployEnviroment'
 		//name=EString
 		//'{'
 		//    ('includeDevice' '{' includeDevice+=DeviceInstance ( "," includeDevice+=DeviceInstance)* '}' )?
@@ -73,11 +73,11 @@ public class TargetEnvironmentGrammarAccess extends AbstractElementFinder.Abstra
 		//'}'
 		public Group getGroup() { return cGroup; }
 		
-		//{TargetEnviroment}
-		public Action getTargetEnviromentAction_0() { return cTargetEnviromentAction_0; }
+		//{TargetDeployEnviroment}
+		public Action getTargetDeployEnviromentAction_0() { return cTargetDeployEnviromentAction_0; }
 		
-		//'TargetEnviroment'
-		public Keyword getTargetEnviromentKeyword_1() { return cTargetEnviromentKeyword_1; }
+		//'TargetDeployEnviroment'
+		public Keyword getTargetDeployEnviromentKeyword_1() { return cTargetDeployEnviromentKeyword_1; }
 		
 		//name=EString
 		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
@@ -992,7 +992,7 @@ public class TargetEnvironmentGrammarAccess extends AbstractElementFinder.Abstra
 	}
 	
 	
-	private final TargetEnviromentElements pTargetEnviroment;
+	private final TargetDeployEnviromentElements pTargetDeployEnviroment;
 	private final ConnectionElements pConnection;
 	private final CapabilityKindElements pCapabilityKind;
 	private final EStringElements pEString;
@@ -1018,7 +1018,7 @@ public class TargetEnvironmentGrammarAccess extends AbstractElementFinder.Abstra
 			TerminalsGrammarAccess gaTerminals) {
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaTerminals = gaTerminals;
-		this.pTargetEnviroment = new TargetEnviromentElements();
+		this.pTargetDeployEnviroment = new TargetDeployEnviromentElements();
 		this.pConnection = new ConnectionElements();
 		this.pCapabilityKind = new CapabilityKindElements();
 		this.pEString = new EStringElements();
@@ -1063,20 +1063,20 @@ public class TargetEnvironmentGrammarAccess extends AbstractElementFinder.Abstra
 	}
 
 	
-	//TargetEnviroment returns TargetEnviroment:
-	//    {TargetEnviroment}
-	//    'TargetEnviroment'
+	//TargetDeployEnviroment returns TargetDeployEnviroment:
+	//    {TargetDeployEnviroment}
+	//    'TargetDeployEnviroment'
 	//    name=EString
 	//    '{'
 	//        ('includeDevice' '{' includeDevice+=DeviceInstance ( "," includeDevice+=DeviceInstance)* '}' )?
 	//        ('configConnection' '{' configConnection+=ConfigConnection ( "," configConnection+=ConfigConnection)* '}' )?
 	//    '}';
-	public TargetEnviromentElements getTargetEnviromentAccess() {
-		return pTargetEnviroment;
+	public TargetDeployEnviromentElements getTargetDeployEnviromentAccess() {
+		return pTargetDeployEnviroment;
 	}
 	
-	public ParserRule getTargetEnviromentRule() {
-		return getTargetEnviromentAccess().getRule();
+	public ParserRule getTargetDeployEnviromentRule() {
+		return getTargetDeployEnviromentAccess().getRule();
 	}
 	
 	//Connection returns device::Connection:

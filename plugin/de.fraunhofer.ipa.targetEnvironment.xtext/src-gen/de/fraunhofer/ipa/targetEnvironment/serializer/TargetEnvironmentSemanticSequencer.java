@@ -28,7 +28,7 @@ import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransi
 import targetEnvironment.ConfigConnection;
 import targetEnvironment.ConnectedDevice;
 import targetEnvironment.DeviceInstance;
-import targetEnvironment.TargetEnviroment;
+import targetEnvironment.TargetDeployEnviroment;
 import targetEnvironment.TargetEnvironmentPackage;
 
 @SuppressWarnings("all")
@@ -84,8 +84,8 @@ public class TargetEnvironmentSemanticSequencer extends AbstractDelegatingSemant
 			case TargetEnvironmentPackage.DEVICE_INSTANCE:
 				sequence_DeviceInstance(context, (DeviceInstance) semanticObject); 
 				return; 
-			case TargetEnvironmentPackage.TARGET_ENVIROMENT:
-				sequence_TargetEnviroment(context, (TargetEnviroment) semanticObject); 
+			case TargetEnvironmentPackage.TARGET_DEPLOY_ENVIROMENT:
+				sequence_TargetDeployEnviroment(context, (TargetDeployEnviroment) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -278,7 +278,7 @@ public class TargetEnvironmentSemanticSequencer extends AbstractDelegatingSemant
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     TargetEnviroment returns TargetEnviroment
+	 *     TargetDeployEnviroment returns TargetDeployEnviroment
 	 *
 	 * Constraint:
 	 *     (
@@ -288,7 +288,7 @@ public class TargetEnvironmentSemanticSequencer extends AbstractDelegatingSemant
 	 *     )
 	 * </pre>
 	 */
-	protected void sequence_TargetEnviroment(ISerializationContext context, TargetEnviroment semanticObject) {
+	protected void sequence_TargetDeployEnviroment(ISerializationContext context, TargetDeployEnviroment semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

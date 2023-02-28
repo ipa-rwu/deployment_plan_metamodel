@@ -10,7 +10,7 @@
 'MinimumKind'=26
 'Property'=28
 'SelectionKind'=27
-'TargetEnviroment'=11
+'TargetDeployEnviroment'=11
 'configConnection'=16
 'connectDevice'=20
 'includeDevice'=13

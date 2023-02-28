@@ -20,18 +20,6 @@
 		<systemProperties></systemProperties>
 		<additionalTestArguments></additionalTestArguments>
 	</properties>
-	<modules>
-		<module>de.fraunhofer.ipa.targetEnvironment.xtext</module>
-		<module>de.fraunhofer.ipa.targetEnvironment.xtext.ide</module>
-		<module>de.fraunhofer.ipa.targetEnvironment.xtext.ui</module>
-		<module>de.fraunhofer.ipa.targetEnvironment.xtext.target</module>
-		<module>de.fraunhofer.ipa.targetEnvironment.xtext.tests</module>
-		<module>de.fraunhofer.ipa.targetEnvironment.xtext.ui.tests</module>
-		<module>../de.fraunhofer.ipa.targetEnvironment</module>
-		<module>../de.fraunhofer.ipa.targetEnvironment.edit</module>
-		<module>../de.fraunhofer.ipa.targetEnvironment.editor</module>
-		<module>../de.fraunhofer.ipa.targetEnvironment.tests</module>
-	</modules>
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -300,5 +288,22 @@
 
 	<dependencies>
 	</dependencies>
+	<modules>
+		<module>../de.fraunhofer.ipa.targetEnvironment</module>
+		<module>../de.fraunhofer.ipa.targetEnvironment.xtext</module>
+		<module>
+			../de.fraunhofer.ipa.targetEnvironment.xtext.ide
+		</module>
+		<module>
+			../de.fraunhofer.ipa.targetEnvironment.xtext.target
+		</module>
+		<module>
+			../de.fraunhofer.ipa.targetEnvironment.xtext.tests
+		</module>
+		<module>../de.fraunhofer.ipa.targetEnvironment.xtext.ui</module>
+		<module>
+			../de.fraunhofer.ipa.targetEnvironment.xtext.ui.tests
+		</module>
+	</modules>
 </project>
 

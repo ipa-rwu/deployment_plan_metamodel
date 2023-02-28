@@ -43,7 +43,7 @@ import de.fraunhofer.ipa.targetEnvironment.services.TargetEnvironmentGrammarAcce
 
     @Override
     protected String getFirstRuleName() {
-    	return "TargetEnviroment";
+    	return "TargetDeployEnviroment";
    	}
 
    	@Override
@@ -60,15 +60,15 @@ import de.fraunhofer.ipa.targetEnvironment.services.TargetEnvironmentGrammarAcce
     }
 }
 
-// Entry rule entryRuleTargetEnviroment
-entryRuleTargetEnviroment returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getTargetEnviromentRule()); }
-	iv_ruleTargetEnviroment=ruleTargetEnviroment
-	{ $current=$iv_ruleTargetEnviroment.current; }
+// Entry rule entryRuleTargetDeployEnviroment
+entryRuleTargetDeployEnviroment returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getTargetDeployEnviromentRule()); }
+	iv_ruleTargetDeployEnviroment=ruleTargetDeployEnviroment
+	{ $current=$iv_ruleTargetDeployEnviroment.current; }
 	EOF;
 
-// Rule TargetEnviroment
-ruleTargetEnviroment returns [EObject current=null]
+// Rule TargetDeployEnviroment
+ruleTargetDeployEnviroment returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -79,23 +79,23 @@ ruleTargetEnviroment returns [EObject current=null]
 		(
 			{
 				$current = forceCreateModelElement(
-					grammarAccess.getTargetEnviromentAccess().getTargetEnviromentAction_0(),
+					grammarAccess.getTargetDeployEnviromentAccess().getTargetDeployEnviromentAction_0(),
 					$current);
 			}
 		)
-		otherlv_1='TargetEnviroment'
+		otherlv_1='TargetDeployEnviroment'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getTargetEnviromentAccess().getTargetEnviromentKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getTargetDeployEnviromentAccess().getTargetDeployEnviromentKeyword_1());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getTargetEnviromentAccess().getNameEStringParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getTargetDeployEnviromentAccess().getNameEStringParserRuleCall_2_0());
 				}
 				lv_name_2_0=ruleEString
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getTargetEnviromentRule());
+						$current = createModelElementForParent(grammarAccess.getTargetDeployEnviromentRule());
 					}
 					set(
 						$current,
@@ -108,26 +108,26 @@ ruleTargetEnviroment returns [EObject current=null]
 		)
 		otherlv_3='{'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getTargetEnviromentAccess().getLeftCurlyBracketKeyword_3());
+			newLeafNode(otherlv_3, grammarAccess.getTargetDeployEnviromentAccess().getLeftCurlyBracketKeyword_3());
 		}
 		(
 			otherlv_4='includeDevice'
 			{
-				newLeafNode(otherlv_4, grammarAccess.getTargetEnviromentAccess().getIncludeDeviceKeyword_4_0());
+				newLeafNode(otherlv_4, grammarAccess.getTargetDeployEnviromentAccess().getIncludeDeviceKeyword_4_0());
 			}
 			otherlv_5='{'
 			{
-				newLeafNode(otherlv_5, grammarAccess.getTargetEnviromentAccess().getLeftCurlyBracketKeyword_4_1());
+				newLeafNode(otherlv_5, grammarAccess.getTargetDeployEnviromentAccess().getLeftCurlyBracketKeyword_4_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getTargetEnviromentAccess().getIncludeDeviceDeviceInstanceParserRuleCall_4_2_0());
+						newCompositeNode(grammarAccess.getTargetDeployEnviromentAccess().getIncludeDeviceDeviceInstanceParserRuleCall_4_2_0());
 					}
 					lv_includeDevice_6_0=ruleDeviceInstance
 					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getTargetEnviromentRule());
+							$current = createModelElementForParent(grammarAccess.getTargetDeployEnviromentRule());
 						}
 						add(
 							$current,
@@ -141,17 +141,17 @@ ruleTargetEnviroment returns [EObject current=null]
 			(
 				otherlv_7=','
 				{
-					newLeafNode(otherlv_7, grammarAccess.getTargetEnviromentAccess().getCommaKeyword_4_3_0());
+					newLeafNode(otherlv_7, grammarAccess.getTargetDeployEnviromentAccess().getCommaKeyword_4_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getTargetEnviromentAccess().getIncludeDeviceDeviceInstanceParserRuleCall_4_3_1_0());
+							newCompositeNode(grammarAccess.getTargetDeployEnviromentAccess().getIncludeDeviceDeviceInstanceParserRuleCall_4_3_1_0());
 						}
 						lv_includeDevice_8_0=ruleDeviceInstance
 						{
 							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getTargetEnviromentRule());
+								$current = createModelElementForParent(grammarAccess.getTargetDeployEnviromentRule());
 							}
 							add(
 								$current,
@@ -165,27 +165,27 @@ ruleTargetEnviroment returns [EObject current=null]
 			)*
 			otherlv_9='}'
 			{
-				newLeafNode(otherlv_9, grammarAccess.getTargetEnviromentAccess().getRightCurlyBracketKeyword_4_4());
+				newLeafNode(otherlv_9, grammarAccess.getTargetDeployEnviromentAccess().getRightCurlyBracketKeyword_4_4());
 			}
 		)?
 		(
 			otherlv_10='configConnection'
 			{
-				newLeafNode(otherlv_10, grammarAccess.getTargetEnviromentAccess().getConfigConnectionKeyword_5_0());
+				newLeafNode(otherlv_10, grammarAccess.getTargetDeployEnviromentAccess().getConfigConnectionKeyword_5_0());
 			}
 			otherlv_11='{'
 			{
-				newLeafNode(otherlv_11, grammarAccess.getTargetEnviromentAccess().getLeftCurlyBracketKeyword_5_1());
+				newLeafNode(otherlv_11, grammarAccess.getTargetDeployEnviromentAccess().getLeftCurlyBracketKeyword_5_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getTargetEnviromentAccess().getConfigConnectionConfigConnectionParserRuleCall_5_2_0());
+						newCompositeNode(grammarAccess.getTargetDeployEnviromentAccess().getConfigConnectionConfigConnectionParserRuleCall_5_2_0());
 					}
 					lv_configConnection_12_0=ruleConfigConnection
 					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getTargetEnviromentRule());
+							$current = createModelElementForParent(grammarAccess.getTargetDeployEnviromentRule());
 						}
 						add(
 							$current,
@@ -199,17 +199,17 @@ ruleTargetEnviroment returns [EObject current=null]
 			(
 				otherlv_13=','
 				{
-					newLeafNode(otherlv_13, grammarAccess.getTargetEnviromentAccess().getCommaKeyword_5_3_0());
+					newLeafNode(otherlv_13, grammarAccess.getTargetDeployEnviromentAccess().getCommaKeyword_5_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getTargetEnviromentAccess().getConfigConnectionConfigConnectionParserRuleCall_5_3_1_0());
+							newCompositeNode(grammarAccess.getTargetDeployEnviromentAccess().getConfigConnectionConfigConnectionParserRuleCall_5_3_1_0());
 						}
 						lv_configConnection_14_0=ruleConfigConnection
 						{
 							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getTargetEnviromentRule());
+								$current = createModelElementForParent(grammarAccess.getTargetDeployEnviromentRule());
 							}
 							add(
 								$current,
@@ -223,12 +223,12 @@ ruleTargetEnviroment returns [EObject current=null]
 			)*
 			otherlv_15='}'
 			{
-				newLeafNode(otherlv_15, grammarAccess.getTargetEnviromentAccess().getRightCurlyBracketKeyword_5_4());
+				newLeafNode(otherlv_15, grammarAccess.getTargetDeployEnviromentAccess().getRightCurlyBracketKeyword_5_4());
 			}
 		)?
 		otherlv_16='}'
 		{
-			newLeafNode(otherlv_16, grammarAccess.getTargetEnviromentAccess().getRightCurlyBracketKeyword_6());
+			newLeafNode(otherlv_16, grammarAccess.getTargetDeployEnviromentAccess().getRightCurlyBracketKeyword_6());
 		}
 	)
 ;

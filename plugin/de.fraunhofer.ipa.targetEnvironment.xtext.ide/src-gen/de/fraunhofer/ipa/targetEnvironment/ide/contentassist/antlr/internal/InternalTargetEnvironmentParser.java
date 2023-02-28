@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalTargetEnvironmentParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'TargetEnviroment'", "'{'", "'}'", "'includeDevice'", "','", "'configConnection'", "'DeviceInstance'", "'refDeviceType'", "'ConfigConnection'", "'connectDevice'", "'CapabilityProperty'", "'kind'", "'value'", "'AttributeKind'", "'MaximumKind'", "'MinimumKind'", "'SelectionKind'", "'Property'", "'IndirectConnection'", "'properties'", "'DirectConnection'", "'ConnectedDevice'", "'refDevice'", "'refConnection'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'TargetDeployEnviroment'", "'{'", "'}'", "'includeDevice'", "','", "'configConnection'", "'DeviceInstance'", "'refDeviceType'", "'ConfigConnection'", "'connectDevice'", "'CapabilityProperty'", "'kind'", "'value'", "'AttributeKind'", "'MaximumKind'", "'MinimumKind'", "'SelectionKind'", "'Property'", "'IndirectConnection'", "'properties'", "'DirectConnection'", "'ConnectedDevice'", "'refDevice'", "'refConnection'"
     };
     public static final int RULE_STRING=4;
     public static final int RULE_SL_COMMENT=8;
@@ -92,20 +92,20 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
 
 
 
-    // $ANTLR start "entryRuleTargetEnviroment"
-    // InternalTargetEnvironment.g:53:1: entryRuleTargetEnviroment : ruleTargetEnviroment EOF ;
-    public final void entryRuleTargetEnviroment() throws RecognitionException {
+    // $ANTLR start "entryRuleTargetDeployEnviroment"
+    // InternalTargetEnvironment.g:53:1: entryRuleTargetDeployEnviroment : ruleTargetDeployEnviroment EOF ;
+    public final void entryRuleTargetDeployEnviroment() throws RecognitionException {
         try {
-            // InternalTargetEnvironment.g:54:1: ( ruleTargetEnviroment EOF )
-            // InternalTargetEnvironment.g:55:1: ruleTargetEnviroment EOF
+            // InternalTargetEnvironment.g:54:1: ( ruleTargetDeployEnviroment EOF )
+            // InternalTargetEnvironment.g:55:1: ruleTargetDeployEnviroment EOF
             {
-             before(grammarAccess.getTargetEnviromentRule()); 
+             before(grammarAccess.getTargetDeployEnviromentRule()); 
             pushFollow(FOLLOW_1);
-            ruleTargetEnviroment();
+            ruleTargetDeployEnviroment();
 
             state._fsp--;
 
-             after(grammarAccess.getTargetEnviromentRule()); 
+             after(grammarAccess.getTargetDeployEnviromentRule()); 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -119,35 +119,35 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "entryRuleTargetEnviroment"
+    // $ANTLR end "entryRuleTargetDeployEnviroment"
 
 
-    // $ANTLR start "ruleTargetEnviroment"
-    // InternalTargetEnvironment.g:62:1: ruleTargetEnviroment : ( ( rule__TargetEnviroment__Group__0 ) ) ;
-    public final void ruleTargetEnviroment() throws RecognitionException {
+    // $ANTLR start "ruleTargetDeployEnviroment"
+    // InternalTargetEnvironment.g:62:1: ruleTargetDeployEnviroment : ( ( rule__TargetDeployEnviroment__Group__0 ) ) ;
+    public final void ruleTargetDeployEnviroment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTargetEnvironment.g:66:2: ( ( ( rule__TargetEnviroment__Group__0 ) ) )
-            // InternalTargetEnvironment.g:67:2: ( ( rule__TargetEnviroment__Group__0 ) )
+            // InternalTargetEnvironment.g:66:2: ( ( ( rule__TargetDeployEnviroment__Group__0 ) ) )
+            // InternalTargetEnvironment.g:67:2: ( ( rule__TargetDeployEnviroment__Group__0 ) )
             {
-            // InternalTargetEnvironment.g:67:2: ( ( rule__TargetEnviroment__Group__0 ) )
-            // InternalTargetEnvironment.g:68:3: ( rule__TargetEnviroment__Group__0 )
+            // InternalTargetEnvironment.g:67:2: ( ( rule__TargetDeployEnviroment__Group__0 ) )
+            // InternalTargetEnvironment.g:68:3: ( rule__TargetDeployEnviroment__Group__0 )
             {
-             before(grammarAccess.getTargetEnviromentAccess().getGroup()); 
-            // InternalTargetEnvironment.g:69:3: ( rule__TargetEnviroment__Group__0 )
-            // InternalTargetEnvironment.g:69:4: rule__TargetEnviroment__Group__0
+             before(grammarAccess.getTargetDeployEnviromentAccess().getGroup()); 
+            // InternalTargetEnvironment.g:69:3: ( rule__TargetDeployEnviroment__Group__0 )
+            // InternalTargetEnvironment.g:69:4: rule__TargetDeployEnviroment__Group__0
             {
             pushFollow(FOLLOW_2);
-            rule__TargetEnviroment__Group__0();
+            rule__TargetDeployEnviroment__Group__0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getTargetEnviromentAccess().getGroup()); 
+             after(grammarAccess.getTargetDeployEnviromentAccess().getGroup()); 
 
             }
 
@@ -166,7 +166,7 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "ruleTargetEnviroment"
+    // $ANTLR end "ruleTargetDeployEnviroment"
 
 
     // $ANTLR start "entryRuleConnection"
@@ -1528,23 +1528,23 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
     // $ANTLR end "rule__EString__Alternatives"
 
 
-    // $ANTLR start "rule__TargetEnviroment__Group__0"
-    // InternalTargetEnvironment.g:502:1: rule__TargetEnviroment__Group__0 : rule__TargetEnviroment__Group__0__Impl rule__TargetEnviroment__Group__1 ;
-    public final void rule__TargetEnviroment__Group__0() throws RecognitionException {
+    // $ANTLR start "rule__TargetDeployEnviroment__Group__0"
+    // InternalTargetEnvironment.g:502:1: rule__TargetDeployEnviroment__Group__0 : rule__TargetDeployEnviroment__Group__0__Impl rule__TargetDeployEnviroment__Group__1 ;
+    public final void rule__TargetDeployEnviroment__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTargetEnvironment.g:506:1: ( rule__TargetEnviroment__Group__0__Impl rule__TargetEnviroment__Group__1 )
-            // InternalTargetEnvironment.g:507:2: rule__TargetEnviroment__Group__0__Impl rule__TargetEnviroment__Group__1
+            // InternalTargetEnvironment.g:506:1: ( rule__TargetDeployEnviroment__Group__0__Impl rule__TargetDeployEnviroment__Group__1 )
+            // InternalTargetEnvironment.g:507:2: rule__TargetDeployEnviroment__Group__0__Impl rule__TargetDeployEnviroment__Group__1
             {
             pushFollow(FOLLOW_3);
-            rule__TargetEnviroment__Group__0__Impl();
+            rule__TargetDeployEnviroment__Group__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__TargetEnviroment__Group__1();
+            rule__TargetDeployEnviroment__Group__1();
 
             state._fsp--;
 
@@ -1563,12 +1563,12 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__TargetEnviroment__Group__0"
+    // $ANTLR end "rule__TargetDeployEnviroment__Group__0"
 
 
-    // $ANTLR start "rule__TargetEnviroment__Group__0__Impl"
-    // InternalTargetEnvironment.g:514:1: rule__TargetEnviroment__Group__0__Impl : ( () ) ;
-    public final void rule__TargetEnviroment__Group__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__TargetDeployEnviroment__Group__0__Impl"
+    // InternalTargetEnvironment.g:514:1: rule__TargetDeployEnviroment__Group__0__Impl : ( () ) ;
+    public final void rule__TargetDeployEnviroment__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -1579,13 +1579,13 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
             // InternalTargetEnvironment.g:519:1: ( () )
             // InternalTargetEnvironment.g:520:2: ()
             {
-             before(grammarAccess.getTargetEnviromentAccess().getTargetEnviromentAction_0()); 
+             before(grammarAccess.getTargetDeployEnviromentAccess().getTargetDeployEnviromentAction_0()); 
             // InternalTargetEnvironment.g:521:2: ()
             // InternalTargetEnvironment.g:521:3: 
             {
             }
 
-             after(grammarAccess.getTargetEnviromentAccess().getTargetEnviromentAction_0()); 
+             after(grammarAccess.getTargetDeployEnviromentAccess().getTargetDeployEnviromentAction_0()); 
 
             }
 
@@ -1600,26 +1600,26 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__TargetEnviroment__Group__0__Impl"
+    // $ANTLR end "rule__TargetDeployEnviroment__Group__0__Impl"
 
 
-    // $ANTLR start "rule__TargetEnviroment__Group__1"
-    // InternalTargetEnvironment.g:529:1: rule__TargetEnviroment__Group__1 : rule__TargetEnviroment__Group__1__Impl rule__TargetEnviroment__Group__2 ;
-    public final void rule__TargetEnviroment__Group__1() throws RecognitionException {
+    // $ANTLR start "rule__TargetDeployEnviroment__Group__1"
+    // InternalTargetEnvironment.g:529:1: rule__TargetDeployEnviroment__Group__1 : rule__TargetDeployEnviroment__Group__1__Impl rule__TargetDeployEnviroment__Group__2 ;
+    public final void rule__TargetDeployEnviroment__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTargetEnvironment.g:533:1: ( rule__TargetEnviroment__Group__1__Impl rule__TargetEnviroment__Group__2 )
-            // InternalTargetEnvironment.g:534:2: rule__TargetEnviroment__Group__1__Impl rule__TargetEnviroment__Group__2
+            // InternalTargetEnvironment.g:533:1: ( rule__TargetDeployEnviroment__Group__1__Impl rule__TargetDeployEnviroment__Group__2 )
+            // InternalTargetEnvironment.g:534:2: rule__TargetDeployEnviroment__Group__1__Impl rule__TargetDeployEnviroment__Group__2
             {
             pushFollow(FOLLOW_4);
-            rule__TargetEnviroment__Group__1__Impl();
+            rule__TargetDeployEnviroment__Group__1__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__TargetEnviroment__Group__2();
+            rule__TargetDeployEnviroment__Group__2();
 
             state._fsp--;
 
@@ -1638,25 +1638,25 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__TargetEnviroment__Group__1"
+    // $ANTLR end "rule__TargetDeployEnviroment__Group__1"
 
 
-    // $ANTLR start "rule__TargetEnviroment__Group__1__Impl"
-    // InternalTargetEnvironment.g:541:1: rule__TargetEnviroment__Group__1__Impl : ( 'TargetEnviroment' ) ;
-    public final void rule__TargetEnviroment__Group__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__TargetDeployEnviroment__Group__1__Impl"
+    // InternalTargetEnvironment.g:541:1: rule__TargetDeployEnviroment__Group__1__Impl : ( 'TargetDeployEnviroment' ) ;
+    public final void rule__TargetDeployEnviroment__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTargetEnvironment.g:545:1: ( ( 'TargetEnviroment' ) )
-            // InternalTargetEnvironment.g:546:1: ( 'TargetEnviroment' )
+            // InternalTargetEnvironment.g:545:1: ( ( 'TargetDeployEnviroment' ) )
+            // InternalTargetEnvironment.g:546:1: ( 'TargetDeployEnviroment' )
             {
-            // InternalTargetEnvironment.g:546:1: ( 'TargetEnviroment' )
-            // InternalTargetEnvironment.g:547:2: 'TargetEnviroment'
+            // InternalTargetEnvironment.g:546:1: ( 'TargetDeployEnviroment' )
+            // InternalTargetEnvironment.g:547:2: 'TargetDeployEnviroment'
             {
-             before(grammarAccess.getTargetEnviromentAccess().getTargetEnviromentKeyword_1()); 
+             before(grammarAccess.getTargetDeployEnviromentAccess().getTargetDeployEnviromentKeyword_1()); 
             match(input,11,FOLLOW_2); 
-             after(grammarAccess.getTargetEnviromentAccess().getTargetEnviromentKeyword_1()); 
+             after(grammarAccess.getTargetDeployEnviromentAccess().getTargetDeployEnviromentKeyword_1()); 
 
             }
 
@@ -1675,26 +1675,26 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__TargetEnviroment__Group__1__Impl"
+    // $ANTLR end "rule__TargetDeployEnviroment__Group__1__Impl"
 
 
-    // $ANTLR start "rule__TargetEnviroment__Group__2"
-    // InternalTargetEnvironment.g:556:1: rule__TargetEnviroment__Group__2 : rule__TargetEnviroment__Group__2__Impl rule__TargetEnviroment__Group__3 ;
-    public final void rule__TargetEnviroment__Group__2() throws RecognitionException {
+    // $ANTLR start "rule__TargetDeployEnviroment__Group__2"
+    // InternalTargetEnvironment.g:556:1: rule__TargetDeployEnviroment__Group__2 : rule__TargetDeployEnviroment__Group__2__Impl rule__TargetDeployEnviroment__Group__3 ;
+    public final void rule__TargetDeployEnviroment__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTargetEnvironment.g:560:1: ( rule__TargetEnviroment__Group__2__Impl rule__TargetEnviroment__Group__3 )
-            // InternalTargetEnvironment.g:561:2: rule__TargetEnviroment__Group__2__Impl rule__TargetEnviroment__Group__3
+            // InternalTargetEnvironment.g:560:1: ( rule__TargetDeployEnviroment__Group__2__Impl rule__TargetDeployEnviroment__Group__3 )
+            // InternalTargetEnvironment.g:561:2: rule__TargetDeployEnviroment__Group__2__Impl rule__TargetDeployEnviroment__Group__3
             {
             pushFollow(FOLLOW_5);
-            rule__TargetEnviroment__Group__2__Impl();
+            rule__TargetDeployEnviroment__Group__2__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__TargetEnviroment__Group__3();
+            rule__TargetDeployEnviroment__Group__3();
 
             state._fsp--;
 
@@ -1713,35 +1713,35 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__TargetEnviroment__Group__2"
+    // $ANTLR end "rule__TargetDeployEnviroment__Group__2"
 
 
-    // $ANTLR start "rule__TargetEnviroment__Group__2__Impl"
-    // InternalTargetEnvironment.g:568:1: rule__TargetEnviroment__Group__2__Impl : ( ( rule__TargetEnviroment__NameAssignment_2 ) ) ;
-    public final void rule__TargetEnviroment__Group__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__TargetDeployEnviroment__Group__2__Impl"
+    // InternalTargetEnvironment.g:568:1: rule__TargetDeployEnviroment__Group__2__Impl : ( ( rule__TargetDeployEnviroment__NameAssignment_2 ) ) ;
+    public final void rule__TargetDeployEnviroment__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTargetEnvironment.g:572:1: ( ( ( rule__TargetEnviroment__NameAssignment_2 ) ) )
-            // InternalTargetEnvironment.g:573:1: ( ( rule__TargetEnviroment__NameAssignment_2 ) )
+            // InternalTargetEnvironment.g:572:1: ( ( ( rule__TargetDeployEnviroment__NameAssignment_2 ) ) )
+            // InternalTargetEnvironment.g:573:1: ( ( rule__TargetDeployEnviroment__NameAssignment_2 ) )
             {
-            // InternalTargetEnvironment.g:573:1: ( ( rule__TargetEnviroment__NameAssignment_2 ) )
-            // InternalTargetEnvironment.g:574:2: ( rule__TargetEnviroment__NameAssignment_2 )
+            // InternalTargetEnvironment.g:573:1: ( ( rule__TargetDeployEnviroment__NameAssignment_2 ) )
+            // InternalTargetEnvironment.g:574:2: ( rule__TargetDeployEnviroment__NameAssignment_2 )
             {
-             before(grammarAccess.getTargetEnviromentAccess().getNameAssignment_2()); 
-            // InternalTargetEnvironment.g:575:2: ( rule__TargetEnviroment__NameAssignment_2 )
-            // InternalTargetEnvironment.g:575:3: rule__TargetEnviroment__NameAssignment_2
+             before(grammarAccess.getTargetDeployEnviromentAccess().getNameAssignment_2()); 
+            // InternalTargetEnvironment.g:575:2: ( rule__TargetDeployEnviroment__NameAssignment_2 )
+            // InternalTargetEnvironment.g:575:3: rule__TargetDeployEnviroment__NameAssignment_2
             {
             pushFollow(FOLLOW_2);
-            rule__TargetEnviroment__NameAssignment_2();
+            rule__TargetDeployEnviroment__NameAssignment_2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getTargetEnviromentAccess().getNameAssignment_2()); 
+             after(grammarAccess.getTargetDeployEnviromentAccess().getNameAssignment_2()); 
 
             }
 
@@ -1760,26 +1760,26 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__TargetEnviroment__Group__2__Impl"
+    // $ANTLR end "rule__TargetDeployEnviroment__Group__2__Impl"
 
 
-    // $ANTLR start "rule__TargetEnviroment__Group__3"
-    // InternalTargetEnvironment.g:583:1: rule__TargetEnviroment__Group__3 : rule__TargetEnviroment__Group__3__Impl rule__TargetEnviroment__Group__4 ;
-    public final void rule__TargetEnviroment__Group__3() throws RecognitionException {
+    // $ANTLR start "rule__TargetDeployEnviroment__Group__3"
+    // InternalTargetEnvironment.g:583:1: rule__TargetDeployEnviroment__Group__3 : rule__TargetDeployEnviroment__Group__3__Impl rule__TargetDeployEnviroment__Group__4 ;
+    public final void rule__TargetDeployEnviroment__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTargetEnvironment.g:587:1: ( rule__TargetEnviroment__Group__3__Impl rule__TargetEnviroment__Group__4 )
-            // InternalTargetEnvironment.g:588:2: rule__TargetEnviroment__Group__3__Impl rule__TargetEnviroment__Group__4
+            // InternalTargetEnvironment.g:587:1: ( rule__TargetDeployEnviroment__Group__3__Impl rule__TargetDeployEnviroment__Group__4 )
+            // InternalTargetEnvironment.g:588:2: rule__TargetDeployEnviroment__Group__3__Impl rule__TargetDeployEnviroment__Group__4
             {
             pushFollow(FOLLOW_6);
-            rule__TargetEnviroment__Group__3__Impl();
+            rule__TargetDeployEnviroment__Group__3__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__TargetEnviroment__Group__4();
+            rule__TargetDeployEnviroment__Group__4();
 
             state._fsp--;
 
@@ -1798,12 +1798,12 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__TargetEnviroment__Group__3"
+    // $ANTLR end "rule__TargetDeployEnviroment__Group__3"
 
 
-    // $ANTLR start "rule__TargetEnviroment__Group__3__Impl"
-    // InternalTargetEnvironment.g:595:1: rule__TargetEnviroment__Group__3__Impl : ( '{' ) ;
-    public final void rule__TargetEnviroment__Group__3__Impl() throws RecognitionException {
+    // $ANTLR start "rule__TargetDeployEnviroment__Group__3__Impl"
+    // InternalTargetEnvironment.g:595:1: rule__TargetDeployEnviroment__Group__3__Impl : ( '{' ) ;
+    public final void rule__TargetDeployEnviroment__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -1814,9 +1814,9 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
             // InternalTargetEnvironment.g:600:1: ( '{' )
             // InternalTargetEnvironment.g:601:2: '{'
             {
-             before(grammarAccess.getTargetEnviromentAccess().getLeftCurlyBracketKeyword_3()); 
+             before(grammarAccess.getTargetDeployEnviromentAccess().getLeftCurlyBracketKeyword_3()); 
             match(input,12,FOLLOW_2); 
-             after(grammarAccess.getTargetEnviromentAccess().getLeftCurlyBracketKeyword_3()); 
+             after(grammarAccess.getTargetDeployEnviromentAccess().getLeftCurlyBracketKeyword_3()); 
 
             }
 
@@ -1835,26 +1835,26 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__TargetEnviroment__Group__3__Impl"
+    // $ANTLR end "rule__TargetDeployEnviroment__Group__3__Impl"
 
 
-    // $ANTLR start "rule__TargetEnviroment__Group__4"
-    // InternalTargetEnvironment.g:610:1: rule__TargetEnviroment__Group__4 : rule__TargetEnviroment__Group__4__Impl rule__TargetEnviroment__Group__5 ;
-    public final void rule__TargetEnviroment__Group__4() throws RecognitionException {
+    // $ANTLR start "rule__TargetDeployEnviroment__Group__4"
+    // InternalTargetEnvironment.g:610:1: rule__TargetDeployEnviroment__Group__4 : rule__TargetDeployEnviroment__Group__4__Impl rule__TargetDeployEnviroment__Group__5 ;
+    public final void rule__TargetDeployEnviroment__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTargetEnvironment.g:614:1: ( rule__TargetEnviroment__Group__4__Impl rule__TargetEnviroment__Group__5 )
-            // InternalTargetEnvironment.g:615:2: rule__TargetEnviroment__Group__4__Impl rule__TargetEnviroment__Group__5
+            // InternalTargetEnvironment.g:614:1: ( rule__TargetDeployEnviroment__Group__4__Impl rule__TargetDeployEnviroment__Group__5 )
+            // InternalTargetEnvironment.g:615:2: rule__TargetDeployEnviroment__Group__4__Impl rule__TargetDeployEnviroment__Group__5
             {
             pushFollow(FOLLOW_6);
-            rule__TargetEnviroment__Group__4__Impl();
+            rule__TargetDeployEnviroment__Group__4__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__TargetEnviroment__Group__5();
+            rule__TargetDeployEnviroment__Group__5();
 
             state._fsp--;
 
@@ -1873,24 +1873,24 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__TargetEnviroment__Group__4"
+    // $ANTLR end "rule__TargetDeployEnviroment__Group__4"
 
 
-    // $ANTLR start "rule__TargetEnviroment__Group__4__Impl"
-    // InternalTargetEnvironment.g:622:1: rule__TargetEnviroment__Group__4__Impl : ( ( rule__TargetEnviroment__Group_4__0 )? ) ;
-    public final void rule__TargetEnviroment__Group__4__Impl() throws RecognitionException {
+    // $ANTLR start "rule__TargetDeployEnviroment__Group__4__Impl"
+    // InternalTargetEnvironment.g:622:1: rule__TargetDeployEnviroment__Group__4__Impl : ( ( rule__TargetDeployEnviroment__Group_4__0 )? ) ;
+    public final void rule__TargetDeployEnviroment__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTargetEnvironment.g:626:1: ( ( ( rule__TargetEnviroment__Group_4__0 )? ) )
-            // InternalTargetEnvironment.g:627:1: ( ( rule__TargetEnviroment__Group_4__0 )? )
+            // InternalTargetEnvironment.g:626:1: ( ( ( rule__TargetDeployEnviroment__Group_4__0 )? ) )
+            // InternalTargetEnvironment.g:627:1: ( ( rule__TargetDeployEnviroment__Group_4__0 )? )
             {
-            // InternalTargetEnvironment.g:627:1: ( ( rule__TargetEnviroment__Group_4__0 )? )
-            // InternalTargetEnvironment.g:628:2: ( rule__TargetEnviroment__Group_4__0 )?
+            // InternalTargetEnvironment.g:627:1: ( ( rule__TargetDeployEnviroment__Group_4__0 )? )
+            // InternalTargetEnvironment.g:628:2: ( rule__TargetDeployEnviroment__Group_4__0 )?
             {
-             before(grammarAccess.getTargetEnviromentAccess().getGroup_4()); 
-            // InternalTargetEnvironment.g:629:2: ( rule__TargetEnviroment__Group_4__0 )?
+             before(grammarAccess.getTargetDeployEnviromentAccess().getGroup_4()); 
+            // InternalTargetEnvironment.g:629:2: ( rule__TargetDeployEnviroment__Group_4__0 )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -1899,10 +1899,10 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
             }
             switch (alt4) {
                 case 1 :
-                    // InternalTargetEnvironment.g:629:3: rule__TargetEnviroment__Group_4__0
+                    // InternalTargetEnvironment.g:629:3: rule__TargetDeployEnviroment__Group_4__0
                     {
                     pushFollow(FOLLOW_2);
-                    rule__TargetEnviroment__Group_4__0();
+                    rule__TargetDeployEnviroment__Group_4__0();
 
                     state._fsp--;
 
@@ -1912,7 +1912,7 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
 
             }
 
-             after(grammarAccess.getTargetEnviromentAccess().getGroup_4()); 
+             after(grammarAccess.getTargetDeployEnviromentAccess().getGroup_4()); 
 
             }
 
@@ -1931,26 +1931,26 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__TargetEnviroment__Group__4__Impl"
+    // $ANTLR end "rule__TargetDeployEnviroment__Group__4__Impl"
 
 
-    // $ANTLR start "rule__TargetEnviroment__Group__5"
-    // InternalTargetEnvironment.g:637:1: rule__TargetEnviroment__Group__5 : rule__TargetEnviroment__Group__5__Impl rule__TargetEnviroment__Group__6 ;
-    public final void rule__TargetEnviroment__Group__5() throws RecognitionException {
+    // $ANTLR start "rule__TargetDeployEnviroment__Group__5"
+    // InternalTargetEnvironment.g:637:1: rule__TargetDeployEnviroment__Group__5 : rule__TargetDeployEnviroment__Group__5__Impl rule__TargetDeployEnviroment__Group__6 ;
+    public final void rule__TargetDeployEnviroment__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTargetEnvironment.g:641:1: ( rule__TargetEnviroment__Group__5__Impl rule__TargetEnviroment__Group__6 )
-            // InternalTargetEnvironment.g:642:2: rule__TargetEnviroment__Group__5__Impl rule__TargetEnviroment__Group__6
+            // InternalTargetEnvironment.g:641:1: ( rule__TargetDeployEnviroment__Group__5__Impl rule__TargetDeployEnviroment__Group__6 )
+            // InternalTargetEnvironment.g:642:2: rule__TargetDeployEnviroment__Group__5__Impl rule__TargetDeployEnviroment__Group__6
             {
             pushFollow(FOLLOW_6);
-            rule__TargetEnviroment__Group__5__Impl();
+            rule__TargetDeployEnviroment__Group__5__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__TargetEnviroment__Group__6();
+            rule__TargetDeployEnviroment__Group__6();
 
             state._fsp--;
 
@@ -1969,24 +1969,24 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__TargetEnviroment__Group__5"
+    // $ANTLR end "rule__TargetDeployEnviroment__Group__5"
 
 
-    // $ANTLR start "rule__TargetEnviroment__Group__5__Impl"
-    // InternalTargetEnvironment.g:649:1: rule__TargetEnviroment__Group__5__Impl : ( ( rule__TargetEnviroment__Group_5__0 )? ) ;
-    public final void rule__TargetEnviroment__Group__5__Impl() throws RecognitionException {
+    // $ANTLR start "rule__TargetDeployEnviroment__Group__5__Impl"
+    // InternalTargetEnvironment.g:649:1: rule__TargetDeployEnviroment__Group__5__Impl : ( ( rule__TargetDeployEnviroment__Group_5__0 )? ) ;
+    public final void rule__TargetDeployEnviroment__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTargetEnvironment.g:653:1: ( ( ( rule__TargetEnviroment__Group_5__0 )? ) )
-            // InternalTargetEnvironment.g:654:1: ( ( rule__TargetEnviroment__Group_5__0 )? )
+            // InternalTargetEnvironment.g:653:1: ( ( ( rule__TargetDeployEnviroment__Group_5__0 )? ) )
+            // InternalTargetEnvironment.g:654:1: ( ( rule__TargetDeployEnviroment__Group_5__0 )? )
             {
-            // InternalTargetEnvironment.g:654:1: ( ( rule__TargetEnviroment__Group_5__0 )? )
-            // InternalTargetEnvironment.g:655:2: ( rule__TargetEnviroment__Group_5__0 )?
+            // InternalTargetEnvironment.g:654:1: ( ( rule__TargetDeployEnviroment__Group_5__0 )? )
+            // InternalTargetEnvironment.g:655:2: ( rule__TargetDeployEnviroment__Group_5__0 )?
             {
-             before(grammarAccess.getTargetEnviromentAccess().getGroup_5()); 
-            // InternalTargetEnvironment.g:656:2: ( rule__TargetEnviroment__Group_5__0 )?
+             before(grammarAccess.getTargetDeployEnviromentAccess().getGroup_5()); 
+            // InternalTargetEnvironment.g:656:2: ( rule__TargetDeployEnviroment__Group_5__0 )?
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -1995,10 +1995,10 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
             }
             switch (alt5) {
                 case 1 :
-                    // InternalTargetEnvironment.g:656:3: rule__TargetEnviroment__Group_5__0
+                    // InternalTargetEnvironment.g:656:3: rule__TargetDeployEnviroment__Group_5__0
                     {
                     pushFollow(FOLLOW_2);
-                    rule__TargetEnviroment__Group_5__0();
+                    rule__TargetDeployEnviroment__Group_5__0();
 
                     state._fsp--;
 
@@ -2008,7 +2008,7 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
 
             }
 
-             after(grammarAccess.getTargetEnviromentAccess().getGroup_5()); 
+             after(grammarAccess.getTargetDeployEnviromentAccess().getGroup_5()); 
 
             }
 
@@ -2027,21 +2027,21 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__TargetEnviroment__Group__5__Impl"
+    // $ANTLR end "rule__TargetDeployEnviroment__Group__5__Impl"
 
 
-    // $ANTLR start "rule__TargetEnviroment__Group__6"
-    // InternalTargetEnvironment.g:664:1: rule__TargetEnviroment__Group__6 : rule__TargetEnviroment__Group__6__Impl ;
-    public final void rule__TargetEnviroment__Group__6() throws RecognitionException {
+    // $ANTLR start "rule__TargetDeployEnviroment__Group__6"
+    // InternalTargetEnvironment.g:664:1: rule__TargetDeployEnviroment__Group__6 : rule__TargetDeployEnviroment__Group__6__Impl ;
+    public final void rule__TargetDeployEnviroment__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTargetEnvironment.g:668:1: ( rule__TargetEnviroment__Group__6__Impl )
-            // InternalTargetEnvironment.g:669:2: rule__TargetEnviroment__Group__6__Impl
+            // InternalTargetEnvironment.g:668:1: ( rule__TargetDeployEnviroment__Group__6__Impl )
+            // InternalTargetEnvironment.g:669:2: rule__TargetDeployEnviroment__Group__6__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__TargetEnviroment__Group__6__Impl();
+            rule__TargetDeployEnviroment__Group__6__Impl();
 
             state._fsp--;
 
@@ -2060,12 +2060,12 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__TargetEnviroment__Group__6"
+    // $ANTLR end "rule__TargetDeployEnviroment__Group__6"
 
 
-    // $ANTLR start "rule__TargetEnviroment__Group__6__Impl"
-    // InternalTargetEnvironment.g:675:1: rule__TargetEnviroment__Group__6__Impl : ( '}' ) ;
-    public final void rule__TargetEnviroment__Group__6__Impl() throws RecognitionException {
+    // $ANTLR start "rule__TargetDeployEnviroment__Group__6__Impl"
+    // InternalTargetEnvironment.g:675:1: rule__TargetDeployEnviroment__Group__6__Impl : ( '}' ) ;
+    public final void rule__TargetDeployEnviroment__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -2076,9 +2076,9 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
             // InternalTargetEnvironment.g:680:1: ( '}' )
             // InternalTargetEnvironment.g:681:2: '}'
             {
-             before(grammarAccess.getTargetEnviromentAccess().getRightCurlyBracketKeyword_6()); 
+             before(grammarAccess.getTargetDeployEnviromentAccess().getRightCurlyBracketKeyword_6()); 
             match(input,13,FOLLOW_2); 
-             after(grammarAccess.getTargetEnviromentAccess().getRightCurlyBracketKeyword_6()); 
+             after(grammarAccess.getTargetDeployEnviromentAccess().getRightCurlyBracketKeyword_6()); 
 
             }
 
@@ -2097,26 +2097,26 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__TargetEnviroment__Group__6__Impl"
+    // $ANTLR end "rule__TargetDeployEnviroment__Group__6__Impl"
 
 
-    // $ANTLR start "rule__TargetEnviroment__Group_4__0"
-    // InternalTargetEnvironment.g:691:1: rule__TargetEnviroment__Group_4__0 : rule__TargetEnviroment__Group_4__0__Impl rule__TargetEnviroment__Group_4__1 ;
-    public final void rule__TargetEnviroment__Group_4__0() throws RecognitionException {
+    // $ANTLR start "rule__TargetDeployEnviroment__Group_4__0"
+    // InternalTargetEnvironment.g:691:1: rule__TargetDeployEnviroment__Group_4__0 : rule__TargetDeployEnviroment__Group_4__0__Impl rule__TargetDeployEnviroment__Group_4__1 ;
+    public final void rule__TargetDeployEnviroment__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTargetEnvironment.g:695:1: ( rule__TargetEnviroment__Group_4__0__Impl rule__TargetEnviroment__Group_4__1 )
-            // InternalTargetEnvironment.g:696:2: rule__TargetEnviroment__Group_4__0__Impl rule__TargetEnviroment__Group_4__1
+            // InternalTargetEnvironment.g:695:1: ( rule__TargetDeployEnviroment__Group_4__0__Impl rule__TargetDeployEnviroment__Group_4__1 )
+            // InternalTargetEnvironment.g:696:2: rule__TargetDeployEnviroment__Group_4__0__Impl rule__TargetDeployEnviroment__Group_4__1
             {
             pushFollow(FOLLOW_5);
-            rule__TargetEnviroment__Group_4__0__Impl();
+            rule__TargetDeployEnviroment__Group_4__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__TargetEnviroment__Group_4__1();
+            rule__TargetDeployEnviroment__Group_4__1();
 
             state._fsp--;
 
@@ -2135,12 +2135,12 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__TargetEnviroment__Group_4__0"
+    // $ANTLR end "rule__TargetDeployEnviroment__Group_4__0"
 
 
-    // $ANTLR start "rule__TargetEnviroment__Group_4__0__Impl"
-    // InternalTargetEnvironment.g:703:1: rule__TargetEnviroment__Group_4__0__Impl : ( 'includeDevice' ) ;
-    public final void rule__TargetEnviroment__Group_4__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__TargetDeployEnviroment__Group_4__0__Impl"
+    // InternalTargetEnvironment.g:703:1: rule__TargetDeployEnviroment__Group_4__0__Impl : ( 'includeDevice' ) ;
+    public final void rule__TargetDeployEnviroment__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -2151,9 +2151,9 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
             // InternalTargetEnvironment.g:708:1: ( 'includeDevice' )
             // InternalTargetEnvironment.g:709:2: 'includeDevice'
             {
-             before(grammarAccess.getTargetEnviromentAccess().getIncludeDeviceKeyword_4_0()); 
+             before(grammarAccess.getTargetDeployEnviromentAccess().getIncludeDeviceKeyword_4_0()); 
             match(input,14,FOLLOW_2); 
-             after(grammarAccess.getTargetEnviromentAccess().getIncludeDeviceKeyword_4_0()); 
+             after(grammarAccess.getTargetDeployEnviromentAccess().getIncludeDeviceKeyword_4_0()); 
 
             }
 
@@ -2172,26 +2172,26 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__TargetEnviroment__Group_4__0__Impl"
+    // $ANTLR end "rule__TargetDeployEnviroment__Group_4__0__Impl"
 
 
-    // $ANTLR start "rule__TargetEnviroment__Group_4__1"
-    // InternalTargetEnvironment.g:718:1: rule__TargetEnviroment__Group_4__1 : rule__TargetEnviroment__Group_4__1__Impl rule__TargetEnviroment__Group_4__2 ;
-    public final void rule__TargetEnviroment__Group_4__1() throws RecognitionException {
+    // $ANTLR start "rule__TargetDeployEnviroment__Group_4__1"
+    // InternalTargetEnvironment.g:718:1: rule__TargetDeployEnviroment__Group_4__1 : rule__TargetDeployEnviroment__Group_4__1__Impl rule__TargetDeployEnviroment__Group_4__2 ;
+    public final void rule__TargetDeployEnviroment__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTargetEnvironment.g:722:1: ( rule__TargetEnviroment__Group_4__1__Impl rule__TargetEnviroment__Group_4__2 )
-            // InternalTargetEnvironment.g:723:2: rule__TargetEnviroment__Group_4__1__Impl rule__TargetEnviroment__Group_4__2
+            // InternalTargetEnvironment.g:722:1: ( rule__TargetDeployEnviroment__Group_4__1__Impl rule__TargetDeployEnviroment__Group_4__2 )
+            // InternalTargetEnvironment.g:723:2: rule__TargetDeployEnviroment__Group_4__1__Impl rule__TargetDeployEnviroment__Group_4__2
             {
             pushFollow(FOLLOW_7);
-            rule__TargetEnviroment__Group_4__1__Impl();
+            rule__TargetDeployEnviroment__Group_4__1__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__TargetEnviroment__Group_4__2();
+            rule__TargetDeployEnviroment__Group_4__2();
 
             state._fsp--;
 
@@ -2210,12 +2210,12 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__TargetEnviroment__Group_4__1"
+    // $ANTLR end "rule__TargetDeployEnviroment__Group_4__1"
 
 
-    // $ANTLR start "rule__TargetEnviroment__Group_4__1__Impl"
-    // InternalTargetEnvironment.g:730:1: rule__TargetEnviroment__Group_4__1__Impl : ( '{' ) ;
-    public final void rule__TargetEnviroment__Group_4__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__TargetDeployEnviroment__Group_4__1__Impl"
+    // InternalTargetEnvironment.g:730:1: rule__TargetDeployEnviroment__Group_4__1__Impl : ( '{' ) ;
+    public final void rule__TargetDeployEnviroment__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -2226,9 +2226,9 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
             // InternalTargetEnvironment.g:735:1: ( '{' )
             // InternalTargetEnvironment.g:736:2: '{'
             {
-             before(grammarAccess.getTargetEnviromentAccess().getLeftCurlyBracketKeyword_4_1()); 
+             before(grammarAccess.getTargetDeployEnviromentAccess().getLeftCurlyBracketKeyword_4_1()); 
             match(input,12,FOLLOW_2); 
-             after(grammarAccess.getTargetEnviromentAccess().getLeftCurlyBracketKeyword_4_1()); 
+             after(grammarAccess.getTargetDeployEnviromentAccess().getLeftCurlyBracketKeyword_4_1()); 
 
             }
 
@@ -2247,26 +2247,26 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__TargetEnviroment__Group_4__1__Impl"
+    // $ANTLR end "rule__TargetDeployEnviroment__Group_4__1__Impl"
 
 
-    // $ANTLR start "rule__TargetEnviroment__Group_4__2"
-    // InternalTargetEnvironment.g:745:1: rule__TargetEnviroment__Group_4__2 : rule__TargetEnviroment__Group_4__2__Impl rule__TargetEnviroment__Group_4__3 ;
-    public final void rule__TargetEnviroment__Group_4__2() throws RecognitionException {
+    // $ANTLR start "rule__TargetDeployEnviroment__Group_4__2"
+    // InternalTargetEnvironment.g:745:1: rule__TargetDeployEnviroment__Group_4__2 : rule__TargetDeployEnviroment__Group_4__2__Impl rule__TargetDeployEnviroment__Group_4__3 ;
+    public final void rule__TargetDeployEnviroment__Group_4__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTargetEnvironment.g:749:1: ( rule__TargetEnviroment__Group_4__2__Impl rule__TargetEnviroment__Group_4__3 )
-            // InternalTargetEnvironment.g:750:2: rule__TargetEnviroment__Group_4__2__Impl rule__TargetEnviroment__Group_4__3
+            // InternalTargetEnvironment.g:749:1: ( rule__TargetDeployEnviroment__Group_4__2__Impl rule__TargetDeployEnviroment__Group_4__3 )
+            // InternalTargetEnvironment.g:750:2: rule__TargetDeployEnviroment__Group_4__2__Impl rule__TargetDeployEnviroment__Group_4__3
             {
             pushFollow(FOLLOW_8);
-            rule__TargetEnviroment__Group_4__2__Impl();
+            rule__TargetDeployEnviroment__Group_4__2__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__TargetEnviroment__Group_4__3();
+            rule__TargetDeployEnviroment__Group_4__3();
 
             state._fsp--;
 
@@ -2285,35 +2285,35 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__TargetEnviroment__Group_4__2"
+    // $ANTLR end "rule__TargetDeployEnviroment__Group_4__2"
 
 
-    // $ANTLR start "rule__TargetEnviroment__Group_4__2__Impl"
-    // InternalTargetEnvironment.g:757:1: rule__TargetEnviroment__Group_4__2__Impl : ( ( rule__TargetEnviroment__IncludeDeviceAssignment_4_2 ) ) ;
-    public final void rule__TargetEnviroment__Group_4__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__TargetDeployEnviroment__Group_4__2__Impl"
+    // InternalTargetEnvironment.g:757:1: rule__TargetDeployEnviroment__Group_4__2__Impl : ( ( rule__TargetDeployEnviroment__IncludeDeviceAssignment_4_2 ) ) ;
+    public final void rule__TargetDeployEnviroment__Group_4__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTargetEnvironment.g:761:1: ( ( ( rule__TargetEnviroment__IncludeDeviceAssignment_4_2 ) ) )
-            // InternalTargetEnvironment.g:762:1: ( ( rule__TargetEnviroment__IncludeDeviceAssignment_4_2 ) )
+            // InternalTargetEnvironment.g:761:1: ( ( ( rule__TargetDeployEnviroment__IncludeDeviceAssignment_4_2 ) ) )
+            // InternalTargetEnvironment.g:762:1: ( ( rule__TargetDeployEnviroment__IncludeDeviceAssignment_4_2 ) )
             {
-            // InternalTargetEnvironment.g:762:1: ( ( rule__TargetEnviroment__IncludeDeviceAssignment_4_2 ) )
-            // InternalTargetEnvironment.g:763:2: ( rule__TargetEnviroment__IncludeDeviceAssignment_4_2 )
+            // InternalTargetEnvironment.g:762:1: ( ( rule__TargetDeployEnviroment__IncludeDeviceAssignment_4_2 ) )
+            // InternalTargetEnvironment.g:763:2: ( rule__TargetDeployEnviroment__IncludeDeviceAssignment_4_2 )
             {
-             before(grammarAccess.getTargetEnviromentAccess().getIncludeDeviceAssignment_4_2()); 
-            // InternalTargetEnvironment.g:764:2: ( rule__TargetEnviroment__IncludeDeviceAssignment_4_2 )
-            // InternalTargetEnvironment.g:764:3: rule__TargetEnviroment__IncludeDeviceAssignment_4_2
+             before(grammarAccess.getTargetDeployEnviromentAccess().getIncludeDeviceAssignment_4_2()); 
+            // InternalTargetEnvironment.g:764:2: ( rule__TargetDeployEnviroment__IncludeDeviceAssignment_4_2 )
+            // InternalTargetEnvironment.g:764:3: rule__TargetDeployEnviroment__IncludeDeviceAssignment_4_2
             {
             pushFollow(FOLLOW_2);
-            rule__TargetEnviroment__IncludeDeviceAssignment_4_2();
+            rule__TargetDeployEnviroment__IncludeDeviceAssignment_4_2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getTargetEnviromentAccess().getIncludeDeviceAssignment_4_2()); 
+             after(grammarAccess.getTargetDeployEnviromentAccess().getIncludeDeviceAssignment_4_2()); 
 
             }
 
@@ -2332,26 +2332,26 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__TargetEnviroment__Group_4__2__Impl"
+    // $ANTLR end "rule__TargetDeployEnviroment__Group_4__2__Impl"
 
 
-    // $ANTLR start "rule__TargetEnviroment__Group_4__3"
-    // InternalTargetEnvironment.g:772:1: rule__TargetEnviroment__Group_4__3 : rule__TargetEnviroment__Group_4__3__Impl rule__TargetEnviroment__Group_4__4 ;
-    public final void rule__TargetEnviroment__Group_4__3() throws RecognitionException {
+    // $ANTLR start "rule__TargetDeployEnviroment__Group_4__3"
+    // InternalTargetEnvironment.g:772:1: rule__TargetDeployEnviroment__Group_4__3 : rule__TargetDeployEnviroment__Group_4__3__Impl rule__TargetDeployEnviroment__Group_4__4 ;
+    public final void rule__TargetDeployEnviroment__Group_4__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTargetEnvironment.g:776:1: ( rule__TargetEnviroment__Group_4__3__Impl rule__TargetEnviroment__Group_4__4 )
-            // InternalTargetEnvironment.g:777:2: rule__TargetEnviroment__Group_4__3__Impl rule__TargetEnviroment__Group_4__4
+            // InternalTargetEnvironment.g:776:1: ( rule__TargetDeployEnviroment__Group_4__3__Impl rule__TargetDeployEnviroment__Group_4__4 )
+            // InternalTargetEnvironment.g:777:2: rule__TargetDeployEnviroment__Group_4__3__Impl rule__TargetDeployEnviroment__Group_4__4
             {
             pushFollow(FOLLOW_8);
-            rule__TargetEnviroment__Group_4__3__Impl();
+            rule__TargetDeployEnviroment__Group_4__3__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__TargetEnviroment__Group_4__4();
+            rule__TargetDeployEnviroment__Group_4__4();
 
             state._fsp--;
 
@@ -2370,24 +2370,24 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__TargetEnviroment__Group_4__3"
+    // $ANTLR end "rule__TargetDeployEnviroment__Group_4__3"
 
 
-    // $ANTLR start "rule__TargetEnviroment__Group_4__3__Impl"
-    // InternalTargetEnvironment.g:784:1: rule__TargetEnviroment__Group_4__3__Impl : ( ( rule__TargetEnviroment__Group_4_3__0 )* ) ;
-    public final void rule__TargetEnviroment__Group_4__3__Impl() throws RecognitionException {
+    // $ANTLR start "rule__TargetDeployEnviroment__Group_4__3__Impl"
+    // InternalTargetEnvironment.g:784:1: rule__TargetDeployEnviroment__Group_4__3__Impl : ( ( rule__TargetDeployEnviroment__Group_4_3__0 )* ) ;
+    public final void rule__TargetDeployEnviroment__Group_4__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTargetEnvironment.g:788:1: ( ( ( rule__TargetEnviroment__Group_4_3__0 )* ) )
-            // InternalTargetEnvironment.g:789:1: ( ( rule__TargetEnviroment__Group_4_3__0 )* )
+            // InternalTargetEnvironment.g:788:1: ( ( ( rule__TargetDeployEnviroment__Group_4_3__0 )* ) )
+            // InternalTargetEnvironment.g:789:1: ( ( rule__TargetDeployEnviroment__Group_4_3__0 )* )
             {
-            // InternalTargetEnvironment.g:789:1: ( ( rule__TargetEnviroment__Group_4_3__0 )* )
-            // InternalTargetEnvironment.g:790:2: ( rule__TargetEnviroment__Group_4_3__0 )*
+            // InternalTargetEnvironment.g:789:1: ( ( rule__TargetDeployEnviroment__Group_4_3__0 )* )
+            // InternalTargetEnvironment.g:790:2: ( rule__TargetDeployEnviroment__Group_4_3__0 )*
             {
-             before(grammarAccess.getTargetEnviromentAccess().getGroup_4_3()); 
-            // InternalTargetEnvironment.g:791:2: ( rule__TargetEnviroment__Group_4_3__0 )*
+             before(grammarAccess.getTargetDeployEnviromentAccess().getGroup_4_3()); 
+            // InternalTargetEnvironment.g:791:2: ( rule__TargetDeployEnviroment__Group_4_3__0 )*
             loop6:
             do {
                 int alt6=2;
@@ -2400,10 +2400,10 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
 
                 switch (alt6) {
             	case 1 :
-            	    // InternalTargetEnvironment.g:791:3: rule__TargetEnviroment__Group_4_3__0
+            	    // InternalTargetEnvironment.g:791:3: rule__TargetDeployEnviroment__Group_4_3__0
             	    {
             	    pushFollow(FOLLOW_9);
-            	    rule__TargetEnviroment__Group_4_3__0();
+            	    rule__TargetDeployEnviroment__Group_4_3__0();
 
             	    state._fsp--;
 
@@ -2416,7 +2416,7 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
                 }
             } while (true);
 
-             after(grammarAccess.getTargetEnviromentAccess().getGroup_4_3()); 
+             after(grammarAccess.getTargetDeployEnviromentAccess().getGroup_4_3()); 
 
             }
 
@@ -2435,21 +2435,21 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__TargetEnviroment__Group_4__3__Impl"
+    // $ANTLR end "rule__TargetDeployEnviroment__Group_4__3__Impl"
 
 
-    // $ANTLR start "rule__TargetEnviroment__Group_4__4"
-    // InternalTargetEnvironment.g:799:1: rule__TargetEnviroment__Group_4__4 : rule__TargetEnviroment__Group_4__4__Impl ;
-    public final void rule__TargetEnviroment__Group_4__4() throws RecognitionException {
+    // $ANTLR start "rule__TargetDeployEnviroment__Group_4__4"
+    // InternalTargetEnvironment.g:799:1: rule__TargetDeployEnviroment__Group_4__4 : rule__TargetDeployEnviroment__Group_4__4__Impl ;
+    public final void rule__TargetDeployEnviroment__Group_4__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTargetEnvironment.g:803:1: ( rule__TargetEnviroment__Group_4__4__Impl )
-            // InternalTargetEnvironment.g:804:2: rule__TargetEnviroment__Group_4__4__Impl
+            // InternalTargetEnvironment.g:803:1: ( rule__TargetDeployEnviroment__Group_4__4__Impl )
+            // InternalTargetEnvironment.g:804:2: rule__TargetDeployEnviroment__Group_4__4__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__TargetEnviroment__Group_4__4__Impl();
+            rule__TargetDeployEnviroment__Group_4__4__Impl();
 
             state._fsp--;
 
@@ -2468,12 +2468,12 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__TargetEnviroment__Group_4__4"
+    // $ANTLR end "rule__TargetDeployEnviroment__Group_4__4"
 
 
-    // $ANTLR start "rule__TargetEnviroment__Group_4__4__Impl"
-    // InternalTargetEnvironment.g:810:1: rule__TargetEnviroment__Group_4__4__Impl : ( '}' ) ;
-    public final void rule__TargetEnviroment__Group_4__4__Impl() throws RecognitionException {
+    // $ANTLR start "rule__TargetDeployEnviroment__Group_4__4__Impl"
+    // InternalTargetEnvironment.g:810:1: rule__TargetDeployEnviroment__Group_4__4__Impl : ( '}' ) ;
+    public final void rule__TargetDeployEnviroment__Group_4__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -2484,9 +2484,9 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
             // InternalTargetEnvironment.g:815:1: ( '}' )
             // InternalTargetEnvironment.g:816:2: '}'
             {
-             before(grammarAccess.getTargetEnviromentAccess().getRightCurlyBracketKeyword_4_4()); 
+             before(grammarAccess.getTargetDeployEnviromentAccess().getRightCurlyBracketKeyword_4_4()); 
             match(input,13,FOLLOW_2); 
-             after(grammarAccess.getTargetEnviromentAccess().getRightCurlyBracketKeyword_4_4()); 
+             after(grammarAccess.getTargetDeployEnviromentAccess().getRightCurlyBracketKeyword_4_4()); 
 
             }
 
@@ -2505,26 +2505,26 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__TargetEnviroment__Group_4__4__Impl"
+    // $ANTLR end "rule__TargetDeployEnviroment__Group_4__4__Impl"
 
 
-    // $ANTLR start "rule__TargetEnviroment__Group_4_3__0"
-    // InternalTargetEnvironment.g:826:1: rule__TargetEnviroment__Group_4_3__0 : rule__TargetEnviroment__Group_4_3__0__Impl rule__TargetEnviroment__Group_4_3__1 ;
-    public final void rule__TargetEnviroment__Group_4_3__0() throws RecognitionException {
+    // $ANTLR start "rule__TargetDeployEnviroment__Group_4_3__0"
+    // InternalTargetEnvironment.g:826:1: rule__TargetDeployEnviroment__Group_4_3__0 : rule__TargetDeployEnviroment__Group_4_3__0__Impl rule__TargetDeployEnviroment__Group_4_3__1 ;
+    public final void rule__TargetDeployEnviroment__Group_4_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTargetEnvironment.g:830:1: ( rule__TargetEnviroment__Group_4_3__0__Impl rule__TargetEnviroment__Group_4_3__1 )
-            // InternalTargetEnvironment.g:831:2: rule__TargetEnviroment__Group_4_3__0__Impl rule__TargetEnviroment__Group_4_3__1
+            // InternalTargetEnvironment.g:830:1: ( rule__TargetDeployEnviroment__Group_4_3__0__Impl rule__TargetDeployEnviroment__Group_4_3__1 )
+            // InternalTargetEnvironment.g:831:2: rule__TargetDeployEnviroment__Group_4_3__0__Impl rule__TargetDeployEnviroment__Group_4_3__1
             {
             pushFollow(FOLLOW_7);
-            rule__TargetEnviroment__Group_4_3__0__Impl();
+            rule__TargetDeployEnviroment__Group_4_3__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__TargetEnviroment__Group_4_3__1();
+            rule__TargetDeployEnviroment__Group_4_3__1();
 
             state._fsp--;
 
@@ -2543,12 +2543,12 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__TargetEnviroment__Group_4_3__0"
+    // $ANTLR end "rule__TargetDeployEnviroment__Group_4_3__0"
 
 
-    // $ANTLR start "rule__TargetEnviroment__Group_4_3__0__Impl"
-    // InternalTargetEnvironment.g:838:1: rule__TargetEnviroment__Group_4_3__0__Impl : ( ',' ) ;
-    public final void rule__TargetEnviroment__Group_4_3__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__TargetDeployEnviroment__Group_4_3__0__Impl"
+    // InternalTargetEnvironment.g:838:1: rule__TargetDeployEnviroment__Group_4_3__0__Impl : ( ',' ) ;
+    public final void rule__TargetDeployEnviroment__Group_4_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -2559,9 +2559,9 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
             // InternalTargetEnvironment.g:843:1: ( ',' )
             // InternalTargetEnvironment.g:844:2: ','
             {
-             before(grammarAccess.getTargetEnviromentAccess().getCommaKeyword_4_3_0()); 
+             before(grammarAccess.getTargetDeployEnviromentAccess().getCommaKeyword_4_3_0()); 
             match(input,15,FOLLOW_2); 
-             after(grammarAccess.getTargetEnviromentAccess().getCommaKeyword_4_3_0()); 
+             after(grammarAccess.getTargetDeployEnviromentAccess().getCommaKeyword_4_3_0()); 
 
             }
 
@@ -2580,21 +2580,21 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__TargetEnviroment__Group_4_3__0__Impl"
+    // $ANTLR end "rule__TargetDeployEnviroment__Group_4_3__0__Impl"
 
 
-    // $ANTLR start "rule__TargetEnviroment__Group_4_3__1"
-    // InternalTargetEnvironment.g:853:1: rule__TargetEnviroment__Group_4_3__1 : rule__TargetEnviroment__Group_4_3__1__Impl ;
-    public final void rule__TargetEnviroment__Group_4_3__1() throws RecognitionException {
+    // $ANTLR start "rule__TargetDeployEnviroment__Group_4_3__1"
+    // InternalTargetEnvironment.g:853:1: rule__TargetDeployEnviroment__Group_4_3__1 : rule__TargetDeployEnviroment__Group_4_3__1__Impl ;
+    public final void rule__TargetDeployEnviroment__Group_4_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTargetEnvironment.g:857:1: ( rule__TargetEnviroment__Group_4_3__1__Impl )
-            // InternalTargetEnvironment.g:858:2: rule__TargetEnviroment__Group_4_3__1__Impl
+            // InternalTargetEnvironment.g:857:1: ( rule__TargetDeployEnviroment__Group_4_3__1__Impl )
+            // InternalTargetEnvironment.g:858:2: rule__TargetDeployEnviroment__Group_4_3__1__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__TargetEnviroment__Group_4_3__1__Impl();
+            rule__TargetDeployEnviroment__Group_4_3__1__Impl();
 
             state._fsp--;
 
@@ -2613,35 +2613,35 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__TargetEnviroment__Group_4_3__1"
+    // $ANTLR end "rule__TargetDeployEnviroment__Group_4_3__1"
 
 
-    // $ANTLR start "rule__TargetEnviroment__Group_4_3__1__Impl"
-    // InternalTargetEnvironment.g:864:1: rule__TargetEnviroment__Group_4_3__1__Impl : ( ( rule__TargetEnviroment__IncludeDeviceAssignment_4_3_1 ) ) ;
-    public final void rule__TargetEnviroment__Group_4_3__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__TargetDeployEnviroment__Group_4_3__1__Impl"
+    // InternalTargetEnvironment.g:864:1: rule__TargetDeployEnviroment__Group_4_3__1__Impl : ( ( rule__TargetDeployEnviroment__IncludeDeviceAssignment_4_3_1 ) ) ;
+    public final void rule__TargetDeployEnviroment__Group_4_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTargetEnvironment.g:868:1: ( ( ( rule__TargetEnviroment__IncludeDeviceAssignment_4_3_1 ) ) )
-            // InternalTargetEnvironment.g:869:1: ( ( rule__TargetEnviroment__IncludeDeviceAssignment_4_3_1 ) )
+            // InternalTargetEnvironment.g:868:1: ( ( ( rule__TargetDeployEnviroment__IncludeDeviceAssignment_4_3_1 ) ) )
+            // InternalTargetEnvironment.g:869:1: ( ( rule__TargetDeployEnviroment__IncludeDeviceAssignment_4_3_1 ) )
             {
-            // InternalTargetEnvironment.g:869:1: ( ( rule__TargetEnviroment__IncludeDeviceAssignment_4_3_1 ) )
-            // InternalTargetEnvironment.g:870:2: ( rule__TargetEnviroment__IncludeDeviceAssignment_4_3_1 )
+            // InternalTargetEnvironment.g:869:1: ( ( rule__TargetDeployEnviroment__IncludeDeviceAssignment_4_3_1 ) )
+            // InternalTargetEnvironment.g:870:2: ( rule__TargetDeployEnviroment__IncludeDeviceAssignment_4_3_1 )
             {
-             before(grammarAccess.getTargetEnviromentAccess().getIncludeDeviceAssignment_4_3_1()); 
-            // InternalTargetEnvironment.g:871:2: ( rule__TargetEnviroment__IncludeDeviceAssignment_4_3_1 )
-            // InternalTargetEnvironment.g:871:3: rule__TargetEnviroment__IncludeDeviceAssignment_4_3_1
+             before(grammarAccess.getTargetDeployEnviromentAccess().getIncludeDeviceAssignment_4_3_1()); 
+            // InternalTargetEnvironment.g:871:2: ( rule__TargetDeployEnviroment__IncludeDeviceAssignment_4_3_1 )
+            // InternalTargetEnvironment.g:871:3: rule__TargetDeployEnviroment__IncludeDeviceAssignment_4_3_1
             {
             pushFollow(FOLLOW_2);
-            rule__TargetEnviroment__IncludeDeviceAssignment_4_3_1();
+            rule__TargetDeployEnviroment__IncludeDeviceAssignment_4_3_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getTargetEnviromentAccess().getIncludeDeviceAssignment_4_3_1()); 
+             after(grammarAccess.getTargetDeployEnviromentAccess().getIncludeDeviceAssignment_4_3_1()); 
 
             }
 
@@ -2660,26 +2660,26 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__TargetEnviroment__Group_4_3__1__Impl"
+    // $ANTLR end "rule__TargetDeployEnviroment__Group_4_3__1__Impl"
 
 
-    // $ANTLR start "rule__TargetEnviroment__Group_5__0"
-    // InternalTargetEnvironment.g:880:1: rule__TargetEnviroment__Group_5__0 : rule__TargetEnviroment__Group_5__0__Impl rule__TargetEnviroment__Group_5__1 ;
-    public final void rule__TargetEnviroment__Group_5__0() throws RecognitionException {
+    // $ANTLR start "rule__TargetDeployEnviroment__Group_5__0"
+    // InternalTargetEnvironment.g:880:1: rule__TargetDeployEnviroment__Group_5__0 : rule__TargetDeployEnviroment__Group_5__0__Impl rule__TargetDeployEnviroment__Group_5__1 ;
+    public final void rule__TargetDeployEnviroment__Group_5__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTargetEnvironment.g:884:1: ( rule__TargetEnviroment__Group_5__0__Impl rule__TargetEnviroment__Group_5__1 )
-            // InternalTargetEnvironment.g:885:2: rule__TargetEnviroment__Group_5__0__Impl rule__TargetEnviroment__Group_5__1
+            // InternalTargetEnvironment.g:884:1: ( rule__TargetDeployEnviroment__Group_5__0__Impl rule__TargetDeployEnviroment__Group_5__1 )
+            // InternalTargetEnvironment.g:885:2: rule__TargetDeployEnviroment__Group_5__0__Impl rule__TargetDeployEnviroment__Group_5__1
             {
             pushFollow(FOLLOW_5);
-            rule__TargetEnviroment__Group_5__0__Impl();
+            rule__TargetDeployEnviroment__Group_5__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__TargetEnviroment__Group_5__1();
+            rule__TargetDeployEnviroment__Group_5__1();
 
             state._fsp--;
 
@@ -2698,12 +2698,12 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__TargetEnviroment__Group_5__0"
+    // $ANTLR end "rule__TargetDeployEnviroment__Group_5__0"
 
 
-    // $ANTLR start "rule__TargetEnviroment__Group_5__0__Impl"
-    // InternalTargetEnvironment.g:892:1: rule__TargetEnviroment__Group_5__0__Impl : ( 'configConnection' ) ;
-    public final void rule__TargetEnviroment__Group_5__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__TargetDeployEnviroment__Group_5__0__Impl"
+    // InternalTargetEnvironment.g:892:1: rule__TargetDeployEnviroment__Group_5__0__Impl : ( 'configConnection' ) ;
+    public final void rule__TargetDeployEnviroment__Group_5__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -2714,9 +2714,9 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
             // InternalTargetEnvironment.g:897:1: ( 'configConnection' )
             // InternalTargetEnvironment.g:898:2: 'configConnection'
             {
-             before(grammarAccess.getTargetEnviromentAccess().getConfigConnectionKeyword_5_0()); 
+             before(grammarAccess.getTargetDeployEnviromentAccess().getConfigConnectionKeyword_5_0()); 
             match(input,16,FOLLOW_2); 
-             after(grammarAccess.getTargetEnviromentAccess().getConfigConnectionKeyword_5_0()); 
+             after(grammarAccess.getTargetDeployEnviromentAccess().getConfigConnectionKeyword_5_0()); 
 
             }
 
@@ -2735,26 +2735,26 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__TargetEnviroment__Group_5__0__Impl"
+    // $ANTLR end "rule__TargetDeployEnviroment__Group_5__0__Impl"
 
 
-    // $ANTLR start "rule__TargetEnviroment__Group_5__1"
-    // InternalTargetEnvironment.g:907:1: rule__TargetEnviroment__Group_5__1 : rule__TargetEnviroment__Group_5__1__Impl rule__TargetEnviroment__Group_5__2 ;
-    public final void rule__TargetEnviroment__Group_5__1() throws RecognitionException {
+    // $ANTLR start "rule__TargetDeployEnviroment__Group_5__1"
+    // InternalTargetEnvironment.g:907:1: rule__TargetDeployEnviroment__Group_5__1 : rule__TargetDeployEnviroment__Group_5__1__Impl rule__TargetDeployEnviroment__Group_5__2 ;
+    public final void rule__TargetDeployEnviroment__Group_5__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTargetEnvironment.g:911:1: ( rule__TargetEnviroment__Group_5__1__Impl rule__TargetEnviroment__Group_5__2 )
-            // InternalTargetEnvironment.g:912:2: rule__TargetEnviroment__Group_5__1__Impl rule__TargetEnviroment__Group_5__2
+            // InternalTargetEnvironment.g:911:1: ( rule__TargetDeployEnviroment__Group_5__1__Impl rule__TargetDeployEnviroment__Group_5__2 )
+            // InternalTargetEnvironment.g:912:2: rule__TargetDeployEnviroment__Group_5__1__Impl rule__TargetDeployEnviroment__Group_5__2
             {
             pushFollow(FOLLOW_10);
-            rule__TargetEnviroment__Group_5__1__Impl();
+            rule__TargetDeployEnviroment__Group_5__1__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__TargetEnviroment__Group_5__2();
+            rule__TargetDeployEnviroment__Group_5__2();
 
             state._fsp--;
 
@@ -2773,12 +2773,12 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__TargetEnviroment__Group_5__1"
+    // $ANTLR end "rule__TargetDeployEnviroment__Group_5__1"
 
 
-    // $ANTLR start "rule__TargetEnviroment__Group_5__1__Impl"
-    // InternalTargetEnvironment.g:919:1: rule__TargetEnviroment__Group_5__1__Impl : ( '{' ) ;
-    public final void rule__TargetEnviroment__Group_5__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__TargetDeployEnviroment__Group_5__1__Impl"
+    // InternalTargetEnvironment.g:919:1: rule__TargetDeployEnviroment__Group_5__1__Impl : ( '{' ) ;
+    public final void rule__TargetDeployEnviroment__Group_5__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -2789,9 +2789,9 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
             // InternalTargetEnvironment.g:924:1: ( '{' )
             // InternalTargetEnvironment.g:925:2: '{'
             {
-             before(grammarAccess.getTargetEnviromentAccess().getLeftCurlyBracketKeyword_5_1()); 
+             before(grammarAccess.getTargetDeployEnviromentAccess().getLeftCurlyBracketKeyword_5_1()); 
             match(input,12,FOLLOW_2); 
-             after(grammarAccess.getTargetEnviromentAccess().getLeftCurlyBracketKeyword_5_1()); 
+             after(grammarAccess.getTargetDeployEnviromentAccess().getLeftCurlyBracketKeyword_5_1()); 
 
             }
 
@@ -2810,26 +2810,26 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__TargetEnviroment__Group_5__1__Impl"
+    // $ANTLR end "rule__TargetDeployEnviroment__Group_5__1__Impl"
 
 
-    // $ANTLR start "rule__TargetEnviroment__Group_5__2"
-    // InternalTargetEnvironment.g:934:1: rule__TargetEnviroment__Group_5__2 : rule__TargetEnviroment__Group_5__2__Impl rule__TargetEnviroment__Group_5__3 ;
-    public final void rule__TargetEnviroment__Group_5__2() throws RecognitionException {
+    // $ANTLR start "rule__TargetDeployEnviroment__Group_5__2"
+    // InternalTargetEnvironment.g:934:1: rule__TargetDeployEnviroment__Group_5__2 : rule__TargetDeployEnviroment__Group_5__2__Impl rule__TargetDeployEnviroment__Group_5__3 ;
+    public final void rule__TargetDeployEnviroment__Group_5__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTargetEnvironment.g:938:1: ( rule__TargetEnviroment__Group_5__2__Impl rule__TargetEnviroment__Group_5__3 )
-            // InternalTargetEnvironment.g:939:2: rule__TargetEnviroment__Group_5__2__Impl rule__TargetEnviroment__Group_5__3
+            // InternalTargetEnvironment.g:938:1: ( rule__TargetDeployEnviroment__Group_5__2__Impl rule__TargetDeployEnviroment__Group_5__3 )
+            // InternalTargetEnvironment.g:939:2: rule__TargetDeployEnviroment__Group_5__2__Impl rule__TargetDeployEnviroment__Group_5__3
             {
             pushFollow(FOLLOW_8);
-            rule__TargetEnviroment__Group_5__2__Impl();
+            rule__TargetDeployEnviroment__Group_5__2__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__TargetEnviroment__Group_5__3();
+            rule__TargetDeployEnviroment__Group_5__3();
 
             state._fsp--;
 
@@ -2848,35 +2848,35 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__TargetEnviroment__Group_5__2"
+    // $ANTLR end "rule__TargetDeployEnviroment__Group_5__2"
 
 
-    // $ANTLR start "rule__TargetEnviroment__Group_5__2__Impl"
-    // InternalTargetEnvironment.g:946:1: rule__TargetEnviroment__Group_5__2__Impl : ( ( rule__TargetEnviroment__ConfigConnectionAssignment_5_2 ) ) ;
-    public final void rule__TargetEnviroment__Group_5__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__TargetDeployEnviroment__Group_5__2__Impl"
+    // InternalTargetEnvironment.g:946:1: rule__TargetDeployEnviroment__Group_5__2__Impl : ( ( rule__TargetDeployEnviroment__ConfigConnectionAssignment_5_2 ) ) ;
+    public final void rule__TargetDeployEnviroment__Group_5__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTargetEnvironment.g:950:1: ( ( ( rule__TargetEnviroment__ConfigConnectionAssignment_5_2 ) ) )
-            // InternalTargetEnvironment.g:951:1: ( ( rule__TargetEnviroment__ConfigConnectionAssignment_5_2 ) )
+            // InternalTargetEnvironment.g:950:1: ( ( ( rule__TargetDeployEnviroment__ConfigConnectionAssignment_5_2 ) ) )
+            // InternalTargetEnvironment.g:951:1: ( ( rule__TargetDeployEnviroment__ConfigConnectionAssignment_5_2 ) )
             {
-            // InternalTargetEnvironment.g:951:1: ( ( rule__TargetEnviroment__ConfigConnectionAssignment_5_2 ) )
-            // InternalTargetEnvironment.g:952:2: ( rule__TargetEnviroment__ConfigConnectionAssignment_5_2 )
+            // InternalTargetEnvironment.g:951:1: ( ( rule__TargetDeployEnviroment__ConfigConnectionAssignment_5_2 ) )
+            // InternalTargetEnvironment.g:952:2: ( rule__TargetDeployEnviroment__ConfigConnectionAssignment_5_2 )
             {
-             before(grammarAccess.getTargetEnviromentAccess().getConfigConnectionAssignment_5_2()); 
-            // InternalTargetEnvironment.g:953:2: ( rule__TargetEnviroment__ConfigConnectionAssignment_5_2 )
-            // InternalTargetEnvironment.g:953:3: rule__TargetEnviroment__ConfigConnectionAssignment_5_2
+             before(grammarAccess.getTargetDeployEnviromentAccess().getConfigConnectionAssignment_5_2()); 
+            // InternalTargetEnvironment.g:953:2: ( rule__TargetDeployEnviroment__ConfigConnectionAssignment_5_2 )
+            // InternalTargetEnvironment.g:953:3: rule__TargetDeployEnviroment__ConfigConnectionAssignment_5_2
             {
             pushFollow(FOLLOW_2);
-            rule__TargetEnviroment__ConfigConnectionAssignment_5_2();
+            rule__TargetDeployEnviroment__ConfigConnectionAssignment_5_2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getTargetEnviromentAccess().getConfigConnectionAssignment_5_2()); 
+             after(grammarAccess.getTargetDeployEnviromentAccess().getConfigConnectionAssignment_5_2()); 
 
             }
 
@@ -2895,26 +2895,26 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__TargetEnviroment__Group_5__2__Impl"
+    // $ANTLR end "rule__TargetDeployEnviroment__Group_5__2__Impl"
 
 
-    // $ANTLR start "rule__TargetEnviroment__Group_5__3"
-    // InternalTargetEnvironment.g:961:1: rule__TargetEnviroment__Group_5__3 : rule__TargetEnviroment__Group_5__3__Impl rule__TargetEnviroment__Group_5__4 ;
-    public final void rule__TargetEnviroment__Group_5__3() throws RecognitionException {
+    // $ANTLR start "rule__TargetDeployEnviroment__Group_5__3"
+    // InternalTargetEnvironment.g:961:1: rule__TargetDeployEnviroment__Group_5__3 : rule__TargetDeployEnviroment__Group_5__3__Impl rule__TargetDeployEnviroment__Group_5__4 ;
+    public final void rule__TargetDeployEnviroment__Group_5__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTargetEnvironment.g:965:1: ( rule__TargetEnviroment__Group_5__3__Impl rule__TargetEnviroment__Group_5__4 )
-            // InternalTargetEnvironment.g:966:2: rule__TargetEnviroment__Group_5__3__Impl rule__TargetEnviroment__Group_5__4
+            // InternalTargetEnvironment.g:965:1: ( rule__TargetDeployEnviroment__Group_5__3__Impl rule__TargetDeployEnviroment__Group_5__4 )
+            // InternalTargetEnvironment.g:966:2: rule__TargetDeployEnviroment__Group_5__3__Impl rule__TargetDeployEnviroment__Group_5__4
             {
             pushFollow(FOLLOW_8);
-            rule__TargetEnviroment__Group_5__3__Impl();
+            rule__TargetDeployEnviroment__Group_5__3__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__TargetEnviroment__Group_5__4();
+            rule__TargetDeployEnviroment__Group_5__4();
 
             state._fsp--;
 
@@ -2933,24 +2933,24 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__TargetEnviroment__Group_5__3"
+    // $ANTLR end "rule__TargetDeployEnviroment__Group_5__3"
 
 
-    // $ANTLR start "rule__TargetEnviroment__Group_5__3__Impl"
-    // InternalTargetEnvironment.g:973:1: rule__TargetEnviroment__Group_5__3__Impl : ( ( rule__TargetEnviroment__Group_5_3__0 )* ) ;
-    public final void rule__TargetEnviroment__Group_5__3__Impl() throws RecognitionException {
+    // $ANTLR start "rule__TargetDeployEnviroment__Group_5__3__Impl"
+    // InternalTargetEnvironment.g:973:1: rule__TargetDeployEnviroment__Group_5__3__Impl : ( ( rule__TargetDeployEnviroment__Group_5_3__0 )* ) ;
+    public final void rule__TargetDeployEnviroment__Group_5__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTargetEnvironment.g:977:1: ( ( ( rule__TargetEnviroment__Group_5_3__0 )* ) )
-            // InternalTargetEnvironment.g:978:1: ( ( rule__TargetEnviroment__Group_5_3__0 )* )
+            // InternalTargetEnvironment.g:977:1: ( ( ( rule__TargetDeployEnviroment__Group_5_3__0 )* ) )
+            // InternalTargetEnvironment.g:978:1: ( ( rule__TargetDeployEnviroment__Group_5_3__0 )* )
             {
-            // InternalTargetEnvironment.g:978:1: ( ( rule__TargetEnviroment__Group_5_3__0 )* )
-            // InternalTargetEnvironment.g:979:2: ( rule__TargetEnviroment__Group_5_3__0 )*
+            // InternalTargetEnvironment.g:978:1: ( ( rule__TargetDeployEnviroment__Group_5_3__0 )* )
+            // InternalTargetEnvironment.g:979:2: ( rule__TargetDeployEnviroment__Group_5_3__0 )*
             {
-             before(grammarAccess.getTargetEnviromentAccess().getGroup_5_3()); 
-            // InternalTargetEnvironment.g:980:2: ( rule__TargetEnviroment__Group_5_3__0 )*
+             before(grammarAccess.getTargetDeployEnviromentAccess().getGroup_5_3()); 
+            // InternalTargetEnvironment.g:980:2: ( rule__TargetDeployEnviroment__Group_5_3__0 )*
             loop7:
             do {
                 int alt7=2;
@@ -2963,10 +2963,10 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
 
                 switch (alt7) {
             	case 1 :
-            	    // InternalTargetEnvironment.g:980:3: rule__TargetEnviroment__Group_5_3__0
+            	    // InternalTargetEnvironment.g:980:3: rule__TargetDeployEnviroment__Group_5_3__0
             	    {
             	    pushFollow(FOLLOW_9);
-            	    rule__TargetEnviroment__Group_5_3__0();
+            	    rule__TargetDeployEnviroment__Group_5_3__0();
 
             	    state._fsp--;
 
@@ -2979,7 +2979,7 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
                 }
             } while (true);
 
-             after(grammarAccess.getTargetEnviromentAccess().getGroup_5_3()); 
+             after(grammarAccess.getTargetDeployEnviromentAccess().getGroup_5_3()); 
 
             }
 
@@ -2998,21 +2998,21 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__TargetEnviroment__Group_5__3__Impl"
+    // $ANTLR end "rule__TargetDeployEnviroment__Group_5__3__Impl"
 
 
-    // $ANTLR start "rule__TargetEnviroment__Group_5__4"
-    // InternalTargetEnvironment.g:988:1: rule__TargetEnviroment__Group_5__4 : rule__TargetEnviroment__Group_5__4__Impl ;
-    public final void rule__TargetEnviroment__Group_5__4() throws RecognitionException {
+    // $ANTLR start "rule__TargetDeployEnviroment__Group_5__4"
+    // InternalTargetEnvironment.g:988:1: rule__TargetDeployEnviroment__Group_5__4 : rule__TargetDeployEnviroment__Group_5__4__Impl ;
+    public final void rule__TargetDeployEnviroment__Group_5__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTargetEnvironment.g:992:1: ( rule__TargetEnviroment__Group_5__4__Impl )
-            // InternalTargetEnvironment.g:993:2: rule__TargetEnviroment__Group_5__4__Impl
+            // InternalTargetEnvironment.g:992:1: ( rule__TargetDeployEnviroment__Group_5__4__Impl )
+            // InternalTargetEnvironment.g:993:2: rule__TargetDeployEnviroment__Group_5__4__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__TargetEnviroment__Group_5__4__Impl();
+            rule__TargetDeployEnviroment__Group_5__4__Impl();
 
             state._fsp--;
 
@@ -3031,12 +3031,12 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__TargetEnviroment__Group_5__4"
+    // $ANTLR end "rule__TargetDeployEnviroment__Group_5__4"
 
 
-    // $ANTLR start "rule__TargetEnviroment__Group_5__4__Impl"
-    // InternalTargetEnvironment.g:999:1: rule__TargetEnviroment__Group_5__4__Impl : ( '}' ) ;
-    public final void rule__TargetEnviroment__Group_5__4__Impl() throws RecognitionException {
+    // $ANTLR start "rule__TargetDeployEnviroment__Group_5__4__Impl"
+    // InternalTargetEnvironment.g:999:1: rule__TargetDeployEnviroment__Group_5__4__Impl : ( '}' ) ;
+    public final void rule__TargetDeployEnviroment__Group_5__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -3047,9 +3047,9 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
             // InternalTargetEnvironment.g:1004:1: ( '}' )
             // InternalTargetEnvironment.g:1005:2: '}'
             {
-             before(grammarAccess.getTargetEnviromentAccess().getRightCurlyBracketKeyword_5_4()); 
+             before(grammarAccess.getTargetDeployEnviromentAccess().getRightCurlyBracketKeyword_5_4()); 
             match(input,13,FOLLOW_2); 
-             after(grammarAccess.getTargetEnviromentAccess().getRightCurlyBracketKeyword_5_4()); 
+             after(grammarAccess.getTargetDeployEnviromentAccess().getRightCurlyBracketKeyword_5_4()); 
 
             }
 
@@ -3068,26 +3068,26 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__TargetEnviroment__Group_5__4__Impl"
+    // $ANTLR end "rule__TargetDeployEnviroment__Group_5__4__Impl"
 
 
-    // $ANTLR start "rule__TargetEnviroment__Group_5_3__0"
-    // InternalTargetEnvironment.g:1015:1: rule__TargetEnviroment__Group_5_3__0 : rule__TargetEnviroment__Group_5_3__0__Impl rule__TargetEnviroment__Group_5_3__1 ;
-    public final void rule__TargetEnviroment__Group_5_3__0() throws RecognitionException {
+    // $ANTLR start "rule__TargetDeployEnviroment__Group_5_3__0"
+    // InternalTargetEnvironment.g:1015:1: rule__TargetDeployEnviroment__Group_5_3__0 : rule__TargetDeployEnviroment__Group_5_3__0__Impl rule__TargetDeployEnviroment__Group_5_3__1 ;
+    public final void rule__TargetDeployEnviroment__Group_5_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTargetEnvironment.g:1019:1: ( rule__TargetEnviroment__Group_5_3__0__Impl rule__TargetEnviroment__Group_5_3__1 )
-            // InternalTargetEnvironment.g:1020:2: rule__TargetEnviroment__Group_5_3__0__Impl rule__TargetEnviroment__Group_5_3__1
+            // InternalTargetEnvironment.g:1019:1: ( rule__TargetDeployEnviroment__Group_5_3__0__Impl rule__TargetDeployEnviroment__Group_5_3__1 )
+            // InternalTargetEnvironment.g:1020:2: rule__TargetDeployEnviroment__Group_5_3__0__Impl rule__TargetDeployEnviroment__Group_5_3__1
             {
             pushFollow(FOLLOW_10);
-            rule__TargetEnviroment__Group_5_3__0__Impl();
+            rule__TargetDeployEnviroment__Group_5_3__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__TargetEnviroment__Group_5_3__1();
+            rule__TargetDeployEnviroment__Group_5_3__1();
 
             state._fsp--;
 
@@ -3106,12 +3106,12 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__TargetEnviroment__Group_5_3__0"
+    // $ANTLR end "rule__TargetDeployEnviroment__Group_5_3__0"
 
 
-    // $ANTLR start "rule__TargetEnviroment__Group_5_3__0__Impl"
-    // InternalTargetEnvironment.g:1027:1: rule__TargetEnviroment__Group_5_3__0__Impl : ( ',' ) ;
-    public final void rule__TargetEnviroment__Group_5_3__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__TargetDeployEnviroment__Group_5_3__0__Impl"
+    // InternalTargetEnvironment.g:1027:1: rule__TargetDeployEnviroment__Group_5_3__0__Impl : ( ',' ) ;
+    public final void rule__TargetDeployEnviroment__Group_5_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -3122,9 +3122,9 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
             // InternalTargetEnvironment.g:1032:1: ( ',' )
             // InternalTargetEnvironment.g:1033:2: ','
             {
-             before(grammarAccess.getTargetEnviromentAccess().getCommaKeyword_5_3_0()); 
+             before(grammarAccess.getTargetDeployEnviromentAccess().getCommaKeyword_5_3_0()); 
             match(input,15,FOLLOW_2); 
-             after(grammarAccess.getTargetEnviromentAccess().getCommaKeyword_5_3_0()); 
+             after(grammarAccess.getTargetDeployEnviromentAccess().getCommaKeyword_5_3_0()); 
 
             }
 
@@ -3143,21 +3143,21 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__TargetEnviroment__Group_5_3__0__Impl"
+    // $ANTLR end "rule__TargetDeployEnviroment__Group_5_3__0__Impl"
 
 
-    // $ANTLR start "rule__TargetEnviroment__Group_5_3__1"
-    // InternalTargetEnvironment.g:1042:1: rule__TargetEnviroment__Group_5_3__1 : rule__TargetEnviroment__Group_5_3__1__Impl ;
-    public final void rule__TargetEnviroment__Group_5_3__1() throws RecognitionException {
+    // $ANTLR start "rule__TargetDeployEnviroment__Group_5_3__1"
+    // InternalTargetEnvironment.g:1042:1: rule__TargetDeployEnviroment__Group_5_3__1 : rule__TargetDeployEnviroment__Group_5_3__1__Impl ;
+    public final void rule__TargetDeployEnviroment__Group_5_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTargetEnvironment.g:1046:1: ( rule__TargetEnviroment__Group_5_3__1__Impl )
-            // InternalTargetEnvironment.g:1047:2: rule__TargetEnviroment__Group_5_3__1__Impl
+            // InternalTargetEnvironment.g:1046:1: ( rule__TargetDeployEnviroment__Group_5_3__1__Impl )
+            // InternalTargetEnvironment.g:1047:2: rule__TargetDeployEnviroment__Group_5_3__1__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__TargetEnviroment__Group_5_3__1__Impl();
+            rule__TargetDeployEnviroment__Group_5_3__1__Impl();
 
             state._fsp--;
 
@@ -3176,35 +3176,35 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__TargetEnviroment__Group_5_3__1"
+    // $ANTLR end "rule__TargetDeployEnviroment__Group_5_3__1"
 
 
-    // $ANTLR start "rule__TargetEnviroment__Group_5_3__1__Impl"
-    // InternalTargetEnvironment.g:1053:1: rule__TargetEnviroment__Group_5_3__1__Impl : ( ( rule__TargetEnviroment__ConfigConnectionAssignment_5_3_1 ) ) ;
-    public final void rule__TargetEnviroment__Group_5_3__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__TargetDeployEnviroment__Group_5_3__1__Impl"
+    // InternalTargetEnvironment.g:1053:1: rule__TargetDeployEnviroment__Group_5_3__1__Impl : ( ( rule__TargetDeployEnviroment__ConfigConnectionAssignment_5_3_1 ) ) ;
+    public final void rule__TargetDeployEnviroment__Group_5_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTargetEnvironment.g:1057:1: ( ( ( rule__TargetEnviroment__ConfigConnectionAssignment_5_3_1 ) ) )
-            // InternalTargetEnvironment.g:1058:1: ( ( rule__TargetEnviroment__ConfigConnectionAssignment_5_3_1 ) )
+            // InternalTargetEnvironment.g:1057:1: ( ( ( rule__TargetDeployEnviroment__ConfigConnectionAssignment_5_3_1 ) ) )
+            // InternalTargetEnvironment.g:1058:1: ( ( rule__TargetDeployEnviroment__ConfigConnectionAssignment_5_3_1 ) )
             {
-            // InternalTargetEnvironment.g:1058:1: ( ( rule__TargetEnviroment__ConfigConnectionAssignment_5_3_1 ) )
-            // InternalTargetEnvironment.g:1059:2: ( rule__TargetEnviroment__ConfigConnectionAssignment_5_3_1 )
+            // InternalTargetEnvironment.g:1058:1: ( ( rule__TargetDeployEnviroment__ConfigConnectionAssignment_5_3_1 ) )
+            // InternalTargetEnvironment.g:1059:2: ( rule__TargetDeployEnviroment__ConfigConnectionAssignment_5_3_1 )
             {
-             before(grammarAccess.getTargetEnviromentAccess().getConfigConnectionAssignment_5_3_1()); 
-            // InternalTargetEnvironment.g:1060:2: ( rule__TargetEnviroment__ConfigConnectionAssignment_5_3_1 )
-            // InternalTargetEnvironment.g:1060:3: rule__TargetEnviroment__ConfigConnectionAssignment_5_3_1
+             before(grammarAccess.getTargetDeployEnviromentAccess().getConfigConnectionAssignment_5_3_1()); 
+            // InternalTargetEnvironment.g:1060:2: ( rule__TargetDeployEnviroment__ConfigConnectionAssignment_5_3_1 )
+            // InternalTargetEnvironment.g:1060:3: rule__TargetDeployEnviroment__ConfigConnectionAssignment_5_3_1
             {
             pushFollow(FOLLOW_2);
-            rule__TargetEnviroment__ConfigConnectionAssignment_5_3_1();
+            rule__TargetDeployEnviroment__ConfigConnectionAssignment_5_3_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getTargetEnviromentAccess().getConfigConnectionAssignment_5_3_1()); 
+             after(grammarAccess.getTargetDeployEnviromentAccess().getConfigConnectionAssignment_5_3_1()); 
 
             }
 
@@ -3223,7 +3223,7 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__TargetEnviroment__Group_5_3__1__Impl"
+    // $ANTLR end "rule__TargetDeployEnviroment__Group_5_3__1__Impl"
 
 
     // $ANTLR start "rule__DeviceInstance__Group__0"
@@ -10176,9 +10176,9 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
     // $ANTLR end "rule__ConnectedDevice__Group_6_3__1__Impl"
 
 
-    // $ANTLR start "rule__TargetEnviroment__NameAssignment_2"
-    // InternalTargetEnvironment.g:3445:1: rule__TargetEnviroment__NameAssignment_2 : ( ruleEString ) ;
-    public final void rule__TargetEnviroment__NameAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__TargetDeployEnviroment__NameAssignment_2"
+    // InternalTargetEnvironment.g:3445:1: rule__TargetDeployEnviroment__NameAssignment_2 : ( ruleEString ) ;
+    public final void rule__TargetDeployEnviroment__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -10189,13 +10189,13 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
             // InternalTargetEnvironment.g:3450:2: ( ruleEString )
             // InternalTargetEnvironment.g:3451:3: ruleEString
             {
-             before(grammarAccess.getTargetEnviromentAccess().getNameEStringParserRuleCall_2_0()); 
+             before(grammarAccess.getTargetDeployEnviromentAccess().getNameEStringParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
             ruleEString();
 
             state._fsp--;
 
-             after(grammarAccess.getTargetEnviromentAccess().getNameEStringParserRuleCall_2_0()); 
+             after(grammarAccess.getTargetDeployEnviromentAccess().getNameEStringParserRuleCall_2_0()); 
 
             }
 
@@ -10214,12 +10214,12 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__TargetEnviroment__NameAssignment_2"
+    // $ANTLR end "rule__TargetDeployEnviroment__NameAssignment_2"
 
 
-    // $ANTLR start "rule__TargetEnviroment__IncludeDeviceAssignment_4_2"
-    // InternalTargetEnvironment.g:3460:1: rule__TargetEnviroment__IncludeDeviceAssignment_4_2 : ( ruleDeviceInstance ) ;
-    public final void rule__TargetEnviroment__IncludeDeviceAssignment_4_2() throws RecognitionException {
+    // $ANTLR start "rule__TargetDeployEnviroment__IncludeDeviceAssignment_4_2"
+    // InternalTargetEnvironment.g:3460:1: rule__TargetDeployEnviroment__IncludeDeviceAssignment_4_2 : ( ruleDeviceInstance ) ;
+    public final void rule__TargetDeployEnviroment__IncludeDeviceAssignment_4_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -10230,13 +10230,13 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
             // InternalTargetEnvironment.g:3465:2: ( ruleDeviceInstance )
             // InternalTargetEnvironment.g:3466:3: ruleDeviceInstance
             {
-             before(grammarAccess.getTargetEnviromentAccess().getIncludeDeviceDeviceInstanceParserRuleCall_4_2_0()); 
+             before(grammarAccess.getTargetDeployEnviromentAccess().getIncludeDeviceDeviceInstanceParserRuleCall_4_2_0()); 
             pushFollow(FOLLOW_2);
             ruleDeviceInstance();
 
             state._fsp--;
 
-             after(grammarAccess.getTargetEnviromentAccess().getIncludeDeviceDeviceInstanceParserRuleCall_4_2_0()); 
+             after(grammarAccess.getTargetDeployEnviromentAccess().getIncludeDeviceDeviceInstanceParserRuleCall_4_2_0()); 
 
             }
 
@@ -10255,12 +10255,12 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__TargetEnviroment__IncludeDeviceAssignment_4_2"
+    // $ANTLR end "rule__TargetDeployEnviroment__IncludeDeviceAssignment_4_2"
 
 
-    // $ANTLR start "rule__TargetEnviroment__IncludeDeviceAssignment_4_3_1"
-    // InternalTargetEnvironment.g:3475:1: rule__TargetEnviroment__IncludeDeviceAssignment_4_3_1 : ( ruleDeviceInstance ) ;
-    public final void rule__TargetEnviroment__IncludeDeviceAssignment_4_3_1() throws RecognitionException {
+    // $ANTLR start "rule__TargetDeployEnviroment__IncludeDeviceAssignment_4_3_1"
+    // InternalTargetEnvironment.g:3475:1: rule__TargetDeployEnviroment__IncludeDeviceAssignment_4_3_1 : ( ruleDeviceInstance ) ;
+    public final void rule__TargetDeployEnviroment__IncludeDeviceAssignment_4_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -10271,13 +10271,13 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
             // InternalTargetEnvironment.g:3480:2: ( ruleDeviceInstance )
             // InternalTargetEnvironment.g:3481:3: ruleDeviceInstance
             {
-             before(grammarAccess.getTargetEnviromentAccess().getIncludeDeviceDeviceInstanceParserRuleCall_4_3_1_0()); 
+             before(grammarAccess.getTargetDeployEnviromentAccess().getIncludeDeviceDeviceInstanceParserRuleCall_4_3_1_0()); 
             pushFollow(FOLLOW_2);
             ruleDeviceInstance();
 
             state._fsp--;
 
-             after(grammarAccess.getTargetEnviromentAccess().getIncludeDeviceDeviceInstanceParserRuleCall_4_3_1_0()); 
+             after(grammarAccess.getTargetDeployEnviromentAccess().getIncludeDeviceDeviceInstanceParserRuleCall_4_3_1_0()); 
 
             }
 
@@ -10296,12 +10296,12 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__TargetEnviroment__IncludeDeviceAssignment_4_3_1"
+    // $ANTLR end "rule__TargetDeployEnviroment__IncludeDeviceAssignment_4_3_1"
 
 
-    // $ANTLR start "rule__TargetEnviroment__ConfigConnectionAssignment_5_2"
-    // InternalTargetEnvironment.g:3490:1: rule__TargetEnviroment__ConfigConnectionAssignment_5_2 : ( ruleConfigConnection ) ;
-    public final void rule__TargetEnviroment__ConfigConnectionAssignment_5_2() throws RecognitionException {
+    // $ANTLR start "rule__TargetDeployEnviroment__ConfigConnectionAssignment_5_2"
+    // InternalTargetEnvironment.g:3490:1: rule__TargetDeployEnviroment__ConfigConnectionAssignment_5_2 : ( ruleConfigConnection ) ;
+    public final void rule__TargetDeployEnviroment__ConfigConnectionAssignment_5_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -10312,13 +10312,13 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
             // InternalTargetEnvironment.g:3495:2: ( ruleConfigConnection )
             // InternalTargetEnvironment.g:3496:3: ruleConfigConnection
             {
-             before(grammarAccess.getTargetEnviromentAccess().getConfigConnectionConfigConnectionParserRuleCall_5_2_0()); 
+             before(grammarAccess.getTargetDeployEnviromentAccess().getConfigConnectionConfigConnectionParserRuleCall_5_2_0()); 
             pushFollow(FOLLOW_2);
             ruleConfigConnection();
 
             state._fsp--;
 
-             after(grammarAccess.getTargetEnviromentAccess().getConfigConnectionConfigConnectionParserRuleCall_5_2_0()); 
+             after(grammarAccess.getTargetDeployEnviromentAccess().getConfigConnectionConfigConnectionParserRuleCall_5_2_0()); 
 
             }
 
@@ -10337,12 +10337,12 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__TargetEnviroment__ConfigConnectionAssignment_5_2"
+    // $ANTLR end "rule__TargetDeployEnviroment__ConfigConnectionAssignment_5_2"
 
 
-    // $ANTLR start "rule__TargetEnviroment__ConfigConnectionAssignment_5_3_1"
-    // InternalTargetEnvironment.g:3505:1: rule__TargetEnviroment__ConfigConnectionAssignment_5_3_1 : ( ruleConfigConnection ) ;
-    public final void rule__TargetEnviroment__ConfigConnectionAssignment_5_3_1() throws RecognitionException {
+    // $ANTLR start "rule__TargetDeployEnviroment__ConfigConnectionAssignment_5_3_1"
+    // InternalTargetEnvironment.g:3505:1: rule__TargetDeployEnviroment__ConfigConnectionAssignment_5_3_1 : ( ruleConfigConnection ) ;
+    public final void rule__TargetDeployEnviroment__ConfigConnectionAssignment_5_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -10353,13 +10353,13 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
             // InternalTargetEnvironment.g:3510:2: ( ruleConfigConnection )
             // InternalTargetEnvironment.g:3511:3: ruleConfigConnection
             {
-             before(grammarAccess.getTargetEnviromentAccess().getConfigConnectionConfigConnectionParserRuleCall_5_3_1_0()); 
+             before(grammarAccess.getTargetDeployEnviromentAccess().getConfigConnectionConfigConnectionParserRuleCall_5_3_1_0()); 
             pushFollow(FOLLOW_2);
             ruleConfigConnection();
 
             state._fsp--;
 
-             after(grammarAccess.getTargetEnviromentAccess().getConfigConnectionConfigConnectionParserRuleCall_5_3_1_0()); 
+             after(grammarAccess.getTargetDeployEnviromentAccess().getConfigConnectionConfigConnectionParserRuleCall_5_3_1_0()); 
 
             }
 
@@ -10378,7 +10378,7 @@ public class InternalTargetEnvironmentParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__TargetEnviroment__ConfigConnectionAssignment_5_3_1"
+    // $ANTLR end "rule__TargetDeployEnviroment__ConfigConnectionAssignment_5_3_1"
 
 
     // $ANTLR start "rule__DeviceInstance__NameAssignment_1"

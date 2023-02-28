@@ -14,26 +14,13 @@ Require-Bundle: de.fraunhofer.ipa.targetEnvironment,
  org.eclipse.xtext.util,
  org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
 Bundle-RequiredExecutionEnvironment: JavaSE-17
-Export-Package: de.fraunhofer.ipa.targetEnvironment;uses:="com.google.inject,org.eclipse.xtext.service,org.eclipse.xtext",
- de.fraunhofer.ipa.targetEnvironment.formatting2;uses:="targetEnvironment,org.eclipse.xtext.formatting2",
- de.fraunhofer.ipa.targetEnvironment.generator;uses:="org.eclipse.xtext.generator,org.eclipse.emf.ecore.resource",
- de.fraunhofer.ipa.targetEnvironment.parser.antlr;uses:="org.eclipse.xtext.parser.antlr,de.fraunhofer.ipa.targetEnvironment.services,de.fraunhofer.ipa.targetEnvironment.parser.antlr.internal",
- de.fraunhofer.ipa.targetEnvironment.parser.antlr.internal;
-  uses:="org.eclipse.emf.ecore,
-   org.eclipse.xtext.parser.antlr,
-   de.fraunhofer.ipa.targetEnvironment.services,
-   org.antlr.runtime",
- de.fraunhofer.ipa.targetEnvironment.scoping;uses:="org.eclipse.xtext.scoping.impl",
- de.fraunhofer.ipa.targetEnvironment.serializer;
-  uses:="org.eclipse.emf.ecore,
-   org.eclipse.xtext.nodemodel,
-   org.eclipse.xtext.serializer.analysis,
-   de.fraunhofer.ipa.targetEnvironment.services,
-   targetEnvironment,
-   device,
-   org.eclipse.xtext.serializer.sequencer,
-   org.eclipse.xtext,
-   org.eclipse.xtext.serializer",
- de.fraunhofer.ipa.targetEnvironment.services;uses:="org.eclipse.xtext.common.services,org.eclipse.xtext.service,org.eclipse.xtext",
- de.fraunhofer.ipa.targetEnvironment.validation;uses:="org.eclipse.xtext.util,org.eclipse.xtext.validation"
+Export-Package: de.fraunhofer.ipa.targetEnvironment,
+ de.fraunhofer.ipa.targetEnvironment.serializer,
+ de.fraunhofer.ipa.targetEnvironment.services,
+ de.fraunhofer.ipa.targetEnvironment.generator,
+ de.fraunhofer.ipa.targetEnvironment.parser.antlr.internal,
+ de.fraunhofer.ipa.targetEnvironment.parser.antlr,
+ de.fraunhofer.ipa.targetEnvironment.formatting2,
+ de.fraunhofer.ipa.targetEnvironment.validation,
+ de.fraunhofer.ipa.targetEnvironment.scoping
 Import-Package: org.apache.log4j

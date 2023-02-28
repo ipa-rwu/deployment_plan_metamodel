@@ -8,18 +8,18 @@ import de.fraunhofer.ipa.targetEnvironment.services.TargetEnvironmentGrammarAcce
 import org.eclipse.xtext.formatting2.AbstractFormatter2
 import org.eclipse.xtext.formatting2.IFormattableDocument
 import targetEnvironment.ConfigConnection
-import targetEnvironment.TargetEnviroment
+import targetEnvironment.TargetDeployEnviroment
 
 class TargetEnvironmentFormatter extends AbstractFormatter2 {
 	
 	@Inject extension TargetEnvironmentGrammarAccess
 
-	def dispatch void format(TargetEnviroment targetEnviroment, extension IFormattableDocument document) {
+	def dispatch void format(TargetDeployEnviroment targetDeployEnviroment, extension IFormattableDocument document) {
 		// TODO: format HiddenRegions around keywords, attributes, cross references, etc. 
-		for (deviceInstance : targetEnviroment.includeDevice) {
+		for (deviceInstance : targetDeployEnviroment.includeDevice) {
 			deviceInstance.format
 		}
-		for (configConnection : targetEnviroment.configConnection) {
+		for (configConnection : targetDeployEnviroment.configConnection) {
 			configConnection.format
 		}
 	}
