@@ -68,8 +68,8 @@ public class TargetEnvironmentAdapterFactory extends AdapterFactoryImpl {
 	protected TargetEnvironmentSwitch<Adapter> modelSwitch =
 		new TargetEnvironmentSwitch<Adapter>() {
 			@Override
-			public Adapter caseTargetEnviroment(TargetEnviroment object) {
-				return createTargetEnviromentAdapter();
+			public Adapter caseTargetDeployEnviroment(TargetDeployEnviroment object) {
+				return createTargetDeployEnviromentAdapter();
 			}
 			@Override
 			public Adapter caseConfigConnection(ConfigConnection object) {
@@ -104,16 +104,16 @@ public class TargetEnvironmentAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link targetEnvironment.TargetEnviroment <em>Target Enviroment</em>}'.
+	 * Creates a new adapter for an object of class '{@link targetEnvironment.TargetDeployEnviroment <em>Target Deploy Enviroment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see targetEnvironment.TargetEnviroment
+	 * @see targetEnvironment.TargetDeployEnviroment
 	 * @generated
 	 */
-	public Adapter createTargetEnviromentAdapter() {
+	public Adapter createTargetDeployEnviromentAdapter() {
 		return null;
 	}
 

@@ -57,14 +57,14 @@ public interface TargetEnvironmentPackage extends EPackage {
 	TargetEnvironmentPackage eINSTANCE = targetEnvironment.impl.TargetEnvironmentPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link targetEnvironment.impl.TargetEnviromentImpl <em>Target Enviroment</em>}' class.
+	 * The meta object id for the '{@link targetEnvironment.impl.TargetDeployEnviromentImpl <em>Target Deploy Enviroment</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see targetEnvironment.impl.TargetEnviromentImpl
-	 * @see targetEnvironment.impl.TargetEnvironmentPackageImpl#getTargetEnviroment()
+	 * @see targetEnvironment.impl.TargetDeployEnviromentImpl
+	 * @see targetEnvironment.impl.TargetEnvironmentPackageImpl#getTargetDeployEnviroment()
 	 * @generated
 	 */
-	int TARGET_ENVIROMENT = 0;
+	int TARGET_DEPLOY_ENVIROMENT = 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -73,7 +73,7 @@ public interface TargetEnvironmentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TARGET_ENVIROMENT__NAME = 0;
+	int TARGET_DEPLOY_ENVIROMENT__NAME = 0;
 
 	/**
 	 * The feature id for the '<em><b>Include Device</b></em>' containment reference list.
@@ -82,7 +82,7 @@ public interface TargetEnvironmentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TARGET_ENVIROMENT__INCLUDE_DEVICE = 1;
+	int TARGET_DEPLOY_ENVIROMENT__INCLUDE_DEVICE = 1;
 
 	/**
 	 * The feature id for the '<em><b>Config Connection</b></em>' containment reference list.
@@ -91,25 +91,25 @@ public interface TargetEnvironmentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TARGET_ENVIROMENT__CONFIG_CONNECTION = 2;
+	int TARGET_DEPLOY_ENVIROMENT__CONFIG_CONNECTION = 2;
 
 	/**
-	 * The number of structural features of the '<em>Target Enviroment</em>' class.
+	 * The number of structural features of the '<em>Target Deploy Enviroment</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TARGET_ENVIROMENT_FEATURE_COUNT = 3;
+	int TARGET_DEPLOY_ENVIROMENT_FEATURE_COUNT = 3;
 
 	/**
-	 * The number of operations of the '<em>Target Enviroment</em>' class.
+	 * The number of operations of the '<em>Target Deploy Enviroment</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TARGET_ENVIROMENT_OPERATION_COUNT = 0;
+	int TARGET_DEPLOY_ENVIROMENT_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link targetEnvironment.impl.ConfigConnectionImpl <em>Config Connection</em>}' class.
@@ -203,7 +203,6 @@ public interface TargetEnvironmentPackage extends EPackage {
 	 */
 	int DEVICE_INSTANCE_OPERATION_COUNT = 0;
 
-
 	/**
 	 * The meta object id for the '{@link targetEnvironment.impl.ConnectedDeviceImpl <em>Connected Device</em>}' class.
 	 * <!-- begin-user-doc -->
@@ -261,47 +260,47 @@ public interface TargetEnvironmentPackage extends EPackage {
 
 
 	/**
-	 * Returns the meta object for class '{@link targetEnvironment.TargetEnviroment <em>Target Enviroment</em>}'.
+	 * Returns the meta object for class '{@link targetEnvironment.TargetDeployEnviroment <em>Target Deploy Enviroment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Target Enviroment</em>'.
-	 * @see targetEnvironment.TargetEnviroment
+	 * @return the meta object for class '<em>Target Deploy Enviroment</em>'.
+	 * @see targetEnvironment.TargetDeployEnviroment
 	 * @generated
 	 */
-	EClass getTargetEnviroment();
+	EClass getTargetDeployEnviroment();
 
 	/**
-	 * Returns the meta object for the attribute '{@link targetEnvironment.TargetEnviroment#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link targetEnvironment.TargetDeployEnviroment#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see targetEnvironment.TargetEnviroment#getName()
-	 * @see #getTargetEnviroment()
+	 * @see targetEnvironment.TargetDeployEnviroment#getName()
+	 * @see #getTargetDeployEnviroment()
 	 * @generated
 	 */
-	EAttribute getTargetEnviroment_Name();
+	EAttribute getTargetDeployEnviroment_Name();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link targetEnvironment.TargetEnviroment#getIncludeDevice <em>Include Device</em>}'.
+	 * Returns the meta object for the containment reference list '{@link targetEnvironment.TargetDeployEnviroment#getIncludeDevice <em>Include Device</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Include Device</em>'.
-	 * @see targetEnvironment.TargetEnviroment#getIncludeDevice()
-	 * @see #getTargetEnviroment()
+	 * @see targetEnvironment.TargetDeployEnviroment#getIncludeDevice()
+	 * @see #getTargetDeployEnviroment()
 	 * @generated
 	 */
-	EReference getTargetEnviroment_IncludeDevice();
+	EReference getTargetDeployEnviroment_IncludeDevice();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link targetEnvironment.TargetEnviroment#getConfigConnection <em>Config Connection</em>}'.
+	 * Returns the meta object for the containment reference list '{@link targetEnvironment.TargetDeployEnviroment#getConfigConnection <em>Config Connection</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Config Connection</em>'.
-	 * @see targetEnvironment.TargetEnviroment#getConfigConnection()
-	 * @see #getTargetEnviroment()
+	 * @see targetEnvironment.TargetDeployEnviroment#getConfigConnection()
+	 * @see #getTargetDeployEnviroment()
 	 * @generated
 	 */
-	EReference getTargetEnviroment_ConfigConnection();
+	EReference getTargetDeployEnviroment_ConfigConnection();
 
 	/**
 	 * Returns the meta object for class '{@link targetEnvironment.ConfigConnection <em>Config Connection</em>}'.
@@ -434,14 +433,14 @@ public interface TargetEnvironmentPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link targetEnvironment.impl.TargetEnviromentImpl <em>Target Enviroment</em>}' class.
+		 * The meta object literal for the '{@link targetEnvironment.impl.TargetDeployEnviromentImpl <em>Target Deploy Enviroment</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see targetEnvironment.impl.TargetEnviromentImpl
-		 * @see targetEnvironment.impl.TargetEnvironmentPackageImpl#getTargetEnviroment()
+		 * @see targetEnvironment.impl.TargetDeployEnviromentImpl
+		 * @see targetEnvironment.impl.TargetEnvironmentPackageImpl#getTargetDeployEnviroment()
 		 * @generated
 		 */
-		EClass TARGET_ENVIROMENT = eINSTANCE.getTargetEnviroment();
+		EClass TARGET_DEPLOY_ENVIROMENT = eINSTANCE.getTargetDeployEnviroment();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -449,7 +448,7 @@ public interface TargetEnvironmentPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TARGET_ENVIROMENT__NAME = eINSTANCE.getTargetEnviroment_Name();
+		EAttribute TARGET_DEPLOY_ENVIROMENT__NAME = eINSTANCE.getTargetDeployEnviroment_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Include Device</b></em>' containment reference list feature.
@@ -457,7 +456,7 @@ public interface TargetEnvironmentPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TARGET_ENVIROMENT__INCLUDE_DEVICE = eINSTANCE.getTargetEnviroment_IncludeDevice();
+		EReference TARGET_DEPLOY_ENVIROMENT__INCLUDE_DEVICE = eINSTANCE.getTargetDeployEnviroment_IncludeDevice();
 
 		/**
 		 * The meta object literal for the '<em><b>Config Connection</b></em>' containment reference list feature.
@@ -465,7 +464,7 @@ public interface TargetEnvironmentPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TARGET_ENVIROMENT__CONFIG_CONNECTION = eINSTANCE.getTargetEnviroment_ConfigConnection();
+		EReference TARGET_DEPLOY_ENVIROMENT__CONFIG_CONNECTION = eINSTANCE.getTargetDeployEnviroment_ConfigConnection();
 
 		/**
 		 * The meta object literal for the '{@link targetEnvironment.impl.ConfigConnectionImpl <em>Config Connection</em>}' class.

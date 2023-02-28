@@ -14,7 +14,7 @@ Export-Package: device,
  targetEnvironment,
  targetEnvironment.impl,
  targetEnvironment.util
-Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
- de.fraunhofer.ipa.targetEnvironment;visibility:=reexport,
- org.eclipse.core.runtime
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ de.fraunhofer.ipa.targetEnvironment;visibility:=reexport
 Bundle-ActivationPolicy: lazy

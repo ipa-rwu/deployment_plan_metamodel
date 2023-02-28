@@ -66,9 +66,9 @@ public class TargetEnvironmentSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case TargetEnvironmentPackage.TARGET_ENVIROMENT: {
-				TargetEnviroment targetEnviroment = (TargetEnviroment)theEObject;
-				T result = caseTargetEnviroment(targetEnviroment);
+			case TargetEnvironmentPackage.TARGET_DEPLOY_ENVIROMENT: {
+				TargetDeployEnviroment targetDeployEnviroment = (TargetDeployEnviroment)theEObject;
+				T result = caseTargetDeployEnviroment(targetDeployEnviroment);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -95,17 +95,17 @@ public class TargetEnvironmentSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Target Enviroment</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Target Deploy Enviroment</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Target Enviroment</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Target Deploy Enviroment</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseTargetEnviroment(TargetEnviroment object) {
+	public T caseTargetDeployEnviroment(TargetDeployEnviroment object) {
 		return null;
 	}
 

@@ -56,7 +56,7 @@ public class TargetEnvironmentFactoryImpl extends EFactoryImpl implements Target
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case TargetEnvironmentPackage.TARGET_ENVIROMENT: return createTargetEnviroment();
+			case TargetEnvironmentPackage.TARGET_DEPLOY_ENVIROMENT: return createTargetDeployEnviroment();
 			case TargetEnvironmentPackage.CONFIG_CONNECTION: return createConfigConnection();
 			case TargetEnvironmentPackage.DEVICE_INSTANCE: return createDeviceInstance();
 			case TargetEnvironmentPackage.CONNECTED_DEVICE: return createConnectedDevice();
@@ -70,9 +70,9 @@ public class TargetEnvironmentFactoryImpl extends EFactoryImpl implements Target
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TargetEnviroment createTargetEnviroment() {
-		TargetEnviromentImpl targetEnviroment = new TargetEnviromentImpl();
-		return targetEnviroment;
+	public TargetDeployEnviroment createTargetDeployEnviroment() {
+		TargetDeployEnviromentImpl targetDeployEnviroment = new TargetDeployEnviromentImpl();
+		return targetDeployEnviroment;
 	}
 
 	/**

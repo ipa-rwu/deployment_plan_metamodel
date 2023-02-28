@@ -6,10 +6,10 @@
     usedGenPackages="device.genmodel#//device" operationReflection="true" importOrganizing="true">
   <foreignModel>targetEnvironment.ecore</foreignModel>
   <genPackages prefix="TargetEnvironment" disposableProviderFactory="true" ecorePackage="targetEnvironment.ecore#/">
-    <genClasses ecoreClass="targetEnvironment.ecore#//TargetEnviroment">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute targetEnvironment.ecore#//TargetEnviroment/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference targetEnvironment.ecore#//TargetEnviroment/includeDevice"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference targetEnvironment.ecore#//TargetEnviroment/configConnection"/>
+    <genClasses ecoreClass="targetEnvironment.ecore#//TargetDeployEnviroment">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute targetEnvironment.ecore#//TargetDeployEnviroment/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference targetEnvironment.ecore#//TargetDeployEnviroment/includeDevice"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference targetEnvironment.ecore#//TargetDeployEnviroment/configConnection"/>
     </genClasses>
     <genClasses ecoreClass="targetEnvironment.ecore#//ConfigConnection">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute targetEnvironment.ecore#//ConfigConnection/name"/>

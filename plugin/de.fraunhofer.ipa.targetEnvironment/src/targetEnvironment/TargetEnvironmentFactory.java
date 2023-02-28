@@ -22,13 +22,13 @@ public interface TargetEnvironmentFactory extends EFactory {
 	TargetEnvironmentFactory eINSTANCE = targetEnvironment.impl.TargetEnvironmentFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Target Enviroment</em>'.
+	 * Returns a new object of class '<em>Target Deploy Enviroment</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Target Enviroment</em>'.
+	 * @return a new object of class '<em>Target Deploy Enviroment</em>'.
 	 * @generated
 	 */
-	TargetEnviroment createTargetEnviroment();
+	TargetDeployEnviroment createTargetDeployEnviroment();
 
 	/**
 	 * Returns a new object of class '<em>Config Connection</em>'.
