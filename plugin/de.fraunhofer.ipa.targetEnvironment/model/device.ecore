@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="device" nsURI="http://www.ipa.fraunhofer.de/Device" nsPrefix="Device">
+  <eClassifiers xsi:type="ecore:EClass" name="DeviceSet">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="device" lowerBound="1"
+        upperBound="-1" eType="#//DeviceType" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DeviceType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="capabilities" upperBound="-1"
+        eType="#//CapabilityProperty" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="connection" upperBound="-1"
+        eType="#//Connection" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Connection" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//CommunicationType"
+        derived="true" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
+        eType="#//Property" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Property">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IndirectConnection" eSuperTypes="#//Connection"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DirectConnection" eSuperTypes="#//Connection"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CapabilityProperty">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="kind" lowerBound="1" eType="#//CapabilityKind"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CapabilityKind" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AttributeKind" eSuperTypes="#//CapabilityKind"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MaximumKind" eSuperTypes="#//CapabilityKind"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MinimumKind" eSuperTypes="#//CapabilityKind"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SelectionKind" eSuperTypes="#//CapabilityKind"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PropertyType" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CommunicationType" eSuperTypes="#//PropertyType"/>
+</ecore:EPackage>

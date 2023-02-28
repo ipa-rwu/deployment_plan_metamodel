@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.fraunhofer.ipa.targetEnvironment/src" modelPluginID="de.fraunhofer.ipa.targetEnvironment"
+    modelName="Device" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>device.ecore</foreignModel>
+  <genPackages prefix="Device" disposableProviderFactory="true" ecorePackage="device.ecore#/">
+    <genClasses ecoreClass="device.ecore#//DeviceSet">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//DeviceSet/device"/>
+    </genClasses>
+    <genClasses ecoreClass="device.ecore#//DeviceType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//DeviceType/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//DeviceType/capabilities"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//DeviceType/connection"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="device.ecore#//Connection">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//Connection/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//Connection/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//Connection/properties"/>
+    </genClasses>
+    <genClasses ecoreClass="device.ecore#//Property">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//Property/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//Property/value"/>
+    </genClasses>
+    <genClasses ecoreClass="device.ecore#//IndirectConnection"/>
+    <genClasses ecoreClass="device.ecore#//DirectConnection"/>
+    <genClasses ecoreClass="device.ecore#//CapabilityProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//CapabilityProperty/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//CapabilityProperty/kind"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//CapabilityProperty/value"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="device.ecore#//CapabilityKind"/>
+    <genClasses ecoreClass="device.ecore#//AttributeKind"/>
+    <genClasses ecoreClass="device.ecore#//MaximumKind"/>
+    <genClasses ecoreClass="device.ecore#//MinimumKind"/>
+    <genClasses ecoreClass="device.ecore#//SelectionKind"/>
+    <genClasses image="false" ecoreClass="device.ecore#//PropertyType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//PropertyType/name"/>
+    </genClasses>
+    <genClasses ecoreClass="device.ecore#//CommunicationType"/>
+  </genPackages>
+</genmodel:GenModel>
