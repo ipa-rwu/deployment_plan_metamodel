@@ -3,6 +3,7 @@
 package targetEnvironment.impl;
 
 import device.CommunicationConnection;
+
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;

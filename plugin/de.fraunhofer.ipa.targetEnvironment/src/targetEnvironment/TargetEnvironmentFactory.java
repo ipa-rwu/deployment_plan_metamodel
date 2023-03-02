@@ -22,6 +22,15 @@ public interface TargetEnvironmentFactory extends EFactory {
 	TargetEnvironmentFactory eINSTANCE = targetEnvironment.impl.TargetEnvironmentFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Target Environment</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Target Environment</em>'.
+	 * @generated
+	 */
+	TargetEnvironment createTargetEnvironment();
+
+	/**
 	 * Returns a new object of class '<em>Target Deploy Enviroment</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -56,15 +65,6 @@ public interface TargetEnvironmentFactory extends EFactory {
 	 * @generated
 	 */
 	ConnectedDevice createConnectedDevice();
-
-	/**
-	 * Returns a new object of class '<em>Target Environment</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Target Environment</em>'.
-	 * @generated
-	 */
-	TargetEnvironment createTargetEnvironment();
 
 	/**
 	 * Returns a new object of class '<em>Config Connection Property</em>'.

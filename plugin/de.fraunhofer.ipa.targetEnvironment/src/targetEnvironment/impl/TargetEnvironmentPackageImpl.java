@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.eclipse.emf.ecore.xml.type.XMLTypePackage;
+
 import targetEnvironment.ConfigConnection;
 import targetEnvironment.ConfigConnectionProperty;
 import targetEnvironment.ConnectedDevice;
@@ -30,6 +31,13 @@ import targetEnvironment.TargetEnvironmentPackage;
  * @generated
  */
 public class TargetEnvironmentPackageImpl extends EPackageImpl implements TargetEnvironmentPackage {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass targetEnvironmentEClass = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -57,13 +65,6 @@ public class TargetEnvironmentPackageImpl extends EPackageImpl implements Target
 	 * @generated
 	 */
 	private EClass connectedDeviceEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass targetEnvironmentEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -135,6 +136,24 @@ public class TargetEnvironmentPackageImpl extends EPackageImpl implements Target
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(TargetEnvironmentPackage.eNS_URI, theTargetEnvironmentPackage);
 		return theTargetEnvironmentPackage;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getTargetEnvironment() {
+		return targetEnvironmentEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getTargetEnvironment_Type() {
+		return (EReference)targetEnvironmentEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -261,24 +280,6 @@ public class TargetEnvironmentPackageImpl extends EPackageImpl implements Target
 	 */
 	public EReference getConnectedDevice_Properties() {
 		return (EReference)connectedDeviceEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getTargetEnvironment() {
-		return targetEnvironmentEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getTargetEnvironment_Type() {
-		return (EReference)targetEnvironmentEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**

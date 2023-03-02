@@ -529,7 +529,6 @@ public interface DevicePackage extends EPackage {
 	 */
 	int COMMUNICATION_TYPE_OPERATION_COUNT = PROPERTY_TYPE_OPERATION_COUNT + 0;
 
-
 	/**
 	 * The meta object id for the '{@link device.impl.ConnectionPropertyImpl <em>Connection Property</em>}' class.
 	 * <!-- begin-user-doc -->
@@ -575,7 +574,6 @@ public interface DevicePackage extends EPackage {
 	 * @ordered
 	 */
 	int CONNECTION_PROPERTY_OPERATION_COUNT = PROPERTY_OPERATION_COUNT + 0;
-
 
 	/**
 	 * The meta object id for the '{@link device.impl.CapabilityTypeImpl <em>Capability Type</em>}' class.
