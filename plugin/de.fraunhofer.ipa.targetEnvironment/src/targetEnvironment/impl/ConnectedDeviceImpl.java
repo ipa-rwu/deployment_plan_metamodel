@@ -2,9 +2,7 @@
  */
 package targetEnvironment.impl;
 
-import device.Connection;
-import device.Property;
-
+import device.CommunicationConnection;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -21,6 +19,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import targetEnvironment.ConfigConnectionProperty;
 import targetEnvironment.ConnectedDevice;
 import targetEnvironment.DeviceInstance;
 import targetEnvironment.TargetEnvironmentPackage;
@@ -59,7 +58,7 @@ public class ConnectedDeviceImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 * @ordered
 	 */
-	protected Connection refConnection;
+	protected CommunicationConnection refConnection;
 
 	/**
 	 * The cached value of the '{@link #getProperties() <em>Properties</em>}' containment reference list.
@@ -69,7 +68,7 @@ public class ConnectedDeviceImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Property> properties;
+	protected EList<ConfigConnectionProperty> properties;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -133,10 +132,10 @@ public class ConnectedDeviceImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Connection getRefConnection() {
+	public CommunicationConnection getRefConnection() {
 		if (refConnection != null && refConnection.eIsProxy()) {
 			InternalEObject oldRefConnection = (InternalEObject)refConnection;
-			refConnection = (Connection)eResolveProxy(oldRefConnection);
+			refConnection = (CommunicationConnection)eResolveProxy(oldRefConnection);
 			if (refConnection != oldRefConnection) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TargetEnvironmentPackage.CONNECTED_DEVICE__REF_CONNECTION, oldRefConnection, refConnection));
@@ -150,7 +149,7 @@ public class ConnectedDeviceImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Connection basicGetRefConnection() {
+	public CommunicationConnection basicGetRefConnection() {
 		return refConnection;
 	}
 
@@ -159,8 +158,8 @@ public class ConnectedDeviceImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setRefConnection(Connection newRefConnection) {
-		Connection oldRefConnection = refConnection;
+	public void setRefConnection(CommunicationConnection newRefConnection) {
+		CommunicationConnection oldRefConnection = refConnection;
 		refConnection = newRefConnection;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TargetEnvironmentPackage.CONNECTED_DEVICE__REF_CONNECTION, oldRefConnection, refConnection));
@@ -171,9 +170,9 @@ public class ConnectedDeviceImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Property> getProperties() {
+	public EList<ConfigConnectionProperty> getProperties() {
 		if (properties == null) {
-			properties = new EObjectContainmentEList<Property>(Property.class, this, TargetEnvironmentPackage.CONNECTED_DEVICE__PROPERTIES);
+			properties = new EObjectContainmentEList<ConfigConnectionProperty>(ConfigConnectionProperty.class, this, TargetEnvironmentPackage.CONNECTED_DEVICE__PROPERTIES);
 		}
 		return properties;
 	}
@@ -225,11 +224,11 @@ public class ConnectedDeviceImpl extends MinimalEObjectImpl.Container implements
 				setRefDevice((DeviceInstance)newValue);
 				return;
 			case TargetEnvironmentPackage.CONNECTED_DEVICE__REF_CONNECTION:
-				setRefConnection((Connection)newValue);
+				setRefConnection((CommunicationConnection)newValue);
 				return;
 			case TargetEnvironmentPackage.CONNECTED_DEVICE__PROPERTIES:
 				getProperties().clear();
-				getProperties().addAll((Collection<? extends Property>)newValue);
+				getProperties().addAll((Collection<? extends ConfigConnectionProperty>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -247,7 +246,7 @@ public class ConnectedDeviceImpl extends MinimalEObjectImpl.Container implements
 				setRefDevice((DeviceInstance)null);
 				return;
 			case TargetEnvironmentPackage.CONNECTED_DEVICE__REF_CONNECTION:
-				setRefConnection((Connection)null);
+				setRefConnection((CommunicationConnection)null);
 				return;
 			case TargetEnvironmentPackage.CONNECTED_DEVICE__PROPERTIES:
 				getProperties().clear();

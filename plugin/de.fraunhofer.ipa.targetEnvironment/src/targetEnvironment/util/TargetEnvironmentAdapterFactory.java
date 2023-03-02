@@ -2,6 +2,8 @@
  */
 package targetEnvironment.util;
 
+import base.Description;
+
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 
@@ -68,6 +70,10 @@ public class TargetEnvironmentAdapterFactory extends AdapterFactoryImpl {
 	protected TargetEnvironmentSwitch<Adapter> modelSwitch =
 		new TargetEnvironmentSwitch<Adapter>() {
 			@Override
+			public Adapter caseTargetEnvironment(TargetEnvironment object) {
+				return createTargetEnvironmentAdapter();
+			}
+			@Override
 			public Adapter caseTargetDeployEnviroment(TargetDeployEnviroment object) {
 				return createTargetDeployEnviromentAdapter();
 			}
@@ -82,6 +88,14 @@ public class TargetEnvironmentAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseConnectedDevice(ConnectedDevice object) {
 				return createConnectedDeviceAdapter();
+			}
+			@Override
+			public Adapter caseConfigConnectionProperty(ConfigConnectionProperty object) {
+				return createConfigConnectionPropertyAdapter();
+			}
+			@Override
+			public Adapter caseDescription(Description object) {
+				return createDescriptionAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -156,6 +170,48 @@ public class TargetEnvironmentAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createConnectedDeviceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link targetEnvironment.TargetEnvironment <em>Target Environment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see targetEnvironment.TargetEnvironment
+	 * @generated
+	 */
+	public Adapter createTargetEnvironmentAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link targetEnvironment.ConfigConnectionProperty <em>Config Connection Property</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see targetEnvironment.ConfigConnectionProperty
+	 * @generated
+	 */
+	public Adapter createConfigConnectionPropertyAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link base.Description <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see base.Description
+	 * @generated
+	 */
+	public Adapter createDescriptionAdapter() {
 		return null;
 	}
 

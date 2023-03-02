@@ -2,17 +2,21 @@
  */
 package device.impl;
 
+import base.BasePackage;
+
+import base.impl.BasePackageImpl;
+
 import device.AttributeKind;
 import device.CapabilityKind;
 import device.CapabilityProperty;
+import device.CapabilityType;
+import device.CommunicationConnection;
 import device.CommunicationType;
-import device.Connection;
+import device.ConnectionProperty;
 import device.DeviceFactory;
 import device.DevicePackage;
 import device.DeviceSet;
 import device.DeviceType;
-import device.DirectConnection;
-import device.IndirectConnection;
 import device.MaximumKind;
 import device.MinimumKind;
 import device.Property;
@@ -25,6 +29,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.eclipse.emf.ecore.xml.type.XMLTypePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -52,7 +57,7 @@ public class DevicePackageImpl extends EPackageImpl implements DevicePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass connectionEClass = null;
+	private EClass communicationConnectionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -60,20 +65,6 @@ public class DevicePackageImpl extends EPackageImpl implements DevicePackage {
 	 * @generated
 	 */
 	private EClass propertyEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass indirectConnectionEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass directConnectionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -132,6 +123,20 @@ public class DevicePackageImpl extends EPackageImpl implements DevicePackage {
 	private EClass communicationTypeEClass = null;
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass connectionPropertyEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass capabilityTypeEClass = null;
+
+	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
@@ -177,11 +182,20 @@ public class DevicePackageImpl extends EPackageImpl implements DevicePackage {
 
 		isInited = true;
 
+		// Initialize simple dependencies
+		XMLTypePackage.eINSTANCE.eClass();
+
+		// Obtain or create and register interdependencies
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BasePackage.eNS_URI);
+		BasePackageImpl theBasePackage = (BasePackageImpl)(registeredPackage instanceof BasePackageImpl ? registeredPackage : BasePackage.eINSTANCE);
+
 		// Create package meta-data objects
 		theDevicePackage.createPackageContents();
+		theBasePackage.createPackageContents();
 
 		// Initialize created meta-data
 		theDevicePackage.initializePackageContents();
+		theBasePackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theDevicePackage.freeze();
@@ -232,7 +246,7 @@ public class DevicePackageImpl extends EPackageImpl implements DevicePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDeviceType_Capabilities() {
+	public EReference getDeviceType_Capability() {
 		return (EReference)deviceTypeEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -241,7 +255,7 @@ public class DevicePackageImpl extends EPackageImpl implements DevicePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDeviceType_Connection() {
+	public EReference getDeviceType_CommunicationConnection() {
 		return (EReference)deviceTypeEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -250,8 +264,8 @@ public class DevicePackageImpl extends EPackageImpl implements DevicePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getConnection() {
-		return connectionEClass;
+	public EClass getCommunicationConnection() {
+		return communicationConnectionEClass;
 	}
 
 	/**
@@ -259,8 +273,8 @@ public class DevicePackageImpl extends EPackageImpl implements DevicePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getConnection_Name() {
-		return (EAttribute)connectionEClass.getEStructuralFeatures().get(0);
+	public EAttribute getCommunicationConnection_Name() {
+		return (EAttribute)communicationConnectionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -268,8 +282,8 @@ public class DevicePackageImpl extends EPackageImpl implements DevicePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getConnection_Type() {
-		return (EReference)connectionEClass.getEStructuralFeatures().get(1);
+	public EReference getCommunicationConnection_Type() {
+		return (EReference)communicationConnectionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -277,8 +291,8 @@ public class DevicePackageImpl extends EPackageImpl implements DevicePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getConnection_Properties() {
-		return (EReference)connectionEClass.getEStructuralFeatures().get(2);
+	public EReference getCommunicationConnection_Properties() {
+		return (EReference)communicationConnectionEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -304,26 +318,8 @@ public class DevicePackageImpl extends EPackageImpl implements DevicePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getProperty_Value() {
-		return (EAttribute)propertyEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getIndirectConnection() {
-		return indirectConnectionEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getDirectConnection() {
-		return directConnectionEClass;
+	public EReference getProperty_Value() {
+		return (EReference)propertyEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -340,17 +336,8 @@ public class DevicePackageImpl extends EPackageImpl implements DevicePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCapabilityProperty_Name() {
-		return (EAttribute)capabilityPropertyEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getCapabilityProperty_Kind() {
-		return (EReference)capabilityPropertyEClass.getEStructuralFeatures().get(1);
+		return (EReference)capabilityPropertyEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -358,8 +345,8 @@ public class DevicePackageImpl extends EPackageImpl implements DevicePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCapabilityProperty_Value() {
-		return (EAttribute)capabilityPropertyEClass.getEStructuralFeatures().get(2);
+	public EReference getCapabilityProperty_Type() {
+		return (EReference)capabilityPropertyEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -439,6 +426,24 @@ public class DevicePackageImpl extends EPackageImpl implements DevicePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getConnectionProperty() {
+		return connectionPropertyEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getCapabilityType() {
+		return capabilityTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public DeviceFactory getDeviceFactory() {
 		return (DeviceFactory)getEFactoryInstance();
 	}
@@ -467,26 +472,21 @@ public class DevicePackageImpl extends EPackageImpl implements DevicePackage {
 
 		deviceTypeEClass = createEClass(DEVICE_TYPE);
 		createEAttribute(deviceTypeEClass, DEVICE_TYPE__NAME);
-		createEReference(deviceTypeEClass, DEVICE_TYPE__CAPABILITIES);
-		createEReference(deviceTypeEClass, DEVICE_TYPE__CONNECTION);
+		createEReference(deviceTypeEClass, DEVICE_TYPE__CAPABILITY);
+		createEReference(deviceTypeEClass, DEVICE_TYPE__COMMUNICATION_CONNECTION);
 
-		connectionEClass = createEClass(CONNECTION);
-		createEAttribute(connectionEClass, CONNECTION__NAME);
-		createEReference(connectionEClass, CONNECTION__TYPE);
-		createEReference(connectionEClass, CONNECTION__PROPERTIES);
+		communicationConnectionEClass = createEClass(COMMUNICATION_CONNECTION);
+		createEAttribute(communicationConnectionEClass, COMMUNICATION_CONNECTION__NAME);
+		createEReference(communicationConnectionEClass, COMMUNICATION_CONNECTION__TYPE);
+		createEReference(communicationConnectionEClass, COMMUNICATION_CONNECTION__PROPERTIES);
 
 		propertyEClass = createEClass(PROPERTY);
 		createEAttribute(propertyEClass, PROPERTY__NAME);
-		createEAttribute(propertyEClass, PROPERTY__VALUE);
-
-		indirectConnectionEClass = createEClass(INDIRECT_CONNECTION);
-
-		directConnectionEClass = createEClass(DIRECT_CONNECTION);
+		createEReference(propertyEClass, PROPERTY__VALUE);
 
 		capabilityPropertyEClass = createEClass(CAPABILITY_PROPERTY);
-		createEAttribute(capabilityPropertyEClass, CAPABILITY_PROPERTY__NAME);
 		createEReference(capabilityPropertyEClass, CAPABILITY_PROPERTY__KIND);
-		createEAttribute(capabilityPropertyEClass, CAPABILITY_PROPERTY__VALUE);
+		createEReference(capabilityPropertyEClass, CAPABILITY_PROPERTY__TYPE);
 
 		capabilityKindEClass = createEClass(CAPABILITY_KIND);
 
@@ -502,6 +502,10 @@ public class DevicePackageImpl extends EPackageImpl implements DevicePackage {
 		createEAttribute(propertyTypeEClass, PROPERTY_TYPE__NAME);
 
 		communicationTypeEClass = createEClass(COMMUNICATION_TYPE);
+
+		connectionPropertyEClass = createEClass(CONNECTION_PROPERTY);
+
+		capabilityTypeEClass = createEClass(CAPABILITY_TYPE);
 	}
 
 	/**
@@ -527,18 +531,23 @@ public class DevicePackageImpl extends EPackageImpl implements DevicePackage {
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
+		// Obtain other dependent packages
+		BasePackage theBasePackage = (BasePackage)EPackage.Registry.INSTANCE.getEPackage(BasePackage.eNS_URI);
+
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		indirectConnectionEClass.getESuperTypes().add(this.getConnection());
-		directConnectionEClass.getESuperTypes().add(this.getConnection());
+		deviceSetEClass.getESuperTypes().add(theBasePackage.getDescription());
+		capabilityPropertyEClass.getESuperTypes().add(this.getProperty());
 		attributeKindEClass.getESuperTypes().add(this.getCapabilityKind());
 		maximumKindEClass.getESuperTypes().add(this.getCapabilityKind());
 		minimumKindEClass.getESuperTypes().add(this.getCapabilityKind());
 		selectionKindEClass.getESuperTypes().add(this.getCapabilityKind());
 		communicationTypeEClass.getESuperTypes().add(this.getPropertyType());
+		connectionPropertyEClass.getESuperTypes().add(this.getProperty());
+		capabilityTypeEClass.getESuperTypes().add(this.getPropertyType());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(deviceSetEClass, DeviceSet.class, "DeviceSet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -546,26 +555,21 @@ public class DevicePackageImpl extends EPackageImpl implements DevicePackage {
 
 		initEClass(deviceTypeEClass, DeviceType.class, "DeviceType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDeviceType_Name(), ecorePackage.getEString(), "name", null, 1, 1, DeviceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDeviceType_Capabilities(), this.getCapabilityProperty(), null, "capabilities", null, 0, -1, DeviceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDeviceType_Connection(), this.getConnection(), null, "connection", null, 0, -1, DeviceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDeviceType_Capability(), this.getCapabilityProperty(), null, "capability", null, 0, -1, DeviceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDeviceType_CommunicationConnection(), this.getCommunicationConnection(), null, "communicationConnection", null, 0, -1, DeviceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(connectionEClass, Connection.class, "Connection", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getConnection_Name(), ecorePackage.getEString(), "name", null, 1, 1, Connection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getConnection_Type(), this.getCommunicationType(), null, "type", null, 0, 1, Connection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getConnection_Properties(), this.getProperty(), null, "properties", null, 0, -1, Connection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(communicationConnectionEClass, CommunicationConnection.class, "CommunicationConnection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getCommunicationConnection_Name(), ecorePackage.getEString(), "name", null, 1, 1, CommunicationConnection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCommunicationConnection_Type(), this.getCommunicationType(), null, "type", null, 0, 1, CommunicationConnection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getCommunicationConnection_Properties(), this.getConnectionProperty(), null, "properties", null, 0, -1, CommunicationConnection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(propertyEClass, Property.class, "Property", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getProperty_Name(), ecorePackage.getEString(), "name", null, 1, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProperty_Value(), ecorePackage.getEString(), "value", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(indirectConnectionEClass, IndirectConnection.class, "IndirectConnection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(directConnectionEClass, DirectConnection.class, "DirectConnection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getProperty_Value(), theBasePackage.getPropertyValue(), null, "value", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(capabilityPropertyEClass, CapabilityProperty.class, "CapabilityProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCapabilityProperty_Name(), ecorePackage.getEString(), "name", null, 1, 1, CapabilityProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCapabilityProperty_Kind(), this.getCapabilityKind(), null, "kind", null, 1, 1, CapabilityProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCapabilityProperty_Value(), ecorePackage.getEString(), "value", null, 0, -1, CapabilityProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCapabilityProperty_Type(), this.getCapabilityType(), null, "type", null, 1, 1, CapabilityProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(capabilityKindEClass, CapabilityKind.class, "CapabilityKind", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -581,6 +585,10 @@ public class DevicePackageImpl extends EPackageImpl implements DevicePackage {
 		initEAttribute(getPropertyType_Name(), ecorePackage.getEString(), "name", null, 0, 1, PropertyType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(communicationTypeEClass, CommunicationType.class, "CommunicationType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(connectionPropertyEClass, ConnectionProperty.class, "ConnectionProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(capabilityTypeEClass, CapabilityType.class, "CapabilityType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -58,15 +58,16 @@ public class DeviceFactoryImpl extends EFactoryImpl implements DeviceFactory {
 		switch (eClass.getClassifierID()) {
 			case DevicePackage.DEVICE_SET: return createDeviceSet();
 			case DevicePackage.DEVICE_TYPE: return createDeviceType();
+			case DevicePackage.COMMUNICATION_CONNECTION: return createCommunicationConnection();
 			case DevicePackage.PROPERTY: return createProperty();
-			case DevicePackage.INDIRECT_CONNECTION: return createIndirectConnection();
-			case DevicePackage.DIRECT_CONNECTION: return createDirectConnection();
 			case DevicePackage.CAPABILITY_PROPERTY: return createCapabilityProperty();
 			case DevicePackage.ATTRIBUTE_KIND: return createAttributeKind();
 			case DevicePackage.MAXIMUM_KIND: return createMaximumKind();
 			case DevicePackage.MINIMUM_KIND: return createMinimumKind();
 			case DevicePackage.SELECTION_KIND: return createSelectionKind();
 			case DevicePackage.COMMUNICATION_TYPE: return createCommunicationType();
+			case DevicePackage.CONNECTION_PROPERTY: return createConnectionProperty();
+			case DevicePackage.CAPABILITY_TYPE: return createCapabilityType();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -97,29 +98,19 @@ public class DeviceFactoryImpl extends EFactoryImpl implements DeviceFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public CommunicationConnection createCommunicationConnection() {
+		CommunicationConnectionImpl communicationConnection = new CommunicationConnectionImpl();
+		return communicationConnection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Property createProperty() {
 		PropertyImpl property = new PropertyImpl();
 		return property;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public IndirectConnection createIndirectConnection() {
-		IndirectConnectionImpl indirectConnection = new IndirectConnectionImpl();
-		return indirectConnection;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DirectConnection createDirectConnection() {
-		DirectConnectionImpl directConnection = new DirectConnectionImpl();
-		return directConnection;
 	}
 
 	/**
@@ -180,6 +171,26 @@ public class DeviceFactoryImpl extends EFactoryImpl implements DeviceFactory {
 	public CommunicationType createCommunicationType() {
 		CommunicationTypeImpl communicationType = new CommunicationTypeImpl();
 		return communicationType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ConnectionProperty createConnectionProperty() {
+		ConnectionPropertyImpl connectionProperty = new ConnectionPropertyImpl();
+		return connectionProperty;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CapabilityType createCapabilityType() {
+		CapabilityTypeImpl capabilityType = new CapabilityTypeImpl();
+		return capabilityType;
 	}
 
 	/**

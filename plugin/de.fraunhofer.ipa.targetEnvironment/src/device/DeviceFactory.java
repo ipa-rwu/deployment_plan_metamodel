@@ -40,6 +40,15 @@ public interface DeviceFactory extends EFactory {
 	DeviceType createDeviceType();
 
 	/**
+	 * Returns a new object of class '<em>Communication Connection</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Communication Connection</em>'.
+	 * @generated
+	 */
+	CommunicationConnection createCommunicationConnection();
+
+	/**
 	 * Returns a new object of class '<em>Property</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -47,24 +56,6 @@ public interface DeviceFactory extends EFactory {
 	 * @generated
 	 */
 	Property createProperty();
-
-	/**
-	 * Returns a new object of class '<em>Indirect Connection</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Indirect Connection</em>'.
-	 * @generated
-	 */
-	IndirectConnection createIndirectConnection();
-
-	/**
-	 * Returns a new object of class '<em>Direct Connection</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Direct Connection</em>'.
-	 * @generated
-	 */
-	DirectConnection createDirectConnection();
 
 	/**
 	 * Returns a new object of class '<em>Capability Property</em>'.
@@ -119,6 +110,24 @@ public interface DeviceFactory extends EFactory {
 	 * @generated
 	 */
 	CommunicationType createCommunicationType();
+
+	/**
+	 * Returns a new object of class '<em>Connection Property</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Connection Property</em>'.
+	 * @generated
+	 */
+	ConnectionProperty createConnectionProperty();
+
+	/**
+	 * Returns a new object of class '<em>Capability Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Capability Type</em>'.
+	 * @generated
+	 */
+	CapabilityType createCapabilityType();
 
 	/**
 	 * Returns the package supported by this factory.

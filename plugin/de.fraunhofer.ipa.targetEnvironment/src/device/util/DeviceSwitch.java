@@ -2,6 +2,8 @@
  */
 package device.util;
 
+import base.Description;
+
 import device.*;
 
 import org.eclipse.emf.ecore.EObject;
@@ -69,6 +71,7 @@ public class DeviceSwitch<T> extends Switch<T> {
 			case DevicePackage.DEVICE_SET: {
 				DeviceSet deviceSet = (DeviceSet)theEObject;
 				T result = caseDeviceSet(deviceSet);
+				if (result == null) result = caseDescription(deviceSet);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -78,9 +81,9 @@ public class DeviceSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case DevicePackage.CONNECTION: {
-				Connection connection = (Connection)theEObject;
-				T result = caseConnection(connection);
+			case DevicePackage.COMMUNICATION_CONNECTION: {
+				CommunicationConnection communicationConnection = (CommunicationConnection)theEObject;
+				T result = caseCommunicationConnection(communicationConnection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -90,23 +93,10 @@ public class DeviceSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case DevicePackage.INDIRECT_CONNECTION: {
-				IndirectConnection indirectConnection = (IndirectConnection)theEObject;
-				T result = caseIndirectConnection(indirectConnection);
-				if (result == null) result = caseConnection(indirectConnection);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case DevicePackage.DIRECT_CONNECTION: {
-				DirectConnection directConnection = (DirectConnection)theEObject;
-				T result = caseDirectConnection(directConnection);
-				if (result == null) result = caseConnection(directConnection);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case DevicePackage.CAPABILITY_PROPERTY: {
 				CapabilityProperty capabilityProperty = (CapabilityProperty)theEObject;
 				T result = caseCapabilityProperty(capabilityProperty);
+				if (result == null) result = caseProperty(capabilityProperty);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -157,6 +147,20 @@ public class DeviceSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case DevicePackage.CONNECTION_PROPERTY: {
+				ConnectionProperty connectionProperty = (ConnectionProperty)theEObject;
+				T result = caseConnectionProperty(connectionProperty);
+				if (result == null) result = caseProperty(connectionProperty);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case DevicePackage.CAPABILITY_TYPE: {
+				CapabilityType capabilityType = (CapabilityType)theEObject;
+				T result = caseCapabilityType(capabilityType);
+				if (result == null) result = casePropertyType(capabilityType);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -192,17 +196,17 @@ public class DeviceSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Connection</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Communication Connection</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Connection</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Communication Connection</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseConnection(Connection object) {
+	public T caseCommunicationConnection(CommunicationConnection object) {
 		return null;
 	}
 
@@ -218,36 +222,6 @@ public class DeviceSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseProperty(Property object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Indirect Connection</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Indirect Connection</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseIndirectConnection(IndirectConnection object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Direct Connection</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Direct Connection</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseDirectConnection(DirectConnection object) {
 		return null;
 	}
 
@@ -368,6 +342,51 @@ public class DeviceSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseCommunicationType(CommunicationType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Connection Property</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Connection Property</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseConnectionProperty(ConnectionProperty object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Capability Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Capability Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCapabilityType(CapabilityType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Description</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Description</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDescription(Description object) {
 		return null;
 	}
 

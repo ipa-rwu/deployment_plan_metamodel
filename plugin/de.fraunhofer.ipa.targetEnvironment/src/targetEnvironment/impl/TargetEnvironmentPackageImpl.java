@@ -2,6 +2,8 @@
  */
 package targetEnvironment.impl;
 
+import base.BasePackage;
+
 import device.DevicePackage;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -11,10 +13,13 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import org.eclipse.emf.ecore.xml.type.XMLTypePackage;
 import targetEnvironment.ConfigConnection;
+import targetEnvironment.ConfigConnectionProperty;
 import targetEnvironment.ConnectedDevice;
 import targetEnvironment.DeviceInstance;
 import targetEnvironment.TargetDeployEnviroment;
+import targetEnvironment.TargetEnvironment;
 import targetEnvironment.TargetEnvironmentFactory;
 import targetEnvironment.TargetEnvironmentPackage;
 
@@ -52,6 +57,20 @@ public class TargetEnvironmentPackageImpl extends EPackageImpl implements Target
 	 * @generated
 	 */
 	private EClass connectedDeviceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass targetEnvironmentEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass configConnectionPropertyEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -101,6 +120,8 @@ public class TargetEnvironmentPackageImpl extends EPackageImpl implements Target
 
 		// Initialize simple dependencies
 		DevicePackage.eINSTANCE.eClass();
+		BasePackage.eINSTANCE.eClass();
+		XMLTypePackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theTargetEnvironmentPackage.createPackageContents();
@@ -247,6 +268,51 @@ public class TargetEnvironmentPackageImpl extends EPackageImpl implements Target
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getTargetEnvironment() {
+		return targetEnvironmentEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getTargetEnvironment_Type() {
+		return (EReference)targetEnvironmentEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getConfigConnectionProperty() {
+		return configConnectionPropertyEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getConfigConnectionProperty_RefConnectionProperty() {
+		return (EReference)configConnectionPropertyEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getConfigConnectionProperty_Value() {
+		return (EReference)configConnectionPropertyEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public TargetEnvironmentFactory getTargetEnvironmentFactory() {
 		return (TargetEnvironmentFactory)getEFactoryInstance();
 	}
@@ -270,6 +336,9 @@ public class TargetEnvironmentPackageImpl extends EPackageImpl implements Target
 		isCreated = true;
 
 		// Create classes and their features
+		targetEnvironmentEClass = createEClass(TARGET_ENVIRONMENT);
+		createEReference(targetEnvironmentEClass, TARGET_ENVIRONMENT__TYPE);
+
 		targetDeployEnviromentEClass = createEClass(TARGET_DEPLOY_ENVIROMENT);
 		createEAttribute(targetDeployEnviromentEClass, TARGET_DEPLOY_ENVIROMENT__NAME);
 		createEReference(targetDeployEnviromentEClass, TARGET_DEPLOY_ENVIROMENT__INCLUDE_DEVICE);
@@ -287,6 +356,10 @@ public class TargetEnvironmentPackageImpl extends EPackageImpl implements Target
 		createEReference(connectedDeviceEClass, CONNECTED_DEVICE__REF_DEVICE);
 		createEReference(connectedDeviceEClass, CONNECTED_DEVICE__REF_CONNECTION);
 		createEReference(connectedDeviceEClass, CONNECTED_DEVICE__PROPERTIES);
+
+		configConnectionPropertyEClass = createEClass(CONFIG_CONNECTION_PROPERTY);
+		createEReference(configConnectionPropertyEClass, CONFIG_CONNECTION_PROPERTY__REF_CONNECTION_PROPERTY);
+		createEReference(configConnectionPropertyEClass, CONFIG_CONNECTION_PROPERTY__VALUE);
 	}
 
 	/**
@@ -313,6 +386,7 @@ public class TargetEnvironmentPackageImpl extends EPackageImpl implements Target
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
+		BasePackage theBasePackage = (BasePackage)EPackage.Registry.INSTANCE.getEPackage(BasePackage.eNS_URI);
 		DevicePackage theDevicePackage = (DevicePackage)EPackage.Registry.INSTANCE.getEPackage(DevicePackage.eNS_URI);
 
 		// Create type parameters
@@ -320,10 +394,14 @@ public class TargetEnvironmentPackageImpl extends EPackageImpl implements Target
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		targetDeployEnviromentEClass.getESuperTypes().add(theBasePackage.getDescription());
 
 		// Initialize classes, features, and operations; add parameters
+		initEClass(targetEnvironmentEClass, TargetEnvironment.class, "TargetEnvironment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getTargetEnvironment_Type(), theBasePackage.getDescription(), null, "type", null, 1, -1, TargetEnvironment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(targetDeployEnviromentEClass, TargetDeployEnviroment.class, "TargetDeployEnviroment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTargetDeployEnviroment_Name(), ecorePackage.getEString(), "name", null, 1, 1, TargetDeployEnviroment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTargetDeployEnviroment_Name(), ecorePackage.getEString(), "name", null, 0, 1, TargetDeployEnviroment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTargetDeployEnviroment_IncludeDevice(), this.getDeviceInstance(), null, "includeDevice", null, 0, -1, TargetDeployEnviroment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTargetDeployEnviroment_ConfigConnection(), this.getConfigConnection(), null, "configConnection", null, 0, -1, TargetDeployEnviroment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -337,8 +415,13 @@ public class TargetEnvironmentPackageImpl extends EPackageImpl implements Target
 
 		initEClass(connectedDeviceEClass, ConnectedDevice.class, "ConnectedDevice", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getConnectedDevice_RefDevice(), this.getDeviceInstance(), null, "refDevice", null, 1, 1, ConnectedDevice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getConnectedDevice_RefConnection(), theDevicePackage.getConnection(), null, "refConnection", null, 1, 1, ConnectedDevice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getConnectedDevice_Properties(), theDevicePackage.getProperty(), null, "properties", null, 0, -1, ConnectedDevice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConnectedDevice_RefConnection(), theDevicePackage.getCommunicationConnection(), null, "refConnection", null, 1, 1, ConnectedDevice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConnectedDevice_Properties(), this.getConfigConnectionProperty(), null, "properties", null, 0, -1, ConnectedDevice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(configConnectionPropertyEClass, ConfigConnectionProperty.class, "ConfigConnectionProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getConfigConnectionProperty_RefConnectionProperty(), theDevicePackage.getConnectionProperty(), null, "refConnectionProperty", null, 1, 1, ConfigConnectionProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		getConfigConnectionProperty_RefConnectionProperty().getEKeys().add(theDevicePackage.getProperty_Name());
+		initEReference(getConfigConnectionProperty_Value(), theBasePackage.getPropertyValue(), null, "value", null, 1, 1, ConfigConnectionProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

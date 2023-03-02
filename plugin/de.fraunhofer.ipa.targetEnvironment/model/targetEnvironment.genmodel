@@ -3,9 +3,13 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.fraunhofer.ipa.targetEnvironment/src" modelPluginID="de.fraunhofer.ipa.targetEnvironment"
     modelName="TargetEnvironment" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
-    usedGenPackages="device.genmodel#//device" operationReflection="true" importOrganizing="true">
+    usedGenPackages="device.genmodel#//device device.genmodel#//base ../../org.eclipse.emf.ecore/model/XMLType.genmodel#//type"
+    operationReflection="true" importOrganizing="true">
   <foreignModel>targetEnvironment.ecore</foreignModel>
   <genPackages prefix="TargetEnvironment" disposableProviderFactory="true" ecorePackage="targetEnvironment.ecore#/">
+    <genClasses ecoreClass="targetEnvironment.ecore#//TargetEnvironment">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference targetEnvironment.ecore#//TargetEnvironment/type"/>
+    </genClasses>
     <genClasses ecoreClass="targetEnvironment.ecore#//TargetDeployEnviroment">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute targetEnvironment.ecore#//TargetDeployEnviroment/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference targetEnvironment.ecore#//TargetDeployEnviroment/includeDevice"/>
@@ -23,6 +27,10 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference targetEnvironment.ecore#//ConnectedDevice/refDevice"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference targetEnvironment.ecore#//ConnectedDevice/refConnection"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference targetEnvironment.ecore#//ConnectedDevice/properties"/>
+    </genClasses>
+    <genClasses ecoreClass="targetEnvironment.ecore#//ConfigConnectionProperty">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference targetEnvironment.ecore#//ConfigConnectionProperty/refConnectionProperty"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference targetEnvironment.ecore#//ConfigConnectionProperty/value"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

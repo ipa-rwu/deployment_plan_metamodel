@@ -56,10 +56,12 @@ public class TargetEnvironmentFactoryImpl extends EFactoryImpl implements Target
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+			case TargetEnvironmentPackage.TARGET_ENVIRONMENT: return createTargetEnvironment();
 			case TargetEnvironmentPackage.TARGET_DEPLOY_ENVIROMENT: return createTargetDeployEnviroment();
 			case TargetEnvironmentPackage.CONFIG_CONNECTION: return createConfigConnection();
 			case TargetEnvironmentPackage.DEVICE_INSTANCE: return createDeviceInstance();
 			case TargetEnvironmentPackage.CONNECTED_DEVICE: return createConnectedDevice();
+			case TargetEnvironmentPackage.CONFIG_CONNECTION_PROPERTY: return createConfigConnectionProperty();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -103,6 +105,26 @@ public class TargetEnvironmentFactoryImpl extends EFactoryImpl implements Target
 	public ConnectedDevice createConnectedDevice() {
 		ConnectedDeviceImpl connectedDevice = new ConnectedDeviceImpl();
 		return connectedDevice;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TargetEnvironment createTargetEnvironment() {
+		TargetEnvironmentImpl targetEnvironment = new TargetEnvironmentImpl();
+		return targetEnvironment;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ConfigConnectionProperty createConfigConnectionProperty() {
+		ConfigConnectionPropertyImpl configConnectionProperty = new ConfigConnectionPropertyImpl();
+		return configConnectionProperty;
 	}
 
 	/**

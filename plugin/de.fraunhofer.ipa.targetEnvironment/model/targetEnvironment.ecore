@@ -2,8 +2,12 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="targetEnvironment" nsURI="http://www.ipa.fraunhofer.de/TargetEnvironment"
     nsPrefix="TargetEnvironment">
-  <eClassifiers xsi:type="ecore:EClass" name="TargetDeployEnviroment">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TargetEnvironment">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" upperBound="-1"
+        eType="ecore:EClass base.ecore#//Description" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TargetDeployEnviroment" eSuperTypes="base.ecore#//Description">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="includeDevice" upperBound="-1"
         eType="#//DeviceInstance" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="configConnection" upperBound="-1"
@@ -23,8 +27,15 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="refDevice" lowerBound="1"
         eType="#//DeviceInstance"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="refConnection" lowerBound="1"
-        eType="ecore:EClass device.ecore#//Connection"/>
+        eType="ecore:EClass device.ecore#//CommunicationConnection"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
-        eType="ecore:EClass device.ecore#//Property" containment="true"/>
+        eType="#//ConfigConnectionProperty" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConfigConnectionProperty">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refConnectionProperty"
+        lowerBound="1" eType="ecore:EClass device.ecore#//ConnectionProperty" derived="true"
+        eKeys="device.ecore#//Property/name"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1" eType="ecore:EClass base.ecore#//PropertyValue"
+        containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

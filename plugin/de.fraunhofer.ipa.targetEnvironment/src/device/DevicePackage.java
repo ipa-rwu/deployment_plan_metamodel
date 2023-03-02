@@ -2,6 +2,8 @@
  */
 package device;
 
+import base.BasePackage;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -73,7 +75,7 @@ public interface DevicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_SET__DEVICE = 0;
+	int DEVICE_SET__DEVICE = BasePackage.DESCRIPTION_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Set</em>' class.
@@ -82,7 +84,7 @@ public interface DevicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_SET_FEATURE_COUNT = 1;
+	int DEVICE_SET_FEATURE_COUNT = BasePackage.DESCRIPTION_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Set</em>' class.
@@ -91,7 +93,7 @@ public interface DevicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_SET_OPERATION_COUNT = 0;
+	int DEVICE_SET_OPERATION_COUNT = BasePackage.DESCRIPTION_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link device.impl.DeviceTypeImpl <em>Type</em>}' class.
@@ -113,22 +115,22 @@ public interface DevicePackage extends EPackage {
 	int DEVICE_TYPE__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Capabilities</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Capability</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_TYPE__CAPABILITIES = 1;
+	int DEVICE_TYPE__CAPABILITY = 1;
 
 	/**
-	 * The feature id for the '<em><b>Connection</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Communication Connection</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_TYPE__CONNECTION = 2;
+	int DEVICE_TYPE__COMMUNICATION_CONNECTION = 2;
 
 	/**
 	 * The number of structural features of the '<em>Type</em>' class.
@@ -149,14 +151,14 @@ public interface DevicePackage extends EPackage {
 	int DEVICE_TYPE_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link device.impl.ConnectionImpl <em>Connection</em>}' class.
+	 * The meta object id for the '{@link device.impl.CommunicationConnectionImpl <em>Communication Connection</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see device.impl.ConnectionImpl
-	 * @see device.impl.DevicePackageImpl#getConnection()
+	 * @see device.impl.CommunicationConnectionImpl
+	 * @see device.impl.DevicePackageImpl#getCommunicationConnection()
 	 * @generated
 	 */
-	int CONNECTION = 2;
+	int COMMUNICATION_CONNECTION = 2;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -165,7 +167,7 @@ public interface DevicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTION__NAME = 0;
+	int COMMUNICATION_CONNECTION__NAME = 0;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -174,7 +176,7 @@ public interface DevicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTION__TYPE = 1;
+	int COMMUNICATION_CONNECTION__TYPE = 1;
 
 	/**
 	 * The feature id for the '<em><b>Properties</b></em>' containment reference list.
@@ -183,25 +185,25 @@ public interface DevicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTION__PROPERTIES = 2;
+	int COMMUNICATION_CONNECTION__PROPERTIES = 2;
 
 	/**
-	 * The number of structural features of the '<em>Connection</em>' class.
+	 * The number of structural features of the '<em>Communication Connection</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTION_FEATURE_COUNT = 3;
+	int COMMUNICATION_CONNECTION_FEATURE_COUNT = 3;
 
 	/**
-	 * The number of operations of the '<em>Connection</em>' class.
+	 * The number of operations of the '<em>Communication Connection</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTION_OPERATION_COUNT = 0;
+	int COMMUNICATION_CONNECTION_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link device.impl.PropertyImpl <em>Property</em>}' class.
@@ -223,7 +225,7 @@ public interface DevicePackage extends EPackage {
 	int PROPERTY__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * The feature id for the '<em><b>Value</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -250,116 +252,6 @@ public interface DevicePackage extends EPackage {
 	int PROPERTY_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link device.impl.IndirectConnectionImpl <em>Indirect Connection</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see device.impl.IndirectConnectionImpl
-	 * @see device.impl.DevicePackageImpl#getIndirectConnection()
-	 * @generated
-	 */
-	int INDIRECT_CONNECTION = 4;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INDIRECT_CONNECTION__NAME = CONNECTION__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INDIRECT_CONNECTION__TYPE = CONNECTION__TYPE;
-
-	/**
-	 * The feature id for the '<em><b>Properties</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INDIRECT_CONNECTION__PROPERTIES = CONNECTION__PROPERTIES;
-
-	/**
-	 * The number of structural features of the '<em>Indirect Connection</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INDIRECT_CONNECTION_FEATURE_COUNT = CONNECTION_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Indirect Connection</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INDIRECT_CONNECTION_OPERATION_COUNT = CONNECTION_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link device.impl.DirectConnectionImpl <em>Direct Connection</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see device.impl.DirectConnectionImpl
-	 * @see device.impl.DevicePackageImpl#getDirectConnection()
-	 * @generated
-	 */
-	int DIRECT_CONNECTION = 5;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DIRECT_CONNECTION__NAME = CONNECTION__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DIRECT_CONNECTION__TYPE = CONNECTION__TYPE;
-
-	/**
-	 * The feature id for the '<em><b>Properties</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DIRECT_CONNECTION__PROPERTIES = CONNECTION__PROPERTIES;
-
-	/**
-	 * The number of structural features of the '<em>Direct Connection</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DIRECT_CONNECTION_FEATURE_COUNT = CONNECTION_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Direct Connection</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DIRECT_CONNECTION_OPERATION_COUNT = CONNECTION_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link device.impl.CapabilityPropertyImpl <em>Capability Property</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -367,7 +259,7 @@ public interface DevicePackage extends EPackage {
 	 * @see device.impl.DevicePackageImpl#getCapabilityProperty()
 	 * @generated
 	 */
-	int CAPABILITY_PROPERTY = 6;
+	int CAPABILITY_PROPERTY = 4;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -376,7 +268,16 @@ public interface DevicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CAPABILITY_PROPERTY__NAME = 0;
+	int CAPABILITY_PROPERTY__NAME = PROPERTY__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAPABILITY_PROPERTY__VALUE = PROPERTY__VALUE;
 
 	/**
 	 * The feature id for the '<em><b>Kind</b></em>' containment reference.
@@ -385,16 +286,16 @@ public interface DevicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CAPABILITY_PROPERTY__KIND = 1;
+	int CAPABILITY_PROPERTY__KIND = PROPERTY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute list.
+	 * The feature id for the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CAPABILITY_PROPERTY__VALUE = 2;
+	int CAPABILITY_PROPERTY__TYPE = PROPERTY_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Capability Property</em>' class.
@@ -403,7 +304,7 @@ public interface DevicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CAPABILITY_PROPERTY_FEATURE_COUNT = 3;
+	int CAPABILITY_PROPERTY_FEATURE_COUNT = PROPERTY_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Capability Property</em>' class.
@@ -412,7 +313,7 @@ public interface DevicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CAPABILITY_PROPERTY_OPERATION_COUNT = 0;
+	int CAPABILITY_PROPERTY_OPERATION_COUNT = PROPERTY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link device.impl.CapabilityKindImpl <em>Capability Kind</em>}' class.
@@ -422,7 +323,7 @@ public interface DevicePackage extends EPackage {
 	 * @see device.impl.DevicePackageImpl#getCapabilityKind()
 	 * @generated
 	 */
-	int CAPABILITY_KIND = 7;
+	int CAPABILITY_KIND = 5;
 
 	/**
 	 * The number of structural features of the '<em>Capability Kind</em>' class.
@@ -450,7 +351,7 @@ public interface DevicePackage extends EPackage {
 	 * @see device.impl.DevicePackageImpl#getAttributeKind()
 	 * @generated
 	 */
-	int ATTRIBUTE_KIND = 8;
+	int ATTRIBUTE_KIND = 6;
 
 	/**
 	 * The number of structural features of the '<em>Attribute Kind</em>' class.
@@ -478,7 +379,7 @@ public interface DevicePackage extends EPackage {
 	 * @see device.impl.DevicePackageImpl#getMaximumKind()
 	 * @generated
 	 */
-	int MAXIMUM_KIND = 9;
+	int MAXIMUM_KIND = 7;
 
 	/**
 	 * The number of structural features of the '<em>Maximum Kind</em>' class.
@@ -506,7 +407,7 @@ public interface DevicePackage extends EPackage {
 	 * @see device.impl.DevicePackageImpl#getMinimumKind()
 	 * @generated
 	 */
-	int MINIMUM_KIND = 10;
+	int MINIMUM_KIND = 8;
 
 	/**
 	 * The number of structural features of the '<em>Minimum Kind</em>' class.
@@ -534,7 +435,7 @@ public interface DevicePackage extends EPackage {
 	 * @see device.impl.DevicePackageImpl#getSelectionKind()
 	 * @generated
 	 */
-	int SELECTION_KIND = 11;
+	int SELECTION_KIND = 9;
 
 	/**
 	 * The number of structural features of the '<em>Selection Kind</em>' class.
@@ -562,7 +463,7 @@ public interface DevicePackage extends EPackage {
 	 * @see device.impl.DevicePackageImpl#getPropertyType()
 	 * @generated
 	 */
-	int PROPERTY_TYPE = 12;
+	int PROPERTY_TYPE = 10;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -599,7 +500,7 @@ public interface DevicePackage extends EPackage {
 	 * @see device.impl.DevicePackageImpl#getCommunicationType()
 	 * @generated
 	 */
-	int COMMUNICATION_TYPE = 13;
+	int COMMUNICATION_TYPE = 11;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -627,6 +528,91 @@ public interface DevicePackage extends EPackage {
 	 * @ordered
 	 */
 	int COMMUNICATION_TYPE_OPERATION_COUNT = PROPERTY_TYPE_OPERATION_COUNT + 0;
+
+
+	/**
+	 * The meta object id for the '{@link device.impl.ConnectionPropertyImpl <em>Connection Property</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see device.impl.ConnectionPropertyImpl
+	 * @see device.impl.DevicePackageImpl#getConnectionProperty()
+	 * @generated
+	 */
+	int CONNECTION_PROPERTY = 12;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTION_PROPERTY__NAME = PROPERTY__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTION_PROPERTY__VALUE = PROPERTY__VALUE;
+
+	/**
+	 * The number of structural features of the '<em>Connection Property</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTION_PROPERTY_FEATURE_COUNT = PROPERTY_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Connection Property</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTION_PROPERTY_OPERATION_COUNT = PROPERTY_OPERATION_COUNT + 0;
+
+
+	/**
+	 * The meta object id for the '{@link device.impl.CapabilityTypeImpl <em>Capability Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see device.impl.CapabilityTypeImpl
+	 * @see device.impl.DevicePackageImpl#getCapabilityType()
+	 * @generated
+	 */
+	int CAPABILITY_TYPE = 13;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAPABILITY_TYPE__NAME = PROPERTY_TYPE__NAME;
+
+	/**
+	 * The number of structural features of the '<em>Capability Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAPABILITY_TYPE_FEATURE_COUNT = PROPERTY_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Capability Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAPABILITY_TYPE_OPERATION_COUNT = PROPERTY_TYPE_OPERATION_COUNT + 0;
 
 
 	/**
@@ -672,69 +658,69 @@ public interface DevicePackage extends EPackage {
 	EAttribute getDeviceType_Name();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link device.DeviceType#getCapabilities <em>Capabilities</em>}'.
+	 * Returns the meta object for the containment reference list '{@link device.DeviceType#getCapability <em>Capability</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Capabilities</em>'.
-	 * @see device.DeviceType#getCapabilities()
+	 * @return the meta object for the containment reference list '<em>Capability</em>'.
+	 * @see device.DeviceType#getCapability()
 	 * @see #getDeviceType()
 	 * @generated
 	 */
-	EReference getDeviceType_Capabilities();
+	EReference getDeviceType_Capability();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link device.DeviceType#getConnection <em>Connection</em>}'.
+	 * Returns the meta object for the containment reference list '{@link device.DeviceType#getCommunicationConnection <em>Communication Connection</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Connection</em>'.
-	 * @see device.DeviceType#getConnection()
+	 * @return the meta object for the containment reference list '<em>Communication Connection</em>'.
+	 * @see device.DeviceType#getCommunicationConnection()
 	 * @see #getDeviceType()
 	 * @generated
 	 */
-	EReference getDeviceType_Connection();
+	EReference getDeviceType_CommunicationConnection();
 
 	/**
-	 * Returns the meta object for class '{@link device.Connection <em>Connection</em>}'.
+	 * Returns the meta object for class '{@link device.CommunicationConnection <em>Communication Connection</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Connection</em>'.
-	 * @see device.Connection
+	 * @return the meta object for class '<em>Communication Connection</em>'.
+	 * @see device.CommunicationConnection
 	 * @generated
 	 */
-	EClass getConnection();
+	EClass getCommunicationConnection();
 
 	/**
-	 * Returns the meta object for the attribute '{@link device.Connection#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link device.CommunicationConnection#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see device.Connection#getName()
-	 * @see #getConnection()
+	 * @see device.CommunicationConnection#getName()
+	 * @see #getCommunicationConnection()
 	 * @generated
 	 */
-	EAttribute getConnection_Name();
+	EAttribute getCommunicationConnection_Name();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link device.Connection#getType <em>Type</em>}'.
+	 * Returns the meta object for the containment reference '{@link device.CommunicationConnection#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Type</em>'.
-	 * @see device.Connection#getType()
-	 * @see #getConnection()
+	 * @see device.CommunicationConnection#getType()
+	 * @see #getCommunicationConnection()
 	 * @generated
 	 */
-	EReference getConnection_Type();
+	EReference getCommunicationConnection_Type();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link device.Connection#getProperties <em>Properties</em>}'.
+	 * Returns the meta object for the containment reference list '{@link device.CommunicationConnection#getProperties <em>Properties</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Properties</em>'.
-	 * @see device.Connection#getProperties()
-	 * @see #getConnection()
+	 * @see device.CommunicationConnection#getProperties()
+	 * @see #getCommunicationConnection()
 	 * @generated
 	 */
-	EReference getConnection_Properties();
+	EReference getCommunicationConnection_Properties();
 
 	/**
 	 * Returns the meta object for class '{@link device.Property <em>Property</em>}'.
@@ -758,35 +744,15 @@ public interface DevicePackage extends EPackage {
 	EAttribute getProperty_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link device.Property#getValue <em>Value</em>}'.
+	 * Returns the meta object for the containment reference '{@link device.Property#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @return the meta object for the containment reference '<em>Value</em>'.
 	 * @see device.Property#getValue()
 	 * @see #getProperty()
 	 * @generated
 	 */
-	EAttribute getProperty_Value();
-
-	/**
-	 * Returns the meta object for class '{@link device.IndirectConnection <em>Indirect Connection</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Indirect Connection</em>'.
-	 * @see device.IndirectConnection
-	 * @generated
-	 */
-	EClass getIndirectConnection();
-
-	/**
-	 * Returns the meta object for class '{@link device.DirectConnection <em>Direct Connection</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Direct Connection</em>'.
-	 * @see device.DirectConnection
-	 * @generated
-	 */
-	EClass getDirectConnection();
+	EReference getProperty_Value();
 
 	/**
 	 * Returns the meta object for class '{@link device.CapabilityProperty <em>Capability Property</em>}'.
@@ -797,17 +763,6 @@ public interface DevicePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getCapabilityProperty();
-
-	/**
-	 * Returns the meta object for the attribute '{@link device.CapabilityProperty#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see device.CapabilityProperty#getName()
-	 * @see #getCapabilityProperty()
-	 * @generated
-	 */
-	EAttribute getCapabilityProperty_Name();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link device.CapabilityProperty#getKind <em>Kind</em>}'.
@@ -821,15 +776,15 @@ public interface DevicePackage extends EPackage {
 	EReference getCapabilityProperty_Kind();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link device.CapabilityProperty#getValue <em>Value</em>}'.
+	 * Returns the meta object for the reference '{@link device.CapabilityProperty#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Value</em>'.
-	 * @see device.CapabilityProperty#getValue()
+	 * @return the meta object for the reference '<em>Type</em>'.
+	 * @see device.CapabilityProperty#getType()
 	 * @see #getCapabilityProperty()
 	 * @generated
 	 */
-	EAttribute getCapabilityProperty_Value();
+	EReference getCapabilityProperty_Type();
 
 	/**
 	 * Returns the meta object for class '{@link device.CapabilityKind <em>Capability Kind</em>}'.
@@ -913,6 +868,26 @@ public interface DevicePackage extends EPackage {
 	EClass getCommunicationType();
 
 	/**
+	 * Returns the meta object for class '{@link device.ConnectionProperty <em>Connection Property</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Connection Property</em>'.
+	 * @see device.ConnectionProperty
+	 * @generated
+	 */
+	EClass getConnectionProperty();
+
+	/**
+	 * Returns the meta object for class '{@link device.CapabilityType <em>Capability Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Capability Type</em>'.
+	 * @see device.CapabilityType
+	 * @generated
+	 */
+	EClass getCapabilityType();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -972,30 +947,30 @@ public interface DevicePackage extends EPackage {
 		EAttribute DEVICE_TYPE__NAME = eINSTANCE.getDeviceType_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Capabilities</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Capability</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DEVICE_TYPE__CAPABILITIES = eINSTANCE.getDeviceType_Capabilities();
+		EReference DEVICE_TYPE__CAPABILITY = eINSTANCE.getDeviceType_Capability();
 
 		/**
-		 * The meta object literal for the '<em><b>Connection</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Communication Connection</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DEVICE_TYPE__CONNECTION = eINSTANCE.getDeviceType_Connection();
+		EReference DEVICE_TYPE__COMMUNICATION_CONNECTION = eINSTANCE.getDeviceType_CommunicationConnection();
 
 		/**
-		 * The meta object literal for the '{@link device.impl.ConnectionImpl <em>Connection</em>}' class.
+		 * The meta object literal for the '{@link device.impl.CommunicationConnectionImpl <em>Communication Connection</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see device.impl.ConnectionImpl
-		 * @see device.impl.DevicePackageImpl#getConnection()
+		 * @see device.impl.CommunicationConnectionImpl
+		 * @see device.impl.DevicePackageImpl#getCommunicationConnection()
 		 * @generated
 		 */
-		EClass CONNECTION = eINSTANCE.getConnection();
+		EClass COMMUNICATION_CONNECTION = eINSTANCE.getCommunicationConnection();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -1003,7 +978,7 @@ public interface DevicePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CONNECTION__NAME = eINSTANCE.getConnection_Name();
+		EAttribute COMMUNICATION_CONNECTION__NAME = eINSTANCE.getCommunicationConnection_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
@@ -1011,7 +986,7 @@ public interface DevicePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CONNECTION__TYPE = eINSTANCE.getConnection_Type();
+		EReference COMMUNICATION_CONNECTION__TYPE = eINSTANCE.getCommunicationConnection_Type();
 
 		/**
 		 * The meta object literal for the '<em><b>Properties</b></em>' containment reference list feature.
@@ -1019,7 +994,7 @@ public interface DevicePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CONNECTION__PROPERTIES = eINSTANCE.getConnection_Properties();
+		EReference COMMUNICATION_CONNECTION__PROPERTIES = eINSTANCE.getCommunicationConnection_Properties();
 
 		/**
 		 * The meta object literal for the '{@link device.impl.PropertyImpl <em>Property</em>}' class.
@@ -1040,32 +1015,12 @@ public interface DevicePackage extends EPackage {
 		EAttribute PROPERTY__NAME = eINSTANCE.getProperty_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PROPERTY__VALUE = eINSTANCE.getProperty_Value();
-
-		/**
-		 * The meta object literal for the '{@link device.impl.IndirectConnectionImpl <em>Indirect Connection</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see device.impl.IndirectConnectionImpl
-		 * @see device.impl.DevicePackageImpl#getIndirectConnection()
-		 * @generated
-		 */
-		EClass INDIRECT_CONNECTION = eINSTANCE.getIndirectConnection();
-
-		/**
-		 * The meta object literal for the '{@link device.impl.DirectConnectionImpl <em>Direct Connection</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see device.impl.DirectConnectionImpl
-		 * @see device.impl.DevicePackageImpl#getDirectConnection()
-		 * @generated
-		 */
-		EClass DIRECT_CONNECTION = eINSTANCE.getDirectConnection();
+		EReference PROPERTY__VALUE = eINSTANCE.getProperty_Value();
 
 		/**
 		 * The meta object literal for the '{@link device.impl.CapabilityPropertyImpl <em>Capability Property</em>}' class.
@@ -1078,14 +1033,6 @@ public interface DevicePackage extends EPackage {
 		EClass CAPABILITY_PROPERTY = eINSTANCE.getCapabilityProperty();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CAPABILITY_PROPERTY__NAME = eINSTANCE.getCapabilityProperty_Name();
-
-		/**
 		 * The meta object literal for the '<em><b>Kind</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1094,12 +1041,12 @@ public interface DevicePackage extends EPackage {
 		EReference CAPABILITY_PROPERTY__KIND = eINSTANCE.getCapabilityProperty_Kind();
 
 		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CAPABILITY_PROPERTY__VALUE = eINSTANCE.getCapabilityProperty_Value();
+		EReference CAPABILITY_PROPERTY__TYPE = eINSTANCE.getCapabilityProperty_Type();
 
 		/**
 		 * The meta object literal for the '{@link device.impl.CapabilityKindImpl <em>Capability Kind</em>}' class.
@@ -1178,6 +1125,26 @@ public interface DevicePackage extends EPackage {
 		 * @generated
 		 */
 		EClass COMMUNICATION_TYPE = eINSTANCE.getCommunicationType();
+
+		/**
+		 * The meta object literal for the '{@link device.impl.ConnectionPropertyImpl <em>Connection Property</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see device.impl.ConnectionPropertyImpl
+		 * @see device.impl.DevicePackageImpl#getConnectionProperty()
+		 * @generated
+		 */
+		EClass CONNECTION_PROPERTY = eINSTANCE.getConnectionProperty();
+
+		/**
+		 * The meta object literal for the '{@link device.impl.CapabilityTypeImpl <em>Capability Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see device.impl.CapabilityTypeImpl
+		 * @see device.impl.DevicePackageImpl#getCapabilityType()
+		 * @generated
+		 */
+		EClass CAPABILITY_TYPE = eINSTANCE.getCapabilityType();
 
 	}
 

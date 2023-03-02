@@ -71,7 +71,7 @@ public interface Connection extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Properties</b></em>' containment reference list.
-	 * The list contents are of type {@link device.Property}.
+	 * The list contents are of type {@link device.ConnectionProperty}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Properties</em>' containment reference list.
@@ -79,6 +79,6 @@ public interface Connection extends EObject {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Property> getProperties();
+	EList<ConnectionProperty> getProperties();
 
 } // Connection

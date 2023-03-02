@@ -2,6 +2,8 @@
  */
 package device.util;
 
+import base.Description;
+
 import device.*;
 
 import org.eclipse.emf.common.notify.Adapter;
@@ -76,20 +78,12 @@ public class DeviceAdapterFactory extends AdapterFactoryImpl {
 				return createDeviceTypeAdapter();
 			}
 			@Override
-			public Adapter caseConnection(Connection object) {
-				return createConnectionAdapter();
+			public Adapter caseCommunicationConnection(CommunicationConnection object) {
+				return createCommunicationConnectionAdapter();
 			}
 			@Override
 			public Adapter caseProperty(Property object) {
 				return createPropertyAdapter();
-			}
-			@Override
-			public Adapter caseIndirectConnection(IndirectConnection object) {
-				return createIndirectConnectionAdapter();
-			}
-			@Override
-			public Adapter caseDirectConnection(DirectConnection object) {
-				return createDirectConnectionAdapter();
 			}
 			@Override
 			public Adapter caseCapabilityProperty(CapabilityProperty object) {
@@ -122,6 +116,18 @@ public class DeviceAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseCommunicationType(CommunicationType object) {
 				return createCommunicationTypeAdapter();
+			}
+			@Override
+			public Adapter caseConnectionProperty(ConnectionProperty object) {
+				return createConnectionPropertyAdapter();
+			}
+			@Override
+			public Adapter caseCapabilityType(CapabilityType object) {
+				return createCapabilityTypeAdapter();
+			}
+			@Override
+			public Adapter caseDescription(Description object) {
+				return createDescriptionAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -172,16 +178,16 @@ public class DeviceAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link device.Connection <em>Connection</em>}'.
+	 * Creates a new adapter for an object of class '{@link device.CommunicationConnection <em>Communication Connection</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see device.Connection
+	 * @see device.CommunicationConnection
 	 * @generated
 	 */
-	public Adapter createConnectionAdapter() {
+	public Adapter createCommunicationConnectionAdapter() {
 		return null;
 	}
 
@@ -196,34 +202,6 @@ public class DeviceAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPropertyAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link device.IndirectConnection <em>Indirect Connection</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see device.IndirectConnection
-	 * @generated
-	 */
-	public Adapter createIndirectConnectionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link device.DirectConnection <em>Direct Connection</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see device.DirectConnection
-	 * @generated
-	 */
-	public Adapter createDirectConnectionAdapter() {
 		return null;
 	}
 
@@ -336,6 +314,48 @@ public class DeviceAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCommunicationTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link device.ConnectionProperty <em>Connection Property</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see device.ConnectionProperty
+	 * @generated
+	 */
+	public Adapter createConnectionPropertyAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link device.CapabilityType <em>Capability Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see device.CapabilityType
+	 * @generated
+	 */
+	public Adapter createCapabilityTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link base.Description <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see base.Description
+	 * @generated
+	 */
+	public Adapter createDescriptionAdapter() {
 		return null;
 	}
 

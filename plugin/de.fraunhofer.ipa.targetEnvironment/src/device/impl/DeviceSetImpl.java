@@ -2,6 +2,8 @@
  */
 package device.impl;
 
+import base.impl.DescriptionImpl;
+
 import device.DevicePackage;
 import device.DeviceSet;
 import device.DeviceType;
@@ -14,8 +16,6 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -33,7 +33,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class DeviceSetImpl extends MinimalEObjectImpl.Container implements DeviceSet {
+public class DeviceSetImpl extends DescriptionImpl implements DeviceSet {
 	/**
 	 * The cached value of the '{@link #getDevice() <em>Device</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

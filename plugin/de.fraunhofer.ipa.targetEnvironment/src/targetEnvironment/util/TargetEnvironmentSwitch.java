@@ -2,6 +2,8 @@
  */
 package targetEnvironment.util;
 
+import base.Description;
+
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -66,9 +68,16 @@ public class TargetEnvironmentSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
+			case TargetEnvironmentPackage.TARGET_ENVIRONMENT: {
+				TargetEnvironment targetEnvironment = (TargetEnvironment)theEObject;
+				T result = caseTargetEnvironment(targetEnvironment);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case TargetEnvironmentPackage.TARGET_DEPLOY_ENVIROMENT: {
 				TargetDeployEnviroment targetDeployEnviroment = (TargetDeployEnviroment)theEObject;
 				T result = caseTargetDeployEnviroment(targetDeployEnviroment);
+				if (result == null) result = caseDescription(targetDeployEnviroment);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -87,6 +96,12 @@ public class TargetEnvironmentSwitch<T> extends Switch<T> {
 			case TargetEnvironmentPackage.CONNECTED_DEVICE: {
 				ConnectedDevice connectedDevice = (ConnectedDevice)theEObject;
 				T result = caseConnectedDevice(connectedDevice);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case TargetEnvironmentPackage.CONFIG_CONNECTION_PROPERTY: {
+				ConfigConnectionProperty configConnectionProperty = (ConfigConnectionProperty)theEObject;
+				T result = caseConfigConnectionProperty(configConnectionProperty);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -151,6 +166,51 @@ public class TargetEnvironmentSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseConnectedDevice(ConnectedDevice object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Target Environment</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Target Environment</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTargetEnvironment(TargetEnvironment object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Config Connection Property</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Config Connection Property</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseConfigConnectionProperty(ConfigConnectionProperty object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Description</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Description</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDescription(Description object) {
 		return null;
 	}
 

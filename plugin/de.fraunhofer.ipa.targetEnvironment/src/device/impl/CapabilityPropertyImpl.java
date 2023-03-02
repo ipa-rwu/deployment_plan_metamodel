@@ -4,22 +4,14 @@ package device.impl;
 
 import device.CapabilityKind;
 import device.CapabilityProperty;
+import device.CapabilityType;
 import device.DevicePackage;
-
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,34 +21,13 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link device.impl.CapabilityPropertyImpl#getName <em>Name</em>}</li>
  *   <li>{@link device.impl.CapabilityPropertyImpl#getKind <em>Kind</em>}</li>
- *   <li>{@link device.impl.CapabilityPropertyImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link device.impl.CapabilityPropertyImpl#getType <em>Type</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class CapabilityPropertyImpl extends MinimalEObjectImpl.Container implements CapabilityProperty {
-	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String name = NAME_EDEFAULT;
-
+public class CapabilityPropertyImpl extends PropertyImpl implements CapabilityProperty {
 	/**
 	 * The cached value of the '{@link #getKind() <em>Kind</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -68,14 +39,14 @@ public class CapabilityPropertyImpl extends MinimalEObjectImpl.Container impleme
 	protected CapabilityKind kind;
 
 	/**
-	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute list.
+	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getValue()
+	 * @see #getType()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<String> value;
+	protected CapabilityType type;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -94,27 +65,6 @@ public class CapabilityPropertyImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	protected EClass eStaticClass() {
 		return DevicePackage.Literals.CAPABILITY_PROPERTY;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getName() {
-		return name;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DevicePackage.CAPABILITY_PROPERTY__NAME, oldName, name));
 	}
 
 	/**
@@ -165,11 +115,37 @@ public class CapabilityPropertyImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<String> getValue() {
-		if (value == null) {
-			value = new EDataTypeUniqueEList<String>(String.class, this, DevicePackage.CAPABILITY_PROPERTY__VALUE);
+	public CapabilityType getType() {
+		if (type != null && type.eIsProxy()) {
+			InternalEObject oldType = (InternalEObject)type;
+			type = (CapabilityType)eResolveProxy(oldType);
+			if (type != oldType) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DevicePackage.CAPABILITY_PROPERTY__TYPE, oldType, type));
+			}
 		}
-		return value;
+		return type;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CapabilityType basicGetType() {
+		return type;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setType(CapabilityType newType) {
+		CapabilityType oldType = type;
+		type = newType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DevicePackage.CAPABILITY_PROPERTY__TYPE, oldType, type));
 	}
 
 	/**
@@ -194,12 +170,11 @@ public class CapabilityPropertyImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case DevicePackage.CAPABILITY_PROPERTY__NAME:
-				return getName();
 			case DevicePackage.CAPABILITY_PROPERTY__KIND:
 				return getKind();
-			case DevicePackage.CAPABILITY_PROPERTY__VALUE:
-				return getValue();
+			case DevicePackage.CAPABILITY_PROPERTY__TYPE:
+				if (resolve) return getType();
+				return basicGetType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -213,15 +188,11 @@ public class CapabilityPropertyImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case DevicePackage.CAPABILITY_PROPERTY__NAME:
-				setName((String)newValue);
-				return;
 			case DevicePackage.CAPABILITY_PROPERTY__KIND:
 				setKind((CapabilityKind)newValue);
 				return;
-			case DevicePackage.CAPABILITY_PROPERTY__VALUE:
-				getValue().clear();
-				getValue().addAll((Collection<? extends String>)newValue);
+			case DevicePackage.CAPABILITY_PROPERTY__TYPE:
+				setType((CapabilityType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -235,14 +206,11 @@ public class CapabilityPropertyImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case DevicePackage.CAPABILITY_PROPERTY__NAME:
-				setName(NAME_EDEFAULT);
-				return;
 			case DevicePackage.CAPABILITY_PROPERTY__KIND:
 				setKind((CapabilityKind)null);
 				return;
-			case DevicePackage.CAPABILITY_PROPERTY__VALUE:
-				getValue().clear();
+			case DevicePackage.CAPABILITY_PROPERTY__TYPE:
+				setType((CapabilityType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -256,32 +224,12 @@ public class CapabilityPropertyImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case DevicePackage.CAPABILITY_PROPERTY__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case DevicePackage.CAPABILITY_PROPERTY__KIND:
 				return kind != null;
-			case DevicePackage.CAPABILITY_PROPERTY__VALUE:
-				return value != null && !value.isEmpty();
+			case DevicePackage.CAPABILITY_PROPERTY__TYPE:
+				return type != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (name: ");
-		result.append(name);
-		result.append(", value: ");
-		result.append(value);
-		result.append(')');
-		return result.toString();
 	}
 
 } //CapabilityPropertyImpl

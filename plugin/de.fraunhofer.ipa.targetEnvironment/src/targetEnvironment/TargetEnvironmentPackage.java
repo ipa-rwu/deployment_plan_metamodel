@@ -2,6 +2,8 @@
  */
 package targetEnvironment;
 
+import base.BasePackage;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -64,52 +66,7 @@ public interface TargetEnvironmentPackage extends EPackage {
 	 * @see targetEnvironment.impl.TargetEnvironmentPackageImpl#getTargetDeployEnviroment()
 	 * @generated
 	 */
-	int TARGET_DEPLOY_ENVIROMENT = 0;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TARGET_DEPLOY_ENVIROMENT__NAME = 0;
-
-	/**
-	 * The feature id for the '<em><b>Include Device</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TARGET_DEPLOY_ENVIROMENT__INCLUDE_DEVICE = 1;
-
-	/**
-	 * The feature id for the '<em><b>Config Connection</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TARGET_DEPLOY_ENVIROMENT__CONFIG_CONNECTION = 2;
-
-	/**
-	 * The number of structural features of the '<em>Target Deploy Enviroment</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TARGET_DEPLOY_ENVIROMENT_FEATURE_COUNT = 3;
-
-	/**
-	 * The number of operations of the '<em>Target Deploy Enviroment</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TARGET_DEPLOY_ENVIROMENT_OPERATION_COUNT = 0;
+	int TARGET_DEPLOY_ENVIROMENT = 1;
 
 	/**
 	 * The meta object id for the '{@link targetEnvironment.impl.ConfigConnectionImpl <em>Config Connection</em>}' class.
@@ -119,7 +76,109 @@ public interface TargetEnvironmentPackage extends EPackage {
 	 * @see targetEnvironment.impl.TargetEnvironmentPackageImpl#getConfigConnection()
 	 * @generated
 	 */
-	int CONFIG_CONNECTION = 1;
+	int CONFIG_CONNECTION = 2;
+
+	/**
+	 * The meta object id for the '{@link targetEnvironment.impl.DeviceInstanceImpl <em>Device Instance</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see targetEnvironment.impl.DeviceInstanceImpl
+	 * @see targetEnvironment.impl.TargetEnvironmentPackageImpl#getDeviceInstance()
+	 * @generated
+	 */
+	int DEVICE_INSTANCE = 3;
+
+	/**
+	 * The meta object id for the '{@link targetEnvironment.impl.ConnectedDeviceImpl <em>Connected Device</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see targetEnvironment.impl.ConnectedDeviceImpl
+	 * @see targetEnvironment.impl.TargetEnvironmentPackageImpl#getConnectedDevice()
+	 * @generated
+	 */
+	int CONNECTED_DEVICE = 4;
+
+	/**
+	 * The meta object id for the '{@link targetEnvironment.impl.TargetEnvironmentImpl <em>Target Environment</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see targetEnvironment.impl.TargetEnvironmentImpl
+	 * @see targetEnvironment.impl.TargetEnvironmentPackageImpl#getTargetEnvironment()
+	 * @generated
+	 */
+	int TARGET_ENVIRONMENT = 0;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TARGET_ENVIRONMENT__TYPE = 0;
+
+	/**
+	 * The number of structural features of the '<em>Target Environment</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TARGET_ENVIRONMENT_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Target Environment</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TARGET_ENVIRONMENT_OPERATION_COUNT = 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TARGET_DEPLOY_ENVIROMENT__NAME = BasePackage.DESCRIPTION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Include Device</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TARGET_DEPLOY_ENVIROMENT__INCLUDE_DEVICE = BasePackage.DESCRIPTION_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Config Connection</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TARGET_DEPLOY_ENVIROMENT__CONFIG_CONNECTION = BasePackage.DESCRIPTION_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Target Deploy Enviroment</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TARGET_DEPLOY_ENVIROMENT_FEATURE_COUNT = BasePackage.DESCRIPTION_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of operations of the '<em>Target Deploy Enviroment</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TARGET_DEPLOY_ENVIROMENT_OPERATION_COUNT = BasePackage.DESCRIPTION_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -158,16 +217,6 @@ public interface TargetEnvironmentPackage extends EPackage {
 	int CONFIG_CONNECTION_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link targetEnvironment.impl.DeviceInstanceImpl <em>Device Instance</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see targetEnvironment.impl.DeviceInstanceImpl
-	 * @see targetEnvironment.impl.TargetEnvironmentPackageImpl#getDeviceInstance()
-	 * @generated
-	 */
-	int DEVICE_INSTANCE = 2;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -202,16 +251,6 @@ public interface TargetEnvironmentPackage extends EPackage {
 	 * @ordered
 	 */
 	int DEVICE_INSTANCE_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link targetEnvironment.impl.ConnectedDeviceImpl <em>Connected Device</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see targetEnvironment.impl.ConnectedDeviceImpl
-	 * @see targetEnvironment.impl.TargetEnvironmentPackageImpl#getConnectedDevice()
-	 * @generated
-	 */
-	int CONNECTED_DEVICE = 3;
 
 	/**
 	 * The feature id for the '<em><b>Ref Device</b></em>' reference.
@@ -257,6 +296,53 @@ public interface TargetEnvironmentPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONNECTED_DEVICE_OPERATION_COUNT = 0;
+
+
+	/**
+	 * The meta object id for the '{@link targetEnvironment.impl.ConfigConnectionPropertyImpl <em>Config Connection Property</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see targetEnvironment.impl.ConfigConnectionPropertyImpl
+	 * @see targetEnvironment.impl.TargetEnvironmentPackageImpl#getConfigConnectionProperty()
+	 * @generated
+	 */
+	int CONFIG_CONNECTION_PROPERTY = 5;
+
+	/**
+	 * The feature id for the '<em><b>Ref Connection Property</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFIG_CONNECTION_PROPERTY__REF_CONNECTION_PROPERTY = 0;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFIG_CONNECTION_PROPERTY__VALUE = 1;
+
+	/**
+	 * The number of structural features of the '<em>Config Connection Property</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFIG_CONNECTION_PROPERTY_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Config Connection Property</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFIG_CONNECTION_PROPERTY_OPERATION_COUNT = 0;
 
 
 	/**
@@ -410,6 +496,59 @@ public interface TargetEnvironmentPackage extends EPackage {
 	EReference getConnectedDevice_Properties();
 
 	/**
+	 * Returns the meta object for class '{@link targetEnvironment.TargetEnvironment <em>Target Environment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Target Environment</em>'.
+	 * @see targetEnvironment.TargetEnvironment
+	 * @generated
+	 */
+	EClass getTargetEnvironment();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link targetEnvironment.TargetEnvironment#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Type</em>'.
+	 * @see targetEnvironment.TargetEnvironment#getType()
+	 * @see #getTargetEnvironment()
+	 * @generated
+	 */
+	EReference getTargetEnvironment_Type();
+
+	/**
+	 * Returns the meta object for class '{@link targetEnvironment.ConfigConnectionProperty <em>Config Connection Property</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Config Connection Property</em>'.
+	 * @see targetEnvironment.ConfigConnectionProperty
+	 * @generated
+	 */
+	EClass getConfigConnectionProperty();
+
+	/**
+	 * Returns the meta object for the reference '{@link targetEnvironment.ConfigConnectionProperty#getRefConnectionProperty <em>Ref Connection Property</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Ref Connection Property</em>'.
+	 * @see targetEnvironment.ConfigConnectionProperty#getRefConnectionProperty()
+	 * @see #getConfigConnectionProperty()
+	 * @generated
+	 */
+	EReference getConfigConnectionProperty_RefConnectionProperty();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link targetEnvironment.ConfigConnectionProperty#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Value</em>'.
+	 * @see targetEnvironment.ConfigConnectionProperty#getValue()
+	 * @see #getConfigConnectionProperty()
+	 * @generated
+	 */
+	EReference getConfigConnectionProperty_Value();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -551,6 +690,50 @@ public interface TargetEnvironmentPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CONNECTED_DEVICE__PROPERTIES = eINSTANCE.getConnectedDevice_Properties();
+
+		/**
+		 * The meta object literal for the '{@link targetEnvironment.impl.TargetEnvironmentImpl <em>Target Environment</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see targetEnvironment.impl.TargetEnvironmentImpl
+		 * @see targetEnvironment.impl.TargetEnvironmentPackageImpl#getTargetEnvironment()
+		 * @generated
+		 */
+		EClass TARGET_ENVIRONMENT = eINSTANCE.getTargetEnvironment();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TARGET_ENVIRONMENT__TYPE = eINSTANCE.getTargetEnvironment_Type();
+
+		/**
+		 * The meta object literal for the '{@link targetEnvironment.impl.ConfigConnectionPropertyImpl <em>Config Connection Property</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see targetEnvironment.impl.ConfigConnectionPropertyImpl
+		 * @see targetEnvironment.impl.TargetEnvironmentPackageImpl#getConfigConnectionProperty()
+		 * @generated
+		 */
+		EClass CONFIG_CONNECTION_PROPERTY = eINSTANCE.getConfigConnectionProperty();
+
+		/**
+		 * The meta object literal for the '<em><b>Ref Connection Property</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONFIG_CONNECTION_PROPERTY__REF_CONNECTION_PROPERTY = eINSTANCE.getConfigConnectionProperty_RefConnectionProperty();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONFIG_CONNECTION_PROPERTY__VALUE = eINSTANCE.getConfigConnectionProperty_Value();
 
 	}
 

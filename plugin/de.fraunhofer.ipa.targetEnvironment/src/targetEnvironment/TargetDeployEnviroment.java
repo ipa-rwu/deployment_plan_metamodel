@@ -2,9 +2,9 @@
  */
 package targetEnvironment;
 
-import org.eclipse.emf.common.util.EList;
+import base.Description;
 
-import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface TargetDeployEnviroment extends EObject {
+public interface TargetDeployEnviroment extends Description {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -32,7 +32,7 @@ public interface TargetDeployEnviroment extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see targetEnvironment.TargetEnvironmentPackage#getTargetDeployEnviroment_Name()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
 	String getName();

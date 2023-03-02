@@ -3,7 +3,7 @@
 package device.impl;
 
 import device.CapabilityProperty;
-import device.Connection;
+import device.CommunicationConnection;
 import device.DevicePackage;
 import device.DeviceType;
 
@@ -32,8 +32,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link device.impl.DeviceTypeImpl#getName <em>Name</em>}</li>
- *   <li>{@link device.impl.DeviceTypeImpl#getCapabilities <em>Capabilities</em>}</li>
- *   <li>{@link device.impl.DeviceTypeImpl#getConnection <em>Connection</em>}</li>
+ *   <li>{@link device.impl.DeviceTypeImpl#getCapability <em>Capability</em>}</li>
+ *   <li>{@link device.impl.DeviceTypeImpl#getCommunicationConnection <em>Communication Connection</em>}</li>
  * </ul>
  *
  * @generated
@@ -60,24 +60,24 @@ public class DeviceTypeImpl extends MinimalEObjectImpl.Container implements Devi
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getCapabilities() <em>Capabilities</em>}' containment reference list.
+	 * The cached value of the '{@link #getCapability() <em>Capability</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCapabilities()
+	 * @see #getCapability()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<CapabilityProperty> capabilities;
+	protected EList<CapabilityProperty> capability;
 
 	/**
-	 * The cached value of the '{@link #getConnection() <em>Connection</em>}' containment reference list.
+	 * The cached value of the '{@link #getCommunicationConnection() <em>Communication Connection</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getConnection()
+	 * @see #getCommunicationConnection()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Connection> connection;
+	protected EList<CommunicationConnection> communicationConnection;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -124,11 +124,11 @@ public class DeviceTypeImpl extends MinimalEObjectImpl.Container implements Devi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<CapabilityProperty> getCapabilities() {
-		if (capabilities == null) {
-			capabilities = new EObjectContainmentEList<CapabilityProperty>(CapabilityProperty.class, this, DevicePackage.DEVICE_TYPE__CAPABILITIES);
+	public EList<CapabilityProperty> getCapability() {
+		if (capability == null) {
+			capability = new EObjectContainmentEList<CapabilityProperty>(CapabilityProperty.class, this, DevicePackage.DEVICE_TYPE__CAPABILITY);
 		}
-		return capabilities;
+		return capability;
 	}
 
 	/**
@@ -136,11 +136,11 @@ public class DeviceTypeImpl extends MinimalEObjectImpl.Container implements Devi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Connection> getConnection() {
-		if (connection == null) {
-			connection = new EObjectContainmentEList<Connection>(Connection.class, this, DevicePackage.DEVICE_TYPE__CONNECTION);
+	public EList<CommunicationConnection> getCommunicationConnection() {
+		if (communicationConnection == null) {
+			communicationConnection = new EObjectContainmentEList<CommunicationConnection>(CommunicationConnection.class, this, DevicePackage.DEVICE_TYPE__COMMUNICATION_CONNECTION);
 		}
-		return connection;
+		return communicationConnection;
 	}
 
 	/**
@@ -151,10 +151,10 @@ public class DeviceTypeImpl extends MinimalEObjectImpl.Container implements Devi
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case DevicePackage.DEVICE_TYPE__CAPABILITIES:
-				return ((InternalEList<?>)getCapabilities()).basicRemove(otherEnd, msgs);
-			case DevicePackage.DEVICE_TYPE__CONNECTION:
-				return ((InternalEList<?>)getConnection()).basicRemove(otherEnd, msgs);
+			case DevicePackage.DEVICE_TYPE__CAPABILITY:
+				return ((InternalEList<?>)getCapability()).basicRemove(otherEnd, msgs);
+			case DevicePackage.DEVICE_TYPE__COMMUNICATION_CONNECTION:
+				return ((InternalEList<?>)getCommunicationConnection()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -169,10 +169,10 @@ public class DeviceTypeImpl extends MinimalEObjectImpl.Container implements Devi
 		switch (featureID) {
 			case DevicePackage.DEVICE_TYPE__NAME:
 				return getName();
-			case DevicePackage.DEVICE_TYPE__CAPABILITIES:
-				return getCapabilities();
-			case DevicePackage.DEVICE_TYPE__CONNECTION:
-				return getConnection();
+			case DevicePackage.DEVICE_TYPE__CAPABILITY:
+				return getCapability();
+			case DevicePackage.DEVICE_TYPE__COMMUNICATION_CONNECTION:
+				return getCommunicationConnection();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -189,13 +189,13 @@ public class DeviceTypeImpl extends MinimalEObjectImpl.Container implements Devi
 			case DevicePackage.DEVICE_TYPE__NAME:
 				setName((String)newValue);
 				return;
-			case DevicePackage.DEVICE_TYPE__CAPABILITIES:
-				getCapabilities().clear();
-				getCapabilities().addAll((Collection<? extends CapabilityProperty>)newValue);
+			case DevicePackage.DEVICE_TYPE__CAPABILITY:
+				getCapability().clear();
+				getCapability().addAll((Collection<? extends CapabilityProperty>)newValue);
 				return;
-			case DevicePackage.DEVICE_TYPE__CONNECTION:
-				getConnection().clear();
-				getConnection().addAll((Collection<? extends Connection>)newValue);
+			case DevicePackage.DEVICE_TYPE__COMMUNICATION_CONNECTION:
+				getCommunicationConnection().clear();
+				getCommunicationConnection().addAll((Collection<? extends CommunicationConnection>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -212,11 +212,11 @@ public class DeviceTypeImpl extends MinimalEObjectImpl.Container implements Devi
 			case DevicePackage.DEVICE_TYPE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case DevicePackage.DEVICE_TYPE__CAPABILITIES:
-				getCapabilities().clear();
+			case DevicePackage.DEVICE_TYPE__CAPABILITY:
+				getCapability().clear();
 				return;
-			case DevicePackage.DEVICE_TYPE__CONNECTION:
-				getConnection().clear();
+			case DevicePackage.DEVICE_TYPE__COMMUNICATION_CONNECTION:
+				getCommunicationConnection().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -232,10 +232,10 @@ public class DeviceTypeImpl extends MinimalEObjectImpl.Container implements Devi
 		switch (featureID) {
 			case DevicePackage.DEVICE_TYPE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case DevicePackage.DEVICE_TYPE__CAPABILITIES:
-				return capabilities != null && !capabilities.isEmpty();
-			case DevicePackage.DEVICE_TYPE__CONNECTION:
-				return connection != null && !connection.isEmpty();
+			case DevicePackage.DEVICE_TYPE__CAPABILITY:
+				return capability != null && !capability.isEmpty();
+			case DevicePackage.DEVICE_TYPE__COMMUNICATION_CONNECTION:
+				return communicationConnection != null && !communicationConnection.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

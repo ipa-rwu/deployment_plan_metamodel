@@ -2,9 +2,7 @@
  */
 package targetEnvironment;
 
-import device.Connection;
-import device.Property;
-
+import device.CommunicationConnection;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -55,12 +53,12 @@ public interface ConnectedDevice extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Ref Connection</em>' reference.
-	 * @see #setRefConnection(Connection)
+	 * @see #setRefConnection(CommunicationConnection)
 	 * @see targetEnvironment.TargetEnvironmentPackage#getConnectedDevice_RefConnection()
 	 * @model required="true"
 	 * @generated
 	 */
-	Connection getRefConnection();
+	CommunicationConnection getRefConnection();
 
 	/**
 	 * Sets the value of the '{@link targetEnvironment.ConnectedDevice#getRefConnection <em>Ref Connection</em>}' reference.
@@ -70,11 +68,11 @@ public interface ConnectedDevice extends EObject {
 	 * @see #getRefConnection()
 	 * @generated
 	 */
-	void setRefConnection(Connection value);
+	void setRefConnection(CommunicationConnection value);
 
 	/**
 	 * Returns the value of the '<em><b>Properties</b></em>' containment reference list.
-	 * The list contents are of type {@link device.Property}.
+	 * The list contents are of type {@link targetEnvironment.ConfigConnectionProperty}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Properties</em>' containment reference list.
@@ -82,6 +80,6 @@ public interface ConnectedDevice extends EObject {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Property> getProperties();
+	EList<ConfigConnectionProperty> getProperties();
 
 } // ConnectedDevice

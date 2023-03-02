@@ -58,6 +58,24 @@ public interface TargetEnvironmentFactory extends EFactory {
 	ConnectedDevice createConnectedDevice();
 
 	/**
+	 * Returns a new object of class '<em>Target Environment</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Target Environment</em>'.
+	 * @generated
+	 */
+	TargetEnvironment createTargetEnvironment();
+
+	/**
+	 * Returns a new object of class '<em>Config Connection Property</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Config Connection Property</em>'.
+	 * @generated
+	 */
+	ConfigConnectionProperty createConfigConnectionProperty();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

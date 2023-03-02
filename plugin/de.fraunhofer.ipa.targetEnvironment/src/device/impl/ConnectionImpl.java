@@ -4,9 +4,8 @@ package device.impl;
 
 import device.CommunicationType;
 import device.Connection;
+import device.ConnectionProperty;
 import device.DevicePackage;
-import device.Property;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -77,7 +76,7 @@ public abstract class ConnectionImpl extends MinimalEObjectImpl.Container implem
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Property> properties;
+	protected EList<ConnectionProperty> properties;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -167,9 +166,9 @@ public abstract class ConnectionImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Property> getProperties() {
+	public EList<ConnectionProperty> getProperties() {
 		if (properties == null) {
-			properties = new EObjectContainmentEList<Property>(Property.class, this, DevicePackage.CONNECTION__PROPERTIES);
+			properties = new EObjectContainmentEList<ConnectionProperty>(ConnectionProperty.class, this, DevicePackage.CONNECTION__PROPERTIES);
 		}
 		return properties;
 	}
@@ -225,7 +224,7 @@ public abstract class ConnectionImpl extends MinimalEObjectImpl.Container implem
 				return;
 			case DevicePackage.CONNECTION__PROPERTIES:
 				getProperties().clear();
-				getProperties().addAll((Collection<? extends Property>)newValue);
+				getProperties().addAll((Collection<? extends ConnectionProperty>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
