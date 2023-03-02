@@ -3,17 +3,23 @@
  */
 package de.fraunhofer.ipa.targetEnvironment.serializer;
 
+import base.BasePackage;
+import base.PropertyValueDouble;
+import base.PropertyValueInt;
+import base.PropertyValueString;
 import com.google.inject.Inject;
 import de.fraunhofer.ipa.targetEnvironment.services.TargetEnvironmentGrammarAccess;
 import device.AttributeKind;
 import device.CapabilityProperty;
+import device.CapabilityType;
+import device.CommunicationConnection;
+import device.CommunicationType;
+import device.ConnectionProperty;
 import device.DevicePackage;
+import device.DeviceSet;
 import device.DeviceType;
-import device.DirectConnection;
-import device.IndirectConnection;
 import device.MaximumKind;
 import device.MinimumKind;
-import device.Property;
 import device.SelectionKind;
 import java.util.Set;
 import org.eclipse.emf.ecore.EObject;
@@ -23,16 +29,17 @@ import org.eclipse.xtext.Parameter;
 import org.eclipse.xtext.ParserRule;
 import org.eclipse.xtext.serializer.ISerializationContext;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
-import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import targetEnvironment.ConfigConnection;
+import targetEnvironment.ConfigConnectionProperty;
 import targetEnvironment.ConnectedDevice;
 import targetEnvironment.DeviceInstance;
 import targetEnvironment.TargetDeployEnviroment;
+import targetEnvironment.TargetEnvironment;
 import targetEnvironment.TargetEnvironmentPackage;
 
 @SuppressWarnings("all")
-public class TargetEnvironmentSemanticSequencer extends AbstractDelegatingSemanticSequencer {
+public class TargetEnvironmentSemanticSequencer extends DeviceSemanticSequencer {
 
 	@Inject
 	private TargetEnvironmentGrammarAccess grammarAccess;
@@ -43,7 +50,19 @@ public class TargetEnvironmentSemanticSequencer extends AbstractDelegatingSemant
 		ParserRule rule = context.getParserRule();
 		Action action = context.getAssignedAction();
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
-		if (epackage == DevicePackage.eINSTANCE)
+		if (epackage == BasePackage.eINSTANCE)
+			switch (semanticObject.eClass().getClassifierID()) {
+			case BasePackage.PROPERTY_VALUE_DOUBLE:
+				sequence_PropertyValueDouble(context, (PropertyValueDouble) semanticObject); 
+				return; 
+			case BasePackage.PROPERTY_VALUE_INT:
+				sequence_PropertyValueInt(context, (PropertyValueInt) semanticObject); 
+				return; 
+			case BasePackage.PROPERTY_VALUE_STRING:
+				sequence_PropertyValueString(context, (PropertyValueString) semanticObject); 
+				return; 
+			}
+		else if (epackage == DevicePackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
 			case DevicePackage.ATTRIBUTE_KIND:
 				sequence_AttributeKind(context, (AttributeKind) semanticObject); 
@@ -51,23 +70,29 @@ public class TargetEnvironmentSemanticSequencer extends AbstractDelegatingSemant
 			case DevicePackage.CAPABILITY_PROPERTY:
 				sequence_CapabilityProperty(context, (CapabilityProperty) semanticObject); 
 				return; 
+			case DevicePackage.CAPABILITY_TYPE:
+				sequence_CapabilityType(context, (CapabilityType) semanticObject); 
+				return; 
+			case DevicePackage.COMMUNICATION_CONNECTION:
+				sequence_CommunicationConnection(context, (CommunicationConnection) semanticObject); 
+				return; 
+			case DevicePackage.COMMUNICATION_TYPE:
+				sequence_CommunicationType(context, (CommunicationType) semanticObject); 
+				return; 
+			case DevicePackage.CONNECTION_PROPERTY:
+				sequence_ConnectionProperty(context, (ConnectionProperty) semanticObject); 
+				return; 
+			case DevicePackage.DEVICE_SET:
+				sequence_DeviceSet(context, (DeviceSet) semanticObject); 
+				return; 
 			case DevicePackage.DEVICE_TYPE:
 				sequence_DeviceType(context, (DeviceType) semanticObject); 
-				return; 
-			case DevicePackage.DIRECT_CONNECTION:
-				sequence_DirectConnection(context, (DirectConnection) semanticObject); 
-				return; 
-			case DevicePackage.INDIRECT_CONNECTION:
-				sequence_IndirectConnection(context, (IndirectConnection) semanticObject); 
 				return; 
 			case DevicePackage.MAXIMUM_KIND:
 				sequence_MaximumKind(context, (MaximumKind) semanticObject); 
 				return; 
 			case DevicePackage.MINIMUM_KIND:
 				sequence_MinimumKind(context, (MinimumKind) semanticObject); 
-				return; 
-			case DevicePackage.PROPERTY:
-				sequence_Property(context, (Property) semanticObject); 
 				return; 
 			case DevicePackage.SELECTION_KIND:
 				sequence_SelectionKind(context, (SelectionKind) semanticObject); 
@@ -78,6 +103,9 @@ public class TargetEnvironmentSemanticSequencer extends AbstractDelegatingSemant
 			case TargetEnvironmentPackage.CONFIG_CONNECTION:
 				sequence_ConfigConnection(context, (ConfigConnection) semanticObject); 
 				return; 
+			case TargetEnvironmentPackage.CONFIG_CONNECTION_PROPERTY:
+				sequence_ConfigConnectionProperty(context, (ConfigConnectionProperty) semanticObject); 
+				return; 
 			case TargetEnvironmentPackage.CONNECTED_DEVICE:
 				sequence_ConnectedDevice(context, (ConnectedDevice) semanticObject); 
 				return; 
@@ -87,6 +115,9 @@ public class TargetEnvironmentSemanticSequencer extends AbstractDelegatingSemant
 			case TargetEnvironmentPackage.TARGET_DEPLOY_ENVIROMENT:
 				sequence_TargetDeployEnviroment(context, (TargetDeployEnviroment) semanticObject); 
 				return; 
+			case TargetEnvironmentPackage.TARGET_ENVIRONMENT:
+				sequence_TargetEnvironment(context, (TargetEnvironment) semanticObject); 
+				return; 
 			}
 		if (errorAcceptor != null)
 			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
@@ -95,28 +126,13 @@ public class TargetEnvironmentSemanticSequencer extends AbstractDelegatingSemant
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     CapabilityKind returns AttributeKind
-	 *     AttributeKind returns AttributeKind
+	 *     ConfigConnectionProperty returns ConfigConnectionProperty
 	 *
 	 * Constraint:
-	 *     {AttributeKind}
+	 *     (refConnectionProperty=[ConnectionProperty|EString] value=PropertyValue?)
 	 * </pre>
 	 */
-	protected void sequence_AttributeKind(ISerializationContext context, AttributeKind semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     CapabilityProperty returns CapabilityProperty
-	 *
-	 * Constraint:
-	 *     (name=EString (value+=EString value+=EString*)? kind=CapabilityKind)
-	 * </pre>
-	 */
-	protected void sequence_CapabilityProperty(ISerializationContext context, CapabilityProperty semanticObject) {
+	protected void sequence_ConfigConnectionProperty(ISerializationContext context, ConfigConnectionProperty semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -127,7 +143,7 @@ public class TargetEnvironmentSemanticSequencer extends AbstractDelegatingSemant
 	 *     ConfigConnection returns ConfigConnection
 	 *
 	 * Constraint:
-	 *     (name=EString connectDevice+=ConnectedDevice connectDevice+=ConnectedDevice*)
+	 *     (name=EString connectDevice+=ConnectedDevice+)
 	 * </pre>
 	 */
 	protected void sequence_ConfigConnection(ISerializationContext context, ConfigConnection semanticObject) {
@@ -141,7 +157,7 @@ public class TargetEnvironmentSemanticSequencer extends AbstractDelegatingSemant
 	 *     ConnectedDevice returns ConnectedDevice
 	 *
 	 * Constraint:
-	 *     (refDevice=[DeviceInstance|EString] refConnection=[Connection|EString] (properties+=Property properties+=Property*)?)
+	 *     (refDevice=[DeviceInstance|EString] refConnection=[CommunicationConnection|EString] properties+=ConfigConnectionProperty*)
 	 * </pre>
 	 */
 	protected void sequence_ConnectedDevice(ISerializationContext context, ConnectedDevice semanticObject) {
@@ -166,8 +182,8 @@ public class TargetEnvironmentSemanticSequencer extends AbstractDelegatingSemant
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TargetEnvironmentPackage.Literals.DEVICE_INSTANCE__REF_DEVICE_TYPE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getDeviceInstanceAccess().getNameEStringParserRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getDeviceInstanceAccess().getRefDeviceTypeDeviceTypeEStringParserRuleCall_4_0_1(), semanticObject.eGet(TargetEnvironmentPackage.Literals.DEVICE_INSTANCE__REF_DEVICE_TYPE, false));
+		feeder.accept(grammarAccess.getDeviceInstanceAccess().getNameEStringParserRuleCall_2_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getDeviceInstanceAccess().getRefDeviceTypeDeviceTypeEStringParserRuleCall_5_0_1(), semanticObject.eGet(TargetEnvironmentPackage.Literals.DEVICE_INSTANCE__REF_DEVICE_TYPE, false));
 		feeder.finish();
 	}
 	
@@ -175,120 +191,28 @@ public class TargetEnvironmentSemanticSequencer extends AbstractDelegatingSemant
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     DeviceType returns DeviceType
-	 *
-	 * Constraint:
-	 *     (name=EString (capabilities+=CapabilityProperty capabilities+=CapabilityProperty*)? (connection+=Connection connection+=Connection*)?)
-	 * </pre>
-	 */
-	protected void sequence_DeviceType(ISerializationContext context, DeviceType semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Connection returns DirectConnection
-	 *     DirectConnection returns DirectConnection
-	 *
-	 * Constraint:
-	 *     (name=EString (properties+=Property properties+=Property*)?)
-	 * </pre>
-	 */
-	protected void sequence_DirectConnection(ISerializationContext context, DirectConnection semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Connection returns IndirectConnection
-	 *     IndirectConnection returns IndirectConnection
-	 *
-	 * Constraint:
-	 *     (name=EString (properties+=Property properties+=Property*)?)
-	 * </pre>
-	 */
-	protected void sequence_IndirectConnection(ISerializationContext context, IndirectConnection semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     CapabilityKind returns MaximumKind
-	 *     MaximumKind returns MaximumKind
-	 *
-	 * Constraint:
-	 *     {MaximumKind}
-	 * </pre>
-	 */
-	protected void sequence_MaximumKind(ISerializationContext context, MaximumKind semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     CapabilityKind returns MinimumKind
-	 *     MinimumKind returns MinimumKind
-	 *
-	 * Constraint:
-	 *     {MinimumKind}
-	 * </pre>
-	 */
-	protected void sequence_MinimumKind(ISerializationContext context, MinimumKind semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Property returns Property
-	 *
-	 * Constraint:
-	 *     (name=EString value=EString?)
-	 * </pre>
-	 */
-	protected void sequence_Property(ISerializationContext context, Property semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     CapabilityKind returns SelectionKind
-	 *     SelectionKind returns SelectionKind
-	 *
-	 * Constraint:
-	 *     {SelectionKind}
-	 * </pre>
-	 */
-	protected void sequence_SelectionKind(ISerializationContext context, SelectionKind semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
+	 *     Description returns TargetDeployEnviroment
 	 *     TargetDeployEnviroment returns TargetDeployEnviroment
 	 *
 	 * Constraint:
-	 *     (
-	 *         name=EString 
-	 *         (includeDevice+=DeviceInstance includeDevice+=DeviceInstance*)? 
-	 *         (configConnection+=ConfigConnection configConnection+=ConfigConnection*)?
-	 *     )
+	 *     (name=EString includeDevice+=DeviceInstance* configConnection+=ConfigConnection*)
 	 * </pre>
 	 */
 	protected void sequence_TargetDeployEnviroment(ISerializationContext context, TargetDeployEnviroment semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     TargetEnvironment returns TargetEnvironment
+	 *
+	 * Constraint:
+	 *     type+=Description
+	 * </pre>
+	 */
+	protected void sequence_TargetEnvironment(ISerializationContext context, TargetEnvironment semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

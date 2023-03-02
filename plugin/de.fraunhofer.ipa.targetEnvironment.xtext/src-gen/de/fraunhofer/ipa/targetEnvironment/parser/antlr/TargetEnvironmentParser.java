@@ -6,6 +6,8 @@ package de.fraunhofer.ipa.targetEnvironment.parser.antlr;
 import com.google.inject.Inject;
 import de.fraunhofer.ipa.targetEnvironment.parser.antlr.internal.InternalTargetEnvironmentParser;
 import de.fraunhofer.ipa.targetEnvironment.services.TargetEnvironmentGrammarAccess;
+import org.antlr.runtime.CharStream;
+import org.antlr.runtime.TokenSource;
 import org.eclipse.xtext.parser.antlr.AbstractAntlrParser;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream;
 
@@ -19,6 +21,19 @@ public class TargetEnvironmentParser extends AbstractAntlrParser {
 		tokenStream.setInitialHiddenTokens("RULE_WS", "RULE_ML_COMMENT", "RULE_SL_COMMENT");
 	}
 	
+	@Override
+	protected TokenSource createLexer(CharStream stream) {
+		return new TargetEnvironmentTokenSource(super.createLexer(stream));
+	}
+	
+	/**
+	 * Indentation aware languages do not support partial parsing since the lexer is inherently stateful.
+	 * Override and return {@code true} if your terminal splitting is stateless.
+	 */
+	@Override
+	protected boolean isReparseSupported() {
+		return false;
+	}
 
 	@Override
 	protected InternalTargetEnvironmentParser createParser(XtextTokenStream stream) {
@@ -27,7 +42,7 @@ public class TargetEnvironmentParser extends AbstractAntlrParser {
 
 	@Override 
 	protected String getDefaultRuleName() {
-		return "TargetDeployEnviroment";
+		return "TargetEnvironment";
 	}
 
 	public TargetEnvironmentGrammarAccess getGrammarAccess() {

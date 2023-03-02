@@ -6,14 +6,14 @@ package de.fraunhofer.ipa.targetEnvironment.validation;
 import java.util.ArrayList;
 import java.util.List;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.xtext.validation.AbstractDeclarativeValidator;
 
-public abstract class AbstractTargetEnvironmentValidator extends AbstractDeclarativeValidator {
+public abstract class AbstractTargetEnvironmentValidator extends DeviceValidator {
 	
 	@Override
 	protected List<EPackage> getEPackages() {
-		List<EPackage> result = new ArrayList<EPackage>();
+		List<EPackage> result = new ArrayList<EPackage>(super.getEPackages());
 		result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.ipa.fraunhofer.de/TargetEnvironment"));
+		result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.ipa.fraunhofer.de/Base"));
 		result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.ipa.fraunhofer.de/Device"));
 		return result;
 	}

@@ -3,7 +3,6 @@
  */
 package de.fraunhofer.ipa.targetEnvironment.scoping;
 
-import org.eclipse.xtext.scoping.impl.DelegatingScopeProvider;
 
-public abstract class AbstractTargetEnvironmentScopeProvider extends DelegatingScopeProvider {
+public abstract class AbstractTargetEnvironmentScopeProvider extends DeviceScopeProvider {
 }

@@ -10,7 +10,7 @@ import de.fraunhofer.ipa.targetEnvironment.formatting2.TargetEnvironmentFormatte
 import de.fraunhofer.ipa.targetEnvironment.generator.TargetEnvironmentGenerator;
 import de.fraunhofer.ipa.targetEnvironment.parser.antlr.TargetEnvironmentAntlrTokenFileProvider;
 import de.fraunhofer.ipa.targetEnvironment.parser.antlr.TargetEnvironmentParser;
-import de.fraunhofer.ipa.targetEnvironment.parser.antlr.internal.InternalTargetEnvironmentLexer;
+import de.fraunhofer.ipa.targetEnvironment.parser.antlr.lexer.InternalTargetEnvironmentLexer;
 import de.fraunhofer.ipa.targetEnvironment.scoping.TargetEnvironmentScopeProvider;
 import de.fraunhofer.ipa.targetEnvironment.serializer.TargetEnvironmentSemanticSequencer;
 import de.fraunhofer.ipa.targetEnvironment.serializer.TargetEnvironmentSyntacticSequencer;
