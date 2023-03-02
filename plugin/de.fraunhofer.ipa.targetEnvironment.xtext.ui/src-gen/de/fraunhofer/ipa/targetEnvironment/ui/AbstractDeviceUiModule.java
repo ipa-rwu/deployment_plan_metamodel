@@ -6,15 +6,15 @@ package de.fraunhofer.ipa.targetEnvironment.ui;
 import com.google.inject.Binder;
 import com.google.inject.Provider;
 import com.google.inject.name.Names;
-import de.fraunhofer.ipa.targetEnvironment.ide.contentassist.antlr.PartialTargetEnvironmentContentAssistParser;
-import de.fraunhofer.ipa.targetEnvironment.ide.contentassist.antlr.TargetEnvironmentParser;
-import de.fraunhofer.ipa.targetEnvironment.ide.contentassist.antlr.lexer.InternalTargetEnvironmentLexer;
-import de.fraunhofer.ipa.targetEnvironment.ui.contentassist.TargetEnvironmentProposalProvider;
-import de.fraunhofer.ipa.targetEnvironment.ui.labeling.TargetEnvironmentDescriptionLabelProvider;
-import de.fraunhofer.ipa.targetEnvironment.ui.labeling.TargetEnvironmentLabelProvider;
-import de.fraunhofer.ipa.targetEnvironment.ui.outline.TargetEnvironmentOutlineTreeProvider;
-import de.fraunhofer.ipa.targetEnvironment.ui.quickfix.TargetEnvironmentQuickfixProvider;
-import de.fraunhofer.ipa.targetEnvironment.validation.TargetEnvironmentValidatorConfigurationBlock;
+import de.fraunhofer.ipa.targetEnvironment.ide.contentassist.antlr.DeviceParser;
+import de.fraunhofer.ipa.targetEnvironment.ide.contentassist.antlr.PartialDeviceContentAssistParser;
+import de.fraunhofer.ipa.targetEnvironment.ide.contentassist.antlr.lexer.InternalDeviceLexer;
+import de.fraunhofer.ipa.targetEnvironment.ui.contentassist.DeviceProposalProvider;
+import de.fraunhofer.ipa.targetEnvironment.ui.labeling.DeviceDescriptionLabelProvider;
+import de.fraunhofer.ipa.targetEnvironment.ui.labeling.DeviceLabelProvider;
+import de.fraunhofer.ipa.targetEnvironment.ui.outline.DeviceOutlineTreeProvider;
+import de.fraunhofer.ipa.targetEnvironment.ui.quickfix.DeviceQuickfixProvider;
+import de.fraunhofer.ipa.targetEnvironment.validation.DeviceValidatorConfigurationBlock;
 import org.eclipse.compare.IViewerCreator;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
@@ -84,12 +84,12 @@ import org.eclipse.xtext.ui.shared.Access;
 import org.eclipse.xtext.ui.validation.AbstractValidatorConfigurationBlock;
 
 /**
- * Manual modifications go to {@link TargetEnvironmentUiModule}.
+ * Manual modifications go to {@link DeviceUiModule}.
  */
 @SuppressWarnings("all")
-public abstract class AbstractTargetEnvironmentUiModule extends DefaultUiModule {
+public abstract class AbstractDeviceUiModule extends DefaultUiModule {
 
-	public AbstractTargetEnvironmentUiModule(AbstractUIPlugin plugin) {
+	public AbstractDeviceUiModule(AbstractUIPlugin plugin) {
 		super(plugin);
 	}
 	
@@ -107,14 +107,14 @@ public abstract class AbstractTargetEnvironmentUiModule extends DefaultUiModule 
 	public void configureContentAssistLexer(Binder binder) {
 		binder.bind(Lexer.class)
 			.annotatedWith(Names.named(LexerIdeBindings.CONTENT_ASSIST))
-			.to(InternalTargetEnvironmentLexer.class);
+			.to(InternalDeviceLexer.class);
 	}
 	
 	// contributed by org.eclipse.xtext.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment2
 	public void configureHighlightingLexer(Binder binder) {
 		binder.bind(org.eclipse.xtext.parser.antlr.Lexer.class)
 			.annotatedWith(Names.named(LexerIdeBindings.HIGHLIGHTING))
-			.to(de.fraunhofer.ipa.targetEnvironment.parser.antlr.lexer.InternalTargetEnvironmentLexer.class);
+			.to(de.fraunhofer.ipa.targetEnvironment.parser.antlr.lexer.InternalDeviceLexer.class);
 	}
 	
 	// contributed by org.eclipse.xtext.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment2
@@ -131,12 +131,12 @@ public abstract class AbstractTargetEnvironmentUiModule extends DefaultUiModule 
 	
 	// contributed by org.eclipse.xtext.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment2
 	public Class<? extends IContentAssistParser> bindIContentAssistParser() {
-		return TargetEnvironmentParser.class;
+		return DeviceParser.class;
 	}
 	
 	// contributed by org.eclipse.xtext.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment2
 	public void configureContentAssistLexerProvider(Binder binder) {
-		binder.bind(InternalTargetEnvironmentLexer.class).toProvider(LexerProvider.create(InternalTargetEnvironmentLexer.class));
+		binder.bind(InternalDeviceLexer.class).toProvider(LexerProvider.create(InternalDeviceLexer.class));
 	}
 	
 	// contributed by org.eclipse.xtext.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment2
@@ -146,7 +146,7 @@ public abstract class AbstractTargetEnvironmentUiModule extends DefaultUiModule 
 	
 	// contributed by org.eclipse.xtext.xtext.generator.validation.ValidatorFragment2
 	public Class<? extends AbstractValidatorConfigurationBlock> bindAbstractValidatorConfigurationBlock() {
-		return TargetEnvironmentValidatorConfigurationBlock.class;
+		return DeviceValidatorConfigurationBlock.class;
 	}
 	
 	// contributed by org.eclipse.xtext.xtext.generator.exporting.QualifiedNamesFragment2
@@ -208,32 +208,32 @@ public abstract class AbstractTargetEnvironmentUiModule extends DefaultUiModule 
 	
 	// contributed by org.eclipse.xtext.xtext.generator.ui.labeling.LabelProviderFragment2
 	public Class<? extends ILabelProvider> bindILabelProvider() {
-		return TargetEnvironmentLabelProvider.class;
+		return DeviceLabelProvider.class;
 	}
 	
 	// contributed by org.eclipse.xtext.xtext.generator.ui.labeling.LabelProviderFragment2
 	public void configureResourceUIServiceLabelProvider(Binder binder) {
-		binder.bind(ILabelProvider.class).annotatedWith(ResourceServiceDescriptionLabelProvider.class).to(TargetEnvironmentDescriptionLabelProvider.class);
+		binder.bind(ILabelProvider.class).annotatedWith(ResourceServiceDescriptionLabelProvider.class).to(DeviceDescriptionLabelProvider.class);
 	}
 	
 	// contributed by org.eclipse.xtext.xtext.generator.ui.outline.OutlineTreeProviderFragment2
 	public Class<? extends IOutlineTreeProvider> bindIOutlineTreeProvider() {
-		return TargetEnvironmentOutlineTreeProvider.class;
+		return DeviceOutlineTreeProvider.class;
 	}
 	
 	// contributed by org.eclipse.xtext.xtext.generator.ui.outline.OutlineTreeProviderFragment2
 	public Class<? extends IOutlineTreeStructureProvider> bindIOutlineTreeStructureProvider() {
-		return TargetEnvironmentOutlineTreeProvider.class;
+		return DeviceOutlineTreeProvider.class;
 	}
 	
 	// contributed by org.eclipse.xtext.xtext.generator.ui.quickfix.QuickfixProviderFragment2
 	public Class<? extends IssueResolutionProvider> bindIssueResolutionProvider() {
-		return TargetEnvironmentQuickfixProvider.class;
+		return DeviceQuickfixProvider.class;
 	}
 	
 	// contributed by org.eclipse.xtext.xtext.generator.ui.contentAssist.ContentAssistFragment2
 	public Class<? extends IContentProposalProvider> bindIContentProposalProvider() {
-		return TargetEnvironmentProposalProvider.class;
+		return DeviceProposalProvider.class;
 	}
 	
 	// contributed by org.eclipse.xtext.xtext.generator.ui.refactoring.RefactorElementNameFragment2
@@ -286,7 +286,7 @@ public abstract class AbstractTargetEnvironmentUiModule extends DefaultUiModule 
 	
 	// contributed by org.eclipse.xtext.xtext.generator.ui.templates.CodetemplatesGeneratorFragment2
 	public Class<? extends IPartialEditingContentAssistParser> bindIPartialEditingContentAssistParser() {
-		return PartialTargetEnvironmentContentAssistParser.class;
+		return PartialDeviceContentAssistParser.class;
 	}
 	
 	// contributed by org.eclipse.xtext.xtext.generator.ui.templates.CodetemplatesGeneratorFragment2
@@ -301,7 +301,7 @@ public abstract class AbstractTargetEnvironmentUiModule extends DefaultUiModule 
 	
 	// contributed by org.eclipse.xtext.xtext.generator.ui.compare.CompareFragment2
 	public void configureCompareViewerTitle(Binder binder) {
-		binder.bind(String.class).annotatedWith(Names.named(UIBindings.COMPARE_VIEWER_TITLE)).toInstance("TargetEnvironment Compare");
+		binder.bind(String.class).annotatedWith(Names.named(UIBindings.COMPARE_VIEWER_TITLE)).toInstance("Device Compare");
 	}
 	
 }

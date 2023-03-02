@@ -6,15 +6,15 @@ package de.fraunhofer.ipa.targetEnvironment.ide.contentassist.antlr;
 import com.google.common.collect.ImmutableMap;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-import de.fraunhofer.ipa.targetEnvironment.ide.contentassist.antlr.internal.InternalTargetEnvironmentParser;
-import de.fraunhofer.ipa.targetEnvironment.services.TargetEnvironmentGrammarAccess;
+import de.fraunhofer.ipa.targetEnvironment.ide.contentassist.antlr.internal.InternalDeviceParser;
+import de.fraunhofer.ipa.targetEnvironment.services.DeviceGrammarAccess;
 import java.util.Map;
 import org.antlr.runtime.CharStream;
 import org.antlr.runtime.TokenSource;
 import org.eclipse.xtext.AbstractElement;
 import org.eclipse.xtext.ide.editor.contentassist.antlr.AbstractContentAssistParser;
 
-public class TargetEnvironmentParser extends AbstractContentAssistParser {
+public class DeviceParser extends AbstractContentAssistParser {
 
 	@Singleton
 	public static final class NameMappings {
@@ -22,7 +22,7 @@ public class TargetEnvironmentParser extends AbstractContentAssistParser {
 		private final Map<AbstractElement, String> mappings;
 		
 		@Inject
-		public NameMappings(TargetEnvironmentGrammarAccess grammarAccess) {
+		public NameMappings(DeviceGrammarAccess grammarAccess) {
 			ImmutableMap.Builder<AbstractElement, String> builder = ImmutableMap.builder();
 			init(builder, grammarAccess);
 			this.mappings = builder.build();
@@ -32,22 +32,11 @@ public class TargetEnvironmentParser extends AbstractContentAssistParser {
 			return mappings.get(element);
 		}
 		
-		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, TargetEnvironmentGrammarAccess grammarAccess) {
-			builder.put(grammarAccess.getDescriptionAccess().getAlternatives(), "rule__Description__Alternatives");
+		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, DeviceGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getCapabilityKindAccess().getAlternatives(), "rule__CapabilityKind__Alternatives");
 			builder.put(grammarAccess.getPropertyTypeAccess().getAlternatives(), "rule__PropertyType__Alternatives");
 			builder.put(grammarAccess.getPropertyValueAccess().getAlternatives(), "rule__PropertyValue__Alternatives");
 			builder.put(grammarAccess.getEStringAccess().getAlternatives(), "rule__EString__Alternatives");
-			builder.put(grammarAccess.getTargetEnvironmentAccess().getGroup(), "rule__TargetEnvironment__Group__0");
-			builder.put(grammarAccess.getTargetDeployEnviromentAccess().getGroup(), "rule__TargetDeployEnviroment__Group__0");
-			builder.put(grammarAccess.getTargetDeployEnviromentAccess().getGroup_5(), "rule__TargetDeployEnviroment__Group_5__0");
-			builder.put(grammarAccess.getTargetDeployEnviromentAccess().getGroup_6(), "rule__TargetDeployEnviroment__Group_6__0");
-			builder.put(grammarAccess.getDeviceInstanceAccess().getGroup(), "rule__DeviceInstance__Group__0");
-			builder.put(grammarAccess.getConfigConnectionAccess().getGroup(), "rule__ConfigConnection__Group__0");
-			builder.put(grammarAccess.getConnectedDeviceAccess().getGroup(), "rule__ConnectedDevice__Group__0");
-			builder.put(grammarAccess.getConnectedDeviceAccess().getGroup_6(), "rule__ConnectedDevice__Group_6__0");
-			builder.put(grammarAccess.getConfigConnectionPropertyAccess().getGroup(), "rule__ConfigConnectionProperty__Group__0");
-			builder.put(grammarAccess.getConfigConnectionPropertyAccess().getGroup_4(), "rule__ConfigConnectionProperty__Group_4__0");
 			builder.put(grammarAccess.getDeviceTypeAccess().getGroup(), "rule__DeviceType__Group__0");
 			builder.put(grammarAccess.getDeviceTypeAccess().getGroup_5(), "rule__DeviceType__Group_5__0");
 			builder.put(grammarAccess.getDeviceTypeAccess().getGroup_6(), "rule__DeviceType__Group_6__0");
@@ -63,19 +52,6 @@ public class TargetEnvironmentParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getCommunicationConnectionAccess().getGroup_7(), "rule__CommunicationConnection__Group_7__0");
 			builder.put(grammarAccess.getCommunicationTypeAccess().getGroup(), "rule__CommunicationType__Group__0");
 			builder.put(grammarAccess.getCapabilityTypeAccess().getGroup(), "rule__CapabilityType__Group__0");
-			builder.put(grammarAccess.getTargetEnvironmentAccess().getTypeAssignment_1(), "rule__TargetEnvironment__TypeAssignment_1");
-			builder.put(grammarAccess.getTargetDeployEnviromentAccess().getNameAssignment_4(), "rule__TargetDeployEnviroment__NameAssignment_4");
-			builder.put(grammarAccess.getTargetDeployEnviromentAccess().getIncludeDeviceAssignment_5_2(), "rule__TargetDeployEnviroment__IncludeDeviceAssignment_5_2");
-			builder.put(grammarAccess.getTargetDeployEnviromentAccess().getConfigConnectionAssignment_6_2(), "rule__TargetDeployEnviroment__ConfigConnectionAssignment_6_2");
-			builder.put(grammarAccess.getDeviceInstanceAccess().getNameAssignment_2(), "rule__DeviceInstance__NameAssignment_2");
-			builder.put(grammarAccess.getDeviceInstanceAccess().getRefDeviceTypeAssignment_5(), "rule__DeviceInstance__RefDeviceTypeAssignment_5");
-			builder.put(grammarAccess.getConfigConnectionAccess().getNameAssignment_2(), "rule__ConfigConnection__NameAssignment_2");
-			builder.put(grammarAccess.getConfigConnectionAccess().getConnectDeviceAssignment_6(), "rule__ConfigConnection__ConnectDeviceAssignment_6");
-			builder.put(grammarAccess.getConnectedDeviceAccess().getRefDeviceAssignment_2(), "rule__ConnectedDevice__RefDeviceAssignment_2");
-			builder.put(grammarAccess.getConnectedDeviceAccess().getRefConnectionAssignment_5(), "rule__ConnectedDevice__RefConnectionAssignment_5");
-			builder.put(grammarAccess.getConnectedDeviceAccess().getPropertiesAssignment_6_2(), "rule__ConnectedDevice__PropertiesAssignment_6_2");
-			builder.put(grammarAccess.getConfigConnectionPropertyAccess().getRefConnectionPropertyAssignment_3(), "rule__ConfigConnectionProperty__RefConnectionPropertyAssignment_3");
-			builder.put(grammarAccess.getConfigConnectionPropertyAccess().getValueAssignment_4_2(), "rule__ConfigConnectionProperty__ValueAssignment_4_2");
 			builder.put(grammarAccess.getDeviceSetAccess().getDeviceAssignment(), "rule__DeviceSet__DeviceAssignment");
 			builder.put(grammarAccess.getDeviceTypeAccess().getNameAssignment_4(), "rule__DeviceType__NameAssignment_4");
 			builder.put(grammarAccess.getDeviceTypeAccess().getCapabilityAssignment_5_2(), "rule__DeviceType__CapabilityAssignment_5_2");
@@ -101,18 +77,18 @@ public class TargetEnvironmentParser extends AbstractContentAssistParser {
 	private NameMappings nameMappings;
 
 	@Inject
-	private TargetEnvironmentGrammarAccess grammarAccess;
+	private DeviceGrammarAccess grammarAccess;
 
 	@Override
-	protected InternalTargetEnvironmentParser createParser() {
-		InternalTargetEnvironmentParser result = new InternalTargetEnvironmentParser(null);
+	protected InternalDeviceParser createParser() {
+		InternalDeviceParser result = new InternalDeviceParser(null);
 		result.setGrammarAccess(grammarAccess);
 		return result;
 	}
 
 	@Override
 	protected TokenSource createLexer(CharStream stream) {
-		return new TargetEnvironmentTokenSource(super.createLexer(stream));
+		return new DeviceTokenSource(super.createLexer(stream));
 	}
 	
 	@Override
@@ -125,11 +101,11 @@ public class TargetEnvironmentParser extends AbstractContentAssistParser {
 		return new String[] { "RULE_WS", "RULE_ML_COMMENT", "RULE_SL_COMMENT" };
 	}
 
-	public TargetEnvironmentGrammarAccess getGrammarAccess() {
+	public DeviceGrammarAccess getGrammarAccess() {
 		return this.grammarAccess;
 	}
 
-	public void setGrammarAccess(TargetEnvironmentGrammarAccess grammarAccess) {
+	public void setGrammarAccess(DeviceGrammarAccess grammarAccess) {
 		this.grammarAccess = grammarAccess;
 	}
 	

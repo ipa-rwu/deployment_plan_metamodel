@@ -1,0 +1,91 @@
+DeviceType: 
+   label: UR5E
+   communication: 
+      - name: io_tip
+        type: IO
+        properties:
+          - name: pin_dio_0
+          - name: pin_dio_1 
+      - name: ethernet
+        type: Ethernet
+        properties:
+          - name: address
+   capability:
+      - name: cpu
+      
+DeviceType: 
+   label: EGP50
+   communication: 
+      - name: io
+        type: IO
+            
+DeviceType: 
+   label: PC
+   communication: 
+      - name: ethernet
+        type: Ethernet
+        properties:
+           - name: interface_name
+           - name: address
+      - name: usb_01
+        type:  USB
+        properties:
+          - name: usb_port
+      - name: mqtt
+        type: MQTT   
+        properties:
+          - name: broker
+          - name: client
+            
+DeviceType: 
+   label: Realsense_D435
+   communication: 
+      - name: usb
+        type: Usb
+
+TargetDeployEnviroment:
+   name: ur5e_cell
+   includeDevice:
+      - name: arm
+        refDeviceType: UR5E
+      - name: gripper
+        refDeviceType: EGP50
+      - name: camera_01
+        refDeviceType: Realsense_D435
+      - name: rwu_laptop
+        refDeviceType: pc
+   configConnection:
+      - name: connect_gripper_arm
+        connectDevices:
+           - refDevice: arm
+             refConnection: "UR5E.IO"
+             configuration:
+                - name: UR5E.IO.pin_dio_0
+                  value: 0
+                - name: UR5E.IO.pin_dio_1
+                  value: 1
+           - refDevice: gripper
+             refConnection: "EGP50.IO"
+      - name: connect_arm_pc
+        connectDevices:
+           - refDevice: arm
+             refConnection: "UR5E.Ethernet"
+             configuration:
+                - name: UR5E.Ethernet.address
+                  value: 192.168.56.2
+           - refDevice: rwu_laptop
+             refConnection: "PC.Ethernet"
+             configuration:
+                - name: interface_name
+                  value: ur5e
+                - name: PC.Ethernet.address
+                  value: 192.168.56.1
+      - name: connect_pc_camera
+        connectDevices:
+           - refDevice: camera_01
+             refConnection: "Realsense_D435.usb"
+           - refDevice: rwu_laptop
+             refConnection: "PC.usb"
+             configuration:
+                - name: usb_port_id
+                  value: /dev/video0<     

@@ -5,8 +5,8 @@ package de.fraunhofer.ipa.targetEnvironment.ide;
 
 import com.google.inject.Binder;
 import com.google.inject.name.Names;
-import de.fraunhofer.ipa.targetEnvironment.ide.contentassist.antlr.TargetEnvironmentParser;
-import de.fraunhofer.ipa.targetEnvironment.ide.contentassist.antlr.lexer.InternalTargetEnvironmentLexer;
+import de.fraunhofer.ipa.targetEnvironment.ide.contentassist.antlr.DeviceParser;
+import de.fraunhofer.ipa.targetEnvironment.ide.contentassist.antlr.lexer.InternalDeviceLexer;
 import org.eclipse.xtext.ide.DefaultIdeModule;
 import org.eclipse.xtext.ide.LexerIdeBindings;
 import org.eclipse.xtext.ide.editor.contentassist.CompletionPrefixProvider;
@@ -22,21 +22,21 @@ import org.eclipse.xtext.ide.server.rename.IRenameService2;
 import org.eclipse.xtext.ide.server.rename.RenameService2;
 
 /**
- * Manual modifications go to {@link TargetEnvironmentIdeModule}.
+ * Manual modifications go to {@link DeviceIdeModule}.
  */
 @SuppressWarnings("all")
-public abstract class AbstractTargetEnvironmentIdeModule extends DefaultIdeModule {
+public abstract class AbstractDeviceIdeModule extends DefaultIdeModule {
 
 	// contributed by org.eclipse.xtext.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment2
 	public void configureContentAssistLexer(Binder binder) {
 		binder.bind(Lexer.class)
 			.annotatedWith(Names.named(LexerIdeBindings.CONTENT_ASSIST))
-			.to(InternalTargetEnvironmentLexer.class);
+			.to(InternalDeviceLexer.class);
 	}
 	
 	// contributed by org.eclipse.xtext.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment2
 	public Class<? extends IContentAssistParser> bindIContentAssistParser() {
-		return TargetEnvironmentParser.class;
+		return DeviceParser.class;
 	}
 	
 	// contributed by org.eclipse.xtext.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment2
