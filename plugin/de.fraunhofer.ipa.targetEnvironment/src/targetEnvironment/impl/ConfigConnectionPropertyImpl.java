@@ -3,11 +3,12 @@
 package targetEnvironment.impl;
 
 import base.PropertyValue;
+
 import device.ConnectionProperty;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 

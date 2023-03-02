@@ -118,6 +118,20 @@ public class TargetEnvironmentAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
+	 * Creates a new adapter for an object of class '{@link targetEnvironment.TargetEnvironment <em>Target Environment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see targetEnvironment.TargetEnvironment
+	 * @generated
+	 */
+	public Adapter createTargetEnvironmentAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link targetEnvironment.TargetDeployEnviroment <em>Target Deploy Enviroment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -170,20 +184,6 @@ public class TargetEnvironmentAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createConnectedDeviceAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link targetEnvironment.TargetEnvironment <em>Target Environment</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see targetEnvironment.TargetEnvironment
-	 * @generated
-	 */
-	public Adapter createTargetEnvironmentAdapter() {
 		return null;
 	}
 

@@ -83,7 +83,6 @@ public interface BasePackage extends EPackage {
 	 */
 	int DESCRIPTION_OPERATION_COUNT = 0;
 
-
 	/**
 	 * The meta object id for the '{@link base.impl.PropertyValueImpl <em>Property Value</em>}' class.
 	 * <!-- begin-user-doc -->

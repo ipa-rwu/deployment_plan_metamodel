@@ -6,8 +6,10 @@ import device.CapabilityKind;
 import device.CapabilityProperty;
 import device.CapabilityType;
 import device.DevicePackage;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -184,7 +186,6 @@ public class CapabilityPropertyImpl extends PropertyImpl implements CapabilityPr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {

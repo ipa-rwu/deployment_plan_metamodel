@@ -15,7 +15,6 @@ import org.eclipse.emf.edit.provider.ChangeNotifier;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.provider.IChangeNotifier;
-import org.eclipse.emf.edit.provider.IDisposable;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
@@ -32,7 +31,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
  * <!-- end-user-doc -->
  * @generated
  */
-public class BaseItemProviderAdapterFactory extends BaseAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
+public class BaseItemProviderAdapterFactory extends BaseAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
@@ -230,18 +229,6 @@ public class BaseItemProviderAdapterFactory extends BaseAdapterFactory implement
 		if (parentAdapterFactory != null) {
 			parentAdapterFactory.fireNotifyChanged(notification);
 		}
-	}
-
-	/**
-	 * This disposes all of the item providers created by this factory. 
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void dispose() {
-		if (propertyValueIntItemProvider != null) propertyValueIntItemProvider.dispose();
-		if (propertyValueDoubleItemProvider != null) propertyValueDoubleItemProvider.dispose();
-		if (propertyValueStringItemProvider != null) propertyValueStringItemProvider.dispose();
 	}
 
 }

@@ -4,7 +4,9 @@ package base.impl;
 
 import base.BasePackage;
 import base.Description;
+
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**

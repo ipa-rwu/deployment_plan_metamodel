@@ -3,6 +3,7 @@
 package device;
 
 import base.PropertyValue;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**

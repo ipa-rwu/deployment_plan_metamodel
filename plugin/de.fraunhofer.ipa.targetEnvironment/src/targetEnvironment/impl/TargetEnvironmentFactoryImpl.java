@@ -72,6 +72,16 @@ public class TargetEnvironmentFactoryImpl extends EFactoryImpl implements Target
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public TargetEnvironment createTargetEnvironment() {
+		TargetEnvironmentImpl targetEnvironment = new TargetEnvironmentImpl();
+		return targetEnvironment;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public TargetDeployEnviroment createTargetDeployEnviroment() {
 		TargetDeployEnviromentImpl targetDeployEnviroment = new TargetDeployEnviromentImpl();
 		return targetDeployEnviroment;
@@ -105,16 +115,6 @@ public class TargetEnvironmentFactoryImpl extends EFactoryImpl implements Target
 	public ConnectedDevice createConnectedDevice() {
 		ConnectedDeviceImpl connectedDevice = new ConnectedDeviceImpl();
 		return connectedDevice;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public TargetEnvironment createTargetEnvironment() {
-		TargetEnvironmentImpl targetEnvironment = new TargetEnvironmentImpl();
-		return targetEnvironment;
 	}
 
 	/**

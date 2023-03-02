@@ -3,6 +3,7 @@
 package base.provider;
 
 
+import device.provider.DeviceEditPlugin;
 import java.util.Collection;
 import java.util.List;
 
@@ -103,7 +104,7 @@ public class PropertyValueItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return BaseEditPlugin.INSTANCE;
+		return DeviceEditPlugin.INSTANCE;
 	}
 
 }

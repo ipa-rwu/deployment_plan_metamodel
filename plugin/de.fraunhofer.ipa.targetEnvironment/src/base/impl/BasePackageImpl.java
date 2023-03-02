@@ -5,16 +5,19 @@ package base.impl;
 import base.BaseFactory;
 import base.BasePackage;
 import base.Description;
-
 import base.PropertyValue;
 import base.PropertyValueDouble;
 import base.PropertyValueInt;
 import base.PropertyValueString;
+
+import device.DevicePackage;
+import device.impl.DevicePackageImpl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+
 import org.eclipse.emf.ecore.xml.type.XMLTypePackage;
 
 /**
@@ -37,18 +40,21 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * @generated
 	 */
 	private EClass propertyValueEClass = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private EClass propertyValueIntEClass = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private EClass propertyValueDoubleEClass = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -105,11 +111,17 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		// Initialize simple dependencies
 		XMLTypePackage.eINSTANCE.eClass();
 
+		// Obtain or create and register interdependencies
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(DevicePackage.eNS_URI);
+		DevicePackageImpl theDevicePackage = (DevicePackageImpl)(registeredPackage instanceof DevicePackageImpl ? registeredPackage : DevicePackage.eINSTANCE);
+
 		// Create package meta-data objects
 		theBasePackage.createPackageContents();
+		theDevicePackage.createPackageContents();
 
 		// Initialize created meta-data
 		theBasePackage.initializePackageContents();
+		theDevicePackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theBasePackage.freeze();
