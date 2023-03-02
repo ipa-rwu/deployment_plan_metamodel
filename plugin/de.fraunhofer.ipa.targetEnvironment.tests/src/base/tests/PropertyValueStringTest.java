@@ -1,19 +1,19 @@
 /**
  */
-package device.tests;
+package base.tests;
 
-import device.DeviceFactory;
-import device.IndirectConnection;
+import base.BaseFactory;
+import base.PropertyValueString;
 
 import junit.textui.TestRunner;
 
 /**
  * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Indirect Connection</b></em>'.
+ * A test case for the model object '<em><b>Property Value String</b></em>'.
  * <!-- end-user-doc -->
  * @generated
  */
-public class IndirectConnectionTest extends ConnectionTest {
+public class PropertyValueStringTest extends PropertyValueTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -21,28 +21,28 @@ public class IndirectConnectionTest extends ConnectionTest {
 	 * @generated
 	 */
 	public static void main(String[] args) {
-		TestRunner.run(IndirectConnectionTest.class);
+		TestRunner.run(PropertyValueStringTest.class);
 	}
 
 	/**
-	 * Constructs a new Indirect Connection test case with the given name.
+	 * Constructs a new Property Value String test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public IndirectConnectionTest(String name) {
+	public PropertyValueStringTest(String name) {
 		super(name);
 	}
 
 	/**
-	 * Returns the fixture for this Indirect Connection test case.
+	 * Returns the fixture for this Property Value String test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	protected IndirectConnection getFixture() {
-		return (IndirectConnection)fixture;
+	protected PropertyValueString getFixture() {
+		return (PropertyValueString)fixture;
 	}
 
 	/**
@@ -53,7 +53,7 @@ public class IndirectConnectionTest extends ConnectionTest {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(DeviceFactory.eINSTANCE.createIndirectConnection());
+		setFixture(BaseFactory.eINSTANCE.createPropertyValueString());
 	}
 
 	/**
@@ -67,4 +67,4 @@ public class IndirectConnectionTest extends ConnectionTest {
 		setFixture(null);
 	}
 
-} //IndirectConnectionTest
+} //PropertyValueStringTest

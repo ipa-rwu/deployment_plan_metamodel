@@ -2,10 +2,10 @@
  */
 package device.tests;
 
+import base.tests.DescriptionTest;
+
 import device.DeviceFactory;
 import device.DeviceSet;
-
-import junit.framework.TestCase;
 
 import junit.textui.TestRunner;
 
@@ -15,15 +15,7 @@ import junit.textui.TestRunner;
  * <!-- end-user-doc -->
  * @generated
  */
-public class DeviceSetTest extends TestCase {
-
-	/**
-	 * The fixture for this Set test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected DeviceSet fixture = null;
+public class DeviceSetTest extends DescriptionTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -45,23 +37,14 @@ public class DeviceSetTest extends TestCase {
 	}
 
 	/**
-	 * Sets the fixture for this Set test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void setFixture(DeviceSet fixture) {
-		this.fixture = fixture;
-	}
-
-	/**
 	 * Returns the fixture for this Set test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected DeviceSet getFixture() {
-		return fixture;
+		return (DeviceSet)fixture;
 	}
 
 	/**

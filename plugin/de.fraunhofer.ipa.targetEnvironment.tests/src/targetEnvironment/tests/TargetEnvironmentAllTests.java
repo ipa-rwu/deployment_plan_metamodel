@@ -31,6 +31,7 @@ public class TargetEnvironmentAllTests extends TestSuite {
 	 */
 	public static Test suite() {
 		TestSuite suite = new TargetEnvironmentAllTests("TargetEnvironment Tests");
+		suite.addTest(TargetEnvironmentTests.suite());
 		return suite;
 	}
 

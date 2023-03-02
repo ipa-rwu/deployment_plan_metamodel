@@ -9,8 +9,9 @@ Bundle-Activator: targetEnvironment.presentation.TargetEnvironmentEditorPlugin$I
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
-Export-Package: targetEnvironment.presentation,
- device.presentation
+Export-Package: base.presentation,
+ device.presentation,
+ targetEnvironment.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
  de.fraunhofer.ipa.targetEnvironment.edit;visibility:=reexport,

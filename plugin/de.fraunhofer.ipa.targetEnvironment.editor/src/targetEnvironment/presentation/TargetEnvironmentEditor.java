@@ -157,6 +157,8 @@ import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 
 import targetEnvironment.provider.TargetEnvironmentItemProviderAdapterFactory;
 
+import base.provider.BaseItemProviderAdapterFactory;
+
 import device.provider.DeviceItemProviderAdapterFactory;
 
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
@@ -704,6 +706,7 @@ public class TargetEnvironmentEditor
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new TargetEnvironmentItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new DeviceItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new BaseItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
 		// Create the command stack that will notify this editor as commands are executed.

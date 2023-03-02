@@ -3,7 +3,7 @@
 package device.provider;
 
 
-import device.IndirectConnection;
+import device.ConnectionProperty;
 
 import java.util.Collection;
 import java.util.List;
@@ -14,19 +14,19 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 /**
- * This is the item provider adapter for a {@link device.IndirectConnection} object.
+ * This is the item provider adapter for a {@link device.ConnectionProperty} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class IndirectConnectionItemProvider extends ConnectionItemProvider {
+public class ConnectionPropertyItemProvider extends PropertyItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public IndirectConnectionItemProvider(AdapterFactory adapterFactory) {
+	public ConnectionPropertyItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -46,14 +46,14 @@ public class IndirectConnectionItemProvider extends ConnectionItemProvider {
 	}
 
 	/**
-	 * This returns IndirectConnection.gif.
+	 * This returns ConnectionProperty.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/IndirectConnection"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ConnectionProperty"));
 	}
 
 	/**
@@ -64,10 +64,10 @@ public class IndirectConnectionItemProvider extends ConnectionItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((IndirectConnection)object).getName();
+		String label = ((ConnectionProperty)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_IndirectConnection_type") :
-			getString("_UI_IndirectConnection_type") + " " + label;
+			getString("_UI_ConnectionProperty_type") :
+			getString("_UI_ConnectionProperty_type") + " " + label;
 	}
 
 

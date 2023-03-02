@@ -3,8 +3,6 @@
 package targetEnvironment.provider;
 
 
-import device.DeviceFactory;
-
 import java.util.Collection;
 import java.util.List;
 
@@ -26,6 +24,7 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import targetEnvironment.ConnectedDevice;
+import targetEnvironment.TargetEnvironmentFactory;
 import targetEnvironment.TargetEnvironmentPackage;
 
 /**
@@ -199,7 +198,7 @@ public class ConnectedDeviceItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(TargetEnvironmentPackage.Literals.CONNECTED_DEVICE__PROPERTIES,
-				 DeviceFactory.eINSTANCE.createProperty()));
+				 TargetEnvironmentFactory.eINSTANCE.createConfigConnectionProperty()));
 	}
 
 	/**

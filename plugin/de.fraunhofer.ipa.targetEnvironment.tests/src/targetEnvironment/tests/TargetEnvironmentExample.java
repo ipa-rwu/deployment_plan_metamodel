@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.util.Diagnostician;
 
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
-import targetEnvironment.TargetDeployEnviroment;
+import targetEnvironment.TargetEnvironment;
 import targetEnvironment.TargetEnvironmentFactory;
 import targetEnvironment.TargetEnvironmentPackage;
 
@@ -60,7 +60,7 @@ public class TargetEnvironmentExample {
 			System.out.println("Enter a list of file paths or URIs that have content like this:");
 			try {
 				Resource resource = resourceSet.createResource(URI.createURI("http:///My.targetenvironment"));
-				TargetDeployEnviroment root = TargetEnvironmentFactory.eINSTANCE.createTargetDeployEnviroment();
+				TargetEnvironment root = TargetEnvironmentFactory.eINSTANCE.createTargetEnvironment();
 				resource.getContents().add(root);
 				resource.save(System.out, null);
 			}

@@ -31,6 +31,7 @@ public class TargetEnvironmentTests extends TestSuite {
 	 */
 	public static Test suite() {
 		TestSuite suite = new TargetEnvironmentTests("targetEnvironment Tests");
+		suite.addTestSuite(ConfigConnectionPropertyTest.class);
 		return suite;
 	}
 

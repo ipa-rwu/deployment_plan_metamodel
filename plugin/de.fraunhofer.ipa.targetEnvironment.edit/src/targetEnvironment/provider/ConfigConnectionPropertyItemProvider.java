@@ -1,11 +1,7 @@
 /**
  */
-package device.provider;
+package targetEnvironment.provider;
 
-
-import device.Connection;
-import device.DeviceFactory;
-import device.DevicePackage;
 
 import java.util.Collection;
 import java.util.List;
@@ -15,8 +11,6 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
-import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -24,17 +18,19 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import targetEnvironment.ConfigConnectionProperty;
+import targetEnvironment.TargetEnvironmentPackage;
+
 /**
- * This is the item provider adapter for a {@link device.Connection} object.
+ * This is the item provider adapter for a {@link targetEnvironment.ConfigConnectionProperty} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ConnectionItemProvider 
+public class ConfigConnectionPropertyItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -48,7 +44,7 @@ public class ConnectionItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ConnectionItemProvider(AdapterFactory adapterFactory) {
+	public ConfigConnectionPropertyItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -63,62 +59,65 @@ public class ConnectionItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNamePropertyDescriptor(object);
+			addRefConnectionPropertyPropertyDescriptor(object);
+			addValuePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Name feature.
+	 * This adds a property descriptor for the Ref Connection Property feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addNamePropertyDescriptor(Object object) {
+	protected void addRefConnectionPropertyPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Connection_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Connection_name_feature", "_UI_Connection_type"),
-				 DevicePackage.Literals.CONNECTION__NAME,
+				 getString("_UI_ConfigConnectionProperty_refConnectionProperty_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ConfigConnectionProperty_refConnectionProperty_feature", "_UI_ConfigConnectionProperty_type"),
+				 TargetEnvironmentPackage.Literals.CONFIG_CONNECTION_PROPERTY__REF_CONNECTION_PROPERTY,
 				 true,
 				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 true,
+				 null,
 				 null,
 				 null));
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * This adds a property descriptor for the Value feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
-			super.getChildrenFeatures(object);
-			childrenFeatures.add(DevicePackage.Literals.CONNECTION__TYPE);
-			childrenFeatures.add(DevicePackage.Literals.CONNECTION__PROPERTIES);
-		}
-		return childrenFeatures;
+	protected void addValuePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ConfigConnectionProperty_value_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ConfigConnectionProperty_value_feature", "_UI_ConfigConnectionProperty_type"),
+				 TargetEnvironmentPackage.Literals.CONFIG_CONNECTION_PROPERTY__VALUE,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
+	 * This returns ConfigConnectionProperty.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
+	public Object getImage(Object object) {
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ConfigConnectionProperty"));
 	}
 
 	/**
@@ -129,10 +128,7 @@ public class ConnectionItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Connection)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_Connection_type") :
-			getString("_UI_Connection_type") + " " + label;
+		return getString("_UI_ConfigConnectionProperty_type");
 	}
 
 
@@ -147,13 +143,9 @@ public class ConnectionItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Connection.class)) {
-			case DevicePackage.CONNECTION__NAME:
+		switch (notification.getFeatureID(ConfigConnectionProperty.class)) {
+			case TargetEnvironmentPackage.CONFIG_CONNECTION_PROPERTY__VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case DevicePackage.CONNECTION__TYPE:
-			case DevicePackage.CONNECTION__PROPERTIES:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
 		super.notifyChanged(notification);
@@ -169,16 +161,6 @@ public class ConnectionItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(DevicePackage.Literals.CONNECTION__TYPE,
-				 DeviceFactory.eINSTANCE.createCommunicationType()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(DevicePackage.Literals.CONNECTION__PROPERTIES,
-				 DeviceFactory.eINSTANCE.createProperty()));
 	}
 
 	/**
@@ -189,7 +171,7 @@ public class ConnectionItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return DeviceEditPlugin.INSTANCE;
+		return TargetEnvironmentEditPlugin.INSTANCE;
 	}
 
 }

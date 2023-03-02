@@ -9,10 +9,12 @@ Bundle-Activator: targetEnvironment.provider.TargetEnvironmentEditPlugin$Impleme
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
-Export-Package: targetEnvironment.provider,
- device.provider
+Export-Package: base.provider,
+ device.provider,
+ targetEnvironment.provider
 Require-Bundle: org.eclipse.core.runtime,
  de.fraunhofer.ipa.targetEnvironment;visibility:=reexport,
  org.eclipse.emf.edit;visibility:=reexport,
- de.fraunhofer.ipa.targetEnvironment.edit;visibility:=reexport
+ de.fraunhofer.ipa.targetEnvironment.edit;visibility:=reexport,
+ org.eclipse.emf.ecore;visibility:=reexport
 Bundle-ActivationPolicy: lazy

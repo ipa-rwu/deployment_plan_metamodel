@@ -118,6 +118,29 @@ public class DeviceItemProviderAdapterFactory extends DeviceAdapterFactory imple
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link device.CommunicationConnection} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CommunicationConnectionItemProvider communicationConnectionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link device.CommunicationConnection}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCommunicationConnectionAdapter() {
+		if (communicationConnectionItemProvider == null) {
+			communicationConnectionItemProvider = new CommunicationConnectionItemProvider(this);
+		}
+
+		return communicationConnectionItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link device.Property} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -138,52 +161,6 @@ public class DeviceItemProviderAdapterFactory extends DeviceAdapterFactory imple
 		}
 
 		return propertyItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link device.IndirectConnection} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected IndirectConnectionItemProvider indirectConnectionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link device.IndirectConnection}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createIndirectConnectionAdapter() {
-		if (indirectConnectionItemProvider == null) {
-			indirectConnectionItemProvider = new IndirectConnectionItemProvider(this);
-		}
-
-		return indirectConnectionItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link device.DirectConnection} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected DirectConnectionItemProvider directConnectionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link device.DirectConnection}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createDirectConnectionAdapter() {
-		if (directConnectionItemProvider == null) {
-			directConnectionItemProvider = new DirectConnectionItemProvider(this);
-		}
-
-		return directConnectionItemProvider;
 	}
 
 	/**
@@ -325,6 +302,52 @@ public class DeviceItemProviderAdapterFactory extends DeviceAdapterFactory imple
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link device.ConnectionProperty} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ConnectionPropertyItemProvider connectionPropertyItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link device.ConnectionProperty}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createConnectionPropertyAdapter() {
+		if (connectionPropertyItemProvider == null) {
+			connectionPropertyItemProvider = new ConnectionPropertyItemProvider(this);
+		}
+
+		return connectionPropertyItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link device.CapabilityType} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CapabilityTypeItemProvider capabilityTypeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link device.CapabilityType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCapabilityTypeAdapter() {
+		if (capabilityTypeItemProvider == null) {
+			capabilityTypeItemProvider = new CapabilityTypeItemProvider(this);
+		}
+
+		return capabilityTypeItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -425,15 +448,16 @@ public class DeviceItemProviderAdapterFactory extends DeviceAdapterFactory imple
 	public void dispose() {
 		if (deviceSetItemProvider != null) deviceSetItemProvider.dispose();
 		if (deviceTypeItemProvider != null) deviceTypeItemProvider.dispose();
+		if (communicationConnectionItemProvider != null) communicationConnectionItemProvider.dispose();
 		if (propertyItemProvider != null) propertyItemProvider.dispose();
-		if (indirectConnectionItemProvider != null) indirectConnectionItemProvider.dispose();
-		if (directConnectionItemProvider != null) directConnectionItemProvider.dispose();
 		if (capabilityPropertyItemProvider != null) capabilityPropertyItemProvider.dispose();
 		if (attributeKindItemProvider != null) attributeKindItemProvider.dispose();
 		if (maximumKindItemProvider != null) maximumKindItemProvider.dispose();
 		if (minimumKindItemProvider != null) minimumKindItemProvider.dispose();
 		if (selectionKindItemProvider != null) selectionKindItemProvider.dispose();
 		if (communicationTypeItemProvider != null) communicationTypeItemProvider.dispose();
+		if (connectionPropertyItemProvider != null) connectionPropertyItemProvider.dispose();
+		if (capabilityTypeItemProvider != null) capabilityTypeItemProvider.dispose();
 	}
 
 }

@@ -72,6 +72,29 @@ public class TargetEnvironmentItemProviderAdapterFactory extends TargetEnvironme
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link targetEnvironment.TargetEnvironment} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected TargetEnvironmentItemProvider targetEnvironmentItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link targetEnvironment.TargetEnvironment}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createTargetEnvironmentAdapter() {
+		if (targetEnvironmentItemProvider == null) {
+			targetEnvironmentItemProvider = new TargetEnvironmentItemProvider(this);
+		}
+
+		return targetEnvironmentItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link targetEnvironment.TargetDeployEnviroment} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -161,6 +184,29 @@ public class TargetEnvironmentItemProviderAdapterFactory extends TargetEnvironme
 		}
 
 		return connectedDeviceItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link targetEnvironment.ConfigConnectionProperty} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ConfigConnectionPropertyItemProvider configConnectionPropertyItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link targetEnvironment.ConfigConnectionProperty}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createConfigConnectionPropertyAdapter() {
+		if (configConnectionPropertyItemProvider == null) {
+			configConnectionPropertyItemProvider = new ConfigConnectionPropertyItemProvider(this);
+		}
+
+		return configConnectionPropertyItemProvider;
 	}
 
 	/**
@@ -262,10 +308,12 @@ public class TargetEnvironmentItemProviderAdapterFactory extends TargetEnvironme
 	 * @generated
 	 */
 	public void dispose() {
+		if (targetEnvironmentItemProvider != null) targetEnvironmentItemProvider.dispose();
 		if (targetDeployEnviromentItemProvider != null) targetDeployEnviromentItemProvider.dispose();
 		if (configConnectionItemProvider != null) configConnectionItemProvider.dispose();
 		if (deviceInstanceItemProvider != null) deviceInstanceItemProvider.dispose();
 		if (connectedDeviceItemProvider != null) connectedDeviceItemProvider.dispose();
+		if (configConnectionPropertyItemProvider != null) configConnectionPropertyItemProvider.dispose();
 	}
 
 }

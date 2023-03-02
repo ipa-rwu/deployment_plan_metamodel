@@ -102,8 +102,8 @@ public class DeviceTypeItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(DevicePackage.Literals.DEVICE_TYPE__CAPABILITIES);
-			childrenFeatures.add(DevicePackage.Literals.DEVICE_TYPE__CONNECTION);
+			childrenFeatures.add(DevicePackage.Literals.DEVICE_TYPE__CAPABILITY);
+			childrenFeatures.add(DevicePackage.Literals.DEVICE_TYPE__COMMUNICATION_CONNECTION);
 		}
 		return childrenFeatures;
 	}
@@ -162,8 +162,8 @@ public class DeviceTypeItemProvider
 			case DevicePackage.DEVICE_TYPE__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case DevicePackage.DEVICE_TYPE__CAPABILITIES:
-			case DevicePackage.DEVICE_TYPE__CONNECTION:
+			case DevicePackage.DEVICE_TYPE__CAPABILITY:
+			case DevicePackage.DEVICE_TYPE__COMMUNICATION_CONNECTION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -183,18 +183,13 @@ public class DeviceTypeItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(DevicePackage.Literals.DEVICE_TYPE__CAPABILITIES,
+				(DevicePackage.Literals.DEVICE_TYPE__CAPABILITY,
 				 DeviceFactory.eINSTANCE.createCapabilityProperty()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(DevicePackage.Literals.DEVICE_TYPE__CONNECTION,
-				 DeviceFactory.eINSTANCE.createIndirectConnection()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(DevicePackage.Literals.DEVICE_TYPE__CONNECTION,
-				 DeviceFactory.eINSTANCE.createDirectConnection()));
+				(DevicePackage.Literals.DEVICE_TYPE__COMMUNICATION_CONNECTION,
+				 DeviceFactory.eINSTANCE.createCommunicationConnection()));
 	}
 
 	/**

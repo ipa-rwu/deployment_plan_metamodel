@@ -1,19 +1,19 @@
 /**
  */
-package device.tests;
+package base.tests;
 
-import device.DeviceFactory;
-import device.DirectConnection;
+import base.BaseFactory;
+import base.PropertyValueDouble;
 
 import junit.textui.TestRunner;
 
 /**
  * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Direct Connection</b></em>'.
+ * A test case for the model object '<em><b>Property Value Double</b></em>'.
  * <!-- end-user-doc -->
  * @generated
  */
-public class DirectConnectionTest extends ConnectionTest {
+public class PropertyValueDoubleTest extends PropertyValueTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -21,28 +21,28 @@ public class DirectConnectionTest extends ConnectionTest {
 	 * @generated
 	 */
 	public static void main(String[] args) {
-		TestRunner.run(DirectConnectionTest.class);
+		TestRunner.run(PropertyValueDoubleTest.class);
 	}
 
 	/**
-	 * Constructs a new Direct Connection test case with the given name.
+	 * Constructs a new Property Value Double test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DirectConnectionTest(String name) {
+	public PropertyValueDoubleTest(String name) {
 		super(name);
 	}
 
 	/**
-	 * Returns the fixture for this Direct Connection test case.
+	 * Returns the fixture for this Property Value Double test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	protected DirectConnection getFixture() {
-		return (DirectConnection)fixture;
+	protected PropertyValueDouble getFixture() {
+		return (PropertyValueDouble)fixture;
 	}
 
 	/**
@@ -53,7 +53,7 @@ public class DirectConnectionTest extends ConnectionTest {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(DeviceFactory.eINSTANCE.createDirectConnection());
+		setFixture(BaseFactory.eINSTANCE.createPropertyValueDouble());
 	}
 
 	/**
@@ -67,4 +67,4 @@ public class DirectConnectionTest extends ConnectionTest {
 		setFixture(null);
 	}
 
-} //DirectConnectionTest
+} //PropertyValueDoubleTest

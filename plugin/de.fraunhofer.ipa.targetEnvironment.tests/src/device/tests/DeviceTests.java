@@ -31,8 +31,7 @@ public class DeviceTests extends TestSuite {
 	 */
 	public static Test suite() {
 		TestSuite suite = new DeviceTests("device Tests");
-		suite.addTestSuite(IndirectConnectionTest.class);
-		suite.addTestSuite(DirectConnectionTest.class);
+		suite.addTestSuite(CommunicationConnectionTest.class);
 		return suite;
 	}
 

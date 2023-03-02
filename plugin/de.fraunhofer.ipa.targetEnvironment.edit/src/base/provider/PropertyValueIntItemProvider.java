@@ -1,9 +1,10 @@
 /**
  */
-package device.provider;
+package base.provider;
 
 
-import device.DirectConnection;
+import base.BasePackage;
+import base.PropertyValueInt;
 
 import java.util.Collection;
 import java.util.List;
@@ -11,22 +12,25 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link device.DirectConnection} object.
+ * This is the item provider adapter for a {@link base.PropertyValueInt} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class DirectConnectionItemProvider extends ConnectionItemProvider {
+public class PropertyValueIntItemProvider extends PropertyValueItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DirectConnectionItemProvider(AdapterFactory adapterFactory) {
+	public PropertyValueIntItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -41,19 +45,42 @@ public class DirectConnectionItemProvider extends ConnectionItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addValuePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This returns DirectConnection.gif.
+	 * This adds a property descriptor for the Value feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addValuePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_PropertyValueInt_value_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PropertyValueInt_value_feature", "_UI_PropertyValueInt_type"),
+				 BasePackage.Literals.PROPERTY_VALUE_INT__VALUE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This returns PropertyValueInt.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/DirectConnection"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/PropertyValueInt"));
 	}
 
 	/**
@@ -64,10 +91,8 @@ public class DirectConnectionItemProvider extends ConnectionItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((DirectConnection)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_DirectConnection_type") :
-			getString("_UI_DirectConnection_type") + " " + label;
+		PropertyValueInt propertyValueInt = (PropertyValueInt)object;
+		return getString("_UI_PropertyValueInt_type") + " " + propertyValueInt.getValue();
 	}
 
 
@@ -81,6 +106,12 @@ public class DirectConnectionItemProvider extends ConnectionItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(PropertyValueInt.class)) {
+			case BasePackage.PROPERTY_VALUE_INT__VALUE:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 
