@@ -156,6 +156,8 @@ import org.eclipse.emf.edit.ui.util.EditUIUtil;
 import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 
 import base.provider.BaseItemProviderAdapterFactory;
+import device.presentation.DeviceEditorPlugin;
+import device.provider.DeviceItemProviderAdapterFactory;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 
 
@@ -530,7 +532,7 @@ public class BaseEditor
 					}
 				}
 				catch (CoreException exception) {
-					BaseEditorPlugin.INSTANCE.log(exception);
+					DeviceEditorPlugin.INSTANCE.log(exception);
 				}
 			}
 		};
@@ -647,7 +649,7 @@ public class BaseEditor
 					showTabs();
 				}
 				catch (PartInitException exception) {
-					BaseEditorPlugin.INSTANCE.log(exception);
+					DeviceEditorPlugin.INSTANCE.log(exception);
 				}
 			}
 
@@ -656,7 +658,7 @@ public class BaseEditor
 					markerHelper.updateMarkers(diagnostic);
 				}
 				catch (CoreException exception) {
-					BaseEditorPlugin.INSTANCE.log(exception);
+					DeviceEditorPlugin.INSTANCE.log(exception);
 				}
 			}
 		}
@@ -699,6 +701,7 @@ public class BaseEditor
 		adapterFactory = new ComposedAdapterFactory(ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
 
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new DeviceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new BaseItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
@@ -1526,7 +1529,7 @@ public class BaseEditor
 		catch (Exception exception) {
 			// Something went wrong that shouldn't.
 			//
-			BaseEditorPlugin.INSTANCE.log(exception);
+			DeviceEditorPlugin.INSTANCE.log(exception);
 		}
 		updateProblemIndication = true;
 		updateProblemIndication();
@@ -1730,7 +1733,7 @@ public class BaseEditor
 	 * @generated
 	 */
 	private static String getString(String key) {
-		return BaseEditorPlugin.INSTANCE.getString(key);
+		return DeviceEditorPlugin.INSTANCE.getString(key);
 	}
 
 	/**
@@ -1740,7 +1743,7 @@ public class BaseEditor
 	 * @generated
 	 */
 	private static String getString(String key, Object s1) {
-		return BaseEditorPlugin.INSTANCE.getString(key, new Object [] { s1 });
+		return DeviceEditorPlugin.INSTANCE.getString(key, new Object [] { s1 });
 	}
 
 	/**
