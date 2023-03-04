@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="util" nsURI="http://www.ipa.fraunhofer.de/Util" nsPrefix="Util">
+  <eClassifiers xsi:type="ecore:EClass" name="Description" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PropertyValue" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PropertyValueInt" eSuperTypes="#//PropertyValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/XMLType.ecore#//Int"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PropertyValueDouble" eSuperTypes="#//PropertyValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/XMLType.ecore#//Double"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PropertyValueString" eSuperTypes="#//PropertyValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PropertyType" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Property">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//PropertyValue"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OpertingSystem" abstract="true" eSuperTypes="#//ResouceType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LinuxOpertingSystem" eSuperTypes="#//OpertingSystem"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ResouceType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ProcessorArchitecture" abstract="true"
+      eSuperTypes="#//ResouceType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="X86ProcessorArchitecture" eSuperTypes="#//ProcessorArchitecture">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" defaultValueLiteral="x86"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Arm64ProcessorArchitecture" eSuperTypes="#//ProcessorArchitecture">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" defaultValueLiteral="arm64"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractCommunicationType" abstract="true"
+      eSuperTypes="#//ResouceType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CommunicationType" eSuperTypes="#//AbstractCommunicationType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" defaultValueLiteral="Ethernet"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NetworkCommunicationType" abstract="true"
+      eSuperTypes="#//AbstractCommunicationType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EthernetCommunicationType" eSuperTypes="#//NetworkCommunicationType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="WlanCommunicationType" eSuperTypes="#//NetworkCommunicationType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AvailableResouce">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="list" upperBound="-1" eType="#//ResouceType"
+        containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>

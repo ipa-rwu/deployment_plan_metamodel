@@ -304,6 +304,7 @@
 		<module>
 			../de.fraunhofer.ipa.targetEnvironment.xtext.ui.tests
 		</module>
+		<module>../de.fraunhofer.ipa.deployment.util</module>
 	</modules>
 </project>
 

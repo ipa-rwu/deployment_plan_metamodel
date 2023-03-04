@@ -1,0 +1,461 @@
+/**
+ */
+package de.fraunhofer.ipa.deployment.util.util;
+
+import de.fraunhofer.ipa.deployment.util.*;
+
+import org.eclipse.emf.common.notify.Adapter;
+import org.eclipse.emf.common.notify.Notifier;
+
+import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
+
+import org.eclipse.emf.ecore.EObject;
+
+/**
+ * <!-- begin-user-doc -->
+ * The <b>Adapter Factory</b> for the model.
+ * It provides an adapter <code>createXXX</code> method for each class of the model.
+ * <!-- end-user-doc -->
+ * @see de.fraunhofer.ipa.deployment.util.UtilPackage
+ * @generated
+ */
+public class UtilAdapterFactory extends AdapterFactoryImpl {
+	/**
+	 * The cached model package.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static UtilPackage modelPackage;
+
+	/**
+	 * Creates an instance of the adapter factory.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UtilAdapterFactory() {
+		if (modelPackage == null) {
+			modelPackage = UtilPackage.eINSTANCE;
+		}
+	}
+
+	/**
+	 * Returns whether this factory is applicable for the type of the object.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns <code>true</code> if the object is either the model's package or is an instance object of the model.
+	 * <!-- end-user-doc -->
+	 * @return whether this factory is applicable for the type of the object.
+	 * @generated
+	 */
+	@Override
+	public boolean isFactoryForType(Object object) {
+		if (object == modelPackage) {
+			return true;
+		}
+		if (object instanceof EObject) {
+			return ((EObject) object).eClass().getEPackage() == modelPackage;
+		}
+		return false;
+	}
+
+	/**
+	 * The switch that delegates to the <code>createXXX</code> methods.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected UtilSwitch<Adapter> modelSwitch = new UtilSwitch<Adapter>() {
+		@Override
+		public Adapter caseDescription(Description object) {
+			return createDescriptionAdapter();
+		}
+
+		@Override
+		public Adapter casePropertyValue(PropertyValue object) {
+			return createPropertyValueAdapter();
+		}
+
+		@Override
+		public Adapter casePropertyValueInt(PropertyValueInt object) {
+			return createPropertyValueIntAdapter();
+		}
+
+		@Override
+		public Adapter casePropertyValueDouble(PropertyValueDouble object) {
+			return createPropertyValueDoubleAdapter();
+		}
+
+		@Override
+		public Adapter casePropertyValueString(PropertyValueString object) {
+			return createPropertyValueStringAdapter();
+		}
+
+		@Override
+		public Adapter casePropertyType(PropertyType object) {
+			return createPropertyTypeAdapter();
+		}
+
+		@Override
+		public Adapter caseProperty(Property object) {
+			return createPropertyAdapter();
+		}
+
+		@Override
+		public Adapter caseOpertingSystem(OpertingSystem object) {
+			return createOpertingSystemAdapter();
+		}
+
+		@Override
+		public Adapter caseLinuxOpertingSystem(LinuxOpertingSystem object) {
+			return createLinuxOpertingSystemAdapter();
+		}
+
+		@Override
+		public Adapter caseResouceType(ResouceType object) {
+			return createResouceTypeAdapter();
+		}
+
+		@Override
+		public Adapter caseProcessorArchitecture(ProcessorArchitecture object) {
+			return createProcessorArchitectureAdapter();
+		}
+
+		@Override
+		public Adapter caseX86ProcessorArchitecture(X86ProcessorArchitecture object) {
+			return createX86ProcessorArchitectureAdapter();
+		}
+
+		@Override
+		public Adapter caseArm64ProcessorArchitecture(Arm64ProcessorArchitecture object) {
+			return createArm64ProcessorArchitectureAdapter();
+		}
+
+		@Override
+		public Adapter caseAbstractCommunicationType(AbstractCommunicationType object) {
+			return createAbstractCommunicationTypeAdapter();
+		}
+
+		@Override
+		public Adapter caseCommunicationType(CommunicationType object) {
+			return createCommunicationTypeAdapter();
+		}
+
+		@Override
+		public Adapter caseNetworkCommunicationType(NetworkCommunicationType object) {
+			return createNetworkCommunicationTypeAdapter();
+		}
+
+		@Override
+		public Adapter caseEthernetCommunicationType(EthernetCommunicationType object) {
+			return createEthernetCommunicationTypeAdapter();
+		}
+
+		@Override
+		public Adapter caseWlanCommunicationType(WlanCommunicationType object) {
+			return createWlanCommunicationTypeAdapter();
+		}
+
+		@Override
+		public Adapter caseAvailableResouce(AvailableResouce object) {
+			return createAvailableResouceAdapter();
+		}
+
+		@Override
+		public Adapter defaultCase(EObject object) {
+			return createEObjectAdapter();
+		}
+	};
+
+	/**
+	 * Creates an adapter for the <code>target</code>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param target the object to adapt.
+	 * @return the adapter for the <code>target</code>.
+	 * @generated
+	 */
+	@Override
+	public Adapter createAdapter(Notifier target) {
+		return modelSwitch.doSwitch((EObject) target);
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.fraunhofer.ipa.deployment.util.Description <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.fraunhofer.ipa.deployment.util.Description
+	 * @generated
+	 */
+	public Adapter createDescriptionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.fraunhofer.ipa.deployment.util.PropertyValue <em>Property Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.fraunhofer.ipa.deployment.util.PropertyValue
+	 * @generated
+	 */
+	public Adapter createPropertyValueAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.fraunhofer.ipa.deployment.util.PropertyValueInt <em>Property Value Int</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.fraunhofer.ipa.deployment.util.PropertyValueInt
+	 * @generated
+	 */
+	public Adapter createPropertyValueIntAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.fraunhofer.ipa.deployment.util.PropertyValueDouble <em>Property Value Double</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.fraunhofer.ipa.deployment.util.PropertyValueDouble
+	 * @generated
+	 */
+	public Adapter createPropertyValueDoubleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.fraunhofer.ipa.deployment.util.PropertyValueString <em>Property Value String</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.fraunhofer.ipa.deployment.util.PropertyValueString
+	 * @generated
+	 */
+	public Adapter createPropertyValueStringAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.fraunhofer.ipa.deployment.util.PropertyType <em>Property Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.fraunhofer.ipa.deployment.util.PropertyType
+	 * @generated
+	 */
+	public Adapter createPropertyTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.fraunhofer.ipa.deployment.util.Property <em>Property</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.fraunhofer.ipa.deployment.util.Property
+	 * @generated
+	 */
+	public Adapter createPropertyAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.fraunhofer.ipa.deployment.util.OpertingSystem <em>Operting System</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.fraunhofer.ipa.deployment.util.OpertingSystem
+	 * @generated
+	 */
+	public Adapter createOpertingSystemAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.fraunhofer.ipa.deployment.util.LinuxOpertingSystem <em>Linux Operting System</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.fraunhofer.ipa.deployment.util.LinuxOpertingSystem
+	 * @generated
+	 */
+	public Adapter createLinuxOpertingSystemAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.fraunhofer.ipa.deployment.util.ResouceType <em>Resouce Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.fraunhofer.ipa.deployment.util.ResouceType
+	 * @generated
+	 */
+	public Adapter createResouceTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.fraunhofer.ipa.deployment.util.ProcessorArchitecture <em>Processor Architecture</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.fraunhofer.ipa.deployment.util.ProcessorArchitecture
+	 * @generated
+	 */
+	public Adapter createProcessorArchitectureAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.fraunhofer.ipa.deployment.util.X86ProcessorArchitecture <em>X86 Processor Architecture</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.fraunhofer.ipa.deployment.util.X86ProcessorArchitecture
+	 * @generated
+	 */
+	public Adapter createX86ProcessorArchitectureAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.fraunhofer.ipa.deployment.util.Arm64ProcessorArchitecture <em>Arm64 Processor Architecture</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.fraunhofer.ipa.deployment.util.Arm64ProcessorArchitecture
+	 * @generated
+	 */
+	public Adapter createArm64ProcessorArchitectureAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.fraunhofer.ipa.deployment.util.AbstractCommunicationType <em>Abstract Communication Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.fraunhofer.ipa.deployment.util.AbstractCommunicationType
+	 * @generated
+	 */
+	public Adapter createAbstractCommunicationTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.fraunhofer.ipa.deployment.util.CommunicationType <em>Communication Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.fraunhofer.ipa.deployment.util.CommunicationType
+	 * @generated
+	 */
+	public Adapter createCommunicationTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.fraunhofer.ipa.deployment.util.NetworkCommunicationType <em>Network Communication Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.fraunhofer.ipa.deployment.util.NetworkCommunicationType
+	 * @generated
+	 */
+	public Adapter createNetworkCommunicationTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.fraunhofer.ipa.deployment.util.EthernetCommunicationType <em>Ethernet Communication Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.fraunhofer.ipa.deployment.util.EthernetCommunicationType
+	 * @generated
+	 */
+	public Adapter createEthernetCommunicationTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.fraunhofer.ipa.deployment.util.WlanCommunicationType <em>Wlan Communication Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.fraunhofer.ipa.deployment.util.WlanCommunicationType
+	 * @generated
+	 */
+	public Adapter createWlanCommunicationTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.fraunhofer.ipa.deployment.util.AvailableResouce <em>Available Resouce</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.fraunhofer.ipa.deployment.util.AvailableResouce
+	 * @generated
+	 */
+	public Adapter createAvailableResouceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for the default case.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @generated
+	 */
+	public Adapter createEObjectAdapter() {
+		return null;
+	}
+
+} //UtilAdapterFactory
