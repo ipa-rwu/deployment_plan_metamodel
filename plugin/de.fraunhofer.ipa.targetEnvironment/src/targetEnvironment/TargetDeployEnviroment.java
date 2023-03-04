@@ -2,7 +2,7 @@
  */
 package targetEnvironment;
 
-import base.Description;
+import de.fraunhofer.ipa.deployment.util.Description;
 
 import org.eclipse.emf.common.util.EList;
 

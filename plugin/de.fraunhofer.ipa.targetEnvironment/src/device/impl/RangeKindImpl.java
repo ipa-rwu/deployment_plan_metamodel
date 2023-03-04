@@ -2,25 +2,25 @@
  */
 package device.impl;
 
-import device.CommunicationType;
 import device.DevicePackage;
+import device.RangeKind;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Communication Type</b></em>'.
+ * An implementation of the model object '<em><b>Range Kind</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class CommunicationTypeImpl extends PropertyTypeImpl implements CommunicationType {
+public class RangeKindImpl extends CapabilityKindImpl implements RangeKind {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CommunicationTypeImpl() {
+	protected RangeKindImpl() {
 		super();
 	}
 
@@ -31,7 +31,7 @@ public class CommunicationTypeImpl extends PropertyTypeImpl implements Communica
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return DevicePackage.Literals.COMMUNICATION_TYPE;
+		return DevicePackage.Literals.RANGE_KIND;
 	}
 
-} //CommunicationTypeImpl
+} //RangeKindImpl

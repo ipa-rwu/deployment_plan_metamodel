@@ -2,7 +2,7 @@
  */
 package targetEnvironment.impl;
 
-import base.PropertyValue;
+import de.fraunhofer.ipa.deployment.util.PropertyValue;
 
 import device.ConnectionProperty;
 

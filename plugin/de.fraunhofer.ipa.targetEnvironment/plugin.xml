@@ -22,12 +22,4 @@
             genModel="model/device.genmodel"/>
    </extension>
 
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated device -->
-      <package
-            uri="http://www.ipa.fraunhofer.de/Base"
-            class="base.BasePackage"
-            genModel="model/device.genmodel"/>
-   </extension>
-
 </plugin>

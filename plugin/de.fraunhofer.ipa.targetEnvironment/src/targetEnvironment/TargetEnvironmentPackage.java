@@ -2,7 +2,7 @@
  */
 package targetEnvironment;
 
-import base.BasePackage;
+import de.fraunhofer.ipa.deployment.util.UtilPackage;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -112,7 +112,7 @@ public interface TargetEnvironmentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TARGET_DEPLOY_ENVIROMENT__NAME = BasePackage.DESCRIPTION_FEATURE_COUNT + 0;
+	int TARGET_DEPLOY_ENVIROMENT__NAME = UtilPackage.DESCRIPTION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Include Device</b></em>' containment reference list.
@@ -121,7 +121,7 @@ public interface TargetEnvironmentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TARGET_DEPLOY_ENVIROMENT__INCLUDE_DEVICE = BasePackage.DESCRIPTION_FEATURE_COUNT + 1;
+	int TARGET_DEPLOY_ENVIROMENT__INCLUDE_DEVICE = UtilPackage.DESCRIPTION_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Config Connection</b></em>' containment reference list.
@@ -130,7 +130,7 @@ public interface TargetEnvironmentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TARGET_DEPLOY_ENVIROMENT__CONFIG_CONNECTION = BasePackage.DESCRIPTION_FEATURE_COUNT + 2;
+	int TARGET_DEPLOY_ENVIROMENT__CONFIG_CONNECTION = UtilPackage.DESCRIPTION_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Target Deploy Enviroment</em>' class.
@@ -139,7 +139,7 @@ public interface TargetEnvironmentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TARGET_DEPLOY_ENVIROMENT_FEATURE_COUNT = BasePackage.DESCRIPTION_FEATURE_COUNT + 3;
+	int TARGET_DEPLOY_ENVIROMENT_FEATURE_COUNT = UtilPackage.DESCRIPTION_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Target Deploy Enviroment</em>' class.
@@ -148,7 +148,7 @@ public interface TargetEnvironmentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TARGET_DEPLOY_ENVIROMENT_OPERATION_COUNT = BasePackage.DESCRIPTION_OPERATION_COUNT + 0;
+	int TARGET_DEPLOY_ENVIROMENT_OPERATION_COUNT = UtilPackage.DESCRIPTION_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link targetEnvironment.impl.ConfigConnectionImpl <em>Config Connection</em>}' class.

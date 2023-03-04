@@ -2,7 +2,7 @@
  */
 package targetEnvironment.util;
 
-import base.Description;
+import de.fraunhofer.ipa.deployment.util.Description;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;

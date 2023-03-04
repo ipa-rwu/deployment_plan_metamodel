@@ -59,15 +59,18 @@ public class DeviceFactoryImpl extends EFactoryImpl implements DeviceFactory {
 			case DevicePackage.DEVICE_SET: return createDeviceSet();
 			case DevicePackage.DEVICE_TYPE: return createDeviceType();
 			case DevicePackage.COMMUNICATION_CONNECTION: return createCommunicationConnection();
-			case DevicePackage.PROPERTY: return createProperty();
 			case DevicePackage.CAPABILITY_PROPERTY: return createCapabilityProperty();
 			case DevicePackage.ATTRIBUTE_KIND: return createAttributeKind();
 			case DevicePackage.MAXIMUM_KIND: return createMaximumKind();
 			case DevicePackage.MINIMUM_KIND: return createMinimumKind();
 			case DevicePackage.SELECTION_KIND: return createSelectionKind();
-			case DevicePackage.COMMUNICATION_TYPE: return createCommunicationType();
+			case DevicePackage.RANGE_KIND: return createRangeKind();
 			case DevicePackage.CONNECTION_PROPERTY: return createConnectionProperty();
 			case DevicePackage.CAPABILITY_TYPE: return createCapabilityType();
+			case DevicePackage.COMPUTATION_DEVICE_TYPE: return createComputationDeviceType();
+			case DevicePackage.NETWORK_CONNECTION: return createNetworkConnection();
+			case DevicePackage.INTERFACE_NETWORK_PROPERTY: return createInterfaceNetworkProperty();
+			case DevicePackage.ADDRESS_NETWORK_PROPERTY: return createAddressNetworkProperty();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -101,16 +104,6 @@ public class DeviceFactoryImpl extends EFactoryImpl implements DeviceFactory {
 	public CommunicationConnection createCommunicationConnection() {
 		CommunicationConnectionImpl communicationConnection = new CommunicationConnectionImpl();
 		return communicationConnection;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Property createProperty() {
-		PropertyImpl property = new PropertyImpl();
-		return property;
 	}
 
 	/**
@@ -168,9 +161,9 @@ public class DeviceFactoryImpl extends EFactoryImpl implements DeviceFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CommunicationType createCommunicationType() {
-		CommunicationTypeImpl communicationType = new CommunicationTypeImpl();
-		return communicationType;
+	public RangeKind createRangeKind() {
+		RangeKindImpl rangeKind = new RangeKindImpl();
+		return rangeKind;
 	}
 
 	/**
@@ -191,6 +184,46 @@ public class DeviceFactoryImpl extends EFactoryImpl implements DeviceFactory {
 	public CapabilityType createCapabilityType() {
 		CapabilityTypeImpl capabilityType = new CapabilityTypeImpl();
 		return capabilityType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ComputationDeviceType createComputationDeviceType() {
+		ComputationDeviceTypeImpl computationDeviceType = new ComputationDeviceTypeImpl();
+		return computationDeviceType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NetworkConnection createNetworkConnection() {
+		NetworkConnectionImpl networkConnection = new NetworkConnectionImpl();
+		return networkConnection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public InterfaceNetworkProperty createInterfaceNetworkProperty() {
+		InterfaceNetworkPropertyImpl interfaceNetworkProperty = new InterfaceNetworkPropertyImpl();
+		return interfaceNetworkProperty;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AddressNetworkProperty createAddressNetworkProperty() {
+		AddressNetworkPropertyImpl addressNetworkProperty = new AddressNetworkPropertyImpl();
+		return addressNetworkProperty;
 	}
 
 	/**

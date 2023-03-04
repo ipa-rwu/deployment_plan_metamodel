@@ -2,6 +2,7 @@
  */
 package device;
 
+import de.fraunhofer.ipa.deployment.util.Property;
 
 /**
  * <!-- begin-user-doc -->

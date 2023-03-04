@@ -4,9 +4,10 @@
     nsPrefix="TargetEnvironment">
   <eClassifiers xsi:type="ecore:EClass" name="TargetEnvironment">
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" upperBound="-1"
-        eType="ecore:EClass base.ecore#//Description" containment="true"/>
+        eType="ecore:EClass ../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//Description"
+        containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TargetDeployEnviroment" eSuperTypes="base.ecore#//Description">
+  <eClassifiers xsi:type="ecore:EClass" name="TargetDeployEnviroment" eSuperTypes="../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//Description">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="includeDevice" upperBound="-1"
         eType="#//DeviceInstance" containment="true"/>
@@ -33,9 +34,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ConfigConnectionProperty">
     <eStructuralFeatures xsi:type="ecore:EReference" name="refConnectionProperty"
-        lowerBound="1" eType="ecore:EClass device.ecore#//ConnectionProperty" derived="true"
-        eKeys="device.ecore#//Property/name"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1" eType="ecore:EClass base.ecore#//PropertyValue"
+        lowerBound="1" eType="ecore:EClass device.ecore#//ConnectionProperty" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1" eType="ecore:EClass ../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//PropertyValue"
         containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

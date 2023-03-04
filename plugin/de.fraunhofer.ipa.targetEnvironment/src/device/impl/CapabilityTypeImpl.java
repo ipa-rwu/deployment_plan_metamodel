@@ -2,6 +2,8 @@
  */
 package device.impl;
 
+import de.fraunhofer.ipa.deployment.util.impl.ResouceTypeImpl;
+
 import device.CapabilityType;
 import device.DevicePackage;
 
@@ -14,7 +16,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class CapabilityTypeImpl extends PropertyTypeImpl implements CapabilityType {
+public class CapabilityTypeImpl extends ResouceTypeImpl implements CapabilityType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

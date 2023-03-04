@@ -1,56 +1,57 @@
 /**
  */
-package base.impl;
+package device.impl;
 
-import base.BasePackage;
-import base.PropertyValueDouble;
+import device.AbstractCommunicationConnection;
+import device.DevicePackage;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Property Value Double</b></em>'.
+ * An implementation of the model object '<em><b>Abstract Communication Connection</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link base.impl.PropertyValueDoubleImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link device.impl.AbstractCommunicationConnectionImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class PropertyValueDoubleImpl extends PropertyValueImpl implements PropertyValueDouble {
+public abstract class AbstractCommunicationConnectionImpl extends MinimalEObjectImpl.Container implements AbstractCommunicationConnection {
 	/**
-	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getValue()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final double VALUE_EDEFAULT = 0.0;
+	protected static final String NAME_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getValue()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected double value = VALUE_EDEFAULT;
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PropertyValueDoubleImpl() {
+	protected AbstractCommunicationConnectionImpl() {
 		super();
 	}
 
@@ -61,7 +62,7 @@ public class PropertyValueDoubleImpl extends PropertyValueImpl implements Proper
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return BasePackage.Literals.PROPERTY_VALUE_DOUBLE;
+		return DevicePackage.Literals.ABSTRACT_COMMUNICATION_CONNECTION;
 	}
 
 	/**
@@ -69,8 +70,8 @@ public class PropertyValueDoubleImpl extends PropertyValueImpl implements Proper
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public double getValue() {
-		return value;
+	public String getName() {
+		return name;
 	}
 
 	/**
@@ -78,11 +79,11 @@ public class PropertyValueDoubleImpl extends PropertyValueImpl implements Proper
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setValue(double newValue) {
-		double oldValue = value;
-		value = newValue;
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.PROPERTY_VALUE_DOUBLE__VALUE, oldValue, value));
+			eNotify(new ENotificationImpl(this, Notification.SET, DevicePackage.ABSTRACT_COMMUNICATION_CONNECTION__NAME, oldName, name));
 	}
 
 	/**
@@ -93,8 +94,8 @@ public class PropertyValueDoubleImpl extends PropertyValueImpl implements Proper
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case BasePackage.PROPERTY_VALUE_DOUBLE__VALUE:
-				return getValue();
+			case DevicePackage.ABSTRACT_COMMUNICATION_CONNECTION__NAME:
+				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -107,8 +108,8 @@ public class PropertyValueDoubleImpl extends PropertyValueImpl implements Proper
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case BasePackage.PROPERTY_VALUE_DOUBLE__VALUE:
-				setValue((Double)newValue);
+			case DevicePackage.ABSTRACT_COMMUNICATION_CONNECTION__NAME:
+				setName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -122,8 +123,8 @@ public class PropertyValueDoubleImpl extends PropertyValueImpl implements Proper
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case BasePackage.PROPERTY_VALUE_DOUBLE__VALUE:
-				setValue(VALUE_EDEFAULT);
+			case DevicePackage.ABSTRACT_COMMUNICATION_CONNECTION__NAME:
+				setName(NAME_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -137,8 +138,8 @@ public class PropertyValueDoubleImpl extends PropertyValueImpl implements Proper
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case BasePackage.PROPERTY_VALUE_DOUBLE__VALUE:
-				return value != VALUE_EDEFAULT;
+			case DevicePackage.ABSTRACT_COMMUNICATION_CONNECTION__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -153,10 +154,10 @@ public class PropertyValueDoubleImpl extends PropertyValueImpl implements Proper
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (value: ");
-		result.append(value);
+		result.append(" (name: ");
+		result.append(name);
 		result.append(')');
 		return result.toString();
 	}
 
-} //PropertyValueDoubleImpl
+} //AbstractCommunicationConnectionImpl

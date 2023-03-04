@@ -2,7 +2,9 @@
  */
 package device.util;
 
-import base.Description;
+import de.fraunhofer.ipa.deployment.util.Description;
+import de.fraunhofer.ipa.deployment.util.Property;
+import de.fraunhofer.ipa.deployment.util.ResouceType;
 
 import device.*;
 
@@ -82,10 +84,6 @@ public class DeviceAdapterFactory extends AdapterFactoryImpl {
 				return createCommunicationConnectionAdapter();
 			}
 			@Override
-			public Adapter caseProperty(Property object) {
-				return createPropertyAdapter();
-			}
-			@Override
 			public Adapter caseCapabilityProperty(CapabilityProperty object) {
 				return createCapabilityPropertyAdapter();
 			}
@@ -110,12 +108,8 @@ public class DeviceAdapterFactory extends AdapterFactoryImpl {
 				return createSelectionKindAdapter();
 			}
 			@Override
-			public Adapter casePropertyType(PropertyType object) {
-				return createPropertyTypeAdapter();
-			}
-			@Override
-			public Adapter caseCommunicationType(CommunicationType object) {
-				return createCommunicationTypeAdapter();
+			public Adapter caseRangeKind(RangeKind object) {
+				return createRangeKindAdapter();
 			}
 			@Override
 			public Adapter caseConnectionProperty(ConnectionProperty object) {
@@ -126,8 +120,40 @@ public class DeviceAdapterFactory extends AdapterFactoryImpl {
 				return createCapabilityTypeAdapter();
 			}
 			@Override
+			public Adapter caseComputationDeviceType(ComputationDeviceType object) {
+				return createComputationDeviceTypeAdapter();
+			}
+			@Override
+			public Adapter caseAbstractCommunicationConnection(AbstractCommunicationConnection object) {
+				return createAbstractCommunicationConnectionAdapter();
+			}
+			@Override
+			public Adapter caseNetworkConnection(NetworkConnection object) {
+				return createNetworkConnectionAdapter();
+			}
+			@Override
+			public Adapter caseAbstractNetworkProperty(AbstractNetworkProperty object) {
+				return createAbstractNetworkPropertyAdapter();
+			}
+			@Override
+			public Adapter caseInterfaceNetworkProperty(InterfaceNetworkProperty object) {
+				return createInterfaceNetworkPropertyAdapter();
+			}
+			@Override
+			public Adapter caseAddressNetworkProperty(AddressNetworkProperty object) {
+				return createAddressNetworkPropertyAdapter();
+			}
+			@Override
 			public Adapter caseDescription(Description object) {
 				return createDescriptionAdapter();
+			}
+			@Override
+			public Adapter caseProperty(Property object) {
+				return createPropertyAdapter();
+			}
+			@Override
+			public Adapter caseResouceType(ResouceType object) {
+				return createResouceTypeAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -188,20 +214,6 @@ public class DeviceAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCommunicationConnectionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link device.Property <em>Property</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see device.Property
-	 * @generated
-	 */
-	public Adapter createPropertyAdapter() {
 		return null;
 	}
 
@@ -290,30 +302,16 @@ public class DeviceAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link device.PropertyType <em>Property Type</em>}'.
+	 * Creates a new adapter for an object of class '{@link device.RangeKind <em>Range Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see device.PropertyType
+	 * @see device.RangeKind
 	 * @generated
 	 */
-	public Adapter createPropertyTypeAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link device.CommunicationType <em>Communication Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see device.CommunicationType
-	 * @generated
-	 */
-	public Adapter createCommunicationTypeAdapter() {
+	public Adapter createRangeKindAdapter() {
 		return null;
 	}
 
@@ -346,16 +344,128 @@ public class DeviceAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link base.Description <em>Description</em>}'.
+	 * Creates a new adapter for an object of class '{@link device.ComputationDeviceType <em>Computation Device Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see base.Description
+	 * @see device.ComputationDeviceType
+	 * @generated
+	 */
+	public Adapter createComputationDeviceTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link device.AbstractCommunicationConnection <em>Abstract Communication Connection</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see device.AbstractCommunicationConnection
+	 * @generated
+	 */
+	public Adapter createAbstractCommunicationConnectionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link device.NetworkConnection <em>Network Connection</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see device.NetworkConnection
+	 * @generated
+	 */
+	public Adapter createNetworkConnectionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link device.AbstractNetworkProperty <em>Abstract Network Property</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see device.AbstractNetworkProperty
+	 * @generated
+	 */
+	public Adapter createAbstractNetworkPropertyAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link device.InterfaceNetworkProperty <em>Interface Network Property</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see device.InterfaceNetworkProperty
+	 * @generated
+	 */
+	public Adapter createInterfaceNetworkPropertyAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link device.AddressNetworkProperty <em>Address Network Property</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see device.AddressNetworkProperty
+	 * @generated
+	 */
+	public Adapter createAddressNetworkPropertyAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.fraunhofer.ipa.deployment.util.Description <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.fraunhofer.ipa.deployment.util.Description
 	 * @generated
 	 */
 	public Adapter createDescriptionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.fraunhofer.ipa.deployment.util.Property <em>Property</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.fraunhofer.ipa.deployment.util.Property
+	 * @generated
+	 */
+	public Adapter createPropertyAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.fraunhofer.ipa.deployment.util.ResouceType <em>Resouce Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.fraunhofer.ipa.deployment.util.ResouceType
+	 * @generated
+	 */
+	public Adapter createResouceTypeAdapter() {
 		return null;
 	}
 

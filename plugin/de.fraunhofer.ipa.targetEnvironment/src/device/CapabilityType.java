@@ -2,6 +2,7 @@
  */
 package device;
 
+import de.fraunhofer.ipa.deployment.util.ResouceType;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,5 +14,5 @@ package device;
  * @model
  * @generated
  */
-public interface CapabilityType extends PropertyType {
+public interface CapabilityType extends ResouceType {
 } // CapabilityType

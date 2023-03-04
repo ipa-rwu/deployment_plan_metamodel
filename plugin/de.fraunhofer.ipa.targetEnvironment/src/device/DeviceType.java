@@ -61,7 +61,7 @@ public interface DeviceType extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Communication Connection</b></em>' containment reference list.
-	 * The list contents are of type {@link device.CommunicationConnection}.
+	 * The list contents are of type {@link device.AbstractCommunicationConnection}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Communication Connection</em>' containment reference list.
@@ -69,6 +69,6 @@ public interface DeviceType extends EObject {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<CommunicationConnection> getCommunicationConnection();
+	EList<AbstractCommunicationConnection> getCommunicationConnection();
 
 } // DeviceType

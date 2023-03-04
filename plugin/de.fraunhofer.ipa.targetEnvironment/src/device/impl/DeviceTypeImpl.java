@@ -2,8 +2,8 @@
  */
 package device.impl;
 
+import device.AbstractCommunicationConnection;
 import device.CapabilityProperty;
-import device.CommunicationConnection;
 import device.DevicePackage;
 import device.DeviceType;
 
@@ -77,7 +77,7 @@ public class DeviceTypeImpl extends MinimalEObjectImpl.Container implements Devi
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<CommunicationConnection> communicationConnection;
+	protected EList<AbstractCommunicationConnection> communicationConnection;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -136,9 +136,9 @@ public class DeviceTypeImpl extends MinimalEObjectImpl.Container implements Devi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<CommunicationConnection> getCommunicationConnection() {
+	public EList<AbstractCommunicationConnection> getCommunicationConnection() {
 		if (communicationConnection == null) {
-			communicationConnection = new EObjectContainmentEList<CommunicationConnection>(CommunicationConnection.class, this, DevicePackage.DEVICE_TYPE__COMMUNICATION_CONNECTION);
+			communicationConnection = new EObjectContainmentEList<AbstractCommunicationConnection>(AbstractCommunicationConnection.class, this, DevicePackage.DEVICE_TYPE__COMMUNICATION_CONNECTION);
 		}
 		return communicationConnection;
 	}
@@ -195,7 +195,7 @@ public class DeviceTypeImpl extends MinimalEObjectImpl.Container implements Devi
 				return;
 			case DevicePackage.DEVICE_TYPE__COMMUNICATION_CONNECTION:
 				getCommunicationConnection().clear();
-				getCommunicationConnection().addAll((Collection<? extends CommunicationConnection>)newValue);
+				getCommunicationConnection().addAll((Collection<? extends AbstractCommunicationConnection>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

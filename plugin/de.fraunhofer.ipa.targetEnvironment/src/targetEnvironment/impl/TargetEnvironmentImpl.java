@@ -2,7 +2,7 @@
  */
 package targetEnvironment.impl;
 
-import base.Description;
+import de.fraunhofer.ipa.deployment.util.Description;
 
 import java.util.Collection;
 

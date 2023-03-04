@@ -2,7 +2,7 @@
  */
 package targetEnvironment.util;
 
-import base.Description;
+import de.fraunhofer.ipa.deployment.util.Description;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
@@ -202,13 +202,13 @@ public class TargetEnvironmentAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link base.Description <em>Description</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.fraunhofer.ipa.deployment.util.Description <em>Description</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see base.Description
+	 * @see de.fraunhofer.ipa.deployment.util.Description
 	 * @generated
 	 */
 	public Adapter createDescriptionAdapter() {

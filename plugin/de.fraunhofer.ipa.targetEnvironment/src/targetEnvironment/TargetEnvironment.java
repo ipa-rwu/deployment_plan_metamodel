@@ -2,7 +2,7 @@
  */
 package targetEnvironment;
 
-import base.Description;
+import de.fraunhofer.ipa.deployment.util.Description;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.EObject;
 public interface TargetEnvironment extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' containment reference list.
-	 * The list contents are of type {@link base.Description}.
+	 * The list contents are of type {@link de.fraunhofer.ipa.deployment.util.Description}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Type</em>' containment reference list.

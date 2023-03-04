@@ -49,15 +49,6 @@ public interface DeviceFactory extends EFactory {
 	CommunicationConnection createCommunicationConnection();
 
 	/**
-	 * Returns a new object of class '<em>Property</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Property</em>'.
-	 * @generated
-	 */
-	Property createProperty();
-
-	/**
 	 * Returns a new object of class '<em>Capability Property</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -103,13 +94,13 @@ public interface DeviceFactory extends EFactory {
 	SelectionKind createSelectionKind();
 
 	/**
-	 * Returns a new object of class '<em>Communication Type</em>'.
+	 * Returns a new object of class '<em>Range Kind</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Communication Type</em>'.
+	 * @return a new object of class '<em>Range Kind</em>'.
 	 * @generated
 	 */
-	CommunicationType createCommunicationType();
+	RangeKind createRangeKind();
 
 	/**
 	 * Returns a new object of class '<em>Connection Property</em>'.
@@ -128,6 +119,42 @@ public interface DeviceFactory extends EFactory {
 	 * @generated
 	 */
 	CapabilityType createCapabilityType();
+
+	/**
+	 * Returns a new object of class '<em>Computation Device Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Computation Device Type</em>'.
+	 * @generated
+	 */
+	ComputationDeviceType createComputationDeviceType();
+
+	/**
+	 * Returns a new object of class '<em>Network Connection</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Network Connection</em>'.
+	 * @generated
+	 */
+	NetworkConnection createNetworkConnection();
+
+	/**
+	 * Returns a new object of class '<em>Interface Network Property</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Interface Network Property</em>'.
+	 * @generated
+	 */
+	InterfaceNetworkProperty createInterfaceNetworkProperty();
+
+	/**
+	 * Returns a new object of class '<em>Address Network Property</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Address Network Property</em>'.
+	 * @generated
+	 */
+	AddressNetworkProperty createAddressNetworkProperty();
 
 	/**
 	 * Returns the package supported by this factory.

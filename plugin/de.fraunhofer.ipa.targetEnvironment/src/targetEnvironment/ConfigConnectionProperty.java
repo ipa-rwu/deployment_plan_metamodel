@@ -2,7 +2,7 @@
  */
 package targetEnvironment;
 
-import base.PropertyValue;
+import de.fraunhofer.ipa.deployment.util.PropertyValue;
 
 import device.ConnectionProperty;
 
@@ -33,7 +33,7 @@ public interface ConfigConnectionProperty extends EObject {
 	 * @return the value of the '<em>Ref Connection Property</em>' reference.
 	 * @see #setRefConnectionProperty(ConnectionProperty)
 	 * @see targetEnvironment.TargetEnvironmentPackage#getConfigConnectionProperty_RefConnectionProperty()
-	 * @model keys="name" required="true" derived="true"
+	 * @model required="true" derived="true"
 	 * @generated
 	 */
 	ConnectionProperty getRefConnectionProperty();

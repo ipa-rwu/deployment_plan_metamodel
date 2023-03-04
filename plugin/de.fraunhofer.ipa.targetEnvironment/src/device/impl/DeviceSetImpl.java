@@ -2,7 +2,7 @@
  */
 package device.impl;
 
-import base.impl.DescriptionImpl;
+import de.fraunhofer.ipa.deployment.util.impl.DescriptionImpl;
 
 import device.DevicePackage;
 import device.DeviceSet;

@@ -2,30 +2,25 @@
  */
 package device.impl;
 
+import device.AddressNetworkProperty;
 import device.DevicePackage;
-import device.PropertyType;
-
-import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Property Type</b></em>'.
+ * An implementation of the model object '<em><b>Address Network Property</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link device.impl.PropertyTypeImpl#getName <em>Name</em>}</li>
+ *   <li>{@link device.impl.AddressNetworkPropertyImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public abstract class PropertyTypeImpl extends MinimalEObjectImpl.Container implements PropertyType {
+public class AddressNetworkPropertyImpl extends AbstractNetworkPropertyImpl implements AddressNetworkProperty {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -34,7 +29,7 @@ public abstract class PropertyTypeImpl extends MinimalEObjectImpl.Container impl
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NAME_EDEFAULT = null;
+	protected static final String NAME_EDEFAULT = "address";
 
 	/**
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -51,7 +46,7 @@ public abstract class PropertyTypeImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PropertyTypeImpl() {
+	protected AddressNetworkPropertyImpl() {
 		super();
 	}
 
@@ -62,7 +57,7 @@ public abstract class PropertyTypeImpl extends MinimalEObjectImpl.Container impl
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return DevicePackage.Literals.PROPERTY_TYPE;
+		return DevicePackage.Literals.ADDRESS_NETWORK_PROPERTY;
 	}
 
 	/**
@@ -79,22 +74,10 @@ public abstract class PropertyTypeImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DevicePackage.PROPERTY_TYPE__NAME, oldName, name));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case DevicePackage.PROPERTY_TYPE__NAME:
+			case DevicePackage.ADDRESS_NETWORK_PROPERTY__NAME:
 				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -106,39 +89,9 @@ public abstract class PropertyTypeImpl extends MinimalEObjectImpl.Container impl
 	 * @generated
 	 */
 	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case DevicePackage.PROPERTY_TYPE__NAME:
-				setName((String)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case DevicePackage.PROPERTY_TYPE__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case DevicePackage.PROPERTY_TYPE__NAME:
+			case DevicePackage.ADDRESS_NETWORK_PROPERTY__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
@@ -160,4 +113,4 @@ public abstract class PropertyTypeImpl extends MinimalEObjectImpl.Container impl
 		return result.toString();
 	}
 
-} //PropertyTypeImpl
+} //AddressNetworkPropertyImpl

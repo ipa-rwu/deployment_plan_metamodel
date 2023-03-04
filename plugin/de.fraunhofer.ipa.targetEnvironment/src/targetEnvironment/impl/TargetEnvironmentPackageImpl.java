@@ -2,7 +2,7 @@
  */
 package targetEnvironment.impl;
 
-import base.BasePackage;
+import de.fraunhofer.ipa.deployment.util.UtilPackage;
 
 import device.DevicePackage;
 
@@ -121,8 +121,8 @@ public class TargetEnvironmentPackageImpl extends EPackageImpl implements Target
 
 		// Initialize simple dependencies
 		DevicePackage.eINSTANCE.eClass();
-		BasePackage.eINSTANCE.eClass();
 		XMLTypePackage.eINSTANCE.eClass();
+		UtilPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theTargetEnvironmentPackage.createPackageContents();
@@ -387,7 +387,7 @@ public class TargetEnvironmentPackageImpl extends EPackageImpl implements Target
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		BasePackage theBasePackage = (BasePackage)EPackage.Registry.INSTANCE.getEPackage(BasePackage.eNS_URI);
+		UtilPackage theUtilPackage = (UtilPackage)EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI);
 		DevicePackage theDevicePackage = (DevicePackage)EPackage.Registry.INSTANCE.getEPackage(DevicePackage.eNS_URI);
 
 		// Create type parameters
@@ -395,11 +395,11 @@ public class TargetEnvironmentPackageImpl extends EPackageImpl implements Target
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		targetDeployEnviromentEClass.getESuperTypes().add(theBasePackage.getDescription());
+		targetDeployEnviromentEClass.getESuperTypes().add(theUtilPackage.getDescription());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(targetEnvironmentEClass, TargetEnvironment.class, "TargetEnvironment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTargetEnvironment_Type(), theBasePackage.getDescription(), null, "type", null, 1, -1, TargetEnvironment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTargetEnvironment_Type(), theUtilPackage.getDescription(), null, "type", null, 1, -1, TargetEnvironment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(targetDeployEnviromentEClass, TargetDeployEnviroment.class, "TargetDeployEnviroment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTargetDeployEnviroment_Name(), ecorePackage.getEString(), "name", null, 0, 1, TargetDeployEnviroment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -421,8 +421,7 @@ public class TargetEnvironmentPackageImpl extends EPackageImpl implements Target
 
 		initEClass(configConnectionPropertyEClass, ConfigConnectionProperty.class, "ConfigConnectionProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getConfigConnectionProperty_RefConnectionProperty(), theDevicePackage.getConnectionProperty(), null, "refConnectionProperty", null, 1, 1, ConfigConnectionProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		getConfigConnectionProperty_RefConnectionProperty().getEKeys().add(theDevicePackage.getProperty_Name());
-		initEReference(getConfigConnectionProperty_Value(), theBasePackage.getPropertyValue(), null, "value", null, 1, 1, ConfigConnectionProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConfigConnectionProperty_Value(), theUtilPackage.getPropertyValue(), null, "value", null, 1, 1, ConfigConnectionProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
