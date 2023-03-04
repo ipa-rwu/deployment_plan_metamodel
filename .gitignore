@@ -4,3 +4,6 @@
 *._trace
 bin/
 xtend-gen/
+*.editor/
+*.edit/
+
