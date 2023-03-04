@@ -11,13 +11,31 @@ package de.fraunhofer.ipa.targetEnvironment.parser.antlr.lexer;
 import org.eclipse.xtext.parser.antlr.Lexer;
 }
 
+Arm64ProcessorArchitecture : 'Arm64ProcessorArchitecture';
+
+EthernetCommunicationType : 'EthernetCommunicationType';
+
+X86ProcessorArchitecture : 'X86ProcessorArchitecture';
+
 CommunicationConnection : 'communicationConnection:';
 
 TargetDeployEnviroment : 'TargetDeployEnviroment:';
 
+ComputationDeviceType : 'ComputationDeviceType:';
+
+ProcessorArchitecture : 'processorArchitecture:';
+
 RefConnectionProperty : 'refConnectionProperty:';
 
+WlanCommunicationType : 'WlanCommunicationType';
+
+LinuxOpertingSystem : 'LinuxOpertingSystem';
+
+CommunicationType : 'CommunicationType';
+
 ConfigConnection : 'configConnection:';
+
+OperatingSystem : 'operatingSystem:';
 
 Configuration : 'configuration:';
 
@@ -39,11 +57,17 @@ MaximumKind : 'MaximumKind';
 
 MinimumKind : 'MinimumKind';
 
+ResouceType : 'ResouceType';
+
 Capability : 'capability:';
 
 Properties : 'properties:';
 
 RefDevice : 'refDevice:';
+
+Interface : 'interface';
+
+Address : 'address';
 
 Value : 'value:';
 
@@ -54,6 +78,8 @@ Name : 'name:';
 Type : 'type:';
 
 HyphenMinus : '-';
+
+RightCurlyBracket : '}';
 
 fragment RULE_DIGIT : '0'..'9';
 

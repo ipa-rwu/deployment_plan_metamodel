@@ -34,12 +34,22 @@ public class DeviceParser extends AbstractContentAssistParser {
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, DeviceGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getCapabilityKindAccess().getAlternatives(), "rule__CapabilityKind__Alternatives");
-			builder.put(grammarAccess.getPropertyTypeAccess().getAlternatives(), "rule__PropertyType__Alternatives");
+			builder.put(grammarAccess.getDeviceTypeAccess().getAlternatives(), "rule__DeviceType__Alternatives");
+			builder.put(grammarAccess.getAbstractCommunicationConnectionAccess().getAlternatives(), "rule__AbstractCommunicationConnection__Alternatives");
+			builder.put(grammarAccess.getAbstractNetworkPropertyAccess().getAlternatives(), "rule__AbstractNetworkProperty__Alternatives");
 			builder.put(grammarAccess.getPropertyValueAccess().getAlternatives(), "rule__PropertyValue__Alternatives");
+			builder.put(grammarAccess.getResouceTypeAccess().getAlternatives(), "rule__ResouceType__Alternatives");
 			builder.put(grammarAccess.getEStringAccess().getAlternatives(), "rule__EString__Alternatives");
-			builder.put(grammarAccess.getDeviceTypeAccess().getGroup(), "rule__DeviceType__Group__0");
-			builder.put(grammarAccess.getDeviceTypeAccess().getGroup_5(), "rule__DeviceType__Group_5__0");
-			builder.put(grammarAccess.getDeviceTypeAccess().getGroup_6(), "rule__DeviceType__Group_6__0");
+			builder.put(grammarAccess.getInterfaceNetworkPropertyAccess().getGroup(), "rule__InterfaceNetworkProperty__Group__0");
+			builder.put(grammarAccess.getInterfaceNetworkPropertyAccess().getGroup_5(), "rule__InterfaceNetworkProperty__Group_5__0");
+			builder.put(grammarAccess.getAddressNetworkPropertyAccess().getGroup(), "rule__AddressNetworkProperty__Group__0");
+			builder.put(grammarAccess.getAddressNetworkPropertyAccess().getGroup_5(), "rule__AddressNetworkProperty__Group_5__0");
+			builder.put(grammarAccess.getDeviceType_ImplAccess().getGroup(), "rule__DeviceType_Impl__Group__0");
+			builder.put(grammarAccess.getDeviceType_ImplAccess().getGroup_5(), "rule__DeviceType_Impl__Group_5__0");
+			builder.put(grammarAccess.getDeviceType_ImplAccess().getGroup_6(), "rule__DeviceType_Impl__Group_6__0");
+			builder.put(grammarAccess.getComputationDeviceTypeAccess().getGroup(), "rule__ComputationDeviceType__Group__0");
+			builder.put(grammarAccess.getComputationDeviceTypeAccess().getGroup_8(), "rule__ComputationDeviceType__Group_8__0");
+			builder.put(grammarAccess.getComputationDeviceTypeAccess().getGroup_9(), "rule__ComputationDeviceType__Group_9__0");
 			builder.put(grammarAccess.getCapabilityPropertyAccess().getGroup(), "rule__CapabilityProperty__Group__0");
 			builder.put(grammarAccess.getCapabilityPropertyAccess().getGroup_8(), "rule__CapabilityProperty__Group_8__0");
 			builder.put(grammarAccess.getAttributeKindAccess().getGroup(), "rule__AttributeKind__Group__0");
@@ -48,28 +58,44 @@ public class DeviceParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getSelectionKindAccess().getGroup(), "rule__SelectionKind__Group__0");
 			builder.put(grammarAccess.getConnectionPropertyAccess().getGroup(), "rule__ConnectionProperty__Group__0");
 			builder.put(grammarAccess.getConnectionPropertyAccess().getGroup_4(), "rule__ConnectionProperty__Group_4__0");
+			builder.put(grammarAccess.getNetworkConnectionAccess().getGroup(), "rule__NetworkConnection__Group__0");
+			builder.put(grammarAccess.getNetworkConnectionAccess().getGroup_7(), "rule__NetworkConnection__Group_7__0");
 			builder.put(grammarAccess.getCommunicationConnectionAccess().getGroup(), "rule__CommunicationConnection__Group__0");
 			builder.put(grammarAccess.getCommunicationConnectionAccess().getGroup_7(), "rule__CommunicationConnection__Group_7__0");
+			builder.put(grammarAccess.getResouceType_ImplAccess().getGroup(), "rule__ResouceType_Impl__Group__0");
+			builder.put(grammarAccess.getLinuxOpertingSystemAccess().getGroup(), "rule__LinuxOpertingSystem__Group__0");
+			builder.put(grammarAccess.getX86ProcessorArchitectureAccess().getGroup(), "rule__X86ProcessorArchitecture__Group__0");
+			builder.put(grammarAccess.getArm64ProcessorArchitectureAccess().getGroup(), "rule__Arm64ProcessorArchitecture__Group__0");
 			builder.put(grammarAccess.getCommunicationTypeAccess().getGroup(), "rule__CommunicationType__Group__0");
-			builder.put(grammarAccess.getCapabilityTypeAccess().getGroup(), "rule__CapabilityType__Group__0");
+			builder.put(grammarAccess.getEthernetCommunicationTypeAccess().getGroup(), "rule__EthernetCommunicationType__Group__0");
+			builder.put(grammarAccess.getWlanCommunicationTypeAccess().getGroup(), "rule__WlanCommunicationType__Group__0");
 			builder.put(grammarAccess.getDeviceSetAccess().getDeviceAssignment(), "rule__DeviceSet__DeviceAssignment");
-			builder.put(grammarAccess.getDeviceTypeAccess().getNameAssignment_4(), "rule__DeviceType__NameAssignment_4");
-			builder.put(grammarAccess.getDeviceTypeAccess().getCapabilityAssignment_5_2(), "rule__DeviceType__CapabilityAssignment_5_2");
-			builder.put(grammarAccess.getDeviceTypeAccess().getCommunicationConnectionAssignment_6_2(), "rule__DeviceType__CommunicationConnectionAssignment_6_2");
+			builder.put(grammarAccess.getInterfaceNetworkPropertyAccess().getValueAssignment_5_1(), "rule__InterfaceNetworkProperty__ValueAssignment_5_1");
+			builder.put(grammarAccess.getAddressNetworkPropertyAccess().getValueAssignment_5_1(), "rule__AddressNetworkProperty__ValueAssignment_5_1");
+			builder.put(grammarAccess.getDeviceType_ImplAccess().getNameAssignment_4(), "rule__DeviceType_Impl__NameAssignment_4");
+			builder.put(grammarAccess.getDeviceType_ImplAccess().getCapabilityAssignment_5_2(), "rule__DeviceType_Impl__CapabilityAssignment_5_2");
+			builder.put(grammarAccess.getDeviceType_ImplAccess().getCommunicationConnectionAssignment_6_2(), "rule__DeviceType_Impl__CommunicationConnectionAssignment_6_2");
+			builder.put(grammarAccess.getComputationDeviceTypeAccess().getNameAssignment_3(), "rule__ComputationDeviceType__NameAssignment_3");
+			builder.put(grammarAccess.getComputationDeviceTypeAccess().getOperatingSystemAssignment_5(), "rule__ComputationDeviceType__OperatingSystemAssignment_5");
+			builder.put(grammarAccess.getComputationDeviceTypeAccess().getProcessorArchitectureAssignment_7(), "rule__ComputationDeviceType__ProcessorArchitectureAssignment_7");
+			builder.put(grammarAccess.getComputationDeviceTypeAccess().getCapabilityAssignment_8_2(), "rule__ComputationDeviceType__CapabilityAssignment_8_2");
+			builder.put(grammarAccess.getComputationDeviceTypeAccess().getCommunicationConnectionAssignment_9_2(), "rule__ComputationDeviceType__CommunicationConnectionAssignment_9_2");
 			builder.put(grammarAccess.getCapabilityPropertyAccess().getNameAssignment_2(), "rule__CapabilityProperty__NameAssignment_2");
 			builder.put(grammarAccess.getCapabilityPropertyAccess().getTypeAssignment_5(), "rule__CapabilityProperty__TypeAssignment_5");
 			builder.put(grammarAccess.getCapabilityPropertyAccess().getKindAssignment_7(), "rule__CapabilityProperty__KindAssignment_7");
 			builder.put(grammarAccess.getCapabilityPropertyAccess().getValueAssignment_8_1(), "rule__CapabilityProperty__ValueAssignment_8_1");
 			builder.put(grammarAccess.getConnectionPropertyAccess().getNameAssignment_3(), "rule__ConnectionProperty__NameAssignment_3");
 			builder.put(grammarAccess.getConnectionPropertyAccess().getValueAssignment_4_2(), "rule__ConnectionProperty__ValueAssignment_4_2");
+			builder.put(grammarAccess.getNetworkConnectionAccess().getNameAssignment_3(), "rule__NetworkConnection__NameAssignment_3");
+			builder.put(grammarAccess.getNetworkConnectionAccess().getTypeAssignment_6(), "rule__NetworkConnection__TypeAssignment_6");
+			builder.put(grammarAccess.getNetworkConnectionAccess().getPropertiesAssignment_7_2(), "rule__NetworkConnection__PropertiesAssignment_7_2");
 			builder.put(grammarAccess.getCommunicationConnectionAccess().getNameAssignment_3(), "rule__CommunicationConnection__NameAssignment_3");
 			builder.put(grammarAccess.getCommunicationConnectionAccess().getTypeAssignment_6(), "rule__CommunicationConnection__TypeAssignment_6");
 			builder.put(grammarAccess.getCommunicationConnectionAccess().getPropertiesAssignment_7_2(), "rule__CommunicationConnection__PropertiesAssignment_7_2");
-			builder.put(grammarAccess.getCommunicationTypeAccess().getNameAssignment_1(), "rule__CommunicationType__NameAssignment_1");
-			builder.put(grammarAccess.getCapabilityTypeAccess().getNameAssignment_1(), "rule__CapabilityType__NameAssignment_1");
 			builder.put(grammarAccess.getPropertyValueIntAccess().getValueAssignment(), "rule__PropertyValueInt__ValueAssignment");
 			builder.put(grammarAccess.getPropertyValueDoubleAccess().getValueAssignment(), "rule__PropertyValueDouble__ValueAssignment");
 			builder.put(grammarAccess.getPropertyValueStringAccess().getValueAssignment(), "rule__PropertyValueString__ValueAssignment");
+			builder.put(grammarAccess.getLinuxOpertingSystemAccess().getNameAssignment_2(), "rule__LinuxOpertingSystem__NameAssignment_2");
 		}
 	}
 	

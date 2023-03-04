@@ -5,6 +5,7 @@ package de.fraunhofer.ipa.targetEnvironment;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;
+import de.fraunhofer.ipa.deployment.UtilStandaloneSetup;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtext.ISetup;
 import org.eclipse.xtext.resource.IResourceFactory;
@@ -15,7 +16,7 @@ public class DeviceStandaloneSetupGenerated implements ISetup {
 
 	@Override
 	public Injector createInjectorAndDoEMFRegistration() {
-		BaseStandaloneSetup.doSetup();
+		UtilStandaloneSetup.doSetup();
 
 		Injector injector = createInjector();
 		register(injector);

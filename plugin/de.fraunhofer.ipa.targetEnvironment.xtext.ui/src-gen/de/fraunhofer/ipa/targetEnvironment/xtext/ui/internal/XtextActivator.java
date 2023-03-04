@@ -6,10 +6,8 @@ package de.fraunhofer.ipa.targetEnvironment.xtext.ui.internal;
 import com.google.common.collect.Maps;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
-import de.fraunhofer.ipa.targetEnvironment.BaseRuntimeModule;
 import de.fraunhofer.ipa.targetEnvironment.DeviceRuntimeModule;
 import de.fraunhofer.ipa.targetEnvironment.TargetEnvironmentRuntimeModule;
-import de.fraunhofer.ipa.targetEnvironment.ui.BaseUiModule;
 import de.fraunhofer.ipa.targetEnvironment.ui.DeviceUiModule;
 import de.fraunhofer.ipa.targetEnvironment.ui.TargetEnvironmentUiModule;
 import java.util.Collections;
@@ -29,7 +27,6 @@ public class XtextActivator extends AbstractUIPlugin {
 	public static final String PLUGIN_ID = "de.fraunhofer.ipa.targetEnvironment.xtext.ui";
 	public static final String DE_FRAUNHOFER_IPA_TARGETENVIRONMENT_TARGETENVIRONMENT = "de.fraunhofer.ipa.targetEnvironment.TargetEnvironment";
 	public static final String DE_FRAUNHOFER_IPA_TARGETENVIRONMENT_DEVICE = "de.fraunhofer.ipa.targetEnvironment.Device";
-	public static final String DE_FRAUNHOFER_IPA_TARGETENVIRONMENT_BASE = "de.fraunhofer.ipa.targetEnvironment.Base";
 	
 	private static final Logger logger = Logger.getLogger(XtextActivator.class);
 	
@@ -85,9 +82,6 @@ public class XtextActivator extends AbstractUIPlugin {
 		if (DE_FRAUNHOFER_IPA_TARGETENVIRONMENT_DEVICE.equals(grammar)) {
 			return new DeviceRuntimeModule();
 		}
-		if (DE_FRAUNHOFER_IPA_TARGETENVIRONMENT_BASE.equals(grammar)) {
-			return new BaseRuntimeModule();
-		}
 		throw new IllegalArgumentException(grammar);
 	}
 	
@@ -97,9 +91,6 @@ public class XtextActivator extends AbstractUIPlugin {
 		}
 		if (DE_FRAUNHOFER_IPA_TARGETENVIRONMENT_DEVICE.equals(grammar)) {
 			return new DeviceUiModule(this);
-		}
-		if (DE_FRAUNHOFER_IPA_TARGETENVIRONMENT_BASE.equals(grammar)) {
-			return new BaseUiModule(this);
 		}
 		throw new IllegalArgumentException(grammar);
 	}

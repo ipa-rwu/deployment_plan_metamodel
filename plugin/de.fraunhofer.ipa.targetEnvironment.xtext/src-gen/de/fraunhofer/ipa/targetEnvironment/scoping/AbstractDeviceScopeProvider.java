@@ -3,6 +3,7 @@
  */
 package de.fraunhofer.ipa.targetEnvironment.scoping;
 
+import de.fraunhofer.ipa.deployment.scoping.UtilScopeProvider;
 
-public abstract class AbstractDeviceScopeProvider extends BaseScopeProvider {
+public abstract class AbstractDeviceScopeProvider extends UtilScopeProvider {
 }

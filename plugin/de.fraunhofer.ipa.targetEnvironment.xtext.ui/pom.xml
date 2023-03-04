@@ -19,4 +19,13 @@
 		</plugins>
 	</build>
 
+	<dependencies>
+		<dependency>
+			<groupId>de.fraunhofer.ipa.deployment.util.xtext</groupId>
+			<artifactId>
+				de.fraunhofer.ipa.deployment.util.xtext.ui
+			</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
 </project>

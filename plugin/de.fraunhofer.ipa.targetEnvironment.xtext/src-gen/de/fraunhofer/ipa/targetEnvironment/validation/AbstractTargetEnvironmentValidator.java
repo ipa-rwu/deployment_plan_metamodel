@@ -13,7 +13,7 @@ public abstract class AbstractTargetEnvironmentValidator extends DeviceValidator
 	protected List<EPackage> getEPackages() {
 		List<EPackage> result = new ArrayList<EPackage>(super.getEPackages());
 		result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.ipa.fraunhofer.de/TargetEnvironment"));
-		result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.ipa.fraunhofer.de/Base"));
+		result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.ipa.fraunhofer.de/Util"));
 		result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.ipa.fraunhofer.de/Device"));
 		return result;
 	}
