@@ -3,27 +3,17 @@
 package device.tests;
 
 import device.DeviceFactory;
-import device.Property;
-
-import junit.framework.TestCase;
+import device.InterfaceNetworkProperty;
 
 import junit.textui.TestRunner;
 
 /**
  * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Property</b></em>'.
+ * A test case for the model object '<em><b>Interface Network Property</b></em>'.
  * <!-- end-user-doc -->
  * @generated
  */
-public class PropertyTest extends TestCase {
-
-	/**
-	 * The fixture for this Property test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected Property fixture = null;
+public class InterfaceNetworkPropertyTest extends AbstractNetworkPropertyTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -31,37 +21,28 @@ public class PropertyTest extends TestCase {
 	 * @generated
 	 */
 	public static void main(String[] args) {
-		TestRunner.run(PropertyTest.class);
+		TestRunner.run(InterfaceNetworkPropertyTest.class);
 	}
 
 	/**
-	 * Constructs a new Property test case with the given name.
+	 * Constructs a new Interface Network Property test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PropertyTest(String name) {
+	public InterfaceNetworkPropertyTest(String name) {
 		super(name);
 	}
 
 	/**
-	 * Sets the fixture for this Property test case.
+	 * Returns the fixture for this Interface Network Property test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void setFixture(Property fixture) {
-		this.fixture = fixture;
-	}
-
-	/**
-	 * Returns the fixture for this Property test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected Property getFixture() {
-		return fixture;
+	@Override
+	protected InterfaceNetworkProperty getFixture() {
+		return (InterfaceNetworkProperty)fixture;
 	}
 
 	/**
@@ -72,7 +53,7 @@ public class PropertyTest extends TestCase {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(DeviceFactory.eINSTANCE.createProperty());
+		setFixture(DeviceFactory.eINSTANCE.createInterfaceNetworkProperty());
 	}
 
 	/**
@@ -86,4 +67,4 @@ public class PropertyTest extends TestCase {
 		setFixture(null);
 	}
 
-} //PropertyTest
+} //InterfaceNetworkPropertyTest

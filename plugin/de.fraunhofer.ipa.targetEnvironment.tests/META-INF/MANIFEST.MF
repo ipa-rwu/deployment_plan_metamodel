@@ -8,11 +8,11 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
-Export-Package: base.tests,
- device.tests,
+Export-Package: device.tests,
  targetEnvironment.tests
 Require-Bundle: org.eclipse.core.runtime,
  de.fraunhofer.ipa.targetEnvironment;visibility:=reexport,
+ de.fraunhofer.ipa.deployment.util;visibility:=reexport,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.junit;visibility:=reexport

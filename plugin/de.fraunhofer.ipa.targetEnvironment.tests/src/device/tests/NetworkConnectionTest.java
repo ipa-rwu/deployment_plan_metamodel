@@ -1,19 +1,19 @@
 /**
  */
-package base.tests;
+package device.tests;
 
-import base.BaseFactory;
-import base.PropertyValueDouble;
+import device.DeviceFactory;
+import device.NetworkConnection;
 
 import junit.textui.TestRunner;
 
 /**
  * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Property Value Double</b></em>'.
+ * A test case for the model object '<em><b>Network Connection</b></em>'.
  * <!-- end-user-doc -->
  * @generated
  */
-public class PropertyValueDoubleTest extends PropertyValueTest {
+public class NetworkConnectionTest extends AbstractCommunicationConnectionTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -21,28 +21,28 @@ public class PropertyValueDoubleTest extends PropertyValueTest {
 	 * @generated
 	 */
 	public static void main(String[] args) {
-		TestRunner.run(PropertyValueDoubleTest.class);
+		TestRunner.run(NetworkConnectionTest.class);
 	}
 
 	/**
-	 * Constructs a new Property Value Double test case with the given name.
+	 * Constructs a new Network Connection test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PropertyValueDoubleTest(String name) {
+	public NetworkConnectionTest(String name) {
 		super(name);
 	}
 
 	/**
-	 * Returns the fixture for this Property Value Double test case.
+	 * Returns the fixture for this Network Connection test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	protected PropertyValueDouble getFixture() {
-		return (PropertyValueDouble)fixture;
+	protected NetworkConnection getFixture() {
+		return (NetworkConnection)fixture;
 	}
 
 	/**
@@ -53,7 +53,7 @@ public class PropertyValueDoubleTest extends PropertyValueTest {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(BaseFactory.eINSTANCE.createPropertyValueDouble());
+		setFixture(DeviceFactory.eINSTANCE.createNetworkConnection());
 	}
 
 	/**
@@ -67,4 +67,4 @@ public class PropertyValueDoubleTest extends PropertyValueTest {
 		setFixture(null);
 	}
 
-} //PropertyValueDoubleTest
+} //NetworkConnectionTest

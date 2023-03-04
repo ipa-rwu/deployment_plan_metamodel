@@ -5,6 +5,8 @@ package device.tests;
 import device.CapabilityProperty;
 import device.DeviceFactory;
 
+import junit.framework.TestCase;
+
 import junit.textui.TestRunner;
 
 /**
@@ -13,7 +15,15 @@ import junit.textui.TestRunner;
  * <!-- end-user-doc -->
  * @generated
  */
-public class CapabilityPropertyTest extends PropertyTest {
+public class CapabilityPropertyTest extends TestCase {
+
+	/**
+	 * The fixture for this Capability Property test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CapabilityProperty fixture = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -35,14 +45,23 @@ public class CapabilityPropertyTest extends PropertyTest {
 	}
 
 	/**
+	 * Sets the fixture for this Capability Property test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void setFixture(CapabilityProperty fixture) {
+		this.fixture = fixture;
+	}
+
+	/**
 	 * Returns the fixture for this Capability Property test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	protected CapabilityProperty getFixture() {
-		return (CapabilityProperty)fixture;
+		return fixture;
 	}
 
 	/**

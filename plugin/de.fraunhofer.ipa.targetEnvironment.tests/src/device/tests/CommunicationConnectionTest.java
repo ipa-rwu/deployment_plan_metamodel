@@ -5,8 +5,6 @@ package device.tests;
 import device.CommunicationConnection;
 import device.DeviceFactory;
 
-import junit.framework.TestCase;
-
 import junit.textui.TestRunner;
 
 /**
@@ -21,15 +19,7 @@ import junit.textui.TestRunner;
  * </p>
  * @generated
  */
-public class CommunicationConnectionTest extends TestCase {
-
-	/**
-	 * The fixture for this Communication Connection test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected CommunicationConnection fixture = null;
+public class CommunicationConnectionTest extends AbstractCommunicationConnectionTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -51,23 +41,14 @@ public class CommunicationConnectionTest extends TestCase {
 	}
 
 	/**
-	 * Sets the fixture for this Communication Connection test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void setFixture(CommunicationConnection fixture) {
-		this.fixture = fixture;
-	}
-
-	/**
 	 * Returns the fixture for this Communication Connection test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected CommunicationConnection getFixture() {
-		return fixture;
+		return (CommunicationConnection)fixture;
 	}
 
 	/**
@@ -106,10 +87,10 @@ public class CommunicationConnectionTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link device.CommunicationConnection#setType(device.CommunicationType) <em>Type</em>}' feature setter.
+	 * Tests the '{@link device.CommunicationConnection#setType(de.fraunhofer.ipa.deployment.util.CommunicationType) <em>Type</em>}' feature setter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see device.CommunicationConnection#setType(device.CommunicationType)
+	 * @see device.CommunicationConnection#setType(de.fraunhofer.ipa.deployment.util.CommunicationType)
 	 * @generated
 	 */
 	public void testSetType() {

@@ -5,6 +5,8 @@ package device.tests;
 import device.ConnectionProperty;
 import device.DeviceFactory;
 
+import junit.framework.TestCase;
+
 import junit.textui.TestRunner;
 
 /**
@@ -13,7 +15,15 @@ import junit.textui.TestRunner;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ConnectionPropertyTest extends PropertyTest {
+public class ConnectionPropertyTest extends TestCase {
+
+	/**
+	 * The fixture for this Connection Property test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ConnectionProperty fixture = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -35,14 +45,23 @@ public class ConnectionPropertyTest extends PropertyTest {
 	}
 
 	/**
+	 * Sets the fixture for this Connection Property test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void setFixture(ConnectionProperty fixture) {
+		this.fixture = fixture;
+	}
+
+	/**
 	 * Returns the fixture for this Connection Property test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	protected ConnectionProperty getFixture() {
-		return (ConnectionProperty)fixture;
+		return fixture;
 	}
 
 	/**

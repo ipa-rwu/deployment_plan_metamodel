@@ -1,19 +1,19 @@
 /**
  */
-package base.tests;
+package device.tests;
 
-import base.BaseFactory;
-import base.PropertyValueString;
+import device.DeviceFactory;
+import device.RangeKind;
 
 import junit.textui.TestRunner;
 
 /**
  * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Property Value String</b></em>'.
+ * A test case for the model object '<em><b>Range Kind</b></em>'.
  * <!-- end-user-doc -->
  * @generated
  */
-public class PropertyValueStringTest extends PropertyValueTest {
+public class RangeKindTest extends CapabilityKindTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -21,28 +21,28 @@ public class PropertyValueStringTest extends PropertyValueTest {
 	 * @generated
 	 */
 	public static void main(String[] args) {
-		TestRunner.run(PropertyValueStringTest.class);
+		TestRunner.run(RangeKindTest.class);
 	}
 
 	/**
-	 * Constructs a new Property Value String test case with the given name.
+	 * Constructs a new Range Kind test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PropertyValueStringTest(String name) {
+	public RangeKindTest(String name) {
 		super(name);
 	}
 
 	/**
-	 * Returns the fixture for this Property Value String test case.
+	 * Returns the fixture for this Range Kind test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	protected PropertyValueString getFixture() {
-		return (PropertyValueString)fixture;
+	protected RangeKind getFixture() {
+		return (RangeKind)fixture;
 	}
 
 	/**
@@ -53,7 +53,7 @@ public class PropertyValueStringTest extends PropertyValueTest {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(BaseFactory.eINSTANCE.createPropertyValueString());
+		setFixture(DeviceFactory.eINSTANCE.createRangeKind());
 	}
 
 	/**
@@ -67,4 +67,4 @@ public class PropertyValueStringTest extends PropertyValueTest {
 		setFixture(null);
 	}
 
-} //PropertyValueStringTest
+} //RangeKindTest

@@ -1,19 +1,19 @@
 /**
  */
-package base.tests;
+package device.tests;
 
-import base.BaseFactory;
-import base.PropertyValueInt;
+import device.AddressNetworkProperty;
+import device.DeviceFactory;
 
 import junit.textui.TestRunner;
 
 /**
  * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Property Value Int</b></em>'.
+ * A test case for the model object '<em><b>Address Network Property</b></em>'.
  * <!-- end-user-doc -->
  * @generated
  */
-public class PropertyValueIntTest extends PropertyValueTest {
+public class AddressNetworkPropertyTest extends AbstractNetworkPropertyTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -21,28 +21,28 @@ public class PropertyValueIntTest extends PropertyValueTest {
 	 * @generated
 	 */
 	public static void main(String[] args) {
-		TestRunner.run(PropertyValueIntTest.class);
+		TestRunner.run(AddressNetworkPropertyTest.class);
 	}
 
 	/**
-	 * Constructs a new Property Value Int test case with the given name.
+	 * Constructs a new Address Network Property test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PropertyValueIntTest(String name) {
+	public AddressNetworkPropertyTest(String name) {
 		super(name);
 	}
 
 	/**
-	 * Returns the fixture for this Property Value Int test case.
+	 * Returns the fixture for this Address Network Property test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	protected PropertyValueInt getFixture() {
-		return (PropertyValueInt)fixture;
+	protected AddressNetworkProperty getFixture() {
+		return (AddressNetworkProperty)fixture;
 	}
 
 	/**
@@ -53,7 +53,7 @@ public class PropertyValueIntTest extends PropertyValueTest {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(BaseFactory.eINSTANCE.createPropertyValueInt());
+		setFixture(DeviceFactory.eINSTANCE.createAddressNetworkProperty());
 	}
 
 	/**
@@ -67,4 +67,4 @@ public class PropertyValueIntTest extends PropertyValueTest {
 		setFixture(null);
 	}
 
-} //PropertyValueIntTest
+} //AddressNetworkPropertyTest
