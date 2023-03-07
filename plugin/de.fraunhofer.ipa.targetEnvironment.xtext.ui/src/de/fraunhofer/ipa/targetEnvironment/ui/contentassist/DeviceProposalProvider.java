@@ -3,7 +3,7 @@
  */
 package de.fraunhofer.ipa.targetEnvironment.ui.contentassist;
 
-import de.fraunhofer.ipa.deployment.util.*;
+
 /**
  * See https://www.eclipse.org/Xtext/documentation/310_eclipse_support.html#content-assist
  * on how to customize the content assistant.

@@ -7,11 +7,12 @@ import com.google.inject.Inject;
 import de.fraunhofer.ipa.deployment.util.Arm64ProcessorArchitecture;
 import de.fraunhofer.ipa.deployment.util.CommunicationType;
 import de.fraunhofer.ipa.deployment.util.EthernetCommunicationType;
-import de.fraunhofer.ipa.deployment.util.LinuxOpertingSystem;
+import de.fraunhofer.ipa.deployment.util.LinuxOpertingSystemType;
+import de.fraunhofer.ipa.deployment.util.MacOSOpertingSystemType;
+import de.fraunhofer.ipa.deployment.util.ProcessorArchitectureType;
 import de.fraunhofer.ipa.deployment.util.PropertyValueDouble;
 import de.fraunhofer.ipa.deployment.util.PropertyValueInt;
 import de.fraunhofer.ipa.deployment.util.PropertyValueString;
-import de.fraunhofer.ipa.deployment.util.ResouceType;
 import de.fraunhofer.ipa.deployment.util.UtilPackage;
 import de.fraunhofer.ipa.deployment.util.WlanCommunicationType;
 import de.fraunhofer.ipa.deployment.util.X86ProcessorArchitecture;
@@ -19,6 +20,7 @@ import de.fraunhofer.ipa.targetEnvironment.services.TargetEnvironmentGrammarAcce
 import device.AddressNetworkProperty;
 import device.AttributeKind;
 import device.CapabilityProperty;
+import device.CapabilityType;
 import device.CommunicationConnection;
 import device.ComputationDeviceType;
 import device.ConnectionProperty;
@@ -69,6 +71,9 @@ public class TargetEnvironmentSemanticSequencer extends DeviceSemanticSequencer 
 				return; 
 			case DevicePackage.CAPABILITY_PROPERTY:
 				sequence_CapabilityProperty(context, (CapabilityProperty) semanticObject); 
+				return; 
+			case DevicePackage.CAPABILITY_TYPE:
+				sequence_CapabilityType(context, (CapabilityType) semanticObject); 
 				return; 
 			case DevicePackage.COMMUNICATION_CONNECTION:
 				sequence_CommunicationConnection(context, (CommunicationConnection) semanticObject); 
@@ -133,8 +138,14 @@ public class TargetEnvironmentSemanticSequencer extends DeviceSemanticSequencer 
 			case UtilPackage.ETHERNET_COMMUNICATION_TYPE:
 				sequence_EthernetCommunicationType(context, (EthernetCommunicationType) semanticObject); 
 				return; 
-			case UtilPackage.LINUX_OPERTING_SYSTEM:
-				sequence_LinuxOpertingSystem(context, (LinuxOpertingSystem) semanticObject); 
+			case UtilPackage.LINUX_OPERTING_SYSTEM_TYPE:
+				sequence_LinuxOpertingSystemType(context, (LinuxOpertingSystemType) semanticObject); 
+				return; 
+			case UtilPackage.MAC_OS_OPERTING_SYSTEM_TYPE:
+				sequence_MacOSOpertingSystemType(context, (MacOSOpertingSystemType) semanticObject); 
+				return; 
+			case UtilPackage.PROCESSOR_ARCHITECTURE_TYPE:
+				sequence_ProcessorArchitectureType(context, (ProcessorArchitectureType) semanticObject); 
 				return; 
 			case UtilPackage.PROPERTY_VALUE_DOUBLE:
 				sequence_PropertyValueDouble(context, (PropertyValueDouble) semanticObject); 
@@ -144,9 +155,6 @@ public class TargetEnvironmentSemanticSequencer extends DeviceSemanticSequencer 
 				return; 
 			case UtilPackage.PROPERTY_VALUE_STRING:
 				sequence_PropertyValueString(context, (PropertyValueString) semanticObject); 
-				return; 
-			case UtilPackage.RESOUCE_TYPE:
-				sequence_ResouceType_Impl(context, (ResouceType) semanticObject); 
 				return; 
 			case UtilPackage.WLAN_COMMUNICATION_TYPE:
 				sequence_WlanCommunicationType(context, (WlanCommunicationType) semanticObject); 

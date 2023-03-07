@@ -11,7 +11,6 @@ DeviceSet returns device::DeviceSet:
 ;
 
 
-
 @Override 
 Description returns util::Description:
 	DeviceSet
@@ -21,29 +20,39 @@ Description returns util::Description:
 CapabilityKind returns device::CapabilityKind:
 	AttributeKind | MaximumKind | MinimumKind | SelectionKind;
 
+CapabilityType returns device::CapabilityType:
+	{device::CapabilityType}
+	name=EString
+	;
+
+
 DeviceType returns device::DeviceType:
 	DeviceType_Impl | ComputationDeviceType;
 
 AbstractCommunicationConnection returns device::AbstractCommunicationConnection:
-	NetworkConnection | CommunicationConnection;
+	CommunicationConnection | NetworkConnection;
 
 AbstractNetworkProperty returns device::AbstractNetworkProperty:
 	InterfaceNetworkProperty | AddressNetworkProperty;
 
 InterfaceNetworkProperty returns device::InterfaceNetworkProperty:
 	{device::InterfaceNetworkProperty}
-	INDENT
 	PreListElement "name:" "interface"
-	('value:' value=[util::PropertyValue|EString])?
-	DEDENT
+	(
+		INDENT
+			'value:' value=PropertyValue
+		DEDENT
+	)?
 	;
 	
 AddressNetworkProperty returns device::AddressNetworkProperty:
 	{device::AddressNetworkProperty}
-	INDENT
 	PreListElement "name:" "address"
-	('value:' value=[util::PropertyValue|EString])?
-	DEDENT
+	(
+		INDENT
+			'value:' value=PropertyValue
+		DEDENT
+	)?
 	;
 	
 DeviceType_Impl returns device::DeviceType:
@@ -68,8 +77,6 @@ ComputationDeviceType returns device::ComputationDeviceType:
 	'ComputationDeviceType:'
 	INDENT
 		"name:" name=EString
-		'operatingSystem:' operatingSystem=[util::OpertingSystem|EString]
-		'processorArchitecture:' processorArchitecture=[util::ProcessorArchitecture|EString]
 		('capability:' 
 			INDENT
 			capability+=CapabilityProperty+
@@ -82,12 +89,12 @@ ComputationDeviceType returns device::ComputationDeviceType:
 		)?
 	DEDENT
 	;
-	
+
 CapabilityProperty returns device::CapabilityProperty:
 	PreListElement "name:" name=EString
 	INDENT
-	'type:' type=[device::CapabilityType|EString]
 	'kind:' kind=CapabilityKind
+	'type:' type=AbstractResouceType
 	('value:' value=PropertyValue)?
 	DEDENT
 	;
@@ -126,13 +133,14 @@ NetworkConnection returns device::NetworkConnection:
 	{device::NetworkConnection}
 	PreListElement 'name:'  name=EString
 	INDENT
-		'type:' type=[util::NetworkCommunicationType|EString]
+		'type:' type=NetworkCommunicationType
 		('properties:' 
 			INDENT
 			properties+=AbstractNetworkProperty+
 			DEDENT
 			)?
-	'}';
+	DEDENT
+	;
 	
 CommunicationConnection returns device::CommunicationConnection:
 	{device::CommunicationConnection}

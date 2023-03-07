@@ -13,8 +13,6 @@ import org.eclipse.xtext.parser.antlr.Lexer;
 
 Arm64ProcessorArchitecture : 'Arm64ProcessorArchitecture';
 
-EthernetCommunicationType : 'EthernetCommunicationType';
-
 X86ProcessorArchitecture : 'X86ProcessorArchitecture';
 
 CommunicationConnection : 'communicationConnection:';
@@ -23,19 +21,11 @@ TargetDeployEnviroment : 'TargetDeployEnviroment:';
 
 ComputationDeviceType : 'ComputationDeviceType:';
 
-ProcessorArchitecture : 'processorArchitecture:';
-
 RefConnectionProperty : 'refConnectionProperty:';
 
-WlanCommunicationType : 'WlanCommunicationType';
-
-LinuxOpertingSystem : 'LinuxOpertingSystem';
-
-CommunicationType : 'CommunicationType';
+ProcessorArchitecture : 'ProcessorArchitecture';
 
 ConfigConnection : 'configConnection:';
-
-OperatingSystem : 'operatingSystem:';
 
 Configuration : 'configuration:';
 
@@ -57,8 +47,6 @@ MaximumKind : 'MaximumKind';
 
 MinimumKind : 'MinimumKind';
 
-ResouceType : 'ResouceType';
-
 Capability : 'capability:';
 
 Properties : 'properties:';
@@ -67,9 +55,15 @@ RefDevice : 'refDevice:';
 
 Interface : 'interface';
 
+Ethernet : 'Ethernet';
+
 Address : 'address';
 
 Value : 'value:';
+
+Linux : 'Linux';
+
+MacOS : 'MacOS';
 
 Kind : 'kind:';
 
@@ -77,9 +71,9 @@ Name : 'name:';
 
 Type : 'type:';
 
-HyphenMinus : '-';
+Wlan : 'Wlan';
 
-RightCurlyBracket : '}';
+HyphenMinus : '-';
 
 fragment RULE_DIGIT : '0'..'9';
 

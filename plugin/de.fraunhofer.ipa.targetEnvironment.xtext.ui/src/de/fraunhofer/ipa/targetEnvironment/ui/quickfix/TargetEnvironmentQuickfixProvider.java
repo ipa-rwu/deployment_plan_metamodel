@@ -3,14 +3,13 @@
  */
 package de.fraunhofer.ipa.targetEnvironment.ui.quickfix;
 
-import org.eclipse.xtext.ui.editor.quickfix.DefaultQuickfixProvider;
 
 /**
  * Custom quickfixes.
  *
  * See https://www.eclipse.org/Xtext/documentation/310_eclipse_support.html#quick-fixes
  */
-public class TargetEnvironmentQuickfixProvider extends DefaultQuickfixProvider {
+public class TargetEnvironmentQuickfixProvider extends DeviceQuickfixProvider {
 
 //	@Fix(TargetEnvironmentValidator.INVALID_NAME)
 //	public void capitalizeName(final Issue issue, IssueResolutionAcceptor acceptor) {

@@ -81,6 +81,32 @@ public class DeviceGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		//SelectionKind
 		public RuleCall getSelectionKindParserRuleCall_3() { return cSelectionKindParserRuleCall_3; }
 	}
+	public class CapabilityTypeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.targetEnvironment.Device.CapabilityType");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cCapabilityTypeAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameEStringParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		
+		//CapabilityType returns device::CapabilityType:
+		//    {device::CapabilityType}
+		//    name=EString
+		//    ;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{device::CapabilityType}
+		//name=EString
+		public Group getGroup() { return cGroup; }
+		
+		//{device::CapabilityType}
+		public Action getCapabilityTypeAction_0() { return cCapabilityTypeAction_0; }
+		
+		//name=EString
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//EString
+		public RuleCall getNameEStringParserRuleCall_1_0() { return cNameEStringParserRuleCall_1_0; }
+	}
 	public class DeviceTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.targetEnvironment.Device.DeviceType");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -103,21 +129,21 @@ public class DeviceGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	public class AbstractCommunicationConnectionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.targetEnvironment.Device.AbstractCommunicationConnection");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cNetworkConnectionParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cCommunicationConnectionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cCommunicationConnectionParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cNetworkConnectionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//AbstractCommunicationConnection returns device::AbstractCommunicationConnection:
-		//    NetworkConnection | CommunicationConnection;
+		//    CommunicationConnection | NetworkConnection;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//NetworkConnection | CommunicationConnection
+		//CommunicationConnection | NetworkConnection
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//NetworkConnection
-		public RuleCall getNetworkConnectionParserRuleCall_0() { return cNetworkConnectionParserRuleCall_0; }
-		
 		//CommunicationConnection
-		public RuleCall getCommunicationConnectionParserRuleCall_1() { return cCommunicationConnectionParserRuleCall_1; }
+		public RuleCall getCommunicationConnectionParserRuleCall_0() { return cCommunicationConnectionParserRuleCall_0; }
+		
+		//NetworkConnection
+		public RuleCall getNetworkConnectionParserRuleCall_1() { return cNetworkConnectionParserRuleCall_1; }
 	}
 	public class AbstractNetworkPropertyElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.targetEnvironment.Device.AbstractNetworkProperty");
@@ -142,129 +168,137 @@ public class DeviceGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.targetEnvironment.Device.InterfaceNetworkProperty");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cInterfaceNetworkPropertyAction_0 = (Action)cGroup.eContents().get(0);
-		private final RuleCall cINDENTTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
-		private final RuleCall cPreListElementParserRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
-		private final Keyword cNameKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Keyword cInterfaceKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cValueKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cValueAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final CrossReference cValuePropertyValueCrossReference_5_1_0 = (CrossReference)cValueAssignment_5_1.eContents().get(0);
-		private final RuleCall cValuePropertyValueEStringParserRuleCall_5_1_0_1 = (RuleCall)cValuePropertyValueCrossReference_5_1_0.eContents().get(1);
-		private final RuleCall cDEDENTTerminalRuleCall_6 = (RuleCall)cGroup.eContents().get(6);
+		private final RuleCall cPreListElementParserRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final Keyword cNameKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cInterfaceKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final RuleCall cINDENTTerminalRuleCall_4_0 = (RuleCall)cGroup_4.eContents().get(0);
+		private final Keyword cValueKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
+		private final Assignment cValueAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
+		private final RuleCall cValuePropertyValueParserRuleCall_4_2_0 = (RuleCall)cValueAssignment_4_2.eContents().get(0);
+		private final RuleCall cDEDENTTerminalRuleCall_4_3 = (RuleCall)cGroup_4.eContents().get(3);
 		
 		//InterfaceNetworkProperty returns device::InterfaceNetworkProperty:
 		//    {device::InterfaceNetworkProperty}
-		//    INDENT
 		//    PreListElement "name:" "interface"
-		//    ('value:' value=[util::PropertyValue|EString])?
-		//    DEDENT
+		//    (
+		//        INDENT
+		//            'value:' value=PropertyValue
+		//        DEDENT
+		//    )?
 		//    ;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{device::InterfaceNetworkProperty}
-		//INDENT
 		//PreListElement "name:" "interface"
-		//('value:' value=[util::PropertyValue|EString])?
-		//DEDENT
+		//(
+		//    INDENT
+		//        'value:' value=PropertyValue
+		//    DEDENT
+		//)?
 		public Group getGroup() { return cGroup; }
 		
 		//{device::InterfaceNetworkProperty}
 		public Action getInterfaceNetworkPropertyAction_0() { return cInterfaceNetworkPropertyAction_0; }
 		
-		//INDENT
-		public RuleCall getINDENTTerminalRuleCall_1() { return cINDENTTerminalRuleCall_1; }
-		
 		//PreListElement
-		public RuleCall getPreListElementParserRuleCall_2() { return cPreListElementParserRuleCall_2; }
+		public RuleCall getPreListElementParserRuleCall_1() { return cPreListElementParserRuleCall_1; }
 		
 		//"name:"
-		public Keyword getNameKeyword_3() { return cNameKeyword_3; }
+		public Keyword getNameKeyword_2() { return cNameKeyword_2; }
 		
 		//"interface"
-		public Keyword getInterfaceKeyword_4() { return cInterfaceKeyword_4; }
+		public Keyword getInterfaceKeyword_3() { return cInterfaceKeyword_3; }
 		
-		//('value:' value=[util::PropertyValue|EString])?
-		public Group getGroup_5() { return cGroup_5; }
+		//(
+		//    INDENT
+		//        'value:' value=PropertyValue
+		//    DEDENT
+		//)?
+		public Group getGroup_4() { return cGroup_4; }
+		
+		//INDENT
+		public RuleCall getINDENTTerminalRuleCall_4_0() { return cINDENTTerminalRuleCall_4_0; }
 		
 		//'value:'
-		public Keyword getValueKeyword_5_0() { return cValueKeyword_5_0; }
+		public Keyword getValueKeyword_4_1() { return cValueKeyword_4_1; }
 		
-		//value=[util::PropertyValue|EString]
-		public Assignment getValueAssignment_5_1() { return cValueAssignment_5_1; }
+		//value=PropertyValue
+		public Assignment getValueAssignment_4_2() { return cValueAssignment_4_2; }
 		
-		//[util::PropertyValue|EString]
-		public CrossReference getValuePropertyValueCrossReference_5_1_0() { return cValuePropertyValueCrossReference_5_1_0; }
-		
-		//EString
-		public RuleCall getValuePropertyValueEStringParserRuleCall_5_1_0_1() { return cValuePropertyValueEStringParserRuleCall_5_1_0_1; }
+		//PropertyValue
+		public RuleCall getValuePropertyValueParserRuleCall_4_2_0() { return cValuePropertyValueParserRuleCall_4_2_0; }
 		
 		//DEDENT
-		public RuleCall getDEDENTTerminalRuleCall_6() { return cDEDENTTerminalRuleCall_6; }
+		public RuleCall getDEDENTTerminalRuleCall_4_3() { return cDEDENTTerminalRuleCall_4_3; }
 	}
 	public class AddressNetworkPropertyElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.targetEnvironment.Device.AddressNetworkProperty");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cAddressNetworkPropertyAction_0 = (Action)cGroup.eContents().get(0);
-		private final RuleCall cINDENTTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
-		private final RuleCall cPreListElementParserRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
-		private final Keyword cNameKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Keyword cAddressKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cValueKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cValueAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final CrossReference cValuePropertyValueCrossReference_5_1_0 = (CrossReference)cValueAssignment_5_1.eContents().get(0);
-		private final RuleCall cValuePropertyValueEStringParserRuleCall_5_1_0_1 = (RuleCall)cValuePropertyValueCrossReference_5_1_0.eContents().get(1);
-		private final RuleCall cDEDENTTerminalRuleCall_6 = (RuleCall)cGroup.eContents().get(6);
+		private final RuleCall cPreListElementParserRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final Keyword cNameKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cAddressKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final RuleCall cINDENTTerminalRuleCall_4_0 = (RuleCall)cGroup_4.eContents().get(0);
+		private final Keyword cValueKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
+		private final Assignment cValueAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
+		private final RuleCall cValuePropertyValueParserRuleCall_4_2_0 = (RuleCall)cValueAssignment_4_2.eContents().get(0);
+		private final RuleCall cDEDENTTerminalRuleCall_4_3 = (RuleCall)cGroup_4.eContents().get(3);
 		
 		//AddressNetworkProperty returns device::AddressNetworkProperty:
 		//    {device::AddressNetworkProperty}
-		//    INDENT
 		//    PreListElement "name:" "address"
-		//    ('value:' value=[util::PropertyValue|EString])?
-		//    DEDENT
+		//    (
+		//        INDENT
+		//            'value:' value=PropertyValue
+		//        DEDENT
+		//    )?
 		//    ;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{device::AddressNetworkProperty}
-		//INDENT
 		//PreListElement "name:" "address"
-		//('value:' value=[util::PropertyValue|EString])?
-		//DEDENT
+		//(
+		//    INDENT
+		//        'value:' value=PropertyValue
+		//    DEDENT
+		//)?
 		public Group getGroup() { return cGroup; }
 		
 		//{device::AddressNetworkProperty}
 		public Action getAddressNetworkPropertyAction_0() { return cAddressNetworkPropertyAction_0; }
 		
-		//INDENT
-		public RuleCall getINDENTTerminalRuleCall_1() { return cINDENTTerminalRuleCall_1; }
-		
 		//PreListElement
-		public RuleCall getPreListElementParserRuleCall_2() { return cPreListElementParserRuleCall_2; }
+		public RuleCall getPreListElementParserRuleCall_1() { return cPreListElementParserRuleCall_1; }
 		
 		//"name:"
-		public Keyword getNameKeyword_3() { return cNameKeyword_3; }
+		public Keyword getNameKeyword_2() { return cNameKeyword_2; }
 		
 		//"address"
-		public Keyword getAddressKeyword_4() { return cAddressKeyword_4; }
+		public Keyword getAddressKeyword_3() { return cAddressKeyword_3; }
 		
-		//('value:' value=[util::PropertyValue|EString])?
-		public Group getGroup_5() { return cGroup_5; }
+		//(
+		//    INDENT
+		//        'value:' value=PropertyValue
+		//    DEDENT
+		//)?
+		public Group getGroup_4() { return cGroup_4; }
+		
+		//INDENT
+		public RuleCall getINDENTTerminalRuleCall_4_0() { return cINDENTTerminalRuleCall_4_0; }
 		
 		//'value:'
-		public Keyword getValueKeyword_5_0() { return cValueKeyword_5_0; }
+		public Keyword getValueKeyword_4_1() { return cValueKeyword_4_1; }
 		
-		//value=[util::PropertyValue|EString]
-		public Assignment getValueAssignment_5_1() { return cValueAssignment_5_1; }
+		//value=PropertyValue
+		public Assignment getValueAssignment_4_2() { return cValueAssignment_4_2; }
 		
-		//[util::PropertyValue|EString]
-		public CrossReference getValuePropertyValueCrossReference_5_1_0() { return cValuePropertyValueCrossReference_5_1_0; }
-		
-		//EString
-		public RuleCall getValuePropertyValueEStringParserRuleCall_5_1_0_1() { return cValuePropertyValueEStringParserRuleCall_5_1_0_1; }
+		//PropertyValue
+		public RuleCall getValuePropertyValueParserRuleCall_4_2_0() { return cValuePropertyValueParserRuleCall_4_2_0; }
 		
 		//DEDENT
-		public RuleCall getDEDENTTerminalRuleCall_6() { return cDEDENTTerminalRuleCall_6; }
+		public RuleCall getDEDENTTerminalRuleCall_4_3() { return cDEDENTTerminalRuleCall_4_3; }
 	}
 	public class DeviceType_ImplElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.targetEnvironment.Device.DeviceType_Impl");
@@ -398,34 +432,24 @@ public class DeviceGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		private final Keyword cNameKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cNameEStringParserRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
-		private final Keyword cOperatingSystemKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cOperatingSystemAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final CrossReference cOperatingSystemOpertingSystemCrossReference_5_0 = (CrossReference)cOperatingSystemAssignment_5.eContents().get(0);
-		private final RuleCall cOperatingSystemOpertingSystemEStringParserRuleCall_5_0_1 = (RuleCall)cOperatingSystemOpertingSystemCrossReference_5_0.eContents().get(1);
-		private final Keyword cProcessorArchitectureKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Assignment cProcessorArchitectureAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final CrossReference cProcessorArchitectureProcessorArchitectureCrossReference_7_0 = (CrossReference)cProcessorArchitectureAssignment_7.eContents().get(0);
-		private final RuleCall cProcessorArchitectureProcessorArchitectureEStringParserRuleCall_7_0_1 = (RuleCall)cProcessorArchitectureProcessorArchitectureCrossReference_7_0.eContents().get(1);
-		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
-		private final Keyword cCapabilityKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
-		private final RuleCall cINDENTTerminalRuleCall_8_1 = (RuleCall)cGroup_8.eContents().get(1);
-		private final Assignment cCapabilityAssignment_8_2 = (Assignment)cGroup_8.eContents().get(2);
-		private final RuleCall cCapabilityCapabilityPropertyParserRuleCall_8_2_0 = (RuleCall)cCapabilityAssignment_8_2.eContents().get(0);
-		private final RuleCall cDEDENTTerminalRuleCall_8_3 = (RuleCall)cGroup_8.eContents().get(3);
-		private final Group cGroup_9 = (Group)cGroup.eContents().get(9);
-		private final Keyword cCommunicationConnectionKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
-		private final RuleCall cINDENTTerminalRuleCall_9_1 = (RuleCall)cGroup_9.eContents().get(1);
-		private final Assignment cCommunicationConnectionAssignment_9_2 = (Assignment)cGroup_9.eContents().get(2);
-		private final RuleCall cCommunicationConnectionAbstractCommunicationConnectionParserRuleCall_9_2_0 = (RuleCall)cCommunicationConnectionAssignment_9_2.eContents().get(0);
-		private final RuleCall cDEDENTTerminalRuleCall_9_3 = (RuleCall)cGroup_9.eContents().get(3);
-		private final RuleCall cDEDENTTerminalRuleCall_10 = (RuleCall)cGroup.eContents().get(10);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cCapabilityKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final RuleCall cINDENTTerminalRuleCall_4_1 = (RuleCall)cGroup_4.eContents().get(1);
+		private final Assignment cCapabilityAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
+		private final RuleCall cCapabilityCapabilityPropertyParserRuleCall_4_2_0 = (RuleCall)cCapabilityAssignment_4_2.eContents().get(0);
+		private final RuleCall cDEDENTTerminalRuleCall_4_3 = (RuleCall)cGroup_4.eContents().get(3);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cCommunicationConnectionKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final RuleCall cINDENTTerminalRuleCall_5_1 = (RuleCall)cGroup_5.eContents().get(1);
+		private final Assignment cCommunicationConnectionAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
+		private final RuleCall cCommunicationConnectionAbstractCommunicationConnectionParserRuleCall_5_2_0 = (RuleCall)cCommunicationConnectionAssignment_5_2.eContents().get(0);
+		private final RuleCall cDEDENTTerminalRuleCall_5_3 = (RuleCall)cGroup_5.eContents().get(3);
+		private final RuleCall cDEDENTTerminalRuleCall_6 = (RuleCall)cGroup.eContents().get(6);
 		
 		//ComputationDeviceType returns device::ComputationDeviceType:
 		//    'ComputationDeviceType:'
 		//    INDENT
 		//        "name:" name=EString
-		//        'operatingSystem:' operatingSystem=[util::OpertingSystem|EString]
-		//        'processorArchitecture:' processorArchitecture=[util::ProcessorArchitecture|EString]
 		//        ('capability:'
 		//            INDENT
 		//            capability+=CapabilityProperty+
@@ -443,8 +467,6 @@ public class DeviceGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		//'ComputationDeviceType:'
 		//INDENT
 		//    "name:" name=EString
-		//    'operatingSystem:' operatingSystem=[util::OpertingSystem|EString]
-		//    'processorArchitecture:' processorArchitecture=[util::ProcessorArchitecture|EString]
 		//    ('capability:'
 		//        INDENT
 		//        capability+=CapabilityProperty+
@@ -473,76 +495,52 @@ public class DeviceGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		//EString
 		public RuleCall getNameEStringParserRuleCall_3_0() { return cNameEStringParserRuleCall_3_0; }
 		
-		//'operatingSystem:'
-		public Keyword getOperatingSystemKeyword_4() { return cOperatingSystemKeyword_4; }
-		
-		//operatingSystem=[util::OpertingSystem|EString]
-		public Assignment getOperatingSystemAssignment_5() { return cOperatingSystemAssignment_5; }
-		
-		//[util::OpertingSystem|EString]
-		public CrossReference getOperatingSystemOpertingSystemCrossReference_5_0() { return cOperatingSystemOpertingSystemCrossReference_5_0; }
-		
-		//EString
-		public RuleCall getOperatingSystemOpertingSystemEStringParserRuleCall_5_0_1() { return cOperatingSystemOpertingSystemEStringParserRuleCall_5_0_1; }
-		
-		//'processorArchitecture:'
-		public Keyword getProcessorArchitectureKeyword_6() { return cProcessorArchitectureKeyword_6; }
-		
-		//processorArchitecture=[util::ProcessorArchitecture|EString]
-		public Assignment getProcessorArchitectureAssignment_7() { return cProcessorArchitectureAssignment_7; }
-		
-		//[util::ProcessorArchitecture|EString]
-		public CrossReference getProcessorArchitectureProcessorArchitectureCrossReference_7_0() { return cProcessorArchitectureProcessorArchitectureCrossReference_7_0; }
-		
-		//EString
-		public RuleCall getProcessorArchitectureProcessorArchitectureEStringParserRuleCall_7_0_1() { return cProcessorArchitectureProcessorArchitectureEStringParserRuleCall_7_0_1; }
-		
 		//('capability:'
 		//    INDENT
 		//    capability+=CapabilityProperty+
 		//    DEDENT
 		//)?
-		public Group getGroup_8() { return cGroup_8; }
+		public Group getGroup_4() { return cGroup_4; }
 		
 		//'capability:'
-		public Keyword getCapabilityKeyword_8_0() { return cCapabilityKeyword_8_0; }
+		public Keyword getCapabilityKeyword_4_0() { return cCapabilityKeyword_4_0; }
 		
 		//INDENT
-		public RuleCall getINDENTTerminalRuleCall_8_1() { return cINDENTTerminalRuleCall_8_1; }
+		public RuleCall getINDENTTerminalRuleCall_4_1() { return cINDENTTerminalRuleCall_4_1; }
 		
 		//capability+=CapabilityProperty+
-		public Assignment getCapabilityAssignment_8_2() { return cCapabilityAssignment_8_2; }
+		public Assignment getCapabilityAssignment_4_2() { return cCapabilityAssignment_4_2; }
 		
 		//CapabilityProperty
-		public RuleCall getCapabilityCapabilityPropertyParserRuleCall_8_2_0() { return cCapabilityCapabilityPropertyParserRuleCall_8_2_0; }
+		public RuleCall getCapabilityCapabilityPropertyParserRuleCall_4_2_0() { return cCapabilityCapabilityPropertyParserRuleCall_4_2_0; }
 		
 		//DEDENT
-		public RuleCall getDEDENTTerminalRuleCall_8_3() { return cDEDENTTerminalRuleCall_8_3; }
+		public RuleCall getDEDENTTerminalRuleCall_4_3() { return cDEDENTTerminalRuleCall_4_3; }
 		
 		//('communicationConnection:'
 		//    INDENT
 		//    communicationConnection+=AbstractCommunicationConnection+
 		//    DEDENT
 		//)?
-		public Group getGroup_9() { return cGroup_9; }
+		public Group getGroup_5() { return cGroup_5; }
 		
 		//'communicationConnection:'
-		public Keyword getCommunicationConnectionKeyword_9_0() { return cCommunicationConnectionKeyword_9_0; }
+		public Keyword getCommunicationConnectionKeyword_5_0() { return cCommunicationConnectionKeyword_5_0; }
 		
 		//INDENT
-		public RuleCall getINDENTTerminalRuleCall_9_1() { return cINDENTTerminalRuleCall_9_1; }
+		public RuleCall getINDENTTerminalRuleCall_5_1() { return cINDENTTerminalRuleCall_5_1; }
 		
 		//communicationConnection+=AbstractCommunicationConnection+
-		public Assignment getCommunicationConnectionAssignment_9_2() { return cCommunicationConnectionAssignment_9_2; }
+		public Assignment getCommunicationConnectionAssignment_5_2() { return cCommunicationConnectionAssignment_5_2; }
 		
 		//AbstractCommunicationConnection
-		public RuleCall getCommunicationConnectionAbstractCommunicationConnectionParserRuleCall_9_2_0() { return cCommunicationConnectionAbstractCommunicationConnectionParserRuleCall_9_2_0; }
+		public RuleCall getCommunicationConnectionAbstractCommunicationConnectionParserRuleCall_5_2_0() { return cCommunicationConnectionAbstractCommunicationConnectionParserRuleCall_5_2_0; }
 		
 		//DEDENT
-		public RuleCall getDEDENTTerminalRuleCall_9_3() { return cDEDENTTerminalRuleCall_9_3; }
+		public RuleCall getDEDENTTerminalRuleCall_5_3() { return cDEDENTTerminalRuleCall_5_3; }
 		
 		//DEDENT
-		public RuleCall getDEDENTTerminalRuleCall_10() { return cDEDENTTerminalRuleCall_10; }
+		public RuleCall getDEDENTTerminalRuleCall_6() { return cDEDENTTerminalRuleCall_6; }
 	}
 	public class CapabilityPropertyElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.targetEnvironment.Device.CapabilityProperty");
@@ -552,13 +550,12 @@ public class DeviceGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		private final RuleCall cINDENTTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
-		private final Keyword cTypeKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cTypeAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final CrossReference cTypeCapabilityTypeCrossReference_5_0 = (CrossReference)cTypeAssignment_5.eContents().get(0);
-		private final RuleCall cTypeCapabilityTypeEStringParserRuleCall_5_0_1 = (RuleCall)cTypeCapabilityTypeCrossReference_5_0.eContents().get(1);
-		private final Keyword cKindKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Assignment cKindAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cKindCapabilityKindParserRuleCall_7_0 = (RuleCall)cKindAssignment_7.eContents().get(0);
+		private final Keyword cKindKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cKindAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cKindCapabilityKindParserRuleCall_5_0 = (RuleCall)cKindAssignment_5.eContents().get(0);
+		private final Keyword cTypeKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cTypeAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cTypeAbstractResouceTypeParserRuleCall_7_0 = (RuleCall)cTypeAssignment_7.eContents().get(0);
 		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
 		private final Keyword cValueKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
 		private final Assignment cValueAssignment_8_1 = (Assignment)cGroup_8.eContents().get(1);
@@ -568,8 +565,8 @@ public class DeviceGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		//CapabilityProperty returns device::CapabilityProperty:
 		//    PreListElement "name:" name=EString
 		//    INDENT
-		//    'type:' type=[device::CapabilityType|EString]
 		//    'kind:' kind=CapabilityKind
+		//    'type:' type=AbstractResouceType
 		//    ('value:' value=PropertyValue)?
 		//    DEDENT
 		//    ;
@@ -577,8 +574,8 @@ public class DeviceGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		
 		//PreListElement "name:" name=EString
 		//INDENT
-		//'type:' type=[device::CapabilityType|EString]
 		//'kind:' kind=CapabilityKind
+		//'type:' type=AbstractResouceType
 		//('value:' value=PropertyValue)?
 		//DEDENT
 		public Group getGroup() { return cGroup; }
@@ -598,26 +595,23 @@ public class DeviceGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		//INDENT
 		public RuleCall getINDENTTerminalRuleCall_3() { return cINDENTTerminalRuleCall_3; }
 		
-		//'type:'
-		public Keyword getTypeKeyword_4() { return cTypeKeyword_4; }
-		
-		//type=[device::CapabilityType|EString]
-		public Assignment getTypeAssignment_5() { return cTypeAssignment_5; }
-		
-		//[device::CapabilityType|EString]
-		public CrossReference getTypeCapabilityTypeCrossReference_5_0() { return cTypeCapabilityTypeCrossReference_5_0; }
-		
-		//EString
-		public RuleCall getTypeCapabilityTypeEStringParserRuleCall_5_0_1() { return cTypeCapabilityTypeEStringParserRuleCall_5_0_1; }
-		
 		//'kind:'
-		public Keyword getKindKeyword_6() { return cKindKeyword_6; }
+		public Keyword getKindKeyword_4() { return cKindKeyword_4; }
 		
 		//kind=CapabilityKind
-		public Assignment getKindAssignment_7() { return cKindAssignment_7; }
+		public Assignment getKindAssignment_5() { return cKindAssignment_5; }
 		
 		//CapabilityKind
-		public RuleCall getKindCapabilityKindParserRuleCall_7_0() { return cKindCapabilityKindParserRuleCall_7_0; }
+		public RuleCall getKindCapabilityKindParserRuleCall_5_0() { return cKindCapabilityKindParserRuleCall_5_0; }
+		
+		//'type:'
+		public Keyword getTypeKeyword_6() { return cTypeKeyword_6; }
+		
+		//type=AbstractResouceType
+		public Assignment getTypeAssignment_7() { return cTypeAssignment_7; }
+		
+		//AbstractResouceType
+		public RuleCall getTypeAbstractResouceTypeParserRuleCall_7_0() { return cTypeAbstractResouceTypeParserRuleCall_7_0; }
 		
 		//('value:' value=PropertyValue)?
 		public Group getGroup_8() { return cGroup_8; }
@@ -805,39 +799,39 @@ public class DeviceGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		private final RuleCall cINDENTTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
 		private final Keyword cTypeKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		private final Assignment cTypeAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final CrossReference cTypeNetworkCommunicationTypeCrossReference_6_0 = (CrossReference)cTypeAssignment_6.eContents().get(0);
-		private final RuleCall cTypeNetworkCommunicationTypeEStringParserRuleCall_6_0_1 = (RuleCall)cTypeNetworkCommunicationTypeCrossReference_6_0.eContents().get(1);
+		private final RuleCall cTypeNetworkCommunicationTypeParserRuleCall_6_0 = (RuleCall)cTypeAssignment_6.eContents().get(0);
 		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
 		private final Keyword cPropertiesKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
 		private final RuleCall cINDENTTerminalRuleCall_7_1 = (RuleCall)cGroup_7.eContents().get(1);
 		private final Assignment cPropertiesAssignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
 		private final RuleCall cPropertiesAbstractNetworkPropertyParserRuleCall_7_2_0 = (RuleCall)cPropertiesAssignment_7_2.eContents().get(0);
 		private final RuleCall cDEDENTTerminalRuleCall_7_3 = (RuleCall)cGroup_7.eContents().get(3);
-		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final RuleCall cDEDENTTerminalRuleCall_8 = (RuleCall)cGroup.eContents().get(8);
 		
 		//NetworkConnection returns device::NetworkConnection:
 		//    {device::NetworkConnection}
 		//    PreListElement 'name:'  name=EString
 		//    INDENT
-		//        'type:' type=[util::NetworkCommunicationType|EString]
+		//        'type:' type=NetworkCommunicationType
 		//        ('properties:'
 		//            INDENT
 		//            properties+=AbstractNetworkProperty+
 		//            DEDENT
 		//            )?
-		//    '}';
+		//    DEDENT
+		//    ;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{device::NetworkConnection}
 		//PreListElement 'name:'  name=EString
 		//INDENT
-		//    'type:' type=[util::NetworkCommunicationType|EString]
+		//    'type:' type=NetworkCommunicationType
 		//    ('properties:'
 		//        INDENT
 		//        properties+=AbstractNetworkProperty+
 		//        DEDENT
 		//        )?
-		//'}'
+		//DEDENT
 		public Group getGroup() { return cGroup; }
 		
 		//{device::NetworkConnection}
@@ -861,14 +855,11 @@ public class DeviceGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		//'type:'
 		public Keyword getTypeKeyword_5() { return cTypeKeyword_5; }
 		
-		//type=[util::NetworkCommunicationType|EString]
+		//type=NetworkCommunicationType
 		public Assignment getTypeAssignment_6() { return cTypeAssignment_6; }
 		
-		//[util::NetworkCommunicationType|EString]
-		public CrossReference getTypeNetworkCommunicationTypeCrossReference_6_0() { return cTypeNetworkCommunicationTypeCrossReference_6_0; }
-		
-		//EString
-		public RuleCall getTypeNetworkCommunicationTypeEStringParserRuleCall_6_0_1() { return cTypeNetworkCommunicationTypeEStringParserRuleCall_6_0_1; }
+		//NetworkCommunicationType
+		public RuleCall getTypeNetworkCommunicationTypeParserRuleCall_6_0() { return cTypeNetworkCommunicationTypeParserRuleCall_6_0; }
 		
 		//('properties:'
 		//    INDENT
@@ -892,8 +883,8 @@ public class DeviceGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		//DEDENT
 		public RuleCall getDEDENTTerminalRuleCall_7_3() { return cDEDENTTerminalRuleCall_7_3; }
 		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
+		//DEDENT
+		public RuleCall getDEDENTTerminalRuleCall_8() { return cDEDENTTerminalRuleCall_8; }
 	}
 	public class CommunicationConnectionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.targetEnvironment.Device.CommunicationConnection");
@@ -1001,6 +992,7 @@ public class DeviceGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	private final DeviceSetElements pDeviceSet;
 	private final DescriptionElements pDescription;
 	private final CapabilityKindElements pCapabilityKind;
+	private final CapabilityTypeElements pCapabilityType;
 	private final DeviceTypeElements pDeviceType;
 	private final AbstractCommunicationConnectionElements pAbstractCommunicationConnection;
 	private final AbstractNetworkPropertyElements pAbstractNetworkProperty;
@@ -1033,6 +1025,7 @@ public class DeviceGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		this.pDeviceSet = new DeviceSetElements();
 		this.pDescription = new DescriptionElements();
 		this.pCapabilityKind = new CapabilityKindElements();
+		this.pCapabilityType = new CapabilityTypeElements();
 		this.pDeviceType = new DeviceTypeElements();
 		this.pAbstractCommunicationConnection = new AbstractCommunicationConnectionElements();
 		this.pAbstractNetworkProperty = new AbstractNetworkPropertyElements();
@@ -1114,6 +1107,18 @@ public class DeviceGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		return getCapabilityKindAccess().getRule();
 	}
 	
+	//CapabilityType returns device::CapabilityType:
+	//    {device::CapabilityType}
+	//    name=EString
+	//    ;
+	public CapabilityTypeElements getCapabilityTypeAccess() {
+		return pCapabilityType;
+	}
+	
+	public ParserRule getCapabilityTypeRule() {
+		return getCapabilityTypeAccess().getRule();
+	}
+	
 	//DeviceType returns device::DeviceType:
 	//    DeviceType_Impl | ComputationDeviceType;
 	public DeviceTypeElements getDeviceTypeAccess() {
@@ -1125,7 +1130,7 @@ public class DeviceGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	}
 	
 	//AbstractCommunicationConnection returns device::AbstractCommunicationConnection:
-	//    NetworkConnection | CommunicationConnection;
+	//    CommunicationConnection | NetworkConnection;
 	public AbstractCommunicationConnectionElements getAbstractCommunicationConnectionAccess() {
 		return pAbstractCommunicationConnection;
 	}
@@ -1146,10 +1151,12 @@ public class DeviceGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	
 	//InterfaceNetworkProperty returns device::InterfaceNetworkProperty:
 	//    {device::InterfaceNetworkProperty}
-	//    INDENT
 	//    PreListElement "name:" "interface"
-	//    ('value:' value=[util::PropertyValue|EString])?
-	//    DEDENT
+	//    (
+	//        INDENT
+	//            'value:' value=PropertyValue
+	//        DEDENT
+	//    )?
 	//    ;
 	public InterfaceNetworkPropertyElements getInterfaceNetworkPropertyAccess() {
 		return pInterfaceNetworkProperty;
@@ -1161,10 +1168,12 @@ public class DeviceGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	
 	//AddressNetworkProperty returns device::AddressNetworkProperty:
 	//    {device::AddressNetworkProperty}
-	//    INDENT
 	//    PreListElement "name:" "address"
-	//    ('value:' value=[util::PropertyValue|EString])?
-	//    DEDENT
+	//    (
+	//        INDENT
+	//            'value:' value=PropertyValue
+	//        DEDENT
+	//    )?
 	//    ;
 	public AddressNetworkPropertyElements getAddressNetworkPropertyAccess() {
 		return pAddressNetworkProperty;
@@ -1203,8 +1212,6 @@ public class DeviceGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	//    'ComputationDeviceType:'
 	//    INDENT
 	//        "name:" name=EString
-	//        'operatingSystem:' operatingSystem=[util::OpertingSystem|EString]
-	//        'processorArchitecture:' processorArchitecture=[util::ProcessorArchitecture|EString]
 	//        ('capability:'
 	//            INDENT
 	//            capability+=CapabilityProperty+
@@ -1228,8 +1235,8 @@ public class DeviceGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	//CapabilityProperty returns device::CapabilityProperty:
 	//    PreListElement "name:" name=EString
 	//    INDENT
-	//    'type:' type=[device::CapabilityType|EString]
 	//    'kind:' kind=CapabilityKind
+	//    'type:' type=AbstractResouceType
 	//    ('value:' value=PropertyValue)?
 	//    DEDENT
 	//    ;
@@ -1310,13 +1317,14 @@ public class DeviceGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	//    {device::NetworkConnection}
 	//    PreListElement 'name:'  name=EString
 	//    INDENT
-	//        'type:' type=[util::NetworkCommunicationType|EString]
+	//        'type:' type=NetworkCommunicationType
 	//        ('properties:'
 	//            INDENT
 	//            properties+=AbstractNetworkProperty+
 	//            DEDENT
 	//            )?
-	//    '}';
+	//    DEDENT
+	//    ;
 	public NetworkConnectionElements getNetworkConnectionAccess() {
 		return pNetworkConnection;
 	}
@@ -1344,8 +1352,8 @@ public class DeviceGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		return getCommunicationConnectionAccess().getRule();
 	}
 	
-	//PropertyValue returns PropertyValue:
-	//    PropertyValueInt | PropertyValueDouble | PropertyValueString;
+	//PropertyValue returns util::PropertyValue:
+	//    PropertyValueInt | PropertyValueDouble | PropertyValueString| ProcessorArchitectureValue;
 	public UtilGrammarAccess.PropertyValueElements getPropertyValueAccess() {
 		return gaUtil.getPropertyValueAccess();
 	}
@@ -1354,7 +1362,7 @@ public class DeviceGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		return getPropertyValueAccess().getRule();
 	}
 	
-	//PropertyValueInt returns PropertyValueInt:
+	//PropertyValueInt returns util::PropertyValueInt:
 	//    value=Integer0;
 	public UtilGrammarAccess.PropertyValueIntElements getPropertyValueIntAccess() {
 		return gaUtil.getPropertyValueIntAccess();
@@ -1364,7 +1372,7 @@ public class DeviceGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		return getPropertyValueIntAccess().getRule();
 	}
 	
-	//PropertyValueDouble returns PropertyValueDouble:
+	//PropertyValueDouble returns util::PropertyValueDouble:
 	//    value=Double0
 	//;
 	public UtilGrammarAccess.PropertyValueDoubleElements getPropertyValueDoubleAccess() {
@@ -1375,7 +1383,7 @@ public class DeviceGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		return getPropertyValueDoubleAccess().getRule();
 	}
 	
-	//PropertyValueString returns PropertyValueString:
+	//PropertyValueString returns util::PropertyValueString:
 	//    value=EString;
 	public UtilGrammarAccess.PropertyValueStringElements getPropertyValueStringAccess() {
 		return gaUtil.getPropertyValueStringAccess();
@@ -1385,42 +1393,87 @@ public class DeviceGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		return getPropertyValueStringAccess().getRule();
 	}
 	
-	//ResouceType returns ResouceType:
-	//    ResouceType_Impl | LinuxOpertingSystem | X86ProcessorArchitecture | Arm64ProcessorArchitecture | CommunicationType | EthernetCommunicationType | WlanCommunicationType;
-	public UtilGrammarAccess.ResouceTypeElements getResouceTypeAccess() {
-		return gaUtil.getResouceTypeAccess();
+	//ProcessorArchitectureValue returns util::ProcessorArchitectureValue:
+	//    X86ProcessorArchitecture | Arm64ProcessorArchitecture
+	//;
+	public UtilGrammarAccess.ProcessorArchitectureValueElements getProcessorArchitectureValueAccess() {
+		return gaUtil.getProcessorArchitectureValueAccess();
 	}
 	
-	public ParserRule getResouceTypeRule() {
-		return getResouceTypeAccess().getRule();
+	public ParserRule getProcessorArchitectureValueRule() {
+		return getProcessorArchitectureValueAccess().getRule();
 	}
 	
-	//ResouceType_Impl returns ResouceType:
-	//    {ResouceType}
-	//    'ResouceType'
+	//AbstractResouceType returns util::AbstractResouceType:
+	//    OpertingSystemType | ProcessorArchitectureType;
+	public UtilGrammarAccess.AbstractResouceTypeElements getAbstractResouceTypeAccess() {
+		return gaUtil.getAbstractResouceTypeAccess();
+	}
+	
+	public ParserRule getAbstractResouceTypeRule() {
+		return getAbstractResouceTypeAccess().getRule();
+	}
+	
+	//OpertingSystemType returns util::OpertingSystemType:
+	//    LinuxOpertingSystemType | MacOSOpertingSystemType
+	//;
+	public UtilGrammarAccess.OpertingSystemTypeElements getOpertingSystemTypeAccess() {
+		return gaUtil.getOpertingSystemTypeAccess();
+	}
+	
+	public ParserRule getOpertingSystemTypeRule() {
+		return getOpertingSystemTypeAccess().getRule();
+	}
+	
+	//ProcessorArchitectureType returns util::ProcessorArchitectureType:
+	//    {util::ProcessorArchitectureType}
+	//    "ProcessorArchitecture"
 	//    ;
-	public UtilGrammarAccess.ResouceType_ImplElements getResouceType_ImplAccess() {
-		return gaUtil.getResouceType_ImplAccess();
+	public UtilGrammarAccess.ProcessorArchitectureTypeElements getProcessorArchitectureTypeAccess() {
+		return gaUtil.getProcessorArchitectureTypeAccess();
 	}
 	
-	public ParserRule getResouceType_ImplRule() {
-		return getResouceType_ImplAccess().getRule();
+	public ParserRule getProcessorArchitectureTypeRule() {
+		return getProcessorArchitectureTypeAccess().getRule();
 	}
 	
-	//LinuxOpertingSystem returns LinuxOpertingSystem:
-	//    {LinuxOpertingSystem}
-	//    'LinuxOpertingSystem'
-	//    name=EString;
-	public UtilGrammarAccess.LinuxOpertingSystemElements getLinuxOpertingSystemAccess() {
-		return gaUtil.getLinuxOpertingSystemAccess();
+	//AbstractCommunicationType returns util::AbstractCommunicationType:
+	//    CommunicationType | NetworkCommunicationType
+	//;
+	public UtilGrammarAccess.AbstractCommunicationTypeElements getAbstractCommunicationTypeAccess() {
+		return gaUtil.getAbstractCommunicationTypeAccess();
 	}
 	
-	public ParserRule getLinuxOpertingSystemRule() {
-		return getLinuxOpertingSystemAccess().getRule();
+	public ParserRule getAbstractCommunicationTypeRule() {
+		return getAbstractCommunicationTypeAccess().getRule();
 	}
 	
-	//X86ProcessorArchitecture returns X86ProcessorArchitecture:
-	//    {X86ProcessorArchitecture}
+	//LinuxOpertingSystemType returns util::LinuxOpertingSystemType:
+	//    {util::LinuxOpertingSystemType}
+	//    "Linux"
+	//;
+	public UtilGrammarAccess.LinuxOpertingSystemTypeElements getLinuxOpertingSystemTypeAccess() {
+		return gaUtil.getLinuxOpertingSystemTypeAccess();
+	}
+	
+	public ParserRule getLinuxOpertingSystemTypeRule() {
+		return getLinuxOpertingSystemTypeAccess().getRule();
+	}
+	
+	//MacOSOpertingSystemType returns util::MacOSOpertingSystemType:
+	//    {util::MacOSOpertingSystemType}
+	//    "MacOS"
+	//    ;
+	public UtilGrammarAccess.MacOSOpertingSystemTypeElements getMacOSOpertingSystemTypeAccess() {
+		return gaUtil.getMacOSOpertingSystemTypeAccess();
+	}
+	
+	public ParserRule getMacOSOpertingSystemTypeRule() {
+		return getMacOSOpertingSystemTypeAccess().getRule();
+	}
+	
+	//X86ProcessorArchitecture returns util::X86ProcessorArchitecture:
+	//    {util::X86ProcessorArchitecture}
 	//    'X86ProcessorArchitecture'
 	//    ;
 	public UtilGrammarAccess.X86ProcessorArchitectureElements getX86ProcessorArchitectureAccess() {
@@ -1431,8 +1484,8 @@ public class DeviceGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		return getX86ProcessorArchitectureAccess().getRule();
 	}
 	
-	//Arm64ProcessorArchitecture returns Arm64ProcessorArchitecture:
-	//    {Arm64ProcessorArchitecture}
+	//Arm64ProcessorArchitecture returns util::Arm64ProcessorArchitecture:
+	//    {util::Arm64ProcessorArchitecture}
 	//    'Arm64ProcessorArchitecture'
 	//    ;
 	public UtilGrammarAccess.Arm64ProcessorArchitectureElements getArm64ProcessorArchitectureAccess() {
@@ -1443,9 +1496,9 @@ public class DeviceGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		return getArm64ProcessorArchitectureAccess().getRule();
 	}
 	
-	//CommunicationType returns CommunicationType:
-	//    {CommunicationType}
-	//    'CommunicationType'
+	//CommunicationType returns util::CommunicationType:
+	//    {util::CommunicationType}
+	//    name=EString
 	//    ;
 	public UtilGrammarAccess.CommunicationTypeElements getCommunicationTypeAccess() {
 		return gaUtil.getCommunicationTypeAccess();
@@ -1455,9 +1508,19 @@ public class DeviceGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		return getCommunicationTypeAccess().getRule();
 	}
 	
-	//EthernetCommunicationType returns EthernetCommunicationType:
-	//    {EthernetCommunicationType}
-	//    'EthernetCommunicationType'
+	//NetworkCommunicationType returns util::NetworkCommunicationType:
+	//    EthernetCommunicationType | WlanCommunicationType;
+	public UtilGrammarAccess.NetworkCommunicationTypeElements getNetworkCommunicationTypeAccess() {
+		return gaUtil.getNetworkCommunicationTypeAccess();
+	}
+	
+	public ParserRule getNetworkCommunicationTypeRule() {
+		return getNetworkCommunicationTypeAccess().getRule();
+	}
+	
+	//EthernetCommunicationType returns util::EthernetCommunicationType:
+	//    {util::EthernetCommunicationType}
+	//    'Ethernet'
 	//    ;
 	public UtilGrammarAccess.EthernetCommunicationTypeElements getEthernetCommunicationTypeAccess() {
 		return gaUtil.getEthernetCommunicationTypeAccess();
@@ -1467,9 +1530,9 @@ public class DeviceGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		return getEthernetCommunicationTypeAccess().getRule();
 	}
 	
-	//WlanCommunicationType returns WlanCommunicationType:
-	//    {WlanCommunicationType}
-	//    'WlanCommunicationType'
+	//WlanCommunicationType returns util::WlanCommunicationType:
+	//    {util::WlanCommunicationType}
+	//    'Wlan'
 	//    ;
 	public UtilGrammarAccess.WlanCommunicationTypeElements getWlanCommunicationTypeAccess() {
 		return gaUtil.getWlanCommunicationTypeAccess();
