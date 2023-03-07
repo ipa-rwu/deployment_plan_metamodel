@@ -66,7 +66,6 @@ public class DeviceFactoryImpl extends EFactoryImpl implements DeviceFactory {
 			case DevicePackage.SELECTION_KIND: return createSelectionKind();
 			case DevicePackage.RANGE_KIND: return createRangeKind();
 			case DevicePackage.CONNECTION_PROPERTY: return createConnectionProperty();
-			case DevicePackage.CAPABILITY_TYPE: return createCapabilityType();
 			case DevicePackage.COMPUTATION_DEVICE_TYPE: return createComputationDeviceType();
 			case DevicePackage.NETWORK_CONNECTION: return createNetworkConnection();
 			case DevicePackage.INTERFACE_NETWORK_PROPERTY: return createInterfaceNetworkProperty();
@@ -174,16 +173,6 @@ public class DeviceFactoryImpl extends EFactoryImpl implements DeviceFactory {
 	public ConnectionProperty createConnectionProperty() {
 		ConnectionPropertyImpl connectionProperty = new ConnectionPropertyImpl();
 		return connectionProperty;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public CapabilityType createCapabilityType() {
-		CapabilityTypeImpl capabilityType = new CapabilityTypeImpl();
-		return capabilityType;
 	}
 
 	/**

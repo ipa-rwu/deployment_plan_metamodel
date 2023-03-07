@@ -2,10 +2,9 @@
  */
 package device.util;
 
+import de.fraunhofer.ipa.deployment.util.AbstractResouceType;
 import de.fraunhofer.ipa.deployment.util.Description;
 import de.fraunhofer.ipa.deployment.util.Property;
-import de.fraunhofer.ipa.deployment.util.ResouceType;
-
 import device.*;
 
 import org.eclipse.emf.common.notify.Adapter;
@@ -152,8 +151,8 @@ public class DeviceAdapterFactory extends AdapterFactoryImpl {
 				return createPropertyAdapter();
 			}
 			@Override
-			public Adapter caseResouceType(ResouceType object) {
-				return createResouceTypeAdapter();
+			public Adapter caseAbstractResouceType(AbstractResouceType object) {
+				return createAbstractResouceTypeAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -456,16 +455,16 @@ public class DeviceAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.fraunhofer.ipa.deployment.util.ResouceType <em>Resouce Type</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.fraunhofer.ipa.deployment.util.AbstractResouceType <em>Abstract Resouce Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.fraunhofer.ipa.deployment.util.ResouceType
+	 * @see de.fraunhofer.ipa.deployment.util.AbstractResouceType
 	 * @generated
 	 */
-	public Adapter createResouceTypeAdapter() {
+	public Adapter createAbstractResouceTypeAdapter() {
 		return null;
 	}
 

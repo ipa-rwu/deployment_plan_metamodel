@@ -121,29 +121,9 @@ public class UtilSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case UtilPackage.OPERTING_SYSTEM: {
-			OpertingSystem opertingSystem = (OpertingSystem) theEObject;
-			T result = caseOpertingSystem(opertingSystem);
-			if (result == null)
-				result = caseResouceType(opertingSystem);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case UtilPackage.LINUX_OPERTING_SYSTEM: {
-			LinuxOpertingSystem linuxOpertingSystem = (LinuxOpertingSystem) theEObject;
-			T result = caseLinuxOpertingSystem(linuxOpertingSystem);
-			if (result == null)
-				result = caseOpertingSystem(linuxOpertingSystem);
-			if (result == null)
-				result = caseResouceType(linuxOpertingSystem);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case UtilPackage.RESOUCE_TYPE: {
-			ResouceType resouceType = (ResouceType) theEObject;
-			T result = caseResouceType(resouceType);
+		case UtilPackage.ABSTRACT_RESOUCE_TYPE: {
+			AbstractResouceType abstractResouceType = (AbstractResouceType) theEObject;
+			T result = caseAbstractResouceType(abstractResouceType);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -152,29 +132,7 @@ public class UtilSwitch<T> extends Switch<T> {
 			ProcessorArchitecture processorArchitecture = (ProcessorArchitecture) theEObject;
 			T result = caseProcessorArchitecture(processorArchitecture);
 			if (result == null)
-				result = caseResouceType(processorArchitecture);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case UtilPackage.X86_PROCESSOR_ARCHITECTURE: {
-			X86ProcessorArchitecture x86ProcessorArchitecture = (X86ProcessorArchitecture) theEObject;
-			T result = caseX86ProcessorArchitecture(x86ProcessorArchitecture);
-			if (result == null)
-				result = caseProcessorArchitecture(x86ProcessorArchitecture);
-			if (result == null)
-				result = caseResouceType(x86ProcessorArchitecture);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case UtilPackage.ARM64_PROCESSOR_ARCHITECTURE: {
-			Arm64ProcessorArchitecture arm64ProcessorArchitecture = (Arm64ProcessorArchitecture) theEObject;
-			T result = caseArm64ProcessorArchitecture(arm64ProcessorArchitecture);
-			if (result == null)
-				result = caseProcessorArchitecture(arm64ProcessorArchitecture);
-			if (result == null)
-				result = caseResouceType(arm64ProcessorArchitecture);
+				result = caseAbstractResouceType(processorArchitecture);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -182,8 +140,6 @@ public class UtilSwitch<T> extends Switch<T> {
 		case UtilPackage.ABSTRACT_COMMUNICATION_TYPE: {
 			AbstractCommunicationType abstractCommunicationType = (AbstractCommunicationType) theEObject;
 			T result = caseAbstractCommunicationType(abstractCommunicationType);
-			if (result == null)
-				result = caseResouceType(abstractCommunicationType);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -194,8 +150,6 @@ public class UtilSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseAbstractCommunicationType(communicationType);
 			if (result == null)
-				result = caseResouceType(communicationType);
-			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -204,8 +158,6 @@ public class UtilSwitch<T> extends Switch<T> {
 			T result = caseNetworkCommunicationType(networkCommunicationType);
 			if (result == null)
 				result = caseAbstractCommunicationType(networkCommunicationType);
-			if (result == null)
-				result = caseResouceType(networkCommunicationType);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -218,8 +170,6 @@ public class UtilSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseAbstractCommunicationType(ethernetCommunicationType);
 			if (result == null)
-				result = caseResouceType(ethernetCommunicationType);
-			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -231,14 +181,83 @@ public class UtilSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseAbstractCommunicationType(wlanCommunicationType);
 			if (result == null)
-				result = caseResouceType(wlanCommunicationType);
-			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
 		case UtilPackage.AVAILABLE_RESOUCE: {
 			AvailableResouce availableResouce = (AvailableResouce) theEObject;
 			T result = caseAvailableResouce(availableResouce);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case UtilPackage.OPERTING_SYSTEM_TYPE: {
+			OpertingSystemType opertingSystemType = (OpertingSystemType) theEObject;
+			T result = caseOpertingSystemType(opertingSystemType);
+			if (result == null)
+				result = caseAbstractResouceType(opertingSystemType);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case UtilPackage.LINUX_OPERTING_SYSTEM_TYPE: {
+			LinuxOpertingSystemType linuxOpertingSystemType = (LinuxOpertingSystemType) theEObject;
+			T result = caseLinuxOpertingSystemType(linuxOpertingSystemType);
+			if (result == null)
+				result = caseOpertingSystemType(linuxOpertingSystemType);
+			if (result == null)
+				result = caseAbstractResouceType(linuxOpertingSystemType);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case UtilPackage.MAC_OS_OPERTING_SYSTEM_TYPE: {
+			MacOSOpertingSystemType macOSOpertingSystemType = (MacOSOpertingSystemType) theEObject;
+			T result = caseMacOSOpertingSystemType(macOSOpertingSystemType);
+			if (result == null)
+				result = caseOpertingSystemType(macOSOpertingSystemType);
+			if (result == null)
+				result = caseAbstractResouceType(macOSOpertingSystemType);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case UtilPackage.PROCESSOR_ARCHITECTURE_TYPE: {
+			ProcessorArchitectureType processorArchitectureType = (ProcessorArchitectureType) theEObject;
+			T result = caseProcessorArchitectureType(processorArchitectureType);
+			if (result == null)
+				result = caseAbstractResouceType(processorArchitectureType);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case UtilPackage.PROCESSOR_ARCHITECTURE_VALUE: {
+			ProcessorArchitectureValue processorArchitectureValue = (ProcessorArchitectureValue) theEObject;
+			T result = caseProcessorArchitectureValue(processorArchitectureValue);
+			if (result == null)
+				result = casePropertyValue(processorArchitectureValue);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case UtilPackage.X86_PROCESSOR_ARCHITECTURE: {
+			X86ProcessorArchitecture x86ProcessorArchitecture = (X86ProcessorArchitecture) theEObject;
+			T result = caseX86ProcessorArchitecture(x86ProcessorArchitecture);
+			if (result == null)
+				result = caseProcessorArchitectureValue(x86ProcessorArchitecture);
+			if (result == null)
+				result = casePropertyValue(x86ProcessorArchitecture);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case UtilPackage.ARM64_PROCESSOR_ARCHITECTURE: {
+			Arm64ProcessorArchitecture arm64ProcessorArchitecture = (Arm64ProcessorArchitecture) theEObject;
+			T result = caseArm64ProcessorArchitecture(arm64ProcessorArchitecture);
+			if (result == null)
+				result = caseProcessorArchitectureValue(arm64ProcessorArchitecture);
+			if (result == null)
+				result = casePropertyValue(arm64ProcessorArchitecture);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -354,47 +373,17 @@ public class UtilSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Operting System</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Abstract Resouce Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Operting System</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Abstract Resouce Type</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseOpertingSystem(OpertingSystem object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Linux Operting System</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Linux Operting System</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseLinuxOpertingSystem(LinuxOpertingSystem object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Resouce Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Resouce Type</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseResouceType(ResouceType object) {
+	public T caseAbstractResouceType(AbstractResouceType object) {
 		return null;
 	}
 
@@ -410,36 +399,6 @@ public class UtilSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseProcessorArchitecture(ProcessorArchitecture object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>X86 Processor Architecture</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>X86 Processor Architecture</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseX86ProcessorArchitecture(X86ProcessorArchitecture object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Arm64 Processor Architecture</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Arm64 Processor Architecture</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseArm64ProcessorArchitecture(Arm64ProcessorArchitecture object) {
 		return null;
 	}
 
@@ -530,6 +489,111 @@ public class UtilSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseAvailableResouce(AvailableResouce object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Operting System Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Operting System Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseOpertingSystemType(OpertingSystemType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Linux Operting System Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Linux Operting System Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLinuxOpertingSystemType(LinuxOpertingSystemType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Mac OS Operting System Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Mac OS Operting System Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMacOSOpertingSystemType(MacOSOpertingSystemType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Processor Architecture Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Processor Architecture Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseProcessorArchitectureType(ProcessorArchitectureType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Processor Architecture Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Processor Architecture Value</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseProcessorArchitectureValue(ProcessorArchitectureValue object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>X86 Processor Architecture</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>X86 Processor Architecture</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseX86ProcessorArchitecture(X86ProcessorArchitecture object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Arm64 Processor Architecture</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Arm64 Processor Architecture</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseArm64ProcessorArchitecture(Arm64ProcessorArchitecture object) {
 		return null;
 	}
 

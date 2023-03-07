@@ -416,26 +416,17 @@ public class DevicePackageImpl extends EPackageImpl implements DevicePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getCapabilityType_Name() {
+		return (EAttribute)capabilityTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getComputationDeviceType() {
 		return computationDeviceTypeEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getComputationDeviceType_OperatingSystem() {
-		return (EReference)computationDeviceTypeEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getComputationDeviceType_ProcessorArchitecture() {
-		return (EReference)computationDeviceTypeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -515,26 +506,8 @@ public class DevicePackageImpl extends EPackageImpl implements DevicePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getInterfaceNetworkProperty_Name() {
-		return (EAttribute)interfaceNetworkPropertyEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getAddressNetworkProperty() {
 		return addressNetworkPropertyEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAddressNetworkProperty_Name() {
-		return (EAttribute)addressNetworkPropertyEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -596,10 +569,9 @@ public class DevicePackageImpl extends EPackageImpl implements DevicePackage {
 		connectionPropertyEClass = createEClass(CONNECTION_PROPERTY);
 
 		capabilityTypeEClass = createEClass(CAPABILITY_TYPE);
+		createEAttribute(capabilityTypeEClass, CAPABILITY_TYPE__NAME);
 
 		computationDeviceTypeEClass = createEClass(COMPUTATION_DEVICE_TYPE);
-		createEReference(computationDeviceTypeEClass, COMPUTATION_DEVICE_TYPE__OPERATING_SYSTEM);
-		createEReference(computationDeviceTypeEClass, COMPUTATION_DEVICE_TYPE__PROCESSOR_ARCHITECTURE);
 
 		abstractCommunicationConnectionEClass = createEClass(ABSTRACT_COMMUNICATION_CONNECTION);
 		createEAttribute(abstractCommunicationConnectionEClass, ABSTRACT_COMMUNICATION_CONNECTION__NAME);
@@ -612,10 +584,8 @@ public class DevicePackageImpl extends EPackageImpl implements DevicePackage {
 		createEReference(abstractNetworkPropertyEClass, ABSTRACT_NETWORK_PROPERTY__VALUE);
 
 		interfaceNetworkPropertyEClass = createEClass(INTERFACE_NETWORK_PROPERTY);
-		createEAttribute(interfaceNetworkPropertyEClass, INTERFACE_NETWORK_PROPERTY__NAME);
 
 		addressNetworkPropertyEClass = createEClass(ADDRESS_NETWORK_PROPERTY);
-		createEAttribute(addressNetworkPropertyEClass, ADDRESS_NETWORK_PROPERTY__NAME);
 	}
 
 	/**
@@ -658,7 +628,7 @@ public class DevicePackageImpl extends EPackageImpl implements DevicePackage {
 		selectionKindEClass.getESuperTypes().add(this.getCapabilityKind());
 		rangeKindEClass.getESuperTypes().add(this.getCapabilityKind());
 		connectionPropertyEClass.getESuperTypes().add(theUtilPackage.getProperty());
-		capabilityTypeEClass.getESuperTypes().add(theUtilPackage.getResouceType());
+		capabilityTypeEClass.getESuperTypes().add(theUtilPackage.getAbstractResouceType());
 		computationDeviceTypeEClass.getESuperTypes().add(this.getDeviceType());
 		networkConnectionEClass.getESuperTypes().add(this.getAbstractCommunicationConnection());
 		interfaceNetworkPropertyEClass.getESuperTypes().add(this.getAbstractNetworkProperty());
@@ -679,7 +649,7 @@ public class DevicePackageImpl extends EPackageImpl implements DevicePackage {
 
 		initEClass(capabilityPropertyEClass, CapabilityProperty.class, "CapabilityProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCapabilityProperty_Kind(), this.getCapabilityKind(), null, "kind", null, 1, 1, CapabilityProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCapabilityProperty_Type(), this.getCapabilityType(), null, "type", null, 1, 1, CapabilityProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCapabilityProperty_Type(), theUtilPackage.getAbstractResouceType(), null, "type", null, 1, 1, CapabilityProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(capabilityKindEClass, CapabilityKind.class, "CapabilityKind", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -695,27 +665,24 @@ public class DevicePackageImpl extends EPackageImpl implements DevicePackage {
 
 		initEClass(connectionPropertyEClass, ConnectionProperty.class, "ConnectionProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(capabilityTypeEClass, CapabilityType.class, "CapabilityType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(capabilityTypeEClass, CapabilityType.class, "CapabilityType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getCapabilityType_Name(), ecorePackage.getEString(), "name", null, 1, 1, CapabilityType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(computationDeviceTypeEClass, ComputationDeviceType.class, "ComputationDeviceType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getComputationDeviceType_OperatingSystem(), theUtilPackage.getOpertingSystem(), null, "operatingSystem", null, 1, 1, ComputationDeviceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getComputationDeviceType_ProcessorArchitecture(), theUtilPackage.getProcessorArchitecture(), null, "processorArchitecture", null, 0, 1, ComputationDeviceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(abstractCommunicationConnectionEClass, AbstractCommunicationConnection.class, "AbstractCommunicationConnection", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAbstractCommunicationConnection_Name(), ecorePackage.getEString(), "name", null, 0, 1, AbstractCommunicationConnection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(networkConnectionEClass, NetworkConnection.class, "NetworkConnection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getNetworkConnection_Type(), theUtilPackage.getNetworkCommunicationType(), null, "type", null, 1, 1, NetworkConnection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getNetworkConnection_Type(), theUtilPackage.getNetworkCommunicationType(), null, "type", null, 1, 1, NetworkConnection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getNetworkConnection_Properties(), this.getAbstractNetworkProperty(), null, "properties", null, 0, -1, NetworkConnection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(abstractNetworkPropertyEClass, AbstractNetworkProperty.class, "AbstractNetworkProperty", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAbstractNetworkProperty_Value(), theUtilPackage.getPropertyValue(), null, "value", null, 0, 1, AbstractNetworkProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAbstractNetworkProperty_Value(), theUtilPackage.getPropertyValue(), null, "value", null, 0, 1, AbstractNetworkProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(interfaceNetworkPropertyEClass, InterfaceNetworkProperty.class, "InterfaceNetworkProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getInterfaceNetworkProperty_Name(), ecorePackage.getEString(), "name", "interface", 0, 1, InterfaceNetworkProperty.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(addressNetworkPropertyEClass, AddressNetworkProperty.class, "AddressNetworkProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAddressNetworkProperty_Name(), ecorePackage.getEString(), "name", "address", 0, 1, AddressNetworkProperty.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

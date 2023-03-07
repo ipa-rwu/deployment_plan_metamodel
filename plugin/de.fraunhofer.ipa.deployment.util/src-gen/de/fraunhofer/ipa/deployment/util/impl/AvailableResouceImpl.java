@@ -2,8 +2,8 @@
  */
 package de.fraunhofer.ipa.deployment.util.impl;
 
+import de.fraunhofer.ipa.deployment.util.AbstractResouceType;
 import de.fraunhofer.ipa.deployment.util.AvailableResouce;
-import de.fraunhofer.ipa.deployment.util.ResouceType;
 import de.fraunhofer.ipa.deployment.util.UtilPackage;
 
 import java.util.Collection;
@@ -42,7 +42,7 @@ public class AvailableResouceImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ResouceType> list;
+	protected EList<AbstractResouceType> list;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -68,9 +68,9 @@ public class AvailableResouceImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ResouceType> getList() {
+	public EList<AbstractResouceType> getList() {
 		if (list == null) {
-			list = new EObjectContainmentEList<ResouceType>(ResouceType.class, this,
+			list = new EObjectContainmentEList<AbstractResouceType>(AbstractResouceType.class, this,
 					UtilPackage.AVAILABLE_RESOUCE__LIST);
 		}
 		return list;
@@ -115,7 +115,7 @@ public class AvailableResouceImpl extends MinimalEObjectImpl.Container implement
 		switch (featureID) {
 		case UtilPackage.AVAILABLE_RESOUCE__LIST:
 			getList().clear();
-			getList().addAll((Collection<? extends ResouceType>) newValue);
+			getList().addAll((Collection<? extends AbstractResouceType>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);

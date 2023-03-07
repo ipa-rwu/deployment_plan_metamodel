@@ -2,6 +2,7 @@
  */
 package device;
 
+import de.fraunhofer.ipa.deployment.util.AbstractResouceType;
 import de.fraunhofer.ipa.deployment.util.Property;
 
 /**
@@ -45,25 +46,25 @@ public interface CapabilityProperty extends Property {
 	void setKind(CapabilityKind value);
 
 	/**
-	 * Returns the value of the '<em><b>Type</b></em>' reference.
+	 * Returns the value of the '<em><b>Type</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Type</em>' reference.
-	 * @see #setType(CapabilityType)
+	 * @return the value of the '<em>Type</em>' containment reference.
+	 * @see #setType(AbstractResouceType)
 	 * @see device.DevicePackage#getCapabilityProperty_Type()
-	 * @model required="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	CapabilityType getType();
+	AbstractResouceType getType();
 
 	/**
-	 * Sets the value of the '{@link device.CapabilityProperty#getType <em>Type</em>}' reference.
+	 * Sets the value of the '{@link device.CapabilityProperty#getType <em>Type</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Type</em>' reference.
+	 * @param value the new value of the '<em>Type</em>' containment reference.
 	 * @see #getType()
 	 * @generated
 	 */
-	void setType(CapabilityType value);
+	void setType(AbstractResouceType value);
 
 } // CapabilityProperty

@@ -2,25 +2,25 @@
  */
 package de.fraunhofer.ipa.deployment.util.impl;
 
+import de.fraunhofer.ipa.deployment.util.ProcessorArchitectureValue;
 import de.fraunhofer.ipa.deployment.util.UtilPackage;
-import de.fraunhofer.ipa.deployment.util.X86ProcessorArchitecture;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>X86 Processor Architecture</b></em>'.
+ * An implementation of the model object '<em><b>Processor Architecture Value</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class X86ProcessorArchitectureImpl extends ProcessorArchitectureValueImpl implements X86ProcessorArchitecture {
+public abstract class ProcessorArchitectureValueImpl extends PropertyValueImpl implements ProcessorArchitectureValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected X86ProcessorArchitectureImpl() {
+	protected ProcessorArchitectureValueImpl() {
 		super();
 	}
 
@@ -31,7 +31,7 @@ public class X86ProcessorArchitectureImpl extends ProcessorArchitectureValueImpl
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return UtilPackage.Literals.X86_PROCESSOR_ARCHITECTURE;
+		return UtilPackage.Literals.PROCESSOR_ARCHITECTURE_VALUE;
 	}
 
-} //X86ProcessorArchitectureImpl
+} //ProcessorArchitectureValueImpl

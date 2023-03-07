@@ -24,22 +24,22 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface AbstractNetworkProperty extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Value</b></em>' reference.
+	 * Returns the value of the '<em><b>Value</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Value</em>' reference.
+	 * @return the value of the '<em>Value</em>' containment reference.
 	 * @see #setValue(PropertyValue)
 	 * @see device.DevicePackage#getAbstractNetworkProperty_Value()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	PropertyValue getValue();
 
 	/**
-	 * Sets the value of the '{@link device.AbstractNetworkProperty#getValue <em>Value</em>}' reference.
+	 * Sets the value of the '{@link device.AbstractNetworkProperty#getValue <em>Value</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Value</em>' reference.
+	 * @param value the new value of the '<em>Value</em>' containment reference.
 	 * @see #getValue()
 	 * @generated
 	 */

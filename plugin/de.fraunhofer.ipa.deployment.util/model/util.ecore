@@ -20,34 +20,29 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//PropertyValue"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="OpertingSystem" abstract="true" eSuperTypes="#//ResouceType">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        iD="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="LinuxOpertingSystem" eSuperTypes="#//OpertingSystem"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ResouceType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractResouceType" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="ProcessorArchitecture" abstract="true"
-      eSuperTypes="#//ResouceType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="X86ProcessorArchitecture" eSuperTypes="#//ProcessorArchitecture">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        changeable="false" defaultValueLiteral="x86"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Arm64ProcessorArchitecture" eSuperTypes="#//ProcessorArchitecture">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        changeable="false" defaultValueLiteral="arm64"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AbstractCommunicationType" abstract="true"
-      eSuperTypes="#//ResouceType"/>
+      eSuperTypes="#//AbstractResouceType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractCommunicationType" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="CommunicationType" eSuperTypes="#//AbstractCommunicationType">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        changeable="false" defaultValueLiteral="Ethernet"/>
+        defaultValueLiteral="Ethernet"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NetworkCommunicationType" abstract="true"
       eSuperTypes="#//AbstractCommunicationType"/>
   <eClassifiers xsi:type="ecore:EClass" name="EthernetCommunicationType" eSuperTypes="#//NetworkCommunicationType"/>
   <eClassifiers xsi:type="ecore:EClass" name="WlanCommunicationType" eSuperTypes="#//NetworkCommunicationType"/>
   <eClassifiers xsi:type="ecore:EClass" name="AvailableResouce">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="list" upperBound="-1" eType="#//ResouceType"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="list" upperBound="-1" eType="#//AbstractResouceType"
         containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OpertingSystemType" abstract="true"
+      eSuperTypes="#//AbstractResouceType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LinuxOpertingSystemType" eSuperTypes="#//OpertingSystemType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MacOSOpertingSystemType" eSuperTypes="#//OpertingSystemType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ProcessorArchitectureType" eSuperTypes="#//AbstractResouceType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ProcessorArchitectureValue" abstract="true"
+      eSuperTypes="#//PropertyValue"/>
+  <eClassifiers xsi:type="ecore:EClass" name="X86ProcessorArchitecture" eSuperTypes="#//ProcessorArchitectureValue"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Arm64ProcessorArchitecture" eSuperTypes="#//ProcessorArchitectureValue"/>
 </ecore:EPackage>

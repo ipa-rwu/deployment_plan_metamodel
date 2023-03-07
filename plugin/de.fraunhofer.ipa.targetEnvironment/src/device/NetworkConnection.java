@@ -25,22 +25,22 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface NetworkConnection extends AbstractCommunicationConnection {
 	/**
-	 * Returns the value of the '<em><b>Type</b></em>' reference.
+	 * Returns the value of the '<em><b>Type</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Type</em>' reference.
+	 * @return the value of the '<em>Type</em>' containment reference.
 	 * @see #setType(NetworkCommunicationType)
 	 * @see device.DevicePackage#getNetworkConnection_Type()
-	 * @model required="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	NetworkCommunicationType getType();
 
 	/**
-	 * Sets the value of the '{@link device.NetworkConnection#getType <em>Type</em>}' reference.
+	 * Sets the value of the '{@link device.NetworkConnection#getType <em>Type</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Type</em>' reference.
+	 * @param value the new value of the '<em>Type</em>' containment reference.
 	 * @see #getType()
 	 * @generated
 	 */

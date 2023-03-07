@@ -7,6 +7,8 @@ import de.fraunhofer.ipa.deployment.util.UtilPackage;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Abstract Communication Type</b></em>'.
@@ -14,7 +16,8 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public abstract class AbstractCommunicationTypeImpl extends ResouceTypeImpl implements AbstractCommunicationType {
+public abstract class AbstractCommunicationTypeImpl extends MinimalEObjectImpl.Container
+		implements AbstractCommunicationType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

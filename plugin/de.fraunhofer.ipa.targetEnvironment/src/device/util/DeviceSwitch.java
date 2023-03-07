@@ -2,10 +2,9 @@
  */
 package device.util;
 
+import de.fraunhofer.ipa.deployment.util.AbstractResouceType;
 import de.fraunhofer.ipa.deployment.util.Description;
 import de.fraunhofer.ipa.deployment.util.Property;
-import de.fraunhofer.ipa.deployment.util.ResouceType;
-
 import device.*;
 
 import org.eclipse.emf.ecore.EObject;
@@ -148,7 +147,7 @@ public class DeviceSwitch<T> extends Switch<T> {
 			case DevicePackage.CAPABILITY_TYPE: {
 				CapabilityType capabilityType = (CapabilityType)theEObject;
 				T result = caseCapabilityType(capabilityType);
-				if (result == null) result = caseResouceType(capabilityType);
+				if (result == null) result = caseAbstractResouceType(capabilityType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -497,17 +496,17 @@ public class DeviceSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Resouce Type</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Abstract Resouce Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Resouce Type</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Abstract Resouce Type</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseResouceType(ResouceType object) {
+	public T caseAbstractResouceType(AbstractResouceType object) {
 		return null;
 	}
 

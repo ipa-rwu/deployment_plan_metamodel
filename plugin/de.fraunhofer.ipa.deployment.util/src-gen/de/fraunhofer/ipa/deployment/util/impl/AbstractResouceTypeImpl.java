@@ -2,25 +2,27 @@
  */
 package de.fraunhofer.ipa.deployment.util.impl;
 
+import de.fraunhofer.ipa.deployment.util.AbstractResouceType;
 import de.fraunhofer.ipa.deployment.util.UtilPackage;
-import de.fraunhofer.ipa.deployment.util.X86ProcessorArchitecture;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>X86 Processor Architecture</b></em>'.
+ * An implementation of the model object '<em><b>Abstract Resouce Type</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class X86ProcessorArchitectureImpl extends ProcessorArchitectureValueImpl implements X86ProcessorArchitecture {
+public abstract class AbstractResouceTypeImpl extends MinimalEObjectImpl.Container implements AbstractResouceType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected X86ProcessorArchitectureImpl() {
+	protected AbstractResouceTypeImpl() {
 		super();
 	}
 
@@ -31,7 +33,7 @@ public class X86ProcessorArchitectureImpl extends ProcessorArchitectureValueImpl
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return UtilPackage.Literals.X86_PROCESSOR_ARCHITECTURE;
+		return UtilPackage.Literals.ABSTRACT_RESOUCE_TYPE;
 	}
 
-} //X86ProcessorArchitectureImpl
+} //AbstractResouceTypeImpl

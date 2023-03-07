@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.EObject;
 public interface AvailableResouce extends EObject {
 	/**
 	 * Returns the value of the '<em><b>List</b></em>' containment reference list.
-	 * The list contents are of type {@link de.fraunhofer.ipa.deployment.util.ResouceType}.
+	 * The list contents are of type {@link de.fraunhofer.ipa.deployment.util.AbstractResouceType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>List</em>' containment reference list.
@@ -33,6 +33,6 @@ public interface AvailableResouce extends EObject {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<ResouceType> getList();
+	EList<AbstractResouceType> getList();
 
 } // AvailableResouce

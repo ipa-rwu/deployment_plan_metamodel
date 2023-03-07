@@ -2,27 +2,25 @@
  */
 package de.fraunhofer.ipa.deployment.util.impl;
 
-import de.fraunhofer.ipa.deployment.util.ResouceType;
+import de.fraunhofer.ipa.deployment.util.LinuxOpertingSystemType;
 import de.fraunhofer.ipa.deployment.util.UtilPackage;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Resouce Type</b></em>'.
+ * An implementation of the model object '<em><b>Linux Operting System Type</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class ResouceTypeImpl extends MinimalEObjectImpl.Container implements ResouceType {
+public class LinuxOpertingSystemTypeImpl extends OpertingSystemTypeImpl implements LinuxOpertingSystemType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ResouceTypeImpl() {
+	protected LinuxOpertingSystemTypeImpl() {
 		super();
 	}
 
@@ -33,7 +31,7 @@ public class ResouceTypeImpl extends MinimalEObjectImpl.Container implements Res
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return UtilPackage.Literals.RESOUCE_TYPE;
+		return UtilPackage.Literals.LINUX_OPERTING_SYSTEM_TYPE;
 	}
 
-} //ResouceTypeImpl
+} //LinuxOpertingSystemTypeImpl

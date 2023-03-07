@@ -112,15 +112,6 @@ public interface DeviceFactory extends EFactory {
 	ConnectionProperty createConnectionProperty();
 
 	/**
-	 * Returns a new object of class '<em>Capability Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Capability Type</em>'.
-	 * @generated
-	 */
-	CapabilityType createCapabilityType();
-
-	/**
 	 * Returns a new object of class '<em>Computation Device Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

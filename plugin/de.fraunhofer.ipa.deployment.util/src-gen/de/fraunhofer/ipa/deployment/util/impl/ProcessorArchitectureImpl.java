@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public abstract class ProcessorArchitectureImpl extends ResouceTypeImpl implements ProcessorArchitecture {
+public abstract class ProcessorArchitectureImpl extends AbstractResouceTypeImpl implements ProcessorArchitecture {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

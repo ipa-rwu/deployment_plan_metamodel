@@ -2,11 +2,11 @@
  */
 package device.impl;
 
+import de.fraunhofer.ipa.deployment.util.AbstractResouceType;
 import de.fraunhofer.ipa.deployment.util.impl.PropertyImpl;
 
 import device.CapabilityKind;
 import device.CapabilityProperty;
-import device.CapabilityType;
 import device.DevicePackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -43,14 +43,14 @@ public class CapabilityPropertyImpl extends PropertyImpl implements CapabilityPr
 	protected CapabilityKind kind;
 
 	/**
-	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
+	 * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getType()
 	 * @generated
 	 * @ordered
 	 */
-	protected CapabilityType type;
+	protected AbstractResouceType type;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -119,15 +119,7 @@ public class CapabilityPropertyImpl extends PropertyImpl implements CapabilityPr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CapabilityType getType() {
-		if (type != null && type.eIsProxy()) {
-			InternalEObject oldType = (InternalEObject)type;
-			type = (CapabilityType)eResolveProxy(oldType);
-			if (type != oldType) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DevicePackage.CAPABILITY_PROPERTY__TYPE, oldType, type));
-			}
-		}
+	public AbstractResouceType getType() {
 		return type;
 	}
 
@@ -136,20 +128,33 @@ public class CapabilityPropertyImpl extends PropertyImpl implements CapabilityPr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CapabilityType basicGetType() {
-		return type;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setType(CapabilityType newType) {
-		CapabilityType oldType = type;
+	public NotificationChain basicSetType(AbstractResouceType newType, NotificationChain msgs) {
+		AbstractResouceType oldType = type;
 		type = newType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DevicePackage.CAPABILITY_PROPERTY__TYPE, oldType, type));
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DevicePackage.CAPABILITY_PROPERTY__TYPE, oldType, newType);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setType(AbstractResouceType newType) {
+		if (newType != type) {
+			NotificationChain msgs = null;
+			if (type != null)
+				msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DevicePackage.CAPABILITY_PROPERTY__TYPE, null, msgs);
+			if (newType != null)
+				msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DevicePackage.CAPABILITY_PROPERTY__TYPE, null, msgs);
+			msgs = basicSetType(newType, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DevicePackage.CAPABILITY_PROPERTY__TYPE, newType, newType));
 	}
 
 	/**
@@ -162,6 +167,8 @@ public class CapabilityPropertyImpl extends PropertyImpl implements CapabilityPr
 		switch (featureID) {
 			case DevicePackage.CAPABILITY_PROPERTY__KIND:
 				return basicSetKind(null, msgs);
+			case DevicePackage.CAPABILITY_PROPERTY__TYPE:
+				return basicSetType(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -177,8 +184,7 @@ public class CapabilityPropertyImpl extends PropertyImpl implements CapabilityPr
 			case DevicePackage.CAPABILITY_PROPERTY__KIND:
 				return getKind();
 			case DevicePackage.CAPABILITY_PROPERTY__TYPE:
-				if (resolve) return getType();
-				return basicGetType();
+				return getType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -195,7 +201,7 @@ public class CapabilityPropertyImpl extends PropertyImpl implements CapabilityPr
 				setKind((CapabilityKind)newValue);
 				return;
 			case DevicePackage.CAPABILITY_PROPERTY__TYPE:
-				setType((CapabilityType)newValue);
+				setType((AbstractResouceType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -213,7 +219,7 @@ public class CapabilityPropertyImpl extends PropertyImpl implements CapabilityPr
 				setKind((CapabilityKind)null);
 				return;
 			case DevicePackage.CAPABILITY_PROPERTY__TYPE:
-				setType((CapabilityType)null);
+				setType((AbstractResouceType)null);
 				return;
 		}
 		super.eUnset(featureID);

@@ -63,14 +63,6 @@ public class UtilFactoryImpl extends EFactoryImpl implements UtilFactory {
 			return createPropertyValueString();
 		case UtilPackage.PROPERTY:
 			return createProperty();
-		case UtilPackage.LINUX_OPERTING_SYSTEM:
-			return createLinuxOpertingSystem();
-		case UtilPackage.RESOUCE_TYPE:
-			return createResouceType();
-		case UtilPackage.X86_PROCESSOR_ARCHITECTURE:
-			return createX86ProcessorArchitecture();
-		case UtilPackage.ARM64_PROCESSOR_ARCHITECTURE:
-			return createArm64ProcessorArchitecture();
 		case UtilPackage.COMMUNICATION_TYPE:
 			return createCommunicationType();
 		case UtilPackage.ETHERNET_COMMUNICATION_TYPE:
@@ -79,6 +71,16 @@ public class UtilFactoryImpl extends EFactoryImpl implements UtilFactory {
 			return createWlanCommunicationType();
 		case UtilPackage.AVAILABLE_RESOUCE:
 			return createAvailableResouce();
+		case UtilPackage.LINUX_OPERTING_SYSTEM_TYPE:
+			return createLinuxOpertingSystemType();
+		case UtilPackage.MAC_OS_OPERTING_SYSTEM_TYPE:
+			return createMacOSOpertingSystemType();
+		case UtilPackage.PROCESSOR_ARCHITECTURE_TYPE:
+			return createProcessorArchitectureType();
+		case UtilPackage.X86_PROCESSOR_ARCHITECTURE:
+			return createX86ProcessorArchitecture();
+		case UtilPackage.ARM64_PROCESSOR_ARCHITECTURE:
+			return createArm64ProcessorArchitecture();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -129,46 +131,6 @@ public class UtilFactoryImpl extends EFactoryImpl implements UtilFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public LinuxOpertingSystem createLinuxOpertingSystem() {
-		LinuxOpertingSystemImpl linuxOpertingSystem = new LinuxOpertingSystemImpl();
-		return linuxOpertingSystem;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ResouceType createResouceType() {
-		ResouceTypeImpl resouceType = new ResouceTypeImpl();
-		return resouceType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public X86ProcessorArchitecture createX86ProcessorArchitecture() {
-		X86ProcessorArchitectureImpl x86ProcessorArchitecture = new X86ProcessorArchitectureImpl();
-		return x86ProcessorArchitecture;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Arm64ProcessorArchitecture createArm64ProcessorArchitecture() {
-		Arm64ProcessorArchitectureImpl arm64ProcessorArchitecture = new Arm64ProcessorArchitectureImpl();
-		return arm64ProcessorArchitecture;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public CommunicationType createCommunicationType() {
 		CommunicationTypeImpl communicationType = new CommunicationTypeImpl();
 		return communicationType;
@@ -202,6 +164,56 @@ public class UtilFactoryImpl extends EFactoryImpl implements UtilFactory {
 	public AvailableResouce createAvailableResouce() {
 		AvailableResouceImpl availableResouce = new AvailableResouceImpl();
 		return availableResouce;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public LinuxOpertingSystemType createLinuxOpertingSystemType() {
+		LinuxOpertingSystemTypeImpl linuxOpertingSystemType = new LinuxOpertingSystemTypeImpl();
+		return linuxOpertingSystemType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MacOSOpertingSystemType createMacOSOpertingSystemType() {
+		MacOSOpertingSystemTypeImpl macOSOpertingSystemType = new MacOSOpertingSystemTypeImpl();
+		return macOSOpertingSystemType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProcessorArchitectureType createProcessorArchitectureType() {
+		ProcessorArchitectureTypeImpl processorArchitectureType = new ProcessorArchitectureTypeImpl();
+		return processorArchitectureType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public X86ProcessorArchitecture createX86ProcessorArchitecture() {
+		X86ProcessorArchitectureImpl x86ProcessorArchitecture = new X86ProcessorArchitectureImpl();
+		return x86ProcessorArchitecture;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Arm64ProcessorArchitecture createArm64ProcessorArchitecture() {
+		Arm64ProcessorArchitectureImpl arm64ProcessorArchitecture = new Arm64ProcessorArchitectureImpl();
+		return arm64ProcessorArchitecture;
 	}
 
 	/**

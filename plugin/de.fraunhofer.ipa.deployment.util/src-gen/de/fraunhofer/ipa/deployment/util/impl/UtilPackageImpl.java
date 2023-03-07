@@ -3,22 +3,25 @@
 package de.fraunhofer.ipa.deployment.util.impl;
 
 import de.fraunhofer.ipa.deployment.util.AbstractCommunicationType;
+import de.fraunhofer.ipa.deployment.util.AbstractResouceType;
 import de.fraunhofer.ipa.deployment.util.Arm64ProcessorArchitecture;
 import de.fraunhofer.ipa.deployment.util.AvailableResouce;
 import de.fraunhofer.ipa.deployment.util.CommunicationType;
 import de.fraunhofer.ipa.deployment.util.Description;
 import de.fraunhofer.ipa.deployment.util.EthernetCommunicationType;
-import de.fraunhofer.ipa.deployment.util.LinuxOpertingSystem;
+import de.fraunhofer.ipa.deployment.util.LinuxOpertingSystemType;
+import de.fraunhofer.ipa.deployment.util.MacOSOpertingSystemType;
 import de.fraunhofer.ipa.deployment.util.NetworkCommunicationType;
-import de.fraunhofer.ipa.deployment.util.OpertingSystem;
+import de.fraunhofer.ipa.deployment.util.OpertingSystemType;
 import de.fraunhofer.ipa.deployment.util.ProcessorArchitecture;
+import de.fraunhofer.ipa.deployment.util.ProcessorArchitectureType;
+import de.fraunhofer.ipa.deployment.util.ProcessorArchitectureValue;
 import de.fraunhofer.ipa.deployment.util.Property;
 import de.fraunhofer.ipa.deployment.util.PropertyType;
 import de.fraunhofer.ipa.deployment.util.PropertyValue;
 import de.fraunhofer.ipa.deployment.util.PropertyValueDouble;
 import de.fraunhofer.ipa.deployment.util.PropertyValueInt;
 import de.fraunhofer.ipa.deployment.util.PropertyValueString;
-import de.fraunhofer.ipa.deployment.util.ResouceType;
 import de.fraunhofer.ipa.deployment.util.UtilFactory;
 import de.fraunhofer.ipa.deployment.util.UtilPackage;
 import de.fraunhofer.ipa.deployment.util.WlanCommunicationType;
@@ -94,21 +97,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass opertingSystemEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass linuxOpertingSystemEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass resouceTypeEClass = null;
+	private EClass abstractResouceTypeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -116,20 +105,6 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * @generated
 	 */
 	private EClass processorArchitectureEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass x86ProcessorArchitectureEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass arm64ProcessorArchitectureEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -172,6 +147,55 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * @generated
 	 */
 	private EClass availableResouceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass opertingSystemTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass linuxOpertingSystemTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass macOSOpertingSystemTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass processorArchitectureTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass processorArchitectureValueEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass x86ProcessorArchitectureEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass arm64ProcessorArchitectureEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -362,35 +386,8 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getOpertingSystem() {
-		return opertingSystemEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getOpertingSystem_Name() {
-		return (EAttribute) opertingSystemEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getLinuxOpertingSystem() {
-		return linuxOpertingSystemEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getResouceType() {
-		return resouceTypeEClass;
+	public EClass getAbstractResouceType() {
+		return abstractResouceTypeEClass;
 	}
 
 	/**
@@ -400,42 +397,6 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 */
 	public EClass getProcessorArchitecture() {
 		return processorArchitectureEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getX86ProcessorArchitecture() {
-		return x86ProcessorArchitectureEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getX86ProcessorArchitecture_Name() {
-		return (EAttribute) x86ProcessorArchitectureEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getArm64ProcessorArchitecture() {
-		return arm64ProcessorArchitectureEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getArm64ProcessorArchitecture_Name() {
-		return (EAttribute) arm64ProcessorArchitectureEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -515,6 +476,69 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getOpertingSystemType() {
+		return opertingSystemTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getLinuxOpertingSystemType() {
+		return linuxOpertingSystemTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getMacOSOpertingSystemType() {
+		return macOSOpertingSystemTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getProcessorArchitectureType() {
+		return processorArchitectureTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getProcessorArchitectureValue() {
+		return processorArchitectureValueEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getX86ProcessorArchitecture() {
+		return x86ProcessorArchitectureEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getArm64ProcessorArchitecture() {
+		return arm64ProcessorArchitectureEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public UtilFactory getUtilFactory() {
 		return (UtilFactory) getEFactoryInstance();
 	}
@@ -559,20 +583,9 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 		createEAttribute(propertyEClass, PROPERTY__NAME);
 		createEReference(propertyEClass, PROPERTY__VALUE);
 
-		opertingSystemEClass = createEClass(OPERTING_SYSTEM);
-		createEAttribute(opertingSystemEClass, OPERTING_SYSTEM__NAME);
-
-		linuxOpertingSystemEClass = createEClass(LINUX_OPERTING_SYSTEM);
-
-		resouceTypeEClass = createEClass(RESOUCE_TYPE);
+		abstractResouceTypeEClass = createEClass(ABSTRACT_RESOUCE_TYPE);
 
 		processorArchitectureEClass = createEClass(PROCESSOR_ARCHITECTURE);
-
-		x86ProcessorArchitectureEClass = createEClass(X86_PROCESSOR_ARCHITECTURE);
-		createEAttribute(x86ProcessorArchitectureEClass, X86_PROCESSOR_ARCHITECTURE__NAME);
-
-		arm64ProcessorArchitectureEClass = createEClass(ARM64_PROCESSOR_ARCHITECTURE);
-		createEAttribute(arm64ProcessorArchitectureEClass, ARM64_PROCESSOR_ARCHITECTURE__NAME);
 
 		abstractCommunicationTypeEClass = createEClass(ABSTRACT_COMMUNICATION_TYPE);
 
@@ -587,6 +600,20 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 
 		availableResouceEClass = createEClass(AVAILABLE_RESOUCE);
 		createEReference(availableResouceEClass, AVAILABLE_RESOUCE__LIST);
+
+		opertingSystemTypeEClass = createEClass(OPERTING_SYSTEM_TYPE);
+
+		linuxOpertingSystemTypeEClass = createEClass(LINUX_OPERTING_SYSTEM_TYPE);
+
+		macOSOpertingSystemTypeEClass = createEClass(MAC_OS_OPERTING_SYSTEM_TYPE);
+
+		processorArchitectureTypeEClass = createEClass(PROCESSOR_ARCHITECTURE_TYPE);
+
+		processorArchitectureValueEClass = createEClass(PROCESSOR_ARCHITECTURE_VALUE);
+
+		x86ProcessorArchitectureEClass = createEClass(X86_PROCESSOR_ARCHITECTURE);
+
+		arm64ProcessorArchitectureEClass = createEClass(ARM64_PROCESSOR_ARCHITECTURE);
 	}
 
 	/**
@@ -625,16 +652,18 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 		propertyValueIntEClass.getESuperTypes().add(this.getPropertyValue());
 		propertyValueDoubleEClass.getESuperTypes().add(this.getPropertyValue());
 		propertyValueStringEClass.getESuperTypes().add(this.getPropertyValue());
-		opertingSystemEClass.getESuperTypes().add(this.getResouceType());
-		linuxOpertingSystemEClass.getESuperTypes().add(this.getOpertingSystem());
-		processorArchitectureEClass.getESuperTypes().add(this.getResouceType());
-		x86ProcessorArchitectureEClass.getESuperTypes().add(this.getProcessorArchitecture());
-		arm64ProcessorArchitectureEClass.getESuperTypes().add(this.getProcessorArchitecture());
-		abstractCommunicationTypeEClass.getESuperTypes().add(this.getResouceType());
+		processorArchitectureEClass.getESuperTypes().add(this.getAbstractResouceType());
 		communicationTypeEClass.getESuperTypes().add(this.getAbstractCommunicationType());
 		networkCommunicationTypeEClass.getESuperTypes().add(this.getAbstractCommunicationType());
 		ethernetCommunicationTypeEClass.getESuperTypes().add(this.getNetworkCommunicationType());
 		wlanCommunicationTypeEClass.getESuperTypes().add(this.getNetworkCommunicationType());
+		opertingSystemTypeEClass.getESuperTypes().add(this.getAbstractResouceType());
+		linuxOpertingSystemTypeEClass.getESuperTypes().add(this.getOpertingSystemType());
+		macOSOpertingSystemTypeEClass.getESuperTypes().add(this.getOpertingSystemType());
+		processorArchitectureTypeEClass.getESuperTypes().add(this.getAbstractResouceType());
+		processorArchitectureValueEClass.getESuperTypes().add(this.getPropertyValue());
+		x86ProcessorArchitectureEClass.getESuperTypes().add(this.getProcessorArchitectureValue());
+		arm64ProcessorArchitectureEClass.getESuperTypes().add(this.getProcessorArchitectureValue());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(descriptionEClass, Description.class, "Description", IS_ABSTRACT, !IS_INTERFACE,
@@ -674,31 +703,11 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(opertingSystemEClass, OpertingSystem.class, "OpertingSystem", IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getOpertingSystem_Name(), ecorePackage.getEString(), "name", null, 1, 1, OpertingSystem.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(linuxOpertingSystemEClass, LinuxOpertingSystem.class, "LinuxOpertingSystem", !IS_ABSTRACT,
+		initEClass(abstractResouceTypeEClass, AbstractResouceType.class, "AbstractResouceType", IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(resouceTypeEClass, ResouceType.class, "ResouceType", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(processorArchitectureEClass, ProcessorArchitecture.class, "ProcessorArchitecture", IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(x86ProcessorArchitectureEClass, X86ProcessorArchitecture.class, "X86ProcessorArchitecture",
-				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getX86ProcessorArchitecture_Name(), ecorePackage.getEString(), "name", "x86", 1, 1,
-				X86ProcessorArchitecture.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(arm64ProcessorArchitectureEClass, Arm64ProcessorArchitecture.class, "Arm64ProcessorArchitecture",
-				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getArm64ProcessorArchitecture_Name(), ecorePackage.getEString(), "name", "arm64", 1, 1,
-				Arm64ProcessorArchitecture.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(abstractCommunicationTypeEClass, AbstractCommunicationType.class, "AbstractCommunicationType",
 				IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -706,7 +715,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 		initEClass(communicationTypeEClass, CommunicationType.class, "CommunicationType", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCommunicationType_Name(), ecorePackage.getEString(), "name", "Ethernet", 0, 1,
-				CommunicationType.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				CommunicationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
 
 		initEClass(networkCommunicationTypeEClass, NetworkCommunicationType.class, "NetworkCommunicationType",
@@ -720,9 +729,30 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 
 		initEClass(availableResouceEClass, AvailableResouce.class, "AvailableResouce", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAvailableResouce_List(), this.getResouceType(), null, "list", null, 0, -1,
+		initEReference(getAvailableResouce_List(), this.getAbstractResouceType(), null, "list", null, 0, -1,
 				AvailableResouce.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(opertingSystemTypeEClass, OpertingSystemType.class, "OpertingSystemType", IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(linuxOpertingSystemTypeEClass, LinuxOpertingSystemType.class, "LinuxOpertingSystemType",
+				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(macOSOpertingSystemTypeEClass, MacOSOpertingSystemType.class, "MacOSOpertingSystemType",
+				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(processorArchitectureTypeEClass, ProcessorArchitectureType.class, "ProcessorArchitectureType",
+				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(processorArchitectureValueEClass, ProcessorArchitectureValue.class, "ProcessorArchitectureValue",
+				IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(x86ProcessorArchitectureEClass, X86ProcessorArchitecture.class, "X86ProcessorArchitecture",
+				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(arm64ProcessorArchitectureEClass, Arm64ProcessorArchitecture.class, "Arm64ProcessorArchitecture",
+				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

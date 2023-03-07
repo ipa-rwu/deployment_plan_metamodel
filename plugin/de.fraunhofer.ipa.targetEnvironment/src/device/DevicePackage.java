@@ -280,7 +280,7 @@ public interface DevicePackage extends EPackage {
 	int CAPABILITY_PROPERTY__KIND = UtilPackage.PROPERTY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * The feature id for the '<em><b>Type</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -531,13 +531,22 @@ public interface DevicePackage extends EPackage {
 	int CAPABILITY_TYPE = 11;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAPABILITY_TYPE__NAME = UtilPackage.ABSTRACT_RESOUCE_TYPE_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Capability Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CAPABILITY_TYPE_FEATURE_COUNT = UtilPackage.RESOUCE_TYPE_FEATURE_COUNT + 0;
+	int CAPABILITY_TYPE_FEATURE_COUNT = UtilPackage.ABSTRACT_RESOUCE_TYPE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Capability Type</em>' class.
@@ -546,7 +555,7 @@ public interface DevicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CAPABILITY_TYPE_OPERATION_COUNT = UtilPackage.RESOUCE_TYPE_OPERATION_COUNT + 0;
+	int CAPABILITY_TYPE_OPERATION_COUNT = UtilPackage.ABSTRACT_RESOUCE_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link device.impl.ComputationDeviceTypeImpl <em>Computation Device Type</em>}' class.
@@ -586,31 +595,13 @@ public interface DevicePackage extends EPackage {
 	int COMPUTATION_DEVICE_TYPE__COMMUNICATION_CONNECTION = DEVICE_TYPE__COMMUNICATION_CONNECTION;
 
 	/**
-	 * The feature id for the '<em><b>Operating System</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPUTATION_DEVICE_TYPE__OPERATING_SYSTEM = DEVICE_TYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Processor Architecture</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPUTATION_DEVICE_TYPE__PROCESSOR_ARCHITECTURE = DEVICE_TYPE_FEATURE_COUNT + 1;
-
-	/**
 	 * The number of structural features of the '<em>Computation Device Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPUTATION_DEVICE_TYPE_FEATURE_COUNT = DEVICE_TYPE_FEATURE_COUNT + 2;
+	int COMPUTATION_DEVICE_TYPE_FEATURE_COUNT = DEVICE_TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Computation Device Type</em>' class.
@@ -641,7 +632,7 @@ public interface DevicePackage extends EPackage {
 	int NETWORK_CONNECTION__NAME = ABSTRACT_COMMUNICATION_CONNECTION__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * The feature id for the '<em><b>Type</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -687,7 +678,7 @@ public interface DevicePackage extends EPackage {
 	int ABSTRACT_NETWORK_PROPERTY = 15;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' reference.
+	 * The feature id for the '<em><b>Value</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -724,7 +715,7 @@ public interface DevicePackage extends EPackage {
 	int INTERFACE_NETWORK_PROPERTY = 16;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' reference.
+	 * The feature id for the '<em><b>Value</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -733,22 +724,13 @@ public interface DevicePackage extends EPackage {
 	int INTERFACE_NETWORK_PROPERTY__VALUE = ABSTRACT_NETWORK_PROPERTY__VALUE;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTERFACE_NETWORK_PROPERTY__NAME = ABSTRACT_NETWORK_PROPERTY_FEATURE_COUNT + 0;
-
-	/**
 	 * The number of structural features of the '<em>Interface Network Property</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_NETWORK_PROPERTY_FEATURE_COUNT = ABSTRACT_NETWORK_PROPERTY_FEATURE_COUNT + 1;
+	int INTERFACE_NETWORK_PROPERTY_FEATURE_COUNT = ABSTRACT_NETWORK_PROPERTY_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Interface Network Property</em>' class.
@@ -770,7 +752,7 @@ public interface DevicePackage extends EPackage {
 	int ADDRESS_NETWORK_PROPERTY = 17;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' reference.
+	 * The feature id for the '<em><b>Value</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -779,22 +761,13 @@ public interface DevicePackage extends EPackage {
 	int ADDRESS_NETWORK_PROPERTY__VALUE = ABSTRACT_NETWORK_PROPERTY__VALUE;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADDRESS_NETWORK_PROPERTY__NAME = ABSTRACT_NETWORK_PROPERTY_FEATURE_COUNT + 0;
-
-	/**
 	 * The number of structural features of the '<em>Address Network Property</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ADDRESS_NETWORK_PROPERTY_FEATURE_COUNT = ABSTRACT_NETWORK_PROPERTY_FEATURE_COUNT + 1;
+	int ADDRESS_NETWORK_PROPERTY_FEATURE_COUNT = ABSTRACT_NETWORK_PROPERTY_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Address Network Property</em>' class.
@@ -924,10 +897,10 @@ public interface DevicePackage extends EPackage {
 	EReference getCapabilityProperty_Kind();
 
 	/**
-	 * Returns the meta object for the reference '{@link device.CapabilityProperty#getType <em>Type</em>}'.
+	 * Returns the meta object for the containment reference '{@link device.CapabilityProperty#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Type</em>'.
+	 * @return the meta object for the containment reference '<em>Type</em>'.
 	 * @see device.CapabilityProperty#getType()
 	 * @see #getCapabilityProperty()
 	 * @generated
@@ -1015,6 +988,17 @@ public interface DevicePackage extends EPackage {
 	EClass getCapabilityType();
 
 	/**
+	 * Returns the meta object for the attribute '{@link device.CapabilityType#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see device.CapabilityType#getName()
+	 * @see #getCapabilityType()
+	 * @generated
+	 */
+	EAttribute getCapabilityType_Name();
+
+	/**
 	 * Returns the meta object for class '{@link device.ComputationDeviceType <em>Computation Device Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1023,28 +1007,6 @@ public interface DevicePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getComputationDeviceType();
-
-	/**
-	 * Returns the meta object for the reference '{@link device.ComputationDeviceType#getOperatingSystem <em>Operating System</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Operating System</em>'.
-	 * @see device.ComputationDeviceType#getOperatingSystem()
-	 * @see #getComputationDeviceType()
-	 * @generated
-	 */
-	EReference getComputationDeviceType_OperatingSystem();
-
-	/**
-	 * Returns the meta object for the reference '{@link device.ComputationDeviceType#getProcessorArchitecture <em>Processor Architecture</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Processor Architecture</em>'.
-	 * @see device.ComputationDeviceType#getProcessorArchitecture()
-	 * @see #getComputationDeviceType()
-	 * @generated
-	 */
-	EReference getComputationDeviceType_ProcessorArchitecture();
 
 	/**
 	 * Returns the meta object for class '{@link device.AbstractCommunicationConnection <em>Abstract Communication Connection</em>}'.
@@ -1078,10 +1040,10 @@ public interface DevicePackage extends EPackage {
 	EClass getNetworkConnection();
 
 	/**
-	 * Returns the meta object for the reference '{@link device.NetworkConnection#getType <em>Type</em>}'.
+	 * Returns the meta object for the containment reference '{@link device.NetworkConnection#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Type</em>'.
+	 * @return the meta object for the containment reference '<em>Type</em>'.
 	 * @see device.NetworkConnection#getType()
 	 * @see #getNetworkConnection()
 	 * @generated
@@ -1110,10 +1072,10 @@ public interface DevicePackage extends EPackage {
 	EClass getAbstractNetworkProperty();
 
 	/**
-	 * Returns the meta object for the reference '{@link device.AbstractNetworkProperty#getValue <em>Value</em>}'.
+	 * Returns the meta object for the containment reference '{@link device.AbstractNetworkProperty#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Value</em>'.
+	 * @return the meta object for the containment reference '<em>Value</em>'.
 	 * @see device.AbstractNetworkProperty#getValue()
 	 * @see #getAbstractNetworkProperty()
 	 * @generated
@@ -1131,17 +1093,6 @@ public interface DevicePackage extends EPackage {
 	EClass getInterfaceNetworkProperty();
 
 	/**
-	 * Returns the meta object for the attribute '{@link device.InterfaceNetworkProperty#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see device.InterfaceNetworkProperty#getName()
-	 * @see #getInterfaceNetworkProperty()
-	 * @generated
-	 */
-	EAttribute getInterfaceNetworkProperty_Name();
-
-	/**
 	 * Returns the meta object for class '{@link device.AddressNetworkProperty <em>Address Network Property</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1150,17 +1101,6 @@ public interface DevicePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getAddressNetworkProperty();
-
-	/**
-	 * Returns the meta object for the attribute '{@link device.AddressNetworkProperty#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see device.AddressNetworkProperty#getName()
-	 * @see #getAddressNetworkProperty()
-	 * @generated
-	 */
-	EAttribute getAddressNetworkProperty_Name();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1282,7 +1222,7 @@ public interface DevicePackage extends EPackage {
 		EReference CAPABILITY_PROPERTY__KIND = eINSTANCE.getCapabilityProperty_Kind();
 
 		/**
-		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1370,6 +1310,14 @@ public interface DevicePackage extends EPackage {
 		EClass CAPABILITY_TYPE = eINSTANCE.getCapabilityType();
 
 		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CAPABILITY_TYPE__NAME = eINSTANCE.getCapabilityType_Name();
+
+		/**
 		 * The meta object literal for the '{@link device.impl.ComputationDeviceTypeImpl <em>Computation Device Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1378,22 +1326,6 @@ public interface DevicePackage extends EPackage {
 		 * @generated
 		 */
 		EClass COMPUTATION_DEVICE_TYPE = eINSTANCE.getComputationDeviceType();
-
-		/**
-		 * The meta object literal for the '<em><b>Operating System</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COMPUTATION_DEVICE_TYPE__OPERATING_SYSTEM = eINSTANCE.getComputationDeviceType_OperatingSystem();
-
-		/**
-		 * The meta object literal for the '<em><b>Processor Architecture</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COMPUTATION_DEVICE_TYPE__PROCESSOR_ARCHITECTURE = eINSTANCE.getComputationDeviceType_ProcessorArchitecture();
 
 		/**
 		 * The meta object literal for the '{@link device.impl.AbstractCommunicationConnectionImpl <em>Abstract Communication Connection</em>}' class.
@@ -1424,7 +1356,7 @@ public interface DevicePackage extends EPackage {
 		EClass NETWORK_CONNECTION = eINSTANCE.getNetworkConnection();
 
 		/**
-		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1450,7 +1382,7 @@ public interface DevicePackage extends EPackage {
 		EClass ABSTRACT_NETWORK_PROPERTY = eINSTANCE.getAbstractNetworkProperty();
 
 		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1468,14 +1400,6 @@ public interface DevicePackage extends EPackage {
 		EClass INTERFACE_NETWORK_PROPERTY = eINSTANCE.getInterfaceNetworkProperty();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute INTERFACE_NETWORK_PROPERTY__NAME = eINSTANCE.getInterfaceNetworkProperty_Name();
-
-		/**
 		 * The meta object literal for the '{@link device.impl.AddressNetworkPropertyImpl <em>Address Network Property</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1484,14 +1408,6 @@ public interface DevicePackage extends EPackage {
 		 * @generated
 		 */
 		EClass ADDRESS_NETWORK_PROPERTY = eINSTANCE.getAddressNetworkProperty();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ADDRESS_NETWORK_PROPERTY__NAME = eINSTANCE.getAddressNetworkProperty_Name();
 
 	}
 

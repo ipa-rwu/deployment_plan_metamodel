@@ -12,5 +12,5 @@ package de.fraunhofer.ipa.deployment.util;
  * @model abstract="true"
  * @generated
  */
-public interface ProcessorArchitecture extends ResouceType {
+public interface ProcessorArchitecture extends AbstractResouceType {
 } // ProcessorArchitecture

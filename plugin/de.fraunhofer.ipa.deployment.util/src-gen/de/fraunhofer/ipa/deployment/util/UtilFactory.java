@@ -58,42 +58,6 @@ public interface UtilFactory extends EFactory {
 	Property createProperty();
 
 	/**
-	 * Returns a new object of class '<em>Linux Operting System</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Linux Operting System</em>'.
-	 * @generated
-	 */
-	LinuxOpertingSystem createLinuxOpertingSystem();
-
-	/**
-	 * Returns a new object of class '<em>Resouce Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Resouce Type</em>'.
-	 * @generated
-	 */
-	ResouceType createResouceType();
-
-	/**
-	 * Returns a new object of class '<em>X86 Processor Architecture</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>X86 Processor Architecture</em>'.
-	 * @generated
-	 */
-	X86ProcessorArchitecture createX86ProcessorArchitecture();
-
-	/**
-	 * Returns a new object of class '<em>Arm64 Processor Architecture</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Arm64 Processor Architecture</em>'.
-	 * @generated
-	 */
-	Arm64ProcessorArchitecture createArm64ProcessorArchitecture();
-
-	/**
 	 * Returns a new object of class '<em>Communication Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -128,6 +92,51 @@ public interface UtilFactory extends EFactory {
 	 * @generated
 	 */
 	AvailableResouce createAvailableResouce();
+
+	/**
+	 * Returns a new object of class '<em>Linux Operting System Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Linux Operting System Type</em>'.
+	 * @generated
+	 */
+	LinuxOpertingSystemType createLinuxOpertingSystemType();
+
+	/**
+	 * Returns a new object of class '<em>Mac OS Operting System Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Mac OS Operting System Type</em>'.
+	 * @generated
+	 */
+	MacOSOpertingSystemType createMacOSOpertingSystemType();
+
+	/**
+	 * Returns a new object of class '<em>Processor Architecture Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Processor Architecture Type</em>'.
+	 * @generated
+	 */
+	ProcessorArchitectureType createProcessorArchitectureType();
+
+	/**
+	 * Returns a new object of class '<em>X86 Processor Architecture</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>X86 Processor Architecture</em>'.
+	 * @generated
+	 */
+	X86ProcessorArchitecture createX86ProcessorArchitecture();
+
+	/**
+	 * Returns a new object of class '<em>Arm64 Processor Architecture</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Arm64 Processor Architecture</em>'.
+	 * @generated
+	 */
+	Arm64ProcessorArchitecture createArm64ProcessorArchitecture();
 
 	/**
 	 * Returns the package supported by this factory.

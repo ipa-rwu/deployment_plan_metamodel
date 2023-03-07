@@ -2,6 +2,8 @@
  */
 package de.fraunhofer.ipa.deployment.util;
 
+import org.eclipse.emf.ecore.EObject;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Abstract Communication Type</b></em>'.
@@ -12,5 +14,5 @@ package de.fraunhofer.ipa.deployment.util;
  * @model abstract="true"
  * @generated
  */
-public interface AbstractCommunicationType extends ResouceType {
+public interface AbstractCommunicationType extends EObject {
 } // AbstractCommunicationType

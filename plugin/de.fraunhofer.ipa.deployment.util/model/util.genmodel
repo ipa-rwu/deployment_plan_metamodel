@@ -28,18 +28,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute util.ecore#//Property/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference util.ecore#//Property/value"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="util.ecore#//OpertingSystem">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute util.ecore#//OpertingSystem/name"/>
-    </genClasses>
-    <genClasses ecoreClass="util.ecore#//LinuxOpertingSystem"/>
-    <genClasses ecoreClass="util.ecore#//ResouceType"/>
+    <genClasses image="false" ecoreClass="util.ecore#//AbstractResouceType"/>
     <genClasses image="false" ecoreClass="util.ecore#//ProcessorArchitecture"/>
-    <genClasses ecoreClass="util.ecore#//X86ProcessorArchitecture">
-      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute util.ecore#//X86ProcessorArchitecture/name"/>
-    </genClasses>
-    <genClasses ecoreClass="util.ecore#//Arm64ProcessorArchitecture">
-      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute util.ecore#//Arm64ProcessorArchitecture/name"/>
-    </genClasses>
     <genClasses image="false" ecoreClass="util.ecore#//AbstractCommunicationType"/>
     <genClasses ecoreClass="util.ecore#//CommunicationType">
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute util.ecore#//CommunicationType/name"/>
@@ -50,5 +40,12 @@
     <genClasses ecoreClass="util.ecore#//AvailableResouce">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference util.ecore#//AvailableResouce/list"/>
     </genClasses>
+    <genClasses image="false" ecoreClass="util.ecore#//OpertingSystemType"/>
+    <genClasses ecoreClass="util.ecore#//LinuxOpertingSystemType"/>
+    <genClasses ecoreClass="util.ecore#//MacOSOpertingSystemType"/>
+    <genClasses image="false" ecoreClass="util.ecore#//ProcessorArchitectureType"/>
+    <genClasses image="false" ecoreClass="util.ecore#//ProcessorArchitectureValue"/>
+    <genClasses ecoreClass="util.ecore#//X86ProcessorArchitecture"/>
+    <genClasses ecoreClass="util.ecore#//Arm64ProcessorArchitecture"/>
   </genPackages>
 </genmodel:GenModel>

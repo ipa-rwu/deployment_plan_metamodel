@@ -102,33 +102,13 @@ public class UtilAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseOpertingSystem(OpertingSystem object) {
-			return createOpertingSystemAdapter();
-		}
-
-		@Override
-		public Adapter caseLinuxOpertingSystem(LinuxOpertingSystem object) {
-			return createLinuxOpertingSystemAdapter();
-		}
-
-		@Override
-		public Adapter caseResouceType(ResouceType object) {
-			return createResouceTypeAdapter();
+		public Adapter caseAbstractResouceType(AbstractResouceType object) {
+			return createAbstractResouceTypeAdapter();
 		}
 
 		@Override
 		public Adapter caseProcessorArchitecture(ProcessorArchitecture object) {
 			return createProcessorArchitectureAdapter();
-		}
-
-		@Override
-		public Adapter caseX86ProcessorArchitecture(X86ProcessorArchitecture object) {
-			return createX86ProcessorArchitectureAdapter();
-		}
-
-		@Override
-		public Adapter caseArm64ProcessorArchitecture(Arm64ProcessorArchitecture object) {
-			return createArm64ProcessorArchitectureAdapter();
 		}
 
 		@Override
@@ -159,6 +139,41 @@ public class UtilAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseAvailableResouce(AvailableResouce object) {
 			return createAvailableResouceAdapter();
+		}
+
+		@Override
+		public Adapter caseOpertingSystemType(OpertingSystemType object) {
+			return createOpertingSystemTypeAdapter();
+		}
+
+		@Override
+		public Adapter caseLinuxOpertingSystemType(LinuxOpertingSystemType object) {
+			return createLinuxOpertingSystemTypeAdapter();
+		}
+
+		@Override
+		public Adapter caseMacOSOpertingSystemType(MacOSOpertingSystemType object) {
+			return createMacOSOpertingSystemTypeAdapter();
+		}
+
+		@Override
+		public Adapter caseProcessorArchitectureType(ProcessorArchitectureType object) {
+			return createProcessorArchitectureTypeAdapter();
+		}
+
+		@Override
+		public Adapter caseProcessorArchitectureValue(ProcessorArchitectureValue object) {
+			return createProcessorArchitectureValueAdapter();
+		}
+
+		@Override
+		public Adapter caseX86ProcessorArchitecture(X86ProcessorArchitecture object) {
+			return createX86ProcessorArchitectureAdapter();
+		}
+
+		@Override
+		public Adapter caseArm64ProcessorArchitecture(Arm64ProcessorArchitecture object) {
+			return createArm64ProcessorArchitectureAdapter();
 		}
 
 		@Override
@@ -279,44 +294,16 @@ public class UtilAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.fraunhofer.ipa.deployment.util.OpertingSystem <em>Operting System</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.fraunhofer.ipa.deployment.util.AbstractResouceType <em>Abstract Resouce Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.fraunhofer.ipa.deployment.util.OpertingSystem
+	 * @see de.fraunhofer.ipa.deployment.util.AbstractResouceType
 	 * @generated
 	 */
-	public Adapter createOpertingSystemAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.fraunhofer.ipa.deployment.util.LinuxOpertingSystem <em>Linux Operting System</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.fraunhofer.ipa.deployment.util.LinuxOpertingSystem
-	 * @generated
-	 */
-	public Adapter createLinuxOpertingSystemAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.fraunhofer.ipa.deployment.util.ResouceType <em>Resouce Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.fraunhofer.ipa.deployment.util.ResouceType
-	 * @generated
-	 */
-	public Adapter createResouceTypeAdapter() {
+	public Adapter createAbstractResouceTypeAdapter() {
 		return null;
 	}
 
@@ -331,34 +318,6 @@ public class UtilAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createProcessorArchitectureAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.fraunhofer.ipa.deployment.util.X86ProcessorArchitecture <em>X86 Processor Architecture</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.fraunhofer.ipa.deployment.util.X86ProcessorArchitecture
-	 * @generated
-	 */
-	public Adapter createX86ProcessorArchitectureAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.fraunhofer.ipa.deployment.util.Arm64ProcessorArchitecture <em>Arm64 Processor Architecture</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.fraunhofer.ipa.deployment.util.Arm64ProcessorArchitecture
-	 * @generated
-	 */
-	public Adapter createArm64ProcessorArchitectureAdapter() {
 		return null;
 	}
 
@@ -443,6 +402,104 @@ public class UtilAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAvailableResouceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.fraunhofer.ipa.deployment.util.OpertingSystemType <em>Operting System Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.fraunhofer.ipa.deployment.util.OpertingSystemType
+	 * @generated
+	 */
+	public Adapter createOpertingSystemTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.fraunhofer.ipa.deployment.util.LinuxOpertingSystemType <em>Linux Operting System Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.fraunhofer.ipa.deployment.util.LinuxOpertingSystemType
+	 * @generated
+	 */
+	public Adapter createLinuxOpertingSystemTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.fraunhofer.ipa.deployment.util.MacOSOpertingSystemType <em>Mac OS Operting System Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.fraunhofer.ipa.deployment.util.MacOSOpertingSystemType
+	 * @generated
+	 */
+	public Adapter createMacOSOpertingSystemTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.fraunhofer.ipa.deployment.util.ProcessorArchitectureType <em>Processor Architecture Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.fraunhofer.ipa.deployment.util.ProcessorArchitectureType
+	 * @generated
+	 */
+	public Adapter createProcessorArchitectureTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.fraunhofer.ipa.deployment.util.ProcessorArchitectureValue <em>Processor Architecture Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.fraunhofer.ipa.deployment.util.ProcessorArchitectureValue
+	 * @generated
+	 */
+	public Adapter createProcessorArchitectureValueAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.fraunhofer.ipa.deployment.util.X86ProcessorArchitecture <em>X86 Processor Architecture</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.fraunhofer.ipa.deployment.util.X86ProcessorArchitecture
+	 * @generated
+	 */
+	public Adapter createX86ProcessorArchitectureAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.fraunhofer.ipa.deployment.util.Arm64ProcessorArchitecture <em>Arm64 Processor Architecture</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.fraunhofer.ipa.deployment.util.Arm64ProcessorArchitecture
+	 * @generated
+	 */
+	public Adapter createArm64ProcessorArchitectureAdapter() {
 		return null;
 	}
 

@@ -39,7 +39,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class NetworkConnectionImpl extends AbstractCommunicationConnectionImpl implements NetworkConnection {
 	/**
-	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
+	 * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getType()
@@ -83,14 +83,6 @@ public class NetworkConnectionImpl extends AbstractCommunicationConnectionImpl i
 	 * @generated
 	 */
 	public NetworkCommunicationType getType() {
-		if (type != null && type.eIsProxy()) {
-			InternalEObject oldType = (InternalEObject)type;
-			type = (NetworkCommunicationType)eResolveProxy(oldType);
-			if (type != oldType) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DevicePackage.NETWORK_CONNECTION__TYPE, oldType, type));
-			}
-		}
 		return type;
 	}
 
@@ -99,8 +91,14 @@ public class NetworkConnectionImpl extends AbstractCommunicationConnectionImpl i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NetworkCommunicationType basicGetType() {
-		return type;
+	public NotificationChain basicSetType(NetworkCommunicationType newType, NotificationChain msgs) {
+		NetworkCommunicationType oldType = type;
+		type = newType;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DevicePackage.NETWORK_CONNECTION__TYPE, oldType, newType);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -109,10 +107,17 @@ public class NetworkConnectionImpl extends AbstractCommunicationConnectionImpl i
 	 * @generated
 	 */
 	public void setType(NetworkCommunicationType newType) {
-		NetworkCommunicationType oldType = type;
-		type = newType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DevicePackage.NETWORK_CONNECTION__TYPE, oldType, type));
+		if (newType != type) {
+			NotificationChain msgs = null;
+			if (type != null)
+				msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DevicePackage.NETWORK_CONNECTION__TYPE, null, msgs);
+			if (newType != null)
+				msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DevicePackage.NETWORK_CONNECTION__TYPE, null, msgs);
+			msgs = basicSetType(newType, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DevicePackage.NETWORK_CONNECTION__TYPE, newType, newType));
 	}
 
 	/**
@@ -135,6 +140,8 @@ public class NetworkConnectionImpl extends AbstractCommunicationConnectionImpl i
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case DevicePackage.NETWORK_CONNECTION__TYPE:
+				return basicSetType(null, msgs);
 			case DevicePackage.NETWORK_CONNECTION__PROPERTIES:
 				return ((InternalEList<?>)getProperties()).basicRemove(otherEnd, msgs);
 		}
@@ -150,8 +157,7 @@ public class NetworkConnectionImpl extends AbstractCommunicationConnectionImpl i
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case DevicePackage.NETWORK_CONNECTION__TYPE:
-				if (resolve) return getType();
-				return basicGetType();
+				return getType();
 			case DevicePackage.NETWORK_CONNECTION__PROPERTIES:
 				return getProperties();
 		}

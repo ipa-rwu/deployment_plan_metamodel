@@ -307,106 +307,32 @@ public interface UtilPackage extends EPackage {
 	int PROPERTY_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.ResouceTypeImpl <em>Resouce Type</em>}' class.
+	 * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.AbstractResouceTypeImpl <em>Abstract Resouce Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.fraunhofer.ipa.deployment.util.impl.ResouceTypeImpl
-	 * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getResouceType()
+	 * @see de.fraunhofer.ipa.deployment.util.impl.AbstractResouceTypeImpl
+	 * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getAbstractResouceType()
 	 * @generated
 	 */
-	int RESOUCE_TYPE = 9;
+	int ABSTRACT_RESOUCE_TYPE = 7;
 
 	/**
-	 * The number of structural features of the '<em>Resouce Type</em>' class.
+	 * The number of structural features of the '<em>Abstract Resouce Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESOUCE_TYPE_FEATURE_COUNT = 0;
+	int ABSTRACT_RESOUCE_TYPE_FEATURE_COUNT = 0;
 
 	/**
-	 * The number of operations of the '<em>Resouce Type</em>' class.
+	 * The number of operations of the '<em>Abstract Resouce Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESOUCE_TYPE_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.OpertingSystemImpl <em>Operting System</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.fraunhofer.ipa.deployment.util.impl.OpertingSystemImpl
-	 * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getOpertingSystem()
-	 * @generated
-	 */
-	int OPERTING_SYSTEM = 7;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPERTING_SYSTEM__NAME = RESOUCE_TYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Operting System</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPERTING_SYSTEM_FEATURE_COUNT = RESOUCE_TYPE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Operting System</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPERTING_SYSTEM_OPERATION_COUNT = RESOUCE_TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.LinuxOpertingSystemImpl <em>Linux Operting System</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.fraunhofer.ipa.deployment.util.impl.LinuxOpertingSystemImpl
-	 * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getLinuxOpertingSystem()
-	 * @generated
-	 */
-	int LINUX_OPERTING_SYSTEM = 8;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINUX_OPERTING_SYSTEM__NAME = OPERTING_SYSTEM__NAME;
-
-	/**
-	 * The number of structural features of the '<em>Linux Operting System</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINUX_OPERTING_SYSTEM_FEATURE_COUNT = OPERTING_SYSTEM_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Linux Operting System</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINUX_OPERTING_SYSTEM_OPERATION_COUNT = OPERTING_SYSTEM_OPERATION_COUNT + 0;
+	int ABSTRACT_RESOUCE_TYPE_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.ProcessorArchitectureImpl <em>Processor Architecture</em>}' class.
@@ -416,7 +342,7 @@ public interface UtilPackage extends EPackage {
 	 * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getProcessorArchitecture()
 	 * @generated
 	 */
-	int PROCESSOR_ARCHITECTURE = 10;
+	int PROCESSOR_ARCHITECTURE = 8;
 
 	/**
 	 * The number of structural features of the '<em>Processor Architecture</em>' class.
@@ -425,7 +351,7 @@ public interface UtilPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESSOR_ARCHITECTURE_FEATURE_COUNT = RESOUCE_TYPE_FEATURE_COUNT + 0;
+	int PROCESSOR_ARCHITECTURE_FEATURE_COUNT = ABSTRACT_RESOUCE_TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Processor Architecture</em>' class.
@@ -434,81 +360,7 @@ public interface UtilPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESSOR_ARCHITECTURE_OPERATION_COUNT = RESOUCE_TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.X86ProcessorArchitectureImpl <em>X86 Processor Architecture</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.fraunhofer.ipa.deployment.util.impl.X86ProcessorArchitectureImpl
-	 * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getX86ProcessorArchitecture()
-	 * @generated
-	 */
-	int X86_PROCESSOR_ARCHITECTURE = 11;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int X86_PROCESSOR_ARCHITECTURE__NAME = PROCESSOR_ARCHITECTURE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>X86 Processor Architecture</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int X86_PROCESSOR_ARCHITECTURE_FEATURE_COUNT = PROCESSOR_ARCHITECTURE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>X86 Processor Architecture</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int X86_PROCESSOR_ARCHITECTURE_OPERATION_COUNT = PROCESSOR_ARCHITECTURE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.Arm64ProcessorArchitectureImpl <em>Arm64 Processor Architecture</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.fraunhofer.ipa.deployment.util.impl.Arm64ProcessorArchitectureImpl
-	 * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getArm64ProcessorArchitecture()
-	 * @generated
-	 */
-	int ARM64_PROCESSOR_ARCHITECTURE = 12;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARM64_PROCESSOR_ARCHITECTURE__NAME = PROCESSOR_ARCHITECTURE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Arm64 Processor Architecture</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARM64_PROCESSOR_ARCHITECTURE_FEATURE_COUNT = PROCESSOR_ARCHITECTURE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Arm64 Processor Architecture</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARM64_PROCESSOR_ARCHITECTURE_OPERATION_COUNT = PROCESSOR_ARCHITECTURE_OPERATION_COUNT + 0;
+	int PROCESSOR_ARCHITECTURE_OPERATION_COUNT = ABSTRACT_RESOUCE_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.AbstractCommunicationTypeImpl <em>Abstract Communication Type</em>}' class.
@@ -518,7 +370,7 @@ public interface UtilPackage extends EPackage {
 	 * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getAbstractCommunicationType()
 	 * @generated
 	 */
-	int ABSTRACT_COMMUNICATION_TYPE = 13;
+	int ABSTRACT_COMMUNICATION_TYPE = 9;
 
 	/**
 	 * The number of structural features of the '<em>Abstract Communication Type</em>' class.
@@ -527,7 +379,7 @@ public interface UtilPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_COMMUNICATION_TYPE_FEATURE_COUNT = RESOUCE_TYPE_FEATURE_COUNT + 0;
+	int ABSTRACT_COMMUNICATION_TYPE_FEATURE_COUNT = 0;
 
 	/**
 	 * The number of operations of the '<em>Abstract Communication Type</em>' class.
@@ -536,7 +388,7 @@ public interface UtilPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_COMMUNICATION_TYPE_OPERATION_COUNT = RESOUCE_TYPE_OPERATION_COUNT + 0;
+	int ABSTRACT_COMMUNICATION_TYPE_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.CommunicationTypeImpl <em>Communication Type</em>}' class.
@@ -546,7 +398,7 @@ public interface UtilPackage extends EPackage {
 	 * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getCommunicationType()
 	 * @generated
 	 */
-	int COMMUNICATION_TYPE = 14;
+	int COMMUNICATION_TYPE = 10;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -583,7 +435,7 @@ public interface UtilPackage extends EPackage {
 	 * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getNetworkCommunicationType()
 	 * @generated
 	 */
-	int NETWORK_COMMUNICATION_TYPE = 15;
+	int NETWORK_COMMUNICATION_TYPE = 11;
 
 	/**
 	 * The number of structural features of the '<em>Network Communication Type</em>' class.
@@ -611,7 +463,7 @@ public interface UtilPackage extends EPackage {
 	 * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getEthernetCommunicationType()
 	 * @generated
 	 */
-	int ETHERNET_COMMUNICATION_TYPE = 16;
+	int ETHERNET_COMMUNICATION_TYPE = 12;
 
 	/**
 	 * The number of structural features of the '<em>Ethernet Communication Type</em>' class.
@@ -639,7 +491,7 @@ public interface UtilPackage extends EPackage {
 	 * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getWlanCommunicationType()
 	 * @generated
 	 */
-	int WLAN_COMMUNICATION_TYPE = 17;
+	int WLAN_COMMUNICATION_TYPE = 13;
 
 	/**
 	 * The number of structural features of the '<em>Wlan Communication Type</em>' class.
@@ -667,7 +519,7 @@ public interface UtilPackage extends EPackage {
 	 * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getAvailableResouce()
 	 * @generated
 	 */
-	int AVAILABLE_RESOUCE = 18;
+	int AVAILABLE_RESOUCE = 14;
 
 	/**
 	 * The feature id for the '<em><b>List</b></em>' containment reference list.
@@ -695,6 +547,202 @@ public interface UtilPackage extends EPackage {
 	 * @ordered
 	 */
 	int AVAILABLE_RESOUCE_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.OpertingSystemTypeImpl <em>Operting System Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.fraunhofer.ipa.deployment.util.impl.OpertingSystemTypeImpl
+	 * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getOpertingSystemType()
+	 * @generated
+	 */
+	int OPERTING_SYSTEM_TYPE = 15;
+
+	/**
+	 * The number of structural features of the '<em>Operting System Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERTING_SYSTEM_TYPE_FEATURE_COUNT = ABSTRACT_RESOUCE_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Operting System Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERTING_SYSTEM_TYPE_OPERATION_COUNT = ABSTRACT_RESOUCE_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.LinuxOpertingSystemTypeImpl <em>Linux Operting System Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.fraunhofer.ipa.deployment.util.impl.LinuxOpertingSystemTypeImpl
+	 * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getLinuxOpertingSystemType()
+	 * @generated
+	 */
+	int LINUX_OPERTING_SYSTEM_TYPE = 16;
+
+	/**
+	 * The number of structural features of the '<em>Linux Operting System Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINUX_OPERTING_SYSTEM_TYPE_FEATURE_COUNT = OPERTING_SYSTEM_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Linux Operting System Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINUX_OPERTING_SYSTEM_TYPE_OPERATION_COUNT = OPERTING_SYSTEM_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.MacOSOpertingSystemTypeImpl <em>Mac OS Operting System Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.fraunhofer.ipa.deployment.util.impl.MacOSOpertingSystemTypeImpl
+	 * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getMacOSOpertingSystemType()
+	 * @generated
+	 */
+	int MAC_OS_OPERTING_SYSTEM_TYPE = 17;
+
+	/**
+	 * The number of structural features of the '<em>Mac OS Operting System Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAC_OS_OPERTING_SYSTEM_TYPE_FEATURE_COUNT = OPERTING_SYSTEM_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Mac OS Operting System Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAC_OS_OPERTING_SYSTEM_TYPE_OPERATION_COUNT = OPERTING_SYSTEM_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.ProcessorArchitectureTypeImpl <em>Processor Architecture Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.fraunhofer.ipa.deployment.util.impl.ProcessorArchitectureTypeImpl
+	 * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getProcessorArchitectureType()
+	 * @generated
+	 */
+	int PROCESSOR_ARCHITECTURE_TYPE = 18;
+
+	/**
+	 * The number of structural features of the '<em>Processor Architecture Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROCESSOR_ARCHITECTURE_TYPE_FEATURE_COUNT = ABSTRACT_RESOUCE_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Processor Architecture Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROCESSOR_ARCHITECTURE_TYPE_OPERATION_COUNT = ABSTRACT_RESOUCE_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.ProcessorArchitectureValueImpl <em>Processor Architecture Value</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.fraunhofer.ipa.deployment.util.impl.ProcessorArchitectureValueImpl
+	 * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getProcessorArchitectureValue()
+	 * @generated
+	 */
+	int PROCESSOR_ARCHITECTURE_VALUE = 19;
+
+	/**
+	 * The number of structural features of the '<em>Processor Architecture Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROCESSOR_ARCHITECTURE_VALUE_FEATURE_COUNT = PROPERTY_VALUE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Processor Architecture Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROCESSOR_ARCHITECTURE_VALUE_OPERATION_COUNT = PROPERTY_VALUE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.X86ProcessorArchitectureImpl <em>X86 Processor Architecture</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.fraunhofer.ipa.deployment.util.impl.X86ProcessorArchitectureImpl
+	 * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getX86ProcessorArchitecture()
+	 * @generated
+	 */
+	int X86_PROCESSOR_ARCHITECTURE = 20;
+
+	/**
+	 * The number of structural features of the '<em>X86 Processor Architecture</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int X86_PROCESSOR_ARCHITECTURE_FEATURE_COUNT = PROCESSOR_ARCHITECTURE_VALUE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>X86 Processor Architecture</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int X86_PROCESSOR_ARCHITECTURE_OPERATION_COUNT = PROCESSOR_ARCHITECTURE_VALUE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.Arm64ProcessorArchitectureImpl <em>Arm64 Processor Architecture</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.fraunhofer.ipa.deployment.util.impl.Arm64ProcessorArchitectureImpl
+	 * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getArm64ProcessorArchitecture()
+	 * @generated
+	 */
+	int ARM64_PROCESSOR_ARCHITECTURE = 21;
+
+	/**
+	 * The number of structural features of the '<em>Arm64 Processor Architecture</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARM64_PROCESSOR_ARCHITECTURE_FEATURE_COUNT = PROCESSOR_ARCHITECTURE_VALUE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Arm64 Processor Architecture</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARM64_PROCESSOR_ARCHITECTURE_OPERATION_COUNT = PROCESSOR_ARCHITECTURE_VALUE_OPERATION_COUNT + 0;
 
 	/**
 	 * Returns the meta object for class '{@link de.fraunhofer.ipa.deployment.util.Description <em>Description</em>}'.
@@ -833,45 +881,14 @@ public interface UtilPackage extends EPackage {
 	EReference getProperty_Value();
 
 	/**
-	 * Returns the meta object for class '{@link de.fraunhofer.ipa.deployment.util.OpertingSystem <em>Operting System</em>}'.
+	 * Returns the meta object for class '{@link de.fraunhofer.ipa.deployment.util.AbstractResouceType <em>Abstract Resouce Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Operting System</em>'.
-	 * @see de.fraunhofer.ipa.deployment.util.OpertingSystem
+	 * @return the meta object for class '<em>Abstract Resouce Type</em>'.
+	 * @see de.fraunhofer.ipa.deployment.util.AbstractResouceType
 	 * @generated
 	 */
-	EClass getOpertingSystem();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.fraunhofer.ipa.deployment.util.OpertingSystem#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see de.fraunhofer.ipa.deployment.util.OpertingSystem#getName()
-	 * @see #getOpertingSystem()
-	 * @generated
-	 */
-	EAttribute getOpertingSystem_Name();
-
-	/**
-	 * Returns the meta object for class '{@link de.fraunhofer.ipa.deployment.util.LinuxOpertingSystem <em>Linux Operting System</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Linux Operting System</em>'.
-	 * @see de.fraunhofer.ipa.deployment.util.LinuxOpertingSystem
-	 * @generated
-	 */
-	EClass getLinuxOpertingSystem();
-
-	/**
-	 * Returns the meta object for class '{@link de.fraunhofer.ipa.deployment.util.ResouceType <em>Resouce Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Resouce Type</em>'.
-	 * @see de.fraunhofer.ipa.deployment.util.ResouceType
-	 * @generated
-	 */
-	EClass getResouceType();
+	EClass getAbstractResouceType();
 
 	/**
 	 * Returns the meta object for class '{@link de.fraunhofer.ipa.deployment.util.ProcessorArchitecture <em>Processor Architecture</em>}'.
@@ -882,48 +899,6 @@ public interface UtilPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getProcessorArchitecture();
-
-	/**
-	 * Returns the meta object for class '{@link de.fraunhofer.ipa.deployment.util.X86ProcessorArchitecture <em>X86 Processor Architecture</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>X86 Processor Architecture</em>'.
-	 * @see de.fraunhofer.ipa.deployment.util.X86ProcessorArchitecture
-	 * @generated
-	 */
-	EClass getX86ProcessorArchitecture();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.fraunhofer.ipa.deployment.util.X86ProcessorArchitecture#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see de.fraunhofer.ipa.deployment.util.X86ProcessorArchitecture#getName()
-	 * @see #getX86ProcessorArchitecture()
-	 * @generated
-	 */
-	EAttribute getX86ProcessorArchitecture_Name();
-
-	/**
-	 * Returns the meta object for class '{@link de.fraunhofer.ipa.deployment.util.Arm64ProcessorArchitecture <em>Arm64 Processor Architecture</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Arm64 Processor Architecture</em>'.
-	 * @see de.fraunhofer.ipa.deployment.util.Arm64ProcessorArchitecture
-	 * @generated
-	 */
-	EClass getArm64ProcessorArchitecture();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.fraunhofer.ipa.deployment.util.Arm64ProcessorArchitecture#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see de.fraunhofer.ipa.deployment.util.Arm64ProcessorArchitecture#getName()
-	 * @see #getArm64ProcessorArchitecture()
-	 * @generated
-	 */
-	EAttribute getArm64ProcessorArchitecture_Name();
 
 	/**
 	 * Returns the meta object for class '{@link de.fraunhofer.ipa.deployment.util.AbstractCommunicationType <em>Abstract Communication Type</em>}'.
@@ -1006,6 +981,76 @@ public interface UtilPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getAvailableResouce_List();
+
+	/**
+	 * Returns the meta object for class '{@link de.fraunhofer.ipa.deployment.util.OpertingSystemType <em>Operting System Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Operting System Type</em>'.
+	 * @see de.fraunhofer.ipa.deployment.util.OpertingSystemType
+	 * @generated
+	 */
+	EClass getOpertingSystemType();
+
+	/**
+	 * Returns the meta object for class '{@link de.fraunhofer.ipa.deployment.util.LinuxOpertingSystemType <em>Linux Operting System Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Linux Operting System Type</em>'.
+	 * @see de.fraunhofer.ipa.deployment.util.LinuxOpertingSystemType
+	 * @generated
+	 */
+	EClass getLinuxOpertingSystemType();
+
+	/**
+	 * Returns the meta object for class '{@link de.fraunhofer.ipa.deployment.util.MacOSOpertingSystemType <em>Mac OS Operting System Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Mac OS Operting System Type</em>'.
+	 * @see de.fraunhofer.ipa.deployment.util.MacOSOpertingSystemType
+	 * @generated
+	 */
+	EClass getMacOSOpertingSystemType();
+
+	/**
+	 * Returns the meta object for class '{@link de.fraunhofer.ipa.deployment.util.ProcessorArchitectureType <em>Processor Architecture Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Processor Architecture Type</em>'.
+	 * @see de.fraunhofer.ipa.deployment.util.ProcessorArchitectureType
+	 * @generated
+	 */
+	EClass getProcessorArchitectureType();
+
+	/**
+	 * Returns the meta object for class '{@link de.fraunhofer.ipa.deployment.util.ProcessorArchitectureValue <em>Processor Architecture Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Processor Architecture Value</em>'.
+	 * @see de.fraunhofer.ipa.deployment.util.ProcessorArchitectureValue
+	 * @generated
+	 */
+	EClass getProcessorArchitectureValue();
+
+	/**
+	 * Returns the meta object for class '{@link de.fraunhofer.ipa.deployment.util.X86ProcessorArchitecture <em>X86 Processor Architecture</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>X86 Processor Architecture</em>'.
+	 * @see de.fraunhofer.ipa.deployment.util.X86ProcessorArchitecture
+	 * @generated
+	 */
+	EClass getX86ProcessorArchitecture();
+
+	/**
+	 * Returns the meta object for class '{@link de.fraunhofer.ipa.deployment.util.Arm64ProcessorArchitecture <em>Arm64 Processor Architecture</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Arm64 Processor Architecture</em>'.
+	 * @see de.fraunhofer.ipa.deployment.util.Arm64ProcessorArchitecture
+	 * @generated
+	 */
+	EClass getArm64ProcessorArchitecture();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1149,42 +1194,14 @@ public interface UtilPackage extends EPackage {
 		EReference PROPERTY__VALUE = eINSTANCE.getProperty_Value();
 
 		/**
-		 * The meta object literal for the '{@link de.fraunhofer.ipa.deployment.util.impl.OpertingSystemImpl <em>Operting System</em>}' class.
+		 * The meta object literal for the '{@link de.fraunhofer.ipa.deployment.util.impl.AbstractResouceTypeImpl <em>Abstract Resouce Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.fraunhofer.ipa.deployment.util.impl.OpertingSystemImpl
-		 * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getOpertingSystem()
+		 * @see de.fraunhofer.ipa.deployment.util.impl.AbstractResouceTypeImpl
+		 * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getAbstractResouceType()
 		 * @generated
 		 */
-		EClass OPERTING_SYSTEM = eINSTANCE.getOpertingSystem();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute OPERTING_SYSTEM__NAME = eINSTANCE.getOpertingSystem_Name();
-
-		/**
-		 * The meta object literal for the '{@link de.fraunhofer.ipa.deployment.util.impl.LinuxOpertingSystemImpl <em>Linux Operting System</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.fraunhofer.ipa.deployment.util.impl.LinuxOpertingSystemImpl
-		 * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getLinuxOpertingSystem()
-		 * @generated
-		 */
-		EClass LINUX_OPERTING_SYSTEM = eINSTANCE.getLinuxOpertingSystem();
-
-		/**
-		 * The meta object literal for the '{@link de.fraunhofer.ipa.deployment.util.impl.ResouceTypeImpl <em>Resouce Type</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.fraunhofer.ipa.deployment.util.impl.ResouceTypeImpl
-		 * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getResouceType()
-		 * @generated
-		 */
-		EClass RESOUCE_TYPE = eINSTANCE.getResouceType();
+		EClass ABSTRACT_RESOUCE_TYPE = eINSTANCE.getAbstractResouceType();
 
 		/**
 		 * The meta object literal for the '{@link de.fraunhofer.ipa.deployment.util.impl.ProcessorArchitectureImpl <em>Processor Architecture</em>}' class.
@@ -1195,42 +1212,6 @@ public interface UtilPackage extends EPackage {
 		 * @generated
 		 */
 		EClass PROCESSOR_ARCHITECTURE = eINSTANCE.getProcessorArchitecture();
-
-		/**
-		 * The meta object literal for the '{@link de.fraunhofer.ipa.deployment.util.impl.X86ProcessorArchitectureImpl <em>X86 Processor Architecture</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.fraunhofer.ipa.deployment.util.impl.X86ProcessorArchitectureImpl
-		 * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getX86ProcessorArchitecture()
-		 * @generated
-		 */
-		EClass X86_PROCESSOR_ARCHITECTURE = eINSTANCE.getX86ProcessorArchitecture();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute X86_PROCESSOR_ARCHITECTURE__NAME = eINSTANCE.getX86ProcessorArchitecture_Name();
-
-		/**
-		 * The meta object literal for the '{@link de.fraunhofer.ipa.deployment.util.impl.Arm64ProcessorArchitectureImpl <em>Arm64 Processor Architecture</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.fraunhofer.ipa.deployment.util.impl.Arm64ProcessorArchitectureImpl
-		 * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getArm64ProcessorArchitecture()
-		 * @generated
-		 */
-		EClass ARM64_PROCESSOR_ARCHITECTURE = eINSTANCE.getArm64ProcessorArchitecture();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ARM64_PROCESSOR_ARCHITECTURE__NAME = eINSTANCE.getArm64ProcessorArchitecture_Name();
 
 		/**
 		 * The meta object literal for the '{@link de.fraunhofer.ipa.deployment.util.impl.AbstractCommunicationTypeImpl <em>Abstract Communication Type</em>}' class.
@@ -1307,6 +1288,76 @@ public interface UtilPackage extends EPackage {
 		 * @generated
 		 */
 		EReference AVAILABLE_RESOUCE__LIST = eINSTANCE.getAvailableResouce_List();
+
+		/**
+		 * The meta object literal for the '{@link de.fraunhofer.ipa.deployment.util.impl.OpertingSystemTypeImpl <em>Operting System Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.fraunhofer.ipa.deployment.util.impl.OpertingSystemTypeImpl
+		 * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getOpertingSystemType()
+		 * @generated
+		 */
+		EClass OPERTING_SYSTEM_TYPE = eINSTANCE.getOpertingSystemType();
+
+		/**
+		 * The meta object literal for the '{@link de.fraunhofer.ipa.deployment.util.impl.LinuxOpertingSystemTypeImpl <em>Linux Operting System Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.fraunhofer.ipa.deployment.util.impl.LinuxOpertingSystemTypeImpl
+		 * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getLinuxOpertingSystemType()
+		 * @generated
+		 */
+		EClass LINUX_OPERTING_SYSTEM_TYPE = eINSTANCE.getLinuxOpertingSystemType();
+
+		/**
+		 * The meta object literal for the '{@link de.fraunhofer.ipa.deployment.util.impl.MacOSOpertingSystemTypeImpl <em>Mac OS Operting System Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.fraunhofer.ipa.deployment.util.impl.MacOSOpertingSystemTypeImpl
+		 * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getMacOSOpertingSystemType()
+		 * @generated
+		 */
+		EClass MAC_OS_OPERTING_SYSTEM_TYPE = eINSTANCE.getMacOSOpertingSystemType();
+
+		/**
+		 * The meta object literal for the '{@link de.fraunhofer.ipa.deployment.util.impl.ProcessorArchitectureTypeImpl <em>Processor Architecture Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.fraunhofer.ipa.deployment.util.impl.ProcessorArchitectureTypeImpl
+		 * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getProcessorArchitectureType()
+		 * @generated
+		 */
+		EClass PROCESSOR_ARCHITECTURE_TYPE = eINSTANCE.getProcessorArchitectureType();
+
+		/**
+		 * The meta object literal for the '{@link de.fraunhofer.ipa.deployment.util.impl.ProcessorArchitectureValueImpl <em>Processor Architecture Value</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.fraunhofer.ipa.deployment.util.impl.ProcessorArchitectureValueImpl
+		 * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getProcessorArchitectureValue()
+		 * @generated
+		 */
+		EClass PROCESSOR_ARCHITECTURE_VALUE = eINSTANCE.getProcessorArchitectureValue();
+
+		/**
+		 * The meta object literal for the '{@link de.fraunhofer.ipa.deployment.util.impl.X86ProcessorArchitectureImpl <em>X86 Processor Architecture</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.fraunhofer.ipa.deployment.util.impl.X86ProcessorArchitectureImpl
+		 * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getX86ProcessorArchitecture()
+		 * @generated
+		 */
+		EClass X86_PROCESSOR_ARCHITECTURE = eINSTANCE.getX86ProcessorArchitecture();
+
+		/**
+		 * The meta object literal for the '{@link de.fraunhofer.ipa.deployment.util.impl.Arm64ProcessorArchitectureImpl <em>Arm64 Processor Architecture</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.fraunhofer.ipa.deployment.util.impl.Arm64ProcessorArchitectureImpl
+		 * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getArm64ProcessorArchitecture()
+		 * @generated
+		 */
+		EClass ARM64_PROCESSOR_ARCHITECTURE = eINSTANCE.getArm64ProcessorArchitecture();
 
 	}
 
