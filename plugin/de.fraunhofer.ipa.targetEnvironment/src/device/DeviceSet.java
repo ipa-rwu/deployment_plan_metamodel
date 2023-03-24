@@ -2,7 +2,7 @@
  */
 package device;
 
-import base.Description;
+import de.fraunhofer.ipa.deployment.util.Description;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -23,16 +23,16 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface DeviceSet extends Description {
-	/**
-	 * Returns the value of the '<em><b>Device</b></em>' containment reference list.
-	 * The list contents are of type {@link device.DeviceType}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Device</em>' containment reference list.
-	 * @see device.DevicePackage#getDeviceSet_Device()
-	 * @model containment="true" required="true"
-	 * @generated
-	 */
-	EList<DeviceType> getDevice();
+    /**
+     * Returns the value of the '<em><b>Device</b></em>' containment reference list.
+     * The list contents are of type {@link device.DeviceType}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Device</em>' containment reference list.
+     * @see device.DevicePackage#getDeviceSet_Device()
+     * @model containment="true" required="true"
+     * @generated
+     */
+    EList<DeviceType> getDevice();
 
 } // DeviceSet
