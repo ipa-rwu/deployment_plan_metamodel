@@ -3,6 +3,7 @@
  */
 package de.fraunhofer.ipa.targetEnvironment.ui.contentassist;
 
+import de.fraunhofer.ipa.deployment.ui.contentassist.UtilProposalProvider;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.Assignment;
 import org.eclipse.xtext.CrossReference;
@@ -11,95 +12,152 @@ import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
 
 /**
- * Represents a generated, default implementation of superclass {@link BaseProposalProvider}.
- * Methods are dynamically dispatched on the first parameter, i.e., you can override them 
- * with a more concrete subtype. 
+ * Represents a generated, default implementation of superclass {@link UtilProposalProvider}.
+ * Methods are dynamically dispatched on the first parameter, i.e., you can override them
+ * with a more concrete subtype.
  */
-public abstract class AbstractDeviceProposalProvider extends BaseProposalProvider {
+public abstract class AbstractDeviceProposalProvider extends UtilProposalProvider {
 
-	public void completeDeviceSet_Device(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
-	}
-	public void completeDeviceType_Name(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
-	}
-	public void completeDeviceType_Capability(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
-	}
-	public void completeDeviceType_CommunicationConnection(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
-	}
-	public void completeCapabilityProperty_Name(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
-	}
-	public void completeCapabilityProperty_Type(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		lookupCrossReference(((CrossReference)assignment.getTerminal()), context, acceptor);
-	}
-	public void completeCapabilityProperty_Kind(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
-	}
-	public void completeCapabilityProperty_Value(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
-	}
-	public void completeConnectionProperty_Name(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
-	}
-	public void completeConnectionProperty_Value(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
-	}
-	public void completeCommunicationConnection_Name(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
-	}
-	public void completeCommunicationConnection_Type(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
-	}
-	public void completeCommunicationConnection_Properties(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
-	}
-	public void completeCommunicationType_Name(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
-	}
-	public void completeCapabilityType_Name(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
-	}
+    public void completeDeviceSet_Device(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+        completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
+    }
+    public void completeCapabilityType_Name(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+        completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
+    }
+    public void completeDeviceTypeRef_DeviceType(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+        lookupCrossReference(((CrossReference)assignment.getTerminal()), context, acceptor);
+    }
+    public void completeInterfaceNetworkProperty_Name(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+        // subclasses may override
+    }
+    public void completeInterfaceNetworkProperty_Kind(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+        completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
+    }
+    public void completeInterfaceNetworkProperty_Description(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+        completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
+    }
+    public void completeInterfaceNetworkProperty_Value(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+        completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
+    }
+    public void completeAddressNetworkProperty_Name(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+        // subclasses may override
+    }
+    public void completeAddressNetworkProperty_Kind(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+        completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
+    }
+    public void completeAddressNetworkProperty_Description(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+        completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
+    }
+    public void completeAddressNetworkProperty_Value(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+        completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
+    }
+    public void completeDeviceType_Impl_Name(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+        completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
+    }
+    public void completeDeviceType_Impl_DeviceProperty(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+        completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
+    }
+    public void completeDeviceType_Impl_CommunicationConnection(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+        completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
+    }
+    public void completeDeviceProperty_Name(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+        completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
+    }
+    public void completeDeviceProperty_Kind(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+        completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
+    }
+    public void completeDeviceProperty_Type(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+        completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
+    }
+    public void completeDeviceProperty_Description(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+        completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
+    }
+    public void completeDeviceProperty_Value(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+        completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
+    }
+    public void completeComputationDeviceType_Name(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+        completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
+    }
+    public void completeComputationDeviceType_DeviceProperty(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+        completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
+    }
+    public void completeComputationDeviceType_CommunicationConnection(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+        completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
+    }
+    public void completeConnectionProperty_Name(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+        completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
+    }
+    public void completeConnectionProperty_Kind(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+        completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
+    }
+    public void completeConnectionProperty_Description(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+        completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
+    }
+    public void completeConnectionProperty_Value(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+        completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
+    }
+    public void completeNetworkConnection_Name(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+        completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
+    }
+    public void completeNetworkConnection_Type(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+        completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
+    }
+    public void completeNetworkConnection_Properties(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+        completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
+    }
+    public void completeCommunicationConnection_Name(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+        completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
+    }
+    public void completeCommunicationConnection_Type(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+        completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
+    }
+    public void completeCommunicationConnection_Properties(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+        completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
+    }
 
-	public void complete_DeviceSet(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		// subclasses may override
-	}
-	public void complete_CapabilityKind(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		// subclasses may override
-	}
-	public void complete_DeviceType(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		// subclasses may override
-	}
-	public void complete_CapabilityProperty(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		// subclasses may override
-	}
-	public void complete_AttributeKind(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		// subclasses may override
-	}
-	public void complete_MaximumKind(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		// subclasses may override
-	}
-	public void complete_MinimumKind(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		// subclasses may override
-	}
-	public void complete_SelectionKind(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		// subclasses may override
-	}
-	public void complete_ConnectionProperty(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		// subclasses may override
-	}
-	public void complete_CommunicationConnection(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		// subclasses may override
-	}
-	public void complete_PropertyType(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		// subclasses may override
-	}
-	public void complete_CommunicationType(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		// subclasses may override
-	}
-	public void complete_CapabilityType(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		// subclasses may override
-	}
+    public void complete_DeviceSet(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+        // subclasses may override
+    }
+    public void complete_CapabilityType(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+        // subclasses may override
+    }
+    public void complete_DeviceTypeRef(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+        // subclasses may override
+    }
+    public void complete_DeviceType(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+        // subclasses may override
+    }
+    public void complete_AbstractCommunicationConnection(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+        // subclasses may override
+    }
+    public void complete_AbstractNetworkProperty(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+        // subclasses may override
+    }
+    public void complete_InterfaceNetworkProperty(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+        // subclasses may override
+    }
+    public void complete_AddressNetworkProperty(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+        // subclasses may override
+    }
+    public void complete_DeviceType_Impl(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+        // subclasses may override
+    }
+    public void complete_AbstractDeviceConfig(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+        // subclasses may override
+    }
+    public void complete_DeviceProperty(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+        // subclasses may override
+    }
+    public void complete_ComputationDeviceType(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+        // subclasses may override
+    }
+    public void complete_ConnectionProperty(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+        // subclasses may override
+    }
+    public void complete_NetworkConnection(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+        // subclasses may override
+    }
+    public void complete_CommunicationConnection(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+        // subclasses may override
+    }
 }

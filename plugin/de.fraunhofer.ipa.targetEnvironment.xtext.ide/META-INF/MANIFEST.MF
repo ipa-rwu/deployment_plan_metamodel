@@ -10,8 +10,9 @@ Require-Bundle: de.fraunhofer.ipa.targetEnvironment.xtext,
  de.fraunhofer.ipa.targetEnvironment,
  org.eclipse.xtext.ide,
  org.eclipse.xtext.xbase.ide,
- org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
-Bundle-RequiredExecutionEnvironment: JavaSE-17
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)",
+ de.fraunhofer.ipa.deployment.util.xtext
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Export-Package: de.fraunhofer.ipa.targetEnvironment.ide.contentassist.antlr,
  de.fraunhofer.ipa.targetEnvironment.ide.contentassist.antlr.internal,
  de.fraunhofer.ipa.targetEnvironment.ide.contentassist.antlr.lexer

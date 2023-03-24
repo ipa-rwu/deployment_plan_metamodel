@@ -15,16 +15,16 @@ import targetEnvironment.TargetDeployEnviroment
 @ExtendWith(InjectionExtension)
 @InjectWith(TargetEnvironmentInjectorProvider)
 class TargetEnvironmentParsingTest {
-	@Inject
-	ParseHelper<TargetDeployEnviroment> parseHelper
-	
-	@Test
-	def void loadModel() {
-		val result = parseHelper.parse('''
-			Hello Xtext!
-		''')
-		Assertions.assertNotNull(result)
-		val errors = result.eResource.errors
-		Assertions.assertTrue(errors.isEmpty, '''Unexpected errors: «errors.join(", ")»''')
-	}
+    @Inject
+    ParseHelper<TargetDeployEnviroment> parseHelper
+
+    @Test
+    def void loadModel() {
+        val result = parseHelper.parse('''
+            Hello Xtext!
+        ''')
+        Assertions.assertNotNull(result)
+        val errors = result.eResource.errors
+        Assertions.assertTrue(errors.isEmpty, '''Unexpected errors: «errors.join(", ")»''')
+    }
 }

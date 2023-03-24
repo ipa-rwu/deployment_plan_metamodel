@@ -3,10 +3,38 @@
  */
 package de.fraunhofer.ipa.targetEnvironment.ui.contentassist;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.xtext.Assignment;
+import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
+import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
+
+import com.google.inject.Inject;
+
+import de.fraunhofer.ipa.targetEnvironment.services.TargetEnvironmentGrammarAccess;
+import targetEnvironment.ConfigConnectionProperty;
+import targetEnvironment.ConfigDeviceProperty;
 
 /**
  * See https://www.eclipse.org/Xtext/documentation/310_eclipse_support.html#content-assist
  * on how to customize the content assistant.
  */
 public class TargetEnvironmentProposalProvider extends AbstractTargetEnvironmentProposalProvider {
+
+    @Inject TargetEnvironmentGrammarAccess tarGramma;
+
+    @Override
+    public void completeConfigDeviceProperty_Name(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+        super.completeConfigDeviceProperty_Name(model, assignment, context, acceptor);
+        ConfigDeviceProperty config_model = (ConfigDeviceProperty) model;
+        String from = config_model.getFrom().getName();
+        acceptor.accept(createCompletionProposal(from, context));
+    }
+
+    @Override
+    public void completeConfigConnectionProperty_Name(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+        super.completeConfigConnectionProperty_Name(model, assignment, context, acceptor);
+        ConfigConnectionProperty ref_model = (ConfigConnectionProperty) model;
+        String from = ref_model.getRefConnectionProperty().getName();
+        acceptor.accept(createCompletionProposal(from, context));
+    }
 }
