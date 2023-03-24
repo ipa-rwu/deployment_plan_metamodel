@@ -1,43 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="device" nsURI="http://www.ipa.fraunhofer.de/Device" nsPrefix="Device">
-  <eClassifiers xsi:type="ecore:EClass" name="DeviceSet" eSuperTypes="base.ecore#//Description">
+  <eClassifiers xsi:type="ecore:EClass" name="DeviceSet" eSuperTypes="../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//Description">
     <eStructuralFeatures xsi:type="ecore:EReference" name="device" lowerBound="1"
         upperBound="-1" eType="#//DeviceType" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DeviceType">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="capability" upperBound="-1"
-        eType="#//CapabilityProperty" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="deviceProperty" upperBound="-1"
+        eType="#//DeviceProperty" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="communicationConnection"
-        upperBound="-1" eType="#//CommunicationConnection" containment="true"/>
+        upperBound="-1" eType="#//AbstractCommunicationConnection" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CommunicationConnection">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//CommunicationType"
+  <eClassifiers xsi:type="ecore:EClass" name="DeviceProperty" eSuperTypes="../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//Property">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="ecore:EClass ../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//AbstractResouceType"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CommunicationConnection" eSuperTypes="#//AbstractCommunicationConnection">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="ecore:EClass ../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//CommunicationType"
         derived="true" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
         eType="#//ConnectionProperty" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Property">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="ecore:EClass base.ecore#//PropertyValue"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CapabilityProperty" eSuperTypes="#//Property">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="kind" lowerBound="1" eType="#//CapabilityKind"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="#//CapabilityType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CapabilityKind" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="AttributeKind" eSuperTypes="#//CapabilityKind"/>
   <eClassifiers xsi:type="ecore:EClass" name="MaximumKind" eSuperTypes="#//CapabilityKind"/>
   <eClassifiers xsi:type="ecore:EClass" name="MinimumKind" eSuperTypes="#//CapabilityKind"/>
   <eClassifiers xsi:type="ecore:EClass" name="SelectionKind" eSuperTypes="#//CapabilityKind"/>
-  <eClassifiers xsi:type="ecore:EClass" name="PropertyType" abstract="true">
+  <eClassifiers xsi:type="ecore:EClass" name="RangeKind" eSuperTypes="#//CapabilityKind"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ConnectionProperty" eSuperTypes="../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//PropertyAttribute"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CapabilityType" abstract="true" eSuperTypes="../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//AbstractResouceType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComputationDeviceType" eSuperTypes="#//DeviceType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractCommunicationConnection" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CommunicationType" eSuperTypes="#//PropertyType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ConnectionProperty" eSuperTypes="#//Property"/>
-  <eClassifiers xsi:type="ecore:EClass" name="CapabilityType" eSuperTypes="#//PropertyType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NetworkConnection" eSuperTypes="#//AbstractCommunicationConnection">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="ecore:EClass ../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//NetworkCommunicationType"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
+        eType="#//AbstractNetworkProperty" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractNetworkProperty" abstract="true"
+      eSuperTypes="../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//PropertyAttribute #//AbstractDeviceConfig"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InterfaceNetworkProperty" eSuperTypes="#//AbstractNetworkProperty"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AddressNetworkProperty" eSuperTypes="#//AbstractNetworkProperty"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MacNetworkProperty" eSuperTypes="#//AbstractNetworkProperty"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractDeviceConfig" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DeviceTypeRef" eSuperTypes="#//AbstractDeviceType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="deviceType" lowerBound="1"
+        eType="#//DeviceType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractDeviceType" abstract="true"/>
 </ecore:EPackage>
