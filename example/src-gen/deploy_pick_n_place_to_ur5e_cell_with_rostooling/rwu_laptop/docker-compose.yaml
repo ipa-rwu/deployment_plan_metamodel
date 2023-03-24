@@ -1,0 +1,66 @@
+version: '3'
+networks:
+    ros-network:
+        external: false
+        driver: "bridge"
+
+services:
+    ur5e_driver:
+        image: ${Registry}/ur5e_driver
+        volumes:
+            - ./cyclonedds.xml:/cyclonedds.xml
+        networks:
+            - ros-network
+        environment:
+            - NETINTERFACE=eth0
+            - robot_ip=192.168.56.2
+        command:
+            - bash
+            - -c
+            - |
+              export CYCLONEDDS_URI=file:///cyclonedds.xml
+              ros2 launch ur_robot_driver ur5e.launch.py robot_ip=192.168.56.2
+    realsense_driver:
+        image: ${Registry}/realsense_driver
+        volumes:
+            - ./cyclonedds.xml:/cyclonedds.xml
+        networks:
+            - ros-network
+        environment:
+            - NETINTERFACE=eth0
+            - device_type=d435
+        command:
+            - bash
+            - -c
+            - |
+              export CYCLONEDDS_URI=file:///cyclonedds.xml
+              ros2 run tf2_ros static_transform_publisher -0.00640796 -0.0551158 0.00796752 -0.529877 0.53423 -0.467606 -0.463867 tool0 camera_link
+              ros2 launch realsense2_camera rs_launch.py publish_tf:=false device_type=d435
+    marker_detection:
+        image: ${Registry}/marker_detection
+        volumes:
+            - ./cyclonedds.xml:/cyclonedds.xml
+        networks:
+            - ros-network
+        environment:
+            - NETINTERFACE=eth0
+        command:
+            - bash
+            - -c
+            - |
+              export CYCLONEDDS_URI=file:///cyclonedds.xml
+              ros2 launch aruco_ros marker_publisher.launch.py camera_frame:=camera_color_optical_frame reference_frame:=world marker_size_arg:=0.02
+    pick_place_task:
+        image: ${Registry}/pick_place_task
+        volumes:
+            - ./cyclonedds.xml:/cyclonedds.xml
+        networks:
+            - ros-network
+        environment:
+            - NETINTERFACE=eth0
+        command:
+            - bash
+            - -c
+            - |
+              export CYCLONEDDS_URI=file:///cyclonedds.xml
+              ros2 launch pick_place_app pick_place_demo_ur5e.launch.py

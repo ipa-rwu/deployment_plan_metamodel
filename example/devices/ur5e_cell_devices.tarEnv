@@ -1,0 +1,67 @@
+ComputationDeviceType:
+    name: PC
+    deviceResouce:
+        - name: processor
+          type: Processor
+          properties:
+              - name: core_number
+                kind: AttributeKind
+              - name: processor_architecture
+                kind: AttributeKind
+        - name: operting_system
+          type: LinuxOpertingSystem
+          properties:
+              - name: os_name
+                kind: AttributeKind
+              - name: os_version
+                kind: AttributeKind
+    communicationConnection:
+        - name: ethernet
+          type: Ethernet
+          properties:
+              - name: address
+                kind: AttributeKind
+              - name: address
+                kind: AttributeKind
+        - name: usb_01
+          type: USB
+          properties:
+              - name: usb_port_id
+                kind: AttributeKind
+---
+DeviceType:
+    name: Realsense_camera
+    deviceResouce:
+        - name: camera_info
+          type: CameraInfomation
+          properties:
+              - name: serial_number
+                kind: AttributeKind
+              - name: device_type
+                kind: AttributeKind
+    communicationConnection:
+        - name: usb
+          type: USB
+---
+DeviceType:
+    name: UR5E
+    communicationConnection:
+        - name: io_tip
+          type: IO
+          properties:
+              - name: pin_dio_0
+                kind: AttributeKind
+                value: 0
+              - name: pin_dio_1
+                kind: AttributeKind
+        - name: ethernet
+          type: Ethernet
+          properties:
+              - name: address
+                kind: AttributeKind
+---
+DeviceType:
+    name: EGP50
+    communicationConnection:
+        - name: io
+          type: IO

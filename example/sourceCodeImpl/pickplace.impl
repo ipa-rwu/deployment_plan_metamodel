@@ -1,0 +1,65 @@
+ImplementationDescription:
+    name: pick_place_with_ur5e
+    includeSoftwareComponent:
+        - name: ur_robot_driver
+          repository:
+              type: git
+              url: "https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver.git"
+              version: humble
+          executionRequirement:
+              deviceRequirement:
+                  - type: UR5E
+                    HWSWParemeter:
+                        - name: robot_ip
+                          kind: AttributeKind
+                        - name: ur_type
+                          kind: AttributeKind
+              softwareConfigurationParameter:
+                  - name: launch_rviz
+                    kind: AttributeKind
+        - name: ur5e_cell_moveit_config
+          repository:
+              type: git
+              url: "https://github.com/ipa-cmh/ur5e_cell"
+              version: "Add-behavior_tree-based-manipulation"
+          executionRequirement:
+              deviceRequirement:
+                  - type: UR5E
+        - name: realsense2_camera
+          repository:
+              type: git
+              url: "https://github.com/IntelRealSense/realsense-ros"
+              version: "ros2-development"
+          executionRequirement:
+              deviceRequirement:
+                  - type: Realsense_camera
+                    HWSWParemeter:
+                        - name: camera_name
+                          kind: AttributeKind
+                        - name: usb_port_id
+                          kind: AttributeKind
+                        - name: serial_no
+                          kind: AttributeKind
+              softwareConfigurationParameter:
+                  - name: publish_tf
+                    kind: AttributeKind
+        - name: aRuco_detection
+          repository:
+              type: git
+              url: "https://github.com/ipa-rwu/aruco_ros.git"
+              version: "humble-devel"
+          executionRequirement:
+              softwareConfigurationParameter:
+                  - name: camera_info_topic
+                    kind: AttributeKind
+                  - name: reference_frame
+                    kind: AttributeKind
+                  - name: marker_size
+                    kind: AttributeKind
+                  - name: camera_frame
+                    kind: AttributeKind
+        - name: pick_place_app
+          repository:
+              type: git
+              url: "https://github.com/ipa-cmh/ur5e_cell"
+              version: "Add-behavior_tree-based-manipulation"
