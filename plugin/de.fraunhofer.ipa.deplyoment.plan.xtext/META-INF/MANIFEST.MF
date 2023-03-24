@@ -1,0 +1,31 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: de.fraunhofer.ipa.deplyoment.plan.xtext
+Bundle-ManifestVersion: 2
+Bundle-Name: de.fraunhofer.ipa.deplyoment.plan.xtext
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: de.fraunhofer.ipa.deplyoment.plan.xtext; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: de.fraunhofer.ipa.deploymentPlan,
+ org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.16.0",
+ de.fraunhofer.ipa.deployment.util.xtext;bundle-version="1.0.0",
+ de.fraunhofer.ipa.targetEnvironment.xtext;bundle-version="1.0.0",
+ org.eclipse.xtext.xbase.lib;bundle-version="2.30.0",
+ org.eclipse.xtext.util,
+ org.antlr.runtime;bundle-version="4.7.2",
+ de.fraunhofer.ipa.rossystem.xtext;bundle-version="2.0.0",
+ org.eclipse.xtend.lib;bundle-version="2.14.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: de.fraunhofer.ipa.deplyoment.parser.antlr.lexer,
+ de.fraunhofer.ipa.deplyoment,
+ de.fraunhofer.ipa.deplyoment.parser.antlr.internal,
+ de.fraunhofer.ipa.deplyoment.formatting2,
+ de.fraunhofer.ipa.deplyoment.serializer,
+ de.fraunhofer.ipa.deplyoment.scoping,
+ de.fraunhofer.ipa.deplyoment.parser.antlr,
+ de.fraunhofer.ipa.deplyoment.validation,
+ de.fraunhofer.ipa.deplyoment.services,
+ de.fraunhofer.ipa.deplyoment.generator
+Import-Package: org.apache.log4j
