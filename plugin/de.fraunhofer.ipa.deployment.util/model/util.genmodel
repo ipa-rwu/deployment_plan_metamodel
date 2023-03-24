@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.fraunhofer.ipa.deployment.util/src" creationIcons="false"
+    editDirectory="/de.fraunhofer.ipa.deployment.util.edit/src" editorDirectory="/de.fraunhofer.ipa.deployment.util.editor/src"
+    modelPluginID="de.fraunhofer.ipa.deployment.util" modelName="Util" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" testsDirectory="/de.fraunhofer.ipa.deployment.util.test/src"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>util.ecore</foreignModel>
+  <genPackages prefix="Util" basePackage="de.fraunhofer.ipa.deployment" disposableProviderFactory="true"
+      ecorePackage="util.ecore#/">
+    <genClasses image="false" ecoreClass="util.ecore#//Description"/>
+    <genClasses image="false" ecoreClass="util.ecore#//PropertyValue"/>
+    <genClasses ecoreClass="util.ecore#//PropertyValueInt">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute util.ecore#//PropertyValueInt/value"/>
+    </genClasses>
+    <genClasses ecoreClass="util.ecore#//PropertyValueDouble">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute util.ecore#//PropertyValueDouble/value"/>
+    </genClasses>
+    <genClasses ecoreClass="util.ecore#//PropertyValueString">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute util.ecore#//PropertyValueString/value"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="util.ecore#//PropertyType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute util.ecore#//PropertyType/type"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="util.ecore#//AbstractProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute util.ecore#//AbstractProperty/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute util.ecore#//AbstractProperty/description"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="util.ecore#//AbstractResouceType"/>
+    <genClasses image="false" ecoreClass="util.ecore#//ProcessorArchitecture"/>
+    <genClasses image="false" ecoreClass="util.ecore#//AbstractCommunicationType"/>
+    <genClasses ecoreClass="util.ecore#//CommunicationType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute util.ecore#//CommunicationType/name"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="util.ecore#//NetworkCommunicationType"/>
+    <genClasses ecoreClass="util.ecore#//EthernetCommunicationType"/>
+    <genClasses ecoreClass="util.ecore#//WlanCommunicationType"/>
+    <genClasses ecoreClass="util.ecore#//AvailableResouce">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference util.ecore#//AvailableResouce/list"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference util.ecore#//AvailableResouce/property"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="util.ecore#//OpertingSystemType"/>
+    <genClasses ecoreClass="util.ecore#//LinuxOpertingSystemType"/>
+    <genClasses ecoreClass="util.ecore#//MacOSOpertingSystemType"/>
+    <genClasses ecoreClass="util.ecore#//ProcessorArchitectureType"/>
+    <genClasses image="false" ecoreClass="util.ecore#//ProcessorArchitectureValue"/>
+    <genClasses ecoreClass="util.ecore#//X86ProcessorArchitecture"/>
+    <genClasses ecoreClass="util.ecore#//Arm64ProcessorArchitecture"/>
+    <genClasses image="false" ecoreClass="util.ecore#//AbstractImplementation"/>
+    <genClasses image="false" ecoreClass="util.ecore#//AbstractComputationAssignmentTarget"/>
+    <genClasses image="false" ecoreClass="util.ecore#//PropertyKind"/>
+    <genClasses ecoreClass="util.ecore#//AttributeKind"/>
+    <genClasses ecoreClass="util.ecore#//MaximumKind"/>
+    <genClasses ecoreClass="util.ecore#//MinimumKind"/>
+    <genClasses ecoreClass="util.ecore#//SelectionKind"/>
+    <genClasses ecoreClass="util.ecore#//RangeKind"/>
+    <genClasses ecoreClass="util.ecore#//PropertyAttribute">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference util.ecore#//PropertyAttribute/kind"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference util.ecore#//PropertyAttribute/value"/>
+    </genClasses>
+    <genClasses ecoreClass="util.ecore#//PropertyMaximun">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference util.ecore#//PropertyMaximun/kind"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference util.ecore#//PropertyMaximun/value"/>
+    </genClasses>
+    <genClasses ecoreClass="util.ecore#//PropertyMinimum">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference util.ecore#//PropertyMinimum/kind"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference util.ecore#//PropertyMinimum/value"/>
+    </genClasses>
+    <genClasses ecoreClass="util.ecore#//PropertySelection">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference util.ecore#//PropertySelection/kind"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference util.ecore#//PropertySelection/value"/>
+    </genClasses>
+    <genClasses ecoreClass="util.ecore#//PropertyRange">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference util.ecore#//PropertyRange/kind"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference util.ecore#//PropertyRange/value"/>
+    </genClasses>
+    <genClasses ecoreClass="util.ecore#//Property">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference util.ecore#//Property/kind"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference util.ecore#//Property/value"/>
+    </genClasses>
+    <genClasses ecoreClass="util.ecore#//ResourceType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute util.ecore#//ResourceType/name"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
