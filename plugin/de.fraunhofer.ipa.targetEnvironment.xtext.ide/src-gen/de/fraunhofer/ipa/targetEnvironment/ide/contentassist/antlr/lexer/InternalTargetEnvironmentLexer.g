@@ -6,7 +6,7 @@ lexer grammar InternalTargetEnvironmentLexer;
 @header {
 package de.fraunhofer.ipa.targetEnvironment.ide.contentassist.antlr.lexer;
 
-// Hack: Use our own Lexer superclass by means of import. 
+// Hack: Use our own Lexer superclass by means of import.
 // Currently there is no other way to specify the superclass for the lexer.
 import org.eclipse.xtext.ide.editor.contentassist.antlr.internal.Lexer;
 }
@@ -15,9 +15,19 @@ CommunicationConnection : 'communicationConnection:';
 
 TargetDeployEnviroment : 'TargetDeployEnviroment:';
 
+ComputationDeviceType : 'ComputationDeviceType:';
+
 RefConnectionProperty : 'refConnectionProperty:';
 
+ProcessorArchitecture : 'ProcessorArchitecture';
+
+ConfigDeviceProperty : 'configDeviceProperty:';
+
+ComputationDevice : 'computationDevice:';
+
 ConfigConnection : 'configConnection:';
+
+DeviceProperty : 'deviceProperty:';
 
 Configuration : 'configuration:';
 
@@ -33,25 +43,49 @@ AttributeKind : 'AttributeKind';
 
 SelectionKind : 'SelectionKind';
 
+Description : 'description:';
+
 DeviceType : 'DeviceType:';
 
 MaximumKind : 'MaximumKind';
 
 MinimumKind : 'MinimumKind';
 
-Capability : 'capability:';
-
 Properties : 'properties:';
 
 RefDevice : 'refDevice:';
 
+RangeKind : 'RangeKind';
+
+Interface : 'interface';
+
+Ethernet : 'Ethernet';
+
+Address : 'address';
+
+Device : 'device:';
+
+X86_64 : 'X86_64';
+
 Value : 'value:';
+
+Arm64 : 'Arm64';
+
+Linux : 'Linux';
+
+MacOS : 'MacOS';
+
+From : 'from:';
 
 Kind : 'kind:';
 
 Name : 'name:';
 
 Type : 'type:';
+
+Wlan : 'Wlan';
+
+HyphenMinusHyphenMinusHyphenMinus : '---';
 
 HyphenMinus : '-';
 

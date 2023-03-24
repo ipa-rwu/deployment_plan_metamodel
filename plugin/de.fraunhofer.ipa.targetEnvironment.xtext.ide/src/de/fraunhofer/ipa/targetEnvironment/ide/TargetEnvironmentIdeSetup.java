@@ -14,9 +14,9 @@ import org.eclipse.xtext.util.Modules2;
  */
 public class TargetEnvironmentIdeSetup extends TargetEnvironmentStandaloneSetup {
 
-	@Override
-	public Injector createInjector() {
-		return Guice.createInjector(Modules2.mixin(new TargetEnvironmentRuntimeModule(), new TargetEnvironmentIdeModule()));
-	}
-	
+    @Override
+    public Injector createInjector() {
+        return Guice.createInjector(Modules2.mixin(new TargetEnvironmentRuntimeModule(), new TargetEnvironmentIdeModule()));
+    }
+
 }

@@ -9,9 +9,9 @@ import org.eclipse.xtext.testing.IInjectorProvider;
 
 public class DeviceUiInjectorProvider implements IInjectorProvider {
 
-	@Override
-	public Injector getInjector() {
-		return XtextActivator.getInstance().getInjector("de.fraunhofer.ipa.targetEnvironment.Device");
-	}
+    @Override
+    public Injector getInjector() {
+        return XtextActivator.getInstance().getInjector("de.fraunhofer.ipa.targetEnvironment.Device");
+    }
 
 }
