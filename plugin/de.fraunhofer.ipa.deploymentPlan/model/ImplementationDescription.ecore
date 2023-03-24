@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="implementationDescription" nsURI="http://www.ipa.fraunhofer.de/ImplementationDescription"
+    nsPrefix="ImplementationDescription">
+  <eClassifiers xsi:type="ecore:EClass" name="ExecutionRequirement" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ImplementationDescription" eSuperTypes="../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//AbstractImplementation ../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//AbstractComputationAssignmentTarget">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="softwareDependency" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="includeSoftwareComponent"
+        lowerBound="1" upperBound="-1" eType="#//SoftwareComponent" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SoftwareComponent" eSuperTypes="../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//AbstractComputationAssignmentTarget">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="executionRequirement" upperBound="-1"
+        eType="#//ExecutionRequirement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DeviceRequirement" eSuperTypes="#//ExecutionRequirement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" upperBound="-1"
+        eType="#//HWSWParemeter" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SoftwareConfigurationRequirement" eSuperTypes="#//ExecutionRequirement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" lowerBound="1"
+        upperBound="-1" eType="#//SoftwareExecutionParemeter" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HWSWParemeter" eSuperTypes="#//ExecutionProperty"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SoftwareExecutionParemeter" eSuperTypes="#//ExecutionProperty"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ExecutionProperty" eSuperTypes="../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//Property"/>
+</ecore:EPackage>
