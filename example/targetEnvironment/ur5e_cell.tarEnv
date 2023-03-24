@@ -1,0 +1,65 @@
+TargetDeployEnviroment:
+    name: ur5e_cell
+    includeDevice:
+        computationDevice:
+            - name: rwu_laptop
+              refDeviceType: PC
+              configDeviceProperty:
+                  - name: "os_name"
+                    from: "PC.operting_system.os_name"
+                    value: ubuntu
+                  - name: "os_version"
+                    from: "PC.operting_system.os_version"
+                    value: focal
+                  - name: "processor_architecture"
+                    from: "PC.processor.processor_architecture"
+                    value: x86
+        device:
+            - name: arm
+              refDeviceType: UR5E
+            - name: gripper
+              refDeviceType: EGP50
+            - name: camera_01
+              refDeviceType: Realsense_camera
+              configDeviceProperty:
+                  - name: device_type
+                    from: "Realsense_camera.camera_info.device_type"
+                    value: d435
+    configConnection:
+        - name: connect_gripper_arm
+          connectDevice:
+              - refDevice: arm
+                refConnection: "UR5E.io_tip"
+                configuration:
+                    - name: close_gripper
+                      refConnectionProperty: "UR5E.io_tip.pin_dio_0"
+                      value: 0
+              - refDevice: gripper
+                refConnection: "EGP50.io"
+        - name: connect_pc_camera
+          connectDevice:
+              - refDevice: camera_01
+                refConnection: "Realsense_camera.usb"
+              - refDevice: rwu_laptop
+                refConnection: "PC.usb_01"
+                configuration:
+                    - name: camera_01_usb_port
+                      refConnectionProperty: "PC.usb_01.usb_port_id"
+                      value: "/dev/video0"
+        - name: connect_arm_pc
+          connectDevice:
+              - refDevice: arm
+                refConnection: "UR5E.ethernet"
+                configuration:
+                    - name: robot_ip
+                      refConnectionProperty: "UR5E.ethernet.address"
+                      value: "192.168.56.2"
+              - refDevice: rwu_laptop
+                refConnection: "PC.ethernet"
+                configuration:
+                    - name: pc_ip
+                      refConnectionProperty: "PC.ethernet.address"
+                      value: "192.168.56.1"
+                    - name: ethernet_interface_name
+                      refConnectionProperty: "PC.ethernet.interface_name"
+                      value: ur5e

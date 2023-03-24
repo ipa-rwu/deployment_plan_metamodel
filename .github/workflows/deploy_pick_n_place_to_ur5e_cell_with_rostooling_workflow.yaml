@@ -1,0 +1,72 @@
+name: deploy_pick_n_place_to_ur5e_cell_with_rostooling
+on:
+    push:
+        paths:
+            - "examples/src-gen/deploy_pick_n_place_to_ur5e_cell_with_rostooling/**"
+env:
+    BUILDER_PREFIX: "ghcr.io/ipa-rwu/"
+    BUILDER_SUFFIX: ":latest"
+    CMAKE_ARGS: "-DCMAKE_BUILD_TYPE=Release"
+    REGISTRY: ghcr.io
+
+jobs:
+    EnvSetup:
+        runs-on: ubuntu-latest
+        name: Setup Dynamic Environment Variables
+        outputs:
+            registry: ${{ steps.set-output-defaults.outputs.registry }}
+            build-prefix: ${{ steps.set-output-defaults.outputs.build-prefix }}
+            build-suffix: ${{ steps.set-output-defaults.outputs.build-suffix }}
+            cmake-args: ${{ steps.set-output-defaults.outputs.cmake-args }}
+        steps:
+            - name: set outputs with default values
+              id: set-output-defaults
+              run: |
+                  echo "registry=$REGISTRY" >> $GITHUB_OUTPUT
+                  echo "build-prefix=$BUILDER_PREFIX" >> $GITHUB_OUTPUT
+                  echo "build-suffix=$BUILDER_SUFFIX" >> $GITHUB_OUTPUT
+                  echo "cmake-args=$CMAKE_ARGS" >> $GITHUB_OUTPUT
+    ur5e_driver:
+        needs: [EnvSetup]
+        uses: ./.github/workflows/test_code_build_image_workflow_reuse.yaml
+        with:
+            context-path: example/src-gen/deploy_pick_n_place_to_ur5e_cell_with_rostooling/ur5e_driver
+            ros-distro: humble
+            registry: ${{needs.EnvSetup.outputs.registry}}
+            image-name: ${{ github.repository_owner }}/ur5e_driver
+            build-prefix: ${{needs.EnvSetup.outputs.build-prefix}}
+            build-suffix: ${{needs.EnvSetup.outputs.build-suffix}}
+            cmake-args: ${{needs.EnvSetup.outputs.cmake-args}}
+    realsense_driver:
+        needs: [EnvSetup]
+        uses: ./.github/workflows/test_code_build_image_workflow_reuse.yaml
+        with:
+            context-path: example/src-gen/deploy_pick_n_place_to_ur5e_cell_with_rostooling/realsense_driver
+            ros-distro: humble
+            registry: ${{needs.EnvSetup.outputs.registry}}
+            image-name: ${{ github.repository_owner }}/realsense_driver
+            build-prefix: ${{needs.EnvSetup.outputs.build-prefix}}
+            build-suffix: ${{needs.EnvSetup.outputs.build-suffix}}
+            cmake-args: ${{needs.EnvSetup.outputs.cmake-args}}
+    marker_detection:
+        needs: [EnvSetup]
+        uses: ./.github/workflows/test_code_build_image_workflow_reuse.yaml
+        with:
+            context-path: example/src-gen/deploy_pick_n_place_to_ur5e_cell_with_rostooling/marker_detection
+            ros-distro: humble
+            registry: ${{needs.EnvSetup.outputs.registry}}
+            image-name: ${{ github.repository_owner }}/marker_detection
+            build-prefix: ${{needs.EnvSetup.outputs.build-prefix}}
+            build-suffix: ${{needs.EnvSetup.outputs.build-suffix}}
+            cmake-args: ${{needs.EnvSetup.outputs.cmake-args}}
+    pick_place_task:
+        needs: [EnvSetup]
+        uses: ./.github/workflows/test_code_build_image_workflow_reuse.yaml
+        with:
+            context-path: example/src-gen/deploy_pick_n_place_to_ur5e_cell_with_rostooling/pick_place_task
+            ros-distro: humble
+            registry: ${{needs.EnvSetup.outputs.registry}}
+            image-name: ${{ github.repository_owner }}/pick_place_task
+            build-prefix: ${{needs.EnvSetup.outputs.build-prefix}}
+            build-suffix: ${{needs.EnvSetup.outputs.build-suffix}}
+            cmake-args: ${{needs.EnvSetup.outputs.cmake-args}}

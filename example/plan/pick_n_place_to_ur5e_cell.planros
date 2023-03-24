@@ -1,0 +1,47 @@
+DeploymentPlanWithRos:
+    name: deploy_pick_n_place_to_ur5e_cell_with_rostooling
+    deployTo: ur5e_cell
+    assignment:
+        - name: ur5e_driver
+          executedBy: "ur5e_cell.rwu_laptop"
+          softwareComponents:
+              - ur5e_driver_rossystem:
+                executionConfiguration:
+                    - from: "ur5e_driver_rossystem.dashboard_client.robot_ip"
+                      to: "ur5e_cell.connect_arm_pc.robot_ip"
+                startCommand:
+                    - "ros2 launch ur_robot_driver ur5e.launch.py"
+          middleware: humble
+          runtimeType: container
+          opertingSystemType: ubuntu
+        - name: realsense_driver
+          executedBy: "ur5e_cell.rwu_laptop"
+          softwareComponents:
+              - relsense_camera_driver:
+                executionConfiguration:
+                    - from: "relsense_camera_driver.relsense_camera.device_type"
+                      to: "ur5e_cell.camera_01.device_type"
+                startCommand:
+                    - "ros2 run tf2_ros static_transform_publisher -0.00640796 -0.0551158 0.00796752 -0.529877 0.53423 -0.467606 -0.463867 tool0 camera_link"
+                    - "ros2 launch realsense2_camera rs_launch.py publish_tf:=false"
+          middleware: humble
+          runtimeType: container
+          opertingSystemType: ubuntu
+        - name: marker_detection
+          executedBy: "ur5e_cell.rwu_laptop"
+          softwareComponents:
+              - aruco_marker_detection:
+                startCommand:
+                    - "ros2 launch aruco_ros marker_publisher.launch.py camera_frame:=camera_color_optical_frame reference_frame:=world marker_size_arg:=0.02"
+          middleware: humble
+          runtimeType: container
+          opertingSystemType: ubuntu
+        - name: pick_place_task
+          executedBy: "ur5e_cell.rwu_laptop"
+          softwareComponents:
+              - pick_place_rossystem:
+                startCommand:
+                    - "ros2 launch pick_place_app pick_place_demo_ur5e.launch.py"
+          middleware: humble
+          runtimeType: container
+          opertingSystemType: ubuntu

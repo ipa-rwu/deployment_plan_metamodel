@@ -1,0 +1,38 @@
+point_to_point_task_private_94580858871248:
+    node: point_to_point_task_private_94580858871248
+    subscribers:
+      "collision_object":
+        type: "moveit_msgs.CollisionObject"
+      "joint_states":
+        type: "sensor_msgs.JointState"
+      "moveit_cpp/planning_scene_monitor":
+        type: "moveit_msgs.AttachedCollisionObject"
+      "moveit_cpp/publish_planning_scene":
+        type: "moveit_msgs.PlanningScene"
+      "planning_scene_world":
+        type: "moveit_msgs.PlanningSceneWorld"
+    publishers:
+      "monitored_planning_scene":
+        type: "moveit_msgs.PlanningScene"
+    serviceservers:
+      "compute_path_moveitcpp_skill/get_planning_scene":
+        type: "moveit_msgs.GetPlanningScene"
+    parameters:
+      "publish_geometry_updates":
+        type: Boolean
+        value: True
+      "publish_planning_scene":
+        type: Boolean
+        value: True
+      "publish_planning_scene_hz":
+        type: Double
+        value: 4.0
+      "publish_state_updates":
+        type: Boolean
+        value: True
+      "publish_transforms_updates":
+        type: Boolean
+        value: True
+      "use_sim_time":
+        type: Boolean
+        value: False
