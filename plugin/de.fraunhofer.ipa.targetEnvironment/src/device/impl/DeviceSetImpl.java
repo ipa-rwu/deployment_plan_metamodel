@@ -2,7 +2,7 @@
  */
 package device.impl;
 
-import base.impl.DescriptionImpl;
+import de.fraunhofer.ipa.deployment.util.impl.DescriptionImpl;
 
 import device.DevicePackage;
 import device.DeviceSet;
@@ -34,119 +34,119 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * @generated
  */
 public class DeviceSetImpl extends DescriptionImpl implements DeviceSet {
-	/**
-	 * The cached value of the '{@link #getDevice() <em>Device</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDevice()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<DeviceType> device;
+    /**
+     * The cached value of the '{@link #getDevice() <em>Device</em>}' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getDevice()
+     * @generated
+     * @ordered
+     */
+    protected EList<DeviceType> device;
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected DeviceSetImpl() {
-		super();
-	}
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected DeviceSetImpl() {
+        super();
+    }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EClass eStaticClass() {
-		return DevicePackage.Literals.DEVICE_SET;
-	}
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    protected EClass eStaticClass() {
+        return DevicePackage.Literals.DEVICE_SET;
+    }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<DeviceType> getDevice() {
-		if (device == null) {
-			device = new EObjectContainmentEList<DeviceType>(DeviceType.class, this, DevicePackage.DEVICE_SET__DEVICE);
-		}
-		return device;
-	}
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EList<DeviceType> getDevice() {
+        if (device == null) {
+            device = new EObjectContainmentEList<DeviceType>(DeviceType.class, this, DevicePackage.DEVICE_SET__DEVICE);
+        }
+        return device;
+    }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case DevicePackage.DEVICE_SET__DEVICE:
-				return ((InternalEList<?>)getDevice()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+        switch (featureID) {
+            case DevicePackage.DEVICE_SET__DEVICE:
+                return ((InternalEList<?>)getDevice()).basicRemove(otherEnd, msgs);
+        }
+        return super.eInverseRemove(otherEnd, featureID, msgs);
+    }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case DevicePackage.DEVICE_SET__DEVICE:
-				return getDevice();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Object eGet(int featureID, boolean resolve, boolean coreType) {
+        switch (featureID) {
+            case DevicePackage.DEVICE_SET__DEVICE:
+                return getDevice();
+        }
+        return super.eGet(featureID, resolve, coreType);
+    }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case DevicePackage.DEVICE_SET__DEVICE:
-				getDevice().clear();
-				getDevice().addAll((Collection<? extends DeviceType>)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @SuppressWarnings("unchecked")
+    @Override
+    public void eSet(int featureID, Object newValue) {
+        switch (featureID) {
+            case DevicePackage.DEVICE_SET__DEVICE:
+                getDevice().clear();
+                getDevice().addAll((Collection<? extends DeviceType>)newValue);
+                return;
+        }
+        super.eSet(featureID, newValue);
+    }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case DevicePackage.DEVICE_SET__DEVICE:
-				getDevice().clear();
-				return;
-		}
-		super.eUnset(featureID);
-	}
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void eUnset(int featureID) {
+        switch (featureID) {
+            case DevicePackage.DEVICE_SET__DEVICE:
+                getDevice().clear();
+                return;
+        }
+        super.eUnset(featureID);
+    }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case DevicePackage.DEVICE_SET__DEVICE:
-				return device != null && !device.isEmpty();
-		}
-		return super.eIsSet(featureID);
-	}
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean eIsSet(int featureID) {
+        switch (featureID) {
+            case DevicePackage.DEVICE_SET__DEVICE:
+                return device != null && !device.isEmpty();
+        }
+        return super.eIsSet(featureID);
+    }
 
 } //DeviceSetImpl

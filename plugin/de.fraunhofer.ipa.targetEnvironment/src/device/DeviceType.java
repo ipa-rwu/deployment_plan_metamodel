@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link device.DeviceType#getName <em>Name</em>}</li>
- *   <li>{@link device.DeviceType#getCapability <em>Capability</em>}</li>
+ *   <li>{@link device.DeviceType#getDeviceProperty <em>Device Property</em>}</li>
  *   <li>{@link device.DeviceType#getCommunicationConnection <em>Communication Connection</em>}</li>
  * </ul>
  *
@@ -25,50 +25,50 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface DeviceType extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see device.DevicePackage#getDeviceType_Name()
-	 * @model required="true"
-	 * @generated
-	 */
-	String getName();
+    /**
+     * Returns the value of the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Name</em>' attribute.
+     * @see #setName(String)
+     * @see device.DevicePackage#getDeviceType_Name()
+     * @model required="true"
+     * @generated
+     */
+    String getName();
 
-	/**
-	 * Sets the value of the '{@link device.DeviceType#getName <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
-	 * @generated
-	 */
-	void setName(String value);
+    /**
+     * Sets the value of the '{@link device.DeviceType#getName <em>Name</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Name</em>' attribute.
+     * @see #getName()
+     * @generated
+     */
+    void setName(String value);
 
-	/**
-	 * Returns the value of the '<em><b>Capability</b></em>' containment reference list.
-	 * The list contents are of type {@link device.CapabilityProperty}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Capability</em>' containment reference list.
-	 * @see device.DevicePackage#getDeviceType_Capability()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<CapabilityProperty> getCapability();
+    /**
+     * Returns the value of the '<em><b>Device Property</b></em>' containment reference list.
+     * The list contents are of type {@link device.DeviceProperty}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Device Property</em>' containment reference list.
+     * @see device.DevicePackage#getDeviceType_DeviceProperty()
+     * @model containment="true"
+     * @generated
+     */
+    EList<DeviceProperty> getDeviceProperty();
 
-	/**
-	 * Returns the value of the '<em><b>Communication Connection</b></em>' containment reference list.
-	 * The list contents are of type {@link device.CommunicationConnection}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Communication Connection</em>' containment reference list.
-	 * @see device.DevicePackage#getDeviceType_CommunicationConnection()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<CommunicationConnection> getCommunicationConnection();
+    /**
+     * Returns the value of the '<em><b>Communication Connection</b></em>' containment reference list.
+     * The list contents are of type {@link device.AbstractCommunicationConnection}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Communication Connection</em>' containment reference list.
+     * @see device.DevicePackage#getDeviceType_CommunicationConnection()
+     * @model containment="true"
+     * @generated
+     */
+    EList<AbstractCommunicationConnection> getCommunicationConnection();
 
 } // DeviceType

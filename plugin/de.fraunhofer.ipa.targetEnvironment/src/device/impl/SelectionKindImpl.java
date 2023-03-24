@@ -15,23 +15,23 @@ import org.eclipse.emf.ecore.EClass;
  * @generated
  */
 public class SelectionKindImpl extends CapabilityKindImpl implements SelectionKind {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected SelectionKindImpl() {
-		super();
-	}
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected SelectionKindImpl() {
+        super();
+    }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EClass eStaticClass() {
-		return DevicePackage.Literals.SELECTION_KIND;
-	}
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    protected EClass eStaticClass() {
+        return DevicePackage.Literals.SELECTION_KIND;
+    }
 
 } //SelectionKindImpl
