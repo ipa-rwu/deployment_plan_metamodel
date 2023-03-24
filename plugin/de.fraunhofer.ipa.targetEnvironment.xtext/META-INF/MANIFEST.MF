@@ -7,13 +7,15 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: de.fraunhofer.ipa.targetEnvironment.xtext; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: de.fraunhofer.ipa.targetEnvironment,
- org.eclipse.xtext,
+ org.eclipse.xtext;bundle-version="2.30.0",
  org.eclipse.xtext.xbase,
- org.eclipse.equinox.common;bundle-version="3.16.0",
- org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.equinox.common;bundle-version="3.17.0",
+ org.eclipse.xtext.xbase.lib;bundle-version="2.30.0",
  org.eclipse.xtext.util,
- org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
-Bundle-RequiredExecutionEnvironment: JavaSE-17
+ org.antlr.runtime;bundle-version="4.7.2",
+ de.fraunhofer.ipa.deployment.util.xtext;bundle-version="1.0.0",
+ org.eclipse.xtend.lib;bundle-version="2.14.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Export-Package: de.fraunhofer.ipa.targetEnvironment,
  de.fraunhofer.ipa.targetEnvironment.serializer,
  de.fraunhofer.ipa.targetEnvironment.services,

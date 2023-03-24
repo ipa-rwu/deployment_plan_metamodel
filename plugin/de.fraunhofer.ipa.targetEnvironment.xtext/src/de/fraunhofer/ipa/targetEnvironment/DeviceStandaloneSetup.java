@@ -9,7 +9,7 @@ package de.fraunhofer.ipa.targetEnvironment;
  */
 public class DeviceStandaloneSetup extends DeviceStandaloneSetupGenerated {
 
-	public static void doSetup() {
-		new DeviceStandaloneSetup().createInjectorAndDoEMFRegistration();
-	}
+    public static void doSetup() {
+        new DeviceStandaloneSetup().createInjectorAndDoEMFRegistration();
+    }
 }

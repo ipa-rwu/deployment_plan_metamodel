@@ -4,32 +4,28 @@
 package de.fraunhofer.ipa.targetEnvironment.formatting2
 
 import com.google.inject.Inject
+import de.fraunhofer.ipa.deployment.formatting2.UtilFormatter
 import de.fraunhofer.ipa.targetEnvironment.services.DeviceGrammarAccess
 import device.DeviceSet
-import device.DeviceType
-import org.eclipse.xtext.formatting2.AbstractFormatter2
+import device.InterfaceNetworkProperty
 import org.eclipse.xtext.formatting2.IFormattableDocument
 
-class DeviceFormatter extends AbstractFormatter2 {
-	
-	@Inject extension DeviceGrammarAccess
+class DeviceFormatter extends UtilFormatter {
 
-	def dispatch void format(DeviceSet deviceSet, extension IFormattableDocument document) {
-		// TODO: format HiddenRegions around keywords, attributes, cross references, etc. 
-		for (deviceType : deviceSet.device) {
-			deviceType.format
-		}
-	}
+    @Inject extension DeviceGrammarAccess
 
-	def dispatch void format(DeviceType deviceType, extension IFormattableDocument document) {
-		// TODO: format HiddenRegions around keywords, attributes, cross references, etc. 
-		for (capabilityProperty : deviceType.capability) {
-			capabilityProperty.format
-		}
-		for (connection : deviceType.communicationConnection) {
-			connection.format
-		}
-	}
-	
-	// TODO: implement for CapabilityProperty, IndirectConnection, DirectConnection
+    def dispatch void format(DeviceSet deviceSet, extension IFormattableDocument document) {
+        // TODO: format HiddenRegions around keywords, attributes, cross references, etc.
+        for (deviceType : deviceSet.device) {
+            deviceType.format
+        }
+    }
+
+    def dispatch void format(InterfaceNetworkProperty interfaceNetworkProperty, extension IFormattableDocument document) {
+        // TODO: format HiddenRegions around keywords, attributes, cross references, etc.
+        interfaceNetworkProperty.kind.format
+        interfaceNetworkProperty.value.format
+    }
+
+    // TODO: implement for AddressNetworkProperty, DeviceType, DeviceProperty, ComputationDeviceType, ConnectionProperty, NetworkConnection, CommunicationConnection
 }
