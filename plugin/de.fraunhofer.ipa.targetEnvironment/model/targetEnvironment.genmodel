@@ -3,7 +3,7 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.fraunhofer.ipa.targetEnvironment/src" modelPluginID="de.fraunhofer.ipa.targetEnvironment"
     modelName="TargetEnvironment" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
-    usedGenPackages="device.genmodel#//device device.genmodel#//base ../../org.eclipse.emf.ecore/model/XMLType.genmodel#//type"
+    usedGenPackages="device.genmodel#//device ../../org.eclipse.emf.ecore/model/XMLType.genmodel#//type ../../de.fraunhofer.ipa.deployment.util/model/util.genmodel#//util"
     operationReflection="true" importOrganizing="true">
   <foreignModel>targetEnvironment.ecore</foreignModel>
   <genPackages prefix="TargetEnvironment" disposableProviderFactory="true" ecorePackage="targetEnvironment.ecore#/">
@@ -19,18 +19,33 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute targetEnvironment.ecore#//ConfigConnection/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference targetEnvironment.ecore#//ConfigConnection/connectDevice"/>
     </genClasses>
-    <genClasses ecoreClass="targetEnvironment.ecore#//DeviceInstance">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute targetEnvironment.ecore#//DeviceInstance/name"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference targetEnvironment.ecore#//DeviceInstance/refDeviceType"/>
-    </genClasses>
     <genClasses ecoreClass="targetEnvironment.ecore#//ConnectedDevice">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference targetEnvironment.ecore#//ConnectedDevice/refDevice"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference targetEnvironment.ecore#//ConnectedDevice/refConnection"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference targetEnvironment.ecore#//ConnectedDevice/properties"/>
     </genClasses>
     <genClasses ecoreClass="targetEnvironment.ecore#//ConfigConnectionProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute targetEnvironment.ecore#//ConfigConnectionProperty/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference targetEnvironment.ecore#//ConfigConnectionProperty/refConnectionProperty"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EReference targetEnvironment.ecore#//ConfigConnectionProperty/value"/>
     </genClasses>
+    <genClasses ecoreClass="targetEnvironment.ecore#//ComputationDeviceInstance">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference targetEnvironment.ecore#//ComputationDeviceInstance/refDeviceType"/>
+    </genClasses>
+    <genClasses ecoreClass="targetEnvironment.ecore#//DeviceInstance">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference targetEnvironment.ecore#//DeviceInstance/refDeviceType"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="targetEnvironment.ecore#//AbstractDeviceInstance">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute targetEnvironment.ecore#//AbstractDeviceInstance/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference targetEnvironment.ecore#//AbstractDeviceInstance/configDeviceProperty"/>
+    </genClasses>
+    <genClasses ecoreClass="targetEnvironment.ecore#//ConfigDeviceProperty">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference targetEnvironment.ecore#//ConfigDeviceProperty/from"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference targetEnvironment.ecore#//ConfigDeviceProperty/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute targetEnvironment.ecore#//ConfigDeviceProperty/fullname"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute targetEnvironment.ecore#//ConfigDeviceProperty/name"/>
+      <genOperations ecoreOperation="targetEnvironment.ecore#//ConfigDeviceProperty/getParent"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="targetEnvironment.ecore#//AbstractConfigProperty"/>
   </genPackages>
 </genmodel:GenModel>

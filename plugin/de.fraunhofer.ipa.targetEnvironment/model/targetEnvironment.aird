@@ -6,11 +6,10 @@
     <semanticResources>targetEnvironment.ecore</semanticResources>
     <semanticResources>device.genmodel</semanticResources>
     <semanticResources>targetEnvironment.genmodel</semanticResources>
-    <semanticResources>base.ecore</semanticResources>
-    <semanticResources>base.genmodel</semanticResources>
     <semanticResources>platform:/resource/org.eclipse.emf.ecore/model/XMLType.ecore</semanticResources>
-    <semanticResources>XMLType.ecore</semanticResources>
     <semanticResources>platform:/resource/org.eclipse.emf.ecore/model/XMLType.genmodel</semanticResources>
+    <semanticResources>platform:/resource/de.fraunhofer.ipa.deployment.util/model/util.ecore</semanticResources>
+    <semanticResources>platform:/resource/de.fraunhofer.ipa.deployment.util/model/util.genmodel</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_I0xx8LbiEe2Oc4bVgW30HA">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_I0_NULbiEe2Oc4bVgW30HA" name="targetEnvironment" repPath="#_I08xELbiEe2Oc4bVgW30HA" changeId="e3cee4d8-9197-4ead-88dd-dba1e9f26d0b">

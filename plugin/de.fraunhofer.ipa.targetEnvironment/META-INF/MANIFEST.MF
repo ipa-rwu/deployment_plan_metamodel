@@ -7,11 +7,8 @@ Bundle-Version: 0.1.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-17
-Export-Package: base,
- base.impl,
- base.util,
- device,
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: device,
  device.impl,
  device.util,
  targetEnvironment,
@@ -19,5 +16,6 @@ Export-Package: base,
  targetEnvironment.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
- de.fraunhofer.ipa.targetEnvironment;visibility:=reexport
+ de.fraunhofer.ipa.targetEnvironment;visibility:=reexport,
+ de.fraunhofer.ipa.deployment.util;visibility:=reexport
 Bundle-ActivationPolicy: lazy

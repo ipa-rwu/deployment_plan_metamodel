@@ -4,12 +4,13 @@
     nsPrefix="TargetEnvironment">
   <eClassifiers xsi:type="ecore:EClass" name="TargetEnvironment">
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" upperBound="-1"
-        eType="ecore:EClass base.ecore#//Description" containment="true"/>
+        eType="ecore:EClass ../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//Description"
+        containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TargetDeployEnviroment" eSuperTypes="base.ecore#//Description">
+  <eClassifiers xsi:type="ecore:EClass" name="TargetDeployEnviroment" eSuperTypes="../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//Description">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="includeDevice" upperBound="-1"
-        eType="#//DeviceInstance" containment="true"/>
+        eType="#//AbstractDeviceInstance" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="configConnection" upperBound="-1"
         eType="#//ConfigConnection" containment="true"/>
   </eClassifiers>
@@ -18,24 +19,44 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="connectDevice" lowerBound="2"
         upperBound="-1" eType="#//ConnectedDevice" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DeviceInstance">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="refDeviceType" lowerBound="1"
-        eType="ecore:EClass device.ecore#//DeviceType"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ConnectedDevice">
     <eStructuralFeatures xsi:type="ecore:EReference" name="refDevice" lowerBound="1"
-        eType="#//DeviceInstance"/>
+        eType="#//AbstractDeviceInstance"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="refConnection" lowerBound="1"
-        eType="ecore:EClass device.ecore#//CommunicationConnection"/>
+        eType="ecore:EClass device.ecore#//AbstractCommunicationConnection"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
         eType="#//ConfigConnectionProperty" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ConfigConnectionProperty">
+  <eClassifiers xsi:type="ecore:EClass" name="ConfigConnectionProperty" eSuperTypes="#//AbstractConfigProperty">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="refConnectionProperty"
-        lowerBound="1" eType="ecore:EClass device.ecore#//ConnectionProperty" derived="true"
-        eKeys="device.ecore#//Property/name"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1" eType="ecore:EClass base.ecore#//PropertyValue"
+        lowerBound="1" eType="ecore:EClass device.ecore#//ConnectionProperty" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1" eType="ecore:EClass ../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//PropertyValue"
         containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComputationDeviceInstance" eSuperTypes="#//AbstractDeviceInstance">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refDeviceType" lowerBound="1"
+        eType="ecore:EClass device.ecore#//ComputationDeviceType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DeviceInstance" eSuperTypes="#//AbstractDeviceInstance">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refDeviceType" lowerBound="1"
+        eType="ecore:EClass device.ecore#//DeviceType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractDeviceInstance" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="configDeviceProperty" upperBound="-1"
+        eType="#//ConfigDeviceProperty" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConfigDeviceProperty" eSuperTypes="#//AbstractConfigProperty">
+    <eOperations name="getParent" eType="#//AbstractDeviceInstance"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from" lowerBound="1" eType="ecore:EClass device.ecore#//DeviceProperty"
+        derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1" eType="ecore:EClass ../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//PropertyValue"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fullname" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" changeable="false"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractConfigProperty" abstract="true"/>
 </ecore:EPackage>
