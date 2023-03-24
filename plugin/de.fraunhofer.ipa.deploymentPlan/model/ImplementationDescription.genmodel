@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.fraunhofer.ipa.deploymentPlan/src" modelPluginID="de.fraunhofer.ipa.deploymentPlan"
+    modelName="ImplementationDescription" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    usedGenPackages="../../de.fraunhofer.ipa.deployment.util/model/util.genmodel#//util"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>ImplementationDescription.ecore</foreignModel>
+  <genPackages prefix="ImplementationDescription" disposableProviderFactory="true"
+      ecorePackage="ImplementationDescription.ecore#/">
+    <genClasses image="false" ecoreClass="ImplementationDescription.ecore#//ExecutionRequirement"/>
+    <genClasses ecoreClass="ImplementationDescription.ecore#//ImplementationDescription">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ImplementationDescription.ecore#//ImplementationDescription/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ImplementationDescription.ecore#//ImplementationDescription/softwareDependency"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ImplementationDescription.ecore#//ImplementationDescription/includeSoftwareComponent"/>
+    </genClasses>
+    <genClasses ecoreClass="ImplementationDescription.ecore#//SoftwareComponent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ImplementationDescription.ecore#//SoftwareComponent/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ImplementationDescription.ecore#//SoftwareComponent/path"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ImplementationDescription.ecore#//SoftwareComponent/executionRequirement"/>
+    </genClasses>
+    <genClasses ecoreClass="ImplementationDescription.ecore#//DeviceRequirement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ImplementationDescription.ecore#//DeviceRequirement/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ImplementationDescription.ecore#//DeviceRequirement/parameter"/>
+    </genClasses>
+    <genClasses ecoreClass="ImplementationDescription.ecore#//SoftwareConfigurationRequirement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ImplementationDescription.ecore#//SoftwareConfigurationRequirement/parameter"/>
+    </genClasses>
+    <genClasses ecoreClass="ImplementationDescription.ecore#//HWSWParemeter"/>
+    <genClasses ecoreClass="ImplementationDescription.ecore#//SoftwareExecutionParemeter"/>
+    <genClasses ecoreClass="ImplementationDescription.ecore#//ExecutionProperty"/>
+  </genPackages>
+</genmodel:GenModel>

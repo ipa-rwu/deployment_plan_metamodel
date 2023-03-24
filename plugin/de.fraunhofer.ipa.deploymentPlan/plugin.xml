@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated deploymentPlan -->
+      <package
+            uri="http://www.ipa.fraunhofer.de/DeploymentPlan"
+            class="deploymentPlan.DeploymentPlanPackage"
+            genModel="model/deploymentPlan.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated ImplementationDescription -->
+      <package
+            uri="http://www.ipa.fraunhofer.de/ImplementationDescription"
+            class="implementationDescription.ImplementationDescriptionPackage"
+            genModel="model/ImplementationDescription.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated deployPlanWithRosModel -->
+      <package
+            uri="http://www.ipa.fraunhofer.de/DeployPlanWithRosModel"
+            class="deployPlanWithRosModel.DeployPlanWithRosModelPackage"
+            genModel="model/deployPlanWithRosModel.genmodel"/>
+   </extension>
+
+</plugin>
