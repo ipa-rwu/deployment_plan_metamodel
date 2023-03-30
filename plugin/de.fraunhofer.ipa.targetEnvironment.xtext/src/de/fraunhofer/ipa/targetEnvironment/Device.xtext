@@ -25,9 +25,6 @@ CapabilityType returns CapabilityType:
     name=EString
     ;
 
-DeviceTypeRef returns DeviceTypeRef:
-    deviceType=[DeviceType|EString]
-;
 
 DeviceType returns DeviceType:
     DeviceType_Impl | ComputationDeviceType;
@@ -84,10 +81,6 @@ DeviceType_Impl returns DeviceType:
         )?
     DEDENT
     ;
-
-AbstractDeviceConfig returns AbstractDeviceConfig:
-    {AbstractDeviceConfig}
-;
 
 DeviceProperty returns DeviceProperty:
     PreListElement 'name:' name=EString

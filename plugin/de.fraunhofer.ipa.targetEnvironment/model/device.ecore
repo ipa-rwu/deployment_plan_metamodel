@@ -43,14 +43,8 @@
         eType="#//AbstractNetworkProperty" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AbstractNetworkProperty" abstract="true"
-      eSuperTypes="../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//PropertyAttribute #//AbstractDeviceConfig"/>
+      eSuperTypes="../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//PropertyAttribute"/>
   <eClassifiers xsi:type="ecore:EClass" name="InterfaceNetworkProperty" eSuperTypes="#//AbstractNetworkProperty"/>
   <eClassifiers xsi:type="ecore:EClass" name="AddressNetworkProperty" eSuperTypes="#//AbstractNetworkProperty"/>
   <eClassifiers xsi:type="ecore:EClass" name="MacNetworkProperty" eSuperTypes="#//AbstractNetworkProperty"/>
-  <eClassifiers xsi:type="ecore:EClass" name="AbstractDeviceConfig" abstract="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="DeviceTypeRef" eSuperTypes="#//AbstractDeviceType">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="deviceType" lowerBound="1"
-        eType="#//DeviceType"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AbstractDeviceType" abstract="true"/>
 </ecore:EPackage>
