@@ -7,6 +7,7 @@ import de.fraunhofer.ipa.deployment.util.UtilPackage;
 import deploymentPlan.AbstarctConfigSoftwareComponent;
 import deploymentPlan.AbstractComputationAssignment;
 import deploymentPlan.AbstractConfigExecutionParameter;
+import deploymentPlan.AbstractConfigedValue;
 import deploymentPlan.AbstractDeploymentPlan;
 import deploymentPlan.AbstractExecutionConfiguration;
 import deploymentPlan.AbstractRealization;
@@ -23,12 +24,14 @@ import deploymentPlan.Plan;
 import deploymentPlan.ROSDistro;
 import deploymentPlan.Realization;
 
+import deploymentPlan.RosMiddleware;
 import device.DevicePackage;
 
 import implementationDescription.ImplementationDescriptionPackage;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -125,13 +128,6 @@ public class DeploymentPlanPackageImpl extends EPackageImpl implements Deploymen
      * <!-- end-user-doc -->
      * @generated
      */
-    private EClass rosDistroEClass = null;
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
     private EClass humbleROSDistroEClass = null;
 
     /**
@@ -156,6 +152,27 @@ public class DeploymentPlanPackageImpl extends EPackageImpl implements Deploymen
     private EClass abstarctConfigSoftwareComponentEClass = null;
 
     /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass rosMiddlewareEClass = null;
+
+                /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass abstractConfigedValueEClass = null;
+
+                                                                /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EEnum rosDistroEEnum = null;
+
+                /**
      * Creates an instance of the model <b>Package</b>, registered with
      * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
      * package URI value.
@@ -298,11 +315,11 @@ public class DeploymentPlanPackageImpl extends EPackageImpl implements Deploymen
      * <!-- end-user-doc -->
      * @generated
      */
-    public EReference getAbstractRealization_Realization() {
+    public EReference getAbstractRealization_Realizations() {
         return (EReference)abstractRealizationEClass.getEStructuralFeatures().get(0);
     }
 
-    /**
+                /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -325,35 +342,71 @@ public class DeploymentPlanPackageImpl extends EPackageImpl implements Deploymen
      * <!-- end-user-doc -->
      * @generated
      */
+    public EAttribute getAbstractComputationAssignment_Name() {
+        return (EAttribute)abstractComputationAssignmentEClass.getEStructuralFeatures().get(0);
+    }
+
+                /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public EReference getAbstractComputationAssignment_ExecutedBy() {
-        return (EReference)abstractComputationAssignmentEClass.getEStructuralFeatures().get(0);
+        return (EReference)abstractComputationAssignmentEClass.getEStructuralFeatures().get(1);
     }
 
     /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EReference getAbstractComputationAssignment_SoftwareComponents() {
+        return (EReference)abstractComputationAssignmentEClass.getEStructuralFeatures().get(2);
+    }
+
+                /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EReference getAbstractComputationAssignment_Middleware() {
+        return (EReference)abstractComputationAssignmentEClass.getEStructuralFeatures().get(5);
+    }
+
+                /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EReference getAbstractComputationAssignment_OpertingSystemType() {
+        return (EReference)abstractComputationAssignmentEClass.getEStructuralFeatures().get(6);
+    }
+
+                /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getAbstractComputationAssignment_OpertingSystemVersion() {
+        return (EAttribute)abstractComputationAssignmentEClass.getEStructuralFeatures().get(3);
+    }
+
+                /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getAbstractComputationAssignment_RuntimeType() {
+        return (EAttribute)abstractComputationAssignmentEClass.getEStructuralFeatures().get(4);
+    }
+
+                /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     public EClass getImplementationAssignment() {
         return implementationAssignmentEClass;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public EReference getImplementationAssignment_SoftwareComponent() {
-        return (EReference)implementationAssignmentEClass.getEStructuralFeatures().get(0);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public EReference getImplementationAssignment_Middleware() {
-        return (EReference)implementationAssignmentEClass.getEStructuralFeatures().get(1);
     }
 
     /**
@@ -424,8 +477,8 @@ public class DeploymentPlanPackageImpl extends EPackageImpl implements Deploymen
      * <!-- end-user-doc -->
      * @generated
      */
-    public EClass getROSDistro() {
-        return rosDistroEClass;
+    public EEnum getROSDistro() {
+        return rosDistroEEnum;
     }
 
     /**
@@ -532,6 +585,33 @@ public class DeploymentPlanPackageImpl extends EPackageImpl implements Deploymen
      * <!-- end-user-doc -->
      * @generated
      */
+    public EClass getRosMiddleware() {
+        return rosMiddlewareEClass;
+    }
+
+                /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getRosMiddleware_Value() {
+        return (EAttribute)rosMiddlewareEClass.getEStructuralFeatures().get(0);
+    }
+
+                /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getAbstractConfigedValue() {
+        return abstractConfigedValueEClass;
+    }
+
+                                                                /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public DeploymentPlanFactory getDeploymentPlanFactory() {
         return (DeploymentPlanFactory)getEFactoryInstance();
     }
@@ -558,37 +638,18 @@ public class DeploymentPlanPackageImpl extends EPackageImpl implements Deploymen
         planEClass = createEClass(PLAN);
         createEReference(planEClass, PLAN__PLAN);
 
-        abstractDeploymentPlanEClass = createEClass(ABSTRACT_DEPLOYMENT_PLAN);
-        createEAttribute(abstractDeploymentPlanEClass, ABSTRACT_DEPLOYMENT_PLAN__NAME);
-        createEReference(abstractDeploymentPlanEClass, ABSTRACT_DEPLOYMENT_PLAN__DEPLOY_TO);
-        createEReference(abstractDeploymentPlanEClass, ABSTRACT_DEPLOYMENT_PLAN__REALIZE);
-
         deploymentPlanEClass = createEClass(DEPLOYMENT_PLAN);
-
-        abstractRealizationEClass = createEClass(ABSTRACT_REALIZATION);
-        createEReference(abstractRealizationEClass, ABSTRACT_REALIZATION__REALIZATION);
 
         realizationEClass = createEClass(REALIZATION);
 
-        abstractComputationAssignmentEClass = createEClass(ABSTRACT_COMPUTATION_ASSIGNMENT);
-        createEReference(abstractComputationAssignmentEClass, ABSTRACT_COMPUTATION_ASSIGNMENT__EXECUTED_BY);
-
         implementationAssignmentEClass = createEClass(IMPLEMENTATION_ASSIGNMENT);
-        createEReference(implementationAssignmentEClass, IMPLEMENTATION_ASSIGNMENT__SOFTWARE_COMPONENT);
-        createEReference(implementationAssignmentEClass, IMPLEMENTATION_ASSIGNMENT__MIDDLEWARE);
-
-        abstractConfigExecutionParameterEClass = createEClass(ABSTRACT_CONFIG_EXECUTION_PARAMETER);
 
         configExecutionParameterEClass = createEClass(CONFIG_EXECUTION_PARAMETER);
         createEReference(configExecutionParameterEClass, CONFIG_EXECUTION_PARAMETER__FROM);
         createEReference(configExecutionParameterEClass, CONFIG_EXECUTION_PARAMETER__TO);
         createEReference(configExecutionParameterEClass, CONFIG_EXECUTION_PARAMETER__VALUE);
 
-        abstractExecutionConfigurationEClass = createEClass(ABSTRACT_EXECUTION_CONFIGURATION);
-
         middlewareEClass = createEClass(MIDDLEWARE);
-
-        rosDistroEClass = createEClass(ROS_DISTRO);
 
         humbleROSDistroEClass = createEClass(HUMBLE_ROS_DISTRO);
         createEAttribute(humbleROSDistroEClass, HUMBLE_ROS_DISTRO__VERSION);
@@ -601,9 +662,38 @@ public class DeploymentPlanPackageImpl extends EPackageImpl implements Deploymen
         configSoftwareComponentEClass = createEClass(CONFIG_SOFTWARE_COMPONENT);
         createEReference(configSoftwareComponentEClass, CONFIG_SOFTWARE_COMPONENT__COMPONENT);
 
+        abstractRealizationEClass = createEClass(ABSTRACT_REALIZATION);
+        createEReference(abstractRealizationEClass, ABSTRACT_REALIZATION__REALIZATIONS);
+
+        abstractConfigExecutionParameterEClass = createEClass(ABSTRACT_CONFIG_EXECUTION_PARAMETER);
+
+        abstractComputationAssignmentEClass = createEClass(ABSTRACT_COMPUTATION_ASSIGNMENT);
+        createEAttribute(abstractComputationAssignmentEClass, ABSTRACT_COMPUTATION_ASSIGNMENT__NAME);
+        createEReference(abstractComputationAssignmentEClass, ABSTRACT_COMPUTATION_ASSIGNMENT__EXECUTED_BY);
+        createEReference(abstractComputationAssignmentEClass, ABSTRACT_COMPUTATION_ASSIGNMENT__SOFTWARE_COMPONENTS);
+        createEAttribute(abstractComputationAssignmentEClass, ABSTRACT_COMPUTATION_ASSIGNMENT__OPERTING_SYSTEM_VERSION);
+        createEAttribute(abstractComputationAssignmentEClass, ABSTRACT_COMPUTATION_ASSIGNMENT__RUNTIME_TYPE);
+        createEReference(abstractComputationAssignmentEClass, ABSTRACT_COMPUTATION_ASSIGNMENT__MIDDLEWARE);
+        createEReference(abstractComputationAssignmentEClass, ABSTRACT_COMPUTATION_ASSIGNMENT__OPERTING_SYSTEM_TYPE);
+
+        abstractExecutionConfigurationEClass = createEClass(ABSTRACT_EXECUTION_CONFIGURATION);
+
+        abstractDeploymentPlanEClass = createEClass(ABSTRACT_DEPLOYMENT_PLAN);
+        createEAttribute(abstractDeploymentPlanEClass, ABSTRACT_DEPLOYMENT_PLAN__NAME);
+        createEReference(abstractDeploymentPlanEClass, ABSTRACT_DEPLOYMENT_PLAN__DEPLOY_TO);
+        createEReference(abstractDeploymentPlanEClass, ABSTRACT_DEPLOYMENT_PLAN__REALIZE);
+
         abstarctConfigSoftwareComponentEClass = createEClass(ABSTARCT_CONFIG_SOFTWARE_COMPONENT);
         createEReference(abstarctConfigSoftwareComponentEClass, ABSTARCT_CONFIG_SOFTWARE_COMPONENT__EXECUTION_CONFIGURATION);
         createEAttribute(abstarctConfigSoftwareComponentEClass, ABSTARCT_CONFIG_SOFTWARE_COMPONENT__START_COMMAND);
+
+        rosMiddlewareEClass = createEClass(ROS_MIDDLEWARE);
+        createEAttribute(rosMiddlewareEClass, ROS_MIDDLEWARE__VALUE);
+
+        abstractConfigedValueEClass = createEClass(ABSTRACT_CONFIGED_VALUE);
+
+        // Create enums
+        rosDistroEEnum = createEEnum(ROS_DISTRO);
     }
 
     /**
@@ -630,8 +720,8 @@ public class DeploymentPlanPackageImpl extends EPackageImpl implements Deploymen
         setNsURI(eNS_URI);
 
         // Obtain other dependent packages
-        TargetEnvironmentPackage theTargetEnvironmentPackage = (TargetEnvironmentPackage)EPackage.Registry.INSTANCE.getEPackage(TargetEnvironmentPackage.eNS_URI);
         ImplementationDescriptionPackage theImplementationDescriptionPackage = (ImplementationDescriptionPackage)EPackage.Registry.INSTANCE.getEPackage(ImplementationDescriptionPackage.eNS_URI);
+        TargetEnvironmentPackage theTargetEnvironmentPackage = (TargetEnvironmentPackage)EPackage.Registry.INSTANCE.getEPackage(TargetEnvironmentPackage.eNS_URI);
         UtilPackage theUtilPackage = (UtilPackage)EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI);
 
         // Create type parameters
@@ -643,46 +733,25 @@ public class DeploymentPlanPackageImpl extends EPackageImpl implements Deploymen
         realizationEClass.getESuperTypes().add(this.getAbstractRealization());
         implementationAssignmentEClass.getESuperTypes().add(this.getAbstractComputationAssignment());
         configExecutionParameterEClass.getESuperTypes().add(this.getAbstractConfigExecutionParameter());
-        rosDistroEClass.getESuperTypes().add(this.getMiddleware());
-        humbleROSDistroEClass.getESuperTypes().add(this.getROSDistro());
-        noeticROSDistroEClass.getESuperTypes().add(this.getROSDistro());
         configSoftwareComponentEClass.getESuperTypes().add(this.getAbstarctConfigSoftwareComponent());
+        rosMiddlewareEClass.getESuperTypes().add(this.getMiddleware());
 
         // Initialize classes, features, and operations; add parameters
         initEClass(planEClass, Plan.class, "Plan", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEReference(getPlan_Plan(), this.getAbstractDeploymentPlan(), null, "plan", null, 1, 1, Plan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-        initEClass(abstractDeploymentPlanEClass, AbstractDeploymentPlan.class, "AbstractDeploymentPlan", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEAttribute(getAbstractDeploymentPlan_Name(), ecorePackage.getEString(), "name", null, 1, 1, AbstractDeploymentPlan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        initEReference(getAbstractDeploymentPlan_DeployTo(), theTargetEnvironmentPackage.getTargetDeployEnviroment(), null, "deployTo", null, 1, 1, AbstractDeploymentPlan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        initEReference(getAbstractDeploymentPlan_Realize(), this.getAbstractRealization(), null, "realize", null, 1, 1, AbstractDeploymentPlan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
         initEClass(deploymentPlanEClass, DeploymentPlan.class, "DeploymentPlan", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-        initEClass(abstractRealizationEClass, AbstractRealization.class, "AbstractRealization", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEReference(getAbstractRealization_Realization(), this.getAbstractComputationAssignment(), null, "realization", null, 0, -1, AbstractRealization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(realizationEClass, Realization.class, "Realization", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-        initEClass(abstractComputationAssignmentEClass, AbstractComputationAssignment.class, "AbstractComputationAssignment", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEReference(getAbstractComputationAssignment_ExecutedBy(), theTargetEnvironmentPackage.getComputationDeviceInstance(), null, "executedBy", null, 1, 1, AbstractComputationAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
         initEClass(implementationAssignmentEClass, ImplementationAssignment.class, "ImplementationAssignment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEReference(getImplementationAssignment_SoftwareComponent(), this.getConfigSoftwareComponent(), null, "softwareComponent", null, 1, -1, ImplementationAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        initEReference(getImplementationAssignment_Middleware(), this.getMiddleware(), null, "middleware", null, 0, -1, ImplementationAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-        initEClass(abstractConfigExecutionParameterEClass, AbstractConfigExecutionParameter.class, "AbstractConfigExecutionParameter", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
         initEClass(configExecutionParameterEClass, ConfigExecutionParameter.class, "ConfigExecutionParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEReference(getConfigExecutionParameter_From(), theImplementationDescriptionPackage.getExecutionProperty(), null, "from", null, 1, 1, ConfigExecutionParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEReference(getConfigExecutionParameter_To(), theTargetEnvironmentPackage.getAbstractConfigProperty(), null, "to", null, 0, 1, ConfigExecutionParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEReference(getConfigExecutionParameter_Value(), theUtilPackage.getPropertyValue(), null, "value", null, 0, 1, ConfigExecutionParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-        initEClass(abstractExecutionConfigurationEClass, AbstractExecutionConfiguration.class, "AbstractExecutionConfiguration", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
         initEClass(middlewareEClass, Middleware.class, "Middleware", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-        initEClass(rosDistroEClass, ROSDistro.class, "ROSDistro", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
         initEClass(humbleROSDistroEClass, HumbleROSDistro.class, "HumbleROSDistro", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEAttribute(getHumbleROSDistro_Version(), ecorePackage.getEString(), "version", "2", 1, 1, HumbleROSDistro.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -695,9 +764,42 @@ public class DeploymentPlanPackageImpl extends EPackageImpl implements Deploymen
         initEClass(configSoftwareComponentEClass, ConfigSoftwareComponent.class, "ConfigSoftwareComponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEReference(getConfigSoftwareComponent_Component(), theUtilPackage.getAbstractComputationAssignmentTarget(), null, "component", null, 1, 1, ConfigSoftwareComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+        initEClass(abstractRealizationEClass, AbstractRealization.class, "AbstractRealization", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEReference(getAbstractRealization_Realizations(), this.getAbstractComputationAssignment(), null, "realizations", null, 0, -1, AbstractRealization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+        initEClass(abstractConfigExecutionParameterEClass, AbstractConfigExecutionParameter.class, "AbstractConfigExecutionParameter", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+        initEClass(abstractComputationAssignmentEClass, AbstractComputationAssignment.class, "AbstractComputationAssignment", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEAttribute(getAbstractComputationAssignment_Name(), ecorePackage.getEString(), "name", null, 1, 1, AbstractComputationAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEReference(getAbstractComputationAssignment_ExecutedBy(), theTargetEnvironmentPackage.getComputationDeviceInstance(), null, "executedBy", null, 1, 1, AbstractComputationAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEReference(getAbstractComputationAssignment_SoftwareComponents(), this.getAbstarctConfigSoftwareComponent(), null, "softwareComponents", null, 1, -1, AbstractComputationAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getAbstractComputationAssignment_OpertingSystemVersion(), ecorePackage.getEString(), "opertingSystemVersion", null, 0, 1, AbstractComputationAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getAbstractComputationAssignment_RuntimeType(), theUtilPackage.getRunTimeType(), "runtimeType", null, 0, 1, AbstractComputationAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEReference(getAbstractComputationAssignment_Middleware(), this.getMiddleware(), null, "middleware", null, 0, 1, AbstractComputationAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEReference(getAbstractComputationAssignment_OpertingSystemType(), theUtilPackage.getOpertingSystemName(), null, "opertingSystemType", null, 0, 1, AbstractComputationAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+        initEClass(abstractExecutionConfigurationEClass, AbstractExecutionConfiguration.class, "AbstractExecutionConfiguration", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+        initEClass(abstractDeploymentPlanEClass, AbstractDeploymentPlan.class, "AbstractDeploymentPlan", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEAttribute(getAbstractDeploymentPlan_Name(), ecorePackage.getEString(), "name", null, 1, 1, AbstractDeploymentPlan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEReference(getAbstractDeploymentPlan_DeployTo(), theTargetEnvironmentPackage.getTargetDeployEnviroment(), null, "deployTo", null, 1, 1, AbstractDeploymentPlan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEReference(getAbstractDeploymentPlan_Realize(), this.getAbstractRealization(), null, "realize", null, 1, 1, AbstractDeploymentPlan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
         initEClass(abstarctConfigSoftwareComponentEClass, AbstarctConfigSoftwareComponent.class, "AbstarctConfigSoftwareComponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEReference(getAbstarctConfigSoftwareComponent_ExecutionConfiguration(), this.getAbstractConfigExecutionParameter(), null, "executionConfiguration", null, 0, -1, AbstarctConfigSoftwareComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEAttribute(getAbstarctConfigSoftwareComponent_StartCommand(), ecorePackage.getEString(), "startCommand", null, 0, -1, AbstarctConfigSoftwareComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+        initEClass(rosMiddlewareEClass, RosMiddleware.class, "RosMiddleware", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEAttribute(getRosMiddleware_Value(), this.getROSDistro(), "value", null, 1, 1, RosMiddleware.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+        initEClass(abstractConfigedValueEClass, AbstractConfigedValue.class, "AbstractConfigedValue", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+        // Initialize enums and add enum literals
+        initEEnum(rosDistroEEnum, ROSDistro.class, "ROSDistro");
+        addEEnumLiteral(rosDistroEEnum, ROSDistro.NOETIC);
+        addEEnumLiteral(rosDistroEEnum, ROSDistro.HUMBLE);
+        addEEnumLiteral(rosDistroEEnum, ROSDistro.ROLLING);
+        addEEnumLiteral(rosDistroEEnum, ROSDistro.GALACTIC);
 
         // Create resource
         createResource(eNS_URI);

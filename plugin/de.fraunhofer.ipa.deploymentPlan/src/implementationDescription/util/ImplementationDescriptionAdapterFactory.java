@@ -105,6 +105,18 @@ public class ImplementationDescriptionAdapterFactory extends AdapterFactoryImpl 
                 return createExecutionPropertyAdapter();
             }
             @Override
+            public Adapter caseRepository(Repository object) {
+                return createRepositoryAdapter();
+            }
+            @Override
+            public Adapter caseRepositoryType(RepositoryType object) {
+                return createRepositoryTypeAdapter();
+            }
+            @Override
+            public Adapter caseGitRepositoryType(GitRepositoryType object) {
+                return createGitRepositoryTypeAdapter();
+            }
+            @Override
             public Adapter caseAbstractImplementation(AbstractImplementation object) {
                 return createAbstractImplementationAdapter();
             }
@@ -249,6 +261,48 @@ public class ImplementationDescriptionAdapterFactory extends AdapterFactoryImpl 
      * @generated
      */
     public Adapter createExecutionPropertyAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link implementationDescription.Repository <em>Repository</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see implementationDescription.Repository
+     * @generated
+     */
+    public Adapter createRepositoryAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link implementationDescription.RepositoryType <em>Repository Type</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see implementationDescription.RepositoryType
+     * @generated
+     */
+    public Adapter createRepositoryTypeAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link implementationDescription.GitRepositoryType <em>Git Repository Type</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see implementationDescription.GitRepositoryType
+     * @generated
+     */
+    public Adapter createGitRepositoryTypeAdapter() {
         return null;
     }
 

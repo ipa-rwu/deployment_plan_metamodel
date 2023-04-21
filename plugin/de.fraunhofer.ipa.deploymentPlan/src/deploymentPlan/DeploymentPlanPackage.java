@@ -4,6 +4,7 @@ package deploymentPlan;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -101,7 +102,7 @@ public interface DeploymentPlanPackage extends EPackage {
      * @see deploymentPlan.impl.DeploymentPlanPackageImpl#getAbstractDeploymentPlan()
      * @generated
      */
-    int ABSTRACT_DEPLOYMENT_PLAN = 1;
+    int ABSTRACT_DEPLOYMENT_PLAN = 13;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -156,7 +157,7 @@ public interface DeploymentPlanPackage extends EPackage {
      * @see deploymentPlan.impl.DeploymentPlanPackageImpl#getDeploymentPlan()
      * @generated
      */
-    int DEPLOYMENT_PLAN = 2;
+    int DEPLOYMENT_PLAN = 1;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -211,18 +212,18 @@ public interface DeploymentPlanPackage extends EPackage {
      * @see deploymentPlan.impl.DeploymentPlanPackageImpl#getAbstractRealization()
      * @generated
      */
-    int ABSTRACT_REALIZATION = 3;
+    int ABSTRACT_REALIZATION = 9;
 
     /**
-     * The feature id for the '<em><b>Realization</b></em>' containment reference list.
+     * The feature id for the '<em><b>Realizations</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int ABSTRACT_REALIZATION__REALIZATION = 0;
+    int ABSTRACT_REALIZATION__REALIZATIONS = 0;
 
-    /**
+                /**
      * The number of structural features of the '<em>Abstract Realization</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -248,18 +249,18 @@ public interface DeploymentPlanPackage extends EPackage {
      * @see deploymentPlan.impl.DeploymentPlanPackageImpl#getRealization()
      * @generated
      */
-    int REALIZATION = 4;
+    int REALIZATION = 2;
 
     /**
-     * The feature id for the '<em><b>Realization</b></em>' containment reference list.
+     * The feature id for the '<em><b>Realizations</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int REALIZATION__REALIZATION = ABSTRACT_REALIZATION__REALIZATION;
+    int REALIZATION__REALIZATIONS = ABSTRACT_REALIZATION__REALIZATIONS;
 
-    /**
+                /**
      * The number of structural features of the '<em>Realization</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -285,25 +286,79 @@ public interface DeploymentPlanPackage extends EPackage {
      * @see deploymentPlan.impl.DeploymentPlanPackageImpl#getAbstractComputationAssignment()
      * @generated
      */
-    int ABSTRACT_COMPUTATION_ASSIGNMENT = 5;
+    int ABSTRACT_COMPUTATION_ASSIGNMENT = 11;
 
     /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_COMPUTATION_ASSIGNMENT__NAME = 0;
+
+                /**
      * The feature id for the '<em><b>Executed By</b></em>' reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int ABSTRACT_COMPUTATION_ASSIGNMENT__EXECUTED_BY = 0;
+    int ABSTRACT_COMPUTATION_ASSIGNMENT__EXECUTED_BY = 1;
 
     /**
+     * The feature id for the '<em><b>Software Components</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_COMPUTATION_ASSIGNMENT__SOFTWARE_COMPONENTS = 2;
+
+                /**
+     * The feature id for the '<em><b>Operting System Version</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_COMPUTATION_ASSIGNMENT__OPERTING_SYSTEM_VERSION = 3;
+
+                /**
+     * The feature id for the '<em><b>Runtime Type</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_COMPUTATION_ASSIGNMENT__RUNTIME_TYPE = 4;
+
+                /**
+     * The feature id for the '<em><b>Middleware</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_COMPUTATION_ASSIGNMENT__MIDDLEWARE = 5;
+
+                /**
+     * The feature id for the '<em><b>Operting System Type</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_COMPUTATION_ASSIGNMENT__OPERTING_SYSTEM_TYPE = 6;
+
+                /**
      * The number of structural features of the '<em>Abstract Computation Assignment</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int ABSTRACT_COMPUTATION_ASSIGNMENT_FEATURE_COUNT = 1;
+    int ABSTRACT_COMPUTATION_ASSIGNMENT_FEATURE_COUNT = 7;
 
     /**
      * The number of operations of the '<em>Abstract Computation Assignment</em>' class.
@@ -322,9 +377,18 @@ public interface DeploymentPlanPackage extends EPackage {
      * @see deploymentPlan.impl.DeploymentPlanPackageImpl#getImplementationAssignment()
      * @generated
      */
-    int IMPLEMENTATION_ASSIGNMENT = 6;
+    int IMPLEMENTATION_ASSIGNMENT = 3;
 
     /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int IMPLEMENTATION_ASSIGNMENT__NAME = ABSTRACT_COMPUTATION_ASSIGNMENT__NAME;
+
+                /**
      * The feature id for the '<em><b>Executed By</b></em>' reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -334,31 +398,58 @@ public interface DeploymentPlanPackage extends EPackage {
     int IMPLEMENTATION_ASSIGNMENT__EXECUTED_BY = ABSTRACT_COMPUTATION_ASSIGNMENT__EXECUTED_BY;
 
     /**
-     * The feature id for the '<em><b>Software Component</b></em>' containment reference list.
+     * The feature id for the '<em><b>Software Components</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int IMPLEMENTATION_ASSIGNMENT__SOFTWARE_COMPONENT = ABSTRACT_COMPUTATION_ASSIGNMENT_FEATURE_COUNT + 0;
+    int IMPLEMENTATION_ASSIGNMENT__SOFTWARE_COMPONENTS = ABSTRACT_COMPUTATION_ASSIGNMENT__SOFTWARE_COMPONENTS;
 
-    /**
-     * The feature id for the '<em><b>Middleware</b></em>' containment reference list.
+                /**
+     * The feature id for the '<em><b>Operting System Version</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int IMPLEMENTATION_ASSIGNMENT__MIDDLEWARE = ABSTRACT_COMPUTATION_ASSIGNMENT_FEATURE_COUNT + 1;
+    int IMPLEMENTATION_ASSIGNMENT__OPERTING_SYSTEM_VERSION = ABSTRACT_COMPUTATION_ASSIGNMENT__OPERTING_SYSTEM_VERSION;
 
-    /**
+                /**
+     * The feature id for the '<em><b>Runtime Type</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int IMPLEMENTATION_ASSIGNMENT__RUNTIME_TYPE = ABSTRACT_COMPUTATION_ASSIGNMENT__RUNTIME_TYPE;
+
+                /**
+     * The feature id for the '<em><b>Middleware</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int IMPLEMENTATION_ASSIGNMENT__MIDDLEWARE = ABSTRACT_COMPUTATION_ASSIGNMENT__MIDDLEWARE;
+
+                /**
+     * The feature id for the '<em><b>Operting System Type</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int IMPLEMENTATION_ASSIGNMENT__OPERTING_SYSTEM_TYPE = ABSTRACT_COMPUTATION_ASSIGNMENT__OPERTING_SYSTEM_TYPE;
+
+                /**
      * The number of structural features of the '<em>Implementation Assignment</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int IMPLEMENTATION_ASSIGNMENT_FEATURE_COUNT = ABSTRACT_COMPUTATION_ASSIGNMENT_FEATURE_COUNT + 2;
+    int IMPLEMENTATION_ASSIGNMENT_FEATURE_COUNT = ABSTRACT_COMPUTATION_ASSIGNMENT_FEATURE_COUNT + 0;
 
     /**
      * The number of operations of the '<em>Implementation Assignment</em>' class.
@@ -377,7 +468,7 @@ public interface DeploymentPlanPackage extends EPackage {
      * @see deploymentPlan.impl.DeploymentPlanPackageImpl#getAbstractConfigExecutionParameter()
      * @generated
      */
-    int ABSTRACT_CONFIG_EXECUTION_PARAMETER = 7;
+    int ABSTRACT_CONFIG_EXECUTION_PARAMETER = 10;
 
     /**
      * The number of structural features of the '<em>Abstract Config Execution Parameter</em>' class.
@@ -405,7 +496,7 @@ public interface DeploymentPlanPackage extends EPackage {
      * @see deploymentPlan.impl.DeploymentPlanPackageImpl#getConfigExecutionParameter()
      * @generated
      */
-    int CONFIG_EXECUTION_PARAMETER = 8;
+    int CONFIG_EXECUTION_PARAMETER = 4;
 
     /**
      * The feature id for the '<em><b>From</b></em>' reference.
@@ -460,25 +551,7 @@ public interface DeploymentPlanPackage extends EPackage {
      * @see deploymentPlan.impl.DeploymentPlanPackageImpl#getAbstractExecutionConfiguration()
      * @generated
      */
-    int ABSTRACT_EXECUTION_CONFIGURATION = 9;
-
-    /**
-     * The number of structural features of the '<em>Abstract Execution Configuration</em>' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int ABSTRACT_EXECUTION_CONFIGURATION_FEATURE_COUNT = 0;
-
-    /**
-     * The number of operations of the '<em>Abstract Execution Configuration</em>' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int ABSTRACT_EXECUTION_CONFIGURATION_OPERATION_COUNT = 0;
+    int ABSTRACT_EXECUTION_CONFIGURATION = 12;
 
     /**
      * The meta object id for the '{@link deploymentPlan.impl.MiddlewareImpl <em>Middleware</em>}' class.
@@ -488,7 +561,7 @@ public interface DeploymentPlanPackage extends EPackage {
      * @see deploymentPlan.impl.DeploymentPlanPackageImpl#getMiddleware()
      * @generated
      */
-    int MIDDLEWARE = 10;
+    int MIDDLEWARE = 5;
 
     /**
      * The number of structural features of the '<em>Middleware</em>' class.
@@ -509,32 +582,14 @@ public interface DeploymentPlanPackage extends EPackage {
     int MIDDLEWARE_OPERATION_COUNT = 0;
 
     /**
-     * The meta object id for the '{@link deploymentPlan.impl.ROSDistroImpl <em>ROS Distro</em>}' class.
+     * The meta object id for the '{@link deploymentPlan.ROSDistro <em>ROS Distro</em>}' enum.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see deploymentPlan.impl.ROSDistroImpl
+     * @see deploymentPlan.ROSDistro
      * @see deploymentPlan.impl.DeploymentPlanPackageImpl#getROSDistro()
      * @generated
      */
-    int ROS_DISTRO = 11;
-
-    /**
-     * The number of structural features of the '<em>ROS Distro</em>' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int ROS_DISTRO_FEATURE_COUNT = MIDDLEWARE_FEATURE_COUNT + 0;
-
-    /**
-     * The number of operations of the '<em>ROS Distro</em>' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int ROS_DISTRO_OPERATION_COUNT = MIDDLEWARE_OPERATION_COUNT + 0;
+    int ROS_DISTRO = 17;
 
     /**
      * The meta object id for the '{@link deploymentPlan.impl.HumbleROSDistroImpl <em>Humble ROS Distro</em>}' class.
@@ -544,7 +599,7 @@ public interface DeploymentPlanPackage extends EPackage {
      * @see deploymentPlan.impl.DeploymentPlanPackageImpl#getHumbleROSDistro()
      * @generated
      */
-    int HUMBLE_ROS_DISTRO = 12;
+    int HUMBLE_ROS_DISTRO = 6;
 
     /**
      * The feature id for the '<em><b>Version</b></em>' attribute.
@@ -553,7 +608,7 @@ public interface DeploymentPlanPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int HUMBLE_ROS_DISTRO__VERSION = ROS_DISTRO_FEATURE_COUNT + 0;
+    int HUMBLE_ROS_DISTRO__VERSION = 0;
 
     /**
      * The feature id for the '<em><b>Distro</b></em>' attribute.
@@ -562,7 +617,7 @@ public interface DeploymentPlanPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int HUMBLE_ROS_DISTRO__DISTRO = ROS_DISTRO_FEATURE_COUNT + 1;
+    int HUMBLE_ROS_DISTRO__DISTRO = 1;
 
     /**
      * The number of structural features of the '<em>Humble ROS Distro</em>' class.
@@ -571,7 +626,7 @@ public interface DeploymentPlanPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int HUMBLE_ROS_DISTRO_FEATURE_COUNT = ROS_DISTRO_FEATURE_COUNT + 2;
+    int HUMBLE_ROS_DISTRO_FEATURE_COUNT = 2;
 
     /**
      * The number of operations of the '<em>Humble ROS Distro</em>' class.
@@ -580,7 +635,7 @@ public interface DeploymentPlanPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int HUMBLE_ROS_DISTRO_OPERATION_COUNT = ROS_DISTRO_OPERATION_COUNT + 0;
+    int HUMBLE_ROS_DISTRO_OPERATION_COUNT = 0;
 
     /**
      * The meta object id for the '{@link deploymentPlan.impl.NoeticROSDistroImpl <em>Noetic ROS Distro</em>}' class.
@@ -590,7 +645,7 @@ public interface DeploymentPlanPackage extends EPackage {
      * @see deploymentPlan.impl.DeploymentPlanPackageImpl#getNoeticROSDistro()
      * @generated
      */
-    int NOETIC_ROS_DISTRO = 13;
+    int NOETIC_ROS_DISTRO = 7;
 
     /**
      * The feature id for the '<em><b>Version</b></em>' attribute.
@@ -599,7 +654,7 @@ public interface DeploymentPlanPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int NOETIC_ROS_DISTRO__VERSION = ROS_DISTRO_FEATURE_COUNT + 0;
+    int NOETIC_ROS_DISTRO__VERSION = 0;
 
     /**
      * The feature id for the '<em><b>Distro</b></em>' attribute.
@@ -608,7 +663,7 @@ public interface DeploymentPlanPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int NOETIC_ROS_DISTRO__DISTRO = ROS_DISTRO_FEATURE_COUNT + 1;
+    int NOETIC_ROS_DISTRO__DISTRO = 1;
 
     /**
      * The number of structural features of the '<em>Noetic ROS Distro</em>' class.
@@ -617,7 +672,7 @@ public interface DeploymentPlanPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int NOETIC_ROS_DISTRO_FEATURE_COUNT = ROS_DISTRO_FEATURE_COUNT + 2;
+    int NOETIC_ROS_DISTRO_FEATURE_COUNT = 2;
 
     /**
      * The number of operations of the '<em>Noetic ROS Distro</em>' class.
@@ -626,7 +681,7 @@ public interface DeploymentPlanPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int NOETIC_ROS_DISTRO_OPERATION_COUNT = ROS_DISTRO_OPERATION_COUNT + 0;
+    int NOETIC_ROS_DISTRO_OPERATION_COUNT = 0;
 
     /**
      * The meta object id for the '{@link deploymentPlan.impl.AbstarctConfigSoftwareComponentImpl <em>Abstarct Config Software Component</em>}' class.
@@ -636,7 +691,7 @@ public interface DeploymentPlanPackage extends EPackage {
      * @see deploymentPlan.impl.DeploymentPlanPackageImpl#getAbstarctConfigSoftwareComponent()
      * @generated
      */
-    int ABSTARCT_CONFIG_SOFTWARE_COMPONENT = 15;
+    int ABSTARCT_CONFIG_SOFTWARE_COMPONENT = 14;
 
     /**
      * The feature id for the '<em><b>Execution Configuration</b></em>' containment reference list.
@@ -682,7 +737,7 @@ public interface DeploymentPlanPackage extends EPackage {
      * @see deploymentPlan.impl.DeploymentPlanPackageImpl#getConfigSoftwareComponent()
      * @generated
      */
-    int CONFIG_SOFTWARE_COMPONENT = 14;
+    int CONFIG_SOFTWARE_COMPONENT = 8;
 
     /**
      * The feature id for the '<em><b>Execution Configuration</b></em>' containment reference list.
@@ -729,8 +784,93 @@ public interface DeploymentPlanPackage extends EPackage {
      */
     int CONFIG_SOFTWARE_COMPONENT_OPERATION_COUNT = ABSTARCT_CONFIG_SOFTWARE_COMPONENT_OPERATION_COUNT + 0;
 
+                /**
+     * The number of structural features of the '<em>Abstract Execution Configuration</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_EXECUTION_CONFIGURATION_FEATURE_COUNT = 0;
+
+                /**
+     * The number of operations of the '<em>Abstract Execution Configuration</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_EXECUTION_CONFIGURATION_OPERATION_COUNT = 0;
+
 
     /**
+     * The meta object id for the '{@link deploymentPlan.impl.RosMiddlewareImpl <em>Ros Middleware</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see deploymentPlan.impl.RosMiddlewareImpl
+     * @see deploymentPlan.impl.DeploymentPlanPackageImpl#getRosMiddleware()
+     * @generated
+     */
+    int ROS_MIDDLEWARE = 15;
+
+                /**
+     * The feature id for the '<em><b>Value</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ROS_MIDDLEWARE__VALUE = MIDDLEWARE_FEATURE_COUNT + 0;
+
+                /**
+     * The number of structural features of the '<em>Ros Middleware</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ROS_MIDDLEWARE_FEATURE_COUNT = MIDDLEWARE_FEATURE_COUNT + 1;
+
+                /**
+     * The number of operations of the '<em>Ros Middleware</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ROS_MIDDLEWARE_OPERATION_COUNT = MIDDLEWARE_OPERATION_COUNT + 0;
+
+
+                /**
+     * The meta object id for the '{@link deploymentPlan.impl.AbstractConfigedValueImpl <em>Abstract Configed Value</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see deploymentPlan.impl.AbstractConfigedValueImpl
+     * @see deploymentPlan.impl.DeploymentPlanPackageImpl#getAbstractConfigedValue()
+     * @generated
+     */
+    int ABSTRACT_CONFIGED_VALUE = 16;
+
+                                                                /**
+     * The number of structural features of the '<em>Abstract Configed Value</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_CONFIGED_VALUE_FEATURE_COUNT = 0;
+
+                                                                /**
+     * The number of operations of the '<em>Abstract Configed Value</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_CONFIGED_VALUE_OPERATION_COUNT = 0;
+
+
+                                                                /**
      * Returns the meta object for class '{@link deploymentPlan.Plan <em>Plan</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -815,17 +955,17 @@ public interface DeploymentPlanPackage extends EPackage {
     EClass getAbstractRealization();
 
     /**
-     * Returns the meta object for the containment reference list '{@link deploymentPlan.AbstractRealization#getRealization <em>Realization</em>}'.
+     * Returns the meta object for the containment reference list '{@link deploymentPlan.AbstractRealization#getRealizations <em>Realizations</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the containment reference list '<em>Realization</em>'.
-     * @see deploymentPlan.AbstractRealization#getRealization()
+     * @return the meta object for the containment reference list '<em>Realizations</em>'.
+     * @see deploymentPlan.AbstractRealization#getRealizations()
      * @see #getAbstractRealization()
      * @generated
      */
-    EReference getAbstractRealization_Realization();
+    EReference getAbstractRealization_Realizations();
 
-    /**
+                /**
      * Returns the meta object for class '{@link deploymentPlan.Realization <em>Realization</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -846,6 +986,17 @@ public interface DeploymentPlanPackage extends EPackage {
     EClass getAbstractComputationAssignment();
 
     /**
+     * Returns the meta object for the attribute '{@link deploymentPlan.AbstractComputationAssignment#getName <em>Name</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Name</em>'.
+     * @see deploymentPlan.AbstractComputationAssignment#getName()
+     * @see #getAbstractComputationAssignment()
+     * @generated
+     */
+    EAttribute getAbstractComputationAssignment_Name();
+
+                /**
      * Returns the meta object for the reference '{@link deploymentPlan.AbstractComputationAssignment#getExecutedBy <em>Executed By</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -857,6 +1008,61 @@ public interface DeploymentPlanPackage extends EPackage {
     EReference getAbstractComputationAssignment_ExecutedBy();
 
     /**
+     * Returns the meta object for the containment reference list '{@link deploymentPlan.AbstractComputationAssignment#getSoftwareComponents <em>Software Components</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the containment reference list '<em>Software Components</em>'.
+     * @see deploymentPlan.AbstractComputationAssignment#getSoftwareComponents()
+     * @see #getAbstractComputationAssignment()
+     * @generated
+     */
+    EReference getAbstractComputationAssignment_SoftwareComponents();
+
+                /**
+     * Returns the meta object for the containment reference '{@link deploymentPlan.AbstractComputationAssignment#getMiddleware <em>Middleware</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the containment reference '<em>Middleware</em>'.
+     * @see deploymentPlan.AbstractComputationAssignment#getMiddleware()
+     * @see #getAbstractComputationAssignment()
+     * @generated
+     */
+    EReference getAbstractComputationAssignment_Middleware();
+
+                /**
+     * Returns the meta object for the containment reference '{@link deploymentPlan.AbstractComputationAssignment#getOpertingSystemType <em>Operting System Type</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the containment reference '<em>Operting System Type</em>'.
+     * @see deploymentPlan.AbstractComputationAssignment#getOpertingSystemType()
+     * @see #getAbstractComputationAssignment()
+     * @generated
+     */
+    EReference getAbstractComputationAssignment_OpertingSystemType();
+
+                /**
+     * Returns the meta object for the attribute '{@link deploymentPlan.AbstractComputationAssignment#getOpertingSystemVersion <em>Operting System Version</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Operting System Version</em>'.
+     * @see deploymentPlan.AbstractComputationAssignment#getOpertingSystemVersion()
+     * @see #getAbstractComputationAssignment()
+     * @generated
+     */
+    EAttribute getAbstractComputationAssignment_OpertingSystemVersion();
+
+                /**
+     * Returns the meta object for the attribute '{@link deploymentPlan.AbstractComputationAssignment#getRuntimeType <em>Runtime Type</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Runtime Type</em>'.
+     * @see deploymentPlan.AbstractComputationAssignment#getRuntimeType()
+     * @see #getAbstractComputationAssignment()
+     * @generated
+     */
+    EAttribute getAbstractComputationAssignment_RuntimeType();
+
+                /**
      * Returns the meta object for class '{@link deploymentPlan.ImplementationAssignment <em>Implementation Assignment</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -865,28 +1071,6 @@ public interface DeploymentPlanPackage extends EPackage {
      * @generated
      */
     EClass getImplementationAssignment();
-
-    /**
-     * Returns the meta object for the containment reference list '{@link deploymentPlan.ImplementationAssignment#getSoftwareComponent <em>Software Component</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the containment reference list '<em>Software Component</em>'.
-     * @see deploymentPlan.ImplementationAssignment#getSoftwareComponent()
-     * @see #getImplementationAssignment()
-     * @generated
-     */
-    EReference getImplementationAssignment_SoftwareComponent();
-
-    /**
-     * Returns the meta object for the containment reference list '{@link deploymentPlan.ImplementationAssignment#getMiddleware <em>Middleware</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the containment reference list '<em>Middleware</em>'.
-     * @see deploymentPlan.ImplementationAssignment#getMiddleware()
-     * @see #getImplementationAssignment()
-     * @generated
-     */
-    EReference getImplementationAssignment_Middleware();
 
     /**
      * Returns the meta object for class '{@link deploymentPlan.AbstractConfigExecutionParameter <em>Abstract Config Execution Parameter</em>}'.
@@ -962,14 +1146,14 @@ public interface DeploymentPlanPackage extends EPackage {
     EClass getMiddleware();
 
     /**
-     * Returns the meta object for class '{@link deploymentPlan.ROSDistro <em>ROS Distro</em>}'.
+     * Returns the meta object for enum '{@link deploymentPlan.ROSDistro <em>ROS Distro</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for class '<em>ROS Distro</em>'.
+     * @return the meta object for enum '<em>ROS Distro</em>'.
      * @see deploymentPlan.ROSDistro
      * @generated
      */
-    EClass getROSDistro();
+    EEnum getROSDistro();
 
     /**
      * Returns the meta object for class '{@link deploymentPlan.HumbleROSDistro <em>Humble ROS Distro</em>}'.
@@ -1089,6 +1273,37 @@ public interface DeploymentPlanPackage extends EPackage {
     EAttribute getAbstarctConfigSoftwareComponent_StartCommand();
 
     /**
+     * Returns the meta object for class '{@link deploymentPlan.RosMiddleware <em>Ros Middleware</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Ros Middleware</em>'.
+     * @see deploymentPlan.RosMiddleware
+     * @generated
+     */
+    EClass getRosMiddleware();
+
+                /**
+     * Returns the meta object for the attribute '{@link deploymentPlan.RosMiddleware#getValue <em>Value</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Value</em>'.
+     * @see deploymentPlan.RosMiddleware#getValue()
+     * @see #getRosMiddleware()
+     * @generated
+     */
+    EAttribute getRosMiddleware_Value();
+
+                /**
+     * Returns the meta object for class '{@link deploymentPlan.AbstractConfigedValue <em>Abstract Configed Value</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Abstract Configed Value</em>'.
+     * @see deploymentPlan.AbstractConfigedValue
+     * @generated
+     */
+    EClass getAbstractConfigedValue();
+
+                                                                /**
      * Returns the factory that creates the instances of the model.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1184,14 +1399,14 @@ public interface DeploymentPlanPackage extends EPackage {
         EClass ABSTRACT_REALIZATION = eINSTANCE.getAbstractRealization();
 
         /**
-         * The meta object literal for the '<em><b>Realization</b></em>' containment reference list feature.
+         * The meta object literal for the '<em><b>Realizations</b></em>' containment reference list feature.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
          * @generated
          */
-        EReference ABSTRACT_REALIZATION__REALIZATION = eINSTANCE.getAbstractRealization_Realization();
+        EReference ABSTRACT_REALIZATION__REALIZATIONS = eINSTANCE.getAbstractRealization_Realizations();
 
-        /**
+                                /**
          * The meta object literal for the '{@link deploymentPlan.impl.RealizationImpl <em>Realization</em>}' class.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
@@ -1212,6 +1427,14 @@ public interface DeploymentPlanPackage extends EPackage {
         EClass ABSTRACT_COMPUTATION_ASSIGNMENT = eINSTANCE.getAbstractComputationAssignment();
 
         /**
+         * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute ABSTRACT_COMPUTATION_ASSIGNMENT__NAME = eINSTANCE.getAbstractComputationAssignment_Name();
+
+                                /**
          * The meta object literal for the '<em><b>Executed By</b></em>' reference feature.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
@@ -1220,6 +1443,46 @@ public interface DeploymentPlanPackage extends EPackage {
         EReference ABSTRACT_COMPUTATION_ASSIGNMENT__EXECUTED_BY = eINSTANCE.getAbstractComputationAssignment_ExecutedBy();
 
         /**
+         * The meta object literal for the '<em><b>Software Components</b></em>' containment reference list feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference ABSTRACT_COMPUTATION_ASSIGNMENT__SOFTWARE_COMPONENTS = eINSTANCE.getAbstractComputationAssignment_SoftwareComponents();
+
+                                /**
+         * The meta object literal for the '<em><b>Middleware</b></em>' containment reference feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference ABSTRACT_COMPUTATION_ASSIGNMENT__MIDDLEWARE = eINSTANCE.getAbstractComputationAssignment_Middleware();
+
+                                /**
+         * The meta object literal for the '<em><b>Operting System Type</b></em>' containment reference feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference ABSTRACT_COMPUTATION_ASSIGNMENT__OPERTING_SYSTEM_TYPE = eINSTANCE.getAbstractComputationAssignment_OpertingSystemType();
+
+                                /**
+         * The meta object literal for the '<em><b>Operting System Version</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute ABSTRACT_COMPUTATION_ASSIGNMENT__OPERTING_SYSTEM_VERSION = eINSTANCE.getAbstractComputationAssignment_OpertingSystemVersion();
+
+                                /**
+         * The meta object literal for the '<em><b>Runtime Type</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute ABSTRACT_COMPUTATION_ASSIGNMENT__RUNTIME_TYPE = eINSTANCE.getAbstractComputationAssignment_RuntimeType();
+
+                                /**
          * The meta object literal for the '{@link deploymentPlan.impl.ImplementationAssignmentImpl <em>Implementation Assignment</em>}' class.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
@@ -1228,22 +1491,6 @@ public interface DeploymentPlanPackage extends EPackage {
          * @generated
          */
         EClass IMPLEMENTATION_ASSIGNMENT = eINSTANCE.getImplementationAssignment();
-
-        /**
-         * The meta object literal for the '<em><b>Software Component</b></em>' containment reference list feature.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @generated
-         */
-        EReference IMPLEMENTATION_ASSIGNMENT__SOFTWARE_COMPONENT = eINSTANCE.getImplementationAssignment_SoftwareComponent();
-
-        /**
-         * The meta object literal for the '<em><b>Middleware</b></em>' containment reference list feature.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @generated
-         */
-        EReference IMPLEMENTATION_ASSIGNMENT__MIDDLEWARE = eINSTANCE.getImplementationAssignment_Middleware();
 
         /**
          * The meta object literal for the '{@link deploymentPlan.impl.AbstractConfigExecutionParameterImpl <em>Abstract Config Execution Parameter</em>}' class.
@@ -1310,14 +1557,14 @@ public interface DeploymentPlanPackage extends EPackage {
         EClass MIDDLEWARE = eINSTANCE.getMiddleware();
 
         /**
-         * The meta object literal for the '{@link deploymentPlan.impl.ROSDistroImpl <em>ROS Distro</em>}' class.
+         * The meta object literal for the '{@link deploymentPlan.ROSDistro <em>ROS Distro</em>}' enum.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @see deploymentPlan.impl.ROSDistroImpl
+         * @see deploymentPlan.ROSDistro
          * @see deploymentPlan.impl.DeploymentPlanPackageImpl#getROSDistro()
          * @generated
          */
-        EClass ROS_DISTRO = eINSTANCE.getROSDistro();
+        EEnum ROS_DISTRO = eINSTANCE.getROSDistro();
 
         /**
          * The meta object literal for the '{@link deploymentPlan.impl.HumbleROSDistroImpl <em>Humble ROS Distro</em>}' class.
@@ -1414,6 +1661,34 @@ public interface DeploymentPlanPackage extends EPackage {
          * @generated
          */
         EAttribute ABSTARCT_CONFIG_SOFTWARE_COMPONENT__START_COMMAND = eINSTANCE.getAbstarctConfigSoftwareComponent_StartCommand();
+
+                                /**
+         * The meta object literal for the '{@link deploymentPlan.impl.RosMiddlewareImpl <em>Ros Middleware</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see deploymentPlan.impl.RosMiddlewareImpl
+         * @see deploymentPlan.impl.DeploymentPlanPackageImpl#getRosMiddleware()
+         * @generated
+         */
+        EClass ROS_MIDDLEWARE = eINSTANCE.getRosMiddleware();
+
+                                /**
+         * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute ROS_MIDDLEWARE__VALUE = eINSTANCE.getRosMiddleware_Value();
+
+                                                                                                                                /**
+         * The meta object literal for the '{@link deploymentPlan.impl.AbstractConfigedValueImpl <em>Abstract Configed Value</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see deploymentPlan.impl.AbstractConfigedValueImpl
+         * @see deploymentPlan.impl.DeploymentPlanPackageImpl#getAbstractConfigedValue()
+         * @generated
+         */
+        EClass ABSTRACT_CONFIGED_VALUE = eINSTANCE.getAbstractConfigedValue();
 
     }
 

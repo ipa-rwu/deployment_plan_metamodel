@@ -2,8 +2,6 @@
  */
 package deployPlanWithRosModel.util;
 
-import de.fraunhofer.ipa.deployment.util.AbstractComputationAssignmentTarget;
-
 import deployPlanWithRosModel.*;
 
 import deploymentPlan.AbstarctConfigSoftwareComponent;
@@ -101,13 +99,6 @@ public class DeployPlanWithRosModelSwitch<T> extends Switch<T> {
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
-            case DeployPlanWithRosModelPackage.ROS_COMPUTATION_ASSIGNMENT_TARGET: {
-                RosComputationAssignmentTarget rosComputationAssignmentTarget = (RosComputationAssignmentTarget)theEObject;
-                T result = caseRosComputationAssignmentTarget(rosComputationAssignmentTarget);
-                if (result == null) result = caseAbstractComputationAssignmentTarget(rosComputationAssignmentTarget);
-                if (result == null) result = defaultCase(theEObject);
-                return result;
-            }
             case DeployPlanWithRosModelPackage.CONFIG_ROS_SOFTWARE_COMPONENT: {
                 ConfigRosSoftwareComponent configRosSoftwareComponent = (ConfigRosSoftwareComponent)theEObject;
                 T result = caseConfigRosSoftwareComponent(configRosSoftwareComponent);
@@ -180,21 +171,6 @@ public class DeployPlanWithRosModelSwitch<T> extends Switch<T> {
     }
 
     /**
-     * Returns the result of interpreting the object as an instance of '<em>Ros Computation Assignment Target</em>'.
-     * <!-- begin-user-doc -->
-     * This implementation returns null;
-     * returning a non-null result will terminate the switch.
-     * <!-- end-user-doc -->
-     * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Ros Computation Assignment Target</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-     * @generated
-     */
-    public T caseRosComputationAssignmentTarget(RosComputationAssignmentTarget object) {
-        return null;
-    }
-
-    /**
      * Returns the result of interpreting the object as an instance of '<em>Config Ros Software Component</em>'.
      * <!-- begin-user-doc -->
      * This implementation returns null;
@@ -251,21 +227,6 @@ public class DeployPlanWithRosModelSwitch<T> extends Switch<T> {
      * @generated
      */
     public T caseAbstractConfigExecutionParameter(AbstractConfigExecutionParameter object) {
-        return null;
-    }
-
-    /**
-     * Returns the result of interpreting the object as an instance of '<em>Abstract Computation Assignment Target</em>'.
-     * <!-- begin-user-doc -->
-     * This implementation returns null;
-     * returning a non-null result will terminate the switch.
-     * <!-- end-user-doc -->
-     * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Abstract Computation Assignment Target</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-     * @generated
-     */
-    public T caseAbstractComputationAssignmentTarget(AbstractComputationAssignmentTarget object) {
         return null;
     }
 

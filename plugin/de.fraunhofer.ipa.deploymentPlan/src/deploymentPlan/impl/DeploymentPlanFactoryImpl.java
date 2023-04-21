@@ -5,6 +5,7 @@ package deploymentPlan.impl;
 import deploymentPlan.*;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -65,12 +66,43 @@ public class DeploymentPlanFactoryImpl extends EFactoryImpl implements Deploymen
             case DeploymentPlanPackage.NOETIC_ROS_DISTRO: return createNoeticROSDistro();
             case DeploymentPlanPackage.CONFIG_SOFTWARE_COMPONENT: return createConfigSoftwareComponent();
             case DeploymentPlanPackage.ABSTARCT_CONFIG_SOFTWARE_COMPONENT: return createAbstarctConfigSoftwareComponent();
+            case DeploymentPlanPackage.ROS_MIDDLEWARE: return createRosMiddleware();
             default:
                 throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
         }
     }
 
     /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Object createFromString(EDataType eDataType, String initialValue) {
+        switch (eDataType.getClassifierID()) {
+            case DeploymentPlanPackage.ROS_DISTRO:
+                return createROSDistroFromString(eDataType, initialValue);
+            default:
+                throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+        }
+    }
+
+                /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public String convertToString(EDataType eDataType, Object instanceValue) {
+        switch (eDataType.getClassifierID()) {
+            case DeploymentPlanPackage.ROS_DISTRO:
+                return convertROSDistroToString(eDataType, instanceValue);
+            default:
+                throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+        }
+    }
+
+                /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -161,6 +193,36 @@ public class DeploymentPlanFactoryImpl extends EFactoryImpl implements Deploymen
     }
 
     /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public RosMiddleware createRosMiddleware() {
+        RosMiddlewareImpl rosMiddleware = new RosMiddlewareImpl();
+        return rosMiddleware;
+    }
+
+                /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public ROSDistro createROSDistroFromString(EDataType eDataType, String initialValue) {
+        ROSDistro result = ROSDistro.get(initialValue);
+        if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+        return result;
+    }
+
+                /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public String convertROSDistroToString(EDataType eDataType, Object instanceValue) {
+        return instanceValue == null ? null : instanceValue.toString();
+    }
+
+                /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated

@@ -6,6 +6,7 @@ import deploymentPlan.DeploymentPlanPackage;
 import deploymentPlan.NoeticROSDistro;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,7 +22,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class NoeticROSDistroImpl extends ROSDistroImpl implements NoeticROSDistro {
+public class NoeticROSDistroImpl extends MinimalEObjectImpl.Container implements NoeticROSDistro {
     /**
      * The default value of the '{@link #getVersion() <em>Version</em>}' attribute.
      * <!-- begin-user-doc -->
@@ -31,7 +32,6 @@ public class NoeticROSDistroImpl extends ROSDistroImpl implements NoeticROSDistr
      * @ordered
      */
     protected static final String VERSION_EDEFAULT = "1";
-
     /**
      * The cached value of the '{@link #getVersion() <em>Version</em>}' attribute.
      * <!-- begin-user-doc -->
@@ -41,7 +41,6 @@ public class NoeticROSDistroImpl extends ROSDistroImpl implements NoeticROSDistr
      * @ordered
      */
     protected String version = VERSION_EDEFAULT;
-
     /**
      * The default value of the '{@link #getDistro() <em>Distro</em>}' attribute.
      * <!-- begin-user-doc -->
@@ -51,7 +50,6 @@ public class NoeticROSDistroImpl extends ROSDistroImpl implements NoeticROSDistr
      * @ordered
      */
     protected static final String DISTRO_EDEFAULT = "noetic";
-
     /**
      * The cached value of the '{@link #getDistro() <em>Distro</em>}' attribute.
      * <!-- begin-user-doc -->

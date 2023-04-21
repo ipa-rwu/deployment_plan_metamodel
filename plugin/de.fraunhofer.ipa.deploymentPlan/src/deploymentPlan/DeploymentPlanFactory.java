@@ -103,6 +103,15 @@ public interface DeploymentPlanFactory extends EFactory {
     AbstarctConfigSoftwareComponent createAbstarctConfigSoftwareComponent();
 
     /**
+     * Returns a new object of class '<em>Ros Middleware</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Ros Middleware</em>'.
+     * @generated
+     */
+    RosMiddleware createRosMiddleware();
+
+                /**
      * Returns the package supported by this factory.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->

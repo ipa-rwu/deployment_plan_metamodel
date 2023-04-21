@@ -28,23 +28,22 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link deploymentPlan.impl.AbstractRealizationImpl#getRealization <em>Realization</em>}</li>
+ *   <li>{@link deploymentPlan.impl.AbstractRealizationImpl#getRealizations <em>Realizations</em>}</li>
  * </ul>
  *
  * @generated
  */
 public abstract class AbstractRealizationImpl extends MinimalEObjectImpl.Container implements AbstractRealization {
     /**
-     * The cached value of the '{@link #getRealization() <em>Realization</em>}' containment reference list.
+     * The cached value of the '{@link #getRealizations() <em>Realizations</em>}' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getRealization()
+     * @see #getRealizations()
      * @generated
      * @ordered
      */
-    protected EList<AbstractComputationAssignment> realization;
-
-    /**
+    protected EList<AbstractComputationAssignment> realizations;
+                /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -68,14 +67,14 @@ public abstract class AbstractRealizationImpl extends MinimalEObjectImpl.Contain
      * <!-- end-user-doc -->
      * @generated
      */
-    public EList<AbstractComputationAssignment> getRealization() {
-        if (realization == null) {
-            realization = new EObjectContainmentEList<AbstractComputationAssignment>(AbstractComputationAssignment.class, this, DeploymentPlanPackage.ABSTRACT_REALIZATION__REALIZATION);
+    public EList<AbstractComputationAssignment> getRealizations() {
+        if (realizations == null) {
+            realizations = new EObjectContainmentEList<AbstractComputationAssignment>(AbstractComputationAssignment.class, this, DeploymentPlanPackage.ABSTRACT_REALIZATION__REALIZATIONS);
         }
-        return realization;
+        return realizations;
     }
 
-    /**
+                /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -83,8 +82,8 @@ public abstract class AbstractRealizationImpl extends MinimalEObjectImpl.Contain
     @Override
     public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
         switch (featureID) {
-            case DeploymentPlanPackage.ABSTRACT_REALIZATION__REALIZATION:
-                return ((InternalEList<?>)getRealization()).basicRemove(otherEnd, msgs);
+            case DeploymentPlanPackage.ABSTRACT_REALIZATION__REALIZATIONS:
+                return ((InternalEList<?>)getRealizations()).basicRemove(otherEnd, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -97,8 +96,8 @@ public abstract class AbstractRealizationImpl extends MinimalEObjectImpl.Contain
     @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
         switch (featureID) {
-            case DeploymentPlanPackage.ABSTRACT_REALIZATION__REALIZATION:
-                return getRealization();
+            case DeploymentPlanPackage.ABSTRACT_REALIZATION__REALIZATIONS:
+                return getRealizations();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -112,9 +111,9 @@ public abstract class AbstractRealizationImpl extends MinimalEObjectImpl.Contain
     @Override
     public void eSet(int featureID, Object newValue) {
         switch (featureID) {
-            case DeploymentPlanPackage.ABSTRACT_REALIZATION__REALIZATION:
-                getRealization().clear();
-                getRealization().addAll((Collection<? extends AbstractComputationAssignment>)newValue);
+            case DeploymentPlanPackage.ABSTRACT_REALIZATION__REALIZATIONS:
+                getRealizations().clear();
+                getRealizations().addAll((Collection<? extends AbstractComputationAssignment>)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -128,8 +127,8 @@ public abstract class AbstractRealizationImpl extends MinimalEObjectImpl.Contain
     @Override
     public void eUnset(int featureID) {
         switch (featureID) {
-            case DeploymentPlanPackage.ABSTRACT_REALIZATION__REALIZATION:
-                getRealization().clear();
+            case DeploymentPlanPackage.ABSTRACT_REALIZATION__REALIZATIONS:
+                getRealizations().clear();
                 return;
         }
         super.eUnset(featureID);
@@ -143,8 +142,8 @@ public abstract class AbstractRealizationImpl extends MinimalEObjectImpl.Contain
     @Override
     public boolean eIsSet(int featureID) {
         switch (featureID) {
-            case DeploymentPlanPackage.ABSTRACT_REALIZATION__REALIZATION:
-                return realization != null && !realization.isEmpty();
+            case DeploymentPlanPackage.ABSTRACT_REALIZATION__REALIZATIONS:
+                return realizations != null && !realizations.isEmpty();
         }
         return super.eIsSet(featureID);
     }

@@ -132,6 +132,25 @@ public class ImplementationDescriptionSwitch<T> extends Switch<T> {
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
+            case ImplementationDescriptionPackage.REPOSITORY: {
+                Repository repository = (Repository)theEObject;
+                T result = caseRepository(repository);
+                if (result == null) result = defaultCase(theEObject);
+                return result;
+            }
+            case ImplementationDescriptionPackage.REPOSITORY_TYPE: {
+                RepositoryType repositoryType = (RepositoryType)theEObject;
+                T result = caseRepositoryType(repositoryType);
+                if (result == null) result = defaultCase(theEObject);
+                return result;
+            }
+            case ImplementationDescriptionPackage.GIT_REPOSITORY_TYPE: {
+                GitRepositoryType gitRepositoryType = (GitRepositoryType)theEObject;
+                T result = caseGitRepositoryType(gitRepositoryType);
+                if (result == null) result = caseRepositoryType(gitRepositoryType);
+                if (result == null) result = defaultCase(theEObject);
+                return result;
+            }
             default: return defaultCase(theEObject);
         }
     }
@@ -253,6 +272,51 @@ public class ImplementationDescriptionSwitch<T> extends Switch<T> {
      * @generated
      */
     public T caseExecutionProperty(ExecutionProperty object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Repository</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Repository</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseRepository(Repository object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Repository Type</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Repository Type</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseRepositoryType(RepositoryType object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Git Repository Type</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Git Repository Type</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseGitRepositoryType(GitRepositoryType object) {
         return null;
     }
 
