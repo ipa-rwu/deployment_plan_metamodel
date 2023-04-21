@@ -19,7 +19,7 @@ services:
             - -c
             - |
               export CYCLONEDDS_URI=file:///cyclonedds.xml
-              ros2 launch ur_robot_driver ur5e.launch.py robot_ip=192.168.56.2
+              ros2 launch ur_robot_driver ur5e.launch.py robot_ip:=192.168.56.2
     realsense_driver:
         image: ${Registry}/realsense_driver
         volumes:
@@ -35,7 +35,7 @@ services:
             - |
               export CYCLONEDDS_URI=file:///cyclonedds.xml
               ros2 run tf2_ros static_transform_publisher -0.00640796 -0.0551158 0.00796752 -0.529877 0.53423 -0.467606 -0.463867 tool0 camera_link
-              ros2 launch realsense2_camera rs_launch.py publish_tf:=false device_type=d435
+              ros2 launch realsense2_camera rs_launch.py publish_tf:=false device_type:=d435
     marker_detection:
         image: ${Registry}/marker_detection
         volumes:
