@@ -2,8 +2,7 @@
  */
 package de.fraunhofer.ipa.deployment.util.impl;
 
-import de.fraunhofer.ipa.deployment.util.ProcessorArchitectureType;
-import de.fraunhofer.ipa.deployment.util.ProcessorArchitectureValue;
+import de.fraunhofer.ipa.deployment.util.AbstractResource;
 import de.fraunhofer.ipa.deployment.util.UtilPackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -11,47 +10,48 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Processor Architecture Value</b></em>'.
+ * An implementation of the model object '<em><b>Abstract Resource</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link de.fraunhofer.ipa.deployment.util.impl.ProcessorArchitectureValueImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link de.fraunhofer.ipa.deployment.util.impl.AbstractResourceImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ProcessorArchitectureValueImpl extends PropertyValueImpl implements ProcessorArchitectureValue {
+public abstract class AbstractResourceImpl extends MinimalEObjectImpl.Container implements AbstractResource {
     /**
-     * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+     * The default value of the '{@link #getName() <em>Name</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getValue()
+     * @see #getName()
      * @generated
      * @ordered
      */
-    protected static final ProcessorArchitectureType VALUE_EDEFAULT = ProcessorArchitectureType.X86;
+    protected static final String NAME_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
+     * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getValue()
+     * @see #getName()
      * @generated
      * @ordered
      */
-    protected ProcessorArchitectureType value = VALUE_EDEFAULT;
+    protected String name = NAME_EDEFAULT;
 
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    protected ProcessorArchitectureValueImpl() {
+    protected AbstractResourceImpl() {
         super();
     }
 
@@ -62,7 +62,7 @@ public class ProcessorArchitectureValueImpl extends PropertyValueImpl implements
      */
     @Override
     protected EClass eStaticClass() {
-        return UtilPackage.Literals.PROCESSOR_ARCHITECTURE_VALUE;
+        return UtilPackage.Literals.ABSTRACT_RESOURCE;
     }
 
     /**
@@ -70,8 +70,8 @@ public class ProcessorArchitectureValueImpl extends PropertyValueImpl implements
      * <!-- end-user-doc -->
      * @generated
      */
-    public ProcessorArchitectureType getValue() {
-        return value;
+    public String getName() {
+        return name;
     }
 
     /**
@@ -79,12 +79,11 @@ public class ProcessorArchitectureValueImpl extends PropertyValueImpl implements
      * <!-- end-user-doc -->
      * @generated
      */
-    public void setValue(ProcessorArchitectureType newValue) {
-        ProcessorArchitectureType oldValue = value;
-        value = newValue == null ? VALUE_EDEFAULT : newValue;
+    public void setName(String newName) {
+        String oldName = name;
+        name = newName;
         if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, UtilPackage.PROCESSOR_ARCHITECTURE_VALUE__VALUE,
-                    oldValue, value));
+            eNotify(new ENotificationImpl(this, Notification.SET, UtilPackage.ABSTRACT_RESOURCE__NAME, oldName, name));
     }
 
     /**
@@ -95,8 +94,8 @@ public class ProcessorArchitectureValueImpl extends PropertyValueImpl implements
     @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
         switch (featureID) {
-        case UtilPackage.PROCESSOR_ARCHITECTURE_VALUE__VALUE:
-            return getValue();
+        case UtilPackage.ABSTRACT_RESOURCE__NAME:
+            return getName();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -109,8 +108,8 @@ public class ProcessorArchitectureValueImpl extends PropertyValueImpl implements
     @Override
     public void eSet(int featureID, Object newValue) {
         switch (featureID) {
-        case UtilPackage.PROCESSOR_ARCHITECTURE_VALUE__VALUE:
-            setValue((ProcessorArchitectureType) newValue);
+        case UtilPackage.ABSTRACT_RESOURCE__NAME:
+            setName((String) newValue);
             return;
         }
         super.eSet(featureID, newValue);
@@ -124,8 +123,8 @@ public class ProcessorArchitectureValueImpl extends PropertyValueImpl implements
     @Override
     public void eUnset(int featureID) {
         switch (featureID) {
-        case UtilPackage.PROCESSOR_ARCHITECTURE_VALUE__VALUE:
-            setValue(VALUE_EDEFAULT);
+        case UtilPackage.ABSTRACT_RESOURCE__NAME:
+            setName(NAME_EDEFAULT);
             return;
         }
         super.eUnset(featureID);
@@ -139,8 +138,8 @@ public class ProcessorArchitectureValueImpl extends PropertyValueImpl implements
     @Override
     public boolean eIsSet(int featureID) {
         switch (featureID) {
-        case UtilPackage.PROCESSOR_ARCHITECTURE_VALUE__VALUE:
-            return value != VALUE_EDEFAULT;
+        case UtilPackage.ABSTRACT_RESOURCE__NAME:
+            return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
         }
         return super.eIsSet(featureID);
     }
@@ -156,10 +155,10 @@ public class ProcessorArchitectureValueImpl extends PropertyValueImpl implements
             return super.toString();
 
         StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (value: ");
-        result.append(value);
+        result.append(" (name: ");
+        result.append(name);
         result.append(')');
         return result.toString();
     }
 
-} //ProcessorArchitectureValueImpl
+} //AbstractResourceImpl

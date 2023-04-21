@@ -22,31 +22,13 @@ public interface UtilFactory extends EFactory {
     UtilFactory eINSTANCE = de.fraunhofer.ipa.deployment.util.impl.UtilFactoryImpl.init();
 
     /**
-     * Returns a new object of class '<em>Property Value Int</em>'.
+     * Returns a new object of class '<em>Resource</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return a new object of class '<em>Property Value Int</em>'.
+     * @return a new object of class '<em>Resource</em>'.
      * @generated
      */
-    PropertyValueInt createPropertyValueInt();
-
-    /**
-     * Returns a new object of class '<em>Property Value Double</em>'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return a new object of class '<em>Property Value Double</em>'.
-     * @generated
-     */
-    PropertyValueDouble createPropertyValueDouble();
-
-    /**
-     * Returns a new object of class '<em>Property Value String</em>'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return a new object of class '<em>Property Value String</em>'.
-     * @generated
-     */
-    PropertyValueString createPropertyValueString();
+    Resource createResource();
 
     /**
      * Returns a new object of class '<em>Communication Type</em>'.
@@ -76,58 +58,49 @@ public interface UtilFactory extends EFactory {
     WlanCommunicationType createWlanCommunicationType();
 
     /**
-     * Returns a new object of class '<em>Available Resouce</em>'.
+     * Returns a new object of class '<em>Linux Operting System</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return a new object of class '<em>Available Resouce</em>'.
+     * @return a new object of class '<em>Linux Operting System</em>'.
      * @generated
      */
-    AvailableResouce createAvailableResouce();
+    LinuxOpertingSystem createLinuxOpertingSystem();
 
     /**
-     * Returns a new object of class '<em>Linux Operting System Type</em>'.
+     * Returns a new object of class '<em>Mac OS Operting System</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return a new object of class '<em>Linux Operting System Type</em>'.
+     * @return a new object of class '<em>Mac OS Operting System</em>'.
      * @generated
      */
-    LinuxOpertingSystemType createLinuxOpertingSystemType();
+    MacOSOpertingSystem createMacOSOpertingSystem();
 
     /**
-     * Returns a new object of class '<em>Mac OS Operting System Type</em>'.
+     * Returns a new object of class '<em>Processor Resouce Type</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return a new object of class '<em>Mac OS Operting System Type</em>'.
+     * @return a new object of class '<em>Processor Resouce Type</em>'.
      * @generated
      */
-    MacOSOpertingSystemType createMacOSOpertingSystemType();
+    ProcessorResouceType createProcessorResouceType();
 
     /**
-     * Returns a new object of class '<em>Processor Architecture Type</em>'.
+     * Returns a new object of class '<em>Resource Type</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return a new object of class '<em>Processor Architecture Type</em>'.
+     * @return a new object of class '<em>Resource Type</em>'.
      * @generated
      */
-    ProcessorArchitectureType createProcessorArchitectureType();
+    ResourceType createResourceType();
 
     /**
-     * Returns a new object of class '<em>X86 Processor Architecture</em>'.
+     * Returns a new object of class '<em>Processor Architecture Value</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return a new object of class '<em>X86 Processor Architecture</em>'.
+     * @return a new object of class '<em>Processor Architecture Value</em>'.
      * @generated
      */
-    X86ProcessorArchitecture createX86ProcessorArchitecture();
-
-    /**
-     * Returns a new object of class '<em>Arm64 Processor Architecture</em>'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return a new object of class '<em>Arm64 Processor Architecture</em>'.
-     * @generated
-     */
-    Arm64ProcessorArchitecture createArm64ProcessorArchitecture();
+    ProcessorArchitectureValue createProcessorArchitectureValue();
 
     /**
      * Returns a new object of class '<em>Attribute Kind</em>'.
@@ -229,13 +202,58 @@ public interface UtilFactory extends EFactory {
     Property createProperty();
 
     /**
-     * Returns a new object of class '<em>Resource Type</em>'.
+     * Returns a new object of class '<em>Property Value Int</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return a new object of class '<em>Resource Type</em>'.
+     * @return a new object of class '<em>Property Value Int</em>'.
      * @generated
      */
-    ResourceType createResourceType();
+    PropertyValueInt createPropertyValueInt();
+
+    /**
+     * Returns a new object of class '<em>Property Value Double</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Property Value Double</em>'.
+     * @generated
+     */
+    PropertyValueDouble createPropertyValueDouble();
+
+    /**
+     * Returns a new object of class '<em>Property Value String</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Property Value String</em>'.
+     * @generated
+     */
+    PropertyValueString createPropertyValueString();
+
+    /**
+     * Returns a new object of class '<em>Container Runtime</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Container Runtime</em>'.
+     * @generated
+     */
+    ContainerRuntime createContainerRuntime();
+
+    /**
+     * Returns a new object of class '<em>Linux Distribution Value</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Linux Distribution Value</em>'.
+     * @generated
+     */
+    LinuxDistributionValue createLinuxDistributionValue();
+
+    /**
+     * Returns a new object of class '<em>Ubuntu Version Value</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Ubuntu Version Value</em>'.
+     * @generated
+     */
+    UbuntuVersionValue createUbuntuVersionValue();
 
     /**
      * Returns the package supported by this factory.

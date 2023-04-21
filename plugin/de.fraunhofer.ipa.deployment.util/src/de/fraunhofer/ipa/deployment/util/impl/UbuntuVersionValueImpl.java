@@ -2,8 +2,8 @@
  */
 package de.fraunhofer.ipa.deployment.util.impl;
 
-import de.fraunhofer.ipa.deployment.util.ProcessorArchitectureType;
-import de.fraunhofer.ipa.deployment.util.ProcessorArchitectureValue;
+import de.fraunhofer.ipa.deployment.util.UbuntuVersion;
+import de.fraunhofer.ipa.deployment.util.UbuntuVersionValue;
 import de.fraunhofer.ipa.deployment.util.UtilPackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -14,18 +14,18 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Processor Architecture Value</b></em>'.
+ * An implementation of the model object '<em><b>Ubuntu Version Value</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link de.fraunhofer.ipa.deployment.util.impl.ProcessorArchitectureValueImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link de.fraunhofer.ipa.deployment.util.impl.UbuntuVersionValueImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ProcessorArchitectureValueImpl extends PropertyValueImpl implements ProcessorArchitectureValue {
+public class UbuntuVersionValueImpl extends PropertyValueImpl implements UbuntuVersionValue {
     /**
      * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
      * <!-- begin-user-doc -->
@@ -34,7 +34,7 @@ public class ProcessorArchitectureValueImpl extends PropertyValueImpl implements
      * @generated
      * @ordered
      */
-    protected static final ProcessorArchitectureType VALUE_EDEFAULT = ProcessorArchitectureType.X86;
+    protected static final UbuntuVersion VALUE_EDEFAULT = UbuntuVersion.FOCAL;
 
     /**
      * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
@@ -44,14 +44,14 @@ public class ProcessorArchitectureValueImpl extends PropertyValueImpl implements
      * @generated
      * @ordered
      */
-    protected ProcessorArchitectureType value = VALUE_EDEFAULT;
+    protected UbuntuVersion value = VALUE_EDEFAULT;
 
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    protected ProcessorArchitectureValueImpl() {
+    protected UbuntuVersionValueImpl() {
         super();
     }
 
@@ -62,7 +62,7 @@ public class ProcessorArchitectureValueImpl extends PropertyValueImpl implements
      */
     @Override
     protected EClass eStaticClass() {
-        return UtilPackage.Literals.PROCESSOR_ARCHITECTURE_VALUE;
+        return UtilPackage.Literals.UBUNTU_VERSION_VALUE;
     }
 
     /**
@@ -70,7 +70,7 @@ public class ProcessorArchitectureValueImpl extends PropertyValueImpl implements
      * <!-- end-user-doc -->
      * @generated
      */
-    public ProcessorArchitectureType getValue() {
+    public UbuntuVersion getValue() {
         return value;
     }
 
@@ -79,12 +79,12 @@ public class ProcessorArchitectureValueImpl extends PropertyValueImpl implements
      * <!-- end-user-doc -->
      * @generated
      */
-    public void setValue(ProcessorArchitectureType newValue) {
-        ProcessorArchitectureType oldValue = value;
+    public void setValue(UbuntuVersion newValue) {
+        UbuntuVersion oldValue = value;
         value = newValue == null ? VALUE_EDEFAULT : newValue;
         if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, UtilPackage.PROCESSOR_ARCHITECTURE_VALUE__VALUE,
-                    oldValue, value));
+            eNotify(new ENotificationImpl(this, Notification.SET, UtilPackage.UBUNTU_VERSION_VALUE__VALUE, oldValue,
+                    value));
     }
 
     /**
@@ -95,7 +95,7 @@ public class ProcessorArchitectureValueImpl extends PropertyValueImpl implements
     @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
         switch (featureID) {
-        case UtilPackage.PROCESSOR_ARCHITECTURE_VALUE__VALUE:
+        case UtilPackage.UBUNTU_VERSION_VALUE__VALUE:
             return getValue();
         }
         return super.eGet(featureID, resolve, coreType);
@@ -109,8 +109,8 @@ public class ProcessorArchitectureValueImpl extends PropertyValueImpl implements
     @Override
     public void eSet(int featureID, Object newValue) {
         switch (featureID) {
-        case UtilPackage.PROCESSOR_ARCHITECTURE_VALUE__VALUE:
-            setValue((ProcessorArchitectureType) newValue);
+        case UtilPackage.UBUNTU_VERSION_VALUE__VALUE:
+            setValue((UbuntuVersion) newValue);
             return;
         }
         super.eSet(featureID, newValue);
@@ -124,7 +124,7 @@ public class ProcessorArchitectureValueImpl extends PropertyValueImpl implements
     @Override
     public void eUnset(int featureID) {
         switch (featureID) {
-        case UtilPackage.PROCESSOR_ARCHITECTURE_VALUE__VALUE:
+        case UtilPackage.UBUNTU_VERSION_VALUE__VALUE:
             setValue(VALUE_EDEFAULT);
             return;
         }
@@ -139,7 +139,7 @@ public class ProcessorArchitectureValueImpl extends PropertyValueImpl implements
     @Override
     public boolean eIsSet(int featureID) {
         switch (featureID) {
-        case UtilPackage.PROCESSOR_ARCHITECTURE_VALUE__VALUE:
+        case UtilPackage.UBUNTU_VERSION_VALUE__VALUE:
             return value != VALUE_EDEFAULT;
         }
         return super.eIsSet(featureID);
@@ -162,4 +162,4 @@ public class ProcessorArchitectureValueImpl extends PropertyValueImpl implements
         return result.toString();
     }
 
-} //ProcessorArchitectureValueImpl
+} //UbuntuVersionValueImpl

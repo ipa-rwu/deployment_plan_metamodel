@@ -2,25 +2,25 @@
  */
 package de.fraunhofer.ipa.deployment.util.impl;
 
-import de.fraunhofer.ipa.deployment.util.MacOSOpertingSystemType;
+import de.fraunhofer.ipa.deployment.util.ContainerRuntime;
 import de.fraunhofer.ipa.deployment.util.UtilPackage;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Mac OS Operting System Type</b></em>'.
+ * An implementation of the model object '<em><b>Container Runtime</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class MacOSOpertingSystemTypeImpl extends OpertingSystemTypeImpl implements MacOSOpertingSystemType {
+public class ContainerRuntimeImpl extends AbstractRuntimeEnviromentImpl implements ContainerRuntime {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    protected MacOSOpertingSystemTypeImpl() {
+    protected ContainerRuntimeImpl() {
         super();
     }
 
@@ -31,7 +31,7 @@ public class MacOSOpertingSystemTypeImpl extends OpertingSystemTypeImpl implemen
      */
     @Override
     protected EClass eStaticClass() {
-        return UtilPackage.Literals.MAC_OS_OPERTING_SYSTEM_TYPE;
+        return UtilPackage.Literals.CONTAINER_RUNTIME;
     }
 
-} //MacOSOpertingSystemTypeImpl
+} //ContainerRuntimeImpl

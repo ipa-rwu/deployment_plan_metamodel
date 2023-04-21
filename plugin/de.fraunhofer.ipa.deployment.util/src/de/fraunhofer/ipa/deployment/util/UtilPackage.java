@@ -4,6 +4,7 @@ package de.fraunhofer.ipa.deployment.util;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -57,210 +58,6 @@ public interface UtilPackage extends EPackage {
     UtilPackage eINSTANCE = de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl.init();
 
     /**
-     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.DescriptionImpl <em>Description</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.fraunhofer.ipa.deployment.util.impl.DescriptionImpl
-     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getDescription()
-     * @generated
-     */
-    int DESCRIPTION = 0;
-
-    /**
-     * The number of structural features of the '<em>Description</em>' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int DESCRIPTION_FEATURE_COUNT = 0;
-
-    /**
-     * The number of operations of the '<em>Description</em>' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int DESCRIPTION_OPERATION_COUNT = 0;
-
-    /**
-     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.PropertyValueImpl <em>Property Value</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.fraunhofer.ipa.deployment.util.impl.PropertyValueImpl
-     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getPropertyValue()
-     * @generated
-     */
-    int PROPERTY_VALUE = 1;
-
-    /**
-     * The number of structural features of the '<em>Property Value</em>' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int PROPERTY_VALUE_FEATURE_COUNT = 0;
-
-    /**
-     * The number of operations of the '<em>Property Value</em>' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int PROPERTY_VALUE_OPERATION_COUNT = 0;
-
-    /**
-     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.PropertyValueIntImpl <em>Property Value Int</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.fraunhofer.ipa.deployment.util.impl.PropertyValueIntImpl
-     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getPropertyValueInt()
-     * @generated
-     */
-    int PROPERTY_VALUE_INT = 2;
-
-    /**
-     * The feature id for the '<em><b>Value</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int PROPERTY_VALUE_INT__VALUE = PROPERTY_VALUE_FEATURE_COUNT + 0;
-
-    /**
-     * The number of structural features of the '<em>Property Value Int</em>' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int PROPERTY_VALUE_INT_FEATURE_COUNT = PROPERTY_VALUE_FEATURE_COUNT + 1;
-
-    /**
-     * The number of operations of the '<em>Property Value Int</em>' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int PROPERTY_VALUE_INT_OPERATION_COUNT = PROPERTY_VALUE_OPERATION_COUNT + 0;
-
-    /**
-     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.PropertyValueDoubleImpl <em>Property Value Double</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.fraunhofer.ipa.deployment.util.impl.PropertyValueDoubleImpl
-     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getPropertyValueDouble()
-     * @generated
-     */
-    int PROPERTY_VALUE_DOUBLE = 3;
-
-    /**
-     * The feature id for the '<em><b>Value</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int PROPERTY_VALUE_DOUBLE__VALUE = PROPERTY_VALUE_FEATURE_COUNT + 0;
-
-    /**
-     * The number of structural features of the '<em>Property Value Double</em>' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int PROPERTY_VALUE_DOUBLE_FEATURE_COUNT = PROPERTY_VALUE_FEATURE_COUNT + 1;
-
-    /**
-     * The number of operations of the '<em>Property Value Double</em>' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int PROPERTY_VALUE_DOUBLE_OPERATION_COUNT = PROPERTY_VALUE_OPERATION_COUNT + 0;
-
-    /**
-     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.PropertyValueStringImpl <em>Property Value String</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.fraunhofer.ipa.deployment.util.impl.PropertyValueStringImpl
-     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getPropertyValueString()
-     * @generated
-     */
-    int PROPERTY_VALUE_STRING = 4;
-
-    /**
-     * The feature id for the '<em><b>Value</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int PROPERTY_VALUE_STRING__VALUE = PROPERTY_VALUE_FEATURE_COUNT + 0;
-
-    /**
-     * The number of structural features of the '<em>Property Value String</em>' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int PROPERTY_VALUE_STRING_FEATURE_COUNT = PROPERTY_VALUE_FEATURE_COUNT + 1;
-
-    /**
-     * The number of operations of the '<em>Property Value String</em>' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int PROPERTY_VALUE_STRING_OPERATION_COUNT = PROPERTY_VALUE_OPERATION_COUNT + 0;
-
-    /**
-     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.PropertyTypeImpl <em>Property Type</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.fraunhofer.ipa.deployment.util.impl.PropertyTypeImpl
-     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getPropertyType()
-     * @generated
-     */
-    int PROPERTY_TYPE = 5;
-
-    /**
-     * The feature id for the '<em><b>Type</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int PROPERTY_TYPE__TYPE = 0;
-
-    /**
-     * The number of structural features of the '<em>Property Type</em>' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int PROPERTY_TYPE_FEATURE_COUNT = 1;
-
-    /**
-     * The number of operations of the '<em>Property Type</em>' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int PROPERTY_TYPE_OPERATION_COUNT = 0;
-
-    /**
      * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.AbstractPropertyImpl <em>Abstract Property</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -268,7 +65,7 @@ public interface UtilPackage extends EPackage {
      * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getAbstractProperty()
      * @generated
      */
-    int ABSTRACT_PROPERTY = 6;
+    int ABSTRACT_PROPERTY = 0;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -314,7 +111,7 @@ public interface UtilPackage extends EPackage {
      * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getAbstractResouceType()
      * @generated
      */
-    int ABSTRACT_RESOUCE_TYPE = 7;
+    int ABSTRACT_RESOUCE_TYPE = 1;
 
     /**
      * The number of structural features of the '<em>Abstract Resouce Type</em>' class.
@@ -335,34 +132,6 @@ public interface UtilPackage extends EPackage {
     int ABSTRACT_RESOUCE_TYPE_OPERATION_COUNT = 0;
 
     /**
-     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.ProcessorArchitectureImpl <em>Processor Architecture</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.fraunhofer.ipa.deployment.util.impl.ProcessorArchitectureImpl
-     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getProcessorArchitecture()
-     * @generated
-     */
-    int PROCESSOR_ARCHITECTURE = 8;
-
-    /**
-     * The number of structural features of the '<em>Processor Architecture</em>' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int PROCESSOR_ARCHITECTURE_FEATURE_COUNT = ABSTRACT_RESOUCE_TYPE_FEATURE_COUNT + 0;
-
-    /**
-     * The number of operations of the '<em>Processor Architecture</em>' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int PROCESSOR_ARCHITECTURE_OPERATION_COUNT = ABSTRACT_RESOUCE_TYPE_OPERATION_COUNT + 0;
-
-    /**
      * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.AbstractCommunicationTypeImpl <em>Abstract Communication Type</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -370,7 +139,7 @@ public interface UtilPackage extends EPackage {
      * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getAbstractCommunicationType()
      * @generated
      */
-    int ABSTRACT_COMMUNICATION_TYPE = 9;
+    int ABSTRACT_COMMUNICATION_TYPE = 2;
 
     /**
      * The number of structural features of the '<em>Abstract Communication Type</em>' class.
@@ -391,6 +160,157 @@ public interface UtilPackage extends EPackage {
     int ABSTRACT_COMMUNICATION_TYPE_OPERATION_COUNT = 0;
 
     /**
+     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.AbstractImplementationImpl <em>Abstract Implementation</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.fraunhofer.ipa.deployment.util.impl.AbstractImplementationImpl
+     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getAbstractImplementation()
+     * @generated
+     */
+    int ABSTRACT_IMPLEMENTATION = 3;
+
+    /**
+     * The number of structural features of the '<em>Abstract Implementation</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_IMPLEMENTATION_FEATURE_COUNT = 0;
+
+    /**
+     * The number of operations of the '<em>Abstract Implementation</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_IMPLEMENTATION_OPERATION_COUNT = 0;
+
+    /**
+     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.AbstractComputationAssignmentTargetImpl <em>Abstract Computation Assignment Target</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.fraunhofer.ipa.deployment.util.impl.AbstractComputationAssignmentTargetImpl
+     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getAbstractComputationAssignmentTarget()
+     * @generated
+     */
+    int ABSTRACT_COMPUTATION_ASSIGNMENT_TARGET = 4;
+
+    /**
+     * The number of structural features of the '<em>Abstract Computation Assignment Target</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_COMPUTATION_ASSIGNMENT_TARGET_FEATURE_COUNT = 0;
+
+    /**
+     * The number of operations of the '<em>Abstract Computation Assignment Target</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_COMPUTATION_ASSIGNMENT_TARGET_OPERATION_COUNT = 0;
+
+    /**
+     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.AbstractResourceImpl <em>Abstract Resource</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.fraunhofer.ipa.deployment.util.impl.AbstractResourceImpl
+     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getAbstractResource()
+     * @generated
+     */
+    int ABSTRACT_RESOURCE = 5;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_RESOURCE__NAME = 0;
+
+    /**
+     * The number of structural features of the '<em>Abstract Resource</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_RESOURCE_FEATURE_COUNT = 1;
+
+    /**
+     * The number of operations of the '<em>Abstract Resource</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_RESOURCE_OPERATION_COUNT = 0;
+
+    /**
+     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.AbstractRuntimeEnviromentImpl <em>Abstract Runtime Enviroment</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.fraunhofer.ipa.deployment.util.impl.AbstractRuntimeEnviromentImpl
+     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getAbstractRuntimeEnviroment()
+     * @generated
+     */
+    int ABSTRACT_RUNTIME_ENVIROMENT = 6;
+
+    /**
+     * The number of structural features of the '<em>Abstract Runtime Enviroment</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_RUNTIME_ENVIROMENT_FEATURE_COUNT = 0;
+
+    /**
+     * The number of operations of the '<em>Abstract Runtime Enviroment</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_RUNTIME_ENVIROMENT_OPERATION_COUNT = 0;
+
+    /**
+     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.PropertyValueImpl <em>Property Value</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.fraunhofer.ipa.deployment.util.impl.PropertyValueImpl
+     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getPropertyValue()
+     * @generated
+     */
+    int PROPERTY_VALUE = 8;
+
+    /**
+     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.DescriptionImpl <em>Description</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.fraunhofer.ipa.deployment.util.impl.DescriptionImpl
+     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getDescription()
+     * @generated
+     */
+    int DESCRIPTION = 9;
+
+    /**
+     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.ResourceImpl <em>Resource</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.fraunhofer.ipa.deployment.util.impl.ResourceImpl
+     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getResource()
+     * @generated
+     */
+    int RESOURCE = 10;
+
+    /**
      * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.CommunicationTypeImpl <em>Communication Type</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -398,7 +318,146 @@ public interface UtilPackage extends EPackage {
      * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getCommunicationType()
      * @generated
      */
-    int COMMUNICATION_TYPE = 10;
+    int COMMUNICATION_TYPE = 11;
+
+    /**
+     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.NetworkCommunicationTypeImpl <em>Network Communication Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.fraunhofer.ipa.deployment.util.impl.NetworkCommunicationTypeImpl
+     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getNetworkCommunicationType()
+     * @generated
+     */
+    int NETWORK_COMMUNICATION_TYPE = 12;
+
+    /**
+     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.EthernetCommunicationTypeImpl <em>Ethernet Communication Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.fraunhofer.ipa.deployment.util.impl.EthernetCommunicationTypeImpl
+     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getEthernetCommunicationType()
+     * @generated
+     */
+    int ETHERNET_COMMUNICATION_TYPE = 13;
+
+    /**
+     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.WlanCommunicationTypeImpl <em>Wlan Communication Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.fraunhofer.ipa.deployment.util.impl.WlanCommunicationTypeImpl
+     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getWlanCommunicationType()
+     * @generated
+     */
+    int WLAN_COMMUNICATION_TYPE = 14;
+
+    /**
+     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.OpertingSystemResouceTypeImpl <em>Operting System Resouce Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.fraunhofer.ipa.deployment.util.impl.OpertingSystemResouceTypeImpl
+     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getOpertingSystemResouceType()
+     * @generated
+     */
+    int OPERTING_SYSTEM_RESOUCE_TYPE = 7;
+
+    /**
+     * The number of structural features of the '<em>Operting System Resouce Type</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int OPERTING_SYSTEM_RESOUCE_TYPE_FEATURE_COUNT = 0;
+
+    /**
+     * The number of operations of the '<em>Operting System Resouce Type</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int OPERTING_SYSTEM_RESOUCE_TYPE_OPERATION_COUNT = 0;
+
+    /**
+     * The number of structural features of the '<em>Property Value</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PROPERTY_VALUE_FEATURE_COUNT = 0;
+
+    /**
+     * The number of operations of the '<em>Property Value</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PROPERTY_VALUE_OPERATION_COUNT = 0;
+
+    /**
+     * The number of structural features of the '<em>Description</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DESCRIPTION_FEATURE_COUNT = 0;
+
+    /**
+     * The number of operations of the '<em>Description</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DESCRIPTION_OPERATION_COUNT = 0;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int RESOURCE__NAME = ABSTRACT_RESOURCE__NAME;
+
+    /**
+     * The feature id for the '<em><b>Type</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int RESOURCE__TYPE = ABSTRACT_RESOURCE_FEATURE_COUNT + 0;
+
+    /**
+     * The feature id for the '<em><b>Properties</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int RESOURCE__PROPERTIES = ABSTRACT_RESOURCE_FEATURE_COUNT + 1;
+
+    /**
+     * The number of structural features of the '<em>Resource</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int RESOURCE_FEATURE_COUNT = ABSTRACT_RESOURCE_FEATURE_COUNT + 2;
+
+    /**
+     * The number of operations of the '<em>Resource</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int RESOURCE_OPERATION_COUNT = ABSTRACT_RESOURCE_OPERATION_COUNT + 0;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -428,16 +487,6 @@ public interface UtilPackage extends EPackage {
     int COMMUNICATION_TYPE_OPERATION_COUNT = ABSTRACT_COMMUNICATION_TYPE_OPERATION_COUNT + 0;
 
     /**
-     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.NetworkCommunicationTypeImpl <em>Network Communication Type</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.fraunhofer.ipa.deployment.util.impl.NetworkCommunicationTypeImpl
-     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getNetworkCommunicationType()
-     * @generated
-     */
-    int NETWORK_COMMUNICATION_TYPE = 11;
-
-    /**
      * The number of structural features of the '<em>Network Communication Type</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -454,16 +503,6 @@ public interface UtilPackage extends EPackage {
      * @ordered
      */
     int NETWORK_COMMUNICATION_TYPE_OPERATION_COUNT = ABSTRACT_COMMUNICATION_TYPE_OPERATION_COUNT + 0;
-
-    /**
-     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.EthernetCommunicationTypeImpl <em>Ethernet Communication Type</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.fraunhofer.ipa.deployment.util.impl.EthernetCommunicationTypeImpl
-     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getEthernetCommunicationType()
-     * @generated
-     */
-    int ETHERNET_COMMUNICATION_TYPE = 12;
 
     /**
      * The number of structural features of the '<em>Ethernet Communication Type</em>' class.
@@ -484,16 +523,6 @@ public interface UtilPackage extends EPackage {
     int ETHERNET_COMMUNICATION_TYPE_OPERATION_COUNT = NETWORK_COMMUNICATION_TYPE_OPERATION_COUNT + 0;
 
     /**
-     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.WlanCommunicationTypeImpl <em>Wlan Communication Type</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.fraunhofer.ipa.deployment.util.impl.WlanCommunicationTypeImpl
-     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getWlanCommunicationType()
-     * @generated
-     */
-    int WLAN_COMMUNICATION_TYPE = 13;
-
-    /**
      * The number of structural features of the '<em>Wlan Communication Type</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -512,162 +541,125 @@ public interface UtilPackage extends EPackage {
     int WLAN_COMMUNICATION_TYPE_OPERATION_COUNT = NETWORK_COMMUNICATION_TYPE_OPERATION_COUNT + 0;
 
     /**
-     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.AvailableResouceImpl <em>Available Resouce</em>}' class.
+     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.LinuxOpertingSystemImpl <em>Linux Operting System</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see de.fraunhofer.ipa.deployment.util.impl.AvailableResouceImpl
-     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getAvailableResouce()
+     * @see de.fraunhofer.ipa.deployment.util.impl.LinuxOpertingSystemImpl
+     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getLinuxOpertingSystem()
      * @generated
      */
-    int AVAILABLE_RESOUCE = 14;
+    int LINUX_OPERTING_SYSTEM = 15;
 
     /**
-     * The feature id for the '<em><b>List</b></em>' containment reference list.
+     * The number of structural features of the '<em>Linux Operting System</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int AVAILABLE_RESOUCE__LIST = 0;
+    int LINUX_OPERTING_SYSTEM_FEATURE_COUNT = OPERTING_SYSTEM_RESOUCE_TYPE_FEATURE_COUNT + 0;
 
     /**
-     * The feature id for the '<em><b>Property</b></em>' reference.
+     * The number of operations of the '<em>Linux Operting System</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int AVAILABLE_RESOUCE__PROPERTY = 1;
+    int LINUX_OPERTING_SYSTEM_OPERATION_COUNT = OPERTING_SYSTEM_RESOUCE_TYPE_OPERATION_COUNT + 0;
 
     /**
-     * The number of structural features of the '<em>Available Resouce</em>' class.
+     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.MacOSOpertingSystemImpl <em>Mac OS Operting System</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.fraunhofer.ipa.deployment.util.impl.MacOSOpertingSystemImpl
+     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getMacOSOpertingSystem()
+     * @generated
+     */
+    int MAC_OS_OPERTING_SYSTEM = 16;
+
+    /**
+     * The number of structural features of the '<em>Mac OS Operting System</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int AVAILABLE_RESOUCE_FEATURE_COUNT = 2;
+    int MAC_OS_OPERTING_SYSTEM_FEATURE_COUNT = OPERTING_SYSTEM_RESOUCE_TYPE_FEATURE_COUNT + 0;
 
     /**
-     * The number of operations of the '<em>Available Resouce</em>' class.
+     * The number of operations of the '<em>Mac OS Operting System</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int AVAILABLE_RESOUCE_OPERATION_COUNT = 0;
+    int MAC_OS_OPERTING_SYSTEM_OPERATION_COUNT = OPERTING_SYSTEM_RESOUCE_TYPE_OPERATION_COUNT + 0;
 
     /**
-     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.OpertingSystemTypeImpl <em>Operting System Type</em>}' class.
+     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.ProcessorResouceTypeImpl <em>Processor Resouce Type</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see de.fraunhofer.ipa.deployment.util.impl.OpertingSystemTypeImpl
-     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getOpertingSystemType()
+     * @see de.fraunhofer.ipa.deployment.util.impl.ProcessorResouceTypeImpl
+     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getProcessorResouceType()
      * @generated
      */
-    int OPERTING_SYSTEM_TYPE = 15;
+    int PROCESSOR_RESOUCE_TYPE = 17;
 
     /**
-     * The number of structural features of the '<em>Operting System Type</em>' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int OPERTING_SYSTEM_TYPE_FEATURE_COUNT = ABSTRACT_RESOUCE_TYPE_FEATURE_COUNT + 0;
-
-    /**
-     * The number of operations of the '<em>Operting System Type</em>' class.
+     * The number of structural features of the '<em>Processor Resouce Type</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int OPERTING_SYSTEM_TYPE_OPERATION_COUNT = ABSTRACT_RESOUCE_TYPE_OPERATION_COUNT + 0;
+    int PROCESSOR_RESOUCE_TYPE_FEATURE_COUNT = ABSTRACT_RESOUCE_TYPE_FEATURE_COUNT + 0;
 
     /**
-     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.LinuxOpertingSystemTypeImpl <em>Linux Operting System Type</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.fraunhofer.ipa.deployment.util.impl.LinuxOpertingSystemTypeImpl
-     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getLinuxOpertingSystemType()
-     * @generated
-     */
-    int LINUX_OPERTING_SYSTEM_TYPE = 16;
-
-    /**
-     * The number of structural features of the '<em>Linux Operting System Type</em>' class.
+     * The number of operations of the '<em>Processor Resouce Type</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int LINUX_OPERTING_SYSTEM_TYPE_FEATURE_COUNT = OPERTING_SYSTEM_TYPE_FEATURE_COUNT + 0;
+    int PROCESSOR_RESOUCE_TYPE_OPERATION_COUNT = ABSTRACT_RESOUCE_TYPE_OPERATION_COUNT + 0;
 
     /**
-     * The number of operations of the '<em>Linux Operting System Type</em>' class.
+     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.ResourceTypeImpl <em>Resource Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.fraunhofer.ipa.deployment.util.impl.ResourceTypeImpl
+     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getResourceType()
+     * @generated
+     */
+    int RESOURCE_TYPE = 18;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int LINUX_OPERTING_SYSTEM_TYPE_OPERATION_COUNT = OPERTING_SYSTEM_TYPE_OPERATION_COUNT + 0;
+    int RESOURCE_TYPE__NAME = ABSTRACT_RESOUCE_TYPE_FEATURE_COUNT + 0;
 
     /**
-     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.MacOSOpertingSystemTypeImpl <em>Mac OS Operting System Type</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.fraunhofer.ipa.deployment.util.impl.MacOSOpertingSystemTypeImpl
-     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getMacOSOpertingSystemType()
-     * @generated
-     */
-    int MAC_OS_OPERTING_SYSTEM_TYPE = 17;
-
-    /**
-     * The number of structural features of the '<em>Mac OS Operting System Type</em>' class.
+     * The number of structural features of the '<em>Resource Type</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int MAC_OS_OPERTING_SYSTEM_TYPE_FEATURE_COUNT = OPERTING_SYSTEM_TYPE_FEATURE_COUNT + 0;
+    int RESOURCE_TYPE_FEATURE_COUNT = ABSTRACT_RESOUCE_TYPE_FEATURE_COUNT + 1;
 
     /**
-     * The number of operations of the '<em>Mac OS Operting System Type</em>' class.
+     * The number of operations of the '<em>Resource Type</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int MAC_OS_OPERTING_SYSTEM_TYPE_OPERATION_COUNT = OPERTING_SYSTEM_TYPE_OPERATION_COUNT + 0;
-
-    /**
-     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.ProcessorArchitectureTypeImpl <em>Processor Architecture Type</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.fraunhofer.ipa.deployment.util.impl.ProcessorArchitectureTypeImpl
-     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getProcessorArchitectureType()
-     * @generated
-     */
-    int PROCESSOR_ARCHITECTURE_TYPE = 18;
-
-    /**
-     * The number of structural features of the '<em>Processor Architecture Type</em>' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int PROCESSOR_ARCHITECTURE_TYPE_FEATURE_COUNT = ABSTRACT_RESOUCE_TYPE_FEATURE_COUNT + 0;
-
-    /**
-     * The number of operations of the '<em>Processor Architecture Type</em>' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int PROCESSOR_ARCHITECTURE_TYPE_OPERATION_COUNT = ABSTRACT_RESOUCE_TYPE_OPERATION_COUNT + 0;
+    int RESOURCE_TYPE_OPERATION_COUNT = ABSTRACT_RESOUCE_TYPE_OPERATION_COUNT + 0;
 
     /**
      * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.ProcessorArchitectureValueImpl <em>Processor Architecture Value</em>}' class.
@@ -680,13 +672,22 @@ public interface UtilPackage extends EPackage {
     int PROCESSOR_ARCHITECTURE_VALUE = 19;
 
     /**
+     * The feature id for the '<em><b>Value</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PROCESSOR_ARCHITECTURE_VALUE__VALUE = PROPERTY_VALUE_FEATURE_COUNT + 0;
+
+    /**
      * The number of structural features of the '<em>Processor Architecture Value</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int PROCESSOR_ARCHITECTURE_VALUE_FEATURE_COUNT = PROPERTY_VALUE_FEATURE_COUNT + 0;
+    int PROCESSOR_ARCHITECTURE_VALUE_FEATURE_COUNT = PROPERTY_VALUE_FEATURE_COUNT + 1;
 
     /**
      * The number of operations of the '<em>Processor Architecture Value</em>' class.
@@ -698,118 +699,6 @@ public interface UtilPackage extends EPackage {
     int PROCESSOR_ARCHITECTURE_VALUE_OPERATION_COUNT = PROPERTY_VALUE_OPERATION_COUNT + 0;
 
     /**
-     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.X86ProcessorArchitectureImpl <em>X86 Processor Architecture</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.fraunhofer.ipa.deployment.util.impl.X86ProcessorArchitectureImpl
-     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getX86ProcessorArchitecture()
-     * @generated
-     */
-    int X86_PROCESSOR_ARCHITECTURE = 20;
-
-    /**
-     * The number of structural features of the '<em>X86 Processor Architecture</em>' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int X86_PROCESSOR_ARCHITECTURE_FEATURE_COUNT = PROCESSOR_ARCHITECTURE_VALUE_FEATURE_COUNT + 0;
-
-    /**
-     * The number of operations of the '<em>X86 Processor Architecture</em>' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int X86_PROCESSOR_ARCHITECTURE_OPERATION_COUNT = PROCESSOR_ARCHITECTURE_VALUE_OPERATION_COUNT + 0;
-
-    /**
-     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.Arm64ProcessorArchitectureImpl <em>Arm64 Processor Architecture</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.fraunhofer.ipa.deployment.util.impl.Arm64ProcessorArchitectureImpl
-     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getArm64ProcessorArchitecture()
-     * @generated
-     */
-    int ARM64_PROCESSOR_ARCHITECTURE = 21;
-
-    /**
-     * The number of structural features of the '<em>Arm64 Processor Architecture</em>' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int ARM64_PROCESSOR_ARCHITECTURE_FEATURE_COUNT = PROCESSOR_ARCHITECTURE_VALUE_FEATURE_COUNT + 0;
-
-    /**
-     * The number of operations of the '<em>Arm64 Processor Architecture</em>' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int ARM64_PROCESSOR_ARCHITECTURE_OPERATION_COUNT = PROCESSOR_ARCHITECTURE_VALUE_OPERATION_COUNT + 0;
-
-    /**
-     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.AbstractImplementationImpl <em>Abstract Implementation</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.fraunhofer.ipa.deployment.util.impl.AbstractImplementationImpl
-     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getAbstractImplementation()
-     * @generated
-     */
-    int ABSTRACT_IMPLEMENTATION = 22;
-
-    /**
-     * The number of structural features of the '<em>Abstract Implementation</em>' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int ABSTRACT_IMPLEMENTATION_FEATURE_COUNT = 0;
-
-    /**
-     * The number of operations of the '<em>Abstract Implementation</em>' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int ABSTRACT_IMPLEMENTATION_OPERATION_COUNT = 0;
-
-    /**
-     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.AbstractComputationAssignmentTargetImpl <em>Abstract Computation Assignment Target</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.fraunhofer.ipa.deployment.util.impl.AbstractComputationAssignmentTargetImpl
-     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getAbstractComputationAssignmentTarget()
-     * @generated
-     */
-    int ABSTRACT_COMPUTATION_ASSIGNMENT_TARGET = 23;
-
-    /**
-     * The number of structural features of the '<em>Abstract Computation Assignment Target</em>' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int ABSTRACT_COMPUTATION_ASSIGNMENT_TARGET_FEATURE_COUNT = 0;
-
-    /**
-     * The number of operations of the '<em>Abstract Computation Assignment Target</em>' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int ABSTRACT_COMPUTATION_ASSIGNMENT_TARGET_OPERATION_COUNT = 0;
-
-    /**
      * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.PropertyKindImpl <em>Property Kind</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -817,7 +706,231 @@ public interface UtilPackage extends EPackage {
      * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getPropertyKind()
      * @generated
      */
-    int PROPERTY_KIND = 24;
+    int PROPERTY_KIND = 22;
+
+    /**
+     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.AttributeKindImpl <em>Attribute Kind</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.fraunhofer.ipa.deployment.util.impl.AttributeKindImpl
+     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getAttributeKind()
+     * @generated
+     */
+    int ATTRIBUTE_KIND = 23;
+
+    /**
+     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.MaximumKindImpl <em>Maximum Kind</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.fraunhofer.ipa.deployment.util.impl.MaximumKindImpl
+     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getMaximumKind()
+     * @generated
+     */
+    int MAXIMUM_KIND = 24;
+
+    /**
+     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.MinimumKindImpl <em>Minimum Kind</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.fraunhofer.ipa.deployment.util.impl.MinimumKindImpl
+     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getMinimumKind()
+     * @generated
+     */
+    int MINIMUM_KIND = 25;
+
+    /**
+     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.SelectionKindImpl <em>Selection Kind</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.fraunhofer.ipa.deployment.util.impl.SelectionKindImpl
+     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getSelectionKind()
+     * @generated
+     */
+    int SELECTION_KIND = 26;
+
+    /**
+     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.RangeKindImpl <em>Range Kind</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.fraunhofer.ipa.deployment.util.impl.RangeKindImpl
+     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getRangeKind()
+     * @generated
+     */
+    int RANGE_KIND = 27;
+
+    /**
+     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.PropertyAttributeImpl <em>Property Attribute</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.fraunhofer.ipa.deployment.util.impl.PropertyAttributeImpl
+     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getPropertyAttribute()
+     * @generated
+     */
+    int PROPERTY_ATTRIBUTE = 28;
+
+    /**
+     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.PropertyMaximunImpl <em>Property Maximun</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.fraunhofer.ipa.deployment.util.impl.PropertyMaximunImpl
+     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getPropertyMaximun()
+     * @generated
+     */
+    int PROPERTY_MAXIMUN = 29;
+
+    /**
+     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.PropertyMinimumImpl <em>Property Minimum</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.fraunhofer.ipa.deployment.util.impl.PropertyMinimumImpl
+     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getPropertyMinimum()
+     * @generated
+     */
+    int PROPERTY_MINIMUM = 30;
+
+    /**
+     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.PropertySelectionImpl <em>Property Selection</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.fraunhofer.ipa.deployment.util.impl.PropertySelectionImpl
+     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getPropertySelection()
+     * @generated
+     */
+    int PROPERTY_SELECTION = 31;
+
+    /**
+     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.PropertyRangeImpl <em>Property Range</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.fraunhofer.ipa.deployment.util.impl.PropertyRangeImpl
+     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getPropertyRange()
+     * @generated
+     */
+    int PROPERTY_RANGE = 32;
+
+    /**
+     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.PropertyImpl <em>Property</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.fraunhofer.ipa.deployment.util.impl.PropertyImpl
+     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getProperty()
+     * @generated
+     */
+    int PROPERTY = 33;
+
+    /**
+     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.PropertyValueIntImpl <em>Property Value Int</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.fraunhofer.ipa.deployment.util.impl.PropertyValueIntImpl
+     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getPropertyValueInt()
+     * @generated
+     */
+    int PROPERTY_VALUE_INT = 34;
+
+    /**
+     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.PropertyValueDoubleImpl <em>Property Value Double</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.fraunhofer.ipa.deployment.util.impl.PropertyValueDoubleImpl
+     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getPropertyValueDouble()
+     * @generated
+     */
+    int PROPERTY_VALUE_DOUBLE = 35;
+
+    /**
+     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.PropertyValueStringImpl <em>Property Value String</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.fraunhofer.ipa.deployment.util.impl.PropertyValueStringImpl
+     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getPropertyValueString()
+     * @generated
+     */
+    int PROPERTY_VALUE_STRING = 36;
+
+    /**
+     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.ContainerRuntimeImpl <em>Container Runtime</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.fraunhofer.ipa.deployment.util.impl.ContainerRuntimeImpl
+     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getContainerRuntime()
+     * @generated
+     */
+    int CONTAINER_RUNTIME = 37;
+
+    /**
+     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.LinuxDistributionValueImpl <em>Linux Distribution Value</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.fraunhofer.ipa.deployment.util.impl.LinuxDistributionValueImpl
+     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getLinuxDistributionValue()
+     * @generated
+     */
+    int LINUX_DISTRIBUTION_VALUE = 20;
+
+    /**
+     * The feature id for the '<em><b>Value</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LINUX_DISTRIBUTION_VALUE__VALUE = PROPERTY_VALUE_FEATURE_COUNT + 0;
+
+    /**
+     * The number of structural features of the '<em>Linux Distribution Value</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LINUX_DISTRIBUTION_VALUE_FEATURE_COUNT = PROPERTY_VALUE_FEATURE_COUNT + 1;
+
+    /**
+     * The number of operations of the '<em>Linux Distribution Value</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LINUX_DISTRIBUTION_VALUE_OPERATION_COUNT = PROPERTY_VALUE_OPERATION_COUNT + 0;
+
+    /**
+     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.UbuntuVersionValueImpl <em>Ubuntu Version Value</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.fraunhofer.ipa.deployment.util.impl.UbuntuVersionValueImpl
+     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getUbuntuVersionValue()
+     * @generated
+     */
+    int UBUNTU_VERSION_VALUE = 21;
+
+    /**
+     * The feature id for the '<em><b>Value</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int UBUNTU_VERSION_VALUE__VALUE = PROPERTY_VALUE_FEATURE_COUNT + 0;
+
+    /**
+     * The number of structural features of the '<em>Ubuntu Version Value</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int UBUNTU_VERSION_VALUE_FEATURE_COUNT = PROPERTY_VALUE_FEATURE_COUNT + 1;
+
+    /**
+     * The number of operations of the '<em>Ubuntu Version Value</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int UBUNTU_VERSION_VALUE_OPERATION_COUNT = PROPERTY_VALUE_OPERATION_COUNT + 0;
 
     /**
      * The number of structural features of the '<em>Property Kind</em>' class.
@@ -838,16 +951,6 @@ public interface UtilPackage extends EPackage {
     int PROPERTY_KIND_OPERATION_COUNT = 0;
 
     /**
-     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.AttributeKindImpl <em>Attribute Kind</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.fraunhofer.ipa.deployment.util.impl.AttributeKindImpl
-     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getAttributeKind()
-     * @generated
-     */
-    int ATTRIBUTE_KIND = 25;
-
-    /**
      * The number of structural features of the '<em>Attribute Kind</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -864,16 +967,6 @@ public interface UtilPackage extends EPackage {
      * @ordered
      */
     int ATTRIBUTE_KIND_OPERATION_COUNT = PROPERTY_KIND_OPERATION_COUNT + 0;
-
-    /**
-     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.MaximumKindImpl <em>Maximum Kind</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.fraunhofer.ipa.deployment.util.impl.MaximumKindImpl
-     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getMaximumKind()
-     * @generated
-     */
-    int MAXIMUM_KIND = 26;
 
     /**
      * The number of structural features of the '<em>Maximum Kind</em>' class.
@@ -894,16 +987,6 @@ public interface UtilPackage extends EPackage {
     int MAXIMUM_KIND_OPERATION_COUNT = PROPERTY_KIND_OPERATION_COUNT + 0;
 
     /**
-     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.MinimumKindImpl <em>Minimum Kind</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.fraunhofer.ipa.deployment.util.impl.MinimumKindImpl
-     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getMinimumKind()
-     * @generated
-     */
-    int MINIMUM_KIND = 27;
-
-    /**
      * The number of structural features of the '<em>Minimum Kind</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -920,16 +1003,6 @@ public interface UtilPackage extends EPackage {
      * @ordered
      */
     int MINIMUM_KIND_OPERATION_COUNT = PROPERTY_KIND_OPERATION_COUNT + 0;
-
-    /**
-     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.SelectionKindImpl <em>Selection Kind</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.fraunhofer.ipa.deployment.util.impl.SelectionKindImpl
-     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getSelectionKind()
-     * @generated
-     */
-    int SELECTION_KIND = 28;
 
     /**
      * The number of structural features of the '<em>Selection Kind</em>' class.
@@ -950,16 +1023,6 @@ public interface UtilPackage extends EPackage {
     int SELECTION_KIND_OPERATION_COUNT = PROPERTY_KIND_OPERATION_COUNT + 0;
 
     /**
-     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.RangeKindImpl <em>Range Kind</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.fraunhofer.ipa.deployment.util.impl.RangeKindImpl
-     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getRangeKind()
-     * @generated
-     */
-    int RANGE_KIND = 29;
-
-    /**
      * The number of structural features of the '<em>Range Kind</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -976,16 +1039,6 @@ public interface UtilPackage extends EPackage {
      * @ordered
      */
     int RANGE_KIND_OPERATION_COUNT = PROPERTY_KIND_OPERATION_COUNT + 0;
-
-    /**
-     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.PropertyAttributeImpl <em>Property Attribute</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.fraunhofer.ipa.deployment.util.impl.PropertyAttributeImpl
-     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getPropertyAttribute()
-     * @generated
-     */
-    int PROPERTY_ATTRIBUTE = 30;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1042,16 +1095,6 @@ public interface UtilPackage extends EPackage {
     int PROPERTY_ATTRIBUTE_OPERATION_COUNT = ABSTRACT_PROPERTY_OPERATION_COUNT + 0;
 
     /**
-     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.PropertyMaximunImpl <em>Property Maximun</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.fraunhofer.ipa.deployment.util.impl.PropertyMaximunImpl
-     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getPropertyMaximun()
-     * @generated
-     */
-    int PROPERTY_MAXIMUN = 31;
-
-    /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1104,16 +1147,6 @@ public interface UtilPackage extends EPackage {
      * @ordered
      */
     int PROPERTY_MAXIMUN_OPERATION_COUNT = ABSTRACT_PROPERTY_OPERATION_COUNT + 0;
-
-    /**
-     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.PropertyMinimumImpl <em>Property Minimum</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.fraunhofer.ipa.deployment.util.impl.PropertyMinimumImpl
-     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getPropertyMinimum()
-     * @generated
-     */
-    int PROPERTY_MINIMUM = 32;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1170,16 +1203,6 @@ public interface UtilPackage extends EPackage {
     int PROPERTY_MINIMUM_OPERATION_COUNT = ABSTRACT_PROPERTY_OPERATION_COUNT + 0;
 
     /**
-     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.PropertySelectionImpl <em>Property Selection</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.fraunhofer.ipa.deployment.util.impl.PropertySelectionImpl
-     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getPropertySelection()
-     * @generated
-     */
-    int PROPERTY_SELECTION = 33;
-
-    /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1232,16 +1255,6 @@ public interface UtilPackage extends EPackage {
      * @ordered
      */
     int PROPERTY_SELECTION_OPERATION_COUNT = ABSTRACT_PROPERTY_OPERATION_COUNT + 0;
-
-    /**
-     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.PropertyRangeImpl <em>Property Range</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.fraunhofer.ipa.deployment.util.impl.PropertyRangeImpl
-     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getPropertyRange()
-     * @generated
-     */
-    int PROPERTY_RANGE = 34;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1298,16 +1311,6 @@ public interface UtilPackage extends EPackage {
     int PROPERTY_RANGE_OPERATION_COUNT = ABSTRACT_PROPERTY_OPERATION_COUNT + 0;
 
     /**
-     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.PropertyImpl <em>Property</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.fraunhofer.ipa.deployment.util.impl.PropertyImpl
-     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getProperty()
-     * @generated
-     */
-    int PROPERTY = 35;
-
-    /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1362,145 +1365,171 @@ public interface UtilPackage extends EPackage {
     int PROPERTY_OPERATION_COUNT = ABSTRACT_PROPERTY_OPERATION_COUNT + 0;
 
     /**
-     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.ResourceTypeImpl <em>Resource Type</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.fraunhofer.ipa.deployment.util.impl.ResourceTypeImpl
-     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getResourceType()
-     * @generated
-     */
-    int RESOURCE_TYPE = 36;
-
-    /**
-     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * The feature id for the '<em><b>Value</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int RESOURCE_TYPE__NAME = ABSTRACT_RESOUCE_TYPE_FEATURE_COUNT + 0;
+    int PROPERTY_VALUE_INT__VALUE = PROPERTY_VALUE_FEATURE_COUNT + 0;
 
     /**
-     * The number of structural features of the '<em>Resource Type</em>' class.
+     * The number of structural features of the '<em>Property Value Int</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int RESOURCE_TYPE_FEATURE_COUNT = ABSTRACT_RESOUCE_TYPE_FEATURE_COUNT + 1;
+    int PROPERTY_VALUE_INT_FEATURE_COUNT = PROPERTY_VALUE_FEATURE_COUNT + 1;
 
     /**
-     * The number of operations of the '<em>Resource Type</em>' class.
+     * The number of operations of the '<em>Property Value Int</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int RESOURCE_TYPE_OPERATION_COUNT = ABSTRACT_RESOUCE_TYPE_OPERATION_COUNT + 0;
+    int PROPERTY_VALUE_INT_OPERATION_COUNT = PROPERTY_VALUE_OPERATION_COUNT + 0;
 
     /**
-     * Returns the meta object for class '{@link de.fraunhofer.ipa.deployment.util.Description <em>Description</em>}'.
+     * The feature id for the '<em><b>Value</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for class '<em>Description</em>'.
-     * @see de.fraunhofer.ipa.deployment.util.Description
      * @generated
+     * @ordered
      */
-    EClass getDescription();
+    int PROPERTY_VALUE_DOUBLE__VALUE = PROPERTY_VALUE_FEATURE_COUNT + 0;
 
     /**
-     * Returns the meta object for class '{@link de.fraunhofer.ipa.deployment.util.PropertyValue <em>Property Value</em>}'.
+     * The number of structural features of the '<em>Property Value Double</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for class '<em>Property Value</em>'.
-     * @see de.fraunhofer.ipa.deployment.util.PropertyValue
      * @generated
+     * @ordered
      */
-    EClass getPropertyValue();
+    int PROPERTY_VALUE_DOUBLE_FEATURE_COUNT = PROPERTY_VALUE_FEATURE_COUNT + 1;
 
     /**
-     * Returns the meta object for class '{@link de.fraunhofer.ipa.deployment.util.PropertyValueInt <em>Property Value Int</em>}'.
+     * The number of operations of the '<em>Property Value Double</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for class '<em>Property Value Int</em>'.
-     * @see de.fraunhofer.ipa.deployment.util.PropertyValueInt
      * @generated
+     * @ordered
      */
-    EClass getPropertyValueInt();
+    int PROPERTY_VALUE_DOUBLE_OPERATION_COUNT = PROPERTY_VALUE_OPERATION_COUNT + 0;
 
     /**
-     * Returns the meta object for the attribute '{@link de.fraunhofer.ipa.deployment.util.PropertyValueInt#getValue <em>Value</em>}'.
+     * The feature id for the '<em><b>Value</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Value</em>'.
-     * @see de.fraunhofer.ipa.deployment.util.PropertyValueInt#getValue()
-     * @see #getPropertyValueInt()
      * @generated
+     * @ordered
      */
-    EAttribute getPropertyValueInt_Value();
+    int PROPERTY_VALUE_STRING__VALUE = PROPERTY_VALUE_FEATURE_COUNT + 0;
 
     /**
-     * Returns the meta object for class '{@link de.fraunhofer.ipa.deployment.util.PropertyValueDouble <em>Property Value Double</em>}'.
+     * The number of structural features of the '<em>Property Value String</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for class '<em>Property Value Double</em>'.
-     * @see de.fraunhofer.ipa.deployment.util.PropertyValueDouble
      * @generated
+     * @ordered
      */
-    EClass getPropertyValueDouble();
+    int PROPERTY_VALUE_STRING_FEATURE_COUNT = PROPERTY_VALUE_FEATURE_COUNT + 1;
 
     /**
-     * Returns the meta object for the attribute '{@link de.fraunhofer.ipa.deployment.util.PropertyValueDouble#getValue <em>Value</em>}'.
+     * The number of operations of the '<em>Property Value String</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Value</em>'.
-     * @see de.fraunhofer.ipa.deployment.util.PropertyValueDouble#getValue()
-     * @see #getPropertyValueDouble()
      * @generated
+     * @ordered
      */
-    EAttribute getPropertyValueDouble_Value();
+    int PROPERTY_VALUE_STRING_OPERATION_COUNT = PROPERTY_VALUE_OPERATION_COUNT + 0;
 
     /**
-     * Returns the meta object for class '{@link de.fraunhofer.ipa.deployment.util.PropertyValueString <em>Property Value String</em>}'.
+     * The number of structural features of the '<em>Container Runtime</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for class '<em>Property Value String</em>'.
-     * @see de.fraunhofer.ipa.deployment.util.PropertyValueString
      * @generated
+     * @ordered
      */
-    EClass getPropertyValueString();
+    int CONTAINER_RUNTIME_FEATURE_COUNT = ABSTRACT_RUNTIME_ENVIROMENT_FEATURE_COUNT + 0;
 
     /**
-     * Returns the meta object for the attribute '{@link de.fraunhofer.ipa.deployment.util.PropertyValueString#getValue <em>Value</em>}'.
+     * The number of operations of the '<em>Container Runtime</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Value</em>'.
-     * @see de.fraunhofer.ipa.deployment.util.PropertyValueString#getValue()
-     * @see #getPropertyValueString()
      * @generated
+     * @ordered
      */
-    EAttribute getPropertyValueString_Value();
+    int CONTAINER_RUNTIME_OPERATION_COUNT = ABSTRACT_RUNTIME_ENVIROMENT_OPERATION_COUNT + 0;
 
     /**
-     * Returns the meta object for class '{@link de.fraunhofer.ipa.deployment.util.PropertyType <em>Property Type</em>}'.
+     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.impl.OpertingSystemNameImpl <em>Operting System Name</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for class '<em>Property Type</em>'.
-     * @see de.fraunhofer.ipa.deployment.util.PropertyType
+     * @see de.fraunhofer.ipa.deployment.util.impl.OpertingSystemNameImpl
+     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getOpertingSystemName()
      * @generated
      */
-    EClass getPropertyType();
+    int OPERTING_SYSTEM_NAME = 38;
 
     /**
-     * Returns the meta object for the attribute '{@link de.fraunhofer.ipa.deployment.util.PropertyType#getType <em>Type</em>}'.
+     * The number of structural features of the '<em>Operting System Name</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Type</em>'.
-     * @see de.fraunhofer.ipa.deployment.util.PropertyType#getType()
-     * @see #getPropertyType()
+     * @generated
+     * @ordered
+     */
+    int OPERTING_SYSTEM_NAME_FEATURE_COUNT = 0;
+
+    /**
+     * The number of operations of the '<em>Operting System Name</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int OPERTING_SYSTEM_NAME_OPERATION_COUNT = 0;
+
+    /**
+     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.UbuntuVersion <em>Ubuntu Version</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.fraunhofer.ipa.deployment.util.UbuntuVersion
+     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getUbuntuVersion()
      * @generated
      */
-    EAttribute getPropertyType_Type();
+    int UBUNTU_VERSION = 39;
+
+    /**
+     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.LinuxDistribution <em>Linux Distribution</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.fraunhofer.ipa.deployment.util.LinuxDistribution
+     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getLinuxDistribution()
+     * @generated
+     */
+    int LINUX_DISTRIBUTION = 40;
+
+    /**
+     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.RunTimeType <em>Run Time Type</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.fraunhofer.ipa.deployment.util.RunTimeType
+     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getRunTimeType()
+     * @generated
+     */
+    int RUN_TIME_TYPE = 41;
+
+    /**
+     * The meta object id for the '{@link de.fraunhofer.ipa.deployment.util.ProcessorArchitectureType <em>Processor Architecture Type</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.fraunhofer.ipa.deployment.util.ProcessorArchitectureType
+     * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getProcessorArchitectureType()
+     * @generated
+     */
+    int PROCESSOR_ARCHITECTURE_TYPE = 42;
 
     /**
      * Returns the meta object for class '{@link de.fraunhofer.ipa.deployment.util.AbstractProperty <em>Abstract Property</em>}'.
@@ -1545,16 +1574,6 @@ public interface UtilPackage extends EPackage {
     EClass getAbstractResouceType();
 
     /**
-     * Returns the meta object for class '{@link de.fraunhofer.ipa.deployment.util.ProcessorArchitecture <em>Processor Architecture</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for class '<em>Processor Architecture</em>'.
-     * @see de.fraunhofer.ipa.deployment.util.ProcessorArchitecture
-     * @generated
-     */
-    EClass getProcessorArchitecture();
-
-    /**
      * Returns the meta object for class '{@link de.fraunhofer.ipa.deployment.util.AbstractCommunicationType <em>Abstract Communication Type</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1563,6 +1582,109 @@ public interface UtilPackage extends EPackage {
      * @generated
      */
     EClass getAbstractCommunicationType();
+
+    /**
+     * Returns the meta object for class '{@link de.fraunhofer.ipa.deployment.util.AbstractImplementation <em>Abstract Implementation</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Abstract Implementation</em>'.
+     * @see de.fraunhofer.ipa.deployment.util.AbstractImplementation
+     * @generated
+     */
+    EClass getAbstractImplementation();
+
+    /**
+     * Returns the meta object for class '{@link de.fraunhofer.ipa.deployment.util.AbstractComputationAssignmentTarget <em>Abstract Computation Assignment Target</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Abstract Computation Assignment Target</em>'.
+     * @see de.fraunhofer.ipa.deployment.util.AbstractComputationAssignmentTarget
+     * @generated
+     */
+    EClass getAbstractComputationAssignmentTarget();
+
+    /**
+     * Returns the meta object for class '{@link de.fraunhofer.ipa.deployment.util.AbstractResource <em>Abstract Resource</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Abstract Resource</em>'.
+     * @see de.fraunhofer.ipa.deployment.util.AbstractResource
+     * @generated
+     */
+    EClass getAbstractResource();
+
+    /**
+     * Returns the meta object for the attribute '{@link de.fraunhofer.ipa.deployment.util.AbstractResource#getName <em>Name</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Name</em>'.
+     * @see de.fraunhofer.ipa.deployment.util.AbstractResource#getName()
+     * @see #getAbstractResource()
+     * @generated
+     */
+    EAttribute getAbstractResource_Name();
+
+    /**
+     * Returns the meta object for class '{@link de.fraunhofer.ipa.deployment.util.AbstractRuntimeEnviroment <em>Abstract Runtime Enviroment</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Abstract Runtime Enviroment</em>'.
+     * @see de.fraunhofer.ipa.deployment.util.AbstractRuntimeEnviroment
+     * @generated
+     */
+    EClass getAbstractRuntimeEnviroment();
+
+    /**
+     * Returns the meta object for class '{@link de.fraunhofer.ipa.deployment.util.PropertyValue <em>Property Value</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Property Value</em>'.
+     * @see de.fraunhofer.ipa.deployment.util.PropertyValue
+     * @generated
+     */
+    EClass getPropertyValue();
+
+    /**
+     * Returns the meta object for class '{@link de.fraunhofer.ipa.deployment.util.Description <em>Description</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Description</em>'.
+     * @see de.fraunhofer.ipa.deployment.util.Description
+     * @generated
+     */
+    EClass getDescription();
+
+    /**
+     * Returns the meta object for class '{@link de.fraunhofer.ipa.deployment.util.Resource <em>Resource</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Resource</em>'.
+     * @see de.fraunhofer.ipa.deployment.util.Resource
+     * @generated
+     */
+    EClass getResource();
+
+    /**
+     * Returns the meta object for the containment reference '{@link de.fraunhofer.ipa.deployment.util.Resource#getType <em>Type</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the containment reference '<em>Type</em>'.
+     * @see de.fraunhofer.ipa.deployment.util.Resource#getType()
+     * @see #getResource()
+     * @generated
+     */
+    EReference getResource_Type();
+
+    /**
+     * Returns the meta object for the containment reference list '{@link de.fraunhofer.ipa.deployment.util.Resource#getProperties <em>Properties</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the containment reference list '<em>Properties</em>'.
+     * @see de.fraunhofer.ipa.deployment.util.Resource#getProperties()
+     * @see #getResource()
+     * @generated
+     */
+    EReference getResource_Properties();
 
     /**
      * Returns the meta object for class '{@link de.fraunhofer.ipa.deployment.util.CommunicationType <em>Communication Type</em>}'.
@@ -1616,76 +1738,65 @@ public interface UtilPackage extends EPackage {
     EClass getWlanCommunicationType();
 
     /**
-     * Returns the meta object for class '{@link de.fraunhofer.ipa.deployment.util.AvailableResouce <em>Available Resouce</em>}'.
+     * Returns the meta object for class '{@link de.fraunhofer.ipa.deployment.util.OpertingSystemResouceType <em>Operting System Resouce Type</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for class '<em>Available Resouce</em>'.
-     * @see de.fraunhofer.ipa.deployment.util.AvailableResouce
+     * @return the meta object for class '<em>Operting System Resouce Type</em>'.
+     * @see de.fraunhofer.ipa.deployment.util.OpertingSystemResouceType
      * @generated
      */
-    EClass getAvailableResouce();
+    EClass getOpertingSystemResouceType();
 
     /**
-     * Returns the meta object for the containment reference list '{@link de.fraunhofer.ipa.deployment.util.AvailableResouce#getList <em>List</em>}'.
+     * Returns the meta object for class '{@link de.fraunhofer.ipa.deployment.util.LinuxOpertingSystem <em>Linux Operting System</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the containment reference list '<em>List</em>'.
-     * @see de.fraunhofer.ipa.deployment.util.AvailableResouce#getList()
-     * @see #getAvailableResouce()
+     * @return the meta object for class '<em>Linux Operting System</em>'.
+     * @see de.fraunhofer.ipa.deployment.util.LinuxOpertingSystem
      * @generated
      */
-    EReference getAvailableResouce_List();
+    EClass getLinuxOpertingSystem();
 
     /**
-     * Returns the meta object for the reference '{@link de.fraunhofer.ipa.deployment.util.AvailableResouce#getProperty <em>Property</em>}'.
+     * Returns the meta object for class '{@link de.fraunhofer.ipa.deployment.util.MacOSOpertingSystem <em>Mac OS Operting System</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the reference '<em>Property</em>'.
-     * @see de.fraunhofer.ipa.deployment.util.AvailableResouce#getProperty()
-     * @see #getAvailableResouce()
+     * @return the meta object for class '<em>Mac OS Operting System</em>'.
+     * @see de.fraunhofer.ipa.deployment.util.MacOSOpertingSystem
      * @generated
      */
-    EReference getAvailableResouce_Property();
+    EClass getMacOSOpertingSystem();
 
     /**
-     * Returns the meta object for class '{@link de.fraunhofer.ipa.deployment.util.OpertingSystemType <em>Operting System Type</em>}'.
+     * Returns the meta object for class '{@link de.fraunhofer.ipa.deployment.util.ProcessorResouceType <em>Processor Resouce Type</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for class '<em>Operting System Type</em>'.
-     * @see de.fraunhofer.ipa.deployment.util.OpertingSystemType
+     * @return the meta object for class '<em>Processor Resouce Type</em>'.
+     * @see de.fraunhofer.ipa.deployment.util.ProcessorResouceType
      * @generated
      */
-    EClass getOpertingSystemType();
+    EClass getProcessorResouceType();
 
     /**
-     * Returns the meta object for class '{@link de.fraunhofer.ipa.deployment.util.LinuxOpertingSystemType <em>Linux Operting System Type</em>}'.
+     * Returns the meta object for class '{@link de.fraunhofer.ipa.deployment.util.ResourceType <em>Resource Type</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for class '<em>Linux Operting System Type</em>'.
-     * @see de.fraunhofer.ipa.deployment.util.LinuxOpertingSystemType
+     * @return the meta object for class '<em>Resource Type</em>'.
+     * @see de.fraunhofer.ipa.deployment.util.ResourceType
      * @generated
      */
-    EClass getLinuxOpertingSystemType();
+    EClass getResourceType();
 
     /**
-     * Returns the meta object for class '{@link de.fraunhofer.ipa.deployment.util.MacOSOpertingSystemType <em>Mac OS Operting System Type</em>}'.
+     * Returns the meta object for the attribute '{@link de.fraunhofer.ipa.deployment.util.ResourceType#getName <em>Name</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for class '<em>Mac OS Operting System Type</em>'.
-     * @see de.fraunhofer.ipa.deployment.util.MacOSOpertingSystemType
+     * @return the meta object for the attribute '<em>Name</em>'.
+     * @see de.fraunhofer.ipa.deployment.util.ResourceType#getName()
+     * @see #getResourceType()
      * @generated
      */
-    EClass getMacOSOpertingSystemType();
-
-    /**
-     * Returns the meta object for class '{@link de.fraunhofer.ipa.deployment.util.ProcessorArchitectureType <em>Processor Architecture Type</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for class '<em>Processor Architecture Type</em>'.
-     * @see de.fraunhofer.ipa.deployment.util.ProcessorArchitectureType
-     * @generated
-     */
-    EClass getProcessorArchitectureType();
+    EAttribute getResourceType_Name();
 
     /**
      * Returns the meta object for class '{@link de.fraunhofer.ipa.deployment.util.ProcessorArchitectureValue <em>Processor Architecture Value</em>}'.
@@ -1698,44 +1809,15 @@ public interface UtilPackage extends EPackage {
     EClass getProcessorArchitectureValue();
 
     /**
-     * Returns the meta object for class '{@link de.fraunhofer.ipa.deployment.util.X86ProcessorArchitecture <em>X86 Processor Architecture</em>}'.
+     * Returns the meta object for the attribute '{@link de.fraunhofer.ipa.deployment.util.ProcessorArchitectureValue#getValue <em>Value</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for class '<em>X86 Processor Architecture</em>'.
-     * @see de.fraunhofer.ipa.deployment.util.X86ProcessorArchitecture
+     * @return the meta object for the attribute '<em>Value</em>'.
+     * @see de.fraunhofer.ipa.deployment.util.ProcessorArchitectureValue#getValue()
+     * @see #getProcessorArchitectureValue()
      * @generated
      */
-    EClass getX86ProcessorArchitecture();
-
-    /**
-     * Returns the meta object for class '{@link de.fraunhofer.ipa.deployment.util.Arm64ProcessorArchitecture <em>Arm64 Processor Architecture</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for class '<em>Arm64 Processor Architecture</em>'.
-     * @see de.fraunhofer.ipa.deployment.util.Arm64ProcessorArchitecture
-     * @generated
-     */
-    EClass getArm64ProcessorArchitecture();
-
-    /**
-     * Returns the meta object for class '{@link de.fraunhofer.ipa.deployment.util.AbstractImplementation <em>Abstract Implementation</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for class '<em>Abstract Implementation</em>'.
-     * @see de.fraunhofer.ipa.deployment.util.AbstractImplementation
-     * @generated
-     */
-    EClass getAbstractImplementation();
-
-    /**
-     * Returns the meta object for class '{@link de.fraunhofer.ipa.deployment.util.AbstractComputationAssignmentTarget <em>Abstract Computation Assignment Target</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for class '<em>Abstract Computation Assignment Target</em>'.
-     * @see de.fraunhofer.ipa.deployment.util.AbstractComputationAssignmentTarget
-     * @generated
-     */
-    EClass getAbstractComputationAssignmentTarget();
+    EAttribute getProcessorArchitectureValue_Value();
 
     /**
      * Returns the meta object for class '{@link de.fraunhofer.ipa.deployment.util.PropertyKind <em>Property Kind</em>}'.
@@ -1990,25 +2072,169 @@ public interface UtilPackage extends EPackage {
     EReference getProperty_Value();
 
     /**
-     * Returns the meta object for class '{@link de.fraunhofer.ipa.deployment.util.ResourceType <em>Resource Type</em>}'.
+     * Returns the meta object for class '{@link de.fraunhofer.ipa.deployment.util.PropertyValueInt <em>Property Value Int</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for class '<em>Resource Type</em>'.
-     * @see de.fraunhofer.ipa.deployment.util.ResourceType
+     * @return the meta object for class '<em>Property Value Int</em>'.
+     * @see de.fraunhofer.ipa.deployment.util.PropertyValueInt
      * @generated
      */
-    EClass getResourceType();
+    EClass getPropertyValueInt();
 
     /**
-     * Returns the meta object for the attribute '{@link de.fraunhofer.ipa.deployment.util.ResourceType#getName <em>Name</em>}'.
+     * Returns the meta object for the attribute '{@link de.fraunhofer.ipa.deployment.util.PropertyValueInt#getValue <em>Value</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Name</em>'.
-     * @see de.fraunhofer.ipa.deployment.util.ResourceType#getName()
-     * @see #getResourceType()
+     * @return the meta object for the attribute '<em>Value</em>'.
+     * @see de.fraunhofer.ipa.deployment.util.PropertyValueInt#getValue()
+     * @see #getPropertyValueInt()
      * @generated
      */
-    EAttribute getResourceType_Name();
+    EAttribute getPropertyValueInt_Value();
+
+    /**
+     * Returns the meta object for class '{@link de.fraunhofer.ipa.deployment.util.PropertyValueDouble <em>Property Value Double</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Property Value Double</em>'.
+     * @see de.fraunhofer.ipa.deployment.util.PropertyValueDouble
+     * @generated
+     */
+    EClass getPropertyValueDouble();
+
+    /**
+     * Returns the meta object for the attribute '{@link de.fraunhofer.ipa.deployment.util.PropertyValueDouble#getValue <em>Value</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Value</em>'.
+     * @see de.fraunhofer.ipa.deployment.util.PropertyValueDouble#getValue()
+     * @see #getPropertyValueDouble()
+     * @generated
+     */
+    EAttribute getPropertyValueDouble_Value();
+
+    /**
+     * Returns the meta object for class '{@link de.fraunhofer.ipa.deployment.util.PropertyValueString <em>Property Value String</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Property Value String</em>'.
+     * @see de.fraunhofer.ipa.deployment.util.PropertyValueString
+     * @generated
+     */
+    EClass getPropertyValueString();
+
+    /**
+     * Returns the meta object for the attribute '{@link de.fraunhofer.ipa.deployment.util.PropertyValueString#getValue <em>Value</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Value</em>'.
+     * @see de.fraunhofer.ipa.deployment.util.PropertyValueString#getValue()
+     * @see #getPropertyValueString()
+     * @generated
+     */
+    EAttribute getPropertyValueString_Value();
+
+    /**
+     * Returns the meta object for class '{@link de.fraunhofer.ipa.deployment.util.ContainerRuntime <em>Container Runtime</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Container Runtime</em>'.
+     * @see de.fraunhofer.ipa.deployment.util.ContainerRuntime
+     * @generated
+     */
+    EClass getContainerRuntime();
+
+    /**
+     * Returns the meta object for class '{@link de.fraunhofer.ipa.deployment.util.OpertingSystemName <em>Operting System Name</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Operting System Name</em>'.
+     * @see de.fraunhofer.ipa.deployment.util.OpertingSystemName
+     * @generated
+     */
+    EClass getOpertingSystemName();
+
+    /**
+     * Returns the meta object for class '{@link de.fraunhofer.ipa.deployment.util.LinuxDistributionValue <em>Linux Distribution Value</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Linux Distribution Value</em>'.
+     * @see de.fraunhofer.ipa.deployment.util.LinuxDistributionValue
+     * @generated
+     */
+    EClass getLinuxDistributionValue();
+
+    /**
+     * Returns the meta object for the attribute '{@link de.fraunhofer.ipa.deployment.util.LinuxDistributionValue#getValue <em>Value</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Value</em>'.
+     * @see de.fraunhofer.ipa.deployment.util.LinuxDistributionValue#getValue()
+     * @see #getLinuxDistributionValue()
+     * @generated
+     */
+    EAttribute getLinuxDistributionValue_Value();
+
+    /**
+     * Returns the meta object for class '{@link de.fraunhofer.ipa.deployment.util.UbuntuVersionValue <em>Ubuntu Version Value</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Ubuntu Version Value</em>'.
+     * @see de.fraunhofer.ipa.deployment.util.UbuntuVersionValue
+     * @generated
+     */
+    EClass getUbuntuVersionValue();
+
+    /**
+     * Returns the meta object for the attribute '{@link de.fraunhofer.ipa.deployment.util.UbuntuVersionValue#getValue <em>Value</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Value</em>'.
+     * @see de.fraunhofer.ipa.deployment.util.UbuntuVersionValue#getValue()
+     * @see #getUbuntuVersionValue()
+     * @generated
+     */
+    EAttribute getUbuntuVersionValue_Value();
+
+    /**
+     * Returns the meta object for enum '{@link de.fraunhofer.ipa.deployment.util.UbuntuVersion <em>Ubuntu Version</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for enum '<em>Ubuntu Version</em>'.
+     * @see de.fraunhofer.ipa.deployment.util.UbuntuVersion
+     * @generated
+     */
+    EEnum getUbuntuVersion();
+
+    /**
+     * Returns the meta object for enum '{@link de.fraunhofer.ipa.deployment.util.LinuxDistribution <em>Linux Distribution</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for enum '<em>Linux Distribution</em>'.
+     * @see de.fraunhofer.ipa.deployment.util.LinuxDistribution
+     * @generated
+     */
+    EEnum getLinuxDistribution();
+
+    /**
+     * Returns the meta object for enum '{@link de.fraunhofer.ipa.deployment.util.RunTimeType <em>Run Time Type</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for enum '<em>Run Time Type</em>'.
+     * @see de.fraunhofer.ipa.deployment.util.RunTimeType
+     * @generated
+     */
+    EEnum getRunTimeType();
+
+    /**
+     * Returns the meta object for enum '{@link de.fraunhofer.ipa.deployment.util.ProcessorArchitectureType <em>Processor Architecture Type</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for enum '<em>Processor Architecture Type</em>'.
+     * @see de.fraunhofer.ipa.deployment.util.ProcessorArchitectureType
+     * @generated
+     */
+    EEnum getProcessorArchitectureType();
 
     /**
      * Returns the factory that creates the instances of the model.
@@ -2033,98 +2259,6 @@ public interface UtilPackage extends EPackage {
      * @generated
      */
     interface Literals {
-        /**
-         * The meta object literal for the '{@link de.fraunhofer.ipa.deployment.util.impl.DescriptionImpl <em>Description</em>}' class.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @see de.fraunhofer.ipa.deployment.util.impl.DescriptionImpl
-         * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getDescription()
-         * @generated
-         */
-        EClass DESCRIPTION = eINSTANCE.getDescription();
-
-        /**
-         * The meta object literal for the '{@link de.fraunhofer.ipa.deployment.util.impl.PropertyValueImpl <em>Property Value</em>}' class.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @see de.fraunhofer.ipa.deployment.util.impl.PropertyValueImpl
-         * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getPropertyValue()
-         * @generated
-         */
-        EClass PROPERTY_VALUE = eINSTANCE.getPropertyValue();
-
-        /**
-         * The meta object literal for the '{@link de.fraunhofer.ipa.deployment.util.impl.PropertyValueIntImpl <em>Property Value Int</em>}' class.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @see de.fraunhofer.ipa.deployment.util.impl.PropertyValueIntImpl
-         * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getPropertyValueInt()
-         * @generated
-         */
-        EClass PROPERTY_VALUE_INT = eINSTANCE.getPropertyValueInt();
-
-        /**
-         * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @generated
-         */
-        EAttribute PROPERTY_VALUE_INT__VALUE = eINSTANCE.getPropertyValueInt_Value();
-
-        /**
-         * The meta object literal for the '{@link de.fraunhofer.ipa.deployment.util.impl.PropertyValueDoubleImpl <em>Property Value Double</em>}' class.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @see de.fraunhofer.ipa.deployment.util.impl.PropertyValueDoubleImpl
-         * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getPropertyValueDouble()
-         * @generated
-         */
-        EClass PROPERTY_VALUE_DOUBLE = eINSTANCE.getPropertyValueDouble();
-
-        /**
-         * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @generated
-         */
-        EAttribute PROPERTY_VALUE_DOUBLE__VALUE = eINSTANCE.getPropertyValueDouble_Value();
-
-        /**
-         * The meta object literal for the '{@link de.fraunhofer.ipa.deployment.util.impl.PropertyValueStringImpl <em>Property Value String</em>}' class.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @see de.fraunhofer.ipa.deployment.util.impl.PropertyValueStringImpl
-         * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getPropertyValueString()
-         * @generated
-         */
-        EClass PROPERTY_VALUE_STRING = eINSTANCE.getPropertyValueString();
-
-        /**
-         * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @generated
-         */
-        EAttribute PROPERTY_VALUE_STRING__VALUE = eINSTANCE.getPropertyValueString_Value();
-
-        /**
-         * The meta object literal for the '{@link de.fraunhofer.ipa.deployment.util.impl.PropertyTypeImpl <em>Property Type</em>}' class.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @see de.fraunhofer.ipa.deployment.util.impl.PropertyTypeImpl
-         * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getPropertyType()
-         * @generated
-         */
-        EClass PROPERTY_TYPE = eINSTANCE.getPropertyType();
-
-        /**
-         * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @generated
-         */
-        EAttribute PROPERTY_TYPE__TYPE = eINSTANCE.getPropertyType_Type();
-
         /**
          * The meta object literal for the '{@link de.fraunhofer.ipa.deployment.util.impl.AbstractPropertyImpl <em>Abstract Property</em>}' class.
          * <!-- begin-user-doc -->
@@ -2162,16 +2296,6 @@ public interface UtilPackage extends EPackage {
         EClass ABSTRACT_RESOUCE_TYPE = eINSTANCE.getAbstractResouceType();
 
         /**
-         * The meta object literal for the '{@link de.fraunhofer.ipa.deployment.util.impl.ProcessorArchitectureImpl <em>Processor Architecture</em>}' class.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @see de.fraunhofer.ipa.deployment.util.impl.ProcessorArchitectureImpl
-         * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getProcessorArchitecture()
-         * @generated
-         */
-        EClass PROCESSOR_ARCHITECTURE = eINSTANCE.getProcessorArchitecture();
-
-        /**
          * The meta object literal for the '{@link de.fraunhofer.ipa.deployment.util.impl.AbstractCommunicationTypeImpl <em>Abstract Communication Type</em>}' class.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
@@ -2180,6 +2304,100 @@ public interface UtilPackage extends EPackage {
          * @generated
          */
         EClass ABSTRACT_COMMUNICATION_TYPE = eINSTANCE.getAbstractCommunicationType();
+
+        /**
+         * The meta object literal for the '{@link de.fraunhofer.ipa.deployment.util.impl.AbstractImplementationImpl <em>Abstract Implementation</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see de.fraunhofer.ipa.deployment.util.impl.AbstractImplementationImpl
+         * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getAbstractImplementation()
+         * @generated
+         */
+        EClass ABSTRACT_IMPLEMENTATION = eINSTANCE.getAbstractImplementation();
+
+        /**
+         * The meta object literal for the '{@link de.fraunhofer.ipa.deployment.util.impl.AbstractComputationAssignmentTargetImpl <em>Abstract Computation Assignment Target</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see de.fraunhofer.ipa.deployment.util.impl.AbstractComputationAssignmentTargetImpl
+         * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getAbstractComputationAssignmentTarget()
+         * @generated
+         */
+        EClass ABSTRACT_COMPUTATION_ASSIGNMENT_TARGET = eINSTANCE.getAbstractComputationAssignmentTarget();
+
+        /**
+         * The meta object literal for the '{@link de.fraunhofer.ipa.deployment.util.impl.AbstractResourceImpl <em>Abstract Resource</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see de.fraunhofer.ipa.deployment.util.impl.AbstractResourceImpl
+         * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getAbstractResource()
+         * @generated
+         */
+        EClass ABSTRACT_RESOURCE = eINSTANCE.getAbstractResource();
+
+        /**
+         * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute ABSTRACT_RESOURCE__NAME = eINSTANCE.getAbstractResource_Name();
+
+        /**
+         * The meta object literal for the '{@link de.fraunhofer.ipa.deployment.util.impl.AbstractRuntimeEnviromentImpl <em>Abstract Runtime Enviroment</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see de.fraunhofer.ipa.deployment.util.impl.AbstractRuntimeEnviromentImpl
+         * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getAbstractRuntimeEnviroment()
+         * @generated
+         */
+        EClass ABSTRACT_RUNTIME_ENVIROMENT = eINSTANCE.getAbstractRuntimeEnviroment();
+
+        /**
+         * The meta object literal for the '{@link de.fraunhofer.ipa.deployment.util.impl.PropertyValueImpl <em>Property Value</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see de.fraunhofer.ipa.deployment.util.impl.PropertyValueImpl
+         * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getPropertyValue()
+         * @generated
+         */
+        EClass PROPERTY_VALUE = eINSTANCE.getPropertyValue();
+
+        /**
+         * The meta object literal for the '{@link de.fraunhofer.ipa.deployment.util.impl.DescriptionImpl <em>Description</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see de.fraunhofer.ipa.deployment.util.impl.DescriptionImpl
+         * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getDescription()
+         * @generated
+         */
+        EClass DESCRIPTION = eINSTANCE.getDescription();
+
+        /**
+         * The meta object literal for the '{@link de.fraunhofer.ipa.deployment.util.impl.ResourceImpl <em>Resource</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see de.fraunhofer.ipa.deployment.util.impl.ResourceImpl
+         * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getResource()
+         * @generated
+         */
+        EClass RESOURCE = eINSTANCE.getResource();
+
+        /**
+         * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference RESOURCE__TYPE = eINSTANCE.getResource_Type();
+
+        /**
+         * The meta object literal for the '<em><b>Properties</b></em>' containment reference list feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference RESOURCE__PROPERTIES = eINSTANCE.getResource_Properties();
 
         /**
          * The meta object literal for the '{@link de.fraunhofer.ipa.deployment.util.impl.CommunicationTypeImpl <em>Communication Type</em>}' class.
@@ -2230,70 +2448,62 @@ public interface UtilPackage extends EPackage {
         EClass WLAN_COMMUNICATION_TYPE = eINSTANCE.getWlanCommunicationType();
 
         /**
-         * The meta object literal for the '{@link de.fraunhofer.ipa.deployment.util.impl.AvailableResouceImpl <em>Available Resouce</em>}' class.
+         * The meta object literal for the '{@link de.fraunhofer.ipa.deployment.util.impl.OpertingSystemResouceTypeImpl <em>Operting System Resouce Type</em>}' class.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @see de.fraunhofer.ipa.deployment.util.impl.AvailableResouceImpl
-         * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getAvailableResouce()
+         * @see de.fraunhofer.ipa.deployment.util.impl.OpertingSystemResouceTypeImpl
+         * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getOpertingSystemResouceType()
          * @generated
          */
-        EClass AVAILABLE_RESOUCE = eINSTANCE.getAvailableResouce();
+        EClass OPERTING_SYSTEM_RESOUCE_TYPE = eINSTANCE.getOpertingSystemResouceType();
 
         /**
-         * The meta object literal for the '<em><b>List</b></em>' containment reference list feature.
+         * The meta object literal for the '{@link de.fraunhofer.ipa.deployment.util.impl.LinuxOpertingSystemImpl <em>Linux Operting System</em>}' class.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
+         * @see de.fraunhofer.ipa.deployment.util.impl.LinuxOpertingSystemImpl
+         * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getLinuxOpertingSystem()
          * @generated
          */
-        EReference AVAILABLE_RESOUCE__LIST = eINSTANCE.getAvailableResouce_List();
+        EClass LINUX_OPERTING_SYSTEM = eINSTANCE.getLinuxOpertingSystem();
 
         /**
-         * The meta object literal for the '<em><b>Property</b></em>' reference feature.
+         * The meta object literal for the '{@link de.fraunhofer.ipa.deployment.util.impl.MacOSOpertingSystemImpl <em>Mac OS Operting System</em>}' class.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
+         * @see de.fraunhofer.ipa.deployment.util.impl.MacOSOpertingSystemImpl
+         * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getMacOSOpertingSystem()
          * @generated
          */
-        EReference AVAILABLE_RESOUCE__PROPERTY = eINSTANCE.getAvailableResouce_Property();
+        EClass MAC_OS_OPERTING_SYSTEM = eINSTANCE.getMacOSOpertingSystem();
 
         /**
-         * The meta object literal for the '{@link de.fraunhofer.ipa.deployment.util.impl.OpertingSystemTypeImpl <em>Operting System Type</em>}' class.
+         * The meta object literal for the '{@link de.fraunhofer.ipa.deployment.util.impl.ProcessorResouceTypeImpl <em>Processor Resouce Type</em>}' class.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @see de.fraunhofer.ipa.deployment.util.impl.OpertingSystemTypeImpl
-         * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getOpertingSystemType()
+         * @see de.fraunhofer.ipa.deployment.util.impl.ProcessorResouceTypeImpl
+         * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getProcessorResouceType()
          * @generated
          */
-        EClass OPERTING_SYSTEM_TYPE = eINSTANCE.getOpertingSystemType();
+        EClass PROCESSOR_RESOUCE_TYPE = eINSTANCE.getProcessorResouceType();
 
         /**
-         * The meta object literal for the '{@link de.fraunhofer.ipa.deployment.util.impl.LinuxOpertingSystemTypeImpl <em>Linux Operting System Type</em>}' class.
+         * The meta object literal for the '{@link de.fraunhofer.ipa.deployment.util.impl.ResourceTypeImpl <em>Resource Type</em>}' class.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @see de.fraunhofer.ipa.deployment.util.impl.LinuxOpertingSystemTypeImpl
-         * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getLinuxOpertingSystemType()
+         * @see de.fraunhofer.ipa.deployment.util.impl.ResourceTypeImpl
+         * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getResourceType()
          * @generated
          */
-        EClass LINUX_OPERTING_SYSTEM_TYPE = eINSTANCE.getLinuxOpertingSystemType();
+        EClass RESOURCE_TYPE = eINSTANCE.getResourceType();
 
         /**
-         * The meta object literal for the '{@link de.fraunhofer.ipa.deployment.util.impl.MacOSOpertingSystemTypeImpl <em>Mac OS Operting System Type</em>}' class.
+         * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @see de.fraunhofer.ipa.deployment.util.impl.MacOSOpertingSystemTypeImpl
-         * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getMacOSOpertingSystemType()
          * @generated
          */
-        EClass MAC_OS_OPERTING_SYSTEM_TYPE = eINSTANCE.getMacOSOpertingSystemType();
-
-        /**
-         * The meta object literal for the '{@link de.fraunhofer.ipa.deployment.util.impl.ProcessorArchitectureTypeImpl <em>Processor Architecture Type</em>}' class.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @see de.fraunhofer.ipa.deployment.util.impl.ProcessorArchitectureTypeImpl
-         * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getProcessorArchitectureType()
-         * @generated
-         */
-        EClass PROCESSOR_ARCHITECTURE_TYPE = eINSTANCE.getProcessorArchitectureType();
+        EAttribute RESOURCE_TYPE__NAME = eINSTANCE.getResourceType_Name();
 
         /**
          * The meta object literal for the '{@link de.fraunhofer.ipa.deployment.util.impl.ProcessorArchitectureValueImpl <em>Processor Architecture Value</em>}' class.
@@ -2306,44 +2516,12 @@ public interface UtilPackage extends EPackage {
         EClass PROCESSOR_ARCHITECTURE_VALUE = eINSTANCE.getProcessorArchitectureValue();
 
         /**
-         * The meta object literal for the '{@link de.fraunhofer.ipa.deployment.util.impl.X86ProcessorArchitectureImpl <em>X86 Processor Architecture</em>}' class.
+         * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @see de.fraunhofer.ipa.deployment.util.impl.X86ProcessorArchitectureImpl
-         * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getX86ProcessorArchitecture()
          * @generated
          */
-        EClass X86_PROCESSOR_ARCHITECTURE = eINSTANCE.getX86ProcessorArchitecture();
-
-        /**
-         * The meta object literal for the '{@link de.fraunhofer.ipa.deployment.util.impl.Arm64ProcessorArchitectureImpl <em>Arm64 Processor Architecture</em>}' class.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @see de.fraunhofer.ipa.deployment.util.impl.Arm64ProcessorArchitectureImpl
-         * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getArm64ProcessorArchitecture()
-         * @generated
-         */
-        EClass ARM64_PROCESSOR_ARCHITECTURE = eINSTANCE.getArm64ProcessorArchitecture();
-
-        /**
-         * The meta object literal for the '{@link de.fraunhofer.ipa.deployment.util.impl.AbstractImplementationImpl <em>Abstract Implementation</em>}' class.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @see de.fraunhofer.ipa.deployment.util.impl.AbstractImplementationImpl
-         * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getAbstractImplementation()
-         * @generated
-         */
-        EClass ABSTRACT_IMPLEMENTATION = eINSTANCE.getAbstractImplementation();
-
-        /**
-         * The meta object literal for the '{@link de.fraunhofer.ipa.deployment.util.impl.AbstractComputationAssignmentTargetImpl <em>Abstract Computation Assignment Target</em>}' class.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @see de.fraunhofer.ipa.deployment.util.impl.AbstractComputationAssignmentTargetImpl
-         * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getAbstractComputationAssignmentTarget()
-         * @generated
-         */
-        EClass ABSTRACT_COMPUTATION_ASSIGNMENT_TARGET = eINSTANCE.getAbstractComputationAssignmentTarget();
+        EAttribute PROCESSOR_ARCHITECTURE_VALUE__VALUE = eINSTANCE.getProcessorArchitectureValue_Value();
 
         /**
          * The meta object literal for the '{@link de.fraunhofer.ipa.deployment.util.impl.PropertyKindImpl <em>Property Kind</em>}' class.
@@ -2562,22 +2740,154 @@ public interface UtilPackage extends EPackage {
         EReference PROPERTY__VALUE = eINSTANCE.getProperty_Value();
 
         /**
-         * The meta object literal for the '{@link de.fraunhofer.ipa.deployment.util.impl.ResourceTypeImpl <em>Resource Type</em>}' class.
+         * The meta object literal for the '{@link de.fraunhofer.ipa.deployment.util.impl.PropertyValueIntImpl <em>Property Value Int</em>}' class.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @see de.fraunhofer.ipa.deployment.util.impl.ResourceTypeImpl
-         * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getResourceType()
+         * @see de.fraunhofer.ipa.deployment.util.impl.PropertyValueIntImpl
+         * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getPropertyValueInt()
          * @generated
          */
-        EClass RESOURCE_TYPE = eINSTANCE.getResourceType();
+        EClass PROPERTY_VALUE_INT = eINSTANCE.getPropertyValueInt();
 
         /**
-         * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+         * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
          * @generated
          */
-        EAttribute RESOURCE_TYPE__NAME = eINSTANCE.getResourceType_Name();
+        EAttribute PROPERTY_VALUE_INT__VALUE = eINSTANCE.getPropertyValueInt_Value();
+
+        /**
+         * The meta object literal for the '{@link de.fraunhofer.ipa.deployment.util.impl.PropertyValueDoubleImpl <em>Property Value Double</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see de.fraunhofer.ipa.deployment.util.impl.PropertyValueDoubleImpl
+         * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getPropertyValueDouble()
+         * @generated
+         */
+        EClass PROPERTY_VALUE_DOUBLE = eINSTANCE.getPropertyValueDouble();
+
+        /**
+         * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute PROPERTY_VALUE_DOUBLE__VALUE = eINSTANCE.getPropertyValueDouble_Value();
+
+        /**
+         * The meta object literal for the '{@link de.fraunhofer.ipa.deployment.util.impl.PropertyValueStringImpl <em>Property Value String</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see de.fraunhofer.ipa.deployment.util.impl.PropertyValueStringImpl
+         * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getPropertyValueString()
+         * @generated
+         */
+        EClass PROPERTY_VALUE_STRING = eINSTANCE.getPropertyValueString();
+
+        /**
+         * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute PROPERTY_VALUE_STRING__VALUE = eINSTANCE.getPropertyValueString_Value();
+
+        /**
+         * The meta object literal for the '{@link de.fraunhofer.ipa.deployment.util.impl.ContainerRuntimeImpl <em>Container Runtime</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see de.fraunhofer.ipa.deployment.util.impl.ContainerRuntimeImpl
+         * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getContainerRuntime()
+         * @generated
+         */
+        EClass CONTAINER_RUNTIME = eINSTANCE.getContainerRuntime();
+
+        /**
+         * The meta object literal for the '{@link de.fraunhofer.ipa.deployment.util.impl.OpertingSystemNameImpl <em>Operting System Name</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see de.fraunhofer.ipa.deployment.util.impl.OpertingSystemNameImpl
+         * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getOpertingSystemName()
+         * @generated
+         */
+        EClass OPERTING_SYSTEM_NAME = eINSTANCE.getOpertingSystemName();
+
+        /**
+         * The meta object literal for the '{@link de.fraunhofer.ipa.deployment.util.impl.LinuxDistributionValueImpl <em>Linux Distribution Value</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see de.fraunhofer.ipa.deployment.util.impl.LinuxDistributionValueImpl
+         * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getLinuxDistributionValue()
+         * @generated
+         */
+        EClass LINUX_DISTRIBUTION_VALUE = eINSTANCE.getLinuxDistributionValue();
+
+        /**
+         * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute LINUX_DISTRIBUTION_VALUE__VALUE = eINSTANCE.getLinuxDistributionValue_Value();
+
+        /**
+         * The meta object literal for the '{@link de.fraunhofer.ipa.deployment.util.impl.UbuntuVersionValueImpl <em>Ubuntu Version Value</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see de.fraunhofer.ipa.deployment.util.impl.UbuntuVersionValueImpl
+         * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getUbuntuVersionValue()
+         * @generated
+         */
+        EClass UBUNTU_VERSION_VALUE = eINSTANCE.getUbuntuVersionValue();
+
+        /**
+         * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute UBUNTU_VERSION_VALUE__VALUE = eINSTANCE.getUbuntuVersionValue_Value();
+
+        /**
+         * The meta object literal for the '{@link de.fraunhofer.ipa.deployment.util.UbuntuVersion <em>Ubuntu Version</em>}' enum.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see de.fraunhofer.ipa.deployment.util.UbuntuVersion
+         * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getUbuntuVersion()
+         * @generated
+         */
+        EEnum UBUNTU_VERSION = eINSTANCE.getUbuntuVersion();
+
+        /**
+         * The meta object literal for the '{@link de.fraunhofer.ipa.deployment.util.LinuxDistribution <em>Linux Distribution</em>}' enum.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see de.fraunhofer.ipa.deployment.util.LinuxDistribution
+         * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getLinuxDistribution()
+         * @generated
+         */
+        EEnum LINUX_DISTRIBUTION = eINSTANCE.getLinuxDistribution();
+
+        /**
+         * The meta object literal for the '{@link de.fraunhofer.ipa.deployment.util.RunTimeType <em>Run Time Type</em>}' enum.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see de.fraunhofer.ipa.deployment.util.RunTimeType
+         * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getRunTimeType()
+         * @generated
+         */
+        EEnum RUN_TIME_TYPE = eINSTANCE.getRunTimeType();
+
+        /**
+         * The meta object literal for the '{@link de.fraunhofer.ipa.deployment.util.ProcessorArchitectureType <em>Processor Architecture Type</em>}' enum.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see de.fraunhofer.ipa.deployment.util.ProcessorArchitectureType
+         * @see de.fraunhofer.ipa.deployment.util.impl.UtilPackageImpl#getProcessorArchitectureType()
+         * @generated
+         */
+        EEnum PROCESSOR_ARCHITECTURE_TYPE = eINSTANCE.getProcessorArchitectureType();
 
     }
 

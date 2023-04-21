@@ -66,54 +66,6 @@ public class UtilSwitch<T> extends Switch<T> {
     @Override
     protected T doSwitch(int classifierID, EObject theEObject) {
         switch (classifierID) {
-        case UtilPackage.DESCRIPTION: {
-            Description description = (Description) theEObject;
-            T result = caseDescription(description);
-            if (result == null)
-                result = defaultCase(theEObject);
-            return result;
-        }
-        case UtilPackage.PROPERTY_VALUE: {
-            PropertyValue propertyValue = (PropertyValue) theEObject;
-            T result = casePropertyValue(propertyValue);
-            if (result == null)
-                result = defaultCase(theEObject);
-            return result;
-        }
-        case UtilPackage.PROPERTY_VALUE_INT: {
-            PropertyValueInt propertyValueInt = (PropertyValueInt) theEObject;
-            T result = casePropertyValueInt(propertyValueInt);
-            if (result == null)
-                result = casePropertyValue(propertyValueInt);
-            if (result == null)
-                result = defaultCase(theEObject);
-            return result;
-        }
-        case UtilPackage.PROPERTY_VALUE_DOUBLE: {
-            PropertyValueDouble propertyValueDouble = (PropertyValueDouble) theEObject;
-            T result = casePropertyValueDouble(propertyValueDouble);
-            if (result == null)
-                result = casePropertyValue(propertyValueDouble);
-            if (result == null)
-                result = defaultCase(theEObject);
-            return result;
-        }
-        case UtilPackage.PROPERTY_VALUE_STRING: {
-            PropertyValueString propertyValueString = (PropertyValueString) theEObject;
-            T result = casePropertyValueString(propertyValueString);
-            if (result == null)
-                result = casePropertyValue(propertyValueString);
-            if (result == null)
-                result = defaultCase(theEObject);
-            return result;
-        }
-        case UtilPackage.PROPERTY_TYPE: {
-            PropertyType propertyType = (PropertyType) theEObject;
-            T result = casePropertyType(propertyType);
-            if (result == null)
-                result = defaultCase(theEObject);
-            return result;
-        }
         case UtilPackage.ABSTRACT_PROPERTY: {
             AbstractProperty abstractProperty = (AbstractProperty) theEObject;
             T result = caseAbstractProperty(abstractProperty);
@@ -128,18 +80,67 @@ public class UtilSwitch<T> extends Switch<T> {
                 result = defaultCase(theEObject);
             return result;
         }
-        case UtilPackage.PROCESSOR_ARCHITECTURE: {
-            ProcessorArchitecture processorArchitecture = (ProcessorArchitecture) theEObject;
-            T result = caseProcessorArchitecture(processorArchitecture);
-            if (result == null)
-                result = caseAbstractResouceType(processorArchitecture);
+        case UtilPackage.ABSTRACT_COMMUNICATION_TYPE: {
+            AbstractCommunicationType abstractCommunicationType = (AbstractCommunicationType) theEObject;
+            T result = caseAbstractCommunicationType(abstractCommunicationType);
             if (result == null)
                 result = defaultCase(theEObject);
             return result;
         }
-        case UtilPackage.ABSTRACT_COMMUNICATION_TYPE: {
-            AbstractCommunicationType abstractCommunicationType = (AbstractCommunicationType) theEObject;
-            T result = caseAbstractCommunicationType(abstractCommunicationType);
+        case UtilPackage.ABSTRACT_IMPLEMENTATION: {
+            AbstractImplementation abstractImplementation = (AbstractImplementation) theEObject;
+            T result = caseAbstractImplementation(abstractImplementation);
+            if (result == null)
+                result = defaultCase(theEObject);
+            return result;
+        }
+        case UtilPackage.ABSTRACT_COMPUTATION_ASSIGNMENT_TARGET: {
+            AbstractComputationAssignmentTarget abstractComputationAssignmentTarget = (AbstractComputationAssignmentTarget) theEObject;
+            T result = caseAbstractComputationAssignmentTarget(abstractComputationAssignmentTarget);
+            if (result == null)
+                result = defaultCase(theEObject);
+            return result;
+        }
+        case UtilPackage.ABSTRACT_RESOURCE: {
+            AbstractResource abstractResource = (AbstractResource) theEObject;
+            T result = caseAbstractResource(abstractResource);
+            if (result == null)
+                result = defaultCase(theEObject);
+            return result;
+        }
+        case UtilPackage.ABSTRACT_RUNTIME_ENVIROMENT: {
+            AbstractRuntimeEnviroment abstractRuntimeEnviroment = (AbstractRuntimeEnviroment) theEObject;
+            T result = caseAbstractRuntimeEnviroment(abstractRuntimeEnviroment);
+            if (result == null)
+                result = defaultCase(theEObject);
+            return result;
+        }
+        case UtilPackage.OPERTING_SYSTEM_RESOUCE_TYPE: {
+            OpertingSystemResouceType opertingSystemResouceType = (OpertingSystemResouceType) theEObject;
+            T result = caseOpertingSystemResouceType(opertingSystemResouceType);
+            if (result == null)
+                result = defaultCase(theEObject);
+            return result;
+        }
+        case UtilPackage.PROPERTY_VALUE: {
+            PropertyValue propertyValue = (PropertyValue) theEObject;
+            T result = casePropertyValue(propertyValue);
+            if (result == null)
+                result = defaultCase(theEObject);
+            return result;
+        }
+        case UtilPackage.DESCRIPTION: {
+            Description description = (Description) theEObject;
+            T result = caseDescription(description);
+            if (result == null)
+                result = defaultCase(theEObject);
+            return result;
+        }
+        case UtilPackage.RESOURCE: {
+            Resource resource = (Resource) theEObject;
+            T result = caseResource(resource);
+            if (result == null)
+                result = caseAbstractResource(resource);
             if (result == null)
                 result = defaultCase(theEObject);
             return result;
@@ -184,49 +185,38 @@ public class UtilSwitch<T> extends Switch<T> {
                 result = defaultCase(theEObject);
             return result;
         }
-        case UtilPackage.AVAILABLE_RESOUCE: {
-            AvailableResouce availableResouce = (AvailableResouce) theEObject;
-            T result = caseAvailableResouce(availableResouce);
+        case UtilPackage.LINUX_OPERTING_SYSTEM: {
+            LinuxOpertingSystem linuxOpertingSystem = (LinuxOpertingSystem) theEObject;
+            T result = caseLinuxOpertingSystem(linuxOpertingSystem);
+            if (result == null)
+                result = caseOpertingSystemResouceType(linuxOpertingSystem);
             if (result == null)
                 result = defaultCase(theEObject);
             return result;
         }
-        case UtilPackage.OPERTING_SYSTEM_TYPE: {
-            OpertingSystemType opertingSystemType = (OpertingSystemType) theEObject;
-            T result = caseOpertingSystemType(opertingSystemType);
+        case UtilPackage.MAC_OS_OPERTING_SYSTEM: {
+            MacOSOpertingSystem macOSOpertingSystem = (MacOSOpertingSystem) theEObject;
+            T result = caseMacOSOpertingSystem(macOSOpertingSystem);
             if (result == null)
-                result = caseAbstractResouceType(opertingSystemType);
-            if (result == null)
-                result = defaultCase(theEObject);
-            return result;
-        }
-        case UtilPackage.LINUX_OPERTING_SYSTEM_TYPE: {
-            LinuxOpertingSystemType linuxOpertingSystemType = (LinuxOpertingSystemType) theEObject;
-            T result = caseLinuxOpertingSystemType(linuxOpertingSystemType);
-            if (result == null)
-                result = caseOpertingSystemType(linuxOpertingSystemType);
-            if (result == null)
-                result = caseAbstractResouceType(linuxOpertingSystemType);
+                result = caseOpertingSystemResouceType(macOSOpertingSystem);
             if (result == null)
                 result = defaultCase(theEObject);
             return result;
         }
-        case UtilPackage.MAC_OS_OPERTING_SYSTEM_TYPE: {
-            MacOSOpertingSystemType macOSOpertingSystemType = (MacOSOpertingSystemType) theEObject;
-            T result = caseMacOSOpertingSystemType(macOSOpertingSystemType);
+        case UtilPackage.PROCESSOR_RESOUCE_TYPE: {
+            ProcessorResouceType processorResouceType = (ProcessorResouceType) theEObject;
+            T result = caseProcessorResouceType(processorResouceType);
             if (result == null)
-                result = caseOpertingSystemType(macOSOpertingSystemType);
-            if (result == null)
-                result = caseAbstractResouceType(macOSOpertingSystemType);
+                result = caseAbstractResouceType(processorResouceType);
             if (result == null)
                 result = defaultCase(theEObject);
             return result;
         }
-        case UtilPackage.PROCESSOR_ARCHITECTURE_TYPE: {
-            ProcessorArchitectureType processorArchitectureType = (ProcessorArchitectureType) theEObject;
-            T result = caseProcessorArchitectureType(processorArchitectureType);
+        case UtilPackage.RESOURCE_TYPE: {
+            ResourceType resourceType = (ResourceType) theEObject;
+            T result = caseResourceType(resourceType);
             if (result == null)
-                result = caseAbstractResouceType(processorArchitectureType);
+                result = caseAbstractResouceType(resourceType);
             if (result == null)
                 result = defaultCase(theEObject);
             return result;
@@ -240,38 +230,22 @@ public class UtilSwitch<T> extends Switch<T> {
                 result = defaultCase(theEObject);
             return result;
         }
-        case UtilPackage.X86_PROCESSOR_ARCHITECTURE: {
-            X86ProcessorArchitecture x86ProcessorArchitecture = (X86ProcessorArchitecture) theEObject;
-            T result = caseX86ProcessorArchitecture(x86ProcessorArchitecture);
+        case UtilPackage.LINUX_DISTRIBUTION_VALUE: {
+            LinuxDistributionValue linuxDistributionValue = (LinuxDistributionValue) theEObject;
+            T result = caseLinuxDistributionValue(linuxDistributionValue);
             if (result == null)
-                result = caseProcessorArchitectureValue(x86ProcessorArchitecture);
+                result = casePropertyValue(linuxDistributionValue);
             if (result == null)
-                result = casePropertyValue(x86ProcessorArchitecture);
-            if (result == null)
-                result = defaultCase(theEObject);
-            return result;
-        }
-        case UtilPackage.ARM64_PROCESSOR_ARCHITECTURE: {
-            Arm64ProcessorArchitecture arm64ProcessorArchitecture = (Arm64ProcessorArchitecture) theEObject;
-            T result = caseArm64ProcessorArchitecture(arm64ProcessorArchitecture);
-            if (result == null)
-                result = caseProcessorArchitectureValue(arm64ProcessorArchitecture);
-            if (result == null)
-                result = casePropertyValue(arm64ProcessorArchitecture);
+                result = caseOpertingSystemName(linuxDistributionValue);
             if (result == null)
                 result = defaultCase(theEObject);
             return result;
         }
-        case UtilPackage.ABSTRACT_IMPLEMENTATION: {
-            AbstractImplementation abstractImplementation = (AbstractImplementation) theEObject;
-            T result = caseAbstractImplementation(abstractImplementation);
+        case UtilPackage.UBUNTU_VERSION_VALUE: {
+            UbuntuVersionValue ubuntuVersionValue = (UbuntuVersionValue) theEObject;
+            T result = caseUbuntuVersionValue(ubuntuVersionValue);
             if (result == null)
-                result = defaultCase(theEObject);
-            return result;
-        }
-        case UtilPackage.ABSTRACT_COMPUTATION_ASSIGNMENT_TARGET: {
-            AbstractComputationAssignmentTarget abstractComputationAssignmentTarget = (AbstractComputationAssignmentTarget) theEObject;
-            T result = caseAbstractComputationAssignmentTarget(abstractComputationAssignmentTarget);
+                result = casePropertyValue(ubuntuVersionValue);
             if (result == null)
                 result = defaultCase(theEObject);
             return result;
@@ -382,11 +356,45 @@ public class UtilSwitch<T> extends Switch<T> {
                 result = defaultCase(theEObject);
             return result;
         }
-        case UtilPackage.RESOURCE_TYPE: {
-            ResourceType resourceType = (ResourceType) theEObject;
-            T result = caseResourceType(resourceType);
+        case UtilPackage.PROPERTY_VALUE_INT: {
+            PropertyValueInt propertyValueInt = (PropertyValueInt) theEObject;
+            T result = casePropertyValueInt(propertyValueInt);
             if (result == null)
-                result = caseAbstractResouceType(resourceType);
+                result = casePropertyValue(propertyValueInt);
+            if (result == null)
+                result = defaultCase(theEObject);
+            return result;
+        }
+        case UtilPackage.PROPERTY_VALUE_DOUBLE: {
+            PropertyValueDouble propertyValueDouble = (PropertyValueDouble) theEObject;
+            T result = casePropertyValueDouble(propertyValueDouble);
+            if (result == null)
+                result = casePropertyValue(propertyValueDouble);
+            if (result == null)
+                result = defaultCase(theEObject);
+            return result;
+        }
+        case UtilPackage.PROPERTY_VALUE_STRING: {
+            PropertyValueString propertyValueString = (PropertyValueString) theEObject;
+            T result = casePropertyValueString(propertyValueString);
+            if (result == null)
+                result = casePropertyValue(propertyValueString);
+            if (result == null)
+                result = defaultCase(theEObject);
+            return result;
+        }
+        case UtilPackage.CONTAINER_RUNTIME: {
+            ContainerRuntime containerRuntime = (ContainerRuntime) theEObject;
+            T result = caseContainerRuntime(containerRuntime);
+            if (result == null)
+                result = caseAbstractRuntimeEnviroment(containerRuntime);
+            if (result == null)
+                result = defaultCase(theEObject);
+            return result;
+        }
+        case UtilPackage.OPERTING_SYSTEM_NAME: {
+            OpertingSystemName opertingSystemName = (OpertingSystemName) theEObject;
+            T result = caseOpertingSystemName(opertingSystemName);
             if (result == null)
                 result = defaultCase(theEObject);
             return result;
@@ -394,96 +402,6 @@ public class UtilSwitch<T> extends Switch<T> {
         default:
             return defaultCase(theEObject);
         }
-    }
-
-    /**
-     * Returns the result of interpreting the object as an instance of '<em>Description</em>'.
-     * <!-- begin-user-doc -->
-     * This implementation returns null;
-     * returning a non-null result will terminate the switch.
-     * <!-- end-user-doc -->
-     * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Description</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-     * @generated
-     */
-    public T caseDescription(Description object) {
-        return null;
-    }
-
-    /**
-     * Returns the result of interpreting the object as an instance of '<em>Property Value</em>'.
-     * <!-- begin-user-doc -->
-     * This implementation returns null;
-     * returning a non-null result will terminate the switch.
-     * <!-- end-user-doc -->
-     * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Property Value</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-     * @generated
-     */
-    public T casePropertyValue(PropertyValue object) {
-        return null;
-    }
-
-    /**
-     * Returns the result of interpreting the object as an instance of '<em>Property Value Int</em>'.
-     * <!-- begin-user-doc -->
-     * This implementation returns null;
-     * returning a non-null result will terminate the switch.
-     * <!-- end-user-doc -->
-     * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Property Value Int</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-     * @generated
-     */
-    public T casePropertyValueInt(PropertyValueInt object) {
-        return null;
-    }
-
-    /**
-     * Returns the result of interpreting the object as an instance of '<em>Property Value Double</em>'.
-     * <!-- begin-user-doc -->
-     * This implementation returns null;
-     * returning a non-null result will terminate the switch.
-     * <!-- end-user-doc -->
-     * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Property Value Double</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-     * @generated
-     */
-    public T casePropertyValueDouble(PropertyValueDouble object) {
-        return null;
-    }
-
-    /**
-     * Returns the result of interpreting the object as an instance of '<em>Property Value String</em>'.
-     * <!-- begin-user-doc -->
-     * This implementation returns null;
-     * returning a non-null result will terminate the switch.
-     * <!-- end-user-doc -->
-     * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Property Value String</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-     * @generated
-     */
-    public T casePropertyValueString(PropertyValueString object) {
-        return null;
-    }
-
-    /**
-     * Returns the result of interpreting the object as an instance of '<em>Property Type</em>'.
-     * <!-- begin-user-doc -->
-     * This implementation returns null;
-     * returning a non-null result will terminate the switch.
-     * <!-- end-user-doc -->
-     * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Property Type</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-     * @generated
-     */
-    public T casePropertyType(PropertyType object) {
-        return null;
     }
 
     /**
@@ -517,21 +435,6 @@ public class UtilSwitch<T> extends Switch<T> {
     }
 
     /**
-     * Returns the result of interpreting the object as an instance of '<em>Processor Architecture</em>'.
-     * <!-- begin-user-doc -->
-     * This implementation returns null;
-     * returning a non-null result will terminate the switch.
-     * <!-- end-user-doc -->
-     * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Processor Architecture</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-     * @generated
-     */
-    public T caseProcessorArchitecture(ProcessorArchitecture object) {
-        return null;
-    }
-
-    /**
      * Returns the result of interpreting the object as an instance of '<em>Abstract Communication Type</em>'.
      * <!-- begin-user-doc -->
      * This implementation returns null;
@@ -543,6 +446,111 @@ public class UtilSwitch<T> extends Switch<T> {
      * @generated
      */
     public T caseAbstractCommunicationType(AbstractCommunicationType object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Abstract Implementation</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Abstract Implementation</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseAbstractImplementation(AbstractImplementation object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Abstract Computation Assignment Target</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Abstract Computation Assignment Target</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseAbstractComputationAssignmentTarget(AbstractComputationAssignmentTarget object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Abstract Resource</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Abstract Resource</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseAbstractResource(AbstractResource object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Abstract Runtime Enviroment</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Abstract Runtime Enviroment</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseAbstractRuntimeEnviroment(AbstractRuntimeEnviroment object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Property Value</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Property Value</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T casePropertyValue(PropertyValue object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Description</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Description</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseDescription(Description object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Resource</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Resource</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseResource(Resource object) {
         return null;
     }
 
@@ -607,77 +615,77 @@ public class UtilSwitch<T> extends Switch<T> {
     }
 
     /**
-     * Returns the result of interpreting the object as an instance of '<em>Available Resouce</em>'.
+     * Returns the result of interpreting the object as an instance of '<em>Operting System Resouce Type</em>'.
      * <!-- begin-user-doc -->
      * This implementation returns null;
      * returning a non-null result will terminate the switch.
      * <!-- end-user-doc -->
      * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Available Resouce</em>'.
+     * @return the result of interpreting the object as an instance of '<em>Operting System Resouce Type</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseAvailableResouce(AvailableResouce object) {
+    public T caseOpertingSystemResouceType(OpertingSystemResouceType object) {
         return null;
     }
 
     /**
-     * Returns the result of interpreting the object as an instance of '<em>Operting System Type</em>'.
+     * Returns the result of interpreting the object as an instance of '<em>Linux Operting System</em>'.
      * <!-- begin-user-doc -->
      * This implementation returns null;
      * returning a non-null result will terminate the switch.
      * <!-- end-user-doc -->
      * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Operting System Type</em>'.
+     * @return the result of interpreting the object as an instance of '<em>Linux Operting System</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseOpertingSystemType(OpertingSystemType object) {
+    public T caseLinuxOpertingSystem(LinuxOpertingSystem object) {
         return null;
     }
 
     /**
-     * Returns the result of interpreting the object as an instance of '<em>Linux Operting System Type</em>'.
+     * Returns the result of interpreting the object as an instance of '<em>Mac OS Operting System</em>'.
      * <!-- begin-user-doc -->
      * This implementation returns null;
      * returning a non-null result will terminate the switch.
      * <!-- end-user-doc -->
      * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Linux Operting System Type</em>'.
+     * @return the result of interpreting the object as an instance of '<em>Mac OS Operting System</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseLinuxOpertingSystemType(LinuxOpertingSystemType object) {
+    public T caseMacOSOpertingSystem(MacOSOpertingSystem object) {
         return null;
     }
 
     /**
-     * Returns the result of interpreting the object as an instance of '<em>Mac OS Operting System Type</em>'.
+     * Returns the result of interpreting the object as an instance of '<em>Processor Resouce Type</em>'.
      * <!-- begin-user-doc -->
      * This implementation returns null;
      * returning a non-null result will terminate the switch.
      * <!-- end-user-doc -->
      * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Mac OS Operting System Type</em>'.
+     * @return the result of interpreting the object as an instance of '<em>Processor Resouce Type</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseMacOSOpertingSystemType(MacOSOpertingSystemType object) {
+    public T caseProcessorResouceType(ProcessorResouceType object) {
         return null;
     }
 
     /**
-     * Returns the result of interpreting the object as an instance of '<em>Processor Architecture Type</em>'.
+     * Returns the result of interpreting the object as an instance of '<em>Resource Type</em>'.
      * <!-- begin-user-doc -->
      * This implementation returns null;
      * returning a non-null result will terminate the switch.
      * <!-- end-user-doc -->
      * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Processor Architecture Type</em>'.
+     * @return the result of interpreting the object as an instance of '<em>Resource Type</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseProcessorArchitectureType(ProcessorArchitectureType object) {
+    public T caseResourceType(ResourceType object) {
         return null;
     }
 
@@ -693,66 +701,6 @@ public class UtilSwitch<T> extends Switch<T> {
      * @generated
      */
     public T caseProcessorArchitectureValue(ProcessorArchitectureValue object) {
-        return null;
-    }
-
-    /**
-     * Returns the result of interpreting the object as an instance of '<em>X86 Processor Architecture</em>'.
-     * <!-- begin-user-doc -->
-     * This implementation returns null;
-     * returning a non-null result will terminate the switch.
-     * <!-- end-user-doc -->
-     * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>X86 Processor Architecture</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-     * @generated
-     */
-    public T caseX86ProcessorArchitecture(X86ProcessorArchitecture object) {
-        return null;
-    }
-
-    /**
-     * Returns the result of interpreting the object as an instance of '<em>Arm64 Processor Architecture</em>'.
-     * <!-- begin-user-doc -->
-     * This implementation returns null;
-     * returning a non-null result will terminate the switch.
-     * <!-- end-user-doc -->
-     * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Arm64 Processor Architecture</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-     * @generated
-     */
-    public T caseArm64ProcessorArchitecture(Arm64ProcessorArchitecture object) {
-        return null;
-    }
-
-    /**
-     * Returns the result of interpreting the object as an instance of '<em>Abstract Implementation</em>'.
-     * <!-- begin-user-doc -->
-     * This implementation returns null;
-     * returning a non-null result will terminate the switch.
-     * <!-- end-user-doc -->
-     * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Abstract Implementation</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-     * @generated
-     */
-    public T caseAbstractImplementation(AbstractImplementation object) {
-        return null;
-    }
-
-    /**
-     * Returns the result of interpreting the object as an instance of '<em>Abstract Computation Assignment Target</em>'.
-     * <!-- begin-user-doc -->
-     * This implementation returns null;
-     * returning a non-null result will terminate the switch.
-     * <!-- end-user-doc -->
-     * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Abstract Computation Assignment Target</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-     * @generated
-     */
-    public T caseAbstractComputationAssignmentTarget(AbstractComputationAssignmentTarget object) {
         return null;
     }
 
@@ -937,17 +885,107 @@ public class UtilSwitch<T> extends Switch<T> {
     }
 
     /**
-     * Returns the result of interpreting the object as an instance of '<em>Resource Type</em>'.
+     * Returns the result of interpreting the object as an instance of '<em>Property Value Int</em>'.
      * <!-- begin-user-doc -->
      * This implementation returns null;
      * returning a non-null result will terminate the switch.
      * <!-- end-user-doc -->
      * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Resource Type</em>'.
+     * @return the result of interpreting the object as an instance of '<em>Property Value Int</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseResourceType(ResourceType object) {
+    public T casePropertyValueInt(PropertyValueInt object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Property Value Double</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Property Value Double</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T casePropertyValueDouble(PropertyValueDouble object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Property Value String</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Property Value String</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T casePropertyValueString(PropertyValueString object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Container Runtime</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Container Runtime</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseContainerRuntime(ContainerRuntime object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Operting System Name</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Operting System Name</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseOpertingSystemName(OpertingSystemName object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Linux Distribution Value</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Linux Distribution Value</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseLinuxDistributionValue(LinuxDistributionValue object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Ubuntu Version Value</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Ubuntu Version Value</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseUbuntuVersionValue(UbuntuVersionValue object) {
         return null;
     }
 

@@ -2,7 +2,8 @@
  */
 package de.fraunhofer.ipa.deployment.util.impl;
 
-import de.fraunhofer.ipa.deployment.util.PropertyType;
+import de.fraunhofer.ipa.deployment.util.LinuxDistribution;
+import de.fraunhofer.ipa.deployment.util.LinuxDistributionValue;
 import de.fraunhofer.ipa.deployment.util.UtilPackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -10,48 +11,47 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Property Type</b></em>'.
+ * An implementation of the model object '<em><b>Linux Distribution Value</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link de.fraunhofer.ipa.deployment.util.impl.PropertyTypeImpl#getType <em>Type</em>}</li>
+ *   <li>{@link de.fraunhofer.ipa.deployment.util.impl.LinuxDistributionValueImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
  */
-public abstract class PropertyTypeImpl extends MinimalEObjectImpl.Container implements PropertyType {
+public class LinuxDistributionValueImpl extends PropertyValueImpl implements LinuxDistributionValue {
     /**
-     * The default value of the '{@link #getType() <em>Type</em>}' attribute.
+     * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getType()
+     * @see #getValue()
      * @generated
      * @ordered
      */
-    protected static final String TYPE_EDEFAULT = null;
+    protected static final LinuxDistribution VALUE_EDEFAULT = LinuxDistribution.UBUNTU;
 
     /**
-     * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
+     * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getType()
+     * @see #getValue()
      * @generated
      * @ordered
      */
-    protected String type = TYPE_EDEFAULT;
+    protected LinuxDistribution value = VALUE_EDEFAULT;
 
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    protected PropertyTypeImpl() {
+    protected LinuxDistributionValueImpl() {
         super();
     }
 
@@ -62,7 +62,7 @@ public abstract class PropertyTypeImpl extends MinimalEObjectImpl.Container impl
      */
     @Override
     protected EClass eStaticClass() {
-        return UtilPackage.Literals.PROPERTY_TYPE;
+        return UtilPackage.Literals.LINUX_DISTRIBUTION_VALUE;
     }
 
     /**
@@ -70,8 +70,8 @@ public abstract class PropertyTypeImpl extends MinimalEObjectImpl.Container impl
      * <!-- end-user-doc -->
      * @generated
      */
-    public String getType() {
-        return type;
+    public LinuxDistribution getValue() {
+        return value;
     }
 
     /**
@@ -79,11 +79,12 @@ public abstract class PropertyTypeImpl extends MinimalEObjectImpl.Container impl
      * <!-- end-user-doc -->
      * @generated
      */
-    public void setType(String newType) {
-        String oldType = type;
-        type = newType;
+    public void setValue(LinuxDistribution newValue) {
+        LinuxDistribution oldValue = value;
+        value = newValue == null ? VALUE_EDEFAULT : newValue;
         if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, UtilPackage.PROPERTY_TYPE__TYPE, oldType, type));
+            eNotify(new ENotificationImpl(this, Notification.SET, UtilPackage.LINUX_DISTRIBUTION_VALUE__VALUE, oldValue,
+                    value));
     }
 
     /**
@@ -94,8 +95,8 @@ public abstract class PropertyTypeImpl extends MinimalEObjectImpl.Container impl
     @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
         switch (featureID) {
-        case UtilPackage.PROPERTY_TYPE__TYPE:
-            return getType();
+        case UtilPackage.LINUX_DISTRIBUTION_VALUE__VALUE:
+            return getValue();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -108,8 +109,8 @@ public abstract class PropertyTypeImpl extends MinimalEObjectImpl.Container impl
     @Override
     public void eSet(int featureID, Object newValue) {
         switch (featureID) {
-        case UtilPackage.PROPERTY_TYPE__TYPE:
-            setType((String) newValue);
+        case UtilPackage.LINUX_DISTRIBUTION_VALUE__VALUE:
+            setValue((LinuxDistribution) newValue);
             return;
         }
         super.eSet(featureID, newValue);
@@ -123,8 +124,8 @@ public abstract class PropertyTypeImpl extends MinimalEObjectImpl.Container impl
     @Override
     public void eUnset(int featureID) {
         switch (featureID) {
-        case UtilPackage.PROPERTY_TYPE__TYPE:
-            setType(TYPE_EDEFAULT);
+        case UtilPackage.LINUX_DISTRIBUTION_VALUE__VALUE:
+            setValue(VALUE_EDEFAULT);
             return;
         }
         super.eUnset(featureID);
@@ -138,8 +139,8 @@ public abstract class PropertyTypeImpl extends MinimalEObjectImpl.Container impl
     @Override
     public boolean eIsSet(int featureID) {
         switch (featureID) {
-        case UtilPackage.PROPERTY_TYPE__TYPE:
-            return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
+        case UtilPackage.LINUX_DISTRIBUTION_VALUE__VALUE:
+            return value != VALUE_EDEFAULT;
         }
         return super.eIsSet(featureID);
     }
@@ -155,10 +156,10 @@ public abstract class PropertyTypeImpl extends MinimalEObjectImpl.Container impl
             return super.toString();
 
         StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (type: ");
-        result.append(type);
+        result.append(" (value: ");
+        result.append(value);
         result.append(')');
         return result.toString();
     }
 
-} //PropertyTypeImpl
+} //LinuxDistributionValueImpl

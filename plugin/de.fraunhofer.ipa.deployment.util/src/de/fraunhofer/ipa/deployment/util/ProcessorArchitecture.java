@@ -9,7 +9,7 @@ package de.fraunhofer.ipa.deployment.util;
  *
  *
  * @see de.fraunhofer.ipa.deployment.util.UtilPackage#getProcessorArchitecture()
- * @model abstract="true"
+ * @model
  * @generated
  */
 public interface ProcessorArchitecture extends AbstractResouceType {

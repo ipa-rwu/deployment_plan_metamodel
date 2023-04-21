@@ -5,6 +5,7 @@ package de.fraunhofer.ipa.deployment.util.impl;
 import de.fraunhofer.ipa.deployment.util.*;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -55,30 +56,28 @@ public class UtilFactoryImpl extends EFactoryImpl implements UtilFactory {
     @Override
     public EObject create(EClass eClass) {
         switch (eClass.getClassifierID()) {
-        case UtilPackage.PROPERTY_VALUE_INT:
-            return createPropertyValueInt();
-        case UtilPackage.PROPERTY_VALUE_DOUBLE:
-            return createPropertyValueDouble();
-        case UtilPackage.PROPERTY_VALUE_STRING:
-            return createPropertyValueString();
+        case UtilPackage.RESOURCE:
+            return createResource();
         case UtilPackage.COMMUNICATION_TYPE:
             return createCommunicationType();
         case UtilPackage.ETHERNET_COMMUNICATION_TYPE:
             return createEthernetCommunicationType();
         case UtilPackage.WLAN_COMMUNICATION_TYPE:
             return createWlanCommunicationType();
-        case UtilPackage.AVAILABLE_RESOUCE:
-            return createAvailableResouce();
-        case UtilPackage.LINUX_OPERTING_SYSTEM_TYPE:
-            return createLinuxOpertingSystemType();
-        case UtilPackage.MAC_OS_OPERTING_SYSTEM_TYPE:
-            return createMacOSOpertingSystemType();
-        case UtilPackage.PROCESSOR_ARCHITECTURE_TYPE:
-            return createProcessorArchitectureType();
-        case UtilPackage.X86_PROCESSOR_ARCHITECTURE:
-            return createX86ProcessorArchitecture();
-        case UtilPackage.ARM64_PROCESSOR_ARCHITECTURE:
-            return createArm64ProcessorArchitecture();
+        case UtilPackage.LINUX_OPERTING_SYSTEM:
+            return createLinuxOpertingSystem();
+        case UtilPackage.MAC_OS_OPERTING_SYSTEM:
+            return createMacOSOpertingSystem();
+        case UtilPackage.PROCESSOR_RESOUCE_TYPE:
+            return createProcessorResouceType();
+        case UtilPackage.RESOURCE_TYPE:
+            return createResourceType();
+        case UtilPackage.PROCESSOR_ARCHITECTURE_VALUE:
+            return createProcessorArchitectureValue();
+        case UtilPackage.LINUX_DISTRIBUTION_VALUE:
+            return createLinuxDistributionValue();
+        case UtilPackage.UBUNTU_VERSION_VALUE:
+            return createUbuntuVersionValue();
         case UtilPackage.ATTRIBUTE_KIND:
             return createAttributeKind();
         case UtilPackage.MAXIMUM_KIND:
@@ -101,8 +100,14 @@ public class UtilFactoryImpl extends EFactoryImpl implements UtilFactory {
             return createPropertyRange();
         case UtilPackage.PROPERTY:
             return createProperty();
-        case UtilPackage.RESOURCE_TYPE:
-            return createResourceType();
+        case UtilPackage.PROPERTY_VALUE_INT:
+            return createPropertyValueInt();
+        case UtilPackage.PROPERTY_VALUE_DOUBLE:
+            return createPropertyValueDouble();
+        case UtilPackage.PROPERTY_VALUE_STRING:
+            return createPropertyValueString();
+        case UtilPackage.CONTAINER_RUNTIME:
+            return createContainerRuntime();
         default:
             throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
         }
@@ -113,9 +118,20 @@ public class UtilFactoryImpl extends EFactoryImpl implements UtilFactory {
      * <!-- end-user-doc -->
      * @generated
      */
-    public PropertyValueInt createPropertyValueInt() {
-        PropertyValueIntImpl propertyValueInt = new PropertyValueIntImpl();
-        return propertyValueInt;
+    @Override
+    public Object createFromString(EDataType eDataType, String initialValue) {
+        switch (eDataType.getClassifierID()) {
+        case UtilPackage.UBUNTU_VERSION:
+            return createUbuntuVersionFromString(eDataType, initialValue);
+        case UtilPackage.LINUX_DISTRIBUTION:
+            return createLinuxDistributionFromString(eDataType, initialValue);
+        case UtilPackage.RUN_TIME_TYPE:
+            return createRunTimeTypeFromString(eDataType, initialValue);
+        case UtilPackage.PROCESSOR_ARCHITECTURE_TYPE:
+            return createProcessorArchitectureTypeFromString(eDataType, initialValue);
+        default:
+            throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+        }
     }
 
     /**
@@ -123,9 +139,20 @@ public class UtilFactoryImpl extends EFactoryImpl implements UtilFactory {
      * <!-- end-user-doc -->
      * @generated
      */
-    public PropertyValueDouble createPropertyValueDouble() {
-        PropertyValueDoubleImpl propertyValueDouble = new PropertyValueDoubleImpl();
-        return propertyValueDouble;
+    @Override
+    public String convertToString(EDataType eDataType, Object instanceValue) {
+        switch (eDataType.getClassifierID()) {
+        case UtilPackage.UBUNTU_VERSION:
+            return convertUbuntuVersionToString(eDataType, instanceValue);
+        case UtilPackage.LINUX_DISTRIBUTION:
+            return convertLinuxDistributionToString(eDataType, instanceValue);
+        case UtilPackage.RUN_TIME_TYPE:
+            return convertRunTimeTypeToString(eDataType, instanceValue);
+        case UtilPackage.PROCESSOR_ARCHITECTURE_TYPE:
+            return convertProcessorArchitectureTypeToString(eDataType, instanceValue);
+        default:
+            throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+        }
     }
 
     /**
@@ -133,9 +160,9 @@ public class UtilFactoryImpl extends EFactoryImpl implements UtilFactory {
      * <!-- end-user-doc -->
      * @generated
      */
-    public PropertyValueString createPropertyValueString() {
-        PropertyValueStringImpl propertyValueString = new PropertyValueStringImpl();
-        return propertyValueString;
+    public Resource createResource() {
+        ResourceImpl resource = new ResourceImpl();
+        return resource;
     }
 
     /**
@@ -173,9 +200,9 @@ public class UtilFactoryImpl extends EFactoryImpl implements UtilFactory {
      * <!-- end-user-doc -->
      * @generated
      */
-    public AvailableResouce createAvailableResouce() {
-        AvailableResouceImpl availableResouce = new AvailableResouceImpl();
-        return availableResouce;
+    public LinuxOpertingSystem createLinuxOpertingSystem() {
+        LinuxOpertingSystemImpl linuxOpertingSystem = new LinuxOpertingSystemImpl();
+        return linuxOpertingSystem;
     }
 
     /**
@@ -183,9 +210,9 @@ public class UtilFactoryImpl extends EFactoryImpl implements UtilFactory {
      * <!-- end-user-doc -->
      * @generated
      */
-    public LinuxOpertingSystemType createLinuxOpertingSystemType() {
-        LinuxOpertingSystemTypeImpl linuxOpertingSystemType = new LinuxOpertingSystemTypeImpl();
-        return linuxOpertingSystemType;
+    public MacOSOpertingSystem createMacOSOpertingSystem() {
+        MacOSOpertingSystemImpl macOSOpertingSystem = new MacOSOpertingSystemImpl();
+        return macOSOpertingSystem;
     }
 
     /**
@@ -193,9 +220,9 @@ public class UtilFactoryImpl extends EFactoryImpl implements UtilFactory {
      * <!-- end-user-doc -->
      * @generated
      */
-    public MacOSOpertingSystemType createMacOSOpertingSystemType() {
-        MacOSOpertingSystemTypeImpl macOSOpertingSystemType = new MacOSOpertingSystemTypeImpl();
-        return macOSOpertingSystemType;
+    public ProcessorResouceType createProcessorResouceType() {
+        ProcessorResouceTypeImpl processorResouceType = new ProcessorResouceTypeImpl();
+        return processorResouceType;
     }
 
     /**
@@ -203,9 +230,9 @@ public class UtilFactoryImpl extends EFactoryImpl implements UtilFactory {
      * <!-- end-user-doc -->
      * @generated
      */
-    public ProcessorArchitectureType createProcessorArchitectureType() {
-        ProcessorArchitectureTypeImpl processorArchitectureType = new ProcessorArchitectureTypeImpl();
-        return processorArchitectureType;
+    public ResourceType createResourceType() {
+        ResourceTypeImpl resourceType = new ResourceTypeImpl();
+        return resourceType;
     }
 
     /**
@@ -213,9 +240,9 @@ public class UtilFactoryImpl extends EFactoryImpl implements UtilFactory {
      * <!-- end-user-doc -->
      * @generated
      */
-    public X86ProcessorArchitecture createX86ProcessorArchitecture() {
-        X86ProcessorArchitectureImpl x86ProcessorArchitecture = new X86ProcessorArchitectureImpl();
-        return x86ProcessorArchitecture;
+    public ProcessorArchitectureValue createProcessorArchitectureValue() {
+        ProcessorArchitectureValueImpl processorArchitectureValue = new ProcessorArchitectureValueImpl();
+        return processorArchitectureValue;
     }
 
     /**
@@ -223,9 +250,19 @@ public class UtilFactoryImpl extends EFactoryImpl implements UtilFactory {
      * <!-- end-user-doc -->
      * @generated
      */
-    public Arm64ProcessorArchitecture createArm64ProcessorArchitecture() {
-        Arm64ProcessorArchitectureImpl arm64ProcessorArchitecture = new Arm64ProcessorArchitectureImpl();
-        return arm64ProcessorArchitecture;
+    public LinuxDistributionValue createLinuxDistributionValue() {
+        LinuxDistributionValueImpl linuxDistributionValue = new LinuxDistributionValueImpl();
+        return linuxDistributionValue;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public UbuntuVersionValue createUbuntuVersionValue() {
+        UbuntuVersionValueImpl ubuntuVersionValue = new UbuntuVersionValueImpl();
+        return ubuntuVersionValue;
     }
 
     /**
@@ -343,9 +380,128 @@ public class UtilFactoryImpl extends EFactoryImpl implements UtilFactory {
      * <!-- end-user-doc -->
      * @generated
      */
-    public ResourceType createResourceType() {
-        ResourceTypeImpl resourceType = new ResourceTypeImpl();
-        return resourceType;
+    public PropertyValueInt createPropertyValueInt() {
+        PropertyValueIntImpl propertyValueInt = new PropertyValueIntImpl();
+        return propertyValueInt;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public PropertyValueDouble createPropertyValueDouble() {
+        PropertyValueDoubleImpl propertyValueDouble = new PropertyValueDoubleImpl();
+        return propertyValueDouble;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public PropertyValueString createPropertyValueString() {
+        PropertyValueStringImpl propertyValueString = new PropertyValueStringImpl();
+        return propertyValueString;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public ContainerRuntime createContainerRuntime() {
+        ContainerRuntimeImpl containerRuntime = new ContainerRuntimeImpl();
+        return containerRuntime;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public UbuntuVersion createUbuntuVersionFromString(EDataType eDataType, String initialValue) {
+        UbuntuVersion result = UbuntuVersion.get(initialValue);
+        if (result == null)
+            throw new IllegalArgumentException(
+                    "The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+        return result;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public String convertUbuntuVersionToString(EDataType eDataType, Object instanceValue) {
+        return instanceValue == null ? null : instanceValue.toString();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public LinuxDistribution createLinuxDistributionFromString(EDataType eDataType, String initialValue) {
+        LinuxDistribution result = LinuxDistribution.get(initialValue);
+        if (result == null)
+            throw new IllegalArgumentException(
+                    "The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+        return result;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public String convertLinuxDistributionToString(EDataType eDataType, Object instanceValue) {
+        return instanceValue == null ? null : instanceValue.toString();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public RunTimeType createRunTimeTypeFromString(EDataType eDataType, String initialValue) {
+        RunTimeType result = RunTimeType.get(initialValue);
+        if (result == null)
+            throw new IllegalArgumentException(
+                    "The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+        return result;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public String convertRunTimeTypeToString(EDataType eDataType, Object instanceValue) {
+        return instanceValue == null ? null : instanceValue.toString();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public ProcessorArchitectureType createProcessorArchitectureTypeFromString(EDataType eDataType,
+            String initialValue) {
+        ProcessorArchitectureType result = ProcessorArchitectureType.get(initialValue);
+        if (result == null)
+            throw new IllegalArgumentException(
+                    "The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+        return result;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public String convertProcessorArchitectureTypeToString(EDataType eDataType, Object instanceValue) {
+        return instanceValue == null ? null : instanceValue.toString();
     }
 
     /**
