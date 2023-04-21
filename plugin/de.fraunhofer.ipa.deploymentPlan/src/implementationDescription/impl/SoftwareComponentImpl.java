@@ -6,6 +6,7 @@ import de.fraunhofer.ipa.deployment.util.impl.AbstractComputationAssignmentTarge
 
 import implementationDescription.ExecutionRequirement;
 import implementationDescription.ImplementationDescriptionPackage;
+import implementationDescription.Repository;
 import implementationDescription.SoftwareComponent;
 
 import java.util.Collection;
@@ -32,7 +33,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link implementationDescription.impl.SoftwareComponentImpl#getName <em>Name</em>}</li>
- *   <li>{@link implementationDescription.impl.SoftwareComponentImpl#getPath <em>Path</em>}</li>
+ *   <li>{@link implementationDescription.impl.SoftwareComponentImpl#getRepository <em>Repository</em>}</li>
  *   <li>{@link implementationDescription.impl.SoftwareComponentImpl#getExecutionRequirement <em>Execution Requirement</em>}</li>
  * </ul>
  *
@@ -60,24 +61,14 @@ public class SoftwareComponentImpl extends AbstractComputationAssignmentTargetIm
     protected String name = NAME_EDEFAULT;
 
     /**
-     * The default value of the '{@link #getPath() <em>Path</em>}' attribute.
+     * The cached value of the '{@link #getRepository() <em>Repository</em>}' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getPath()
+     * @see #getRepository()
      * @generated
      * @ordered
      */
-    protected static final String PATH_EDEFAULT = null;
-
-    /**
-     * The cached value of the '{@link #getPath() <em>Path</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getPath()
-     * @generated
-     * @ordered
-     */
-    protected String path = PATH_EDEFAULT;
+    protected Repository repository;
 
     /**
      * The cached value of the '{@link #getExecutionRequirement() <em>Execution Requirement</em>}' containment reference list.
@@ -134,8 +125,8 @@ public class SoftwareComponentImpl extends AbstractComputationAssignmentTargetIm
      * <!-- end-user-doc -->
      * @generated
      */
-    public String getPath() {
-        return path;
+    public Repository getRepository() {
+        return repository;
     }
 
     /**
@@ -143,11 +134,33 @@ public class SoftwareComponentImpl extends AbstractComputationAssignmentTargetIm
      * <!-- end-user-doc -->
      * @generated
      */
-    public void setPath(String newPath) {
-        String oldPath = path;
-        path = newPath;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, ImplementationDescriptionPackage.SOFTWARE_COMPONENT__PATH, oldPath, path));
+    public NotificationChain basicSetRepository(Repository newRepository, NotificationChain msgs) {
+        Repository oldRepository = repository;
+        repository = newRepository;
+        if (eNotificationRequired()) {
+            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ImplementationDescriptionPackage.SOFTWARE_COMPONENT__REPOSITORY, oldRepository, newRepository);
+            if (msgs == null) msgs = notification; else msgs.add(notification);
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void setRepository(Repository newRepository) {
+        if (newRepository != repository) {
+            NotificationChain msgs = null;
+            if (repository != null)
+                msgs = ((InternalEObject)repository).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ImplementationDescriptionPackage.SOFTWARE_COMPONENT__REPOSITORY, null, msgs);
+            if (newRepository != null)
+                msgs = ((InternalEObject)newRepository).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ImplementationDescriptionPackage.SOFTWARE_COMPONENT__REPOSITORY, null, msgs);
+            msgs = basicSetRepository(newRepository, msgs);
+            if (msgs != null) msgs.dispatch();
+        }
+        else if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, ImplementationDescriptionPackage.SOFTWARE_COMPONENT__REPOSITORY, newRepository, newRepository));
     }
 
     /**
@@ -170,6 +183,8 @@ public class SoftwareComponentImpl extends AbstractComputationAssignmentTargetIm
     @Override
     public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
         switch (featureID) {
+            case ImplementationDescriptionPackage.SOFTWARE_COMPONENT__REPOSITORY:
+                return basicSetRepository(null, msgs);
             case ImplementationDescriptionPackage.SOFTWARE_COMPONENT__EXECUTION_REQUIREMENT:
                 return ((InternalEList<?>)getExecutionRequirement()).basicRemove(otherEnd, msgs);
         }
@@ -186,8 +201,8 @@ public class SoftwareComponentImpl extends AbstractComputationAssignmentTargetIm
         switch (featureID) {
             case ImplementationDescriptionPackage.SOFTWARE_COMPONENT__NAME:
                 return getName();
-            case ImplementationDescriptionPackage.SOFTWARE_COMPONENT__PATH:
-                return getPath();
+            case ImplementationDescriptionPackage.SOFTWARE_COMPONENT__REPOSITORY:
+                return getRepository();
             case ImplementationDescriptionPackage.SOFTWARE_COMPONENT__EXECUTION_REQUIREMENT:
                 return getExecutionRequirement();
         }
@@ -206,8 +221,8 @@ public class SoftwareComponentImpl extends AbstractComputationAssignmentTargetIm
             case ImplementationDescriptionPackage.SOFTWARE_COMPONENT__NAME:
                 setName((String)newValue);
                 return;
-            case ImplementationDescriptionPackage.SOFTWARE_COMPONENT__PATH:
-                setPath((String)newValue);
+            case ImplementationDescriptionPackage.SOFTWARE_COMPONENT__REPOSITORY:
+                setRepository((Repository)newValue);
                 return;
             case ImplementationDescriptionPackage.SOFTWARE_COMPONENT__EXECUTION_REQUIREMENT:
                 getExecutionRequirement().clear();
@@ -228,8 +243,8 @@ public class SoftwareComponentImpl extends AbstractComputationAssignmentTargetIm
             case ImplementationDescriptionPackage.SOFTWARE_COMPONENT__NAME:
                 setName(NAME_EDEFAULT);
                 return;
-            case ImplementationDescriptionPackage.SOFTWARE_COMPONENT__PATH:
-                setPath(PATH_EDEFAULT);
+            case ImplementationDescriptionPackage.SOFTWARE_COMPONENT__REPOSITORY:
+                setRepository((Repository)null);
                 return;
             case ImplementationDescriptionPackage.SOFTWARE_COMPONENT__EXECUTION_REQUIREMENT:
                 getExecutionRequirement().clear();
@@ -248,8 +263,8 @@ public class SoftwareComponentImpl extends AbstractComputationAssignmentTargetIm
         switch (featureID) {
             case ImplementationDescriptionPackage.SOFTWARE_COMPONENT__NAME:
                 return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-            case ImplementationDescriptionPackage.SOFTWARE_COMPONENT__PATH:
-                return PATH_EDEFAULT == null ? path != null : !PATH_EDEFAULT.equals(path);
+            case ImplementationDescriptionPackage.SOFTWARE_COMPONENT__REPOSITORY:
+                return repository != null;
             case ImplementationDescriptionPackage.SOFTWARE_COMPONENT__EXECUTION_REQUIREMENT:
                 return executionRequirement != null && !executionRequirement.isEmpty();
         }
@@ -268,8 +283,6 @@ public class SoftwareComponentImpl extends AbstractComputationAssignmentTargetIm
         StringBuilder result = new StringBuilder(super.toString());
         result.append(" (name: ");
         result.append(name);
-        result.append(", path: ");
-        result.append(path);
         result.append(')');
         return result.toString();
     }

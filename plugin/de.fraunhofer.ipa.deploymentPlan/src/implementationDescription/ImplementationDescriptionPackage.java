@@ -161,13 +161,13 @@ public interface ImplementationDescriptionPackage extends EPackage {
     int SOFTWARE_COMPONENT__NAME = UtilPackage.ABSTRACT_COMPUTATION_ASSIGNMENT_TARGET_FEATURE_COUNT + 0;
 
     /**
-     * The feature id for the '<em><b>Path</b></em>' attribute.
+     * The feature id for the '<em><b>Repository</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int SOFTWARE_COMPONENT__PATH = UtilPackage.ABSTRACT_COMPUTATION_ASSIGNMENT_TARGET_FEATURE_COUNT + 1;
+    int SOFTWARE_COMPONENT__REPOSITORY = UtilPackage.ABSTRACT_COMPUTATION_ASSIGNMENT_TARGET_FEATURE_COUNT + 1;
 
     /**
      * The feature id for the '<em><b>Execution Requirement</b></em>' containment reference list.
@@ -471,6 +471,117 @@ public interface ImplementationDescriptionPackage extends EPackage {
      */
     int SOFTWARE_EXECUTION_PAREMETER_OPERATION_COUNT = EXECUTION_PROPERTY_OPERATION_COUNT + 0;
 
+    /**
+     * The meta object id for the '{@link implementationDescription.impl.RepositoryImpl <em>Repository</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see implementationDescription.impl.RepositoryImpl
+     * @see implementationDescription.impl.ImplementationDescriptionPackageImpl#getRepository()
+     * @generated
+     */
+    int REPOSITORY = 8;
+
+    /**
+     * The feature id for the '<em><b>Url</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int REPOSITORY__URL = 0;
+
+    /**
+     * The feature id for the '<em><b>Version</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int REPOSITORY__VERSION = 1;
+
+    /**
+     * The feature id for the '<em><b>Type</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int REPOSITORY__TYPE = 2;
+
+    /**
+     * The number of structural features of the '<em>Repository</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int REPOSITORY_FEATURE_COUNT = 3;
+
+    /**
+     * The number of operations of the '<em>Repository</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int REPOSITORY_OPERATION_COUNT = 0;
+
+    /**
+     * The meta object id for the '{@link implementationDescription.impl.RepositoryTypeImpl <em>Repository Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see implementationDescription.impl.RepositoryTypeImpl
+     * @see implementationDescription.impl.ImplementationDescriptionPackageImpl#getRepositoryType()
+     * @generated
+     */
+    int REPOSITORY_TYPE = 9;
+
+    /**
+     * The number of structural features of the '<em>Repository Type</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int REPOSITORY_TYPE_FEATURE_COUNT = 0;
+
+    /**
+     * The number of operations of the '<em>Repository Type</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int REPOSITORY_TYPE_OPERATION_COUNT = 0;
+
+    /**
+     * The meta object id for the '{@link implementationDescription.impl.GitRepositoryTypeImpl <em>Git Repository Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see implementationDescription.impl.GitRepositoryTypeImpl
+     * @see implementationDescription.impl.ImplementationDescriptionPackageImpl#getGitRepositoryType()
+     * @generated
+     */
+    int GIT_REPOSITORY_TYPE = 10;
+
+    /**
+     * The number of structural features of the '<em>Git Repository Type</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GIT_REPOSITORY_TYPE_FEATURE_COUNT = REPOSITORY_TYPE_FEATURE_COUNT + 0;
+
+    /**
+     * The number of operations of the '<em>Git Repository Type</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GIT_REPOSITORY_TYPE_OPERATION_COUNT = REPOSITORY_TYPE_OPERATION_COUNT + 0;
+
 
     /**
      * Returns the meta object for class '{@link implementationDescription.ExecutionRequirement <em>Execution Requirement</em>}'.
@@ -547,15 +658,15 @@ public interface ImplementationDescriptionPackage extends EPackage {
     EAttribute getSoftwareComponent_Name();
 
     /**
-     * Returns the meta object for the attribute '{@link implementationDescription.SoftwareComponent#getPath <em>Path</em>}'.
+     * Returns the meta object for the containment reference '{@link implementationDescription.SoftwareComponent#getRepository <em>Repository</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Path</em>'.
-     * @see implementationDescription.SoftwareComponent#getPath()
+     * @return the meta object for the containment reference '<em>Repository</em>'.
+     * @see implementationDescription.SoftwareComponent#getRepository()
      * @see #getSoftwareComponent()
      * @generated
      */
-    EAttribute getSoftwareComponent_Path();
+    EReference getSoftwareComponent_Repository();
 
     /**
      * Returns the meta object for the containment reference list '{@link implementationDescription.SoftwareComponent#getExecutionRequirement <em>Execution Requirement</em>}'.
@@ -652,6 +763,69 @@ public interface ImplementationDescriptionPackage extends EPackage {
     EClass getExecutionProperty();
 
     /**
+     * Returns the meta object for class '{@link implementationDescription.Repository <em>Repository</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Repository</em>'.
+     * @see implementationDescription.Repository
+     * @generated
+     */
+    EClass getRepository();
+
+    /**
+     * Returns the meta object for the attribute '{@link implementationDescription.Repository#getUrl <em>Url</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Url</em>'.
+     * @see implementationDescription.Repository#getUrl()
+     * @see #getRepository()
+     * @generated
+     */
+    EAttribute getRepository_Url();
+
+    /**
+     * Returns the meta object for the attribute '{@link implementationDescription.Repository#getVersion <em>Version</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Version</em>'.
+     * @see implementationDescription.Repository#getVersion()
+     * @see #getRepository()
+     * @generated
+     */
+    EAttribute getRepository_Version();
+
+    /**
+     * Returns the meta object for the containment reference '{@link implementationDescription.Repository#getType <em>Type</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the containment reference '<em>Type</em>'.
+     * @see implementationDescription.Repository#getType()
+     * @see #getRepository()
+     * @generated
+     */
+    EReference getRepository_Type();
+
+    /**
+     * Returns the meta object for class '{@link implementationDescription.RepositoryType <em>Repository Type</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Repository Type</em>'.
+     * @see implementationDescription.RepositoryType
+     * @generated
+     */
+    EClass getRepositoryType();
+
+    /**
+     * Returns the meta object for class '{@link implementationDescription.GitRepositoryType <em>Git Repository Type</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Git Repository Type</em>'.
+     * @see implementationDescription.GitRepositoryType
+     * @generated
+     */
+    EClass getGitRepositoryType();
+
+    /**
      * Returns the factory that creates the instances of the model.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -737,12 +911,12 @@ public interface ImplementationDescriptionPackage extends EPackage {
         EAttribute SOFTWARE_COMPONENT__NAME = eINSTANCE.getSoftwareComponent_Name();
 
         /**
-         * The meta object literal for the '<em><b>Path</b></em>' attribute feature.
+         * The meta object literal for the '<em><b>Repository</b></em>' containment reference feature.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
          * @generated
          */
-        EAttribute SOFTWARE_COMPONENT__PATH = eINSTANCE.getSoftwareComponent_Path();
+        EReference SOFTWARE_COMPONENT__REPOSITORY = eINSTANCE.getSoftwareComponent_Repository();
 
         /**
          * The meta object literal for the '<em><b>Execution Requirement</b></em>' containment reference list feature.
@@ -825,6 +999,60 @@ public interface ImplementationDescriptionPackage extends EPackage {
          * @generated
          */
         EClass EXECUTION_PROPERTY = eINSTANCE.getExecutionProperty();
+
+        /**
+         * The meta object literal for the '{@link implementationDescription.impl.RepositoryImpl <em>Repository</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see implementationDescription.impl.RepositoryImpl
+         * @see implementationDescription.impl.ImplementationDescriptionPackageImpl#getRepository()
+         * @generated
+         */
+        EClass REPOSITORY = eINSTANCE.getRepository();
+
+        /**
+         * The meta object literal for the '<em><b>Url</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute REPOSITORY__URL = eINSTANCE.getRepository_Url();
+
+        /**
+         * The meta object literal for the '<em><b>Version</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute REPOSITORY__VERSION = eINSTANCE.getRepository_Version();
+
+        /**
+         * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference REPOSITORY__TYPE = eINSTANCE.getRepository_Type();
+
+        /**
+         * The meta object literal for the '{@link implementationDescription.impl.RepositoryTypeImpl <em>Repository Type</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see implementationDescription.impl.RepositoryTypeImpl
+         * @see implementationDescription.impl.ImplementationDescriptionPackageImpl#getRepositoryType()
+         * @generated
+         */
+        EClass REPOSITORY_TYPE = eINSTANCE.getRepositoryType();
+
+        /**
+         * The meta object literal for the '{@link implementationDescription.impl.GitRepositoryTypeImpl <em>Git Repository Type</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see implementationDescription.impl.GitRepositoryTypeImpl
+         * @see implementationDescription.impl.ImplementationDescriptionPackageImpl#getGitRepositoryType()
+         * @generated
+         */
+        EClass GIT_REPOSITORY_TYPE = eINSTANCE.getGitRepositoryType();
 
     }
 

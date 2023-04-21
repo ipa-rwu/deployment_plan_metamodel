@@ -7,10 +7,13 @@ import de.fraunhofer.ipa.deployment.util.UtilPackage;
 import implementationDescription.DeviceRequirement;
 import implementationDescription.ExecutionProperty;
 import implementationDescription.ExecutionRequirement;
+import implementationDescription.GitRepositoryType;
 import implementationDescription.HWSWParemeter;
 import implementationDescription.ImplementationDescription;
 import implementationDescription.ImplementationDescriptionFactory;
 import implementationDescription.ImplementationDescriptionPackage;
+import implementationDescription.Repository;
+import implementationDescription.RepositoryType;
 import implementationDescription.SoftwareComponent;
 import implementationDescription.SoftwareConfigurationRequirement;
 import implementationDescription.SoftwareExecutionParemeter;
@@ -84,6 +87,27 @@ public class ImplementationDescriptionPackageImpl extends EPackageImpl implement
      * @generated
      */
     private EClass executionPropertyEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass repositoryEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass repositoryTypeEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass gitRepositoryTypeEClass = null;
 
     /**
      * Creates an instance of the model <b>Package</b>, registered with
@@ -216,8 +240,8 @@ public class ImplementationDescriptionPackageImpl extends EPackageImpl implement
      * <!-- end-user-doc -->
      * @generated
      */
-    public EAttribute getSoftwareComponent_Path() {
-        return (EAttribute)softwareComponentEClass.getEStructuralFeatures().get(1);
+    public EReference getSoftwareComponent_Repository() {
+        return (EReference)softwareComponentEClass.getEStructuralFeatures().get(1);
     }
 
     /**
@@ -306,6 +330,60 @@ public class ImplementationDescriptionPackageImpl extends EPackageImpl implement
      * <!-- end-user-doc -->
      * @generated
      */
+    public EClass getRepository() {
+        return repositoryEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getRepository_Url() {
+        return (EAttribute)repositoryEClass.getEStructuralFeatures().get(0);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getRepository_Version() {
+        return (EAttribute)repositoryEClass.getEStructuralFeatures().get(1);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EReference getRepository_Type() {
+        return (EReference)repositoryEClass.getEStructuralFeatures().get(2);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getRepositoryType() {
+        return repositoryTypeEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getGitRepositoryType() {
+        return gitRepositoryTypeEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public ImplementationDescriptionFactory getImplementationDescriptionFactory() {
         return (ImplementationDescriptionFactory)getEFactoryInstance();
     }
@@ -338,7 +416,7 @@ public class ImplementationDescriptionPackageImpl extends EPackageImpl implement
 
         softwareComponentEClass = createEClass(SOFTWARE_COMPONENT);
         createEAttribute(softwareComponentEClass, SOFTWARE_COMPONENT__NAME);
-        createEAttribute(softwareComponentEClass, SOFTWARE_COMPONENT__PATH);
+        createEReference(softwareComponentEClass, SOFTWARE_COMPONENT__REPOSITORY);
         createEReference(softwareComponentEClass, SOFTWARE_COMPONENT__EXECUTION_REQUIREMENT);
 
         deviceRequirementEClass = createEClass(DEVICE_REQUIREMENT);
@@ -353,6 +431,15 @@ public class ImplementationDescriptionPackageImpl extends EPackageImpl implement
         softwareExecutionParemeterEClass = createEClass(SOFTWARE_EXECUTION_PAREMETER);
 
         executionPropertyEClass = createEClass(EXECUTION_PROPERTY);
+
+        repositoryEClass = createEClass(REPOSITORY);
+        createEAttribute(repositoryEClass, REPOSITORY__URL);
+        createEAttribute(repositoryEClass, REPOSITORY__VERSION);
+        createEReference(repositoryEClass, REPOSITORY__TYPE);
+
+        repositoryTypeEClass = createEClass(REPOSITORY_TYPE);
+
+        gitRepositoryTypeEClass = createEClass(GIT_REPOSITORY_TYPE);
     }
 
     /**
@@ -394,6 +481,7 @@ public class ImplementationDescriptionPackageImpl extends EPackageImpl implement
         hwswParemeterEClass.getESuperTypes().add(this.getExecutionProperty());
         softwareExecutionParemeterEClass.getESuperTypes().add(this.getExecutionProperty());
         executionPropertyEClass.getESuperTypes().add(theUtilPackage.getProperty());
+        gitRepositoryTypeEClass.getESuperTypes().add(this.getRepositoryType());
 
         // Initialize classes, features, and operations; add parameters
         initEClass(executionRequirementEClass, ExecutionRequirement.class, "ExecutionRequirement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -405,7 +493,7 @@ public class ImplementationDescriptionPackageImpl extends EPackageImpl implement
 
         initEClass(softwareComponentEClass, SoftwareComponent.class, "SoftwareComponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEAttribute(getSoftwareComponent_Name(), ecorePackage.getEString(), "name", null, 1, 1, SoftwareComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        initEAttribute(getSoftwareComponent_Path(), ecorePackage.getEString(), "path", null, 1, 1, SoftwareComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEReference(getSoftwareComponent_Repository(), this.getRepository(), null, "repository", null, 1, 1, SoftwareComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEReference(getSoftwareComponent_ExecutionRequirement(), this.getExecutionRequirement(), null, "executionRequirement", null, 0, -1, SoftwareComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(deviceRequirementEClass, DeviceRequirement.class, "DeviceRequirement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -420,6 +508,15 @@ public class ImplementationDescriptionPackageImpl extends EPackageImpl implement
         initEClass(softwareExecutionParemeterEClass, SoftwareExecutionParemeter.class, "SoftwareExecutionParemeter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
         initEClass(executionPropertyEClass, ExecutionProperty.class, "ExecutionProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+        initEClass(repositoryEClass, Repository.class, "Repository", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEAttribute(getRepository_Url(), ecorePackage.getEString(), "url", null, 1, 1, Repository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getRepository_Version(), ecorePackage.getEString(), "version", null, 1, 1, Repository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEReference(getRepository_Type(), this.getRepositoryType(), null, "type", null, 1, 1, Repository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+        initEClass(repositoryTypeEClass, RepositoryType.class, "RepositoryType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+        initEClass(gitRepositoryTypeEClass, GitRepositoryType.class, "GitRepositoryType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
         // Create resource
         createResource(eNS_URI);

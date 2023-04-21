@@ -58,15 +58,6 @@ public interface DeployPlanWithRosModelFactory extends EFactory {
     ConfigRosParameter createConfigRosParameter();
 
     /**
-     * Returns a new object of class '<em>Ros Computation Assignment Target</em>'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return a new object of class '<em>Ros Computation Assignment Target</em>'.
-     * @generated
-     */
-    RosComputationAssignmentTarget createRosComputationAssignmentTarget();
-
-    /**
      * Returns a new object of class '<em>Config Ros Software Component</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->

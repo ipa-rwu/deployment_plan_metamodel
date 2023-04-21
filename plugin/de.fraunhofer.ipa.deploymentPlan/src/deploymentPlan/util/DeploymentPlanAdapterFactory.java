@@ -72,48 +72,24 @@ public class DeploymentPlanAdapterFactory extends AdapterFactoryImpl {
                 return createPlanAdapter();
             }
             @Override
-            public Adapter caseAbstractDeploymentPlan(AbstractDeploymentPlan object) {
-                return createAbstractDeploymentPlanAdapter();
-            }
-            @Override
             public Adapter caseDeploymentPlan(DeploymentPlan object) {
                 return createDeploymentPlanAdapter();
-            }
-            @Override
-            public Adapter caseAbstractRealization(AbstractRealization object) {
-                return createAbstractRealizationAdapter();
             }
             @Override
             public Adapter caseRealization(Realization object) {
                 return createRealizationAdapter();
             }
             @Override
-            public Adapter caseAbstractComputationAssignment(AbstractComputationAssignment object) {
-                return createAbstractComputationAssignmentAdapter();
-            }
-            @Override
             public Adapter caseImplementationAssignment(ImplementationAssignment object) {
                 return createImplementationAssignmentAdapter();
-            }
-            @Override
-            public Adapter caseAbstractConfigExecutionParameter(AbstractConfigExecutionParameter object) {
-                return createAbstractConfigExecutionParameterAdapter();
             }
             @Override
             public Adapter caseConfigExecutionParameter(ConfigExecutionParameter object) {
                 return createConfigExecutionParameterAdapter();
             }
             @Override
-            public Adapter caseAbstractExecutionConfiguration(AbstractExecutionConfiguration object) {
-                return createAbstractExecutionConfigurationAdapter();
-            }
-            @Override
             public Adapter caseMiddleware(Middleware object) {
                 return createMiddlewareAdapter();
-            }
-            @Override
-            public Adapter caseROSDistro(ROSDistro object) {
-                return createROSDistroAdapter();
             }
             @Override
             public Adapter caseHumbleROSDistro(HumbleROSDistro object) {
@@ -128,8 +104,36 @@ public class DeploymentPlanAdapterFactory extends AdapterFactoryImpl {
                 return createConfigSoftwareComponentAdapter();
             }
             @Override
+            public Adapter caseAbstractRealization(AbstractRealization object) {
+                return createAbstractRealizationAdapter();
+            }
+            @Override
+            public Adapter caseAbstractConfigExecutionParameter(AbstractConfigExecutionParameter object) {
+                return createAbstractConfigExecutionParameterAdapter();
+            }
+            @Override
+            public Adapter caseAbstractComputationAssignment(AbstractComputationAssignment object) {
+                return createAbstractComputationAssignmentAdapter();
+            }
+            @Override
+            public Adapter caseAbstractExecutionConfiguration(AbstractExecutionConfiguration object) {
+                return createAbstractExecutionConfigurationAdapter();
+            }
+            @Override
+            public Adapter caseAbstractDeploymentPlan(AbstractDeploymentPlan object) {
+                return createAbstractDeploymentPlanAdapter();
+            }
+            @Override
             public Adapter caseAbstarctConfigSoftwareComponent(AbstarctConfigSoftwareComponent object) {
                 return createAbstarctConfigSoftwareComponentAdapter();
+            }
+            @Override
+            public Adapter caseRosMiddleware(RosMiddleware object) {
+                return createRosMiddlewareAdapter();
+            }
+            @Override
+            public Adapter caseAbstractConfigedValue(AbstractConfigedValue object) {
+                return createAbstractConfigedValueAdapter();
             }
             @Override
             public Adapter defaultCase(EObject object) {
@@ -306,20 +310,6 @@ public class DeploymentPlanAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
-     * Creates a new adapter for an object of class '{@link deploymentPlan.ROSDistro <em>ROS Distro</em>}'.
-     * <!-- begin-user-doc -->
-     * This default implementation returns null so that we can easily ignore cases;
-     * it's useful to ignore a case when inheritance will catch all the cases anyway.
-     * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see deploymentPlan.ROSDistro
-     * @generated
-     */
-    public Adapter createROSDistroAdapter() {
-        return null;
-    }
-
-    /**
      * Creates a new adapter for an object of class '{@link deploymentPlan.HumbleROSDistro <em>Humble ROS Distro</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
@@ -376,6 +366,34 @@ public class DeploymentPlanAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
+     * Creates a new adapter for an object of class '{@link deploymentPlan.RosMiddleware <em>Ros Middleware</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see deploymentPlan.RosMiddleware
+     * @generated
+     */
+    public Adapter createRosMiddlewareAdapter() {
+        return null;
+    }
+
+                /**
+     * Creates a new adapter for an object of class '{@link deploymentPlan.AbstractConfigedValue <em>Abstract Configed Value</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see deploymentPlan.AbstractConfigedValue
+     * @generated
+     */
+    public Adapter createAbstractConfigedValueAdapter() {
+        return null;
+    }
+
+                                                                /**
      * Creates a new adapter for the default case.
      * <!-- begin-user-doc -->
      * This default implementation returns null.

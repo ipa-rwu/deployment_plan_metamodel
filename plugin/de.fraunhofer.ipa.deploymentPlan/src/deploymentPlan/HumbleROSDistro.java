@@ -2,6 +2,8 @@
  */
 package deploymentPlan;
 
+import org.eclipse.emf.ecore.EObject;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -20,7 +22,8 @@ package deploymentPlan;
  * @model
  * @generated
  */
-public interface HumbleROSDistro extends ROSDistro {
+public interface HumbleROSDistro extends EObject {
+
     /**
      * Returns the value of the '<em><b>Version</b></em>' attribute.
      * The default value is <code>"2"</code>.

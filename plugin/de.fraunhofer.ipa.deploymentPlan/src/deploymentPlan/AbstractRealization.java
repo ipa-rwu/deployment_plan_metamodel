@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link deploymentPlan.AbstractRealization#getRealization <em>Realization</em>}</li>
+ *   <li>{@link deploymentPlan.AbstractRealization#getRealizations <em>Realizations</em>}</li>
  * </ul>
  *
  * @see deploymentPlan.DeploymentPlanPackage#getAbstractRealization()
@@ -24,15 +24,15 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface AbstractRealization extends EObject {
     /**
-     * Returns the value of the '<em><b>Realization</b></em>' containment reference list.
+     * Returns the value of the '<em><b>Realizations</b></em>' containment reference list.
      * The list contents are of type {@link deploymentPlan.AbstractComputationAssignment}.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Realization</em>' containment reference list.
-     * @see deploymentPlan.DeploymentPlanPackage#getAbstractRealization_Realization()
+     * @return the value of the '<em>Realizations</em>' containment reference list.
+     * @see deploymentPlan.DeploymentPlanPackage#getAbstractRealization_Realizations()
      * @model containment="true"
      * @generated
      */
-    EList<AbstractComputationAssignment> getRealization();
+    EList<AbstractComputationAssignment> getRealizations();
 
 } // AbstractRealization

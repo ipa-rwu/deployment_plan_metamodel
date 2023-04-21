@@ -2,8 +2,6 @@
  */
 package deployPlanWithRosModel.util;
 
-import de.fraunhofer.ipa.deployment.util.AbstractComputationAssignmentTarget;
-
 import deployPlanWithRosModel.*;
 
 import deploymentPlan.AbstarctConfigSoftwareComponent;
@@ -91,10 +89,6 @@ public class DeployPlanWithRosModelAdapterFactory extends AdapterFactoryImpl {
                 return createConfigRosParameterAdapter();
             }
             @Override
-            public Adapter caseRosComputationAssignmentTarget(RosComputationAssignmentTarget object) {
-                return createRosComputationAssignmentTargetAdapter();
-            }
-            @Override
             public Adapter caseConfigRosSoftwareComponent(ConfigRosSoftwareComponent object) {
                 return createConfigRosSoftwareComponentAdapter();
             }
@@ -109,10 +103,6 @@ public class DeployPlanWithRosModelAdapterFactory extends AdapterFactoryImpl {
             @Override
             public Adapter caseAbstractConfigExecutionParameter(AbstractConfigExecutionParameter object) {
                 return createAbstractConfigExecutionParameterAdapter();
-            }
-            @Override
-            public Adapter caseAbstractComputationAssignmentTarget(AbstractComputationAssignmentTarget object) {
-                return createAbstractComputationAssignmentTargetAdapter();
             }
             @Override
             public Adapter caseAbstarctConfigSoftwareComponent(AbstarctConfigSoftwareComponent object) {
@@ -195,20 +185,6 @@ public class DeployPlanWithRosModelAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
-     * Creates a new adapter for an object of class '{@link deployPlanWithRosModel.RosComputationAssignmentTarget <em>Ros Computation Assignment Target</em>}'.
-     * <!-- begin-user-doc -->
-     * This default implementation returns null so that we can easily ignore cases;
-     * it's useful to ignore a case when inheritance will catch all the cases anyway.
-     * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see deployPlanWithRosModel.RosComputationAssignmentTarget
-     * @generated
-     */
-    public Adapter createRosComputationAssignmentTargetAdapter() {
-        return null;
-    }
-
-    /**
      * Creates a new adapter for an object of class '{@link deployPlanWithRosModel.ConfigRosSoftwareComponent <em>Config Ros Software Component</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
@@ -261,20 +237,6 @@ public class DeployPlanWithRosModelAdapterFactory extends AdapterFactoryImpl {
      * @generated
      */
     public Adapter createAbstractConfigExecutionParameterAdapter() {
-        return null;
-    }
-
-    /**
-     * Creates a new adapter for an object of class '{@link de.fraunhofer.ipa.deployment.util.AbstractComputationAssignmentTarget <em>Abstract Computation Assignment Target</em>}'.
-     * <!-- begin-user-doc -->
-     * This default implementation returns null so that we can easily ignore cases;
-     * it's useful to ignore a case when inheritance will catch all the cases anyway.
-     * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see de.fraunhofer.ipa.deployment.util.AbstractComputationAssignmentTarget
-     * @generated
-     */
-    public Adapter createAbstractComputationAssignmentTargetAdapter() {
         return null;
     }
 

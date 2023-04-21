@@ -16,7 +16,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link implementationDescription.SoftwareComponent#getName <em>Name</em>}</li>
- *   <li>{@link implementationDescription.SoftwareComponent#getPath <em>Path</em>}</li>
+ *   <li>{@link implementationDescription.SoftwareComponent#getRepository <em>Repository</em>}</li>
  *   <li>{@link implementationDescription.SoftwareComponent#getExecutionRequirement <em>Execution Requirement</em>}</li>
  * </ul>
  *
@@ -48,26 +48,26 @@ public interface SoftwareComponent extends AbstractComputationAssignmentTarget {
     void setName(String value);
 
     /**
-     * Returns the value of the '<em><b>Path</b></em>' attribute.
+     * Returns the value of the '<em><b>Repository</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Path</em>' attribute.
-     * @see #setPath(String)
-     * @see implementationDescription.ImplementationDescriptionPackage#getSoftwareComponent_Path()
-     * @model required="true"
+     * @return the value of the '<em>Repository</em>' containment reference.
+     * @see #setRepository(Repository)
+     * @see implementationDescription.ImplementationDescriptionPackage#getSoftwareComponent_Repository()
+     * @model containment="true" required="true"
      * @generated
      */
-    String getPath();
+    Repository getRepository();
 
     /**
-     * Sets the value of the '{@link implementationDescription.SoftwareComponent#getPath <em>Path</em>}' attribute.
+     * Sets the value of the '{@link implementationDescription.SoftwareComponent#getRepository <em>Repository</em>}' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Path</em>' attribute.
-     * @see #getPath()
+     * @param value the new value of the '<em>Repository</em>' containment reference.
+     * @see #getRepository()
      * @generated
      */
-    void setPath(String value);
+    void setRepository(Repository value);
 
     /**
      * Returns the value of the '<em><b>Execution Requirement</b></em>' containment reference list.

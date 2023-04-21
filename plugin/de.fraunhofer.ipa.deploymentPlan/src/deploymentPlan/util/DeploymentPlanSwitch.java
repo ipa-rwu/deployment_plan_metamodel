@@ -72,22 +72,10 @@ public class DeploymentPlanSwitch<T> extends Switch<T> {
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
-            case DeploymentPlanPackage.ABSTRACT_DEPLOYMENT_PLAN: {
-                AbstractDeploymentPlan abstractDeploymentPlan = (AbstractDeploymentPlan)theEObject;
-                T result = caseAbstractDeploymentPlan(abstractDeploymentPlan);
-                if (result == null) result = defaultCase(theEObject);
-                return result;
-            }
             case DeploymentPlanPackage.DEPLOYMENT_PLAN: {
                 DeploymentPlan deploymentPlan = (DeploymentPlan)theEObject;
                 T result = caseDeploymentPlan(deploymentPlan);
                 if (result == null) result = caseAbstractDeploymentPlan(deploymentPlan);
-                if (result == null) result = defaultCase(theEObject);
-                return result;
-            }
-            case DeploymentPlanPackage.ABSTRACT_REALIZATION: {
-                AbstractRealization abstractRealization = (AbstractRealization)theEObject;
-                T result = caseAbstractRealization(abstractRealization);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -98,22 +86,10 @@ public class DeploymentPlanSwitch<T> extends Switch<T> {
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
-            case DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT: {
-                AbstractComputationAssignment abstractComputationAssignment = (AbstractComputationAssignment)theEObject;
-                T result = caseAbstractComputationAssignment(abstractComputationAssignment);
-                if (result == null) result = defaultCase(theEObject);
-                return result;
-            }
             case DeploymentPlanPackage.IMPLEMENTATION_ASSIGNMENT: {
                 ImplementationAssignment implementationAssignment = (ImplementationAssignment)theEObject;
                 T result = caseImplementationAssignment(implementationAssignment);
                 if (result == null) result = caseAbstractComputationAssignment(implementationAssignment);
-                if (result == null) result = defaultCase(theEObject);
-                return result;
-            }
-            case DeploymentPlanPackage.ABSTRACT_CONFIG_EXECUTION_PARAMETER: {
-                AbstractConfigExecutionParameter abstractConfigExecutionParameter = (AbstractConfigExecutionParameter)theEObject;
-                T result = caseAbstractConfigExecutionParameter(abstractConfigExecutionParameter);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -124,38 +100,21 @@ public class DeploymentPlanSwitch<T> extends Switch<T> {
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
-            case DeploymentPlanPackage.ABSTRACT_EXECUTION_CONFIGURATION: {
-                AbstractExecutionConfiguration abstractExecutionConfiguration = (AbstractExecutionConfiguration)theEObject;
-                T result = caseAbstractExecutionConfiguration(abstractExecutionConfiguration);
-                if (result == null) result = defaultCase(theEObject);
-                return result;
-            }
             case DeploymentPlanPackage.MIDDLEWARE: {
                 Middleware middleware = (Middleware)theEObject;
                 T result = caseMiddleware(middleware);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
-            case DeploymentPlanPackage.ROS_DISTRO: {
-                ROSDistro rosDistro = (ROSDistro)theEObject;
-                T result = caseROSDistro(rosDistro);
-                if (result == null) result = caseMiddleware(rosDistro);
-                if (result == null) result = defaultCase(theEObject);
-                return result;
-            }
             case DeploymentPlanPackage.HUMBLE_ROS_DISTRO: {
                 HumbleROSDistro humbleROSDistro = (HumbleROSDistro)theEObject;
                 T result = caseHumbleROSDistro(humbleROSDistro);
-                if (result == null) result = caseROSDistro(humbleROSDistro);
-                if (result == null) result = caseMiddleware(humbleROSDistro);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
             case DeploymentPlanPackage.NOETIC_ROS_DISTRO: {
                 NoeticROSDistro noeticROSDistro = (NoeticROSDistro)theEObject;
                 T result = caseNoeticROSDistro(noeticROSDistro);
-                if (result == null) result = caseROSDistro(noeticROSDistro);
-                if (result == null) result = caseMiddleware(noeticROSDistro);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -166,9 +125,52 @@ public class DeploymentPlanSwitch<T> extends Switch<T> {
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
+            case DeploymentPlanPackage.ABSTRACT_REALIZATION: {
+                AbstractRealization abstractRealization = (AbstractRealization)theEObject;
+                T result = caseAbstractRealization(abstractRealization);
+                if (result == null) result = defaultCase(theEObject);
+                return result;
+            }
+            case DeploymentPlanPackage.ABSTRACT_CONFIG_EXECUTION_PARAMETER: {
+                AbstractConfigExecutionParameter abstractConfigExecutionParameter = (AbstractConfigExecutionParameter)theEObject;
+                T result = caseAbstractConfigExecutionParameter(abstractConfigExecutionParameter);
+                if (result == null) result = defaultCase(theEObject);
+                return result;
+            }
+            case DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT: {
+                AbstractComputationAssignment abstractComputationAssignment = (AbstractComputationAssignment)theEObject;
+                T result = caseAbstractComputationAssignment(abstractComputationAssignment);
+                if (result == null) result = defaultCase(theEObject);
+                return result;
+            }
+            case DeploymentPlanPackage.ABSTRACT_EXECUTION_CONFIGURATION: {
+                AbstractExecutionConfiguration abstractExecutionConfiguration = (AbstractExecutionConfiguration)theEObject;
+                T result = caseAbstractExecutionConfiguration(abstractExecutionConfiguration);
+                if (result == null) result = defaultCase(theEObject);
+                return result;
+            }
+            case DeploymentPlanPackage.ABSTRACT_DEPLOYMENT_PLAN: {
+                AbstractDeploymentPlan abstractDeploymentPlan = (AbstractDeploymentPlan)theEObject;
+                T result = caseAbstractDeploymentPlan(abstractDeploymentPlan);
+                if (result == null) result = defaultCase(theEObject);
+                return result;
+            }
             case DeploymentPlanPackage.ABSTARCT_CONFIG_SOFTWARE_COMPONENT: {
                 AbstarctConfigSoftwareComponent abstarctConfigSoftwareComponent = (AbstarctConfigSoftwareComponent)theEObject;
                 T result = caseAbstarctConfigSoftwareComponent(abstarctConfigSoftwareComponent);
+                if (result == null) result = defaultCase(theEObject);
+                return result;
+            }
+            case DeploymentPlanPackage.ROS_MIDDLEWARE: {
+                RosMiddleware rosMiddleware = (RosMiddleware)theEObject;
+                T result = caseRosMiddleware(rosMiddleware);
+                if (result == null) result = caseMiddleware(rosMiddleware);
+                if (result == null) result = defaultCase(theEObject);
+                return result;
+            }
+            case DeploymentPlanPackage.ABSTRACT_CONFIGED_VALUE: {
+                AbstractConfigedValue abstractConfigedValue = (AbstractConfigedValue)theEObject;
+                T result = caseAbstractConfigedValue(abstractConfigedValue);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -342,21 +344,6 @@ public class DeploymentPlanSwitch<T> extends Switch<T> {
     }
 
     /**
-     * Returns the result of interpreting the object as an instance of '<em>ROS Distro</em>'.
-     * <!-- begin-user-doc -->
-     * This implementation returns null;
-     * returning a non-null result will terminate the switch.
-     * <!-- end-user-doc -->
-     * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>ROS Distro</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-     * @generated
-     */
-    public T caseROSDistro(ROSDistro object) {
-        return null;
-    }
-
-    /**
      * Returns the result of interpreting the object as an instance of '<em>Humble ROS Distro</em>'.
      * <!-- begin-user-doc -->
      * This implementation returns null;
@@ -417,6 +404,36 @@ public class DeploymentPlanSwitch<T> extends Switch<T> {
     }
 
     /**
+     * Returns the result of interpreting the object as an instance of '<em>Ros Middleware</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Ros Middleware</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseRosMiddleware(RosMiddleware object) {
+        return null;
+    }
+
+                /**
+     * Returns the result of interpreting the object as an instance of '<em>Abstract Configed Value</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Abstract Configed Value</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseAbstractConfigedValue(AbstractConfigedValue object) {
+        return null;
+    }
+
+                                                                /**
      * Returns the result of interpreting the object as an instance of '<em>EObject</em>'.
      * <!-- begin-user-doc -->
      * This implementation returns null;

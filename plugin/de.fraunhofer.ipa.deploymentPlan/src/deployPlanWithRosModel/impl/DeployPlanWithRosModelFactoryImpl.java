@@ -60,7 +60,6 @@ public class DeployPlanWithRosModelFactoryImpl extends EFactoryImpl implements D
             case DeployPlanWithRosModelPackage.ROSSYSTEM_ASSIGNMENT: return createRossystemAssignment();
             case DeployPlanWithRosModelPackage.ROSPACKAGE_IMPLEMENTATION: return createRospackageImplementation();
             case DeployPlanWithRosModelPackage.CONFIG_ROS_PARAMETER: return createConfigRosParameter();
-            case DeployPlanWithRosModelPackage.ROS_COMPUTATION_ASSIGNMENT_TARGET: return createRosComputationAssignmentTarget();
             case DeployPlanWithRosModelPackage.CONFIG_ROS_SOFTWARE_COMPONENT: return createConfigRosSoftwareComponent();
             default:
                 throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -105,16 +104,6 @@ public class DeployPlanWithRosModelFactoryImpl extends EFactoryImpl implements D
     public ConfigRosParameter createConfigRosParameter() {
         ConfigRosParameterImpl configRosParameter = new ConfigRosParameterImpl();
         return configRosParameter;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public RosComputationAssignmentTarget createRosComputationAssignmentTarget() {
-        RosComputationAssignmentTargetImpl rosComputationAssignmentTarget = new RosComputationAssignmentTargetImpl();
-        return rosComputationAssignmentTarget;
     }
 
     /**

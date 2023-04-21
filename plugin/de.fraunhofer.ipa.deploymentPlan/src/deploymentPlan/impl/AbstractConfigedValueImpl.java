@@ -2,25 +2,27 @@
  */
 package deploymentPlan.impl;
 
+import deploymentPlan.AbstractConfigedValue;
 import deploymentPlan.DeploymentPlanPackage;
-import deploymentPlan.ROSDistro;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>ROS Distro</b></em>'.
+ * An implementation of the model object '<em><b>Abstract Configed Value</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public abstract class ROSDistroImpl extends MiddlewareImpl implements ROSDistro {
+public abstract class AbstractConfigedValueImpl extends MinimalEObjectImpl.Container implements AbstractConfigedValue {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    protected ROSDistroImpl() {
+    protected AbstractConfigedValueImpl() {
         super();
     }
 
@@ -31,7 +33,7 @@ public abstract class ROSDistroImpl extends MiddlewareImpl implements ROSDistro 
      */
     @Override
     protected EClass eStaticClass() {
-        return DeploymentPlanPackage.Literals.ROS_DISTRO;
+        return DeploymentPlanPackage.Literals.ABSTRACT_CONFIGED_VALUE;
     }
 
-} //ROSDistroImpl
+} //AbstractConfigedValueImpl

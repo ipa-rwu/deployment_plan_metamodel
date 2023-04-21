@@ -85,6 +85,24 @@ public interface ImplementationDescriptionFactory extends EFactory {
     ExecutionProperty createExecutionProperty();
 
     /**
+     * Returns a new object of class '<em>Repository</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Repository</em>'.
+     * @generated
+     */
+    Repository createRepository();
+
+    /**
+     * Returns a new object of class '<em>Git Repository Type</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Git Repository Type</em>'.
+     * @generated
+     */
+    GitRepositoryType createGitRepositoryType();
+
+    /**
      * Returns the package supported by this factory.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->

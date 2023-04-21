@@ -63,6 +63,8 @@ public class ImplementationDescriptionFactoryImpl extends EFactoryImpl implement
             case ImplementationDescriptionPackage.HWSW_PAREMETER: return createHWSWParemeter();
             case ImplementationDescriptionPackage.SOFTWARE_EXECUTION_PAREMETER: return createSoftwareExecutionParemeter();
             case ImplementationDescriptionPackage.EXECUTION_PROPERTY: return createExecutionProperty();
+            case ImplementationDescriptionPackage.REPOSITORY: return createRepository();
+            case ImplementationDescriptionPackage.GIT_REPOSITORY_TYPE: return createGitRepositoryType();
             default:
                 throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
         }
@@ -136,6 +138,26 @@ public class ImplementationDescriptionFactoryImpl extends EFactoryImpl implement
     public ExecutionProperty createExecutionProperty() {
         ExecutionPropertyImpl executionProperty = new ExecutionPropertyImpl();
         return executionProperty;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public Repository createRepository() {
+        RepositoryImpl repository = new RepositoryImpl();
+        return repository;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public GitRepositoryType createGitRepositoryType() {
+        GitRepositoryTypeImpl gitRepositoryType = new GitRepositoryTypeImpl();
+        return gitRepositoryType;
     }
 
     /**
