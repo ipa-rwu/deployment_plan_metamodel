@@ -16,7 +16,7 @@
     </genClasses>
     <genClasses ecoreClass="ImplementationDescription.ecore#//SoftwareComponent">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ImplementationDescription.ecore#//SoftwareComponent/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ImplementationDescription.ecore#//SoftwareComponent/path"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ImplementationDescription.ecore#//SoftwareComponent/repository"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ImplementationDescription.ecore#//SoftwareComponent/executionRequirement"/>
     </genClasses>
     <genClasses ecoreClass="ImplementationDescription.ecore#//DeviceRequirement">
@@ -29,5 +29,12 @@
     <genClasses ecoreClass="ImplementationDescription.ecore#//HWSWParemeter"/>
     <genClasses ecoreClass="ImplementationDescription.ecore#//SoftwareExecutionParemeter"/>
     <genClasses ecoreClass="ImplementationDescription.ecore#//ExecutionProperty"/>
+    <genClasses image="false" ecoreClass="ImplementationDescription.ecore#//Repository">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ImplementationDescription.ecore#//Repository/url"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ImplementationDescription.ecore#//Repository/version"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ImplementationDescription.ecore#//Repository/type"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ImplementationDescription.ecore#//RepositoryType"/>
+    <genClasses ecoreClass="ImplementationDescription.ecore#//GitRepositoryType"/>
   </genPackages>
 </genmodel:GenModel>

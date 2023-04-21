@@ -3,24 +3,12 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="deployPlanWithRosModel" nsURI="http://www.ipa.fraunhofer.de/DeployPlanWithRosModel"
     nsPrefix="DeployPlanWithRosModel">
   <eClassifiers xsi:type="ecore:EClass" name="DeploymentPlanWithRosModel" eSuperTypes="deploymentPlan.ecore#//AbstractDeploymentPlan"/>
-  <eClassifiers xsi:type="ecore:EClass" name="RossystemAssignment" eSuperTypes="deploymentPlan.ecore#//AbstractComputationAssignment">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="softwareComponent" lowerBound="1"
-        upperBound="-1" eType="#//ConfigRosSoftwareComponent" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="executionConfiguration"
-        eType="#//ConfigRosParameter" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RospackageImplementation" eSuperTypes="deploymentPlan.ecore#//AbstractComputationAssignment">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//Package"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RossystemAssignment" eSuperTypes="deploymentPlan.ecore#//AbstractComputationAssignment"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RospackageImplementation" eSuperTypes="deploymentPlan.ecore#//AbstractComputationAssignment"/>
   <eClassifiers xsi:type="ecore:EClass" name="ConfigRosParameter" eSuperTypes="deploymentPlan.ecore#//AbstractConfigExecutionParameter">
     <eStructuralFeatures xsi:type="ecore:EReference" name="from" lowerBound="1" eType="ecore:EClass ../../de.fraunhofer.ipa.rossystem/model/rossystem.ecore#//RosParameter"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="to" lowerBound="1" eType="ecore:EClass ../../de.fraunhofer.ipa.targetEnvironment/model/targetEnvironment.ecore#//AbstractConfigProperty"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="ecore:EClass ../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//PropertyValue"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RosComputationAssignmentTarget" eSuperTypes="../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//AbstractComputationAssignmentTarget">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="refComponent" lowerBound="1"
-        eType="ecore:EClass ../../de.fraunhofer.ipa.rossystem/model/rossystem.ecore#//SystemRef"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ConfigRosSoftwareComponent" eSuperTypes="deploymentPlan.ecore#//AbstarctConfigSoftwareComponent">
