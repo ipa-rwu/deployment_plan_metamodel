@@ -15,9 +15,13 @@ CommunicationConnection : 'communicationConnection:';
 
 ComputationDeviceType : 'ComputationDeviceType:';
 
-ProcessorArchitecture : 'ProcessorArchitecture';
+Processor_architecture : 'processor_architecture';
 
-DeviceProperty : 'deviceProperty:';
+LinuxOpertingSystem : 'LinuxOpertingSystem';
+
+MacOSOpertingSystem : 'MacOSOpertingSystem';
+
+DeviceResouce : 'deviceResouce:';
 
 AttributeKind : 'AttributeKind';
 
@@ -31,9 +35,17 @@ MaximumKind : 'MaximumKind';
 
 MinimumKind : 'MinimumKind';
 
+Core_number : 'core_number';
+
 Properties : 'properties:';
 
+Os_version : 'os_version';
+
+Processor : 'Processor';
+
 RangeKind : 'RangeKind';
+
+Container : 'container';
 
 Interface : 'interface';
 
@@ -41,15 +53,19 @@ Ethernet : 'Ethernet';
 
 Address : 'address';
 
-X86_64 : 'X86_64';
+Os_name : 'os_name';
+
+Debian : 'debian';
+
+Ubuntu : 'ubuntu';
 
 Value : 'value:';
 
-Arm64 : 'Arm64';
+Arm64 : 'arm64';
 
-Linux : 'Linux';
+Focal : 'focal';
 
-MacOS : 'MacOS';
+Jammy : 'jammy';
 
 Kind : 'kind:';
 
@@ -61,29 +77,15 @@ Wlan : 'Wlan';
 
 HyphenMinusHyphenMinusHyphenMinus : '---';
 
+X86 : 'x86';
+
 HyphenMinus : '-';
 
 fragment RULE_DIGIT : '0'..'9';
 
-RULE_BINARY : ('0b'|'0B') ('0'|'1')+;
-
-RULE_BOOLEAN : ('true'|'false');
-
 RULE_DOUBLE : RULE_DIGIT ('.' RULE_DECINT*|('.' RULE_DIGIT*)? ('E'|'e') ('-'|'+')? RULE_DIGIT);
 
 RULE_DECINT : ('0'|'1'..'9' RULE_DIGIT*|'-' '0'..'9' RULE_DIGIT*);
-
-fragment RULE_DAY : ('1'..'9'|'1'..'3' '0'..'9');
-
-fragment RULE_MONTH : ('1'..'9'|'1' '0'..'2');
-
-fragment RULE_YEAR : '0'..'2' '0'..'9' '0'..'9' '0'..'9';
-
-fragment RULE_HOUR : ('0'..'1' '0'..'9'|'2' '0'..'3');
-
-fragment RULE_MIN_SEC : '0'..'5' '0'..'9';
-
-RULE_DATE_TIME : RULE_YEAR '-' RULE_MONTH '-' RULE_DAY 'T' RULE_HOUR ':' RULE_MIN_SEC ':' RULE_MIN_SEC;
 
 RULE_SL_COMMENT : '#' ~(('\n'|'\r'))*;
 

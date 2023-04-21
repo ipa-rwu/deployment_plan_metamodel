@@ -5,15 +5,16 @@ package de.fraunhofer.ipa.targetEnvironment.serializer;
 
 import com.google.inject.Inject;
 import de.fraunhofer.ipa.deployment.util.AbstractComputationAssignmentTarget;
-import de.fraunhofer.ipa.deployment.util.Arm64ProcessorArchitecture;
 import de.fraunhofer.ipa.deployment.util.AttributeKind;
 import de.fraunhofer.ipa.deployment.util.CommunicationType;
 import de.fraunhofer.ipa.deployment.util.EthernetCommunicationType;
-import de.fraunhofer.ipa.deployment.util.LinuxOpertingSystemType;
-import de.fraunhofer.ipa.deployment.util.MacOSOpertingSystemType;
+import de.fraunhofer.ipa.deployment.util.LinuxDistributionValue;
+import de.fraunhofer.ipa.deployment.util.LinuxOpertingSystem;
+import de.fraunhofer.ipa.deployment.util.MacOSOpertingSystem;
 import de.fraunhofer.ipa.deployment.util.MaximumKind;
 import de.fraunhofer.ipa.deployment.util.MinimumKind;
-import de.fraunhofer.ipa.deployment.util.ProcessorArchitectureType;
+import de.fraunhofer.ipa.deployment.util.ProcessorArchitectureValue;
+import de.fraunhofer.ipa.deployment.util.ProcessorResouceType;
 import de.fraunhofer.ipa.deployment.util.Property;
 import de.fraunhofer.ipa.deployment.util.PropertyAttribute;
 import de.fraunhofer.ipa.deployment.util.PropertyMaximun;
@@ -24,25 +25,29 @@ import de.fraunhofer.ipa.deployment.util.PropertyValueDouble;
 import de.fraunhofer.ipa.deployment.util.PropertyValueInt;
 import de.fraunhofer.ipa.deployment.util.PropertyValueString;
 import de.fraunhofer.ipa.deployment.util.RangeKind;
+import de.fraunhofer.ipa.deployment.util.Resource;
 import de.fraunhofer.ipa.deployment.util.ResourceType;
 import de.fraunhofer.ipa.deployment.util.SelectionKind;
+import de.fraunhofer.ipa.deployment.util.UbuntuVersionValue;
 import de.fraunhofer.ipa.deployment.util.UtilPackage;
 import de.fraunhofer.ipa.deployment.util.WlanCommunicationType;
-import de.fraunhofer.ipa.deployment.util.X86ProcessorArchitecture;
 import de.fraunhofer.ipa.targetEnvironment.services.TargetEnvironmentGrammarAccess;
-import device.AbstractDeviceConfig;
 import device.AddressNetworkProperty;
-import device.CapabilityType;
+import device.ArchitectureProcessorProperty;
 import device.CommunicationConnection;
 import device.ComputationDeviceType;
 import device.ConnectionProperty;
+import device.CoreProcessorProperty;
 import device.DevicePackage;
-import device.DeviceProperty;
+import device.DeviceResource;
 import device.DeviceSet;
 import device.DeviceType;
-import device.DeviceTypeRef;
 import device.InterfaceNetworkProperty;
+import device.NameOperatingSystemProperty;
 import device.NetworkConnection;
+import device.OperatingSystemResouce;
+import device.ProcessorResouce;
+import device.VersionOperatingSystemProperty;
 import java.util.Set;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -76,14 +81,11 @@ public class TargetEnvironmentSemanticSequencer extends DeviceSemanticSequencer 
         Set<Parameter> parameters = context.getEnabledBooleanParameters();
         if (epackage == DevicePackage.eINSTANCE)
             switch (semanticObject.eClass().getClassifierID()) {
-            case DevicePackage.ABSTRACT_DEVICE_CONFIG:
-                sequence_AbstractDeviceConfig(context, (AbstractDeviceConfig) semanticObject);
-                return;
             case DevicePackage.ADDRESS_NETWORK_PROPERTY:
                 sequence_AddressNetworkProperty(context, (AddressNetworkProperty) semanticObject);
                 return;
-            case DevicePackage.CAPABILITY_TYPE:
-                sequence_CapabilityType(context, (CapabilityType) semanticObject);
+            case DevicePackage.ARCHITECTURE_PROCESSOR_PROPERTY:
+                sequence_ArchitectureProcessorProperty(context, (ArchitectureProcessorProperty) semanticObject);
                 return;
             case DevicePackage.COMMUNICATION_CONNECTION:
                 sequence_CommunicationConnection(context, (CommunicationConnection) semanticObject);
@@ -94,8 +96,11 @@ public class TargetEnvironmentSemanticSequencer extends DeviceSemanticSequencer 
             case DevicePackage.CONNECTION_PROPERTY:
                 sequence_ConnectionProperty(context, (ConnectionProperty) semanticObject);
                 return;
-            case DevicePackage.DEVICE_PROPERTY:
-                sequence_DeviceProperty(context, (DeviceProperty) semanticObject);
+            case DevicePackage.CORE_PROCESSOR_PROPERTY:
+                sequence_CoreProcessorProperty(context, (CoreProcessorProperty) semanticObject);
+                return;
+            case DevicePackage.DEVICE_RESOURCE:
+                sequence_DeviceResource(context, (DeviceResource) semanticObject);
                 return;
             case DevicePackage.DEVICE_SET:
                 sequence_DeviceSet(context, (DeviceSet) semanticObject);
@@ -103,14 +108,23 @@ public class TargetEnvironmentSemanticSequencer extends DeviceSemanticSequencer 
             case DevicePackage.DEVICE_TYPE:
                 sequence_DeviceType_Impl(context, (DeviceType) semanticObject);
                 return;
-            case DevicePackage.DEVICE_TYPE_REF:
-                sequence_DeviceTypeRef(context, (DeviceTypeRef) semanticObject);
-                return;
             case DevicePackage.INTERFACE_NETWORK_PROPERTY:
                 sequence_InterfaceNetworkProperty(context, (InterfaceNetworkProperty) semanticObject);
                 return;
+            case DevicePackage.NAME_OPERATING_SYSTEM_PROPERTY:
+                sequence_NameOperatingSystemProperty(context, (NameOperatingSystemProperty) semanticObject);
+                return;
             case DevicePackage.NETWORK_CONNECTION:
                 sequence_NetworkConnection(context, (NetworkConnection) semanticObject);
+                return;
+            case DevicePackage.OPERATING_SYSTEM_RESOUCE:
+                sequence_OperatingSystemResouce(context, (OperatingSystemResouce) semanticObject);
+                return;
+            case DevicePackage.PROCESSOR_RESOUCE:
+                sequence_ProcessorResouce(context, (ProcessorResouce) semanticObject);
+                return;
+            case DevicePackage.VERSION_OPERATING_SYSTEM_PROPERTY:
+                sequence_VersionOperatingSystemProperty(context, (VersionOperatingSystemProperty) semanticObject);
                 return;
             }
         else if (epackage == TargetEnvironmentPackage.eINSTANCE)
@@ -145,9 +159,6 @@ public class TargetEnvironmentSemanticSequencer extends DeviceSemanticSequencer 
             case UtilPackage.ABSTRACT_COMPUTATION_ASSIGNMENT_TARGET:
                 sequence_AbstractComputationAssignmentTarget(context, (AbstractComputationAssignmentTarget) semanticObject);
                 return;
-            case UtilPackage.ARM64_PROCESSOR_ARCHITECTURE:
-                sequence_Arm64ProcessorArchitecture(context, (Arm64ProcessorArchitecture) semanticObject);
-                return;
             case UtilPackage.ATTRIBUTE_KIND:
                 sequence_AttributeKind(context, (AttributeKind) semanticObject);
                 return;
@@ -157,11 +168,14 @@ public class TargetEnvironmentSemanticSequencer extends DeviceSemanticSequencer 
             case UtilPackage.ETHERNET_COMMUNICATION_TYPE:
                 sequence_EthernetCommunicationType(context, (EthernetCommunicationType) semanticObject);
                 return;
-            case UtilPackage.LINUX_OPERTING_SYSTEM_TYPE:
-                sequence_LinuxOpertingSystemType(context, (LinuxOpertingSystemType) semanticObject);
+            case UtilPackage.LINUX_DISTRIBUTION_VALUE:
+                sequence_LinuxDistributionValue(context, (LinuxDistributionValue) semanticObject);
                 return;
-            case UtilPackage.MAC_OS_OPERTING_SYSTEM_TYPE:
-                sequence_MacOSOpertingSystemType(context, (MacOSOpertingSystemType) semanticObject);
+            case UtilPackage.LINUX_OPERTING_SYSTEM:
+                sequence_LinuxOpertingSystem(context, (LinuxOpertingSystem) semanticObject);
+                return;
+            case UtilPackage.MAC_OS_OPERTING_SYSTEM:
+                sequence_MacOSOpertingSystem(context, (MacOSOpertingSystem) semanticObject);
                 return;
             case UtilPackage.MAXIMUM_KIND:
                 sequence_MaximumKind(context, (MaximumKind) semanticObject);
@@ -169,8 +183,11 @@ public class TargetEnvironmentSemanticSequencer extends DeviceSemanticSequencer 
             case UtilPackage.MINIMUM_KIND:
                 sequence_MinimumKind(context, (MinimumKind) semanticObject);
                 return;
-            case UtilPackage.PROCESSOR_ARCHITECTURE_TYPE:
-                sequence_ProcessorArchitectureType(context, (ProcessorArchitectureType) semanticObject);
+            case UtilPackage.PROCESSOR_ARCHITECTURE_VALUE:
+                sequence_ProcessorArchitectureValue(context, (ProcessorArchitectureValue) semanticObject);
+                return;
+            case UtilPackage.PROCESSOR_RESOUCE_TYPE:
+                sequence_ProcessorResouceType(context, (ProcessorResouceType) semanticObject);
                 return;
             case UtilPackage.PROPERTY:
                 sequence_Property(context, (Property) semanticObject);
@@ -202,17 +219,20 @@ public class TargetEnvironmentSemanticSequencer extends DeviceSemanticSequencer 
             case UtilPackage.RANGE_KIND:
                 sequence_RangeKind(context, (RangeKind) semanticObject);
                 return;
+            case UtilPackage.RESOURCE:
+                sequence_Resource(context, (Resource) semanticObject);
+                return;
             case UtilPackage.RESOURCE_TYPE:
                 sequence_ResourceType(context, (ResourceType) semanticObject);
                 return;
             case UtilPackage.SELECTION_KIND:
                 sequence_SelectionKind(context, (SelectionKind) semanticObject);
                 return;
+            case UtilPackage.UBUNTU_VERSION_VALUE:
+                sequence_UbuntuVersionValue(context, (UbuntuVersionValue) semanticObject);
+                return;
             case UtilPackage.WLAN_COMMUNICATION_TYPE:
                 sequence_WlanCommunicationType(context, (WlanCommunicationType) semanticObject);
-                return;
-            case UtilPackage.X86_PROCESSOR_ARCHITECTURE:
-                sequence_X86ProcessorArchitecture(context, (X86ProcessorArchitecture) semanticObject);
                 return;
             }
         if (errorAcceptor != null)
@@ -226,20 +246,11 @@ public class TargetEnvironmentSemanticSequencer extends DeviceSemanticSequencer 
      *     ComputationDeviceInstance returns ComputationDeviceInstance
      *
      * Constraint:
-     *     (name=EString refDeviceType=[ComputationDeviceType|EString])
+     *     (name=EString refDeviceType=[ComputationDeviceType|EString] configDeviceProperty+=ConfigDeviceProperty*)
      * </pre>
      */
     protected void sequence_ComputationDeviceInstance(ISerializationContext context, ComputationDeviceInstance semanticObject) {
-        if (errorAcceptor != null) {
-            if (transientValues.isValueTransient(semanticObject, TargetEnvironmentPackage.Literals.ABSTRACT_DEVICE_INSTANCE__NAME) == ValueTransient.YES)
-                errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TargetEnvironmentPackage.Literals.ABSTRACT_DEVICE_INSTANCE__NAME));
-            if (transientValues.isValueTransient(semanticObject, TargetEnvironmentPackage.Literals.COMPUTATION_DEVICE_INSTANCE__REF_DEVICE_TYPE) == ValueTransient.YES)
-                errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TargetEnvironmentPackage.Literals.COMPUTATION_DEVICE_INSTANCE__REF_DEVICE_TYPE));
-        }
-        SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-        feeder.accept(grammarAccess.getComputationDeviceInstanceAccess().getNameEStringParserRuleCall_2_0(), semanticObject.getName());
-        feeder.accept(grammarAccess.getComputationDeviceInstanceAccess().getRefDeviceTypeComputationDeviceTypeEStringParserRuleCall_5_0_1(), semanticObject.eGet(TargetEnvironmentPackage.Literals.COMPUTATION_DEVICE_INSTANCE__REF_DEVICE_TYPE, false));
-        feeder.finish();
+        genericSequencer.createSequence(context, semanticObject);
     }
 
 
@@ -277,7 +288,7 @@ public class TargetEnvironmentSemanticSequencer extends DeviceSemanticSequencer 
      *     ConfigDeviceProperty returns ConfigDeviceProperty
      *
      * Constraint:
-     *     (name=EString from=[DeviceProperty|EString] value=PropertyValue)
+     *     (name=EString from=[AbstractProperty|EString] value=PropertyValue)
      * </pre>
      */
     protected void sequence_ConfigDeviceProperty(ISerializationContext context, ConfigDeviceProperty semanticObject) {
@@ -291,7 +302,7 @@ public class TargetEnvironmentSemanticSequencer extends DeviceSemanticSequencer 
         }
         SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
         feeder.accept(grammarAccess.getConfigDevicePropertyAccess().getNameEStringParserRuleCall_2_0(), semanticObject.getName());
-        feeder.accept(grammarAccess.getConfigDevicePropertyAccess().getFromDevicePropertyEStringParserRuleCall_5_0_1(), semanticObject.eGet(TargetEnvironmentPackage.Literals.CONFIG_DEVICE_PROPERTY__FROM, false));
+        feeder.accept(grammarAccess.getConfigDevicePropertyAccess().getFromAbstractPropertyEStringParserRuleCall_5_0_1(), semanticObject.eGet(TargetEnvironmentPackage.Literals.CONFIG_DEVICE_PROPERTY__FROM, false));
         feeder.accept(grammarAccess.getConfigDevicePropertyAccess().getValuePropertyValueParserRuleCall_7_0(), semanticObject.getValue());
         feeder.finish();
     }
