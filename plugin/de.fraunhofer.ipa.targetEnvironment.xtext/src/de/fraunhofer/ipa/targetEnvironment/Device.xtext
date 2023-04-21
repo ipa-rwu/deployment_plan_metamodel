@@ -20,12 +20,6 @@ Description returns util::Description:
 ;
 
 
-CapabilityType returns CapabilityType:
-    {CapabilityType}
-    name=EString
-    ;
-
-
 DeviceType returns DeviceType:
     DeviceType_Impl | ComputationDeviceType;
 
@@ -69,9 +63,9 @@ DeviceType_Impl returns DeviceType:
     'DeviceType:'
     INDENT
         "name:" name=EString
-        ('deviceProperty:'
+        ('deviceResouce:'
             INDENT
-            deviceProperty+=DeviceProperty+
+            deviceResource+=DeviceResource+
             DEDENT
         )?
         ('communicationConnection:'
@@ -82,31 +76,46 @@ DeviceType_Impl returns DeviceType:
     DEDENT
     ;
 
-DeviceProperty returns DeviceProperty:
-    PreListElement 'name:' name=EString
+AbstractComputationDeviceResource returns AbstractComputationDeviceResource:
+    DeviceResource | OperatingSystemResouce | ProcessorResouce
+;
+
+DeviceResource returns DeviceResource:
+    PreListElement  'name:' name=EString
     INDENT
-        'kind:' kind=PropertyKind
-        'type:' type =AbstractResouceType
-        (
-        'description:' description=EString
-        )?
-        (
-            'value:'
+        'type:' type=AbstractResouceType
+        ('properties:'
             INDENT
-            PreListElement value+=PropertyValue
-            ( PreListElement value+=PropertyValue)*
+            properties+=AbstractProperty
+            (properties+=AbstractProperty)*
             DEDENT
             )?
-        DEDENT
+    DEDENT
+//
+//    PreListElement 'name:' name=EString
+//    INDENT
+//        'kind:' kind=PropertyKind
+//        'type:' type =AbstractResouceType
+//        (
+//        'description:' description=EString
+//        )?
+//        (
+//            'value:'
+//            INDENT
+//            PreListElement value+=PropertyValue
+//            ( PreListElement value+=PropertyValue)*
+//            DEDENT
+//            )?
+//        DEDENT
     ;
 
 ComputationDeviceType returns ComputationDeviceType:
     'ComputationDeviceType:'
     INDENT
         "name:" name=EString
-        ('deviceProperty:'
+        ('deviceResouce:'
             INDENT
-            deviceProperty+=DeviceProperty+
+            deviceResource+=AbstractComputationDeviceResource+
             DEDENT
         )?
         ('communicationConnection:'
@@ -157,3 +166,93 @@ CommunicationConnection returns CommunicationConnection:
             DEDENT
             )?
     DEDENT;
+
+OperatingSystemResouce returns OperatingSystemResouce:
+    {OperatingSystemResouce}
+    PreListElement 'name:'  name=EString
+    INDENT
+        'type:' type=OpertingSystemResouceType
+        ('properties:'
+            INDENT
+            properties+=AbstractOperatingSystemProperty+
+            DEDENT
+            )?
+    DEDENT
+    ;
+
+AbstractOperatingSystemProperty returns AbstractOperatingSystemProperty:
+    NameOperatingSystemProperty |VersionOperatingSystemProperty
+;
+
+NameOperatingSystemProperty returns NameOperatingSystemProperty:
+    {NameOperatingSystemProperty}
+    PreListElement "name:" name="os_name"
+    INDENT
+        'kind:' kind=AttributeKind
+        (
+        'description:' description=EString
+        )?
+        (
+        'value:' value=PropertyValue
+        )?
+    DEDENT
+    ;
+
+VersionOperatingSystemProperty returns VersionOperatingSystemProperty:
+    {VersionOperatingSystemProperty}
+    PreListElement "name:" name="os_version"
+    INDENT
+        'kind:' kind=AttributeKind
+        (
+        'description:' description=EString
+        )?
+        (
+        'value:' value=PropertyValue
+        )?
+    DEDENT
+    ;
+
+ProcessorResouce returns ProcessorResouce:
+    {ProcessorResouce}
+    PreListElement 'name:'  name=EString
+    INDENT
+        'type:' type=ProcessorResouceType
+        ('properties:'
+            INDENT
+            properties+=AbstracProcessorProperty+
+            DEDENT
+            )?
+    DEDENT
+    ;
+
+AbstracProcessorProperty returns AbstracProcessorProperty:
+    ArchitectureProcessorProperty |CoreProcessorProperty
+;
+
+ArchitectureProcessorProperty returns ArchitectureProcessorProperty:
+  {ArchitectureProcessorProperty}
+  PreListElement "name:" name="processor_architecture"
+  INDENT
+      'kind:' kind=AttributeKind
+      (
+      'description:' description=EString
+      )?
+      (
+      'value:' value=PropertyValue
+      )?
+  DEDENT
+  ;
+
+CoreProcessorProperty returns CoreProcessorProperty:
+  {CoreProcessorProperty}
+  PreListElement "name:" name="core_number"
+  INDENT
+      'kind:' kind=AttributeKind
+      (
+      'description:' description=EString
+      )?
+      (
+      'value:' value=PropertyValue
+      )?
+  DEDENT
+  ;
