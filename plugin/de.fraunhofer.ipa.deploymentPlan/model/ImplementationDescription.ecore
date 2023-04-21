@@ -12,7 +12,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SoftwareComponent" eSuperTypes="../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//AbstractComputationAssignmentTarget">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="repository" lowerBound="1"
+        eType="#//Repository" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="executionRequirement" upperBound="-1"
         eType="#//ExecutionRequirement" containment="true"/>
   </eClassifiers>
@@ -28,4 +29,13 @@
   <eClassifiers xsi:type="ecore:EClass" name="HWSWParemeter" eSuperTypes="#//ExecutionProperty"/>
   <eClassifiers xsi:type="ecore:EClass" name="SoftwareExecutionParemeter" eSuperTypes="#//ExecutionProperty"/>
   <eClassifiers xsi:type="ecore:EClass" name="ExecutionProperty" eSuperTypes="../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//Property"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Repository">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="url" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="#//RepositoryType"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RepositoryType" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="GitRepositoryType" eSuperTypes="#//RepositoryType"/>
 </ecore:EPackage>

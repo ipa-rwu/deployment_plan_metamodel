@@ -8,20 +8,12 @@
   <foreignModel>deployPlanWithRosModel.ecore</foreignModel>
   <genPackages prefix="DeployPlanWithRosModel" disposableProviderFactory="true" ecorePackage="deployPlanWithRosModel.ecore#/">
     <genClasses ecoreClass="deployPlanWithRosModel.ecore#//DeploymentPlanWithRosModel"/>
-    <genClasses ecoreClass="deployPlanWithRosModel.ecore#//RossystemAssignment">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference deployPlanWithRosModel.ecore#//RossystemAssignment/softwareComponent"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference deployPlanWithRosModel.ecore#//RossystemAssignment/executionConfiguration"/>
-    </genClasses>
-    <genClasses ecoreClass="deployPlanWithRosModel.ecore#//RospackageImplementation">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference deployPlanWithRosModel.ecore#//RospackageImplementation/name"/>
-    </genClasses>
+    <genClasses ecoreClass="deployPlanWithRosModel.ecore#//RossystemAssignment"/>
+    <genClasses ecoreClass="deployPlanWithRosModel.ecore#//RospackageImplementation"/>
     <genClasses ecoreClass="deployPlanWithRosModel.ecore#//ConfigRosParameter">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference deployPlanWithRosModel.ecore#//ConfigRosParameter/from"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference deployPlanWithRosModel.ecore#//ConfigRosParameter/to"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference deployPlanWithRosModel.ecore#//ConfigRosParameter/value"/>
-    </genClasses>
-    <genClasses ecoreClass="deployPlanWithRosModel.ecore#//RosComputationAssignmentTarget">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference deployPlanWithRosModel.ecore#//RosComputationAssignmentTarget/refComponent"/>
     </genClasses>
     <genClasses ecoreClass="deployPlanWithRosModel.ecore#//ConfigRosSoftwareComponent">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference deployPlanWithRosModel.ecore#//ConfigRosSoftwareComponent/component"/>
