@@ -3,24 +3,23 @@
 package device.impl;
 
 import device.DevicePackage;
-import device.MaximumKind;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Maximum Kind</b></em>'.
+ * An implementation of the model object '<em><b>Container</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class MaximumKindImpl extends CapabilityKindImpl implements MaximumKind {
+public class ContainerImpl extends AbstractRuntimeEnviromentImpl implements device.Container {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    protected MaximumKindImpl() {
+    protected ContainerImpl() {
         super();
     }
 
@@ -31,7 +30,7 @@ public class MaximumKindImpl extends CapabilityKindImpl implements MaximumKind {
      */
     @Override
     protected EClass eStaticClass() {
-        return DevicePackage.Literals.MAXIMUM_KIND;
+        return DevicePackage.Literals.CONTAINER;
     }
 
-} //MaximumKindImpl
+} //ContainerImpl

@@ -3,8 +3,8 @@
 package device.impl;
 
 import device.AbstractCommunicationConnection;
+import device.AbstractComputationDeviceResource;
 import device.DevicePackage;
-import device.DeviceProperty;
 import device.DeviceType;
 
 import java.util.Collection;
@@ -32,7 +32,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link device.impl.DeviceTypeImpl#getName <em>Name</em>}</li>
- *   <li>{@link device.impl.DeviceTypeImpl#getDeviceProperty <em>Device Property</em>}</li>
+ *   <li>{@link device.impl.DeviceTypeImpl#getDeviceResource <em>Device Resource</em>}</li>
  *   <li>{@link device.impl.DeviceTypeImpl#getCommunicationConnection <em>Communication Connection</em>}</li>
  * </ul>
  *
@@ -60,14 +60,14 @@ public class DeviceTypeImpl extends MinimalEObjectImpl.Container implements Devi
     protected String name = NAME_EDEFAULT;
 
     /**
-     * The cached value of the '{@link #getDeviceProperty() <em>Device Property</em>}' containment reference list.
+     * The cached value of the '{@link #getDeviceResource() <em>Device Resource</em>}' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getDeviceProperty()
+     * @see #getDeviceResource()
      * @generated
      * @ordered
      */
-    protected EList<DeviceProperty> deviceProperty;
+    protected EList<AbstractComputationDeviceResource> deviceResource;
 
     /**
      * The cached value of the '{@link #getCommunicationConnection() <em>Communication Connection</em>}' containment reference list.
@@ -124,11 +124,11 @@ public class DeviceTypeImpl extends MinimalEObjectImpl.Container implements Devi
      * <!-- end-user-doc -->
      * @generated
      */
-    public EList<DeviceProperty> getDeviceProperty() {
-        if (deviceProperty == null) {
-            deviceProperty = new EObjectContainmentEList<DeviceProperty>(DeviceProperty.class, this, DevicePackage.DEVICE_TYPE__DEVICE_PROPERTY);
+    public EList<AbstractComputationDeviceResource> getDeviceResource() {
+        if (deviceResource == null) {
+            deviceResource = new EObjectContainmentEList<AbstractComputationDeviceResource>(AbstractComputationDeviceResource.class, this, DevicePackage.DEVICE_TYPE__DEVICE_RESOURCE);
         }
-        return deviceProperty;
+        return deviceResource;
     }
 
     /**
@@ -151,8 +151,8 @@ public class DeviceTypeImpl extends MinimalEObjectImpl.Container implements Devi
     @Override
     public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
         switch (featureID) {
-            case DevicePackage.DEVICE_TYPE__DEVICE_PROPERTY:
-                return ((InternalEList<?>)getDeviceProperty()).basicRemove(otherEnd, msgs);
+            case DevicePackage.DEVICE_TYPE__DEVICE_RESOURCE:
+                return ((InternalEList<?>)getDeviceResource()).basicRemove(otherEnd, msgs);
             case DevicePackage.DEVICE_TYPE__COMMUNICATION_CONNECTION:
                 return ((InternalEList<?>)getCommunicationConnection()).basicRemove(otherEnd, msgs);
         }
@@ -169,8 +169,8 @@ public class DeviceTypeImpl extends MinimalEObjectImpl.Container implements Devi
         switch (featureID) {
             case DevicePackage.DEVICE_TYPE__NAME:
                 return getName();
-            case DevicePackage.DEVICE_TYPE__DEVICE_PROPERTY:
-                return getDeviceProperty();
+            case DevicePackage.DEVICE_TYPE__DEVICE_RESOURCE:
+                return getDeviceResource();
             case DevicePackage.DEVICE_TYPE__COMMUNICATION_CONNECTION:
                 return getCommunicationConnection();
         }
@@ -189,9 +189,9 @@ public class DeviceTypeImpl extends MinimalEObjectImpl.Container implements Devi
             case DevicePackage.DEVICE_TYPE__NAME:
                 setName((String)newValue);
                 return;
-            case DevicePackage.DEVICE_TYPE__DEVICE_PROPERTY:
-                getDeviceProperty().clear();
-                getDeviceProperty().addAll((Collection<? extends DeviceProperty>)newValue);
+            case DevicePackage.DEVICE_TYPE__DEVICE_RESOURCE:
+                getDeviceResource().clear();
+                getDeviceResource().addAll((Collection<? extends AbstractComputationDeviceResource>)newValue);
                 return;
             case DevicePackage.DEVICE_TYPE__COMMUNICATION_CONNECTION:
                 getCommunicationConnection().clear();
@@ -212,8 +212,8 @@ public class DeviceTypeImpl extends MinimalEObjectImpl.Container implements Devi
             case DevicePackage.DEVICE_TYPE__NAME:
                 setName(NAME_EDEFAULT);
                 return;
-            case DevicePackage.DEVICE_TYPE__DEVICE_PROPERTY:
-                getDeviceProperty().clear();
+            case DevicePackage.DEVICE_TYPE__DEVICE_RESOURCE:
+                getDeviceResource().clear();
                 return;
             case DevicePackage.DEVICE_TYPE__COMMUNICATION_CONNECTION:
                 getCommunicationConnection().clear();
@@ -232,8 +232,8 @@ public class DeviceTypeImpl extends MinimalEObjectImpl.Container implements Devi
         switch (featureID) {
             case DevicePackage.DEVICE_TYPE__NAME:
                 return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-            case DevicePackage.DEVICE_TYPE__DEVICE_PROPERTY:
-                return deviceProperty != null && !deviceProperty.isEmpty();
+            case DevicePackage.DEVICE_TYPE__DEVICE_RESOURCE:
+                return deviceResource != null && !deviceResource.isEmpty();
             case DevicePackage.DEVICE_TYPE__COMMUNICATION_CONNECTION:
                 return communicationConnection != null && !communicationConnection.isEmpty();
         }

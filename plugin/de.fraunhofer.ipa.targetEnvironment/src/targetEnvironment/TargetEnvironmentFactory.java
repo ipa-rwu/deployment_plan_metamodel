@@ -49,24 +49,6 @@ public interface TargetEnvironmentFactory extends EFactory {
     ConfigConnection createConfigConnection();
 
     /**
-     * Returns a new object of class '<em>Device Instance</em>'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return a new object of class '<em>Device Instance</em>'.
-     * @generated
-     */
-    DeviceInstance createDeviceInstance();
-
-    /**
-     * Returns a new object of class '<em>Config Device Property</em>'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return a new object of class '<em>Config Device Property</em>'.
-     * @generated
-     */
-    ConfigDeviceProperty createConfigDeviceProperty();
-
-    /**
      * Returns a new object of class '<em>Connected Device</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -92,6 +74,24 @@ public interface TargetEnvironmentFactory extends EFactory {
      * @generated
      */
     ComputationDeviceInstance createComputationDeviceInstance();
+
+    /**
+     * Returns a new object of class '<em>Device Instance</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Device Instance</em>'.
+     * @generated
+     */
+    DeviceInstance createDeviceInstance();
+
+    /**
+     * Returns a new object of class '<em>Config Device Property</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Config Device Property</em>'.
+     * @generated
+     */
+    ConfigDeviceProperty createConfigDeviceProperty();
 
     /**
      * Returns the package supported by this factory.

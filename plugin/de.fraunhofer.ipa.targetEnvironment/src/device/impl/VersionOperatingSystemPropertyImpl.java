@@ -3,24 +3,24 @@
 package device.impl;
 
 import device.DevicePackage;
-import device.SelectionKind;
+import device.VersionOperatingSystemProperty;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Selection Kind</b></em>'.
+ * An implementation of the model object '<em><b>Version Operating System Property</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class SelectionKindImpl extends CapabilityKindImpl implements SelectionKind {
+public class VersionOperatingSystemPropertyImpl extends AbstractOperatingSystemPropertyImpl implements VersionOperatingSystemProperty {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    protected SelectionKindImpl() {
+    protected VersionOperatingSystemPropertyImpl() {
         super();
     }
 
@@ -31,7 +31,7 @@ public class SelectionKindImpl extends CapabilityKindImpl implements SelectionKi
      */
     @Override
     protected EClass eStaticClass() {
-        return DevicePackage.Literals.SELECTION_KIND;
+        return DevicePackage.Literals.VERSION_OPERATING_SYSTEM_PROPERTY;
     }
 
-} //SelectionKindImpl
+} //VersionOperatingSystemPropertyImpl

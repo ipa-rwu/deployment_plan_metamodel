@@ -115,13 +115,13 @@ public interface DevicePackage extends EPackage {
     int DEVICE_TYPE__NAME = 0;
 
     /**
-     * The feature id for the '<em><b>Device Property</b></em>' containment reference list.
+     * The feature id for the '<em><b>Device Resource</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int DEVICE_TYPE__DEVICE_PROPERTY = 1;
+    int DEVICE_TYPE__DEVICE_RESOURCE = 1;
 
     /**
      * The feature id for the '<em><b>Communication Connection</b></em>' containment reference list.
@@ -151,24 +151,14 @@ public interface DevicePackage extends EPackage {
     int DEVICE_TYPE_OPERATION_COUNT = 0;
 
     /**
-     * The meta object id for the '{@link device.impl.AbstractDeviceConfigImpl <em>Abstract Device Config</em>}' class.
+     * The meta object id for the '{@link device.impl.DeviceResourceImpl <em>Resource</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see device.impl.AbstractDeviceConfigImpl
-     * @see device.impl.DevicePackageImpl#getAbstractDeviceConfig()
+     * @see device.impl.DeviceResourceImpl
+     * @see device.impl.DevicePackageImpl#getDeviceResource()
      * @generated
      */
-    int ABSTRACT_DEVICE_CONFIG = 19;
-
-    /**
-     * The meta object id for the '{@link device.impl.DevicePropertyImpl <em>Property</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see device.impl.DevicePropertyImpl
-     * @see device.impl.DevicePackageImpl#getDeviceProperty()
-     * @generated
-     */
-    int DEVICE_PROPERTY = 2;
+    int DEVICE_RESOURCE = 2;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -177,34 +167,7 @@ public interface DevicePackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DEVICE_PROPERTY__NAME = UtilPackage.PROPERTY__NAME;
-
-    /**
-     * The feature id for the '<em><b>Description</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int DEVICE_PROPERTY__DESCRIPTION = UtilPackage.PROPERTY__DESCRIPTION;
-
-    /**
-     * The feature id for the '<em><b>Kind</b></em>' containment reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int DEVICE_PROPERTY__KIND = UtilPackage.PROPERTY__KIND;
-
-    /**
-     * The feature id for the '<em><b>Value</b></em>' containment reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int DEVICE_PROPERTY__VALUE = UtilPackage.PROPERTY__VALUE;
+    int DEVICE_RESOURCE__NAME = UtilPackage.RESOURCE__NAME;
 
     /**
      * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -213,25 +176,34 @@ public interface DevicePackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DEVICE_PROPERTY__TYPE = UtilPackage.PROPERTY_FEATURE_COUNT + 0;
+    int DEVICE_RESOURCE__TYPE = UtilPackage.RESOURCE__TYPE;
 
     /**
-     * The number of structural features of the '<em>Property</em>' class.
+     * The feature id for the '<em><b>Properties</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int DEVICE_PROPERTY_FEATURE_COUNT = UtilPackage.PROPERTY_FEATURE_COUNT + 1;
+    int DEVICE_RESOURCE__PROPERTIES = UtilPackage.RESOURCE__PROPERTIES;
 
     /**
-     * The number of operations of the '<em>Property</em>' class.
+     * The number of structural features of the '<em>Resource</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int DEVICE_PROPERTY_OPERATION_COUNT = UtilPackage.PROPERTY_OPERATION_COUNT + 0;
+    int DEVICE_RESOURCE_FEATURE_COUNT = UtilPackage.RESOURCE_FEATURE_COUNT + 0;
+
+    /**
+     * The number of operations of the '<em>Resource</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DEVICE_RESOURCE_OPERATION_COUNT = UtilPackage.RESOURCE_OPERATION_COUNT + 0;
 
     /**
      * The meta object id for the '{@link device.impl.AbstractCommunicationConnectionImpl <em>Abstract Communication Connection</em>}' class.
@@ -241,7 +213,7 @@ public interface DevicePackage extends EPackage {
      * @see device.impl.DevicePackageImpl#getAbstractCommunicationConnection()
      * @generated
      */
-    int ABSTRACT_COMMUNICATION_CONNECTION = 13;
+    int ABSTRACT_COMMUNICATION_CONNECTION = 18;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -250,7 +222,7 @@ public interface DevicePackage extends EPackage {
      * @generated
      * @ordered
      */
-    int ABSTRACT_COMMUNICATION_CONNECTION__NAME = 0;
+    int ABSTRACT_COMMUNICATION_CONNECTION__NAME = UtilPackage.ABSTRACT_RESOURCE__NAME;
 
     /**
      * The number of structural features of the '<em>Abstract Communication Connection</em>' class.
@@ -259,7 +231,7 @@ public interface DevicePackage extends EPackage {
      * @generated
      * @ordered
      */
-    int ABSTRACT_COMMUNICATION_CONNECTION_FEATURE_COUNT = 1;
+    int ABSTRACT_COMMUNICATION_CONNECTION_FEATURE_COUNT = UtilPackage.ABSTRACT_RESOURCE_FEATURE_COUNT + 0;
 
     /**
      * The number of operations of the '<em>Abstract Communication Connection</em>' class.
@@ -268,7 +240,7 @@ public interface DevicePackage extends EPackage {
      * @generated
      * @ordered
      */
-    int ABSTRACT_COMMUNICATION_CONNECTION_OPERATION_COUNT = 0;
+    int ABSTRACT_COMMUNICATION_CONNECTION_OPERATION_COUNT = UtilPackage.ABSTRACT_RESOURCE_OPERATION_COUNT + 0;
 
     /**
      * The meta object id for the '{@link device.impl.CommunicationConnectionImpl <em>Communication Connection</em>}' class.
@@ -326,174 +298,6 @@ public interface DevicePackage extends EPackage {
     int COMMUNICATION_CONNECTION_OPERATION_COUNT = ABSTRACT_COMMUNICATION_CONNECTION_OPERATION_COUNT + 0;
 
     /**
-     * The meta object id for the '{@link device.impl.CapabilityKindImpl <em>Capability Kind</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see device.impl.CapabilityKindImpl
-     * @see device.impl.DevicePackageImpl#getCapabilityKind()
-     * @generated
-     */
-    int CAPABILITY_KIND = 4;
-
-    /**
-     * The number of structural features of the '<em>Capability Kind</em>' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int CAPABILITY_KIND_FEATURE_COUNT = 0;
-
-    /**
-     * The number of operations of the '<em>Capability Kind</em>' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int CAPABILITY_KIND_OPERATION_COUNT = 0;
-
-    /**
-     * The meta object id for the '{@link device.impl.AttributeKindImpl <em>Attribute Kind</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see device.impl.AttributeKindImpl
-     * @see device.impl.DevicePackageImpl#getAttributeKind()
-     * @generated
-     */
-    int ATTRIBUTE_KIND = 5;
-
-    /**
-     * The number of structural features of the '<em>Attribute Kind</em>' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int ATTRIBUTE_KIND_FEATURE_COUNT = CAPABILITY_KIND_FEATURE_COUNT + 0;
-
-    /**
-     * The number of operations of the '<em>Attribute Kind</em>' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int ATTRIBUTE_KIND_OPERATION_COUNT = CAPABILITY_KIND_OPERATION_COUNT + 0;
-
-    /**
-     * The meta object id for the '{@link device.impl.MaximumKindImpl <em>Maximum Kind</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see device.impl.MaximumKindImpl
-     * @see device.impl.DevicePackageImpl#getMaximumKind()
-     * @generated
-     */
-    int MAXIMUM_KIND = 6;
-
-    /**
-     * The number of structural features of the '<em>Maximum Kind</em>' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int MAXIMUM_KIND_FEATURE_COUNT = CAPABILITY_KIND_FEATURE_COUNT + 0;
-
-    /**
-     * The number of operations of the '<em>Maximum Kind</em>' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int MAXIMUM_KIND_OPERATION_COUNT = CAPABILITY_KIND_OPERATION_COUNT + 0;
-
-    /**
-     * The meta object id for the '{@link device.impl.MinimumKindImpl <em>Minimum Kind</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see device.impl.MinimumKindImpl
-     * @see device.impl.DevicePackageImpl#getMinimumKind()
-     * @generated
-     */
-    int MINIMUM_KIND = 7;
-
-    /**
-     * The number of structural features of the '<em>Minimum Kind</em>' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int MINIMUM_KIND_FEATURE_COUNT = CAPABILITY_KIND_FEATURE_COUNT + 0;
-
-    /**
-     * The number of operations of the '<em>Minimum Kind</em>' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int MINIMUM_KIND_OPERATION_COUNT = CAPABILITY_KIND_OPERATION_COUNT + 0;
-
-    /**
-     * The meta object id for the '{@link device.impl.SelectionKindImpl <em>Selection Kind</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see device.impl.SelectionKindImpl
-     * @see device.impl.DevicePackageImpl#getSelectionKind()
-     * @generated
-     */
-    int SELECTION_KIND = 8;
-
-    /**
-     * The number of structural features of the '<em>Selection Kind</em>' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int SELECTION_KIND_FEATURE_COUNT = CAPABILITY_KIND_FEATURE_COUNT + 0;
-
-    /**
-     * The number of operations of the '<em>Selection Kind</em>' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int SELECTION_KIND_OPERATION_COUNT = CAPABILITY_KIND_OPERATION_COUNT + 0;
-
-    /**
-     * The meta object id for the '{@link device.impl.RangeKindImpl <em>Range Kind</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see device.impl.RangeKindImpl
-     * @see device.impl.DevicePackageImpl#getRangeKind()
-     * @generated
-     */
-    int RANGE_KIND = 9;
-
-    /**
-     * The number of structural features of the '<em>Range Kind</em>' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int RANGE_KIND_FEATURE_COUNT = CAPABILITY_KIND_FEATURE_COUNT + 0;
-
-    /**
-     * The number of operations of the '<em>Range Kind</em>' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int RANGE_KIND_OPERATION_COUNT = CAPABILITY_KIND_OPERATION_COUNT + 0;
-
-    /**
      * The meta object id for the '{@link device.impl.ConnectionPropertyImpl <em>Connection Property</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -501,7 +305,7 @@ public interface DevicePackage extends EPackage {
      * @see device.impl.DevicePackageImpl#getConnectionProperty()
      * @generated
      */
-    int CONNECTION_PROPERTY = 10;
+    int CONNECTION_PROPERTY = 4;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -558,43 +362,6 @@ public interface DevicePackage extends EPackage {
     int CONNECTION_PROPERTY_OPERATION_COUNT = UtilPackage.PROPERTY_ATTRIBUTE_OPERATION_COUNT + 0;
 
     /**
-     * The meta object id for the '{@link device.impl.CapabilityTypeImpl <em>Capability Type</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see device.impl.CapabilityTypeImpl
-     * @see device.impl.DevicePackageImpl#getCapabilityType()
-     * @generated
-     */
-    int CAPABILITY_TYPE = 11;
-
-    /**
-     * The feature id for the '<em><b>Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int CAPABILITY_TYPE__NAME = UtilPackage.ABSTRACT_RESOUCE_TYPE_FEATURE_COUNT + 0;
-
-    /**
-     * The number of structural features of the '<em>Capability Type</em>' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int CAPABILITY_TYPE_FEATURE_COUNT = UtilPackage.ABSTRACT_RESOUCE_TYPE_FEATURE_COUNT + 1;
-
-    /**
-     * The number of operations of the '<em>Capability Type</em>' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int CAPABILITY_TYPE_OPERATION_COUNT = UtilPackage.ABSTRACT_RESOUCE_TYPE_OPERATION_COUNT + 0;
-
-    /**
      * The meta object id for the '{@link device.impl.ComputationDeviceTypeImpl <em>Computation Device Type</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -602,7 +369,7 @@ public interface DevicePackage extends EPackage {
      * @see device.impl.DevicePackageImpl#getComputationDeviceType()
      * @generated
      */
-    int COMPUTATION_DEVICE_TYPE = 12;
+    int COMPUTATION_DEVICE_TYPE = 5;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -614,13 +381,13 @@ public interface DevicePackage extends EPackage {
     int COMPUTATION_DEVICE_TYPE__NAME = DEVICE_TYPE__NAME;
 
     /**
-     * The feature id for the '<em><b>Device Property</b></em>' containment reference list.
+     * The feature id for the '<em><b>Device Resource</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int COMPUTATION_DEVICE_TYPE__DEVICE_PROPERTY = DEVICE_TYPE__DEVICE_PROPERTY;
+    int COMPUTATION_DEVICE_TYPE__DEVICE_RESOURCE = DEVICE_TYPE__DEVICE_RESOURCE;
 
     /**
      * The feature id for the '<em><b>Communication Connection</b></em>' containment reference list.
@@ -657,7 +424,7 @@ public interface DevicePackage extends EPackage {
      * @see device.impl.DevicePackageImpl#getNetworkConnection()
      * @generated
      */
-    int NETWORK_CONNECTION = 14;
+    int NETWORK_CONNECTION = 6;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -712,7 +479,7 @@ public interface DevicePackage extends EPackage {
      * @see device.impl.DevicePackageImpl#getAbstractNetworkProperty()
      * @generated
      */
-    int ABSTRACT_NETWORK_PROPERTY = 15;
+    int ABSTRACT_NETWORK_PROPERTY = 17;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -776,7 +543,7 @@ public interface DevicePackage extends EPackage {
      * @see device.impl.DevicePackageImpl#getInterfaceNetworkProperty()
      * @generated
      */
-    int INTERFACE_NETWORK_PROPERTY = 16;
+    int INTERFACE_NETWORK_PROPERTY = 7;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -840,7 +607,7 @@ public interface DevicePackage extends EPackage {
      * @see device.impl.DevicePackageImpl#getAddressNetworkProperty()
      * @generated
      */
-    int ADDRESS_NETWORK_PROPERTY = 17;
+    int ADDRESS_NETWORK_PROPERTY = 8;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -904,7 +671,7 @@ public interface DevicePackage extends EPackage {
      * @see device.impl.DevicePackageImpl#getMacNetworkProperty()
      * @generated
      */
-    int MAC_NETWORK_PROPERTY = 18;
+    int MAC_NETWORK_PROPERTY = 9;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -961,91 +728,549 @@ public interface DevicePackage extends EPackage {
     int MAC_NETWORK_PROPERTY_OPERATION_COUNT = ABSTRACT_NETWORK_PROPERTY_OPERATION_COUNT + 0;
 
     /**
-     * The number of structural features of the '<em>Abstract Device Config</em>' class.
+     * The meta object id for the '{@link device.impl.AbstractRuntimeEnviromentImpl <em>Abstract Runtime Enviroment</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see device.impl.AbstractRuntimeEnviromentImpl
+     * @see device.impl.DevicePackageImpl#getAbstractRuntimeEnviroment()
      * @generated
-     * @ordered
      */
-    int ABSTRACT_DEVICE_CONFIG_FEATURE_COUNT = 0;
+    int ABSTRACT_RUNTIME_ENVIROMENT = 19;
 
     /**
-     * The number of operations of the '<em>Abstract Device Config</em>' class.
+     * The number of structural features of the '<em>Abstract Runtime Enviroment</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int ABSTRACT_DEVICE_CONFIG_OPERATION_COUNT = 0;
+    int ABSTRACT_RUNTIME_ENVIROMENT_FEATURE_COUNT = 0;
+
+    /**
+     * The number of operations of the '<em>Abstract Runtime Enviroment</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_RUNTIME_ENVIROMENT_OPERATION_COUNT = 0;
+
+    /**
+     * The meta object id for the '{@link device.impl.ContainerImpl <em>Container</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see device.impl.ContainerImpl
+     * @see device.impl.DevicePackageImpl#getContainer()
+     * @generated
+     */
+    int CONTAINER = 10;
+
+    /**
+     * The number of structural features of the '<em>Container</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONTAINER_FEATURE_COUNT = ABSTRACT_RUNTIME_ENVIROMENT_FEATURE_COUNT + 0;
+
+    /**
+     * The number of operations of the '<em>Container</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONTAINER_OPERATION_COUNT = ABSTRACT_RUNTIME_ENVIROMENT_OPERATION_COUNT + 0;
 
 
     /**
-     * The meta object id for the '{@link device.impl.AbstractDeviceTypeImpl <em>Abstract Device Type</em>}' class.
+     * The meta object id for the '{@link device.impl.OperatingSystemResouceImpl <em>Operating System Resouce</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see device.impl.AbstractDeviceTypeImpl
-     * @see device.impl.DevicePackageImpl#getAbstractDeviceType()
+     * @see device.impl.OperatingSystemResouceImpl
+     * @see device.impl.DevicePackageImpl#getOperatingSystemResouce()
      * @generated
      */
-    int ABSTRACT_DEVICE_TYPE = 21;
+    int OPERATING_SYSTEM_RESOUCE = 11;
 
-                /**
-     * The number of structural features of the '<em>Abstract Device Type</em>' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int ABSTRACT_DEVICE_TYPE_FEATURE_COUNT = 0;
-
-                /**
-     * The number of operations of the '<em>Abstract Device Type</em>' class.
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int ABSTRACT_DEVICE_TYPE_OPERATION_COUNT = 0;
+    int OPERATING_SYSTEM_RESOUCE__NAME = UtilPackage.ABSTRACT_RESOURCE__NAME;
 
-                /**
-     * The meta object id for the '{@link device.impl.DeviceTypeRefImpl <em>Type Ref</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see device.impl.DeviceTypeRefImpl
-     * @see device.impl.DevicePackageImpl#getDeviceTypeRef()
-     * @generated
-     */
-    int DEVICE_TYPE_REF = 20;
-
-                /**
-     * The feature id for the '<em><b>Device Type</b></em>' reference.
+    /**
+     * The feature id for the '<em><b>Type</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int DEVICE_TYPE_REF__DEVICE_TYPE = ABSTRACT_DEVICE_TYPE_FEATURE_COUNT + 0;
+    int OPERATING_SYSTEM_RESOUCE__TYPE = UtilPackage.ABSTRACT_RESOURCE_FEATURE_COUNT + 0;
 
-                /**
-     * The number of structural features of the '<em>Type Ref</em>' class.
+    /**
+     * The feature id for the '<em><b>Properties</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int DEVICE_TYPE_REF_FEATURE_COUNT = ABSTRACT_DEVICE_TYPE_FEATURE_COUNT + 1;
+    int OPERATING_SYSTEM_RESOUCE__PROPERTIES = UtilPackage.ABSTRACT_RESOURCE_FEATURE_COUNT + 1;
 
-                /**
-     * The number of operations of the '<em>Type Ref</em>' class.
+    /**
+     * The number of structural features of the '<em>Operating System Resouce</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int DEVICE_TYPE_REF_OPERATION_COUNT = ABSTRACT_DEVICE_TYPE_OPERATION_COUNT + 0;
+    int OPERATING_SYSTEM_RESOUCE_FEATURE_COUNT = UtilPackage.ABSTRACT_RESOURCE_FEATURE_COUNT + 2;
 
+    /**
+     * The number of operations of the '<em>Operating System Resouce</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int OPERATING_SYSTEM_RESOUCE_OPERATION_COUNT = UtilPackage.ABSTRACT_RESOURCE_OPERATION_COUNT + 0;
 
-                /**
+    /**
+     * The meta object id for the '{@link device.impl.AbstractOperatingSystemPropertyImpl <em>Abstract Operating System Property</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see device.impl.AbstractOperatingSystemPropertyImpl
+     * @see device.impl.DevicePackageImpl#getAbstractOperatingSystemProperty()
+     * @generated
+     */
+    int ABSTRACT_OPERATING_SYSTEM_PROPERTY = 20;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_OPERATING_SYSTEM_PROPERTY__NAME = UtilPackage.PROPERTY_ATTRIBUTE__NAME;
+
+    /**
+     * The feature id for the '<em><b>Description</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_OPERATING_SYSTEM_PROPERTY__DESCRIPTION = UtilPackage.PROPERTY_ATTRIBUTE__DESCRIPTION;
+
+    /**
+     * The feature id for the '<em><b>Kind</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_OPERATING_SYSTEM_PROPERTY__KIND = UtilPackage.PROPERTY_ATTRIBUTE__KIND;
+
+    /**
+     * The feature id for the '<em><b>Value</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_OPERATING_SYSTEM_PROPERTY__VALUE = UtilPackage.PROPERTY_ATTRIBUTE__VALUE;
+
+    /**
+     * The number of structural features of the '<em>Abstract Operating System Property</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_OPERATING_SYSTEM_PROPERTY_FEATURE_COUNT = UtilPackage.PROPERTY_ATTRIBUTE_FEATURE_COUNT + 0;
+
+    /**
+     * The number of operations of the '<em>Abstract Operating System Property</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_OPERATING_SYSTEM_PROPERTY_OPERATION_COUNT = UtilPackage.PROPERTY_ATTRIBUTE_OPERATION_COUNT + 0;
+
+    /**
+     * The meta object id for the '{@link device.impl.NameOperatingSystemPropertyImpl <em>Name Operating System Property</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see device.impl.NameOperatingSystemPropertyImpl
+     * @see device.impl.DevicePackageImpl#getNameOperatingSystemProperty()
+     * @generated
+     */
+    int NAME_OPERATING_SYSTEM_PROPERTY = 12;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int NAME_OPERATING_SYSTEM_PROPERTY__NAME = ABSTRACT_OPERATING_SYSTEM_PROPERTY__NAME;
+
+    /**
+     * The feature id for the '<em><b>Description</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int NAME_OPERATING_SYSTEM_PROPERTY__DESCRIPTION = ABSTRACT_OPERATING_SYSTEM_PROPERTY__DESCRIPTION;
+
+    /**
+     * The feature id for the '<em><b>Kind</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int NAME_OPERATING_SYSTEM_PROPERTY__KIND = ABSTRACT_OPERATING_SYSTEM_PROPERTY__KIND;
+
+    /**
+     * The feature id for the '<em><b>Value</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int NAME_OPERATING_SYSTEM_PROPERTY__VALUE = ABSTRACT_OPERATING_SYSTEM_PROPERTY__VALUE;
+
+    /**
+     * The number of structural features of the '<em>Name Operating System Property</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int NAME_OPERATING_SYSTEM_PROPERTY_FEATURE_COUNT = ABSTRACT_OPERATING_SYSTEM_PROPERTY_FEATURE_COUNT + 0;
+
+    /**
+     * The number of operations of the '<em>Name Operating System Property</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int NAME_OPERATING_SYSTEM_PROPERTY_OPERATION_COUNT = ABSTRACT_OPERATING_SYSTEM_PROPERTY_OPERATION_COUNT + 0;
+
+    /**
+     * The meta object id for the '{@link device.impl.VersionOperatingSystemPropertyImpl <em>Version Operating System Property</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see device.impl.VersionOperatingSystemPropertyImpl
+     * @see device.impl.DevicePackageImpl#getVersionOperatingSystemProperty()
+     * @generated
+     */
+    int VERSION_OPERATING_SYSTEM_PROPERTY = 13;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int VERSION_OPERATING_SYSTEM_PROPERTY__NAME = ABSTRACT_OPERATING_SYSTEM_PROPERTY__NAME;
+
+    /**
+     * The feature id for the '<em><b>Description</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int VERSION_OPERATING_SYSTEM_PROPERTY__DESCRIPTION = ABSTRACT_OPERATING_SYSTEM_PROPERTY__DESCRIPTION;
+
+    /**
+     * The feature id for the '<em><b>Kind</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int VERSION_OPERATING_SYSTEM_PROPERTY__KIND = ABSTRACT_OPERATING_SYSTEM_PROPERTY__KIND;
+
+    /**
+     * The feature id for the '<em><b>Value</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int VERSION_OPERATING_SYSTEM_PROPERTY__VALUE = ABSTRACT_OPERATING_SYSTEM_PROPERTY__VALUE;
+
+    /**
+     * The number of structural features of the '<em>Version Operating System Property</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int VERSION_OPERATING_SYSTEM_PROPERTY_FEATURE_COUNT = ABSTRACT_OPERATING_SYSTEM_PROPERTY_FEATURE_COUNT + 0;
+
+    /**
+     * The number of operations of the '<em>Version Operating System Property</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int VERSION_OPERATING_SYSTEM_PROPERTY_OPERATION_COUNT = ABSTRACT_OPERATING_SYSTEM_PROPERTY_OPERATION_COUNT + 0;
+
+    /**
+     * The meta object id for the '{@link device.impl.ProcessorResouceImpl <em>Processor Resouce</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see device.impl.ProcessorResouceImpl
+     * @see device.impl.DevicePackageImpl#getProcessorResouce()
+     * @generated
+     */
+    int PROCESSOR_RESOUCE = 14;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PROCESSOR_RESOUCE__NAME = UtilPackage.ABSTRACT_RESOURCE__NAME;
+
+    /**
+     * The feature id for the '<em><b>Type</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PROCESSOR_RESOUCE__TYPE = UtilPackage.ABSTRACT_RESOURCE_FEATURE_COUNT + 0;
+
+    /**
+     * The feature id for the '<em><b>Properties</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PROCESSOR_RESOUCE__PROPERTIES = UtilPackage.ABSTRACT_RESOURCE_FEATURE_COUNT + 1;
+
+    /**
+     * The number of structural features of the '<em>Processor Resouce</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PROCESSOR_RESOUCE_FEATURE_COUNT = UtilPackage.ABSTRACT_RESOURCE_FEATURE_COUNT + 2;
+
+    /**
+     * The number of operations of the '<em>Processor Resouce</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PROCESSOR_RESOUCE_OPERATION_COUNT = UtilPackage.ABSTRACT_RESOURCE_OPERATION_COUNT + 0;
+
+    /**
+     * The meta object id for the '{@link device.impl.AbstracProcessorPropertyImpl <em>Abstrac Processor Property</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see device.impl.AbstracProcessorPropertyImpl
+     * @see device.impl.DevicePackageImpl#getAbstracProcessorProperty()
+     * @generated
+     */
+    int ABSTRAC_PROCESSOR_PROPERTY = 22;
+
+    /**
+     * The meta object id for the '{@link device.impl.ArchitectureProcessorPropertyImpl <em>Architecture Processor Property</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see device.impl.ArchitectureProcessorPropertyImpl
+     * @see device.impl.DevicePackageImpl#getArchitectureProcessorProperty()
+     * @generated
+     */
+    int ARCHITECTURE_PROCESSOR_PROPERTY = 15;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ARCHITECTURE_PROCESSOR_PROPERTY__NAME = UtilPackage.PROPERTY_ATTRIBUTE__NAME;
+
+    /**
+     * The feature id for the '<em><b>Description</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ARCHITECTURE_PROCESSOR_PROPERTY__DESCRIPTION = UtilPackage.PROPERTY_ATTRIBUTE__DESCRIPTION;
+
+    /**
+     * The feature id for the '<em><b>Kind</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ARCHITECTURE_PROCESSOR_PROPERTY__KIND = UtilPackage.PROPERTY_ATTRIBUTE__KIND;
+
+    /**
+     * The feature id for the '<em><b>Value</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ARCHITECTURE_PROCESSOR_PROPERTY__VALUE = UtilPackage.PROPERTY_ATTRIBUTE__VALUE;
+
+    /**
+     * The number of structural features of the '<em>Architecture Processor Property</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ARCHITECTURE_PROCESSOR_PROPERTY_FEATURE_COUNT = UtilPackage.PROPERTY_ATTRIBUTE_FEATURE_COUNT + 0;
+
+    /**
+     * The number of operations of the '<em>Architecture Processor Property</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ARCHITECTURE_PROCESSOR_PROPERTY_OPERATION_COUNT = UtilPackage.PROPERTY_ATTRIBUTE_OPERATION_COUNT + 0;
+
+    /**
+     * The meta object id for the '{@link device.impl.CoreProcessorPropertyImpl <em>Core Processor Property</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see device.impl.CoreProcessorPropertyImpl
+     * @see device.impl.DevicePackageImpl#getCoreProcessorProperty()
+     * @generated
+     */
+    int CORE_PROCESSOR_PROPERTY = 16;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CORE_PROCESSOR_PROPERTY__NAME = UtilPackage.PROPERTY_ATTRIBUTE__NAME;
+
+    /**
+     * The feature id for the '<em><b>Description</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CORE_PROCESSOR_PROPERTY__DESCRIPTION = UtilPackage.PROPERTY_ATTRIBUTE__DESCRIPTION;
+
+    /**
+     * The feature id for the '<em><b>Kind</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CORE_PROCESSOR_PROPERTY__KIND = UtilPackage.PROPERTY_ATTRIBUTE__KIND;
+
+    /**
+     * The feature id for the '<em><b>Value</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CORE_PROCESSOR_PROPERTY__VALUE = UtilPackage.PROPERTY_ATTRIBUTE__VALUE;
+
+    /**
+     * The number of structural features of the '<em>Core Processor Property</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CORE_PROCESSOR_PROPERTY_FEATURE_COUNT = UtilPackage.PROPERTY_ATTRIBUTE_FEATURE_COUNT + 0;
+
+    /**
+     * The number of operations of the '<em>Core Processor Property</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CORE_PROCESSOR_PROPERTY_OPERATION_COUNT = UtilPackage.PROPERTY_ATTRIBUTE_OPERATION_COUNT + 0;
+
+    /**
+     * The meta object id for the '{@link device.impl.AbstractComputationDeviceResourceImpl <em>Abstract Computation Device Resource</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see device.impl.AbstractComputationDeviceResourceImpl
+     * @see device.impl.DevicePackageImpl#getAbstractComputationDeviceResource()
+     * @generated
+     */
+    int ABSTRACT_COMPUTATION_DEVICE_RESOURCE = 21;
+
+    /**
+     * The number of structural features of the '<em>Abstract Computation Device Resource</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_COMPUTATION_DEVICE_RESOURCE_FEATURE_COUNT = 0;
+
+    /**
+     * The number of operations of the '<em>Abstract Computation Device Resource</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_COMPUTATION_DEVICE_RESOURCE_OPERATION_COUNT = 0;
+
+    /**
+     * The number of structural features of the '<em>Abstrac Processor Property</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRAC_PROCESSOR_PROPERTY_FEATURE_COUNT = 0;
+
+    /**
+     * The number of operations of the '<em>Abstrac Processor Property</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRAC_PROCESSOR_PROPERTY_OPERATION_COUNT = 0;
+
+    /**
      * Returns the meta object for class '{@link device.DeviceSet <em>Set</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1088,15 +1313,15 @@ public interface DevicePackage extends EPackage {
     EAttribute getDeviceType_Name();
 
     /**
-     * Returns the meta object for the containment reference list '{@link device.DeviceType#getDeviceProperty <em>Device Property</em>}'.
+     * Returns the meta object for the containment reference list '{@link device.DeviceType#getDeviceResource <em>Device Resource</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the containment reference list '<em>Device Property</em>'.
-     * @see device.DeviceType#getDeviceProperty()
+     * @return the meta object for the containment reference list '<em>Device Resource</em>'.
+     * @see device.DeviceType#getDeviceResource()
      * @see #getDeviceType()
      * @generated
      */
-    EReference getDeviceType_DeviceProperty();
+    EReference getDeviceType_DeviceResource();
 
     /**
      * Returns the meta object for the containment reference list '{@link device.DeviceType#getCommunicationConnection <em>Communication Connection</em>}'.
@@ -1110,25 +1335,14 @@ public interface DevicePackage extends EPackage {
     EReference getDeviceType_CommunicationConnection();
 
     /**
-     * Returns the meta object for class '{@link device.DeviceProperty <em>Property</em>}'.
+     * Returns the meta object for class '{@link device.DeviceResource <em>Resource</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for class '<em>Property</em>'.
-     * @see device.DeviceProperty
+     * @return the meta object for class '<em>Resource</em>'.
+     * @see device.DeviceResource
      * @generated
      */
-    EClass getDeviceProperty();
-
-    /**
-     * Returns the meta object for the containment reference '{@link device.DeviceProperty#getType <em>Type</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the containment reference '<em>Type</em>'.
-     * @see device.DeviceProperty#getType()
-     * @see #getDeviceProperty()
-     * @generated
-     */
-    EReference getDeviceProperty_Type();
+    EClass getDeviceResource();
 
     /**
      * Returns the meta object for class '{@link device.CommunicationConnection <em>Communication Connection</em>}'.
@@ -1163,66 +1377,6 @@ public interface DevicePackage extends EPackage {
     EReference getCommunicationConnection_Properties();
 
     /**
-     * Returns the meta object for class '{@link device.CapabilityKind <em>Capability Kind</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for class '<em>Capability Kind</em>'.
-     * @see device.CapabilityKind
-     * @generated
-     */
-    EClass getCapabilityKind();
-
-    /**
-     * Returns the meta object for class '{@link device.AttributeKind <em>Attribute Kind</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for class '<em>Attribute Kind</em>'.
-     * @see device.AttributeKind
-     * @generated
-     */
-    EClass getAttributeKind();
-
-    /**
-     * Returns the meta object for class '{@link device.MaximumKind <em>Maximum Kind</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for class '<em>Maximum Kind</em>'.
-     * @see device.MaximumKind
-     * @generated
-     */
-    EClass getMaximumKind();
-
-    /**
-     * Returns the meta object for class '{@link device.MinimumKind <em>Minimum Kind</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for class '<em>Minimum Kind</em>'.
-     * @see device.MinimumKind
-     * @generated
-     */
-    EClass getMinimumKind();
-
-    /**
-     * Returns the meta object for class '{@link device.SelectionKind <em>Selection Kind</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for class '<em>Selection Kind</em>'.
-     * @see device.SelectionKind
-     * @generated
-     */
-    EClass getSelectionKind();
-
-    /**
-     * Returns the meta object for class '{@link device.RangeKind <em>Range Kind</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for class '<em>Range Kind</em>'.
-     * @see device.RangeKind
-     * @generated
-     */
-    EClass getRangeKind();
-
-    /**
      * Returns the meta object for class '{@link device.ConnectionProperty <em>Connection Property</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1233,27 +1387,6 @@ public interface DevicePackage extends EPackage {
     EClass getConnectionProperty();
 
     /**
-     * Returns the meta object for class '{@link device.CapabilityType <em>Capability Type</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for class '<em>Capability Type</em>'.
-     * @see device.CapabilityType
-     * @generated
-     */
-    EClass getCapabilityType();
-
-    /**
-     * Returns the meta object for the attribute '{@link device.CapabilityType#getName <em>Name</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Name</em>'.
-     * @see device.CapabilityType#getName()
-     * @see #getCapabilityType()
-     * @generated
-     */
-    EAttribute getCapabilityType_Name();
-
-    /**
      * Returns the meta object for class '{@link device.ComputationDeviceType <em>Computation Device Type</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1262,27 +1395,6 @@ public interface DevicePackage extends EPackage {
      * @generated
      */
     EClass getComputationDeviceType();
-
-    /**
-     * Returns the meta object for class '{@link device.AbstractCommunicationConnection <em>Abstract Communication Connection</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for class '<em>Abstract Communication Connection</em>'.
-     * @see device.AbstractCommunicationConnection
-     * @generated
-     */
-    EClass getAbstractCommunicationConnection();
-
-    /**
-     * Returns the meta object for the attribute '{@link device.AbstractCommunicationConnection#getName <em>Name</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Name</em>'.
-     * @see device.AbstractCommunicationConnection#getName()
-     * @see #getAbstractCommunicationConnection()
-     * @generated
-     */
-    EAttribute getAbstractCommunicationConnection_Name();
 
     /**
      * Returns the meta object for class '{@link device.NetworkConnection <em>Network Connection</em>}'.
@@ -1317,16 +1429,6 @@ public interface DevicePackage extends EPackage {
     EReference getNetworkConnection_Properties();
 
     /**
-     * Returns the meta object for class '{@link device.AbstractNetworkProperty <em>Abstract Network Property</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for class '<em>Abstract Network Property</em>'.
-     * @see device.AbstractNetworkProperty
-     * @generated
-     */
-    EClass getAbstractNetworkProperty();
-
-    /**
      * Returns the meta object for class '{@link device.InterfaceNetworkProperty <em>Interface Network Property</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1347,47 +1449,6 @@ public interface DevicePackage extends EPackage {
     EClass getAddressNetworkProperty();
 
     /**
-     * Returns the meta object for class '{@link device.AbstractDeviceConfig <em>Abstract Device Config</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for class '<em>Abstract Device Config</em>'.
-     * @see device.AbstractDeviceConfig
-     * @generated
-     */
-    EClass getAbstractDeviceConfig();
-
-    /**
-     * Returns the meta object for class '{@link device.DeviceTypeRef <em>Type Ref</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for class '<em>Type Ref</em>'.
-     * @see device.DeviceTypeRef
-     * @generated
-     */
-    EClass getDeviceTypeRef();
-
-                /**
-     * Returns the meta object for the reference '{@link device.DeviceTypeRef#getDeviceType <em>Device Type</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the reference '<em>Device Type</em>'.
-     * @see device.DeviceTypeRef#getDeviceType()
-     * @see #getDeviceTypeRef()
-     * @generated
-     */
-    EReference getDeviceTypeRef_DeviceType();
-
-                /**
-     * Returns the meta object for class '{@link device.AbstractDeviceType <em>Abstract Device Type</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for class '<em>Abstract Device Type</em>'.
-     * @see device.AbstractDeviceType
-     * @generated
-     */
-    EClass getAbstractDeviceType();
-
-                /**
      * Returns the meta object for class '{@link device.MacNetworkProperty <em>Mac Network Property</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1396,6 +1457,180 @@ public interface DevicePackage extends EPackage {
      * @generated
      */
     EClass getMacNetworkProperty();
+
+    /**
+     * Returns the meta object for class '{@link device.Container <em>Container</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Container</em>'.
+     * @see device.Container
+     * @generated
+     */
+    EClass getContainer();
+
+    /**
+     * Returns the meta object for class '{@link device.AbstractNetworkProperty <em>Abstract Network Property</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Abstract Network Property</em>'.
+     * @see device.AbstractNetworkProperty
+     * @generated
+     */
+    EClass getAbstractNetworkProperty();
+
+    /**
+     * Returns the meta object for class '{@link device.AbstractCommunicationConnection <em>Abstract Communication Connection</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Abstract Communication Connection</em>'.
+     * @see device.AbstractCommunicationConnection
+     * @generated
+     */
+    EClass getAbstractCommunicationConnection();
+
+    /**
+     * Returns the meta object for class '{@link device.AbstractRuntimeEnviroment <em>Abstract Runtime Enviroment</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Abstract Runtime Enviroment</em>'.
+     * @see device.AbstractRuntimeEnviroment
+     * @generated
+     */
+    EClass getAbstractRuntimeEnviroment();
+
+    /**
+     * Returns the meta object for class '{@link device.OperatingSystemResouce <em>Operating System Resouce</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Operating System Resouce</em>'.
+     * @see device.OperatingSystemResouce
+     * @generated
+     */
+    EClass getOperatingSystemResouce();
+
+    /**
+     * Returns the meta object for the containment reference '{@link device.OperatingSystemResouce#getType <em>Type</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the containment reference '<em>Type</em>'.
+     * @see device.OperatingSystemResouce#getType()
+     * @see #getOperatingSystemResouce()
+     * @generated
+     */
+    EReference getOperatingSystemResouce_Type();
+
+    /**
+     * Returns the meta object for the containment reference list '{@link device.OperatingSystemResouce#getProperties <em>Properties</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the containment reference list '<em>Properties</em>'.
+     * @see device.OperatingSystemResouce#getProperties()
+     * @see #getOperatingSystemResouce()
+     * @generated
+     */
+    EReference getOperatingSystemResouce_Properties();
+
+    /**
+     * Returns the meta object for class '{@link device.AbstractOperatingSystemProperty <em>Abstract Operating System Property</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Abstract Operating System Property</em>'.
+     * @see device.AbstractOperatingSystemProperty
+     * @generated
+     */
+    EClass getAbstractOperatingSystemProperty();
+
+    /**
+     * Returns the meta object for class '{@link device.AbstractComputationDeviceResource <em>Abstract Computation Device Resource</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Abstract Computation Device Resource</em>'.
+     * @see device.AbstractComputationDeviceResource
+     * @generated
+     */
+    EClass getAbstractComputationDeviceResource();
+
+    /**
+     * Returns the meta object for class '{@link device.NameOperatingSystemProperty <em>Name Operating System Property</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Name Operating System Property</em>'.
+     * @see device.NameOperatingSystemProperty
+     * @generated
+     */
+    EClass getNameOperatingSystemProperty();
+
+    /**
+     * Returns the meta object for class '{@link device.VersionOperatingSystemProperty <em>Version Operating System Property</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Version Operating System Property</em>'.
+     * @see device.VersionOperatingSystemProperty
+     * @generated
+     */
+    EClass getVersionOperatingSystemProperty();
+
+    /**
+     * Returns the meta object for class '{@link device.ProcessorResouce <em>Processor Resouce</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Processor Resouce</em>'.
+     * @see device.ProcessorResouce
+     * @generated
+     */
+    EClass getProcessorResouce();
+
+    /**
+     * Returns the meta object for the containment reference '{@link device.ProcessorResouce#getType <em>Type</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the containment reference '<em>Type</em>'.
+     * @see device.ProcessorResouce#getType()
+     * @see #getProcessorResouce()
+     * @generated
+     */
+    EReference getProcessorResouce_Type();
+
+    /**
+     * Returns the meta object for the containment reference list '{@link device.ProcessorResouce#getProperties <em>Properties</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the containment reference list '<em>Properties</em>'.
+     * @see device.ProcessorResouce#getProperties()
+     * @see #getProcessorResouce()
+     * @generated
+     */
+    EReference getProcessorResouce_Properties();
+
+    /**
+     * Returns the meta object for class '{@link device.ArchitectureProcessorProperty <em>Architecture Processor Property</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Architecture Processor Property</em>'.
+     * @see device.ArchitectureProcessorProperty
+     * @generated
+     */
+    EClass getArchitectureProcessorProperty();
+
+    /**
+     * Returns the meta object for class '{@link device.CoreProcessorProperty <em>Core Processor Property</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Core Processor Property</em>'.
+     * @see device.CoreProcessorProperty
+     * @generated
+     */
+    EClass getCoreProcessorProperty();
+
+    /**
+     * Returns the meta object for class '{@link device.AbstracProcessorProperty <em>Abstrac Processor Property</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Abstrac Processor Property</em>'.
+     * @see device.AbstracProcessorProperty
+     * @generated
+     */
+    EClass getAbstracProcessorProperty();
 
     /**
      * Returns the factory that creates the instances of the model.
@@ -1457,12 +1692,12 @@ public interface DevicePackage extends EPackage {
         EAttribute DEVICE_TYPE__NAME = eINSTANCE.getDeviceType_Name();
 
         /**
-         * The meta object literal for the '<em><b>Device Property</b></em>' containment reference list feature.
+         * The meta object literal for the '<em><b>Device Resource</b></em>' containment reference list feature.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
          * @generated
          */
-        EReference DEVICE_TYPE__DEVICE_PROPERTY = eINSTANCE.getDeviceType_DeviceProperty();
+        EReference DEVICE_TYPE__DEVICE_RESOURCE = eINSTANCE.getDeviceType_DeviceResource();
 
         /**
          * The meta object literal for the '<em><b>Communication Connection</b></em>' containment reference list feature.
@@ -1473,22 +1708,14 @@ public interface DevicePackage extends EPackage {
         EReference DEVICE_TYPE__COMMUNICATION_CONNECTION = eINSTANCE.getDeviceType_CommunicationConnection();
 
         /**
-         * The meta object literal for the '{@link device.impl.DevicePropertyImpl <em>Property</em>}' class.
+         * The meta object literal for the '{@link device.impl.DeviceResourceImpl <em>Resource</em>}' class.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @see device.impl.DevicePropertyImpl
-         * @see device.impl.DevicePackageImpl#getDeviceProperty()
+         * @see device.impl.DeviceResourceImpl
+         * @see device.impl.DevicePackageImpl#getDeviceResource()
          * @generated
          */
-        EClass DEVICE_PROPERTY = eINSTANCE.getDeviceProperty();
-
-        /**
-         * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @generated
-         */
-        EReference DEVICE_PROPERTY__TYPE = eINSTANCE.getDeviceProperty_Type();
+        EClass DEVICE_RESOURCE = eINSTANCE.getDeviceResource();
 
         /**
          * The meta object literal for the '{@link device.impl.CommunicationConnectionImpl <em>Communication Connection</em>}' class.
@@ -1517,66 +1744,6 @@ public interface DevicePackage extends EPackage {
         EReference COMMUNICATION_CONNECTION__PROPERTIES = eINSTANCE.getCommunicationConnection_Properties();
 
         /**
-         * The meta object literal for the '{@link device.impl.CapabilityKindImpl <em>Capability Kind</em>}' class.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @see device.impl.CapabilityKindImpl
-         * @see device.impl.DevicePackageImpl#getCapabilityKind()
-         * @generated
-         */
-        EClass CAPABILITY_KIND = eINSTANCE.getCapabilityKind();
-
-        /**
-         * The meta object literal for the '{@link device.impl.AttributeKindImpl <em>Attribute Kind</em>}' class.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @see device.impl.AttributeKindImpl
-         * @see device.impl.DevicePackageImpl#getAttributeKind()
-         * @generated
-         */
-        EClass ATTRIBUTE_KIND = eINSTANCE.getAttributeKind();
-
-        /**
-         * The meta object literal for the '{@link device.impl.MaximumKindImpl <em>Maximum Kind</em>}' class.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @see device.impl.MaximumKindImpl
-         * @see device.impl.DevicePackageImpl#getMaximumKind()
-         * @generated
-         */
-        EClass MAXIMUM_KIND = eINSTANCE.getMaximumKind();
-
-        /**
-         * The meta object literal for the '{@link device.impl.MinimumKindImpl <em>Minimum Kind</em>}' class.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @see device.impl.MinimumKindImpl
-         * @see device.impl.DevicePackageImpl#getMinimumKind()
-         * @generated
-         */
-        EClass MINIMUM_KIND = eINSTANCE.getMinimumKind();
-
-        /**
-         * The meta object literal for the '{@link device.impl.SelectionKindImpl <em>Selection Kind</em>}' class.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @see device.impl.SelectionKindImpl
-         * @see device.impl.DevicePackageImpl#getSelectionKind()
-         * @generated
-         */
-        EClass SELECTION_KIND = eINSTANCE.getSelectionKind();
-
-        /**
-         * The meta object literal for the '{@link device.impl.RangeKindImpl <em>Range Kind</em>}' class.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @see device.impl.RangeKindImpl
-         * @see device.impl.DevicePackageImpl#getRangeKind()
-         * @generated
-         */
-        EClass RANGE_KIND = eINSTANCE.getRangeKind();
-
-        /**
          * The meta object literal for the '{@link device.impl.ConnectionPropertyImpl <em>Connection Property</em>}' class.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
@@ -1587,24 +1754,6 @@ public interface DevicePackage extends EPackage {
         EClass CONNECTION_PROPERTY = eINSTANCE.getConnectionProperty();
 
         /**
-         * The meta object literal for the '{@link device.impl.CapabilityTypeImpl <em>Capability Type</em>}' class.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @see device.impl.CapabilityTypeImpl
-         * @see device.impl.DevicePackageImpl#getCapabilityType()
-         * @generated
-         */
-        EClass CAPABILITY_TYPE = eINSTANCE.getCapabilityType();
-
-        /**
-         * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @generated
-         */
-        EAttribute CAPABILITY_TYPE__NAME = eINSTANCE.getCapabilityType_Name();
-
-        /**
          * The meta object literal for the '{@link device.impl.ComputationDeviceTypeImpl <em>Computation Device Type</em>}' class.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
@@ -1613,24 +1762,6 @@ public interface DevicePackage extends EPackage {
          * @generated
          */
         EClass COMPUTATION_DEVICE_TYPE = eINSTANCE.getComputationDeviceType();
-
-        /**
-         * The meta object literal for the '{@link device.impl.AbstractCommunicationConnectionImpl <em>Abstract Communication Connection</em>}' class.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @see device.impl.AbstractCommunicationConnectionImpl
-         * @see device.impl.DevicePackageImpl#getAbstractCommunicationConnection()
-         * @generated
-         */
-        EClass ABSTRACT_COMMUNICATION_CONNECTION = eINSTANCE.getAbstractCommunicationConnection();
-
-        /**
-         * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @generated
-         */
-        EAttribute ABSTRACT_COMMUNICATION_CONNECTION__NAME = eINSTANCE.getAbstractCommunicationConnection_Name();
 
         /**
          * The meta object literal for the '{@link device.impl.NetworkConnectionImpl <em>Network Connection</em>}' class.
@@ -1659,16 +1790,6 @@ public interface DevicePackage extends EPackage {
         EReference NETWORK_CONNECTION__PROPERTIES = eINSTANCE.getNetworkConnection_Properties();
 
         /**
-         * The meta object literal for the '{@link device.impl.AbstractNetworkPropertyImpl <em>Abstract Network Property</em>}' class.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @see device.impl.AbstractNetworkPropertyImpl
-         * @see device.impl.DevicePackageImpl#getAbstractNetworkProperty()
-         * @generated
-         */
-        EClass ABSTRACT_NETWORK_PROPERTY = eINSTANCE.getAbstractNetworkProperty();
-
-        /**
          * The meta object literal for the '{@link device.impl.InterfaceNetworkPropertyImpl <em>Interface Network Property</em>}' class.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
@@ -1689,44 +1810,6 @@ public interface DevicePackage extends EPackage {
         EClass ADDRESS_NETWORK_PROPERTY = eINSTANCE.getAddressNetworkProperty();
 
         /**
-         * The meta object literal for the '{@link device.impl.AbstractDeviceConfigImpl <em>Abstract Device Config</em>}' class.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @see device.impl.AbstractDeviceConfigImpl
-         * @see device.impl.DevicePackageImpl#getAbstractDeviceConfig()
-         * @generated
-         */
-        EClass ABSTRACT_DEVICE_CONFIG = eINSTANCE.getAbstractDeviceConfig();
-
-        /**
-         * The meta object literal for the '{@link device.impl.DeviceTypeRefImpl <em>Type Ref</em>}' class.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @see device.impl.DeviceTypeRefImpl
-         * @see device.impl.DevicePackageImpl#getDeviceTypeRef()
-         * @generated
-         */
-        EClass DEVICE_TYPE_REF = eINSTANCE.getDeviceTypeRef();
-
-                                /**
-         * The meta object literal for the '<em><b>Device Type</b></em>' reference feature.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @generated
-         */
-        EReference DEVICE_TYPE_REF__DEVICE_TYPE = eINSTANCE.getDeviceTypeRef_DeviceType();
-
-                                /**
-         * The meta object literal for the '{@link device.impl.AbstractDeviceTypeImpl <em>Abstract Device Type</em>}' class.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @see device.impl.AbstractDeviceTypeImpl
-         * @see device.impl.DevicePackageImpl#getAbstractDeviceType()
-         * @generated
-         */
-        EClass ABSTRACT_DEVICE_TYPE = eINSTANCE.getAbstractDeviceType();
-
-                                /**
          * The meta object literal for the '{@link device.impl.MacNetworkPropertyImpl <em>Mac Network Property</em>}' class.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
@@ -1735,6 +1818,168 @@ public interface DevicePackage extends EPackage {
          * @generated
          */
         EClass MAC_NETWORK_PROPERTY = eINSTANCE.getMacNetworkProperty();
+
+        /**
+         * The meta object literal for the '{@link device.impl.ContainerImpl <em>Container</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see device.impl.ContainerImpl
+         * @see device.impl.DevicePackageImpl#getContainer()
+         * @generated
+         */
+        EClass CONTAINER = eINSTANCE.getContainer();
+
+        /**
+         * The meta object literal for the '{@link device.impl.AbstractNetworkPropertyImpl <em>Abstract Network Property</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see device.impl.AbstractNetworkPropertyImpl
+         * @see device.impl.DevicePackageImpl#getAbstractNetworkProperty()
+         * @generated
+         */
+        EClass ABSTRACT_NETWORK_PROPERTY = eINSTANCE.getAbstractNetworkProperty();
+
+        /**
+         * The meta object literal for the '{@link device.impl.AbstractCommunicationConnectionImpl <em>Abstract Communication Connection</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see device.impl.AbstractCommunicationConnectionImpl
+         * @see device.impl.DevicePackageImpl#getAbstractCommunicationConnection()
+         * @generated
+         */
+        EClass ABSTRACT_COMMUNICATION_CONNECTION = eINSTANCE.getAbstractCommunicationConnection();
+
+        /**
+         * The meta object literal for the '{@link device.impl.AbstractRuntimeEnviromentImpl <em>Abstract Runtime Enviroment</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see device.impl.AbstractRuntimeEnviromentImpl
+         * @see device.impl.DevicePackageImpl#getAbstractRuntimeEnviroment()
+         * @generated
+         */
+        EClass ABSTRACT_RUNTIME_ENVIROMENT = eINSTANCE.getAbstractRuntimeEnviroment();
+
+        /**
+         * The meta object literal for the '{@link device.impl.OperatingSystemResouceImpl <em>Operating System Resouce</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see device.impl.OperatingSystemResouceImpl
+         * @see device.impl.DevicePackageImpl#getOperatingSystemResouce()
+         * @generated
+         */
+        EClass OPERATING_SYSTEM_RESOUCE = eINSTANCE.getOperatingSystemResouce();
+
+        /**
+         * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference OPERATING_SYSTEM_RESOUCE__TYPE = eINSTANCE.getOperatingSystemResouce_Type();
+
+        /**
+         * The meta object literal for the '<em><b>Properties</b></em>' containment reference list feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference OPERATING_SYSTEM_RESOUCE__PROPERTIES = eINSTANCE.getOperatingSystemResouce_Properties();
+
+        /**
+         * The meta object literal for the '{@link device.impl.AbstractOperatingSystemPropertyImpl <em>Abstract Operating System Property</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see device.impl.AbstractOperatingSystemPropertyImpl
+         * @see device.impl.DevicePackageImpl#getAbstractOperatingSystemProperty()
+         * @generated
+         */
+        EClass ABSTRACT_OPERATING_SYSTEM_PROPERTY = eINSTANCE.getAbstractOperatingSystemProperty();
+
+        /**
+         * The meta object literal for the '{@link device.impl.AbstractComputationDeviceResourceImpl <em>Abstract Computation Device Resource</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see device.impl.AbstractComputationDeviceResourceImpl
+         * @see device.impl.DevicePackageImpl#getAbstractComputationDeviceResource()
+         * @generated
+         */
+        EClass ABSTRACT_COMPUTATION_DEVICE_RESOURCE = eINSTANCE.getAbstractComputationDeviceResource();
+
+        /**
+         * The meta object literal for the '{@link device.impl.NameOperatingSystemPropertyImpl <em>Name Operating System Property</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see device.impl.NameOperatingSystemPropertyImpl
+         * @see device.impl.DevicePackageImpl#getNameOperatingSystemProperty()
+         * @generated
+         */
+        EClass NAME_OPERATING_SYSTEM_PROPERTY = eINSTANCE.getNameOperatingSystemProperty();
+
+        /**
+         * The meta object literal for the '{@link device.impl.VersionOperatingSystemPropertyImpl <em>Version Operating System Property</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see device.impl.VersionOperatingSystemPropertyImpl
+         * @see device.impl.DevicePackageImpl#getVersionOperatingSystemProperty()
+         * @generated
+         */
+        EClass VERSION_OPERATING_SYSTEM_PROPERTY = eINSTANCE.getVersionOperatingSystemProperty();
+
+        /**
+         * The meta object literal for the '{@link device.impl.ProcessorResouceImpl <em>Processor Resouce</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see device.impl.ProcessorResouceImpl
+         * @see device.impl.DevicePackageImpl#getProcessorResouce()
+         * @generated
+         */
+        EClass PROCESSOR_RESOUCE = eINSTANCE.getProcessorResouce();
+
+        /**
+         * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference PROCESSOR_RESOUCE__TYPE = eINSTANCE.getProcessorResouce_Type();
+
+        /**
+         * The meta object literal for the '<em><b>Properties</b></em>' containment reference list feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference PROCESSOR_RESOUCE__PROPERTIES = eINSTANCE.getProcessorResouce_Properties();
+
+        /**
+         * The meta object literal for the '{@link device.impl.ArchitectureProcessorPropertyImpl <em>Architecture Processor Property</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see device.impl.ArchitectureProcessorPropertyImpl
+         * @see device.impl.DevicePackageImpl#getArchitectureProcessorProperty()
+         * @generated
+         */
+        EClass ARCHITECTURE_PROCESSOR_PROPERTY = eINSTANCE.getArchitectureProcessorProperty();
+
+        /**
+         * The meta object literal for the '{@link device.impl.CoreProcessorPropertyImpl <em>Core Processor Property</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see device.impl.CoreProcessorPropertyImpl
+         * @see device.impl.DevicePackageImpl#getCoreProcessorProperty()
+         * @generated
+         */
+        EClass CORE_PROCESSOR_PROPERTY = eINSTANCE.getCoreProcessorProperty();
+
+        /**
+         * The meta object literal for the '{@link device.impl.AbstracProcessorPropertyImpl <em>Abstrac Processor Property</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see device.impl.AbstracProcessorPropertyImpl
+         * @see device.impl.DevicePackageImpl#getAbstracProcessorProperty()
+         * @generated
+         */
+        EClass ABSTRAC_PROCESSOR_PROPERTY = eINSTANCE.getAbstracProcessorProperty();
 
     }
 

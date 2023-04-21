@@ -2,9 +2,10 @@
  */
 package targetEnvironment;
 
+import de.fraunhofer.ipa.deployment.util.AbstractProperty;
 import de.fraunhofer.ipa.deployment.util.PropertyValue;
 
-import device.DeviceProperty;
+import device.DeviceResource;
 
 /**
  * <!-- begin-user-doc -->
@@ -15,10 +16,10 @@ import device.DeviceProperty;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link targetEnvironment.ConfigDeviceProperty#getName <em>Name</em>}</li>
  *   <li>{@link targetEnvironment.ConfigDeviceProperty#getFrom <em>From</em>}</li>
  *   <li>{@link targetEnvironment.ConfigDeviceProperty#getValue <em>Value</em>}</li>
  *   <li>{@link targetEnvironment.ConfigDeviceProperty#getFullname <em>Fullname</em>}</li>
- *   <li>{@link targetEnvironment.ConfigDeviceProperty#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see targetEnvironment.TargetEnvironmentPackage#getConfigDeviceProperty()
@@ -27,16 +28,38 @@ import device.DeviceProperty;
  */
 public interface ConfigDeviceProperty extends AbstractConfigProperty {
     /**
+     * Returns the value of the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Name</em>' attribute.
+     * @see #setName(String)
+     * @see targetEnvironment.TargetEnvironmentPackage#getConfigDeviceProperty_Name()
+     * @model required="true"
+     * @generated
+     */
+    String getName();
+
+    /**
+     * Sets the value of the '{@link targetEnvironment.ConfigDeviceProperty#getName <em>Name</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Name</em>' attribute.
+     * @see #getName()
+     * @generated
+     */
+    void setName(String value);
+
+    /**
      * Returns the value of the '<em><b>From</b></em>' reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return the value of the '<em>From</em>' reference.
-     * @see #setFrom(DeviceProperty)
+     * @see #setFrom(AbstractProperty)
      * @see targetEnvironment.TargetEnvironmentPackage#getConfigDeviceProperty_From()
      * @model required="true" derived="true"
      * @generated
      */
-    DeviceProperty getFrom();
+    AbstractProperty getFrom();
 
     /**
      * Sets the value of the '{@link targetEnvironment.ConfigDeviceProperty#getFrom <em>From</em>}' reference.
@@ -46,7 +69,7 @@ public interface ConfigDeviceProperty extends AbstractConfigProperty {
      * @see #getFrom()
      * @generated
      */
-    void setFrom(DeviceProperty value);
+    void setFrom(AbstractProperty value);
 
     /**
      * Returns the value of the '<em><b>Value</b></em>' containment reference.
@@ -93,26 +116,12 @@ public interface ConfigDeviceProperty extends AbstractConfigProperty {
     boolean isSetFullname();
 
     /**
-     * Returns the value of the '<em><b>Name</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Name</em>' attribute.
-     * @see #setName(String)
-     * @see targetEnvironment.TargetEnvironmentPackage#getConfigDeviceProperty_Name()
-     * @model required="true"
+     * @model kind="operation"
      * @generated
      */
-    String getName();
-
-    /**
-     * Sets the value of the '{@link targetEnvironment.ConfigDeviceProperty#getName <em>Name</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Name</em>' attribute.
-     * @see #getName()
-     * @generated
-     */
-    void setName(String value);
+    AbstractDeviceInstance getParent();
 
     /**
      * <!-- begin-user-doc -->
@@ -120,6 +129,6 @@ public interface ConfigDeviceProperty extends AbstractConfigProperty {
      * @model kind="operation"
      * @generated
      */
-    AbstractDeviceInstance getParent();
+    DeviceResource getDeviceResouce();
 
 } // ConfigDeviceProperty

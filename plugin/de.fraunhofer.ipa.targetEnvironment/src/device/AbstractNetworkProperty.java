@@ -14,5 +14,5 @@ import de.fraunhofer.ipa.deployment.util.PropertyAttribute;
  * @model abstract="true"
  * @generated
  */
-public interface AbstractNetworkProperty extends PropertyAttribute, AbstractDeviceConfig {
+public interface AbstractNetworkProperty extends PropertyAttribute {
 } // AbstractNetworkProperty
