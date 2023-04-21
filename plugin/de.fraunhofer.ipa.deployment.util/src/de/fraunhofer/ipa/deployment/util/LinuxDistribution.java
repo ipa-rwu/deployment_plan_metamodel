@@ -10,125 +10,83 @@ import org.eclipse.emf.common.util.Enumerator;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the literals of the enumeration '<em><b>Processor Architecture Type</b></em>',
+ * A representation of the literals of the enumeration '<em><b>Linux Distribution</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see de.fraunhofer.ipa.deployment.util.UtilPackage#getProcessorArchitectureType()
+ * @see de.fraunhofer.ipa.deployment.util.UtilPackage#getLinuxDistribution()
  * @model
  * @generated
  */
-public enum ProcessorArchitectureType implements Enumerator {
+public enum LinuxDistribution implements Enumerator {
     /**
-     * The '<em><b>X86</b></em>' literal object.
+     * The '<em><b>Ubuntu</b></em>' literal object.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #X86_VALUE
+     * @see #UBUNTU_VALUE
      * @generated
      * @ordered
      */
-    X86(0, "x86", "x86"),
+    UBUNTU(0, "ubuntu", "ubuntu"),
 
     /**
-     * The '<em><b>Arm64</b></em>' literal object.
+     * The '<em><b>Debian</b></em>' literal object.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #ARM64_VALUE
+     * @see #DEBIAN_VALUE
      * @generated
      * @ordered
      */
-    ARM64(0, "arm64", "arm64"),
-    /**
-     * The '<em><b>Arm64v8</b></em>' literal object.
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @see #ARM64V8_VALUE
-     * @generated
-     * @ordered
-     */
-    ARM64V8(0, "arm64v8", "arm64v8"),
-    /**
-     * The '<em><b>Arm32</b></em>' literal object.
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @see #ARM32_VALUE
-     * @generated
-     * @ordered
-     */
-    ARM32(0, "arm32", "arm32");
+    DEBIAN(1, "debian", "debian");
 
     /**
-     * The '<em><b>X86</b></em>' literal value.
+     * The '<em><b>Ubuntu</b></em>' literal value.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #X86
-     * @model name="x86"
+     * @see #UBUNTU
+     * @model name="ubuntu"
      * @generated
      * @ordered
      */
-    public static final int X86_VALUE = 0;
+    public static final int UBUNTU_VALUE = 0;
 
     /**
-     * The '<em><b>Arm64</b></em>' literal value.
+     * The '<em><b>Debian</b></em>' literal value.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #ARM64
-     * @model name="arm64"
+     * @see #DEBIAN
+     * @model name="debian"
      * @generated
      * @ordered
      */
-    public static final int ARM64_VALUE = 0;
+    public static final int DEBIAN_VALUE = 1;
 
     /**
-     * The '<em><b>Arm64v8</b></em>' literal value.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #ARM64V8
-     * @model name="arm64v8"
-     * @generated
-     * @ordered
-     */
-    public static final int ARM64V8_VALUE = 0;
-
-    /**
-     * The '<em><b>Arm32</b></em>' literal value.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #ARM32
-     * @model name="arm32"
-     * @generated
-     * @ordered
-     */
-    public static final int ARM32_VALUE = 0;
-
-    /**
-     * An array of all the '<em><b>Processor Architecture Type</b></em>' enumerators.
+     * An array of all the '<em><b>Linux Distribution</b></em>' enumerators.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    private static final ProcessorArchitectureType[] VALUES_ARRAY = new ProcessorArchitectureType[] { X86, ARM64,
-            ARM64V8, ARM32, };
+    private static final LinuxDistribution[] VALUES_ARRAY = new LinuxDistribution[] { UBUNTU, DEBIAN, };
 
     /**
-     * A public read-only list of all the '<em><b>Processor Architecture Type</b></em>' enumerators.
+     * A public read-only list of all the '<em><b>Linux Distribution</b></em>' enumerators.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    public static final List<ProcessorArchitectureType> VALUES = Collections
-            .unmodifiableList(Arrays.asList(VALUES_ARRAY));
+    public static final List<LinuxDistribution> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
     /**
-     * Returns the '<em><b>Processor Architecture Type</b></em>' literal with the specified literal value.
+     * Returns the '<em><b>Linux Distribution</b></em>' literal with the specified literal value.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @param literal the literal.
      * @return the matching enumerator or <code>null</code>.
      * @generated
      */
-    public static ProcessorArchitectureType get(String literal) {
+    public static LinuxDistribution get(String literal) {
         for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-            ProcessorArchitectureType result = VALUES_ARRAY[i];
+            LinuxDistribution result = VALUES_ARRAY[i];
             if (result.toString().equals(literal)) {
                 return result;
             }
@@ -137,16 +95,16 @@ public enum ProcessorArchitectureType implements Enumerator {
     }
 
     /**
-     * Returns the '<em><b>Processor Architecture Type</b></em>' literal with the specified name.
+     * Returns the '<em><b>Linux Distribution</b></em>' literal with the specified name.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @param name the name.
      * @return the matching enumerator or <code>null</code>.
      * @generated
      */
-    public static ProcessorArchitectureType getByName(String name) {
+    public static LinuxDistribution getByName(String name) {
         for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-            ProcessorArchitectureType result = VALUES_ARRAY[i];
+            LinuxDistribution result = VALUES_ARRAY[i];
             if (result.getName().equals(name)) {
                 return result;
             }
@@ -155,17 +113,19 @@ public enum ProcessorArchitectureType implements Enumerator {
     }
 
     /**
-     * Returns the '<em><b>Processor Architecture Type</b></em>' literal with the specified integer value.
+     * Returns the '<em><b>Linux Distribution</b></em>' literal with the specified integer value.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @param value the integer value.
      * @return the matching enumerator or <code>null</code>.
      * @generated
      */
-    public static ProcessorArchitectureType get(int value) {
+    public static LinuxDistribution get(int value) {
         switch (value) {
-        case X86_VALUE:
-            return X86;
+        case UBUNTU_VALUE:
+            return UBUNTU;
+        case DEBIAN_VALUE:
+            return DEBIAN;
         }
         return null;
     }
@@ -197,7 +157,7 @@ public enum ProcessorArchitectureType implements Enumerator {
      * <!-- end-user-doc -->
      * @generated
      */
-    private ProcessorArchitectureType(int value, String name, String literal) {
+    private LinuxDistribution(int value, String name, String literal) {
         this.value = value;
         this.name = name;
         this.literal = literal;
@@ -241,4 +201,4 @@ public enum ProcessorArchitectureType implements Enumerator {
         return literal;
     }
 
-} //ProcessorArchitectureType
+} //LinuxDistribution

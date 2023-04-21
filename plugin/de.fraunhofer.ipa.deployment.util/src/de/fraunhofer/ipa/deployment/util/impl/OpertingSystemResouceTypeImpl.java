@@ -2,25 +2,28 @@
  */
 package de.fraunhofer.ipa.deployment.util.impl;
 
-import de.fraunhofer.ipa.deployment.util.ProcessorArchitecture;
+import de.fraunhofer.ipa.deployment.util.OpertingSystemResouceType;
 import de.fraunhofer.ipa.deployment.util.UtilPackage;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Processor Architecture</b></em>'.
+ * An implementation of the model object '<em><b>Operting System Resouce Type</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public abstract class ProcessorArchitectureImpl extends AbstractResouceTypeImpl implements ProcessorArchitecture {
+public abstract class OpertingSystemResouceTypeImpl extends MinimalEObjectImpl.Container
+        implements OpertingSystemResouceType {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    protected ProcessorArchitectureImpl() {
+    protected OpertingSystemResouceTypeImpl() {
         super();
     }
 
@@ -31,7 +34,7 @@ public abstract class ProcessorArchitectureImpl extends AbstractResouceTypeImpl 
      */
     @Override
     protected EClass eStaticClass() {
-        return UtilPackage.Literals.PROCESSOR_ARCHITECTURE;
+        return UtilPackage.Literals.OPERTING_SYSTEM_RESOUCE_TYPE;
     }
 
-} //ProcessorArchitectureImpl
+} //OpertingSystemResouceTypeImpl

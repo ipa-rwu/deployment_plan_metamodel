@@ -10,125 +10,83 @@ import org.eclipse.emf.common.util.Enumerator;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the literals of the enumeration '<em><b>Processor Architecture Type</b></em>',
+ * A representation of the literals of the enumeration '<em><b>Ubuntu Version</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see de.fraunhofer.ipa.deployment.util.UtilPackage#getProcessorArchitectureType()
+ * @see de.fraunhofer.ipa.deployment.util.UtilPackage#getUbuntuVersion()
  * @model
  * @generated
  */
-public enum ProcessorArchitectureType implements Enumerator {
+public enum UbuntuVersion implements Enumerator {
     /**
-     * The '<em><b>X86</b></em>' literal object.
+     * The '<em><b>Focal</b></em>' literal object.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #X86_VALUE
+     * @see #FOCAL_VALUE
      * @generated
      * @ordered
      */
-    X86(0, "x86", "x86"),
+    FOCAL(18, "focal", "focal"),
 
     /**
-     * The '<em><b>Arm64</b></em>' literal object.
+     * The '<em><b>Jammy</b></em>' literal object.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #ARM64_VALUE
+     * @see #JAMMY_VALUE
      * @generated
      * @ordered
      */
-    ARM64(0, "arm64", "arm64"),
-    /**
-     * The '<em><b>Arm64v8</b></em>' literal object.
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @see #ARM64V8_VALUE
-     * @generated
-     * @ordered
-     */
-    ARM64V8(0, "arm64v8", "arm64v8"),
-    /**
-     * The '<em><b>Arm32</b></em>' literal object.
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @see #ARM32_VALUE
-     * @generated
-     * @ordered
-     */
-    ARM32(0, "arm32", "arm32");
+    JAMMY(20, "jammy", "jammy");
 
     /**
-     * The '<em><b>X86</b></em>' literal value.
+     * The '<em><b>Focal</b></em>' literal value.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #X86
-     * @model name="x86"
+     * @see #FOCAL
+     * @model name="focal"
      * @generated
      * @ordered
      */
-    public static final int X86_VALUE = 0;
+    public static final int FOCAL_VALUE = 18;
 
     /**
-     * The '<em><b>Arm64</b></em>' literal value.
+     * The '<em><b>Jammy</b></em>' literal value.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #ARM64
-     * @model name="arm64"
+     * @see #JAMMY
+     * @model name="jammy"
      * @generated
      * @ordered
      */
-    public static final int ARM64_VALUE = 0;
+    public static final int JAMMY_VALUE = 20;
 
     /**
-     * The '<em><b>Arm64v8</b></em>' literal value.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #ARM64V8
-     * @model name="arm64v8"
-     * @generated
-     * @ordered
-     */
-    public static final int ARM64V8_VALUE = 0;
-
-    /**
-     * The '<em><b>Arm32</b></em>' literal value.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #ARM32
-     * @model name="arm32"
-     * @generated
-     * @ordered
-     */
-    public static final int ARM32_VALUE = 0;
-
-    /**
-     * An array of all the '<em><b>Processor Architecture Type</b></em>' enumerators.
+     * An array of all the '<em><b>Ubuntu Version</b></em>' enumerators.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    private static final ProcessorArchitectureType[] VALUES_ARRAY = new ProcessorArchitectureType[] { X86, ARM64,
-            ARM64V8, ARM32, };
+    private static final UbuntuVersion[] VALUES_ARRAY = new UbuntuVersion[] { FOCAL, JAMMY, };
 
     /**
-     * A public read-only list of all the '<em><b>Processor Architecture Type</b></em>' enumerators.
+     * A public read-only list of all the '<em><b>Ubuntu Version</b></em>' enumerators.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    public static final List<ProcessorArchitectureType> VALUES = Collections
-            .unmodifiableList(Arrays.asList(VALUES_ARRAY));
+    public static final List<UbuntuVersion> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
     /**
-     * Returns the '<em><b>Processor Architecture Type</b></em>' literal with the specified literal value.
+     * Returns the '<em><b>Ubuntu Version</b></em>' literal with the specified literal value.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @param literal the literal.
      * @return the matching enumerator or <code>null</code>.
      * @generated
      */
-    public static ProcessorArchitectureType get(String literal) {
+    public static UbuntuVersion get(String literal) {
         for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-            ProcessorArchitectureType result = VALUES_ARRAY[i];
+            UbuntuVersion result = VALUES_ARRAY[i];
             if (result.toString().equals(literal)) {
                 return result;
             }
@@ -137,16 +95,16 @@ public enum ProcessorArchitectureType implements Enumerator {
     }
 
     /**
-     * Returns the '<em><b>Processor Architecture Type</b></em>' literal with the specified name.
+     * Returns the '<em><b>Ubuntu Version</b></em>' literal with the specified name.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @param name the name.
      * @return the matching enumerator or <code>null</code>.
      * @generated
      */
-    public static ProcessorArchitectureType getByName(String name) {
+    public static UbuntuVersion getByName(String name) {
         for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-            ProcessorArchitectureType result = VALUES_ARRAY[i];
+            UbuntuVersion result = VALUES_ARRAY[i];
             if (result.getName().equals(name)) {
                 return result;
             }
@@ -155,17 +113,19 @@ public enum ProcessorArchitectureType implements Enumerator {
     }
 
     /**
-     * Returns the '<em><b>Processor Architecture Type</b></em>' literal with the specified integer value.
+     * Returns the '<em><b>Ubuntu Version</b></em>' literal with the specified integer value.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @param value the integer value.
      * @return the matching enumerator or <code>null</code>.
      * @generated
      */
-    public static ProcessorArchitectureType get(int value) {
+    public static UbuntuVersion get(int value) {
         switch (value) {
-        case X86_VALUE:
-            return X86;
+        case FOCAL_VALUE:
+            return FOCAL;
+        case JAMMY_VALUE:
+            return JAMMY;
         }
         return null;
     }
@@ -197,7 +157,7 @@ public enum ProcessorArchitectureType implements Enumerator {
      * <!-- end-user-doc -->
      * @generated
      */
-    private ProcessorArchitectureType(int value, String name, String literal) {
+    private UbuntuVersion(int value, String name, String literal) {
         this.value = value;
         this.name = name;
         this.literal = literal;
@@ -241,4 +201,4 @@ public enum ProcessorArchitectureType implements Enumerator {
         return literal;
     }
 
-} //ProcessorArchitectureType
+} //UbuntuVersion

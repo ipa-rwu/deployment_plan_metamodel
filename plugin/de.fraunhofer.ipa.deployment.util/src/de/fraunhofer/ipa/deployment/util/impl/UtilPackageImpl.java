@@ -7,21 +7,25 @@ import de.fraunhofer.ipa.deployment.util.AbstractComputationAssignmentTarget;
 import de.fraunhofer.ipa.deployment.util.AbstractImplementation;
 import de.fraunhofer.ipa.deployment.util.AbstractProperty;
 import de.fraunhofer.ipa.deployment.util.AbstractResouceType;
-import de.fraunhofer.ipa.deployment.util.Arm64ProcessorArchitecture;
+import de.fraunhofer.ipa.deployment.util.AbstractResource;
+import de.fraunhofer.ipa.deployment.util.AbstractRuntimeEnviroment;
 import de.fraunhofer.ipa.deployment.util.AttributeKind;
-import de.fraunhofer.ipa.deployment.util.AvailableResouce;
 import de.fraunhofer.ipa.deployment.util.CommunicationType;
+import de.fraunhofer.ipa.deployment.util.ContainerRuntime;
 import de.fraunhofer.ipa.deployment.util.Description;
 import de.fraunhofer.ipa.deployment.util.EthernetCommunicationType;
-import de.fraunhofer.ipa.deployment.util.LinuxOpertingSystemType;
-import de.fraunhofer.ipa.deployment.util.MacOSOpertingSystemType;
+import de.fraunhofer.ipa.deployment.util.LinuxDistribution;
+import de.fraunhofer.ipa.deployment.util.LinuxDistributionValue;
+import de.fraunhofer.ipa.deployment.util.LinuxOpertingSystem;
+import de.fraunhofer.ipa.deployment.util.MacOSOpertingSystem;
 import de.fraunhofer.ipa.deployment.util.MaximumKind;
 import de.fraunhofer.ipa.deployment.util.MinimumKind;
 import de.fraunhofer.ipa.deployment.util.NetworkCommunicationType;
-import de.fraunhofer.ipa.deployment.util.OpertingSystemType;
-import de.fraunhofer.ipa.deployment.util.ProcessorArchitecture;
+import de.fraunhofer.ipa.deployment.util.OpertingSystemName;
+import de.fraunhofer.ipa.deployment.util.OpertingSystemResouceType;
 import de.fraunhofer.ipa.deployment.util.ProcessorArchitectureType;
 import de.fraunhofer.ipa.deployment.util.ProcessorArchitectureValue;
+import de.fraunhofer.ipa.deployment.util.ProcessorResouceType;
 import de.fraunhofer.ipa.deployment.util.Property;
 import de.fraunhofer.ipa.deployment.util.PropertyAttribute;
 import de.fraunhofer.ipa.deployment.util.PropertyKind;
@@ -29,21 +33,24 @@ import de.fraunhofer.ipa.deployment.util.PropertyMaximun;
 import de.fraunhofer.ipa.deployment.util.PropertyMinimum;
 import de.fraunhofer.ipa.deployment.util.PropertyRange;
 import de.fraunhofer.ipa.deployment.util.PropertySelection;
-import de.fraunhofer.ipa.deployment.util.PropertyType;
 import de.fraunhofer.ipa.deployment.util.PropertyValue;
 import de.fraunhofer.ipa.deployment.util.PropertyValueDouble;
 import de.fraunhofer.ipa.deployment.util.PropertyValueInt;
 import de.fraunhofer.ipa.deployment.util.PropertyValueString;
 import de.fraunhofer.ipa.deployment.util.RangeKind;
+import de.fraunhofer.ipa.deployment.util.Resource;
 import de.fraunhofer.ipa.deployment.util.ResourceType;
+import de.fraunhofer.ipa.deployment.util.RunTimeType;
 import de.fraunhofer.ipa.deployment.util.SelectionKind;
+import de.fraunhofer.ipa.deployment.util.UbuntuVersion;
+import de.fraunhofer.ipa.deployment.util.UbuntuVersionValue;
 import de.fraunhofer.ipa.deployment.util.UtilFactory;
 import de.fraunhofer.ipa.deployment.util.UtilPackage;
 import de.fraunhofer.ipa.deployment.util.WlanCommunicationType;
-import de.fraunhofer.ipa.deployment.util.X86ProcessorArchitecture;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -63,48 +70,6 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    private EClass descriptionEClass = null;
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    private EClass propertyValueEClass = null;
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    private EClass propertyValueIntEClass = null;
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    private EClass propertyValueDoubleEClass = null;
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    private EClass propertyValueStringEClass = null;
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    private EClass propertyTypeEClass = null;
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
     private EClass abstractPropertyEClass = null;
 
     /**
@@ -119,14 +84,63 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    private EClass processorArchitectureEClass = null;
+    private EClass abstractCommunicationTypeEClass = null;
 
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    private EClass abstractCommunicationTypeEClass = null;
+    private EClass abstractImplementationEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass abstractComputationAssignmentTargetEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass abstractResourceEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass abstractRuntimeEnviromentEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass opertingSystemResouceTypeEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass propertyValueEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass descriptionEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass resourceEClass = null;
 
     /**
      * <!-- begin-user-doc -->
@@ -161,35 +175,28 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    private EClass availableResouceEClass = null;
+    private EClass linuxOpertingSystemEClass = null;
 
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    private EClass opertingSystemTypeEClass = null;
+    private EClass macOSOpertingSystemEClass = null;
 
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    private EClass linuxOpertingSystemTypeEClass = null;
+    private EClass processorResouceTypeEClass = null;
 
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    private EClass macOSOpertingSystemTypeEClass = null;
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    private EClass processorArchitectureTypeEClass = null;
+    private EClass resourceTypeEClass = null;
 
     /**
      * <!-- begin-user-doc -->
@@ -203,28 +210,14 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    private EClass x86ProcessorArchitectureEClass = null;
+    private EClass linuxDistributionValueEClass = null;
 
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    private EClass arm64ProcessorArchitectureEClass = null;
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    private EClass abstractImplementationEClass = null;
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    private EClass abstractComputationAssignmentTargetEClass = null;
+    private EClass ubuntuVersionValueEClass = null;
 
     /**
      * <!-- begin-user-doc -->
@@ -315,7 +308,63 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    private EClass resourceTypeEClass = null;
+    private EClass propertyValueIntEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass propertyValueDoubleEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass propertyValueStringEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass containerRuntimeEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass opertingSystemNameEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EEnum ubuntuVersionEEnum = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EEnum linuxDistributionEEnum = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EEnum runTimeTypeEEnum = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EEnum processorArchitectureTypeEEnum = null;
 
     /**
      * Creates an instance of the model <b>Package</b>, registered with
@@ -389,96 +438,6 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    public EClass getDescription() {
-        return descriptionEClass;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public EClass getPropertyValue() {
-        return propertyValueEClass;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public EClass getPropertyValueInt() {
-        return propertyValueIntEClass;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public EAttribute getPropertyValueInt_Value() {
-        return (EAttribute) propertyValueIntEClass.getEStructuralFeatures().get(0);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public EClass getPropertyValueDouble() {
-        return propertyValueDoubleEClass;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public EAttribute getPropertyValueDouble_Value() {
-        return (EAttribute) propertyValueDoubleEClass.getEStructuralFeatures().get(0);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public EClass getPropertyValueString() {
-        return propertyValueStringEClass;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public EAttribute getPropertyValueString_Value() {
-        return (EAttribute) propertyValueStringEClass.getEStructuralFeatures().get(0);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public EClass getPropertyType() {
-        return propertyTypeEClass;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public EAttribute getPropertyType_Type() {
-        return (EAttribute) propertyTypeEClass.getEStructuralFeatures().get(0);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
     public EClass getAbstractProperty() {
         return abstractPropertyEClass;
     }
@@ -515,8 +474,8 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    public EClass getProcessorArchitecture() {
-        return processorArchitectureEClass;
+    public EClass getAbstractCommunicationType() {
+        return abstractCommunicationTypeEClass;
     }
 
     /**
@@ -524,8 +483,98 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    public EClass getAbstractCommunicationType() {
-        return abstractCommunicationTypeEClass;
+    public EClass getAbstractImplementation() {
+        return abstractImplementationEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getAbstractComputationAssignmentTarget() {
+        return abstractComputationAssignmentTargetEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getAbstractResource() {
+        return abstractResourceEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getAbstractResource_Name() {
+        return (EAttribute) abstractResourceEClass.getEStructuralFeatures().get(0);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getAbstractRuntimeEnviroment() {
+        return abstractRuntimeEnviromentEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getOpertingSystemResouceType() {
+        return opertingSystemResouceTypeEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getPropertyValue() {
+        return propertyValueEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getDescription() {
+        return descriptionEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getResource() {
+        return resourceEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EReference getResource_Type() {
+        return (EReference) resourceEClass.getEStructuralFeatures().get(0);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EReference getResource_Properties() {
+        return (EReference) resourceEClass.getEStructuralFeatures().get(1);
     }
 
     /**
@@ -578,8 +627,8 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    public EClass getAvailableResouce() {
-        return availableResouceEClass;
+    public EClass getLinuxOpertingSystem() {
+        return linuxOpertingSystemEClass;
     }
 
     /**
@@ -587,8 +636,8 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    public EReference getAvailableResouce_List() {
-        return (EReference) availableResouceEClass.getEStructuralFeatures().get(0);
+    public EClass getMacOSOpertingSystem() {
+        return macOSOpertingSystemEClass;
     }
 
     /**
@@ -596,8 +645,8 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    public EReference getAvailableResouce_Property() {
-        return (EReference) availableResouceEClass.getEStructuralFeatures().get(1);
+    public EClass getProcessorResouceType() {
+        return processorResouceTypeEClass;
     }
 
     /**
@@ -605,8 +654,8 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    public EClass getOpertingSystemType() {
-        return opertingSystemTypeEClass;
+    public EClass getResourceType() {
+        return resourceTypeEClass;
     }
 
     /**
@@ -614,26 +663,8 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    public EClass getLinuxOpertingSystemType() {
-        return linuxOpertingSystemTypeEClass;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public EClass getMacOSOpertingSystemType() {
-        return macOSOpertingSystemTypeEClass;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public EClass getProcessorArchitectureType() {
-        return processorArchitectureTypeEClass;
+    public EAttribute getResourceType_Name() {
+        return (EAttribute) resourceTypeEClass.getEStructuralFeatures().get(0);
     }
 
     /**
@@ -650,8 +681,8 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    public EClass getX86ProcessorArchitecture() {
-        return x86ProcessorArchitectureEClass;
+    public EAttribute getProcessorArchitectureValue_Value() {
+        return (EAttribute) processorArchitectureValueEClass.getEStructuralFeatures().get(0);
     }
 
     /**
@@ -659,8 +690,8 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    public EClass getArm64ProcessorArchitecture() {
-        return arm64ProcessorArchitectureEClass;
+    public EClass getLinuxDistributionValue() {
+        return linuxDistributionValueEClass;
     }
 
     /**
@@ -668,8 +699,8 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    public EClass getAbstractImplementation() {
-        return abstractImplementationEClass;
+    public EAttribute getLinuxDistributionValue_Value() {
+        return (EAttribute) linuxDistributionValueEClass.getEStructuralFeatures().get(0);
     }
 
     /**
@@ -677,8 +708,17 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    public EClass getAbstractComputationAssignmentTarget() {
-        return abstractComputationAssignmentTargetEClass;
+    public EClass getUbuntuVersionValue() {
+        return ubuntuVersionValueEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getUbuntuVersionValue_Value() {
+        return (EAttribute) ubuntuVersionValueEClass.getEStructuralFeatures().get(0);
     }
 
     /**
@@ -902,8 +942,8 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    public EClass getResourceType() {
-        return resourceTypeEClass;
+    public EClass getPropertyValueInt() {
+        return propertyValueIntEClass;
     }
 
     /**
@@ -911,8 +951,98 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    public EAttribute getResourceType_Name() {
-        return (EAttribute) resourceTypeEClass.getEStructuralFeatures().get(0);
+    public EAttribute getPropertyValueInt_Value() {
+        return (EAttribute) propertyValueIntEClass.getEStructuralFeatures().get(0);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getPropertyValueDouble() {
+        return propertyValueDoubleEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getPropertyValueDouble_Value() {
+        return (EAttribute) propertyValueDoubleEClass.getEStructuralFeatures().get(0);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getPropertyValueString() {
+        return propertyValueStringEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getPropertyValueString_Value() {
+        return (EAttribute) propertyValueStringEClass.getEStructuralFeatures().get(0);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getContainerRuntime() {
+        return containerRuntimeEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getOpertingSystemName() {
+        return opertingSystemNameEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EEnum getUbuntuVersion() {
+        return ubuntuVersionEEnum;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EEnum getLinuxDistribution() {
+        return linuxDistributionEEnum;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EEnum getRunTimeType() {
+        return runTimeTypeEEnum;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EEnum getProcessorArchitectureType() {
+        return processorArchitectureTypeEEnum;
     }
 
     /**
@@ -944,31 +1074,32 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
         isCreated = true;
 
         // Create classes and their features
-        descriptionEClass = createEClass(DESCRIPTION);
-
-        propertyValueEClass = createEClass(PROPERTY_VALUE);
-
-        propertyValueIntEClass = createEClass(PROPERTY_VALUE_INT);
-        createEAttribute(propertyValueIntEClass, PROPERTY_VALUE_INT__VALUE);
-
-        propertyValueDoubleEClass = createEClass(PROPERTY_VALUE_DOUBLE);
-        createEAttribute(propertyValueDoubleEClass, PROPERTY_VALUE_DOUBLE__VALUE);
-
-        propertyValueStringEClass = createEClass(PROPERTY_VALUE_STRING);
-        createEAttribute(propertyValueStringEClass, PROPERTY_VALUE_STRING__VALUE);
-
-        propertyTypeEClass = createEClass(PROPERTY_TYPE);
-        createEAttribute(propertyTypeEClass, PROPERTY_TYPE__TYPE);
-
         abstractPropertyEClass = createEClass(ABSTRACT_PROPERTY);
         createEAttribute(abstractPropertyEClass, ABSTRACT_PROPERTY__NAME);
         createEAttribute(abstractPropertyEClass, ABSTRACT_PROPERTY__DESCRIPTION);
 
         abstractResouceTypeEClass = createEClass(ABSTRACT_RESOUCE_TYPE);
 
-        processorArchitectureEClass = createEClass(PROCESSOR_ARCHITECTURE);
-
         abstractCommunicationTypeEClass = createEClass(ABSTRACT_COMMUNICATION_TYPE);
+
+        abstractImplementationEClass = createEClass(ABSTRACT_IMPLEMENTATION);
+
+        abstractComputationAssignmentTargetEClass = createEClass(ABSTRACT_COMPUTATION_ASSIGNMENT_TARGET);
+
+        abstractResourceEClass = createEClass(ABSTRACT_RESOURCE);
+        createEAttribute(abstractResourceEClass, ABSTRACT_RESOURCE__NAME);
+
+        abstractRuntimeEnviromentEClass = createEClass(ABSTRACT_RUNTIME_ENVIROMENT);
+
+        opertingSystemResouceTypeEClass = createEClass(OPERTING_SYSTEM_RESOUCE_TYPE);
+
+        propertyValueEClass = createEClass(PROPERTY_VALUE);
+
+        descriptionEClass = createEClass(DESCRIPTION);
+
+        resourceEClass = createEClass(RESOURCE);
+        createEReference(resourceEClass, RESOURCE__TYPE);
+        createEReference(resourceEClass, RESOURCE__PROPERTIES);
 
         communicationTypeEClass = createEClass(COMMUNICATION_TYPE);
         createEAttribute(communicationTypeEClass, COMMUNICATION_TYPE__NAME);
@@ -979,27 +1110,23 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 
         wlanCommunicationTypeEClass = createEClass(WLAN_COMMUNICATION_TYPE);
 
-        availableResouceEClass = createEClass(AVAILABLE_RESOUCE);
-        createEReference(availableResouceEClass, AVAILABLE_RESOUCE__LIST);
-        createEReference(availableResouceEClass, AVAILABLE_RESOUCE__PROPERTY);
+        linuxOpertingSystemEClass = createEClass(LINUX_OPERTING_SYSTEM);
 
-        opertingSystemTypeEClass = createEClass(OPERTING_SYSTEM_TYPE);
+        macOSOpertingSystemEClass = createEClass(MAC_OS_OPERTING_SYSTEM);
 
-        linuxOpertingSystemTypeEClass = createEClass(LINUX_OPERTING_SYSTEM_TYPE);
+        processorResouceTypeEClass = createEClass(PROCESSOR_RESOUCE_TYPE);
 
-        macOSOpertingSystemTypeEClass = createEClass(MAC_OS_OPERTING_SYSTEM_TYPE);
-
-        processorArchitectureTypeEClass = createEClass(PROCESSOR_ARCHITECTURE_TYPE);
+        resourceTypeEClass = createEClass(RESOURCE_TYPE);
+        createEAttribute(resourceTypeEClass, RESOURCE_TYPE__NAME);
 
         processorArchitectureValueEClass = createEClass(PROCESSOR_ARCHITECTURE_VALUE);
+        createEAttribute(processorArchitectureValueEClass, PROCESSOR_ARCHITECTURE_VALUE__VALUE);
 
-        x86ProcessorArchitectureEClass = createEClass(X86_PROCESSOR_ARCHITECTURE);
+        linuxDistributionValueEClass = createEClass(LINUX_DISTRIBUTION_VALUE);
+        createEAttribute(linuxDistributionValueEClass, LINUX_DISTRIBUTION_VALUE__VALUE);
 
-        arm64ProcessorArchitectureEClass = createEClass(ARM64_PROCESSOR_ARCHITECTURE);
-
-        abstractImplementationEClass = createEClass(ABSTRACT_IMPLEMENTATION);
-
-        abstractComputationAssignmentTargetEClass = createEClass(ABSTRACT_COMPUTATION_ASSIGNMENT_TARGET);
+        ubuntuVersionValueEClass = createEClass(UBUNTU_VERSION_VALUE);
+        createEAttribute(ubuntuVersionValueEClass, UBUNTU_VERSION_VALUE__VALUE);
 
         propertyKindEClass = createEClass(PROPERTY_KIND);
 
@@ -1037,8 +1164,24 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
         createEReference(propertyEClass, PROPERTY__KIND);
         createEReference(propertyEClass, PROPERTY__VALUE);
 
-        resourceTypeEClass = createEClass(RESOURCE_TYPE);
-        createEAttribute(resourceTypeEClass, RESOURCE_TYPE__NAME);
+        propertyValueIntEClass = createEClass(PROPERTY_VALUE_INT);
+        createEAttribute(propertyValueIntEClass, PROPERTY_VALUE_INT__VALUE);
+
+        propertyValueDoubleEClass = createEClass(PROPERTY_VALUE_DOUBLE);
+        createEAttribute(propertyValueDoubleEClass, PROPERTY_VALUE_DOUBLE__VALUE);
+
+        propertyValueStringEClass = createEClass(PROPERTY_VALUE_STRING);
+        createEAttribute(propertyValueStringEClass, PROPERTY_VALUE_STRING__VALUE);
+
+        containerRuntimeEClass = createEClass(CONTAINER_RUNTIME);
+
+        opertingSystemNameEClass = createEClass(OPERTING_SYSTEM_NAME);
+
+        // Create enums
+        ubuntuVersionEEnum = createEEnum(UBUNTU_VERSION);
+        linuxDistributionEEnum = createEEnum(LINUX_DISTRIBUTION);
+        runTimeTypeEEnum = createEEnum(RUN_TIME_TYPE);
+        processorArchitectureTypeEEnum = createEEnum(PROCESSOR_ARCHITECTURE_TYPE);
     }
 
     /**
@@ -1074,21 +1217,19 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
         // Set bounds for type parameters
 
         // Add supertypes to classes
-        propertyValueIntEClass.getESuperTypes().add(this.getPropertyValue());
-        propertyValueDoubleEClass.getESuperTypes().add(this.getPropertyValue());
-        propertyValueStringEClass.getESuperTypes().add(this.getPropertyValue());
-        processorArchitectureEClass.getESuperTypes().add(this.getAbstractResouceType());
+        resourceEClass.getESuperTypes().add(this.getAbstractResource());
         communicationTypeEClass.getESuperTypes().add(this.getAbstractCommunicationType());
         networkCommunicationTypeEClass.getESuperTypes().add(this.getAbstractCommunicationType());
         ethernetCommunicationTypeEClass.getESuperTypes().add(this.getNetworkCommunicationType());
         wlanCommunicationTypeEClass.getESuperTypes().add(this.getNetworkCommunicationType());
-        opertingSystemTypeEClass.getESuperTypes().add(this.getAbstractResouceType());
-        linuxOpertingSystemTypeEClass.getESuperTypes().add(this.getOpertingSystemType());
-        macOSOpertingSystemTypeEClass.getESuperTypes().add(this.getOpertingSystemType());
-        processorArchitectureTypeEClass.getESuperTypes().add(this.getAbstractResouceType());
+        linuxOpertingSystemEClass.getESuperTypes().add(this.getOpertingSystemResouceType());
+        macOSOpertingSystemEClass.getESuperTypes().add(this.getOpertingSystemResouceType());
+        processorResouceTypeEClass.getESuperTypes().add(this.getAbstractResouceType());
+        resourceTypeEClass.getESuperTypes().add(this.getAbstractResouceType());
         processorArchitectureValueEClass.getESuperTypes().add(this.getPropertyValue());
-        x86ProcessorArchitectureEClass.getESuperTypes().add(this.getProcessorArchitectureValue());
-        arm64ProcessorArchitectureEClass.getESuperTypes().add(this.getProcessorArchitectureValue());
+        linuxDistributionValueEClass.getESuperTypes().add(this.getPropertyValue());
+        linuxDistributionValueEClass.getESuperTypes().add(this.getOpertingSystemName());
+        ubuntuVersionValueEClass.getESuperTypes().add(this.getPropertyValue());
         attributeKindEClass.getESuperTypes().add(this.getPropertyKind());
         maximumKindEClass.getESuperTypes().add(this.getPropertyKind());
         minimumKindEClass.getESuperTypes().add(this.getPropertyKind());
@@ -1100,38 +1241,12 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
         propertySelectionEClass.getESuperTypes().add(this.getAbstractProperty());
         propertyRangeEClass.getESuperTypes().add(this.getAbstractProperty());
         propertyEClass.getESuperTypes().add(this.getAbstractProperty());
-        resourceTypeEClass.getESuperTypes().add(this.getAbstractResouceType());
+        propertyValueIntEClass.getESuperTypes().add(this.getPropertyValue());
+        propertyValueDoubleEClass.getESuperTypes().add(this.getPropertyValue());
+        propertyValueStringEClass.getESuperTypes().add(this.getPropertyValue());
+        containerRuntimeEClass.getESuperTypes().add(this.getAbstractRuntimeEnviroment());
 
         // Initialize classes, features, and operations; add parameters
-        initEClass(descriptionEClass, Description.class, "Description", IS_ABSTRACT, !IS_INTERFACE,
-                IS_GENERATED_INSTANCE_CLASS);
-
-        initEClass(propertyValueEClass, PropertyValue.class, "PropertyValue", IS_ABSTRACT, !IS_INTERFACE,
-                IS_GENERATED_INSTANCE_CLASS);
-
-        initEClass(propertyValueIntEClass, PropertyValueInt.class, "PropertyValueInt", !IS_ABSTRACT, !IS_INTERFACE,
-                IS_GENERATED_INSTANCE_CLASS);
-        initEAttribute(getPropertyValueInt_Value(), theXMLTypePackage.getInt(), "value", null, 1, 1,
-                PropertyValueInt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-                !IS_DERIVED, IS_ORDERED);
-
-        initEClass(propertyValueDoubleEClass, PropertyValueDouble.class, "PropertyValueDouble", !IS_ABSTRACT,
-                !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEAttribute(getPropertyValueDouble_Value(), theXMLTypePackage.getDouble(), "value", null, 1, 1,
-                PropertyValueDouble.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
-                IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-        initEClass(propertyValueStringEClass, PropertyValueString.class, "PropertyValueString", !IS_ABSTRACT,
-                !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEAttribute(getPropertyValueString_Value(), ecorePackage.getEString(), "value", null, 1, 1,
-                PropertyValueString.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
-                IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-        initEClass(propertyTypeEClass, PropertyType.class, "PropertyType", IS_ABSTRACT, !IS_INTERFACE,
-                IS_GENERATED_INSTANCE_CLASS);
-        initEAttribute(getPropertyType_Type(), ecorePackage.getEString(), "type", null, 0, 1, PropertyType.class,
-                !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
         initEClass(abstractPropertyEClass, AbstractProperty.class, "AbstractProperty", IS_ABSTRACT, !IS_INTERFACE,
                 IS_GENERATED_INSTANCE_CLASS);
         initEAttribute(getAbstractProperty_Name(), ecorePackage.getEString(), "name", null, 1, 1,
@@ -1144,11 +1259,41 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
         initEClass(abstractResouceTypeEClass, AbstractResouceType.class, "AbstractResouceType", IS_ABSTRACT,
                 !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-        initEClass(processorArchitectureEClass, ProcessorArchitecture.class, "ProcessorArchitecture", IS_ABSTRACT,
-                !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
         initEClass(abstractCommunicationTypeEClass, AbstractCommunicationType.class, "AbstractCommunicationType",
                 IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+        initEClass(abstractImplementationEClass, AbstractImplementation.class, "AbstractImplementation", IS_ABSTRACT,
+                !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+        initEClass(abstractComputationAssignmentTargetEClass, AbstractComputationAssignmentTarget.class,
+                "AbstractComputationAssignmentTarget", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+        initEClass(abstractResourceEClass, AbstractResource.class, "AbstractResource", IS_ABSTRACT, !IS_INTERFACE,
+                IS_GENERATED_INSTANCE_CLASS);
+        initEAttribute(getAbstractResource_Name(), ecorePackage.getEString(), "name", null, 1, 1,
+                AbstractResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+                !IS_DERIVED, IS_ORDERED);
+
+        initEClass(abstractRuntimeEnviromentEClass, AbstractRuntimeEnviroment.class, "AbstractRuntimeEnviroment",
+                IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+        initEClass(opertingSystemResouceTypeEClass, OpertingSystemResouceType.class, "OpertingSystemResouceType",
+                IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+        initEClass(propertyValueEClass, PropertyValue.class, "PropertyValue", IS_ABSTRACT, !IS_INTERFACE,
+                IS_GENERATED_INSTANCE_CLASS);
+
+        initEClass(descriptionEClass, Description.class, "Description", IS_ABSTRACT, !IS_INTERFACE,
+                IS_GENERATED_INSTANCE_CLASS);
+
+        initEClass(resourceEClass, Resource.class, "Resource", !IS_ABSTRACT, !IS_INTERFACE,
+                IS_GENERATED_INSTANCE_CLASS);
+        initEReference(getResource_Type(), this.getAbstractResouceType(), null, "type", null, 1, 1, Resource.class,
+                !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+                IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEReference(getResource_Properties(), this.getAbstractProperty(), null, "properties", null, 0, -1,
+                Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+                !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(communicationTypeEClass, CommunicationType.class, "CommunicationType", !IS_ABSTRACT, !IS_INTERFACE,
                 IS_GENERATED_INSTANCE_CLASS);
@@ -1165,41 +1310,37 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
         initEClass(wlanCommunicationTypeEClass, WlanCommunicationType.class, "WlanCommunicationType", !IS_ABSTRACT,
                 !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-        initEClass(availableResouceEClass, AvailableResouce.class, "AvailableResouce", !IS_ABSTRACT, !IS_INTERFACE,
-                IS_GENERATED_INSTANCE_CLASS);
-        initEReference(getAvailableResouce_List(), this.getAbstractResouceType(), null, "list", null, 0, -1,
-                AvailableResouce.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-                !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        initEReference(getAvailableResouce_Property(), this.getAbstractProperty(), null, "property", null, 0, 1,
-                AvailableResouce.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-                !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-        initEClass(opertingSystemTypeEClass, OpertingSystemType.class, "OpertingSystemType", IS_ABSTRACT, !IS_INTERFACE,
-                IS_GENERATED_INSTANCE_CLASS);
-
-        initEClass(linuxOpertingSystemTypeEClass, LinuxOpertingSystemType.class, "LinuxOpertingSystemType",
-                !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-        initEClass(macOSOpertingSystemTypeEClass, MacOSOpertingSystemType.class, "MacOSOpertingSystemType",
-                !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-        initEClass(processorArchitectureTypeEClass, ProcessorArchitectureType.class, "ProcessorArchitectureType",
-                !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-        initEClass(processorArchitectureValueEClass, ProcessorArchitectureValue.class, "ProcessorArchitectureValue",
-                IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-        initEClass(x86ProcessorArchitectureEClass, X86ProcessorArchitecture.class, "X86ProcessorArchitecture",
-                !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-        initEClass(arm64ProcessorArchitectureEClass, Arm64ProcessorArchitecture.class, "Arm64ProcessorArchitecture",
-                !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-        initEClass(abstractImplementationEClass, AbstractImplementation.class, "AbstractImplementation", IS_ABSTRACT,
+        initEClass(linuxOpertingSystemEClass, LinuxOpertingSystem.class, "LinuxOpertingSystem", !IS_ABSTRACT,
                 !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-        initEClass(abstractComputationAssignmentTargetEClass, AbstractComputationAssignmentTarget.class,
-                "AbstractComputationAssignmentTarget", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEClass(macOSOpertingSystemEClass, MacOSOpertingSystem.class, "MacOSOpertingSystem", !IS_ABSTRACT,
+                !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+        initEClass(processorResouceTypeEClass, ProcessorResouceType.class, "ProcessorResouceType", !IS_ABSTRACT,
+                !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+        initEClass(resourceTypeEClass, ResourceType.class, "ResourceType", !IS_ABSTRACT, !IS_INTERFACE,
+                IS_GENERATED_INSTANCE_CLASS);
+        initEAttribute(getResourceType_Name(), ecorePackage.getEString(), "name", null, 0, 1, ResourceType.class,
+                !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+        initEClass(processorArchitectureValueEClass, ProcessorArchitectureValue.class, "ProcessorArchitectureValue",
+                !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEAttribute(getProcessorArchitectureValue_Value(), this.getProcessorArchitectureType(), "value", null, 1, 1,
+                ProcessorArchitectureValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+                IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+        initEClass(linuxDistributionValueEClass, LinuxDistributionValue.class, "LinuxDistributionValue", !IS_ABSTRACT,
+                !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEAttribute(getLinuxDistributionValue_Value(), this.getLinuxDistribution(), "value", null, 1, 1,
+                LinuxDistributionValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+                IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+        initEClass(ubuntuVersionValueEClass, UbuntuVersionValue.class, "UbuntuVersionValue", !IS_ABSTRACT,
+                !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEAttribute(getUbuntuVersionValue_Value(), this.getUbuntuVersion(), "value", null, 1, 1,
+                UbuntuVersionValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+                !IS_DERIVED, IS_ORDERED);
 
         initEClass(propertyKindEClass, PropertyKind.class, "PropertyKind", IS_ABSTRACT, !IS_INTERFACE,
                 IS_GENERATED_INSTANCE_CLASS);
@@ -1273,10 +1414,47 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
                 !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
                 IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-        initEClass(resourceTypeEClass, ResourceType.class, "ResourceType", !IS_ABSTRACT, !IS_INTERFACE,
+        initEClass(propertyValueIntEClass, PropertyValueInt.class, "PropertyValueInt", !IS_ABSTRACT, !IS_INTERFACE,
                 IS_GENERATED_INSTANCE_CLASS);
-        initEAttribute(getResourceType_Name(), ecorePackage.getEString(), "name", null, 0, 1, ResourceType.class,
-                !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getPropertyValueInt_Value(), theXMLTypePackage.getInt(), "value", null, 1, 1,
+                PropertyValueInt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+                !IS_DERIVED, IS_ORDERED);
+
+        initEClass(propertyValueDoubleEClass, PropertyValueDouble.class, "PropertyValueDouble", !IS_ABSTRACT,
+                !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEAttribute(getPropertyValueDouble_Value(), theXMLTypePackage.getDouble(), "value", null, 1, 1,
+                PropertyValueDouble.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+                IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+        initEClass(propertyValueStringEClass, PropertyValueString.class, "PropertyValueString", !IS_ABSTRACT,
+                !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEAttribute(getPropertyValueString_Value(), ecorePackage.getEString(), "value", null, 1, 1,
+                PropertyValueString.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+                IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+        initEClass(containerRuntimeEClass, ContainerRuntime.class, "ContainerRuntime", !IS_ABSTRACT, !IS_INTERFACE,
+                IS_GENERATED_INSTANCE_CLASS);
+
+        initEClass(opertingSystemNameEClass, OpertingSystemName.class, "OpertingSystemName", IS_ABSTRACT, !IS_INTERFACE,
+                IS_GENERATED_INSTANCE_CLASS);
+
+        // Initialize enums and add enum literals
+        initEEnum(ubuntuVersionEEnum, UbuntuVersion.class, "UbuntuVersion");
+        addEEnumLiteral(ubuntuVersionEEnum, UbuntuVersion.FOCAL);
+        addEEnumLiteral(ubuntuVersionEEnum, UbuntuVersion.JAMMY);
+
+        initEEnum(linuxDistributionEEnum, LinuxDistribution.class, "LinuxDistribution");
+        addEEnumLiteral(linuxDistributionEEnum, LinuxDistribution.UBUNTU);
+        addEEnumLiteral(linuxDistributionEEnum, LinuxDistribution.DEBIAN);
+
+        initEEnum(runTimeTypeEEnum, RunTimeType.class, "RunTimeType");
+        addEEnumLiteral(runTimeTypeEEnum, RunTimeType.CONTAINER);
+
+        initEEnum(processorArchitectureTypeEEnum, ProcessorArchitectureType.class, "ProcessorArchitectureType");
+        addEEnumLiteral(processorArchitectureTypeEEnum, ProcessorArchitectureType.X86);
+        addEEnumLiteral(processorArchitectureTypeEEnum, ProcessorArchitectureType.ARM64);
+        addEEnumLiteral(processorArchitectureTypeEEnum, ProcessorArchitectureType.ARM64V8);
+        addEEnumLiteral(processorArchitectureTypeEEnum, ProcessorArchitectureType.ARM32);
 
         // Create resource
         createResource(eNS_URI);

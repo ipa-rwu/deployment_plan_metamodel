@@ -2,25 +2,25 @@
  */
 package de.fraunhofer.ipa.deployment.util.impl;
 
-import de.fraunhofer.ipa.deployment.util.ProcessorArchitectureType;
+import de.fraunhofer.ipa.deployment.util.LinuxOpertingSystem;
 import de.fraunhofer.ipa.deployment.util.UtilPackage;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Processor Architecture Type</b></em>'.
+ * An implementation of the model object '<em><b>Linux Operting System</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class ProcessorArchitectureTypeImpl extends AbstractResouceTypeImpl implements ProcessorArchitectureType {
+public class LinuxOpertingSystemImpl extends OpertingSystemResouceTypeImpl implements LinuxOpertingSystem {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    protected ProcessorArchitectureTypeImpl() {
+    protected LinuxOpertingSystemImpl() {
         super();
     }
 
@@ -31,7 +31,7 @@ public class ProcessorArchitectureTypeImpl extends AbstractResouceTypeImpl imple
      */
     @Override
     protected EClass eStaticClass() {
-        return UtilPackage.Literals.PROCESSOR_ARCHITECTURE_TYPE;
+        return UtilPackage.Literals.LINUX_OPERTING_SYSTEM;
     }
 
-} //ProcessorArchitectureTypeImpl
+} //LinuxOpertingSystemImpl

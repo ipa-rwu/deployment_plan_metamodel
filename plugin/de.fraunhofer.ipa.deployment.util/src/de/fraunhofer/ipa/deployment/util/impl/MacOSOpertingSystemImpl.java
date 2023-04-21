@@ -2,25 +2,25 @@
  */
 package de.fraunhofer.ipa.deployment.util.impl;
 
-import de.fraunhofer.ipa.deployment.util.OpertingSystemType;
+import de.fraunhofer.ipa.deployment.util.MacOSOpertingSystem;
 import de.fraunhofer.ipa.deployment.util.UtilPackage;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Operting System Type</b></em>'.
+ * An implementation of the model object '<em><b>Mac OS Operting System</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public abstract class OpertingSystemTypeImpl extends AbstractResouceTypeImpl implements OpertingSystemType {
+public class MacOSOpertingSystemImpl extends OpertingSystemResouceTypeImpl implements MacOSOpertingSystem {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    protected OpertingSystemTypeImpl() {
+    protected MacOSOpertingSystemImpl() {
         super();
     }
 
@@ -31,7 +31,7 @@ public abstract class OpertingSystemTypeImpl extends AbstractResouceTypeImpl imp
      */
     @Override
     protected EClass eStaticClass() {
-        return UtilPackage.Literals.OPERTING_SYSTEM_TYPE;
+        return UtilPackage.Literals.MAC_OS_OPERTING_SYSTEM;
     }
 
-} //OpertingSystemTypeImpl
+} //MacOSOpertingSystemImpl
