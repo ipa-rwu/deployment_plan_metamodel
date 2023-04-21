@@ -9,46 +9,63 @@
   <foreignModel>util.ecore</foreignModel>
   <genPackages prefix="Util" basePackage="de.fraunhofer.ipa.deployment" disposableProviderFactory="true"
       ecorePackage="util.ecore#/">
-    <genClasses image="false" ecoreClass="util.ecore#//Description"/>
-    <genClasses image="false" ecoreClass="util.ecore#//PropertyValue"/>
-    <genClasses ecoreClass="util.ecore#//PropertyValueInt">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute util.ecore#//PropertyValueInt/value"/>
-    </genClasses>
-    <genClasses ecoreClass="util.ecore#//PropertyValueDouble">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute util.ecore#//PropertyValueDouble/value"/>
-    </genClasses>
-    <genClasses ecoreClass="util.ecore#//PropertyValueString">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute util.ecore#//PropertyValueString/value"/>
-    </genClasses>
-    <genClasses image="false" ecoreClass="util.ecore#//PropertyType">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute util.ecore#//PropertyType/type"/>
-    </genClasses>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="util.ecore#//UbuntuVersion">
+      <genEnumLiterals ecoreEnumLiteral="util.ecore#//UbuntuVersion/focal"/>
+      <genEnumLiterals ecoreEnumLiteral="util.ecore#//UbuntuVersion/jammy"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="util.ecore#//LinuxDistribution">
+      <genEnumLiterals ecoreEnumLiteral="util.ecore#//LinuxDistribution/ubuntu"/>
+      <genEnumLiterals ecoreEnumLiteral="util.ecore#//LinuxDistribution/debian"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="util.ecore#//RunTimeType">
+      <genEnumLiterals ecoreEnumLiteral="util.ecore#//RunTimeType/container"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="util.ecore#//ProcessorArchitectureType">
+      <genEnumLiterals ecoreEnumLiteral="util.ecore#//ProcessorArchitectureType/x86"/>
+      <genEnumLiterals ecoreEnumLiteral="util.ecore#//ProcessorArchitectureType/arm64"/>
+      <genEnumLiterals ecoreEnumLiteral="util.ecore#//ProcessorArchitectureType/arm64v8"/>
+      <genEnumLiterals ecoreEnumLiteral="util.ecore#//ProcessorArchitectureType/arm32"/>
+    </genEnums>
     <genClasses image="false" ecoreClass="util.ecore#//AbstractProperty">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute util.ecore#//AbstractProperty/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute util.ecore#//AbstractProperty/description"/>
     </genClasses>
     <genClasses image="false" ecoreClass="util.ecore#//AbstractResouceType"/>
-    <genClasses image="false" ecoreClass="util.ecore#//ProcessorArchitecture"/>
     <genClasses image="false" ecoreClass="util.ecore#//AbstractCommunicationType"/>
+    <genClasses image="false" ecoreClass="util.ecore#//AbstractImplementation"/>
+    <genClasses image="false" ecoreClass="util.ecore#//AbstractComputationAssignmentTarget"/>
+    <genClasses image="false" ecoreClass="util.ecore#//AbstractResource">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute util.ecore#//AbstractResource/name"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="util.ecore#//AbstractRuntimeEnviroment"/>
+    <genClasses image="false" ecoreClass="util.ecore#//OpertingSystemResouceType"/>
+    <genClasses image="false" ecoreClass="util.ecore#//PropertyValue"/>
+    <genClasses image="false" ecoreClass="util.ecore#//Description"/>
+    <genClasses ecoreClass="util.ecore#//Resource">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference util.ecore#//Resource/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference util.ecore#//Resource/properties"/>
+    </genClasses>
     <genClasses ecoreClass="util.ecore#//CommunicationType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute util.ecore#//CommunicationType/name"/>
     </genClasses>
     <genClasses image="false" ecoreClass="util.ecore#//NetworkCommunicationType"/>
     <genClasses ecoreClass="util.ecore#//EthernetCommunicationType"/>
     <genClasses ecoreClass="util.ecore#//WlanCommunicationType"/>
-    <genClasses ecoreClass="util.ecore#//AvailableResouce">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference util.ecore#//AvailableResouce/list"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference util.ecore#//AvailableResouce/property"/>
+    <genClasses ecoreClass="util.ecore#//LinuxOpertingSystem"/>
+    <genClasses ecoreClass="util.ecore#//MacOSOpertingSystem"/>
+    <genClasses ecoreClass="util.ecore#//ProcessorResouceType"/>
+    <genClasses ecoreClass="util.ecore#//ResourceType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute util.ecore#//ResourceType/name"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="util.ecore#//OpertingSystemType"/>
-    <genClasses ecoreClass="util.ecore#//LinuxOpertingSystemType"/>
-    <genClasses ecoreClass="util.ecore#//MacOSOpertingSystemType"/>
-    <genClasses ecoreClass="util.ecore#//ProcessorArchitectureType"/>
-    <genClasses image="false" ecoreClass="util.ecore#//ProcessorArchitectureValue"/>
-    <genClasses ecoreClass="util.ecore#//X86ProcessorArchitecture"/>
-    <genClasses ecoreClass="util.ecore#//Arm64ProcessorArchitecture"/>
-    <genClasses image="false" ecoreClass="util.ecore#//AbstractImplementation"/>
-    <genClasses image="false" ecoreClass="util.ecore#//AbstractComputationAssignmentTarget"/>
+    <genClasses image="false" ecoreClass="util.ecore#//ProcessorArchitectureValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute util.ecore#//ProcessorArchitectureValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="util.ecore#//LinuxDistributionValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute util.ecore#//LinuxDistributionValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="util.ecore#//UbuntuVersionValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute util.ecore#//UbuntuVersionValue/value"/>
+    </genClasses>
     <genClasses image="false" ecoreClass="util.ecore#//PropertyKind"/>
     <genClasses ecoreClass="util.ecore#//AttributeKind"/>
     <genClasses ecoreClass="util.ecore#//MaximumKind"/>
@@ -79,8 +96,16 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference util.ecore#//Property/kind"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference util.ecore#//Property/value"/>
     </genClasses>
-    <genClasses ecoreClass="util.ecore#//ResourceType">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute util.ecore#//ResourceType/name"/>
+    <genClasses ecoreClass="util.ecore#//PropertyValueInt">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute util.ecore#//PropertyValueInt/value"/>
     </genClasses>
+    <genClasses ecoreClass="util.ecore#//PropertyValueDouble">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute util.ecore#//PropertyValueDouble/value"/>
+    </genClasses>
+    <genClasses ecoreClass="util.ecore#//PropertyValueString">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute util.ecore#//PropertyValueString/value"/>
+    </genClasses>
+    <genClasses ecoreClass="util.ecore#//ContainerRuntime"/>
+    <genClasses ecoreClass="util.ecore#//OpertingSystemName"/>
   </genPackages>
 </genmodel:GenModel>

@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="util" nsURI="http://www.ipa.fraunhofer.de/Util" nsPrefix="Util">
-  <eClassifiers xsi:type="ecore:EClass" name="Description" abstract="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="PropertyValue" abstract="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="PropertyValueInt" eSuperTypes="#//PropertyValue">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PropertyValueDouble" eSuperTypes="#//PropertyValue">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Double"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PropertyValueString" eSuperTypes="#//PropertyValue">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PropertyType" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AbstractProperty" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AbstractResouceType" abstract="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ProcessorArchitecture" abstract="true"
-      eSuperTypes="#//AbstractResouceType"/>
   <eClassifiers xsi:type="ecore:EClass" name="AbstractCommunicationType" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractImplementation" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractComputationAssignmentTarget"
+      abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractResource" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractRuntimeEnviroment" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OpertingSystemResouceType" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PropertyValue" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Description" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Resource" eSuperTypes="#//AbstractResource">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="#//AbstractResouceType"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
+        eType="#//AbstractProperty" containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CommunicationType" eSuperTypes="#//AbstractCommunicationType">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         defaultValueLiteral="Ethernet"/>
@@ -31,23 +31,21 @@
       eSuperTypes="#//AbstractCommunicationType"/>
   <eClassifiers xsi:type="ecore:EClass" name="EthernetCommunicationType" eSuperTypes="#//NetworkCommunicationType"/>
   <eClassifiers xsi:type="ecore:EClass" name="WlanCommunicationType" eSuperTypes="#//NetworkCommunicationType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="AvailableResouce">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="list" upperBound="-1" eType="#//AbstractResouceType"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="property" eType="#//AbstractProperty"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LinuxOpertingSystem" eSuperTypes="#//OpertingSystemResouceType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MacOSOpertingSystem" eSuperTypes="#//OpertingSystemResouceType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ProcessorResouceType" eSuperTypes="#//AbstractResouceType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ResourceType" eSuperTypes="#//AbstractResouceType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="OpertingSystemType" abstract="true"
-      eSuperTypes="#//AbstractResouceType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="LinuxOpertingSystemType" eSuperTypes="#//OpertingSystemType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="MacOSOpertingSystemType" eSuperTypes="#//OpertingSystemType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ProcessorArchitectureType" eSuperTypes="#//AbstractResouceType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ProcessorArchitectureValue" abstract="true"
-      eSuperTypes="#//PropertyValue"/>
-  <eClassifiers xsi:type="ecore:EClass" name="X86ProcessorArchitecture" eSuperTypes="#//ProcessorArchitectureValue"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Arm64ProcessorArchitecture" eSuperTypes="#//ProcessorArchitectureValue"/>
-  <eClassifiers xsi:type="ecore:EClass" name="AbstractImplementation" abstract="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="AbstractComputationAssignmentTarget"
-      abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ProcessorArchitectureValue" eSuperTypes="#//PropertyValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="#//ProcessorArchitectureType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LinuxDistributionValue" eSuperTypes="#//PropertyValue #//OpertingSystemName">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="#//LinuxDistribution"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UbuntuVersionValue" eSuperTypes="#//PropertyValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="#//UbuntuVersion"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PropertyKind" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="AttributeKind" eSuperTypes="#//PropertyKind"/>
   <eClassifiers xsi:type="ecore:EClass" name="MaximumKind" eSuperTypes="#//PropertyKind"/>
@@ -90,7 +88,32 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="value" upperBound="2" eType="#//PropertyValue"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ResourceType" eSuperTypes="#//AbstractResouceType">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PropertyValueInt" eSuperTypes="#//PropertyValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PropertyValueDouble" eSuperTypes="#//PropertyValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Double"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PropertyValueString" eSuperTypes="#//PropertyValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ContainerRuntime" eSuperTypes="#//AbstractRuntimeEnviroment"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="UbuntuVersion">
+    <eLiterals name="focal" value="18"/>
+    <eLiterals name="jammy" value="20"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="LinuxDistribution">
+    <eLiterals name="ubuntu"/>
+    <eLiterals name="debian" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="RunTimeType">
+    <eLiterals name="container"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ProcessorArchitectureType">
+    <eLiterals name="x86"/>
+    <eLiterals name="arm64"/>
+    <eLiterals name="arm64v8"/>
+    <eLiterals name="arm32"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OpertingSystemName" abstract="true"/>
 </ecore:EPackage>
