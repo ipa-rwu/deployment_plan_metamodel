@@ -2,25 +2,26 @@
  */
 package device.impl;
 
-import device.AttributeKind;
+import de.fraunhofer.ipa.deployment.util.impl.PropertyAttributeImpl;
+import device.CoreProcessorProperty;
 import device.DevicePackage;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Attribute Kind</b></em>'.
+ * An implementation of the model object '<em><b>Core Processor Property</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class AttributeKindImpl extends CapabilityKindImpl implements AttributeKind {
+public class CoreProcessorPropertyImpl extends PropertyAttributeImpl implements CoreProcessorProperty {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    protected AttributeKindImpl() {
+    protected CoreProcessorPropertyImpl() {
         super();
     }
 
@@ -31,7 +32,7 @@ public class AttributeKindImpl extends CapabilityKindImpl implements AttributeKi
      */
     @Override
     protected EClass eStaticClass() {
-        return DevicePackage.Literals.ATTRIBUTE_KIND;
+        return DevicePackage.Literals.CORE_PROCESSOR_PROPERTY;
     }
 
-} //AttributeKindImpl
+} //CoreProcessorPropertyImpl

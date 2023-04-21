@@ -2,27 +2,26 @@
  */
 package device.impl;
 
-import device.AbstractDeviceType;
+import device.AbstracProcessorProperty;
 import device.DevicePackage;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Abstract Device Type</b></em>'.
+ * An implementation of the model object '<em><b>Abstrac Processor Property</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public abstract class AbstractDeviceTypeImpl extends MinimalEObjectImpl.Container implements AbstractDeviceType {
+public abstract class AbstracProcessorPropertyImpl extends MinimalEObjectImpl.Container implements AbstracProcessorProperty {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    protected AbstractDeviceTypeImpl() {
+    protected AbstracProcessorPropertyImpl() {
         super();
     }
 
@@ -33,7 +32,7 @@ public abstract class AbstractDeviceTypeImpl extends MinimalEObjectImpl.Containe
      */
     @Override
     protected EClass eStaticClass() {
-        return DevicePackage.Literals.ABSTRACT_DEVICE_TYPE;
+        return DevicePackage.Literals.ABSTRAC_PROCESSOR_PROPERTY;
     }
 
-} //AbstractDeviceTypeImpl
+} //AbstracProcessorPropertyImpl

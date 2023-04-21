@@ -58,20 +58,21 @@ public class DeviceFactoryImpl extends EFactoryImpl implements DeviceFactory {
         switch (eClass.getClassifierID()) {
             case DevicePackage.DEVICE_SET: return createDeviceSet();
             case DevicePackage.DEVICE_TYPE: return createDeviceType();
-            case DevicePackage.DEVICE_PROPERTY: return createDeviceProperty();
+            case DevicePackage.DEVICE_RESOURCE: return createDeviceResource();
             case DevicePackage.COMMUNICATION_CONNECTION: return createCommunicationConnection();
-            case DevicePackage.ATTRIBUTE_KIND: return createAttributeKind();
-            case DevicePackage.MAXIMUM_KIND: return createMaximumKind();
-            case DevicePackage.MINIMUM_KIND: return createMinimumKind();
-            case DevicePackage.SELECTION_KIND: return createSelectionKind();
-            case DevicePackage.RANGE_KIND: return createRangeKind();
             case DevicePackage.CONNECTION_PROPERTY: return createConnectionProperty();
             case DevicePackage.COMPUTATION_DEVICE_TYPE: return createComputationDeviceType();
             case DevicePackage.NETWORK_CONNECTION: return createNetworkConnection();
             case DevicePackage.INTERFACE_NETWORK_PROPERTY: return createInterfaceNetworkProperty();
             case DevicePackage.ADDRESS_NETWORK_PROPERTY: return createAddressNetworkProperty();
             case DevicePackage.MAC_NETWORK_PROPERTY: return createMacNetworkProperty();
-            case DevicePackage.DEVICE_TYPE_REF: return createDeviceTypeRef();
+            case DevicePackage.CONTAINER: return createContainer();
+            case DevicePackage.OPERATING_SYSTEM_RESOUCE: return createOperatingSystemResouce();
+            case DevicePackage.NAME_OPERATING_SYSTEM_PROPERTY: return createNameOperatingSystemProperty();
+            case DevicePackage.VERSION_OPERATING_SYSTEM_PROPERTY: return createVersionOperatingSystemProperty();
+            case DevicePackage.PROCESSOR_RESOUCE: return createProcessorResouce();
+            case DevicePackage.ARCHITECTURE_PROCESSOR_PROPERTY: return createArchitectureProcessorProperty();
+            case DevicePackage.CORE_PROCESSOR_PROPERTY: return createCoreProcessorProperty();
             default:
                 throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
         }
@@ -102,9 +103,9 @@ public class DeviceFactoryImpl extends EFactoryImpl implements DeviceFactory {
      * <!-- end-user-doc -->
      * @generated
      */
-    public DeviceProperty createDeviceProperty() {
-        DevicePropertyImpl deviceProperty = new DevicePropertyImpl();
-        return deviceProperty;
+    public DeviceResource createDeviceResource() {
+        DeviceResourceImpl deviceResource = new DeviceResourceImpl();
+        return deviceResource;
     }
 
     /**
@@ -115,56 +116,6 @@ public class DeviceFactoryImpl extends EFactoryImpl implements DeviceFactory {
     public CommunicationConnection createCommunicationConnection() {
         CommunicationConnectionImpl communicationConnection = new CommunicationConnectionImpl();
         return communicationConnection;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public AttributeKind createAttributeKind() {
-        AttributeKindImpl attributeKind = new AttributeKindImpl();
-        return attributeKind;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public MaximumKind createMaximumKind() {
-        MaximumKindImpl maximumKind = new MaximumKindImpl();
-        return maximumKind;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public MinimumKind createMinimumKind() {
-        MinimumKindImpl minimumKind = new MinimumKindImpl();
-        return minimumKind;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public SelectionKind createSelectionKind() {
-        SelectionKindImpl selectionKind = new SelectionKindImpl();
-        return selectionKind;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public RangeKind createRangeKind() {
-        RangeKindImpl rangeKind = new RangeKindImpl();
-        return rangeKind;
     }
 
     /**
@@ -232,12 +183,72 @@ public class DeviceFactoryImpl extends EFactoryImpl implements DeviceFactory {
      * <!-- end-user-doc -->
      * @generated
      */
-    public DeviceTypeRef createDeviceTypeRef() {
-        DeviceTypeRefImpl deviceTypeRef = new DeviceTypeRefImpl();
-        return deviceTypeRef;
+    public device.Container createContainer() {
+        ContainerImpl container = new ContainerImpl();
+        return container;
     }
 
-                /**
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public OperatingSystemResouce createOperatingSystemResouce() {
+        OperatingSystemResouceImpl operatingSystemResouce = new OperatingSystemResouceImpl();
+        return operatingSystemResouce;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NameOperatingSystemProperty createNameOperatingSystemProperty() {
+        NameOperatingSystemPropertyImpl nameOperatingSystemProperty = new NameOperatingSystemPropertyImpl();
+        return nameOperatingSystemProperty;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public VersionOperatingSystemProperty createVersionOperatingSystemProperty() {
+        VersionOperatingSystemPropertyImpl versionOperatingSystemProperty = new VersionOperatingSystemPropertyImpl();
+        return versionOperatingSystemProperty;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public ProcessorResouce createProcessorResouce() {
+        ProcessorResouceImpl processorResouce = new ProcessorResouceImpl();
+        return processorResouce;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public ArchitectureProcessorProperty createArchitectureProcessorProperty() {
+        ArchitectureProcessorPropertyImpl architectureProcessorProperty = new ArchitectureProcessorPropertyImpl();
+        return architectureProcessorProperty;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public CoreProcessorProperty createCoreProcessorProperty() {
+        CoreProcessorPropertyImpl coreProcessorProperty = new CoreProcessorPropertyImpl();
+        return coreProcessorProperty;
+    }
+
+    /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated

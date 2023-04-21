@@ -2,27 +2,25 @@
  */
 package device.impl;
 
-import device.AbstractDeviceConfig;
 import device.DevicePackage;
+import device.NameOperatingSystemProperty;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Abstract Device Config</b></em>'.
+ * An implementation of the model object '<em><b>Name Operating System Property</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public abstract class AbstractDeviceConfigImpl extends MinimalEObjectImpl.Container implements AbstractDeviceConfig {
+public class NameOperatingSystemPropertyImpl extends AbstractOperatingSystemPropertyImpl implements NameOperatingSystemProperty {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    protected AbstractDeviceConfigImpl() {
+    protected NameOperatingSystemPropertyImpl() {
         super();
     }
 
@@ -33,7 +31,7 @@ public abstract class AbstractDeviceConfigImpl extends MinimalEObjectImpl.Contai
      */
     @Override
     protected EClass eStaticClass() {
-        return DevicePackage.Literals.ABSTRACT_DEVICE_CONFIG;
+        return DevicePackage.Literals.NAME_OPERATING_SYSTEM_PROPERTY;
     }
 
-} //AbstractDeviceConfigImpl
+} //NameOperatingSystemPropertyImpl

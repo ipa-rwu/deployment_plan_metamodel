@@ -104,26 +104,6 @@ public class TargetEnvironmentFactoryImpl extends EFactoryImpl implements Target
      * <!-- end-user-doc -->
      * @generated
      */
-    public DeviceInstance createDeviceInstance() {
-        DeviceInstanceImpl deviceInstance = new DeviceInstanceImpl();
-        return deviceInstance;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public ConfigDeviceProperty createConfigDeviceProperty() {
-        ConfigDevicePropertyImpl configDeviceProperty = new ConfigDevicePropertyImpl();
-        return configDeviceProperty;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
     public ConnectedDevice createConnectedDevice() {
         ConnectedDeviceImpl connectedDevice = new ConnectedDeviceImpl();
         return connectedDevice;
@@ -147,6 +127,26 @@ public class TargetEnvironmentFactoryImpl extends EFactoryImpl implements Target
     public ComputationDeviceInstance createComputationDeviceInstance() {
         ComputationDeviceInstanceImpl computationDeviceInstance = new ComputationDeviceInstanceImpl();
         return computationDeviceInstance;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public DeviceInstance createDeviceInstance() {
+        DeviceInstanceImpl deviceInstance = new DeviceInstanceImpl();
+        return deviceInstance;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public ConfigDeviceProperty createConfigDeviceProperty() {
+        ConfigDevicePropertyImpl configDeviceProperty = new ConfigDevicePropertyImpl();
+        return configDeviceProperty;
     }
 
     /**

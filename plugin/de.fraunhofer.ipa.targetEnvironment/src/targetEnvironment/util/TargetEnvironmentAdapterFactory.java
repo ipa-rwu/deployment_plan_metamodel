@@ -3,6 +3,7 @@
 package targetEnvironment.util;
 
 import de.fraunhofer.ipa.deployment.util.Description;
+
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 
@@ -97,12 +98,12 @@ public class TargetEnvironmentAdapterFactory extends AdapterFactoryImpl {
                 return createDeviceInstanceAdapter();
             }
             @Override
-            public Adapter caseAbstractDeviceInstance(AbstractDeviceInstance object) {
-                return createAbstractDeviceInstanceAdapter();
-            }
-            @Override
             public Adapter caseConfigDeviceProperty(ConfigDeviceProperty object) {
                 return createConfigDevicePropertyAdapter();
+            }
+            @Override
+            public Adapter caseAbstractDeviceInstance(AbstractDeviceInstance object) {
+                return createAbstractDeviceInstanceAdapter();
             }
             @Override
             public Adapter caseAbstractConfigProperty(AbstractConfigProperty object) {
@@ -175,20 +176,6 @@ public class TargetEnvironmentAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
-     * Creates a new adapter for an object of class '{@link targetEnvironment.DeviceInstance <em>Device Instance</em>}'.
-     * <!-- begin-user-doc -->
-     * This default implementation returns null so that we can easily ignore cases;
-     * it's useful to ignore a case when inheritance will catch all the cases anyway.
-     * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see targetEnvironment.DeviceInstance
-     * @generated
-     */
-    public Adapter createDeviceInstanceAdapter() {
-        return null;
-    }
-
-    /**
      * Creates a new adapter for an object of class '{@link targetEnvironment.ConnectedDevice <em>Connected Device</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
@@ -231,16 +218,16 @@ public class TargetEnvironmentAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
-     * Creates a new adapter for an object of class '{@link targetEnvironment.AbstractDeviceInstance <em>Abstract Device Instance</em>}'.
+     * Creates a new adapter for an object of class '{@link targetEnvironment.DeviceInstance <em>Device Instance</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
      * it's useful to ignore a case when inheritance will catch all the cases anyway.
      * <!-- end-user-doc -->
      * @return the new adapter.
-     * @see targetEnvironment.AbstractDeviceInstance
+     * @see targetEnvironment.DeviceInstance
      * @generated
      */
-    public Adapter createAbstractDeviceInstanceAdapter() {
+    public Adapter createDeviceInstanceAdapter() {
         return null;
     }
 
@@ -255,6 +242,20 @@ public class TargetEnvironmentAdapterFactory extends AdapterFactoryImpl {
      * @generated
      */
     public Adapter createConfigDevicePropertyAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link targetEnvironment.AbstractDeviceInstance <em>Abstract Device Instance</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see targetEnvironment.AbstractDeviceInstance
+     * @generated
+     */
+    public Adapter createAbstractDeviceInstanceAdapter() {
         return null;
     }
 

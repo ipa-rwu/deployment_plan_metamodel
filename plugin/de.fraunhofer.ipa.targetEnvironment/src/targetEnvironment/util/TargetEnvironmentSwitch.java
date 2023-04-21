@@ -3,6 +3,7 @@
 package targetEnvironment.util;
 
 import de.fraunhofer.ipa.deployment.util.Description;
+
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -113,16 +114,16 @@ public class TargetEnvironmentSwitch<T> extends Switch<T> {
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
-            case TargetEnvironmentPackage.ABSTRACT_DEVICE_INSTANCE: {
-                AbstractDeviceInstance abstractDeviceInstance = (AbstractDeviceInstance)theEObject;
-                T result = caseAbstractDeviceInstance(abstractDeviceInstance);
-                if (result == null) result = defaultCase(theEObject);
-                return result;
-            }
             case TargetEnvironmentPackage.CONFIG_DEVICE_PROPERTY: {
                 ConfigDeviceProperty configDeviceProperty = (ConfigDeviceProperty)theEObject;
                 T result = caseConfigDeviceProperty(configDeviceProperty);
                 if (result == null) result = caseAbstractConfigProperty(configDeviceProperty);
+                if (result == null) result = defaultCase(theEObject);
+                return result;
+            }
+            case TargetEnvironmentPackage.ABSTRACT_DEVICE_INSTANCE: {
+                AbstractDeviceInstance abstractDeviceInstance = (AbstractDeviceInstance)theEObject;
+                T result = caseAbstractDeviceInstance(abstractDeviceInstance);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -182,21 +183,6 @@ public class TargetEnvironmentSwitch<T> extends Switch<T> {
     }
 
     /**
-     * Returns the result of interpreting the object as an instance of '<em>Device Instance</em>'.
-     * <!-- begin-user-doc -->
-     * This implementation returns null;
-     * returning a non-null result will terminate the switch.
-     * <!-- end-user-doc -->
-     * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Device Instance</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-     * @generated
-     */
-    public T caseDeviceInstance(DeviceInstance object) {
-        return null;
-    }
-
-    /**
      * Returns the result of interpreting the object as an instance of '<em>Connected Device</em>'.
      * <!-- begin-user-doc -->
      * This implementation returns null;
@@ -242,17 +228,17 @@ public class TargetEnvironmentSwitch<T> extends Switch<T> {
     }
 
     /**
-     * Returns the result of interpreting the object as an instance of '<em>Abstract Device Instance</em>'.
+     * Returns the result of interpreting the object as an instance of '<em>Device Instance</em>'.
      * <!-- begin-user-doc -->
      * This implementation returns null;
      * returning a non-null result will terminate the switch.
      * <!-- end-user-doc -->
      * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Abstract Device Instance</em>'.
+     * @return the result of interpreting the object as an instance of '<em>Device Instance</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseAbstractDeviceInstance(AbstractDeviceInstance object) {
+    public T caseDeviceInstance(DeviceInstance object) {
         return null;
     }
 
@@ -268,6 +254,21 @@ public class TargetEnvironmentSwitch<T> extends Switch<T> {
      * @generated
      */
     public T caseConfigDeviceProperty(ConfigDeviceProperty object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Abstract Device Instance</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Abstract Device Instance</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseAbstractDeviceInstance(AbstractDeviceInstance object) {
         return null;
     }
 

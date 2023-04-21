@@ -40,13 +40,13 @@ public interface DeviceFactory extends EFactory {
     DeviceType createDeviceType();
 
     /**
-     * Returns a new object of class '<em>Property</em>'.
+     * Returns a new object of class '<em>Resource</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return a new object of class '<em>Property</em>'.
+     * @return a new object of class '<em>Resource</em>'.
      * @generated
      */
-    DeviceProperty createDeviceProperty();
+    DeviceResource createDeviceResource();
 
     /**
      * Returns a new object of class '<em>Communication Connection</em>'.
@@ -56,51 +56,6 @@ public interface DeviceFactory extends EFactory {
      * @generated
      */
     CommunicationConnection createCommunicationConnection();
-
-    /**
-     * Returns a new object of class '<em>Attribute Kind</em>'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return a new object of class '<em>Attribute Kind</em>'.
-     * @generated
-     */
-    AttributeKind createAttributeKind();
-
-    /**
-     * Returns a new object of class '<em>Maximum Kind</em>'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return a new object of class '<em>Maximum Kind</em>'.
-     * @generated
-     */
-    MaximumKind createMaximumKind();
-
-    /**
-     * Returns a new object of class '<em>Minimum Kind</em>'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return a new object of class '<em>Minimum Kind</em>'.
-     * @generated
-     */
-    MinimumKind createMinimumKind();
-
-    /**
-     * Returns a new object of class '<em>Selection Kind</em>'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return a new object of class '<em>Selection Kind</em>'.
-     * @generated
-     */
-    SelectionKind createSelectionKind();
-
-    /**
-     * Returns a new object of class '<em>Range Kind</em>'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return a new object of class '<em>Range Kind</em>'.
-     * @generated
-     */
-    RangeKind createRangeKind();
 
     /**
      * Returns a new object of class '<em>Connection Property</em>'.
@@ -157,15 +112,69 @@ public interface DeviceFactory extends EFactory {
     MacNetworkProperty createMacNetworkProperty();
 
     /**
-     * Returns a new object of class '<em>Type Ref</em>'.
+     * Returns a new object of class '<em>Container</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return a new object of class '<em>Type Ref</em>'.
+     * @return a new object of class '<em>Container</em>'.
      * @generated
      */
-    DeviceTypeRef createDeviceTypeRef();
+    Container createContainer();
 
-                /**
+    /**
+     * Returns a new object of class '<em>Operating System Resouce</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Operating System Resouce</em>'.
+     * @generated
+     */
+    OperatingSystemResouce createOperatingSystemResouce();
+
+    /**
+     * Returns a new object of class '<em>Name Operating System Property</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Name Operating System Property</em>'.
+     * @generated
+     */
+    NameOperatingSystemProperty createNameOperatingSystemProperty();
+
+    /**
+     * Returns a new object of class '<em>Version Operating System Property</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Version Operating System Property</em>'.
+     * @generated
+     */
+    VersionOperatingSystemProperty createVersionOperatingSystemProperty();
+
+    /**
+     * Returns a new object of class '<em>Processor Resouce</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Processor Resouce</em>'.
+     * @generated
+     */
+    ProcessorResouce createProcessorResouce();
+
+    /**
+     * Returns a new object of class '<em>Architecture Processor Property</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Architecture Processor Property</em>'.
+     * @generated
+     */
+    ArchitectureProcessorProperty createArchitectureProcessorProperty();
+
+    /**
+     * Returns a new object of class '<em>Core Processor Property</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Core Processor Property</em>'.
+     * @generated
+     */
+    CoreProcessorProperty createCoreProcessorProperty();
+
+    /**
      * Returns the package supported by this factory.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
