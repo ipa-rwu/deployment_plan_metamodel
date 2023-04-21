@@ -61,6 +61,12 @@ ComputationDeviceInstance returns ComputationDeviceInstance:
     PreListElement "name:" name=EString
     INDENT
         'refDeviceType:' refDeviceType=[device::ComputationDeviceType|EString]
+       (
+        'configDeviceProperty:'
+        INDENT
+            configDeviceProperty += ConfigDeviceProperty+
+        DEDENT
+        )?
     DEDENT;
 
 ConfigConnection returns ConfigConnection:
@@ -99,6 +105,6 @@ ConfigConnectionProperty returns ConfigConnectionProperty:
 ConfigDeviceProperty returns ConfigDeviceProperty:
     PreListElement 'name:' name=EString
     INDENT
-        'from:' from=[device::DeviceProperty|EString]
+        'from:' from=[util::AbstractProperty|EString]
         'value:' value=PropertyValue
     DEDENT;
