@@ -10,26 +10,26 @@ import org.eclipse.xtext.parser.antlr.AbstractIndentationTokenSource;
 
 public class BaseTokenSource extends AbstractIndentationTokenSource {
 
-	public BaseTokenSource(TokenSource delegate) {
-		super(delegate);
-	}
+    public BaseTokenSource(TokenSource delegate) {
+        super(delegate);
+    }
 
-	@Override
-	protected boolean shouldSplitTokenImpl(Token token) {
-		// TODO Review assumption
-		return token.getType() == InternalBaseParser.RULE_WS;
-	}
+    @Override
+    protected boolean shouldSplitTokenImpl(Token token) {
+        // TODO Review assumption
+        return token.getType() == InternalBaseParser.RULE_WS;
+    }
 
-	@Override
-	protected int getBeginTokenType() {
-		// TODO Review assumption
-		return InternalBaseParser.RULE_INDENT;
-	}
+    @Override
+    protected int getBeginTokenType() {
+        // TODO Review assumption
+        return InternalBaseParser.RULE_INDENT;
+    }
 
-	@Override
-	protected int getEndTokenType() {
-		// TODO Review assumption
-		return InternalBaseParser.RULE_DEDENT;
-	}
+    @Override
+    protected int getEndTokenType() {
+        // TODO Review assumption
+        return InternalBaseParser.RULE_DEDENT;
+    }
 
 }

@@ -10,7 +10,7 @@ import org.eclipse.ui.plugin.AbstractUIPlugin;
  */
 public class TargetEnvironmentUiModule extends AbstractTargetEnvironmentUiModule {
 
-	public TargetEnvironmentUiModule(AbstractUIPlugin plugin) {
-		super(plugin);
-	}
+    public TargetEnvironmentUiModule(AbstractUIPlugin plugin) {
+        super(plugin);
+    }
 }

@@ -14,9 +14,9 @@ import org.eclipse.xtext.util.Modules2;
  */
 public class BaseIdeSetup extends BaseStandaloneSetup {
 
-	@Override
-	public Injector createInjector() {
-		return Guice.createInjector(Modules2.mixin(new BaseRuntimeModule(), new BaseIdeModule()));
-	}
-	
+    @Override
+    public Injector createInjector() {
+        return Guice.createInjector(Modules2.mixin(new BaseRuntimeModule(), new BaseIdeModule()));
+    }
+
 }

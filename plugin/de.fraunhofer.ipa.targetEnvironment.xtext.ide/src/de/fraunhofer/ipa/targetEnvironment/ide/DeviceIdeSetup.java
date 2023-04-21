@@ -14,9 +14,9 @@ import org.eclipse.xtext.util.Modules2;
  */
 public class DeviceIdeSetup extends DeviceStandaloneSetup {
 
-	@Override
-	public Injector createInjector() {
-		return Guice.createInjector(Modules2.mixin(new DeviceRuntimeModule(), new DeviceIdeModule()));
-	}
-	
+    @Override
+    public Injector createInjector() {
+        return Guice.createInjector(Modules2.mixin(new DeviceRuntimeModule(), new DeviceIdeModule()));
+    }
+
 }

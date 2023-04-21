@@ -25,50 +25,50 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface TargetDeployEnviroment extends Description {
-	/**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see targetEnvironment.TargetEnvironmentPackage#getTargetDeployEnviroment_Name()
-	 * @model
-	 * @generated
-	 */
-	String getName();
+    /**
+     * Returns the value of the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Name</em>' attribute.
+     * @see #setName(String)
+     * @see targetEnvironment.TargetEnvironmentPackage#getTargetDeployEnviroment_Name()
+     * @model
+     * @generated
+     */
+    String getName();
 
-	/**
-	 * Sets the value of the '{@link targetEnvironment.TargetDeployEnviroment#getName <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
-	 * @generated
-	 */
-	void setName(String value);
+    /**
+     * Sets the value of the '{@link targetEnvironment.TargetDeployEnviroment#getName <em>Name</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Name</em>' attribute.
+     * @see #getName()
+     * @generated
+     */
+    void setName(String value);
 
-	/**
-	 * Returns the value of the '<em><b>Include Device</b></em>' containment reference list.
-	 * The list contents are of type {@link targetEnvironment.DeviceInstance}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Include Device</em>' containment reference list.
-	 * @see targetEnvironment.TargetEnvironmentPackage#getTargetDeployEnviroment_IncludeDevice()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<DeviceInstance> getIncludeDevice();
+    /**
+     * Returns the value of the '<em><b>Include Device</b></em>' containment reference list.
+     * The list contents are of type {@link targetEnvironment.DeviceInstance}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Include Device</em>' containment reference list.
+     * @see targetEnvironment.TargetEnvironmentPackage#getTargetDeployEnviroment_IncludeDevice()
+     * @model containment="true"
+     * @generated
+     */
+    EList<DeviceInstance> getIncludeDevice();
 
-	/**
-	 * Returns the value of the '<em><b>Config Connection</b></em>' containment reference list.
-	 * The list contents are of type {@link targetEnvironment.ConfigConnection}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Config Connection</em>' containment reference list.
-	 * @see targetEnvironment.TargetEnvironmentPackage#getTargetDeployEnviroment_ConfigConnection()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<ConfigConnection> getConfigConnection();
+    /**
+     * Returns the value of the '<em><b>Config Connection</b></em>' containment reference list.
+     * The list contents are of type {@link targetEnvironment.ConfigConnection}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Config Connection</em>' containment reference list.
+     * @see targetEnvironment.TargetEnvironmentPackage#getTargetDeployEnviroment_ConfigConnection()
+     * @model containment="true"
+     * @generated
+     */
+    EList<ConfigConnection> getConfigConnection();
 
 } // TargetDeployEnviroment

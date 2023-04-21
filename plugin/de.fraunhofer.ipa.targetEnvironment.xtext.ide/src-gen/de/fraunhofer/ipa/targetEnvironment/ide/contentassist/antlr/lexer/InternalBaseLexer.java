@@ -1,6 +1,6 @@
 package de.fraunhofer.ipa.targetEnvironment.ide.contentassist.antlr.lexer;
 
-// Hack: Use our own Lexer superclass by means of import. 
+// Hack: Use our own Lexer superclass by means of import.
 // Currently there is no other way to specify the superclass for the lexer.
 import org.eclipse.xtext.ide.editor.contentassist.antlr.internal.Lexer;
 
@@ -38,7 +38,7 @@ public class InternalBaseLexer extends Lexer {
     // delegates
     // delegators
 
-    public InternalBaseLexer() {;} 
+    public InternalBaseLexer() {;}
     public InternalBaseLexer(CharStream input) {
         this(input, new RecognizerSharedState());
     }
@@ -56,7 +56,7 @@ public class InternalBaseLexer extends Lexer {
             // InternalBaseLexer.g:14:13: ( '-' )
             // InternalBaseLexer.g:14:15: '-'
             {
-            match('-'); 
+            match('-');
 
             }
 
@@ -74,7 +74,7 @@ public class InternalBaseLexer extends Lexer {
             // InternalBaseLexer.g:16:21: ( '0' .. '9' )
             // InternalBaseLexer.g:16:23: '0' .. '9'
             {
-            matchRange('0','9'); 
+            matchRange('0','9');
 
             }
 
@@ -122,7 +122,7 @@ public class InternalBaseLexer extends Lexer {
                 case 1 :
                     // InternalBaseLexer.g:18:16: '0b'
                     {
-                    match("0b"); 
+                    match("0b");
 
 
                     }
@@ -130,7 +130,7 @@ public class InternalBaseLexer extends Lexer {
                 case 2 :
                     // InternalBaseLexer.g:18:21: '0B'
                     {
-                    match("0B"); 
+                    match("0B");
 
 
                     }
@@ -151,24 +151,24 @@ public class InternalBaseLexer extends Lexer {
 
 
                 switch (alt2) {
-            	case 1 :
-            	    // InternalBaseLexer.g:
-            	    {
-            	    if ( (input.LA(1)>='0' && input.LA(1)<='1') ) {
-            	        input.consume();
+                case 1 :
+                    // InternalBaseLexer.g:
+                    {
+                    if ( (input.LA(1)>='0' && input.LA(1)<='1') ) {
+                        input.consume();
 
-            	    }
-            	    else {
-            	        MismatchedSetException mse = new MismatchedSetException(null,input);
-            	        recover(mse);
-            	        throw mse;}
+                    }
+                    else {
+                        MismatchedSetException mse = new MismatchedSetException(null,input);
+                        recover(mse);
+                        throw mse;}
 
 
-            	    }
-            	    break;
+                    }
+                    break;
 
-            	default :
-            	    if ( cnt2 >= 1 ) break loop2;
+                default :
+                    if ( cnt2 >= 1 ) break loop2;
                         EarlyExitException eee =
                             new EarlyExitException(2, input);
                         throw eee;
@@ -215,7 +215,7 @@ public class InternalBaseLexer extends Lexer {
                 case 1 :
                     // InternalBaseLexer.g:20:17: 'true'
                     {
-                    match("true"); 
+                    match("true");
 
 
                     }
@@ -223,7 +223,7 @@ public class InternalBaseLexer extends Lexer {
                 case 2 :
                     // InternalBaseLexer.g:20:24: 'false'
                     {
-                    match("false"); 
+                    match("false");
 
 
                     }
@@ -250,7 +250,7 @@ public class InternalBaseLexer extends Lexer {
             // InternalBaseLexer.g:22:13: ( RULE_DIGIT ( '.' ( RULE_DECINT )* | ( '.' ( RULE_DIGIT )* )? ( 'E' | 'e' ) ( '-' | '+' )? RULE_DIGIT ) )
             // InternalBaseLexer.g:22:15: RULE_DIGIT ( '.' ( RULE_DECINT )* | ( '.' ( RULE_DIGIT )* )? ( 'E' | 'e' ) ( '-' | '+' )? RULE_DIGIT )
             {
-            mRULE_DIGIT(); 
+            mRULE_DIGIT();
             // InternalBaseLexer.g:22:26: ( '.' ( RULE_DECINT )* | ( '.' ( RULE_DIGIT )* )? ( 'E' | 'e' ) ( '-' | '+' )? RULE_DIGIT )
             int alt8=2;
             alt8 = dfa8.predict(input);
@@ -258,7 +258,7 @@ public class InternalBaseLexer extends Lexer {
                 case 1 :
                     // InternalBaseLexer.g:22:27: '.' ( RULE_DECINT )*
                     {
-                    match('.'); 
+                    match('.');
                     // InternalBaseLexer.g:22:31: ( RULE_DECINT )*
                     loop4:
                     do {
@@ -271,16 +271,16 @@ public class InternalBaseLexer extends Lexer {
 
 
                         switch (alt4) {
-                    	case 1 :
-                    	    // InternalBaseLexer.g:22:31: RULE_DECINT
-                    	    {
-                    	    mRULE_DECINT(); 
+                        case 1 :
+                            // InternalBaseLexer.g:22:31: RULE_DECINT
+                            {
+                            mRULE_DECINT();
 
-                    	    }
-                    	    break;
+                            }
+                            break;
 
-                    	default :
-                    	    break loop4;
+                        default :
+                            break loop4;
                         }
                     } while (true);
 
@@ -301,7 +301,7 @@ public class InternalBaseLexer extends Lexer {
                         case 1 :
                             // InternalBaseLexer.g:22:45: '.' ( RULE_DIGIT )*
                             {
-                            match('.'); 
+                            match('.');
                             // InternalBaseLexer.g:22:49: ( RULE_DIGIT )*
                             loop5:
                             do {
@@ -314,16 +314,16 @@ public class InternalBaseLexer extends Lexer {
 
 
                                 switch (alt5) {
-                            	case 1 :
-                            	    // InternalBaseLexer.g:22:49: RULE_DIGIT
-                            	    {
-                            	    mRULE_DIGIT(); 
+                                case 1 :
+                                    // InternalBaseLexer.g:22:49: RULE_DIGIT
+                                    {
+                                    mRULE_DIGIT();
 
-                            	    }
-                            	    break;
+                                    }
+                                    break;
 
-                            	default :
-                            	    break loop5;
+                                default :
+                                    break loop5;
                                 }
                             } while (true);
 
@@ -368,7 +368,7 @@ public class InternalBaseLexer extends Lexer {
 
                     }
 
-                    mRULE_DIGIT(); 
+                    mRULE_DIGIT();
 
                     }
                     break;
@@ -431,14 +431,14 @@ public class InternalBaseLexer extends Lexer {
                 case 1 :
                     // InternalBaseLexer.g:24:16: '0'
                     {
-                    match('0'); 
+                    match('0');
 
                     }
                     break;
                 case 2 :
                     // InternalBaseLexer.g:24:20: '1' .. '9' ( RULE_DIGIT )*
                     {
-                    matchRange('1','9'); 
+                    matchRange('1','9');
                     // InternalBaseLexer.g:24:29: ( RULE_DIGIT )*
                     loop9:
                     do {
@@ -451,16 +451,16 @@ public class InternalBaseLexer extends Lexer {
 
 
                         switch (alt9) {
-                    	case 1 :
-                    	    // InternalBaseLexer.g:24:29: RULE_DIGIT
-                    	    {
-                    	    mRULE_DIGIT(); 
+                        case 1 :
+                            // InternalBaseLexer.g:24:29: RULE_DIGIT
+                            {
+                            mRULE_DIGIT();
 
-                    	    }
-                    	    break;
+                            }
+                            break;
 
-                    	default :
-                    	    break loop9;
+                        default :
+                            break loop9;
                         }
                     } while (true);
 
@@ -470,8 +470,8 @@ public class InternalBaseLexer extends Lexer {
                 case 3 :
                     // InternalBaseLexer.g:24:41: '-' '0' .. '9' ( RULE_DIGIT )*
                     {
-                    match('-'); 
-                    matchRange('0','9'); 
+                    match('-');
+                    matchRange('0','9');
                     // InternalBaseLexer.g:24:54: ( RULE_DIGIT )*
                     loop10:
                     do {
@@ -484,16 +484,16 @@ public class InternalBaseLexer extends Lexer {
 
 
                         switch (alt10) {
-                    	case 1 :
-                    	    // InternalBaseLexer.g:24:54: RULE_DIGIT
-                    	    {
-                    	    mRULE_DIGIT(); 
+                        case 1 :
+                            // InternalBaseLexer.g:24:54: RULE_DIGIT
+                            {
+                            mRULE_DIGIT();
 
-                    	    }
-                    	    break;
+                            }
+                            break;
 
-                    	default :
-                    	    break loop10;
+                        default :
+                            break loop10;
                         }
                     } while (true);
 
@@ -546,15 +546,15 @@ public class InternalBaseLexer extends Lexer {
                 case 1 :
                     // InternalBaseLexer.g:26:22: '1' .. '9'
                     {
-                    matchRange('1','9'); 
+                    matchRange('1','9');
 
                     }
                     break;
                 case 2 :
                     // InternalBaseLexer.g:26:31: '1' .. '3' '0' .. '9'
                     {
-                    matchRange('1','3'); 
-                    matchRange('0','9'); 
+                    matchRange('1','3');
+                    matchRange('0','9');
 
                     }
                     break;
@@ -602,15 +602,15 @@ public class InternalBaseLexer extends Lexer {
                 case 1 :
                     // InternalBaseLexer.g:28:24: '1' .. '9'
                     {
-                    matchRange('1','9'); 
+                    matchRange('1','9');
 
                     }
                     break;
                 case 2 :
                     // InternalBaseLexer.g:28:33: '1' '0' .. '2'
                     {
-                    match('1'); 
-                    matchRange('0','2'); 
+                    match('1');
+                    matchRange('0','2');
 
                     }
                     break;
@@ -632,10 +632,10 @@ public class InternalBaseLexer extends Lexer {
             // InternalBaseLexer.g:30:20: ( '0' .. '2' '0' .. '9' '0' .. '9' '0' .. '9' )
             // InternalBaseLexer.g:30:22: '0' .. '2' '0' .. '9' '0' .. '9' '0' .. '9'
             {
-            matchRange('0','2'); 
-            matchRange('0','9'); 
-            matchRange('0','9'); 
-            matchRange('0','9'); 
+            matchRange('0','2');
+            matchRange('0','9');
+            matchRange('0','9');
+            matchRange('0','9');
 
             }
 
@@ -671,16 +671,16 @@ public class InternalBaseLexer extends Lexer {
                 case 1 :
                     // InternalBaseLexer.g:32:23: '0' .. '1' '0' .. '9'
                     {
-                    matchRange('0','1'); 
-                    matchRange('0','9'); 
+                    matchRange('0','1');
+                    matchRange('0','9');
 
                     }
                     break;
                 case 2 :
                     // InternalBaseLexer.g:32:41: '2' '0' .. '3'
                     {
-                    match('2'); 
-                    matchRange('0','3'); 
+                    match('2');
+                    matchRange('0','3');
 
                     }
                     break;
@@ -702,8 +702,8 @@ public class InternalBaseLexer extends Lexer {
             // InternalBaseLexer.g:34:23: ( '0' .. '5' '0' .. '9' )
             // InternalBaseLexer.g:34:25: '0' .. '5' '0' .. '9'
             {
-            matchRange('0','5'); 
-            matchRange('0','9'); 
+            matchRange('0','5');
+            matchRange('0','9');
 
             }
 
@@ -721,17 +721,17 @@ public class InternalBaseLexer extends Lexer {
             // InternalBaseLexer.g:36:16: ( RULE_YEAR '-' RULE_MONTH '-' RULE_DAY 'T' RULE_HOUR ':' RULE_MIN_SEC ':' RULE_MIN_SEC )
             // InternalBaseLexer.g:36:18: RULE_YEAR '-' RULE_MONTH '-' RULE_DAY 'T' RULE_HOUR ':' RULE_MIN_SEC ':' RULE_MIN_SEC
             {
-            mRULE_YEAR(); 
-            match('-'); 
-            mRULE_MONTH(); 
-            match('-'); 
-            mRULE_DAY(); 
-            match('T'); 
-            mRULE_HOUR(); 
-            match(':'); 
-            mRULE_MIN_SEC(); 
-            match(':'); 
-            mRULE_MIN_SEC(); 
+            mRULE_YEAR();
+            match('-');
+            mRULE_MONTH();
+            match('-');
+            mRULE_DAY();
+            match('T');
+            mRULE_HOUR();
+            match(':');
+            mRULE_MIN_SEC();
+            match(':');
+            mRULE_MIN_SEC();
 
             }
 
@@ -751,7 +751,7 @@ public class InternalBaseLexer extends Lexer {
             // InternalBaseLexer.g:38:17: ( '#' (~ ( ( '\\n' | '\\r' ) ) )* )
             // InternalBaseLexer.g:38:19: '#' (~ ( ( '\\n' | '\\r' ) ) )*
             {
-            match('#'); 
+            match('#');
             // InternalBaseLexer.g:38:23: (~ ( ( '\\n' | '\\r' ) ) )*
             loop15:
             do {
@@ -764,24 +764,24 @@ public class InternalBaseLexer extends Lexer {
 
 
                 switch (alt15) {
-            	case 1 :
-            	    // InternalBaseLexer.g:38:23: ~ ( ( '\\n' | '\\r' ) )
-            	    {
-            	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
-            	        input.consume();
+                case 1 :
+                    // InternalBaseLexer.g:38:23: ~ ( ( '\\n' | '\\r' ) )
+                    {
+                    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
+                        input.consume();
 
-            	    }
-            	    else {
-            	        MismatchedSetException mse = new MismatchedSetException(null,input);
-            	        recover(mse);
-            	        throw mse;}
+                    }
+                    else {
+                        MismatchedSetException mse = new MismatchedSetException(null,input);
+                        recover(mse);
+                        throw mse;}
 
 
-            	    }
-            	    break;
+                    }
+                    break;
 
-            	default :
-            	    break loop15;
+                default :
+                    break loop15;
                 }
             } while (true);
 
@@ -800,7 +800,7 @@ public class InternalBaseLexer extends Lexer {
     public final void mRULE_INDENT() throws RecognitionException {
         try {
             // InternalBaseLexer.g:40:22: ()
-            // InternalBaseLexer.g:40:24: 
+            // InternalBaseLexer.g:40:24:
             {
             }
 
@@ -814,7 +814,7 @@ public class InternalBaseLexer extends Lexer {
     public final void mRULE_DEDENT() throws RecognitionException {
         try {
             // InternalBaseLexer.g:42:22: ()
-            // InternalBaseLexer.g:42:24: 
+            // InternalBaseLexer.g:42:24:
             {
             }
 
@@ -843,7 +843,7 @@ public class InternalBaseLexer extends Lexer {
                 case 1 :
                     // InternalBaseLexer.g:44:11: '^'
                     {
-                    match('^'); 
+                    match('^');
 
                     }
                     break;
@@ -871,24 +871,24 @@ public class InternalBaseLexer extends Lexer {
 
 
                 switch (alt17) {
-            	case 1 :
-            	    // InternalBaseLexer.g:
-            	    {
-            	    if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
-            	        input.consume();
+                case 1 :
+                    // InternalBaseLexer.g:
+                    {
+                    if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
+                        input.consume();
 
-            	    }
-            	    else {
-            	        MismatchedSetException mse = new MismatchedSetException(null,input);
-            	        recover(mse);
-            	        throw mse;}
+                    }
+                    else {
+                        MismatchedSetException mse = new MismatchedSetException(null,input);
+                        recover(mse);
+                        throw mse;}
 
 
-            	    }
-            	    break;
+                    }
+                    break;
 
-            	default :
-            	    break loop17;
+                default :
+                    break loop17;
                 }
             } while (true);
 
@@ -924,16 +924,16 @@ public class InternalBaseLexer extends Lexer {
 
 
                 switch (alt18) {
-            	case 1 :
-            	    // InternalBaseLexer.g:46:13: '0' .. '9'
-            	    {
-            	    matchRange('0','9'); 
+                case 1 :
+                    // InternalBaseLexer.g:46:13: '0' .. '9'
+                    {
+                    matchRange('0','9');
 
-            	    }
-            	    break;
+                    }
+                    break;
 
-            	default :
-            	    if ( cnt18 >= 1 ) break loop18;
+                default :
+                    if ( cnt18 >= 1 ) break loop18;
                         EarlyExitException eee =
                             new EarlyExitException(18, input);
                         throw eee;
@@ -980,7 +980,7 @@ public class InternalBaseLexer extends Lexer {
                 case 1 :
                     // InternalBaseLexer.g:48:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
-                    match('\"'); 
+                    match('\"');
                     // InternalBaseLexer.g:48:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop19:
                     do {
@@ -996,43 +996,43 @@ public class InternalBaseLexer extends Lexer {
 
 
                         switch (alt19) {
-                    	case 1 :
-                    	    // InternalBaseLexer.g:48:21: '\\\\' .
-                    	    {
-                    	    match('\\'); 
-                    	    matchAny(); 
+                        case 1 :
+                            // InternalBaseLexer.g:48:21: '\\\\' .
+                            {
+                            match('\\');
+                            matchAny();
 
-                    	    }
-                    	    break;
-                    	case 2 :
-                    	    // InternalBaseLexer.g:48:28: ~ ( ( '\\\\' | '\"' ) )
-                    	    {
-                    	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
-                    	        input.consume();
+                            }
+                            break;
+                        case 2 :
+                            // InternalBaseLexer.g:48:28: ~ ( ( '\\\\' | '\"' ) )
+                            {
+                            if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
+                                input.consume();
 
-                    	    }
-                    	    else {
-                    	        MismatchedSetException mse = new MismatchedSetException(null,input);
-                    	        recover(mse);
-                    	        throw mse;}
+                            }
+                            else {
+                                MismatchedSetException mse = new MismatchedSetException(null,input);
+                                recover(mse);
+                                throw mse;}
 
 
-                    	    }
-                    	    break;
+                            }
+                            break;
 
-                    	default :
-                    	    break loop19;
+                        default :
+                            break loop19;
                         }
                     } while (true);
 
-                    match('\"'); 
+                    match('\"');
 
                     }
                     break;
                 case 2 :
                     // InternalBaseLexer.g:48:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
-                    match('\''); 
+                    match('\'');
                     // InternalBaseLexer.g:48:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop20:
                     do {
@@ -1048,36 +1048,36 @@ public class InternalBaseLexer extends Lexer {
 
 
                         switch (alt20) {
-                    	case 1 :
-                    	    // InternalBaseLexer.g:48:54: '\\\\' .
-                    	    {
-                    	    match('\\'); 
-                    	    matchAny(); 
+                        case 1 :
+                            // InternalBaseLexer.g:48:54: '\\\\' .
+                            {
+                            match('\\');
+                            matchAny();
 
-                    	    }
-                    	    break;
-                    	case 2 :
-                    	    // InternalBaseLexer.g:48:61: ~ ( ( '\\\\' | '\\'' ) )
-                    	    {
-                    	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
-                    	        input.consume();
+                            }
+                            break;
+                        case 2 :
+                            // InternalBaseLexer.g:48:61: ~ ( ( '\\\\' | '\\'' ) )
+                            {
+                            if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
+                                input.consume();
 
-                    	    }
-                    	    else {
-                    	        MismatchedSetException mse = new MismatchedSetException(null,input);
-                    	        recover(mse);
-                    	        throw mse;}
+                            }
+                            else {
+                                MismatchedSetException mse = new MismatchedSetException(null,input);
+                                recover(mse);
+                                throw mse;}
 
 
-                    	    }
-                    	    break;
+                            }
+                            break;
 
-                    	default :
-                    	    break loop20;
+                        default :
+                            break loop20;
                         }
                     } while (true);
 
-                    match('\''); 
+                    match('\'');
 
                     }
                     break;
@@ -1103,7 +1103,7 @@ public class InternalBaseLexer extends Lexer {
             // InternalBaseLexer.g:50:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
             // InternalBaseLexer.g:50:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
-            match("/*"); 
+            match("/*");
 
             // InternalBaseLexer.g:50:24: ( options {greedy=false; } : . )*
             loop22:
@@ -1129,20 +1129,20 @@ public class InternalBaseLexer extends Lexer {
 
 
                 switch (alt22) {
-            	case 1 :
-            	    // InternalBaseLexer.g:50:52: .
-            	    {
-            	    matchAny(); 
+                case 1 :
+                    // InternalBaseLexer.g:50:52: .
+                    {
+                    matchAny();
 
-            	    }
-            	    break;
+                    }
+                    break;
 
-            	default :
-            	    break loop22;
+                default :
+                    break loop22;
                 }
             } while (true);
 
-            match("*/"); 
+            match("*/");
 
 
             }
@@ -1176,24 +1176,24 @@ public class InternalBaseLexer extends Lexer {
 
 
                 switch (alt23) {
-            	case 1 :
-            	    // InternalBaseLexer.g:
-            	    {
-            	    if ( (input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||input.LA(1)==' ' ) {
-            	        input.consume();
+                case 1 :
+                    // InternalBaseLexer.g:
+                    {
+                    if ( (input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||input.LA(1)==' ' ) {
+                        input.consume();
 
-            	    }
-            	    else {
-            	        MismatchedSetException mse = new MismatchedSetException(null,input);
-            	        recover(mse);
-            	        throw mse;}
+                    }
+                    else {
+                        MismatchedSetException mse = new MismatchedSetException(null,input);
+                        recover(mse);
+                        throw mse;}
 
 
-            	    }
-            	    break;
+                    }
+                    break;
 
-            	default :
-            	    if ( cnt23 >= 1 ) break loop23;
+                default :
+                    if ( cnt23 >= 1 ) break loop23;
                         EarlyExitException eee =
                             new EarlyExitException(23, input);
                         throw eee;
@@ -1220,7 +1220,7 @@ public class InternalBaseLexer extends Lexer {
             // InternalBaseLexer.g:54:16: ( . )
             // InternalBaseLexer.g:54:18: .
             {
-            matchAny(); 
+            matchAny();
 
             }
 
@@ -1240,91 +1240,91 @@ public class InternalBaseLexer extends Lexer {
             case 1 :
                 // InternalBaseLexer.g:1:10: HyphenMinus
                 {
-                mHyphenMinus(); 
+                mHyphenMinus();
 
                 }
                 break;
             case 2 :
                 // InternalBaseLexer.g:1:22: RULE_BINARY
                 {
-                mRULE_BINARY(); 
+                mRULE_BINARY();
 
                 }
                 break;
             case 3 :
                 // InternalBaseLexer.g:1:34: RULE_BOOLEAN
                 {
-                mRULE_BOOLEAN(); 
+                mRULE_BOOLEAN();
 
                 }
                 break;
             case 4 :
                 // InternalBaseLexer.g:1:47: RULE_DOUBLE
                 {
-                mRULE_DOUBLE(); 
+                mRULE_DOUBLE();
 
                 }
                 break;
             case 5 :
                 // InternalBaseLexer.g:1:59: RULE_DECINT
                 {
-                mRULE_DECINT(); 
+                mRULE_DECINT();
 
                 }
                 break;
             case 6 :
                 // InternalBaseLexer.g:1:71: RULE_DATE_TIME
                 {
-                mRULE_DATE_TIME(); 
+                mRULE_DATE_TIME();
 
                 }
                 break;
             case 7 :
                 // InternalBaseLexer.g:1:86: RULE_SL_COMMENT
                 {
-                mRULE_SL_COMMENT(); 
+                mRULE_SL_COMMENT();
 
                 }
                 break;
             case 8 :
                 // InternalBaseLexer.g:1:102: RULE_ID
                 {
-                mRULE_ID(); 
+                mRULE_ID();
 
                 }
                 break;
             case 9 :
                 // InternalBaseLexer.g:1:110: RULE_INT
                 {
-                mRULE_INT(); 
+                mRULE_INT();
 
                 }
                 break;
             case 10 :
                 // InternalBaseLexer.g:1:119: RULE_STRING
                 {
-                mRULE_STRING(); 
+                mRULE_STRING();
 
                 }
                 break;
             case 11 :
                 // InternalBaseLexer.g:1:131: RULE_ML_COMMENT
                 {
-                mRULE_ML_COMMENT(); 
+                mRULE_ML_COMMENT();
 
                 }
                 break;
             case 12 :
                 // InternalBaseLexer.g:1:147: RULE_WS
                 {
-                mRULE_WS(); 
+                mRULE_WS();
 
                 }
                 break;
             case 13 :
                 // InternalBaseLexer.g:1:155: RULE_ANY_OTHER
                 {
-                mRULE_ANY_OTHER(); 
+                mRULE_ANY_OTHER();
 
                 }
                 break;
@@ -1482,9 +1482,9 @@ public class InternalBaseLexer extends Lexer {
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
-        	int _s = s;
+            int _s = s;
             switch ( s ) {
-                    case 0 : 
+                    case 0 :
                         int LA24_0 = input.LA(1);
 
                         s = -1;
@@ -1518,7 +1518,7 @@ public class InternalBaseLexer extends Lexer {
 
                         if ( s>=0 ) return s;
                         break;
-                    case 1 : 
+                    case 1 :
                         int LA24_10 = input.LA(1);
 
                         s = -1;
@@ -1528,7 +1528,7 @@ public class InternalBaseLexer extends Lexer {
 
                         if ( s>=0 ) return s;
                         break;
-                    case 2 : 
+                    case 2 :
                         int LA24_11 = input.LA(1);
 
                         s = -1;
@@ -1545,6 +1545,6 @@ public class InternalBaseLexer extends Lexer {
             throw nvae;
         }
     }
- 
+
 
 }

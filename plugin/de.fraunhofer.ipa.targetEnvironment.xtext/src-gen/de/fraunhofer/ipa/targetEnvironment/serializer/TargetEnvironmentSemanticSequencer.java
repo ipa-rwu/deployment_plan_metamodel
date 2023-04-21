@@ -41,180 +41,180 @@ import targetEnvironment.TargetEnvironmentPackage;
 @SuppressWarnings("all")
 public class TargetEnvironmentSemanticSequencer extends DeviceSemanticSequencer {
 
-	@Inject
-	private TargetEnvironmentGrammarAccess grammarAccess;
-	
-	@Override
-	public void sequence(ISerializationContext context, EObject semanticObject) {
-		EPackage epackage = semanticObject.eClass().getEPackage();
-		ParserRule rule = context.getParserRule();
-		Action action = context.getAssignedAction();
-		Set<Parameter> parameters = context.getEnabledBooleanParameters();
-		if (epackage == BasePackage.eINSTANCE)
-			switch (semanticObject.eClass().getClassifierID()) {
-			case BasePackage.PROPERTY_VALUE_DOUBLE:
-				sequence_PropertyValueDouble(context, (PropertyValueDouble) semanticObject); 
-				return; 
-			case BasePackage.PROPERTY_VALUE_INT:
-				sequence_PropertyValueInt(context, (PropertyValueInt) semanticObject); 
-				return; 
-			case BasePackage.PROPERTY_VALUE_STRING:
-				sequence_PropertyValueString(context, (PropertyValueString) semanticObject); 
-				return; 
-			}
-		else if (epackage == DevicePackage.eINSTANCE)
-			switch (semanticObject.eClass().getClassifierID()) {
-			case DevicePackage.ATTRIBUTE_KIND:
-				sequence_AttributeKind(context, (AttributeKind) semanticObject); 
-				return; 
-			case DevicePackage.CAPABILITY_PROPERTY:
-				sequence_CapabilityProperty(context, (CapabilityProperty) semanticObject); 
-				return; 
-			case DevicePackage.CAPABILITY_TYPE:
-				sequence_CapabilityType(context, (CapabilityType) semanticObject); 
-				return; 
-			case DevicePackage.COMMUNICATION_CONNECTION:
-				sequence_CommunicationConnection(context, (CommunicationConnection) semanticObject); 
-				return; 
-			case DevicePackage.COMMUNICATION_TYPE:
-				sequence_CommunicationType(context, (CommunicationType) semanticObject); 
-				return; 
-			case DevicePackage.CONNECTION_PROPERTY:
-				sequence_ConnectionProperty(context, (ConnectionProperty) semanticObject); 
-				return; 
-			case DevicePackage.DEVICE_SET:
-				sequence_DeviceSet(context, (DeviceSet) semanticObject); 
-				return; 
-			case DevicePackage.DEVICE_TYPE:
-				sequence_DeviceType(context, (DeviceType) semanticObject); 
-				return; 
-			case DevicePackage.MAXIMUM_KIND:
-				sequence_MaximumKind(context, (MaximumKind) semanticObject); 
-				return; 
-			case DevicePackage.MINIMUM_KIND:
-				sequence_MinimumKind(context, (MinimumKind) semanticObject); 
-				return; 
-			case DevicePackage.SELECTION_KIND:
-				sequence_SelectionKind(context, (SelectionKind) semanticObject); 
-				return; 
-			}
-		else if (epackage == TargetEnvironmentPackage.eINSTANCE)
-			switch (semanticObject.eClass().getClassifierID()) {
-			case TargetEnvironmentPackage.CONFIG_CONNECTION:
-				sequence_ConfigConnection(context, (ConfigConnection) semanticObject); 
-				return; 
-			case TargetEnvironmentPackage.CONFIG_CONNECTION_PROPERTY:
-				sequence_ConfigConnectionProperty(context, (ConfigConnectionProperty) semanticObject); 
-				return; 
-			case TargetEnvironmentPackage.CONNECTED_DEVICE:
-				sequence_ConnectedDevice(context, (ConnectedDevice) semanticObject); 
-				return; 
-			case TargetEnvironmentPackage.DEVICE_INSTANCE:
-				sequence_DeviceInstance(context, (DeviceInstance) semanticObject); 
-				return; 
-			case TargetEnvironmentPackage.TARGET_DEPLOY_ENVIROMENT:
-				sequence_TargetDeployEnviroment(context, (TargetDeployEnviroment) semanticObject); 
-				return; 
-			case TargetEnvironmentPackage.TARGET_ENVIRONMENT:
-				sequence_TargetEnvironment(context, (TargetEnvironment) semanticObject); 
-				return; 
-			}
-		if (errorAcceptor != null)
-			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
-	}
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     ConfigConnectionProperty returns ConfigConnectionProperty
-	 *
-	 * Constraint:
-	 *     (refConnectionProperty=[ConnectionProperty|EString] value=PropertyValue?)
-	 * </pre>
-	 */
-	protected void sequence_ConfigConnectionProperty(ISerializationContext context, ConfigConnectionProperty semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     ConfigConnection returns ConfigConnection
-	 *
-	 * Constraint:
-	 *     (name=EString connectDevice+=ConnectedDevice+)
-	 * </pre>
-	 */
-	protected void sequence_ConfigConnection(ISerializationContext context, ConfigConnection semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     ConnectedDevice returns ConnectedDevice
-	 *
-	 * Constraint:
-	 *     (refDevice=[DeviceInstance|EString] refConnection=[CommunicationConnection|EString] properties+=ConfigConnectionProperty*)
-	 * </pre>
-	 */
-	protected void sequence_ConnectedDevice(ISerializationContext context, ConnectedDevice semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     DeviceInstance returns DeviceInstance
-	 *
-	 * Constraint:
-	 *     (name=EString refDeviceType=[DeviceType|EString])
-	 * </pre>
-	 */
-	protected void sequence_DeviceInstance(ISerializationContext context, DeviceInstance semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, TargetEnvironmentPackage.Literals.DEVICE_INSTANCE__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TargetEnvironmentPackage.Literals.DEVICE_INSTANCE__NAME));
-			if (transientValues.isValueTransient(semanticObject, TargetEnvironmentPackage.Literals.DEVICE_INSTANCE__REF_DEVICE_TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TargetEnvironmentPackage.Literals.DEVICE_INSTANCE__REF_DEVICE_TYPE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getDeviceInstanceAccess().getNameEStringParserRuleCall_2_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getDeviceInstanceAccess().getRefDeviceTypeDeviceTypeEStringParserRuleCall_5_0_1(), semanticObject.eGet(TargetEnvironmentPackage.Literals.DEVICE_INSTANCE__REF_DEVICE_TYPE, false));
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Description returns TargetDeployEnviroment
-	 *     TargetDeployEnviroment returns TargetDeployEnviroment
-	 *
-	 * Constraint:
-	 *     (name=EString includeDevice+=DeviceInstance* configConnection+=ConfigConnection*)
-	 * </pre>
-	 */
-	protected void sequence_TargetDeployEnviroment(ISerializationContext context, TargetDeployEnviroment semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     TargetEnvironment returns TargetEnvironment
-	 *
-	 * Constraint:
-	 *     type+=Description
-	 * </pre>
-	 */
-	protected void sequence_TargetEnvironment(ISerializationContext context, TargetEnvironment semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
+    @Inject
+    private TargetEnvironmentGrammarAccess grammarAccess;
+
+    @Override
+    public void sequence(ISerializationContext context, EObject semanticObject) {
+        EPackage epackage = semanticObject.eClass().getEPackage();
+        ParserRule rule = context.getParserRule();
+        Action action = context.getAssignedAction();
+        Set<Parameter> parameters = context.getEnabledBooleanParameters();
+        if (epackage == BasePackage.eINSTANCE)
+            switch (semanticObject.eClass().getClassifierID()) {
+            case BasePackage.PROPERTY_VALUE_DOUBLE:
+                sequence_PropertyValueDouble(context, (PropertyValueDouble) semanticObject);
+                return;
+            case BasePackage.PROPERTY_VALUE_INT:
+                sequence_PropertyValueInt(context, (PropertyValueInt) semanticObject);
+                return;
+            case BasePackage.PROPERTY_VALUE_STRING:
+                sequence_PropertyValueString(context, (PropertyValueString) semanticObject);
+                return;
+            }
+        else if (epackage == DevicePackage.eINSTANCE)
+            switch (semanticObject.eClass().getClassifierID()) {
+            case DevicePackage.ATTRIBUTE_KIND:
+                sequence_AttributeKind(context, (AttributeKind) semanticObject);
+                return;
+            case DevicePackage.CAPABILITY_PROPERTY:
+                sequence_CapabilityProperty(context, (CapabilityProperty) semanticObject);
+                return;
+            case DevicePackage.CAPABILITY_TYPE:
+                sequence_CapabilityType(context, (CapabilityType) semanticObject);
+                return;
+            case DevicePackage.COMMUNICATION_CONNECTION:
+                sequence_CommunicationConnection(context, (CommunicationConnection) semanticObject);
+                return;
+            case DevicePackage.COMMUNICATION_TYPE:
+                sequence_CommunicationType(context, (CommunicationType) semanticObject);
+                return;
+            case DevicePackage.CONNECTION_PROPERTY:
+                sequence_ConnectionProperty(context, (ConnectionProperty) semanticObject);
+                return;
+            case DevicePackage.DEVICE_SET:
+                sequence_DeviceSet(context, (DeviceSet) semanticObject);
+                return;
+            case DevicePackage.DEVICE_TYPE:
+                sequence_DeviceType(context, (DeviceType) semanticObject);
+                return;
+            case DevicePackage.MAXIMUM_KIND:
+                sequence_MaximumKind(context, (MaximumKind) semanticObject);
+                return;
+            case DevicePackage.MINIMUM_KIND:
+                sequence_MinimumKind(context, (MinimumKind) semanticObject);
+                return;
+            case DevicePackage.SELECTION_KIND:
+                sequence_SelectionKind(context, (SelectionKind) semanticObject);
+                return;
+            }
+        else if (epackage == TargetEnvironmentPackage.eINSTANCE)
+            switch (semanticObject.eClass().getClassifierID()) {
+            case TargetEnvironmentPackage.CONFIG_CONNECTION:
+                sequence_ConfigConnection(context, (ConfigConnection) semanticObject);
+                return;
+            case TargetEnvironmentPackage.CONFIG_CONNECTION_PROPERTY:
+                sequence_ConfigConnectionProperty(context, (ConfigConnectionProperty) semanticObject);
+                return;
+            case TargetEnvironmentPackage.CONNECTED_DEVICE:
+                sequence_ConnectedDevice(context, (ConnectedDevice) semanticObject);
+                return;
+            case TargetEnvironmentPackage.DEVICE_INSTANCE:
+                sequence_DeviceInstance(context, (DeviceInstance) semanticObject);
+                return;
+            case TargetEnvironmentPackage.TARGET_DEPLOY_ENVIROMENT:
+                sequence_TargetDeployEnviroment(context, (TargetDeployEnviroment) semanticObject);
+                return;
+            case TargetEnvironmentPackage.TARGET_ENVIRONMENT:
+                sequence_TargetEnvironment(context, (TargetEnvironment) semanticObject);
+                return;
+            }
+        if (errorAcceptor != null)
+            errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
+    }
+
+    /**
+     * <pre>
+     * Contexts:
+     *     ConfigConnectionProperty returns ConfigConnectionProperty
+     *
+     * Constraint:
+     *     (refConnectionProperty=[ConnectionProperty|EString] value=PropertyValue?)
+     * </pre>
+     */
+    protected void sequence_ConfigConnectionProperty(ISerializationContext context, ConfigConnectionProperty semanticObject) {
+        genericSequencer.createSequence(context, semanticObject);
+    }
+
+
+    /**
+     * <pre>
+     * Contexts:
+     *     ConfigConnection returns ConfigConnection
+     *
+     * Constraint:
+     *     (name=EString connectDevice+=ConnectedDevice+)
+     * </pre>
+     */
+    protected void sequence_ConfigConnection(ISerializationContext context, ConfigConnection semanticObject) {
+        genericSequencer.createSequence(context, semanticObject);
+    }
+
+
+    /**
+     * <pre>
+     * Contexts:
+     *     ConnectedDevice returns ConnectedDevice
+     *
+     * Constraint:
+     *     (refDevice=[DeviceInstance|EString] refConnection=[CommunicationConnection|EString] properties+=ConfigConnectionProperty*)
+     * </pre>
+     */
+    protected void sequence_ConnectedDevice(ISerializationContext context, ConnectedDevice semanticObject) {
+        genericSequencer.createSequence(context, semanticObject);
+    }
+
+
+    /**
+     * <pre>
+     * Contexts:
+     *     DeviceInstance returns DeviceInstance
+     *
+     * Constraint:
+     *     (name=EString refDeviceType=[DeviceType|EString])
+     * </pre>
+     */
+    protected void sequence_DeviceInstance(ISerializationContext context, DeviceInstance semanticObject) {
+        if (errorAcceptor != null) {
+            if (transientValues.isValueTransient(semanticObject, TargetEnvironmentPackage.Literals.DEVICE_INSTANCE__NAME) == ValueTransient.YES)
+                errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TargetEnvironmentPackage.Literals.DEVICE_INSTANCE__NAME));
+            if (transientValues.isValueTransient(semanticObject, TargetEnvironmentPackage.Literals.DEVICE_INSTANCE__REF_DEVICE_TYPE) == ValueTransient.YES)
+                errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TargetEnvironmentPackage.Literals.DEVICE_INSTANCE__REF_DEVICE_TYPE));
+        }
+        SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+        feeder.accept(grammarAccess.getDeviceInstanceAccess().getNameEStringParserRuleCall_2_0(), semanticObject.getName());
+        feeder.accept(grammarAccess.getDeviceInstanceAccess().getRefDeviceTypeDeviceTypeEStringParserRuleCall_5_0_1(), semanticObject.eGet(TargetEnvironmentPackage.Literals.DEVICE_INSTANCE__REF_DEVICE_TYPE, false));
+        feeder.finish();
+    }
+
+
+    /**
+     * <pre>
+     * Contexts:
+     *     Description returns TargetDeployEnviroment
+     *     TargetDeployEnviroment returns TargetDeployEnviroment
+     *
+     * Constraint:
+     *     (name=EString includeDevice+=DeviceInstance* configConnection+=ConfigConnection*)
+     * </pre>
+     */
+    protected void sequence_TargetDeployEnviroment(ISerializationContext context, TargetDeployEnviroment semanticObject) {
+        genericSequencer.createSequence(context, semanticObject);
+    }
+
+
+    /**
+     * <pre>
+     * Contexts:
+     *     TargetEnvironment returns TargetEnvironment
+     *
+     * Constraint:
+     *     type+=Description
+     * </pre>
+     */
+    protected void sequence_TargetEnvironment(ISerializationContext context, TargetEnvironment semanticObject) {
+        genericSequencer.createSequence(context, semanticObject);
+    }
+
+
 }

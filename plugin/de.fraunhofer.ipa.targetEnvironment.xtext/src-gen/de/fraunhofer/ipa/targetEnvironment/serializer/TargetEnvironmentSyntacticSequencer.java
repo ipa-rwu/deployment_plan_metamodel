@@ -17,54 +17,54 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 @SuppressWarnings("all")
 public class TargetEnvironmentSyntacticSequencer extends AbstractSyntacticSequencer {
 
-	protected TargetEnvironmentGrammarAccess grammarAccess;
-	
-	@Inject
-	protected void init(IGrammarAccess access) {
-		grammarAccess = (TargetEnvironmentGrammarAccess) access;
-	}
-	
-	@Override
-	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (ruleCall.getRule() == grammarAccess.getDEDENTRule())
-			return getDEDENTToken(semanticObject, ruleCall, node);
-		else if (ruleCall.getRule() == grammarAccess.getINDENTRule())
-			return getINDENTToken(semanticObject, ruleCall, node);
-		else if (ruleCall.getRule() == grammarAccess.getPreListElementRule())
-			return getPreListElementToken(semanticObject, ruleCall, node);
-		return "";
-	}
-	
-	/**
-	 * Synthetic terminal rule. The concrete syntax is to be specified by clients.
-	 * Defaults to the empty string.
-	 */
-	protected String getDEDENTToken(EObject semanticObject, RuleCall ruleCall, INode node) { return ""; }
-	
-	/**
-	 * Synthetic terminal rule. The concrete syntax is to be specified by clients.
-	 * Defaults to the empty string.
-	 */
-	protected String getINDENTToken(EObject semanticObject, RuleCall ruleCall, INode node) { return ""; }
-	
-	/**
-	 * PreListElement hidden(SL_COMMENT):
-	 *   '-';
-	 */
-	protected String getPreListElementToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "-";
-	}
-	
-	@Override
-	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
-		if (transition.getAmbiguousSyntaxes().isEmpty()) return;
-		List<INode> transitionNodes = collectNodes(fromNode, toNode);
-		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
-			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			acceptNodes(getLastNavigableState(), syntaxNodes);
-		}
-	}
+    protected TargetEnvironmentGrammarAccess grammarAccess;
+
+    @Inject
+    protected void init(IGrammarAccess access) {
+        grammarAccess = (TargetEnvironmentGrammarAccess) access;
+    }
+
+    @Override
+    protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+        if (ruleCall.getRule() == grammarAccess.getDEDENTRule())
+            return getDEDENTToken(semanticObject, ruleCall, node);
+        else if (ruleCall.getRule() == grammarAccess.getINDENTRule())
+            return getINDENTToken(semanticObject, ruleCall, node);
+        else if (ruleCall.getRule() == grammarAccess.getPreListElementRule())
+            return getPreListElementToken(semanticObject, ruleCall, node);
+        return "";
+    }
+
+    /**
+     * Synthetic terminal rule. The concrete syntax is to be specified by clients.
+     * Defaults to the empty string.
+     */
+    protected String getDEDENTToken(EObject semanticObject, RuleCall ruleCall, INode node) { return ""; }
+
+    /**
+     * Synthetic terminal rule. The concrete syntax is to be specified by clients.
+     * Defaults to the empty string.
+     */
+    protected String getINDENTToken(EObject semanticObject, RuleCall ruleCall, INode node) { return ""; }
+
+    /**
+     * PreListElement hidden(SL_COMMENT):
+     *   '-';
+     */
+    protected String getPreListElementToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+        if (node != null)
+            return getTokenText(node);
+        return "-";
+    }
+
+    @Override
+    protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+        if (transition.getAmbiguousSyntaxes().isEmpty()) return;
+        List<INode> transitionNodes = collectNodes(fromNode, toNode);
+        for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
+            List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
+            acceptNodes(getLastNavigableState(), syntaxNodes);
+        }
+    }
 
 }

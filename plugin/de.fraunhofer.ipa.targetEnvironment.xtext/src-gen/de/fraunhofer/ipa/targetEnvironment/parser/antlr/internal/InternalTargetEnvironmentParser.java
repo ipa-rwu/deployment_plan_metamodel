@@ -76,16 +76,16 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
         }
         public InternalTargetEnvironmentParser(TokenStream input, RecognizerSharedState state) {
             super(input, state);
-             
+
         }
-        
+
 
     public String[] getTokenNames() { return InternalTargetEnvironmentParser.tokenNames; }
     public String getGrammarFileName() { return "InternalTargetEnvironmentParser.g"; }
 
 
 
-     	private TargetEnvironmentGrammarAccess grammarAccess;
+        private TargetEnvironmentGrammarAccess grammarAccess;
 
         public InternalTargetEnvironmentParser(TokenStream input, TargetEnvironmentGrammarAccess grammarAccess) {
             this(input);
@@ -95,13 +95,13 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
 
         @Override
         protected String getFirstRuleName() {
-        	return "TargetEnvironment";
-       	}
+            return "TargetEnvironment";
+        }
 
-       	@Override
-       	protected TargetEnvironmentGrammarAccess getGrammarAccess() {
-       		return grammarAccess;
-       	}
+        @Override
+        protected TargetEnvironmentGrammarAccess getGrammarAccess() {
+            return grammarAccess;
+        }
 
 
 
@@ -118,14 +118,14 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironmentParser.g:57:58: (iv_ruleTargetEnvironment= ruleTargetEnvironment EOF )
             // InternalTargetEnvironmentParser.g:58:2: iv_ruleTargetEnvironment= ruleTargetEnvironment EOF
             {
-             newCompositeNode(grammarAccess.getTargetEnvironmentRule()); 
+             newCompositeNode(grammarAccess.getTargetEnvironmentRule());
             pushFollow(FOLLOW_1);
             iv_ruleTargetEnvironment=ruleTargetEnvironment();
 
             state._fsp--;
 
-             current =iv_ruleTargetEnvironment; 
-            match(input,EOF,FOLLOW_2); 
+             current =iv_ruleTargetEnvironment;
+            match(input,EOF,FOLLOW_2);
 
             }
 
@@ -151,7 +151,7 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
 
 
 
-        	enterRule();
+            enterRule();
 
         try {
             // InternalTargetEnvironmentParser.g:70:2: ( ( () ( (lv_type_1_0= ruleDescription ) ) ) )
@@ -161,13 +161,13 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironmentParser.g:72:3: () ( (lv_type_1_0= ruleDescription ) )
             {
             // InternalTargetEnvironmentParser.g:72:3: ()
-            // InternalTargetEnvironmentParser.g:73:4: 
+            // InternalTargetEnvironmentParser.g:73:4:
             {
 
-            				current = forceCreateModelElement(
-            					grammarAccess.getTargetEnvironmentAccess().getTargetEnvironmentAction_0(),
-            					current);
-            			
+                            current = forceCreateModelElement(
+                                grammarAccess.getTargetEnvironmentAccess().getTargetEnvironmentAction_0(),
+                                current);
+
 
             }
 
@@ -178,26 +178,23 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironmentParser.g:81:5: lv_type_1_0= ruleDescription
             {
 
-            					newCompositeNode(grammarAccess.getTargetEnvironmentAccess().getTypeDescriptionParserRuleCall_1_0());
-            				
+                                newCompositeNode(grammarAccess.getTargetEnvironmentAccess().getTypeDescriptionParserRuleCall_1_0());
+
             pushFollow(FOLLOW_2);
             lv_type_1_0=ruleDescription();
 
             state._fsp--;
 
 
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getTargetEnvironmentRule());
-            					}
-            					add(
-            						current,
-            						"type",
-            						lv_type_1_0,
-            						"de.fraunhofer.ipa.targetEnvironment.TargetEnvironment.Description");
-            					afterParserOrEnumRuleCall();
-            				
-
-            }
+                                if (current==null) {
+                                    current = createModelElementForParent(grammarAccess.getTargetEnvironmentRule());
+                                }
+                                add(
+                                    current,
+                                    "type",
+                                    lv_type_1_0,
+                                    "de.fraunhofer.ipa.targetEnvironment.TargetEnvironment.Description");
+                                afterParserOrEnumRuleCall();
 
 
             }
@@ -209,7 +206,10 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             }
 
 
-            	leaveRule();
+            }
+
+
+                leaveRule();
 
         }
 
@@ -236,14 +236,14 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironmentParser.g:102:52: (iv_ruleDescription= ruleDescription EOF )
             // InternalTargetEnvironmentParser.g:103:2: iv_ruleDescription= ruleDescription EOF
             {
-             newCompositeNode(grammarAccess.getDescriptionRule()); 
+             newCompositeNode(grammarAccess.getDescriptionRule());
             pushFollow(FOLLOW_1);
             iv_ruleDescription=ruleDescription();
 
             state._fsp--;
 
-             current =iv_ruleDescription; 
-            match(input,EOF,FOLLOW_2); 
+             current =iv_ruleDescription;
+            match(input,EOF,FOLLOW_2);
 
             }
 
@@ -271,7 +271,7 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
 
 
 
-        	enterRule();
+            enterRule();
 
         try {
             // InternalTargetEnvironmentParser.g:115:2: ( (this_DeviceSet_0= ruleDeviceSet | this_TargetDeployEnviroment_1= ruleTargetDeployEnviroment ) )
@@ -298,17 +298,17 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
                     // InternalTargetEnvironmentParser.g:117:3: this_DeviceSet_0= ruleDeviceSet
                     {
 
-                    			newCompositeNode(grammarAccess.getDescriptionAccess().getDeviceSetParserRuleCall_0());
-                    		
+                                newCompositeNode(grammarAccess.getDescriptionAccess().getDeviceSetParserRuleCall_0());
+
                     pushFollow(FOLLOW_2);
                     this_DeviceSet_0=ruleDeviceSet();
 
                     state._fsp--;
 
 
-                    			current = this_DeviceSet_0;
-                    			afterParserOrEnumRuleCall();
-                    		
+                                current = this_DeviceSet_0;
+                                afterParserOrEnumRuleCall();
+
 
                     }
                     break;
@@ -316,17 +316,17 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
                     // InternalTargetEnvironmentParser.g:126:3: this_TargetDeployEnviroment_1= ruleTargetDeployEnviroment
                     {
 
-                    			newCompositeNode(grammarAccess.getDescriptionAccess().getTargetDeployEnviromentParserRuleCall_1());
-                    		
+                                newCompositeNode(grammarAccess.getDescriptionAccess().getTargetDeployEnviromentParserRuleCall_1());
+
                     pushFollow(FOLLOW_2);
                     this_TargetDeployEnviroment_1=ruleTargetDeployEnviroment();
 
                     state._fsp--;
 
 
-                    			current = this_TargetDeployEnviroment_1;
-                    			afterParserOrEnumRuleCall();
-                    		
+                                current = this_TargetDeployEnviroment_1;
+                                afterParserOrEnumRuleCall();
+
 
                     }
                     break;
@@ -337,7 +337,7 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             }
 
 
-            	leaveRule();
+                leaveRule();
 
         }
 
@@ -364,14 +364,14 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironmentParser.g:138:63: (iv_ruleTargetDeployEnviroment= ruleTargetDeployEnviroment EOF )
             // InternalTargetEnvironmentParser.g:139:2: iv_ruleTargetDeployEnviroment= ruleTargetDeployEnviroment EOF
             {
-             newCompositeNode(grammarAccess.getTargetDeployEnviromentRule()); 
+             newCompositeNode(grammarAccess.getTargetDeployEnviromentRule());
             pushFollow(FOLLOW_1);
             iv_ruleTargetDeployEnviroment=ruleTargetDeployEnviroment();
 
             state._fsp--;
 
-             current =iv_ruleTargetDeployEnviroment; 
-            match(input,EOF,FOLLOW_2); 
+             current =iv_ruleTargetDeployEnviroment;
+            match(input,EOF,FOLLOW_2);
 
             }
 
@@ -411,7 +411,7 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
 
 
 
-        	enterRule();
+            enterRule();
 
         try {
             // InternalTargetEnvironmentParser.g:151:2: ( ( () otherlv_1= TargetDeployEnviroment this_INDENT_2= RULE_INDENT otherlv_3= Name ( (lv_name_4_0= ruleEString ) ) (otherlv_5= IncludeDevice this_INDENT_6= RULE_INDENT ( (lv_includeDevice_7_0= ruleDeviceInstance ) )+ this_DEDENT_8= RULE_DEDENT )? (otherlv_9= ConfigConnection this_INDENT_10= RULE_INDENT ( (lv_configConnection_11_0= ruleConfigConnection ) )+ this_DEDENT_12= RULE_DEDENT )? this_DEDENT_13= RULE_DEDENT ) )
@@ -421,28 +421,28 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironmentParser.g:153:3: () otherlv_1= TargetDeployEnviroment this_INDENT_2= RULE_INDENT otherlv_3= Name ( (lv_name_4_0= ruleEString ) ) (otherlv_5= IncludeDevice this_INDENT_6= RULE_INDENT ( (lv_includeDevice_7_0= ruleDeviceInstance ) )+ this_DEDENT_8= RULE_DEDENT )? (otherlv_9= ConfigConnection this_INDENT_10= RULE_INDENT ( (lv_configConnection_11_0= ruleConfigConnection ) )+ this_DEDENT_12= RULE_DEDENT )? this_DEDENT_13= RULE_DEDENT
             {
             // InternalTargetEnvironmentParser.g:153:3: ()
-            // InternalTargetEnvironmentParser.g:154:4: 
+            // InternalTargetEnvironmentParser.g:154:4:
             {
 
-            				current = forceCreateModelElement(
-            					grammarAccess.getTargetDeployEnviromentAccess().getTargetDeployEnviromentAction_0(),
-            					current);
-            			
+                            current = forceCreateModelElement(
+                                grammarAccess.getTargetDeployEnviromentAccess().getTargetDeployEnviromentAction_0(),
+                                current);
+
 
             }
 
-            otherlv_1=(Token)match(input,TargetDeployEnviroment,FOLLOW_3); 
+            otherlv_1=(Token)match(input,TargetDeployEnviroment,FOLLOW_3);
 
-            			newLeafNode(otherlv_1, grammarAccess.getTargetDeployEnviromentAccess().getTargetDeployEnviromentKeyword_1());
-            		
-            this_INDENT_2=(Token)match(input,RULE_INDENT,FOLLOW_4); 
+                        newLeafNode(otherlv_1, grammarAccess.getTargetDeployEnviromentAccess().getTargetDeployEnviromentKeyword_1());
 
-            			newLeafNode(this_INDENT_2, grammarAccess.getTargetDeployEnviromentAccess().getINDENTTerminalRuleCall_2());
-            		
-            otherlv_3=(Token)match(input,Name,FOLLOW_5); 
+            this_INDENT_2=(Token)match(input,RULE_INDENT,FOLLOW_4);
 
-            			newLeafNode(otherlv_3, grammarAccess.getTargetDeployEnviromentAccess().getNameKeyword_3());
-            		
+                        newLeafNode(this_INDENT_2, grammarAccess.getTargetDeployEnviromentAccess().getINDENTTerminalRuleCall_2());
+
+            otherlv_3=(Token)match(input,Name,FOLLOW_5);
+
+                        newLeafNode(otherlv_3, grammarAccess.getTargetDeployEnviromentAccess().getNameKeyword_3());
+
             // InternalTargetEnvironmentParser.g:172:3: ( (lv_name_4_0= ruleEString ) )
             // InternalTargetEnvironmentParser.g:173:4: (lv_name_4_0= ruleEString )
             {
@@ -450,24 +450,24 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironmentParser.g:174:5: lv_name_4_0= ruleEString
             {
 
-            					newCompositeNode(grammarAccess.getTargetDeployEnviromentAccess().getNameEStringParserRuleCall_4_0());
-            				
+                                newCompositeNode(grammarAccess.getTargetDeployEnviromentAccess().getNameEStringParserRuleCall_4_0());
+
             pushFollow(FOLLOW_6);
             lv_name_4_0=ruleEString();
 
             state._fsp--;
 
 
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getTargetDeployEnviromentRule());
-            					}
-            					set(
-            						current,
-            						"name",
-            						lv_name_4_0,
-            						"de.fraunhofer.ipa.targetEnvironment.Base.EString");
-            					afterParserOrEnumRuleCall();
-            				
+                                if (current==null) {
+                                    current = createModelElementForParent(grammarAccess.getTargetDeployEnviromentRule());
+                                }
+                                set(
+                                    current,
+                                    "name",
+                                    lv_name_4_0,
+                                    "de.fraunhofer.ipa.targetEnvironment.Base.EString");
+                                afterParserOrEnumRuleCall();
+
 
             }
 
@@ -485,14 +485,14 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
                 case 1 :
                     // InternalTargetEnvironmentParser.g:192:4: otherlv_5= IncludeDevice this_INDENT_6= RULE_INDENT ( (lv_includeDevice_7_0= ruleDeviceInstance ) )+ this_DEDENT_8= RULE_DEDENT
                     {
-                    otherlv_5=(Token)match(input,IncludeDevice,FOLLOW_3); 
+                    otherlv_5=(Token)match(input,IncludeDevice,FOLLOW_3);
 
-                    				newLeafNode(otherlv_5, grammarAccess.getTargetDeployEnviromentAccess().getIncludeDeviceKeyword_5_0());
-                    			
-                    this_INDENT_6=(Token)match(input,RULE_INDENT,FOLLOW_7); 
+                                    newLeafNode(otherlv_5, grammarAccess.getTargetDeployEnviromentAccess().getIncludeDeviceKeyword_5_0());
 
-                    				newLeafNode(this_INDENT_6, grammarAccess.getTargetDeployEnviromentAccess().getINDENTTerminalRuleCall_5_1());
-                    			
+                    this_INDENT_6=(Token)match(input,RULE_INDENT,FOLLOW_7);
+
+                                    newLeafNode(this_INDENT_6, grammarAccess.getTargetDeployEnviromentAccess().getINDENTTerminalRuleCall_5_1());
+
                     // InternalTargetEnvironmentParser.g:200:4: ( (lv_includeDevice_7_0= ruleDeviceInstance ) )+
                     int cnt2=0;
                     loop2:
@@ -506,40 +506,40 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
 
 
                         switch (alt2) {
-                    	case 1 :
-                    	    // InternalTargetEnvironmentParser.g:201:5: (lv_includeDevice_7_0= ruleDeviceInstance )
-                    	    {
-                    	    // InternalTargetEnvironmentParser.g:201:5: (lv_includeDevice_7_0= ruleDeviceInstance )
-                    	    // InternalTargetEnvironmentParser.g:202:6: lv_includeDevice_7_0= ruleDeviceInstance
-                    	    {
+                        case 1 :
+                            // InternalTargetEnvironmentParser.g:201:5: (lv_includeDevice_7_0= ruleDeviceInstance )
+                            {
+                            // InternalTargetEnvironmentParser.g:201:5: (lv_includeDevice_7_0= ruleDeviceInstance )
+                            // InternalTargetEnvironmentParser.g:202:6: lv_includeDevice_7_0= ruleDeviceInstance
+                            {
 
-                    	    						newCompositeNode(grammarAccess.getTargetDeployEnviromentAccess().getIncludeDeviceDeviceInstanceParserRuleCall_5_2_0());
-                    	    					
-                    	    pushFollow(FOLLOW_8);
-                    	    lv_includeDevice_7_0=ruleDeviceInstance();
+                                                    newCompositeNode(grammarAccess.getTargetDeployEnviromentAccess().getIncludeDeviceDeviceInstanceParserRuleCall_5_2_0());
 
-                    	    state._fsp--;
+                            pushFollow(FOLLOW_8);
+                            lv_includeDevice_7_0=ruleDeviceInstance();
 
-
-                    	    						if (current==null) {
-                    	    							current = createModelElementForParent(grammarAccess.getTargetDeployEnviromentRule());
-                    	    						}
-                    	    						add(
-                    	    							current,
-                    	    							"includeDevice",
-                    	    							lv_includeDevice_7_0,
-                    	    							"de.fraunhofer.ipa.targetEnvironment.TargetEnvironment.DeviceInstance");
-                    	    						afterParserOrEnumRuleCall();
-                    	    					
-
-                    	    }
+                            state._fsp--;
 
 
-                    	    }
-                    	    break;
+                                                    if (current==null) {
+                                                        current = createModelElementForParent(grammarAccess.getTargetDeployEnviromentRule());
+                                                    }
+                                                    add(
+                                                        current,
+                                                        "includeDevice",
+                                                        lv_includeDevice_7_0,
+                                                        "de.fraunhofer.ipa.targetEnvironment.TargetEnvironment.DeviceInstance");
+                                                    afterParserOrEnumRuleCall();
 
-                    	default :
-                    	    if ( cnt2 >= 1 ) break loop2;
+
+                            }
+
+
+                            }
+                            break;
+
+                        default :
+                            if ( cnt2 >= 1 ) break loop2;
                                 EarlyExitException eee =
                                     new EarlyExitException(2, input);
                                 throw eee;
@@ -547,10 +547,10 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
                         cnt2++;
                     } while (true);
 
-                    this_DEDENT_8=(Token)match(input,RULE_DEDENT,FOLLOW_9); 
+                    this_DEDENT_8=(Token)match(input,RULE_DEDENT,FOLLOW_9);
 
-                    				newLeafNode(this_DEDENT_8, grammarAccess.getTargetDeployEnviromentAccess().getDEDENTTerminalRuleCall_5_3());
-                    			
+                                    newLeafNode(this_DEDENT_8, grammarAccess.getTargetDeployEnviromentAccess().getDEDENTTerminalRuleCall_5_3());
+
 
                     }
                     break;
@@ -568,14 +568,14 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
                 case 1 :
                     // InternalTargetEnvironmentParser.g:225:4: otherlv_9= ConfigConnection this_INDENT_10= RULE_INDENT ( (lv_configConnection_11_0= ruleConfigConnection ) )+ this_DEDENT_12= RULE_DEDENT
                     {
-                    otherlv_9=(Token)match(input,ConfigConnection,FOLLOW_3); 
+                    otherlv_9=(Token)match(input,ConfigConnection,FOLLOW_3);
 
-                    				newLeafNode(otherlv_9, grammarAccess.getTargetDeployEnviromentAccess().getConfigConnectionKeyword_6_0());
-                    			
-                    this_INDENT_10=(Token)match(input,RULE_INDENT,FOLLOW_7); 
+                                    newLeafNode(otherlv_9, grammarAccess.getTargetDeployEnviromentAccess().getConfigConnectionKeyword_6_0());
 
-                    				newLeafNode(this_INDENT_10, grammarAccess.getTargetDeployEnviromentAccess().getINDENTTerminalRuleCall_6_1());
-                    			
+                    this_INDENT_10=(Token)match(input,RULE_INDENT,FOLLOW_7);
+
+                                    newLeafNode(this_INDENT_10, grammarAccess.getTargetDeployEnviromentAccess().getINDENTTerminalRuleCall_6_1());
+
                     // InternalTargetEnvironmentParser.g:233:4: ( (lv_configConnection_11_0= ruleConfigConnection ) )+
                     int cnt4=0;
                     loop4:
@@ -589,40 +589,40 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
 
 
                         switch (alt4) {
-                    	case 1 :
-                    	    // InternalTargetEnvironmentParser.g:234:5: (lv_configConnection_11_0= ruleConfigConnection )
-                    	    {
-                    	    // InternalTargetEnvironmentParser.g:234:5: (lv_configConnection_11_0= ruleConfigConnection )
-                    	    // InternalTargetEnvironmentParser.g:235:6: lv_configConnection_11_0= ruleConfigConnection
-                    	    {
+                        case 1 :
+                            // InternalTargetEnvironmentParser.g:234:5: (lv_configConnection_11_0= ruleConfigConnection )
+                            {
+                            // InternalTargetEnvironmentParser.g:234:5: (lv_configConnection_11_0= ruleConfigConnection )
+                            // InternalTargetEnvironmentParser.g:235:6: lv_configConnection_11_0= ruleConfigConnection
+                            {
 
-                    	    						newCompositeNode(grammarAccess.getTargetDeployEnviromentAccess().getConfigConnectionConfigConnectionParserRuleCall_6_2_0());
-                    	    					
-                    	    pushFollow(FOLLOW_8);
-                    	    lv_configConnection_11_0=ruleConfigConnection();
+                                                    newCompositeNode(grammarAccess.getTargetDeployEnviromentAccess().getConfigConnectionConfigConnectionParserRuleCall_6_2_0());
 
-                    	    state._fsp--;
+                            pushFollow(FOLLOW_8);
+                            lv_configConnection_11_0=ruleConfigConnection();
 
-
-                    	    						if (current==null) {
-                    	    							current = createModelElementForParent(grammarAccess.getTargetDeployEnviromentRule());
-                    	    						}
-                    	    						add(
-                    	    							current,
-                    	    							"configConnection",
-                    	    							lv_configConnection_11_0,
-                    	    							"de.fraunhofer.ipa.targetEnvironment.TargetEnvironment.ConfigConnection");
-                    	    						afterParserOrEnumRuleCall();
-                    	    					
-
-                    	    }
+                            state._fsp--;
 
 
-                    	    }
-                    	    break;
+                                                    if (current==null) {
+                                                        current = createModelElementForParent(grammarAccess.getTargetDeployEnviromentRule());
+                                                    }
+                                                    add(
+                                                        current,
+                                                        "configConnection",
+                                                        lv_configConnection_11_0,
+                                                        "de.fraunhofer.ipa.targetEnvironment.TargetEnvironment.ConfigConnection");
+                                                    afterParserOrEnumRuleCall();
 
-                    	default :
-                    	    if ( cnt4 >= 1 ) break loop4;
+
+                            }
+
+
+                            }
+                            break;
+
+                        default :
+                            if ( cnt4 >= 1 ) break loop4;
                                 EarlyExitException eee =
                                     new EarlyExitException(4, input);
                                 throw eee;
@@ -630,28 +630,28 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
                         cnt4++;
                     } while (true);
 
-                    this_DEDENT_12=(Token)match(input,RULE_DEDENT,FOLLOW_10); 
+                    this_DEDENT_12=(Token)match(input,RULE_DEDENT,FOLLOW_10);
 
-                    				newLeafNode(this_DEDENT_12, grammarAccess.getTargetDeployEnviromentAccess().getDEDENTTerminalRuleCall_6_3());
-                    			
+                                    newLeafNode(this_DEDENT_12, grammarAccess.getTargetDeployEnviromentAccess().getDEDENTTerminalRuleCall_6_3());
+
 
                     }
                     break;
 
             }
 
-            this_DEDENT_13=(Token)match(input,RULE_DEDENT,FOLLOW_2); 
+            this_DEDENT_13=(Token)match(input,RULE_DEDENT,FOLLOW_2);
 
-            			newLeafNode(this_DEDENT_13, grammarAccess.getTargetDeployEnviromentAccess().getDEDENTTerminalRuleCall_7());
-            		
-
-            }
+                        newLeafNode(this_DEDENT_13, grammarAccess.getTargetDeployEnviromentAccess().getDEDENTTerminalRuleCall_7());
 
 
             }
 
 
-            	leaveRule();
+            }
+
+
+                leaveRule();
 
         }
 
@@ -678,14 +678,14 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironmentParser.g:265:55: (iv_ruleDeviceInstance= ruleDeviceInstance EOF )
             // InternalTargetEnvironmentParser.g:266:2: iv_ruleDeviceInstance= ruleDeviceInstance EOF
             {
-             newCompositeNode(grammarAccess.getDeviceInstanceRule()); 
+             newCompositeNode(grammarAccess.getDeviceInstanceRule());
             pushFollow(FOLLOW_1);
             iv_ruleDeviceInstance=ruleDeviceInstance();
 
             state._fsp--;
 
-             current =iv_ruleDeviceInstance; 
-            match(input,EOF,FOLLOW_2); 
+             current =iv_ruleDeviceInstance;
+            match(input,EOF,FOLLOW_2);
 
             }
 
@@ -715,7 +715,7 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
 
 
 
-        	enterRule();
+            enterRule();
 
         try {
             // InternalTargetEnvironmentParser.g:278:2: ( ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= RefDeviceType ( ( ruleEString ) ) this_DEDENT_6= RULE_DEDENT ) )
@@ -725,20 +725,20 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironmentParser.g:280:3: rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= RefDeviceType ( ( ruleEString ) ) this_DEDENT_6= RULE_DEDENT
             {
 
-            			newCompositeNode(grammarAccess.getDeviceInstanceAccess().getPreListElementParserRuleCall_0());
-            		
+                        newCompositeNode(grammarAccess.getDeviceInstanceAccess().getPreListElementParserRuleCall_0());
+
             pushFollow(FOLLOW_4);
             rulePreListElement();
 
             state._fsp--;
 
 
-            			afterParserOrEnumRuleCall();
-            		
-            otherlv_1=(Token)match(input,Name,FOLLOW_5); 
+                        afterParserOrEnumRuleCall();
 
-            			newLeafNode(otherlv_1, grammarAccess.getDeviceInstanceAccess().getNameKeyword_1());
-            		
+            otherlv_1=(Token)match(input,Name,FOLLOW_5);
+
+                        newLeafNode(otherlv_1, grammarAccess.getDeviceInstanceAccess().getNameKeyword_1());
+
             // InternalTargetEnvironmentParser.g:291:3: ( (lv_name_2_0= ruleEString ) )
             // InternalTargetEnvironmentParser.g:292:4: (lv_name_2_0= ruleEString )
             {
@@ -746,38 +746,38 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironmentParser.g:293:5: lv_name_2_0= ruleEString
             {
 
-            					newCompositeNode(grammarAccess.getDeviceInstanceAccess().getNameEStringParserRuleCall_2_0());
-            				
+                                newCompositeNode(grammarAccess.getDeviceInstanceAccess().getNameEStringParserRuleCall_2_0());
+
             pushFollow(FOLLOW_3);
             lv_name_2_0=ruleEString();
 
             state._fsp--;
 
 
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getDeviceInstanceRule());
-            					}
-            					set(
-            						current,
-            						"name",
-            						lv_name_2_0,
-            						"de.fraunhofer.ipa.targetEnvironment.Base.EString");
-            					afterParserOrEnumRuleCall();
-            				
-
-            }
+                                if (current==null) {
+                                    current = createModelElementForParent(grammarAccess.getDeviceInstanceRule());
+                                }
+                                set(
+                                    current,
+                                    "name",
+                                    lv_name_2_0,
+                                    "de.fraunhofer.ipa.targetEnvironment.Base.EString");
+                                afterParserOrEnumRuleCall();
 
 
             }
 
-            this_INDENT_3=(Token)match(input,RULE_INDENT,FOLLOW_11); 
 
-            			newLeafNode(this_INDENT_3, grammarAccess.getDeviceInstanceAccess().getINDENTTerminalRuleCall_3());
-            		
-            otherlv_4=(Token)match(input,RefDeviceType,FOLLOW_5); 
+            }
 
-            			newLeafNode(otherlv_4, grammarAccess.getDeviceInstanceAccess().getRefDeviceTypeKeyword_4());
-            		
+            this_INDENT_3=(Token)match(input,RULE_INDENT,FOLLOW_11);
+
+                        newLeafNode(this_INDENT_3, grammarAccess.getDeviceInstanceAccess().getINDENTTerminalRuleCall_3());
+
+            otherlv_4=(Token)match(input,RefDeviceType,FOLLOW_5);
+
+                        newLeafNode(otherlv_4, grammarAccess.getDeviceInstanceAccess().getRefDeviceTypeKeyword_4());
+
             // InternalTargetEnvironmentParser.g:318:3: ( ( ruleEString ) )
             // InternalTargetEnvironmentParser.g:319:4: ( ruleEString )
             {
@@ -785,39 +785,39 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironmentParser.g:320:5: ruleEString
             {
 
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getDeviceInstanceRule());
-            					}
-            				
+                                if (current==null) {
+                                    current = createModelElement(grammarAccess.getDeviceInstanceRule());
+                                }
 
-            					newCompositeNode(grammarAccess.getDeviceInstanceAccess().getRefDeviceTypeDeviceTypeCrossReference_5_0());
-            				
+
+                                newCompositeNode(grammarAccess.getDeviceInstanceAccess().getRefDeviceTypeDeviceTypeCrossReference_5_0());
+
             pushFollow(FOLLOW_10);
             ruleEString();
 
             state._fsp--;
 
 
-            					afterParserOrEnumRuleCall();
-            				
+                                afterParserOrEnumRuleCall();
 
-            }
-
-
-            }
-
-            this_DEDENT_6=(Token)match(input,RULE_DEDENT,FOLLOW_2); 
-
-            			newLeafNode(this_DEDENT_6, grammarAccess.getDeviceInstanceAccess().getDEDENTTerminalRuleCall_6());
-            		
 
             }
 
 
             }
 
+            this_DEDENT_6=(Token)match(input,RULE_DEDENT,FOLLOW_2);
 
-            	leaveRule();
+                        newLeafNode(this_DEDENT_6, grammarAccess.getDeviceInstanceAccess().getDEDENTTerminalRuleCall_6());
+
+
+            }
+
+
+            }
+
+
+                leaveRule();
 
         }
 
@@ -844,14 +844,14 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironmentParser.g:342:57: (iv_ruleConfigConnection= ruleConfigConnection EOF )
             // InternalTargetEnvironmentParser.g:343:2: iv_ruleConfigConnection= ruleConfigConnection EOF
             {
-             newCompositeNode(grammarAccess.getConfigConnectionRule()); 
+             newCompositeNode(grammarAccess.getConfigConnectionRule());
             pushFollow(FOLLOW_1);
             iv_ruleConfigConnection=ruleConfigConnection();
 
             state._fsp--;
 
-             current =iv_ruleConfigConnection; 
-            match(input,EOF,FOLLOW_2); 
+             current =iv_ruleConfigConnection;
+            match(input,EOF,FOLLOW_2);
 
             }
 
@@ -885,7 +885,7 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
 
 
 
-        	enterRule();
+            enterRule();
 
         try {
             // InternalTargetEnvironmentParser.g:355:2: ( ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= ConnectDevice this_INDENT_5= RULE_INDENT ( (lv_connectDevice_6_0= ruleConnectedDevice ) )+ this_DEDENT_7= RULE_DEDENT this_DEDENT_8= RULE_DEDENT ) )
@@ -895,20 +895,20 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironmentParser.g:357:3: rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= ConnectDevice this_INDENT_5= RULE_INDENT ( (lv_connectDevice_6_0= ruleConnectedDevice ) )+ this_DEDENT_7= RULE_DEDENT this_DEDENT_8= RULE_DEDENT
             {
 
-            			newCompositeNode(grammarAccess.getConfigConnectionAccess().getPreListElementParserRuleCall_0());
-            		
+                        newCompositeNode(grammarAccess.getConfigConnectionAccess().getPreListElementParserRuleCall_0());
+
             pushFollow(FOLLOW_4);
             rulePreListElement();
 
             state._fsp--;
 
 
-            			afterParserOrEnumRuleCall();
-            		
-            otherlv_1=(Token)match(input,Name,FOLLOW_5); 
+                        afterParserOrEnumRuleCall();
 
-            			newLeafNode(otherlv_1, grammarAccess.getConfigConnectionAccess().getNameKeyword_1());
-            		
+            otherlv_1=(Token)match(input,Name,FOLLOW_5);
+
+                        newLeafNode(otherlv_1, grammarAccess.getConfigConnectionAccess().getNameKeyword_1());
+
             // InternalTargetEnvironmentParser.g:368:3: ( (lv_name_2_0= ruleEString ) )
             // InternalTargetEnvironmentParser.g:369:4: (lv_name_2_0= ruleEString )
             {
@@ -916,42 +916,42 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironmentParser.g:370:5: lv_name_2_0= ruleEString
             {
 
-            					newCompositeNode(grammarAccess.getConfigConnectionAccess().getNameEStringParserRuleCall_2_0());
-            				
+                                newCompositeNode(grammarAccess.getConfigConnectionAccess().getNameEStringParserRuleCall_2_0());
+
             pushFollow(FOLLOW_3);
             lv_name_2_0=ruleEString();
 
             state._fsp--;
 
 
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getConfigConnectionRule());
-            					}
-            					set(
-            						current,
-            						"name",
-            						lv_name_2_0,
-            						"de.fraunhofer.ipa.targetEnvironment.Base.EString");
-            					afterParserOrEnumRuleCall();
-            				
-
-            }
+                                if (current==null) {
+                                    current = createModelElementForParent(grammarAccess.getConfigConnectionRule());
+                                }
+                                set(
+                                    current,
+                                    "name",
+                                    lv_name_2_0,
+                                    "de.fraunhofer.ipa.targetEnvironment.Base.EString");
+                                afterParserOrEnumRuleCall();
 
 
             }
 
-            this_INDENT_3=(Token)match(input,RULE_INDENT,FOLLOW_12); 
 
-            			newLeafNode(this_INDENT_3, grammarAccess.getConfigConnectionAccess().getINDENTTerminalRuleCall_3());
-            		
-            otherlv_4=(Token)match(input,ConnectDevice,FOLLOW_3); 
+            }
 
-            			newLeafNode(otherlv_4, grammarAccess.getConfigConnectionAccess().getConnectDeviceKeyword_4());
-            		
-            this_INDENT_5=(Token)match(input,RULE_INDENT,FOLLOW_7); 
+            this_INDENT_3=(Token)match(input,RULE_INDENT,FOLLOW_12);
 
-            			newLeafNode(this_INDENT_5, grammarAccess.getConfigConnectionAccess().getINDENTTerminalRuleCall_5());
-            		
+                        newLeafNode(this_INDENT_3, grammarAccess.getConfigConnectionAccess().getINDENTTerminalRuleCall_3());
+
+            otherlv_4=(Token)match(input,ConnectDevice,FOLLOW_3);
+
+                        newLeafNode(otherlv_4, grammarAccess.getConfigConnectionAccess().getConnectDeviceKeyword_4());
+
+            this_INDENT_5=(Token)match(input,RULE_INDENT,FOLLOW_7);
+
+                        newLeafNode(this_INDENT_5, grammarAccess.getConfigConnectionAccess().getINDENTTerminalRuleCall_5());
+
             // InternalTargetEnvironmentParser.g:399:3: ( (lv_connectDevice_6_0= ruleConnectedDevice ) )+
             int cnt6=0;
             loop6:
@@ -965,40 +965,40 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
 
 
                 switch (alt6) {
-            	case 1 :
-            	    // InternalTargetEnvironmentParser.g:400:4: (lv_connectDevice_6_0= ruleConnectedDevice )
-            	    {
-            	    // InternalTargetEnvironmentParser.g:400:4: (lv_connectDevice_6_0= ruleConnectedDevice )
-            	    // InternalTargetEnvironmentParser.g:401:5: lv_connectDevice_6_0= ruleConnectedDevice
-            	    {
+                case 1 :
+                    // InternalTargetEnvironmentParser.g:400:4: (lv_connectDevice_6_0= ruleConnectedDevice )
+                    {
+                    // InternalTargetEnvironmentParser.g:400:4: (lv_connectDevice_6_0= ruleConnectedDevice )
+                    // InternalTargetEnvironmentParser.g:401:5: lv_connectDevice_6_0= ruleConnectedDevice
+                    {
 
-            	    					newCompositeNode(grammarAccess.getConfigConnectionAccess().getConnectDeviceConnectedDeviceParserRuleCall_6_0());
-            	    				
-            	    pushFollow(FOLLOW_8);
-            	    lv_connectDevice_6_0=ruleConnectedDevice();
+                                        newCompositeNode(grammarAccess.getConfigConnectionAccess().getConnectDeviceConnectedDeviceParserRuleCall_6_0());
 
-            	    state._fsp--;
+                    pushFollow(FOLLOW_8);
+                    lv_connectDevice_6_0=ruleConnectedDevice();
 
-
-            	    					if (current==null) {
-            	    						current = createModelElementForParent(grammarAccess.getConfigConnectionRule());
-            	    					}
-            	    					add(
-            	    						current,
-            	    						"connectDevice",
-            	    						lv_connectDevice_6_0,
-            	    						"de.fraunhofer.ipa.targetEnvironment.TargetEnvironment.ConnectedDevice");
-            	    					afterParserOrEnumRuleCall();
-            	    				
-
-            	    }
+                    state._fsp--;
 
 
-            	    }
-            	    break;
+                                        if (current==null) {
+                                            current = createModelElementForParent(grammarAccess.getConfigConnectionRule());
+                                        }
+                                        add(
+                                            current,
+                                            "connectDevice",
+                                            lv_connectDevice_6_0,
+                                            "de.fraunhofer.ipa.targetEnvironment.TargetEnvironment.ConnectedDevice");
+                                        afterParserOrEnumRuleCall();
 
-            	default :
-            	    if ( cnt6 >= 1 ) break loop6;
+
+                    }
+
+
+                    }
+                    break;
+
+                default :
+                    if ( cnt6 >= 1 ) break loop6;
                         EarlyExitException eee =
                             new EarlyExitException(6, input);
                         throw eee;
@@ -1006,22 +1006,22 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
                 cnt6++;
             } while (true);
 
-            this_DEDENT_7=(Token)match(input,RULE_DEDENT,FOLLOW_10); 
+            this_DEDENT_7=(Token)match(input,RULE_DEDENT,FOLLOW_10);
 
-            			newLeafNode(this_DEDENT_7, grammarAccess.getConfigConnectionAccess().getDEDENTTerminalRuleCall_7());
-            		
-            this_DEDENT_8=(Token)match(input,RULE_DEDENT,FOLLOW_2); 
+                        newLeafNode(this_DEDENT_7, grammarAccess.getConfigConnectionAccess().getDEDENTTerminalRuleCall_7());
 
-            			newLeafNode(this_DEDENT_8, grammarAccess.getConfigConnectionAccess().getDEDENTTerminalRuleCall_8());
-            		
+            this_DEDENT_8=(Token)match(input,RULE_DEDENT,FOLLOW_2);
 
-            }
+                        newLeafNode(this_DEDENT_8, grammarAccess.getConfigConnectionAccess().getDEDENTTerminalRuleCall_8());
 
 
             }
 
 
-            	leaveRule();
+            }
+
+
+                leaveRule();
 
         }
 
@@ -1048,14 +1048,14 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironmentParser.g:430:56: (iv_ruleConnectedDevice= ruleConnectedDevice EOF )
             // InternalTargetEnvironmentParser.g:431:2: iv_ruleConnectedDevice= ruleConnectedDevice EOF
             {
-             newCompositeNode(grammarAccess.getConnectedDeviceRule()); 
+             newCompositeNode(grammarAccess.getConnectedDeviceRule());
             pushFollow(FOLLOW_1);
             iv_ruleConnectedDevice=ruleConnectedDevice();
 
             state._fsp--;
 
-             current =iv_ruleConnectedDevice; 
-            match(input,EOF,FOLLOW_2); 
+             current =iv_ruleConnectedDevice;
+            match(input,EOF,FOLLOW_2);
 
             }
 
@@ -1088,7 +1088,7 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
 
 
 
-        	enterRule();
+            enterRule();
 
         try {
             // InternalTargetEnvironmentParser.g:443:2: ( ( rulePreListElement otherlv_1= RefDevice ( ( ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= RefConnection ( ( ruleEString ) ) (otherlv_6= Configuration this_INDENT_7= RULE_INDENT ( (lv_properties_8_0= ruleConfigConnectionProperty ) )+ this_DEDENT_9= RULE_DEDENT )? this_DEDENT_10= RULE_DEDENT ) )
@@ -1098,20 +1098,20 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironmentParser.g:445:3: rulePreListElement otherlv_1= RefDevice ( ( ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= RefConnection ( ( ruleEString ) ) (otherlv_6= Configuration this_INDENT_7= RULE_INDENT ( (lv_properties_8_0= ruleConfigConnectionProperty ) )+ this_DEDENT_9= RULE_DEDENT )? this_DEDENT_10= RULE_DEDENT
             {
 
-            			newCompositeNode(grammarAccess.getConnectedDeviceAccess().getPreListElementParserRuleCall_0());
-            		
+                        newCompositeNode(grammarAccess.getConnectedDeviceAccess().getPreListElementParserRuleCall_0());
+
             pushFollow(FOLLOW_13);
             rulePreListElement();
 
             state._fsp--;
 
 
-            			afterParserOrEnumRuleCall();
-            		
-            otherlv_1=(Token)match(input,RefDevice,FOLLOW_5); 
+                        afterParserOrEnumRuleCall();
 
-            			newLeafNode(otherlv_1, grammarAccess.getConnectedDeviceAccess().getRefDeviceKeyword_1());
-            		
+            otherlv_1=(Token)match(input,RefDevice,FOLLOW_5);
+
+                        newLeafNode(otherlv_1, grammarAccess.getConnectedDeviceAccess().getRefDeviceKeyword_1());
+
             // InternalTargetEnvironmentParser.g:456:3: ( ( ruleEString ) )
             // InternalTargetEnvironmentParser.g:457:4: ( ruleEString )
             {
@@ -1119,35 +1119,35 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironmentParser.g:458:5: ruleEString
             {
 
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getConnectedDeviceRule());
-            					}
-            				
+                                if (current==null) {
+                                    current = createModelElement(grammarAccess.getConnectedDeviceRule());
+                                }
 
-            					newCompositeNode(grammarAccess.getConnectedDeviceAccess().getRefDeviceDeviceInstanceCrossReference_2_0());
-            				
+
+                                newCompositeNode(grammarAccess.getConnectedDeviceAccess().getRefDeviceDeviceInstanceCrossReference_2_0());
+
             pushFollow(FOLLOW_3);
             ruleEString();
 
             state._fsp--;
 
 
-            					afterParserOrEnumRuleCall();
-            				
-
-            }
+                                afterParserOrEnumRuleCall();
 
 
             }
 
-            this_INDENT_3=(Token)match(input,RULE_INDENT,FOLLOW_14); 
 
-            			newLeafNode(this_INDENT_3, grammarAccess.getConnectedDeviceAccess().getINDENTTerminalRuleCall_3());
-            		
-            otherlv_4=(Token)match(input,RefConnection,FOLLOW_5); 
+            }
 
-            			newLeafNode(otherlv_4, grammarAccess.getConnectedDeviceAccess().getRefConnectionKeyword_4());
-            		
+            this_INDENT_3=(Token)match(input,RULE_INDENT,FOLLOW_14);
+
+                        newLeafNode(this_INDENT_3, grammarAccess.getConnectedDeviceAccess().getINDENTTerminalRuleCall_3());
+
+            otherlv_4=(Token)match(input,RefConnection,FOLLOW_5);
+
+                        newLeafNode(otherlv_4, grammarAccess.getConnectedDeviceAccess().getRefConnectionKeyword_4());
+
             // InternalTargetEnvironmentParser.g:480:3: ( ( ruleEString ) )
             // InternalTargetEnvironmentParser.g:481:4: ( ruleEString )
             {
@@ -1155,21 +1155,21 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironmentParser.g:482:5: ruleEString
             {
 
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getConnectedDeviceRule());
-            					}
-            				
+                                if (current==null) {
+                                    current = createModelElement(grammarAccess.getConnectedDeviceRule());
+                                }
 
-            					newCompositeNode(grammarAccess.getConnectedDeviceAccess().getRefConnectionCommunicationConnectionCrossReference_5_0());
-            				
+
+                                newCompositeNode(grammarAccess.getConnectedDeviceAccess().getRefConnectionCommunicationConnectionCrossReference_5_0());
+
             pushFollow(FOLLOW_15);
             ruleEString();
 
             state._fsp--;
 
 
-            					afterParserOrEnumRuleCall();
-            				
+                                afterParserOrEnumRuleCall();
+
 
             }
 
@@ -1187,14 +1187,14 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
                 case 1 :
                     // InternalTargetEnvironmentParser.g:497:4: otherlv_6= Configuration this_INDENT_7= RULE_INDENT ( (lv_properties_8_0= ruleConfigConnectionProperty ) )+ this_DEDENT_9= RULE_DEDENT
                     {
-                    otherlv_6=(Token)match(input,Configuration,FOLLOW_3); 
+                    otherlv_6=(Token)match(input,Configuration,FOLLOW_3);
 
-                    				newLeafNode(otherlv_6, grammarAccess.getConnectedDeviceAccess().getConfigurationKeyword_6_0());
-                    			
-                    this_INDENT_7=(Token)match(input,RULE_INDENT,FOLLOW_7); 
+                                    newLeafNode(otherlv_6, grammarAccess.getConnectedDeviceAccess().getConfigurationKeyword_6_0());
 
-                    				newLeafNode(this_INDENT_7, grammarAccess.getConnectedDeviceAccess().getINDENTTerminalRuleCall_6_1());
-                    			
+                    this_INDENT_7=(Token)match(input,RULE_INDENT,FOLLOW_7);
+
+                                    newLeafNode(this_INDENT_7, grammarAccess.getConnectedDeviceAccess().getINDENTTerminalRuleCall_6_1());
+
                     // InternalTargetEnvironmentParser.g:505:4: ( (lv_properties_8_0= ruleConfigConnectionProperty ) )+
                     int cnt7=0;
                     loop7:
@@ -1208,40 +1208,40 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
 
 
                         switch (alt7) {
-                    	case 1 :
-                    	    // InternalTargetEnvironmentParser.g:506:5: (lv_properties_8_0= ruleConfigConnectionProperty )
-                    	    {
-                    	    // InternalTargetEnvironmentParser.g:506:5: (lv_properties_8_0= ruleConfigConnectionProperty )
-                    	    // InternalTargetEnvironmentParser.g:507:6: lv_properties_8_0= ruleConfigConnectionProperty
-                    	    {
+                        case 1 :
+                            // InternalTargetEnvironmentParser.g:506:5: (lv_properties_8_0= ruleConfigConnectionProperty )
+                            {
+                            // InternalTargetEnvironmentParser.g:506:5: (lv_properties_8_0= ruleConfigConnectionProperty )
+                            // InternalTargetEnvironmentParser.g:507:6: lv_properties_8_0= ruleConfigConnectionProperty
+                            {
 
-                    	    						newCompositeNode(grammarAccess.getConnectedDeviceAccess().getPropertiesConfigConnectionPropertyParserRuleCall_6_2_0());
-                    	    					
-                    	    pushFollow(FOLLOW_8);
-                    	    lv_properties_8_0=ruleConfigConnectionProperty();
+                                                    newCompositeNode(grammarAccess.getConnectedDeviceAccess().getPropertiesConfigConnectionPropertyParserRuleCall_6_2_0());
 
-                    	    state._fsp--;
+                            pushFollow(FOLLOW_8);
+                            lv_properties_8_0=ruleConfigConnectionProperty();
 
-
-                    	    						if (current==null) {
-                    	    							current = createModelElementForParent(grammarAccess.getConnectedDeviceRule());
-                    	    						}
-                    	    						add(
-                    	    							current,
-                    	    							"properties",
-                    	    							lv_properties_8_0,
-                    	    							"de.fraunhofer.ipa.targetEnvironment.TargetEnvironment.ConfigConnectionProperty");
-                    	    						afterParserOrEnumRuleCall();
-                    	    					
-
-                    	    }
+                            state._fsp--;
 
 
-                    	    }
-                    	    break;
+                                                    if (current==null) {
+                                                        current = createModelElementForParent(grammarAccess.getConnectedDeviceRule());
+                                                    }
+                                                    add(
+                                                        current,
+                                                        "properties",
+                                                        lv_properties_8_0,
+                                                        "de.fraunhofer.ipa.targetEnvironment.TargetEnvironment.ConfigConnectionProperty");
+                                                    afterParserOrEnumRuleCall();
 
-                    	default :
-                    	    if ( cnt7 >= 1 ) break loop7;
+
+                            }
+
+
+                            }
+                            break;
+
+                        default :
+                            if ( cnt7 >= 1 ) break loop7;
                                 EarlyExitException eee =
                                     new EarlyExitException(7, input);
                                 throw eee;
@@ -1249,28 +1249,28 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
                         cnt7++;
                     } while (true);
 
-                    this_DEDENT_9=(Token)match(input,RULE_DEDENT,FOLLOW_10); 
+                    this_DEDENT_9=(Token)match(input,RULE_DEDENT,FOLLOW_10);
 
-                    				newLeafNode(this_DEDENT_9, grammarAccess.getConnectedDeviceAccess().getDEDENTTerminalRuleCall_6_3());
-                    			
+                                    newLeafNode(this_DEDENT_9, grammarAccess.getConnectedDeviceAccess().getDEDENTTerminalRuleCall_6_3());
+
 
                     }
                     break;
 
             }
 
-            this_DEDENT_10=(Token)match(input,RULE_DEDENT,FOLLOW_2); 
+            this_DEDENT_10=(Token)match(input,RULE_DEDENT,FOLLOW_2);
 
-            			newLeafNode(this_DEDENT_10, grammarAccess.getConnectedDeviceAccess().getDEDENTTerminalRuleCall_7());
-            		
-
-            }
+                        newLeafNode(this_DEDENT_10, grammarAccess.getConnectedDeviceAccess().getDEDENTTerminalRuleCall_7());
 
 
             }
 
 
-            	leaveRule();
+            }
+
+
+                leaveRule();
 
         }
 
@@ -1297,14 +1297,14 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironmentParser.g:537:65: (iv_ruleConfigConnectionProperty= ruleConfigConnectionProperty EOF )
             // InternalTargetEnvironmentParser.g:538:2: iv_ruleConfigConnectionProperty= ruleConfigConnectionProperty EOF
             {
-             newCompositeNode(grammarAccess.getConfigConnectionPropertyRule()); 
+             newCompositeNode(grammarAccess.getConfigConnectionPropertyRule());
             pushFollow(FOLLOW_1);
             iv_ruleConfigConnectionProperty=ruleConfigConnectionProperty();
 
             state._fsp--;
 
-             current =iv_ruleConfigConnectionProperty; 
-            match(input,EOF,FOLLOW_2); 
+             current =iv_ruleConfigConnectionProperty;
+            match(input,EOF,FOLLOW_2);
 
             }
 
@@ -1334,7 +1334,7 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
 
 
 
-        	enterRule();
+            enterRule();
 
         try {
             // InternalTargetEnvironmentParser.g:550:2: ( ( () rulePreListElement otherlv_2= RefConnectionProperty ( ( ruleEString ) ) (this_INDENT_4= RULE_INDENT otherlv_5= Value ( (lv_value_6_0= rulePropertyValue ) ) this_DEDENT_7= RULE_DEDENT )? ) )
@@ -1344,31 +1344,31 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironmentParser.g:552:3: () rulePreListElement otherlv_2= RefConnectionProperty ( ( ruleEString ) ) (this_INDENT_4= RULE_INDENT otherlv_5= Value ( (lv_value_6_0= rulePropertyValue ) ) this_DEDENT_7= RULE_DEDENT )?
             {
             // InternalTargetEnvironmentParser.g:552:3: ()
-            // InternalTargetEnvironmentParser.g:553:4: 
+            // InternalTargetEnvironmentParser.g:553:4:
             {
 
-            				current = forceCreateModelElement(
-            					grammarAccess.getConfigConnectionPropertyAccess().getConfigConnectionPropertyAction_0(),
-            					current);
-            			
+                            current = forceCreateModelElement(
+                                grammarAccess.getConfigConnectionPropertyAccess().getConfigConnectionPropertyAction_0(),
+                                current);
+
 
             }
 
 
-            			newCompositeNode(grammarAccess.getConfigConnectionPropertyAccess().getPreListElementParserRuleCall_1());
-            		
+                        newCompositeNode(grammarAccess.getConfigConnectionPropertyAccess().getPreListElementParserRuleCall_1());
+
             pushFollow(FOLLOW_16);
             rulePreListElement();
 
             state._fsp--;
 
 
-            			afterParserOrEnumRuleCall();
-            		
-            otherlv_2=(Token)match(input,RefConnectionProperty,FOLLOW_5); 
+                        afterParserOrEnumRuleCall();
 
-            			newLeafNode(otherlv_2, grammarAccess.getConfigConnectionPropertyAccess().getRefConnectionPropertyKeyword_2());
-            		
+            otherlv_2=(Token)match(input,RefConnectionProperty,FOLLOW_5);
+
+                        newLeafNode(otherlv_2, grammarAccess.getConfigConnectionPropertyAccess().getRefConnectionPropertyKeyword_2());
+
             // InternalTargetEnvironmentParser.g:570:3: ( ( ruleEString ) )
             // InternalTargetEnvironmentParser.g:571:4: ( ruleEString )
             {
@@ -1376,21 +1376,21 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironmentParser.g:572:5: ruleEString
             {
 
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getConfigConnectionPropertyRule());
-            					}
-            				
+                                if (current==null) {
+                                    current = createModelElement(grammarAccess.getConfigConnectionPropertyRule());
+                                }
 
-            					newCompositeNode(grammarAccess.getConfigConnectionPropertyAccess().getRefConnectionPropertyConnectionPropertyCrossReference_3_0());
-            				
+
+                                newCompositeNode(grammarAccess.getConfigConnectionPropertyAccess().getRefConnectionPropertyConnectionPropertyCrossReference_3_0());
+
             pushFollow(FOLLOW_17);
             ruleEString();
 
             state._fsp--;
 
 
-            					afterParserOrEnumRuleCall();
-            				
+                                afterParserOrEnumRuleCall();
+
 
             }
 
@@ -1408,14 +1408,14 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
                 case 1 :
                     // InternalTargetEnvironmentParser.g:587:4: this_INDENT_4= RULE_INDENT otherlv_5= Value ( (lv_value_6_0= rulePropertyValue ) ) this_DEDENT_7= RULE_DEDENT
                     {
-                    this_INDENT_4=(Token)match(input,RULE_INDENT,FOLLOW_18); 
+                    this_INDENT_4=(Token)match(input,RULE_INDENT,FOLLOW_18);
 
-                    				newLeafNode(this_INDENT_4, grammarAccess.getConfigConnectionPropertyAccess().getINDENTTerminalRuleCall_4_0());
-                    			
-                    otherlv_5=(Token)match(input,Value,FOLLOW_19); 
+                                    newLeafNode(this_INDENT_4, grammarAccess.getConfigConnectionPropertyAccess().getINDENTTerminalRuleCall_4_0());
 
-                    				newLeafNode(otherlv_5, grammarAccess.getConfigConnectionPropertyAccess().getValueKeyword_4_1());
-                    			
+                    otherlv_5=(Token)match(input,Value,FOLLOW_19);
+
+                                    newLeafNode(otherlv_5, grammarAccess.getConfigConnectionPropertyAccess().getValueKeyword_4_1());
+
                     // InternalTargetEnvironmentParser.g:595:4: ( (lv_value_6_0= rulePropertyValue ) )
                     // InternalTargetEnvironmentParser.g:596:5: (lv_value_6_0= rulePropertyValue )
                     {
@@ -1423,34 +1423,34 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
                     // InternalTargetEnvironmentParser.g:597:6: lv_value_6_0= rulePropertyValue
                     {
 
-                    						newCompositeNode(grammarAccess.getConfigConnectionPropertyAccess().getValuePropertyValueParserRuleCall_4_2_0());
-                    					
+                                            newCompositeNode(grammarAccess.getConfigConnectionPropertyAccess().getValuePropertyValueParserRuleCall_4_2_0());
+
                     pushFollow(FOLLOW_10);
                     lv_value_6_0=rulePropertyValue();
 
                     state._fsp--;
 
 
-                    						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getConfigConnectionPropertyRule());
-                    						}
-                    						set(
-                    							current,
-                    							"value",
-                    							lv_value_6_0,
-                    							"de.fraunhofer.ipa.targetEnvironment.Base.PropertyValue");
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
+                                            if (current==null) {
+                                                current = createModelElementForParent(grammarAccess.getConfigConnectionPropertyRule());
+                                            }
+                                            set(
+                                                current,
+                                                "value",
+                                                lv_value_6_0,
+                                                "de.fraunhofer.ipa.targetEnvironment.Base.PropertyValue");
+                                            afterParserOrEnumRuleCall();
 
 
                     }
 
-                    this_DEDENT_7=(Token)match(input,RULE_DEDENT,FOLLOW_2); 
 
-                    				newLeafNode(this_DEDENT_7, grammarAccess.getConfigConnectionPropertyAccess().getDEDENTTerminalRuleCall_4_3());
-                    			
+                    }
+
+                    this_DEDENT_7=(Token)match(input,RULE_DEDENT,FOLLOW_2);
+
+                                    newLeafNode(this_DEDENT_7, grammarAccess.getConfigConnectionPropertyAccess().getDEDENTTerminalRuleCall_4_3());
+
 
                     }
                     break;
@@ -1464,7 +1464,7 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             }
 
 
-            	leaveRule();
+                leaveRule();
 
         }
 
@@ -1491,14 +1491,14 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironmentParser.g:623:50: (iv_ruleDeviceSet= ruleDeviceSet EOF )
             // InternalTargetEnvironmentParser.g:624:2: iv_ruleDeviceSet= ruleDeviceSet EOF
             {
-             newCompositeNode(grammarAccess.getDeviceSetRule()); 
+             newCompositeNode(grammarAccess.getDeviceSetRule());
             pushFollow(FOLLOW_1);
             iv_ruleDeviceSet=ruleDeviceSet();
 
             state._fsp--;
 
-             current =iv_ruleDeviceSet; 
-            match(input,EOF,FOLLOW_2); 
+             current =iv_ruleDeviceSet;
+            match(input,EOF,FOLLOW_2);
 
             }
 
@@ -1524,7 +1524,7 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
 
 
 
-        	enterRule();
+            enterRule();
 
         try {
             // InternalTargetEnvironmentParser.g:636:2: ( ( (lv_device_0_0= ruleDeviceType ) )* )
@@ -1542,40 +1542,40 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
 
 
                 switch (alt10) {
-            	case 1 :
-            	    // InternalTargetEnvironmentParser.g:638:3: (lv_device_0_0= ruleDeviceType )
-            	    {
-            	    // InternalTargetEnvironmentParser.g:638:3: (lv_device_0_0= ruleDeviceType )
-            	    // InternalTargetEnvironmentParser.g:639:4: lv_device_0_0= ruleDeviceType
-            	    {
+                case 1 :
+                    // InternalTargetEnvironmentParser.g:638:3: (lv_device_0_0= ruleDeviceType )
+                    {
+                    // InternalTargetEnvironmentParser.g:638:3: (lv_device_0_0= ruleDeviceType )
+                    // InternalTargetEnvironmentParser.g:639:4: lv_device_0_0= ruleDeviceType
+                    {
 
-            	    				newCompositeNode(grammarAccess.getDeviceSetAccess().getDeviceDeviceTypeParserRuleCall_0());
-            	    			
-            	    pushFollow(FOLLOW_20);
-            	    lv_device_0_0=ruleDeviceType();
+                                    newCompositeNode(grammarAccess.getDeviceSetAccess().getDeviceDeviceTypeParserRuleCall_0());
 
-            	    state._fsp--;
+                    pushFollow(FOLLOW_20);
+                    lv_device_0_0=ruleDeviceType();
 
-
-            	    				if (current==null) {
-            	    					current = createModelElementForParent(grammarAccess.getDeviceSetRule());
-            	    				}
-            	    				add(
-            	    					current,
-            	    					"device",
-            	    					lv_device_0_0,
-            	    					"de.fraunhofer.ipa.targetEnvironment.Device.DeviceType");
-            	    				afterParserOrEnumRuleCall();
-            	    			
-
-            	    }
+                    state._fsp--;
 
 
-            	    }
-            	    break;
+                                    if (current==null) {
+                                        current = createModelElementForParent(grammarAccess.getDeviceSetRule());
+                                    }
+                                    add(
+                                        current,
+                                        "device",
+                                        lv_device_0_0,
+                                        "de.fraunhofer.ipa.targetEnvironment.Device.DeviceType");
+                                    afterParserOrEnumRuleCall();
 
-            	default :
-            	    break loop10;
+
+                    }
+
+
+                    }
+                    break;
+
+                default :
+                    break loop10;
                 }
             } while (true);
 
@@ -1583,7 +1583,7 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             }
 
 
-            	leaveRule();
+                leaveRule();
 
         }
 
@@ -1610,14 +1610,14 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironmentParser.g:659:55: (iv_ruleCapabilityKind= ruleCapabilityKind EOF )
             // InternalTargetEnvironmentParser.g:660:2: iv_ruleCapabilityKind= ruleCapabilityKind EOF
             {
-             newCompositeNode(grammarAccess.getCapabilityKindRule()); 
+             newCompositeNode(grammarAccess.getCapabilityKindRule());
             pushFollow(FOLLOW_1);
             iv_ruleCapabilityKind=ruleCapabilityKind();
 
             state._fsp--;
 
-             current =iv_ruleCapabilityKind; 
-            match(input,EOF,FOLLOW_2); 
+             current =iv_ruleCapabilityKind;
+            match(input,EOF,FOLLOW_2);
 
             }
 
@@ -1649,7 +1649,7 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
 
 
 
-        	enterRule();
+            enterRule();
 
         try {
             // InternalTargetEnvironmentParser.g:672:2: ( (this_AttributeKind_0= ruleAttributeKind | this_MaximumKind_1= ruleMaximumKind | this_MinimumKind_2= ruleMinimumKind | this_SelectionKind_3= ruleSelectionKind ) )
@@ -1690,17 +1690,17 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
                     // InternalTargetEnvironmentParser.g:674:3: this_AttributeKind_0= ruleAttributeKind
                     {
 
-                    			newCompositeNode(grammarAccess.getCapabilityKindAccess().getAttributeKindParserRuleCall_0());
-                    		
+                                newCompositeNode(grammarAccess.getCapabilityKindAccess().getAttributeKindParserRuleCall_0());
+
                     pushFollow(FOLLOW_2);
                     this_AttributeKind_0=ruleAttributeKind();
 
                     state._fsp--;
 
 
-                    			current = this_AttributeKind_0;
-                    			afterParserOrEnumRuleCall();
-                    		
+                                current = this_AttributeKind_0;
+                                afterParserOrEnumRuleCall();
+
 
                     }
                     break;
@@ -1708,17 +1708,17 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
                     // InternalTargetEnvironmentParser.g:683:3: this_MaximumKind_1= ruleMaximumKind
                     {
 
-                    			newCompositeNode(grammarAccess.getCapabilityKindAccess().getMaximumKindParserRuleCall_1());
-                    		
+                                newCompositeNode(grammarAccess.getCapabilityKindAccess().getMaximumKindParserRuleCall_1());
+
                     pushFollow(FOLLOW_2);
                     this_MaximumKind_1=ruleMaximumKind();
 
                     state._fsp--;
 
 
-                    			current = this_MaximumKind_1;
-                    			afterParserOrEnumRuleCall();
-                    		
+                                current = this_MaximumKind_1;
+                                afterParserOrEnumRuleCall();
+
 
                     }
                     break;
@@ -1726,17 +1726,17 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
                     // InternalTargetEnvironmentParser.g:692:3: this_MinimumKind_2= ruleMinimumKind
                     {
 
-                    			newCompositeNode(grammarAccess.getCapabilityKindAccess().getMinimumKindParserRuleCall_2());
-                    		
+                                newCompositeNode(grammarAccess.getCapabilityKindAccess().getMinimumKindParserRuleCall_2());
+
                     pushFollow(FOLLOW_2);
                     this_MinimumKind_2=ruleMinimumKind();
 
                     state._fsp--;
 
 
-                    			current = this_MinimumKind_2;
-                    			afterParserOrEnumRuleCall();
-                    		
+                                current = this_MinimumKind_2;
+                                afterParserOrEnumRuleCall();
+
 
                     }
                     break;
@@ -1744,17 +1744,17 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
                     // InternalTargetEnvironmentParser.g:701:3: this_SelectionKind_3= ruleSelectionKind
                     {
 
-                    			newCompositeNode(grammarAccess.getCapabilityKindAccess().getSelectionKindParserRuleCall_3());
-                    		
+                                newCompositeNode(grammarAccess.getCapabilityKindAccess().getSelectionKindParserRuleCall_3());
+
                     pushFollow(FOLLOW_2);
                     this_SelectionKind_3=ruleSelectionKind();
 
                     state._fsp--;
 
 
-                    			current = this_SelectionKind_3;
-                    			afterParserOrEnumRuleCall();
-                    		
+                                current = this_SelectionKind_3;
+                                afterParserOrEnumRuleCall();
+
 
                     }
                     break;
@@ -1765,7 +1765,7 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             }
 
 
-            	leaveRule();
+                leaveRule();
 
         }
 
@@ -1792,14 +1792,14 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironmentParser.g:713:51: (iv_ruleDeviceType= ruleDeviceType EOF )
             // InternalTargetEnvironmentParser.g:714:2: iv_ruleDeviceType= ruleDeviceType EOF
             {
-             newCompositeNode(grammarAccess.getDeviceTypeRule()); 
+             newCompositeNode(grammarAccess.getDeviceTypeRule());
             pushFollow(FOLLOW_1);
             iv_ruleDeviceType=ruleDeviceType();
 
             state._fsp--;
 
-             current =iv_ruleDeviceType; 
-            match(input,EOF,FOLLOW_2); 
+             current =iv_ruleDeviceType;
+            match(input,EOF,FOLLOW_2);
 
             }
 
@@ -1839,7 +1839,7 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
 
 
 
-        	enterRule();
+            enterRule();
 
         try {
             // InternalTargetEnvironmentParser.g:726:2: ( ( () otherlv_1= DeviceType this_INDENT_2= RULE_INDENT otherlv_3= Name ( (lv_name_4_0= ruleEString ) ) (otherlv_5= Capability this_INDENT_6= RULE_INDENT ( (lv_capability_7_0= ruleCapabilityProperty ) )+ this_DEDENT_8= RULE_DEDENT )? (otherlv_9= CommunicationConnection this_INDENT_10= RULE_INDENT ( (lv_communicationConnection_11_0= ruleCommunicationConnection ) )+ this_DEDENT_12= RULE_DEDENT )? this_DEDENT_13= RULE_DEDENT ) )
@@ -1849,28 +1849,28 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironmentParser.g:728:3: () otherlv_1= DeviceType this_INDENT_2= RULE_INDENT otherlv_3= Name ( (lv_name_4_0= ruleEString ) ) (otherlv_5= Capability this_INDENT_6= RULE_INDENT ( (lv_capability_7_0= ruleCapabilityProperty ) )+ this_DEDENT_8= RULE_DEDENT )? (otherlv_9= CommunicationConnection this_INDENT_10= RULE_INDENT ( (lv_communicationConnection_11_0= ruleCommunicationConnection ) )+ this_DEDENT_12= RULE_DEDENT )? this_DEDENT_13= RULE_DEDENT
             {
             // InternalTargetEnvironmentParser.g:728:3: ()
-            // InternalTargetEnvironmentParser.g:729:4: 
+            // InternalTargetEnvironmentParser.g:729:4:
             {
 
-            				current = forceCreateModelElement(
-            					grammarAccess.getDeviceTypeAccess().getDeviceTypeAction_0(),
-            					current);
-            			
+                            current = forceCreateModelElement(
+                                grammarAccess.getDeviceTypeAccess().getDeviceTypeAction_0(),
+                                current);
+
 
             }
 
-            otherlv_1=(Token)match(input,DeviceType,FOLLOW_3); 
+            otherlv_1=(Token)match(input,DeviceType,FOLLOW_3);
 
-            			newLeafNode(otherlv_1, grammarAccess.getDeviceTypeAccess().getDeviceTypeKeyword_1());
-            		
-            this_INDENT_2=(Token)match(input,RULE_INDENT,FOLLOW_4); 
+                        newLeafNode(otherlv_1, grammarAccess.getDeviceTypeAccess().getDeviceTypeKeyword_1());
 
-            			newLeafNode(this_INDENT_2, grammarAccess.getDeviceTypeAccess().getINDENTTerminalRuleCall_2());
-            		
-            otherlv_3=(Token)match(input,Name,FOLLOW_5); 
+            this_INDENT_2=(Token)match(input,RULE_INDENT,FOLLOW_4);
 
-            			newLeafNode(otherlv_3, grammarAccess.getDeviceTypeAccess().getNameKeyword_3());
-            		
+                        newLeafNode(this_INDENT_2, grammarAccess.getDeviceTypeAccess().getINDENTTerminalRuleCall_2());
+
+            otherlv_3=(Token)match(input,Name,FOLLOW_5);
+
+                        newLeafNode(otherlv_3, grammarAccess.getDeviceTypeAccess().getNameKeyword_3());
+
             // InternalTargetEnvironmentParser.g:747:3: ( (lv_name_4_0= ruleEString ) )
             // InternalTargetEnvironmentParser.g:748:4: (lv_name_4_0= ruleEString )
             {
@@ -1878,24 +1878,24 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironmentParser.g:749:5: lv_name_4_0= ruleEString
             {
 
-            					newCompositeNode(grammarAccess.getDeviceTypeAccess().getNameEStringParserRuleCall_4_0());
-            				
+                                newCompositeNode(grammarAccess.getDeviceTypeAccess().getNameEStringParserRuleCall_4_0());
+
             pushFollow(FOLLOW_21);
             lv_name_4_0=ruleEString();
 
             state._fsp--;
 
 
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getDeviceTypeRule());
-            					}
-            					set(
-            						current,
-            						"name",
-            						lv_name_4_0,
-            						"de.fraunhofer.ipa.targetEnvironment.Base.EString");
-            					afterParserOrEnumRuleCall();
-            				
+                                if (current==null) {
+                                    current = createModelElementForParent(grammarAccess.getDeviceTypeRule());
+                                }
+                                set(
+                                    current,
+                                    "name",
+                                    lv_name_4_0,
+                                    "de.fraunhofer.ipa.targetEnvironment.Base.EString");
+                                afterParserOrEnumRuleCall();
+
 
             }
 
@@ -1913,14 +1913,14 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
                 case 1 :
                     // InternalTargetEnvironmentParser.g:767:4: otherlv_5= Capability this_INDENT_6= RULE_INDENT ( (lv_capability_7_0= ruleCapabilityProperty ) )+ this_DEDENT_8= RULE_DEDENT
                     {
-                    otherlv_5=(Token)match(input,Capability,FOLLOW_3); 
+                    otherlv_5=(Token)match(input,Capability,FOLLOW_3);
 
-                    				newLeafNode(otherlv_5, grammarAccess.getDeviceTypeAccess().getCapabilityKeyword_5_0());
-                    			
-                    this_INDENT_6=(Token)match(input,RULE_INDENT,FOLLOW_7); 
+                                    newLeafNode(otherlv_5, grammarAccess.getDeviceTypeAccess().getCapabilityKeyword_5_0());
 
-                    				newLeafNode(this_INDENT_6, grammarAccess.getDeviceTypeAccess().getINDENTTerminalRuleCall_5_1());
-                    			
+                    this_INDENT_6=(Token)match(input,RULE_INDENT,FOLLOW_7);
+
+                                    newLeafNode(this_INDENT_6, grammarAccess.getDeviceTypeAccess().getINDENTTerminalRuleCall_5_1());
+
                     // InternalTargetEnvironmentParser.g:775:4: ( (lv_capability_7_0= ruleCapabilityProperty ) )+
                     int cnt12=0;
                     loop12:
@@ -1934,40 +1934,40 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
 
 
                         switch (alt12) {
-                    	case 1 :
-                    	    // InternalTargetEnvironmentParser.g:776:5: (lv_capability_7_0= ruleCapabilityProperty )
-                    	    {
-                    	    // InternalTargetEnvironmentParser.g:776:5: (lv_capability_7_0= ruleCapabilityProperty )
-                    	    // InternalTargetEnvironmentParser.g:777:6: lv_capability_7_0= ruleCapabilityProperty
-                    	    {
+                        case 1 :
+                            // InternalTargetEnvironmentParser.g:776:5: (lv_capability_7_0= ruleCapabilityProperty )
+                            {
+                            // InternalTargetEnvironmentParser.g:776:5: (lv_capability_7_0= ruleCapabilityProperty )
+                            // InternalTargetEnvironmentParser.g:777:6: lv_capability_7_0= ruleCapabilityProperty
+                            {
 
-                    	    						newCompositeNode(grammarAccess.getDeviceTypeAccess().getCapabilityCapabilityPropertyParserRuleCall_5_2_0());
-                    	    					
-                    	    pushFollow(FOLLOW_8);
-                    	    lv_capability_7_0=ruleCapabilityProperty();
+                                                    newCompositeNode(grammarAccess.getDeviceTypeAccess().getCapabilityCapabilityPropertyParserRuleCall_5_2_0());
 
-                    	    state._fsp--;
+                            pushFollow(FOLLOW_8);
+                            lv_capability_7_0=ruleCapabilityProperty();
 
-
-                    	    						if (current==null) {
-                    	    							current = createModelElementForParent(grammarAccess.getDeviceTypeRule());
-                    	    						}
-                    	    						add(
-                    	    							current,
-                    	    							"capability",
-                    	    							lv_capability_7_0,
-                    	    							"de.fraunhofer.ipa.targetEnvironment.Device.CapabilityProperty");
-                    	    						afterParserOrEnumRuleCall();
-                    	    					
-
-                    	    }
+                            state._fsp--;
 
 
-                    	    }
-                    	    break;
+                                                    if (current==null) {
+                                                        current = createModelElementForParent(grammarAccess.getDeviceTypeRule());
+                                                    }
+                                                    add(
+                                                        current,
+                                                        "capability",
+                                                        lv_capability_7_0,
+                                                        "de.fraunhofer.ipa.targetEnvironment.Device.CapabilityProperty");
+                                                    afterParserOrEnumRuleCall();
 
-                    	default :
-                    	    if ( cnt12 >= 1 ) break loop12;
+
+                            }
+
+
+                            }
+                            break;
+
+                        default :
+                            if ( cnt12 >= 1 ) break loop12;
                                 EarlyExitException eee =
                                     new EarlyExitException(12, input);
                                 throw eee;
@@ -1975,10 +1975,10 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
                         cnt12++;
                     } while (true);
 
-                    this_DEDENT_8=(Token)match(input,RULE_DEDENT,FOLLOW_22); 
+                    this_DEDENT_8=(Token)match(input,RULE_DEDENT,FOLLOW_22);
 
-                    				newLeafNode(this_DEDENT_8, grammarAccess.getDeviceTypeAccess().getDEDENTTerminalRuleCall_5_3());
-                    			
+                                    newLeafNode(this_DEDENT_8, grammarAccess.getDeviceTypeAccess().getDEDENTTerminalRuleCall_5_3());
+
 
                     }
                     break;
@@ -1996,14 +1996,14 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
                 case 1 :
                     // InternalTargetEnvironmentParser.g:800:4: otherlv_9= CommunicationConnection this_INDENT_10= RULE_INDENT ( (lv_communicationConnection_11_0= ruleCommunicationConnection ) )+ this_DEDENT_12= RULE_DEDENT
                     {
-                    otherlv_9=(Token)match(input,CommunicationConnection,FOLLOW_3); 
+                    otherlv_9=(Token)match(input,CommunicationConnection,FOLLOW_3);
 
-                    				newLeafNode(otherlv_9, grammarAccess.getDeviceTypeAccess().getCommunicationConnectionKeyword_6_0());
-                    			
-                    this_INDENT_10=(Token)match(input,RULE_INDENT,FOLLOW_7); 
+                                    newLeafNode(otherlv_9, grammarAccess.getDeviceTypeAccess().getCommunicationConnectionKeyword_6_0());
 
-                    				newLeafNode(this_INDENT_10, grammarAccess.getDeviceTypeAccess().getINDENTTerminalRuleCall_6_1());
-                    			
+                    this_INDENT_10=(Token)match(input,RULE_INDENT,FOLLOW_7);
+
+                                    newLeafNode(this_INDENT_10, grammarAccess.getDeviceTypeAccess().getINDENTTerminalRuleCall_6_1());
+
                     // InternalTargetEnvironmentParser.g:808:4: ( (lv_communicationConnection_11_0= ruleCommunicationConnection ) )+
                     int cnt14=0;
                     loop14:
@@ -2017,40 +2017,40 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
 
 
                         switch (alt14) {
-                    	case 1 :
-                    	    // InternalTargetEnvironmentParser.g:809:5: (lv_communicationConnection_11_0= ruleCommunicationConnection )
-                    	    {
-                    	    // InternalTargetEnvironmentParser.g:809:5: (lv_communicationConnection_11_0= ruleCommunicationConnection )
-                    	    // InternalTargetEnvironmentParser.g:810:6: lv_communicationConnection_11_0= ruleCommunicationConnection
-                    	    {
+                        case 1 :
+                            // InternalTargetEnvironmentParser.g:809:5: (lv_communicationConnection_11_0= ruleCommunicationConnection )
+                            {
+                            // InternalTargetEnvironmentParser.g:809:5: (lv_communicationConnection_11_0= ruleCommunicationConnection )
+                            // InternalTargetEnvironmentParser.g:810:6: lv_communicationConnection_11_0= ruleCommunicationConnection
+                            {
 
-                    	    						newCompositeNode(grammarAccess.getDeviceTypeAccess().getCommunicationConnectionCommunicationConnectionParserRuleCall_6_2_0());
-                    	    					
-                    	    pushFollow(FOLLOW_8);
-                    	    lv_communicationConnection_11_0=ruleCommunicationConnection();
+                                                    newCompositeNode(grammarAccess.getDeviceTypeAccess().getCommunicationConnectionCommunicationConnectionParserRuleCall_6_2_0());
 
-                    	    state._fsp--;
+                            pushFollow(FOLLOW_8);
+                            lv_communicationConnection_11_0=ruleCommunicationConnection();
 
-
-                    	    						if (current==null) {
-                    	    							current = createModelElementForParent(grammarAccess.getDeviceTypeRule());
-                    	    						}
-                    	    						add(
-                    	    							current,
-                    	    							"communicationConnection",
-                    	    							lv_communicationConnection_11_0,
-                    	    							"de.fraunhofer.ipa.targetEnvironment.Device.CommunicationConnection");
-                    	    						afterParserOrEnumRuleCall();
-                    	    					
-
-                    	    }
+                            state._fsp--;
 
 
-                    	    }
-                    	    break;
+                                                    if (current==null) {
+                                                        current = createModelElementForParent(grammarAccess.getDeviceTypeRule());
+                                                    }
+                                                    add(
+                                                        current,
+                                                        "communicationConnection",
+                                                        lv_communicationConnection_11_0,
+                                                        "de.fraunhofer.ipa.targetEnvironment.Device.CommunicationConnection");
+                                                    afterParserOrEnumRuleCall();
 
-                    	default :
-                    	    if ( cnt14 >= 1 ) break loop14;
+
+                            }
+
+
+                            }
+                            break;
+
+                        default :
+                            if ( cnt14 >= 1 ) break loop14;
                                 EarlyExitException eee =
                                     new EarlyExitException(14, input);
                                 throw eee;
@@ -2058,28 +2058,28 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
                         cnt14++;
                     } while (true);
 
-                    this_DEDENT_12=(Token)match(input,RULE_DEDENT,FOLLOW_10); 
+                    this_DEDENT_12=(Token)match(input,RULE_DEDENT,FOLLOW_10);
 
-                    				newLeafNode(this_DEDENT_12, grammarAccess.getDeviceTypeAccess().getDEDENTTerminalRuleCall_6_3());
-                    			
+                                    newLeafNode(this_DEDENT_12, grammarAccess.getDeviceTypeAccess().getDEDENTTerminalRuleCall_6_3());
+
 
                     }
                     break;
 
             }
 
-            this_DEDENT_13=(Token)match(input,RULE_DEDENT,FOLLOW_2); 
+            this_DEDENT_13=(Token)match(input,RULE_DEDENT,FOLLOW_2);
 
-            			newLeafNode(this_DEDENT_13, grammarAccess.getDeviceTypeAccess().getDEDENTTerminalRuleCall_7());
-            		
-
-            }
+                        newLeafNode(this_DEDENT_13, grammarAccess.getDeviceTypeAccess().getDEDENTTerminalRuleCall_7());
 
 
             }
 
 
-            	leaveRule();
+            }
+
+
+                leaveRule();
 
         }
 
@@ -2106,14 +2106,14 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironmentParser.g:840:59: (iv_ruleCapabilityProperty= ruleCapabilityProperty EOF )
             // InternalTargetEnvironmentParser.g:841:2: iv_ruleCapabilityProperty= ruleCapabilityProperty EOF
             {
-             newCompositeNode(grammarAccess.getCapabilityPropertyRule()); 
+             newCompositeNode(grammarAccess.getCapabilityPropertyRule());
             pushFollow(FOLLOW_1);
             iv_ruleCapabilityProperty=ruleCapabilityProperty();
 
             state._fsp--;
 
-             current =iv_ruleCapabilityProperty; 
-            match(input,EOF,FOLLOW_2); 
+             current =iv_ruleCapabilityProperty;
+            match(input,EOF,FOLLOW_2);
 
             }
 
@@ -2149,7 +2149,7 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
 
 
 
-        	enterRule();
+            enterRule();
 
         try {
             // InternalTargetEnvironmentParser.g:853:2: ( ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Type ( ( ruleEString ) ) otherlv_6= Kind ( (lv_kind_7_0= ruleCapabilityKind ) ) (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? this_DEDENT_10= RULE_DEDENT ) )
@@ -2159,20 +2159,20 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironmentParser.g:855:3: rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Type ( ( ruleEString ) ) otherlv_6= Kind ( (lv_kind_7_0= ruleCapabilityKind ) ) (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? this_DEDENT_10= RULE_DEDENT
             {
 
-            			newCompositeNode(grammarAccess.getCapabilityPropertyAccess().getPreListElementParserRuleCall_0());
-            		
+                        newCompositeNode(grammarAccess.getCapabilityPropertyAccess().getPreListElementParserRuleCall_0());
+
             pushFollow(FOLLOW_4);
             rulePreListElement();
 
             state._fsp--;
 
 
-            			afterParserOrEnumRuleCall();
-            		
-            otherlv_1=(Token)match(input,Name,FOLLOW_5); 
+                        afterParserOrEnumRuleCall();
 
-            			newLeafNode(otherlv_1, grammarAccess.getCapabilityPropertyAccess().getNameKeyword_1());
-            		
+            otherlv_1=(Token)match(input,Name,FOLLOW_5);
+
+                        newLeafNode(otherlv_1, grammarAccess.getCapabilityPropertyAccess().getNameKeyword_1());
+
             // InternalTargetEnvironmentParser.g:866:3: ( (lv_name_2_0= ruleEString ) )
             // InternalTargetEnvironmentParser.g:867:4: (lv_name_2_0= ruleEString )
             {
@@ -2180,38 +2180,38 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironmentParser.g:868:5: lv_name_2_0= ruleEString
             {
 
-            					newCompositeNode(grammarAccess.getCapabilityPropertyAccess().getNameEStringParserRuleCall_2_0());
-            				
+                                newCompositeNode(grammarAccess.getCapabilityPropertyAccess().getNameEStringParserRuleCall_2_0());
+
             pushFollow(FOLLOW_3);
             lv_name_2_0=ruleEString();
 
             state._fsp--;
 
 
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getCapabilityPropertyRule());
-            					}
-            					set(
-            						current,
-            						"name",
-            						lv_name_2_0,
-            						"de.fraunhofer.ipa.targetEnvironment.Base.EString");
-            					afterParserOrEnumRuleCall();
-            				
-
-            }
+                                if (current==null) {
+                                    current = createModelElementForParent(grammarAccess.getCapabilityPropertyRule());
+                                }
+                                set(
+                                    current,
+                                    "name",
+                                    lv_name_2_0,
+                                    "de.fraunhofer.ipa.targetEnvironment.Base.EString");
+                                afterParserOrEnumRuleCall();
 
 
             }
 
-            this_INDENT_3=(Token)match(input,RULE_INDENT,FOLLOW_23); 
 
-            			newLeafNode(this_INDENT_3, grammarAccess.getCapabilityPropertyAccess().getINDENTTerminalRuleCall_3());
-            		
-            otherlv_4=(Token)match(input,Type,FOLLOW_5); 
+            }
 
-            			newLeafNode(otherlv_4, grammarAccess.getCapabilityPropertyAccess().getTypeKeyword_4());
-            		
+            this_INDENT_3=(Token)match(input,RULE_INDENT,FOLLOW_23);
+
+                        newLeafNode(this_INDENT_3, grammarAccess.getCapabilityPropertyAccess().getINDENTTerminalRuleCall_3());
+
+            otherlv_4=(Token)match(input,Type,FOLLOW_5);
+
+                        newLeafNode(otherlv_4, grammarAccess.getCapabilityPropertyAccess().getTypeKeyword_4());
+
             // InternalTargetEnvironmentParser.g:893:3: ( ( ruleEString ) )
             // InternalTargetEnvironmentParser.g:894:4: ( ruleEString )
             {
@@ -2219,31 +2219,31 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironmentParser.g:895:5: ruleEString
             {
 
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getCapabilityPropertyRule());
-            					}
-            				
+                                if (current==null) {
+                                    current = createModelElement(grammarAccess.getCapabilityPropertyRule());
+                                }
 
-            					newCompositeNode(grammarAccess.getCapabilityPropertyAccess().getTypeCapabilityTypeCrossReference_5_0());
-            				
+
+                                newCompositeNode(grammarAccess.getCapabilityPropertyAccess().getTypeCapabilityTypeCrossReference_5_0());
+
             pushFollow(FOLLOW_24);
             ruleEString();
 
             state._fsp--;
 
 
-            					afterParserOrEnumRuleCall();
-            				
-
-            }
+                                afterParserOrEnumRuleCall();
 
 
             }
 
-            otherlv_6=(Token)match(input,Kind,FOLLOW_25); 
 
-            			newLeafNode(otherlv_6, grammarAccess.getCapabilityPropertyAccess().getKindKeyword_6());
-            		
+            }
+
+            otherlv_6=(Token)match(input,Kind,FOLLOW_25);
+
+                        newLeafNode(otherlv_6, grammarAccess.getCapabilityPropertyAccess().getKindKeyword_6());
+
             // InternalTargetEnvironmentParser.g:913:3: ( (lv_kind_7_0= ruleCapabilityKind ) )
             // InternalTargetEnvironmentParser.g:914:4: (lv_kind_7_0= ruleCapabilityKind )
             {
@@ -2251,24 +2251,24 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironmentParser.g:915:5: lv_kind_7_0= ruleCapabilityKind
             {
 
-            					newCompositeNode(grammarAccess.getCapabilityPropertyAccess().getKindCapabilityKindParserRuleCall_7_0());
-            				
+                                newCompositeNode(grammarAccess.getCapabilityPropertyAccess().getKindCapabilityKindParserRuleCall_7_0());
+
             pushFollow(FOLLOW_26);
             lv_kind_7_0=ruleCapabilityKind();
 
             state._fsp--;
 
 
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getCapabilityPropertyRule());
-            					}
-            					set(
-            						current,
-            						"kind",
-            						lv_kind_7_0,
-            						"de.fraunhofer.ipa.targetEnvironment.Device.CapabilityKind");
-            					afterParserOrEnumRuleCall();
-            				
+                                if (current==null) {
+                                    current = createModelElementForParent(grammarAccess.getCapabilityPropertyRule());
+                                }
+                                set(
+                                    current,
+                                    "kind",
+                                    lv_kind_7_0,
+                                    "de.fraunhofer.ipa.targetEnvironment.Device.CapabilityKind");
+                                afterParserOrEnumRuleCall();
+
 
             }
 
@@ -2286,10 +2286,10 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
                 case 1 :
                     // InternalTargetEnvironmentParser.g:933:4: otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) )
                     {
-                    otherlv_8=(Token)match(input,Value,FOLLOW_19); 
+                    otherlv_8=(Token)match(input,Value,FOLLOW_19);
 
-                    				newLeafNode(otherlv_8, grammarAccess.getCapabilityPropertyAccess().getValueKeyword_8_0());
-                    			
+                                    newLeafNode(otherlv_8, grammarAccess.getCapabilityPropertyAccess().getValueKeyword_8_0());
+
                     // InternalTargetEnvironmentParser.g:937:4: ( (lv_value_9_0= rulePropertyValue ) )
                     // InternalTargetEnvironmentParser.g:938:5: (lv_value_9_0= rulePropertyValue )
                     {
@@ -2297,24 +2297,24 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
                     // InternalTargetEnvironmentParser.g:939:6: lv_value_9_0= rulePropertyValue
                     {
 
-                    						newCompositeNode(grammarAccess.getCapabilityPropertyAccess().getValuePropertyValueParserRuleCall_8_1_0());
-                    					
+                                            newCompositeNode(grammarAccess.getCapabilityPropertyAccess().getValuePropertyValueParserRuleCall_8_1_0());
+
                     pushFollow(FOLLOW_10);
                     lv_value_9_0=rulePropertyValue();
 
                     state._fsp--;
 
 
-                    						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getCapabilityPropertyRule());
-                    						}
-                    						set(
-                    							current,
-                    							"value",
-                    							lv_value_9_0,
-                    							"de.fraunhofer.ipa.targetEnvironment.Base.PropertyValue");
-                    						afterParserOrEnumRuleCall();
-                    					
+                                            if (current==null) {
+                                                current = createModelElementForParent(grammarAccess.getCapabilityPropertyRule());
+                                            }
+                                            set(
+                                                current,
+                                                "value",
+                                                lv_value_9_0,
+                                                "de.fraunhofer.ipa.targetEnvironment.Base.PropertyValue");
+                                            afterParserOrEnumRuleCall();
+
 
                     }
 
@@ -2327,18 +2327,18 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
 
             }
 
-            this_DEDENT_10=(Token)match(input,RULE_DEDENT,FOLLOW_2); 
+            this_DEDENT_10=(Token)match(input,RULE_DEDENT,FOLLOW_2);
 
-            			newLeafNode(this_DEDENT_10, grammarAccess.getCapabilityPropertyAccess().getDEDENTTerminalRuleCall_9());
-            		
-
-            }
+                        newLeafNode(this_DEDENT_10, grammarAccess.getCapabilityPropertyAccess().getDEDENTTerminalRuleCall_9());
 
 
             }
 
 
-            	leaveRule();
+            }
+
+
+                leaveRule();
 
         }
 
@@ -2365,14 +2365,14 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironmentParser.g:965:54: (iv_ruleAttributeKind= ruleAttributeKind EOF )
             // InternalTargetEnvironmentParser.g:966:2: iv_ruleAttributeKind= ruleAttributeKind EOF
             {
-             newCompositeNode(grammarAccess.getAttributeKindRule()); 
+             newCompositeNode(grammarAccess.getAttributeKindRule());
             pushFollow(FOLLOW_1);
             iv_ruleAttributeKind=ruleAttributeKind();
 
             state._fsp--;
 
-             current =iv_ruleAttributeKind; 
-            match(input,EOF,FOLLOW_2); 
+             current =iv_ruleAttributeKind;
+            match(input,EOF,FOLLOW_2);
 
             }
 
@@ -2397,7 +2397,7 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
         Token otherlv_1=null;
 
 
-        	enterRule();
+            enterRule();
 
         try {
             // InternalTargetEnvironmentParser.g:978:2: ( ( () otherlv_1= AttributeKind ) )
@@ -2407,28 +2407,28 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironmentParser.g:980:3: () otherlv_1= AttributeKind
             {
             // InternalTargetEnvironmentParser.g:980:3: ()
-            // InternalTargetEnvironmentParser.g:981:4: 
+            // InternalTargetEnvironmentParser.g:981:4:
             {
 
-            				current = forceCreateModelElement(
-            					grammarAccess.getAttributeKindAccess().getAttributeKindAction_0(),
-            					current);
-            			
+                            current = forceCreateModelElement(
+                                grammarAccess.getAttributeKindAccess().getAttributeKindAction_0(),
+                                current);
+
 
             }
 
-            otherlv_1=(Token)match(input,AttributeKind,FOLLOW_2); 
+            otherlv_1=(Token)match(input,AttributeKind,FOLLOW_2);
 
-            			newLeafNode(otherlv_1, grammarAccess.getAttributeKindAccess().getAttributeKindKeyword_1());
-            		
-
-            }
+                        newLeafNode(otherlv_1, grammarAccess.getAttributeKindAccess().getAttributeKindKeyword_1());
 
 
             }
 
 
-            	leaveRule();
+            }
+
+
+                leaveRule();
 
         }
 
@@ -2455,14 +2455,14 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironmentParser.g:995:52: (iv_ruleMaximumKind= ruleMaximumKind EOF )
             // InternalTargetEnvironmentParser.g:996:2: iv_ruleMaximumKind= ruleMaximumKind EOF
             {
-             newCompositeNode(grammarAccess.getMaximumKindRule()); 
+             newCompositeNode(grammarAccess.getMaximumKindRule());
             pushFollow(FOLLOW_1);
             iv_ruleMaximumKind=ruleMaximumKind();
 
             state._fsp--;
 
-             current =iv_ruleMaximumKind; 
-            match(input,EOF,FOLLOW_2); 
+             current =iv_ruleMaximumKind;
+            match(input,EOF,FOLLOW_2);
 
             }
 
@@ -2487,7 +2487,7 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
         Token otherlv_1=null;
 
 
-        	enterRule();
+            enterRule();
 
         try {
             // InternalTargetEnvironmentParser.g:1008:2: ( ( () otherlv_1= MaximumKind ) )
@@ -2497,28 +2497,28 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironmentParser.g:1010:3: () otherlv_1= MaximumKind
             {
             // InternalTargetEnvironmentParser.g:1010:3: ()
-            // InternalTargetEnvironmentParser.g:1011:4: 
+            // InternalTargetEnvironmentParser.g:1011:4:
             {
 
-            				current = forceCreateModelElement(
-            					grammarAccess.getMaximumKindAccess().getMaximumKindAction_0(),
-            					current);
-            			
+                            current = forceCreateModelElement(
+                                grammarAccess.getMaximumKindAccess().getMaximumKindAction_0(),
+                                current);
+
 
             }
 
-            otherlv_1=(Token)match(input,MaximumKind,FOLLOW_2); 
+            otherlv_1=(Token)match(input,MaximumKind,FOLLOW_2);
 
-            			newLeafNode(otherlv_1, grammarAccess.getMaximumKindAccess().getMaximumKindKeyword_1());
-            		
-
-            }
+                        newLeafNode(otherlv_1, grammarAccess.getMaximumKindAccess().getMaximumKindKeyword_1());
 
 
             }
 
 
-            	leaveRule();
+            }
+
+
+                leaveRule();
 
         }
 
@@ -2545,14 +2545,14 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironmentParser.g:1025:52: (iv_ruleMinimumKind= ruleMinimumKind EOF )
             // InternalTargetEnvironmentParser.g:1026:2: iv_ruleMinimumKind= ruleMinimumKind EOF
             {
-             newCompositeNode(grammarAccess.getMinimumKindRule()); 
+             newCompositeNode(grammarAccess.getMinimumKindRule());
             pushFollow(FOLLOW_1);
             iv_ruleMinimumKind=ruleMinimumKind();
 
             state._fsp--;
 
-             current =iv_ruleMinimumKind; 
-            match(input,EOF,FOLLOW_2); 
+             current =iv_ruleMinimumKind;
+            match(input,EOF,FOLLOW_2);
 
             }
 
@@ -2577,7 +2577,7 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
         Token otherlv_1=null;
 
 
-        	enterRule();
+            enterRule();
 
         try {
             // InternalTargetEnvironmentParser.g:1038:2: ( ( () otherlv_1= MinimumKind ) )
@@ -2587,28 +2587,28 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironmentParser.g:1040:3: () otherlv_1= MinimumKind
             {
             // InternalTargetEnvironmentParser.g:1040:3: ()
-            // InternalTargetEnvironmentParser.g:1041:4: 
+            // InternalTargetEnvironmentParser.g:1041:4:
             {
 
-            				current = forceCreateModelElement(
-            					grammarAccess.getMinimumKindAccess().getMinimumKindAction_0(),
-            					current);
-            			
+                            current = forceCreateModelElement(
+                                grammarAccess.getMinimumKindAccess().getMinimumKindAction_0(),
+                                current);
+
 
             }
 
-            otherlv_1=(Token)match(input,MinimumKind,FOLLOW_2); 
+            otherlv_1=(Token)match(input,MinimumKind,FOLLOW_2);
 
-            			newLeafNode(otherlv_1, grammarAccess.getMinimumKindAccess().getMinimumKindKeyword_1());
-            		
-
-            }
+                        newLeafNode(otherlv_1, grammarAccess.getMinimumKindAccess().getMinimumKindKeyword_1());
 
 
             }
 
 
-            	leaveRule();
+            }
+
+
+                leaveRule();
 
         }
 
@@ -2635,14 +2635,14 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironmentParser.g:1055:54: (iv_ruleSelectionKind= ruleSelectionKind EOF )
             // InternalTargetEnvironmentParser.g:1056:2: iv_ruleSelectionKind= ruleSelectionKind EOF
             {
-             newCompositeNode(grammarAccess.getSelectionKindRule()); 
+             newCompositeNode(grammarAccess.getSelectionKindRule());
             pushFollow(FOLLOW_1);
             iv_ruleSelectionKind=ruleSelectionKind();
 
             state._fsp--;
 
-             current =iv_ruleSelectionKind; 
-            match(input,EOF,FOLLOW_2); 
+             current =iv_ruleSelectionKind;
+            match(input,EOF,FOLLOW_2);
 
             }
 
@@ -2667,7 +2667,7 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
         Token otherlv_1=null;
 
 
-        	enterRule();
+            enterRule();
 
         try {
             // InternalTargetEnvironmentParser.g:1068:2: ( ( () otherlv_1= SelectionKind ) )
@@ -2677,28 +2677,28 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironmentParser.g:1070:3: () otherlv_1= SelectionKind
             {
             // InternalTargetEnvironmentParser.g:1070:3: ()
-            // InternalTargetEnvironmentParser.g:1071:4: 
+            // InternalTargetEnvironmentParser.g:1071:4:
             {
 
-            				current = forceCreateModelElement(
-            					grammarAccess.getSelectionKindAccess().getSelectionKindAction_0(),
-            					current);
-            			
+                            current = forceCreateModelElement(
+                                grammarAccess.getSelectionKindAccess().getSelectionKindAction_0(),
+                                current);
+
 
             }
 
-            otherlv_1=(Token)match(input,SelectionKind,FOLLOW_2); 
+            otherlv_1=(Token)match(input,SelectionKind,FOLLOW_2);
 
-            			newLeafNode(otherlv_1, grammarAccess.getSelectionKindAccess().getSelectionKindKeyword_1());
-            		
-
-            }
+                        newLeafNode(otherlv_1, grammarAccess.getSelectionKindAccess().getSelectionKindKeyword_1());
 
 
             }
 
 
-            	leaveRule();
+            }
+
+
+                leaveRule();
 
         }
 
@@ -2725,14 +2725,14 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironmentParser.g:1085:59: (iv_ruleConnectionProperty= ruleConnectionProperty EOF )
             // InternalTargetEnvironmentParser.g:1086:2: iv_ruleConnectionProperty= ruleConnectionProperty EOF
             {
-             newCompositeNode(grammarAccess.getConnectionPropertyRule()); 
+             newCompositeNode(grammarAccess.getConnectionPropertyRule());
             pushFollow(FOLLOW_1);
             iv_ruleConnectionProperty=ruleConnectionProperty();
 
             state._fsp--;
 
-             current =iv_ruleConnectionProperty; 
-            match(input,EOF,FOLLOW_2); 
+             current =iv_ruleConnectionProperty;
+            match(input,EOF,FOLLOW_2);
 
             }
 
@@ -2764,7 +2764,7 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
 
 
 
-        	enterRule();
+            enterRule();
 
         try {
             // InternalTargetEnvironmentParser.g:1098:2: ( ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) (this_INDENT_4= RULE_INDENT otherlv_5= Value ( (lv_value_6_0= rulePropertyValue ) ) this_DEDENT_7= RULE_DEDENT )? ) )
@@ -2774,31 +2774,31 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironmentParser.g:1100:3: () rulePreListElement otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) (this_INDENT_4= RULE_INDENT otherlv_5= Value ( (lv_value_6_0= rulePropertyValue ) ) this_DEDENT_7= RULE_DEDENT )?
             {
             // InternalTargetEnvironmentParser.g:1100:3: ()
-            // InternalTargetEnvironmentParser.g:1101:4: 
+            // InternalTargetEnvironmentParser.g:1101:4:
             {
 
-            				current = forceCreateModelElement(
-            					grammarAccess.getConnectionPropertyAccess().getConnectionPropertyAction_0(),
-            					current);
-            			
+                            current = forceCreateModelElement(
+                                grammarAccess.getConnectionPropertyAccess().getConnectionPropertyAction_0(),
+                                current);
+
 
             }
 
 
-            			newCompositeNode(grammarAccess.getConnectionPropertyAccess().getPreListElementParserRuleCall_1());
-            		
+                        newCompositeNode(grammarAccess.getConnectionPropertyAccess().getPreListElementParserRuleCall_1());
+
             pushFollow(FOLLOW_4);
             rulePreListElement();
 
             state._fsp--;
 
 
-            			afterParserOrEnumRuleCall();
-            		
-            otherlv_2=(Token)match(input,Name,FOLLOW_5); 
+                        afterParserOrEnumRuleCall();
 
-            			newLeafNode(otherlv_2, grammarAccess.getConnectionPropertyAccess().getNameKeyword_2());
-            		
+            otherlv_2=(Token)match(input,Name,FOLLOW_5);
+
+                        newLeafNode(otherlv_2, grammarAccess.getConnectionPropertyAccess().getNameKeyword_2());
+
             // InternalTargetEnvironmentParser.g:1118:3: ( (lv_name_3_0= ruleEString ) )
             // InternalTargetEnvironmentParser.g:1119:4: (lv_name_3_0= ruleEString )
             {
@@ -2806,24 +2806,24 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironmentParser.g:1120:5: lv_name_3_0= ruleEString
             {
 
-            					newCompositeNode(grammarAccess.getConnectionPropertyAccess().getNameEStringParserRuleCall_3_0());
-            				
+                                newCompositeNode(grammarAccess.getConnectionPropertyAccess().getNameEStringParserRuleCall_3_0());
+
             pushFollow(FOLLOW_17);
             lv_name_3_0=ruleEString();
 
             state._fsp--;
 
 
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getConnectionPropertyRule());
-            					}
-            					set(
-            						current,
-            						"name",
-            						lv_name_3_0,
-            						"de.fraunhofer.ipa.targetEnvironment.Base.EString");
-            					afterParserOrEnumRuleCall();
-            				
+                                if (current==null) {
+                                    current = createModelElementForParent(grammarAccess.getConnectionPropertyRule());
+                                }
+                                set(
+                                    current,
+                                    "name",
+                                    lv_name_3_0,
+                                    "de.fraunhofer.ipa.targetEnvironment.Base.EString");
+                                afterParserOrEnumRuleCall();
+
 
             }
 
@@ -2841,14 +2841,14 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
                 case 1 :
                     // InternalTargetEnvironmentParser.g:1138:4: this_INDENT_4= RULE_INDENT otherlv_5= Value ( (lv_value_6_0= rulePropertyValue ) ) this_DEDENT_7= RULE_DEDENT
                     {
-                    this_INDENT_4=(Token)match(input,RULE_INDENT,FOLLOW_18); 
+                    this_INDENT_4=(Token)match(input,RULE_INDENT,FOLLOW_18);
 
-                    				newLeafNode(this_INDENT_4, grammarAccess.getConnectionPropertyAccess().getINDENTTerminalRuleCall_4_0());
-                    			
-                    otherlv_5=(Token)match(input,Value,FOLLOW_19); 
+                                    newLeafNode(this_INDENT_4, grammarAccess.getConnectionPropertyAccess().getINDENTTerminalRuleCall_4_0());
 
-                    				newLeafNode(otherlv_5, grammarAccess.getConnectionPropertyAccess().getValueKeyword_4_1());
-                    			
+                    otherlv_5=(Token)match(input,Value,FOLLOW_19);
+
+                                    newLeafNode(otherlv_5, grammarAccess.getConnectionPropertyAccess().getValueKeyword_4_1());
+
                     // InternalTargetEnvironmentParser.g:1146:4: ( (lv_value_6_0= rulePropertyValue ) )
                     // InternalTargetEnvironmentParser.g:1147:5: (lv_value_6_0= rulePropertyValue )
                     {
@@ -2856,34 +2856,34 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
                     // InternalTargetEnvironmentParser.g:1148:6: lv_value_6_0= rulePropertyValue
                     {
 
-                    						newCompositeNode(grammarAccess.getConnectionPropertyAccess().getValuePropertyValueParserRuleCall_4_2_0());
-                    					
+                                            newCompositeNode(grammarAccess.getConnectionPropertyAccess().getValuePropertyValueParserRuleCall_4_2_0());
+
                     pushFollow(FOLLOW_10);
                     lv_value_6_0=rulePropertyValue();
 
                     state._fsp--;
 
 
-                    						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getConnectionPropertyRule());
-                    						}
-                    						set(
-                    							current,
-                    							"value",
-                    							lv_value_6_0,
-                    							"de.fraunhofer.ipa.targetEnvironment.Base.PropertyValue");
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
+                                            if (current==null) {
+                                                current = createModelElementForParent(grammarAccess.getConnectionPropertyRule());
+                                            }
+                                            set(
+                                                current,
+                                                "value",
+                                                lv_value_6_0,
+                                                "de.fraunhofer.ipa.targetEnvironment.Base.PropertyValue");
+                                            afterParserOrEnumRuleCall();
 
 
                     }
 
-                    this_DEDENT_7=(Token)match(input,RULE_DEDENT,FOLLOW_2); 
 
-                    				newLeafNode(this_DEDENT_7, grammarAccess.getConnectionPropertyAccess().getDEDENTTerminalRuleCall_4_3());
-                    			
+                    }
+
+                    this_DEDENT_7=(Token)match(input,RULE_DEDENT,FOLLOW_2);
+
+                                    newLeafNode(this_DEDENT_7, grammarAccess.getConnectionPropertyAccess().getDEDENTTerminalRuleCall_4_3());
+
 
                     }
                     break;
@@ -2897,7 +2897,7 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             }
 
 
-            	leaveRule();
+                leaveRule();
 
         }
 
@@ -2924,14 +2924,14 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironmentParser.g:1174:64: (iv_ruleCommunicationConnection= ruleCommunicationConnection EOF )
             // InternalTargetEnvironmentParser.g:1175:2: iv_ruleCommunicationConnection= ruleCommunicationConnection EOF
             {
-             newCompositeNode(grammarAccess.getCommunicationConnectionRule()); 
+             newCompositeNode(grammarAccess.getCommunicationConnectionRule());
             pushFollow(FOLLOW_1);
             iv_ruleCommunicationConnection=ruleCommunicationConnection();
 
             state._fsp--;
 
-             current =iv_ruleCommunicationConnection; 
-            match(input,EOF,FOLLOW_2); 
+             current =iv_ruleCommunicationConnection;
+            match(input,EOF,FOLLOW_2);
 
             }
 
@@ -2968,7 +2968,7 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
 
 
 
-        	enterRule();
+            enterRule();
 
         try {
             // InternalTargetEnvironmentParser.g:1187:2: ( ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) this_INDENT_4= RULE_INDENT otherlv_5= Type ( (lv_type_6_0= ruleCommunicationType ) ) (otherlv_7= Properties this_INDENT_8= RULE_INDENT ( (lv_properties_9_0= ruleConnectionProperty ) )+ this_DEDENT_10= RULE_DEDENT )? this_DEDENT_11= RULE_DEDENT ) )
@@ -2978,31 +2978,31 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironmentParser.g:1189:3: () rulePreListElement otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) this_INDENT_4= RULE_INDENT otherlv_5= Type ( (lv_type_6_0= ruleCommunicationType ) ) (otherlv_7= Properties this_INDENT_8= RULE_INDENT ( (lv_properties_9_0= ruleConnectionProperty ) )+ this_DEDENT_10= RULE_DEDENT )? this_DEDENT_11= RULE_DEDENT
             {
             // InternalTargetEnvironmentParser.g:1189:3: ()
-            // InternalTargetEnvironmentParser.g:1190:4: 
+            // InternalTargetEnvironmentParser.g:1190:4:
             {
 
-            				current = forceCreateModelElement(
-            					grammarAccess.getCommunicationConnectionAccess().getCommunicationConnectionAction_0(),
-            					current);
-            			
+                            current = forceCreateModelElement(
+                                grammarAccess.getCommunicationConnectionAccess().getCommunicationConnectionAction_0(),
+                                current);
+
 
             }
 
 
-            			newCompositeNode(grammarAccess.getCommunicationConnectionAccess().getPreListElementParserRuleCall_1());
-            		
+                        newCompositeNode(grammarAccess.getCommunicationConnectionAccess().getPreListElementParserRuleCall_1());
+
             pushFollow(FOLLOW_4);
             rulePreListElement();
 
             state._fsp--;
 
 
-            			afterParserOrEnumRuleCall();
-            		
-            otherlv_2=(Token)match(input,Name,FOLLOW_5); 
+                        afterParserOrEnumRuleCall();
 
-            			newLeafNode(otherlv_2, grammarAccess.getCommunicationConnectionAccess().getNameKeyword_2());
-            		
+            otherlv_2=(Token)match(input,Name,FOLLOW_5);
+
+                        newLeafNode(otherlv_2, grammarAccess.getCommunicationConnectionAccess().getNameKeyword_2());
+
             // InternalTargetEnvironmentParser.g:1207:3: ( (lv_name_3_0= ruleEString ) )
             // InternalTargetEnvironmentParser.g:1208:4: (lv_name_3_0= ruleEString )
             {
@@ -3010,38 +3010,38 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironmentParser.g:1209:5: lv_name_3_0= ruleEString
             {
 
-            					newCompositeNode(grammarAccess.getCommunicationConnectionAccess().getNameEStringParserRuleCall_3_0());
-            				
+                                newCompositeNode(grammarAccess.getCommunicationConnectionAccess().getNameEStringParserRuleCall_3_0());
+
             pushFollow(FOLLOW_3);
             lv_name_3_0=ruleEString();
 
             state._fsp--;
 
 
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getCommunicationConnectionRule());
-            					}
-            					set(
-            						current,
-            						"name",
-            						lv_name_3_0,
-            						"de.fraunhofer.ipa.targetEnvironment.Base.EString");
-            					afterParserOrEnumRuleCall();
-            				
-
-            }
+                                if (current==null) {
+                                    current = createModelElementForParent(grammarAccess.getCommunicationConnectionRule());
+                                }
+                                set(
+                                    current,
+                                    "name",
+                                    lv_name_3_0,
+                                    "de.fraunhofer.ipa.targetEnvironment.Base.EString");
+                                afterParserOrEnumRuleCall();
 
 
             }
 
-            this_INDENT_4=(Token)match(input,RULE_INDENT,FOLLOW_23); 
 
-            			newLeafNode(this_INDENT_4, grammarAccess.getCommunicationConnectionAccess().getINDENTTerminalRuleCall_4());
-            		
-            otherlv_5=(Token)match(input,Type,FOLLOW_5); 
+            }
 
-            			newLeafNode(otherlv_5, grammarAccess.getCommunicationConnectionAccess().getTypeKeyword_5());
-            		
+            this_INDENT_4=(Token)match(input,RULE_INDENT,FOLLOW_23);
+
+                        newLeafNode(this_INDENT_4, grammarAccess.getCommunicationConnectionAccess().getINDENTTerminalRuleCall_4());
+
+            otherlv_5=(Token)match(input,Type,FOLLOW_5);
+
+                        newLeafNode(otherlv_5, grammarAccess.getCommunicationConnectionAccess().getTypeKeyword_5());
+
             // InternalTargetEnvironmentParser.g:1234:3: ( (lv_type_6_0= ruleCommunicationType ) )
             // InternalTargetEnvironmentParser.g:1235:4: (lv_type_6_0= ruleCommunicationType )
             {
@@ -3049,24 +3049,24 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironmentParser.g:1236:5: lv_type_6_0= ruleCommunicationType
             {
 
-            					newCompositeNode(grammarAccess.getCommunicationConnectionAccess().getTypeCommunicationTypeParserRuleCall_6_0());
-            				
+                                newCompositeNode(grammarAccess.getCommunicationConnectionAccess().getTypeCommunicationTypeParserRuleCall_6_0());
+
             pushFollow(FOLLOW_27);
             lv_type_6_0=ruleCommunicationType();
 
             state._fsp--;
 
 
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getCommunicationConnectionRule());
-            					}
-            					set(
-            						current,
-            						"type",
-            						lv_type_6_0,
-            						"de.fraunhofer.ipa.targetEnvironment.Device.CommunicationType");
-            					afterParserOrEnumRuleCall();
-            				
+                                if (current==null) {
+                                    current = createModelElementForParent(grammarAccess.getCommunicationConnectionRule());
+                                }
+                                set(
+                                    current,
+                                    "type",
+                                    lv_type_6_0,
+                                    "de.fraunhofer.ipa.targetEnvironment.Device.CommunicationType");
+                                afterParserOrEnumRuleCall();
+
 
             }
 
@@ -3084,14 +3084,14 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
                 case 1 :
                     // InternalTargetEnvironmentParser.g:1254:4: otherlv_7= Properties this_INDENT_8= RULE_INDENT ( (lv_properties_9_0= ruleConnectionProperty ) )+ this_DEDENT_10= RULE_DEDENT
                     {
-                    otherlv_7=(Token)match(input,Properties,FOLLOW_3); 
+                    otherlv_7=(Token)match(input,Properties,FOLLOW_3);
 
-                    				newLeafNode(otherlv_7, grammarAccess.getCommunicationConnectionAccess().getPropertiesKeyword_7_0());
-                    			
-                    this_INDENT_8=(Token)match(input,RULE_INDENT,FOLLOW_7); 
+                                    newLeafNode(otherlv_7, grammarAccess.getCommunicationConnectionAccess().getPropertiesKeyword_7_0());
 
-                    				newLeafNode(this_INDENT_8, grammarAccess.getCommunicationConnectionAccess().getINDENTTerminalRuleCall_7_1());
-                    			
+                    this_INDENT_8=(Token)match(input,RULE_INDENT,FOLLOW_7);
+
+                                    newLeafNode(this_INDENT_8, grammarAccess.getCommunicationConnectionAccess().getINDENTTerminalRuleCall_7_1());
+
                     // InternalTargetEnvironmentParser.g:1262:4: ( (lv_properties_9_0= ruleConnectionProperty ) )+
                     int cnt18=0;
                     loop18:
@@ -3105,40 +3105,40 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
 
 
                         switch (alt18) {
-                    	case 1 :
-                    	    // InternalTargetEnvironmentParser.g:1263:5: (lv_properties_9_0= ruleConnectionProperty )
-                    	    {
-                    	    // InternalTargetEnvironmentParser.g:1263:5: (lv_properties_9_0= ruleConnectionProperty )
-                    	    // InternalTargetEnvironmentParser.g:1264:6: lv_properties_9_0= ruleConnectionProperty
-                    	    {
+                        case 1 :
+                            // InternalTargetEnvironmentParser.g:1263:5: (lv_properties_9_0= ruleConnectionProperty )
+                            {
+                            // InternalTargetEnvironmentParser.g:1263:5: (lv_properties_9_0= ruleConnectionProperty )
+                            // InternalTargetEnvironmentParser.g:1264:6: lv_properties_9_0= ruleConnectionProperty
+                            {
 
-                    	    						newCompositeNode(grammarAccess.getCommunicationConnectionAccess().getPropertiesConnectionPropertyParserRuleCall_7_2_0());
-                    	    					
-                    	    pushFollow(FOLLOW_8);
-                    	    lv_properties_9_0=ruleConnectionProperty();
+                                                    newCompositeNode(grammarAccess.getCommunicationConnectionAccess().getPropertiesConnectionPropertyParserRuleCall_7_2_0());
 
-                    	    state._fsp--;
+                            pushFollow(FOLLOW_8);
+                            lv_properties_9_0=ruleConnectionProperty();
 
-
-                    	    						if (current==null) {
-                    	    							current = createModelElementForParent(grammarAccess.getCommunicationConnectionRule());
-                    	    						}
-                    	    						add(
-                    	    							current,
-                    	    							"properties",
-                    	    							lv_properties_9_0,
-                    	    							"de.fraunhofer.ipa.targetEnvironment.Device.ConnectionProperty");
-                    	    						afterParserOrEnumRuleCall();
-                    	    					
-
-                    	    }
+                            state._fsp--;
 
 
-                    	    }
-                    	    break;
+                                                    if (current==null) {
+                                                        current = createModelElementForParent(grammarAccess.getCommunicationConnectionRule());
+                                                    }
+                                                    add(
+                                                        current,
+                                                        "properties",
+                                                        lv_properties_9_0,
+                                                        "de.fraunhofer.ipa.targetEnvironment.Device.ConnectionProperty");
+                                                    afterParserOrEnumRuleCall();
 
-                    	default :
-                    	    if ( cnt18 >= 1 ) break loop18;
+
+                            }
+
+
+                            }
+                            break;
+
+                        default :
+                            if ( cnt18 >= 1 ) break loop18;
                                 EarlyExitException eee =
                                     new EarlyExitException(18, input);
                                 throw eee;
@@ -3146,28 +3146,28 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
                         cnt18++;
                     } while (true);
 
-                    this_DEDENT_10=(Token)match(input,RULE_DEDENT,FOLLOW_10); 
+                    this_DEDENT_10=(Token)match(input,RULE_DEDENT,FOLLOW_10);
 
-                    				newLeafNode(this_DEDENT_10, grammarAccess.getCommunicationConnectionAccess().getDEDENTTerminalRuleCall_7_3());
-                    			
+                                    newLeafNode(this_DEDENT_10, grammarAccess.getCommunicationConnectionAccess().getDEDENTTerminalRuleCall_7_3());
+
 
                     }
                     break;
 
             }
 
-            this_DEDENT_11=(Token)match(input,RULE_DEDENT,FOLLOW_2); 
+            this_DEDENT_11=(Token)match(input,RULE_DEDENT,FOLLOW_2);
 
-            			newLeafNode(this_DEDENT_11, grammarAccess.getCommunicationConnectionAccess().getDEDENTTerminalRuleCall_8());
-            		
-
-            }
+                        newLeafNode(this_DEDENT_11, grammarAccess.getCommunicationConnectionAccess().getDEDENTTerminalRuleCall_8());
 
 
             }
 
 
-            	leaveRule();
+            }
+
+
+                leaveRule();
 
         }
 
@@ -3194,14 +3194,14 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironmentParser.g:1294:58: (iv_ruleCommunicationType= ruleCommunicationType EOF )
             // InternalTargetEnvironmentParser.g:1295:2: iv_ruleCommunicationType= ruleCommunicationType EOF
             {
-             newCompositeNode(grammarAccess.getCommunicationTypeRule()); 
+             newCompositeNode(grammarAccess.getCommunicationTypeRule());
             pushFollow(FOLLOW_1);
             iv_ruleCommunicationType=ruleCommunicationType();
 
             state._fsp--;
 
-             current =iv_ruleCommunicationType; 
-            match(input,EOF,FOLLOW_2); 
+             current =iv_ruleCommunicationType;
+            match(input,EOF,FOLLOW_2);
 
             }
 
@@ -3227,7 +3227,7 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
 
 
 
-        	enterRule();
+            enterRule();
 
         try {
             // InternalTargetEnvironmentParser.g:1307:2: ( ( () ( (lv_name_1_0= ruleEString ) ) ) )
@@ -3237,13 +3237,13 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironmentParser.g:1309:3: () ( (lv_name_1_0= ruleEString ) )
             {
             // InternalTargetEnvironmentParser.g:1309:3: ()
-            // InternalTargetEnvironmentParser.g:1310:4: 
+            // InternalTargetEnvironmentParser.g:1310:4:
             {
 
-            				current = forceCreateModelElement(
-            					grammarAccess.getCommunicationTypeAccess().getCommunicationTypeAction_0(),
-            					current);
-            			
+                            current = forceCreateModelElement(
+                                grammarAccess.getCommunicationTypeAccess().getCommunicationTypeAction_0(),
+                                current);
+
 
             }
 
@@ -3254,26 +3254,23 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironmentParser.g:1318:5: lv_name_1_0= ruleEString
             {
 
-            					newCompositeNode(grammarAccess.getCommunicationTypeAccess().getNameEStringParserRuleCall_1_0());
-            				
+                                newCompositeNode(grammarAccess.getCommunicationTypeAccess().getNameEStringParserRuleCall_1_0());
+
             pushFollow(FOLLOW_2);
             lv_name_1_0=ruleEString();
 
             state._fsp--;
 
 
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getCommunicationTypeRule());
-            					}
-            					set(
-            						current,
-            						"name",
-            						lv_name_1_0,
-            						"de.fraunhofer.ipa.targetEnvironment.Base.EString");
-            					afterParserOrEnumRuleCall();
-            				
-
-            }
+                                if (current==null) {
+                                    current = createModelElementForParent(grammarAccess.getCommunicationTypeRule());
+                                }
+                                set(
+                                    current,
+                                    "name",
+                                    lv_name_1_0,
+                                    "de.fraunhofer.ipa.targetEnvironment.Base.EString");
+                                afterParserOrEnumRuleCall();
 
 
             }
@@ -3285,7 +3282,10 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             }
 
 
-            	leaveRule();
+            }
+
+
+                leaveRule();
 
         }
 
@@ -3312,14 +3312,14 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironmentParser.g:1339:55: (iv_ruleCapabilityType= ruleCapabilityType EOF )
             // InternalTargetEnvironmentParser.g:1340:2: iv_ruleCapabilityType= ruleCapabilityType EOF
             {
-             newCompositeNode(grammarAccess.getCapabilityTypeRule()); 
+             newCompositeNode(grammarAccess.getCapabilityTypeRule());
             pushFollow(FOLLOW_1);
             iv_ruleCapabilityType=ruleCapabilityType();
 
             state._fsp--;
 
-             current =iv_ruleCapabilityType; 
-            match(input,EOF,FOLLOW_2); 
+             current =iv_ruleCapabilityType;
+            match(input,EOF,FOLLOW_2);
 
             }
 
@@ -3345,7 +3345,7 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
 
 
 
-        	enterRule();
+            enterRule();
 
         try {
             // InternalTargetEnvironmentParser.g:1352:2: ( ( () ( (lv_name_1_0= ruleEString ) ) ) )
@@ -3355,13 +3355,13 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironmentParser.g:1354:3: () ( (lv_name_1_0= ruleEString ) )
             {
             // InternalTargetEnvironmentParser.g:1354:3: ()
-            // InternalTargetEnvironmentParser.g:1355:4: 
+            // InternalTargetEnvironmentParser.g:1355:4:
             {
 
-            				current = forceCreateModelElement(
-            					grammarAccess.getCapabilityTypeAccess().getCapabilityTypeAction_0(),
-            					current);
-            			
+                            current = forceCreateModelElement(
+                                grammarAccess.getCapabilityTypeAccess().getCapabilityTypeAction_0(),
+                                current);
+
 
             }
 
@@ -3372,26 +3372,23 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironmentParser.g:1363:5: lv_name_1_0= ruleEString
             {
 
-            					newCompositeNode(grammarAccess.getCapabilityTypeAccess().getNameEStringParserRuleCall_1_0());
-            				
+                                newCompositeNode(grammarAccess.getCapabilityTypeAccess().getNameEStringParserRuleCall_1_0());
+
             pushFollow(FOLLOW_2);
             lv_name_1_0=ruleEString();
 
             state._fsp--;
 
 
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getCapabilityTypeRule());
-            					}
-            					set(
-            						current,
-            						"name",
-            						lv_name_1_0,
-            						"de.fraunhofer.ipa.targetEnvironment.Base.EString");
-            					afterParserOrEnumRuleCall();
-            				
-
-            }
+                                if (current==null) {
+                                    current = createModelElementForParent(grammarAccess.getCapabilityTypeRule());
+                                }
+                                set(
+                                    current,
+                                    "name",
+                                    lv_name_1_0,
+                                    "de.fraunhofer.ipa.targetEnvironment.Base.EString");
+                                afterParserOrEnumRuleCall();
 
 
             }
@@ -3403,7 +3400,10 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             }
 
 
-            	leaveRule();
+            }
+
+
+                leaveRule();
 
         }
 
@@ -3430,14 +3430,14 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironmentParser.g:1384:54: (iv_rulePropertyValue= rulePropertyValue EOF )
             // InternalTargetEnvironmentParser.g:1385:2: iv_rulePropertyValue= rulePropertyValue EOF
             {
-             newCompositeNode(grammarAccess.getPropertyValueRule()); 
+             newCompositeNode(grammarAccess.getPropertyValueRule());
             pushFollow(FOLLOW_1);
             iv_rulePropertyValue=rulePropertyValue();
 
             state._fsp--;
 
-             current =iv_rulePropertyValue; 
-            match(input,EOF,FOLLOW_2); 
+             current =iv_rulePropertyValue;
+            match(input,EOF,FOLLOW_2);
 
             }
 
@@ -3467,7 +3467,7 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
 
 
 
-        	enterRule();
+            enterRule();
 
         try {
             // InternalTargetEnvironmentParser.g:1397:2: ( (this_PropertyValueInt_0= rulePropertyValueInt | this_PropertyValueDouble_1= rulePropertyValueDouble | this_PropertyValueString_2= rulePropertyValueString ) )
@@ -3504,17 +3504,17 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
                     // InternalTargetEnvironmentParser.g:1399:3: this_PropertyValueInt_0= rulePropertyValueInt
                     {
 
-                    			newCompositeNode(grammarAccess.getPropertyValueAccess().getPropertyValueIntParserRuleCall_0());
-                    		
+                                newCompositeNode(grammarAccess.getPropertyValueAccess().getPropertyValueIntParserRuleCall_0());
+
                     pushFollow(FOLLOW_2);
                     this_PropertyValueInt_0=rulePropertyValueInt();
 
                     state._fsp--;
 
 
-                    			current = this_PropertyValueInt_0;
-                    			afterParserOrEnumRuleCall();
-                    		
+                                current = this_PropertyValueInt_0;
+                                afterParserOrEnumRuleCall();
+
 
                     }
                     break;
@@ -3522,17 +3522,17 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
                     // InternalTargetEnvironmentParser.g:1408:3: this_PropertyValueDouble_1= rulePropertyValueDouble
                     {
 
-                    			newCompositeNode(grammarAccess.getPropertyValueAccess().getPropertyValueDoubleParserRuleCall_1());
-                    		
+                                newCompositeNode(grammarAccess.getPropertyValueAccess().getPropertyValueDoubleParserRuleCall_1());
+
                     pushFollow(FOLLOW_2);
                     this_PropertyValueDouble_1=rulePropertyValueDouble();
 
                     state._fsp--;
 
 
-                    			current = this_PropertyValueDouble_1;
-                    			afterParserOrEnumRuleCall();
-                    		
+                                current = this_PropertyValueDouble_1;
+                                afterParserOrEnumRuleCall();
+
 
                     }
                     break;
@@ -3540,17 +3540,17 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
                     // InternalTargetEnvironmentParser.g:1417:3: this_PropertyValueString_2= rulePropertyValueString
                     {
 
-                    			newCompositeNode(grammarAccess.getPropertyValueAccess().getPropertyValueStringParserRuleCall_2());
-                    		
+                                newCompositeNode(grammarAccess.getPropertyValueAccess().getPropertyValueStringParserRuleCall_2());
+
                     pushFollow(FOLLOW_2);
                     this_PropertyValueString_2=rulePropertyValueString();
 
                     state._fsp--;
 
 
-                    			current = this_PropertyValueString_2;
-                    			afterParserOrEnumRuleCall();
-                    		
+                                current = this_PropertyValueString_2;
+                                afterParserOrEnumRuleCall();
+
 
                     }
                     break;
@@ -3561,7 +3561,7 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             }
 
 
-            	leaveRule();
+                leaveRule();
 
         }
 
@@ -3588,14 +3588,14 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironmentParser.g:1429:57: (iv_rulePropertyValueInt= rulePropertyValueInt EOF )
             // InternalTargetEnvironmentParser.g:1430:2: iv_rulePropertyValueInt= rulePropertyValueInt EOF
             {
-             newCompositeNode(grammarAccess.getPropertyValueIntRule()); 
+             newCompositeNode(grammarAccess.getPropertyValueIntRule());
             pushFollow(FOLLOW_1);
             iv_rulePropertyValueInt=rulePropertyValueInt();
 
             state._fsp--;
 
-             current =iv_rulePropertyValueInt; 
-            match(input,EOF,FOLLOW_2); 
+             current =iv_rulePropertyValueInt;
+            match(input,EOF,FOLLOW_2);
 
             }
 
@@ -3621,7 +3621,7 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
 
 
 
-        	enterRule();
+            enterRule();
 
         try {
             // InternalTargetEnvironmentParser.g:1442:2: ( ( (lv_value_0_0= ruleInteger0 ) ) )
@@ -3634,26 +3634,23 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironmentParser.g:1445:4: lv_value_0_0= ruleInteger0
             {
 
-            				newCompositeNode(grammarAccess.getPropertyValueIntAccess().getValueInteger0ParserRuleCall_0());
-            			
+                            newCompositeNode(grammarAccess.getPropertyValueIntAccess().getValueInteger0ParserRuleCall_0());
+
             pushFollow(FOLLOW_2);
             lv_value_0_0=ruleInteger0();
 
             state._fsp--;
 
 
-            				if (current==null) {
-            					current = createModelElementForParent(grammarAccess.getPropertyValueIntRule());
-            				}
-            				set(
-            					current,
-            					"value",
-            					lv_value_0_0,
-            					"de.fraunhofer.ipa.targetEnvironment.Base.Integer0");
-            				afterParserOrEnumRuleCall();
-            			
-
-            }
+                            if (current==null) {
+                                current = createModelElementForParent(grammarAccess.getPropertyValueIntRule());
+                            }
+                            set(
+                                current,
+                                "value",
+                                lv_value_0_0,
+                                "de.fraunhofer.ipa.targetEnvironment.Base.Integer0");
+                            afterParserOrEnumRuleCall();
 
 
             }
@@ -3662,7 +3659,10 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             }
 
 
-            	leaveRule();
+            }
+
+
+                leaveRule();
 
         }
 
@@ -3689,14 +3689,14 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironmentParser.g:1465:60: (iv_rulePropertyValueDouble= rulePropertyValueDouble EOF )
             // InternalTargetEnvironmentParser.g:1466:2: iv_rulePropertyValueDouble= rulePropertyValueDouble EOF
             {
-             newCompositeNode(grammarAccess.getPropertyValueDoubleRule()); 
+             newCompositeNode(grammarAccess.getPropertyValueDoubleRule());
             pushFollow(FOLLOW_1);
             iv_rulePropertyValueDouble=rulePropertyValueDouble();
 
             state._fsp--;
 
-             current =iv_rulePropertyValueDouble; 
-            match(input,EOF,FOLLOW_2); 
+             current =iv_rulePropertyValueDouble;
+            match(input,EOF,FOLLOW_2);
 
             }
 
@@ -3722,7 +3722,7 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
 
 
 
-        	enterRule();
+            enterRule();
 
         try {
             // InternalTargetEnvironmentParser.g:1478:2: ( ( (lv_value_0_0= ruleDouble0 ) ) )
@@ -3735,26 +3735,23 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironmentParser.g:1481:4: lv_value_0_0= ruleDouble0
             {
 
-            				newCompositeNode(grammarAccess.getPropertyValueDoubleAccess().getValueDouble0ParserRuleCall_0());
-            			
+                            newCompositeNode(grammarAccess.getPropertyValueDoubleAccess().getValueDouble0ParserRuleCall_0());
+
             pushFollow(FOLLOW_2);
             lv_value_0_0=ruleDouble0();
 
             state._fsp--;
 
 
-            				if (current==null) {
-            					current = createModelElementForParent(grammarAccess.getPropertyValueDoubleRule());
-            				}
-            				set(
-            					current,
-            					"value",
-            					lv_value_0_0,
-            					"de.fraunhofer.ipa.targetEnvironment.Base.Double0");
-            				afterParserOrEnumRuleCall();
-            			
-
-            }
+                            if (current==null) {
+                                current = createModelElementForParent(grammarAccess.getPropertyValueDoubleRule());
+                            }
+                            set(
+                                current,
+                                "value",
+                                lv_value_0_0,
+                                "de.fraunhofer.ipa.targetEnvironment.Base.Double0");
+                            afterParserOrEnumRuleCall();
 
 
             }
@@ -3763,7 +3760,10 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             }
 
 
-            	leaveRule();
+            }
+
+
+                leaveRule();
 
         }
 
@@ -3790,14 +3790,14 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironmentParser.g:1501:60: (iv_rulePropertyValueString= rulePropertyValueString EOF )
             // InternalTargetEnvironmentParser.g:1502:2: iv_rulePropertyValueString= rulePropertyValueString EOF
             {
-             newCompositeNode(grammarAccess.getPropertyValueStringRule()); 
+             newCompositeNode(grammarAccess.getPropertyValueStringRule());
             pushFollow(FOLLOW_1);
             iv_rulePropertyValueString=rulePropertyValueString();
 
             state._fsp--;
 
-             current =iv_rulePropertyValueString; 
-            match(input,EOF,FOLLOW_2); 
+             current =iv_rulePropertyValueString;
+            match(input,EOF,FOLLOW_2);
 
             }
 
@@ -3823,7 +3823,7 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
 
 
 
-        	enterRule();
+            enterRule();
 
         try {
             // InternalTargetEnvironmentParser.g:1514:2: ( ( (lv_value_0_0= ruleEString ) ) )
@@ -3836,26 +3836,23 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironmentParser.g:1517:4: lv_value_0_0= ruleEString
             {
 
-            				newCompositeNode(grammarAccess.getPropertyValueStringAccess().getValueEStringParserRuleCall_0());
-            			
+                            newCompositeNode(grammarAccess.getPropertyValueStringAccess().getValueEStringParserRuleCall_0());
+
             pushFollow(FOLLOW_2);
             lv_value_0_0=ruleEString();
 
             state._fsp--;
 
 
-            				if (current==null) {
-            					current = createModelElementForParent(grammarAccess.getPropertyValueStringRule());
-            				}
-            				set(
-            					current,
-            					"value",
-            					lv_value_0_0,
-            					"de.fraunhofer.ipa.targetEnvironment.Base.EString");
-            				afterParserOrEnumRuleCall();
-            			
-
-            }
+                            if (current==null) {
+                                current = createModelElementForParent(grammarAccess.getPropertyValueStringRule());
+                            }
+                            set(
+                                current,
+                                "value",
+                                lv_value_0_0,
+                                "de.fraunhofer.ipa.targetEnvironment.Base.EString");
+                            afterParserOrEnumRuleCall();
 
 
             }
@@ -3864,7 +3861,10 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             }
 
 
-            	leaveRule();
+            }
+
+
+                leaveRule();
 
         }
 
@@ -3891,14 +3891,14 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironmentParser.g:1537:47: (iv_ruleDouble0= ruleDouble0 EOF )
             // InternalTargetEnvironmentParser.g:1538:2: iv_ruleDouble0= ruleDouble0 EOF
             {
-             newCompositeNode(grammarAccess.getDouble0Rule()); 
+             newCompositeNode(grammarAccess.getDouble0Rule());
             pushFollow(FOLLOW_1);
             iv_ruleDouble0=ruleDouble0();
 
             state._fsp--;
 
-             current =iv_ruleDouble0.getText(); 
-            match(input,EOF,FOLLOW_2); 
+             current =iv_ruleDouble0.getText();
+            match(input,EOF,FOLLOW_2);
 
             }
 
@@ -3923,24 +3923,24 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
         Token this_DOUBLE_0=null;
 
 
-        	enterRule();
+            enterRule();
 
         try {
             // InternalTargetEnvironmentParser.g:1550:2: (this_DOUBLE_0= RULE_DOUBLE )
             // InternalTargetEnvironmentParser.g:1551:2: this_DOUBLE_0= RULE_DOUBLE
             {
-            this_DOUBLE_0=(Token)match(input,RULE_DOUBLE,FOLLOW_2); 
+            this_DOUBLE_0=(Token)match(input,RULE_DOUBLE,FOLLOW_2);
 
-            		current.merge(this_DOUBLE_0);
-            	
+                    current.merge(this_DOUBLE_0);
 
-            		newLeafNode(this_DOUBLE_0, grammarAccess.getDouble0Access().getDOUBLETerminalRuleCall());
-            	
+
+                    newLeafNode(this_DOUBLE_0, grammarAccess.getDouble0Access().getDOUBLETerminalRuleCall());
+
 
             }
 
 
-            	leaveRule();
+                leaveRule();
 
         }
 
@@ -3967,14 +3967,14 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironmentParser.g:1561:48: (iv_ruleInteger0= ruleInteger0 EOF )
             // InternalTargetEnvironmentParser.g:1562:2: iv_ruleInteger0= ruleInteger0 EOF
             {
-             newCompositeNode(grammarAccess.getInteger0Rule()); 
+             newCompositeNode(grammarAccess.getInteger0Rule());
             pushFollow(FOLLOW_1);
             iv_ruleInteger0=ruleInteger0();
 
             state._fsp--;
 
-             current =iv_ruleInteger0.getText(); 
-            match(input,EOF,FOLLOW_2); 
+             current =iv_ruleInteger0.getText();
+            match(input,EOF,FOLLOW_2);
 
             }
 
@@ -3999,24 +3999,24 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
         Token this_DECINT_0=null;
 
 
-        	enterRule();
+            enterRule();
 
         try {
             // InternalTargetEnvironmentParser.g:1574:2: (this_DECINT_0= RULE_DECINT )
             // InternalTargetEnvironmentParser.g:1575:2: this_DECINT_0= RULE_DECINT
             {
-            this_DECINT_0=(Token)match(input,RULE_DECINT,FOLLOW_2); 
+            this_DECINT_0=(Token)match(input,RULE_DECINT,FOLLOW_2);
 
-            		current.merge(this_DECINT_0);
-            	
+                    current.merge(this_DECINT_0);
 
-            		newLeafNode(this_DECINT_0, grammarAccess.getInteger0Access().getDECINTTerminalRuleCall());
-            	
+
+                    newLeafNode(this_DECINT_0, grammarAccess.getInteger0Access().getDECINTTerminalRuleCall());
+
 
             }
 
 
-            	leaveRule();
+                leaveRule();
 
         }
 
@@ -4043,14 +4043,14 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             // InternalTargetEnvironmentParser.g:1585:47: (iv_ruleEString= ruleEString EOF )
             // InternalTargetEnvironmentParser.g:1586:2: iv_ruleEString= ruleEString EOF
             {
-             newCompositeNode(grammarAccess.getEStringRule()); 
+             newCompositeNode(grammarAccess.getEStringRule());
             pushFollow(FOLLOW_1);
             iv_ruleEString=ruleEString();
 
             state._fsp--;
 
-             current =iv_ruleEString.getText(); 
-            match(input,EOF,FOLLOW_2); 
+             current =iv_ruleEString.getText();
+            match(input,EOF,FOLLOW_2);
 
             }
 
@@ -4076,7 +4076,7 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
         Token this_ID_1=null;
 
 
-        	enterRule();
+            enterRule();
 
         try {
             // InternalTargetEnvironmentParser.g:1598:2: ( (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) )
@@ -4102,26 +4102,26 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
                 case 1 :
                     // InternalTargetEnvironmentParser.g:1600:3: this_STRING_0= RULE_STRING
                     {
-                    this_STRING_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
+                    this_STRING_0=(Token)match(input,RULE_STRING,FOLLOW_2);
 
-                    			current.merge(this_STRING_0);
-                    		
+                                current.merge(this_STRING_0);
 
-                    			newLeafNode(this_STRING_0, grammarAccess.getEStringAccess().getSTRINGTerminalRuleCall_0());
-                    		
+
+                                newLeafNode(this_STRING_0, grammarAccess.getEStringAccess().getSTRINGTerminalRuleCall_0());
+
 
                     }
                     break;
                 case 2 :
                     // InternalTargetEnvironmentParser.g:1608:3: this_ID_1= RULE_ID
                     {
-                    this_ID_1=(Token)match(input,RULE_ID,FOLLOW_2); 
+                    this_ID_1=(Token)match(input,RULE_ID,FOLLOW_2);
 
-                    			current.merge(this_ID_1);
-                    		
+                                current.merge(this_ID_1);
 
-                    			newLeafNode(this_ID_1, grammarAccess.getEStringAccess().getIDTerminalRuleCall_1());
-                    		
+
+                                newLeafNode(this_ID_1, grammarAccess.getEStringAccess().getIDTerminalRuleCall_1());
+
 
                     }
                     break;
@@ -4132,7 +4132,7 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             }
 
 
-            	leaveRule();
+                leaveRule();
 
         }
 
@@ -4156,20 +4156,20 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
 
 
 
-        	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_SL_COMMENT");
+            HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_SL_COMMENT");
 
         try {
             // InternalTargetEnvironmentParser.g:1621:2: (iv_rulePreListElement= rulePreListElement EOF )
             // InternalTargetEnvironmentParser.g:1622:2: iv_rulePreListElement= rulePreListElement EOF
             {
-             newCompositeNode(grammarAccess.getPreListElementRule()); 
+             newCompositeNode(grammarAccess.getPreListElementRule());
             pushFollow(FOLLOW_1);
             iv_rulePreListElement=rulePreListElement();
 
             state._fsp--;
 
-             current =iv_rulePreListElement.getText(); 
-            match(input,EOF,FOLLOW_2); 
+             current =iv_rulePreListElement.getText();
+            match(input,EOF,FOLLOW_2);
 
             }
 
@@ -4181,7 +4181,7 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             }
         finally {
 
-            	myHiddenTokenState.restore();
+                myHiddenTokenState.restore();
 
         }
         return current;
@@ -4197,23 +4197,23 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
         Token kw=null;
 
 
-        	enterRule();
-        	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_SL_COMMENT");
+            enterRule();
+            HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_SL_COMMENT");
 
         try {
             // InternalTargetEnvironmentParser.g:1638:2: (kw= HyphenMinus )
             // InternalTargetEnvironmentParser.g:1639:2: kw= HyphenMinus
             {
-            kw=(Token)match(input,HyphenMinus,FOLLOW_2); 
+            kw=(Token)match(input,HyphenMinus,FOLLOW_2);
 
-            		current.merge(kw);
-            		newLeafNode(kw, grammarAccess.getPreListElementAccess().getHyphenMinusKeyword());
-            	
+                    current.merge(kw);
+                    newLeafNode(kw, grammarAccess.getPreListElementAccess().getHyphenMinusKeyword());
+
 
             }
 
 
-            	leaveRule();
+                leaveRule();
 
         }
 
@@ -4223,7 +4223,7 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
             }
         finally {
 
-            	myHiddenTokenState.restore();
+                myHiddenTokenState.restore();
 
         }
         return current;
@@ -4233,7 +4233,7 @@ public class InternalTargetEnvironmentParser extends AbstractInternalAntlrParser
     // Delegated rules
 
 
- 
+
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});

@@ -24,109 +24,109 @@ import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransi
 @SuppressWarnings("all")
 public class BaseSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 
-	@Inject
-	private BaseGrammarAccess grammarAccess;
-	
-	@Override
-	public void sequence(ISerializationContext context, EObject semanticObject) {
-		EPackage epackage = semanticObject.eClass().getEPackage();
-		ParserRule rule = context.getParserRule();
-		Action action = context.getAssignedAction();
-		Set<Parameter> parameters = context.getEnabledBooleanParameters();
-		if (epackage == BasePackage.eINSTANCE)
-			switch (semanticObject.eClass().getClassifierID()) {
-			case BasePackage.DESCRIPTION:
-				sequence_Description(context, (Description) semanticObject); 
-				return; 
-			case BasePackage.PROPERTY_VALUE_DOUBLE:
-				sequence_PropertyValueDouble(context, (PropertyValueDouble) semanticObject); 
-				return; 
-			case BasePackage.PROPERTY_VALUE_INT:
-				sequence_PropertyValueInt(context, (PropertyValueInt) semanticObject); 
-				return; 
-			case BasePackage.PROPERTY_VALUE_STRING:
-				sequence_PropertyValueString(context, (PropertyValueString) semanticObject); 
-				return; 
-			}
-		if (errorAcceptor != null)
-			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
-	}
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Description returns Description
-	 *
-	 * Constraint:
-	 *     {Description}
-	 * </pre>
-	 */
-	protected void sequence_Description(ISerializationContext context, Description semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     PropertyValue returns PropertyValueDouble
-	 *     PropertyValueDouble returns PropertyValueDouble
-	 *
-	 * Constraint:
-	 *     value=Double0
-	 * </pre>
-	 */
-	protected void sequence_PropertyValueDouble(ISerializationContext context, PropertyValueDouble semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, BasePackage.Literals.PROPERTY_VALUE_DOUBLE__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, BasePackage.Literals.PROPERTY_VALUE_DOUBLE__VALUE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getPropertyValueDoubleAccess().getValueDouble0ParserRuleCall_0(), semanticObject.getValue());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     PropertyValue returns PropertyValueInt
-	 *     PropertyValueInt returns PropertyValueInt
-	 *
-	 * Constraint:
-	 *     value=Integer0
-	 * </pre>
-	 */
-	protected void sequence_PropertyValueInt(ISerializationContext context, PropertyValueInt semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, BasePackage.Literals.PROPERTY_VALUE_INT__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, BasePackage.Literals.PROPERTY_VALUE_INT__VALUE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getPropertyValueIntAccess().getValueInteger0ParserRuleCall_0(), semanticObject.getValue());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     PropertyValue returns PropertyValueString
-	 *     PropertyValueString returns PropertyValueString
-	 *
-	 * Constraint:
-	 *     value=EString
-	 * </pre>
-	 */
-	protected void sequence_PropertyValueString(ISerializationContext context, PropertyValueString semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, BasePackage.Literals.PROPERTY_VALUE_STRING__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, BasePackage.Literals.PROPERTY_VALUE_STRING__VALUE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getPropertyValueStringAccess().getValueEStringParserRuleCall_0(), semanticObject.getValue());
-		feeder.finish();
-	}
-	
-	
+    @Inject
+    private BaseGrammarAccess grammarAccess;
+
+    @Override
+    public void sequence(ISerializationContext context, EObject semanticObject) {
+        EPackage epackage = semanticObject.eClass().getEPackage();
+        ParserRule rule = context.getParserRule();
+        Action action = context.getAssignedAction();
+        Set<Parameter> parameters = context.getEnabledBooleanParameters();
+        if (epackage == BasePackage.eINSTANCE)
+            switch (semanticObject.eClass().getClassifierID()) {
+            case BasePackage.DESCRIPTION:
+                sequence_Description(context, (Description) semanticObject);
+                return;
+            case BasePackage.PROPERTY_VALUE_DOUBLE:
+                sequence_PropertyValueDouble(context, (PropertyValueDouble) semanticObject);
+                return;
+            case BasePackage.PROPERTY_VALUE_INT:
+                sequence_PropertyValueInt(context, (PropertyValueInt) semanticObject);
+                return;
+            case BasePackage.PROPERTY_VALUE_STRING:
+                sequence_PropertyValueString(context, (PropertyValueString) semanticObject);
+                return;
+            }
+        if (errorAcceptor != null)
+            errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
+    }
+
+    /**
+     * <pre>
+     * Contexts:
+     *     Description returns Description
+     *
+     * Constraint:
+     *     {Description}
+     * </pre>
+     */
+    protected void sequence_Description(ISerializationContext context, Description semanticObject) {
+        genericSequencer.createSequence(context, semanticObject);
+    }
+
+
+    /**
+     * <pre>
+     * Contexts:
+     *     PropertyValue returns PropertyValueDouble
+     *     PropertyValueDouble returns PropertyValueDouble
+     *
+     * Constraint:
+     *     value=Double0
+     * </pre>
+     */
+    protected void sequence_PropertyValueDouble(ISerializationContext context, PropertyValueDouble semanticObject) {
+        if (errorAcceptor != null) {
+            if (transientValues.isValueTransient(semanticObject, BasePackage.Literals.PROPERTY_VALUE_DOUBLE__VALUE) == ValueTransient.YES)
+                errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, BasePackage.Literals.PROPERTY_VALUE_DOUBLE__VALUE));
+        }
+        SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+        feeder.accept(grammarAccess.getPropertyValueDoubleAccess().getValueDouble0ParserRuleCall_0(), semanticObject.getValue());
+        feeder.finish();
+    }
+
+
+    /**
+     * <pre>
+     * Contexts:
+     *     PropertyValue returns PropertyValueInt
+     *     PropertyValueInt returns PropertyValueInt
+     *
+     * Constraint:
+     *     value=Integer0
+     * </pre>
+     */
+    protected void sequence_PropertyValueInt(ISerializationContext context, PropertyValueInt semanticObject) {
+        if (errorAcceptor != null) {
+            if (transientValues.isValueTransient(semanticObject, BasePackage.Literals.PROPERTY_VALUE_INT__VALUE) == ValueTransient.YES)
+                errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, BasePackage.Literals.PROPERTY_VALUE_INT__VALUE));
+        }
+        SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+        feeder.accept(grammarAccess.getPropertyValueIntAccess().getValueInteger0ParserRuleCall_0(), semanticObject.getValue());
+        feeder.finish();
+    }
+
+
+    /**
+     * <pre>
+     * Contexts:
+     *     PropertyValue returns PropertyValueString
+     *     PropertyValueString returns PropertyValueString
+     *
+     * Constraint:
+     *     value=EString
+     * </pre>
+     */
+    protected void sequence_PropertyValueString(ISerializationContext context, PropertyValueString semanticObject) {
+        if (errorAcceptor != null) {
+            if (transientValues.isValueTransient(semanticObject, BasePackage.Literals.PROPERTY_VALUE_STRING__VALUE) == ValueTransient.YES)
+                errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, BasePackage.Literals.PROPERTY_VALUE_STRING__VALUE));
+        }
+        SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+        feeder.accept(grammarAccess.getPropertyValueStringAccess().getValueEStringParserRuleCall_0(), semanticObject.getValue());
+        feeder.finish();
+    }
+
+
 }

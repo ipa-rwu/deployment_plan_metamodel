@@ -19,132 +19,132 @@ import targetEnvironment.*;
  * @generated
  */
 public class TargetEnvironmentFactoryImpl extends EFactoryImpl implements TargetEnvironmentFactory {
-	/**
-	 * Creates the default factory implementation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static TargetEnvironmentFactory init() {
-		try {
-			TargetEnvironmentFactory theTargetEnvironmentFactory = (TargetEnvironmentFactory)EPackage.Registry.INSTANCE.getEFactory(TargetEnvironmentPackage.eNS_URI);
-			if (theTargetEnvironmentFactory != null) {
-				return theTargetEnvironmentFactory;
-			}
-		}
-		catch (Exception exception) {
-			EcorePlugin.INSTANCE.log(exception);
-		}
-		return new TargetEnvironmentFactoryImpl();
-	}
+    /**
+     * Creates the default factory implementation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public static TargetEnvironmentFactory init() {
+        try {
+            TargetEnvironmentFactory theTargetEnvironmentFactory = (TargetEnvironmentFactory)EPackage.Registry.INSTANCE.getEFactory(TargetEnvironmentPackage.eNS_URI);
+            if (theTargetEnvironmentFactory != null) {
+                return theTargetEnvironmentFactory;
+            }
+        }
+        catch (Exception exception) {
+            EcorePlugin.INSTANCE.log(exception);
+        }
+        return new TargetEnvironmentFactoryImpl();
+    }
 
-	/**
-	 * Creates an instance of the factory.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public TargetEnvironmentFactoryImpl() {
-		super();
-	}
+    /**
+     * Creates an instance of the factory.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public TargetEnvironmentFactoryImpl() {
+        super();
+    }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EObject create(EClass eClass) {
-		switch (eClass.getClassifierID()) {
-			case TargetEnvironmentPackage.TARGET_ENVIRONMENT: return createTargetEnvironment();
-			case TargetEnvironmentPackage.TARGET_DEPLOY_ENVIROMENT: return createTargetDeployEnviroment();
-			case TargetEnvironmentPackage.CONFIG_CONNECTION: return createConfigConnection();
-			case TargetEnvironmentPackage.DEVICE_INSTANCE: return createDeviceInstance();
-			case TargetEnvironmentPackage.CONNECTED_DEVICE: return createConnectedDevice();
-			case TargetEnvironmentPackage.CONFIG_CONNECTION_PROPERTY: return createConfigConnectionProperty();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
-		}
-	}
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EObject create(EClass eClass) {
+        switch (eClass.getClassifierID()) {
+            case TargetEnvironmentPackage.TARGET_ENVIRONMENT: return createTargetEnvironment();
+            case TargetEnvironmentPackage.TARGET_DEPLOY_ENVIROMENT: return createTargetDeployEnviroment();
+            case TargetEnvironmentPackage.CONFIG_CONNECTION: return createConfigConnection();
+            case TargetEnvironmentPackage.DEVICE_INSTANCE: return createDeviceInstance();
+            case TargetEnvironmentPackage.CONNECTED_DEVICE: return createConnectedDevice();
+            case TargetEnvironmentPackage.CONFIG_CONNECTION_PROPERTY: return createConfigConnectionProperty();
+            default:
+                throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+        }
+    }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public TargetEnvironment createTargetEnvironment() {
-		TargetEnvironmentImpl targetEnvironment = new TargetEnvironmentImpl();
-		return targetEnvironment;
-	}
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public TargetEnvironment createTargetEnvironment() {
+        TargetEnvironmentImpl targetEnvironment = new TargetEnvironmentImpl();
+        return targetEnvironment;
+    }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public TargetDeployEnviroment createTargetDeployEnviroment() {
-		TargetDeployEnviromentImpl targetDeployEnviroment = new TargetDeployEnviromentImpl();
-		return targetDeployEnviroment;
-	}
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public TargetDeployEnviroment createTargetDeployEnviroment() {
+        TargetDeployEnviromentImpl targetDeployEnviroment = new TargetDeployEnviromentImpl();
+        return targetDeployEnviroment;
+    }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ConfigConnection createConfigConnection() {
-		ConfigConnectionImpl configConnection = new ConfigConnectionImpl();
-		return configConnection;
-	}
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public ConfigConnection createConfigConnection() {
+        ConfigConnectionImpl configConnection = new ConfigConnectionImpl();
+        return configConnection;
+    }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DeviceInstance createDeviceInstance() {
-		DeviceInstanceImpl deviceInstance = new DeviceInstanceImpl();
-		return deviceInstance;
-	}
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public DeviceInstance createDeviceInstance() {
+        DeviceInstanceImpl deviceInstance = new DeviceInstanceImpl();
+        return deviceInstance;
+    }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ConnectedDevice createConnectedDevice() {
-		ConnectedDeviceImpl connectedDevice = new ConnectedDeviceImpl();
-		return connectedDevice;
-	}
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public ConnectedDevice createConnectedDevice() {
+        ConnectedDeviceImpl connectedDevice = new ConnectedDeviceImpl();
+        return connectedDevice;
+    }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ConfigConnectionProperty createConfigConnectionProperty() {
-		ConfigConnectionPropertyImpl configConnectionProperty = new ConfigConnectionPropertyImpl();
-		return configConnectionProperty;
-	}
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public ConfigConnectionProperty createConfigConnectionProperty() {
+        ConfigConnectionPropertyImpl configConnectionProperty = new ConfigConnectionPropertyImpl();
+        return configConnectionProperty;
+    }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public TargetEnvironmentPackage getTargetEnvironmentPackage() {
-		return (TargetEnvironmentPackage)getEPackage();
-	}
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public TargetEnvironmentPackage getTargetEnvironmentPackage() {
+        return (TargetEnvironmentPackage)getEPackage();
+    }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @deprecated
-	 * @generated
-	 */
-	@Deprecated
-	public static TargetEnvironmentPackage getPackage() {
-		return TargetEnvironmentPackage.eINSTANCE;
-	}
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @deprecated
+     * @generated
+     */
+    @Deprecated
+    public static TargetEnvironmentPackage getPackage() {
+        return TargetEnvironmentPackage.eINSTANCE;
+    }
 
 } //TargetEnvironmentFactoryImpl

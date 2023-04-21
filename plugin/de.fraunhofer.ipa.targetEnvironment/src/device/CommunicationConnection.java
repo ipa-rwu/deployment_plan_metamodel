@@ -25,60 +25,60 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface CommunicationConnection extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see device.DevicePackage#getCommunicationConnection_Name()
-	 * @model required="true"
-	 * @generated
-	 */
-	String getName();
+    /**
+     * Returns the value of the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Name</em>' attribute.
+     * @see #setName(String)
+     * @see device.DevicePackage#getCommunicationConnection_Name()
+     * @model required="true"
+     * @generated
+     */
+    String getName();
 
-	/**
-	 * Sets the value of the '{@link device.CommunicationConnection#getName <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
-	 * @generated
-	 */
-	void setName(String value);
+    /**
+     * Sets the value of the '{@link device.CommunicationConnection#getName <em>Name</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Name</em>' attribute.
+     * @see #getName()
+     * @generated
+     */
+    void setName(String value);
 
-	/**
-	 * Returns the value of the '<em><b>Type</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Type</em>' containment reference.
-	 * @see #setType(CommunicationType)
-	 * @see device.DevicePackage#getCommunicationConnection_Type()
-	 * @model containment="true" derived="true"
-	 * @generated
-	 */
-	CommunicationType getType();
+    /**
+     * Returns the value of the '<em><b>Type</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Type</em>' containment reference.
+     * @see #setType(CommunicationType)
+     * @see device.DevicePackage#getCommunicationConnection_Type()
+     * @model containment="true" derived="true"
+     * @generated
+     */
+    CommunicationType getType();
 
-	/**
-	 * Sets the value of the '{@link device.CommunicationConnection#getType <em>Type</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Type</em>' containment reference.
-	 * @see #getType()
-	 * @generated
-	 */
-	void setType(CommunicationType value);
+    /**
+     * Sets the value of the '{@link device.CommunicationConnection#getType <em>Type</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Type</em>' containment reference.
+     * @see #getType()
+     * @generated
+     */
+    void setType(CommunicationType value);
 
-	/**
-	 * Returns the value of the '<em><b>Properties</b></em>' containment reference list.
-	 * The list contents are of type {@link device.ConnectionProperty}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Properties</em>' containment reference list.
-	 * @see device.DevicePackage#getCommunicationConnection_Properties()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<ConnectionProperty> getProperties();
+    /**
+     * Returns the value of the '<em><b>Properties</b></em>' containment reference list.
+     * The list contents are of type {@link device.ConnectionProperty}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Properties</em>' containment reference list.
+     * @see device.DevicePackage#getCommunicationConnection_Properties()
+     * @model containment="true"
+     * @generated
+     */
+    EList<ConnectionProperty> getProperties();
 
 } // CommunicationConnection

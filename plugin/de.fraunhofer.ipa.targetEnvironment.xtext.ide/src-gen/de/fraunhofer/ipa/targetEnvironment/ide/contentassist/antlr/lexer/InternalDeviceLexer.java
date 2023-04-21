@@ -1,6 +1,6 @@
 package de.fraunhofer.ipa.targetEnvironment.ide.contentassist.antlr.lexer;
 
-// Hack: Use our own Lexer superclass by means of import. 
+// Hack: Use our own Lexer superclass by means of import.
 // Currently there is no other way to specify the superclass for the lexer.
 import org.eclipse.xtext.ide.editor.contentassist.antlr.internal.Lexer;
 
@@ -50,7 +50,7 @@ public class InternalDeviceLexer extends Lexer {
     // delegates
     // delegators
 
-    public InternalDeviceLexer() {;} 
+    public InternalDeviceLexer() {;}
     public InternalDeviceLexer(CharStream input) {
         this(input, new RecognizerSharedState());
     }
@@ -68,7 +68,7 @@ public class InternalDeviceLexer extends Lexer {
             // InternalDeviceLexer.g:14:25: ( 'communicationConnection:' )
             // InternalDeviceLexer.g:14:27: 'communicationConnection:'
             {
-            match("communicationConnection:"); 
+            match("communicationConnection:");
 
 
             }
@@ -89,7 +89,7 @@ public class InternalDeviceLexer extends Lexer {
             // InternalDeviceLexer.g:16:15: ( 'AttributeKind' )
             // InternalDeviceLexer.g:16:17: 'AttributeKind'
             {
-            match("AttributeKind"); 
+            match("AttributeKind");
 
 
             }
@@ -110,7 +110,7 @@ public class InternalDeviceLexer extends Lexer {
             // InternalDeviceLexer.g:18:15: ( 'SelectionKind' )
             // InternalDeviceLexer.g:18:17: 'SelectionKind'
             {
-            match("SelectionKind"); 
+            match("SelectionKind");
 
 
             }
@@ -131,7 +131,7 @@ public class InternalDeviceLexer extends Lexer {
             // InternalDeviceLexer.g:20:12: ( 'DeviceType:' )
             // InternalDeviceLexer.g:20:14: 'DeviceType:'
             {
-            match("DeviceType:"); 
+            match("DeviceType:");
 
 
             }
@@ -152,7 +152,7 @@ public class InternalDeviceLexer extends Lexer {
             // InternalDeviceLexer.g:22:13: ( 'MaximumKind' )
             // InternalDeviceLexer.g:22:15: 'MaximumKind'
             {
-            match("MaximumKind"); 
+            match("MaximumKind");
 
 
             }
@@ -173,7 +173,7 @@ public class InternalDeviceLexer extends Lexer {
             // InternalDeviceLexer.g:24:13: ( 'MinimumKind' )
             // InternalDeviceLexer.g:24:15: 'MinimumKind'
             {
-            match("MinimumKind"); 
+            match("MinimumKind");
 
 
             }
@@ -194,7 +194,7 @@ public class InternalDeviceLexer extends Lexer {
             // InternalDeviceLexer.g:26:12: ( 'capability:' )
             // InternalDeviceLexer.g:26:14: 'capability:'
             {
-            match("capability:"); 
+            match("capability:");
 
 
             }
@@ -215,7 +215,7 @@ public class InternalDeviceLexer extends Lexer {
             // InternalDeviceLexer.g:28:12: ( 'properties:' )
             // InternalDeviceLexer.g:28:14: 'properties:'
             {
-            match("properties:"); 
+            match("properties:");
 
 
             }
@@ -236,7 +236,7 @@ public class InternalDeviceLexer extends Lexer {
             // InternalDeviceLexer.g:30:7: ( 'value:' )
             // InternalDeviceLexer.g:30:9: 'value:'
             {
-            match("value:"); 
+            match("value:");
 
 
             }
@@ -257,7 +257,7 @@ public class InternalDeviceLexer extends Lexer {
             // InternalDeviceLexer.g:32:6: ( 'kind:' )
             // InternalDeviceLexer.g:32:8: 'kind:'
             {
-            match("kind:"); 
+            match("kind:");
 
 
             }
@@ -278,7 +278,7 @@ public class InternalDeviceLexer extends Lexer {
             // InternalDeviceLexer.g:34:6: ( 'name:' )
             // InternalDeviceLexer.g:34:8: 'name:'
             {
-            match("name:"); 
+            match("name:");
 
 
             }
@@ -299,7 +299,7 @@ public class InternalDeviceLexer extends Lexer {
             // InternalDeviceLexer.g:36:6: ( 'type:' )
             // InternalDeviceLexer.g:36:8: 'type:'
             {
-            match("type:"); 
+            match("type:");
 
 
             }
@@ -320,7 +320,7 @@ public class InternalDeviceLexer extends Lexer {
             // InternalDeviceLexer.g:38:13: ( '-' )
             // InternalDeviceLexer.g:38:15: '-'
             {
-            match('-'); 
+            match('-');
 
             }
 
@@ -338,7 +338,7 @@ public class InternalDeviceLexer extends Lexer {
             // InternalDeviceLexer.g:40:21: ( '0' .. '9' )
             // InternalDeviceLexer.g:40:23: '0' .. '9'
             {
-            matchRange('0','9'); 
+            matchRange('0','9');
 
             }
 
@@ -386,7 +386,7 @@ public class InternalDeviceLexer extends Lexer {
                 case 1 :
                     // InternalDeviceLexer.g:42:16: '0b'
                     {
-                    match("0b"); 
+                    match("0b");
 
 
                     }
@@ -394,7 +394,7 @@ public class InternalDeviceLexer extends Lexer {
                 case 2 :
                     // InternalDeviceLexer.g:42:21: '0B'
                     {
-                    match("0B"); 
+                    match("0B");
 
 
                     }
@@ -415,24 +415,24 @@ public class InternalDeviceLexer extends Lexer {
 
 
                 switch (alt2) {
-            	case 1 :
-            	    // InternalDeviceLexer.g:
-            	    {
-            	    if ( (input.LA(1)>='0' && input.LA(1)<='1') ) {
-            	        input.consume();
+                case 1 :
+                    // InternalDeviceLexer.g:
+                    {
+                    if ( (input.LA(1)>='0' && input.LA(1)<='1') ) {
+                        input.consume();
 
-            	    }
-            	    else {
-            	        MismatchedSetException mse = new MismatchedSetException(null,input);
-            	        recover(mse);
-            	        throw mse;}
+                    }
+                    else {
+                        MismatchedSetException mse = new MismatchedSetException(null,input);
+                        recover(mse);
+                        throw mse;}
 
 
-            	    }
-            	    break;
+                    }
+                    break;
 
-            	default :
-            	    if ( cnt2 >= 1 ) break loop2;
+                default :
+                    if ( cnt2 >= 1 ) break loop2;
                         EarlyExitException eee =
                             new EarlyExitException(2, input);
                         throw eee;
@@ -479,7 +479,7 @@ public class InternalDeviceLexer extends Lexer {
                 case 1 :
                     // InternalDeviceLexer.g:44:17: 'true'
                     {
-                    match("true"); 
+                    match("true");
 
 
                     }
@@ -487,7 +487,7 @@ public class InternalDeviceLexer extends Lexer {
                 case 2 :
                     // InternalDeviceLexer.g:44:24: 'false'
                     {
-                    match("false"); 
+                    match("false");
 
 
                     }
@@ -514,7 +514,7 @@ public class InternalDeviceLexer extends Lexer {
             // InternalDeviceLexer.g:46:13: ( RULE_DIGIT ( '.' ( RULE_DECINT )* | ( '.' ( RULE_DIGIT )* )? ( 'E' | 'e' ) ( '-' | '+' )? RULE_DIGIT ) )
             // InternalDeviceLexer.g:46:15: RULE_DIGIT ( '.' ( RULE_DECINT )* | ( '.' ( RULE_DIGIT )* )? ( 'E' | 'e' ) ( '-' | '+' )? RULE_DIGIT )
             {
-            mRULE_DIGIT(); 
+            mRULE_DIGIT();
             // InternalDeviceLexer.g:46:26: ( '.' ( RULE_DECINT )* | ( '.' ( RULE_DIGIT )* )? ( 'E' | 'e' ) ( '-' | '+' )? RULE_DIGIT )
             int alt8=2;
             alt8 = dfa8.predict(input);
@@ -522,7 +522,7 @@ public class InternalDeviceLexer extends Lexer {
                 case 1 :
                     // InternalDeviceLexer.g:46:27: '.' ( RULE_DECINT )*
                     {
-                    match('.'); 
+                    match('.');
                     // InternalDeviceLexer.g:46:31: ( RULE_DECINT )*
                     loop4:
                     do {
@@ -535,16 +535,16 @@ public class InternalDeviceLexer extends Lexer {
 
 
                         switch (alt4) {
-                    	case 1 :
-                    	    // InternalDeviceLexer.g:46:31: RULE_DECINT
-                    	    {
-                    	    mRULE_DECINT(); 
+                        case 1 :
+                            // InternalDeviceLexer.g:46:31: RULE_DECINT
+                            {
+                            mRULE_DECINT();
 
-                    	    }
-                    	    break;
+                            }
+                            break;
 
-                    	default :
-                    	    break loop4;
+                        default :
+                            break loop4;
                         }
                     } while (true);
 
@@ -565,7 +565,7 @@ public class InternalDeviceLexer extends Lexer {
                         case 1 :
                             // InternalDeviceLexer.g:46:45: '.' ( RULE_DIGIT )*
                             {
-                            match('.'); 
+                            match('.');
                             // InternalDeviceLexer.g:46:49: ( RULE_DIGIT )*
                             loop5:
                             do {
@@ -578,16 +578,16 @@ public class InternalDeviceLexer extends Lexer {
 
 
                                 switch (alt5) {
-                            	case 1 :
-                            	    // InternalDeviceLexer.g:46:49: RULE_DIGIT
-                            	    {
-                            	    mRULE_DIGIT(); 
+                                case 1 :
+                                    // InternalDeviceLexer.g:46:49: RULE_DIGIT
+                                    {
+                                    mRULE_DIGIT();
 
-                            	    }
-                            	    break;
+                                    }
+                                    break;
 
-                            	default :
-                            	    break loop5;
+                                default :
+                                    break loop5;
                                 }
                             } while (true);
 
@@ -632,7 +632,7 @@ public class InternalDeviceLexer extends Lexer {
 
                     }
 
-                    mRULE_DIGIT(); 
+                    mRULE_DIGIT();
 
                     }
                     break;
@@ -695,14 +695,14 @@ public class InternalDeviceLexer extends Lexer {
                 case 1 :
                     // InternalDeviceLexer.g:48:16: '0'
                     {
-                    match('0'); 
+                    match('0');
 
                     }
                     break;
                 case 2 :
                     // InternalDeviceLexer.g:48:20: '1' .. '9' ( RULE_DIGIT )*
                     {
-                    matchRange('1','9'); 
+                    matchRange('1','9');
                     // InternalDeviceLexer.g:48:29: ( RULE_DIGIT )*
                     loop9:
                     do {
@@ -715,16 +715,16 @@ public class InternalDeviceLexer extends Lexer {
 
 
                         switch (alt9) {
-                    	case 1 :
-                    	    // InternalDeviceLexer.g:48:29: RULE_DIGIT
-                    	    {
-                    	    mRULE_DIGIT(); 
+                        case 1 :
+                            // InternalDeviceLexer.g:48:29: RULE_DIGIT
+                            {
+                            mRULE_DIGIT();
 
-                    	    }
-                    	    break;
+                            }
+                            break;
 
-                    	default :
-                    	    break loop9;
+                        default :
+                            break loop9;
                         }
                     } while (true);
 
@@ -734,8 +734,8 @@ public class InternalDeviceLexer extends Lexer {
                 case 3 :
                     // InternalDeviceLexer.g:48:41: '-' '0' .. '9' ( RULE_DIGIT )*
                     {
-                    match('-'); 
-                    matchRange('0','9'); 
+                    match('-');
+                    matchRange('0','9');
                     // InternalDeviceLexer.g:48:54: ( RULE_DIGIT )*
                     loop10:
                     do {
@@ -748,16 +748,16 @@ public class InternalDeviceLexer extends Lexer {
 
 
                         switch (alt10) {
-                    	case 1 :
-                    	    // InternalDeviceLexer.g:48:54: RULE_DIGIT
-                    	    {
-                    	    mRULE_DIGIT(); 
+                        case 1 :
+                            // InternalDeviceLexer.g:48:54: RULE_DIGIT
+                            {
+                            mRULE_DIGIT();
 
-                    	    }
-                    	    break;
+                            }
+                            break;
 
-                    	default :
-                    	    break loop10;
+                        default :
+                            break loop10;
                         }
                     } while (true);
 
@@ -810,15 +810,15 @@ public class InternalDeviceLexer extends Lexer {
                 case 1 :
                     // InternalDeviceLexer.g:50:22: '1' .. '9'
                     {
-                    matchRange('1','9'); 
+                    matchRange('1','9');
 
                     }
                     break;
                 case 2 :
                     // InternalDeviceLexer.g:50:31: '1' .. '3' '0' .. '9'
                     {
-                    matchRange('1','3'); 
-                    matchRange('0','9'); 
+                    matchRange('1','3');
+                    matchRange('0','9');
 
                     }
                     break;
@@ -866,15 +866,15 @@ public class InternalDeviceLexer extends Lexer {
                 case 1 :
                     // InternalDeviceLexer.g:52:24: '1' .. '9'
                     {
-                    matchRange('1','9'); 
+                    matchRange('1','9');
 
                     }
                     break;
                 case 2 :
                     // InternalDeviceLexer.g:52:33: '1' '0' .. '2'
                     {
-                    match('1'); 
-                    matchRange('0','2'); 
+                    match('1');
+                    matchRange('0','2');
 
                     }
                     break;
@@ -896,10 +896,10 @@ public class InternalDeviceLexer extends Lexer {
             // InternalDeviceLexer.g:54:20: ( '0' .. '2' '0' .. '9' '0' .. '9' '0' .. '9' )
             // InternalDeviceLexer.g:54:22: '0' .. '2' '0' .. '9' '0' .. '9' '0' .. '9'
             {
-            matchRange('0','2'); 
-            matchRange('0','9'); 
-            matchRange('0','9'); 
-            matchRange('0','9'); 
+            matchRange('0','2');
+            matchRange('0','9');
+            matchRange('0','9');
+            matchRange('0','9');
 
             }
 
@@ -935,16 +935,16 @@ public class InternalDeviceLexer extends Lexer {
                 case 1 :
                     // InternalDeviceLexer.g:56:23: '0' .. '1' '0' .. '9'
                     {
-                    matchRange('0','1'); 
-                    matchRange('0','9'); 
+                    matchRange('0','1');
+                    matchRange('0','9');
 
                     }
                     break;
                 case 2 :
                     // InternalDeviceLexer.g:56:41: '2' '0' .. '3'
                     {
-                    match('2'); 
-                    matchRange('0','3'); 
+                    match('2');
+                    matchRange('0','3');
 
                     }
                     break;
@@ -966,8 +966,8 @@ public class InternalDeviceLexer extends Lexer {
             // InternalDeviceLexer.g:58:23: ( '0' .. '5' '0' .. '9' )
             // InternalDeviceLexer.g:58:25: '0' .. '5' '0' .. '9'
             {
-            matchRange('0','5'); 
-            matchRange('0','9'); 
+            matchRange('0','5');
+            matchRange('0','9');
 
             }
 
@@ -985,17 +985,17 @@ public class InternalDeviceLexer extends Lexer {
             // InternalDeviceLexer.g:60:16: ( RULE_YEAR '-' RULE_MONTH '-' RULE_DAY 'T' RULE_HOUR ':' RULE_MIN_SEC ':' RULE_MIN_SEC )
             // InternalDeviceLexer.g:60:18: RULE_YEAR '-' RULE_MONTH '-' RULE_DAY 'T' RULE_HOUR ':' RULE_MIN_SEC ':' RULE_MIN_SEC
             {
-            mRULE_YEAR(); 
-            match('-'); 
-            mRULE_MONTH(); 
-            match('-'); 
-            mRULE_DAY(); 
-            match('T'); 
-            mRULE_HOUR(); 
-            match(':'); 
-            mRULE_MIN_SEC(); 
-            match(':'); 
-            mRULE_MIN_SEC(); 
+            mRULE_YEAR();
+            match('-');
+            mRULE_MONTH();
+            match('-');
+            mRULE_DAY();
+            match('T');
+            mRULE_HOUR();
+            match(':');
+            mRULE_MIN_SEC();
+            match(':');
+            mRULE_MIN_SEC();
 
             }
 
@@ -1015,7 +1015,7 @@ public class InternalDeviceLexer extends Lexer {
             // InternalDeviceLexer.g:62:17: ( '#' (~ ( ( '\\n' | '\\r' ) ) )* )
             // InternalDeviceLexer.g:62:19: '#' (~ ( ( '\\n' | '\\r' ) ) )*
             {
-            match('#'); 
+            match('#');
             // InternalDeviceLexer.g:62:23: (~ ( ( '\\n' | '\\r' ) ) )*
             loop15:
             do {
@@ -1028,24 +1028,24 @@ public class InternalDeviceLexer extends Lexer {
 
 
                 switch (alt15) {
-            	case 1 :
-            	    // InternalDeviceLexer.g:62:23: ~ ( ( '\\n' | '\\r' ) )
-            	    {
-            	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
-            	        input.consume();
+                case 1 :
+                    // InternalDeviceLexer.g:62:23: ~ ( ( '\\n' | '\\r' ) )
+                    {
+                    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
+                        input.consume();
 
-            	    }
-            	    else {
-            	        MismatchedSetException mse = new MismatchedSetException(null,input);
-            	        recover(mse);
-            	        throw mse;}
+                    }
+                    else {
+                        MismatchedSetException mse = new MismatchedSetException(null,input);
+                        recover(mse);
+                        throw mse;}
 
 
-            	    }
-            	    break;
+                    }
+                    break;
 
-            	default :
-            	    break loop15;
+                default :
+                    break loop15;
                 }
             } while (true);
 
@@ -1064,7 +1064,7 @@ public class InternalDeviceLexer extends Lexer {
     public final void mRULE_INDENT() throws RecognitionException {
         try {
             // InternalDeviceLexer.g:64:22: ()
-            // InternalDeviceLexer.g:64:24: 
+            // InternalDeviceLexer.g:64:24:
             {
             }
 
@@ -1078,7 +1078,7 @@ public class InternalDeviceLexer extends Lexer {
     public final void mRULE_DEDENT() throws RecognitionException {
         try {
             // InternalDeviceLexer.g:66:22: ()
-            // InternalDeviceLexer.g:66:24: 
+            // InternalDeviceLexer.g:66:24:
             {
             }
 
@@ -1107,7 +1107,7 @@ public class InternalDeviceLexer extends Lexer {
                 case 1 :
                     // InternalDeviceLexer.g:68:11: '^'
                     {
-                    match('^'); 
+                    match('^');
 
                     }
                     break;
@@ -1135,24 +1135,24 @@ public class InternalDeviceLexer extends Lexer {
 
 
                 switch (alt17) {
-            	case 1 :
-            	    // InternalDeviceLexer.g:
-            	    {
-            	    if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
-            	        input.consume();
+                case 1 :
+                    // InternalDeviceLexer.g:
+                    {
+                    if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
+                        input.consume();
 
-            	    }
-            	    else {
-            	        MismatchedSetException mse = new MismatchedSetException(null,input);
-            	        recover(mse);
-            	        throw mse;}
+                    }
+                    else {
+                        MismatchedSetException mse = new MismatchedSetException(null,input);
+                        recover(mse);
+                        throw mse;}
 
 
-            	    }
-            	    break;
+                    }
+                    break;
 
-            	default :
-            	    break loop17;
+                default :
+                    break loop17;
                 }
             } while (true);
 
@@ -1188,16 +1188,16 @@ public class InternalDeviceLexer extends Lexer {
 
 
                 switch (alt18) {
-            	case 1 :
-            	    // InternalDeviceLexer.g:70:13: '0' .. '9'
-            	    {
-            	    matchRange('0','9'); 
+                case 1 :
+                    // InternalDeviceLexer.g:70:13: '0' .. '9'
+                    {
+                    matchRange('0','9');
 
-            	    }
-            	    break;
+                    }
+                    break;
 
-            	default :
-            	    if ( cnt18 >= 1 ) break loop18;
+                default :
+                    if ( cnt18 >= 1 ) break loop18;
                         EarlyExitException eee =
                             new EarlyExitException(18, input);
                         throw eee;
@@ -1244,7 +1244,7 @@ public class InternalDeviceLexer extends Lexer {
                 case 1 :
                     // InternalDeviceLexer.g:72:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
-                    match('\"'); 
+                    match('\"');
                     // InternalDeviceLexer.g:72:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop19:
                     do {
@@ -1260,43 +1260,43 @@ public class InternalDeviceLexer extends Lexer {
 
 
                         switch (alt19) {
-                    	case 1 :
-                    	    // InternalDeviceLexer.g:72:21: '\\\\' .
-                    	    {
-                    	    match('\\'); 
-                    	    matchAny(); 
+                        case 1 :
+                            // InternalDeviceLexer.g:72:21: '\\\\' .
+                            {
+                            match('\\');
+                            matchAny();
 
-                    	    }
-                    	    break;
-                    	case 2 :
-                    	    // InternalDeviceLexer.g:72:28: ~ ( ( '\\\\' | '\"' ) )
-                    	    {
-                    	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
-                    	        input.consume();
+                            }
+                            break;
+                        case 2 :
+                            // InternalDeviceLexer.g:72:28: ~ ( ( '\\\\' | '\"' ) )
+                            {
+                            if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
+                                input.consume();
 
-                    	    }
-                    	    else {
-                    	        MismatchedSetException mse = new MismatchedSetException(null,input);
-                    	        recover(mse);
-                    	        throw mse;}
+                            }
+                            else {
+                                MismatchedSetException mse = new MismatchedSetException(null,input);
+                                recover(mse);
+                                throw mse;}
 
 
-                    	    }
-                    	    break;
+                            }
+                            break;
 
-                    	default :
-                    	    break loop19;
+                        default :
+                            break loop19;
                         }
                     } while (true);
 
-                    match('\"'); 
+                    match('\"');
 
                     }
                     break;
                 case 2 :
                     // InternalDeviceLexer.g:72:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
-                    match('\''); 
+                    match('\'');
                     // InternalDeviceLexer.g:72:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop20:
                     do {
@@ -1312,36 +1312,36 @@ public class InternalDeviceLexer extends Lexer {
 
 
                         switch (alt20) {
-                    	case 1 :
-                    	    // InternalDeviceLexer.g:72:54: '\\\\' .
-                    	    {
-                    	    match('\\'); 
-                    	    matchAny(); 
+                        case 1 :
+                            // InternalDeviceLexer.g:72:54: '\\\\' .
+                            {
+                            match('\\');
+                            matchAny();
 
-                    	    }
-                    	    break;
-                    	case 2 :
-                    	    // InternalDeviceLexer.g:72:61: ~ ( ( '\\\\' | '\\'' ) )
-                    	    {
-                    	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
-                    	        input.consume();
+                            }
+                            break;
+                        case 2 :
+                            // InternalDeviceLexer.g:72:61: ~ ( ( '\\\\' | '\\'' ) )
+                            {
+                            if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
+                                input.consume();
 
-                    	    }
-                    	    else {
-                    	        MismatchedSetException mse = new MismatchedSetException(null,input);
-                    	        recover(mse);
-                    	        throw mse;}
+                            }
+                            else {
+                                MismatchedSetException mse = new MismatchedSetException(null,input);
+                                recover(mse);
+                                throw mse;}
 
 
-                    	    }
-                    	    break;
+                            }
+                            break;
 
-                    	default :
-                    	    break loop20;
+                        default :
+                            break loop20;
                         }
                     } while (true);
 
-                    match('\''); 
+                    match('\'');
 
                     }
                     break;
@@ -1367,7 +1367,7 @@ public class InternalDeviceLexer extends Lexer {
             // InternalDeviceLexer.g:74:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
             // InternalDeviceLexer.g:74:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
-            match("/*"); 
+            match("/*");
 
             // InternalDeviceLexer.g:74:24: ( options {greedy=false; } : . )*
             loop22:
@@ -1393,20 +1393,20 @@ public class InternalDeviceLexer extends Lexer {
 
 
                 switch (alt22) {
-            	case 1 :
-            	    // InternalDeviceLexer.g:74:52: .
-            	    {
-            	    matchAny(); 
+                case 1 :
+                    // InternalDeviceLexer.g:74:52: .
+                    {
+                    matchAny();
 
-            	    }
-            	    break;
+                    }
+                    break;
 
-            	default :
-            	    break loop22;
+                default :
+                    break loop22;
                 }
             } while (true);
 
-            match("*/"); 
+            match("*/");
 
 
             }
@@ -1440,24 +1440,24 @@ public class InternalDeviceLexer extends Lexer {
 
 
                 switch (alt23) {
-            	case 1 :
-            	    // InternalDeviceLexer.g:
-            	    {
-            	    if ( (input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||input.LA(1)==' ' ) {
-            	        input.consume();
+                case 1 :
+                    // InternalDeviceLexer.g:
+                    {
+                    if ( (input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||input.LA(1)==' ' ) {
+                        input.consume();
 
-            	    }
-            	    else {
-            	        MismatchedSetException mse = new MismatchedSetException(null,input);
-            	        recover(mse);
-            	        throw mse;}
+                    }
+                    else {
+                        MismatchedSetException mse = new MismatchedSetException(null,input);
+                        recover(mse);
+                        throw mse;}
 
 
-            	    }
-            	    break;
+                    }
+                    break;
 
-            	default :
-            	    if ( cnt23 >= 1 ) break loop23;
+                default :
+                    if ( cnt23 >= 1 ) break loop23;
                         EarlyExitException eee =
                             new EarlyExitException(23, input);
                         throw eee;
@@ -1484,7 +1484,7 @@ public class InternalDeviceLexer extends Lexer {
             // InternalDeviceLexer.g:78:16: ( . )
             // InternalDeviceLexer.g:78:18: .
             {
-            matchAny(); 
+            matchAny();
 
             }
 
@@ -1504,175 +1504,175 @@ public class InternalDeviceLexer extends Lexer {
             case 1 :
                 // InternalDeviceLexer.g:1:10: CommunicationConnection
                 {
-                mCommunicationConnection(); 
+                mCommunicationConnection();
 
                 }
                 break;
             case 2 :
                 // InternalDeviceLexer.g:1:34: AttributeKind
                 {
-                mAttributeKind(); 
+                mAttributeKind();
 
                 }
                 break;
             case 3 :
                 // InternalDeviceLexer.g:1:48: SelectionKind
                 {
-                mSelectionKind(); 
+                mSelectionKind();
 
                 }
                 break;
             case 4 :
                 // InternalDeviceLexer.g:1:62: DeviceType
                 {
-                mDeviceType(); 
+                mDeviceType();
 
                 }
                 break;
             case 5 :
                 // InternalDeviceLexer.g:1:73: MaximumKind
                 {
-                mMaximumKind(); 
+                mMaximumKind();
 
                 }
                 break;
             case 6 :
                 // InternalDeviceLexer.g:1:85: MinimumKind
                 {
-                mMinimumKind(); 
+                mMinimumKind();
 
                 }
                 break;
             case 7 :
                 // InternalDeviceLexer.g:1:97: Capability
                 {
-                mCapability(); 
+                mCapability();
 
                 }
                 break;
             case 8 :
                 // InternalDeviceLexer.g:1:108: Properties
                 {
-                mProperties(); 
+                mProperties();
 
                 }
                 break;
             case 9 :
                 // InternalDeviceLexer.g:1:119: Value
                 {
-                mValue(); 
+                mValue();
 
                 }
                 break;
             case 10 :
                 // InternalDeviceLexer.g:1:125: Kind
                 {
-                mKind(); 
+                mKind();
 
                 }
                 break;
             case 11 :
                 // InternalDeviceLexer.g:1:130: Name
                 {
-                mName(); 
+                mName();
 
                 }
                 break;
             case 12 :
                 // InternalDeviceLexer.g:1:135: Type
                 {
-                mType(); 
+                mType();
 
                 }
                 break;
             case 13 :
                 // InternalDeviceLexer.g:1:140: HyphenMinus
                 {
-                mHyphenMinus(); 
+                mHyphenMinus();
 
                 }
                 break;
             case 14 :
                 // InternalDeviceLexer.g:1:152: RULE_BINARY
                 {
-                mRULE_BINARY(); 
+                mRULE_BINARY();
 
                 }
                 break;
             case 15 :
                 // InternalDeviceLexer.g:1:164: RULE_BOOLEAN
                 {
-                mRULE_BOOLEAN(); 
+                mRULE_BOOLEAN();
 
                 }
                 break;
             case 16 :
                 // InternalDeviceLexer.g:1:177: RULE_DOUBLE
                 {
-                mRULE_DOUBLE(); 
+                mRULE_DOUBLE();
 
                 }
                 break;
             case 17 :
                 // InternalDeviceLexer.g:1:189: RULE_DECINT
                 {
-                mRULE_DECINT(); 
+                mRULE_DECINT();
 
                 }
                 break;
             case 18 :
                 // InternalDeviceLexer.g:1:201: RULE_DATE_TIME
                 {
-                mRULE_DATE_TIME(); 
+                mRULE_DATE_TIME();
 
                 }
                 break;
             case 19 :
                 // InternalDeviceLexer.g:1:216: RULE_SL_COMMENT
                 {
-                mRULE_SL_COMMENT(); 
+                mRULE_SL_COMMENT();
 
                 }
                 break;
             case 20 :
                 // InternalDeviceLexer.g:1:232: RULE_ID
                 {
-                mRULE_ID(); 
+                mRULE_ID();
 
                 }
                 break;
             case 21 :
                 // InternalDeviceLexer.g:1:240: RULE_INT
                 {
-                mRULE_INT(); 
+                mRULE_INT();
 
                 }
                 break;
             case 22 :
                 // InternalDeviceLexer.g:1:249: RULE_STRING
                 {
-                mRULE_STRING(); 
+                mRULE_STRING();
 
                 }
                 break;
             case 23 :
                 // InternalDeviceLexer.g:1:261: RULE_ML_COMMENT
                 {
-                mRULE_ML_COMMENT(); 
+                mRULE_ML_COMMENT();
 
                 }
                 break;
             case 24 :
                 // InternalDeviceLexer.g:1:277: RULE_WS
                 {
-                mRULE_WS(); 
+                mRULE_WS();
 
                 }
                 break;
             case 25 :
                 // InternalDeviceLexer.g:1:285: RULE_ANY_OTHER
                 {
-                mRULE_ANY_OTHER(); 
+                mRULE_ANY_OTHER();
 
                 }
                 break;
@@ -1957,9 +1957,9 @@ public class InternalDeviceLexer extends Lexer {
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
-        	int _s = s;
+            int _s = s;
             switch ( s ) {
-                    case 0 : 
+                    case 0 :
                         int LA24_19 = input.LA(1);
 
                         s = -1;
@@ -1969,7 +1969,7 @@ public class InternalDeviceLexer extends Lexer {
 
                         if ( s>=0 ) return s;
                         break;
-                    case 1 : 
+                    case 1 :
                         int LA24_0 = input.LA(1);
 
                         s = -1;
@@ -2021,7 +2021,7 @@ public class InternalDeviceLexer extends Lexer {
 
                         if ( s>=0 ) return s;
                         break;
-                    case 2 : 
+                    case 2 :
                         int LA24_20 = input.LA(1);
 
                         s = -1;
@@ -2038,6 +2038,6 @@ public class InternalDeviceLexer extends Lexer {
             throw nvae;
         }
     }
- 
+
 
 }

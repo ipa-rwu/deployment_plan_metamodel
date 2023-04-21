@@ -10,7 +10,7 @@ import org.eclipse.ui.plugin.AbstractUIPlugin;
  */
 public class DeviceUiModule extends AbstractDeviceUiModule {
 
-	public DeviceUiModule(AbstractUIPlugin plugin) {
-		super(plugin);
-	}
+    public DeviceUiModule(AbstractUIPlugin plugin) {
+        super(plugin);
+    }
 }

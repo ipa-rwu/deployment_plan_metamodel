@@ -9,7 +9,7 @@ package de.fraunhofer.ipa.targetEnvironment;
  */
 public class BaseStandaloneSetup extends BaseStandaloneSetupGenerated {
 
-	public static void doSetup() {
-		new BaseStandaloneSetup().createInjectorAndDoEMFRegistration();
-	}
+    public static void doSetup() {
+        new BaseStandaloneSetup().createInjectorAndDoEMFRegistration();
+    }
 }

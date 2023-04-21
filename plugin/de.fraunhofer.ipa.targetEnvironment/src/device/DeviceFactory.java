@@ -13,129 +13,129 @@ import org.eclipse.emf.ecore.EFactory;
  * @generated
  */
 public interface DeviceFactory extends EFactory {
-	/**
-	 * The singleton instance of the factory.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	DeviceFactory eINSTANCE = device.impl.DeviceFactoryImpl.init();
+    /**
+     * The singleton instance of the factory.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    DeviceFactory eINSTANCE = device.impl.DeviceFactoryImpl.init();
 
-	/**
-	 * Returns a new object of class '<em>Set</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Set</em>'.
-	 * @generated
-	 */
-	DeviceSet createDeviceSet();
+    /**
+     * Returns a new object of class '<em>Set</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Set</em>'.
+     * @generated
+     */
+    DeviceSet createDeviceSet();
 
-	/**
-	 * Returns a new object of class '<em>Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Type</em>'.
-	 * @generated
-	 */
-	DeviceType createDeviceType();
+    /**
+     * Returns a new object of class '<em>Type</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Type</em>'.
+     * @generated
+     */
+    DeviceType createDeviceType();
 
-	/**
-	 * Returns a new object of class '<em>Communication Connection</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Communication Connection</em>'.
-	 * @generated
-	 */
-	CommunicationConnection createCommunicationConnection();
+    /**
+     * Returns a new object of class '<em>Communication Connection</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Communication Connection</em>'.
+     * @generated
+     */
+    CommunicationConnection createCommunicationConnection();
 
-	/**
-	 * Returns a new object of class '<em>Property</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Property</em>'.
-	 * @generated
-	 */
-	Property createProperty();
+    /**
+     * Returns a new object of class '<em>Property</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Property</em>'.
+     * @generated
+     */
+    Property createProperty();
 
-	/**
-	 * Returns a new object of class '<em>Capability Property</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Capability Property</em>'.
-	 * @generated
-	 */
-	CapabilityProperty createCapabilityProperty();
+    /**
+     * Returns a new object of class '<em>Capability Property</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Capability Property</em>'.
+     * @generated
+     */
+    CapabilityProperty createCapabilityProperty();
 
-	/**
-	 * Returns a new object of class '<em>Attribute Kind</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Attribute Kind</em>'.
-	 * @generated
-	 */
-	AttributeKind createAttributeKind();
+    /**
+     * Returns a new object of class '<em>Attribute Kind</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Attribute Kind</em>'.
+     * @generated
+     */
+    AttributeKind createAttributeKind();
 
-	/**
-	 * Returns a new object of class '<em>Maximum Kind</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Maximum Kind</em>'.
-	 * @generated
-	 */
-	MaximumKind createMaximumKind();
+    /**
+     * Returns a new object of class '<em>Maximum Kind</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Maximum Kind</em>'.
+     * @generated
+     */
+    MaximumKind createMaximumKind();
 
-	/**
-	 * Returns a new object of class '<em>Minimum Kind</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Minimum Kind</em>'.
-	 * @generated
-	 */
-	MinimumKind createMinimumKind();
+    /**
+     * Returns a new object of class '<em>Minimum Kind</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Minimum Kind</em>'.
+     * @generated
+     */
+    MinimumKind createMinimumKind();
 
-	/**
-	 * Returns a new object of class '<em>Selection Kind</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Selection Kind</em>'.
-	 * @generated
-	 */
-	SelectionKind createSelectionKind();
+    /**
+     * Returns a new object of class '<em>Selection Kind</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Selection Kind</em>'.
+     * @generated
+     */
+    SelectionKind createSelectionKind();
 
-	/**
-	 * Returns a new object of class '<em>Communication Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Communication Type</em>'.
-	 * @generated
-	 */
-	CommunicationType createCommunicationType();
+    /**
+     * Returns a new object of class '<em>Communication Type</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Communication Type</em>'.
+     * @generated
+     */
+    CommunicationType createCommunicationType();
 
-	/**
-	 * Returns a new object of class '<em>Connection Property</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Connection Property</em>'.
-	 * @generated
-	 */
-	ConnectionProperty createConnectionProperty();
+    /**
+     * Returns a new object of class '<em>Connection Property</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Connection Property</em>'.
+     * @generated
+     */
+    ConnectionProperty createConnectionProperty();
 
-	/**
-	 * Returns a new object of class '<em>Capability Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Capability Type</em>'.
-	 * @generated
-	 */
-	CapabilityType createCapabilityType();
+    /**
+     * Returns a new object of class '<em>Capability Type</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Capability Type</em>'.
+     * @generated
+     */
+    CapabilityType createCapabilityType();
 
-	/**
-	 * Returns the package supported by this factory.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the package supported by this factory.
-	 * @generated
-	 */
-	DevicePackage getDevicePackage();
+    /**
+     * Returns the package supported by this factory.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the package supported by this factory.
+     * @generated
+     */
+    DevicePackage getDevicePackage();
 
 } //DeviceFactory

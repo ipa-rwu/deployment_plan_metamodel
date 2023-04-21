@@ -16,72 +16,72 @@ import org.eclipse.xtext.ide.editor.contentassist.antlr.AbstractContentAssistPar
 
 public class BaseParser extends AbstractContentAssistParser {
 
-	@Singleton
-	public static final class NameMappings {
-		
-		private final Map<AbstractElement, String> mappings;
-		
-		@Inject
-		public NameMappings(BaseGrammarAccess grammarAccess) {
-			ImmutableMap.Builder<AbstractElement, String> builder = ImmutableMap.builder();
-			init(builder, grammarAccess);
-			this.mappings = builder.build();
-		}
-		
-		public String getRuleName(AbstractElement element) {
-			return mappings.get(element);
-		}
-		
-		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, BaseGrammarAccess grammarAccess) {
-			builder.put(grammarAccess.getPropertyValueAccess().getAlternatives(), "rule__PropertyValue__Alternatives");
-			builder.put(grammarAccess.getEStringAccess().getAlternatives(), "rule__EString__Alternatives");
-			builder.put(grammarAccess.getPropertyValueIntAccess().getValueAssignment(), "rule__PropertyValueInt__ValueAssignment");
-			builder.put(grammarAccess.getPropertyValueDoubleAccess().getValueAssignment(), "rule__PropertyValueDouble__ValueAssignment");
-			builder.put(grammarAccess.getPropertyValueStringAccess().getValueAssignment(), "rule__PropertyValueString__ValueAssignment");
-		}
-	}
-	
-	@Inject
-	private NameMappings nameMappings;
+    @Singleton
+    public static final class NameMappings {
 
-	@Inject
-	private BaseGrammarAccess grammarAccess;
+        private final Map<AbstractElement, String> mappings;
 
-	@Override
-	protected InternalBaseParser createParser() {
-		InternalBaseParser result = new InternalBaseParser(null);
-		result.setGrammarAccess(grammarAccess);
-		return result;
-	}
+        @Inject
+        public NameMappings(BaseGrammarAccess grammarAccess) {
+            ImmutableMap.Builder<AbstractElement, String> builder = ImmutableMap.builder();
+            init(builder, grammarAccess);
+            this.mappings = builder.build();
+        }
 
-	@Override
-	protected TokenSource createLexer(CharStream stream) {
-		return new BaseTokenSource(super.createLexer(stream));
-	}
-	
-	@Override
-	protected String getRuleName(AbstractElement element) {
-		return nameMappings.getRuleName(element);
-	}
+        public String getRuleName(AbstractElement element) {
+            return mappings.get(element);
+        }
 
-	@Override
-	protected String[] getInitialHiddenTokens() {
-		return new String[] { "RULE_WS", "RULE_ML_COMMENT", "RULE_SL_COMMENT" };
-	}
+        private static void init(ImmutableMap.Builder<AbstractElement, String> builder, BaseGrammarAccess grammarAccess) {
+            builder.put(grammarAccess.getPropertyValueAccess().getAlternatives(), "rule__PropertyValue__Alternatives");
+            builder.put(grammarAccess.getEStringAccess().getAlternatives(), "rule__EString__Alternatives");
+            builder.put(grammarAccess.getPropertyValueIntAccess().getValueAssignment(), "rule__PropertyValueInt__ValueAssignment");
+            builder.put(grammarAccess.getPropertyValueDoubleAccess().getValueAssignment(), "rule__PropertyValueDouble__ValueAssignment");
+            builder.put(grammarAccess.getPropertyValueStringAccess().getValueAssignment(), "rule__PropertyValueString__ValueAssignment");
+        }
+    }
 
-	public BaseGrammarAccess getGrammarAccess() {
-		return this.grammarAccess;
-	}
+    @Inject
+    private NameMappings nameMappings;
 
-	public void setGrammarAccess(BaseGrammarAccess grammarAccess) {
-		this.grammarAccess = grammarAccess;
-	}
-	
-	public NameMappings getNameMappings() {
-		return nameMappings;
-	}
-	
-	public void setNameMappings(NameMappings nameMappings) {
-		this.nameMappings = nameMappings;
-	}
+    @Inject
+    private BaseGrammarAccess grammarAccess;
+
+    @Override
+    protected InternalBaseParser createParser() {
+        InternalBaseParser result = new InternalBaseParser(null);
+        result.setGrammarAccess(grammarAccess);
+        return result;
+    }
+
+    @Override
+    protected TokenSource createLexer(CharStream stream) {
+        return new BaseTokenSource(super.createLexer(stream));
+    }
+
+    @Override
+    protected String getRuleName(AbstractElement element) {
+        return nameMappings.getRuleName(element);
+    }
+
+    @Override
+    protected String[] getInitialHiddenTokens() {
+        return new String[] { "RULE_WS", "RULE_ML_COMMENT", "RULE_SL_COMMENT" };
+    }
+
+    public BaseGrammarAccess getGrammarAccess() {
+        return this.grammarAccess;
+    }
+
+    public void setGrammarAccess(BaseGrammarAccess grammarAccess) {
+        this.grammarAccess = grammarAccess;
+    }
+
+    public NameMappings getNameMappings() {
+        return nameMappings;
+    }
+
+    public void setNameMappings(NameMappings nameMappings) {
+        this.nameMappings = nameMappings;
+    }
 }

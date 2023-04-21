@@ -10,7 +10,7 @@ import org.eclipse.ui.plugin.AbstractUIPlugin;
  */
 public class BaseUiModule extends AbstractBaseUiModule {
 
-	public BaseUiModule(AbstractUIPlugin plugin) {
-		super(plugin);
-	}
+    public BaseUiModule(AbstractUIPlugin plugin) {
+        super(plugin);
+    }
 }

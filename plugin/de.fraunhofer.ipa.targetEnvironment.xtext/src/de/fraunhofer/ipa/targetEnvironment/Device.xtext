@@ -7,98 +7,98 @@ import "http://www.ipa.fraunhofer.de/Base" as base
 
 
 DeviceSet returns device::DeviceSet:
-	device+=DeviceType*
+    device+=DeviceType*
 ;
 
 
 
-@Override 
+@Override
 Description returns base::Description:
-	DeviceSet
+    DeviceSet
 ;
 
 
 CapabilityKind returns device::CapabilityKind:
-	AttributeKind | MaximumKind | MinimumKind | SelectionKind;
+    AttributeKind | MaximumKind | MinimumKind | SelectionKind;
 
 
 DeviceType returns device::DeviceType:
-	{device::DeviceType}
-	'DeviceType:' 
-	INDENT
-		"name:" name=EString
-		('capability:' 
-			INDENT
-			capability+=CapabilityProperty+
-			DEDENT
-		)?
-		('communicationConnection:' 
-			INDENT
-			communicationConnection+=CommunicationConnection+
-			DEDENT
-		)?
-	DEDENT;
+    {device::DeviceType}
+    'DeviceType:'
+    INDENT
+        "name:" name=EString
+        ('capability:'
+            INDENT
+            capability+=CapabilityProperty+
+            DEDENT
+        )?
+        ('communicationConnection:'
+            INDENT
+            communicationConnection+=CommunicationConnection+
+            DEDENT
+        )?
+    DEDENT;
 
 CapabilityProperty returns device::CapabilityProperty:
-	PreListElement "name:" name=EString
-	INDENT
-	'type:' type=[device::CapabilityType|EString]
-	'kind:' kind=CapabilityKind
-	('value:' value=PropertyValue)?
-	DEDENT
-	;
+    PreListElement "name:" name=EString
+    INDENT
+    'type:' type=[device::CapabilityType|EString]
+    'kind:' kind=CapabilityKind
+    ('value:' value=PropertyValue)?
+    DEDENT
+    ;
 
 AttributeKind returns device::AttributeKind:
-	{device::AttributeKind}
-	'AttributeKind'
-	;
+    {device::AttributeKind}
+    'AttributeKind'
+    ;
 
 MaximumKind returns device::MaximumKind:
-	{device::MaximumKind}
-	'MaximumKind'
-	;
+    {device::MaximumKind}
+    'MaximumKind'
+    ;
 
 MinimumKind returns device::MinimumKind:
-	{device::MinimumKind}
-	'MinimumKind'
-	;
+    {device::MinimumKind}
+    'MinimumKind'
+    ;
 
 SelectionKind returns device::SelectionKind:
-	{device::SelectionKind}
-	'SelectionKind'
-	;
+    {device::SelectionKind}
+    'SelectionKind'
+    ;
 
 ConnectionProperty returns device::ConnectionProperty:
-	{device::ConnectionProperty}
-	PreListElement "name:" name=EString
-	(
-		INDENT
-		'value:' value=PropertyValue
-		DEDENT
-	)?
-	;
+    {device::ConnectionProperty}
+    PreListElement "name:" name=EString
+    (
+        INDENT
+        'value:' value=PropertyValue
+        DEDENT
+    )?
+    ;
 
 
 CommunicationConnection returns device::CommunicationConnection:
-	{device::CommunicationConnection}
-	PreListElement 'name:'  name=EString
-	INDENT
-		'type:' type=CommunicationType
-		('properties:' 
-			INDENT
-			properties+=ConnectionProperty+
-			DEDENT
-			)?
-	DEDENT;
+    {device::CommunicationConnection}
+    PreListElement 'name:'  name=EString
+    INDENT
+        'type:' type=CommunicationType
+        ('properties:'
+            INDENT
+            properties+=ConnectionProperty+
+            DEDENT
+            )?
+    DEDENT;
 
-PropertyType returns device::PropertyType: 
-	CommunicationType | CapabilityType
+PropertyType returns device::PropertyType:
+    CommunicationType | CapabilityType
 ;
 
 CommunicationType returns device::CommunicationType:
-	{device::CommunicationType}
-	name=EString;
+    {device::CommunicationType}
+    name=EString;
 
 CapabilityType returns device::CapabilityType:
-	{device::CapabilityType}
-	name=EString;
+    {device::CapabilityType}
+    name=EString;

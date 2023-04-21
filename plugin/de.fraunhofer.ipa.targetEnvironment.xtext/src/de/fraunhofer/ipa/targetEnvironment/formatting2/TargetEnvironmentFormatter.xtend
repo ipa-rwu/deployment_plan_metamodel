@@ -11,25 +11,25 @@ import targetEnvironment.ConfigConnection
 import targetEnvironment.TargetDeployEnviroment
 
 class TargetEnvironmentFormatter extends AbstractFormatter2 {
-	
-	@Inject extension TargetEnvironmentGrammarAccess
 
-	def dispatch void format(TargetDeployEnviroment targetDeployEnviroment, extension IFormattableDocument document) {
-		// TODO: format HiddenRegions around keywords, attributes, cross references, etc. 
-		for (deviceInstance : targetDeployEnviroment.includeDevice) {
-			deviceInstance.format
-		}
-		for (configConnection : targetDeployEnviroment.configConnection) {
-			configConnection.format
-		}
-	}
+    @Inject extension TargetEnvironmentGrammarAccess
 
-	def dispatch void format(ConfigConnection configConnection, extension IFormattableDocument document) {
-		// TODO: format HiddenRegions around keywords, attributes, cross references, etc. 
-		for (connectedDevice : configConnection.connectDevice) {
-			connectedDevice.format
-		}
-	}
-	
-	// TODO: implement for DeviceType, CapabilityProperty, IndirectConnection, DirectConnection, ConnectedDevice
+    def dispatch void format(TargetDeployEnviroment targetDeployEnviroment, extension IFormattableDocument document) {
+        // TODO: format HiddenRegions around keywords, attributes, cross references, etc.
+        for (deviceInstance : targetDeployEnviroment.includeDevice) {
+            deviceInstance.format
+        }
+        for (configConnection : targetDeployEnviroment.configConnection) {
+            configConnection.format
+        }
+    }
+
+    def dispatch void format(ConfigConnection configConnection, extension IFormattableDocument document) {
+        // TODO: format HiddenRegions around keywords, attributes, cross references, etc.
+        for (connectedDevice : configConnection.connectDevice) {
+            connectedDevice.format
+        }
+    }
+
+    // TODO: implement for DeviceType, CapabilityProperty, IndirectConnection, DirectConnection, ConnectedDevice
 }

@@ -13,43 +13,43 @@ import org.eclipse.xtext.parser.antlr.XtextTokenStream;
 
 public class BaseParser extends AbstractAntlrParser {
 
-	@Inject
-	private BaseGrammarAccess grammarAccess;
+    @Inject
+    private BaseGrammarAccess grammarAccess;
 
-	@Override
-	protected void setInitialHiddenTokens(XtextTokenStream tokenStream) {
-		tokenStream.setInitialHiddenTokens("RULE_WS", "RULE_ML_COMMENT", "RULE_SL_COMMENT");
-	}
-	
-	@Override
-	protected TokenSource createLexer(CharStream stream) {
-		return new BaseTokenSource(super.createLexer(stream));
-	}
-	
-	/**
-	 * Indentation aware languages do not support partial parsing since the lexer is inherently stateful.
-	 * Override and return {@code true} if your terminal splitting is stateless.
-	 */
-	@Override
-	protected boolean isReparseSupported() {
-		return false;
-	}
+    @Override
+    protected void setInitialHiddenTokens(XtextTokenStream tokenStream) {
+        tokenStream.setInitialHiddenTokens("RULE_WS", "RULE_ML_COMMENT", "RULE_SL_COMMENT");
+    }
 
-	@Override
-	protected InternalBaseParser createParser(XtextTokenStream stream) {
-		return new InternalBaseParser(stream, getGrammarAccess());
-	}
+    @Override
+    protected TokenSource createLexer(CharStream stream) {
+        return new BaseTokenSource(super.createLexer(stream));
+    }
 
-	@Override 
-	protected String getDefaultRuleName() {
-		return "Description";
-	}
+    /**
+     * Indentation aware languages do not support partial parsing since the lexer is inherently stateful.
+     * Override and return {@code true} if your terminal splitting is stateless.
+     */
+    @Override
+    protected boolean isReparseSupported() {
+        return false;
+    }
 
-	public BaseGrammarAccess getGrammarAccess() {
-		return this.grammarAccess;
-	}
+    @Override
+    protected InternalBaseParser createParser(XtextTokenStream stream) {
+        return new InternalBaseParser(stream, getGrammarAccess());
+    }
 
-	public void setGrammarAccess(BaseGrammarAccess grammarAccess) {
-		this.grammarAccess = grammarAccess;
-	}
+    @Override
+    protected String getDefaultRuleName() {
+        return "Description";
+    }
+
+    public BaseGrammarAccess getGrammarAccess() {
+        return this.grammarAccess;
+    }
+
+    public void setGrammarAccess(BaseGrammarAccess grammarAccess) {
+        this.grammarAccess = grammarAccess;
+    }
 }

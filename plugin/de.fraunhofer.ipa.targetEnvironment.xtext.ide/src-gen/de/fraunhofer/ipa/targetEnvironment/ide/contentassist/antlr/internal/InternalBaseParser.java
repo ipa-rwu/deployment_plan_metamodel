@@ -58,37 +58,37 @@ public class InternalBaseParser extends AbstractInternalContentAssistParser {
         }
         public InternalBaseParser(TokenStream input, RecognizerSharedState state) {
             super(input, state);
-             
+
         }
-        
+
 
     public String[] getTokenNames() { return InternalBaseParser.tokenNames; }
     public String getGrammarFileName() { return "InternalBaseParser.g"; }
 
 
-    	private BaseGrammarAccess grammarAccess;
-    	private final Map<String, String> tokenNameToValue = new HashMap<String, String>();
-    	
-    	{
-    		tokenNameToValue.put("HyphenMinus", "'-'");
-    	}
+        private BaseGrammarAccess grammarAccess;
+        private final Map<String, String> tokenNameToValue = new HashMap<String, String>();
 
-    	public void setGrammarAccess(BaseGrammarAccess grammarAccess) {
-    		this.grammarAccess = grammarAccess;
-    	}
+        {
+            tokenNameToValue.put("HyphenMinus", "'-'");
+        }
 
-    	@Override
-    	protected Grammar getGrammar() {
-    		return grammarAccess.getGrammar();
-    	}
+        public void setGrammarAccess(BaseGrammarAccess grammarAccess) {
+            this.grammarAccess = grammarAccess;
+        }
 
-    	@Override
-    	protected String getValueForTokenName(String tokenName) {
-    		String result = tokenNameToValue.get(tokenName);
-    		if (result == null)
-    			result = tokenName;
-    		return result;
-    	}
+        @Override
+        protected Grammar getGrammar() {
+            return grammarAccess.getGrammar();
+        }
+
+        @Override
+        protected String getValueForTokenName(String tokenName) {
+            String result = tokenNameToValue.get(tokenName);
+            if (result == null)
+                result = tokenName;
+            return result;
+        }
 
 
 
@@ -99,14 +99,14 @@ public class InternalBaseParser extends AbstractInternalContentAssistParser {
             // InternalBaseParser.g:57:1: ( ruleDescription EOF )
             // InternalBaseParser.g:58:1: ruleDescription EOF
             {
-             before(grammarAccess.getDescriptionRule()); 
+             before(grammarAccess.getDescriptionRule());
             pushFollow(FOLLOW_1);
             ruleDescription();
 
             state._fsp--;
 
-             after(grammarAccess.getDescriptionRule()); 
-            match(input,EOF,FOLLOW_2); 
+             after(grammarAccess.getDescriptionRule());
+            match(input,EOF,FOLLOW_2);
 
             }
 
@@ -126,8 +126,8 @@ public class InternalBaseParser extends AbstractInternalContentAssistParser {
     // InternalBaseParser.g:65:1: ruleDescription : ( () ) ;
     public final void ruleDescription() throws RecognitionException {
 
-        		int stackSize = keepStackSize();
-        	
+                int stackSize = keepStackSize();
+
         try {
             // InternalBaseParser.g:69:2: ( ( () ) )
             // InternalBaseParser.g:70:2: ( () )
@@ -135,13 +135,13 @@ public class InternalBaseParser extends AbstractInternalContentAssistParser {
             // InternalBaseParser.g:70:2: ( () )
             // InternalBaseParser.g:71:3: ()
             {
-             before(grammarAccess.getDescriptionAccess().getDescriptionAction()); 
+             before(grammarAccess.getDescriptionAccess().getDescriptionAction());
             // InternalBaseParser.g:72:3: ()
-            // InternalBaseParser.g:72:4: 
+            // InternalBaseParser.g:72:4:
             {
             }
 
-             after(grammarAccess.getDescriptionAccess().getDescriptionAction()); 
+             after(grammarAccess.getDescriptionAccess().getDescriptionAction());
 
             }
 
@@ -151,7 +151,7 @@ public class InternalBaseParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-            	restoreStackSize(stackSize);
+                restoreStackSize(stackSize);
 
         }
         return ;
@@ -166,14 +166,14 @@ public class InternalBaseParser extends AbstractInternalContentAssistParser {
             // InternalBaseParser.g:82:1: ( rulePropertyValueInt EOF )
             // InternalBaseParser.g:83:1: rulePropertyValueInt EOF
             {
-             before(grammarAccess.getPropertyValueIntRule()); 
+             before(grammarAccess.getPropertyValueIntRule());
             pushFollow(FOLLOW_1);
             rulePropertyValueInt();
 
             state._fsp--;
 
-             after(grammarAccess.getPropertyValueIntRule()); 
-            match(input,EOF,FOLLOW_2); 
+             after(grammarAccess.getPropertyValueIntRule());
+            match(input,EOF,FOLLOW_2);
 
             }
 
@@ -193,8 +193,8 @@ public class InternalBaseParser extends AbstractInternalContentAssistParser {
     // InternalBaseParser.g:90:1: rulePropertyValueInt : ( ( rule__PropertyValueInt__ValueAssignment ) ) ;
     public final void rulePropertyValueInt() throws RecognitionException {
 
-        		int stackSize = keepStackSize();
-        	
+                int stackSize = keepStackSize();
+
         try {
             // InternalBaseParser.g:94:2: ( ( ( rule__PropertyValueInt__ValueAssignment ) ) )
             // InternalBaseParser.g:95:2: ( ( rule__PropertyValueInt__ValueAssignment ) )
@@ -202,7 +202,7 @@ public class InternalBaseParser extends AbstractInternalContentAssistParser {
             // InternalBaseParser.g:95:2: ( ( rule__PropertyValueInt__ValueAssignment ) )
             // InternalBaseParser.g:96:3: ( rule__PropertyValueInt__ValueAssignment )
             {
-             before(grammarAccess.getPropertyValueIntAccess().getValueAssignment()); 
+             before(grammarAccess.getPropertyValueIntAccess().getValueAssignment());
             // InternalBaseParser.g:97:3: ( rule__PropertyValueInt__ValueAssignment )
             // InternalBaseParser.g:97:4: rule__PropertyValueInt__ValueAssignment
             {
@@ -214,7 +214,7 @@ public class InternalBaseParser extends AbstractInternalContentAssistParser {
 
             }
 
-             after(grammarAccess.getPropertyValueIntAccess().getValueAssignment()); 
+             after(grammarAccess.getPropertyValueIntAccess().getValueAssignment());
 
             }
 
@@ -228,7 +228,7 @@ public class InternalBaseParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-            	restoreStackSize(stackSize);
+                restoreStackSize(stackSize);
 
         }
         return ;
@@ -243,14 +243,14 @@ public class InternalBaseParser extends AbstractInternalContentAssistParser {
             // InternalBaseParser.g:107:1: ( rulePropertyValueDouble EOF )
             // InternalBaseParser.g:108:1: rulePropertyValueDouble EOF
             {
-             before(grammarAccess.getPropertyValueDoubleRule()); 
+             before(grammarAccess.getPropertyValueDoubleRule());
             pushFollow(FOLLOW_1);
             rulePropertyValueDouble();
 
             state._fsp--;
 
-             after(grammarAccess.getPropertyValueDoubleRule()); 
-            match(input,EOF,FOLLOW_2); 
+             after(grammarAccess.getPropertyValueDoubleRule());
+            match(input,EOF,FOLLOW_2);
 
             }
 
@@ -270,8 +270,8 @@ public class InternalBaseParser extends AbstractInternalContentAssistParser {
     // InternalBaseParser.g:115:1: rulePropertyValueDouble : ( ( rule__PropertyValueDouble__ValueAssignment ) ) ;
     public final void rulePropertyValueDouble() throws RecognitionException {
 
-        		int stackSize = keepStackSize();
-        	
+                int stackSize = keepStackSize();
+
         try {
             // InternalBaseParser.g:119:2: ( ( ( rule__PropertyValueDouble__ValueAssignment ) ) )
             // InternalBaseParser.g:120:2: ( ( rule__PropertyValueDouble__ValueAssignment ) )
@@ -279,7 +279,7 @@ public class InternalBaseParser extends AbstractInternalContentAssistParser {
             // InternalBaseParser.g:120:2: ( ( rule__PropertyValueDouble__ValueAssignment ) )
             // InternalBaseParser.g:121:3: ( rule__PropertyValueDouble__ValueAssignment )
             {
-             before(grammarAccess.getPropertyValueDoubleAccess().getValueAssignment()); 
+             before(grammarAccess.getPropertyValueDoubleAccess().getValueAssignment());
             // InternalBaseParser.g:122:3: ( rule__PropertyValueDouble__ValueAssignment )
             // InternalBaseParser.g:122:4: rule__PropertyValueDouble__ValueAssignment
             {
@@ -291,7 +291,7 @@ public class InternalBaseParser extends AbstractInternalContentAssistParser {
 
             }
 
-             after(grammarAccess.getPropertyValueDoubleAccess().getValueAssignment()); 
+             after(grammarAccess.getPropertyValueDoubleAccess().getValueAssignment());
 
             }
 
@@ -305,7 +305,7 @@ public class InternalBaseParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-            	restoreStackSize(stackSize);
+                restoreStackSize(stackSize);
 
         }
         return ;
@@ -320,14 +320,14 @@ public class InternalBaseParser extends AbstractInternalContentAssistParser {
             // InternalBaseParser.g:132:1: ( rulePropertyValueString EOF )
             // InternalBaseParser.g:133:1: rulePropertyValueString EOF
             {
-             before(grammarAccess.getPropertyValueStringRule()); 
+             before(grammarAccess.getPropertyValueStringRule());
             pushFollow(FOLLOW_1);
             rulePropertyValueString();
 
             state._fsp--;
 
-             after(grammarAccess.getPropertyValueStringRule()); 
-            match(input,EOF,FOLLOW_2); 
+             after(grammarAccess.getPropertyValueStringRule());
+            match(input,EOF,FOLLOW_2);
 
             }
 
@@ -347,8 +347,8 @@ public class InternalBaseParser extends AbstractInternalContentAssistParser {
     // InternalBaseParser.g:140:1: rulePropertyValueString : ( ( rule__PropertyValueString__ValueAssignment ) ) ;
     public final void rulePropertyValueString() throws RecognitionException {
 
-        		int stackSize = keepStackSize();
-        	
+                int stackSize = keepStackSize();
+
         try {
             // InternalBaseParser.g:144:2: ( ( ( rule__PropertyValueString__ValueAssignment ) ) )
             // InternalBaseParser.g:145:2: ( ( rule__PropertyValueString__ValueAssignment ) )
@@ -356,7 +356,7 @@ public class InternalBaseParser extends AbstractInternalContentAssistParser {
             // InternalBaseParser.g:145:2: ( ( rule__PropertyValueString__ValueAssignment ) )
             // InternalBaseParser.g:146:3: ( rule__PropertyValueString__ValueAssignment )
             {
-             before(grammarAccess.getPropertyValueStringAccess().getValueAssignment()); 
+             before(grammarAccess.getPropertyValueStringAccess().getValueAssignment());
             // InternalBaseParser.g:147:3: ( rule__PropertyValueString__ValueAssignment )
             // InternalBaseParser.g:147:4: rule__PropertyValueString__ValueAssignment
             {
@@ -368,7 +368,7 @@ public class InternalBaseParser extends AbstractInternalContentAssistParser {
 
             }
 
-             after(grammarAccess.getPropertyValueStringAccess().getValueAssignment()); 
+             after(grammarAccess.getPropertyValueStringAccess().getValueAssignment());
 
             }
 
@@ -382,7 +382,7 @@ public class InternalBaseParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-            	restoreStackSize(stackSize);
+                restoreStackSize(stackSize);
 
         }
         return ;
@@ -397,14 +397,14 @@ public class InternalBaseParser extends AbstractInternalContentAssistParser {
             // InternalBaseParser.g:157:1: ( ruleDouble0 EOF )
             // InternalBaseParser.g:158:1: ruleDouble0 EOF
             {
-             before(grammarAccess.getDouble0Rule()); 
+             before(grammarAccess.getDouble0Rule());
             pushFollow(FOLLOW_1);
             ruleDouble0();
 
             state._fsp--;
 
-             after(grammarAccess.getDouble0Rule()); 
-            match(input,EOF,FOLLOW_2); 
+             after(grammarAccess.getDouble0Rule());
+            match(input,EOF,FOLLOW_2);
 
             }
 
@@ -424,8 +424,8 @@ public class InternalBaseParser extends AbstractInternalContentAssistParser {
     // InternalBaseParser.g:165:1: ruleDouble0 : ( RULE_DOUBLE ) ;
     public final void ruleDouble0() throws RecognitionException {
 
-        		int stackSize = keepStackSize();
-        	
+                int stackSize = keepStackSize();
+
         try {
             // InternalBaseParser.g:169:2: ( ( RULE_DOUBLE ) )
             // InternalBaseParser.g:170:2: ( RULE_DOUBLE )
@@ -433,9 +433,9 @@ public class InternalBaseParser extends AbstractInternalContentAssistParser {
             // InternalBaseParser.g:170:2: ( RULE_DOUBLE )
             // InternalBaseParser.g:171:3: RULE_DOUBLE
             {
-             before(grammarAccess.getDouble0Access().getDOUBLETerminalRuleCall()); 
-            match(input,RULE_DOUBLE,FOLLOW_2); 
-             after(grammarAccess.getDouble0Access().getDOUBLETerminalRuleCall()); 
+             before(grammarAccess.getDouble0Access().getDOUBLETerminalRuleCall());
+            match(input,RULE_DOUBLE,FOLLOW_2);
+             after(grammarAccess.getDouble0Access().getDOUBLETerminalRuleCall());
 
             }
 
@@ -449,7 +449,7 @@ public class InternalBaseParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-            	restoreStackSize(stackSize);
+                restoreStackSize(stackSize);
 
         }
         return ;
@@ -464,14 +464,14 @@ public class InternalBaseParser extends AbstractInternalContentAssistParser {
             // InternalBaseParser.g:182:1: ( ruleInteger0 EOF )
             // InternalBaseParser.g:183:1: ruleInteger0 EOF
             {
-             before(grammarAccess.getInteger0Rule()); 
+             before(grammarAccess.getInteger0Rule());
             pushFollow(FOLLOW_1);
             ruleInteger0();
 
             state._fsp--;
 
-             after(grammarAccess.getInteger0Rule()); 
-            match(input,EOF,FOLLOW_2); 
+             after(grammarAccess.getInteger0Rule());
+            match(input,EOF,FOLLOW_2);
 
             }
 
@@ -491,8 +491,8 @@ public class InternalBaseParser extends AbstractInternalContentAssistParser {
     // InternalBaseParser.g:190:1: ruleInteger0 : ( RULE_DECINT ) ;
     public final void ruleInteger0() throws RecognitionException {
 
-        		int stackSize = keepStackSize();
-        	
+                int stackSize = keepStackSize();
+
         try {
             // InternalBaseParser.g:194:2: ( ( RULE_DECINT ) )
             // InternalBaseParser.g:195:2: ( RULE_DECINT )
@@ -500,9 +500,9 @@ public class InternalBaseParser extends AbstractInternalContentAssistParser {
             // InternalBaseParser.g:195:2: ( RULE_DECINT )
             // InternalBaseParser.g:196:3: RULE_DECINT
             {
-             before(grammarAccess.getInteger0Access().getDECINTTerminalRuleCall()); 
-            match(input,RULE_DECINT,FOLLOW_2); 
-             after(grammarAccess.getInteger0Access().getDECINTTerminalRuleCall()); 
+             before(grammarAccess.getInteger0Access().getDECINTTerminalRuleCall());
+            match(input,RULE_DECINT,FOLLOW_2);
+             after(grammarAccess.getInteger0Access().getDECINTTerminalRuleCall());
 
             }
 
@@ -516,7 +516,7 @@ public class InternalBaseParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-            	restoreStackSize(stackSize);
+                restoreStackSize(stackSize);
 
         }
         return ;
@@ -531,14 +531,14 @@ public class InternalBaseParser extends AbstractInternalContentAssistParser {
             // InternalBaseParser.g:207:1: ( ruleEString EOF )
             // InternalBaseParser.g:208:1: ruleEString EOF
             {
-             before(grammarAccess.getEStringRule()); 
+             before(grammarAccess.getEStringRule());
             pushFollow(FOLLOW_1);
             ruleEString();
 
             state._fsp--;
 
-             after(grammarAccess.getEStringRule()); 
-            match(input,EOF,FOLLOW_2); 
+             after(grammarAccess.getEStringRule());
+            match(input,EOF,FOLLOW_2);
 
             }
 
@@ -558,8 +558,8 @@ public class InternalBaseParser extends AbstractInternalContentAssistParser {
     // InternalBaseParser.g:215:1: ruleEString : ( ( rule__EString__Alternatives ) ) ;
     public final void ruleEString() throws RecognitionException {
 
-        		int stackSize = keepStackSize();
-        	
+                int stackSize = keepStackSize();
+
         try {
             // InternalBaseParser.g:219:2: ( ( ( rule__EString__Alternatives ) ) )
             // InternalBaseParser.g:220:2: ( ( rule__EString__Alternatives ) )
@@ -567,7 +567,7 @@ public class InternalBaseParser extends AbstractInternalContentAssistParser {
             // InternalBaseParser.g:220:2: ( ( rule__EString__Alternatives ) )
             // InternalBaseParser.g:221:3: ( rule__EString__Alternatives )
             {
-             before(grammarAccess.getEStringAccess().getAlternatives()); 
+             before(grammarAccess.getEStringAccess().getAlternatives());
             // InternalBaseParser.g:222:3: ( rule__EString__Alternatives )
             // InternalBaseParser.g:222:4: rule__EString__Alternatives
             {
@@ -579,7 +579,7 @@ public class InternalBaseParser extends AbstractInternalContentAssistParser {
 
             }
 
-             after(grammarAccess.getEStringAccess().getAlternatives()); 
+             after(grammarAccess.getEStringAccess().getAlternatives());
 
             }
 
@@ -593,7 +593,7 @@ public class InternalBaseParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-            	restoreStackSize(stackSize);
+                restoreStackSize(stackSize);
 
         }
         return ;
@@ -605,8 +605,8 @@ public class InternalBaseParser extends AbstractInternalContentAssistParser {
     // InternalBaseParser.g:230:1: rule__EString__Alternatives : ( ( RULE_STRING ) | ( RULE_ID ) );
     public final void rule__EString__Alternatives() throws RecognitionException {
 
-        		int stackSize = keepStackSize();
-        	
+                int stackSize = keepStackSize();
+
         try {
             // InternalBaseParser.g:234:1: ( ( RULE_STRING ) | ( RULE_ID ) )
             int alt1=2;
@@ -631,9 +631,9 @@ public class InternalBaseParser extends AbstractInternalContentAssistParser {
                     // InternalBaseParser.g:235:2: ( RULE_STRING )
                     // InternalBaseParser.g:236:3: RULE_STRING
                     {
-                     before(grammarAccess.getEStringAccess().getSTRINGTerminalRuleCall_0()); 
-                    match(input,RULE_STRING,FOLLOW_2); 
-                     after(grammarAccess.getEStringAccess().getSTRINGTerminalRuleCall_0()); 
+                     before(grammarAccess.getEStringAccess().getSTRINGTerminalRuleCall_0());
+                    match(input,RULE_STRING,FOLLOW_2);
+                     after(grammarAccess.getEStringAccess().getSTRINGTerminalRuleCall_0());
 
                     }
 
@@ -646,9 +646,9 @@ public class InternalBaseParser extends AbstractInternalContentAssistParser {
                     // InternalBaseParser.g:241:2: ( RULE_ID )
                     // InternalBaseParser.g:242:3: RULE_ID
                     {
-                     before(grammarAccess.getEStringAccess().getIDTerminalRuleCall_1()); 
-                    match(input,RULE_ID,FOLLOW_2); 
-                     after(grammarAccess.getEStringAccess().getIDTerminalRuleCall_1()); 
+                     before(grammarAccess.getEStringAccess().getIDTerminalRuleCall_1());
+                    match(input,RULE_ID,FOLLOW_2);
+                     after(grammarAccess.getEStringAccess().getIDTerminalRuleCall_1());
 
                     }
 
@@ -664,7 +664,7 @@ public class InternalBaseParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-            	restoreStackSize(stackSize);
+                restoreStackSize(stackSize);
 
         }
         return ;
@@ -676,8 +676,8 @@ public class InternalBaseParser extends AbstractInternalContentAssistParser {
     // InternalBaseParser.g:251:1: rule__PropertyValueInt__ValueAssignment : ( ruleInteger0 ) ;
     public final void rule__PropertyValueInt__ValueAssignment() throws RecognitionException {
 
-        		int stackSize = keepStackSize();
-        	
+                int stackSize = keepStackSize();
+
         try {
             // InternalBaseParser.g:255:1: ( ( ruleInteger0 ) )
             // InternalBaseParser.g:256:2: ( ruleInteger0 )
@@ -685,13 +685,13 @@ public class InternalBaseParser extends AbstractInternalContentAssistParser {
             // InternalBaseParser.g:256:2: ( ruleInteger0 )
             // InternalBaseParser.g:257:3: ruleInteger0
             {
-             before(grammarAccess.getPropertyValueIntAccess().getValueInteger0ParserRuleCall_0()); 
+             before(grammarAccess.getPropertyValueIntAccess().getValueInteger0ParserRuleCall_0());
             pushFollow(FOLLOW_2);
             ruleInteger0();
 
             state._fsp--;
 
-             after(grammarAccess.getPropertyValueIntAccess().getValueInteger0ParserRuleCall_0()); 
+             after(grammarAccess.getPropertyValueIntAccess().getValueInteger0ParserRuleCall_0());
 
             }
 
@@ -705,7 +705,7 @@ public class InternalBaseParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-            	restoreStackSize(stackSize);
+                restoreStackSize(stackSize);
 
         }
         return ;
@@ -717,8 +717,8 @@ public class InternalBaseParser extends AbstractInternalContentAssistParser {
     // InternalBaseParser.g:266:1: rule__PropertyValueDouble__ValueAssignment : ( ruleDouble0 ) ;
     public final void rule__PropertyValueDouble__ValueAssignment() throws RecognitionException {
 
-        		int stackSize = keepStackSize();
-        	
+                int stackSize = keepStackSize();
+
         try {
             // InternalBaseParser.g:270:1: ( ( ruleDouble0 ) )
             // InternalBaseParser.g:271:2: ( ruleDouble0 )
@@ -726,13 +726,13 @@ public class InternalBaseParser extends AbstractInternalContentAssistParser {
             // InternalBaseParser.g:271:2: ( ruleDouble0 )
             // InternalBaseParser.g:272:3: ruleDouble0
             {
-             before(grammarAccess.getPropertyValueDoubleAccess().getValueDouble0ParserRuleCall_0()); 
+             before(grammarAccess.getPropertyValueDoubleAccess().getValueDouble0ParserRuleCall_0());
             pushFollow(FOLLOW_2);
             ruleDouble0();
 
             state._fsp--;
 
-             after(grammarAccess.getPropertyValueDoubleAccess().getValueDouble0ParserRuleCall_0()); 
+             after(grammarAccess.getPropertyValueDoubleAccess().getValueDouble0ParserRuleCall_0());
 
             }
 
@@ -746,7 +746,7 @@ public class InternalBaseParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-            	restoreStackSize(stackSize);
+                restoreStackSize(stackSize);
 
         }
         return ;
@@ -758,8 +758,8 @@ public class InternalBaseParser extends AbstractInternalContentAssistParser {
     // InternalBaseParser.g:281:1: rule__PropertyValueString__ValueAssignment : ( ruleEString ) ;
     public final void rule__PropertyValueString__ValueAssignment() throws RecognitionException {
 
-        		int stackSize = keepStackSize();
-        	
+                int stackSize = keepStackSize();
+
         try {
             // InternalBaseParser.g:285:1: ( ( ruleEString ) )
             // InternalBaseParser.g:286:2: ( ruleEString )
@@ -767,13 +767,13 @@ public class InternalBaseParser extends AbstractInternalContentAssistParser {
             // InternalBaseParser.g:286:2: ( ruleEString )
             // InternalBaseParser.g:287:3: ruleEString
             {
-             before(grammarAccess.getPropertyValueStringAccess().getValueEStringParserRuleCall_0()); 
+             before(grammarAccess.getPropertyValueStringAccess().getValueEStringParserRuleCall_0());
             pushFollow(FOLLOW_2);
             ruleEString();
 
             state._fsp--;
 
-             after(grammarAccess.getPropertyValueStringAccess().getValueEStringParserRuleCall_0()); 
+             after(grammarAccess.getPropertyValueStringAccess().getValueEStringParserRuleCall_0());
 
             }
 
@@ -787,7 +787,7 @@ public class InternalBaseParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-            	restoreStackSize(stackSize);
+                restoreStackSize(stackSize);
 
         }
         return ;
@@ -797,7 +797,7 @@ public class InternalBaseParser extends AbstractInternalContentAssistParser {
     // Delegated rules
 
 
- 
+
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});

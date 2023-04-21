@@ -9,9 +9,9 @@ import org.eclipse.xtext.testing.IInjectorProvider;
 
 public class BaseUiInjectorProvider implements IInjectorProvider {
 
-	@Override
-	public Injector getInjector() {
-		return XtextActivator.getInstance().getInjector("de.fraunhofer.ipa.targetEnvironment.Base");
-	}
+    @Override
+    public Injector getInjector() {
+        return XtextActivator.getInstance().getInjector("de.fraunhofer.ipa.targetEnvironment.Base");
+    }
 
 }

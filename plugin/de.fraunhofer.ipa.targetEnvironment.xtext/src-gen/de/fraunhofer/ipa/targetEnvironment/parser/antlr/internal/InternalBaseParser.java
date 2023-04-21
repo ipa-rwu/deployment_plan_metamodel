@@ -55,16 +55,16 @@ public class InternalBaseParser extends AbstractInternalAntlrParser {
         }
         public InternalBaseParser(TokenStream input, RecognizerSharedState state) {
             super(input, state);
-             
+
         }
-        
+
 
     public String[] getTokenNames() { return InternalBaseParser.tokenNames; }
     public String getGrammarFileName() { return "InternalBaseParser.g"; }
 
 
 
-     	private BaseGrammarAccess grammarAccess;
+        private BaseGrammarAccess grammarAccess;
 
         public InternalBaseParser(TokenStream input, BaseGrammarAccess grammarAccess) {
             this(input);
@@ -74,13 +74,13 @@ public class InternalBaseParser extends AbstractInternalAntlrParser {
 
         @Override
         protected String getFirstRuleName() {
-        	return "Description";
-       	}
+            return "Description";
+        }
 
-       	@Override
-       	protected BaseGrammarAccess getGrammarAccess() {
-       		return grammarAccess;
-       	}
+        @Override
+        protected BaseGrammarAccess getGrammarAccess() {
+            return grammarAccess;
+        }
 
 
 
@@ -97,14 +97,14 @@ public class InternalBaseParser extends AbstractInternalAntlrParser {
             // InternalBaseParser.g:57:52: (iv_ruleDescription= ruleDescription EOF )
             // InternalBaseParser.g:58:2: iv_ruleDescription= ruleDescription EOF
             {
-             newCompositeNode(grammarAccess.getDescriptionRule()); 
+             newCompositeNode(grammarAccess.getDescriptionRule());
             pushFollow(FOLLOW_1);
             iv_ruleDescription=ruleDescription();
 
             state._fsp--;
 
-             current =iv_ruleDescription; 
-            match(input,EOF,FOLLOW_2); 
+             current =iv_ruleDescription;
+            match(input,EOF,FOLLOW_2);
 
             }
 
@@ -127,28 +127,28 @@ public class InternalBaseParser extends AbstractInternalAntlrParser {
         EObject current = null;
 
 
-        	enterRule();
+            enterRule();
 
         try {
             // InternalBaseParser.g:70:2: ( () )
             // InternalBaseParser.g:71:2: ()
             {
             // InternalBaseParser.g:71:2: ()
-            // InternalBaseParser.g:72:3: 
+            // InternalBaseParser.g:72:3:
             {
 
-            			current = forceCreateModelElement(
-            				grammarAccess.getDescriptionAccess().getDescriptionAction(),
-            				current);
-            		
-
-            }
+                        current = forceCreateModelElement(
+                            grammarAccess.getDescriptionAccess().getDescriptionAction(),
+                            current);
 
 
             }
 
 
-            	leaveRule();
+            }
+
+
+                leaveRule();
 
         }
         finally {
@@ -170,14 +170,14 @@ public class InternalBaseParser extends AbstractInternalAntlrParser {
             // InternalBaseParser.g:81:57: (iv_rulePropertyValueInt= rulePropertyValueInt EOF )
             // InternalBaseParser.g:82:2: iv_rulePropertyValueInt= rulePropertyValueInt EOF
             {
-             newCompositeNode(grammarAccess.getPropertyValueIntRule()); 
+             newCompositeNode(grammarAccess.getPropertyValueIntRule());
             pushFollow(FOLLOW_1);
             iv_rulePropertyValueInt=rulePropertyValueInt();
 
             state._fsp--;
 
-             current =iv_rulePropertyValueInt; 
-            match(input,EOF,FOLLOW_2); 
+             current =iv_rulePropertyValueInt;
+            match(input,EOF,FOLLOW_2);
 
             }
 
@@ -203,7 +203,7 @@ public class InternalBaseParser extends AbstractInternalAntlrParser {
 
 
 
-        	enterRule();
+            enterRule();
 
         try {
             // InternalBaseParser.g:94:2: ( ( (lv_value_0_0= ruleInteger0 ) ) )
@@ -216,26 +216,23 @@ public class InternalBaseParser extends AbstractInternalAntlrParser {
             // InternalBaseParser.g:97:4: lv_value_0_0= ruleInteger0
             {
 
-            				newCompositeNode(grammarAccess.getPropertyValueIntAccess().getValueInteger0ParserRuleCall_0());
-            			
+                            newCompositeNode(grammarAccess.getPropertyValueIntAccess().getValueInteger0ParserRuleCall_0());
+
             pushFollow(FOLLOW_2);
             lv_value_0_0=ruleInteger0();
 
             state._fsp--;
 
 
-            				if (current==null) {
-            					current = createModelElementForParent(grammarAccess.getPropertyValueIntRule());
-            				}
-            				set(
-            					current,
-            					"value",
-            					lv_value_0_0,
-            					"de.fraunhofer.ipa.targetEnvironment.Base.Integer0");
-            				afterParserOrEnumRuleCall();
-            			
-
-            }
+                            if (current==null) {
+                                current = createModelElementForParent(grammarAccess.getPropertyValueIntRule());
+                            }
+                            set(
+                                current,
+                                "value",
+                                lv_value_0_0,
+                                "de.fraunhofer.ipa.targetEnvironment.Base.Integer0");
+                            afterParserOrEnumRuleCall();
 
 
             }
@@ -244,7 +241,10 @@ public class InternalBaseParser extends AbstractInternalAntlrParser {
             }
 
 
-            	leaveRule();
+            }
+
+
+                leaveRule();
 
         }
 
@@ -271,14 +271,14 @@ public class InternalBaseParser extends AbstractInternalAntlrParser {
             // InternalBaseParser.g:117:60: (iv_rulePropertyValueDouble= rulePropertyValueDouble EOF )
             // InternalBaseParser.g:118:2: iv_rulePropertyValueDouble= rulePropertyValueDouble EOF
             {
-             newCompositeNode(grammarAccess.getPropertyValueDoubleRule()); 
+             newCompositeNode(grammarAccess.getPropertyValueDoubleRule());
             pushFollow(FOLLOW_1);
             iv_rulePropertyValueDouble=rulePropertyValueDouble();
 
             state._fsp--;
 
-             current =iv_rulePropertyValueDouble; 
-            match(input,EOF,FOLLOW_2); 
+             current =iv_rulePropertyValueDouble;
+            match(input,EOF,FOLLOW_2);
 
             }
 
@@ -304,7 +304,7 @@ public class InternalBaseParser extends AbstractInternalAntlrParser {
 
 
 
-        	enterRule();
+            enterRule();
 
         try {
             // InternalBaseParser.g:130:2: ( ( (lv_value_0_0= ruleDouble0 ) ) )
@@ -317,26 +317,23 @@ public class InternalBaseParser extends AbstractInternalAntlrParser {
             // InternalBaseParser.g:133:4: lv_value_0_0= ruleDouble0
             {
 
-            				newCompositeNode(grammarAccess.getPropertyValueDoubleAccess().getValueDouble0ParserRuleCall_0());
-            			
+                            newCompositeNode(grammarAccess.getPropertyValueDoubleAccess().getValueDouble0ParserRuleCall_0());
+
             pushFollow(FOLLOW_2);
             lv_value_0_0=ruleDouble0();
 
             state._fsp--;
 
 
-            				if (current==null) {
-            					current = createModelElementForParent(grammarAccess.getPropertyValueDoubleRule());
-            				}
-            				set(
-            					current,
-            					"value",
-            					lv_value_0_0,
-            					"de.fraunhofer.ipa.targetEnvironment.Base.Double0");
-            				afterParserOrEnumRuleCall();
-            			
-
-            }
+                            if (current==null) {
+                                current = createModelElementForParent(grammarAccess.getPropertyValueDoubleRule());
+                            }
+                            set(
+                                current,
+                                "value",
+                                lv_value_0_0,
+                                "de.fraunhofer.ipa.targetEnvironment.Base.Double0");
+                            afterParserOrEnumRuleCall();
 
 
             }
@@ -345,7 +342,10 @@ public class InternalBaseParser extends AbstractInternalAntlrParser {
             }
 
 
-            	leaveRule();
+            }
+
+
+                leaveRule();
 
         }
 
@@ -372,14 +372,14 @@ public class InternalBaseParser extends AbstractInternalAntlrParser {
             // InternalBaseParser.g:153:60: (iv_rulePropertyValueString= rulePropertyValueString EOF )
             // InternalBaseParser.g:154:2: iv_rulePropertyValueString= rulePropertyValueString EOF
             {
-             newCompositeNode(grammarAccess.getPropertyValueStringRule()); 
+             newCompositeNode(grammarAccess.getPropertyValueStringRule());
             pushFollow(FOLLOW_1);
             iv_rulePropertyValueString=rulePropertyValueString();
 
             state._fsp--;
 
-             current =iv_rulePropertyValueString; 
-            match(input,EOF,FOLLOW_2); 
+             current =iv_rulePropertyValueString;
+            match(input,EOF,FOLLOW_2);
 
             }
 
@@ -405,7 +405,7 @@ public class InternalBaseParser extends AbstractInternalAntlrParser {
 
 
 
-        	enterRule();
+            enterRule();
 
         try {
             // InternalBaseParser.g:166:2: ( ( (lv_value_0_0= ruleEString ) ) )
@@ -418,26 +418,23 @@ public class InternalBaseParser extends AbstractInternalAntlrParser {
             // InternalBaseParser.g:169:4: lv_value_0_0= ruleEString
             {
 
-            				newCompositeNode(grammarAccess.getPropertyValueStringAccess().getValueEStringParserRuleCall_0());
-            			
+                            newCompositeNode(grammarAccess.getPropertyValueStringAccess().getValueEStringParserRuleCall_0());
+
             pushFollow(FOLLOW_2);
             lv_value_0_0=ruleEString();
 
             state._fsp--;
 
 
-            				if (current==null) {
-            					current = createModelElementForParent(grammarAccess.getPropertyValueStringRule());
-            				}
-            				set(
-            					current,
-            					"value",
-            					lv_value_0_0,
-            					"de.fraunhofer.ipa.targetEnvironment.Base.EString");
-            				afterParserOrEnumRuleCall();
-            			
-
-            }
+                            if (current==null) {
+                                current = createModelElementForParent(grammarAccess.getPropertyValueStringRule());
+                            }
+                            set(
+                                current,
+                                "value",
+                                lv_value_0_0,
+                                "de.fraunhofer.ipa.targetEnvironment.Base.EString");
+                            afterParserOrEnumRuleCall();
 
 
             }
@@ -446,7 +443,10 @@ public class InternalBaseParser extends AbstractInternalAntlrParser {
             }
 
 
-            	leaveRule();
+            }
+
+
+                leaveRule();
 
         }
 
@@ -473,14 +473,14 @@ public class InternalBaseParser extends AbstractInternalAntlrParser {
             // InternalBaseParser.g:189:47: (iv_ruleDouble0= ruleDouble0 EOF )
             // InternalBaseParser.g:190:2: iv_ruleDouble0= ruleDouble0 EOF
             {
-             newCompositeNode(grammarAccess.getDouble0Rule()); 
+             newCompositeNode(grammarAccess.getDouble0Rule());
             pushFollow(FOLLOW_1);
             iv_ruleDouble0=ruleDouble0();
 
             state._fsp--;
 
-             current =iv_ruleDouble0.getText(); 
-            match(input,EOF,FOLLOW_2); 
+             current =iv_ruleDouble0.getText();
+            match(input,EOF,FOLLOW_2);
 
             }
 
@@ -505,24 +505,24 @@ public class InternalBaseParser extends AbstractInternalAntlrParser {
         Token this_DOUBLE_0=null;
 
 
-        	enterRule();
+            enterRule();
 
         try {
             // InternalBaseParser.g:202:2: (this_DOUBLE_0= RULE_DOUBLE )
             // InternalBaseParser.g:203:2: this_DOUBLE_0= RULE_DOUBLE
             {
-            this_DOUBLE_0=(Token)match(input,RULE_DOUBLE,FOLLOW_2); 
+            this_DOUBLE_0=(Token)match(input,RULE_DOUBLE,FOLLOW_2);
 
-            		current.merge(this_DOUBLE_0);
-            	
+                    current.merge(this_DOUBLE_0);
 
-            		newLeafNode(this_DOUBLE_0, grammarAccess.getDouble0Access().getDOUBLETerminalRuleCall());
-            	
+
+                    newLeafNode(this_DOUBLE_0, grammarAccess.getDouble0Access().getDOUBLETerminalRuleCall());
+
 
             }
 
 
-            	leaveRule();
+                leaveRule();
 
         }
 
@@ -549,14 +549,14 @@ public class InternalBaseParser extends AbstractInternalAntlrParser {
             // InternalBaseParser.g:213:48: (iv_ruleInteger0= ruleInteger0 EOF )
             // InternalBaseParser.g:214:2: iv_ruleInteger0= ruleInteger0 EOF
             {
-             newCompositeNode(grammarAccess.getInteger0Rule()); 
+             newCompositeNode(grammarAccess.getInteger0Rule());
             pushFollow(FOLLOW_1);
             iv_ruleInteger0=ruleInteger0();
 
             state._fsp--;
 
-             current =iv_ruleInteger0.getText(); 
-            match(input,EOF,FOLLOW_2); 
+             current =iv_ruleInteger0.getText();
+            match(input,EOF,FOLLOW_2);
 
             }
 
@@ -581,24 +581,24 @@ public class InternalBaseParser extends AbstractInternalAntlrParser {
         Token this_DECINT_0=null;
 
 
-        	enterRule();
+            enterRule();
 
         try {
             // InternalBaseParser.g:226:2: (this_DECINT_0= RULE_DECINT )
             // InternalBaseParser.g:227:2: this_DECINT_0= RULE_DECINT
             {
-            this_DECINT_0=(Token)match(input,RULE_DECINT,FOLLOW_2); 
+            this_DECINT_0=(Token)match(input,RULE_DECINT,FOLLOW_2);
 
-            		current.merge(this_DECINT_0);
-            	
+                    current.merge(this_DECINT_0);
 
-            		newLeafNode(this_DECINT_0, grammarAccess.getInteger0Access().getDECINTTerminalRuleCall());
-            	
+
+                    newLeafNode(this_DECINT_0, grammarAccess.getInteger0Access().getDECINTTerminalRuleCall());
+
 
             }
 
 
-            	leaveRule();
+                leaveRule();
 
         }
 
@@ -625,14 +625,14 @@ public class InternalBaseParser extends AbstractInternalAntlrParser {
             // InternalBaseParser.g:237:47: (iv_ruleEString= ruleEString EOF )
             // InternalBaseParser.g:238:2: iv_ruleEString= ruleEString EOF
             {
-             newCompositeNode(grammarAccess.getEStringRule()); 
+             newCompositeNode(grammarAccess.getEStringRule());
             pushFollow(FOLLOW_1);
             iv_ruleEString=ruleEString();
 
             state._fsp--;
 
-             current =iv_ruleEString.getText(); 
-            match(input,EOF,FOLLOW_2); 
+             current =iv_ruleEString.getText();
+            match(input,EOF,FOLLOW_2);
 
             }
 
@@ -658,7 +658,7 @@ public class InternalBaseParser extends AbstractInternalAntlrParser {
         Token this_ID_1=null;
 
 
-        	enterRule();
+            enterRule();
 
         try {
             // InternalBaseParser.g:250:2: ( (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) )
@@ -684,26 +684,26 @@ public class InternalBaseParser extends AbstractInternalAntlrParser {
                 case 1 :
                     // InternalBaseParser.g:252:3: this_STRING_0= RULE_STRING
                     {
-                    this_STRING_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
+                    this_STRING_0=(Token)match(input,RULE_STRING,FOLLOW_2);
 
-                    			current.merge(this_STRING_0);
-                    		
+                                current.merge(this_STRING_0);
 
-                    			newLeafNode(this_STRING_0, grammarAccess.getEStringAccess().getSTRINGTerminalRuleCall_0());
-                    		
+
+                                newLeafNode(this_STRING_0, grammarAccess.getEStringAccess().getSTRINGTerminalRuleCall_0());
+
 
                     }
                     break;
                 case 2 :
                     // InternalBaseParser.g:260:3: this_ID_1= RULE_ID
                     {
-                    this_ID_1=(Token)match(input,RULE_ID,FOLLOW_2); 
+                    this_ID_1=(Token)match(input,RULE_ID,FOLLOW_2);
 
-                    			current.merge(this_ID_1);
-                    		
+                                current.merge(this_ID_1);
 
-                    			newLeafNode(this_ID_1, grammarAccess.getEStringAccess().getIDTerminalRuleCall_1());
-                    		
+
+                                newLeafNode(this_ID_1, grammarAccess.getEStringAccess().getIDTerminalRuleCall_1());
+
 
                     }
                     break;
@@ -714,7 +714,7 @@ public class InternalBaseParser extends AbstractInternalAntlrParser {
             }
 
 
-            	leaveRule();
+                leaveRule();
 
         }
 
@@ -731,7 +731,7 @@ public class InternalBaseParser extends AbstractInternalAntlrParser {
     // Delegated rules
 
 
- 
+
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
