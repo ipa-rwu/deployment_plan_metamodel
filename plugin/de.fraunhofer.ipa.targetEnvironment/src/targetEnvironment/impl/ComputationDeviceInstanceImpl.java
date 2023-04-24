@@ -5,6 +5,7 @@ package targetEnvironment.impl;
 import device.ComputationDeviceType;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 

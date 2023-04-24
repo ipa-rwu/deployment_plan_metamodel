@@ -4,8 +4,6 @@ package device.impl;
 
 import de.fraunhofer.ipa.deployment.util.ProcessorResouceType;
 
-import de.fraunhofer.ipa.deployment.util.impl.AbstractResourceImpl;
-
 import device.AbstracProcessorProperty;
 import device.DevicePackage;
 import device.ProcessorResouce;
@@ -39,7 +37,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class ProcessorResouceImpl extends AbstractResourceImpl implements ProcessorResouce {
+public class ProcessorResouceImpl extends AbstractComputationResourceImpl implements ProcessorResouce {
     /**
      * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
      * <!-- begin-user-doc -->

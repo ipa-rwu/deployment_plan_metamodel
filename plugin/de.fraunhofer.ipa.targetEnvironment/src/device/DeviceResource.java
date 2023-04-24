@@ -14,5 +14,5 @@ import de.fraunhofer.ipa.deployment.util.Resource;
  * @model
  * @generated
  */
-public interface DeviceResource extends Resource, AbstractComputationDeviceResource {
+public interface DeviceResource extends Resource {
 } // DeviceResource

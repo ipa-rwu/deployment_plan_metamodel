@@ -110,8 +110,8 @@ public class DeviceAdapterFactory extends AdapterFactoryImpl {
                 return createAddressNetworkPropertyAdapter();
             }
             @Override
-            public Adapter caseMacNetworkProperty(MacNetworkProperty object) {
-                return createMacNetworkPropertyAdapter();
+            public Adapter caseMacAddressNetworkProperty(MacAddressNetworkProperty object) {
+                return createMacAddressNetworkPropertyAdapter();
             }
             @Override
             public Adapter caseContainer(Container object) {
@@ -158,12 +158,16 @@ public class DeviceAdapterFactory extends AdapterFactoryImpl {
                 return createAbstractOperatingSystemPropertyAdapter();
             }
             @Override
-            public Adapter caseAbstractComputationDeviceResource(AbstractComputationDeviceResource object) {
-                return createAbstractComputationDeviceResourceAdapter();
-            }
-            @Override
             public Adapter caseAbstracProcessorProperty(AbstracProcessorProperty object) {
                 return createAbstracProcessorPropertyAdapter();
+            }
+            @Override
+            public Adapter caseAbstractComputationResource(AbstractComputationResource object) {
+                return createAbstractComputationResourceAdapter();
+            }
+            @Override
+            public Adapter caseAbstractDeviceType(AbstractDeviceType object) {
+                return createAbstractDeviceTypeAdapter();
             }
             @Override
             public Adapter caseDescription(Description object) {
@@ -332,16 +336,16 @@ public class DeviceAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
-     * Creates a new adapter for an object of class '{@link device.MacNetworkProperty <em>Mac Network Property</em>}'.
+     * Creates a new adapter for an object of class '{@link device.MacAddressNetworkProperty <em>Mac Address Network Property</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
      * it's useful to ignore a case when inheritance will catch all the cases anyway.
      * <!-- end-user-doc -->
      * @return the new adapter.
-     * @see device.MacNetworkProperty
+     * @see device.MacAddressNetworkProperty
      * @generated
      */
-    public Adapter createMacNetworkPropertyAdapter() {
+    public Adapter createMacAddressNetworkPropertyAdapter() {
         return null;
     }
 
@@ -360,48 +364,6 @@ public class DeviceAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
-     * Creates a new adapter for an object of class '{@link device.AbstractNetworkProperty <em>Abstract Network Property</em>}'.
-     * <!-- begin-user-doc -->
-     * This default implementation returns null so that we can easily ignore cases;
-     * it's useful to ignore a case when inheritance will catch all the cases anyway.
-     * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see device.AbstractNetworkProperty
-     * @generated
-     */
-    public Adapter createAbstractNetworkPropertyAdapter() {
-        return null;
-    }
-
-    /**
-     * Creates a new adapter for an object of class '{@link device.AbstractCommunicationConnection <em>Abstract Communication Connection</em>}'.
-     * <!-- begin-user-doc -->
-     * This default implementation returns null so that we can easily ignore cases;
-     * it's useful to ignore a case when inheritance will catch all the cases anyway.
-     * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see device.AbstractCommunicationConnection
-     * @generated
-     */
-    public Adapter createAbstractCommunicationConnectionAdapter() {
-        return null;
-    }
-
-    /**
-     * Creates a new adapter for an object of class '{@link device.AbstractRuntimeEnviroment <em>Abstract Runtime Enviroment</em>}'.
-     * <!-- begin-user-doc -->
-     * This default implementation returns null so that we can easily ignore cases;
-     * it's useful to ignore a case when inheritance will catch all the cases anyway.
-     * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see device.AbstractRuntimeEnviroment
-     * @generated
-     */
-    public Adapter createAbstractRuntimeEnviromentAdapter() {
-        return null;
-    }
-
-    /**
      * Creates a new adapter for an object of class '{@link device.OperatingSystemResouce <em>Operating System Resouce</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
@@ -412,34 +374,6 @@ public class DeviceAdapterFactory extends AdapterFactoryImpl {
      * @generated
      */
     public Adapter createOperatingSystemResouceAdapter() {
-        return null;
-    }
-
-    /**
-     * Creates a new adapter for an object of class '{@link device.AbstractOperatingSystemProperty <em>Abstract Operating System Property</em>}'.
-     * <!-- begin-user-doc -->
-     * This default implementation returns null so that we can easily ignore cases;
-     * it's useful to ignore a case when inheritance will catch all the cases anyway.
-     * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see device.AbstractOperatingSystemProperty
-     * @generated
-     */
-    public Adapter createAbstractOperatingSystemPropertyAdapter() {
-        return null;
-    }
-
-    /**
-     * Creates a new adapter for an object of class '{@link device.AbstractComputationDeviceResource <em>Abstract Computation Device Resource</em>}'.
-     * <!-- begin-user-doc -->
-     * This default implementation returns null so that we can easily ignore cases;
-     * it's useful to ignore a case when inheritance will catch all the cases anyway.
-     * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see device.AbstractComputationDeviceResource
-     * @generated
-     */
-    public Adapter createAbstractComputationDeviceResourceAdapter() {
         return null;
     }
 
@@ -514,6 +448,62 @@ public class DeviceAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
+     * Creates a new adapter for an object of class '{@link device.AbstractNetworkProperty <em>Abstract Network Property</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see device.AbstractNetworkProperty
+     * @generated
+     */
+    public Adapter createAbstractNetworkPropertyAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link device.AbstractCommunicationConnection <em>Abstract Communication Connection</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see device.AbstractCommunicationConnection
+     * @generated
+     */
+    public Adapter createAbstractCommunicationConnectionAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link device.AbstractRuntimeEnviroment <em>Abstract Runtime Enviroment</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see device.AbstractRuntimeEnviroment
+     * @generated
+     */
+    public Adapter createAbstractRuntimeEnviromentAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link device.AbstractOperatingSystemProperty <em>Abstract Operating System Property</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see device.AbstractOperatingSystemProperty
+     * @generated
+     */
+    public Adapter createAbstractOperatingSystemPropertyAdapter() {
+        return null;
+    }
+
+    /**
      * Creates a new adapter for an object of class '{@link device.AbstracProcessorProperty <em>Abstrac Processor Property</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
@@ -524,6 +514,34 @@ public class DeviceAdapterFactory extends AdapterFactoryImpl {
      * @generated
      */
     public Adapter createAbstracProcessorPropertyAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link device.AbstractComputationResource <em>Abstract Computation Resource</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see device.AbstractComputationResource
+     * @generated
+     */
+    public Adapter createAbstractComputationResourceAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link device.AbstractDeviceType <em>Abstract Device Type</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see device.AbstractDeviceType
+     * @generated
+     */
+    public Adapter createAbstractDeviceTypeAdapter() {
         return null;
     }
 

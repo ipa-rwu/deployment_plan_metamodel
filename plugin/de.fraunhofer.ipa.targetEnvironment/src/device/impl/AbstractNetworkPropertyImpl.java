@@ -2,12 +2,12 @@
  */
 package device.impl;
 
-import de.fraunhofer.ipa.deployment.util.impl.PropertyAttributeImpl;
-
 import device.AbstractNetworkProperty;
 import device.DevicePackage;
 
 import org.eclipse.emf.ecore.EClass;
+
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public abstract class AbstractNetworkPropertyImpl extends PropertyAttributeImpl implements AbstractNetworkProperty {
+public abstract class AbstractNetworkPropertyImpl extends MinimalEObjectImpl.Container implements AbstractNetworkProperty {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->

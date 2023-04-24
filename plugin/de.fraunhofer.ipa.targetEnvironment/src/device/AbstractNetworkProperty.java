@@ -2,7 +2,7 @@
  */
 package device;
 
-import de.fraunhofer.ipa.deployment.util.PropertyAttribute;
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,5 +14,5 @@ import de.fraunhofer.ipa.deployment.util.PropertyAttribute;
  * @model abstract="true"
  * @generated
  */
-public interface AbstractNetworkProperty extends PropertyAttribute {
+public interface AbstractNetworkProperty extends EObject {
 } // AbstractNetworkProperty

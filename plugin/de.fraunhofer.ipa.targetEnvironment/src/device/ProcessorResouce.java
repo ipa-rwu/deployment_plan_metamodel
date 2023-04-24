@@ -2,7 +2,6 @@
  */
 package device;
 
-import de.fraunhofer.ipa.deployment.util.AbstractResource;
 import de.fraunhofer.ipa.deployment.util.ProcessorResouceType;
 
 import org.eclipse.emf.common.util.EList;
@@ -24,7 +23,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface ProcessorResouce extends AbstractResource, AbstractComputationDeviceResource {
+public interface ProcessorResouce extends AbstractComputationResource {
     /**
      * Returns the value of the '<em><b>Type</b></em>' containment reference.
      * <!-- begin-user-doc -->

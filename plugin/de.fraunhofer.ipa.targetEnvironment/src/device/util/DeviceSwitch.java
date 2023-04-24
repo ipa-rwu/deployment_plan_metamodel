@@ -82,6 +82,7 @@ public class DeviceSwitch<T> extends Switch<T> {
             case DevicePackage.DEVICE_TYPE: {
                 DeviceType deviceType = (DeviceType)theEObject;
                 T result = caseDeviceType(deviceType);
+                if (result == null) result = caseAbstractDeviceType(deviceType);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -89,7 +90,6 @@ public class DeviceSwitch<T> extends Switch<T> {
                 DeviceResource deviceResource = (DeviceResource)theEObject;
                 T result = caseDeviceResource(deviceResource);
                 if (result == null) result = caseResource(deviceResource);
-                if (result == null) result = caseAbstractComputationDeviceResource(deviceResource);
                 if (result == null) result = caseAbstractResource(deviceResource);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
@@ -114,6 +114,7 @@ public class DeviceSwitch<T> extends Switch<T> {
                 ComputationDeviceType computationDeviceType = (ComputationDeviceType)theEObject;
                 T result = caseComputationDeviceType(computationDeviceType);
                 if (result == null) result = caseDeviceType(computationDeviceType);
+                if (result == null) result = caseAbstractDeviceType(computationDeviceType);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -128,8 +129,8 @@ public class DeviceSwitch<T> extends Switch<T> {
             case DevicePackage.INTERFACE_NETWORK_PROPERTY: {
                 InterfaceNetworkProperty interfaceNetworkProperty = (InterfaceNetworkProperty)theEObject;
                 T result = caseInterfaceNetworkProperty(interfaceNetworkProperty);
-                if (result == null) result = caseAbstractNetworkProperty(interfaceNetworkProperty);
                 if (result == null) result = casePropertyAttribute(interfaceNetworkProperty);
+                if (result == null) result = caseAbstractNetworkProperty(interfaceNetworkProperty);
                 if (result == null) result = caseAbstractProperty(interfaceNetworkProperty);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
@@ -137,18 +138,18 @@ public class DeviceSwitch<T> extends Switch<T> {
             case DevicePackage.ADDRESS_NETWORK_PROPERTY: {
                 AddressNetworkProperty addressNetworkProperty = (AddressNetworkProperty)theEObject;
                 T result = caseAddressNetworkProperty(addressNetworkProperty);
-                if (result == null) result = caseAbstractNetworkProperty(addressNetworkProperty);
                 if (result == null) result = casePropertyAttribute(addressNetworkProperty);
+                if (result == null) result = caseAbstractNetworkProperty(addressNetworkProperty);
                 if (result == null) result = caseAbstractProperty(addressNetworkProperty);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
-            case DevicePackage.MAC_NETWORK_PROPERTY: {
-                MacNetworkProperty macNetworkProperty = (MacNetworkProperty)theEObject;
-                T result = caseMacNetworkProperty(macNetworkProperty);
-                if (result == null) result = caseAbstractNetworkProperty(macNetworkProperty);
-                if (result == null) result = casePropertyAttribute(macNetworkProperty);
-                if (result == null) result = caseAbstractProperty(macNetworkProperty);
+            case DevicePackage.MAC_ADDRESS_NETWORK_PROPERTY: {
+                MacAddressNetworkProperty macAddressNetworkProperty = (MacAddressNetworkProperty)theEObject;
+                T result = caseMacAddressNetworkProperty(macAddressNetworkProperty);
+                if (result == null) result = casePropertyAttribute(macAddressNetworkProperty);
+                if (result == null) result = caseAbstractNetworkProperty(macAddressNetworkProperty);
+                if (result == null) result = caseAbstractProperty(macAddressNetworkProperty);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -162,16 +163,16 @@ public class DeviceSwitch<T> extends Switch<T> {
             case DevicePackage.OPERATING_SYSTEM_RESOUCE: {
                 OperatingSystemResouce operatingSystemResouce = (OperatingSystemResouce)theEObject;
                 T result = caseOperatingSystemResouce(operatingSystemResouce);
+                if (result == null) result = caseAbstractComputationResource(operatingSystemResouce);
                 if (result == null) result = caseAbstractResource(operatingSystemResouce);
-                if (result == null) result = caseAbstractComputationDeviceResource(operatingSystemResouce);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
             case DevicePackage.NAME_OPERATING_SYSTEM_PROPERTY: {
                 NameOperatingSystemProperty nameOperatingSystemProperty = (NameOperatingSystemProperty)theEObject;
                 T result = caseNameOperatingSystemProperty(nameOperatingSystemProperty);
-                if (result == null) result = caseAbstractOperatingSystemProperty(nameOperatingSystemProperty);
                 if (result == null) result = casePropertyAttribute(nameOperatingSystemProperty);
+                if (result == null) result = caseAbstractOperatingSystemProperty(nameOperatingSystemProperty);
                 if (result == null) result = caseAbstractProperty(nameOperatingSystemProperty);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
@@ -179,8 +180,8 @@ public class DeviceSwitch<T> extends Switch<T> {
             case DevicePackage.VERSION_OPERATING_SYSTEM_PROPERTY: {
                 VersionOperatingSystemProperty versionOperatingSystemProperty = (VersionOperatingSystemProperty)theEObject;
                 T result = caseVersionOperatingSystemProperty(versionOperatingSystemProperty);
-                if (result == null) result = caseAbstractOperatingSystemProperty(versionOperatingSystemProperty);
                 if (result == null) result = casePropertyAttribute(versionOperatingSystemProperty);
+                if (result == null) result = caseAbstractOperatingSystemProperty(versionOperatingSystemProperty);
                 if (result == null) result = caseAbstractProperty(versionOperatingSystemProperty);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
@@ -188,8 +189,8 @@ public class DeviceSwitch<T> extends Switch<T> {
             case DevicePackage.PROCESSOR_RESOUCE: {
                 ProcessorResouce processorResouce = (ProcessorResouce)theEObject;
                 T result = caseProcessorResouce(processorResouce);
+                if (result == null) result = caseAbstractComputationResource(processorResouce);
                 if (result == null) result = caseAbstractResource(processorResouce);
-                if (result == null) result = caseAbstractComputationDeviceResource(processorResouce);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -214,8 +215,6 @@ public class DeviceSwitch<T> extends Switch<T> {
             case DevicePackage.ABSTRACT_NETWORK_PROPERTY: {
                 AbstractNetworkProperty abstractNetworkProperty = (AbstractNetworkProperty)theEObject;
                 T result = caseAbstractNetworkProperty(abstractNetworkProperty);
-                if (result == null) result = casePropertyAttribute(abstractNetworkProperty);
-                if (result == null) result = caseAbstractProperty(abstractNetworkProperty);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -235,20 +234,25 @@ public class DeviceSwitch<T> extends Switch<T> {
             case DevicePackage.ABSTRACT_OPERATING_SYSTEM_PROPERTY: {
                 AbstractOperatingSystemProperty abstractOperatingSystemProperty = (AbstractOperatingSystemProperty)theEObject;
                 T result = caseAbstractOperatingSystemProperty(abstractOperatingSystemProperty);
-                if (result == null) result = casePropertyAttribute(abstractOperatingSystemProperty);
-                if (result == null) result = caseAbstractProperty(abstractOperatingSystemProperty);
-                if (result == null) result = defaultCase(theEObject);
-                return result;
-            }
-            case DevicePackage.ABSTRACT_COMPUTATION_DEVICE_RESOURCE: {
-                AbstractComputationDeviceResource abstractComputationDeviceResource = (AbstractComputationDeviceResource)theEObject;
-                T result = caseAbstractComputationDeviceResource(abstractComputationDeviceResource);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
             case DevicePackage.ABSTRAC_PROCESSOR_PROPERTY: {
                 AbstracProcessorProperty abstracProcessorProperty = (AbstracProcessorProperty)theEObject;
                 T result = caseAbstracProcessorProperty(abstracProcessorProperty);
+                if (result == null) result = defaultCase(theEObject);
+                return result;
+            }
+            case DevicePackage.ABSTRACT_COMPUTATION_RESOURCE: {
+                AbstractComputationResource abstractComputationResource = (AbstractComputationResource)theEObject;
+                T result = caseAbstractComputationResource(abstractComputationResource);
+                if (result == null) result = caseAbstractResource(abstractComputationResource);
+                if (result == null) result = defaultCase(theEObject);
+                return result;
+            }
+            case DevicePackage.ABSTRACT_DEVICE_TYPE: {
+                AbstractDeviceType abstractDeviceType = (AbstractDeviceType)theEObject;
+                T result = caseAbstractDeviceType(abstractDeviceType);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -392,17 +396,17 @@ public class DeviceSwitch<T> extends Switch<T> {
     }
 
     /**
-     * Returns the result of interpreting the object as an instance of '<em>Mac Network Property</em>'.
+     * Returns the result of interpreting the object as an instance of '<em>Mac Address Network Property</em>'.
      * <!-- begin-user-doc -->
      * This implementation returns null;
      * returning a non-null result will terminate the switch.
      * <!-- end-user-doc -->
      * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Mac Network Property</em>'.
+     * @return the result of interpreting the object as an instance of '<em>Mac Address Network Property</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseMacNetworkProperty(MacNetworkProperty object) {
+    public T caseMacAddressNetworkProperty(MacAddressNetworkProperty object) {
         return null;
     }
 
@@ -422,51 +426,6 @@ public class DeviceSwitch<T> extends Switch<T> {
     }
 
     /**
-     * Returns the result of interpreting the object as an instance of '<em>Abstract Network Property</em>'.
-     * <!-- begin-user-doc -->
-     * This implementation returns null;
-     * returning a non-null result will terminate the switch.
-     * <!-- end-user-doc -->
-     * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Abstract Network Property</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-     * @generated
-     */
-    public T caseAbstractNetworkProperty(AbstractNetworkProperty object) {
-        return null;
-    }
-
-    /**
-     * Returns the result of interpreting the object as an instance of '<em>Abstract Communication Connection</em>'.
-     * <!-- begin-user-doc -->
-     * This implementation returns null;
-     * returning a non-null result will terminate the switch.
-     * <!-- end-user-doc -->
-     * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Abstract Communication Connection</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-     * @generated
-     */
-    public T caseAbstractCommunicationConnection(AbstractCommunicationConnection object) {
-        return null;
-    }
-
-    /**
-     * Returns the result of interpreting the object as an instance of '<em>Abstract Runtime Enviroment</em>'.
-     * <!-- begin-user-doc -->
-     * This implementation returns null;
-     * returning a non-null result will terminate the switch.
-     * <!-- end-user-doc -->
-     * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Abstract Runtime Enviroment</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-     * @generated
-     */
-    public T caseAbstractRuntimeEnviroment(AbstractRuntimeEnviroment object) {
-        return null;
-    }
-
-    /**
      * Returns the result of interpreting the object as an instance of '<em>Operating System Resouce</em>'.
      * <!-- begin-user-doc -->
      * This implementation returns null;
@@ -478,36 +437,6 @@ public class DeviceSwitch<T> extends Switch<T> {
      * @generated
      */
     public T caseOperatingSystemResouce(OperatingSystemResouce object) {
-        return null;
-    }
-
-    /**
-     * Returns the result of interpreting the object as an instance of '<em>Abstract Operating System Property</em>'.
-     * <!-- begin-user-doc -->
-     * This implementation returns null;
-     * returning a non-null result will terminate the switch.
-     * <!-- end-user-doc -->
-     * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Abstract Operating System Property</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-     * @generated
-     */
-    public T caseAbstractOperatingSystemProperty(AbstractOperatingSystemProperty object) {
-        return null;
-    }
-
-    /**
-     * Returns the result of interpreting the object as an instance of '<em>Abstract Computation Device Resource</em>'.
-     * <!-- begin-user-doc -->
-     * This implementation returns null;
-     * returning a non-null result will terminate the switch.
-     * <!-- end-user-doc -->
-     * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Abstract Computation Device Resource</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-     * @generated
-     */
-    public T caseAbstractComputationDeviceResource(AbstractComputationDeviceResource object) {
         return null;
     }
 
@@ -587,6 +516,66 @@ public class DeviceSwitch<T> extends Switch<T> {
     }
 
     /**
+     * Returns the result of interpreting the object as an instance of '<em>Abstract Network Property</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Abstract Network Property</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseAbstractNetworkProperty(AbstractNetworkProperty object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Abstract Communication Connection</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Abstract Communication Connection</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseAbstractCommunicationConnection(AbstractCommunicationConnection object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Abstract Runtime Enviroment</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Abstract Runtime Enviroment</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseAbstractRuntimeEnviroment(AbstractRuntimeEnviroment object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Abstract Operating System Property</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Abstract Operating System Property</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseAbstractOperatingSystemProperty(AbstractOperatingSystemProperty object) {
+        return null;
+    }
+
+    /**
      * Returns the result of interpreting the object as an instance of '<em>Abstrac Processor Property</em>'.
      * <!-- begin-user-doc -->
      * This implementation returns null;
@@ -598,6 +587,36 @@ public class DeviceSwitch<T> extends Switch<T> {
      * @generated
      */
     public T caseAbstracProcessorProperty(AbstracProcessorProperty object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Abstract Computation Resource</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Abstract Computation Resource</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseAbstractComputationResource(AbstractComputationResource object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Abstract Device Type</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Abstract Device Type</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseAbstractDeviceType(AbstractDeviceType object) {
         return null;
     }
 

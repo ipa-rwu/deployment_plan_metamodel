@@ -103,13 +103,13 @@ public interface DeviceFactory extends EFactory {
     AddressNetworkProperty createAddressNetworkProperty();
 
     /**
-     * Returns a new object of class '<em>Mac Network Property</em>'.
+     * Returns a new object of class '<em>Mac Address Network Property</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return a new object of class '<em>Mac Network Property</em>'.
+     * @return a new object of class '<em>Mac Address Network Property</em>'.
      * @generated
      */
-    MacNetworkProperty createMacNetworkProperty();
+    MacAddressNetworkProperty createMacAddressNetworkProperty();
 
     /**
      * Returns a new object of class '<em>Container</em>'.
@@ -173,6 +173,15 @@ public interface DeviceFactory extends EFactory {
      * @generated
      */
     CoreProcessorProperty createCoreProcessorProperty();
+
+    /**
+     * Returns a new object of class '<em>Abstract Device Type</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Abstract Device Type</em>'.
+     * @generated
+     */
+    AbstractDeviceType createAbstractDeviceType();
 
     /**
      * Returns the package supported by this factory.

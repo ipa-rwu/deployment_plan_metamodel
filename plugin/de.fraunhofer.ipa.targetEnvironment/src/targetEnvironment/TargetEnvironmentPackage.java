@@ -6,7 +6,6 @@ import de.fraunhofer.ipa.deployment.util.UtilPackage;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -511,13 +510,13 @@ public interface TargetEnvironmentPackage extends EPackage {
     int CONFIG_DEVICE_PROPERTY__NAME = ABSTRACT_CONFIG_PROPERTY_FEATURE_COUNT + 0;
 
     /**
-     * The feature id for the '<em><b>From</b></em>' reference.
+     * The feature id for the '<em><b>Ref Property</b></em>' reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int CONFIG_DEVICE_PROPERTY__FROM = ABSTRACT_CONFIG_PROPERTY_FEATURE_COUNT + 1;
+    int CONFIG_DEVICE_PROPERTY__REF_PROPERTY = ABSTRACT_CONFIG_PROPERTY_FEATURE_COUNT + 1;
 
     /**
      * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -529,40 +528,13 @@ public interface TargetEnvironmentPackage extends EPackage {
     int CONFIG_DEVICE_PROPERTY__VALUE = ABSTRACT_CONFIG_PROPERTY_FEATURE_COUNT + 2;
 
     /**
-     * The feature id for the '<em><b>Fullname</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int CONFIG_DEVICE_PROPERTY__FULLNAME = ABSTRACT_CONFIG_PROPERTY_FEATURE_COUNT + 3;
-
-    /**
      * The number of structural features of the '<em>Config Device Property</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int CONFIG_DEVICE_PROPERTY_FEATURE_COUNT = ABSTRACT_CONFIG_PROPERTY_FEATURE_COUNT + 4;
-
-    /**
-     * The operation id for the '<em>Get Parent</em>' operation.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int CONFIG_DEVICE_PROPERTY___GET_PARENT = ABSTRACT_CONFIG_PROPERTY_OPERATION_COUNT + 0;
-
-    /**
-     * The operation id for the '<em>Get Device Resouce</em>' operation.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int CONFIG_DEVICE_PROPERTY___GET_DEVICE_RESOUCE = ABSTRACT_CONFIG_PROPERTY_OPERATION_COUNT + 1;
+    int CONFIG_DEVICE_PROPERTY_FEATURE_COUNT = ABSTRACT_CONFIG_PROPERTY_FEATURE_COUNT + 3;
 
     /**
      * The number of operations of the '<em>Config Device Property</em>' class.
@@ -571,7 +543,7 @@ public interface TargetEnvironmentPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int CONFIG_DEVICE_PROPERTY_OPERATION_COUNT = ABSTRACT_CONFIG_PROPERTY_OPERATION_COUNT + 2;
+    int CONFIG_DEVICE_PROPERTY_OPERATION_COUNT = ABSTRACT_CONFIG_PROPERTY_OPERATION_COUNT + 0;
 
 
     /**
@@ -820,15 +792,15 @@ public interface TargetEnvironmentPackage extends EPackage {
     EAttribute getConfigDeviceProperty_Name();
 
     /**
-     * Returns the meta object for the reference '{@link targetEnvironment.ConfigDeviceProperty#getFrom <em>From</em>}'.
+     * Returns the meta object for the reference '{@link targetEnvironment.ConfigDeviceProperty#getRefProperty <em>Ref Property</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the reference '<em>From</em>'.
-     * @see targetEnvironment.ConfigDeviceProperty#getFrom()
+     * @return the meta object for the reference '<em>Ref Property</em>'.
+     * @see targetEnvironment.ConfigDeviceProperty#getRefProperty()
      * @see #getConfigDeviceProperty()
      * @generated
      */
-    EReference getConfigDeviceProperty_From();
+    EReference getConfigDeviceProperty_RefProperty();
 
     /**
      * Returns the meta object for the containment reference '{@link targetEnvironment.ConfigDeviceProperty#getValue <em>Value</em>}'.
@@ -840,37 +812,6 @@ public interface TargetEnvironmentPackage extends EPackage {
      * @generated
      */
     EReference getConfigDeviceProperty_Value();
-
-    /**
-     * Returns the meta object for the attribute '{@link targetEnvironment.ConfigDeviceProperty#getFullname <em>Fullname</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Fullname</em>'.
-     * @see targetEnvironment.ConfigDeviceProperty#getFullname()
-     * @see #getConfigDeviceProperty()
-     * @generated
-     */
-    EAttribute getConfigDeviceProperty_Fullname();
-
-    /**
-     * Returns the meta object for the '{@link targetEnvironment.ConfigDeviceProperty#getParent() <em>Get Parent</em>}' operation.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the '<em>Get Parent</em>' operation.
-     * @see targetEnvironment.ConfigDeviceProperty#getParent()
-     * @generated
-     */
-    EOperation getConfigDeviceProperty__GetParent();
-
-    /**
-     * Returns the meta object for the '{@link targetEnvironment.ConfigDeviceProperty#getDeviceResouce() <em>Get Device Resouce</em>}' operation.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the '<em>Get Device Resouce</em>' operation.
-     * @see targetEnvironment.ConfigDeviceProperty#getDeviceResouce()
-     * @generated
-     */
-    EOperation getConfigDeviceProperty__GetDeviceResouce();
 
     /**
      * Returns the meta object for class '{@link targetEnvironment.AbstractDeviceInstance <em>Abstract Device Instance</em>}'.
@@ -1138,12 +1079,12 @@ public interface TargetEnvironmentPackage extends EPackage {
         EAttribute CONFIG_DEVICE_PROPERTY__NAME = eINSTANCE.getConfigDeviceProperty_Name();
 
         /**
-         * The meta object literal for the '<em><b>From</b></em>' reference feature.
+         * The meta object literal for the '<em><b>Ref Property</b></em>' reference feature.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
          * @generated
          */
-        EReference CONFIG_DEVICE_PROPERTY__FROM = eINSTANCE.getConfigDeviceProperty_From();
+        EReference CONFIG_DEVICE_PROPERTY__REF_PROPERTY = eINSTANCE.getConfigDeviceProperty_RefProperty();
 
         /**
          * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
@@ -1152,30 +1093,6 @@ public interface TargetEnvironmentPackage extends EPackage {
          * @generated
          */
         EReference CONFIG_DEVICE_PROPERTY__VALUE = eINSTANCE.getConfigDeviceProperty_Value();
-
-        /**
-         * The meta object literal for the '<em><b>Fullname</b></em>' attribute feature.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @generated
-         */
-        EAttribute CONFIG_DEVICE_PROPERTY__FULLNAME = eINSTANCE.getConfigDeviceProperty_Fullname();
-
-        /**
-         * The meta object literal for the '<em><b>Get Parent</b></em>' operation.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @generated
-         */
-        EOperation CONFIG_DEVICE_PROPERTY___GET_PARENT = eINSTANCE.getConfigDeviceProperty__GetParent();
-
-        /**
-         * The meta object literal for the '<em><b>Get Device Resouce</b></em>' operation.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @generated
-         */
-        EOperation CONFIG_DEVICE_PROPERTY___GET_DEVICE_RESOUCE = eINSTANCE.getConfigDeviceProperty__GetDeviceResouce();
 
         /**
          * The meta object literal for the '{@link targetEnvironment.impl.AbstractDeviceInstanceImpl <em>Abstract Device Instance</em>}' class.

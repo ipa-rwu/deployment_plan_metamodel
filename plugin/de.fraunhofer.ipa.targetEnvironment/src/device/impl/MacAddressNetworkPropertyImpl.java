@@ -5,24 +5,24 @@ package device.impl;
 import de.fraunhofer.ipa.deployment.util.impl.PropertyAttributeImpl;
 
 import device.DevicePackage;
-import device.NameOperatingSystemProperty;
+import device.MacAddressNetworkProperty;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Name Operating System Property</b></em>'.
+ * An implementation of the model object '<em><b>Mac Address Network Property</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class NameOperatingSystemPropertyImpl extends PropertyAttributeImpl implements NameOperatingSystemProperty {
+public class MacAddressNetworkPropertyImpl extends PropertyAttributeImpl implements MacAddressNetworkProperty {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    protected NameOperatingSystemPropertyImpl() {
+    protected MacAddressNetworkPropertyImpl() {
         super();
     }
 
@@ -33,7 +33,7 @@ public class NameOperatingSystemPropertyImpl extends PropertyAttributeImpl imple
      */
     @Override
     protected EClass eStaticClass() {
-        return DevicePackage.Literals.NAME_OPERATING_SYSTEM_PROPERTY;
+        return DevicePackage.Literals.MAC_ADDRESS_NETWORK_PROPERTY;
     }
 
-} //NameOperatingSystemPropertyImpl
+} //MacAddressNetworkPropertyImpl

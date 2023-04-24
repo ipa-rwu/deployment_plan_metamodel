@@ -6,7 +6,8 @@ import de.fraunhofer.ipa.deployment.util.UtilPackage;
 
 import device.AbstracProcessorProperty;
 import device.AbstractCommunicationConnection;
-import device.AbstractComputationDeviceResource;
+import device.AbstractComputationResource;
+import device.AbstractDeviceType;
 import device.AbstractNetworkProperty;
 import device.AbstractOperatingSystemProperty;
 import device.AbstractRuntimeEnviroment;
@@ -22,13 +23,13 @@ import device.DeviceResource;
 import device.DeviceSet;
 import device.DeviceType;
 import device.InterfaceNetworkProperty;
-import device.MacNetworkProperty;
+import device.MacAddressNetworkProperty;
 import device.NameOperatingSystemProperty;
 import device.NetworkConnection;
-
 import device.OperatingSystemResouce;
 import device.ProcessorResouce;
 import device.VersionOperatingSystemProperty;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -111,7 +112,7 @@ public class DevicePackageImpl extends EPackageImpl implements DevicePackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    private EClass macNetworkPropertyEClass = null;
+    private EClass macAddressNetworkPropertyEClass = null;
 
     /**
      * <!-- begin-user-doc -->
@@ -125,42 +126,7 @@ public class DevicePackageImpl extends EPackageImpl implements DevicePackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    private EClass abstractNetworkPropertyEClass = null;
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    private EClass abstractCommunicationConnectionEClass = null;
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    private EClass abstractRuntimeEnviromentEClass = null;
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
     private EClass operatingSystemResouceEClass = null;
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    private EClass abstractOperatingSystemPropertyEClass = null;
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    private EClass abstractComputationDeviceResourceEClass = null;
 
     /**
      * <!-- begin-user-doc -->
@@ -202,7 +168,49 @@ public class DevicePackageImpl extends EPackageImpl implements DevicePackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    private EClass abstractNetworkPropertyEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass abstractCommunicationConnectionEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass abstractRuntimeEnviromentEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass abstractOperatingSystemPropertyEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     private EClass abstracProcessorPropertyEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass abstractComputationResourceEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass abstractDeviceTypeEClass = null;
 
     /**
      * Creates an instance of the model <b>Package</b>, registered with
@@ -299,26 +307,8 @@ public class DevicePackageImpl extends EPackageImpl implements DevicePackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    public EAttribute getDeviceType_Name() {
-        return (EAttribute)deviceTypeEClass.getEStructuralFeatures().get(0);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
     public EReference getDeviceType_DeviceResource() {
-        return (EReference)deviceTypeEClass.getEStructuralFeatures().get(1);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public EReference getDeviceType_CommunicationConnection() {
-        return (EReference)deviceTypeEClass.getEStructuralFeatures().get(2);
+        return (EReference)deviceTypeEClass.getEStructuralFeatures().get(0);
     }
 
     /**
@@ -380,6 +370,15 @@ public class DevicePackageImpl extends EPackageImpl implements DevicePackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    public EReference getComputationDeviceType_ComputationResource() {
+        return (EReference)computationDeviceTypeEClass.getEStructuralFeatures().get(0);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public EClass getNetworkConnection() {
         return networkConnectionEClass;
     }
@@ -425,8 +424,8 @@ public class DevicePackageImpl extends EPackageImpl implements DevicePackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    public EClass getMacNetworkProperty() {
-        return macNetworkPropertyEClass;
+    public EClass getMacAddressNetworkProperty() {
+        return macAddressNetworkPropertyEClass;
     }
 
     /**
@@ -436,33 +435,6 @@ public class DevicePackageImpl extends EPackageImpl implements DevicePackage {
      */
     public EClass getContainer() {
         return containerEClass;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public EClass getAbstractNetworkProperty() {
-        return abstractNetworkPropertyEClass;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public EClass getAbstractCommunicationConnection() {
-        return abstractCommunicationConnectionEClass;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public EClass getAbstractRuntimeEnviroment() {
-        return abstractRuntimeEnviromentEClass;
     }
 
     /**
@@ -490,24 +462,6 @@ public class DevicePackageImpl extends EPackageImpl implements DevicePackage {
      */
     public EReference getOperatingSystemResouce_Properties() {
         return (EReference)operatingSystemResouceEClass.getEStructuralFeatures().get(1);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public EClass getAbstractOperatingSystemProperty() {
-        return abstractOperatingSystemPropertyEClass;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public EClass getAbstractComputationDeviceResource() {
-        return abstractComputationDeviceResourceEClass;
     }
 
     /**
@@ -578,8 +532,80 @@ public class DevicePackageImpl extends EPackageImpl implements DevicePackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    public EClass getAbstractNetworkProperty() {
+        return abstractNetworkPropertyEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getAbstractCommunicationConnection() {
+        return abstractCommunicationConnectionEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getAbstractRuntimeEnviroment() {
+        return abstractRuntimeEnviromentEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getAbstractOperatingSystemProperty() {
+        return abstractOperatingSystemPropertyEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public EClass getAbstracProcessorProperty() {
         return abstracProcessorPropertyEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getAbstractComputationResource() {
+        return abstractComputationResourceEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getAbstractDeviceType() {
+        return abstractDeviceTypeEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getAbstractDeviceType_Name() {
+        return (EAttribute)abstractDeviceTypeEClass.getEStructuralFeatures().get(0);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EReference getAbstractDeviceType_CommunicationConnection() {
+        return (EReference)abstractDeviceTypeEClass.getEStructuralFeatures().get(1);
     }
 
     /**
@@ -614,9 +640,7 @@ public class DevicePackageImpl extends EPackageImpl implements DevicePackage {
         createEReference(deviceSetEClass, DEVICE_SET__DEVICE);
 
         deviceTypeEClass = createEClass(DEVICE_TYPE);
-        createEAttribute(deviceTypeEClass, DEVICE_TYPE__NAME);
         createEReference(deviceTypeEClass, DEVICE_TYPE__DEVICE_RESOURCE);
-        createEReference(deviceTypeEClass, DEVICE_TYPE__COMMUNICATION_CONNECTION);
 
         deviceResourceEClass = createEClass(DEVICE_RESOURCE);
 
@@ -627,6 +651,7 @@ public class DevicePackageImpl extends EPackageImpl implements DevicePackage {
         connectionPropertyEClass = createEClass(CONNECTION_PROPERTY);
 
         computationDeviceTypeEClass = createEClass(COMPUTATION_DEVICE_TYPE);
+        createEReference(computationDeviceTypeEClass, COMPUTATION_DEVICE_TYPE__COMPUTATION_RESOURCE);
 
         networkConnectionEClass = createEClass(NETWORK_CONNECTION);
         createEReference(networkConnectionEClass, NETWORK_CONNECTION__TYPE);
@@ -636,7 +661,7 @@ public class DevicePackageImpl extends EPackageImpl implements DevicePackage {
 
         addressNetworkPropertyEClass = createEClass(ADDRESS_NETWORK_PROPERTY);
 
-        macNetworkPropertyEClass = createEClass(MAC_NETWORK_PROPERTY);
+        macAddressNetworkPropertyEClass = createEClass(MAC_ADDRESS_NETWORK_PROPERTY);
 
         containerEClass = createEClass(CONTAINER);
 
@@ -664,9 +689,13 @@ public class DevicePackageImpl extends EPackageImpl implements DevicePackage {
 
         abstractOperatingSystemPropertyEClass = createEClass(ABSTRACT_OPERATING_SYSTEM_PROPERTY);
 
-        abstractComputationDeviceResourceEClass = createEClass(ABSTRACT_COMPUTATION_DEVICE_RESOURCE);
-
         abstracProcessorPropertyEClass = createEClass(ABSTRAC_PROCESSOR_PROPERTY);
+
+        abstractComputationResourceEClass = createEClass(ABSTRACT_COMPUTATION_RESOURCE);
+
+        abstractDeviceTypeEClass = createEClass(ABSTRACT_DEVICE_TYPE);
+        createEAttribute(abstractDeviceTypeEClass, ABSTRACT_DEVICE_TYPE__NAME);
+        createEReference(abstractDeviceTypeEClass, ABSTRACT_DEVICE_TYPE__COMMUNICATION_CONNECTION);
     }
 
     /**
@@ -701,38 +730,38 @@ public class DevicePackageImpl extends EPackageImpl implements DevicePackage {
 
         // Add supertypes to classes
         deviceSetEClass.getESuperTypes().add(theUtilPackage.getDescription());
+        deviceTypeEClass.getESuperTypes().add(this.getAbstractDeviceType());
         deviceResourceEClass.getESuperTypes().add(theUtilPackage.getResource());
-        deviceResourceEClass.getESuperTypes().add(this.getAbstractComputationDeviceResource());
         communicationConnectionEClass.getESuperTypes().add(this.getAbstractCommunicationConnection());
         connectionPropertyEClass.getESuperTypes().add(theUtilPackage.getPropertyAttribute());
         computationDeviceTypeEClass.getESuperTypes().add(this.getDeviceType());
         networkConnectionEClass.getESuperTypes().add(this.getAbstractCommunicationConnection());
+        interfaceNetworkPropertyEClass.getESuperTypes().add(theUtilPackage.getPropertyAttribute());
         interfaceNetworkPropertyEClass.getESuperTypes().add(this.getAbstractNetworkProperty());
+        addressNetworkPropertyEClass.getESuperTypes().add(theUtilPackage.getPropertyAttribute());
         addressNetworkPropertyEClass.getESuperTypes().add(this.getAbstractNetworkProperty());
-        macNetworkPropertyEClass.getESuperTypes().add(this.getAbstractNetworkProperty());
+        macAddressNetworkPropertyEClass.getESuperTypes().add(theUtilPackage.getPropertyAttribute());
+        macAddressNetworkPropertyEClass.getESuperTypes().add(this.getAbstractNetworkProperty());
         containerEClass.getESuperTypes().add(this.getAbstractRuntimeEnviroment());
-        operatingSystemResouceEClass.getESuperTypes().add(theUtilPackage.getAbstractResource());
-        operatingSystemResouceEClass.getESuperTypes().add(this.getAbstractComputationDeviceResource());
+        operatingSystemResouceEClass.getESuperTypes().add(this.getAbstractComputationResource());
+        nameOperatingSystemPropertyEClass.getESuperTypes().add(theUtilPackage.getPropertyAttribute());
         nameOperatingSystemPropertyEClass.getESuperTypes().add(this.getAbstractOperatingSystemProperty());
+        versionOperatingSystemPropertyEClass.getESuperTypes().add(theUtilPackage.getPropertyAttribute());
         versionOperatingSystemPropertyEClass.getESuperTypes().add(this.getAbstractOperatingSystemProperty());
-        processorResouceEClass.getESuperTypes().add(theUtilPackage.getAbstractResource());
-        processorResouceEClass.getESuperTypes().add(this.getAbstractComputationDeviceResource());
+        processorResouceEClass.getESuperTypes().add(this.getAbstractComputationResource());
         architectureProcessorPropertyEClass.getESuperTypes().add(theUtilPackage.getPropertyAttribute());
         architectureProcessorPropertyEClass.getESuperTypes().add(this.getAbstracProcessorProperty());
         coreProcessorPropertyEClass.getESuperTypes().add(theUtilPackage.getPropertyAttribute());
         coreProcessorPropertyEClass.getESuperTypes().add(this.getAbstracProcessorProperty());
-        abstractNetworkPropertyEClass.getESuperTypes().add(theUtilPackage.getPropertyAttribute());
         abstractCommunicationConnectionEClass.getESuperTypes().add(theUtilPackage.getAbstractResource());
-        abstractOperatingSystemPropertyEClass.getESuperTypes().add(theUtilPackage.getPropertyAttribute());
+        abstractComputationResourceEClass.getESuperTypes().add(theUtilPackage.getAbstractResource());
 
         // Initialize classes, features, and operations; add parameters
         initEClass(deviceSetEClass, DeviceSet.class, "DeviceSet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEReference(getDeviceSet_Device(), this.getDeviceType(), null, "device", null, 1, -1, DeviceSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(deviceTypeEClass, DeviceType.class, "DeviceType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEAttribute(getDeviceType_Name(), ecorePackage.getEString(), "name", null, 1, 1, DeviceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        initEReference(getDeviceType_DeviceResource(), this.getAbstractComputationDeviceResource(), null, "deviceResource", null, 0, -1, DeviceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        initEReference(getDeviceType_CommunicationConnection(), this.getAbstractCommunicationConnection(), null, "communicationConnection", null, 0, -1, DeviceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEReference(getDeviceType_DeviceResource(), this.getDeviceResource(), null, "deviceResource", null, 0, -1, DeviceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(deviceResourceEClass, DeviceResource.class, "DeviceResource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -743,6 +772,7 @@ public class DevicePackageImpl extends EPackageImpl implements DevicePackage {
         initEClass(connectionPropertyEClass, ConnectionProperty.class, "ConnectionProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
         initEClass(computationDeviceTypeEClass, ComputationDeviceType.class, "ComputationDeviceType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEReference(getComputationDeviceType_ComputationResource(), this.getAbstractComputationResource(), null, "computationResource", null, 1, -1, ComputationDeviceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(networkConnectionEClass, NetworkConnection.class, "NetworkConnection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEReference(getNetworkConnection_Type(), theUtilPackage.getNetworkCommunicationType(), null, "type", null, 1, 1, NetworkConnection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -752,7 +782,7 @@ public class DevicePackageImpl extends EPackageImpl implements DevicePackage {
 
         initEClass(addressNetworkPropertyEClass, AddressNetworkProperty.class, "AddressNetworkProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-        initEClass(macNetworkPropertyEClass, MacNetworkProperty.class, "MacNetworkProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEClass(macAddressNetworkPropertyEClass, MacAddressNetworkProperty.class, "MacAddressNetworkProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
         initEClass(containerEClass, device.Container.class, "Container", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -780,9 +810,13 @@ public class DevicePackageImpl extends EPackageImpl implements DevicePackage {
 
         initEClass(abstractOperatingSystemPropertyEClass, AbstractOperatingSystemProperty.class, "AbstractOperatingSystemProperty", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-        initEClass(abstractComputationDeviceResourceEClass, AbstractComputationDeviceResource.class, "AbstractComputationDeviceResource", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
         initEClass(abstracProcessorPropertyEClass, AbstracProcessorProperty.class, "AbstracProcessorProperty", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+        initEClass(abstractComputationResourceEClass, AbstractComputationResource.class, "AbstractComputationResource", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+        initEClass(abstractDeviceTypeEClass, AbstractDeviceType.class, "AbstractDeviceType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEAttribute(getAbstractDeviceType_Name(), ecorePackage.getEString(), "name", null, 1, 1, AbstractDeviceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEReference(getAbstractDeviceType_CommunicationConnection(), this.getAbstractCommunicationConnection(), null, "communicationConnection", null, 0, -1, AbstractDeviceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         // Create resource
         createResource(eNS_URI);
