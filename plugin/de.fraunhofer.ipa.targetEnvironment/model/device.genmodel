@@ -11,9 +11,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//DeviceSet/device"/>
     </genClasses>
     <genClasses ecoreClass="device.ecore#//DeviceType">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//DeviceType/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//DeviceType/deviceResource"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//DeviceType/communicationConnection"/>
     </genClasses>
     <genClasses ecoreClass="device.ecore#//DeviceResource"/>
     <genClasses ecoreClass="device.ecore#//CommunicationConnection">
@@ -21,14 +19,16 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//CommunicationConnection/properties"/>
     </genClasses>
     <genClasses ecoreClass="device.ecore#//ConnectionProperty"/>
-    <genClasses ecoreClass="device.ecore#//ComputationDeviceType"/>
+    <genClasses ecoreClass="device.ecore#//ComputationDeviceType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//ComputationDeviceType/computationResource"/>
+    </genClasses>
     <genClasses ecoreClass="device.ecore#//NetworkConnection">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference device.ecore#//NetworkConnection/type"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//NetworkConnection/properties"/>
     </genClasses>
     <genClasses ecoreClass="device.ecore#//InterfaceNetworkProperty"/>
     <genClasses ecoreClass="device.ecore#//AddressNetworkProperty"/>
-    <genClasses ecoreClass="device.ecore#//MacNetworkProperty"/>
+    <genClasses ecoreClass="device.ecore#//MacAddressNetworkProperty"/>
     <genClasses ecoreClass="device.ecore#//Container"/>
     <genClasses ecoreClass="device.ecore#//OperatingSystemResouce">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//OperatingSystemResouce/type"/>
@@ -46,7 +46,11 @@
     <genClasses image="false" ecoreClass="device.ecore#//AbstractCommunicationConnection"/>
     <genClasses image="false" ecoreClass="device.ecore#//AbstractRuntimeEnviroment"/>
     <genClasses image="false" ecoreClass="device.ecore#//AbstractOperatingSystemProperty"/>
-    <genClasses image="false" ecoreClass="device.ecore#//AbstractComputationDeviceResource"/>
     <genClasses image="false" ecoreClass="device.ecore#//AbstracProcessorProperty"/>
+    <genClasses image="false" ecoreClass="device.ecore#//AbstractComputationResource"/>
+    <genClasses ecoreClass="device.ecore#//AbstractDeviceType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//AbstractDeviceType/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//AbstractDeviceType/communicationConnection"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

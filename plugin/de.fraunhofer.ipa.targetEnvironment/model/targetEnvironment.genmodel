@@ -3,7 +3,7 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.fraunhofer.ipa.targetEnvironment/src" modelPluginID="de.fraunhofer.ipa.targetEnvironment"
     modelName="TargetEnvironment" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
-    usedGenPackages="device.genmodel#//device ../../org.eclipse.emf.ecore/model/XMLType.genmodel#//type ../../de.fraunhofer.ipa.deployment.util/model/util.genmodel#//util"
+    usedGenPackages="device.genmodel#//device ../../de.fraunhofer.ipa.deployment.util/model/util.genmodel#//util"
     operationReflection="true" importOrganizing="true">
   <foreignModel>targetEnvironment.ecore</foreignModel>
   <genPackages prefix="TargetEnvironment" disposableProviderFactory="true" ecorePackage="targetEnvironment.ecore#/">
@@ -37,11 +37,8 @@
     </genClasses>
     <genClasses ecoreClass="targetEnvironment.ecore#//ConfigDeviceProperty">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute targetEnvironment.ecore#//ConfigDeviceProperty/name"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference targetEnvironment.ecore#//ConfigDeviceProperty/from"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference targetEnvironment.ecore#//ConfigDeviceProperty/refProperty"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference targetEnvironment.ecore#//ConfigDeviceProperty/value"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute targetEnvironment.ecore#//ConfigDeviceProperty/fullname"/>
-      <genOperations ecoreOperation="targetEnvironment.ecore#//ConfigDeviceProperty/getParent"/>
-      <genOperations ecoreOperation="targetEnvironment.ecore#//ConfigDeviceProperty/getDeviceResouce"/>
     </genClasses>
     <genClasses image="false" ecoreClass="targetEnvironment.ecore#//AbstractDeviceInstance">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute targetEnvironment.ecore#//AbstractDeviceInstance/name"/>
