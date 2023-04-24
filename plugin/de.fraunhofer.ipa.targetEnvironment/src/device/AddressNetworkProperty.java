@@ -2,6 +2,7 @@
  */
 package device;
 
+import de.fraunhofer.ipa.deployment.util.PropertyAttribute;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,5 +14,5 @@ package device;
  * @model
  * @generated
  */
-public interface AddressNetworkProperty extends AbstractNetworkProperty {
+public interface AddressNetworkProperty extends PropertyAttribute, AbstractNetworkProperty {
 } // AddressNetworkProperty

@@ -3,7 +3,6 @@
 package device.impl;
 
 import de.fraunhofer.ipa.deployment.util.OpertingSystemResouceType;
-import de.fraunhofer.ipa.deployment.util.impl.AbstractResourceImpl;
 
 import device.AbstractOperatingSystemProperty;
 import device.DevicePackage;
@@ -38,7 +37,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class OperatingSystemResouceImpl extends AbstractResourceImpl implements OperatingSystemResouce {
+public class OperatingSystemResouceImpl extends AbstractComputationResourceImpl implements OperatingSystemResouce {
     /**
      * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
      * <!-- begin-user-doc -->

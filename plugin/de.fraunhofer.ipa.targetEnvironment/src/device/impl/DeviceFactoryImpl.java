@@ -65,7 +65,7 @@ public class DeviceFactoryImpl extends EFactoryImpl implements DeviceFactory {
             case DevicePackage.NETWORK_CONNECTION: return createNetworkConnection();
             case DevicePackage.INTERFACE_NETWORK_PROPERTY: return createInterfaceNetworkProperty();
             case DevicePackage.ADDRESS_NETWORK_PROPERTY: return createAddressNetworkProperty();
-            case DevicePackage.MAC_NETWORK_PROPERTY: return createMacNetworkProperty();
+            case DevicePackage.MAC_ADDRESS_NETWORK_PROPERTY: return createMacAddressNetworkProperty();
             case DevicePackage.CONTAINER: return createContainer();
             case DevicePackage.OPERATING_SYSTEM_RESOUCE: return createOperatingSystemResouce();
             case DevicePackage.NAME_OPERATING_SYSTEM_PROPERTY: return createNameOperatingSystemProperty();
@@ -73,6 +73,7 @@ public class DeviceFactoryImpl extends EFactoryImpl implements DeviceFactory {
             case DevicePackage.PROCESSOR_RESOUCE: return createProcessorResouce();
             case DevicePackage.ARCHITECTURE_PROCESSOR_PROPERTY: return createArchitectureProcessorProperty();
             case DevicePackage.CORE_PROCESSOR_PROPERTY: return createCoreProcessorProperty();
+            case DevicePackage.ABSTRACT_DEVICE_TYPE: return createAbstractDeviceType();
             default:
                 throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
         }
@@ -173,9 +174,9 @@ public class DeviceFactoryImpl extends EFactoryImpl implements DeviceFactory {
      * <!-- end-user-doc -->
      * @generated
      */
-    public MacNetworkProperty createMacNetworkProperty() {
-        MacNetworkPropertyImpl macNetworkProperty = new MacNetworkPropertyImpl();
-        return macNetworkProperty;
+    public MacAddressNetworkProperty createMacAddressNetworkProperty() {
+        MacAddressNetworkPropertyImpl macAddressNetworkProperty = new MacAddressNetworkPropertyImpl();
+        return macAddressNetworkProperty;
     }
 
     /**
@@ -246,6 +247,16 @@ public class DeviceFactoryImpl extends EFactoryImpl implements DeviceFactory {
     public CoreProcessorProperty createCoreProcessorProperty() {
         CoreProcessorPropertyImpl coreProcessorProperty = new CoreProcessorPropertyImpl();
         return coreProcessorProperty;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public AbstractDeviceType createAbstractDeviceType() {
+        AbstractDeviceTypeImpl abstractDeviceType = new AbstractDeviceTypeImpl();
+        return abstractDeviceType;
     }
 
     /**

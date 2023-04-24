@@ -8,13 +8,10 @@ import device.DevicePackage;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
-import org.eclipse.emf.ecore.xml.type.XMLTypePackage;
 
 import targetEnvironment.AbstractConfigProperty;
 import targetEnvironment.AbstractDeviceInstance;
@@ -154,7 +151,6 @@ public class TargetEnvironmentPackageImpl extends EPackageImpl implements Target
 
         // Initialize simple dependencies
         DevicePackage.eINSTANCE.eClass();
-        XMLTypePackage.eINSTANCE.eClass();
         UtilPackage.eINSTANCE.eClass();
 
         // Create package meta-data objects
@@ -383,7 +379,7 @@ public class TargetEnvironmentPackageImpl extends EPackageImpl implements Target
      * <!-- end-user-doc -->
      * @generated
      */
-    public EReference getConfigDeviceProperty_From() {
+    public EReference getConfigDeviceProperty_RefProperty() {
         return (EReference)configDevicePropertyEClass.getEStructuralFeatures().get(1);
     }
 
@@ -394,33 +390,6 @@ public class TargetEnvironmentPackageImpl extends EPackageImpl implements Target
      */
     public EReference getConfigDeviceProperty_Value() {
         return (EReference)configDevicePropertyEClass.getEStructuralFeatures().get(2);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public EAttribute getConfigDeviceProperty_Fullname() {
-        return (EAttribute)configDevicePropertyEClass.getEStructuralFeatures().get(3);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public EOperation getConfigDeviceProperty__GetParent() {
-        return configDevicePropertyEClass.getEOperations().get(0);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public EOperation getConfigDeviceProperty__GetDeviceResouce() {
-        return configDevicePropertyEClass.getEOperations().get(1);
     }
 
     /**
@@ -517,11 +486,8 @@ public class TargetEnvironmentPackageImpl extends EPackageImpl implements Target
 
         configDevicePropertyEClass = createEClass(CONFIG_DEVICE_PROPERTY);
         createEAttribute(configDevicePropertyEClass, CONFIG_DEVICE_PROPERTY__NAME);
-        createEReference(configDevicePropertyEClass, CONFIG_DEVICE_PROPERTY__FROM);
+        createEReference(configDevicePropertyEClass, CONFIG_DEVICE_PROPERTY__REF_PROPERTY);
         createEReference(configDevicePropertyEClass, CONFIG_DEVICE_PROPERTY__VALUE);
-        createEAttribute(configDevicePropertyEClass, CONFIG_DEVICE_PROPERTY__FULLNAME);
-        createEOperation(configDevicePropertyEClass, CONFIG_DEVICE_PROPERTY___GET_PARENT);
-        createEOperation(configDevicePropertyEClass, CONFIG_DEVICE_PROPERTY___GET_DEVICE_RESOUCE);
 
         abstractDeviceInstanceEClass = createEClass(ABSTRACT_DEVICE_INSTANCE);
         createEAttribute(abstractDeviceInstanceEClass, ABSTRACT_DEVICE_INSTANCE__NAME);
@@ -599,13 +565,8 @@ public class TargetEnvironmentPackageImpl extends EPackageImpl implements Target
 
         initEClass(configDevicePropertyEClass, ConfigDeviceProperty.class, "ConfigDeviceProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEAttribute(getConfigDeviceProperty_Name(), ecorePackage.getEString(), "name", null, 1, 1, ConfigDeviceProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        initEReference(getConfigDeviceProperty_From(), theUtilPackage.getAbstractProperty(), null, "from", null, 1, 1, ConfigDeviceProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+        initEReference(getConfigDeviceProperty_RefProperty(), theUtilPackage.getAbstractProperty(), null, "refProperty", null, 1, 1, ConfigDeviceProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
         initEReference(getConfigDeviceProperty_Value(), theUtilPackage.getPropertyValue(), null, "value", null, 1, 1, ConfigDeviceProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        initEAttribute(getConfigDeviceProperty_Fullname(), ecorePackage.getEString(), "fullname", null, 1, 1, ConfigDeviceProperty.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-        initEOperation(getConfigDeviceProperty__GetParent(), this.getAbstractDeviceInstance(), "getParent", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-        initEOperation(getConfigDeviceProperty__GetDeviceResouce(), theDevicePackage.getDeviceResource(), "getDeviceResouce", 0, 1, IS_UNIQUE, IS_ORDERED);
 
         initEClass(abstractDeviceInstanceEClass, AbstractDeviceInstance.class, "AbstractDeviceInstance", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEAttribute(getAbstractDeviceInstance_Name(), ecorePackage.getEString(), "name", null, 1, 1, AbstractDeviceInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

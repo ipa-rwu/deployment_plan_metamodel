@@ -2,6 +2,8 @@
  */
 package device.impl;
 
+import de.fraunhofer.ipa.deployment.util.impl.PropertyAttributeImpl;
+
 import device.AddressNetworkProperty;
 import device.DevicePackage;
 
@@ -14,7 +16,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class AddressNetworkPropertyImpl extends AbstractNetworkPropertyImpl implements AddressNetworkProperty {
+public class AddressNetworkPropertyImpl extends PropertyAttributeImpl implements AddressNetworkProperty {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->

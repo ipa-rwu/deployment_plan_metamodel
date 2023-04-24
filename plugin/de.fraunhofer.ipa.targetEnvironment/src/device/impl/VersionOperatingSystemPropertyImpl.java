@@ -2,6 +2,8 @@
  */
 package device.impl;
 
+import de.fraunhofer.ipa.deployment.util.impl.PropertyAttributeImpl;
+
 import device.DevicePackage;
 import device.VersionOperatingSystemProperty;
 
@@ -14,7 +16,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class VersionOperatingSystemPropertyImpl extends AbstractOperatingSystemPropertyImpl implements VersionOperatingSystemProperty {
+public class VersionOperatingSystemPropertyImpl extends PropertyAttributeImpl implements VersionOperatingSystemProperty {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->

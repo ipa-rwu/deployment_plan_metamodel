@@ -6,6 +6,7 @@ import device.AbstracProcessorProperty;
 import device.DevicePackage;
 
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**

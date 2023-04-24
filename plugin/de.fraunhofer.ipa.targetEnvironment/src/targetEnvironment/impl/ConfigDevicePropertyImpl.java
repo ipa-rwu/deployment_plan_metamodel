@@ -5,21 +5,14 @@ package targetEnvironment.impl;
 import de.fraunhofer.ipa.deployment.util.AbstractProperty;
 import de.fraunhofer.ipa.deployment.util.PropertyValue;
 
-import device.DeviceResource;
-
-import java.lang.reflect.InvocationTargetException;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import targetEnvironment.AbstractDeviceInstance;
 import targetEnvironment.ConfigDeviceProperty;
 import targetEnvironment.TargetEnvironmentPackage;
 
@@ -32,9 +25,8 @@ import targetEnvironment.TargetEnvironmentPackage;
  * </p>
  * <ul>
  *   <li>{@link targetEnvironment.impl.ConfigDevicePropertyImpl#getName <em>Name</em>}</li>
- *   <li>{@link targetEnvironment.impl.ConfigDevicePropertyImpl#getFrom <em>From</em>}</li>
+ *   <li>{@link targetEnvironment.impl.ConfigDevicePropertyImpl#getRefProperty <em>Ref Property</em>}</li>
  *   <li>{@link targetEnvironment.impl.ConfigDevicePropertyImpl#getValue <em>Value</em>}</li>
- *   <li>{@link targetEnvironment.impl.ConfigDevicePropertyImpl#getFullname <em>Fullname</em>}</li>
  * </ul>
  *
  * @generated
@@ -61,14 +53,14 @@ public class ConfigDevicePropertyImpl extends AbstractConfigPropertyImpl impleme
     protected String name = NAME_EDEFAULT;
 
     /**
-     * The cached value of the '{@link #getFrom() <em>From</em>}' reference.
+     * The cached value of the '{@link #getRefProperty() <em>Ref Property</em>}' reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getFrom()
+     * @see #getRefProperty()
      * @generated
      * @ordered
      */
-    protected AbstractProperty from;
+    protected AbstractProperty refProperty;
 
     /**
      * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
@@ -79,35 +71,6 @@ public class ConfigDevicePropertyImpl extends AbstractConfigPropertyImpl impleme
      * @ordered
      */
     protected PropertyValue value;
-
-    /**
-     * The default value of the '{@link #getFullname() <em>Fullname</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getFullname()
-     * @generated
-     * @ordered
-     */
-    protected static final String FULLNAME_EDEFAULT = null;
-
-    /**
-     * The cached value of the '{@link #getFullname() <em>Fullname</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getFullname()
-     * @generated
-     * @ordered
-     */
-    protected String fullname = FULLNAME_EDEFAULT;
-
-    /**
-     * This is true if the Fullname attribute has been set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    protected boolean fullnameESet;
 
     /**
      * <!-- begin-user-doc -->
@@ -154,16 +117,16 @@ public class ConfigDevicePropertyImpl extends AbstractConfigPropertyImpl impleme
      * <!-- end-user-doc -->
      * @generated
      */
-    public AbstractProperty getFrom() {
-        if (from != null && from.eIsProxy()) {
-            InternalEObject oldFrom = (InternalEObject)from;
-            from = (AbstractProperty)eResolveProxy(oldFrom);
-            if (from != oldFrom) {
+    public AbstractProperty getRefProperty() {
+        if (refProperty != null && refProperty.eIsProxy()) {
+            InternalEObject oldRefProperty = (InternalEObject)refProperty;
+            refProperty = (AbstractProperty)eResolveProxy(oldRefProperty);
+            if (refProperty != oldRefProperty) {
                 if (eNotificationRequired())
-                    eNotify(new ENotificationImpl(this, Notification.RESOLVE, TargetEnvironmentPackage.CONFIG_DEVICE_PROPERTY__FROM, oldFrom, from));
+                    eNotify(new ENotificationImpl(this, Notification.RESOLVE, TargetEnvironmentPackage.CONFIG_DEVICE_PROPERTY__REF_PROPERTY, oldRefProperty, refProperty));
             }
         }
-        return from;
+        return refProperty;
     }
 
     /**
@@ -171,8 +134,8 @@ public class ConfigDevicePropertyImpl extends AbstractConfigPropertyImpl impleme
      * <!-- end-user-doc -->
      * @generated
      */
-    public AbstractProperty basicGetFrom() {
-        return from;
+    public AbstractProperty basicGetRefProperty() {
+        return refProperty;
     }
 
     /**
@@ -180,11 +143,11 @@ public class ConfigDevicePropertyImpl extends AbstractConfigPropertyImpl impleme
      * <!-- end-user-doc -->
      * @generated
      */
-    public void setFrom(AbstractProperty newFrom) {
-        AbstractProperty oldFrom = from;
-        from = newFrom;
+    public void setRefProperty(AbstractProperty newRefProperty) {
+        AbstractProperty oldRefProperty = refProperty;
+        refProperty = newRefProperty;
         if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, TargetEnvironmentPackage.CONFIG_DEVICE_PROPERTY__FROM, oldFrom, from));
+            eNotify(new ENotificationImpl(this, Notification.SET, TargetEnvironmentPackage.CONFIG_DEVICE_PROPERTY__REF_PROPERTY, oldRefProperty, refProperty));
     }
 
     /**
@@ -235,45 +198,6 @@ public class ConfigDevicePropertyImpl extends AbstractConfigPropertyImpl impleme
      * <!-- end-user-doc -->
      * @generated
      */
-    public String getFullname() {
-        return fullname;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated not
-     */
-    public boolean isSetFullname() {
-        return true;
-    }
-
-    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated NOT
-    */
-
-    public AbstractDeviceInstance getParent() {
-    AbstractDeviceInstance parent = (AbstractDeviceInstance) this.eContainer();
-    return parent;
-    }
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public DeviceResource getDeviceResouce() {
-        // TODO: implement this method
-        // Ensure that you remove @generated or mark it @generated NOT
-        throw new UnsupportedOperationException();
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
     @Override
     public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
         switch (featureID) {
@@ -293,13 +217,11 @@ public class ConfigDevicePropertyImpl extends AbstractConfigPropertyImpl impleme
         switch (featureID) {
             case TargetEnvironmentPackage.CONFIG_DEVICE_PROPERTY__NAME:
                 return getName();
-            case TargetEnvironmentPackage.CONFIG_DEVICE_PROPERTY__FROM:
-                if (resolve) return getFrom();
-                return basicGetFrom();
+            case TargetEnvironmentPackage.CONFIG_DEVICE_PROPERTY__REF_PROPERTY:
+                if (resolve) return getRefProperty();
+                return basicGetRefProperty();
             case TargetEnvironmentPackage.CONFIG_DEVICE_PROPERTY__VALUE:
                 return getValue();
-            case TargetEnvironmentPackage.CONFIG_DEVICE_PROPERTY__FULLNAME:
-                return getFullname();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -315,8 +237,8 @@ public class ConfigDevicePropertyImpl extends AbstractConfigPropertyImpl impleme
             case TargetEnvironmentPackage.CONFIG_DEVICE_PROPERTY__NAME:
                 setName((String)newValue);
                 return;
-            case TargetEnvironmentPackage.CONFIG_DEVICE_PROPERTY__FROM:
-                setFrom((AbstractProperty)newValue);
+            case TargetEnvironmentPackage.CONFIG_DEVICE_PROPERTY__REF_PROPERTY:
+                setRefProperty((AbstractProperty)newValue);
                 return;
             case TargetEnvironmentPackage.CONFIG_DEVICE_PROPERTY__VALUE:
                 setValue((PropertyValue)newValue);
@@ -336,8 +258,8 @@ public class ConfigDevicePropertyImpl extends AbstractConfigPropertyImpl impleme
             case TargetEnvironmentPackage.CONFIG_DEVICE_PROPERTY__NAME:
                 setName(NAME_EDEFAULT);
                 return;
-            case TargetEnvironmentPackage.CONFIG_DEVICE_PROPERTY__FROM:
-                setFrom((AbstractProperty)null);
+            case TargetEnvironmentPackage.CONFIG_DEVICE_PROPERTY__REF_PROPERTY:
+                setRefProperty((AbstractProperty)null);
                 return;
             case TargetEnvironmentPackage.CONFIG_DEVICE_PROPERTY__VALUE:
                 setValue((PropertyValue)null);
@@ -356,30 +278,12 @@ public class ConfigDevicePropertyImpl extends AbstractConfigPropertyImpl impleme
         switch (featureID) {
             case TargetEnvironmentPackage.CONFIG_DEVICE_PROPERTY__NAME:
                 return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-            case TargetEnvironmentPackage.CONFIG_DEVICE_PROPERTY__FROM:
-                return from != null;
+            case TargetEnvironmentPackage.CONFIG_DEVICE_PROPERTY__REF_PROPERTY:
+                return refProperty != null;
             case TargetEnvironmentPackage.CONFIG_DEVICE_PROPERTY__VALUE:
                 return value != null;
-            case TargetEnvironmentPackage.CONFIG_DEVICE_PROPERTY__FULLNAME:
-                return isSetFullname();
         }
         return super.eIsSet(featureID);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-        switch (operationID) {
-            case TargetEnvironmentPackage.CONFIG_DEVICE_PROPERTY___GET_PARENT:
-                return getParent();
-            case TargetEnvironmentPackage.CONFIG_DEVICE_PROPERTY___GET_DEVICE_RESOUCE:
-                return getDeviceResouce();
-        }
-        return super.eInvoke(operationID, arguments);
     }
 
     /**
@@ -394,8 +298,6 @@ public class ConfigDevicePropertyImpl extends AbstractConfigPropertyImpl impleme
         StringBuilder result = new StringBuilder(super.toString());
         result.append(" (name: ");
         result.append(name);
-        result.append(", fullname: ");
-        if (fullnameESet) result.append(fullname); else result.append("<unset>");
         result.append(')');
         return result.toString();
     }

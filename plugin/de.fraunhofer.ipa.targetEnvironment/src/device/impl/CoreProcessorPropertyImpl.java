@@ -3,6 +3,7 @@
 package device.impl;
 
 import de.fraunhofer.ipa.deployment.util.impl.PropertyAttributeImpl;
+
 import device.CoreProcessorProperty;
 import device.DevicePackage;
 

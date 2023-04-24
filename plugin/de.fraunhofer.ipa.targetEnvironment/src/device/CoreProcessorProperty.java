@@ -4,7 +4,6 @@ package device;
 
 import de.fraunhofer.ipa.deployment.util.PropertyAttribute;
 
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Core Processor Property</b></em>'.
