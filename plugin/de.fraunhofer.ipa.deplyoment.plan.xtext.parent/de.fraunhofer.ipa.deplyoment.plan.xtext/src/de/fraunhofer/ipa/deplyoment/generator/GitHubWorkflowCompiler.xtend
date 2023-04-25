@@ -1,7 +1,5 @@
 package de.fraunhofer.ipa.deplyoment.generator
 
-import deploymentPlan.AbstractComputationAssignment
-import deploymentPlan.DeploymentPlan
 import deploymentPlan.AbstractDeploymentPlan
 import deploymentPlan.RosMiddleware
 

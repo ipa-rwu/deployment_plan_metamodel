@@ -1,28 +1,25 @@
 package de.fraunhofer.ipa.deplyoment.generator
 
-import deploymentPlan.AbstractDeploymentPlan
-import java.util.Map
-import java.util.List
-import targetEnvironment.ComputationDeviceInstance
-import org.eclipse.emf.mwe.internal.core.ast.AbstractASTBase
-import deploymentPlan.AbstractComputationAssignment
-import java.util.HashMap
-import java.util.ArrayList
-import deploymentPlan.AbstractConfigExecutionParameter
-import deploymentPlan.ConfigExecutionParameter
-import deployPlanWithRosModel.ConfigRosParameter
 import de.fraunhofer.ipa.deployment.util.PropertyValue
-import org.eclipse.emf.ecore.EObject
-import de.fraunhofer.ipa.deployment.util.AbstractProperty
-import targetEnvironment.AbstractConfigProperty
-import targetEnvironment.ConfigConnectionProperty
-import targetEnvironment.ConfigDeviceProperty
-import system.RosParameter
-import implementationDescription.ExecutionProperty
 import de.fraunhofer.ipa.deployment.util.PropertyValueDouble
 import de.fraunhofer.ipa.deployment.util.PropertyValueInt
 import de.fraunhofer.ipa.deployment.util.PropertyValueString
 import deploymentPlan.AbstarctConfigSoftwareComponent
+import deploymentPlan.AbstractComputationAssignment
+import deploymentPlan.AbstractConfigExecutionParameter
+import deploymentPlan.ConfigExecutionParameter
+import deployPlanWithRosModel.ConfigRosParameter
+import implementationDescription.ExecutionParameter
+import java.util.ArrayList
+import java.util.HashMap
+import java.util.List
+import java.util.Map
+import org.eclipse.emf.ecore.EObject
+import system.RosParameter
+import targetEnvironment.AbstractConfigProperty
+import targetEnvironment.ComputationDeviceInstance
+import targetEnvironment.ConfigConnectionProperty
+import targetEnvironment.ConfigDeviceProperty
 
 class DockerComposeCompiler {
 
@@ -151,8 +148,8 @@ def covertCollectExecutionEnvtoString(Map<EObject, PropertyValue> res){
     if(entry.key instanceof RosParameter){
             converted.add(new Pair((entry.key as RosParameter).name, getValueFromPropertyValue(entry.value)))
         }
-    else if(entry.getKey() instanceof ExecutionProperty){
-            converted.add(new Pair((entry.key as ExecutionProperty).name, getValueFromPropertyValue(entry.value)))
+    else if(entry.getKey() instanceof ExecutionParameter){
+            converted.add(new Pair((entry.key as ExecutionParameter).name, getValueFromPropertyValue(entry.value)))
         }
     }
     return converted

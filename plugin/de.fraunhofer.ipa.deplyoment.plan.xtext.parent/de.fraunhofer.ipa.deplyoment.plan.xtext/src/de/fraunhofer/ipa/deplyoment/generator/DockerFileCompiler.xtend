@@ -72,7 +72,7 @@ COPY --from=install /opt/ros/$ROS_DISTRO /opt/ros/$ROS_DISTRO
 
  def getProcessorArchitecture(AbstractComputationAssignment cas){
     for(cp : (cas.executedBy as ComputationDeviceInstance).configDeviceProperty){
-        if(cp.from instanceof ArchitectureProcessorProperty){
+        if(cp.refProperty instanceof ArchitectureProcessorProperty){
             if(cp.value instanceof ProcessorArchitectureValue){
             var architecture = (cp.value as ProcessorArchitectureValue).value
             System.out.println(String.format("getProcessorArchitecture:%s", architecture.getName))
