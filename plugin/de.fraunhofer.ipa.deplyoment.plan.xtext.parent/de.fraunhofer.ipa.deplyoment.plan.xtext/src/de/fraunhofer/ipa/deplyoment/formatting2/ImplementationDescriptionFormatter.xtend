@@ -16,17 +16,18 @@ class ImplementationDescriptionFormatter extends UtilFormatter {
 
     def dispatch void format(ImplementationDescription implementationDescription, extension IFormattableDocument document) {
         // TODO: format HiddenRegions around keywords, attributes, cross references, etc.
-        for (softwareComponent : implementationDescription.includeSoftwareComponent) {
+        for (softwareComponent : implementationDescription.includeSoftwareComponents) {
             softwareComponent.format
         }
     }
 
     def dispatch void format(SoftwareComponent softwareComponent, extension IFormattableDocument document) {
         // TODO: format HiddenRegions around keywords, attributes, cross references, etc.
+        softwareComponent.repository.format
         for (executionRequirement : softwareComponent.executionRequirement) {
             executionRequirement.format
         }
     }
 
-    // TODO: implement for DeviceRequirement, SoftwareConfigurationRequirement, HWSWParemeter, SoftwareExecutionParemeter
+    // TODO: implement for Repository, DeviceRequirement, SoftwareConfigurationRequirement, HWSWParemeter, SoftwareExecutionParemeter
 }
