@@ -4,7 +4,9 @@ package deploymentPlan;
 
 import de.fraunhofer.ipa.deployment.util.OpertingSystemName;
 import de.fraunhofer.ipa.deployment.util.RunTimeType;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 import targetEnvironment.ComputationDeviceInstance;

@@ -13,5 +13,5 @@ package implementationDescription;
  * @model
  * @generated
  */
-public interface SoftwareExecutionParemeter extends ExecutionProperty {
+public interface SoftwareExecutionParemeter extends ExecutionParameter {
 } // SoftwareExecutionParemeter

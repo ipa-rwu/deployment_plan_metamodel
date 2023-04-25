@@ -76,13 +76,13 @@ public interface ImplementationDescriptionFactory extends EFactory {
     SoftwareExecutionParemeter createSoftwareExecutionParemeter();
 
     /**
-     * Returns a new object of class '<em>Execution Property</em>'.
+     * Returns a new object of class '<em>Execution Parameter</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return a new object of class '<em>Execution Property</em>'.
+     * @return a new object of class '<em>Execution Parameter</em>'.
      * @generated
      */
-    ExecutionProperty createExecutionProperty();
+    ExecutionParameter createExecutionParameter();
 
     /**
      * Returns a new object of class '<em>Repository</em>'.

@@ -62,8 +62,6 @@ public class DeploymentPlanFactoryImpl extends EFactoryImpl implements Deploymen
             case DeploymentPlanPackage.REALIZATION: return createRealization();
             case DeploymentPlanPackage.IMPLEMENTATION_ASSIGNMENT: return createImplementationAssignment();
             case DeploymentPlanPackage.CONFIG_EXECUTION_PARAMETER: return createConfigExecutionParameter();
-            case DeploymentPlanPackage.HUMBLE_ROS_DISTRO: return createHumbleROSDistro();
-            case DeploymentPlanPackage.NOETIC_ROS_DISTRO: return createNoeticROSDistro();
             case DeploymentPlanPackage.CONFIG_SOFTWARE_COMPONENT: return createConfigSoftwareComponent();
             case DeploymentPlanPackage.ABSTARCT_CONFIG_SOFTWARE_COMPONENT: return createAbstarctConfigSoftwareComponent();
             case DeploymentPlanPackage.ROS_MIDDLEWARE: return createRosMiddleware();
@@ -87,7 +85,7 @@ public class DeploymentPlanFactoryImpl extends EFactoryImpl implements Deploymen
         }
     }
 
-                /**
+    /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -102,7 +100,7 @@ public class DeploymentPlanFactoryImpl extends EFactoryImpl implements Deploymen
         }
     }
 
-                /**
+    /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -157,26 +155,6 @@ public class DeploymentPlanFactoryImpl extends EFactoryImpl implements Deploymen
      * <!-- end-user-doc -->
      * @generated
      */
-    public HumbleROSDistro createHumbleROSDistro() {
-        HumbleROSDistroImpl humbleROSDistro = new HumbleROSDistroImpl();
-        return humbleROSDistro;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public NoeticROSDistro createNoeticROSDistro() {
-        NoeticROSDistroImpl noeticROSDistro = new NoeticROSDistroImpl();
-        return noeticROSDistro;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
     public ConfigSoftwareComponent createConfigSoftwareComponent() {
         ConfigSoftwareComponentImpl configSoftwareComponent = new ConfigSoftwareComponentImpl();
         return configSoftwareComponent;
@@ -202,7 +180,7 @@ public class DeploymentPlanFactoryImpl extends EFactoryImpl implements Deploymen
         return rosMiddleware;
     }
 
-                /**
+    /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -213,7 +191,7 @@ public class DeploymentPlanFactoryImpl extends EFactoryImpl implements Deploymen
         return result;
     }
 
-                /**
+    /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -222,7 +200,7 @@ public class DeploymentPlanFactoryImpl extends EFactoryImpl implements Deploymen
         return instanceValue == null ? null : instanceValue.toString();
     }
 
-                /**
+    /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated

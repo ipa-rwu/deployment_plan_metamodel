@@ -5,7 +5,7 @@ package implementationDescription.impl;
 import de.fraunhofer.ipa.deployment.util.UtilPackage;
 
 import implementationDescription.DeviceRequirement;
-import implementationDescription.ExecutionProperty;
+import implementationDescription.ExecutionParameter;
 import implementationDescription.ExecutionRequirement;
 import implementationDescription.GitRepositoryType;
 import implementationDescription.HWSWParemeter;
@@ -32,13 +32,6 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
  * @generated
  */
 public class ImplementationDescriptionPackageImpl extends EPackageImpl implements ImplementationDescriptionPackage {
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    private EClass executionRequirementEClass = null;
-
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -86,7 +79,14 @@ public class ImplementationDescriptionPackageImpl extends EPackageImpl implement
      * <!-- end-user-doc -->
      * @generated
      */
-    private EClass executionPropertyEClass = null;
+    private EClass executionParameterEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass executionRequirementEClass = null;
 
     /**
      * <!-- begin-user-doc -->
@@ -177,15 +177,6 @@ public class ImplementationDescriptionPackageImpl extends EPackageImpl implement
      * <!-- end-user-doc -->
      * @generated
      */
-    public EClass getExecutionRequirement() {
-        return executionRequirementEClass;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
     public EClass getImplementationDescription() {
         return implementationDescriptionEClass;
     }
@@ -204,17 +195,8 @@ public class ImplementationDescriptionPackageImpl extends EPackageImpl implement
      * <!-- end-user-doc -->
      * @generated
      */
-    public EAttribute getImplementationDescription_SoftwareDependency() {
-        return (EAttribute)implementationDescriptionEClass.getEStructuralFeatures().get(1);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public EReference getImplementationDescription_IncludeSoftwareComponent() {
-        return (EReference)implementationDescriptionEClass.getEStructuralFeatures().get(2);
+    public EReference getImplementationDescription_IncludeSoftwareComponents() {
+        return (EReference)implementationDescriptionEClass.getEStructuralFeatures().get(1);
     }
 
     /**
@@ -321,8 +303,17 @@ public class ImplementationDescriptionPackageImpl extends EPackageImpl implement
      * <!-- end-user-doc -->
      * @generated
      */
-    public EClass getExecutionProperty() {
-        return executionPropertyEClass;
+    public EClass getExecutionParameter() {
+        return executionParameterEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getExecutionRequirement() {
+        return executionRequirementEClass;
     }
 
     /**
@@ -407,12 +398,9 @@ public class ImplementationDescriptionPackageImpl extends EPackageImpl implement
         isCreated = true;
 
         // Create classes and their features
-        executionRequirementEClass = createEClass(EXECUTION_REQUIREMENT);
-
         implementationDescriptionEClass = createEClass(IMPLEMENTATION_DESCRIPTION);
         createEAttribute(implementationDescriptionEClass, IMPLEMENTATION_DESCRIPTION__NAME);
-        createEAttribute(implementationDescriptionEClass, IMPLEMENTATION_DESCRIPTION__SOFTWARE_DEPENDENCY);
-        createEReference(implementationDescriptionEClass, IMPLEMENTATION_DESCRIPTION__INCLUDE_SOFTWARE_COMPONENT);
+        createEReference(implementationDescriptionEClass, IMPLEMENTATION_DESCRIPTION__INCLUDE_SOFTWARE_COMPONENTS);
 
         softwareComponentEClass = createEClass(SOFTWARE_COMPONENT);
         createEAttribute(softwareComponentEClass, SOFTWARE_COMPONENT__NAME);
@@ -430,7 +418,9 @@ public class ImplementationDescriptionPackageImpl extends EPackageImpl implement
 
         softwareExecutionParemeterEClass = createEClass(SOFTWARE_EXECUTION_PAREMETER);
 
-        executionPropertyEClass = createEClass(EXECUTION_PROPERTY);
+        executionParameterEClass = createEClass(EXECUTION_PARAMETER);
+
+        executionRequirementEClass = createEClass(EXECUTION_REQUIREMENT);
 
         repositoryEClass = createEClass(REPOSITORY);
         createEAttribute(repositoryEClass, REPOSITORY__URL);
@@ -478,18 +468,15 @@ public class ImplementationDescriptionPackageImpl extends EPackageImpl implement
         softwareComponentEClass.getESuperTypes().add(theUtilPackage.getAbstractComputationAssignmentTarget());
         deviceRequirementEClass.getESuperTypes().add(this.getExecutionRequirement());
         softwareConfigurationRequirementEClass.getESuperTypes().add(this.getExecutionRequirement());
-        hwswParemeterEClass.getESuperTypes().add(this.getExecutionProperty());
-        softwareExecutionParemeterEClass.getESuperTypes().add(this.getExecutionProperty());
-        executionPropertyEClass.getESuperTypes().add(theUtilPackage.getProperty());
+        hwswParemeterEClass.getESuperTypes().add(this.getExecutionParameter());
+        softwareExecutionParemeterEClass.getESuperTypes().add(this.getExecutionParameter());
+        executionParameterEClass.getESuperTypes().add(theUtilPackage.getProperty());
         gitRepositoryTypeEClass.getESuperTypes().add(this.getRepositoryType());
 
         // Initialize classes, features, and operations; add parameters
-        initEClass(executionRequirementEClass, ExecutionRequirement.class, "ExecutionRequirement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
         initEClass(implementationDescriptionEClass, ImplementationDescription.class, "ImplementationDescription", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEAttribute(getImplementationDescription_Name(), ecorePackage.getEString(), "name", null, 1, 1, ImplementationDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        initEAttribute(getImplementationDescription_SoftwareDependency(), ecorePackage.getEString(), "softwareDependency", null, 0, -1, ImplementationDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        initEReference(getImplementationDescription_IncludeSoftwareComponent(), this.getSoftwareComponent(), null, "includeSoftwareComponent", null, 1, -1, ImplementationDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEReference(getImplementationDescription_IncludeSoftwareComponents(), this.getSoftwareComponent(), null, "includeSoftwareComponents", null, 1, -1, ImplementationDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(softwareComponentEClass, SoftwareComponent.class, "SoftwareComponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEAttribute(getSoftwareComponent_Name(), ecorePackage.getEString(), "name", null, 1, 1, SoftwareComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -507,7 +494,9 @@ public class ImplementationDescriptionPackageImpl extends EPackageImpl implement
 
         initEClass(softwareExecutionParemeterEClass, SoftwareExecutionParemeter.class, "SoftwareExecutionParemeter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-        initEClass(executionPropertyEClass, ExecutionProperty.class, "ExecutionProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEClass(executionParameterEClass, ExecutionParameter.class, "ExecutionParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+        initEClass(executionRequirementEClass, ExecutionRequirement.class, "ExecutionRequirement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
         initEClass(repositoryEClass, Repository.class, "Repository", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEAttribute(getRepository_Url(), ecorePackage.getEString(), "url", null, 1, 1, Repository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

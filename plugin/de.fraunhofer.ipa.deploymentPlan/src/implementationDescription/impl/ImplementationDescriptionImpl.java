@@ -20,7 +20,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -33,8 +32,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link implementationDescription.impl.ImplementationDescriptionImpl#getName <em>Name</em>}</li>
- *   <li>{@link implementationDescription.impl.ImplementationDescriptionImpl#getSoftwareDependency <em>Software Dependency</em>}</li>
- *   <li>{@link implementationDescription.impl.ImplementationDescriptionImpl#getIncludeSoftwareComponent <em>Include Software Component</em>}</li>
+ *   <li>{@link implementationDescription.impl.ImplementationDescriptionImpl#getIncludeSoftwareComponents <em>Include Software Components</em>}</li>
  * </ul>
  *
  * @generated
@@ -61,24 +59,14 @@ public class ImplementationDescriptionImpl extends AbstractImplementationImpl im
     protected String name = NAME_EDEFAULT;
 
     /**
-     * The cached value of the '{@link #getSoftwareDependency() <em>Software Dependency</em>}' attribute list.
+     * The cached value of the '{@link #getIncludeSoftwareComponents() <em>Include Software Components</em>}' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getSoftwareDependency()
+     * @see #getIncludeSoftwareComponents()
      * @generated
      * @ordered
      */
-    protected EList<String> softwareDependency;
-
-    /**
-     * The cached value of the '{@link #getIncludeSoftwareComponent() <em>Include Software Component</em>}' containment reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getIncludeSoftwareComponent()
-     * @generated
-     * @ordered
-     */
-    protected EList<SoftwareComponent> includeSoftwareComponent;
+    protected EList<SoftwareComponent> includeSoftwareComponents;
 
     /**
      * <!-- begin-user-doc -->
@@ -125,23 +113,11 @@ public class ImplementationDescriptionImpl extends AbstractImplementationImpl im
      * <!-- end-user-doc -->
      * @generated
      */
-    public EList<String> getSoftwareDependency() {
-        if (softwareDependency == null) {
-            softwareDependency = new EDataTypeUniqueEList<String>(String.class, this, ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION__SOFTWARE_DEPENDENCY);
+    public EList<SoftwareComponent> getIncludeSoftwareComponents() {
+        if (includeSoftwareComponents == null) {
+            includeSoftwareComponents = new EObjectContainmentEList<SoftwareComponent>(SoftwareComponent.class, this, ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION__INCLUDE_SOFTWARE_COMPONENTS);
         }
-        return softwareDependency;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public EList<SoftwareComponent> getIncludeSoftwareComponent() {
-        if (includeSoftwareComponent == null) {
-            includeSoftwareComponent = new EObjectContainmentEList<SoftwareComponent>(SoftwareComponent.class, this, ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION__INCLUDE_SOFTWARE_COMPONENT);
-        }
-        return includeSoftwareComponent;
+        return includeSoftwareComponents;
     }
 
     /**
@@ -152,8 +128,8 @@ public class ImplementationDescriptionImpl extends AbstractImplementationImpl im
     @Override
     public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
         switch (featureID) {
-            case ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION__INCLUDE_SOFTWARE_COMPONENT:
-                return ((InternalEList<?>)getIncludeSoftwareComponent()).basicRemove(otherEnd, msgs);
+            case ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION__INCLUDE_SOFTWARE_COMPONENTS:
+                return ((InternalEList<?>)getIncludeSoftwareComponents()).basicRemove(otherEnd, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -168,10 +144,8 @@ public class ImplementationDescriptionImpl extends AbstractImplementationImpl im
         switch (featureID) {
             case ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION__NAME:
                 return getName();
-            case ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION__SOFTWARE_DEPENDENCY:
-                return getSoftwareDependency();
-            case ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION__INCLUDE_SOFTWARE_COMPONENT:
-                return getIncludeSoftwareComponent();
+            case ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION__INCLUDE_SOFTWARE_COMPONENTS:
+                return getIncludeSoftwareComponents();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -188,13 +162,9 @@ public class ImplementationDescriptionImpl extends AbstractImplementationImpl im
             case ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION__NAME:
                 setName((String)newValue);
                 return;
-            case ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION__SOFTWARE_DEPENDENCY:
-                getSoftwareDependency().clear();
-                getSoftwareDependency().addAll((Collection<? extends String>)newValue);
-                return;
-            case ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION__INCLUDE_SOFTWARE_COMPONENT:
-                getIncludeSoftwareComponent().clear();
-                getIncludeSoftwareComponent().addAll((Collection<? extends SoftwareComponent>)newValue);
+            case ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION__INCLUDE_SOFTWARE_COMPONENTS:
+                getIncludeSoftwareComponents().clear();
+                getIncludeSoftwareComponents().addAll((Collection<? extends SoftwareComponent>)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -211,11 +181,8 @@ public class ImplementationDescriptionImpl extends AbstractImplementationImpl im
             case ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION__NAME:
                 setName(NAME_EDEFAULT);
                 return;
-            case ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION__SOFTWARE_DEPENDENCY:
-                getSoftwareDependency().clear();
-                return;
-            case ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION__INCLUDE_SOFTWARE_COMPONENT:
-                getIncludeSoftwareComponent().clear();
+            case ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION__INCLUDE_SOFTWARE_COMPONENTS:
+                getIncludeSoftwareComponents().clear();
                 return;
         }
         super.eUnset(featureID);
@@ -231,10 +198,8 @@ public class ImplementationDescriptionImpl extends AbstractImplementationImpl im
         switch (featureID) {
             case ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION__NAME:
                 return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-            case ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION__SOFTWARE_DEPENDENCY:
-                return softwareDependency != null && !softwareDependency.isEmpty();
-            case ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION__INCLUDE_SOFTWARE_COMPONENT:
-                return includeSoftwareComponent != null && !includeSoftwareComponent.isEmpty();
+            case ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION__INCLUDE_SOFTWARE_COMPONENTS:
+                return includeSoftwareComponents != null && !includeSoftwareComponents.isEmpty();
         }
         return super.eIsSet(featureID);
     }
@@ -251,8 +216,6 @@ public class ImplementationDescriptionImpl extends AbstractImplementationImpl im
         StringBuilder result = new StringBuilder(super.toString());
         result.append(" (name: ");
         result.append(name);
-        result.append(", softwareDependency: ");
-        result.append(softwareDependency);
         result.append(')');
         return result.toString();
     }

@@ -131,7 +131,7 @@ public interface DeployPlanWithRosModelPackage extends EPackage {
      */
     int ROSSYSTEM_ASSIGNMENT__NAME = DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__NAME;
 
-                /**
+    /**
      * The feature id for the '<em><b>Executed By</b></em>' reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -149,7 +149,7 @@ public interface DeployPlanWithRosModelPackage extends EPackage {
      */
     int ROSSYSTEM_ASSIGNMENT__SOFTWARE_COMPONENTS = DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__SOFTWARE_COMPONENTS;
 
-                /**
+    /**
      * The feature id for the '<em><b>Operting System Version</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -158,7 +158,7 @@ public interface DeployPlanWithRosModelPackage extends EPackage {
      */
     int ROSSYSTEM_ASSIGNMENT__OPERTING_SYSTEM_VERSION = DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__OPERTING_SYSTEM_VERSION;
 
-                /**
+    /**
      * The feature id for the '<em><b>Runtime Type</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -167,7 +167,7 @@ public interface DeployPlanWithRosModelPackage extends EPackage {
      */
     int ROSSYSTEM_ASSIGNMENT__RUNTIME_TYPE = DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__RUNTIME_TYPE;
 
-                /**
+    /**
      * The feature id for the '<em><b>Middleware</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -176,7 +176,7 @@ public interface DeployPlanWithRosModelPackage extends EPackage {
      */
     int ROSSYSTEM_ASSIGNMENT__MIDDLEWARE = DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__MIDDLEWARE;
 
-                /**
+    /**
      * The feature id for the '<em><b>Operting System Type</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -185,7 +185,7 @@ public interface DeployPlanWithRosModelPackage extends EPackage {
      */
     int ROSSYSTEM_ASSIGNMENT__OPERTING_SYSTEM_TYPE = DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__OPERTING_SYSTEM_TYPE;
 
-                /**
+    /**
      * The number of structural features of the '<em>Rossystem Assignment</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -222,7 +222,7 @@ public interface DeployPlanWithRosModelPackage extends EPackage {
      */
     int ROSPACKAGE_IMPLEMENTATION__NAME = DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__NAME;
 
-                /**
+    /**
      * The feature id for the '<em><b>Executed By</b></em>' reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -231,7 +231,7 @@ public interface DeployPlanWithRosModelPackage extends EPackage {
      */
     int ROSPACKAGE_IMPLEMENTATION__EXECUTED_BY = DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__EXECUTED_BY;
 
-                /**
+    /**
      * The feature id for the '<em><b>Software Components</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -240,7 +240,7 @@ public interface DeployPlanWithRosModelPackage extends EPackage {
      */
     int ROSPACKAGE_IMPLEMENTATION__SOFTWARE_COMPONENTS = DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__SOFTWARE_COMPONENTS;
 
-                /**
+    /**
      * The feature id for the '<em><b>Operting System Version</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -249,7 +249,7 @@ public interface DeployPlanWithRosModelPackage extends EPackage {
      */
     int ROSPACKAGE_IMPLEMENTATION__OPERTING_SYSTEM_VERSION = DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__OPERTING_SYSTEM_VERSION;
 
-                /**
+    /**
      * The feature id for the '<em><b>Runtime Type</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -258,7 +258,7 @@ public interface DeployPlanWithRosModelPackage extends EPackage {
      */
     int ROSPACKAGE_IMPLEMENTATION__RUNTIME_TYPE = DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__RUNTIME_TYPE;
 
-                /**
+    /**
      * The feature id for the '<em><b>Middleware</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -267,7 +267,7 @@ public interface DeployPlanWithRosModelPackage extends EPackage {
      */
     int ROSPACKAGE_IMPLEMENTATION__MIDDLEWARE = DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__MIDDLEWARE;
 
-                /**
+    /**
      * The feature id for the '<em><b>Operting System Type</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -403,6 +403,7 @@ public interface DeployPlanWithRosModelPackage extends EPackage {
      * @ordered
      */
     int CONFIG_ROS_SOFTWARE_COMPONENT_OPERATION_COUNT = DeploymentPlanPackage.ABSTARCT_CONFIG_SOFTWARE_COMPONENT_OPERATION_COUNT + 0;
+
 
     /**
      * Returns the meta object for class '{@link deployPlanWithRosModel.DeploymentPlanWithRosModel <em>Deployment Plan With Ros Model</em>}'.

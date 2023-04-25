@@ -3,26 +3,25 @@
 package implementationDescription.impl;
 
 import de.fraunhofer.ipa.deployment.util.impl.PropertyImpl;
-
-import implementationDescription.ExecutionProperty;
+import implementationDescription.ExecutionParameter;
 import implementationDescription.ImplementationDescriptionPackage;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Execution Property</b></em>'.
+ * An implementation of the model object '<em><b>Execution Parameter</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class ExecutionPropertyImpl extends PropertyImpl implements ExecutionProperty {
+public class ExecutionParameterImpl extends PropertyImpl implements ExecutionParameter {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    protected ExecutionPropertyImpl() {
+    protected ExecutionParameterImpl() {
         super();
     }
 
@@ -33,7 +32,7 @@ public class ExecutionPropertyImpl extends PropertyImpl implements ExecutionProp
      */
     @Override
     protected EClass eStaticClass() {
-        return ImplementationDescriptionPackage.Literals.EXECUTION_PROPERTY;
+        return ImplementationDescriptionPackage.Literals.EXECUTION_PARAMETER;
     }
 
-} //ExecutionPropertyImpl
+} //ExecutionParameterImpl

@@ -7,7 +7,7 @@ import de.fraunhofer.ipa.deployment.util.PropertyValue;
 import deploymentPlan.ConfigExecutionParameter;
 import deploymentPlan.DeploymentPlanPackage;
 
-import implementationDescription.ExecutionProperty;
+import implementationDescription.ExecutionParameter;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -43,7 +43,7 @@ public class ConfigExecutionParameterImpl extends AbstractConfigExecutionParamet
      * @generated
      * @ordered
      */
-    protected ExecutionProperty from;
+    protected ExecutionParameter from;
 
     /**
      * The cached value of the '{@link #getTo() <em>To</em>}' reference.
@@ -89,10 +89,10 @@ public class ConfigExecutionParameterImpl extends AbstractConfigExecutionParamet
      * <!-- end-user-doc -->
      * @generated
      */
-    public ExecutionProperty getFrom() {
+    public ExecutionParameter getFrom() {
         if (from != null && from.eIsProxy()) {
             InternalEObject oldFrom = (InternalEObject)from;
-            from = (ExecutionProperty)eResolveProxy(oldFrom);
+            from = (ExecutionParameter)eResolveProxy(oldFrom);
             if (from != oldFrom) {
                 if (eNotificationRequired())
                     eNotify(new ENotificationImpl(this, Notification.RESOLVE, DeploymentPlanPackage.CONFIG_EXECUTION_PARAMETER__FROM, oldFrom, from));
@@ -106,7 +106,7 @@ public class ConfigExecutionParameterImpl extends AbstractConfigExecutionParamet
      * <!-- end-user-doc -->
      * @generated
      */
-    public ExecutionProperty basicGetFrom() {
+    public ExecutionParameter basicGetFrom() {
         return from;
     }
 
@@ -115,8 +115,8 @@ public class ConfigExecutionParameterImpl extends AbstractConfigExecutionParamet
      * <!-- end-user-doc -->
      * @generated
      */
-    public void setFrom(ExecutionProperty newFrom) {
-        ExecutionProperty oldFrom = from;
+    public void setFrom(ExecutionParameter newFrom) {
+        ExecutionParameter oldFrom = from;
         from = newFrom;
         if (eNotificationRequired())
             eNotify(new ENotificationImpl(this, Notification.SET, DeploymentPlanPackage.CONFIG_EXECUTION_PARAMETER__FROM, oldFrom, from));
@@ -246,7 +246,7 @@ public class ConfigExecutionParameterImpl extends AbstractConfigExecutionParamet
     public void eSet(int featureID, Object newValue) {
         switch (featureID) {
             case DeploymentPlanPackage.CONFIG_EXECUTION_PARAMETER__FROM:
-                setFrom((ExecutionProperty)newValue);
+                setFrom((ExecutionParameter)newValue);
                 return;
             case DeploymentPlanPackage.CONFIG_EXECUTION_PARAMETER__TO:
                 setTo((AbstractConfigProperty)newValue);
@@ -267,7 +267,7 @@ public class ConfigExecutionParameterImpl extends AbstractConfigExecutionParamet
     public void eUnset(int featureID) {
         switch (featureID) {
             case DeploymentPlanPackage.CONFIG_EXECUTION_PARAMETER__FROM:
-                setFrom((ExecutionProperty)null);
+                setFrom((ExecutionParameter)null);
                 return;
             case DeploymentPlanPackage.CONFIG_EXECUTION_PARAMETER__TO:
                 setTo((AbstractConfigProperty)null);

@@ -13,5 +13,5 @@ package implementationDescription;
  * @model
  * @generated
  */
-public interface HWSWParemeter extends ExecutionProperty {
+public interface HWSWParemeter extends ExecutionParameter {
 } // HWSWParemeter

@@ -2,6 +2,7 @@
  */
 package deploymentPlan;
 
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Implementation Assignment</b></em>'.
@@ -13,5 +14,4 @@ package deploymentPlan;
  * @generated
  */
 public interface ImplementationAssignment extends AbstractComputationAssignment {
-
 } // ImplementationAssignment

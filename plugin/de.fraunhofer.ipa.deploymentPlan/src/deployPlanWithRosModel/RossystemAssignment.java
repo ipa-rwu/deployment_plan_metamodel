@@ -15,5 +15,4 @@ import deploymentPlan.AbstractComputationAssignment;
  * @generated
  */
 public interface RossystemAssignment extends AbstractComputationAssignment {
-
 } // RossystemAssignment

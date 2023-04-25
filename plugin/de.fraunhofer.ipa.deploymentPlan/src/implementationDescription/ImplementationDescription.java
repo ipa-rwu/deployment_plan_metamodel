@@ -17,8 +17,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link implementationDescription.ImplementationDescription#getName <em>Name</em>}</li>
- *   <li>{@link implementationDescription.ImplementationDescription#getSoftwareDependency <em>Software Dependency</em>}</li>
- *   <li>{@link implementationDescription.ImplementationDescription#getIncludeSoftwareComponent <em>Include Software Component</em>}</li>
+ *   <li>{@link implementationDescription.ImplementationDescription#getIncludeSoftwareComponents <em>Include Software Components</em>}</li>
  * </ul>
  *
  * @see implementationDescription.ImplementationDescriptionPackage#getImplementationDescription()
@@ -49,27 +48,15 @@ public interface ImplementationDescription extends AbstractImplementation, Abstr
     void setName(String value);
 
     /**
-     * Returns the value of the '<em><b>Software Dependency</b></em>' attribute list.
-     * The list contents are of type {@link java.lang.String}.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Software Dependency</em>' attribute list.
-     * @see implementationDescription.ImplementationDescriptionPackage#getImplementationDescription_SoftwareDependency()
-     * @model
-     * @generated
-     */
-    EList<String> getSoftwareDependency();
-
-    /**
-     * Returns the value of the '<em><b>Include Software Component</b></em>' containment reference list.
+     * Returns the value of the '<em><b>Include Software Components</b></em>' containment reference list.
      * The list contents are of type {@link implementationDescription.SoftwareComponent}.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Include Software Component</em>' containment reference list.
-     * @see implementationDescription.ImplementationDescriptionPackage#getImplementationDescription_IncludeSoftwareComponent()
+     * @return the value of the '<em>Include Software Components</em>' containment reference list.
+     * @see implementationDescription.ImplementationDescriptionPackage#getImplementationDescription_IncludeSoftwareComponents()
      * @model containment="true" required="true"
      * @generated
      */
-    EList<SoftwareComponent> getIncludeSoftwareComponent();
+    EList<SoftwareComponent> getIncludeSoftwareComponents();
 
 } // ImplementationDescription

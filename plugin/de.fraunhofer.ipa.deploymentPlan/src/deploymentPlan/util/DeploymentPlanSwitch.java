@@ -106,18 +106,6 @@ public class DeploymentPlanSwitch<T> extends Switch<T> {
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
-            case DeploymentPlanPackage.HUMBLE_ROS_DISTRO: {
-                HumbleROSDistro humbleROSDistro = (HumbleROSDistro)theEObject;
-                T result = caseHumbleROSDistro(humbleROSDistro);
-                if (result == null) result = defaultCase(theEObject);
-                return result;
-            }
-            case DeploymentPlanPackage.NOETIC_ROS_DISTRO: {
-                NoeticROSDistro noeticROSDistro = (NoeticROSDistro)theEObject;
-                T result = caseNoeticROSDistro(noeticROSDistro);
-                if (result == null) result = defaultCase(theEObject);
-                return result;
-            }
             case DeploymentPlanPackage.CONFIG_SOFTWARE_COMPONENT: {
                 ConfigSoftwareComponent configSoftwareComponent = (ConfigSoftwareComponent)theEObject;
                 T result = caseConfigSoftwareComponent(configSoftwareComponent);
@@ -143,12 +131,6 @@ public class DeploymentPlanSwitch<T> extends Switch<T> {
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
-            case DeploymentPlanPackage.ABSTRACT_EXECUTION_CONFIGURATION: {
-                AbstractExecutionConfiguration abstractExecutionConfiguration = (AbstractExecutionConfiguration)theEObject;
-                T result = caseAbstractExecutionConfiguration(abstractExecutionConfiguration);
-                if (result == null) result = defaultCase(theEObject);
-                return result;
-            }
             case DeploymentPlanPackage.ABSTRACT_DEPLOYMENT_PLAN: {
                 AbstractDeploymentPlan abstractDeploymentPlan = (AbstractDeploymentPlan)theEObject;
                 T result = caseAbstractDeploymentPlan(abstractDeploymentPlan);
@@ -165,12 +147,6 @@ public class DeploymentPlanSwitch<T> extends Switch<T> {
                 RosMiddleware rosMiddleware = (RosMiddleware)theEObject;
                 T result = caseRosMiddleware(rosMiddleware);
                 if (result == null) result = caseMiddleware(rosMiddleware);
-                if (result == null) result = defaultCase(theEObject);
-                return result;
-            }
-            case DeploymentPlanPackage.ABSTRACT_CONFIGED_VALUE: {
-                AbstractConfigedValue abstractConfigedValue = (AbstractConfigedValue)theEObject;
-                T result = caseAbstractConfigedValue(abstractConfigedValue);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -194,21 +170,6 @@ public class DeploymentPlanSwitch<T> extends Switch<T> {
     }
 
     /**
-     * Returns the result of interpreting the object as an instance of '<em>Abstract Deployment Plan</em>'.
-     * <!-- begin-user-doc -->
-     * This implementation returns null;
-     * returning a non-null result will terminate the switch.
-     * <!-- end-user-doc -->
-     * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Abstract Deployment Plan</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-     * @generated
-     */
-    public T caseAbstractDeploymentPlan(AbstractDeploymentPlan object) {
-        return null;
-    }
-
-    /**
      * Returns the result of interpreting the object as an instance of '<em>Deployment Plan</em>'.
      * <!-- begin-user-doc -->
      * This implementation returns null;
@@ -220,21 +181,6 @@ public class DeploymentPlanSwitch<T> extends Switch<T> {
      * @generated
      */
     public T caseDeploymentPlan(DeploymentPlan object) {
-        return null;
-    }
-
-    /**
-     * Returns the result of interpreting the object as an instance of '<em>Abstract Realization</em>'.
-     * <!-- begin-user-doc -->
-     * This implementation returns null;
-     * returning a non-null result will terminate the switch.
-     * <!-- end-user-doc -->
-     * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Abstract Realization</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-     * @generated
-     */
-    public T caseAbstractRealization(AbstractRealization object) {
         return null;
     }
 
@@ -254,21 +200,6 @@ public class DeploymentPlanSwitch<T> extends Switch<T> {
     }
 
     /**
-     * Returns the result of interpreting the object as an instance of '<em>Abstract Computation Assignment</em>'.
-     * <!-- begin-user-doc -->
-     * This implementation returns null;
-     * returning a non-null result will terminate the switch.
-     * <!-- end-user-doc -->
-     * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Abstract Computation Assignment</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-     * @generated
-     */
-    public T caseAbstractComputationAssignment(AbstractComputationAssignment object) {
-        return null;
-    }
-
-    /**
      * Returns the result of interpreting the object as an instance of '<em>Implementation Assignment</em>'.
      * <!-- begin-user-doc -->
      * This implementation returns null;
@@ -280,21 +211,6 @@ public class DeploymentPlanSwitch<T> extends Switch<T> {
      * @generated
      */
     public T caseImplementationAssignment(ImplementationAssignment object) {
-        return null;
-    }
-
-    /**
-     * Returns the result of interpreting the object as an instance of '<em>Abstract Config Execution Parameter</em>'.
-     * <!-- begin-user-doc -->
-     * This implementation returns null;
-     * returning a non-null result will terminate the switch.
-     * <!-- end-user-doc -->
-     * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Abstract Config Execution Parameter</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-     * @generated
-     */
-    public T caseAbstractConfigExecutionParameter(AbstractConfigExecutionParameter object) {
         return null;
     }
 
@@ -314,21 +230,6 @@ public class DeploymentPlanSwitch<T> extends Switch<T> {
     }
 
     /**
-     * Returns the result of interpreting the object as an instance of '<em>Abstract Execution Configuration</em>'.
-     * <!-- begin-user-doc -->
-     * This implementation returns null;
-     * returning a non-null result will terminate the switch.
-     * <!-- end-user-doc -->
-     * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Abstract Execution Configuration</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-     * @generated
-     */
-    public T caseAbstractExecutionConfiguration(AbstractExecutionConfiguration object) {
-        return null;
-    }
-
-    /**
      * Returns the result of interpreting the object as an instance of '<em>Middleware</em>'.
      * <!-- begin-user-doc -->
      * This implementation returns null;
@@ -344,36 +245,6 @@ public class DeploymentPlanSwitch<T> extends Switch<T> {
     }
 
     /**
-     * Returns the result of interpreting the object as an instance of '<em>Humble ROS Distro</em>'.
-     * <!-- begin-user-doc -->
-     * This implementation returns null;
-     * returning a non-null result will terminate the switch.
-     * <!-- end-user-doc -->
-     * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Humble ROS Distro</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-     * @generated
-     */
-    public T caseHumbleROSDistro(HumbleROSDistro object) {
-        return null;
-    }
-
-    /**
-     * Returns the result of interpreting the object as an instance of '<em>Noetic ROS Distro</em>'.
-     * <!-- begin-user-doc -->
-     * This implementation returns null;
-     * returning a non-null result will terminate the switch.
-     * <!-- end-user-doc -->
-     * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Noetic ROS Distro</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-     * @generated
-     */
-    public T caseNoeticROSDistro(NoeticROSDistro object) {
-        return null;
-    }
-
-    /**
      * Returns the result of interpreting the object as an instance of '<em>Config Software Component</em>'.
      * <!-- begin-user-doc -->
      * This implementation returns null;
@@ -385,6 +256,66 @@ public class DeploymentPlanSwitch<T> extends Switch<T> {
      * @generated
      */
     public T caseConfigSoftwareComponent(ConfigSoftwareComponent object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Abstract Realization</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Abstract Realization</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseAbstractRealization(AbstractRealization object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Abstract Config Execution Parameter</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Abstract Config Execution Parameter</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseAbstractConfigExecutionParameter(AbstractConfigExecutionParameter object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Abstract Computation Assignment</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Abstract Computation Assignment</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseAbstractComputationAssignment(AbstractComputationAssignment object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Abstract Deployment Plan</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Abstract Deployment Plan</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseAbstractDeploymentPlan(AbstractDeploymentPlan object) {
         return null;
     }
 
@@ -418,22 +349,7 @@ public class DeploymentPlanSwitch<T> extends Switch<T> {
         return null;
     }
 
-                /**
-     * Returns the result of interpreting the object as an instance of '<em>Abstract Configed Value</em>'.
-     * <!-- begin-user-doc -->
-     * This implementation returns null;
-     * returning a non-null result will terminate the switch.
-     * <!-- end-user-doc -->
-     * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Abstract Configed Value</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-     * @generated
-     */
-    public T caseAbstractConfigedValue(AbstractConfigedValue object) {
-        return null;
-    }
-
-                                                                /**
+    /**
      * Returns the result of interpreting the object as an instance of '<em>EObject</em>'.
      * <!-- begin-user-doc -->
      * This implementation returns null;

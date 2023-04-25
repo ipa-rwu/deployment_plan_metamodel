@@ -34,7 +34,7 @@ public class RosMiddlewareImpl extends MiddlewareImpl implements RosMiddleware {
      * @generated
      * @ordered
      */
-    protected static final ROSDistro VALUE_EDEFAULT = ROSDistro.NOETIC;
+    protected static final ROSDistro VALUE_EDEFAULT = ROSDistro.HUMBLE;
 
     /**
      * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
