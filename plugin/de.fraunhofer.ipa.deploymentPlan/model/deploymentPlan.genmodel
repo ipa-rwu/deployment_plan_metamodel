@@ -8,8 +8,8 @@
   <foreignModel>deploymentPlan.ecore</foreignModel>
   <genPackages prefix="DeploymentPlan" disposableProviderFactory="true" ecorePackage="deploymentPlan.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="deploymentPlan.ecore#//ROSDistro">
-      <genEnumLiterals ecoreEnumLiteral="deploymentPlan.ecore#//ROSDistro/noetic"/>
       <genEnumLiterals ecoreEnumLiteral="deploymentPlan.ecore#//ROSDistro/humble"/>
+      <genEnumLiterals ecoreEnumLiteral="deploymentPlan.ecore#//ROSDistro/noetic"/>
       <genEnumLiterals ecoreEnumLiteral="deploymentPlan.ecore#//ROSDistro/rolling"/>
       <genEnumLiterals ecoreEnumLiteral="deploymentPlan.ecore#//ROSDistro/galactic"/>
     </genEnums>
@@ -25,14 +25,6 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference deploymentPlan.ecore#//ConfigExecutionParameter/value"/>
     </genClasses>
     <genClasses image="false" ecoreClass="deploymentPlan.ecore#//Middleware"/>
-    <genClasses ecoreClass="deploymentPlan.ecore#//HumbleROSDistro">
-      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute deploymentPlan.ecore#//HumbleROSDistro/version"/>
-      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute deploymentPlan.ecore#//HumbleROSDistro/distro"/>
-    </genClasses>
-    <genClasses ecoreClass="deploymentPlan.ecore#//NoeticROSDistro">
-      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute deploymentPlan.ecore#//NoeticROSDistro/version"/>
-      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute deploymentPlan.ecore#//NoeticROSDistro/distro"/>
-    </genClasses>
     <genClasses ecoreClass="deploymentPlan.ecore#//ConfigSoftwareComponent">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference deploymentPlan.ecore#//ConfigSoftwareComponent/component"/>
     </genClasses>
@@ -49,7 +41,6 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference deploymentPlan.ecore#//AbstractComputationAssignment/middleware"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EReference deploymentPlan.ecore#//AbstractComputationAssignment/opertingSystemType"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="deploymentPlan.ecore#//AbstractExecutionConfiguration"/>
     <genClasses image="false" ecoreClass="deploymentPlan.ecore#//AbstractDeploymentPlan">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute deploymentPlan.ecore#//AbstractDeploymentPlan/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference deploymentPlan.ecore#//AbstractDeploymentPlan/deployTo"/>
@@ -62,6 +53,5 @@
     <genClasses ecoreClass="deploymentPlan.ecore#//RosMiddleware">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute deploymentPlan.ecore#//RosMiddleware/value"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="deploymentPlan.ecore#//AbstractConfigedValue"/>
   </genPackages>
 </genmodel:GenModel>
