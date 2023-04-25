@@ -73,6 +73,7 @@ import de.fraunhofer.ipa.targetEnvironment.services.TargetEnvironmentGrammarAcce
         tokenNameToValue.put("ComputationDevice", "'computationDevice:'");
         tokenNameToValue.put("LinuxOpertingSystem", "'LinuxOpertingSystem'");
         tokenNameToValue.put("MacOSOpertingSystem", "'MacOSOpertingSystem'");
+        tokenNameToValue.put("ComputationResouce", "'computationResouce:'");
         tokenNameToValue.put("ConfigDeviceProperty", "'configDeviceProperty:'");
         tokenNameToValue.put("ComputationDeviceType", "'ComputationDeviceType:'");
         tokenNameToValue.put("Processor_architecture", "'processor_architecture'");
@@ -499,25 +500,25 @@ finally {
     restoreStackSize(stackSize);
 }
 
-// Entry rule entryRuleAbstractComputationDeviceResource
-entryRuleAbstractComputationDeviceResource
+// Entry rule entryRuleAbstractComputationResource
+entryRuleAbstractComputationResource
 :
-{ before(grammarAccess.getAbstractComputationDeviceResourceRule()); }
-     ruleAbstractComputationDeviceResource
-{ after(grammarAccess.getAbstractComputationDeviceResourceRule()); }
+{ before(grammarAccess.getAbstractComputationResourceRule()); }
+     ruleAbstractComputationResource
+{ after(grammarAccess.getAbstractComputationResourceRule()); }
      EOF
 ;
 
-// Rule AbstractComputationDeviceResource
-ruleAbstractComputationDeviceResource
+// Rule AbstractComputationResource
+ruleAbstractComputationResource
     @init {
         int stackSize = keepStackSize();
     }
     :
     (
-        { before(grammarAccess.getAbstractComputationDeviceResourceAccess().getAlternatives()); }
-        (rule__AbstractComputationDeviceResource__Alternatives)
-        { after(grammarAccess.getAbstractComputationDeviceResourceAccess().getAlternatives()); }
+        { before(grammarAccess.getAbstractComputationResourceAccess().getAlternatives()); }
+        (rule__AbstractComputationResource__Alternatives)
+        { after(grammarAccess.getAbstractComputationResourceAccess().getAlternatives()); }
     )
 ;
 finally {
@@ -1814,27 +1815,21 @@ finally {
     restoreStackSize(stackSize);
 }
 
-rule__AbstractComputationDeviceResource__Alternatives
+rule__AbstractComputationResource__Alternatives
     @init {
         int stackSize = keepStackSize();
     }
 :
     (
-        { before(grammarAccess.getAbstractComputationDeviceResourceAccess().getDeviceResourceParserRuleCall_0()); }
-        ruleDeviceResource
-        { after(grammarAccess.getAbstractComputationDeviceResourceAccess().getDeviceResourceParserRuleCall_0()); }
-    )
-    |
-    (
-        { before(grammarAccess.getAbstractComputationDeviceResourceAccess().getOperatingSystemResouceParserRuleCall_1()); }
+        { before(grammarAccess.getAbstractComputationResourceAccess().getOperatingSystemResouceParserRuleCall_0()); }
         ruleOperatingSystemResouce
-        { after(grammarAccess.getAbstractComputationDeviceResourceAccess().getOperatingSystemResouceParserRuleCall_1()); }
+        { after(grammarAccess.getAbstractComputationResourceAccess().getOperatingSystemResouceParserRuleCall_0()); }
     )
     |
     (
-        { before(grammarAccess.getAbstractComputationDeviceResourceAccess().getProcessorResouceParserRuleCall_2()); }
+        { before(grammarAccess.getAbstractComputationResourceAccess().getProcessorResouceParserRuleCall_1()); }
         ruleProcessorResouce
-        { after(grammarAccess.getAbstractComputationDeviceResourceAccess().getProcessorResouceParserRuleCall_2()); }
+        { after(grammarAccess.getAbstractComputationResourceAccess().getProcessorResouceParserRuleCall_1()); }
     )
 ;
 finally {
@@ -4521,9 +4516,9 @@ rule__ConfigDeviceProperty__Group__5__Impl
     }
 :
 (
-    { before(grammarAccess.getConfigDevicePropertyAccess().getFromAssignment_5()); }
-    (rule__ConfigDeviceProperty__FromAssignment_5)
-    { after(grammarAccess.getConfigDevicePropertyAccess().getFromAssignment_5()); }
+    { before(grammarAccess.getConfigDevicePropertyAccess().getRefPropertyAssignment_5()); }
+    (rule__ConfigDeviceProperty__RefPropertyAssignment_5)
+    { after(grammarAccess.getConfigDevicePropertyAccess().getRefPropertyAssignment_5()); }
 )
 ;
 finally {
@@ -6440,6 +6435,7 @@ rule__ComputationDeviceType__Group__6
     }
 :
     rule__ComputationDeviceType__Group__6__Impl
+    rule__ComputationDeviceType__Group__7
 ;
 finally {
     restoreStackSize(stackSize);
@@ -6451,9 +6447,35 @@ rule__ComputationDeviceType__Group__6__Impl
     }
 :
 (
-    { before(grammarAccess.getComputationDeviceTypeAccess().getDEDENTTerminalRuleCall_6()); }
+    { before(grammarAccess.getComputationDeviceTypeAccess().getGroup_6()); }
+    (rule__ComputationDeviceType__Group_6__0)?
+    { after(grammarAccess.getComputationDeviceTypeAccess().getGroup_6()); }
+)
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__ComputationDeviceType__Group__7
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+    rule__ComputationDeviceType__Group__7__Impl
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__ComputationDeviceType__Group__7__Impl
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+(
+    { before(grammarAccess.getComputationDeviceTypeAccess().getDEDENTTerminalRuleCall_7()); }
     RULE_DEDENT
-    { after(grammarAccess.getComputationDeviceTypeAccess().getDEDENTTerminalRuleCall_6()); }
+    { after(grammarAccess.getComputationDeviceTypeAccess().getDEDENTTerminalRuleCall_7()); }
 )
 ;
 finally {
@@ -6594,9 +6616,9 @@ rule__ComputationDeviceType__Group_5__0__Impl
     }
 :
 (
-    { before(grammarAccess.getComputationDeviceTypeAccess().getCommunicationConnectionKeyword_5_0()); }
-    CommunicationConnection
-    { after(grammarAccess.getComputationDeviceTypeAccess().getCommunicationConnectionKeyword_5_0()); }
+    { before(grammarAccess.getComputationDeviceTypeAccess().getComputationResouceKeyword_5_0()); }
+    ComputationResouce
+    { after(grammarAccess.getComputationDeviceTypeAccess().getComputationResouceKeyword_5_0()); }
 )
 ;
 finally {
@@ -6649,14 +6671,14 @@ rule__ComputationDeviceType__Group_5__2__Impl
 :
 (
     (
-        { before(grammarAccess.getComputationDeviceTypeAccess().getCommunicationConnectionAssignment_5_2()); }
-        (rule__ComputationDeviceType__CommunicationConnectionAssignment_5_2)
-        { after(grammarAccess.getComputationDeviceTypeAccess().getCommunicationConnectionAssignment_5_2()); }
+        { before(grammarAccess.getComputationDeviceTypeAccess().getComputationResourceAssignment_5_2()); }
+        (rule__ComputationDeviceType__ComputationResourceAssignment_5_2)
+        { after(grammarAccess.getComputationDeviceTypeAccess().getComputationResourceAssignment_5_2()); }
     )
     (
-        { before(grammarAccess.getComputationDeviceTypeAccess().getCommunicationConnectionAssignment_5_2()); }
-        (rule__ComputationDeviceType__CommunicationConnectionAssignment_5_2)*
-        { after(grammarAccess.getComputationDeviceTypeAccess().getCommunicationConnectionAssignment_5_2()); }
+        { before(grammarAccess.getComputationDeviceTypeAccess().getComputationResourceAssignment_5_2()); }
+        (rule__ComputationDeviceType__ComputationResourceAssignment_5_2)*
+        { after(grammarAccess.getComputationDeviceTypeAccess().getComputationResourceAssignment_5_2()); }
     )
 )
 ;
@@ -6684,6 +6706,121 @@ rule__ComputationDeviceType__Group_5__3__Impl
     { before(grammarAccess.getComputationDeviceTypeAccess().getDEDENTTerminalRuleCall_5_3()); }
     RULE_DEDENT
     { after(grammarAccess.getComputationDeviceTypeAccess().getDEDENTTerminalRuleCall_5_3()); }
+)
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+
+rule__ComputationDeviceType__Group_6__0
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+    rule__ComputationDeviceType__Group_6__0__Impl
+    rule__ComputationDeviceType__Group_6__1
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__ComputationDeviceType__Group_6__0__Impl
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+(
+    { before(grammarAccess.getComputationDeviceTypeAccess().getCommunicationConnectionKeyword_6_0()); }
+    CommunicationConnection
+    { after(grammarAccess.getComputationDeviceTypeAccess().getCommunicationConnectionKeyword_6_0()); }
+)
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__ComputationDeviceType__Group_6__1
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+    rule__ComputationDeviceType__Group_6__1__Impl
+    rule__ComputationDeviceType__Group_6__2
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__ComputationDeviceType__Group_6__1__Impl
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+(
+    { before(grammarAccess.getComputationDeviceTypeAccess().getINDENTTerminalRuleCall_6_1()); }
+    RULE_INDENT
+    { after(grammarAccess.getComputationDeviceTypeAccess().getINDENTTerminalRuleCall_6_1()); }
+)
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__ComputationDeviceType__Group_6__2
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+    rule__ComputationDeviceType__Group_6__2__Impl
+    rule__ComputationDeviceType__Group_6__3
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__ComputationDeviceType__Group_6__2__Impl
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+(
+    (
+        { before(grammarAccess.getComputationDeviceTypeAccess().getCommunicationConnectionAssignment_6_2()); }
+        (rule__ComputationDeviceType__CommunicationConnectionAssignment_6_2)
+        { after(grammarAccess.getComputationDeviceTypeAccess().getCommunicationConnectionAssignment_6_2()); }
+    )
+    (
+        { before(grammarAccess.getComputationDeviceTypeAccess().getCommunicationConnectionAssignment_6_2()); }
+        (rule__ComputationDeviceType__CommunicationConnectionAssignment_6_2)*
+        { after(grammarAccess.getComputationDeviceTypeAccess().getCommunicationConnectionAssignment_6_2()); }
+    )
+)
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__ComputationDeviceType__Group_6__3
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+    rule__ComputationDeviceType__Group_6__3__Impl
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__ComputationDeviceType__Group_6__3__Impl
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+(
+    { before(grammarAccess.getComputationDeviceTypeAccess().getDEDENTTerminalRuleCall_6_3()); }
+    RULE_DEDENT
+    { after(grammarAccess.getComputationDeviceTypeAccess().getDEDENTTerminalRuleCall_6_3()); }
 )
 ;
 finally {
@@ -13141,19 +13278,19 @@ finally {
     restoreStackSize(stackSize);
 }
 
-rule__ConfigDeviceProperty__FromAssignment_5
+rule__ConfigDeviceProperty__RefPropertyAssignment_5
     @init {
         int stackSize = keepStackSize();
     }
 :
     (
-        { before(grammarAccess.getConfigDevicePropertyAccess().getFromAbstractPropertyCrossReference_5_0()); }
+        { before(grammarAccess.getConfigDevicePropertyAccess().getRefPropertyAbstractPropertyCrossReference_5_0()); }
         (
-            { before(grammarAccess.getConfigDevicePropertyAccess().getFromAbstractPropertyEStringParserRuleCall_5_0_1()); }
+            { before(grammarAccess.getConfigDevicePropertyAccess().getRefPropertyAbstractPropertyEStringParserRuleCall_5_0_1()); }
             ruleEString
-            { after(grammarAccess.getConfigDevicePropertyAccess().getFromAbstractPropertyEStringParserRuleCall_5_0_1()); }
+            { after(grammarAccess.getConfigDevicePropertyAccess().getRefPropertyAbstractPropertyEStringParserRuleCall_5_0_1()); }
         )
-        { after(grammarAccess.getConfigDevicePropertyAccess().getFromAbstractPropertyCrossReference_5_0()); }
+        { after(grammarAccess.getConfigDevicePropertyAccess().getRefPropertyAbstractPropertyCrossReference_5_0()); }
     )
 ;
 finally {
@@ -13459,24 +13596,39 @@ rule__ComputationDeviceType__DeviceResourceAssignment_4_2
     }
 :
     (
-        { before(grammarAccess.getComputationDeviceTypeAccess().getDeviceResourceAbstractComputationDeviceResourceParserRuleCall_4_2_0()); }
-        ruleAbstractComputationDeviceResource
-        { after(grammarAccess.getComputationDeviceTypeAccess().getDeviceResourceAbstractComputationDeviceResourceParserRuleCall_4_2_0()); }
+        { before(grammarAccess.getComputationDeviceTypeAccess().getDeviceResourceDeviceResourceParserRuleCall_4_2_0()); }
+        ruleDeviceResource
+        { after(grammarAccess.getComputationDeviceTypeAccess().getDeviceResourceDeviceResourceParserRuleCall_4_2_0()); }
     )
 ;
 finally {
     restoreStackSize(stackSize);
 }
 
-rule__ComputationDeviceType__CommunicationConnectionAssignment_5_2
+rule__ComputationDeviceType__ComputationResourceAssignment_5_2
     @init {
         int stackSize = keepStackSize();
     }
 :
     (
-        { before(grammarAccess.getComputationDeviceTypeAccess().getCommunicationConnectionAbstractCommunicationConnectionParserRuleCall_5_2_0()); }
+        { before(grammarAccess.getComputationDeviceTypeAccess().getComputationResourceAbstractComputationResourceParserRuleCall_5_2_0()); }
+        ruleAbstractComputationResource
+        { after(grammarAccess.getComputationDeviceTypeAccess().getComputationResourceAbstractComputationResourceParserRuleCall_5_2_0()); }
+    )
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__ComputationDeviceType__CommunicationConnectionAssignment_6_2
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+    (
+        { before(grammarAccess.getComputationDeviceTypeAccess().getCommunicationConnectionAbstractCommunicationConnectionParserRuleCall_6_2_0()); }
         ruleAbstractCommunicationConnection
-        { after(grammarAccess.getComputationDeviceTypeAccess().getCommunicationConnectionAbstractCommunicationConnectionParserRuleCall_5_2_0()); }
+        { after(grammarAccess.getComputationDeviceTypeAccess().getCommunicationConnectionAbstractCommunicationConnectionParserRuleCall_6_2_0()); }
     )
 ;
 finally {

@@ -12,67 +12,68 @@ import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalTargetEnvironmentLexer extends Lexer {
-    public static final int Core_number=26;
-    public static final int Configuration=14;
-    public static final int Address=35;
-    public static final int AttributeKind=20;
-    public static final int RefDeviceType=19;
-    public static final int Name=46;
-    public static final int Container=32;
-    public static final int Debian=38;
-    public static final int Kind=45;
-    public static final int ConnectDevice=15;
-    public static final int Ubuntu=39;
-    public static final int RULE_DEDENT=57;
+    public static final int Core_number=27;
+    public static final int Configuration=15;
+    public static final int Address=36;
+    public static final int ComputationResouce=12;
+    public static final int AttributeKind=21;
+    public static final int RefDeviceType=20;
+    public static final int Name=47;
+    public static final int Container=33;
+    public static final int Debian=39;
+    public static final int Kind=46;
+    public static final int ConnectDevice=16;
+    public static final int Ubuntu=40;
+    public static final int RULE_DEDENT=58;
     public static final int LinuxOpertingSystem=10;
-    public static final int RULE_ID=58;
-    public static final int Device=36;
-    public static final int ConfigConnection=13;
-    public static final int RULE_DIGIT=52;
-    public static final int HyphenMinusHyphenMinusHyphenMinus=49;
-    public static final int SelectionKind=21;
-    public static final int DeviceType=23;
+    public static final int RULE_ID=59;
+    public static final int Device=37;
+    public static final int ConfigConnection=14;
+    public static final int RULE_DIGIT=53;
+    public static final int HyphenMinusHyphenMinusHyphenMinus=50;
+    public static final int SelectionKind=22;
+    public static final int DeviceType=24;
     public static final int TargetDeployEnviroment=5;
-    public static final int Arm64=41;
-    public static final int RULE_INT=59;
-    public static final int ComputationDevice=12;
-    public static final int Ethernet=34;
-    public static final int Value=40;
-    public static final int RULE_ML_COMMENT=61;
+    public static final int Arm64=42;
+    public static final int RULE_INT=60;
+    public static final int ComputationDevice=13;
+    public static final int Ethernet=35;
+    public static final int Value=41;
+    public static final int RULE_ML_COMMENT=62;
     public static final int RefConnectionProperty=8;
     public static final int ConfigDeviceProperty=9;
-    public static final int Description=22;
-    public static final int Processor=30;
-    public static final int RULE_STRING=60;
-    public static final int Focal=42;
-    public static final int Wlan=48;
-    public static final int Properties=27;
-    public static final int DeviceResouce=16;
-    public static final int RULE_SL_COMMENT=55;
+    public static final int Description=23;
+    public static final int Processor=31;
+    public static final int RULE_STRING=61;
+    public static final int Focal=43;
+    public static final int Wlan=49;
+    public static final int Properties=28;
+    public static final int DeviceResouce=17;
+    public static final int RULE_SL_COMMENT=56;
     public static final int CommunicationConnection=4;
-    public static final int Os_name=37;
-    public static final int HyphenMinus=51;
-    public static final int RULE_DOUBLE=54;
-    public static final int X86=50;
-    public static final int RULE_DECINT=53;
-    public static final int MinimumKind=25;
+    public static final int Os_name=38;
+    public static final int HyphenMinus=52;
+    public static final int RULE_DOUBLE=55;
+    public static final int X86=51;
+    public static final int RULE_DECINT=54;
+    public static final int MinimumKind=26;
     public static final int EOF=-1;
-    public static final int RULE_INDENT=56;
-    public static final int Jammy=44;
-    public static final int RefDevice=29;
-    public static final int RULE_WS=62;
-    public static final int MaximumKind=24;
-    public static final int From=43;
-    public static final int RULE_ANY_OTHER=63;
+    public static final int RULE_INDENT=57;
+    public static final int Jammy=45;
+    public static final int RefDevice=30;
+    public static final int RULE_WS=63;
+    public static final int MaximumKind=25;
+    public static final int From=44;
+    public static final int RULE_ANY_OTHER=64;
     public static final int ComputationDeviceType=6;
     public static final int Processor_architecture=7;
-    public static final int RangeKind=31;
-    public static final int Os_version=28;
-    public static final int RefConnection=18;
-    public static final int Type=47;
+    public static final int RangeKind=32;
+    public static final int Os_version=29;
+    public static final int RefConnection=19;
+    public static final int Type=48;
     public static final int MacOSOpertingSystem=11;
-    public static final int IncludeDevice=17;
-    public static final int Interface=33;
+    public static final int IncludeDevice=18;
+    public static final int Interface=34;
 
     // delegates
     // delegators
@@ -255,13 +256,34 @@ public class InternalTargetEnvironmentLexer extends Lexer {
     }
     // $ANTLR end "MacOSOpertingSystem"
 
+    // $ANTLR start "ComputationResouce"
+    public final void mComputationResouce() throws RecognitionException {
+        try {
+            int _type = ComputationResouce;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalTargetEnvironmentLexer.g:30:20: ( 'computationResouce:' )
+            // InternalTargetEnvironmentLexer.g:30:22: 'computationResouce:'
+            {
+            match("computationResouce:");
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "ComputationResouce"
+
     // $ANTLR start "ComputationDevice"
     public final void mComputationDevice() throws RecognitionException {
         try {
             int _type = ComputationDevice;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTargetEnvironmentLexer.g:30:19: ( 'computationDevice:' )
-            // InternalTargetEnvironmentLexer.g:30:21: 'computationDevice:'
+            // InternalTargetEnvironmentLexer.g:32:19: ( 'computationDevice:' )
+            // InternalTargetEnvironmentLexer.g:32:21: 'computationDevice:'
             {
             match("computationDevice:");
 
@@ -281,8 +303,8 @@ public class InternalTargetEnvironmentLexer extends Lexer {
         try {
             int _type = ConfigConnection;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTargetEnvironmentLexer.g:32:18: ( 'configConnection:' )
-            // InternalTargetEnvironmentLexer.g:32:20: 'configConnection:'
+            // InternalTargetEnvironmentLexer.g:34:18: ( 'configConnection:' )
+            // InternalTargetEnvironmentLexer.g:34:20: 'configConnection:'
             {
             match("configConnection:");
 
@@ -302,8 +324,8 @@ public class InternalTargetEnvironmentLexer extends Lexer {
         try {
             int _type = Configuration;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTargetEnvironmentLexer.g:34:15: ( 'configuration:' )
-            // InternalTargetEnvironmentLexer.g:34:17: 'configuration:'
+            // InternalTargetEnvironmentLexer.g:36:15: ( 'configuration:' )
+            // InternalTargetEnvironmentLexer.g:36:17: 'configuration:'
             {
             match("configuration:");
 
@@ -323,8 +345,8 @@ public class InternalTargetEnvironmentLexer extends Lexer {
         try {
             int _type = ConnectDevice;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTargetEnvironmentLexer.g:36:15: ( 'connectDevice:' )
-            // InternalTargetEnvironmentLexer.g:36:17: 'connectDevice:'
+            // InternalTargetEnvironmentLexer.g:38:15: ( 'connectDevice:' )
+            // InternalTargetEnvironmentLexer.g:38:17: 'connectDevice:'
             {
             match("connectDevice:");
 
@@ -344,8 +366,8 @@ public class InternalTargetEnvironmentLexer extends Lexer {
         try {
             int _type = DeviceResouce;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTargetEnvironmentLexer.g:38:15: ( 'deviceResouce:' )
-            // InternalTargetEnvironmentLexer.g:38:17: 'deviceResouce:'
+            // InternalTargetEnvironmentLexer.g:40:15: ( 'deviceResouce:' )
+            // InternalTargetEnvironmentLexer.g:40:17: 'deviceResouce:'
             {
             match("deviceResouce:");
 
@@ -365,8 +387,8 @@ public class InternalTargetEnvironmentLexer extends Lexer {
         try {
             int _type = IncludeDevice;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTargetEnvironmentLexer.g:40:15: ( 'includeDevice:' )
-            // InternalTargetEnvironmentLexer.g:40:17: 'includeDevice:'
+            // InternalTargetEnvironmentLexer.g:42:15: ( 'includeDevice:' )
+            // InternalTargetEnvironmentLexer.g:42:17: 'includeDevice:'
             {
             match("includeDevice:");
 
@@ -386,8 +408,8 @@ public class InternalTargetEnvironmentLexer extends Lexer {
         try {
             int _type = RefConnection;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTargetEnvironmentLexer.g:42:15: ( 'refConnection:' )
-            // InternalTargetEnvironmentLexer.g:42:17: 'refConnection:'
+            // InternalTargetEnvironmentLexer.g:44:15: ( 'refConnection:' )
+            // InternalTargetEnvironmentLexer.g:44:17: 'refConnection:'
             {
             match("refConnection:");
 
@@ -407,8 +429,8 @@ public class InternalTargetEnvironmentLexer extends Lexer {
         try {
             int _type = RefDeviceType;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTargetEnvironmentLexer.g:44:15: ( 'refDeviceType:' )
-            // InternalTargetEnvironmentLexer.g:44:17: 'refDeviceType:'
+            // InternalTargetEnvironmentLexer.g:46:15: ( 'refDeviceType:' )
+            // InternalTargetEnvironmentLexer.g:46:17: 'refDeviceType:'
             {
             match("refDeviceType:");
 
@@ -428,8 +450,8 @@ public class InternalTargetEnvironmentLexer extends Lexer {
         try {
             int _type = AttributeKind;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTargetEnvironmentLexer.g:46:15: ( 'AttributeKind' )
-            // InternalTargetEnvironmentLexer.g:46:17: 'AttributeKind'
+            // InternalTargetEnvironmentLexer.g:48:15: ( 'AttributeKind' )
+            // InternalTargetEnvironmentLexer.g:48:17: 'AttributeKind'
             {
             match("AttributeKind");
 
@@ -449,8 +471,8 @@ public class InternalTargetEnvironmentLexer extends Lexer {
         try {
             int _type = SelectionKind;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTargetEnvironmentLexer.g:48:15: ( 'SelectionKind' )
-            // InternalTargetEnvironmentLexer.g:48:17: 'SelectionKind'
+            // InternalTargetEnvironmentLexer.g:50:15: ( 'SelectionKind' )
+            // InternalTargetEnvironmentLexer.g:50:17: 'SelectionKind'
             {
             match("SelectionKind");
 
@@ -470,8 +492,8 @@ public class InternalTargetEnvironmentLexer extends Lexer {
         try {
             int _type = Description;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTargetEnvironmentLexer.g:50:13: ( 'description:' )
-            // InternalTargetEnvironmentLexer.g:50:15: 'description:'
+            // InternalTargetEnvironmentLexer.g:52:13: ( 'description:' )
+            // InternalTargetEnvironmentLexer.g:52:15: 'description:'
             {
             match("description:");
 
@@ -491,8 +513,8 @@ public class InternalTargetEnvironmentLexer extends Lexer {
         try {
             int _type = DeviceType;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTargetEnvironmentLexer.g:52:12: ( 'DeviceType:' )
-            // InternalTargetEnvironmentLexer.g:52:14: 'DeviceType:'
+            // InternalTargetEnvironmentLexer.g:54:12: ( 'DeviceType:' )
+            // InternalTargetEnvironmentLexer.g:54:14: 'DeviceType:'
             {
             match("DeviceType:");
 
@@ -512,8 +534,8 @@ public class InternalTargetEnvironmentLexer extends Lexer {
         try {
             int _type = MaximumKind;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTargetEnvironmentLexer.g:54:13: ( 'MaximumKind' )
-            // InternalTargetEnvironmentLexer.g:54:15: 'MaximumKind'
+            // InternalTargetEnvironmentLexer.g:56:13: ( 'MaximumKind' )
+            // InternalTargetEnvironmentLexer.g:56:15: 'MaximumKind'
             {
             match("MaximumKind");
 
@@ -533,8 +555,8 @@ public class InternalTargetEnvironmentLexer extends Lexer {
         try {
             int _type = MinimumKind;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTargetEnvironmentLexer.g:56:13: ( 'MinimumKind' )
-            // InternalTargetEnvironmentLexer.g:56:15: 'MinimumKind'
+            // InternalTargetEnvironmentLexer.g:58:13: ( 'MinimumKind' )
+            // InternalTargetEnvironmentLexer.g:58:15: 'MinimumKind'
             {
             match("MinimumKind");
 
@@ -554,8 +576,8 @@ public class InternalTargetEnvironmentLexer extends Lexer {
         try {
             int _type = Core_number;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTargetEnvironmentLexer.g:58:13: ( 'core_number' )
-            // InternalTargetEnvironmentLexer.g:58:15: 'core_number'
+            // InternalTargetEnvironmentLexer.g:60:13: ( 'core_number' )
+            // InternalTargetEnvironmentLexer.g:60:15: 'core_number'
             {
             match("core_number");
 
@@ -575,8 +597,8 @@ public class InternalTargetEnvironmentLexer extends Lexer {
         try {
             int _type = Properties;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTargetEnvironmentLexer.g:60:12: ( 'properties:' )
-            // InternalTargetEnvironmentLexer.g:60:14: 'properties:'
+            // InternalTargetEnvironmentLexer.g:62:12: ( 'properties:' )
+            // InternalTargetEnvironmentLexer.g:62:14: 'properties:'
             {
             match("properties:");
 
@@ -596,8 +618,8 @@ public class InternalTargetEnvironmentLexer extends Lexer {
         try {
             int _type = Os_version;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTargetEnvironmentLexer.g:62:12: ( 'os_version' )
-            // InternalTargetEnvironmentLexer.g:62:14: 'os_version'
+            // InternalTargetEnvironmentLexer.g:64:12: ( 'os_version' )
+            // InternalTargetEnvironmentLexer.g:64:14: 'os_version'
             {
             match("os_version");
 
@@ -617,8 +639,8 @@ public class InternalTargetEnvironmentLexer extends Lexer {
         try {
             int _type = RefDevice;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTargetEnvironmentLexer.g:64:11: ( 'refDevice:' )
-            // InternalTargetEnvironmentLexer.g:64:13: 'refDevice:'
+            // InternalTargetEnvironmentLexer.g:66:11: ( 'refDevice:' )
+            // InternalTargetEnvironmentLexer.g:66:13: 'refDevice:'
             {
             match("refDevice:");
 
@@ -638,8 +660,8 @@ public class InternalTargetEnvironmentLexer extends Lexer {
         try {
             int _type = Processor;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTargetEnvironmentLexer.g:66:11: ( 'Processor' )
-            // InternalTargetEnvironmentLexer.g:66:13: 'Processor'
+            // InternalTargetEnvironmentLexer.g:68:11: ( 'Processor' )
+            // InternalTargetEnvironmentLexer.g:68:13: 'Processor'
             {
             match("Processor");
 
@@ -659,8 +681,8 @@ public class InternalTargetEnvironmentLexer extends Lexer {
         try {
             int _type = RangeKind;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTargetEnvironmentLexer.g:68:11: ( 'RangeKind' )
-            // InternalTargetEnvironmentLexer.g:68:13: 'RangeKind'
+            // InternalTargetEnvironmentLexer.g:70:11: ( 'RangeKind' )
+            // InternalTargetEnvironmentLexer.g:70:13: 'RangeKind'
             {
             match("RangeKind");
 
@@ -680,8 +702,8 @@ public class InternalTargetEnvironmentLexer extends Lexer {
         try {
             int _type = Container;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTargetEnvironmentLexer.g:70:11: ( 'container' )
-            // InternalTargetEnvironmentLexer.g:70:13: 'container'
+            // InternalTargetEnvironmentLexer.g:72:11: ( 'container' )
+            // InternalTargetEnvironmentLexer.g:72:13: 'container'
             {
             match("container");
 
@@ -701,8 +723,8 @@ public class InternalTargetEnvironmentLexer extends Lexer {
         try {
             int _type = Interface;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTargetEnvironmentLexer.g:72:11: ( 'interface' )
-            // InternalTargetEnvironmentLexer.g:72:13: 'interface'
+            // InternalTargetEnvironmentLexer.g:74:11: ( 'interface' )
+            // InternalTargetEnvironmentLexer.g:74:13: 'interface'
             {
             match("interface");
 
@@ -722,8 +744,8 @@ public class InternalTargetEnvironmentLexer extends Lexer {
         try {
             int _type = Ethernet;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTargetEnvironmentLexer.g:74:10: ( 'Ethernet' )
-            // InternalTargetEnvironmentLexer.g:74:12: 'Ethernet'
+            // InternalTargetEnvironmentLexer.g:76:10: ( 'Ethernet' )
+            // InternalTargetEnvironmentLexer.g:76:12: 'Ethernet'
             {
             match("Ethernet");
 
@@ -743,8 +765,8 @@ public class InternalTargetEnvironmentLexer extends Lexer {
         try {
             int _type = Address;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTargetEnvironmentLexer.g:76:9: ( 'address' )
-            // InternalTargetEnvironmentLexer.g:76:11: 'address'
+            // InternalTargetEnvironmentLexer.g:78:9: ( 'address' )
+            // InternalTargetEnvironmentLexer.g:78:11: 'address'
             {
             match("address");
 
@@ -764,8 +786,8 @@ public class InternalTargetEnvironmentLexer extends Lexer {
         try {
             int _type = Device;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTargetEnvironmentLexer.g:78:8: ( 'device:' )
-            // InternalTargetEnvironmentLexer.g:78:10: 'device:'
+            // InternalTargetEnvironmentLexer.g:80:8: ( 'device:' )
+            // InternalTargetEnvironmentLexer.g:80:10: 'device:'
             {
             match("device:");
 
@@ -785,8 +807,8 @@ public class InternalTargetEnvironmentLexer extends Lexer {
         try {
             int _type = Os_name;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTargetEnvironmentLexer.g:80:9: ( 'os_name' )
-            // InternalTargetEnvironmentLexer.g:80:11: 'os_name'
+            // InternalTargetEnvironmentLexer.g:82:9: ( 'os_name' )
+            // InternalTargetEnvironmentLexer.g:82:11: 'os_name'
             {
             match("os_name");
 
@@ -806,8 +828,8 @@ public class InternalTargetEnvironmentLexer extends Lexer {
         try {
             int _type = Debian;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTargetEnvironmentLexer.g:82:8: ( 'debian' )
-            // InternalTargetEnvironmentLexer.g:82:10: 'debian'
+            // InternalTargetEnvironmentLexer.g:84:8: ( 'debian' )
+            // InternalTargetEnvironmentLexer.g:84:10: 'debian'
             {
             match("debian");
 
@@ -827,8 +849,8 @@ public class InternalTargetEnvironmentLexer extends Lexer {
         try {
             int _type = Ubuntu;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTargetEnvironmentLexer.g:84:8: ( 'ubuntu' )
-            // InternalTargetEnvironmentLexer.g:84:10: 'ubuntu'
+            // InternalTargetEnvironmentLexer.g:86:8: ( 'ubuntu' )
+            // InternalTargetEnvironmentLexer.g:86:10: 'ubuntu'
             {
             match("ubuntu");
 
@@ -848,8 +870,8 @@ public class InternalTargetEnvironmentLexer extends Lexer {
         try {
             int _type = Value;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTargetEnvironmentLexer.g:86:7: ( 'value:' )
-            // InternalTargetEnvironmentLexer.g:86:9: 'value:'
+            // InternalTargetEnvironmentLexer.g:88:7: ( 'value:' )
+            // InternalTargetEnvironmentLexer.g:88:9: 'value:'
             {
             match("value:");
 
@@ -869,8 +891,8 @@ public class InternalTargetEnvironmentLexer extends Lexer {
         try {
             int _type = Arm64;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTargetEnvironmentLexer.g:88:7: ( 'arm64' )
-            // InternalTargetEnvironmentLexer.g:88:9: 'arm64'
+            // InternalTargetEnvironmentLexer.g:90:7: ( 'arm64' )
+            // InternalTargetEnvironmentLexer.g:90:9: 'arm64'
             {
             match("arm64");
 
@@ -890,8 +912,8 @@ public class InternalTargetEnvironmentLexer extends Lexer {
         try {
             int _type = Focal;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTargetEnvironmentLexer.g:90:7: ( 'focal' )
-            // InternalTargetEnvironmentLexer.g:90:9: 'focal'
+            // InternalTargetEnvironmentLexer.g:92:7: ( 'focal' )
+            // InternalTargetEnvironmentLexer.g:92:9: 'focal'
             {
             match("focal");
 
@@ -911,8 +933,8 @@ public class InternalTargetEnvironmentLexer extends Lexer {
         try {
             int _type = From;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTargetEnvironmentLexer.g:92:6: ( 'from:' )
-            // InternalTargetEnvironmentLexer.g:92:8: 'from:'
+            // InternalTargetEnvironmentLexer.g:94:6: ( 'from:' )
+            // InternalTargetEnvironmentLexer.g:94:8: 'from:'
             {
             match("from:");
 
@@ -932,8 +954,8 @@ public class InternalTargetEnvironmentLexer extends Lexer {
         try {
             int _type = Jammy;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTargetEnvironmentLexer.g:94:7: ( 'jammy' )
-            // InternalTargetEnvironmentLexer.g:94:9: 'jammy'
+            // InternalTargetEnvironmentLexer.g:96:7: ( 'jammy' )
+            // InternalTargetEnvironmentLexer.g:96:9: 'jammy'
             {
             match("jammy");
 
@@ -953,8 +975,8 @@ public class InternalTargetEnvironmentLexer extends Lexer {
         try {
             int _type = Kind;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTargetEnvironmentLexer.g:96:6: ( 'kind:' )
-            // InternalTargetEnvironmentLexer.g:96:8: 'kind:'
+            // InternalTargetEnvironmentLexer.g:98:6: ( 'kind:' )
+            // InternalTargetEnvironmentLexer.g:98:8: 'kind:'
             {
             match("kind:");
 
@@ -974,8 +996,8 @@ public class InternalTargetEnvironmentLexer extends Lexer {
         try {
             int _type = Name;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTargetEnvironmentLexer.g:98:6: ( 'name:' )
-            // InternalTargetEnvironmentLexer.g:98:8: 'name:'
+            // InternalTargetEnvironmentLexer.g:100:6: ( 'name:' )
+            // InternalTargetEnvironmentLexer.g:100:8: 'name:'
             {
             match("name:");
 
@@ -995,8 +1017,8 @@ public class InternalTargetEnvironmentLexer extends Lexer {
         try {
             int _type = Type;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTargetEnvironmentLexer.g:100:6: ( 'type:' )
-            // InternalTargetEnvironmentLexer.g:100:8: 'type:'
+            // InternalTargetEnvironmentLexer.g:102:6: ( 'type:' )
+            // InternalTargetEnvironmentLexer.g:102:8: 'type:'
             {
             match("type:");
 
@@ -1016,8 +1038,8 @@ public class InternalTargetEnvironmentLexer extends Lexer {
         try {
             int _type = Wlan;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTargetEnvironmentLexer.g:102:6: ( 'Wlan' )
-            // InternalTargetEnvironmentLexer.g:102:8: 'Wlan'
+            // InternalTargetEnvironmentLexer.g:104:6: ( 'Wlan' )
+            // InternalTargetEnvironmentLexer.g:104:8: 'Wlan'
             {
             match("Wlan");
 
@@ -1037,8 +1059,8 @@ public class InternalTargetEnvironmentLexer extends Lexer {
         try {
             int _type = HyphenMinusHyphenMinusHyphenMinus;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTargetEnvironmentLexer.g:104:35: ( '---' )
-            // InternalTargetEnvironmentLexer.g:104:37: '---'
+            // InternalTargetEnvironmentLexer.g:106:35: ( '---' )
+            // InternalTargetEnvironmentLexer.g:106:37: '---'
             {
             match("---");
 
@@ -1058,8 +1080,8 @@ public class InternalTargetEnvironmentLexer extends Lexer {
         try {
             int _type = X86;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTargetEnvironmentLexer.g:106:5: ( 'x86' )
-            // InternalTargetEnvironmentLexer.g:106:7: 'x86'
+            // InternalTargetEnvironmentLexer.g:108:5: ( 'x86' )
+            // InternalTargetEnvironmentLexer.g:108:7: 'x86'
             {
             match("x86");
 
@@ -1079,8 +1101,8 @@ public class InternalTargetEnvironmentLexer extends Lexer {
         try {
             int _type = HyphenMinus;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTargetEnvironmentLexer.g:108:13: ( '-' )
-            // InternalTargetEnvironmentLexer.g:108:15: '-'
+            // InternalTargetEnvironmentLexer.g:110:13: ( '-' )
+            // InternalTargetEnvironmentLexer.g:110:15: '-'
             {
             match('-');
 
@@ -1097,8 +1119,8 @@ public class InternalTargetEnvironmentLexer extends Lexer {
     // $ANTLR start "RULE_DIGIT"
     public final void mRULE_DIGIT() throws RecognitionException {
         try {
-            // InternalTargetEnvironmentLexer.g:110:21: ( '0' .. '9' )
-            // InternalTargetEnvironmentLexer.g:110:23: '0' .. '9'
+            // InternalTargetEnvironmentLexer.g:112:21: ( '0' .. '9' )
+            // InternalTargetEnvironmentLexer.g:112:23: '0' .. '9'
             {
             matchRange('0','9');
 
@@ -1115,19 +1137,19 @@ public class InternalTargetEnvironmentLexer extends Lexer {
         try {
             int _type = RULE_DOUBLE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTargetEnvironmentLexer.g:112:13: ( RULE_DIGIT ( '.' ( RULE_DECINT )* | ( '.' ( RULE_DIGIT )* )? ( 'E' | 'e' ) ( '-' | '+' )? RULE_DIGIT ) )
-            // InternalTargetEnvironmentLexer.g:112:15: RULE_DIGIT ( '.' ( RULE_DECINT )* | ( '.' ( RULE_DIGIT )* )? ( 'E' | 'e' ) ( '-' | '+' )? RULE_DIGIT )
+            // InternalTargetEnvironmentLexer.g:114:13: ( RULE_DIGIT ( '.' ( RULE_DECINT )* | ( '.' ( RULE_DIGIT )* )? ( 'E' | 'e' ) ( '-' | '+' )? RULE_DIGIT ) )
+            // InternalTargetEnvironmentLexer.g:114:15: RULE_DIGIT ( '.' ( RULE_DECINT )* | ( '.' ( RULE_DIGIT )* )? ( 'E' | 'e' ) ( '-' | '+' )? RULE_DIGIT )
             {
             mRULE_DIGIT();
-            // InternalTargetEnvironmentLexer.g:112:26: ( '.' ( RULE_DECINT )* | ( '.' ( RULE_DIGIT )* )? ( 'E' | 'e' ) ( '-' | '+' )? RULE_DIGIT )
+            // InternalTargetEnvironmentLexer.g:114:26: ( '.' ( RULE_DECINT )* | ( '.' ( RULE_DIGIT )* )? ( 'E' | 'e' ) ( '-' | '+' )? RULE_DIGIT )
             int alt5=2;
             alt5 = dfa5.predict(input);
             switch (alt5) {
                 case 1 :
-                    // InternalTargetEnvironmentLexer.g:112:27: '.' ( RULE_DECINT )*
+                    // InternalTargetEnvironmentLexer.g:114:27: '.' ( RULE_DECINT )*
                     {
                     match('.');
-                    // InternalTargetEnvironmentLexer.g:112:31: ( RULE_DECINT )*
+                    // InternalTargetEnvironmentLexer.g:114:31: ( RULE_DECINT )*
                     loop1:
                     do {
                         int alt1=2;
@@ -1140,7 +1162,7 @@ public class InternalTargetEnvironmentLexer extends Lexer {
 
                         switch (alt1) {
                         case 1 :
-                            // InternalTargetEnvironmentLexer.g:112:31: RULE_DECINT
+                            // InternalTargetEnvironmentLexer.g:114:31: RULE_DECINT
                             {
                             mRULE_DECINT();
 
@@ -1156,9 +1178,9 @@ public class InternalTargetEnvironmentLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalTargetEnvironmentLexer.g:112:44: ( '.' ( RULE_DIGIT )* )? ( 'E' | 'e' ) ( '-' | '+' )? RULE_DIGIT
+                    // InternalTargetEnvironmentLexer.g:114:44: ( '.' ( RULE_DIGIT )* )? ( 'E' | 'e' ) ( '-' | '+' )? RULE_DIGIT
                     {
-                    // InternalTargetEnvironmentLexer.g:112:44: ( '.' ( RULE_DIGIT )* )?
+                    // InternalTargetEnvironmentLexer.g:114:44: ( '.' ( RULE_DIGIT )* )?
                     int alt3=2;
                     int LA3_0 = input.LA(1);
 
@@ -1167,10 +1189,10 @@ public class InternalTargetEnvironmentLexer extends Lexer {
                     }
                     switch (alt3) {
                         case 1 :
-                            // InternalTargetEnvironmentLexer.g:112:45: '.' ( RULE_DIGIT )*
+                            // InternalTargetEnvironmentLexer.g:114:45: '.' ( RULE_DIGIT )*
                             {
                             match('.');
-                            // InternalTargetEnvironmentLexer.g:112:49: ( RULE_DIGIT )*
+                            // InternalTargetEnvironmentLexer.g:114:49: ( RULE_DIGIT )*
                             loop2:
                             do {
                                 int alt2=2;
@@ -1183,7 +1205,7 @@ public class InternalTargetEnvironmentLexer extends Lexer {
 
                                 switch (alt2) {
                                 case 1 :
-                                    // InternalTargetEnvironmentLexer.g:112:49: RULE_DIGIT
+                                    // InternalTargetEnvironmentLexer.g:114:49: RULE_DIGIT
                                     {
                                     mRULE_DIGIT();
 
@@ -1210,7 +1232,7 @@ public class InternalTargetEnvironmentLexer extends Lexer {
                         recover(mse);
                         throw mse;}
 
-                    // InternalTargetEnvironmentLexer.g:112:73: ( '-' | '+' )?
+                    // InternalTargetEnvironmentLexer.g:114:73: ( '-' | '+' )?
                     int alt4=2;
                     int LA4_0 = input.LA(1);
 
@@ -1259,10 +1281,10 @@ public class InternalTargetEnvironmentLexer extends Lexer {
         try {
             int _type = RULE_DECINT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTargetEnvironmentLexer.g:114:13: ( ( '0' | '1' .. '9' ( RULE_DIGIT )* | '-' '0' .. '9' ( RULE_DIGIT )* ) )
-            // InternalTargetEnvironmentLexer.g:114:15: ( '0' | '1' .. '9' ( RULE_DIGIT )* | '-' '0' .. '9' ( RULE_DIGIT )* )
+            // InternalTargetEnvironmentLexer.g:116:13: ( ( '0' | '1' .. '9' ( RULE_DIGIT )* | '-' '0' .. '9' ( RULE_DIGIT )* ) )
+            // InternalTargetEnvironmentLexer.g:116:15: ( '0' | '1' .. '9' ( RULE_DIGIT )* | '-' '0' .. '9' ( RULE_DIGIT )* )
             {
-            // InternalTargetEnvironmentLexer.g:114:15: ( '0' | '1' .. '9' ( RULE_DIGIT )* | '-' '0' .. '9' ( RULE_DIGIT )* )
+            // InternalTargetEnvironmentLexer.g:116:15: ( '0' | '1' .. '9' ( RULE_DIGIT )* | '-' '0' .. '9' ( RULE_DIGIT )* )
             int alt8=3;
             switch ( input.LA(1) ) {
             case '0':
@@ -1297,17 +1319,17 @@ public class InternalTargetEnvironmentLexer extends Lexer {
 
             switch (alt8) {
                 case 1 :
-                    // InternalTargetEnvironmentLexer.g:114:16: '0'
+                    // InternalTargetEnvironmentLexer.g:116:16: '0'
                     {
                     match('0');
 
                     }
                     break;
                 case 2 :
-                    // InternalTargetEnvironmentLexer.g:114:20: '1' .. '9' ( RULE_DIGIT )*
+                    // InternalTargetEnvironmentLexer.g:116:20: '1' .. '9' ( RULE_DIGIT )*
                     {
                     matchRange('1','9');
-                    // InternalTargetEnvironmentLexer.g:114:29: ( RULE_DIGIT )*
+                    // InternalTargetEnvironmentLexer.g:116:29: ( RULE_DIGIT )*
                     loop6:
                     do {
                         int alt6=2;
@@ -1320,7 +1342,7 @@ public class InternalTargetEnvironmentLexer extends Lexer {
 
                         switch (alt6) {
                         case 1 :
-                            // InternalTargetEnvironmentLexer.g:114:29: RULE_DIGIT
+                            // InternalTargetEnvironmentLexer.g:116:29: RULE_DIGIT
                             {
                             mRULE_DIGIT();
 
@@ -1336,11 +1358,11 @@ public class InternalTargetEnvironmentLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // InternalTargetEnvironmentLexer.g:114:41: '-' '0' .. '9' ( RULE_DIGIT )*
+                    // InternalTargetEnvironmentLexer.g:116:41: '-' '0' .. '9' ( RULE_DIGIT )*
                     {
                     match('-');
                     matchRange('0','9');
-                    // InternalTargetEnvironmentLexer.g:114:54: ( RULE_DIGIT )*
+                    // InternalTargetEnvironmentLexer.g:116:54: ( RULE_DIGIT )*
                     loop7:
                     do {
                         int alt7=2;
@@ -1353,7 +1375,7 @@ public class InternalTargetEnvironmentLexer extends Lexer {
 
                         switch (alt7) {
                         case 1 :
-                            // InternalTargetEnvironmentLexer.g:114:54: RULE_DIGIT
+                            // InternalTargetEnvironmentLexer.g:116:54: RULE_DIGIT
                             {
                             mRULE_DIGIT();
 
@@ -1387,11 +1409,11 @@ public class InternalTargetEnvironmentLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTargetEnvironmentLexer.g:116:17: ( '#' (~ ( ( '\\n' | '\\r' ) ) )* )
-            // InternalTargetEnvironmentLexer.g:116:19: '#' (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalTargetEnvironmentLexer.g:118:17: ( '#' (~ ( ( '\\n' | '\\r' ) ) )* )
+            // InternalTargetEnvironmentLexer.g:118:19: '#' (~ ( ( '\\n' | '\\r' ) ) )*
             {
             match('#');
-            // InternalTargetEnvironmentLexer.g:116:23: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalTargetEnvironmentLexer.g:118:23: (~ ( ( '\\n' | '\\r' ) ) )*
             loop9:
             do {
                 int alt9=2;
@@ -1404,7 +1426,7 @@ public class InternalTargetEnvironmentLexer extends Lexer {
 
                 switch (alt9) {
                 case 1 :
-                    // InternalTargetEnvironmentLexer.g:116:23: ~ ( ( '\\n' | '\\r' ) )
+                    // InternalTargetEnvironmentLexer.g:118:23: ~ ( ( '\\n' | '\\r' ) )
                     {
                     if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
                         input.consume();
@@ -1438,8 +1460,8 @@ public class InternalTargetEnvironmentLexer extends Lexer {
     // $ANTLR start "RULE_INDENT"
     public final void mRULE_INDENT() throws RecognitionException {
         try {
-            // InternalTargetEnvironmentLexer.g:118:22: ()
-            // InternalTargetEnvironmentLexer.g:118:24:
+            // InternalTargetEnvironmentLexer.g:120:22: ()
+            // InternalTargetEnvironmentLexer.g:120:24:
             {
             }
 
@@ -1452,8 +1474,8 @@ public class InternalTargetEnvironmentLexer extends Lexer {
     // $ANTLR start "RULE_DEDENT"
     public final void mRULE_DEDENT() throws RecognitionException {
         try {
-            // InternalTargetEnvironmentLexer.g:120:22: ()
-            // InternalTargetEnvironmentLexer.g:120:24:
+            // InternalTargetEnvironmentLexer.g:122:22: ()
+            // InternalTargetEnvironmentLexer.g:122:24:
             {
             }
 
@@ -1468,10 +1490,10 @@ public class InternalTargetEnvironmentLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTargetEnvironmentLexer.g:122:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalTargetEnvironmentLexer.g:122:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalTargetEnvironmentLexer.g:124:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalTargetEnvironmentLexer.g:124:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // InternalTargetEnvironmentLexer.g:122:11: ( '^' )?
+            // InternalTargetEnvironmentLexer.g:124:11: ( '^' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -1480,7 +1502,7 @@ public class InternalTargetEnvironmentLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // InternalTargetEnvironmentLexer.g:122:11: '^'
+                    // InternalTargetEnvironmentLexer.g:124:11: '^'
                     {
                     match('^');
 
@@ -1498,7 +1520,7 @@ public class InternalTargetEnvironmentLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalTargetEnvironmentLexer.g:122:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalTargetEnvironmentLexer.g:124:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop11:
             do {
                 int alt11=2;
@@ -1547,10 +1569,10 @@ public class InternalTargetEnvironmentLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTargetEnvironmentLexer.g:124:10: ( ( '0' .. '9' )+ )
-            // InternalTargetEnvironmentLexer.g:124:12: ( '0' .. '9' )+
+            // InternalTargetEnvironmentLexer.g:126:10: ( ( '0' .. '9' )+ )
+            // InternalTargetEnvironmentLexer.g:126:12: ( '0' .. '9' )+
             {
-            // InternalTargetEnvironmentLexer.g:124:12: ( '0' .. '9' )+
+            // InternalTargetEnvironmentLexer.g:126:12: ( '0' .. '9' )+
             int cnt12=0;
             loop12:
             do {
@@ -1564,7 +1586,7 @@ public class InternalTargetEnvironmentLexer extends Lexer {
 
                 switch (alt12) {
                 case 1 :
-                    // InternalTargetEnvironmentLexer.g:124:13: '0' .. '9'
+                    // InternalTargetEnvironmentLexer.g:126:13: '0' .. '9'
                     {
                     matchRange('0','9');
 
@@ -1596,10 +1618,10 @@ public class InternalTargetEnvironmentLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTargetEnvironmentLexer.g:126:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // InternalTargetEnvironmentLexer.g:126:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalTargetEnvironmentLexer.g:128:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalTargetEnvironmentLexer.g:128:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // InternalTargetEnvironmentLexer.g:126:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalTargetEnvironmentLexer.g:128:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt15=2;
             int LA15_0 = input.LA(1);
 
@@ -1617,10 +1639,10 @@ public class InternalTargetEnvironmentLexer extends Lexer {
             }
             switch (alt15) {
                 case 1 :
-                    // InternalTargetEnvironmentLexer.g:126:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalTargetEnvironmentLexer.g:128:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"');
-                    // InternalTargetEnvironmentLexer.g:126:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalTargetEnvironmentLexer.g:128:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop13:
                     do {
                         int alt13=3;
@@ -1636,7 +1658,7 @@ public class InternalTargetEnvironmentLexer extends Lexer {
 
                         switch (alt13) {
                         case 1 :
-                            // InternalTargetEnvironmentLexer.g:126:21: '\\\\' .
+                            // InternalTargetEnvironmentLexer.g:128:21: '\\\\' .
                             {
                             match('\\');
                             matchAny();
@@ -1644,7 +1666,7 @@ public class InternalTargetEnvironmentLexer extends Lexer {
                             }
                             break;
                         case 2 :
-                            // InternalTargetEnvironmentLexer.g:126:28: ~ ( ( '\\\\' | '\"' ) )
+                            // InternalTargetEnvironmentLexer.g:128:28: ~ ( ( '\\\\' | '\"' ) )
                             {
                             if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                                 input.consume();
@@ -1669,10 +1691,10 @@ public class InternalTargetEnvironmentLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalTargetEnvironmentLexer.g:126:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalTargetEnvironmentLexer.g:128:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\'');
-                    // InternalTargetEnvironmentLexer.g:126:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalTargetEnvironmentLexer.g:128:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop14:
                     do {
                         int alt14=3;
@@ -1688,7 +1710,7 @@ public class InternalTargetEnvironmentLexer extends Lexer {
 
                         switch (alt14) {
                         case 1 :
-                            // InternalTargetEnvironmentLexer.g:126:54: '\\\\' .
+                            // InternalTargetEnvironmentLexer.g:128:54: '\\\\' .
                             {
                             match('\\');
                             matchAny();
@@ -1696,7 +1718,7 @@ public class InternalTargetEnvironmentLexer extends Lexer {
                             }
                             break;
                         case 2 :
-                            // InternalTargetEnvironmentLexer.g:126:61: ~ ( ( '\\\\' | '\\'' ) )
+                            // InternalTargetEnvironmentLexer.g:128:61: ~ ( ( '\\\\' | '\\'' ) )
                             {
                             if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                                 input.consume();
@@ -1739,12 +1761,12 @@ public class InternalTargetEnvironmentLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTargetEnvironmentLexer.g:128:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalTargetEnvironmentLexer.g:128:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalTargetEnvironmentLexer.g:130:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalTargetEnvironmentLexer.g:130:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*");
 
-            // InternalTargetEnvironmentLexer.g:128:24: ( options {greedy=false; } : . )*
+            // InternalTargetEnvironmentLexer.g:130:24: ( options {greedy=false; } : . )*
             loop16:
             do {
                 int alt16=2;
@@ -1769,7 +1791,7 @@ public class InternalTargetEnvironmentLexer extends Lexer {
 
                 switch (alt16) {
                 case 1 :
-                    // InternalTargetEnvironmentLexer.g:128:52: .
+                    // InternalTargetEnvironmentLexer.g:130:52: .
                     {
                     matchAny();
 
@@ -1799,10 +1821,10 @@ public class InternalTargetEnvironmentLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTargetEnvironmentLexer.g:130:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalTargetEnvironmentLexer.g:130:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalTargetEnvironmentLexer.g:132:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalTargetEnvironmentLexer.g:132:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalTargetEnvironmentLexer.g:130:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalTargetEnvironmentLexer.g:132:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt17=0;
             loop17:
             do {
@@ -1856,8 +1878,8 @@ public class InternalTargetEnvironmentLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTargetEnvironmentLexer.g:132:16: ( . )
-            // InternalTargetEnvironmentLexer.g:132:18: .
+            // InternalTargetEnvironmentLexer.g:134:16: ( . )
+            // InternalTargetEnvironmentLexer.g:134:18: .
             {
             matchAny();
 
@@ -1872,8 +1894,8 @@ public class InternalTargetEnvironmentLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // InternalTargetEnvironmentLexer.g:1:8: ( CommunicationConnection | TargetDeployEnviroment | ComputationDeviceType | Processor_architecture | RefConnectionProperty | ConfigDeviceProperty | LinuxOpertingSystem | MacOSOpertingSystem | ComputationDevice | ConfigConnection | Configuration | ConnectDevice | DeviceResouce | IncludeDevice | RefConnection | RefDeviceType | AttributeKind | SelectionKind | Description | DeviceType | MaximumKind | MinimumKind | Core_number | Properties | Os_version | RefDevice | Processor | RangeKind | Container | Interface | Ethernet | Address | Device | Os_name | Debian | Ubuntu | Value | Arm64 | Focal | From | Jammy | Kind | Name | Type | Wlan | HyphenMinusHyphenMinusHyphenMinus | X86 | HyphenMinus | RULE_DOUBLE | RULE_DECINT | RULE_SL_COMMENT | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt18=57;
+        // InternalTargetEnvironmentLexer.g:1:8: ( CommunicationConnection | TargetDeployEnviroment | ComputationDeviceType | Processor_architecture | RefConnectionProperty | ConfigDeviceProperty | LinuxOpertingSystem | MacOSOpertingSystem | ComputationResouce | ComputationDevice | ConfigConnection | Configuration | ConnectDevice | DeviceResouce | IncludeDevice | RefConnection | RefDeviceType | AttributeKind | SelectionKind | Description | DeviceType | MaximumKind | MinimumKind | Core_number | Properties | Os_version | RefDevice | Processor | RangeKind | Container | Interface | Ethernet | Address | Device | Os_name | Debian | Ubuntu | Value | Arm64 | Focal | From | Jammy | Kind | Name | Type | Wlan | HyphenMinusHyphenMinusHyphenMinus | X86 | HyphenMinus | RULE_DOUBLE | RULE_DECINT | RULE_SL_COMMENT | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt18=58;
         alt18 = dfa18.predict(input);
         switch (alt18) {
             case 1 :
@@ -1933,343 +1955,350 @@ public class InternalTargetEnvironmentLexer extends Lexer {
                 }
                 break;
             case 9 :
-                // InternalTargetEnvironmentLexer.g:1:185: ComputationDevice
+                // InternalTargetEnvironmentLexer.g:1:185: ComputationResouce
+                {
+                mComputationResouce();
+
+                }
+                break;
+            case 10 :
+                // InternalTargetEnvironmentLexer.g:1:204: ComputationDevice
                 {
                 mComputationDevice();
 
                 }
                 break;
-            case 10 :
-                // InternalTargetEnvironmentLexer.g:1:203: ConfigConnection
+            case 11 :
+                // InternalTargetEnvironmentLexer.g:1:222: ConfigConnection
                 {
                 mConfigConnection();
 
                 }
                 break;
-            case 11 :
-                // InternalTargetEnvironmentLexer.g:1:220: Configuration
+            case 12 :
+                // InternalTargetEnvironmentLexer.g:1:239: Configuration
                 {
                 mConfiguration();
 
                 }
                 break;
-            case 12 :
-                // InternalTargetEnvironmentLexer.g:1:234: ConnectDevice
+            case 13 :
+                // InternalTargetEnvironmentLexer.g:1:253: ConnectDevice
                 {
                 mConnectDevice();
 
                 }
                 break;
-            case 13 :
-                // InternalTargetEnvironmentLexer.g:1:248: DeviceResouce
+            case 14 :
+                // InternalTargetEnvironmentLexer.g:1:267: DeviceResouce
                 {
                 mDeviceResouce();
 
                 }
                 break;
-            case 14 :
-                // InternalTargetEnvironmentLexer.g:1:262: IncludeDevice
+            case 15 :
+                // InternalTargetEnvironmentLexer.g:1:281: IncludeDevice
                 {
                 mIncludeDevice();
 
                 }
                 break;
-            case 15 :
-                // InternalTargetEnvironmentLexer.g:1:276: RefConnection
+            case 16 :
+                // InternalTargetEnvironmentLexer.g:1:295: RefConnection
                 {
                 mRefConnection();
 
                 }
                 break;
-            case 16 :
-                // InternalTargetEnvironmentLexer.g:1:290: RefDeviceType
+            case 17 :
+                // InternalTargetEnvironmentLexer.g:1:309: RefDeviceType
                 {
                 mRefDeviceType();
 
                 }
                 break;
-            case 17 :
-                // InternalTargetEnvironmentLexer.g:1:304: AttributeKind
+            case 18 :
+                // InternalTargetEnvironmentLexer.g:1:323: AttributeKind
                 {
                 mAttributeKind();
 
                 }
                 break;
-            case 18 :
-                // InternalTargetEnvironmentLexer.g:1:318: SelectionKind
+            case 19 :
+                // InternalTargetEnvironmentLexer.g:1:337: SelectionKind
                 {
                 mSelectionKind();
 
                 }
                 break;
-            case 19 :
-                // InternalTargetEnvironmentLexer.g:1:332: Description
+            case 20 :
+                // InternalTargetEnvironmentLexer.g:1:351: Description
                 {
                 mDescription();
 
                 }
                 break;
-            case 20 :
-                // InternalTargetEnvironmentLexer.g:1:344: DeviceType
+            case 21 :
+                // InternalTargetEnvironmentLexer.g:1:363: DeviceType
                 {
                 mDeviceType();
 
                 }
                 break;
-            case 21 :
-                // InternalTargetEnvironmentLexer.g:1:355: MaximumKind
+            case 22 :
+                // InternalTargetEnvironmentLexer.g:1:374: MaximumKind
                 {
                 mMaximumKind();
 
                 }
                 break;
-            case 22 :
-                // InternalTargetEnvironmentLexer.g:1:367: MinimumKind
+            case 23 :
+                // InternalTargetEnvironmentLexer.g:1:386: MinimumKind
                 {
                 mMinimumKind();
 
                 }
                 break;
-            case 23 :
-                // InternalTargetEnvironmentLexer.g:1:379: Core_number
+            case 24 :
+                // InternalTargetEnvironmentLexer.g:1:398: Core_number
                 {
                 mCore_number();
 
                 }
                 break;
-            case 24 :
-                // InternalTargetEnvironmentLexer.g:1:391: Properties
+            case 25 :
+                // InternalTargetEnvironmentLexer.g:1:410: Properties
                 {
                 mProperties();
 
                 }
                 break;
-            case 25 :
-                // InternalTargetEnvironmentLexer.g:1:402: Os_version
+            case 26 :
+                // InternalTargetEnvironmentLexer.g:1:421: Os_version
                 {
                 mOs_version();
 
                 }
                 break;
-            case 26 :
-                // InternalTargetEnvironmentLexer.g:1:413: RefDevice
+            case 27 :
+                // InternalTargetEnvironmentLexer.g:1:432: RefDevice
                 {
                 mRefDevice();
 
                 }
                 break;
-            case 27 :
-                // InternalTargetEnvironmentLexer.g:1:423: Processor
+            case 28 :
+                // InternalTargetEnvironmentLexer.g:1:442: Processor
                 {
                 mProcessor();
 
                 }
                 break;
-            case 28 :
-                // InternalTargetEnvironmentLexer.g:1:433: RangeKind
+            case 29 :
+                // InternalTargetEnvironmentLexer.g:1:452: RangeKind
                 {
                 mRangeKind();
 
                 }
                 break;
-            case 29 :
-                // InternalTargetEnvironmentLexer.g:1:443: Container
+            case 30 :
+                // InternalTargetEnvironmentLexer.g:1:462: Container
                 {
                 mContainer();
 
                 }
                 break;
-            case 30 :
-                // InternalTargetEnvironmentLexer.g:1:453: Interface
+            case 31 :
+                // InternalTargetEnvironmentLexer.g:1:472: Interface
                 {
                 mInterface();
 
                 }
                 break;
-            case 31 :
-                // InternalTargetEnvironmentLexer.g:1:463: Ethernet
+            case 32 :
+                // InternalTargetEnvironmentLexer.g:1:482: Ethernet
                 {
                 mEthernet();
 
                 }
                 break;
-            case 32 :
-                // InternalTargetEnvironmentLexer.g:1:472: Address
+            case 33 :
+                // InternalTargetEnvironmentLexer.g:1:491: Address
                 {
                 mAddress();
 
                 }
                 break;
-            case 33 :
-                // InternalTargetEnvironmentLexer.g:1:480: Device
+            case 34 :
+                // InternalTargetEnvironmentLexer.g:1:499: Device
                 {
                 mDevice();
 
                 }
                 break;
-            case 34 :
-                // InternalTargetEnvironmentLexer.g:1:487: Os_name
+            case 35 :
+                // InternalTargetEnvironmentLexer.g:1:506: Os_name
                 {
                 mOs_name();
 
                 }
                 break;
-            case 35 :
-                // InternalTargetEnvironmentLexer.g:1:495: Debian
+            case 36 :
+                // InternalTargetEnvironmentLexer.g:1:514: Debian
                 {
                 mDebian();
 
                 }
                 break;
-            case 36 :
-                // InternalTargetEnvironmentLexer.g:1:502: Ubuntu
+            case 37 :
+                // InternalTargetEnvironmentLexer.g:1:521: Ubuntu
                 {
                 mUbuntu();
 
                 }
                 break;
-            case 37 :
-                // InternalTargetEnvironmentLexer.g:1:509: Value
+            case 38 :
+                // InternalTargetEnvironmentLexer.g:1:528: Value
                 {
                 mValue();
 
                 }
                 break;
-            case 38 :
-                // InternalTargetEnvironmentLexer.g:1:515: Arm64
+            case 39 :
+                // InternalTargetEnvironmentLexer.g:1:534: Arm64
                 {
                 mArm64();
 
                 }
                 break;
-            case 39 :
-                // InternalTargetEnvironmentLexer.g:1:521: Focal
+            case 40 :
+                // InternalTargetEnvironmentLexer.g:1:540: Focal
                 {
                 mFocal();
 
                 }
                 break;
-            case 40 :
-                // InternalTargetEnvironmentLexer.g:1:527: From
+            case 41 :
+                // InternalTargetEnvironmentLexer.g:1:546: From
                 {
                 mFrom();
 
                 }
                 break;
-            case 41 :
-                // InternalTargetEnvironmentLexer.g:1:532: Jammy
+            case 42 :
+                // InternalTargetEnvironmentLexer.g:1:551: Jammy
                 {
                 mJammy();
 
                 }
                 break;
-            case 42 :
-                // InternalTargetEnvironmentLexer.g:1:538: Kind
+            case 43 :
+                // InternalTargetEnvironmentLexer.g:1:557: Kind
                 {
                 mKind();
 
                 }
                 break;
-            case 43 :
-                // InternalTargetEnvironmentLexer.g:1:543: Name
+            case 44 :
+                // InternalTargetEnvironmentLexer.g:1:562: Name
                 {
                 mName();
 
                 }
                 break;
-            case 44 :
-                // InternalTargetEnvironmentLexer.g:1:548: Type
+            case 45 :
+                // InternalTargetEnvironmentLexer.g:1:567: Type
                 {
                 mType();
 
                 }
                 break;
-            case 45 :
-                // InternalTargetEnvironmentLexer.g:1:553: Wlan
+            case 46 :
+                // InternalTargetEnvironmentLexer.g:1:572: Wlan
                 {
                 mWlan();
 
                 }
                 break;
-            case 46 :
-                // InternalTargetEnvironmentLexer.g:1:558: HyphenMinusHyphenMinusHyphenMinus
+            case 47 :
+                // InternalTargetEnvironmentLexer.g:1:577: HyphenMinusHyphenMinusHyphenMinus
                 {
                 mHyphenMinusHyphenMinusHyphenMinus();
 
                 }
                 break;
-            case 47 :
-                // InternalTargetEnvironmentLexer.g:1:592: X86
+            case 48 :
+                // InternalTargetEnvironmentLexer.g:1:611: X86
                 {
                 mX86();
 
                 }
                 break;
-            case 48 :
-                // InternalTargetEnvironmentLexer.g:1:596: HyphenMinus
+            case 49 :
+                // InternalTargetEnvironmentLexer.g:1:615: HyphenMinus
                 {
                 mHyphenMinus();
 
                 }
                 break;
-            case 49 :
-                // InternalTargetEnvironmentLexer.g:1:608: RULE_DOUBLE
+            case 50 :
+                // InternalTargetEnvironmentLexer.g:1:627: RULE_DOUBLE
                 {
                 mRULE_DOUBLE();
 
                 }
                 break;
-            case 50 :
-                // InternalTargetEnvironmentLexer.g:1:620: RULE_DECINT
+            case 51 :
+                // InternalTargetEnvironmentLexer.g:1:639: RULE_DECINT
                 {
                 mRULE_DECINT();
 
                 }
                 break;
-            case 51 :
-                // InternalTargetEnvironmentLexer.g:1:632: RULE_SL_COMMENT
+            case 52 :
+                // InternalTargetEnvironmentLexer.g:1:651: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT();
 
                 }
                 break;
-            case 52 :
-                // InternalTargetEnvironmentLexer.g:1:648: RULE_ID
+            case 53 :
+                // InternalTargetEnvironmentLexer.g:1:667: RULE_ID
                 {
                 mRULE_ID();
 
                 }
                 break;
-            case 53 :
-                // InternalTargetEnvironmentLexer.g:1:656: RULE_INT
+            case 54 :
+                // InternalTargetEnvironmentLexer.g:1:675: RULE_INT
                 {
                 mRULE_INT();
 
                 }
                 break;
-            case 54 :
-                // InternalTargetEnvironmentLexer.g:1:665: RULE_STRING
+            case 55 :
+                // InternalTargetEnvironmentLexer.g:1:684: RULE_STRING
                 {
                 mRULE_STRING();
 
                 }
                 break;
-            case 55 :
-                // InternalTargetEnvironmentLexer.g:1:677: RULE_ML_COMMENT
+            case 56 :
+                // InternalTargetEnvironmentLexer.g:1:696: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT();
 
                 }
                 break;
-            case 56 :
-                // InternalTargetEnvironmentLexer.g:1:693: RULE_WS
+            case 57 :
+                // InternalTargetEnvironmentLexer.g:1:712: RULE_WS
                 {
                 mRULE_WS();
 
                 }
                 break;
-            case 57 :
-                // InternalTargetEnvironmentLexer.g:1:701: RULE_ANY_OTHER
+            case 58 :
+                // InternalTargetEnvironmentLexer.g:1:720: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER();
 
@@ -2336,21 +2365,21 @@ public class InternalTargetEnvironmentLexer extends Lexer {
             this.transition = DFA5_transition;
         }
         public String getDescription() {
-            return "112:26: ( '.' ( RULE_DECINT )* | ( '.' ( RULE_DIGIT )* )? ( 'E' | 'e' ) ( '-' | '+' )? RULE_DIGIT )";
+            return "114:26: ( '.' ( RULE_DECINT )* | ( '.' ( RULE_DIGIT )* )? ( 'E' | 'e' ) ( '-' | '+' )? RULE_DIGIT )";
         }
     }
     static final String DFA18_eotS =
-        "\1\uffff\31\47\1\105\1\47\2\104\1\uffff\1\45\1\uffff\3\45\2\uffff\1\47\1\uffff\33\47\3\uffff\1\47\2\uffff\1\104\4\uffff\42\47\1\u0099\47\47\1\u00c1\1\uffff\36\47\1\u00e0\2\47\1\u00e3\1\uffff\1\u00e4\4\uffff\22\47\1\u00fa\13\47\1\uffff\1\u0106\3\uffff\23\47\1\uffff\1\47\1\uffff\6\47\1\u0121\3\47\1\u0125\1\uffff\32\47\1\uffff\2\47\1\u0142\1\uffff\6\47\1\u0149\16\47\1\u0159\4\47\1\u015e\1\u015f\1\uffff\6\47\1\uffff\7\47\1\uffff\7\47\1\uffff\3\47\1\u0177\2\uffff\6\47\1\u017e\3\47\1\uffff\4\47\1\u0186\1\u0187\5\47\2\uffff\6\47\1\uffff\7\47\2\uffff\1\47\1\uffff\22\47\1\u01ae\1\u01af\4\47\2\uffff\4\47\2\uffff\2\47\4\uffff\27\47\1\uffff\7\47\1\uffff\15\47\1\u01e5\1\u01e6\6\47\2\uffff\1\47\1\uffff\6\47\1\uffff\1\u01f4\1\uffff\1\47\3\uffff";
+        "\1\uffff\31\47\1\105\1\47\2\104\1\uffff\1\45\1\uffff\3\45\2\uffff\1\47\1\uffff\33\47\3\uffff\1\47\2\uffff\1\104\4\uffff\42\47\1\u0099\47\47\1\u00c1\1\uffff\36\47\1\u00e0\2\47\1\u00e3\1\uffff\1\u00e4\4\uffff\22\47\1\u00fa\13\47\1\uffff\1\u0106\3\uffff\23\47\1\uffff\1\47\1\uffff\6\47\1\u0121\3\47\1\u0125\1\uffff\32\47\1\uffff\2\47\1\u0142\1\uffff\6\47\1\u0149\16\47\1\u0159\4\47\1\u015e\1\u015f\1\uffff\6\47\1\uffff\7\47\1\uffff\7\47\1\uffff\3\47\1\u0177\2\uffff\6\47\1\u017f\3\47\1\uffff\4\47\1\u0187\1\u0188\5\47\2\uffff\7\47\1\uffff\7\47\2\uffff\1\47\1\uffff\23\47\1\u01b1\1\u01b2\5\47\2\uffff\4\47\2\uffff\2\47\4\uffff\32\47\1\uffff\10\47\1\uffff\10\47\1\uffff\5\47\1\u01ed\1\u01ee\6\47\2\uffff\1\47\1\uffff\6\47\1\uffff\1\u01fc\1\uffff\1\47\3\uffff";
     static final String DFA18_eofS =
-        "\u01f6\uffff";
+        "\u01fe\uffff";
     static final String DFA18_minS =
-        "\1\0\1\157\1\141\1\157\1\162\1\145\1\151\1\141\1\145\1\156\1\164\2\145\1\163\1\162\1\141\1\164\1\144\1\142\1\141\1\157\1\141\1\151\1\141\1\171\1\154\1\55\1\70\2\56\1\uffff\1\101\1\uffff\2\0\1\52\2\uffff\1\155\1\uffff\1\162\1\155\1\157\1\146\1\156\1\143\1\156\1\142\1\143\1\164\1\154\1\166\1\137\1\157\1\156\1\150\1\144\1\155\1\165\1\154\1\143\1\157\1\155\1\156\1\155\1\160\1\141\3\uffff\1\66\2\uffff\1\60\4\uffff\1\155\1\146\1\145\1\147\1\160\1\143\1\103\1\165\1\117\3\151\1\143\1\151\1\154\1\145\1\162\1\145\1\151\1\156\1\143\1\147\1\145\1\162\1\66\1\156\1\165\1\141\2\155\1\144\2\145\1\156\1\60\2\165\1\151\1\145\1\141\1\137\1\145\1\165\2\145\1\157\1\145\1\170\1\123\2\155\1\143\1\162\1\141\1\165\1\162\1\151\2\143\1\145\1\141\2\145\1\162\1\145\1\64\1\164\1\145\1\154\1\72\1\171\3\72\1\60\1\uffff\1\156\1\164\1\147\1\143\1\151\1\156\2\164\1\163\1\162\1\156\1\166\2\117\2\165\1\145\1\151\1\156\1\144\1\146\1\142\1\164\1\145\1\162\1\155\1\163\1\113\1\156\1\163\1\60\1\165\1\72\1\60\1\uffff\1\60\4\uffff\1\151\1\141\1\103\1\164\1\156\1\165\1\104\1\141\1\163\1\164\1\156\1\151\2\160\2\155\1\72\1\160\1\60\1\145\1\141\1\165\1\151\1\124\1\163\1\145\1\163\1\151\1\145\1\163\1\uffff\1\60\3\uffff\1\143\1\164\1\145\1\157\1\162\1\104\1\145\1\155\1\145\1\164\1\157\1\151\1\145\1\143\2\145\2\113\1\145\1\uffff\1\164\1\uffff\1\104\1\143\1\164\1\157\1\171\1\151\1\60\1\157\1\156\1\164\1\60\1\uffff\1\141\1\151\1\166\1\156\1\141\1\145\1\162\1\142\1\160\1\151\1\162\1\145\1\143\1\145\2\162\2\151\1\163\1\151\3\145\1\156\1\160\1\157\1\uffff\1\162\1\144\1\60\1\uffff\1\164\1\157\1\151\1\156\1\164\1\166\1\60\1\145\1\154\1\157\1\137\1\163\1\164\1\72\2\164\2\156\2\157\1\166\1\60\2\113\1\145\1\156\2\60\1\uffff\1\151\1\156\1\143\1\145\2\151\1\uffff\1\162\1\157\1\156\1\141\1\72\1\151\1\171\1\uffff\2\151\2\144\1\165\1\156\1\151\1\uffff\2\151\1\72\1\60\2\uffff\1\157\1\104\1\145\1\143\1\157\1\143\1\60\1\171\1\104\1\162\1\uffff\1\157\1\160\2\156\2\60\1\143\1\72\1\143\2\156\2\uffff\1\156\1\145\1\120\1\164\1\156\1\145\1\uffff\1\105\1\145\1\143\1\156\1\145\2\147\2\uffff\1\145\1\uffff\1\145\2\144\1\103\1\166\1\162\1\151\2\72\1\156\1\166\1\150\2\72\2\123\2\72\2\60\1\157\1\151\2\157\2\uffff\1\166\2\151\1\162\2\uffff\2\171\4\uffff\1\156\1\143\1\160\1\156\1\151\1\143\1\164\1\157\2\163\1\156\2\145\1\72\1\162\2\145\1\160\2\164\1\145\1\72\1\162\1\uffff\1\157\1\124\1\143\3\145\1\143\1\uffff\1\164\1\155\1\171\1\164\1\162\2\155\1\164\1\171\1\145\1\160\1\165\1\164\2\60\1\151\1\72\1\156\1\145\1\162\1\171\2\uffff\1\157\1\uffff\1\164\1\72\1\145\1\72\1\156\1\72\1\uffff\1\60\1\uffff\1\72\3\uffff";
+        "\1\0\1\157\1\141\1\157\1\162\1\145\1\151\1\141\1\145\1\156\1\164\2\145\1\163\1\162\1\141\1\164\1\144\1\142\1\141\1\157\1\141\1\151\1\141\1\171\1\154\1\55\1\70\2\56\1\uffff\1\101\1\uffff\2\0\1\52\2\uffff\1\155\1\uffff\1\162\1\155\1\157\1\146\1\156\1\143\1\156\1\142\1\143\1\164\1\154\1\166\1\137\1\157\1\156\1\150\1\144\1\155\1\165\1\154\1\143\1\157\1\155\1\156\1\155\1\160\1\141\3\uffff\1\66\2\uffff\1\60\4\uffff\1\155\1\146\1\145\1\147\1\160\1\143\1\103\1\165\1\117\3\151\1\143\1\151\1\154\1\145\1\162\1\145\1\151\1\156\1\143\1\147\1\145\1\162\1\66\1\156\1\165\1\141\2\155\1\144\2\145\1\156\1\60\2\165\1\151\1\145\1\141\1\137\1\145\1\165\2\145\1\157\1\145\1\170\1\123\2\155\1\143\1\162\1\141\1\165\1\162\1\151\2\143\1\145\1\141\2\145\1\162\1\145\1\64\1\164\1\145\1\154\1\72\1\171\3\72\1\60\1\uffff\1\156\1\164\1\147\1\143\1\151\1\156\2\164\1\163\1\162\1\156\1\166\2\117\2\165\1\145\1\151\1\156\1\144\1\146\1\142\1\164\1\145\1\162\1\155\1\163\1\113\1\156\1\163\1\60\1\165\1\72\1\60\1\uffff\1\60\4\uffff\1\151\1\141\1\103\1\164\1\156\1\165\1\104\1\141\1\163\1\164\1\156\1\151\2\160\2\155\1\72\1\160\1\60\1\145\1\141\1\165\1\151\1\124\1\163\1\145\1\163\1\151\1\145\1\163\1\uffff\1\60\3\uffff\1\143\1\164\1\145\1\157\1\162\1\104\1\145\1\155\1\145\1\164\1\157\1\151\1\145\1\143\2\145\2\113\1\145\1\uffff\1\164\1\uffff\1\104\1\143\1\164\1\157\1\171\1\151\1\60\1\157\1\156\1\164\1\60\1\uffff\1\141\1\151\1\166\1\156\1\141\1\145\1\162\1\142\1\160\1\151\1\162\1\145\1\143\1\145\2\162\2\151\1\163\1\151\3\145\1\156\1\160\1\157\1\uffff\1\162\1\144\1\60\1\uffff\1\164\1\157\1\151\1\156\1\164\1\166\1\60\1\145\1\154\1\157\1\137\1\163\1\164\1\72\2\164\2\156\2\157\1\166\1\60\2\113\1\145\1\156\2\60\1\uffff\1\151\1\156\1\143\1\145\2\151\1\uffff\1\162\1\157\1\156\1\141\1\72\1\151\1\171\1\uffff\2\151\2\144\1\165\1\156\1\151\1\uffff\2\151\1\72\1\60\2\uffff\1\157\1\104\1\145\1\143\1\157\1\143\1\60\1\171\1\104\1\162\1\uffff\1\157\1\160\2\156\2\60\1\143\1\72\1\143\2\156\2\uffff\1\156\2\145\1\120\1\164\1\156\1\145\1\uffff\1\105\1\145\1\143\1\156\1\145\2\147\2\uffff\1\145\1\uffff\1\145\2\144\1\103\1\163\1\166\1\162\1\151\2\72\1\156\1\166\1\150\2\72\2\123\2\72\2\60\2\157\1\151\2\157\2\uffff\1\166\2\151\1\162\2\uffff\2\171\4\uffff\1\156\1\165\1\143\1\160\1\156\1\151\1\143\1\164\1\157\2\163\1\156\1\143\2\145\1\72\1\162\2\145\1\160\2\164\2\145\1\72\1\162\1\uffff\1\157\1\124\1\143\3\145\1\143\1\72\1\uffff\1\164\1\155\1\171\1\164\1\162\2\155\1\164\1\uffff\1\171\1\145\1\160\1\165\1\164\2\60\1\151\1\72\1\156\1\145\1\162\1\171\2\uffff\1\157\1\uffff\1\164\1\72\1\145\1\72\1\156\1\72\1\uffff\1\60\1\uffff\1\72\3\uffff";
     static final String DFA18_maxS =
-        "\1\uffff\1\157\1\141\1\157\1\162\1\145\2\151\1\145\1\156\1\164\2\145\1\163\1\162\1\141\1\164\1\162\1\142\1\141\1\162\1\141\1\151\1\141\1\171\1\154\1\71\1\70\2\145\1\uffff\1\172\1\uffff\2\uffff\1\52\2\uffff\1\162\1\uffff\1\162\1\155\1\157\1\146\1\156\1\170\1\156\1\166\2\164\1\154\1\166\1\137\1\157\1\156\1\150\1\144\1\155\1\165\1\154\1\143\1\157\1\155\1\156\1\155\1\160\1\141\3\uffff\1\66\2\uffff\1\71\4\uffff\1\160\1\164\1\145\1\147\2\160\1\104\1\165\1\117\3\151\1\143\1\151\1\154\1\145\1\162\1\145\1\151\1\166\1\143\1\147\1\145\1\162\1\66\1\156\1\165\1\141\2\155\1\144\2\145\1\156\1\172\2\165\1\151\1\145\1\141\1\137\1\145\1\165\2\145\1\157\1\145\1\170\1\123\2\155\1\143\1\162\1\141\1\165\1\162\1\151\2\143\1\145\1\141\2\145\1\162\1\145\1\64\1\164\1\145\1\154\1\72\1\171\3\72\1\172\1\uffff\1\156\1\164\1\147\1\143\1\151\1\156\2\164\1\163\1\162\1\156\1\166\2\117\2\165\1\145\1\151\1\156\1\144\1\146\1\142\1\164\1\145\1\162\1\155\1\163\1\113\1\156\1\163\1\172\1\165\1\72\1\172\1\uffff\1\172\4\uffff\1\151\1\141\1\165\1\164\1\156\1\165\1\104\1\141\1\163\1\164\1\156\1\151\2\160\2\155\1\122\1\160\1\172\1\145\1\141\1\165\1\151\1\124\1\163\1\145\1\163\1\151\1\145\1\163\1\uffff\1\172\3\uffff\1\143\1\164\1\145\1\157\1\162\1\104\1\145\1\155\1\145\1\164\1\157\1\151\1\145\1\143\2\145\2\113\1\145\1\uffff\1\164\1\uffff\1\104\1\143\1\164\1\157\1\171\1\151\1\172\1\157\1\156\1\164\1\172\1\uffff\1\141\1\151\1\166\1\156\1\141\1\145\1\162\1\142\1\160\1\151\1\162\1\145\1\143\1\145\2\162\2\151\1\163\1\151\3\145\1\156\1\160\1\157\1\uffff\1\162\1\144\1\172\1\uffff\1\164\1\157\1\151\1\156\1\164\1\166\1\172\1\145\1\154\1\157\1\137\1\163\1\164\1\124\2\164\2\156\2\157\1\166\1\172\2\113\1\145\1\156\2\172\1\uffff\1\151\1\156\1\143\1\145\2\151\1\uffff\1\162\1\157\1\156\1\141\1\72\1\151\1\171\1\uffff\2\151\2\144\1\165\1\156\1\151\1\uffff\2\151\1\72\1\172\2\uffff\1\157\1\104\1\145\1\143\1\157\1\143\1\172\1\171\1\104\1\162\1\uffff\1\157\1\160\2\156\2\172\1\143\1\72\1\143\2\156\2\uffff\1\156\1\145\1\120\1\164\1\156\1\145\1\uffff\1\105\1\145\1\143\1\156\1\145\2\147\2\uffff\1\145\1\uffff\1\145\2\144\1\103\1\166\1\162\1\151\2\72\1\156\1\166\1\150\1\120\1\72\2\123\2\72\2\172\1\157\1\151\2\157\2\uffff\1\166\2\151\1\162\2\uffff\2\171\4\uffff\1\156\1\143\1\160\1\156\1\151\1\143\1\164\1\157\2\163\1\156\2\145\1\72\1\162\2\145\1\160\2\164\1\145\1\72\1\162\1\uffff\1\157\1\124\1\143\3\145\1\143\1\uffff\1\164\1\155\1\171\1\164\1\162\2\155\1\164\1\171\1\145\1\160\1\165\1\164\2\172\1\151\1\72\1\156\1\145\1\162\1\171\2\uffff\1\157\1\uffff\1\164\1\72\1\145\1\72\1\156\1\72\1\uffff\1\172\1\uffff\1\72\3\uffff";
+        "\1\uffff\1\157\1\141\1\157\1\162\1\145\2\151\1\145\1\156\1\164\2\145\1\163\1\162\1\141\1\164\1\162\1\142\1\141\1\162\1\141\1\151\1\141\1\171\1\154\1\71\1\70\2\145\1\uffff\1\172\1\uffff\2\uffff\1\52\2\uffff\1\162\1\uffff\1\162\1\155\1\157\1\146\1\156\1\170\1\156\1\166\2\164\1\154\1\166\1\137\1\157\1\156\1\150\1\144\1\155\1\165\1\154\1\143\1\157\1\155\1\156\1\155\1\160\1\141\3\uffff\1\66\2\uffff\1\71\4\uffff\1\160\1\164\1\145\1\147\2\160\1\104\1\165\1\117\3\151\1\143\1\151\1\154\1\145\1\162\1\145\1\151\1\166\1\143\1\147\1\145\1\162\1\66\1\156\1\165\1\141\2\155\1\144\2\145\1\156\1\172\2\165\1\151\1\145\1\141\1\137\1\145\1\165\2\145\1\157\1\145\1\170\1\123\2\155\1\143\1\162\1\141\1\165\1\162\1\151\2\143\1\145\1\141\2\145\1\162\1\145\1\64\1\164\1\145\1\154\1\72\1\171\3\72\1\172\1\uffff\1\156\1\164\1\147\1\143\1\151\1\156\2\164\1\163\1\162\1\156\1\166\2\117\2\165\1\145\1\151\1\156\1\144\1\146\1\142\1\164\1\145\1\162\1\155\1\163\1\113\1\156\1\163\1\172\1\165\1\72\1\172\1\uffff\1\172\4\uffff\1\151\1\141\1\165\1\164\1\156\1\165\1\104\1\141\1\163\1\164\1\156\1\151\2\160\2\155\1\122\1\160\1\172\1\145\1\141\1\165\1\151\1\124\1\163\1\145\1\163\1\151\1\145\1\163\1\uffff\1\172\3\uffff\1\143\1\164\1\145\1\157\1\162\1\104\1\145\1\155\1\145\1\164\1\157\1\151\1\145\1\143\2\145\2\113\1\145\1\uffff\1\164\1\uffff\1\104\1\143\1\164\1\157\1\171\1\151\1\172\1\157\1\156\1\164\1\172\1\uffff\1\141\1\151\1\166\1\156\1\141\1\145\1\162\1\142\1\160\1\151\1\162\1\145\1\143\1\145\2\162\2\151\1\163\1\151\3\145\1\156\1\160\1\157\1\uffff\1\162\1\144\1\172\1\uffff\1\164\1\157\1\151\1\156\1\164\1\166\1\172\1\145\1\154\1\157\1\137\1\163\1\164\1\124\2\164\2\156\2\157\1\166\1\172\2\113\1\145\1\156\2\172\1\uffff\1\151\1\156\1\143\1\145\2\151\1\uffff\1\162\1\157\1\156\1\141\1\72\1\151\1\171\1\uffff\2\151\2\144\1\165\1\156\1\151\1\uffff\2\151\1\72\1\172\2\uffff\1\157\1\122\1\145\1\143\1\157\1\143\1\172\1\171\1\104\1\162\1\uffff\1\157\1\160\2\156\2\172\1\143\1\72\1\143\2\156\2\uffff\1\156\2\145\1\120\1\164\1\156\1\145\1\uffff\1\105\1\145\1\143\1\156\1\145\2\147\2\uffff\1\145\1\uffff\1\145\2\144\1\103\1\163\1\166\1\162\1\151\2\72\1\156\1\166\1\150\1\120\1\72\2\123\2\72\2\172\2\157\1\151\2\157\2\uffff\1\166\2\151\1\162\2\uffff\2\171\4\uffff\1\156\1\165\1\143\1\160\1\156\1\151\1\143\1\164\1\157\2\163\1\156\1\143\2\145\1\72\1\162\2\145\1\160\2\164\2\145\1\72\1\162\1\uffff\1\157\1\124\1\143\3\145\1\143\1\72\1\uffff\1\164\1\155\1\171\1\164\1\162\2\155\1\164\1\uffff\1\171\1\145\1\160\1\165\1\164\2\172\1\151\1\72\1\156\1\145\1\162\1\171\2\uffff\1\157\1\uffff\1\164\1\72\1\145\1\72\1\156\1\72\1\uffff\1\172\1\uffff\1\72\3\uffff";
     static final String DFA18_acceptS =
-        "\36\uffff\1\63\1\uffff\1\64\3\uffff\1\70\1\71\1\uffff\1\64\33\uffff\1\56\1\62\1\60\1\uffff\1\65\1\61\1\uffff\1\63\1\66\1\67\1\70\113\uffff\1\57\42\uffff\1\50\1\uffff\1\52\1\53\1\54\1\55\36\uffff\1\46\1\uffff\1\45\1\47\1\51\23\uffff\1\41\1\uffff\1\43\13\uffff\1\44\32\uffff\1\42\3\uffff\1\40\34\uffff\1\37\6\uffff\1\35\7\uffff\1\32\7\uffff\1\36\4\uffff\1\33\1\34\12\uffff\1\30\13\uffff\1\24\1\31\6\uffff\1\27\7\uffff\1\25\1\26\1\uffff\1\23\30\uffff\1\13\1\14\4\uffff\1\17\1\20\2\uffff\1\15\1\16\1\21\1\22\27\uffff\1\12\7\uffff\1\11\25\uffff\1\7\1\10\1\uffff\1\6\6\uffff\1\3\1\uffff\1\5\1\uffff\1\2\1\4\1\1";
+        "\36\uffff\1\64\1\uffff\1\65\3\uffff\1\71\1\72\1\uffff\1\65\33\uffff\1\57\1\63\1\61\1\uffff\1\62\1\66\1\uffff\1\64\1\67\1\70\1\71\113\uffff\1\60\42\uffff\1\51\1\uffff\1\53\1\54\1\55\1\56\36\uffff\1\47\1\uffff\1\46\1\50\1\52\23\uffff\1\42\1\uffff\1\44\13\uffff\1\45\32\uffff\1\43\3\uffff\1\41\34\uffff\1\40\6\uffff\1\36\7\uffff\1\33\7\uffff\1\37\4\uffff\1\34\1\35\12\uffff\1\31\13\uffff\1\25\1\32\7\uffff\1\30\7\uffff\1\26\1\27\1\uffff\1\24\32\uffff\1\14\1\15\4\uffff\1\20\1\21\2\uffff\1\16\1\17\1\22\1\23\32\uffff\1\13\10\uffff\1\12\10\uffff\1\11\15\uffff\1\7\1\10\1\uffff\1\6\6\uffff\1\3\1\uffff\1\5\1\uffff\1\2\1\4\1\1";
     static final String DFA18_specialS =
-        "\1\0\40\uffff\1\1\1\2\u01d3\uffff}>";
+        "\1\1\40\uffff\1\2\1\0\u01db\uffff}>";
     static final String[] DFA18_transitionS = {
             "\11\45\2\44\2\45\1\44\22\45\1\44\1\45\1\41\1\36\3\45\1\42\5\45\1\32\1\45\1\43\1\34\11\35\7\45\1\12\1\40\1\3\1\14\1\20\6\40\1\6\1\7\2\40\1\16\1\40\1\17\1\13\1\2\2\40\1\31\3\40\3\45\1\37\1\40\1\45\1\21\1\40\1\1\1\10\1\40\1\24\2\40\1\11\1\25\1\26\2\40\1\27\1\15\1\4\1\40\1\5\1\40\1\30\1\22\1\23\1\40\1\33\2\40\uff85\45",
             "\1\46",
@@ -2380,8 +2409,8 @@ public class InternalTargetEnvironmentLexer extends Lexer {
             "\1\102",
             "\1\103\2\uffff\12\104",
             "\1\106",
-            "\1\110\1\uffff\12\107\13\uffff\1\110\37\uffff\1\110",
-            "\1\110\1\uffff\12\111\13\uffff\1\110\37\uffff\1\110",
+            "\1\107\1\uffff\12\110\13\uffff\1\107\37\uffff\1\107",
+            "\1\107\1\uffff\12\111\13\uffff\1\107\37\uffff\1\107",
             "",
             "\32\47\4\uffff\1\47\1\uffff\32\47",
             "",
@@ -2705,49 +2734,48 @@ public class InternalTargetEnvironmentLexer extends Lexer {
             "",
             "",
             "\1\u0178",
-            "\1\u0179",
-            "\1\u017a",
+            "\1\u017a\15\uffff\1\u0179",
             "\1\u017b",
             "\1\u017c",
             "\1\u017d",
+            "\1\u017e",
             "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "\1\u017f",
             "\1\u0180",
             "\1\u0181",
-            "",
             "\1\u0182",
+            "",
             "\1\u0183",
             "\1\u0184",
             "\1\u0185",
+            "\1\u0186",
             "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
             "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "\1\u0188",
             "\1\u0189",
             "\1\u018a",
             "\1\u018b",
             "\1\u018c",
-            "",
-            "",
             "\1\u018d",
+            "",
+            "",
             "\1\u018e",
             "\1\u018f",
             "\1\u0190",
             "\1\u0191",
             "\1\u0192",
-            "",
             "\1\u0193",
             "\1\u0194",
+            "",
             "\1\u0195",
             "\1\u0196",
             "\1\u0197",
             "\1\u0198",
             "\1\u0199",
-            "",
-            "",
             "\1\u019a",
-            "",
             "\1\u019b",
+            "",
+            "",
             "\1\u019c",
+            "",
             "\1\u019d",
             "\1\u019e",
             "\1\u019f",
@@ -2758,20 +2786,18 @@ public class InternalTargetEnvironmentLexer extends Lexer {
             "\1\u01a4",
             "\1\u01a5",
             "\1\u01a6",
-            "\1\u01a8\25\uffff\1\u01a7",
+            "\1\u01a7",
+            "\1\u01a8",
             "\1\u01a9",
-            "\1\u01aa",
-            "\1\u01ab",
+            "\1\u01ab\25\uffff\1\u01aa",
             "\1\u01ac",
             "\1\u01ad",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u01ae",
+            "\1\u01af",
             "\1\u01b0",
-            "\1\u01b1",
-            "\1\u01b2",
+            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
             "\1\u01b3",
-            "",
-            "",
             "\1\u01b4",
             "\1\u01b5",
             "\1\u01b6",
@@ -2780,14 +2806,16 @@ public class InternalTargetEnvironmentLexer extends Lexer {
             "",
             "\1\u01b8",
             "\1\u01b9",
-            "",
-            "",
-            "",
-            "",
             "\1\u01ba",
             "\1\u01bb",
+            "",
+            "",
             "\1\u01bc",
             "\1\u01bd",
+            "",
+            "",
+            "",
+            "",
             "\1\u01be",
             "\1\u01bf",
             "\1\u01c0",
@@ -2807,7 +2835,6 @@ public class InternalTargetEnvironmentLexer extends Lexer {
             "\1\u01ce",
             "\1\u01cf",
             "\1\u01d0",
-            "",
             "\1\u01d1",
             "\1\u01d2",
             "\1\u01d3",
@@ -2824,33 +2851,43 @@ public class InternalTargetEnvironmentLexer extends Lexer {
             "\1\u01dd",
             "\1\u01de",
             "\1\u01df",
+            "",
             "\1\u01e0",
             "\1\u01e1",
             "\1\u01e2",
             "\1\u01e3",
             "\1\u01e4",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u01e5",
+            "\1\u01e6",
             "\1\u01e7",
+            "",
             "\1\u01e8",
             "\1\u01e9",
             "\1\u01ea",
             "\1\u01eb",
             "\1\u01ec",
-            "",
-            "",
-            "\1\u01ed",
-            "",
-            "\1\u01ee",
+            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
             "\1\u01ef",
             "\1\u01f0",
             "\1\u01f1",
             "\1\u01f2",
             "\1\u01f3",
+            "\1\u01f4",
+            "",
+            "",
+            "\1\u01f5",
+            "",
+            "\1\u01f6",
+            "\1\u01f7",
+            "\1\u01f8",
+            "\1\u01f9",
+            "\1\u01fa",
+            "\1\u01fb",
             "",
             "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
             "",
-            "\1\u01f5",
+            "\1\u01fd",
             "",
             "",
             ""
@@ -2886,13 +2923,23 @@ public class InternalTargetEnvironmentLexer extends Lexer {
             this.transition = DFA18_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( CommunicationConnection | TargetDeployEnviroment | ComputationDeviceType | Processor_architecture | RefConnectionProperty | ConfigDeviceProperty | LinuxOpertingSystem | MacOSOpertingSystem | ComputationDevice | ConfigConnection | Configuration | ConnectDevice | DeviceResouce | IncludeDevice | RefConnection | RefDeviceType | AttributeKind | SelectionKind | Description | DeviceType | MaximumKind | MinimumKind | Core_number | Properties | Os_version | RefDevice | Processor | RangeKind | Container | Interface | Ethernet | Address | Device | Os_name | Debian | Ubuntu | Value | Arm64 | Focal | From | Jammy | Kind | Name | Type | Wlan | HyphenMinusHyphenMinusHyphenMinus | X86 | HyphenMinus | RULE_DOUBLE | RULE_DECINT | RULE_SL_COMMENT | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( CommunicationConnection | TargetDeployEnviroment | ComputationDeviceType | Processor_architecture | RefConnectionProperty | ConfigDeviceProperty | LinuxOpertingSystem | MacOSOpertingSystem | ComputationResouce | ComputationDevice | ConfigConnection | Configuration | ConnectDevice | DeviceResouce | IncludeDevice | RefConnection | RefDeviceType | AttributeKind | SelectionKind | Description | DeviceType | MaximumKind | MinimumKind | Core_number | Properties | Os_version | RefDevice | Processor | RangeKind | Container | Interface | Ethernet | Address | Device | Os_name | Debian | Ubuntu | Value | Arm64 | Focal | From | Jammy | Kind | Name | Type | Wlan | HyphenMinusHyphenMinusHyphenMinus | X86 | HyphenMinus | RULE_DOUBLE | RULE_DECINT | RULE_SL_COMMENT | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
             int _s = s;
             switch ( s ) {
                     case 0 :
+                        int LA18_34 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA18_34>='\u0000' && LA18_34<='\uFFFF')) ) {s = 75;}
+
+                        else s = 37;
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 1 :
                         int LA18_0 = input.LA(1);
 
                         s = -1;
@@ -2972,21 +3019,11 @@ public class InternalTargetEnvironmentLexer extends Lexer {
 
                         if ( s>=0 ) return s;
                         break;
-                    case 1 :
+                    case 2 :
                         int LA18_33 = input.LA(1);
 
                         s = -1;
                         if ( ((LA18_33>='\u0000' && LA18_33<='\uFFFF')) ) {s = 75;}
-
-                        else s = 37;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 :
-                        int LA18_34 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA18_34>='\u0000' && LA18_34<='\uFFFF')) ) {s = 75;}
 
                         else s = 37;
 

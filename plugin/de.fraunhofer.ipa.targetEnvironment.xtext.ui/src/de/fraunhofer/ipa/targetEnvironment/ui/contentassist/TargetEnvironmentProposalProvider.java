@@ -35,7 +35,7 @@ public class TargetEnvironmentProposalProvider extends AbstractTargetEnvironment
     public void completeConfigDeviceProperty_Name(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
         super.completeConfigDeviceProperty_Name(model, assignment, context, acceptor);
         ConfigDeviceProperty config_model = (ConfigDeviceProperty) model;
-        String from = config_model.getFrom().getName();
+        String from = config_model.getRefProperty().getName();
         acceptor.accept(createCompletionProposal(from, context));
     }
 
@@ -51,7 +51,7 @@ public class TargetEnvironmentProposalProvider extends AbstractTargetEnvironment
     private DeviceInstance deviceIns=null;
 
     @Override
-    public void completeConfigDeviceProperty_From(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+    public void completeConfigDeviceProperty_RefProperty(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
         compDeviceIns=null;
         deviceIns=null;
         if(model.eContainer() instanceof ComputationDeviceInstance) {

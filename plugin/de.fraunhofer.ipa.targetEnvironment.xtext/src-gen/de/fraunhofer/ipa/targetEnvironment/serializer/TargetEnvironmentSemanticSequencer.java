@@ -288,21 +288,21 @@ public class TargetEnvironmentSemanticSequencer extends DeviceSemanticSequencer 
      *     ConfigDeviceProperty returns ConfigDeviceProperty
      *
      * Constraint:
-     *     (name=EString from=[AbstractProperty|EString] value=PropertyValue)
+     *     (name=EString refProperty=[AbstractProperty|EString] value=PropertyValue)
      * </pre>
      */
     protected void sequence_ConfigDeviceProperty(ISerializationContext context, ConfigDeviceProperty semanticObject) {
         if (errorAcceptor != null) {
             if (transientValues.isValueTransient(semanticObject, TargetEnvironmentPackage.Literals.CONFIG_DEVICE_PROPERTY__NAME) == ValueTransient.YES)
                 errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TargetEnvironmentPackage.Literals.CONFIG_DEVICE_PROPERTY__NAME));
-            if (transientValues.isValueTransient(semanticObject, TargetEnvironmentPackage.Literals.CONFIG_DEVICE_PROPERTY__FROM) == ValueTransient.YES)
-                errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TargetEnvironmentPackage.Literals.CONFIG_DEVICE_PROPERTY__FROM));
+            if (transientValues.isValueTransient(semanticObject, TargetEnvironmentPackage.Literals.CONFIG_DEVICE_PROPERTY__REF_PROPERTY) == ValueTransient.YES)
+                errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TargetEnvironmentPackage.Literals.CONFIG_DEVICE_PROPERTY__REF_PROPERTY));
             if (transientValues.isValueTransient(semanticObject, TargetEnvironmentPackage.Literals.CONFIG_DEVICE_PROPERTY__VALUE) == ValueTransient.YES)
                 errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TargetEnvironmentPackage.Literals.CONFIG_DEVICE_PROPERTY__VALUE));
         }
         SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
         feeder.accept(grammarAccess.getConfigDevicePropertyAccess().getNameEStringParserRuleCall_2_0(), semanticObject.getName());
-        feeder.accept(grammarAccess.getConfigDevicePropertyAccess().getFromAbstractPropertyEStringParserRuleCall_5_0_1(), semanticObject.eGet(TargetEnvironmentPackage.Literals.CONFIG_DEVICE_PROPERTY__FROM, false));
+        feeder.accept(grammarAccess.getConfigDevicePropertyAccess().getRefPropertyAbstractPropertyEStringParserRuleCall_5_0_1(), semanticObject.eGet(TargetEnvironmentPackage.Literals.CONFIG_DEVICE_PROPERTY__REF_PROPERTY, false));
         feeder.accept(grammarAccess.getConfigDevicePropertyAccess().getValuePropertyValueParserRuleCall_7_0(), semanticObject.getValue());
         feeder.finish();
     }

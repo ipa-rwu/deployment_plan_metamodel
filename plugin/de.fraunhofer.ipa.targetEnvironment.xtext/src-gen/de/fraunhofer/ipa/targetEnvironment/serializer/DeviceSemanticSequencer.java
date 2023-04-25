@@ -254,7 +254,12 @@ public class DeviceSemanticSequencer extends UtilSemanticSequencer {
      *     ComputationDeviceType returns ComputationDeviceType
      *
      * Constraint:
-     *     (name=EString deviceResource+=AbstractComputationDeviceResource* communicationConnection+=AbstractCommunicationConnection*)
+     *     (
+     *         name=EString
+     *         deviceResource+=DeviceResource*
+     *         computationResource+=AbstractComputationResource*
+     *         communicationConnection+=AbstractCommunicationConnection*
+     *     )
      * </pre>
      */
     protected void sequence_ComputationDeviceType(ISerializationContext context, ComputationDeviceType semanticObject) {
@@ -294,7 +299,6 @@ public class DeviceSemanticSequencer extends UtilSemanticSequencer {
     /**
      * <pre>
      * Contexts:
-     *     AbstractComputationDeviceResource returns DeviceResource
      *     DeviceResource returns DeviceResource
      *
      * Constraint:
@@ -384,7 +388,7 @@ public class DeviceSemanticSequencer extends UtilSemanticSequencer {
     /**
      * <pre>
      * Contexts:
-     *     AbstractComputationDeviceResource returns OperatingSystemResouce
+     *     AbstractComputationResource returns OperatingSystemResouce
      *     OperatingSystemResouce returns OperatingSystemResouce
      *
      * Constraint:
@@ -399,7 +403,7 @@ public class DeviceSemanticSequencer extends UtilSemanticSequencer {
     /**
      * <pre>
      * Contexts:
-     *     AbstractComputationDeviceResource returns ProcessorResouce
+     *     AbstractComputationResource returns ProcessorResouce
      *     ProcessorResouce returns ProcessorResouce
      *
      * Constraint:

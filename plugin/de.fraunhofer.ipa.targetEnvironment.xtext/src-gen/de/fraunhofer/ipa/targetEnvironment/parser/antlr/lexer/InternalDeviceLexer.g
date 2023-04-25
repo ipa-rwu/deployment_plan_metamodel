@@ -21,6 +21,8 @@ LinuxOpertingSystem : 'LinuxOpertingSystem';
 
 MacOSOpertingSystem : 'MacOSOpertingSystem';
 
+ComputationResouce : 'computationResouce:';
+
 DeviceResouce : 'deviceResouce:';
 
 AttributeKind : 'AttributeKind';
