@@ -1,5 +1,15 @@
 package de.fraunhofer.ipa.deplyoment.generator
 
+import de.fraunhofer.ipa.deployment.util.LinuxDistribution
+import de.fraunhofer.ipa.deployment.util.LinuxDistributionValue
+import de.fraunhofer.ipa.deployment.util.UbuntuVersion
+import de.fraunhofer.ipa.deployment.util.UbuntuVersionValue
+import deploymentPlan.AbstractComputationAssignment
+import deploymentPlan.ROSDistro
+import device.NameOperatingSystemProperty
+import device.VersionOperatingSystemProperty
+import java.io.BufferedReader
+import java.io.InputStreamReader
 import java.util.ArrayList
 import java.util.Arrays
 import java.util.HashSet
@@ -14,20 +24,8 @@ import ros.Node
 import ros.impl.PackageImpl
 import system.InterfaceReference
 import system.RosNode
-import system.System
 import system.impl.RosPublisherReferenceImpl
-import java.io.BufferedReader
-import java.io.InputStreamReader
-import deploymentPlan.AbstractComputationAssignment
 import targetEnvironment.ComputationDeviceInstance
-import device.NameOperatingSystemProperty
-import de.fraunhofer.ipa.deployment.util.LinuxDistributionValue
-import device.VersionOperatingSystemProperty
-import de.fraunhofer.ipa.deployment.util.UbuntuVersionValue
-import deploymentPlan.ROSDistro
-import de.fraunhofer.ipa.deployment.util.UbuntuVersion
-import de.fraunhofer.ipa.deployment.util.LinuxDistribution
-import java.util.HashMap
 
 class OSInfo{
     String name
@@ -73,7 +71,7 @@ class SubProcessResult{
 
 class DeploymentHelper {
 
-    def getRosPackagesFromSystem(System rossystem){
+    def getRosPackagesFromSystem(system.System rossystem){
         var pkgsList = new LinkedHashSet
         var rosnodes = rossystem.components.stream.map[it as RosNode].collect(Collectors.toList())
         for(rosnode : rosnodes){
@@ -82,7 +80,7 @@ class DeploymentHelper {
         return pkgsList
     }
 
-    def getRosPackagesFromSystemWithoutDuplicate(System rossystem){
+    def getRosPackagesFromSystemWithoutDuplicate(system.System rossystem){
         var pkgsList = getRosPackagesFromSystem(rossystem)
         var Map<String, PackageImpl> map = new TreeMap
         for (pkgimpl : pkgsList) {
@@ -151,7 +149,7 @@ class DeploymentHelper {
 
         if(output.size>0){
             if(debug){
-                    java.lang.System.out.println(output.toList.toString)
+                    System.out.println(output.toList.toString)
                 }
             res.addResult(true, output.toList)
             return res
@@ -164,7 +162,7 @@ class DeploymentHelper {
         }
         if(output.size>0){
             if(debug){
-                    java.lang.System.out.println(output.toList.toString)
+                    System.out.println(output.toList.toString)
                 }
             res.addResult(false, output.toList)
             return res
@@ -179,17 +177,17 @@ class DeploymentHelper {
             var osinfo = new OSInfo
             if(cas.opertingSystemType === null){
                 for(cp : (cas.executedBy as ComputationDeviceInstance).configDeviceProperty){
-                    if(cp.from instanceof NameOperatingSystemProperty){
+                    if(cp.refProperty instanceof NameOperatingSystemProperty){
                         if(cp.value instanceof LinuxDistributionValue){
                         osinfo.name = (cp.value as LinuxDistributionValue).value.getName
-                        java.lang.System.out.println(String.format("name:%s", osinfo.name))
+                        System.out.println(String.format("name:%s", osinfo.name))
                         }
                     }
-                    if(cp.from instanceof VersionOperatingSystemProperty){
-                        java.lang.System.out.println(String.format("cp.from :%s", cp.value ))
+                    if(cp.refProperty instanceof VersionOperatingSystemProperty){
+                        System.out.println(String.format("cp.from :%s", cp.value ))
                         if(cp.value instanceof UbuntuVersionValue){
                         osinfo.version = (cp.value as UbuntuVersionValue).value.getName
-                        java.lang.System.out.println(String.format("version:%s", osinfo.version))
+                        System.out.println(String.format("version:%s", osinfo.version))
                         }
                     }
                 }

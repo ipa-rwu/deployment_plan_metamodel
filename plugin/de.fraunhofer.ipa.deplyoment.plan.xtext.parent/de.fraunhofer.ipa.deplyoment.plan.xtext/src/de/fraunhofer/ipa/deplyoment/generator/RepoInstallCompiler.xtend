@@ -1,10 +1,13 @@
 package de.fraunhofer.ipa.deplyoment.generator
 
+import com.google.common.base.CaseFormat
 import de.fraunhofer.ipa.deployment.util.AbstractComputationAssignmentTarget
-import deployPlanWithRosModel.ConfigRosSoftwareComponent
+import de.fraunhofer.ipa.deployment.util.LinuxDistribution
+import de.fraunhofer.ipa.deployment.util.UbuntuVersion
 import deploymentPlan.AbstractComputationAssignment
 import deploymentPlan.DeploymentPlan
 import deploymentPlan.RosMiddleware
+import deployPlanWithRosModel.ConfigRosSoftwareComponent
 import implementationDescription.SoftwareComponent
 import implementationDescription.impl.GitRepositoryTypeImpl
 import java.util.ArrayList
@@ -13,11 +16,6 @@ import java.util.List
 import javax.inject.Inject
 import org.eclipse.emf.ecore.EObject
 import ros.impl.PackageImpl
-import com.google.common.base.CaseFormat
-import device.OperatingSystemResouce
-import de.fraunhofer.ipa.deployment.util.UbuntuVersionValue
-import de.fraunhofer.ipa.deployment.util.LinuxDistribution
-import de.fraunhofer.ipa.deployment.util.UbuntuVersion
 
 class RepoInfo{
     String name
