@@ -59,34 +59,6 @@ public interface ImplementationDescriptionPackage extends EPackage {
     ImplementationDescriptionPackage eINSTANCE = implementationDescription.impl.ImplementationDescriptionPackageImpl.init();
 
     /**
-     * The meta object id for the '{@link implementationDescription.impl.ExecutionRequirementImpl <em>Execution Requirement</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see implementationDescription.impl.ExecutionRequirementImpl
-     * @see implementationDescription.impl.ImplementationDescriptionPackageImpl#getExecutionRequirement()
-     * @generated
-     */
-    int EXECUTION_REQUIREMENT = 0;
-
-    /**
-     * The number of structural features of the '<em>Execution Requirement</em>' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int EXECUTION_REQUIREMENT_FEATURE_COUNT = 0;
-
-    /**
-     * The number of operations of the '<em>Execution Requirement</em>' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int EXECUTION_REQUIREMENT_OPERATION_COUNT = 0;
-
-    /**
      * The meta object id for the '{@link implementationDescription.impl.ImplementationDescriptionImpl <em>Implementation Description</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -94,7 +66,7 @@ public interface ImplementationDescriptionPackage extends EPackage {
      * @see implementationDescription.impl.ImplementationDescriptionPackageImpl#getImplementationDescription()
      * @generated
      */
-    int IMPLEMENTATION_DESCRIPTION = 1;
+    int IMPLEMENTATION_DESCRIPTION = 0;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -106,22 +78,13 @@ public interface ImplementationDescriptionPackage extends EPackage {
     int IMPLEMENTATION_DESCRIPTION__NAME = UtilPackage.ABSTRACT_IMPLEMENTATION_FEATURE_COUNT + 0;
 
     /**
-     * The feature id for the '<em><b>Software Dependency</b></em>' attribute list.
+     * The feature id for the '<em><b>Include Software Components</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int IMPLEMENTATION_DESCRIPTION__SOFTWARE_DEPENDENCY = UtilPackage.ABSTRACT_IMPLEMENTATION_FEATURE_COUNT + 1;
-
-    /**
-     * The feature id for the '<em><b>Include Software Component</b></em>' containment reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int IMPLEMENTATION_DESCRIPTION__INCLUDE_SOFTWARE_COMPONENT = UtilPackage.ABSTRACT_IMPLEMENTATION_FEATURE_COUNT + 2;
+    int IMPLEMENTATION_DESCRIPTION__INCLUDE_SOFTWARE_COMPONENTS = UtilPackage.ABSTRACT_IMPLEMENTATION_FEATURE_COUNT + 1;
 
     /**
      * The number of structural features of the '<em>Implementation Description</em>' class.
@@ -130,7 +93,7 @@ public interface ImplementationDescriptionPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int IMPLEMENTATION_DESCRIPTION_FEATURE_COUNT = UtilPackage.ABSTRACT_IMPLEMENTATION_FEATURE_COUNT + 3;
+    int IMPLEMENTATION_DESCRIPTION_FEATURE_COUNT = UtilPackage.ABSTRACT_IMPLEMENTATION_FEATURE_COUNT + 2;
 
     /**
      * The number of operations of the '<em>Implementation Description</em>' class.
@@ -149,7 +112,7 @@ public interface ImplementationDescriptionPackage extends EPackage {
      * @see implementationDescription.impl.ImplementationDescriptionPackageImpl#getSoftwareComponent()
      * @generated
      */
-    int SOFTWARE_COMPONENT = 2;
+    int SOFTWARE_COMPONENT = 1;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -197,6 +160,34 @@ public interface ImplementationDescriptionPackage extends EPackage {
     int SOFTWARE_COMPONENT_OPERATION_COUNT = UtilPackage.ABSTRACT_COMPUTATION_ASSIGNMENT_TARGET_OPERATION_COUNT + 0;
 
     /**
+     * The meta object id for the '{@link implementationDescription.impl.ExecutionRequirementImpl <em>Execution Requirement</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see implementationDescription.impl.ExecutionRequirementImpl
+     * @see implementationDescription.impl.ImplementationDescriptionPackageImpl#getExecutionRequirement()
+     * @generated
+     */
+    int EXECUTION_REQUIREMENT = 7;
+
+    /**
+     * The number of structural features of the '<em>Execution Requirement</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXECUTION_REQUIREMENT_FEATURE_COUNT = 0;
+
+    /**
+     * The number of operations of the '<em>Execution Requirement</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXECUTION_REQUIREMENT_OPERATION_COUNT = 0;
+
+    /**
      * The meta object id for the '{@link implementationDescription.impl.DeviceRequirementImpl <em>Device Requirement</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -204,7 +195,7 @@ public interface ImplementationDescriptionPackage extends EPackage {
      * @see implementationDescription.impl.ImplementationDescriptionPackageImpl#getDeviceRequirement()
      * @generated
      */
-    int DEVICE_REQUIREMENT = 3;
+    int DEVICE_REQUIREMENT = 2;
 
     /**
      * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -250,7 +241,7 @@ public interface ImplementationDescriptionPackage extends EPackage {
      * @see implementationDescription.impl.ImplementationDescriptionPackageImpl#getSoftwareConfigurationRequirement()
      * @generated
      */
-    int SOFTWARE_CONFIGURATION_REQUIREMENT = 4;
+    int SOFTWARE_CONFIGURATION_REQUIREMENT = 3;
 
     /**
      * The feature id for the '<em><b>Parameter</b></em>' containment reference list.
@@ -280,14 +271,14 @@ public interface ImplementationDescriptionPackage extends EPackage {
     int SOFTWARE_CONFIGURATION_REQUIREMENT_OPERATION_COUNT = EXECUTION_REQUIREMENT_OPERATION_COUNT + 0;
 
     /**
-     * The meta object id for the '{@link implementationDescription.impl.ExecutionPropertyImpl <em>Execution Property</em>}' class.
+     * The meta object id for the '{@link implementationDescription.impl.ExecutionParameterImpl <em>Execution Parameter</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see implementationDescription.impl.ExecutionPropertyImpl
-     * @see implementationDescription.impl.ImplementationDescriptionPackageImpl#getExecutionProperty()
+     * @see implementationDescription.impl.ExecutionParameterImpl
+     * @see implementationDescription.impl.ImplementationDescriptionPackageImpl#getExecutionParameter()
      * @generated
      */
-    int EXECUTION_PROPERTY = 7;
+    int EXECUTION_PARAMETER = 6;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -296,7 +287,7 @@ public interface ImplementationDescriptionPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int EXECUTION_PROPERTY__NAME = UtilPackage.PROPERTY__NAME;
+    int EXECUTION_PARAMETER__NAME = UtilPackage.PROPERTY__NAME;
 
     /**
      * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -305,7 +296,7 @@ public interface ImplementationDescriptionPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int EXECUTION_PROPERTY__DESCRIPTION = UtilPackage.PROPERTY__DESCRIPTION;
+    int EXECUTION_PARAMETER__DESCRIPTION = UtilPackage.PROPERTY__DESCRIPTION;
 
     /**
      * The feature id for the '<em><b>Kind</b></em>' containment reference.
@@ -314,7 +305,7 @@ public interface ImplementationDescriptionPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int EXECUTION_PROPERTY__KIND = UtilPackage.PROPERTY__KIND;
+    int EXECUTION_PARAMETER__KIND = UtilPackage.PROPERTY__KIND;
 
     /**
      * The feature id for the '<em><b>Value</b></em>' containment reference list.
@@ -323,25 +314,25 @@ public interface ImplementationDescriptionPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int EXECUTION_PROPERTY__VALUE = UtilPackage.PROPERTY__VALUE;
+    int EXECUTION_PARAMETER__VALUE = UtilPackage.PROPERTY__VALUE;
 
     /**
-     * The number of structural features of the '<em>Execution Property</em>' class.
+     * The number of structural features of the '<em>Execution Parameter</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int EXECUTION_PROPERTY_FEATURE_COUNT = UtilPackage.PROPERTY_FEATURE_COUNT + 0;
+    int EXECUTION_PARAMETER_FEATURE_COUNT = UtilPackage.PROPERTY_FEATURE_COUNT + 0;
 
     /**
-     * The number of operations of the '<em>Execution Property</em>' class.
+     * The number of operations of the '<em>Execution Parameter</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int EXECUTION_PROPERTY_OPERATION_COUNT = UtilPackage.PROPERTY_OPERATION_COUNT + 0;
+    int EXECUTION_PARAMETER_OPERATION_COUNT = UtilPackage.PROPERTY_OPERATION_COUNT + 0;
 
     /**
      * The meta object id for the '{@link implementationDescription.impl.HWSWParemeterImpl <em>HWSW Paremeter</em>}' class.
@@ -351,7 +342,7 @@ public interface ImplementationDescriptionPackage extends EPackage {
      * @see implementationDescription.impl.ImplementationDescriptionPackageImpl#getHWSWParemeter()
      * @generated
      */
-    int HWSW_PAREMETER = 5;
+    int HWSW_PAREMETER = 4;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -360,7 +351,7 @@ public interface ImplementationDescriptionPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int HWSW_PAREMETER__NAME = EXECUTION_PROPERTY__NAME;
+    int HWSW_PAREMETER__NAME = EXECUTION_PARAMETER__NAME;
 
     /**
      * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -369,7 +360,7 @@ public interface ImplementationDescriptionPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int HWSW_PAREMETER__DESCRIPTION = EXECUTION_PROPERTY__DESCRIPTION;
+    int HWSW_PAREMETER__DESCRIPTION = EXECUTION_PARAMETER__DESCRIPTION;
 
     /**
      * The feature id for the '<em><b>Kind</b></em>' containment reference.
@@ -378,7 +369,7 @@ public interface ImplementationDescriptionPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int HWSW_PAREMETER__KIND = EXECUTION_PROPERTY__KIND;
+    int HWSW_PAREMETER__KIND = EXECUTION_PARAMETER__KIND;
 
     /**
      * The feature id for the '<em><b>Value</b></em>' containment reference list.
@@ -387,7 +378,7 @@ public interface ImplementationDescriptionPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int HWSW_PAREMETER__VALUE = EXECUTION_PROPERTY__VALUE;
+    int HWSW_PAREMETER__VALUE = EXECUTION_PARAMETER__VALUE;
 
     /**
      * The number of structural features of the '<em>HWSW Paremeter</em>' class.
@@ -396,7 +387,7 @@ public interface ImplementationDescriptionPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int HWSW_PAREMETER_FEATURE_COUNT = EXECUTION_PROPERTY_FEATURE_COUNT + 0;
+    int HWSW_PAREMETER_FEATURE_COUNT = EXECUTION_PARAMETER_FEATURE_COUNT + 0;
 
     /**
      * The number of operations of the '<em>HWSW Paremeter</em>' class.
@@ -405,7 +396,7 @@ public interface ImplementationDescriptionPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int HWSW_PAREMETER_OPERATION_COUNT = EXECUTION_PROPERTY_OPERATION_COUNT + 0;
+    int HWSW_PAREMETER_OPERATION_COUNT = EXECUTION_PARAMETER_OPERATION_COUNT + 0;
 
     /**
      * The meta object id for the '{@link implementationDescription.impl.SoftwareExecutionParemeterImpl <em>Software Execution Paremeter</em>}' class.
@@ -415,7 +406,7 @@ public interface ImplementationDescriptionPackage extends EPackage {
      * @see implementationDescription.impl.ImplementationDescriptionPackageImpl#getSoftwareExecutionParemeter()
      * @generated
      */
-    int SOFTWARE_EXECUTION_PAREMETER = 6;
+    int SOFTWARE_EXECUTION_PAREMETER = 5;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -424,7 +415,7 @@ public interface ImplementationDescriptionPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SOFTWARE_EXECUTION_PAREMETER__NAME = EXECUTION_PROPERTY__NAME;
+    int SOFTWARE_EXECUTION_PAREMETER__NAME = EXECUTION_PARAMETER__NAME;
 
     /**
      * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -433,7 +424,7 @@ public interface ImplementationDescriptionPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SOFTWARE_EXECUTION_PAREMETER__DESCRIPTION = EXECUTION_PROPERTY__DESCRIPTION;
+    int SOFTWARE_EXECUTION_PAREMETER__DESCRIPTION = EXECUTION_PARAMETER__DESCRIPTION;
 
     /**
      * The feature id for the '<em><b>Kind</b></em>' containment reference.
@@ -442,7 +433,7 @@ public interface ImplementationDescriptionPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SOFTWARE_EXECUTION_PAREMETER__KIND = EXECUTION_PROPERTY__KIND;
+    int SOFTWARE_EXECUTION_PAREMETER__KIND = EXECUTION_PARAMETER__KIND;
 
     /**
      * The feature id for the '<em><b>Value</b></em>' containment reference list.
@@ -451,7 +442,7 @@ public interface ImplementationDescriptionPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SOFTWARE_EXECUTION_PAREMETER__VALUE = EXECUTION_PROPERTY__VALUE;
+    int SOFTWARE_EXECUTION_PAREMETER__VALUE = EXECUTION_PARAMETER__VALUE;
 
     /**
      * The number of structural features of the '<em>Software Execution Paremeter</em>' class.
@@ -460,7 +451,7 @@ public interface ImplementationDescriptionPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SOFTWARE_EXECUTION_PAREMETER_FEATURE_COUNT = EXECUTION_PROPERTY_FEATURE_COUNT + 0;
+    int SOFTWARE_EXECUTION_PAREMETER_FEATURE_COUNT = EXECUTION_PARAMETER_FEATURE_COUNT + 0;
 
     /**
      * The number of operations of the '<em>Software Execution Paremeter</em>' class.
@@ -469,7 +460,7 @@ public interface ImplementationDescriptionPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SOFTWARE_EXECUTION_PAREMETER_OPERATION_COUNT = EXECUTION_PROPERTY_OPERATION_COUNT + 0;
+    int SOFTWARE_EXECUTION_PAREMETER_OPERATION_COUNT = EXECUTION_PARAMETER_OPERATION_COUNT + 0;
 
     /**
      * The meta object id for the '{@link implementationDescription.impl.RepositoryImpl <em>Repository</em>}' class.
@@ -584,16 +575,6 @@ public interface ImplementationDescriptionPackage extends EPackage {
 
 
     /**
-     * Returns the meta object for class '{@link implementationDescription.ExecutionRequirement <em>Execution Requirement</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for class '<em>Execution Requirement</em>'.
-     * @see implementationDescription.ExecutionRequirement
-     * @generated
-     */
-    EClass getExecutionRequirement();
-
-    /**
      * Returns the meta object for class '{@link implementationDescription.ImplementationDescription <em>Implementation Description</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -615,26 +596,15 @@ public interface ImplementationDescriptionPackage extends EPackage {
     EAttribute getImplementationDescription_Name();
 
     /**
-     * Returns the meta object for the attribute list '{@link implementationDescription.ImplementationDescription#getSoftwareDependency <em>Software Dependency</em>}'.
+     * Returns the meta object for the containment reference list '{@link implementationDescription.ImplementationDescription#getIncludeSoftwareComponents <em>Include Software Components</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the attribute list '<em>Software Dependency</em>'.
-     * @see implementationDescription.ImplementationDescription#getSoftwareDependency()
+     * @return the meta object for the containment reference list '<em>Include Software Components</em>'.
+     * @see implementationDescription.ImplementationDescription#getIncludeSoftwareComponents()
      * @see #getImplementationDescription()
      * @generated
      */
-    EAttribute getImplementationDescription_SoftwareDependency();
-
-    /**
-     * Returns the meta object for the containment reference list '{@link implementationDescription.ImplementationDescription#getIncludeSoftwareComponent <em>Include Software Component</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the containment reference list '<em>Include Software Component</em>'.
-     * @see implementationDescription.ImplementationDescription#getIncludeSoftwareComponent()
-     * @see #getImplementationDescription()
-     * @generated
-     */
-    EReference getImplementationDescription_IncludeSoftwareComponent();
+    EReference getImplementationDescription_IncludeSoftwareComponents();
 
     /**
      * Returns the meta object for class '{@link implementationDescription.SoftwareComponent <em>Software Component</em>}'.
@@ -753,14 +723,24 @@ public interface ImplementationDescriptionPackage extends EPackage {
     EClass getSoftwareExecutionParemeter();
 
     /**
-     * Returns the meta object for class '{@link implementationDescription.ExecutionProperty <em>Execution Property</em>}'.
+     * Returns the meta object for class '{@link implementationDescription.ExecutionParameter <em>Execution Parameter</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for class '<em>Execution Property</em>'.
-     * @see implementationDescription.ExecutionProperty
+     * @return the meta object for class '<em>Execution Parameter</em>'.
+     * @see implementationDescription.ExecutionParameter
      * @generated
      */
-    EClass getExecutionProperty();
+    EClass getExecutionParameter();
+
+    /**
+     * Returns the meta object for class '{@link implementationDescription.ExecutionRequirement <em>Execution Requirement</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Execution Requirement</em>'.
+     * @see implementationDescription.ExecutionRequirement
+     * @generated
+     */
+    EClass getExecutionRequirement();
 
     /**
      * Returns the meta object for class '{@link implementationDescription.Repository <em>Repository</em>}'.
@@ -849,16 +829,6 @@ public interface ImplementationDescriptionPackage extends EPackage {
      */
     interface Literals {
         /**
-         * The meta object literal for the '{@link implementationDescription.impl.ExecutionRequirementImpl <em>Execution Requirement</em>}' class.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @see implementationDescription.impl.ExecutionRequirementImpl
-         * @see implementationDescription.impl.ImplementationDescriptionPackageImpl#getExecutionRequirement()
-         * @generated
-         */
-        EClass EXECUTION_REQUIREMENT = eINSTANCE.getExecutionRequirement();
-
-        /**
          * The meta object literal for the '{@link implementationDescription.impl.ImplementationDescriptionImpl <em>Implementation Description</em>}' class.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
@@ -877,20 +847,12 @@ public interface ImplementationDescriptionPackage extends EPackage {
         EAttribute IMPLEMENTATION_DESCRIPTION__NAME = eINSTANCE.getImplementationDescription_Name();
 
         /**
-         * The meta object literal for the '<em><b>Software Dependency</b></em>' attribute list feature.
+         * The meta object literal for the '<em><b>Include Software Components</b></em>' containment reference list feature.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
          * @generated
          */
-        EAttribute IMPLEMENTATION_DESCRIPTION__SOFTWARE_DEPENDENCY = eINSTANCE.getImplementationDescription_SoftwareDependency();
-
-        /**
-         * The meta object literal for the '<em><b>Include Software Component</b></em>' containment reference list feature.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @generated
-         */
-        EReference IMPLEMENTATION_DESCRIPTION__INCLUDE_SOFTWARE_COMPONENT = eINSTANCE.getImplementationDescription_IncludeSoftwareComponent();
+        EReference IMPLEMENTATION_DESCRIPTION__INCLUDE_SOFTWARE_COMPONENTS = eINSTANCE.getImplementationDescription_IncludeSoftwareComponents();
 
         /**
          * The meta object literal for the '{@link implementationDescription.impl.SoftwareComponentImpl <em>Software Component</em>}' class.
@@ -991,14 +953,24 @@ public interface ImplementationDescriptionPackage extends EPackage {
         EClass SOFTWARE_EXECUTION_PAREMETER = eINSTANCE.getSoftwareExecutionParemeter();
 
         /**
-         * The meta object literal for the '{@link implementationDescription.impl.ExecutionPropertyImpl <em>Execution Property</em>}' class.
+         * The meta object literal for the '{@link implementationDescription.impl.ExecutionParameterImpl <em>Execution Parameter</em>}' class.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @see implementationDescription.impl.ExecutionPropertyImpl
-         * @see implementationDescription.impl.ImplementationDescriptionPackageImpl#getExecutionProperty()
+         * @see implementationDescription.impl.ExecutionParameterImpl
+         * @see implementationDescription.impl.ImplementationDescriptionPackageImpl#getExecutionParameter()
          * @generated
          */
-        EClass EXECUTION_PROPERTY = eINSTANCE.getExecutionProperty();
+        EClass EXECUTION_PARAMETER = eINSTANCE.getExecutionParameter();
+
+        /**
+         * The meta object literal for the '{@link implementationDescription.impl.ExecutionRequirementImpl <em>Execution Requirement</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see implementationDescription.impl.ExecutionRequirementImpl
+         * @see implementationDescription.impl.ImplementationDescriptionPackageImpl#getExecutionRequirement()
+         * @generated
+         */
+        EClass EXECUTION_REQUIREMENT = eINSTANCE.getExecutionRequirement();
 
         /**
          * The meta object literal for the '{@link implementationDescription.impl.RepositoryImpl <em>Repository</em>}' class.

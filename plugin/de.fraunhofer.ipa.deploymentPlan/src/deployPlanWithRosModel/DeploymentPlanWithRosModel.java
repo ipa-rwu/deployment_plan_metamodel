@@ -15,5 +15,4 @@ import deploymentPlan.AbstractDeploymentPlan;
  * @generated
  */
 public interface DeploymentPlanWithRosModel extends AbstractDeploymentPlan {
-
 } // DeploymentPlanWithRosModel

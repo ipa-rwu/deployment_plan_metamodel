@@ -5,8 +5,8 @@ package implementationDescription.util;
 import de.fraunhofer.ipa.deployment.util.AbstractComputationAssignmentTarget;
 import de.fraunhofer.ipa.deployment.util.AbstractImplementation;
 import de.fraunhofer.ipa.deployment.util.AbstractProperty;
-import de.fraunhofer.ipa.deployment.util.Property;
 
+import de.fraunhofer.ipa.deployment.util.Property;
 import implementationDescription.*;
 
 import org.eclipse.emf.ecore.EObject;
@@ -71,12 +71,6 @@ public class ImplementationDescriptionSwitch<T> extends Switch<T> {
     @Override
     protected T doSwitch(int classifierID, EObject theEObject) {
         switch (classifierID) {
-            case ImplementationDescriptionPackage.EXECUTION_REQUIREMENT: {
-                ExecutionRequirement executionRequirement = (ExecutionRequirement)theEObject;
-                T result = caseExecutionRequirement(executionRequirement);
-                if (result == null) result = defaultCase(theEObject);
-                return result;
-            }
             case ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION: {
                 ImplementationDescription implementationDescription = (ImplementationDescription)theEObject;
                 T result = caseImplementationDescription(implementationDescription);
@@ -109,7 +103,7 @@ public class ImplementationDescriptionSwitch<T> extends Switch<T> {
             case ImplementationDescriptionPackage.HWSW_PAREMETER: {
                 HWSWParemeter hwswParemeter = (HWSWParemeter)theEObject;
                 T result = caseHWSWParemeter(hwswParemeter);
-                if (result == null) result = caseExecutionProperty(hwswParemeter);
+                if (result == null) result = caseExecutionParameter(hwswParemeter);
                 if (result == null) result = caseProperty(hwswParemeter);
                 if (result == null) result = caseAbstractProperty(hwswParemeter);
                 if (result == null) result = defaultCase(theEObject);
@@ -118,17 +112,23 @@ public class ImplementationDescriptionSwitch<T> extends Switch<T> {
             case ImplementationDescriptionPackage.SOFTWARE_EXECUTION_PAREMETER: {
                 SoftwareExecutionParemeter softwareExecutionParemeter = (SoftwareExecutionParemeter)theEObject;
                 T result = caseSoftwareExecutionParemeter(softwareExecutionParemeter);
-                if (result == null) result = caseExecutionProperty(softwareExecutionParemeter);
+                if (result == null) result = caseExecutionParameter(softwareExecutionParemeter);
                 if (result == null) result = caseProperty(softwareExecutionParemeter);
                 if (result == null) result = caseAbstractProperty(softwareExecutionParemeter);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
-            case ImplementationDescriptionPackage.EXECUTION_PROPERTY: {
-                ExecutionProperty executionProperty = (ExecutionProperty)theEObject;
-                T result = caseExecutionProperty(executionProperty);
-                if (result == null) result = caseProperty(executionProperty);
-                if (result == null) result = caseAbstractProperty(executionProperty);
+            case ImplementationDescriptionPackage.EXECUTION_PARAMETER: {
+                ExecutionParameter executionParameter = (ExecutionParameter)theEObject;
+                T result = caseExecutionParameter(executionParameter);
+                if (result == null) result = caseProperty(executionParameter);
+                if (result == null) result = caseAbstractProperty(executionParameter);
+                if (result == null) result = defaultCase(theEObject);
+                return result;
+            }
+            case ImplementationDescriptionPackage.EXECUTION_REQUIREMENT: {
+                ExecutionRequirement executionRequirement = (ExecutionRequirement)theEObject;
+                T result = caseExecutionRequirement(executionRequirement);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -153,21 +153,6 @@ public class ImplementationDescriptionSwitch<T> extends Switch<T> {
             }
             default: return defaultCase(theEObject);
         }
-    }
-
-    /**
-     * Returns the result of interpreting the object as an instance of '<em>Execution Requirement</em>'.
-     * <!-- begin-user-doc -->
-     * This implementation returns null;
-     * returning a non-null result will terminate the switch.
-     * <!-- end-user-doc -->
-     * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Execution Requirement</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-     * @generated
-     */
-    public T caseExecutionRequirement(ExecutionRequirement object) {
-        return null;
     }
 
     /**
@@ -261,17 +246,32 @@ public class ImplementationDescriptionSwitch<T> extends Switch<T> {
     }
 
     /**
-     * Returns the result of interpreting the object as an instance of '<em>Execution Property</em>'.
+     * Returns the result of interpreting the object as an instance of '<em>Execution Parameter</em>'.
      * <!-- begin-user-doc -->
      * This implementation returns null;
      * returning a non-null result will terminate the switch.
      * <!-- end-user-doc -->
      * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Execution Property</em>'.
+     * @return the result of interpreting the object as an instance of '<em>Execution Parameter</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseExecutionProperty(ExecutionProperty object) {
+    public T caseExecutionParameter(ExecutionParameter object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Execution Requirement</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Execution Requirement</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseExecutionRequirement(ExecutionRequirement object) {
         return null;
     }
 

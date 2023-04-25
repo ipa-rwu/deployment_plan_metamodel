@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class SoftwareExecutionParemeterImpl extends ExecutionPropertyImpl implements SoftwareExecutionParemeter {
+public class SoftwareExecutionParemeterImpl extends ExecutionParameterImpl implements SoftwareExecutionParemeter {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->

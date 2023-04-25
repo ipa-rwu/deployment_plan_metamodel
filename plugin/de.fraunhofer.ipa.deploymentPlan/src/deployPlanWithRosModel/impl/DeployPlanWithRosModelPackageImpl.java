@@ -3,6 +3,7 @@
 package deployPlanWithRosModel.impl;
 
 import de.fraunhofer.ipa.deployment.util.UtilPackage;
+
 import deployPlanWithRosModel.ConfigRosParameter;
 import deployPlanWithRosModel.ConfigRosSoftwareComponent;
 import deployPlanWithRosModel.DeployPlanWithRosModelFactory;
@@ -10,6 +11,7 @@ import deployPlanWithRosModel.DeployPlanWithRosModelPackage;
 import deployPlanWithRosModel.DeploymentPlanWithRosModel;
 import deployPlanWithRosModel.RospackageImplementation;
 import deployPlanWithRosModel.RossystemAssignment;
+
 import deploymentPlan.DeploymentPlanPackage;
 
 import device.DevicePackage;

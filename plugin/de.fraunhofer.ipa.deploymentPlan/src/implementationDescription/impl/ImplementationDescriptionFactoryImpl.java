@@ -62,7 +62,7 @@ public class ImplementationDescriptionFactoryImpl extends EFactoryImpl implement
             case ImplementationDescriptionPackage.SOFTWARE_CONFIGURATION_REQUIREMENT: return createSoftwareConfigurationRequirement();
             case ImplementationDescriptionPackage.HWSW_PAREMETER: return createHWSWParemeter();
             case ImplementationDescriptionPackage.SOFTWARE_EXECUTION_PAREMETER: return createSoftwareExecutionParemeter();
-            case ImplementationDescriptionPackage.EXECUTION_PROPERTY: return createExecutionProperty();
+            case ImplementationDescriptionPackage.EXECUTION_PARAMETER: return createExecutionParameter();
             case ImplementationDescriptionPackage.REPOSITORY: return createRepository();
             case ImplementationDescriptionPackage.GIT_REPOSITORY_TYPE: return createGitRepositoryType();
             default:
@@ -135,9 +135,9 @@ public class ImplementationDescriptionFactoryImpl extends EFactoryImpl implement
      * <!-- end-user-doc -->
      * @generated
      */
-    public ExecutionProperty createExecutionProperty() {
-        ExecutionPropertyImpl executionProperty = new ExecutionPropertyImpl();
-        return executionProperty;
+    public ExecutionParameter createExecutionParameter() {
+        ExecutionParameterImpl executionParameter = new ExecutionParameterImpl();
+        return executionParameter;
     }
 
     /**

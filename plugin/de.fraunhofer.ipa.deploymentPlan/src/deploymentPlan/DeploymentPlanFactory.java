@@ -67,24 +67,6 @@ public interface DeploymentPlanFactory extends EFactory {
     ConfigExecutionParameter createConfigExecutionParameter();
 
     /**
-     * Returns a new object of class '<em>Humble ROS Distro</em>'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return a new object of class '<em>Humble ROS Distro</em>'.
-     * @generated
-     */
-    HumbleROSDistro createHumbleROSDistro();
-
-    /**
-     * Returns a new object of class '<em>Noetic ROS Distro</em>'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return a new object of class '<em>Noetic ROS Distro</em>'.
-     * @generated
-     */
-    NoeticROSDistro createNoeticROSDistro();
-
-    /**
      * Returns a new object of class '<em>Config Software Component</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -111,7 +93,7 @@ public interface DeploymentPlanFactory extends EFactory {
      */
     RosMiddleware createRosMiddleware();
 
-                /**
+    /**
      * Returns the package supported by this factory.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->

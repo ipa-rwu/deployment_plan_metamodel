@@ -92,14 +92,6 @@ public class DeploymentPlanAdapterFactory extends AdapterFactoryImpl {
                 return createMiddlewareAdapter();
             }
             @Override
-            public Adapter caseHumbleROSDistro(HumbleROSDistro object) {
-                return createHumbleROSDistroAdapter();
-            }
-            @Override
-            public Adapter caseNoeticROSDistro(NoeticROSDistro object) {
-                return createNoeticROSDistroAdapter();
-            }
-            @Override
             public Adapter caseConfigSoftwareComponent(ConfigSoftwareComponent object) {
                 return createConfigSoftwareComponentAdapter();
             }
@@ -116,10 +108,6 @@ public class DeploymentPlanAdapterFactory extends AdapterFactoryImpl {
                 return createAbstractComputationAssignmentAdapter();
             }
             @Override
-            public Adapter caseAbstractExecutionConfiguration(AbstractExecutionConfiguration object) {
-                return createAbstractExecutionConfigurationAdapter();
-            }
-            @Override
             public Adapter caseAbstractDeploymentPlan(AbstractDeploymentPlan object) {
                 return createAbstractDeploymentPlanAdapter();
             }
@@ -130,10 +118,6 @@ public class DeploymentPlanAdapterFactory extends AdapterFactoryImpl {
             @Override
             public Adapter caseRosMiddleware(RosMiddleware object) {
                 return createRosMiddlewareAdapter();
-            }
-            @Override
-            public Adapter caseAbstractConfigedValue(AbstractConfigedValue object) {
-                return createAbstractConfigedValueAdapter();
             }
             @Override
             public Adapter defaultCase(EObject object) {
@@ -170,20 +154,6 @@ public class DeploymentPlanAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
-     * Creates a new adapter for an object of class '{@link deploymentPlan.AbstractDeploymentPlan <em>Abstract Deployment Plan</em>}'.
-     * <!-- begin-user-doc -->
-     * This default implementation returns null so that we can easily ignore cases;
-     * it's useful to ignore a case when inheritance will catch all the cases anyway.
-     * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see deploymentPlan.AbstractDeploymentPlan
-     * @generated
-     */
-    public Adapter createAbstractDeploymentPlanAdapter() {
-        return null;
-    }
-
-    /**
      * Creates a new adapter for an object of class '{@link deploymentPlan.DeploymentPlan <em>Deployment Plan</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
@@ -194,20 +164,6 @@ public class DeploymentPlanAdapterFactory extends AdapterFactoryImpl {
      * @generated
      */
     public Adapter createDeploymentPlanAdapter() {
-        return null;
-    }
-
-    /**
-     * Creates a new adapter for an object of class '{@link deploymentPlan.AbstractRealization <em>Abstract Realization</em>}'.
-     * <!-- begin-user-doc -->
-     * This default implementation returns null so that we can easily ignore cases;
-     * it's useful to ignore a case when inheritance will catch all the cases anyway.
-     * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see deploymentPlan.AbstractRealization
-     * @generated
-     */
-    public Adapter createAbstractRealizationAdapter() {
         return null;
     }
 
@@ -226,20 +182,6 @@ public class DeploymentPlanAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
-     * Creates a new adapter for an object of class '{@link deploymentPlan.AbstractComputationAssignment <em>Abstract Computation Assignment</em>}'.
-     * <!-- begin-user-doc -->
-     * This default implementation returns null so that we can easily ignore cases;
-     * it's useful to ignore a case when inheritance will catch all the cases anyway.
-     * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see deploymentPlan.AbstractComputationAssignment
-     * @generated
-     */
-    public Adapter createAbstractComputationAssignmentAdapter() {
-        return null;
-    }
-
-    /**
      * Creates a new adapter for an object of class '{@link deploymentPlan.ImplementationAssignment <em>Implementation Assignment</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
@@ -250,20 +192,6 @@ public class DeploymentPlanAdapterFactory extends AdapterFactoryImpl {
      * @generated
      */
     public Adapter createImplementationAssignmentAdapter() {
-        return null;
-    }
-
-    /**
-     * Creates a new adapter for an object of class '{@link deploymentPlan.AbstractConfigExecutionParameter <em>Abstract Config Execution Parameter</em>}'.
-     * <!-- begin-user-doc -->
-     * This default implementation returns null so that we can easily ignore cases;
-     * it's useful to ignore a case when inheritance will catch all the cases anyway.
-     * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see deploymentPlan.AbstractConfigExecutionParameter
-     * @generated
-     */
-    public Adapter createAbstractConfigExecutionParameterAdapter() {
         return null;
     }
 
@@ -282,20 +210,6 @@ public class DeploymentPlanAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
-     * Creates a new adapter for an object of class '{@link deploymentPlan.AbstractExecutionConfiguration <em>Abstract Execution Configuration</em>}'.
-     * <!-- begin-user-doc -->
-     * This default implementation returns null so that we can easily ignore cases;
-     * it's useful to ignore a case when inheritance will catch all the cases anyway.
-     * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see deploymentPlan.AbstractExecutionConfiguration
-     * @generated
-     */
-    public Adapter createAbstractExecutionConfigurationAdapter() {
-        return null;
-    }
-
-    /**
      * Creates a new adapter for an object of class '{@link deploymentPlan.Middleware <em>Middleware</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
@@ -310,34 +224,6 @@ public class DeploymentPlanAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
-     * Creates a new adapter for an object of class '{@link deploymentPlan.HumbleROSDistro <em>Humble ROS Distro</em>}'.
-     * <!-- begin-user-doc -->
-     * This default implementation returns null so that we can easily ignore cases;
-     * it's useful to ignore a case when inheritance will catch all the cases anyway.
-     * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see deploymentPlan.HumbleROSDistro
-     * @generated
-     */
-    public Adapter createHumbleROSDistroAdapter() {
-        return null;
-    }
-
-    /**
-     * Creates a new adapter for an object of class '{@link deploymentPlan.NoeticROSDistro <em>Noetic ROS Distro</em>}'.
-     * <!-- begin-user-doc -->
-     * This default implementation returns null so that we can easily ignore cases;
-     * it's useful to ignore a case when inheritance will catch all the cases anyway.
-     * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see deploymentPlan.NoeticROSDistro
-     * @generated
-     */
-    public Adapter createNoeticROSDistroAdapter() {
-        return null;
-    }
-
-    /**
      * Creates a new adapter for an object of class '{@link deploymentPlan.ConfigSoftwareComponent <em>Config Software Component</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
@@ -348,6 +234,62 @@ public class DeploymentPlanAdapterFactory extends AdapterFactoryImpl {
      * @generated
      */
     public Adapter createConfigSoftwareComponentAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link deploymentPlan.AbstractRealization <em>Abstract Realization</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see deploymentPlan.AbstractRealization
+     * @generated
+     */
+    public Adapter createAbstractRealizationAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link deploymentPlan.AbstractConfigExecutionParameter <em>Abstract Config Execution Parameter</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see deploymentPlan.AbstractConfigExecutionParameter
+     * @generated
+     */
+    public Adapter createAbstractConfigExecutionParameterAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link deploymentPlan.AbstractComputationAssignment <em>Abstract Computation Assignment</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see deploymentPlan.AbstractComputationAssignment
+     * @generated
+     */
+    public Adapter createAbstractComputationAssignmentAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link deploymentPlan.AbstractDeploymentPlan <em>Abstract Deployment Plan</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see deploymentPlan.AbstractDeploymentPlan
+     * @generated
+     */
+    public Adapter createAbstractDeploymentPlanAdapter() {
         return null;
     }
 
@@ -379,21 +321,7 @@ public class DeploymentPlanAdapterFactory extends AdapterFactoryImpl {
         return null;
     }
 
-                /**
-     * Creates a new adapter for an object of class '{@link deploymentPlan.AbstractConfigedValue <em>Abstract Configed Value</em>}'.
-     * <!-- begin-user-doc -->
-     * This default implementation returns null so that we can easily ignore cases;
-     * it's useful to ignore a case when inheritance will catch all the cases anyway.
-     * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see deploymentPlan.AbstractConfigedValue
-     * @generated
-     */
-    public Adapter createAbstractConfigedValueAdapter() {
-        return null;
-    }
-
-                                                                /**
+    /**
      * Creates a new adapter for the default case.
      * <!-- begin-user-doc -->
      * This default implementation returns null.

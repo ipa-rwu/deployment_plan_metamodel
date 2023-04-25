@@ -5,8 +5,8 @@ package implementationDescription.util;
 import de.fraunhofer.ipa.deployment.util.AbstractComputationAssignmentTarget;
 import de.fraunhofer.ipa.deployment.util.AbstractImplementation;
 import de.fraunhofer.ipa.deployment.util.AbstractProperty;
-import de.fraunhofer.ipa.deployment.util.Property;
 
+import de.fraunhofer.ipa.deployment.util.Property;
 import implementationDescription.*;
 
 import org.eclipse.emf.common.notify.Adapter;
@@ -73,10 +73,6 @@ public class ImplementationDescriptionAdapterFactory extends AdapterFactoryImpl 
     protected ImplementationDescriptionSwitch<Adapter> modelSwitch =
         new ImplementationDescriptionSwitch<Adapter>() {
             @Override
-            public Adapter caseExecutionRequirement(ExecutionRequirement object) {
-                return createExecutionRequirementAdapter();
-            }
-            @Override
             public Adapter caseImplementationDescription(ImplementationDescription object) {
                 return createImplementationDescriptionAdapter();
             }
@@ -101,8 +97,12 @@ public class ImplementationDescriptionAdapterFactory extends AdapterFactoryImpl 
                 return createSoftwareExecutionParemeterAdapter();
             }
             @Override
-            public Adapter caseExecutionProperty(ExecutionProperty object) {
-                return createExecutionPropertyAdapter();
+            public Adapter caseExecutionParameter(ExecutionParameter object) {
+                return createExecutionParameterAdapter();
+            }
+            @Override
+            public Adapter caseExecutionRequirement(ExecutionRequirement object) {
+                return createExecutionRequirementAdapter();
             }
             @Override
             public Adapter caseRepository(Repository object) {
@@ -151,20 +151,6 @@ public class ImplementationDescriptionAdapterFactory extends AdapterFactoryImpl 
         return modelSwitch.doSwitch((EObject)target);
     }
 
-
-    /**
-     * Creates a new adapter for an object of class '{@link implementationDescription.ExecutionRequirement <em>Execution Requirement</em>}'.
-     * <!-- begin-user-doc -->
-     * This default implementation returns null so that we can easily ignore cases;
-     * it's useful to ignore a case when inheritance will catch all the cases anyway.
-     * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see implementationDescription.ExecutionRequirement
-     * @generated
-     */
-    public Adapter createExecutionRequirementAdapter() {
-        return null;
-    }
 
     /**
      * Creates a new adapter for an object of class '{@link implementationDescription.ImplementationDescription <em>Implementation Description</em>}'.
@@ -251,16 +237,30 @@ public class ImplementationDescriptionAdapterFactory extends AdapterFactoryImpl 
     }
 
     /**
-     * Creates a new adapter for an object of class '{@link implementationDescription.ExecutionProperty <em>Execution Property</em>}'.
+     * Creates a new adapter for an object of class '{@link implementationDescription.ExecutionParameter <em>Execution Parameter</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
      * it's useful to ignore a case when inheritance will catch all the cases anyway.
      * <!-- end-user-doc -->
      * @return the new adapter.
-     * @see implementationDescription.ExecutionProperty
+     * @see implementationDescription.ExecutionParameter
      * @generated
      */
-    public Adapter createExecutionPropertyAdapter() {
+    public Adapter createExecutionParameterAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link implementationDescription.ExecutionRequirement <em>Execution Requirement</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see implementationDescription.ExecutionRequirement
+     * @generated
+     */
+    public Adapter createExecutionRequirementAdapter() {
         return null;
     }
 

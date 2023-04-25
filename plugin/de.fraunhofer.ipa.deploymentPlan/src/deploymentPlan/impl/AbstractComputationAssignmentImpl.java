@@ -4,15 +4,19 @@ package deploymentPlan.impl;
 
 import de.fraunhofer.ipa.deployment.util.OpertingSystemName;
 import de.fraunhofer.ipa.deployment.util.RunTimeType;
+
 import deploymentPlan.AbstarctConfigSoftwareComponent;
 import deploymentPlan.AbstractComputationAssignment;
 import deploymentPlan.DeploymentPlanPackage;
 import deploymentPlan.Middleware;
-import java.util.Collection;
-import org.eclipse.emf.common.notify.Notification;
 
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -21,6 +25,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
 import targetEnvironment.ComputationDeviceInstance;
 
 /**
@@ -63,7 +68,7 @@ public abstract class AbstractComputationAssignmentImpl extends MinimalEObjectIm
      */
     protected String name = NAME_EDEFAULT;
 
-                /**
+    /**
      * The cached value of the '{@link #getExecutedBy() <em>Executed By</em>}' reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -83,7 +88,7 @@ public abstract class AbstractComputationAssignmentImpl extends MinimalEObjectIm
      */
     protected EList<AbstarctConfigSoftwareComponent> softwareComponents;
 
-                /**
+    /**
      * The default value of the '{@link #getOpertingSystemVersion() <em>Operting System Version</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -93,7 +98,7 @@ public abstract class AbstractComputationAssignmentImpl extends MinimalEObjectIm
      */
     protected static final String OPERTING_SYSTEM_VERSION_EDEFAULT = null;
 
-                /**
+    /**
      * The cached value of the '{@link #getOpertingSystemVersion() <em>Operting System Version</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -103,7 +108,7 @@ public abstract class AbstractComputationAssignmentImpl extends MinimalEObjectIm
      */
     protected String opertingSystemVersion = OPERTING_SYSTEM_VERSION_EDEFAULT;
 
-                /**
+    /**
      * The default value of the '{@link #getRuntimeType() <em>Runtime Type</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -113,7 +118,7 @@ public abstract class AbstractComputationAssignmentImpl extends MinimalEObjectIm
      */
     protected static final RunTimeType RUNTIME_TYPE_EDEFAULT = RunTimeType.CONTAINER;
 
-                /**
+    /**
      * The cached value of the '{@link #getRuntimeType() <em>Runtime Type</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -123,7 +128,7 @@ public abstract class AbstractComputationAssignmentImpl extends MinimalEObjectIm
      */
     protected RunTimeType runtimeType = RUNTIME_TYPE_EDEFAULT;
 
-                /**
+    /**
      * The cached value of the '{@link #getMiddleware() <em>Middleware</em>}' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -133,7 +138,7 @@ public abstract class AbstractComputationAssignmentImpl extends MinimalEObjectIm
      */
     protected Middleware middleware;
 
-                /**
+    /**
      * The cached value of the '{@link #getOpertingSystemType() <em>Operting System Type</em>}' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -142,7 +147,8 @@ public abstract class AbstractComputationAssignmentImpl extends MinimalEObjectIm
      * @ordered
      */
     protected OpertingSystemName opertingSystemType;
-                /**
+
+    /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -170,7 +176,7 @@ public abstract class AbstractComputationAssignmentImpl extends MinimalEObjectIm
         return name;
     }
 
-                /**
+    /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -182,7 +188,7 @@ public abstract class AbstractComputationAssignmentImpl extends MinimalEObjectIm
             eNotify(new ENotificationImpl(this, Notification.SET, DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__NAME, oldName, name));
     }
 
-                /**
+    /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -232,7 +238,49 @@ public abstract class AbstractComputationAssignmentImpl extends MinimalEObjectIm
         return softwareComponents;
     }
 
-                /**
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public String getOpertingSystemVersion() {
+        return opertingSystemVersion;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void setOpertingSystemVersion(String newOpertingSystemVersion) {
+        String oldOpertingSystemVersion = opertingSystemVersion;
+        opertingSystemVersion = newOpertingSystemVersion;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__OPERTING_SYSTEM_VERSION, oldOpertingSystemVersion, opertingSystemVersion));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public RunTimeType getRuntimeType() {
+        return runtimeType;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void setRuntimeType(RunTimeType newRuntimeType) {
+        RunTimeType oldRuntimeType = runtimeType;
+        runtimeType = newRuntimeType == null ? RUNTIME_TYPE_EDEFAULT : newRuntimeType;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__RUNTIME_TYPE, oldRuntimeType, runtimeType));
+    }
+
+    /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -241,7 +289,7 @@ public abstract class AbstractComputationAssignmentImpl extends MinimalEObjectIm
         return middleware;
     }
 
-                /**
+    /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -256,7 +304,7 @@ public abstract class AbstractComputationAssignmentImpl extends MinimalEObjectIm
         return msgs;
     }
 
-                /**
+    /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -275,7 +323,7 @@ public abstract class AbstractComputationAssignmentImpl extends MinimalEObjectIm
             eNotify(new ENotificationImpl(this, Notification.SET, DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__MIDDLEWARE, newMiddleware, newMiddleware));
     }
 
-                /**
+    /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -284,7 +332,7 @@ public abstract class AbstractComputationAssignmentImpl extends MinimalEObjectIm
         return opertingSystemType;
     }
 
-                /**
+    /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -299,7 +347,7 @@ public abstract class AbstractComputationAssignmentImpl extends MinimalEObjectIm
         return msgs;
     }
 
-                /**
+    /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -318,49 +366,7 @@ public abstract class AbstractComputationAssignmentImpl extends MinimalEObjectIm
             eNotify(new ENotificationImpl(this, Notification.SET, DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__OPERTING_SYSTEM_TYPE, newOpertingSystemType, newOpertingSystemType));
     }
 
-                /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public String getOpertingSystemVersion() {
-        return opertingSystemVersion;
-    }
-
-                /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public void setOpertingSystemVersion(String newOpertingSystemVersion) {
-        String oldOpertingSystemVersion = opertingSystemVersion;
-        opertingSystemVersion = newOpertingSystemVersion;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__OPERTING_SYSTEM_VERSION, oldOpertingSystemVersion, opertingSystemVersion));
-    }
-
-                /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public RunTimeType getRuntimeType() {
-        return runtimeType;
-    }
-
-                /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public void setRuntimeType(RunTimeType newRuntimeType) {
-        RunTimeType oldRuntimeType = runtimeType;
-        runtimeType = newRuntimeType == null ? RUNTIME_TYPE_EDEFAULT : newRuntimeType;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__RUNTIME_TYPE, oldRuntimeType, runtimeType));
-    }
-
-                /**
+    /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -499,7 +505,7 @@ public abstract class AbstractComputationAssignmentImpl extends MinimalEObjectIm
         return super.eIsSet(featureID);
     }
 
-                /**
+    /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated

@@ -6,6 +6,7 @@ import deployPlanWithRosModel.DeployPlanWithRosModelPackage;
 import deployPlanWithRosModel.RospackageImplementation;
 
 import deploymentPlan.impl.AbstractComputationAssignmentImpl;
+
 import org.eclipse.emf.ecore.EClass;
 
 /**

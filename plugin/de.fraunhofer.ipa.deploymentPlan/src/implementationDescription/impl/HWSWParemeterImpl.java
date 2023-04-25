@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class HWSWParemeterImpl extends ExecutionPropertyImpl implements HWSWParemeter {
+public class HWSWParemeterImpl extends ExecutionParameterImpl implements HWSWParemeter {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->

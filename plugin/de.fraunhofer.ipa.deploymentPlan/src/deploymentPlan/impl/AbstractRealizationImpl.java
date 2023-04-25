@@ -43,7 +43,8 @@ public abstract class AbstractRealizationImpl extends MinimalEObjectImpl.Contain
      * @ordered
      */
     protected EList<AbstractComputationAssignment> realizations;
-                /**
+
+    /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -74,7 +75,7 @@ public abstract class AbstractRealizationImpl extends MinimalEObjectImpl.Contain
         return realizations;
     }
 
-                /**
+    /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated

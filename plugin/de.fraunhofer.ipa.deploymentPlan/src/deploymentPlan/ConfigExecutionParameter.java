@@ -4,7 +4,7 @@ package deploymentPlan;
 
 import de.fraunhofer.ipa.deployment.util.PropertyValue;
 
-import implementationDescription.ExecutionProperty;
+import implementationDescription.ExecutionParameter;
 
 import targetEnvironment.AbstractConfigProperty;
 
@@ -32,12 +32,12 @@ public interface ConfigExecutionParameter extends AbstractConfigExecutionParamet
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return the value of the '<em>From</em>' reference.
-     * @see #setFrom(ExecutionProperty)
+     * @see #setFrom(ExecutionParameter)
      * @see deploymentPlan.DeploymentPlanPackage#getConfigExecutionParameter_From()
      * @model required="true"
      * @generated
      */
-    ExecutionProperty getFrom();
+    ExecutionParameter getFrom();
 
     /**
      * Sets the value of the '{@link deploymentPlan.ConfigExecutionParameter#getFrom <em>From</em>}' reference.
@@ -47,7 +47,7 @@ public interface ConfigExecutionParameter extends AbstractConfigExecutionParamet
      * @see #getFrom()
      * @generated
      */
-    void setFrom(ExecutionProperty value);
+    void setFrom(ExecutionParameter value);
 
     /**
      * Returns the value of the '<em><b>To</b></em>' reference.

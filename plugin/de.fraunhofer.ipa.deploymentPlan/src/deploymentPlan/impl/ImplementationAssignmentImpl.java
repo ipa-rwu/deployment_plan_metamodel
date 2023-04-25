@@ -4,6 +4,7 @@ package deploymentPlan.impl;
 
 import deploymentPlan.DeploymentPlanPackage;
 import deploymentPlan.ImplementationAssignment;
+
 import org.eclipse.emf.ecore.EClass;
 
 /**
