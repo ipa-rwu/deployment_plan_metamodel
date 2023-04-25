@@ -213,7 +213,7 @@ public class ImplementationDescriptionSemanticSequencer extends UtilSemanticSequ
     /**
      * <pre>
      * Contexts:
-     *     ExecutionProperty returns HWSWParemeter
+     *     ExecutionParameter returns HWSWParemeter
      *     HWSWParemeter returns HWSWParemeter
      *
      * Constraint:
@@ -231,7 +231,7 @@ public class ImplementationDescriptionSemanticSequencer extends UtilSemanticSequ
      *     ImplementationDescription returns ImplementationDescription
      *
      * Constraint:
-     *     (name=EString (softwareDependency+=EString softwareDependency+=EString*)? includeSoftwareComponent+=SoftwareComponent+)
+     *     (name=EString includeSoftwareComponents+=SoftwareComponent+)
      * </pre>
      */
     protected void sequence_ImplementationDescription(ISerializationContext context, ImplementationDescription semanticObject) {
@@ -297,7 +297,7 @@ public class ImplementationDescriptionSemanticSequencer extends UtilSemanticSequ
     /**
      * <pre>
      * Contexts:
-     *     ExecutionProperty returns SoftwareExecutionParemeter
+     *     ExecutionParameter returns SoftwareExecutionParemeter
      *     SoftwareExecutionParemeter returns SoftwareExecutionParemeter
      *
      * Constraint:

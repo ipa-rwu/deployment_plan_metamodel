@@ -1010,7 +1010,7 @@ ruleConfigExecutionParameter returns [EObject current=null]
                     }
                 }
                 {
-                    newCompositeNode(grammarAccess.getConfigExecutionParameterAccess().getFromExecutionPropertyCrossReference_3_0());
+                    newCompositeNode(grammarAccess.getConfigExecutionParameterAccess().getFromExecutionParameterCrossReference_3_0());
                 }
                 ruleEString
                 {
@@ -2821,7 +2821,7 @@ ruleROSDistro returns [Enumerator current=null]
 }:
     (
         (
-            enumLiteral_0=Noetic_1
+            enumLiteral_0=Noetic
             {
                 $current = grammarAccess.getROSDistroAccess().getNoeticEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                 newLeafNode(enumLiteral_0, grammarAccess.getROSDistroAccess().getNoeticEnumLiteralDeclaration_0());
@@ -2829,7 +2829,7 @@ ruleROSDistro returns [Enumerator current=null]
         )
             |
         (
-            enumLiteral_1=Humble_1
+            enumLiteral_1=Humble
             {
                 $current = grammarAccess.getROSDistroAccess().getHumbleEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                 newLeafNode(enumLiteral_1, grammarAccess.getROSDistroAccess().getHumbleEnumLiteralDeclaration_1());

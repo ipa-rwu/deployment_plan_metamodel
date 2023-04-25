@@ -34,7 +34,7 @@ public class ImplementationDescriptionParser extends AbstractContentAssistParser
 
         private static void init(ImmutableMap.Builder<AbstractElement, String> builder, ImplementationDescriptionGrammarAccess grammarAccess) {
             builder.put(grammarAccess.getExecutionRequirementAccess().getAlternatives(), "rule__ExecutionRequirement__Alternatives");
-            builder.put(grammarAccess.getExecutionPropertyAccess().getAlternatives(), "rule__ExecutionProperty__Alternatives");
+            builder.put(grammarAccess.getExecutionParameterAccess().getAlternatives(), "rule__ExecutionParameter__Alternatives");
             builder.put(grammarAccess.getAbstractPropertyAccess().getAlternatives(), "rule__AbstractProperty__Alternatives");
             builder.put(grammarAccess.getPropertyKindAccess().getAlternatives(), "rule__PropertyKind__Alternatives");
             builder.put(grammarAccess.getPropertyValueAccess().getAlternatives(), "rule__PropertyValue__Alternatives");
@@ -46,8 +46,6 @@ public class ImplementationDescriptionParser extends AbstractContentAssistParser
             builder.put(grammarAccess.getLinuxDistributionAccess().getAlternatives(), "rule__LinuxDistribution__Alternatives");
             builder.put(grammarAccess.getUbuntuVersionAccess().getAlternatives(), "rule__UbuntuVersion__Alternatives");
             builder.put(grammarAccess.getImplementationDescriptionAccess().getGroup(), "rule__ImplementationDescription__Group__0");
-            builder.put(grammarAccess.getImplementationDescriptionAccess().getGroup_4(), "rule__ImplementationDescription__Group_4__0");
-            builder.put(grammarAccess.getImplementationDescriptionAccess().getGroup_4_4(), "rule__ImplementationDescription__Group_4_4__0");
             builder.put(grammarAccess.getSoftwareComponentAccess().getGroup(), "rule__SoftwareComponent__Group__0");
             builder.put(grammarAccess.getSoftwareComponentAccess().getGroup_9(), "rule__SoftwareComponent__Group_9__0");
             builder.put(grammarAccess.getRepositoryAccess().getGroup(), "rule__Repository__Group__0");
@@ -100,9 +98,7 @@ public class ImplementationDescriptionParser extends AbstractContentAssistParser
             builder.put(grammarAccess.getLinuxDistributionValueAccess().getGroup(), "rule__LinuxDistributionValue__Group__0");
             builder.put(grammarAccess.getUbuntuVersionValueAccess().getGroup(), "rule__UbuntuVersionValue__Group__0");
             builder.put(grammarAccess.getImplementationDescriptionAccess().getNameAssignment_3(), "rule__ImplementationDescription__NameAssignment_3");
-            builder.put(grammarAccess.getImplementationDescriptionAccess().getSoftwareDependencyAssignment_4_3(), "rule__ImplementationDescription__SoftwareDependencyAssignment_4_3");
-            builder.put(grammarAccess.getImplementationDescriptionAccess().getSoftwareDependencyAssignment_4_4_1(), "rule__ImplementationDescription__SoftwareDependencyAssignment_4_4_1");
-            builder.put(grammarAccess.getImplementationDescriptionAccess().getIncludeSoftwareComponentAssignment_7(), "rule__ImplementationDescription__IncludeSoftwareComponentAssignment_7");
+            builder.put(grammarAccess.getImplementationDescriptionAccess().getIncludeSoftwareComponentsAssignment_6(), "rule__ImplementationDescription__IncludeSoftwareComponentsAssignment_6");
             builder.put(grammarAccess.getSoftwareComponentAccess().getNameAssignment_3(), "rule__SoftwareComponent__NameAssignment_3");
             builder.put(grammarAccess.getSoftwareComponentAccess().getRepositoryAssignment_7(), "rule__SoftwareComponent__RepositoryAssignment_7");
             builder.put(grammarAccess.getSoftwareComponentAccess().getExecutionRequirementAssignment_9_2(), "rule__SoftwareComponent__ExecutionRequirementAssignment_9_2");

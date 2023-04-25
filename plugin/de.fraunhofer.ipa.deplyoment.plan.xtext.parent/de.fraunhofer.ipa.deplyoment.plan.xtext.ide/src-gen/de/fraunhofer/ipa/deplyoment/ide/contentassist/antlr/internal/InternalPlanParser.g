@@ -43,11 +43,9 @@ import de.fraunhofer.ipa.deplyoment.services.PlanGrammarAccess;
         tokenNameToValue.put("Kind", "'kind:'");
         tokenNameToValue.put("Name", "'name:'");
         tokenNameToValue.put("Type", "'type:'");
-        tokenNameToValue.put("Humble", "'Humble'");
-        tokenNameToValue.put("Noetic", "'Noetic'");
         tokenNameToValue.put("Debian", "'debian'");
-        tokenNameToValue.put("Humble_1", "'humble'");
-        tokenNameToValue.put("Noetic_1", "'noetic'");
+        tokenNameToValue.put("Humble", "'humble'");
+        tokenNameToValue.put("Noetic", "'noetic'");
         tokenNameToValue.put("Ubuntu", "'ubuntu'");
         tokenNameToValue.put("Value", "'value:'");
         tokenNameToValue.put("Rolling", "'rolling'");
@@ -1403,13 +1401,13 @@ rule__ROSDistro__Alternatives
 :
     (
         { before(grammarAccess.getROSDistroAccess().getNoeticEnumLiteralDeclaration_0()); }
-        (Noetic_1)
+        (Noetic)
         { after(grammarAccess.getROSDistroAccess().getNoeticEnumLiteralDeclaration_0()); }
     )
     |
     (
         { before(grammarAccess.getROSDistroAccess().getHumbleEnumLiteralDeclaration_1()); }
-        (Humble_1)
+        (Humble)
         { after(grammarAccess.getROSDistroAccess().getHumbleEnumLiteralDeclaration_1()); }
     )
     |
@@ -6375,13 +6373,13 @@ rule__ConfigExecutionParameter__FromAssignment_3
     }
 :
     (
-        { before(grammarAccess.getConfigExecutionParameterAccess().getFromExecutionPropertyCrossReference_3_0()); }
+        { before(grammarAccess.getConfigExecutionParameterAccess().getFromExecutionParameterCrossReference_3_0()); }
         (
-            { before(grammarAccess.getConfigExecutionParameterAccess().getFromExecutionPropertyEStringParserRuleCall_3_0_1()); }
+            { before(grammarAccess.getConfigExecutionParameterAccess().getFromExecutionParameterEStringParserRuleCall_3_0_1()); }
             ruleEString
-            { after(grammarAccess.getConfigExecutionParameterAccess().getFromExecutionPropertyEStringParserRuleCall_3_0_1()); }
+            { after(grammarAccess.getConfigExecutionParameterAccess().getFromExecutionParameterEStringParserRuleCall_3_0_1()); }
         )
-        { after(grammarAccess.getConfigExecutionParameterAccess().getFromExecutionPropertyCrossReference_3_0()); }
+        { after(grammarAccess.getConfigExecutionParameterAccess().getFromExecutionParameterCrossReference_3_0()); }
     )
 ;
 finally {

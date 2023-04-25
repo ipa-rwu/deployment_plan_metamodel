@@ -22,63 +22,61 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalPlanParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "ExecutionConfiguration", "LinuxOpertingSystem", "MacOSOpertingSystem", "OpertingSystemType", "SoftwareComponents", "DeploymentPlan", "AttributeKind", "SelectionKind", "StartCommand", "Description", "RuntimeType", "MaximumKind", "MinimumKind", "Assignment", "ExecutedBy", "Middleware", "Properties", "Processor", "RangeKind", "Container", "DeployTo", "Ethernet", "Rolling", "Humble", "Noetic", "Debian", "Humble_1", "Noetic_1", "Ubuntu", "Value", "Arm64", "Focal", "From", "Jammy", "Kind", "Name", "Type", "Wlan", "To", "X86", "HyphenMinus", "Colon", "RULE_DIGIT", "RULE_DECINT", "RULE_DOUBLE", "RULE_SL_COMMENT", "RULE_INDENT", "RULE_DEDENT", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_WS", "RULE_ANY_OTHER"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "ExecutionConfiguration", "LinuxOpertingSystem", "MacOSOpertingSystem", "OpertingSystemType", "SoftwareComponents", "DeploymentPlan", "AttributeKind", "SelectionKind", "StartCommand", "Description", "RuntimeType", "MaximumKind", "MinimumKind", "Assignment", "ExecutedBy", "Middleware", "Properties", "Processor", "RangeKind", "Container", "DeployTo", "Ethernet", "Rolling", "Debian", "Humble", "Noetic", "Ubuntu", "Value", "Arm64", "Focal", "From", "Jammy", "Kind", "Name", "Type", "Wlan", "To", "X86", "HyphenMinus", "Colon", "RULE_DIGIT", "RULE_DECINT", "RULE_DOUBLE", "RULE_SL_COMMENT", "RULE_INDENT", "RULE_DEDENT", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_WS", "RULE_ANY_OTHER"
     };
     public static final int SoftwareComponents=8;
     public static final int DeployTo=24;
     public static final int AttributeKind=10;
-    public static final int Noetic=28;
-    public static final int Name=39;
+    public static final int Noetic=29;
+    public static final int Name=37;
     public static final int Assignment=17;
     public static final int Container=23;
-    public static final int Debian=29;
-    public static final int Kind=38;
-    public static final int To=42;
+    public static final int Debian=27;
+    public static final int Kind=36;
+    public static final int To=40;
     public static final int ExecutedBy=18;
-    public static final int Ubuntu=32;
-    public static final int RULE_DEDENT=51;
+    public static final int Ubuntu=30;
+    public static final int RULE_DEDENT=49;
     public static final int LinuxOpertingSystem=5;
-    public static final int RULE_ID=52;
-    public static final int RULE_DIGIT=46;
+    public static final int RULE_ID=50;
+    public static final int RULE_DIGIT=44;
     public static final int Middleware=19;
     public static final int SelectionKind=11;
-    public static final int Arm64=34;
-    public static final int RULE_INT=53;
+    public static final int Arm64=32;
+    public static final int RULE_INT=51;
     public static final int Ethernet=25;
-    public static final int Value=33;
-    public static final int RULE_ML_COMMENT=55;
-    public static final int Noetic_1=31;
+    public static final int Value=31;
+    public static final int RULE_ML_COMMENT=53;
     public static final int Description=13;
     public static final int Processor=21;
     public static final int StartCommand=12;
-    public static final int Humble_1=30;
-    public static final int RULE_STRING=54;
-    public static final int Focal=35;
-    public static final int Wlan=41;
+    public static final int RULE_STRING=52;
+    public static final int Focal=33;
+    public static final int Wlan=39;
     public static final int Properties=20;
-    public static final int RULE_SL_COMMENT=49;
-    public static final int HyphenMinus=44;
+    public static final int RULE_SL_COMMENT=47;
+    public static final int HyphenMinus=42;
     public static final int OpertingSystemType=7;
-    public static final int RULE_DOUBLE=48;
-    public static final int X86=43;
-    public static final int Colon=45;
-    public static final int RULE_DECINT=47;
+    public static final int RULE_DOUBLE=46;
+    public static final int X86=41;
+    public static final int Colon=43;
+    public static final int RULE_DECINT=45;
     public static final int DeploymentPlan=9;
     public static final int MinimumKind=16;
     public static final int EOF=-1;
-    public static final int RULE_INDENT=50;
-    public static final int Jammy=37;
-    public static final int RULE_WS=56;
+    public static final int RULE_INDENT=48;
+    public static final int Jammy=35;
+    public static final int RULE_WS=54;
     public static final int Rolling=26;
     public static final int ExecutionConfiguration=4;
     public static final int MaximumKind=15;
-    public static final int From=36;
-    public static final int RULE_ANY_OTHER=57;
+    public static final int From=34;
+    public static final int RULE_ANY_OTHER=55;
     public static final int RangeKind=22;
-    public static final int Type=40;
+    public static final int Type=38;
     public static final int MacOSOpertingSystem=6;
     public static final int RuntimeType=14;
-    public static final int Humble=27;
+    public static final int Humble=28;
 
     // delegates
     // delegators
@@ -1846,7 +1844,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
                                 }
 
 
-                                newCompositeNode(grammarAccess.getConfigExecutionParameterAccess().getFromExecutionPropertyCrossReference_3_0());
+                                newCompositeNode(grammarAccess.getConfigExecutionParameterAccess().getFromExecutionParameterCrossReference_3_0());
 
             pushFollow(FOLLOW_3);
             ruleEString();
@@ -6586,7 +6584,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleROSDistro"
-    // InternalPlanParser.g:2557:1: ruleROSDistro returns [Enumerator current=null] : ( (enumLiteral_0= Noetic_1 ) | (enumLiteral_1= Humble_1 ) | (enumLiteral_2= Rolling ) ) ;
+    // InternalPlanParser.g:2557:1: ruleROSDistro returns [Enumerator current=null] : ( (enumLiteral_0= Noetic ) | (enumLiteral_1= Humble ) | (enumLiteral_2= Rolling ) ) ;
     public final Enumerator ruleROSDistro() throws RecognitionException {
         Enumerator current = null;
 
@@ -6598,18 +6596,18 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
             enterRule();
 
         try {
-            // InternalPlanParser.g:2563:2: ( ( (enumLiteral_0= Noetic_1 ) | (enumLiteral_1= Humble_1 ) | (enumLiteral_2= Rolling ) ) )
-            // InternalPlanParser.g:2564:2: ( (enumLiteral_0= Noetic_1 ) | (enumLiteral_1= Humble_1 ) | (enumLiteral_2= Rolling ) )
+            // InternalPlanParser.g:2563:2: ( ( (enumLiteral_0= Noetic ) | (enumLiteral_1= Humble ) | (enumLiteral_2= Rolling ) ) )
+            // InternalPlanParser.g:2564:2: ( (enumLiteral_0= Noetic ) | (enumLiteral_1= Humble ) | (enumLiteral_2= Rolling ) )
             {
-            // InternalPlanParser.g:2564:2: ( (enumLiteral_0= Noetic_1 ) | (enumLiteral_1= Humble_1 ) | (enumLiteral_2= Rolling ) )
+            // InternalPlanParser.g:2564:2: ( (enumLiteral_0= Noetic ) | (enumLiteral_1= Humble ) | (enumLiteral_2= Rolling ) )
             int alt36=3;
             switch ( input.LA(1) ) {
-            case Noetic_1:
+            case Noetic:
                 {
                 alt36=1;
                 }
                 break;
-            case Humble_1:
+            case Humble:
                 {
                 alt36=2;
                 }
@@ -6628,12 +6626,12 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
             switch (alt36) {
                 case 1 :
-                    // InternalPlanParser.g:2565:3: (enumLiteral_0= Noetic_1 )
+                    // InternalPlanParser.g:2565:3: (enumLiteral_0= Noetic )
                     {
-                    // InternalPlanParser.g:2565:3: (enumLiteral_0= Noetic_1 )
-                    // InternalPlanParser.g:2566:4: enumLiteral_0= Noetic_1
+                    // InternalPlanParser.g:2565:3: (enumLiteral_0= Noetic )
+                    // InternalPlanParser.g:2566:4: enumLiteral_0= Noetic
                     {
-                    enumLiteral_0=(Token)match(input,Noetic_1,FOLLOW_2);
+                    enumLiteral_0=(Token)match(input,Noetic,FOLLOW_2);
 
                                     current = grammarAccess.getROSDistroAccess().getNoeticEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                                     newLeafNode(enumLiteral_0, grammarAccess.getROSDistroAccess().getNoeticEnumLiteralDeclaration_0());
@@ -6645,12 +6643,12 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalPlanParser.g:2573:3: (enumLiteral_1= Humble_1 )
+                    // InternalPlanParser.g:2573:3: (enumLiteral_1= Humble )
                     {
-                    // InternalPlanParser.g:2573:3: (enumLiteral_1= Humble_1 )
-                    // InternalPlanParser.g:2574:4: enumLiteral_1= Humble_1
+                    // InternalPlanParser.g:2573:3: (enumLiteral_1= Humble )
+                    // InternalPlanParser.g:2574:4: enumLiteral_1= Humble
                     {
-                    enumLiteral_1=(Token)match(input,Humble_1,FOLLOW_2);
+                    enumLiteral_1=(Token)match(input,Humble,FOLLOW_2);
 
                                     current = grammarAccess.getROSDistroAccess().getHumbleEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                                     newLeafNode(enumLiteral_1, grammarAccess.getROSDistroAccess().getHumbleEnumLiteralDeclaration_1());
@@ -7012,8 +7010,8 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
     protected DFA15 dfa15 = new DFA15(this);
     static final String dfa_1s = "\14\uffff";
-    static final String dfa_2s = "\1\54\1\47\1\64\2\62\1\46\1\12\5\uffff";
-    static final String dfa_3s = "\1\54\1\47\1\66\2\62\1\46\1\26\5\uffff";
+    static final String dfa_2s = "\1\52\1\45\1\62\2\60\1\44\1\12\5\uffff";
+    static final String dfa_3s = "\1\52\1\45\1\64\2\60\1\44\1\26\5\uffff";
     static final String dfa_4s = "\7\uffff\1\4\1\3\1\2\1\5\1\1";
     static final String dfa_5s = "\14\uffff}>";
     static final String[] dfa_6s = {
@@ -7059,36 +7057,36 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0004000000000000L});
-    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000008000000000L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0050000000000000L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0001000000000000L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0014000000000000L});
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000001000000L});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0008000000000000L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000100000000000L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0008100000000000L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000200000000002L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x000C000000001000L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0002000000000000L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000040000000000L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0002040000000000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000080000000002L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0003000000001000L});
     public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0008000000001000L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0058000000000000L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0002000000001000L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0016000000000000L});
     public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000040000L});
     public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000000100L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0008000000084080L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x00000000C4000000L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0008000000004080L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0002000000084080L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000034000000L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0002000000004080L});
     public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000000800000L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0008000000000080L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000120000000L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0008040200000000L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0008000200000000L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0051882D20000000L});
-    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000004000000000L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0002000000000080L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000048000000L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000400000000L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0002010080000000L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0002000080000000L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0014620B48000000L});
+    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000001000000000L});
     public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000000000400L});
-    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0008000200002002L});
-    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0008000200000002L});
-    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0008000000000002L});
+    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0002000080002002L});
+    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0002000080000002L});
+    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0002000000000002L});
     public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000000000008000L});
     public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000000000010000L});
     public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000000000000800L});

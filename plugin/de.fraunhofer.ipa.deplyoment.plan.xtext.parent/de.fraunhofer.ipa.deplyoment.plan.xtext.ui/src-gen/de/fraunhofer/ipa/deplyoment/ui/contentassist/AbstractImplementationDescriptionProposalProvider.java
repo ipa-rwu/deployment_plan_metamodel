@@ -20,10 +20,7 @@ public abstract class AbstractImplementationDescriptionProposalProvider extends 
     public void completeImplementationDescription_Name(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
         completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
     }
-    public void completeImplementationDescription_SoftwareDependency(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-        completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
-    }
-    public void completeImplementationDescription_IncludeSoftwareComponent(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+    public void completeImplementationDescription_IncludeSoftwareComponents(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
         completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
     }
     public void completeSoftwareComponent_Name(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
@@ -102,7 +99,7 @@ public abstract class AbstractImplementationDescriptionProposalProvider extends 
     public void complete_SoftwareConfigurationRequirement(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
         // subclasses may override
     }
-    public void complete_ExecutionProperty(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+    public void complete_ExecutionParameter(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
         // subclasses may override
     }
     public void complete_HWSWParemeter(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {

@@ -71,8 +71,6 @@ public class PlanWithRosmodelParser extends AbstractContentAssistParser {
             builder.put(grammarAccess.getImplementationAssignmentAccess().getGroup_12(), "rule__ImplementationAssignment__Group_12__0");
             builder.put(grammarAccess.getImplementationAssignmentAccess().getGroup_13(), "rule__ImplementationAssignment__Group_13__0");
             builder.put(grammarAccess.getImplementationAssignmentAccess().getGroup_14(), "rule__ImplementationAssignment__Group_14__0");
-            builder.put(grammarAccess.getHumbleROSDistroAccess().getGroup(), "rule__HumbleROSDistro__Group__0");
-            builder.put(grammarAccess.getNoeticROSDistroAccess().getGroup(), "rule__NoeticROSDistro__Group__0");
             builder.put(grammarAccess.getConfigExecutionParameterAccess().getGroup(), "rule__ConfigExecutionParameter__Group__0");
             builder.put(grammarAccess.getConfigExecutionParameterAccess().getGroup_5(), "rule__ConfigExecutionParameter__Group_5__0");
             builder.put(grammarAccess.getConfigExecutionParameterAccess().getGroup_6(), "rule__ConfigExecutionParameter__Group_6__0");

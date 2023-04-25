@@ -38,9 +38,7 @@ import deploymentPlan.ConfigExecutionParameter;
 import deploymentPlan.ConfigSoftwareComponent;
 import deploymentPlan.DeploymentPlan;
 import deploymentPlan.DeploymentPlanPackage;
-import deploymentPlan.HumbleROSDistro;
 import deploymentPlan.ImplementationAssignment;
-import deploymentPlan.NoeticROSDistro;
 import deploymentPlan.Realization;
 import deploymentPlan.RosMiddleware;
 import java.util.Set;
@@ -76,14 +74,8 @@ public class PlanSemanticSequencer extends UtilSemanticSequencer {
             case DeploymentPlanPackage.DEPLOYMENT_PLAN:
                 sequence_DeploymentPlan(context, (DeploymentPlan) semanticObject);
                 return;
-            case DeploymentPlanPackage.HUMBLE_ROS_DISTRO:
-                sequence_HumbleROSDistro(context, (HumbleROSDistro) semanticObject);
-                return;
             case DeploymentPlanPackage.IMPLEMENTATION_ASSIGNMENT:
                 sequence_ImplementationAssignment(context, (ImplementationAssignment) semanticObject);
-                return;
-            case DeploymentPlanPackage.NOETIC_ROS_DISTRO:
-                sequence_NoeticROSDistro(context, (NoeticROSDistro) semanticObject);
                 return;
             case DeploymentPlanPackage.REALIZATION:
                 sequence_Realization(context, (Realization) semanticObject);
@@ -187,7 +179,7 @@ public class PlanSemanticSequencer extends UtilSemanticSequencer {
      *     ConfigExecutionParameter returns ConfigExecutionParameter
      *
      * Constraint:
-     *     (from=[ExecutionProperty|EString] to=[AbstractConfigProperty|EString]? value=PropertyValue?)
+     *     (from=[ExecutionParameter|EString] to=[AbstractConfigProperty|EString]? value=PropertyValue?)
      * </pre>
      */
     protected void sequence_ConfigExecutionParameter(ISerializationContext context, ConfigExecutionParameter semanticObject) {
@@ -243,20 +235,6 @@ public class PlanSemanticSequencer extends UtilSemanticSequencer {
     /**
      * <pre>
      * Contexts:
-     *     HumbleROSDistro returns HumbleROSDistro
-     *
-     * Constraint:
-     *     {HumbleROSDistro}
-     * </pre>
-     */
-    protected void sequence_HumbleROSDistro(ISerializationContext context, HumbleROSDistro semanticObject) {
-        genericSequencer.createSequence(context, semanticObject);
-    }
-
-
-    /**
-     * <pre>
-     * Contexts:
      *     AbstractComputationAssignment returns ImplementationAssignment
      *     ImplementationAssignment returns ImplementationAssignment
      *
@@ -273,20 +251,6 @@ public class PlanSemanticSequencer extends UtilSemanticSequencer {
      * </pre>
      */
     protected void sequence_ImplementationAssignment(ISerializationContext context, ImplementationAssignment semanticObject) {
-        genericSequencer.createSequence(context, semanticObject);
-    }
-
-
-    /**
-     * <pre>
-     * Contexts:
-     *     NoeticROSDistro returns NoeticROSDistro
-     *
-     * Constraint:
-     *     {NoeticROSDistro}
-     * </pre>
-     */
-    protected void sequence_NoeticROSDistro(ISerializationContext context, NoeticROSDistro semanticObject) {
         genericSequencer.createSequence(context, semanticObject);
     }
 
