@@ -76,8 +76,8 @@ DeviceType_Impl returns DeviceType:
     DEDENT
     ;
 
-AbstractComputationDeviceResource returns AbstractComputationDeviceResource:
-    DeviceResource | OperatingSystemResouce | ProcessorResouce
+AbstractComputationResource returns AbstractComputationResource:
+  OperatingSystemResouce | ProcessorResouce
 ;
 
 DeviceResource returns DeviceResource:
@@ -115,7 +115,12 @@ ComputationDeviceType returns ComputationDeviceType:
         "name:" name=EString
         ('deviceResouce:'
             INDENT
-            deviceResource+=AbstractComputationDeviceResource+
+            deviceResource+=DeviceResource+
+            DEDENT
+        )?
+        ('computationResouce:'
+            INDENT
+            computationResource+=AbstractComputationResource+
             DEDENT
         )?
         ('communicationConnection:'
