@@ -732,9 +732,9 @@ public class TargetEnvironmentGrammarAccess extends AbstractElementFinder.Abstra
         private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
         private final RuleCall cINDENTTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
         private final Keyword cFromKeyword_4 = (Keyword)cGroup.eContents().get(4);
-        private final Assignment cFromAssignment_5 = (Assignment)cGroup.eContents().get(5);
-        private final CrossReference cFromAbstractPropertyCrossReference_5_0 = (CrossReference)cFromAssignment_5.eContents().get(0);
-        private final RuleCall cFromAbstractPropertyEStringParserRuleCall_5_0_1 = (RuleCall)cFromAbstractPropertyCrossReference_5_0.eContents().get(1);
+        private final Assignment cRefPropertyAssignment_5 = (Assignment)cGroup.eContents().get(5);
+        private final CrossReference cRefPropertyAbstractPropertyCrossReference_5_0 = (CrossReference)cRefPropertyAssignment_5.eContents().get(0);
+        private final RuleCall cRefPropertyAbstractPropertyEStringParserRuleCall_5_0_1 = (RuleCall)cRefPropertyAbstractPropertyCrossReference_5_0.eContents().get(1);
         private final Keyword cValueKeyword_6 = (Keyword)cGroup.eContents().get(6);
         private final Assignment cValueAssignment_7 = (Assignment)cGroup.eContents().get(7);
         private final RuleCall cValuePropertyValueParserRuleCall_7_0 = (RuleCall)cValueAssignment_7.eContents().get(0);
@@ -743,14 +743,14 @@ public class TargetEnvironmentGrammarAccess extends AbstractElementFinder.Abstra
         //ConfigDeviceProperty returns ConfigDeviceProperty:
         //    PreListElement 'name:' name=EString
         //    INDENT
-        //        'from:' from=[util::AbstractProperty|EString]
+        //        'from:' refProperty=[util::AbstractProperty|EString]
         //        'value:' value=PropertyValue
         //    DEDENT;
         @Override public ParserRule getRule() { return rule; }
 
         //PreListElement 'name:' name=EString
         //INDENT
-        //    'from:' from=[util::AbstractProperty|EString]
+        //    'from:' refProperty=[util::AbstractProperty|EString]
         //    'value:' value=PropertyValue
         //DEDENT
         public Group getGroup() { return cGroup; }
@@ -773,14 +773,14 @@ public class TargetEnvironmentGrammarAccess extends AbstractElementFinder.Abstra
         //'from:'
         public Keyword getFromKeyword_4() { return cFromKeyword_4; }
 
-        //from=[util::AbstractProperty|EString]
-        public Assignment getFromAssignment_5() { return cFromAssignment_5; }
+        //refProperty=[util::AbstractProperty|EString]
+        public Assignment getRefPropertyAssignment_5() { return cRefPropertyAssignment_5; }
 
         //[util::AbstractProperty|EString]
-        public CrossReference getFromAbstractPropertyCrossReference_5_0() { return cFromAbstractPropertyCrossReference_5_0; }
+        public CrossReference getRefPropertyAbstractPropertyCrossReference_5_0() { return cRefPropertyAbstractPropertyCrossReference_5_0; }
 
         //EString
-        public RuleCall getFromAbstractPropertyEStringParserRuleCall_5_0_1() { return cFromAbstractPropertyEStringParserRuleCall_5_0_1; }
+        public RuleCall getRefPropertyAbstractPropertyEStringParserRuleCall_5_0_1() { return cRefPropertyAbstractPropertyEStringParserRuleCall_5_0_1; }
 
         //'value:'
         public Keyword getValueKeyword_6() { return cValueKeyword_6; }
@@ -1032,7 +1032,7 @@ public class TargetEnvironmentGrammarAccess extends AbstractElementFinder.Abstra
     //ConfigDeviceProperty returns ConfigDeviceProperty:
     //    PreListElement 'name:' name=EString
     //    INDENT
-    //        'from:' from=[util::AbstractProperty|EString]
+    //        'from:' refProperty=[util::AbstractProperty|EString]
     //        'value:' value=PropertyValue
     //    DEDENT;
     public ConfigDevicePropertyElements getConfigDevicePropertyAccess() {
@@ -1154,19 +1154,19 @@ public class TargetEnvironmentGrammarAccess extends AbstractElementFinder.Abstra
         return getDeviceType_ImplAccess().getRule();
     }
 
-    //AbstractComputationDeviceResource returns AbstractComputationDeviceResource:
-    //    DeviceResource | OperatingSystemResouce | ProcessorResouce
+    //AbstractComputationResource returns AbstractComputationResource:
+    //  OperatingSystemResouce | ProcessorResouce
     //;
-    public DeviceGrammarAccess.AbstractComputationDeviceResourceElements getAbstractComputationDeviceResourceAccess() {
-        return gaDevice.getAbstractComputationDeviceResourceAccess();
+    public DeviceGrammarAccess.AbstractComputationResourceElements getAbstractComputationResourceAccess() {
+        return gaDevice.getAbstractComputationResourceAccess();
     }
 
-    public ParserRule getAbstractComputationDeviceResourceRule() {
-        return getAbstractComputationDeviceResourceAccess().getRule();
+    public ParserRule getAbstractComputationResourceRule() {
+        return getAbstractComputationResourceAccess().getRule();
     }
 
     //DeviceResource returns DeviceResource:
-    //    PreListElement    'name:'    name=EString
+    //    PreListElement  'name:' name=EString
     //    INDENT
     //        'type:' type=AbstractResouceType
     //        ('properties:'
@@ -1207,7 +1207,12 @@ public class TargetEnvironmentGrammarAccess extends AbstractElementFinder.Abstra
     //        "name:" name=EString
     //        ('deviceResouce:'
     //            INDENT
-    //            deviceResource+=AbstractComputationDeviceResource+
+    //            deviceResource+=DeviceResource+
+    //            DEDENT
+    //        )?
+    //        ('computationResouce:'
+    //            INDENT
+    //            computationResource+=AbstractComputationResource+
     //            DEDENT
     //        )?
     //        ('communicationConnection:'

@@ -36,7 +36,7 @@ public class DeviceParser extends AbstractContentAssistParser {
             builder.put(grammarAccess.getDeviceTypeAccess().getAlternatives(), "rule__DeviceType__Alternatives");
             builder.put(grammarAccess.getAbstractCommunicationConnectionAccess().getAlternatives(), "rule__AbstractCommunicationConnection__Alternatives");
             builder.put(grammarAccess.getAbstractNetworkPropertyAccess().getAlternatives(), "rule__AbstractNetworkProperty__Alternatives");
-            builder.put(grammarAccess.getAbstractComputationDeviceResourceAccess().getAlternatives(), "rule__AbstractComputationDeviceResource__Alternatives");
+            builder.put(grammarAccess.getAbstractComputationResourceAccess().getAlternatives(), "rule__AbstractComputationResource__Alternatives");
             builder.put(grammarAccess.getAbstractOperatingSystemPropertyAccess().getAlternatives(), "rule__AbstractOperatingSystemProperty__Alternatives");
             builder.put(grammarAccess.getAbstracProcessorPropertyAccess().getAlternatives(), "rule__AbstracProcessorProperty__Alternatives");
             builder.put(grammarAccess.getAbstractPropertyAccess().getAlternatives(), "rule__AbstractProperty__Alternatives");
@@ -65,6 +65,7 @@ public class DeviceParser extends AbstractContentAssistParser {
             builder.put(grammarAccess.getComputationDeviceTypeAccess().getGroup(), "rule__ComputationDeviceType__Group__0");
             builder.put(grammarAccess.getComputationDeviceTypeAccess().getGroup_4(), "rule__ComputationDeviceType__Group_4__0");
             builder.put(grammarAccess.getComputationDeviceTypeAccess().getGroup_5(), "rule__ComputationDeviceType__Group_5__0");
+            builder.put(grammarAccess.getComputationDeviceTypeAccess().getGroup_6(), "rule__ComputationDeviceType__Group_6__0");
             builder.put(grammarAccess.getConnectionPropertyAccess().getGroup(), "rule__ConnectionProperty__Group__0");
             builder.put(grammarAccess.getConnectionPropertyAccess().getGroup_7(), "rule__ConnectionProperty__Group_7__0");
             builder.put(grammarAccess.getConnectionPropertyAccess().getGroup_8(), "rule__ConnectionProperty__Group_8__0");
@@ -143,7 +144,8 @@ public class DeviceParser extends AbstractContentAssistParser {
             builder.put(grammarAccess.getDeviceResourceAccess().getPropertiesAssignment_6_3(), "rule__DeviceResource__PropertiesAssignment_6_3");
             builder.put(grammarAccess.getComputationDeviceTypeAccess().getNameAssignment_3(), "rule__ComputationDeviceType__NameAssignment_3");
             builder.put(grammarAccess.getComputationDeviceTypeAccess().getDeviceResourceAssignment_4_2(), "rule__ComputationDeviceType__DeviceResourceAssignment_4_2");
-            builder.put(grammarAccess.getComputationDeviceTypeAccess().getCommunicationConnectionAssignment_5_2(), "rule__ComputationDeviceType__CommunicationConnectionAssignment_5_2");
+            builder.put(grammarAccess.getComputationDeviceTypeAccess().getComputationResourceAssignment_5_2(), "rule__ComputationDeviceType__ComputationResourceAssignment_5_2");
+            builder.put(grammarAccess.getComputationDeviceTypeAccess().getCommunicationConnectionAssignment_6_2(), "rule__ComputationDeviceType__CommunicationConnectionAssignment_6_2");
             builder.put(grammarAccess.getConnectionPropertyAccess().getNameAssignment_3(), "rule__ConnectionProperty__NameAssignment_3");
             builder.put(grammarAccess.getConnectionPropertyAccess().getKindAssignment_6(), "rule__ConnectionProperty__KindAssignment_6");
             builder.put(grammarAccess.getConnectionPropertyAccess().getDescriptionAssignment_7_1(), "rule__ConnectionProperty__DescriptionAssignment_7_1");

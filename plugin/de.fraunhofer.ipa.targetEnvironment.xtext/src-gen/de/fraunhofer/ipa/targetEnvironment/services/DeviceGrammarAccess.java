@@ -479,29 +479,25 @@ public class DeviceGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
         //DEDENT
         public RuleCall getDEDENTTerminalRuleCall_7() { return cDEDENTTerminalRuleCall_7; }
     }
-    public class AbstractComputationDeviceResourceElements extends AbstractParserRuleElementFinder {
-        private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.targetEnvironment.Device.AbstractComputationDeviceResource");
+    public class AbstractComputationResourceElements extends AbstractParserRuleElementFinder {
+        private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.targetEnvironment.Device.AbstractComputationResource");
         private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-        private final RuleCall cDeviceResourceParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-        private final RuleCall cOperatingSystemResouceParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-        private final RuleCall cProcessorResouceParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+        private final RuleCall cOperatingSystemResouceParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+        private final RuleCall cProcessorResouceParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 
-        //AbstractComputationDeviceResource returns AbstractComputationDeviceResource:
-        //    DeviceResource | OperatingSystemResouce | ProcessorResouce
+        //AbstractComputationResource returns AbstractComputationResource:
+        //  OperatingSystemResouce | ProcessorResouce
         //;
         @Override public ParserRule getRule() { return rule; }
 
-        //DeviceResource | OperatingSystemResouce | ProcessorResouce
+        //OperatingSystemResouce | ProcessorResouce
         public Alternatives getAlternatives() { return cAlternatives; }
 
-        //DeviceResource
-        public RuleCall getDeviceResourceParserRuleCall_0() { return cDeviceResourceParserRuleCall_0; }
-
         //OperatingSystemResouce
-        public RuleCall getOperatingSystemResouceParserRuleCall_1() { return cOperatingSystemResouceParserRuleCall_1; }
+        public RuleCall getOperatingSystemResouceParserRuleCall_0() { return cOperatingSystemResouceParserRuleCall_0; }
 
         //ProcessorResouce
-        public RuleCall getProcessorResouceParserRuleCall_2() { return cProcessorResouceParserRuleCall_2; }
+        public RuleCall getProcessorResouceParserRuleCall_1() { return cProcessorResouceParserRuleCall_1; }
     }
     public class DeviceResourceElements extends AbstractParserRuleElementFinder {
         private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.targetEnvironment.Device.DeviceResource");
@@ -525,7 +521,7 @@ public class DeviceGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
         private final RuleCall cDEDENTTerminalRuleCall_7 = (RuleCall)cGroup.eContents().get(7);
 
         //DeviceResource returns DeviceResource:
-        //    PreListElement    'name:'    name=EString
+        //    PreListElement  'name:' name=EString
         //    INDENT
         //        'type:' type=AbstractResouceType
         //        ('properties:'
@@ -554,7 +550,7 @@ public class DeviceGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
         //    ;
         @Override public ParserRule getRule() { return rule; }
 
-        //PreListElement    'name:'    name=EString
+        //PreListElement  'name:' name=EString
         //INDENT
         //    'type:' type=AbstractResouceType
         //    ('properties:'
@@ -634,15 +630,21 @@ public class DeviceGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
         private final Keyword cDeviceResouceKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
         private final RuleCall cINDENTTerminalRuleCall_4_1 = (RuleCall)cGroup_4.eContents().get(1);
         private final Assignment cDeviceResourceAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
-        private final RuleCall cDeviceResourceAbstractComputationDeviceResourceParserRuleCall_4_2_0 = (RuleCall)cDeviceResourceAssignment_4_2.eContents().get(0);
+        private final RuleCall cDeviceResourceDeviceResourceParserRuleCall_4_2_0 = (RuleCall)cDeviceResourceAssignment_4_2.eContents().get(0);
         private final RuleCall cDEDENTTerminalRuleCall_4_3 = (RuleCall)cGroup_4.eContents().get(3);
         private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-        private final Keyword cCommunicationConnectionKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+        private final Keyword cComputationResouceKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
         private final RuleCall cINDENTTerminalRuleCall_5_1 = (RuleCall)cGroup_5.eContents().get(1);
-        private final Assignment cCommunicationConnectionAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
-        private final RuleCall cCommunicationConnectionAbstractCommunicationConnectionParserRuleCall_5_2_0 = (RuleCall)cCommunicationConnectionAssignment_5_2.eContents().get(0);
+        private final Assignment cComputationResourceAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
+        private final RuleCall cComputationResourceAbstractComputationResourceParserRuleCall_5_2_0 = (RuleCall)cComputationResourceAssignment_5_2.eContents().get(0);
         private final RuleCall cDEDENTTerminalRuleCall_5_3 = (RuleCall)cGroup_5.eContents().get(3);
-        private final RuleCall cDEDENTTerminalRuleCall_6 = (RuleCall)cGroup.eContents().get(6);
+        private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
+        private final Keyword cCommunicationConnectionKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+        private final RuleCall cINDENTTerminalRuleCall_6_1 = (RuleCall)cGroup_6.eContents().get(1);
+        private final Assignment cCommunicationConnectionAssignment_6_2 = (Assignment)cGroup_6.eContents().get(2);
+        private final RuleCall cCommunicationConnectionAbstractCommunicationConnectionParserRuleCall_6_2_0 = (RuleCall)cCommunicationConnectionAssignment_6_2.eContents().get(0);
+        private final RuleCall cDEDENTTerminalRuleCall_6_3 = (RuleCall)cGroup_6.eContents().get(3);
+        private final RuleCall cDEDENTTerminalRuleCall_7 = (RuleCall)cGroup.eContents().get(7);
 
         //ComputationDeviceType returns ComputationDeviceType:
         //    'ComputationDeviceType:'
@@ -650,7 +652,12 @@ public class DeviceGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
         //        "name:" name=EString
         //        ('deviceResouce:'
         //            INDENT
-        //            deviceResource+=AbstractComputationDeviceResource+
+        //            deviceResource+=DeviceResource+
+        //            DEDENT
+        //        )?
+        //        ('computationResouce:'
+        //            INDENT
+        //            computationResource+=AbstractComputationResource+
         //            DEDENT
         //        )?
         //        ('communicationConnection:'
@@ -667,7 +674,12 @@ public class DeviceGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
         //    "name:" name=EString
         //    ('deviceResouce:'
         //        INDENT
-        //        deviceResource+=AbstractComputationDeviceResource+
+        //        deviceResource+=DeviceResource+
+        //        DEDENT
+        //    )?
+        //    ('computationResouce:'
+        //        INDENT
+        //        computationResource+=AbstractComputationResource+
         //        DEDENT
         //    )?
         //    ('communicationConnection:'
@@ -695,7 +707,7 @@ public class DeviceGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 
         //('deviceResouce:'
         //    INDENT
-        //    deviceResource+=AbstractComputationDeviceResource+
+        //    deviceResource+=DeviceResource+
         //    DEDENT
         //)?
         public Group getGroup_4() { return cGroup_4; }
@@ -706,39 +718,61 @@ public class DeviceGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
         //INDENT
         public RuleCall getINDENTTerminalRuleCall_4_1() { return cINDENTTerminalRuleCall_4_1; }
 
-        //deviceResource+=AbstractComputationDeviceResource+
+        //deviceResource+=DeviceResource+
         public Assignment getDeviceResourceAssignment_4_2() { return cDeviceResourceAssignment_4_2; }
 
-        //AbstractComputationDeviceResource
-        public RuleCall getDeviceResourceAbstractComputationDeviceResourceParserRuleCall_4_2_0() { return cDeviceResourceAbstractComputationDeviceResourceParserRuleCall_4_2_0; }
+        //DeviceResource
+        public RuleCall getDeviceResourceDeviceResourceParserRuleCall_4_2_0() { return cDeviceResourceDeviceResourceParserRuleCall_4_2_0; }
 
         //DEDENT
         public RuleCall getDEDENTTerminalRuleCall_4_3() { return cDEDENTTerminalRuleCall_4_3; }
+
+        //('computationResouce:'
+        //    INDENT
+        //    computationResource+=AbstractComputationResource+
+        //    DEDENT
+        //)?
+        public Group getGroup_5() { return cGroup_5; }
+
+        //'computationResouce:'
+        public Keyword getComputationResouceKeyword_5_0() { return cComputationResouceKeyword_5_0; }
+
+        //INDENT
+        public RuleCall getINDENTTerminalRuleCall_5_1() { return cINDENTTerminalRuleCall_5_1; }
+
+        //computationResource+=AbstractComputationResource+
+        public Assignment getComputationResourceAssignment_5_2() { return cComputationResourceAssignment_5_2; }
+
+        //AbstractComputationResource
+        public RuleCall getComputationResourceAbstractComputationResourceParserRuleCall_5_2_0() { return cComputationResourceAbstractComputationResourceParserRuleCall_5_2_0; }
+
+        //DEDENT
+        public RuleCall getDEDENTTerminalRuleCall_5_3() { return cDEDENTTerminalRuleCall_5_3; }
 
         //('communicationConnection:'
         //    INDENT
         //    communicationConnection+=AbstractCommunicationConnection+
         //    DEDENT
         //)?
-        public Group getGroup_5() { return cGroup_5; }
+        public Group getGroup_6() { return cGroup_6; }
 
         //'communicationConnection:'
-        public Keyword getCommunicationConnectionKeyword_5_0() { return cCommunicationConnectionKeyword_5_0; }
+        public Keyword getCommunicationConnectionKeyword_6_0() { return cCommunicationConnectionKeyword_6_0; }
 
         //INDENT
-        public RuleCall getINDENTTerminalRuleCall_5_1() { return cINDENTTerminalRuleCall_5_1; }
+        public RuleCall getINDENTTerminalRuleCall_6_1() { return cINDENTTerminalRuleCall_6_1; }
 
         //communicationConnection+=AbstractCommunicationConnection+
-        public Assignment getCommunicationConnectionAssignment_5_2() { return cCommunicationConnectionAssignment_5_2; }
+        public Assignment getCommunicationConnectionAssignment_6_2() { return cCommunicationConnectionAssignment_6_2; }
 
         //AbstractCommunicationConnection
-        public RuleCall getCommunicationConnectionAbstractCommunicationConnectionParserRuleCall_5_2_0() { return cCommunicationConnectionAbstractCommunicationConnectionParserRuleCall_5_2_0; }
+        public RuleCall getCommunicationConnectionAbstractCommunicationConnectionParserRuleCall_6_2_0() { return cCommunicationConnectionAbstractCommunicationConnectionParserRuleCall_6_2_0; }
 
         //DEDENT
-        public RuleCall getDEDENTTerminalRuleCall_5_3() { return cDEDENTTerminalRuleCall_5_3; }
+        public RuleCall getDEDENTTerminalRuleCall_6_3() { return cDEDENTTerminalRuleCall_6_3; }
 
         //DEDENT
-        public RuleCall getDEDENTTerminalRuleCall_6() { return cDEDENTTerminalRuleCall_6; }
+        public RuleCall getDEDENTTerminalRuleCall_7() { return cDEDENTTerminalRuleCall_7; }
     }
     public class ConnectionPropertyElements extends AbstractParserRuleElementFinder {
         private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.targetEnvironment.Device.ConnectionProperty");
@@ -1721,7 +1755,7 @@ public class DeviceGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
     private final InterfaceNetworkPropertyElements pInterfaceNetworkProperty;
     private final AddressNetworkPropertyElements pAddressNetworkProperty;
     private final DeviceType_ImplElements pDeviceType_Impl;
-    private final AbstractComputationDeviceResourceElements pAbstractComputationDeviceResource;
+    private final AbstractComputationResourceElements pAbstractComputationResource;
     private final DeviceResourceElements pDeviceResource;
     private final ComputationDeviceTypeElements pComputationDeviceType;
     private final ConnectionPropertyElements pConnectionProperty;
@@ -1757,7 +1791,7 @@ public class DeviceGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
         this.pInterfaceNetworkProperty = new InterfaceNetworkPropertyElements();
         this.pAddressNetworkProperty = new AddressNetworkPropertyElements();
         this.pDeviceType_Impl = new DeviceType_ImplElements();
-        this.pAbstractComputationDeviceResource = new AbstractComputationDeviceResourceElements();
+        this.pAbstractComputationResource = new AbstractComputationResourceElements();
         this.pDeviceResource = new DeviceResourceElements();
         this.pComputationDeviceType = new ComputationDeviceTypeElements();
         this.pConnectionProperty = new ConnectionPropertyElements();
@@ -1927,19 +1961,19 @@ public class DeviceGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
         return getDeviceType_ImplAccess().getRule();
     }
 
-    //AbstractComputationDeviceResource returns AbstractComputationDeviceResource:
-    //    DeviceResource | OperatingSystemResouce | ProcessorResouce
+    //AbstractComputationResource returns AbstractComputationResource:
+    //  OperatingSystemResouce | ProcessorResouce
     //;
-    public AbstractComputationDeviceResourceElements getAbstractComputationDeviceResourceAccess() {
-        return pAbstractComputationDeviceResource;
+    public AbstractComputationResourceElements getAbstractComputationResourceAccess() {
+        return pAbstractComputationResource;
     }
 
-    public ParserRule getAbstractComputationDeviceResourceRule() {
-        return getAbstractComputationDeviceResourceAccess().getRule();
+    public ParserRule getAbstractComputationResourceRule() {
+        return getAbstractComputationResourceAccess().getRule();
     }
 
     //DeviceResource returns DeviceResource:
-    //    PreListElement    'name:'    name=EString
+    //    PreListElement  'name:' name=EString
     //    INDENT
     //        'type:' type=AbstractResouceType
     //        ('properties:'
@@ -1980,7 +2014,12 @@ public class DeviceGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
     //        "name:" name=EString
     //        ('deviceResouce:'
     //            INDENT
-    //            deviceResource+=AbstractComputationDeviceResource+
+    //            deviceResource+=DeviceResource+
+    //            DEDENT
+    //        )?
+    //        ('computationResouce:'
+    //            INDENT
+    //            computationResource+=AbstractComputationResource+
     //            DEDENT
     //        )?
     //        ('communicationConnection:'

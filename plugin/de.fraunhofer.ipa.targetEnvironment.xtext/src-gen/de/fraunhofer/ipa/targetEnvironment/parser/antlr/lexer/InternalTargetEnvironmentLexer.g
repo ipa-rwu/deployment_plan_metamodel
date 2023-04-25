@@ -27,6 +27,8 @@ LinuxOpertingSystem : 'LinuxOpertingSystem';
 
 MacOSOpertingSystem : 'MacOSOpertingSystem';
 
+ComputationResouce : 'computationResouce:';
+
 ComputationDevice : 'computationDevice:';
 
 ConfigConnection : 'configConnection:';
