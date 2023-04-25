@@ -1,6 +1,6 @@
 ComputationDeviceType:
     name: PC
-    deviceResouce:
+    computationResouce:
         - name: processor
           type: Processor
           properties:
