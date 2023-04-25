@@ -8,11 +8,9 @@
   <foreignModel>ImplementationDescription.ecore</foreignModel>
   <genPackages prefix="ImplementationDescription" disposableProviderFactory="true"
       ecorePackage="ImplementationDescription.ecore#/">
-    <genClasses image="false" ecoreClass="ImplementationDescription.ecore#//ExecutionRequirement"/>
     <genClasses ecoreClass="ImplementationDescription.ecore#//ImplementationDescription">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ImplementationDescription.ecore#//ImplementationDescription/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ImplementationDescription.ecore#//ImplementationDescription/softwareDependency"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ImplementationDescription.ecore#//ImplementationDescription/includeSoftwareComponent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ImplementationDescription.ecore#//ImplementationDescription/includeSoftwareComponents"/>
     </genClasses>
     <genClasses ecoreClass="ImplementationDescription.ecore#//SoftwareComponent">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ImplementationDescription.ecore#//SoftwareComponent/name"/>
@@ -28,7 +26,8 @@
     </genClasses>
     <genClasses ecoreClass="ImplementationDescription.ecore#//HWSWParemeter"/>
     <genClasses ecoreClass="ImplementationDescription.ecore#//SoftwareExecutionParemeter"/>
-    <genClasses ecoreClass="ImplementationDescription.ecore#//ExecutionProperty"/>
+    <genClasses ecoreClass="ImplementationDescription.ecore#//ExecutionParameter"/>
+    <genClasses image="false" ecoreClass="ImplementationDescription.ecore#//ExecutionRequirement"/>
     <genClasses image="false" ecoreClass="ImplementationDescription.ecore#//Repository">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ImplementationDescription.ecore#//Repository/url"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ImplementationDescription.ecore#//Repository/version"/>
