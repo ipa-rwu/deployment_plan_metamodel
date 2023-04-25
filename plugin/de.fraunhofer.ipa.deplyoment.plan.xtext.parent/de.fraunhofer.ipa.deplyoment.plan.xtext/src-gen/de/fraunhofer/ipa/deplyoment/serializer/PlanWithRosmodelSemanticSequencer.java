@@ -41,9 +41,7 @@ import deploymentPlan.ConfigExecutionParameter;
 import deploymentPlan.ConfigSoftwareComponent;
 import deploymentPlan.DeploymentPlan;
 import deploymentPlan.DeploymentPlanPackage;
-import deploymentPlan.HumbleROSDistro;
 import deploymentPlan.ImplementationAssignment;
-import deploymentPlan.NoeticROSDistro;
 import deploymentPlan.Realization;
 import deploymentPlan.RosMiddleware;
 import java.util.Set;
@@ -91,9 +89,6 @@ public class PlanWithRosmodelSemanticSequencer extends PlanSemanticSequencer {
             case DeploymentPlanPackage.DEPLOYMENT_PLAN:
                 sequence_DeploymentPlan(context, (DeploymentPlan) semanticObject);
                 return;
-            case DeploymentPlanPackage.HUMBLE_ROS_DISTRO:
-                sequence_HumbleROSDistro(context, (HumbleROSDistro) semanticObject);
-                return;
             case DeploymentPlanPackage.IMPLEMENTATION_ASSIGNMENT:
                 if (rule == grammarAccess.getImplementationAssignmentRule()) {
                     sequence_ImplementationAssignment(context, (ImplementationAssignment) semanticObject);
@@ -105,9 +100,6 @@ public class PlanWithRosmodelSemanticSequencer extends PlanSemanticSequencer {
                     return;
                 }
                 else break;
-            case DeploymentPlanPackage.NOETIC_ROS_DISTRO:
-                sequence_NoeticROSDistro(context, (NoeticROSDistro) semanticObject);
-                return;
             case DeploymentPlanPackage.REALIZATION:
                 sequence_Realization(context, (Realization) semanticObject);
                 return;

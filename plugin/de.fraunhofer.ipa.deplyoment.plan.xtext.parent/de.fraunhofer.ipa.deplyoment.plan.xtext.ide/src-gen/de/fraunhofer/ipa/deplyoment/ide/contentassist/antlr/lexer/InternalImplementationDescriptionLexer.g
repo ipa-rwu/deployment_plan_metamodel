@@ -23,8 +23,6 @@ LinuxOpertingSystem : 'LinuxOpertingSystem';
 
 MacOSOpertingSystem : 'MacOSOpertingSystem';
 
-SoftwareDependency : 'softwareDependency:';
-
 DeviceRequirement : 'deviceRequirement:';
 
 HWSWParemeter : 'HWSWParemeter:';

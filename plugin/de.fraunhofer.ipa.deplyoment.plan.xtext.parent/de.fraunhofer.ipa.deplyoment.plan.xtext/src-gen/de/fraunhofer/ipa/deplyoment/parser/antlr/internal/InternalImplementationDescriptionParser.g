@@ -101,108 +101,40 @@ ruleImplementationDescription returns [EObject current=null]
                 }
             )
         )
-        (
-            otherlv_4=SoftwareDependency
-            {
-                newLeafNode(otherlv_4, grammarAccess.getImplementationDescriptionAccess().getSoftwareDependencyKeyword_4_0());
-            }
-            this_INDENT_5=RULE_INDENT
-            {
-                newLeafNode(this_INDENT_5, grammarAccess.getImplementationDescriptionAccess().getINDENTTerminalRuleCall_4_1());
-            }
-            {
-                newCompositeNode(grammarAccess.getImplementationDescriptionAccess().getPreListElementParserRuleCall_4_2());
-            }
-            rulePreListElement
-            {
-                afterParserOrEnumRuleCall();
-            }
-            (
-                (
-                    {
-                        newCompositeNode(grammarAccess.getImplementationDescriptionAccess().getSoftwareDependencyEStringParserRuleCall_4_3_0());
-                    }
-                    lv_softwareDependency_7_0=ruleEString
-                    {
-                        if ($current==null) {
-                            $current = createModelElementForParent(grammarAccess.getImplementationDescriptionRule());
-                        }
-                        add(
-                            $current,
-                            "softwareDependency",
-                            lv_softwareDependency_7_0,
-                            "de.fraunhofer.ipa.deployment.Util.EString");
-                        afterParserOrEnumRuleCall();
-                    }
-                )
-            )
-            (
-                {
-                    newCompositeNode(grammarAccess.getImplementationDescriptionAccess().getPreListElementParserRuleCall_4_4_0());
-                }
-                rulePreListElement
-                {
-                    afterParserOrEnumRuleCall();
-                }
-                (
-                    (
-                        {
-                            newCompositeNode(grammarAccess.getImplementationDescriptionAccess().getSoftwareDependencyEStringParserRuleCall_4_4_1_0());
-                        }
-                        lv_softwareDependency_9_0=ruleEString
-                        {
-                            if ($current==null) {
-                                $current = createModelElementForParent(grammarAccess.getImplementationDescriptionRule());
-                            }
-                            add(
-                                $current,
-                                "softwareDependency",
-                                lv_softwareDependency_9_0,
-                                "de.fraunhofer.ipa.deployment.Util.EString");
-                            afterParserOrEnumRuleCall();
-                        }
-                    )
-                )
-            )*
-            this_DEDENT_10=RULE_DEDENT
-            {
-                newLeafNode(this_DEDENT_10, grammarAccess.getImplementationDescriptionAccess().getDEDENTTerminalRuleCall_4_5());
-            }
-        )?
-        otherlv_11=IncludeSoftwareComponent
+        otherlv_4=IncludeSoftwareComponent
         {
-            newLeafNode(otherlv_11, grammarAccess.getImplementationDescriptionAccess().getIncludeSoftwareComponentKeyword_5());
+            newLeafNode(otherlv_4, grammarAccess.getImplementationDescriptionAccess().getIncludeSoftwareComponentKeyword_4());
         }
-        this_INDENT_12=RULE_INDENT
+        this_INDENT_5=RULE_INDENT
         {
-            newLeafNode(this_INDENT_12, grammarAccess.getImplementationDescriptionAccess().getINDENTTerminalRuleCall_6());
+            newLeafNode(this_INDENT_5, grammarAccess.getImplementationDescriptionAccess().getINDENTTerminalRuleCall_5());
         }
         (
             (
                 {
-                    newCompositeNode(grammarAccess.getImplementationDescriptionAccess().getIncludeSoftwareComponentSoftwareComponentParserRuleCall_7_0());
+                    newCompositeNode(grammarAccess.getImplementationDescriptionAccess().getIncludeSoftwareComponentsSoftwareComponentParserRuleCall_6_0());
                 }
-                lv_includeSoftwareComponent_13_0=ruleSoftwareComponent
+                lv_includeSoftwareComponents_6_0=ruleSoftwareComponent
                 {
                     if ($current==null) {
                         $current = createModelElementForParent(grammarAccess.getImplementationDescriptionRule());
                     }
                     add(
                         $current,
-                        "includeSoftwareComponent",
-                        lv_includeSoftwareComponent_13_0,
+                        "includeSoftwareComponents",
+                        lv_includeSoftwareComponents_6_0,
                         "de.fraunhofer.ipa.deplyoment.ImplementationDescription.SoftwareComponent");
                     afterParserOrEnumRuleCall();
                 }
             )
         )+
-        this_DEDENT_14=RULE_DEDENT
+        this_DEDENT_7=RULE_DEDENT
         {
-            newLeafNode(this_DEDENT_14, grammarAccess.getImplementationDescriptionAccess().getDEDENTTerminalRuleCall_8());
+            newLeafNode(this_DEDENT_7, grammarAccess.getImplementationDescriptionAccess().getDEDENTTerminalRuleCall_7());
         }
-        this_DEDENT_15=RULE_DEDENT
+        this_DEDENT_8=RULE_DEDENT
         {
-            newLeafNode(this_DEDENT_15, grammarAccess.getImplementationDescriptionAccess().getDEDENTTerminalRuleCall_9());
+            newLeafNode(this_DEDENT_8, grammarAccess.getImplementationDescriptionAccess().getDEDENTTerminalRuleCall_8());
         }
     )
 ;

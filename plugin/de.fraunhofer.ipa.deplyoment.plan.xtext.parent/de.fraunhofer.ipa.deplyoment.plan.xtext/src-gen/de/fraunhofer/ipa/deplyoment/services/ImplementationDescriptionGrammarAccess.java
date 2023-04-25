@@ -33,37 +33,20 @@ public class ImplementationDescriptionGrammarAccess extends AbstractElementFinde
         private final Keyword cNameKeyword_2 = (Keyword)cGroup.eContents().get(2);
         private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
         private final RuleCall cNameEStringParserRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
-        private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-        private final Keyword cSoftwareDependencyKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-        private final RuleCall cINDENTTerminalRuleCall_4_1 = (RuleCall)cGroup_4.eContents().get(1);
-        private final RuleCall cPreListElementParserRuleCall_4_2 = (RuleCall)cGroup_4.eContents().get(2);
-        private final Assignment cSoftwareDependencyAssignment_4_3 = (Assignment)cGroup_4.eContents().get(3);
-        private final RuleCall cSoftwareDependencyEStringParserRuleCall_4_3_0 = (RuleCall)cSoftwareDependencyAssignment_4_3.eContents().get(0);
-        private final Group cGroup_4_4 = (Group)cGroup_4.eContents().get(4);
-        private final RuleCall cPreListElementParserRuleCall_4_4_0 = (RuleCall)cGroup_4_4.eContents().get(0);
-        private final Assignment cSoftwareDependencyAssignment_4_4_1 = (Assignment)cGroup_4_4.eContents().get(1);
-        private final RuleCall cSoftwareDependencyEStringParserRuleCall_4_4_1_0 = (RuleCall)cSoftwareDependencyAssignment_4_4_1.eContents().get(0);
-        private final RuleCall cDEDENTTerminalRuleCall_4_5 = (RuleCall)cGroup_4.eContents().get(5);
-        private final Keyword cIncludeSoftwareComponentKeyword_5 = (Keyword)cGroup.eContents().get(5);
-        private final RuleCall cINDENTTerminalRuleCall_6 = (RuleCall)cGroup.eContents().get(6);
-        private final Assignment cIncludeSoftwareComponentAssignment_7 = (Assignment)cGroup.eContents().get(7);
-        private final RuleCall cIncludeSoftwareComponentSoftwareComponentParserRuleCall_7_0 = (RuleCall)cIncludeSoftwareComponentAssignment_7.eContents().get(0);
+        private final Keyword cIncludeSoftwareComponentKeyword_4 = (Keyword)cGroup.eContents().get(4);
+        private final RuleCall cINDENTTerminalRuleCall_5 = (RuleCall)cGroup.eContents().get(5);
+        private final Assignment cIncludeSoftwareComponentsAssignment_6 = (Assignment)cGroup.eContents().get(6);
+        private final RuleCall cIncludeSoftwareComponentsSoftwareComponentParserRuleCall_6_0 = (RuleCall)cIncludeSoftwareComponentsAssignment_6.eContents().get(0);
+        private final RuleCall cDEDENTTerminalRuleCall_7 = (RuleCall)cGroup.eContents().get(7);
         private final RuleCall cDEDENTTerminalRuleCall_8 = (RuleCall)cGroup.eContents().get(8);
-        private final RuleCall cDEDENTTerminalRuleCall_9 = (RuleCall)cGroup.eContents().get(9);
 
         //ImplementationDescription returns ImplementationDescription:
         //    'ImplementationDescription:'
         //    INDENT
         //        'name:' name=EString
-        //        ('softwareDependency:'
-        //            INDENT
-        //                PreListElement softwareDependency+=EString
-        //                ( PreListElement softwareDependency+=EString)*
-        //            DEDENT
-        //            )?
         //        'includeSoftwareComponent:'
         //            INDENT
-        //                includeSoftwareComponent+=SoftwareComponent+
+        //                includeSoftwareComponents+=SoftwareComponent+
         //            DEDENT
         //    DEDENT
         //    ;
@@ -72,15 +55,9 @@ public class ImplementationDescriptionGrammarAccess extends AbstractElementFinde
         //'ImplementationDescription:'
         //INDENT
         //    'name:' name=EString
-        //    ('softwareDependency:'
-        //        INDENT
-        //            PreListElement softwareDependency+=EString
-        //            ( PreListElement softwareDependency+=EString)*
-        //        DEDENT
-        //        )?
         //    'includeSoftwareComponent:'
         //        INDENT
-        //            includeSoftwareComponent+=SoftwareComponent+
+        //            includeSoftwareComponents+=SoftwareComponent+
         //        DEDENT
         //DEDENT
         public Group getGroup() { return cGroup; }
@@ -100,61 +77,23 @@ public class ImplementationDescriptionGrammarAccess extends AbstractElementFinde
         //EString
         public RuleCall getNameEStringParserRuleCall_3_0() { return cNameEStringParserRuleCall_3_0; }
 
-        //('softwareDependency:'
-        //    INDENT
-        //        PreListElement softwareDependency+=EString
-        //        ( PreListElement softwareDependency+=EString)*
-        //    DEDENT
-        //    )?
-        public Group getGroup_4() { return cGroup_4; }
-
-        //'softwareDependency:'
-        public Keyword getSoftwareDependencyKeyword_4_0() { return cSoftwareDependencyKeyword_4_0; }
-
-        //INDENT
-        public RuleCall getINDENTTerminalRuleCall_4_1() { return cINDENTTerminalRuleCall_4_1; }
-
-        //PreListElement
-        public RuleCall getPreListElementParserRuleCall_4_2() { return cPreListElementParserRuleCall_4_2; }
-
-        //softwareDependency+=EString
-        public Assignment getSoftwareDependencyAssignment_4_3() { return cSoftwareDependencyAssignment_4_3; }
-
-        //EString
-        public RuleCall getSoftwareDependencyEStringParserRuleCall_4_3_0() { return cSoftwareDependencyEStringParserRuleCall_4_3_0; }
-
-        //( PreListElement softwareDependency+=EString)*
-        public Group getGroup_4_4() { return cGroup_4_4; }
-
-        //PreListElement
-        public RuleCall getPreListElementParserRuleCall_4_4_0() { return cPreListElementParserRuleCall_4_4_0; }
-
-        //softwareDependency+=EString
-        public Assignment getSoftwareDependencyAssignment_4_4_1() { return cSoftwareDependencyAssignment_4_4_1; }
-
-        //EString
-        public RuleCall getSoftwareDependencyEStringParserRuleCall_4_4_1_0() { return cSoftwareDependencyEStringParserRuleCall_4_4_1_0; }
-
-        //DEDENT
-        public RuleCall getDEDENTTerminalRuleCall_4_5() { return cDEDENTTerminalRuleCall_4_5; }
-
         //'includeSoftwareComponent:'
-        public Keyword getIncludeSoftwareComponentKeyword_5() { return cIncludeSoftwareComponentKeyword_5; }
+        public Keyword getIncludeSoftwareComponentKeyword_4() { return cIncludeSoftwareComponentKeyword_4; }
 
         //INDENT
-        public RuleCall getINDENTTerminalRuleCall_6() { return cINDENTTerminalRuleCall_6; }
+        public RuleCall getINDENTTerminalRuleCall_5() { return cINDENTTerminalRuleCall_5; }
 
-        //includeSoftwareComponent+=SoftwareComponent+
-        public Assignment getIncludeSoftwareComponentAssignment_7() { return cIncludeSoftwareComponentAssignment_7; }
+        //includeSoftwareComponents+=SoftwareComponent+
+        public Assignment getIncludeSoftwareComponentsAssignment_6() { return cIncludeSoftwareComponentsAssignment_6; }
 
         //SoftwareComponent
-        public RuleCall getIncludeSoftwareComponentSoftwareComponentParserRuleCall_7_0() { return cIncludeSoftwareComponentSoftwareComponentParserRuleCall_7_0; }
+        public RuleCall getIncludeSoftwareComponentsSoftwareComponentParserRuleCall_6_0() { return cIncludeSoftwareComponentsSoftwareComponentParserRuleCall_6_0; }
+
+        //DEDENT
+        public RuleCall getDEDENTTerminalRuleCall_7() { return cDEDENTTerminalRuleCall_7; }
 
         //DEDENT
         public RuleCall getDEDENTTerminalRuleCall_8() { return cDEDENTTerminalRuleCall_8; }
-
-        //DEDENT
-        public RuleCall getDEDENTTerminalRuleCall_9() { return cDEDENTTerminalRuleCall_9; }
     }
     public class ExecutionRequirementElements extends AbstractParserRuleElementFinder {
         private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deplyoment.ImplementationDescription.ExecutionRequirement");
@@ -519,13 +458,13 @@ public class ImplementationDescriptionGrammarAccess extends AbstractElementFinde
         //DEDENT
         public RuleCall getDEDENTTerminalRuleCall_3() { return cDEDENTTerminalRuleCall_3; }
     }
-    public class ExecutionPropertyElements extends AbstractParserRuleElementFinder {
-        private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deplyoment.ImplementationDescription.ExecutionProperty");
+    public class ExecutionParameterElements extends AbstractParserRuleElementFinder {
+        private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deplyoment.ImplementationDescription.ExecutionParameter");
         private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
         private final RuleCall cHWSWParemeterParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
         private final RuleCall cSoftwareExecutionParemeterParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 
-        //ExecutionProperty returns ExecutionProperty:
+        //ExecutionParameter returns ExecutionParameter:
         //     HWSWParemeter | SoftwareExecutionParemeter;
         @Override public ParserRule getRule() { return rule; }
 
@@ -858,7 +797,7 @@ public class ImplementationDescriptionGrammarAccess extends AbstractElementFinde
     private final GitRepositoryTypeElements pGitRepositoryType;
     private final DeviceRequirementElements pDeviceRequirement;
     private final SoftwareConfigurationRequirementElements pSoftwareConfigurationRequirement;
-    private final ExecutionPropertyElements pExecutionProperty;
+    private final ExecutionParameterElements pExecutionParameter;
     private final HWSWParemeterElements pHWSWParemeter;
     private final SoftwareExecutionParemeterElements pSoftwareExecutionParemeter;
 
@@ -883,7 +822,7 @@ public class ImplementationDescriptionGrammarAccess extends AbstractElementFinde
         this.pGitRepositoryType = new GitRepositoryTypeElements();
         this.pDeviceRequirement = new DeviceRequirementElements();
         this.pSoftwareConfigurationRequirement = new SoftwareConfigurationRequirementElements();
-        this.pExecutionProperty = new ExecutionPropertyElements();
+        this.pExecutionParameter = new ExecutionParameterElements();
         this.pHWSWParemeter = new HWSWParemeterElements();
         this.pSoftwareExecutionParemeter = new SoftwareExecutionParemeterElements();
     }
@@ -923,15 +862,9 @@ public class ImplementationDescriptionGrammarAccess extends AbstractElementFinde
     //    'ImplementationDescription:'
     //    INDENT
     //        'name:' name=EString
-    //        ('softwareDependency:'
-    //            INDENT
-    //                PreListElement softwareDependency+=EString
-    //                ( PreListElement softwareDependency+=EString)*
-    //            DEDENT
-    //            )?
     //        'includeSoftwareComponent:'
     //            INDENT
-    //                includeSoftwareComponent+=SoftwareComponent+
+    //                includeSoftwareComponents+=SoftwareComponent+
     //            DEDENT
     //    DEDENT
     //    ;
@@ -1053,14 +986,14 @@ public class ImplementationDescriptionGrammarAccess extends AbstractElementFinde
         return getSoftwareConfigurationRequirementAccess().getRule();
     }
 
-    //ExecutionProperty returns ExecutionProperty:
+    //ExecutionParameter returns ExecutionParameter:
     //     HWSWParemeter | SoftwareExecutionParemeter;
-    public ExecutionPropertyElements getExecutionPropertyAccess() {
-        return pExecutionProperty;
+    public ExecutionParameterElements getExecutionParameterAccess() {
+        return pExecutionParameter;
     }
 
-    public ParserRule getExecutionPropertyRule() {
-        return getExecutionPropertyAccess().getRule();
+    public ParserRule getExecutionParameterRule() {
+        return getExecutionParameterAccess().getRule();
     }
 
     ////ExecutionProperty_Impl returns ExecutionProperty:

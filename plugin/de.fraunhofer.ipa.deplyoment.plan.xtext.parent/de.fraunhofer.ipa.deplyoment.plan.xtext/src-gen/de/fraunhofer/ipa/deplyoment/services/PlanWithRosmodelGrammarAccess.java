@@ -797,7 +797,7 @@ public class PlanWithRosmodelGrammarAccess extends AbstractElementFinder.Abstrac
     //          )?
     //          DEDENT
     //      )?
-    //         DEDENT
+    //        DEDENT
     //     )?
     //;
     public PlanGrammarAccess.ConfigSoftwareComponentElements getConfigSoftwareComponentAccess() {
@@ -809,7 +809,7 @@ public class PlanWithRosmodelGrammarAccess extends AbstractElementFinder.Abstrac
     }
 
     //ImplementationAssignment returns ImplementationAssignment:
-    //     PreListElement 'name:' name = EString
+    //    PreListElement 'name:' name = EString
     //  INDENT
     //    'executedBy:' executedBy=[targetEnvironment::ComputationDeviceInstance|EString]
     //    'softwareComponents:'
@@ -853,7 +853,7 @@ public class PlanWithRosmodelGrammarAccess extends AbstractElementFinder.Abstrac
     }
 
     //enum ROSDistro returns ROSDistro:
-    //      noetic = 'noetic' | humble = 'humble' | rolling = 'rolling';
+    //    noetic = 'noetic' | humble = 'humble' | rolling = 'rolling';
     public PlanGrammarAccess.ROSDistroElements getROSDistroAccess() {
         return gaPlan.getROSDistroAccess();
     }
@@ -862,33 +862,9 @@ public class PlanWithRosmodelGrammarAccess extends AbstractElementFinder.Abstrac
         return getROSDistroAccess().getRule();
     }
 
-    //HumbleROSDistro returns HumbleROSDistro:
-    //    {HumbleROSDistro}
-    //    'Humble'
-    //    ;
-    public PlanGrammarAccess.HumbleROSDistroElements getHumbleROSDistroAccess() {
-        return gaPlan.getHumbleROSDistroAccess();
-    }
-
-    public ParserRule getHumbleROSDistroRule() {
-        return getHumbleROSDistroAccess().getRule();
-    }
-
-    //NoeticROSDistro returns NoeticROSDistro:
-    //    {NoeticROSDistro}
-    //    'Noetic'
-    //    ;
-    public PlanGrammarAccess.NoeticROSDistroElements getNoeticROSDistroAccess() {
-        return gaPlan.getNoeticROSDistroAccess();
-    }
-
-    public ParserRule getNoeticROSDistroRule() {
-        return getNoeticROSDistroAccess().getRule();
-    }
-
     //ConfigExecutionParameter returns ConfigExecutionParameter:
     //    {ConfigExecutionParameter}
-    //    PreListElement 'from:' from=[implementationDescription::ExecutionProperty|EString]
+    //    PreListElement 'from:' from=[implementationDescription::ExecutionParameter|EString]
     //    INDENT
     //        (
     //        'to:' to=[targetEnvironment::AbstractConfigProperty|EString]

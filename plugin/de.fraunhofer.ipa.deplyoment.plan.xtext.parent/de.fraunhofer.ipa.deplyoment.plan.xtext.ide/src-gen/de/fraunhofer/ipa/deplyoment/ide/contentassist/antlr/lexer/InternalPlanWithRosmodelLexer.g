@@ -59,15 +59,11 @@ Ethernet : 'Ethernet';
 
 Rolling : 'rolling';
 
-Humble : 'Humble';
-
-Noetic : 'Noetic';
-
 Debian : 'debian';
 
-Humble_1 : 'humble';
+Humble : 'humble';
 
-Noetic_1 : 'noetic';
+Noetic : 'noetic';
 
 Ubuntu : 'ubuntu';
 

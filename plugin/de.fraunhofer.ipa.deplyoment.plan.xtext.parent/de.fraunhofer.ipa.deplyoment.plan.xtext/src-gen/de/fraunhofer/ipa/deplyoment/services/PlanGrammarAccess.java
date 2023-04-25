@@ -247,7 +247,7 @@ public class PlanGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
         //          )?
         //          DEDENT
         //      )?
-        //         DEDENT
+        //        DEDENT
         //     )?
         //;
         @Override public ParserRule getRule() { return rule; }
@@ -268,7 +268,7 @@ public class PlanGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
         //      )?
         //      DEDENT
         //  )?
-        //     DEDENT
+        //    DEDENT
         // )?
         public Group getGroup() { return cGroup; }
 
@@ -297,7 +297,7 @@ public class PlanGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
         //          )?
         //          DEDENT
         //      )?
-        //         DEDENT
+        //        DEDENT
         //     )?
         public Group getGroup_1() { return cGroup_1; }
 
@@ -413,7 +413,7 @@ public class PlanGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
         private final RuleCall cDEDENTTerminalRuleCall_15 = (RuleCall)cGroup.eContents().get(15);
 
         //ImplementationAssignment returns ImplementationAssignment:
-        //     PreListElement 'name:' name = EString
+        //    PreListElement 'name:' name = EString
         //  INDENT
         //    'executedBy:' executedBy=[targetEnvironment::ComputationDeviceInstance|EString]
         //    'softwareComponents:'
@@ -428,7 +428,7 @@ public class PlanGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
         //;
         @Override public ParserRule getRule() { return rule; }
 
-        //   PreListElement 'name:' name = EString
+        //  PreListElement 'name:' name = EString
         //INDENT
         //  'executedBy:' executedBy=[targetEnvironment::ComputationDeviceInstance|EString]
         //  'softwareComponents:'
@@ -566,50 +566,6 @@ public class PlanGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
         //ROSDistro
         public RuleCall getValueROSDistroEnumRuleCall_0() { return cValueROSDistroEnumRuleCall_0; }
     }
-    public class HumbleROSDistroElements extends AbstractParserRuleElementFinder {
-        private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deplyoment.Plan.HumbleROSDistro");
-        private final Group cGroup = (Group)rule.eContents().get(1);
-        private final Action cHumbleROSDistroAction_0 = (Action)cGroup.eContents().get(0);
-        private final Keyword cHumbleKeyword_1 = (Keyword)cGroup.eContents().get(1);
-
-        //HumbleROSDistro returns HumbleROSDistro:
-        //    {HumbleROSDistro}
-        //    'Humble'
-        //    ;
-        @Override public ParserRule getRule() { return rule; }
-
-        //{HumbleROSDistro}
-        //'Humble'
-        public Group getGroup() { return cGroup; }
-
-        //{HumbleROSDistro}
-        public Action getHumbleROSDistroAction_0() { return cHumbleROSDistroAction_0; }
-
-        //'Humble'
-        public Keyword getHumbleKeyword_1() { return cHumbleKeyword_1; }
-    }
-    public class NoeticROSDistroElements extends AbstractParserRuleElementFinder {
-        private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deplyoment.Plan.NoeticROSDistro");
-        private final Group cGroup = (Group)rule.eContents().get(1);
-        private final Action cNoeticROSDistroAction_0 = (Action)cGroup.eContents().get(0);
-        private final Keyword cNoeticKeyword_1 = (Keyword)cGroup.eContents().get(1);
-
-        //NoeticROSDistro returns NoeticROSDistro:
-        //    {NoeticROSDistro}
-        //    'Noetic'
-        //    ;
-        @Override public ParserRule getRule() { return rule; }
-
-        //{NoeticROSDistro}
-        //'Noetic'
-        public Group getGroup() { return cGroup; }
-
-        //{NoeticROSDistro}
-        public Action getNoeticROSDistroAction_0() { return cNoeticROSDistroAction_0; }
-
-        //'Noetic'
-        public Keyword getNoeticKeyword_1() { return cNoeticKeyword_1; }
-    }
     public class ConfigExecutionParameterElements extends AbstractParserRuleElementFinder {
         private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deplyoment.Plan.ConfigExecutionParameter");
         private final Group cGroup = (Group)rule.eContents().get(1);
@@ -617,8 +573,8 @@ public class PlanGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
         private final RuleCall cPreListElementParserRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
         private final Keyword cFromKeyword_2 = (Keyword)cGroup.eContents().get(2);
         private final Assignment cFromAssignment_3 = (Assignment)cGroup.eContents().get(3);
-        private final CrossReference cFromExecutionPropertyCrossReference_3_0 = (CrossReference)cFromAssignment_3.eContents().get(0);
-        private final RuleCall cFromExecutionPropertyEStringParserRuleCall_3_0_1 = (RuleCall)cFromExecutionPropertyCrossReference_3_0.eContents().get(1);
+        private final CrossReference cFromExecutionParameterCrossReference_3_0 = (CrossReference)cFromAssignment_3.eContents().get(0);
+        private final RuleCall cFromExecutionParameterEStringParserRuleCall_3_0_1 = (RuleCall)cFromExecutionParameterCrossReference_3_0.eContents().get(1);
         private final RuleCall cINDENTTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
         private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
         private final Keyword cToKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
@@ -633,7 +589,7 @@ public class PlanGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 
         //ConfigExecutionParameter returns ConfigExecutionParameter:
         //    {ConfigExecutionParameter}
-        //    PreListElement 'from:' from=[implementationDescription::ExecutionProperty|EString]
+        //    PreListElement 'from:' from=[implementationDescription::ExecutionParameter|EString]
         //    INDENT
         //        (
         //        'to:' to=[targetEnvironment::AbstractConfigProperty|EString]
@@ -646,7 +602,7 @@ public class PlanGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
         @Override public ParserRule getRule() { return rule; }
 
         //{ConfigExecutionParameter}
-        //PreListElement 'from:' from=[implementationDescription::ExecutionProperty|EString]
+        //PreListElement 'from:' from=[implementationDescription::ExecutionParameter|EString]
         //INDENT
         //    (
         //    'to:' to=[targetEnvironment::AbstractConfigProperty|EString]
@@ -666,14 +622,14 @@ public class PlanGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
         //'from:'
         public Keyword getFromKeyword_2() { return cFromKeyword_2; }
 
-        //from=[implementationDescription::ExecutionProperty|EString]
+        //from=[implementationDescription::ExecutionParameter|EString]
         public Assignment getFromAssignment_3() { return cFromAssignment_3; }
 
-        //[implementationDescription::ExecutionProperty|EString]
-        public CrossReference getFromExecutionPropertyCrossReference_3_0() { return cFromExecutionPropertyCrossReference_3_0; }
+        //[implementationDescription::ExecutionParameter|EString]
+        public CrossReference getFromExecutionParameterCrossReference_3_0() { return cFromExecutionParameterCrossReference_3_0; }
 
         //EString
-        public RuleCall getFromExecutionPropertyEStringParserRuleCall_3_0_1() { return cFromExecutionPropertyEStringParserRuleCall_3_0_1; }
+        public RuleCall getFromExecutionParameterEStringParserRuleCall_3_0_1() { return cFromExecutionParameterEStringParserRuleCall_3_0_1; }
 
         //INDENT
         public RuleCall getINDENTTerminalRuleCall_4() { return cINDENTTerminalRuleCall_4; }
@@ -724,7 +680,7 @@ public class PlanGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
         private final Keyword cRollingRollingKeyword_2_0 = (Keyword)cRollingEnumLiteralDeclaration_2.eContents().get(0);
 
         //enum ROSDistro returns ROSDistro:
-        //      noetic = 'noetic' | humble = 'humble' | rolling = 'rolling';
+        //    noetic = 'noetic' | humble = 'humble' | rolling = 'rolling';
         public EnumRule getRule() { return rule; }
 
         //noetic = 'noetic' | humble = 'humble' | rolling = 'rolling'
@@ -760,8 +716,6 @@ public class PlanGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
     private final MiddlewareElements pMiddleware;
     private final RosMiddlewareElements pRosMiddleware;
     private final ROSDistroElements eROSDistro;
-    private final HumbleROSDistroElements pHumbleROSDistro;
-    private final NoeticROSDistroElements pNoeticROSDistro;
     private final ConfigExecutionParameterElements pConfigExecutionParameter;
 
     private final Grammar grammar;
@@ -788,8 +742,6 @@ public class PlanGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
         this.pMiddleware = new MiddlewareElements();
         this.pRosMiddleware = new RosMiddlewareElements();
         this.eROSDistro = new ROSDistroElements();
-        this.pHumbleROSDistro = new HumbleROSDistroElements();
-        this.pNoeticROSDistro = new NoeticROSDistroElements();
         this.pConfigExecutionParameter = new ConfigExecutionParameterElements();
     }
 
@@ -918,7 +870,7 @@ public class PlanGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
     //          )?
     //          DEDENT
     //      )?
-    //         DEDENT
+    //        DEDENT
     //     )?
     //;
     public ConfigSoftwareComponentElements getConfigSoftwareComponentAccess() {
@@ -930,7 +882,7 @@ public class PlanGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
     }
 
     //ImplementationAssignment returns ImplementationAssignment:
-    //     PreListElement 'name:' name = EString
+    //    PreListElement 'name:' name = EString
     //  INDENT
     //    'executedBy:' executedBy=[targetEnvironment::ComputationDeviceInstance|EString]
     //    'softwareComponents:'
@@ -974,7 +926,7 @@ public class PlanGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
     }
 
     //enum ROSDistro returns ROSDistro:
-    //      noetic = 'noetic' | humble = 'humble' | rolling = 'rolling';
+    //    noetic = 'noetic' | humble = 'humble' | rolling = 'rolling';
     public ROSDistroElements getROSDistroAccess() {
         return eROSDistro;
     }
@@ -983,33 +935,9 @@ public class PlanGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
         return getROSDistroAccess().getRule();
     }
 
-    //HumbleROSDistro returns HumbleROSDistro:
-    //    {HumbleROSDistro}
-    //    'Humble'
-    //    ;
-    public HumbleROSDistroElements getHumbleROSDistroAccess() {
-        return pHumbleROSDistro;
-    }
-
-    public ParserRule getHumbleROSDistroRule() {
-        return getHumbleROSDistroAccess().getRule();
-    }
-
-    //NoeticROSDistro returns NoeticROSDistro:
-    //    {NoeticROSDistro}
-    //    'Noetic'
-    //    ;
-    public NoeticROSDistroElements getNoeticROSDistroAccess() {
-        return pNoeticROSDistro;
-    }
-
-    public ParserRule getNoeticROSDistroRule() {
-        return getNoeticROSDistroAccess().getRule();
-    }
-
     //ConfigExecutionParameter returns ConfigExecutionParameter:
     //    {ConfigExecutionParameter}
-    //    PreListElement 'from:' from=[implementationDescription::ExecutionProperty|EString]
+    //    PreListElement 'from:' from=[implementationDescription::ExecutionParameter|EString]
     //    INDENT
     //        (
     //        'to:' to=[targetEnvironment::AbstractConfigProperty|EString]

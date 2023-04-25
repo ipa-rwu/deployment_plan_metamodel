@@ -14,9 +14,9 @@ import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
 import com.google.common.base.Predicate;
 
 import de.fraunhofer.ipa.deployment.util.AbstractComputationAssignmentTarget;
-import deploymentPlan.impl.ConfigExecutionParameterImpl;
-import deploymentPlan.impl.ConfigSoftwareComponentImpl;
-import implementationDescription.impl.ExecutionPropertyImpl;
+import deploymentPlan.ConfigExecutionParameter;
+import deploymentPlan.ConfigSoftwareComponent;
+import implementationDescription.impl.ExecutionParameterImpl;
 
 /**
  * See https://www.eclipse.org/Xtext/documentation/310_eclipse_support.html#content-assist
@@ -26,14 +26,14 @@ public class PlanProposalProvider extends AbstractPlanProposalProvider {
 
     @Override
     public void completeConfigExecutionParameter_From(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-        ConfigExecutionParameterImpl ref_model = (ConfigExecutionParameterImpl) model;
-        ConfigSoftwareComponentImpl config_comp = (ConfigSoftwareComponentImpl) ref_model.eContainer();
+        ConfigExecutionParameter ref_model = (ConfigExecutionParameter) model;
+        ConfigSoftwareComponent config_comp = (ConfigSoftwareComponent) ref_model.eContainer();
         AbstractComputationAssignmentTarget comp = config_comp.getComponent();
         lookupCrossReference((CrossReference) assignment.getTerminal(),
                 context, acceptor, new Predicate<IEObjectDescription>() {
                     @Override
                     public boolean apply(IEObjectDescription input) {
-                        ExecutionPropertyImpl param_impl = (ExecutionPropertyImpl) input.getEObjectOrProxy();
+                        ExecutionParameterImpl param_impl = (ExecutionParameterImpl) input.getEObjectOrProxy();
                         if(param_impl.eIsProxy()) {
                             EObject obj = EcoreUtil.resolve(param_impl, model);
                             AbstractComputationAssignmentTarget tmp = (AbstractComputationAssignmentTarget) obj.eContainer().eContainer();

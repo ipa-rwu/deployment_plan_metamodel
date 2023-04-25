@@ -103,12 +103,6 @@ public abstract class AbstractPlanProposalProvider extends UtilProposalProvider 
     public void complete_ROSDistro(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
         // subclasses may override
     }
-    public void complete_HumbleROSDistro(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-        // subclasses may override
-    }
-    public void complete_NoeticROSDistro(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-        // subclasses may override
-    }
     public void complete_ConfigExecutionParameter(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
         // subclasses may override
     }
