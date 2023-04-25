@@ -93,19 +93,9 @@ RosMiddleware returns RosMiddleware:
 enum ROSDistro returns ROSDistro:
     noetic = 'noetic' | humble = 'humble' | rolling = 'rolling';
 
-HumbleROSDistro returns HumbleROSDistro:
-    {HumbleROSDistro}
-    'Humble'
-    ;
-
-NoeticROSDistro returns NoeticROSDistro:
-    {NoeticROSDistro}
-    'Noetic'
-    ;
-
 ConfigExecutionParameter returns ConfigExecutionParameter:
     {ConfigExecutionParameter}
-    PreListElement 'from:' from=[implementationDescription::ExecutionProperty|EString]
+    PreListElement 'from:' from=[implementationDescription::ExecutionParameter|EString]
     INDENT
         (
         'to:' to=[targetEnvironment::AbstractConfigProperty|EString]
