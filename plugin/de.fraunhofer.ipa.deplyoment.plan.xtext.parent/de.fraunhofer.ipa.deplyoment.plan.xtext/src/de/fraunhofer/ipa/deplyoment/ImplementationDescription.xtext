@@ -9,15 +9,9 @@ ImplementationDescription returns ImplementationDescription:
     'ImplementationDescription:'
     INDENT
         'name:' name=EString
-        ('softwareDependency:'
-            INDENT
-                PreListElement softwareDependency+=EString
-                ( PreListElement softwareDependency+=EString)*
-            DEDENT
-            )?
         'includeSoftwareComponent:'
             INDENT
-                includeSoftwareComponent+=SoftwareComponent+
+                includeSoftwareComponents+=SoftwareComponent+
             DEDENT
     DEDENT
     ;
@@ -85,7 +79,7 @@ SoftwareConfigurationRequirement returns SoftwareConfigurationRequirement:
         DEDENT
     ;
 
-ExecutionProperty returns ExecutionProperty:
+ExecutionParameter returns ExecutionParameter:
      HWSWParemeter | SoftwareExecutionParemeter;
 
 //ExecutionProperty_Impl returns ExecutionProperty:
