@@ -70,7 +70,7 @@ class PlanGenerator extends AbstractGenerator {
 
     def generateFiles(List<AbstractDeploymentPlan> plans, IFileSystemAccess2 fsa){
       for(plan: plans){
-        namingHelper.relativeRootFolderPath = plan.name
+        namingHelper.relativePlanFolderPath = plan.name
         generateWorkflow(plan, fsa)
         var assignments = plan.realize.realizations
         for (assignment : assignments){
@@ -119,7 +119,7 @@ class PlanGenerator extends AbstractGenerator {
                 cycloneDDSConfig)
             fsa.generateFile(
                     namingHelper.getDockerComposePath(compDev.name),
-                assignmentList.dockerComposeCompiler)]
+                assignmentList.dockerComposeCompiler(compDev))]
         }
 
 }
