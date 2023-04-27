@@ -3,55 +3,14 @@ package de.fraunhofer.ipa.deployment.generator
 import deploymentPlan.AbstractDeploymentPlan
 import deploymentPlan.RosMiddleware
 
-class Varibales {
-    String planRootFolder
-    String dockerfileParentFolder
-    String rootFolderPrefix
-    String dockerfilePath
-
-    def setPlanRootFolder(String path){
-        this.planRootFolder = path
-    }
-
-    def getPlanRootFolder(){
-        return this.planRootFolder
-    }
-
-    def setDockerfileParentFolder(String path){
-        this.dockerfileParentFolder = path
-    }
-
-    def getDockerfileParentFolder(){
-        return this.dockerfileParentFolder
-    }
-
-    def setRootFolderPrefix(String path){
-        this.rootFolderPrefix = path
-    }
-
-    def getRootFolderPrefix(){
-        return this.rootFolderPrefix
-    }
-
-    def setDockerfilePath(String assignmentName){
-        this.dockerfilePath = String.format("%s/Dockerfile_%s", this.dockerfileParentFolder, assignmentName)
-        return this.dockerfilePath
-    }
-
-    def getDockerfilePath(){
-        return this.dockerfilePath
-    }
-}
-
 class GitHubWorkflowCompiler {
 
     def gitHubWorkflowCompiler(AbstractDeploymentPlan plan, String reusedWorkflowPath, NamingHelper namingHelper)'''
-«var vars = initVariables(plan)»
 name: «plan.name»
 on:
   push:
     paths:
-      - "«vars.dockerfileParentFolder»/**"
+      - "«namingHelper.getAbsolutePlanFolderPath»/**"
 env:
   BUILDER_PREFIX: "ghcr.io/ipa-rwu/"
   BUILDER_SUFFIX: ":latest"
@@ -89,13 +48,6 @@ jobs:
       cmake-args: ${{needs.EnvSetup.outputs.cmake-args}}
 «ENDFOR»
     '''
-
-    def initVariables(AbstractDeploymentPlan plan){
-        var vars = new Varibales
-        vars.rootFolderPrefix = "examples/src-gen/"
-        vars.dockerfileParentFolder = String.format("%s%s", vars.rootFolderPrefix, plan.name)
-        return vars
-    }
 
     def ReusableWorkflow()'''
 name: Test_Build_Docker_Image_Template
