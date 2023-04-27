@@ -58,6 +58,15 @@ public interface UtilFactory extends EFactory {
     WlanCommunicationType createWlanCommunicationType();
 
     /**
+     * Returns a new object of class '<em>Usb Communication Type</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Usb Communication Type</em>'.
+     * @generated
+     */
+    UsbCommunicationType createUsbCommunicationType();
+
+    /**
      * Returns a new object of class '<em>Linux Operting System</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -227,6 +236,15 @@ public interface UtilFactory extends EFactory {
      * @generated
      */
     PropertyValueString createPropertyValueString();
+
+    /**
+     * Returns a new object of class '<em>Property Value List</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Property Value List</em>'.
+     * @generated
+     */
+    PropertyValueList createPropertyValueList();
 
     /**
      * Returns a new object of class '<em>Container Runtime</em>'.

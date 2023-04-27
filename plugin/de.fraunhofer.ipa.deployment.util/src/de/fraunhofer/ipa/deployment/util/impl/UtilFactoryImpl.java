@@ -64,6 +64,8 @@ public class UtilFactoryImpl extends EFactoryImpl implements UtilFactory {
             return createEthernetCommunicationType();
         case UtilPackage.WLAN_COMMUNICATION_TYPE:
             return createWlanCommunicationType();
+        case UtilPackage.USB_COMMUNICATION_TYPE:
+            return createUsbCommunicationType();
         case UtilPackage.LINUX_OPERTING_SYSTEM:
             return createLinuxOpertingSystem();
         case UtilPackage.MAC_OS_OPERTING_SYSTEM:
@@ -106,6 +108,8 @@ public class UtilFactoryImpl extends EFactoryImpl implements UtilFactory {
             return createPropertyValueDouble();
         case UtilPackage.PROPERTY_VALUE_STRING:
             return createPropertyValueString();
+        case UtilPackage.PROPERTY_VALUE_LIST:
+            return createPropertyValueList();
         case UtilPackage.CONTAINER_RUNTIME:
             return createContainerRuntime();
         default:
@@ -193,6 +197,16 @@ public class UtilFactoryImpl extends EFactoryImpl implements UtilFactory {
     public WlanCommunicationType createWlanCommunicationType() {
         WlanCommunicationTypeImpl wlanCommunicationType = new WlanCommunicationTypeImpl();
         return wlanCommunicationType;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public UsbCommunicationType createUsbCommunicationType() {
+        UsbCommunicationTypeImpl usbCommunicationType = new UsbCommunicationTypeImpl();
+        return usbCommunicationType;
     }
 
     /**
@@ -403,6 +417,16 @@ public class UtilFactoryImpl extends EFactoryImpl implements UtilFactory {
     public PropertyValueString createPropertyValueString() {
         PropertyValueStringImpl propertyValueString = new PropertyValueStringImpl();
         return propertyValueString;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public PropertyValueList createPropertyValueList() {
+        PropertyValueListImpl propertyValueList = new PropertyValueListImpl();
+        return propertyValueList;
     }
 
     /**

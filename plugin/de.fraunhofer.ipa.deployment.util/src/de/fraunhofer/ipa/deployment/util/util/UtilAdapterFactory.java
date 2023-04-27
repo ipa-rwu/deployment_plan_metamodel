@@ -142,6 +142,11 @@ public class UtilAdapterFactory extends AdapterFactoryImpl {
         }
 
         @Override
+        public Adapter caseUsbCommunicationType(UsbCommunicationType object) {
+            return createUsbCommunicationTypeAdapter();
+        }
+
+        @Override
         public Adapter caseLinuxOpertingSystem(LinuxOpertingSystem object) {
             return createLinuxOpertingSystemAdapter();
         }
@@ -177,11 +182,6 @@ public class UtilAdapterFactory extends AdapterFactoryImpl {
         }
 
         @Override
-        public Adapter casePropertyKind(PropertyKind object) {
-            return createPropertyKindAdapter();
-        }
-
-        @Override
         public Adapter caseAttributeKind(AttributeKind object) {
             return createAttributeKindAdapter();
         }
@@ -204,6 +204,11 @@ public class UtilAdapterFactory extends AdapterFactoryImpl {
         @Override
         public Adapter caseRangeKind(RangeKind object) {
             return createRangeKindAdapter();
+        }
+
+        @Override
+        public Adapter casePropertyKind(PropertyKind object) {
+            return createPropertyKindAdapter();
         }
 
         @Override
@@ -249,6 +254,11 @@ public class UtilAdapterFactory extends AdapterFactoryImpl {
         @Override
         public Adapter casePropertyValueString(PropertyValueString object) {
             return createPropertyValueStringAdapter();
+        }
+
+        @Override
+        public Adapter casePropertyValueList(PropertyValueList object) {
+            return createPropertyValueListAdapter();
         }
 
         @Override
@@ -473,6 +483,20 @@ public class UtilAdapterFactory extends AdapterFactoryImpl {
      * @generated
      */
     public Adapter createWlanCommunicationTypeAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link de.fraunhofer.ipa.deployment.util.UsbCommunicationType <em>Usb Communication Type</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see de.fraunhofer.ipa.deployment.util.UsbCommunicationType
+     * @generated
+     */
+    public Adapter createUsbCommunicationTypeAdapter() {
         return null;
     }
 
@@ -767,6 +791,20 @@ public class UtilAdapterFactory extends AdapterFactoryImpl {
      * @generated
      */
     public Adapter createPropertyValueStringAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link de.fraunhofer.ipa.deployment.util.PropertyValueList <em>Property Value List</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see de.fraunhofer.ipa.deployment.util.PropertyValueList
+     * @generated
+     */
+    public Adapter createPropertyValueListAdapter() {
         return null;
     }
 
