@@ -1,0 +1,6 @@
+ur5e_cell:
+    hosts:
+        rwu_laptop:
+            ansible_host: #TODO: IP
+            ansible_become_pass: "{{ rwu_laptop_sudo }}"
+            ansible_user: #TODO: UserName
