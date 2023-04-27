@@ -83,6 +83,8 @@ Type : 'type:';
 
 Wlan : 'Wlan';
 
+Usb : 'Usb';
+
 To : 'to:';
 
 X86 : 'x86';

@@ -96,6 +96,8 @@ public class PlanWithRosmodelParser extends AbstractContentAssistParser {
             builder.put(grammarAccess.getPropertyRangeAccess().getGroup(), "rule__PropertyRange__Group__0");
             builder.put(grammarAccess.getPropertyRangeAccess().getGroup_6(), "rule__PropertyRange__Group_6__0");
             builder.put(grammarAccess.getPropertyRangeAccess().getGroup_7(), "rule__PropertyRange__Group_7__0");
+            builder.put(grammarAccess.getPropertyValueListAccess().getGroup(), "rule__PropertyValueList__Group__0");
+            builder.put(grammarAccess.getPropertyValueListAccess().getGroup_3(), "rule__PropertyValueList__Group_3__0");
             builder.put(grammarAccess.getResourceTypeAccess().getGroup(), "rule__ResourceType__Group__0");
             builder.put(grammarAccess.getProcessorResouceTypeAccess().getGroup(), "rule__ProcessorResouceType__Group__0");
             builder.put(grammarAccess.getLinuxOpertingSystemAccess().getGroup(), "rule__LinuxOpertingSystem__Group__0");
@@ -103,6 +105,7 @@ public class PlanWithRosmodelParser extends AbstractContentAssistParser {
             builder.put(grammarAccess.getCommunicationTypeAccess().getGroup(), "rule__CommunicationType__Group__0");
             builder.put(grammarAccess.getEthernetCommunicationTypeAccess().getGroup(), "rule__EthernetCommunicationType__Group__0");
             builder.put(grammarAccess.getWlanCommunicationTypeAccess().getGroup(), "rule__WlanCommunicationType__Group__0");
+            builder.put(grammarAccess.getUsbCommunicationTypeAccess().getGroup(), "rule__UsbCommunicationType__Group__0");
             builder.put(grammarAccess.getAttributeKindAccess().getGroup(), "rule__AttributeKind__Group__0");
             builder.put(grammarAccess.getMaximumKindAccess().getGroup(), "rule__MaximumKind__Group__0");
             builder.put(grammarAccess.getMinimumKindAccess().getGroup(), "rule__MinimumKind__Group__0");
@@ -180,6 +183,8 @@ public class PlanWithRosmodelParser extends AbstractContentAssistParser {
             builder.put(grammarAccess.getPropertyValueIntAccess().getValueAssignment(), "rule__PropertyValueInt__ValueAssignment");
             builder.put(grammarAccess.getPropertyValueDoubleAccess().getValueAssignment(), "rule__PropertyValueDouble__ValueAssignment");
             builder.put(grammarAccess.getPropertyValueStringAccess().getValueAssignment(), "rule__PropertyValueString__ValueAssignment");
+            builder.put(grammarAccess.getPropertyValueListAccess().getValueAssignment_2(), "rule__PropertyValueList__ValueAssignment_2");
+            builder.put(grammarAccess.getPropertyValueListAccess().getValueAssignment_3_1(), "rule__PropertyValueList__ValueAssignment_3_1");
             builder.put(grammarAccess.getProcessorArchitectureValueAccess().getValueAssignment(), "rule__ProcessorArchitectureValue__ValueAssignment");
             builder.put(grammarAccess.getResourceTypeAccess().getNameAssignment_1(), "rule__ResourceType__NameAssignment_1");
             builder.put(grammarAccess.getCommunicationTypeAccess().getNameAssignment_1(), "rule__CommunicationType__NameAssignment_1");
