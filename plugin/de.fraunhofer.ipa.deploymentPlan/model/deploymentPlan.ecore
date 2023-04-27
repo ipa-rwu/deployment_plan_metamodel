@@ -29,6 +29,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="executedBy" lowerBound="1"
         eType="ecore:EClass ../../de.fraunhofer.ipa.targetEnvironment/model/targetEnvironment.ecore#//ComputationDeviceInstance"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="softwareComponents" lowerBound="1"
         upperBound="-1" eType="#//AbstarctConfigSoftwareComponent" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="opertingSystemVersion"
