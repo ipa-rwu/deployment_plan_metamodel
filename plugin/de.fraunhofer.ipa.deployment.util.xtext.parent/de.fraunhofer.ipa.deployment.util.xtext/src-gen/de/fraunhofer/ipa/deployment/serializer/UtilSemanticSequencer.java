@@ -25,12 +25,14 @@ import de.fraunhofer.ipa.deployment.util.PropertyRange;
 import de.fraunhofer.ipa.deployment.util.PropertySelection;
 import de.fraunhofer.ipa.deployment.util.PropertyValueDouble;
 import de.fraunhofer.ipa.deployment.util.PropertyValueInt;
+import de.fraunhofer.ipa.deployment.util.PropertyValueList;
 import de.fraunhofer.ipa.deployment.util.PropertyValueString;
 import de.fraunhofer.ipa.deployment.util.RangeKind;
 import de.fraunhofer.ipa.deployment.util.Resource;
 import de.fraunhofer.ipa.deployment.util.ResourceType;
 import de.fraunhofer.ipa.deployment.util.SelectionKind;
 import de.fraunhofer.ipa.deployment.util.UbuntuVersionValue;
+import de.fraunhofer.ipa.deployment.util.UsbCommunicationType;
 import de.fraunhofer.ipa.deployment.util.UtilPackage;
 import de.fraunhofer.ipa.deployment.util.WlanCommunicationType;
 import java.util.Set;
@@ -118,6 +120,9 @@ public class UtilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
             case UtilPackage.PROPERTY_VALUE_INT:
                 sequence_PropertyValueInt(context, (PropertyValueInt) semanticObject);
                 return;
+            case UtilPackage.PROPERTY_VALUE_LIST:
+                sequence_PropertyValueList(context, (PropertyValueList) semanticObject);
+                return;
             case UtilPackage.PROPERTY_VALUE_STRING:
                 sequence_PropertyValueString(context, (PropertyValueString) semanticObject);
                 return;
@@ -135,6 +140,9 @@ public class UtilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
                 return;
             case UtilPackage.UBUNTU_VERSION_VALUE:
                 sequence_UbuntuVersionValue(context, (UbuntuVersionValue) semanticObject);
+                return;
+            case UtilPackage.USB_COMMUNICATION_TYPE:
+                sequence_UsbCommunicationType(context, (UsbCommunicationType) semanticObject);
                 return;
             case UtilPackage.WLAN_COMMUNICATION_TYPE:
                 sequence_WlanCommunicationType(context, (WlanCommunicationType) semanticObject);
@@ -461,6 +469,21 @@ public class UtilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
     /**
      * <pre>
      * Contexts:
+     *     PropertyValue returns PropertyValueList
+     *     PropertyValueList returns PropertyValueList
+     *
+     * Constraint:
+     *     (value+=PropertyValue value+=PropertyValue*)
+     * </pre>
+     */
+    protected void sequence_PropertyValueList(ISerializationContext context, PropertyValueList semanticObject) {
+        genericSequencer.createSequence(context, semanticObject);
+    }
+
+
+    /**
+     * <pre>
+     * Contexts:
      *     PropertyValue returns PropertyValueString
      *     PropertyValueString returns PropertyValueString
      *
@@ -576,6 +599,20 @@ public class UtilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
         SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
         feeder.accept(grammarAccess.getUbuntuVersionValueAccess().getValueUbuntuVersionEnumRuleCall_1_0(), semanticObject.getValue());
         feeder.finish();
+    }
+
+
+    /**
+     * <pre>
+     * Contexts:
+     *     UsbCommunicationType returns UsbCommunicationType
+     *
+     * Constraint:
+     *     {UsbCommunicationType}
+     * </pre>
+     */
+    protected void sequence_UsbCommunicationType(ISerializationContext context, UsbCommunicationType semanticObject) {
+        genericSequencer.createSequence(context, semanticObject);
     }
 
 
