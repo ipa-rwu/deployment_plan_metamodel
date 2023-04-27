@@ -41,25 +41,59 @@ TargetDeployEnviroment:
               - refDevice: camera_01
                 refConnection: "Realsense_camera.usb"
               - refDevice: rwu_laptop
-                refConnection: "PC.usb_01"
+                refConnection: "PC.usb"
                 configuration:
                     - name: camera_01_usb_port
-                      refConnectionProperty: "PC.usb_01.usb_port_id"
-                      value: "/dev/video0"
+                      refConnectionProperty: "PC.usb.device_volume"
+                      value:
+                        - "/dev/video2"
+                        - "/dev/video3"
+                        - "/dev/video4"
+                        - "/dev/video5"
+                        - "/dev/video6"
+                        - "/dev/video7"
         - name: connect_arm_pc
           connectDevice:
               - refDevice: arm
                 refConnection: "UR5E.ethernet"
                 configuration:
                     - name: robot_ip
-                      refConnectionProperty: "UR5E.ethernet.address"
+                      refConnectionProperty: "UR5E.ethernet.ip_address"
                       value: "192.168.56.2"
+                    - name: default_gateway
+                      refConnectionProperty: "UR5E.ethernet.gateway"
+                      value: "192.168.56.1"
+                    - name: subnet_mask_address
+                      refConnectionProperty: "UR5E.ethernet.subnet_mask"
+                      value: "255.255.255.0"
+                    - name: dns_server_address
+                      refConnectionProperty: "UR5E.ethernet.dns_server"
+                      value:
+                        - "0.0.0.0"
               - refDevice: rwu_laptop
                 refConnection: "PC.ethernet"
                 configuration:
                     - name: pc_ip
-                      refConnectionProperty: "PC.ethernet.address"
+                      refConnectionProperty: "PC.ethernet.ip_address"
                       value: "192.168.56.1"
+                    - name: ethernet_identity_name
+                      refConnectionProperty: "PC.ethernet.identity_name"
+                      value: ur5e
                     - name: ethernet_interface_name
                       refConnectionProperty: "PC.ethernet.interface_name"
-                      value: ur5e
+                      value: enp0s31f6
+                    - name: ethernet_port
+                      refConnectionProperty: "PC.ethernet.port"
+                      value: 50002
+                    - name: netmask_address
+                      refConnectionProperty: "UR5E.ethernet.subnet_mask"
+                      value: "255.255.255.0"
+                    - name: default_gateway
+                      refConnectionProperty: "UR5E.ethernet.gateway"
+                      value: "192.168.56.1"
+                    - name: dns_server_address
+                      refConnectionProperty: "UR5E.ethernet.dns_server"
+                      value:
+                        - "0.0.0.0"
+                        - "8.8.8.8"
+                        - "8.8.4.4"
