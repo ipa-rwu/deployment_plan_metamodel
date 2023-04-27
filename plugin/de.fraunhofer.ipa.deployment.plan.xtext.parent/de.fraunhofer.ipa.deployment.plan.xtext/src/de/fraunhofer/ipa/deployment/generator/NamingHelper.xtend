@@ -6,19 +6,23 @@ class NamingHelper {
     String AbsoluteDefaultGithubWorkflowPath = "./.github/workflows"
     String ReuseableTestBuildWorkflowName = "test_code_build_image_workflow_reuse.yaml"
     String AbsoluteDefaultGithubReuseableWorkflowPath = String.format("%s/%s", AbsoluteDefaultGithubWorkflowPath, ReuseableTestBuildWorkflowName)
-        String DefaultRegistry = "ghcr.io"
-        String CyclonConfigPath
-        String DockerComposePath
+    String DefaultRegistry = "ghcr.io"
+    String CyclonConfigPath
+    String DockerComposePath
 
-    def setRelativeRootFolderPath(String planName){
+    def setRelativePlanFolderPath(String planName){
         this.RelativeRootFolderPath = planName
     }
 
-    def getRelativeRootFolderPath(){
+    def getRelativePlanFolderPath(){
         if(this.RelativeRootFolderPath !== null)
             return this.RelativeRootFolderPath
         else
             throw new RuntimeException("Didn't set RelativeRootFolderPath yet")
+    }
+
+    def getAbsolutePlanFolderPath(){
+        return String.format("%s/%s", getAbsoluteRootPrefix(), getRelativePlanFolderPath())
     }
 
     def getAbsoluteRootPrefix(){
@@ -34,7 +38,7 @@ class NamingHelper {
     }
 
     def getRelativeAssignmentFolderPath(String assignmentName){
-        return String.format("%s/%s", getRelativeRootFolderPath, assignmentName)
+        return String.format("%s/%s", getRelativePlanFolderPath, assignmentName)
     }
 
     def getRelativeDockerfilePath(String assignmentName){
@@ -50,7 +54,7 @@ class NamingHelper {
     }
 
     def getGithubFolderPath(){
-        return String.format("%s/github", getRelativeRootFolderPath)
+        return String.format("%s/github", getRelativePlanFolderPath)
     }
 
     def getGithubWorkflowPath(String planName){
@@ -62,12 +66,12 @@ class NamingHelper {
     }
 
     def getCyclonConfigPath(String executor){
-        this.CyclonConfigPath = String.format("%s/%s/cyclonedds.xml", getRelativeRootFolderPath, executor)
+        this.CyclonConfigPath = String.format("%s/%s/cyclonedds.xml", getRelativePlanFolderPath, executor)
         return this.CyclonConfigPath
     }
 
     def getDockerComposePath(String executor){
-        this.DockerComposePath = String.format("%s/%s/docker-compose.yaml", getRelativeRootFolderPath, executor)
+        this.DockerComposePath = String.format("%s/%s/docker-compose.yaml", getRelativePlanFolderPath, executor)
         return this.DockerComposePath
     }
 }
