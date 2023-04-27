@@ -1071,7 +1071,7 @@ public class ImplementationDescriptionGrammarAccess extends AbstractElementFinde
     }
 
     //Resource returns Resource:
-    //    'name:'    name=EString
+    //    'name:' name=EString
     //    INDENT
     //        'type:' type=AbstractResouceType
     //        ('properties:'
@@ -1123,7 +1123,7 @@ public class ImplementationDescriptionGrammarAccess extends AbstractElementFinde
     }
 
     //Property returns Property:
-    //    PreListElement 'name:'    name=EString
+    //    PreListElement 'name:'  name=EString
     //    INDENT
     //        'kind:' kind=PropertyKind
     //        (
@@ -1147,7 +1147,7 @@ public class ImplementationDescriptionGrammarAccess extends AbstractElementFinde
     }
 
     //PropertyAttribute returns PropertyAttribute:
-    //    PreListElement 'name:'    name=EString
+    //    PreListElement 'name:'  name=EString
     //    INDENT
     //        'kind:' kind=AttributeKind
     //        (
@@ -1167,7 +1167,7 @@ public class ImplementationDescriptionGrammarAccess extends AbstractElementFinde
     }
 
     //PropertyMaximun returns PropertyMaximun:
-    //    PreListElement 'name:'    name=EString
+    //    PreListElement 'name:'  name=EString
     //    INDENT
     //        'kind:' kind=MaximumKind
     //        (
@@ -1187,7 +1187,7 @@ public class ImplementationDescriptionGrammarAccess extends AbstractElementFinde
     }
 
     //PropertyMinimum returns PropertyMinimum:
-    //    PreListElement 'name:'    name=EString
+    //    PreListElement 'name:'  name=EString
     //    INDENT
     //        'kind:' kind=MinimumKind
     //        (
@@ -1207,7 +1207,7 @@ public class ImplementationDescriptionGrammarAccess extends AbstractElementFinde
     }
 
     //PropertySelection returns PropertySelection:
-    //    PreListElement 'name:'    name=EString
+    //    PreListElement 'name:'  name=EString
     //    INDENT
     //        'kind:' kind=SelectionKind
     //        (
@@ -1231,7 +1231,7 @@ public class ImplementationDescriptionGrammarAccess extends AbstractElementFinde
     }
 
     //PropertyRange returns PropertyRange:
-    //    PreListElement 'name:'    name=EString
+    //    PreListElement 'name:'  name=EString
     //    INDENT
     //        'kind:' kind=RangeKind
     //        (
@@ -1255,7 +1255,10 @@ public class ImplementationDescriptionGrammarAccess extends AbstractElementFinde
     }
 
     //PropertyValue returns PropertyValue:
-    //    PropertyValueInt | PropertyValueDouble | PropertyValueString| ProcessorArchitectureValue | LinuxDistributionValue | UbuntuVersionValue;
+    //    PropertyValueInt | PropertyValueDouble
+    //    | PropertyValueString| ProcessorArchitectureValue
+    //    | LinuxDistributionValue | UbuntuVersionValue
+    //    | PropertyValueList;
     public UtilGrammarAccess.PropertyValueElements getPropertyValueAccess() {
         return gaUtil.getPropertyValueAccess();
     }
@@ -1293,6 +1296,20 @@ public class ImplementationDescriptionGrammarAccess extends AbstractElementFinde
 
     public ParserRule getPropertyValueStringRule() {
         return getPropertyValueStringAccess().getRule();
+    }
+
+    //PropertyValueList returns PropertyValueList:
+    //    INDENT
+    //      PreListElement value+=PropertyValue
+    //          (PreListElement value+=PropertyValue)*
+    //    DEDENT
+    // ;
+    public UtilGrammarAccess.PropertyValueListElements getPropertyValueListAccess() {
+        return gaUtil.getPropertyValueListAccess();
+    }
+
+    public ParserRule getPropertyValueListRule() {
+        return getPropertyValueListAccess().getRule();
     }
 
     //ProcessorArchitectureValue returns ProcessorArchitectureValue:
@@ -1430,6 +1447,18 @@ public class ImplementationDescriptionGrammarAccess extends AbstractElementFinde
 
     public ParserRule getWlanCommunicationTypeRule() {
         return getWlanCommunicationTypeAccess().getRule();
+    }
+
+    //UsbCommunicationType returns UsbCommunicationType:
+    //    {UsbCommunicationType}
+    //    'Usb'
+    //    ;
+    public UtilGrammarAccess.UsbCommunicationTypeElements getUsbCommunicationTypeAccess() {
+        return gaUtil.getUsbCommunicationTypeAccess();
+    }
+
+    public ParserRule getUsbCommunicationTypeRule() {
+        return getUsbCommunicationTypeAccess().getRule();
     }
 
     //AttributeKind returns AttributeKind:

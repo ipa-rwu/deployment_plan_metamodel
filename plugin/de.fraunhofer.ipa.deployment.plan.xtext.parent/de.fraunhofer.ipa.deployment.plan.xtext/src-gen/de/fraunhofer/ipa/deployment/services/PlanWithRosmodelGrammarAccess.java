@@ -893,7 +893,7 @@ public class PlanWithRosmodelGrammarAccess extends AbstractElementFinder.Abstrac
     }
 
     //Resource returns Resource:
-    //    'name:'    name=EString
+    //    'name:' name=EString
     //    INDENT
     //        'type:' type=AbstractResouceType
     //        ('properties:'
@@ -945,7 +945,7 @@ public class PlanWithRosmodelGrammarAccess extends AbstractElementFinder.Abstrac
     }
 
     //Property returns Property:
-    //    PreListElement 'name:'    name=EString
+    //    PreListElement 'name:'  name=EString
     //    INDENT
     //        'kind:' kind=PropertyKind
     //        (
@@ -969,7 +969,7 @@ public class PlanWithRosmodelGrammarAccess extends AbstractElementFinder.Abstrac
     }
 
     //PropertyAttribute returns PropertyAttribute:
-    //    PreListElement 'name:'    name=EString
+    //    PreListElement 'name:'  name=EString
     //    INDENT
     //        'kind:' kind=AttributeKind
     //        (
@@ -989,7 +989,7 @@ public class PlanWithRosmodelGrammarAccess extends AbstractElementFinder.Abstrac
     }
 
     //PropertyMaximun returns PropertyMaximun:
-    //    PreListElement 'name:'    name=EString
+    //    PreListElement 'name:'  name=EString
     //    INDENT
     //        'kind:' kind=MaximumKind
     //        (
@@ -1009,7 +1009,7 @@ public class PlanWithRosmodelGrammarAccess extends AbstractElementFinder.Abstrac
     }
 
     //PropertyMinimum returns PropertyMinimum:
-    //    PreListElement 'name:'    name=EString
+    //    PreListElement 'name:'  name=EString
     //    INDENT
     //        'kind:' kind=MinimumKind
     //        (
@@ -1029,7 +1029,7 @@ public class PlanWithRosmodelGrammarAccess extends AbstractElementFinder.Abstrac
     }
 
     //PropertySelection returns PropertySelection:
-    //    PreListElement 'name:'    name=EString
+    //    PreListElement 'name:'  name=EString
     //    INDENT
     //        'kind:' kind=SelectionKind
     //        (
@@ -1053,7 +1053,7 @@ public class PlanWithRosmodelGrammarAccess extends AbstractElementFinder.Abstrac
     }
 
     //PropertyRange returns PropertyRange:
-    //    PreListElement 'name:'    name=EString
+    //    PreListElement 'name:'  name=EString
     //    INDENT
     //        'kind:' kind=RangeKind
     //        (
@@ -1077,7 +1077,10 @@ public class PlanWithRosmodelGrammarAccess extends AbstractElementFinder.Abstrac
     }
 
     //PropertyValue returns PropertyValue:
-    //    PropertyValueInt | PropertyValueDouble | PropertyValueString| ProcessorArchitectureValue | LinuxDistributionValue | UbuntuVersionValue;
+    //    PropertyValueInt | PropertyValueDouble
+    //    | PropertyValueString| ProcessorArchitectureValue
+    //    | LinuxDistributionValue | UbuntuVersionValue
+    //    | PropertyValueList;
     public UtilGrammarAccess.PropertyValueElements getPropertyValueAccess() {
         return gaUtil.getPropertyValueAccess();
     }
@@ -1115,6 +1118,20 @@ public class PlanWithRosmodelGrammarAccess extends AbstractElementFinder.Abstrac
 
     public ParserRule getPropertyValueStringRule() {
         return getPropertyValueStringAccess().getRule();
+    }
+
+    //PropertyValueList returns PropertyValueList:
+    //    INDENT
+    //      PreListElement value+=PropertyValue
+    //          (PreListElement value+=PropertyValue)*
+    //    DEDENT
+    // ;
+    public UtilGrammarAccess.PropertyValueListElements getPropertyValueListAccess() {
+        return gaUtil.getPropertyValueListAccess();
+    }
+
+    public ParserRule getPropertyValueListRule() {
+        return getPropertyValueListAccess().getRule();
     }
 
     //ProcessorArchitectureValue returns ProcessorArchitectureValue:
@@ -1252,6 +1269,18 @@ public class PlanWithRosmodelGrammarAccess extends AbstractElementFinder.Abstrac
 
     public ParserRule getWlanCommunicationTypeRule() {
         return getWlanCommunicationTypeAccess().getRule();
+    }
+
+    //UsbCommunicationType returns UsbCommunicationType:
+    //    {UsbCommunicationType}
+    //    'Usb'
+    //    ;
+    public UtilGrammarAccess.UsbCommunicationTypeElements getUsbCommunicationTypeAccess() {
+        return gaUtil.getUsbCommunicationTypeAccess();
+    }
+
+    public ParserRule getUsbCommunicationTypeRule() {
+        return getUsbCommunicationTypeAccess().getRule();
     }
 
     //AttributeKind returns AttributeKind:

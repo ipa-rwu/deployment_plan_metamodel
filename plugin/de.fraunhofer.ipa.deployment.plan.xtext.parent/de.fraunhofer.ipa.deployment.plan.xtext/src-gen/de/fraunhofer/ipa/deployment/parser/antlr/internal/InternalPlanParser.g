@@ -1757,6 +1757,15 @@ rulePropertyValue returns [EObject current=null]
             $current = $this_UbuntuVersionValue_5.current;
             afterParserOrEnumRuleCall();
         }
+            |
+        {
+            newCompositeNode(grammarAccess.getPropertyValueAccess().getPropertyValueListParserRuleCall_6());
+        }
+        this_PropertyValueList_6=rulePropertyValueList
+        {
+            $current = $this_PropertyValueList_6.current;
+            afterParserOrEnumRuleCall();
+        }
     )
 ;
 
@@ -1865,6 +1874,87 @@ rulePropertyValueString returns [EObject current=null]
                 afterParserOrEnumRuleCall();
             }
         )
+    )
+;
+
+// Entry rule entryRulePropertyValueList
+entryRulePropertyValueList returns [EObject current=null]:
+    { newCompositeNode(grammarAccess.getPropertyValueListRule()); }
+    iv_rulePropertyValueList=rulePropertyValueList
+    { $current=$iv_rulePropertyValueList.current; }
+    EOF;
+
+// Rule PropertyValueList
+rulePropertyValueList returns [EObject current=null]
+@init {
+    enterRule();
+}
+@after {
+    leaveRule();
+}:
+    (
+        this_INDENT_0=RULE_INDENT
+        {
+            newLeafNode(this_INDENT_0, grammarAccess.getPropertyValueListAccess().getINDENTTerminalRuleCall_0());
+        }
+        {
+            newCompositeNode(grammarAccess.getPropertyValueListAccess().getPreListElementParserRuleCall_1());
+        }
+        rulePreListElement
+        {
+            afterParserOrEnumRuleCall();
+        }
+        (
+            (
+                {
+                    newCompositeNode(grammarAccess.getPropertyValueListAccess().getValuePropertyValueParserRuleCall_2_0());
+                }
+                lv_value_2_0=rulePropertyValue
+                {
+                    if ($current==null) {
+                        $current = createModelElementForParent(grammarAccess.getPropertyValueListRule());
+                    }
+                    add(
+                        $current,
+                        "value",
+                        lv_value_2_0,
+                        "de.fraunhofer.ipa.deployment.Util.PropertyValue");
+                    afterParserOrEnumRuleCall();
+                }
+            )
+        )
+        (
+            {
+                newCompositeNode(grammarAccess.getPropertyValueListAccess().getPreListElementParserRuleCall_3_0());
+            }
+            rulePreListElement
+            {
+                afterParserOrEnumRuleCall();
+            }
+            (
+                (
+                    {
+                        newCompositeNode(grammarAccess.getPropertyValueListAccess().getValuePropertyValueParserRuleCall_3_1_0());
+                    }
+                    lv_value_4_0=rulePropertyValue
+                    {
+                        if ($current==null) {
+                            $current = createModelElementForParent(grammarAccess.getPropertyValueListRule());
+                        }
+                        add(
+                            $current,
+                            "value",
+                            lv_value_4_0,
+                            "de.fraunhofer.ipa.deployment.Util.PropertyValue");
+                        afterParserOrEnumRuleCall();
+                    }
+                )
+            )
+        )*
+        this_DEDENT_5=RULE_DEDENT
+        {
+            newLeafNode(this_DEDENT_5, grammarAccess.getPropertyValueListAccess().getDEDENTTerminalRuleCall_4());
+        }
     )
 ;
 

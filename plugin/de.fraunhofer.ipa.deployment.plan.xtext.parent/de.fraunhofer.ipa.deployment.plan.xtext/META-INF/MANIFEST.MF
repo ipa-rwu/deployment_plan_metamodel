@@ -6,8 +6,7 @@ Bundle-Vendor: My Company
 Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: de.fraunhofer.ipa.deployment.plan.xtext;singleton:=true
 Bundle-ActivationPolicy: lazy
-Require-Bundle: de.fraunhofer.ipa.deploymentPlan,
- org.eclipse.xtext,
+Require-Bundle: org.eclipse.xtext,
  org.eclipse.xtext.xbase,
  org.eclipse.equinox.common;bundle-version="3.16.0",
  de.fraunhofer.ipa.deployment.util.xtext;bundle-version="1.0.0",
@@ -17,7 +16,8 @@ Require-Bundle: de.fraunhofer.ipa.deploymentPlan,
  org.antlr.runtime;bundle-version="4.7.2",
  de.fraunhofer.ipa.rossystem.xtext;bundle-version="2.0.0",
  org.eclipse.xtend.lib;bundle-version="2.14.0",
- de.fraunhofer.ipa.deployment.util
+ de.fraunhofer.ipa.deployment.util,
+ de.fraunhofer.ipa.deploymentPlan;bundle-version="0.1.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Export-Package: de.fraunhofer.ipa.deployment.parser.antlr.lexer,
  de.fraunhofer.ipa.deployment,

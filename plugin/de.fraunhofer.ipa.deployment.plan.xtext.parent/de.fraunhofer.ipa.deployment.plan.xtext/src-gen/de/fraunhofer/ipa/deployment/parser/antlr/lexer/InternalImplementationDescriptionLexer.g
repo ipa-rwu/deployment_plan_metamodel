@@ -73,6 +73,8 @@ Wlan : 'Wlan';
 
 Url : 'url:';
 
+Usb : 'Usb';
+
 Git : 'git';
 
 X86 : 'x86';

@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalImplementationDescriptionParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "SoftwareConfigurationParameter", "ImplementationDescription", "IncludeSoftwareComponent", "ExecutionRequirement", "LinuxOpertingSystem", "MacOSOpertingSystem", "DeviceRequirement", "HWSWParemeter", "AttributeKind", "SelectionKind", "Description", "MaximumKind", "MinimumKind", "Properties", "Repository", "Processor", "RangeKind", "Container", "Ethernet", "Version", "Debian", "Ubuntu", "Value", "Arm64", "Focal", "Jammy", "Kind", "Name", "Type", "Wlan", "Url", "Git", "X86", "HyphenMinus", "RULE_DIGIT", "RULE_DECINT", "RULE_DOUBLE", "RULE_SL_COMMENT", "RULE_INDENT", "RULE_DEDENT", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_WS", "RULE_ANY_OTHER"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "SoftwareConfigurationParameter", "ImplementationDescription", "IncludeSoftwareComponent", "ExecutionRequirement", "LinuxOpertingSystem", "MacOSOpertingSystem", "DeviceRequirement", "HWSWParemeter", "AttributeKind", "SelectionKind", "Description", "MaximumKind", "MinimumKind", "Properties", "Repository", "Processor", "RangeKind", "Container", "Ethernet", "Version", "Debian", "Ubuntu", "Value", "Arm64", "Focal", "Jammy", "Kind", "Name", "Type", "Wlan", "Url", "Usb", "Git", "X86", "HyphenMinus", "RULE_DIGIT", "RULE_DECINT", "RULE_DOUBLE", "RULE_SL_COMMENT", "RULE_INDENT", "RULE_DEDENT", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_WS", "RULE_ANY_OTHER"
     };
     public static final int AttributeKind=12;
     public static final int SoftwareConfigurationParameter=4;
@@ -32,40 +32,41 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
     public static final int Version=23;
     public static final int Kind=30;
     public static final int Ubuntu=25;
-    public static final int RULE_DEDENT=43;
+    public static final int RULE_DEDENT=44;
     public static final int LinuxOpertingSystem=8;
-    public static final int RULE_ID=44;
-    public static final int RULE_DIGIT=38;
+    public static final int RULE_ID=45;
+    public static final int RULE_DIGIT=39;
     public static final int ExecutionRequirement=7;
     public static final int HWSWParemeter=11;
     public static final int SelectionKind=13;
     public static final int Arm64=27;
-    public static final int Git=35;
+    public static final int Git=36;
     public static final int IncludeSoftwareComponent=6;
-    public static final int RULE_INT=45;
+    public static final int RULE_INT=46;
     public static final int Ethernet=22;
     public static final int Value=26;
-    public static final int RULE_ML_COMMENT=47;
+    public static final int RULE_ML_COMMENT=48;
     public static final int Description=14;
     public static final int Processor=19;
-    public static final int RULE_STRING=46;
+    public static final int RULE_STRING=47;
     public static final int Focal=28;
     public static final int Wlan=33;
     public static final int Properties=17;
     public static final int Url=34;
-    public static final int RULE_SL_COMMENT=41;
+    public static final int RULE_SL_COMMENT=42;
     public static final int ImplementationDescription=5;
-    public static final int HyphenMinus=37;
-    public static final int RULE_DOUBLE=40;
-    public static final int X86=36;
-    public static final int RULE_DECINT=39;
+    public static final int HyphenMinus=38;
+    public static final int RULE_DOUBLE=41;
+    public static final int X86=37;
+    public static final int RULE_DECINT=40;
     public static final int MinimumKind=16;
     public static final int EOF=-1;
-    public static final int RULE_INDENT=42;
+    public static final int RULE_INDENT=43;
     public static final int Jammy=29;
-    public static final int RULE_WS=48;
+    public static final int Usb=35;
+    public static final int RULE_WS=49;
     public static final int MaximumKind=15;
-    public static final int RULE_ANY_OTHER=49;
+    public static final int RULE_ANY_OTHER=50;
     public static final int RangeKind=20;
     public static final int Repository=18;
     public static final int Type=32;
@@ -4283,7 +4284,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
     // $ANTLR start "rulePropertyValue"
-    // InternalImplementationDescriptionParser.g:1839:1: rulePropertyValue returns [EObject current=null] : (this_PropertyValueInt_0= rulePropertyValueInt | this_PropertyValueDouble_1= rulePropertyValueDouble | this_PropertyValueString_2= rulePropertyValueString | this_ProcessorArchitectureValue_3= ruleProcessorArchitectureValue | this_LinuxDistributionValue_4= ruleLinuxDistributionValue | this_UbuntuVersionValue_5= ruleUbuntuVersionValue ) ;
+    // InternalImplementationDescriptionParser.g:1839:1: rulePropertyValue returns [EObject current=null] : (this_PropertyValueInt_0= rulePropertyValueInt | this_PropertyValueDouble_1= rulePropertyValueDouble | this_PropertyValueString_2= rulePropertyValueString | this_ProcessorArchitectureValue_3= ruleProcessorArchitectureValue | this_LinuxDistributionValue_4= ruleLinuxDistributionValue | this_UbuntuVersionValue_5= ruleUbuntuVersionValue | this_PropertyValueList_6= rulePropertyValueList ) ;
     public final EObject rulePropertyValue() throws RecognitionException {
         EObject current = null;
 
@@ -4299,16 +4300,18 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
         EObject this_UbuntuVersionValue_5 = null;
 
+        EObject this_PropertyValueList_6 = null;
+
 
 
             enterRule();
 
         try {
-            // InternalImplementationDescriptionParser.g:1845:2: ( (this_PropertyValueInt_0= rulePropertyValueInt | this_PropertyValueDouble_1= rulePropertyValueDouble | this_PropertyValueString_2= rulePropertyValueString | this_ProcessorArchitectureValue_3= ruleProcessorArchitectureValue | this_LinuxDistributionValue_4= ruleLinuxDistributionValue | this_UbuntuVersionValue_5= ruleUbuntuVersionValue ) )
-            // InternalImplementationDescriptionParser.g:1846:2: (this_PropertyValueInt_0= rulePropertyValueInt | this_PropertyValueDouble_1= rulePropertyValueDouble | this_PropertyValueString_2= rulePropertyValueString | this_ProcessorArchitectureValue_3= ruleProcessorArchitectureValue | this_LinuxDistributionValue_4= ruleLinuxDistributionValue | this_UbuntuVersionValue_5= ruleUbuntuVersionValue )
+            // InternalImplementationDescriptionParser.g:1845:2: ( (this_PropertyValueInt_0= rulePropertyValueInt | this_PropertyValueDouble_1= rulePropertyValueDouble | this_PropertyValueString_2= rulePropertyValueString | this_ProcessorArchitectureValue_3= ruleProcessorArchitectureValue | this_LinuxDistributionValue_4= ruleLinuxDistributionValue | this_UbuntuVersionValue_5= ruleUbuntuVersionValue | this_PropertyValueList_6= rulePropertyValueList ) )
+            // InternalImplementationDescriptionParser.g:1846:2: (this_PropertyValueInt_0= rulePropertyValueInt | this_PropertyValueDouble_1= rulePropertyValueDouble | this_PropertyValueString_2= rulePropertyValueString | this_ProcessorArchitectureValue_3= ruleProcessorArchitectureValue | this_LinuxDistributionValue_4= ruleLinuxDistributionValue | this_UbuntuVersionValue_5= ruleUbuntuVersionValue | this_PropertyValueList_6= rulePropertyValueList )
             {
-            // InternalImplementationDescriptionParser.g:1846:2: (this_PropertyValueInt_0= rulePropertyValueInt | this_PropertyValueDouble_1= rulePropertyValueDouble | this_PropertyValueString_2= rulePropertyValueString | this_ProcessorArchitectureValue_3= ruleProcessorArchitectureValue | this_LinuxDistributionValue_4= ruleLinuxDistributionValue | this_UbuntuVersionValue_5= ruleUbuntuVersionValue )
-            int alt32=6;
+            // InternalImplementationDescriptionParser.g:1846:2: (this_PropertyValueInt_0= rulePropertyValueInt | this_PropertyValueDouble_1= rulePropertyValueDouble | this_PropertyValueString_2= rulePropertyValueString | this_ProcessorArchitectureValue_3= ruleProcessorArchitectureValue | this_LinuxDistributionValue_4= ruleLinuxDistributionValue | this_UbuntuVersionValue_5= ruleUbuntuVersionValue | this_PropertyValueList_6= rulePropertyValueList )
+            int alt32=7;
             switch ( input.LA(1) ) {
             case RULE_DECINT:
                 {
@@ -4342,6 +4345,11 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
             case Jammy:
                 {
                 alt32=6;
+                }
+                break;
+            case RULE_INDENT:
+                {
+                alt32=7;
                 }
                 break;
             default:
@@ -4460,6 +4468,24 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
                     }
                     break;
+                case 7 :
+                    // InternalImplementationDescriptionParser.g:1901:3: this_PropertyValueList_6= rulePropertyValueList
+                    {
+
+                                newCompositeNode(grammarAccess.getPropertyValueAccess().getPropertyValueListParserRuleCall_6());
+
+                    pushFollow(FOLLOW_2);
+                    this_PropertyValueList_6=rulePropertyValueList();
+
+                    state._fsp--;
+
+
+                                current = this_PropertyValueList_6;
+                                afterParserOrEnumRuleCall();
+
+
+                    }
+                    break;
 
             }
 
@@ -4483,7 +4509,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
     // $ANTLR start "entryRulePropertyValueInt"
-    // InternalImplementationDescriptionParser.g:1904:1: entryRulePropertyValueInt returns [EObject current=null] : iv_rulePropertyValueInt= rulePropertyValueInt EOF ;
+    // InternalImplementationDescriptionParser.g:1913:1: entryRulePropertyValueInt returns [EObject current=null] : iv_rulePropertyValueInt= rulePropertyValueInt EOF ;
     public final EObject entryRulePropertyValueInt() throws RecognitionException {
         EObject current = null;
 
@@ -4491,8 +4517,8 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
         try {
-            // InternalImplementationDescriptionParser.g:1904:57: (iv_rulePropertyValueInt= rulePropertyValueInt EOF )
-            // InternalImplementationDescriptionParser.g:1905:2: iv_rulePropertyValueInt= rulePropertyValueInt EOF
+            // InternalImplementationDescriptionParser.g:1913:57: (iv_rulePropertyValueInt= rulePropertyValueInt EOF )
+            // InternalImplementationDescriptionParser.g:1914:2: iv_rulePropertyValueInt= rulePropertyValueInt EOF
             {
              newCompositeNode(grammarAccess.getPropertyValueIntRule());
             pushFollow(FOLLOW_1);
@@ -4519,7 +4545,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
     // $ANTLR start "rulePropertyValueInt"
-    // InternalImplementationDescriptionParser.g:1911:1: rulePropertyValueInt returns [EObject current=null] : ( (lv_value_0_0= ruleInteger0 ) ) ;
+    // InternalImplementationDescriptionParser.g:1920:1: rulePropertyValueInt returns [EObject current=null] : ( (lv_value_0_0= ruleInteger0 ) ) ;
     public final EObject rulePropertyValueInt() throws RecognitionException {
         EObject current = null;
 
@@ -4530,14 +4556,14 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
             enterRule();
 
         try {
-            // InternalImplementationDescriptionParser.g:1917:2: ( ( (lv_value_0_0= ruleInteger0 ) ) )
-            // InternalImplementationDescriptionParser.g:1918:2: ( (lv_value_0_0= ruleInteger0 ) )
+            // InternalImplementationDescriptionParser.g:1926:2: ( ( (lv_value_0_0= ruleInteger0 ) ) )
+            // InternalImplementationDescriptionParser.g:1927:2: ( (lv_value_0_0= ruleInteger0 ) )
             {
-            // InternalImplementationDescriptionParser.g:1918:2: ( (lv_value_0_0= ruleInteger0 ) )
-            // InternalImplementationDescriptionParser.g:1919:3: (lv_value_0_0= ruleInteger0 )
+            // InternalImplementationDescriptionParser.g:1927:2: ( (lv_value_0_0= ruleInteger0 ) )
+            // InternalImplementationDescriptionParser.g:1928:3: (lv_value_0_0= ruleInteger0 )
             {
-            // InternalImplementationDescriptionParser.g:1919:3: (lv_value_0_0= ruleInteger0 )
-            // InternalImplementationDescriptionParser.g:1920:4: lv_value_0_0= ruleInteger0
+            // InternalImplementationDescriptionParser.g:1928:3: (lv_value_0_0= ruleInteger0 )
+            // InternalImplementationDescriptionParser.g:1929:4: lv_value_0_0= ruleInteger0
             {
 
                             newCompositeNode(grammarAccess.getPropertyValueIntAccess().getValueInteger0ParserRuleCall_0());
@@ -4584,7 +4610,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
     // $ANTLR start "entryRulePropertyValueDouble"
-    // InternalImplementationDescriptionParser.g:1940:1: entryRulePropertyValueDouble returns [EObject current=null] : iv_rulePropertyValueDouble= rulePropertyValueDouble EOF ;
+    // InternalImplementationDescriptionParser.g:1949:1: entryRulePropertyValueDouble returns [EObject current=null] : iv_rulePropertyValueDouble= rulePropertyValueDouble EOF ;
     public final EObject entryRulePropertyValueDouble() throws RecognitionException {
         EObject current = null;
 
@@ -4592,8 +4618,8 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
         try {
-            // InternalImplementationDescriptionParser.g:1940:60: (iv_rulePropertyValueDouble= rulePropertyValueDouble EOF )
-            // InternalImplementationDescriptionParser.g:1941:2: iv_rulePropertyValueDouble= rulePropertyValueDouble EOF
+            // InternalImplementationDescriptionParser.g:1949:60: (iv_rulePropertyValueDouble= rulePropertyValueDouble EOF )
+            // InternalImplementationDescriptionParser.g:1950:2: iv_rulePropertyValueDouble= rulePropertyValueDouble EOF
             {
              newCompositeNode(grammarAccess.getPropertyValueDoubleRule());
             pushFollow(FOLLOW_1);
@@ -4620,7 +4646,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
     // $ANTLR start "rulePropertyValueDouble"
-    // InternalImplementationDescriptionParser.g:1947:1: rulePropertyValueDouble returns [EObject current=null] : ( (lv_value_0_0= ruleDouble0 ) ) ;
+    // InternalImplementationDescriptionParser.g:1956:1: rulePropertyValueDouble returns [EObject current=null] : ( (lv_value_0_0= ruleDouble0 ) ) ;
     public final EObject rulePropertyValueDouble() throws RecognitionException {
         EObject current = null;
 
@@ -4631,14 +4657,14 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
             enterRule();
 
         try {
-            // InternalImplementationDescriptionParser.g:1953:2: ( ( (lv_value_0_0= ruleDouble0 ) ) )
-            // InternalImplementationDescriptionParser.g:1954:2: ( (lv_value_0_0= ruleDouble0 ) )
+            // InternalImplementationDescriptionParser.g:1962:2: ( ( (lv_value_0_0= ruleDouble0 ) ) )
+            // InternalImplementationDescriptionParser.g:1963:2: ( (lv_value_0_0= ruleDouble0 ) )
             {
-            // InternalImplementationDescriptionParser.g:1954:2: ( (lv_value_0_0= ruleDouble0 ) )
-            // InternalImplementationDescriptionParser.g:1955:3: (lv_value_0_0= ruleDouble0 )
+            // InternalImplementationDescriptionParser.g:1963:2: ( (lv_value_0_0= ruleDouble0 ) )
+            // InternalImplementationDescriptionParser.g:1964:3: (lv_value_0_0= ruleDouble0 )
             {
-            // InternalImplementationDescriptionParser.g:1955:3: (lv_value_0_0= ruleDouble0 )
-            // InternalImplementationDescriptionParser.g:1956:4: lv_value_0_0= ruleDouble0
+            // InternalImplementationDescriptionParser.g:1964:3: (lv_value_0_0= ruleDouble0 )
+            // InternalImplementationDescriptionParser.g:1965:4: lv_value_0_0= ruleDouble0
             {
 
                             newCompositeNode(grammarAccess.getPropertyValueDoubleAccess().getValueDouble0ParserRuleCall_0());
@@ -4685,7 +4711,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
     // $ANTLR start "entryRulePropertyValueString"
-    // InternalImplementationDescriptionParser.g:1976:1: entryRulePropertyValueString returns [EObject current=null] : iv_rulePropertyValueString= rulePropertyValueString EOF ;
+    // InternalImplementationDescriptionParser.g:1985:1: entryRulePropertyValueString returns [EObject current=null] : iv_rulePropertyValueString= rulePropertyValueString EOF ;
     public final EObject entryRulePropertyValueString() throws RecognitionException {
         EObject current = null;
 
@@ -4693,8 +4719,8 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
         try {
-            // InternalImplementationDescriptionParser.g:1976:60: (iv_rulePropertyValueString= rulePropertyValueString EOF )
-            // InternalImplementationDescriptionParser.g:1977:2: iv_rulePropertyValueString= rulePropertyValueString EOF
+            // InternalImplementationDescriptionParser.g:1985:60: (iv_rulePropertyValueString= rulePropertyValueString EOF )
+            // InternalImplementationDescriptionParser.g:1986:2: iv_rulePropertyValueString= rulePropertyValueString EOF
             {
              newCompositeNode(grammarAccess.getPropertyValueStringRule());
             pushFollow(FOLLOW_1);
@@ -4721,7 +4747,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
     // $ANTLR start "rulePropertyValueString"
-    // InternalImplementationDescriptionParser.g:1983:1: rulePropertyValueString returns [EObject current=null] : ( (lv_value_0_0= ruleEString ) ) ;
+    // InternalImplementationDescriptionParser.g:1992:1: rulePropertyValueString returns [EObject current=null] : ( (lv_value_0_0= ruleEString ) ) ;
     public final EObject rulePropertyValueString() throws RecognitionException {
         EObject current = null;
 
@@ -4732,14 +4758,14 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
             enterRule();
 
         try {
-            // InternalImplementationDescriptionParser.g:1989:2: ( ( (lv_value_0_0= ruleEString ) ) )
-            // InternalImplementationDescriptionParser.g:1990:2: ( (lv_value_0_0= ruleEString ) )
+            // InternalImplementationDescriptionParser.g:1998:2: ( ( (lv_value_0_0= ruleEString ) ) )
+            // InternalImplementationDescriptionParser.g:1999:2: ( (lv_value_0_0= ruleEString ) )
             {
-            // InternalImplementationDescriptionParser.g:1990:2: ( (lv_value_0_0= ruleEString ) )
-            // InternalImplementationDescriptionParser.g:1991:3: (lv_value_0_0= ruleEString )
+            // InternalImplementationDescriptionParser.g:1999:2: ( (lv_value_0_0= ruleEString ) )
+            // InternalImplementationDescriptionParser.g:2000:3: (lv_value_0_0= ruleEString )
             {
-            // InternalImplementationDescriptionParser.g:1991:3: (lv_value_0_0= ruleEString )
-            // InternalImplementationDescriptionParser.g:1992:4: lv_value_0_0= ruleEString
+            // InternalImplementationDescriptionParser.g:2000:3: (lv_value_0_0= ruleEString )
+            // InternalImplementationDescriptionParser.g:2001:4: lv_value_0_0= ruleEString
             {
 
                             newCompositeNode(grammarAccess.getPropertyValueStringAccess().getValueEStringParserRuleCall_0());
@@ -4785,8 +4811,204 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
     // $ANTLR end "rulePropertyValueString"
 
 
+    // $ANTLR start "entryRulePropertyValueList"
+    // InternalImplementationDescriptionParser.g:2021:1: entryRulePropertyValueList returns [EObject current=null] : iv_rulePropertyValueList= rulePropertyValueList EOF ;
+    public final EObject entryRulePropertyValueList() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_rulePropertyValueList = null;
+
+
+        try {
+            // InternalImplementationDescriptionParser.g:2021:58: (iv_rulePropertyValueList= rulePropertyValueList EOF )
+            // InternalImplementationDescriptionParser.g:2022:2: iv_rulePropertyValueList= rulePropertyValueList EOF
+            {
+             newCompositeNode(grammarAccess.getPropertyValueListRule());
+            pushFollow(FOLLOW_1);
+            iv_rulePropertyValueList=rulePropertyValueList();
+
+            state._fsp--;
+
+             current =iv_rulePropertyValueList;
+            match(input,EOF,FOLLOW_2);
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRulePropertyValueList"
+
+
+    // $ANTLR start "rulePropertyValueList"
+    // InternalImplementationDescriptionParser.g:2028:1: rulePropertyValueList returns [EObject current=null] : (this_INDENT_0= RULE_INDENT rulePreListElement ( (lv_value_2_0= rulePropertyValue ) ) ( rulePreListElement ( (lv_value_4_0= rulePropertyValue ) ) )* this_DEDENT_5= RULE_DEDENT ) ;
+    public final EObject rulePropertyValueList() throws RecognitionException {
+        EObject current = null;
+
+        Token this_INDENT_0=null;
+        Token this_DEDENT_5=null;
+        EObject lv_value_2_0 = null;
+
+        EObject lv_value_4_0 = null;
+
+
+
+            enterRule();
+
+        try {
+            // InternalImplementationDescriptionParser.g:2034:2: ( (this_INDENT_0= RULE_INDENT rulePreListElement ( (lv_value_2_0= rulePropertyValue ) ) ( rulePreListElement ( (lv_value_4_0= rulePropertyValue ) ) )* this_DEDENT_5= RULE_DEDENT ) )
+            // InternalImplementationDescriptionParser.g:2035:2: (this_INDENT_0= RULE_INDENT rulePreListElement ( (lv_value_2_0= rulePropertyValue ) ) ( rulePreListElement ( (lv_value_4_0= rulePropertyValue ) ) )* this_DEDENT_5= RULE_DEDENT )
+            {
+            // InternalImplementationDescriptionParser.g:2035:2: (this_INDENT_0= RULE_INDENT rulePreListElement ( (lv_value_2_0= rulePropertyValue ) ) ( rulePreListElement ( (lv_value_4_0= rulePropertyValue ) ) )* this_DEDENT_5= RULE_DEDENT )
+            // InternalImplementationDescriptionParser.g:2036:3: this_INDENT_0= RULE_INDENT rulePreListElement ( (lv_value_2_0= rulePropertyValue ) ) ( rulePreListElement ( (lv_value_4_0= rulePropertyValue ) ) )* this_DEDENT_5= RULE_DEDENT
+            {
+            this_INDENT_0=(Token)match(input,RULE_INDENT,FOLLOW_7);
+
+                        newLeafNode(this_INDENT_0, grammarAccess.getPropertyValueListAccess().getINDENTTerminalRuleCall_0());
+
+
+                        newCompositeNode(grammarAccess.getPropertyValueListAccess().getPreListElementParserRuleCall_1());
+
+            pushFollow(FOLLOW_24);
+            rulePreListElement();
+
+            state._fsp--;
+
+
+                        afterParserOrEnumRuleCall();
+
+            // InternalImplementationDescriptionParser.g:2047:3: ( (lv_value_2_0= rulePropertyValue ) )
+            // InternalImplementationDescriptionParser.g:2048:4: (lv_value_2_0= rulePropertyValue )
+            {
+            // InternalImplementationDescriptionParser.g:2048:4: (lv_value_2_0= rulePropertyValue )
+            // InternalImplementationDescriptionParser.g:2049:5: lv_value_2_0= rulePropertyValue
+            {
+
+                                newCompositeNode(grammarAccess.getPropertyValueListAccess().getValuePropertyValueParserRuleCall_2_0());
+
+            pushFollow(FOLLOW_8);
+            lv_value_2_0=rulePropertyValue();
+
+            state._fsp--;
+
+
+                                if (current==null) {
+                                    current = createModelElementForParent(grammarAccess.getPropertyValueListRule());
+                                }
+                                add(
+                                    current,
+                                    "value",
+                                    lv_value_2_0,
+                                    "de.fraunhofer.ipa.deployment.Util.PropertyValue");
+                                afterParserOrEnumRuleCall();
+
+
+            }
+
+
+            }
+
+            // InternalImplementationDescriptionParser.g:2066:3: ( rulePreListElement ( (lv_value_4_0= rulePropertyValue ) ) )*
+            loop33:
+            do {
+                int alt33=2;
+                int LA33_0 = input.LA(1);
+
+                if ( (LA33_0==HyphenMinus) ) {
+                    alt33=1;
+                }
+
+
+                switch (alt33) {
+                case 1 :
+                    // InternalImplementationDescriptionParser.g:2067:4: rulePreListElement ( (lv_value_4_0= rulePropertyValue ) )
+                    {
+
+                                    newCompositeNode(grammarAccess.getPropertyValueListAccess().getPreListElementParserRuleCall_3_0());
+
+                    pushFollow(FOLLOW_24);
+                    rulePreListElement();
+
+                    state._fsp--;
+
+
+                                    afterParserOrEnumRuleCall();
+
+                    // InternalImplementationDescriptionParser.g:2074:4: ( (lv_value_4_0= rulePropertyValue ) )
+                    // InternalImplementationDescriptionParser.g:2075:5: (lv_value_4_0= rulePropertyValue )
+                    {
+                    // InternalImplementationDescriptionParser.g:2075:5: (lv_value_4_0= rulePropertyValue )
+                    // InternalImplementationDescriptionParser.g:2076:6: lv_value_4_0= rulePropertyValue
+                    {
+
+                                            newCompositeNode(grammarAccess.getPropertyValueListAccess().getValuePropertyValueParserRuleCall_3_1_0());
+
+                    pushFollow(FOLLOW_8);
+                    lv_value_4_0=rulePropertyValue();
+
+                    state._fsp--;
+
+
+                                            if (current==null) {
+                                                current = createModelElementForParent(grammarAccess.getPropertyValueListRule());
+                                            }
+                                            add(
+                                                current,
+                                                "value",
+                                                lv_value_4_0,
+                                                "de.fraunhofer.ipa.deployment.Util.PropertyValue");
+                                            afterParserOrEnumRuleCall();
+
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+
+                default :
+                    break loop33;
+                }
+            } while (true);
+
+            this_DEDENT_5=(Token)match(input,RULE_DEDENT,FOLLOW_2);
+
+                        newLeafNode(this_DEDENT_5, grammarAccess.getPropertyValueListAccess().getDEDENTTerminalRuleCall_4());
+
+
+            }
+
+
+            }
+
+
+                leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "rulePropertyValueList"
+
+
     // $ANTLR start "entryRuleProcessorArchitectureValue"
-    // InternalImplementationDescriptionParser.g:2012:1: entryRuleProcessorArchitectureValue returns [EObject current=null] : iv_ruleProcessorArchitectureValue= ruleProcessorArchitectureValue EOF ;
+    // InternalImplementationDescriptionParser.g:2102:1: entryRuleProcessorArchitectureValue returns [EObject current=null] : iv_ruleProcessorArchitectureValue= ruleProcessorArchitectureValue EOF ;
     public final EObject entryRuleProcessorArchitectureValue() throws RecognitionException {
         EObject current = null;
 
@@ -4794,8 +5016,8 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
         try {
-            // InternalImplementationDescriptionParser.g:2012:67: (iv_ruleProcessorArchitectureValue= ruleProcessorArchitectureValue EOF )
-            // InternalImplementationDescriptionParser.g:2013:2: iv_ruleProcessorArchitectureValue= ruleProcessorArchitectureValue EOF
+            // InternalImplementationDescriptionParser.g:2102:67: (iv_ruleProcessorArchitectureValue= ruleProcessorArchitectureValue EOF )
+            // InternalImplementationDescriptionParser.g:2103:2: iv_ruleProcessorArchitectureValue= ruleProcessorArchitectureValue EOF
             {
              newCompositeNode(grammarAccess.getProcessorArchitectureValueRule());
             pushFollow(FOLLOW_1);
@@ -4822,7 +5044,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
     // $ANTLR start "ruleProcessorArchitectureValue"
-    // InternalImplementationDescriptionParser.g:2019:1: ruleProcessorArchitectureValue returns [EObject current=null] : ( (lv_value_0_0= ruleProcessorArchitectureType ) ) ;
+    // InternalImplementationDescriptionParser.g:2109:1: ruleProcessorArchitectureValue returns [EObject current=null] : ( (lv_value_0_0= ruleProcessorArchitectureType ) ) ;
     public final EObject ruleProcessorArchitectureValue() throws RecognitionException {
         EObject current = null;
 
@@ -4833,14 +5055,14 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
             enterRule();
 
         try {
-            // InternalImplementationDescriptionParser.g:2025:2: ( ( (lv_value_0_0= ruleProcessorArchitectureType ) ) )
-            // InternalImplementationDescriptionParser.g:2026:2: ( (lv_value_0_0= ruleProcessorArchitectureType ) )
+            // InternalImplementationDescriptionParser.g:2115:2: ( ( (lv_value_0_0= ruleProcessorArchitectureType ) ) )
+            // InternalImplementationDescriptionParser.g:2116:2: ( (lv_value_0_0= ruleProcessorArchitectureType ) )
             {
-            // InternalImplementationDescriptionParser.g:2026:2: ( (lv_value_0_0= ruleProcessorArchitectureType ) )
-            // InternalImplementationDescriptionParser.g:2027:3: (lv_value_0_0= ruleProcessorArchitectureType )
+            // InternalImplementationDescriptionParser.g:2116:2: ( (lv_value_0_0= ruleProcessorArchitectureType ) )
+            // InternalImplementationDescriptionParser.g:2117:3: (lv_value_0_0= ruleProcessorArchitectureType )
             {
-            // InternalImplementationDescriptionParser.g:2027:3: (lv_value_0_0= ruleProcessorArchitectureType )
-            // InternalImplementationDescriptionParser.g:2028:4: lv_value_0_0= ruleProcessorArchitectureType
+            // InternalImplementationDescriptionParser.g:2117:3: (lv_value_0_0= ruleProcessorArchitectureType )
+            // InternalImplementationDescriptionParser.g:2118:4: lv_value_0_0= ruleProcessorArchitectureType
             {
 
                             newCompositeNode(grammarAccess.getProcessorArchitectureValueAccess().getValueProcessorArchitectureTypeEnumRuleCall_0());
@@ -4887,7 +5109,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
     // $ANTLR start "entryRuleAbstractResouceType"
-    // InternalImplementationDescriptionParser.g:2048:1: entryRuleAbstractResouceType returns [EObject current=null] : iv_ruleAbstractResouceType= ruleAbstractResouceType EOF ;
+    // InternalImplementationDescriptionParser.g:2138:1: entryRuleAbstractResouceType returns [EObject current=null] : iv_ruleAbstractResouceType= ruleAbstractResouceType EOF ;
     public final EObject entryRuleAbstractResouceType() throws RecognitionException {
         EObject current = null;
 
@@ -4895,8 +5117,8 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
         try {
-            // InternalImplementationDescriptionParser.g:2048:60: (iv_ruleAbstractResouceType= ruleAbstractResouceType EOF )
-            // InternalImplementationDescriptionParser.g:2049:2: iv_ruleAbstractResouceType= ruleAbstractResouceType EOF
+            // InternalImplementationDescriptionParser.g:2138:60: (iv_ruleAbstractResouceType= ruleAbstractResouceType EOF )
+            // InternalImplementationDescriptionParser.g:2139:2: iv_ruleAbstractResouceType= ruleAbstractResouceType EOF
             {
              newCompositeNode(grammarAccess.getAbstractResouceTypeRule());
             pushFollow(FOLLOW_1);
@@ -4923,7 +5145,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
     // $ANTLR start "ruleAbstractResouceType"
-    // InternalImplementationDescriptionParser.g:2055:1: ruleAbstractResouceType returns [EObject current=null] : this_ResourceType_0= ruleResourceType ;
+    // InternalImplementationDescriptionParser.g:2145:1: ruleAbstractResouceType returns [EObject current=null] : this_ResourceType_0= ruleResourceType ;
     public final EObject ruleAbstractResouceType() throws RecognitionException {
         EObject current = null;
 
@@ -4934,8 +5156,8 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
             enterRule();
 
         try {
-            // InternalImplementationDescriptionParser.g:2061:2: (this_ResourceType_0= ruleResourceType )
-            // InternalImplementationDescriptionParser.g:2062:2: this_ResourceType_0= ruleResourceType
+            // InternalImplementationDescriptionParser.g:2151:2: (this_ResourceType_0= ruleResourceType )
+            // InternalImplementationDescriptionParser.g:2152:2: this_ResourceType_0= ruleResourceType
             {
 
                     newCompositeNode(grammarAccess.getAbstractResouceTypeAccess().getResourceTypeParserRuleCall());
@@ -4969,7 +5191,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
     // $ANTLR start "entryRuleResourceType"
-    // InternalImplementationDescriptionParser.g:2073:1: entryRuleResourceType returns [EObject current=null] : iv_ruleResourceType= ruleResourceType EOF ;
+    // InternalImplementationDescriptionParser.g:2163:1: entryRuleResourceType returns [EObject current=null] : iv_ruleResourceType= ruleResourceType EOF ;
     public final EObject entryRuleResourceType() throws RecognitionException {
         EObject current = null;
 
@@ -4977,8 +5199,8 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
         try {
-            // InternalImplementationDescriptionParser.g:2073:53: (iv_ruleResourceType= ruleResourceType EOF )
-            // InternalImplementationDescriptionParser.g:2074:2: iv_ruleResourceType= ruleResourceType EOF
+            // InternalImplementationDescriptionParser.g:2163:53: (iv_ruleResourceType= ruleResourceType EOF )
+            // InternalImplementationDescriptionParser.g:2164:2: iv_ruleResourceType= ruleResourceType EOF
             {
              newCompositeNode(grammarAccess.getResourceTypeRule());
             pushFollow(FOLLOW_1);
@@ -5005,7 +5227,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
     // $ANTLR start "ruleResourceType"
-    // InternalImplementationDescriptionParser.g:2080:1: ruleResourceType returns [EObject current=null] : ( () ( (lv_name_1_0= ruleEString ) ) ) ;
+    // InternalImplementationDescriptionParser.g:2170:1: ruleResourceType returns [EObject current=null] : ( () ( (lv_name_1_0= ruleEString ) ) ) ;
     public final EObject ruleResourceType() throws RecognitionException {
         EObject current = null;
 
@@ -5016,14 +5238,14 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
             enterRule();
 
         try {
-            // InternalImplementationDescriptionParser.g:2086:2: ( ( () ( (lv_name_1_0= ruleEString ) ) ) )
-            // InternalImplementationDescriptionParser.g:2087:2: ( () ( (lv_name_1_0= ruleEString ) ) )
+            // InternalImplementationDescriptionParser.g:2176:2: ( ( () ( (lv_name_1_0= ruleEString ) ) ) )
+            // InternalImplementationDescriptionParser.g:2177:2: ( () ( (lv_name_1_0= ruleEString ) ) )
             {
-            // InternalImplementationDescriptionParser.g:2087:2: ( () ( (lv_name_1_0= ruleEString ) ) )
-            // InternalImplementationDescriptionParser.g:2088:3: () ( (lv_name_1_0= ruleEString ) )
+            // InternalImplementationDescriptionParser.g:2177:2: ( () ( (lv_name_1_0= ruleEString ) ) )
+            // InternalImplementationDescriptionParser.g:2178:3: () ( (lv_name_1_0= ruleEString ) )
             {
-            // InternalImplementationDescriptionParser.g:2088:3: ()
-            // InternalImplementationDescriptionParser.g:2089:4:
+            // InternalImplementationDescriptionParser.g:2178:3: ()
+            // InternalImplementationDescriptionParser.g:2179:4:
             {
 
                             current = forceCreateModelElement(
@@ -5033,11 +5255,11 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
             }
 
-            // InternalImplementationDescriptionParser.g:2095:3: ( (lv_name_1_0= ruleEString ) )
-            // InternalImplementationDescriptionParser.g:2096:4: (lv_name_1_0= ruleEString )
+            // InternalImplementationDescriptionParser.g:2185:3: ( (lv_name_1_0= ruleEString ) )
+            // InternalImplementationDescriptionParser.g:2186:4: (lv_name_1_0= ruleEString )
             {
-            // InternalImplementationDescriptionParser.g:2096:4: (lv_name_1_0= ruleEString )
-            // InternalImplementationDescriptionParser.g:2097:5: lv_name_1_0= ruleEString
+            // InternalImplementationDescriptionParser.g:2186:4: (lv_name_1_0= ruleEString )
+            // InternalImplementationDescriptionParser.g:2187:5: lv_name_1_0= ruleEString
             {
 
                                 newCompositeNode(grammarAccess.getResourceTypeAccess().getNameEStringParserRuleCall_1_0());
@@ -5087,7 +5309,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
     // $ANTLR start "entryRuleLinuxOpertingSystem"
-    // InternalImplementationDescriptionParser.g:2118:1: entryRuleLinuxOpertingSystem returns [EObject current=null] : iv_ruleLinuxOpertingSystem= ruleLinuxOpertingSystem EOF ;
+    // InternalImplementationDescriptionParser.g:2208:1: entryRuleLinuxOpertingSystem returns [EObject current=null] : iv_ruleLinuxOpertingSystem= ruleLinuxOpertingSystem EOF ;
     public final EObject entryRuleLinuxOpertingSystem() throws RecognitionException {
         EObject current = null;
 
@@ -5095,8 +5317,8 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
         try {
-            // InternalImplementationDescriptionParser.g:2118:60: (iv_ruleLinuxOpertingSystem= ruleLinuxOpertingSystem EOF )
-            // InternalImplementationDescriptionParser.g:2119:2: iv_ruleLinuxOpertingSystem= ruleLinuxOpertingSystem EOF
+            // InternalImplementationDescriptionParser.g:2208:60: (iv_ruleLinuxOpertingSystem= ruleLinuxOpertingSystem EOF )
+            // InternalImplementationDescriptionParser.g:2209:2: iv_ruleLinuxOpertingSystem= ruleLinuxOpertingSystem EOF
             {
              newCompositeNode(grammarAccess.getLinuxOpertingSystemRule());
             pushFollow(FOLLOW_1);
@@ -5123,7 +5345,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
     // $ANTLR start "ruleLinuxOpertingSystem"
-    // InternalImplementationDescriptionParser.g:2125:1: ruleLinuxOpertingSystem returns [EObject current=null] : ( () otherlv_1= LinuxOpertingSystem ) ;
+    // InternalImplementationDescriptionParser.g:2215:1: ruleLinuxOpertingSystem returns [EObject current=null] : ( () otherlv_1= LinuxOpertingSystem ) ;
     public final EObject ruleLinuxOpertingSystem() throws RecognitionException {
         EObject current = null;
 
@@ -5133,14 +5355,14 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
             enterRule();
 
         try {
-            // InternalImplementationDescriptionParser.g:2131:2: ( ( () otherlv_1= LinuxOpertingSystem ) )
-            // InternalImplementationDescriptionParser.g:2132:2: ( () otherlv_1= LinuxOpertingSystem )
+            // InternalImplementationDescriptionParser.g:2221:2: ( ( () otherlv_1= LinuxOpertingSystem ) )
+            // InternalImplementationDescriptionParser.g:2222:2: ( () otherlv_1= LinuxOpertingSystem )
             {
-            // InternalImplementationDescriptionParser.g:2132:2: ( () otherlv_1= LinuxOpertingSystem )
-            // InternalImplementationDescriptionParser.g:2133:3: () otherlv_1= LinuxOpertingSystem
+            // InternalImplementationDescriptionParser.g:2222:2: ( () otherlv_1= LinuxOpertingSystem )
+            // InternalImplementationDescriptionParser.g:2223:3: () otherlv_1= LinuxOpertingSystem
             {
-            // InternalImplementationDescriptionParser.g:2133:3: ()
-            // InternalImplementationDescriptionParser.g:2134:4:
+            // InternalImplementationDescriptionParser.g:2223:3: ()
+            // InternalImplementationDescriptionParser.g:2224:4:
             {
 
                             current = forceCreateModelElement(
@@ -5177,7 +5399,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
     // $ANTLR start "entryRuleMacOSOpertingSystem"
-    // InternalImplementationDescriptionParser.g:2148:1: entryRuleMacOSOpertingSystem returns [EObject current=null] : iv_ruleMacOSOpertingSystem= ruleMacOSOpertingSystem EOF ;
+    // InternalImplementationDescriptionParser.g:2238:1: entryRuleMacOSOpertingSystem returns [EObject current=null] : iv_ruleMacOSOpertingSystem= ruleMacOSOpertingSystem EOF ;
     public final EObject entryRuleMacOSOpertingSystem() throws RecognitionException {
         EObject current = null;
 
@@ -5185,8 +5407,8 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
         try {
-            // InternalImplementationDescriptionParser.g:2148:60: (iv_ruleMacOSOpertingSystem= ruleMacOSOpertingSystem EOF )
-            // InternalImplementationDescriptionParser.g:2149:2: iv_ruleMacOSOpertingSystem= ruleMacOSOpertingSystem EOF
+            // InternalImplementationDescriptionParser.g:2238:60: (iv_ruleMacOSOpertingSystem= ruleMacOSOpertingSystem EOF )
+            // InternalImplementationDescriptionParser.g:2239:2: iv_ruleMacOSOpertingSystem= ruleMacOSOpertingSystem EOF
             {
              newCompositeNode(grammarAccess.getMacOSOpertingSystemRule());
             pushFollow(FOLLOW_1);
@@ -5213,7 +5435,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
     // $ANTLR start "ruleMacOSOpertingSystem"
-    // InternalImplementationDescriptionParser.g:2155:1: ruleMacOSOpertingSystem returns [EObject current=null] : ( () otherlv_1= MacOSOpertingSystem ) ;
+    // InternalImplementationDescriptionParser.g:2245:1: ruleMacOSOpertingSystem returns [EObject current=null] : ( () otherlv_1= MacOSOpertingSystem ) ;
     public final EObject ruleMacOSOpertingSystem() throws RecognitionException {
         EObject current = null;
 
@@ -5223,14 +5445,14 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
             enterRule();
 
         try {
-            // InternalImplementationDescriptionParser.g:2161:2: ( ( () otherlv_1= MacOSOpertingSystem ) )
-            // InternalImplementationDescriptionParser.g:2162:2: ( () otherlv_1= MacOSOpertingSystem )
+            // InternalImplementationDescriptionParser.g:2251:2: ( ( () otherlv_1= MacOSOpertingSystem ) )
+            // InternalImplementationDescriptionParser.g:2252:2: ( () otherlv_1= MacOSOpertingSystem )
             {
-            // InternalImplementationDescriptionParser.g:2162:2: ( () otherlv_1= MacOSOpertingSystem )
-            // InternalImplementationDescriptionParser.g:2163:3: () otherlv_1= MacOSOpertingSystem
+            // InternalImplementationDescriptionParser.g:2252:2: ( () otherlv_1= MacOSOpertingSystem )
+            // InternalImplementationDescriptionParser.g:2253:3: () otherlv_1= MacOSOpertingSystem
             {
-            // InternalImplementationDescriptionParser.g:2163:3: ()
-            // InternalImplementationDescriptionParser.g:2164:4:
+            // InternalImplementationDescriptionParser.g:2253:3: ()
+            // InternalImplementationDescriptionParser.g:2254:4:
             {
 
                             current = forceCreateModelElement(
@@ -5267,7 +5489,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
     // $ANTLR start "entryRuleCommunicationType"
-    // InternalImplementationDescriptionParser.g:2178:1: entryRuleCommunicationType returns [EObject current=null] : iv_ruleCommunicationType= ruleCommunicationType EOF ;
+    // InternalImplementationDescriptionParser.g:2268:1: entryRuleCommunicationType returns [EObject current=null] : iv_ruleCommunicationType= ruleCommunicationType EOF ;
     public final EObject entryRuleCommunicationType() throws RecognitionException {
         EObject current = null;
 
@@ -5275,8 +5497,8 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
         try {
-            // InternalImplementationDescriptionParser.g:2178:58: (iv_ruleCommunicationType= ruleCommunicationType EOF )
-            // InternalImplementationDescriptionParser.g:2179:2: iv_ruleCommunicationType= ruleCommunicationType EOF
+            // InternalImplementationDescriptionParser.g:2268:58: (iv_ruleCommunicationType= ruleCommunicationType EOF )
+            // InternalImplementationDescriptionParser.g:2269:2: iv_ruleCommunicationType= ruleCommunicationType EOF
             {
              newCompositeNode(grammarAccess.getCommunicationTypeRule());
             pushFollow(FOLLOW_1);
@@ -5303,7 +5525,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
     // $ANTLR start "ruleCommunicationType"
-    // InternalImplementationDescriptionParser.g:2185:1: ruleCommunicationType returns [EObject current=null] : ( () ( (lv_name_1_0= ruleEString ) ) ) ;
+    // InternalImplementationDescriptionParser.g:2275:1: ruleCommunicationType returns [EObject current=null] : ( () ( (lv_name_1_0= ruleEString ) ) ) ;
     public final EObject ruleCommunicationType() throws RecognitionException {
         EObject current = null;
 
@@ -5314,14 +5536,14 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
             enterRule();
 
         try {
-            // InternalImplementationDescriptionParser.g:2191:2: ( ( () ( (lv_name_1_0= ruleEString ) ) ) )
-            // InternalImplementationDescriptionParser.g:2192:2: ( () ( (lv_name_1_0= ruleEString ) ) )
+            // InternalImplementationDescriptionParser.g:2281:2: ( ( () ( (lv_name_1_0= ruleEString ) ) ) )
+            // InternalImplementationDescriptionParser.g:2282:2: ( () ( (lv_name_1_0= ruleEString ) ) )
             {
-            // InternalImplementationDescriptionParser.g:2192:2: ( () ( (lv_name_1_0= ruleEString ) ) )
-            // InternalImplementationDescriptionParser.g:2193:3: () ( (lv_name_1_0= ruleEString ) )
+            // InternalImplementationDescriptionParser.g:2282:2: ( () ( (lv_name_1_0= ruleEString ) ) )
+            // InternalImplementationDescriptionParser.g:2283:3: () ( (lv_name_1_0= ruleEString ) )
             {
-            // InternalImplementationDescriptionParser.g:2193:3: ()
-            // InternalImplementationDescriptionParser.g:2194:4:
+            // InternalImplementationDescriptionParser.g:2283:3: ()
+            // InternalImplementationDescriptionParser.g:2284:4:
             {
 
                             current = forceCreateModelElement(
@@ -5331,11 +5553,11 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
             }
 
-            // InternalImplementationDescriptionParser.g:2200:3: ( (lv_name_1_0= ruleEString ) )
-            // InternalImplementationDescriptionParser.g:2201:4: (lv_name_1_0= ruleEString )
+            // InternalImplementationDescriptionParser.g:2290:3: ( (lv_name_1_0= ruleEString ) )
+            // InternalImplementationDescriptionParser.g:2291:4: (lv_name_1_0= ruleEString )
             {
-            // InternalImplementationDescriptionParser.g:2201:4: (lv_name_1_0= ruleEString )
-            // InternalImplementationDescriptionParser.g:2202:5: lv_name_1_0= ruleEString
+            // InternalImplementationDescriptionParser.g:2291:4: (lv_name_1_0= ruleEString )
+            // InternalImplementationDescriptionParser.g:2292:5: lv_name_1_0= ruleEString
             {
 
                                 newCompositeNode(grammarAccess.getCommunicationTypeAccess().getNameEStringParserRuleCall_1_0());
@@ -5385,7 +5607,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
     // $ANTLR start "entryRuleNetworkCommunicationType"
-    // InternalImplementationDescriptionParser.g:2223:1: entryRuleNetworkCommunicationType returns [EObject current=null] : iv_ruleNetworkCommunicationType= ruleNetworkCommunicationType EOF ;
+    // InternalImplementationDescriptionParser.g:2313:1: entryRuleNetworkCommunicationType returns [EObject current=null] : iv_ruleNetworkCommunicationType= ruleNetworkCommunicationType EOF ;
     public final EObject entryRuleNetworkCommunicationType() throws RecognitionException {
         EObject current = null;
 
@@ -5393,8 +5615,8 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
         try {
-            // InternalImplementationDescriptionParser.g:2223:65: (iv_ruleNetworkCommunicationType= ruleNetworkCommunicationType EOF )
-            // InternalImplementationDescriptionParser.g:2224:2: iv_ruleNetworkCommunicationType= ruleNetworkCommunicationType EOF
+            // InternalImplementationDescriptionParser.g:2313:65: (iv_ruleNetworkCommunicationType= ruleNetworkCommunicationType EOF )
+            // InternalImplementationDescriptionParser.g:2314:2: iv_ruleNetworkCommunicationType= ruleNetworkCommunicationType EOF
             {
              newCompositeNode(grammarAccess.getNetworkCommunicationTypeRule());
             pushFollow(FOLLOW_1);
@@ -5421,7 +5643,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
     // $ANTLR start "ruleNetworkCommunicationType"
-    // InternalImplementationDescriptionParser.g:2230:1: ruleNetworkCommunicationType returns [EObject current=null] : (this_EthernetCommunicationType_0= ruleEthernetCommunicationType | this_WlanCommunicationType_1= ruleWlanCommunicationType ) ;
+    // InternalImplementationDescriptionParser.g:2320:1: ruleNetworkCommunicationType returns [EObject current=null] : (this_EthernetCommunicationType_0= ruleEthernetCommunicationType | this_WlanCommunicationType_1= ruleWlanCommunicationType ) ;
     public final EObject ruleNetworkCommunicationType() throws RecognitionException {
         EObject current = null;
 
@@ -5434,28 +5656,28 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
             enterRule();
 
         try {
-            // InternalImplementationDescriptionParser.g:2236:2: ( (this_EthernetCommunicationType_0= ruleEthernetCommunicationType | this_WlanCommunicationType_1= ruleWlanCommunicationType ) )
-            // InternalImplementationDescriptionParser.g:2237:2: (this_EthernetCommunicationType_0= ruleEthernetCommunicationType | this_WlanCommunicationType_1= ruleWlanCommunicationType )
+            // InternalImplementationDescriptionParser.g:2326:2: ( (this_EthernetCommunicationType_0= ruleEthernetCommunicationType | this_WlanCommunicationType_1= ruleWlanCommunicationType ) )
+            // InternalImplementationDescriptionParser.g:2327:2: (this_EthernetCommunicationType_0= ruleEthernetCommunicationType | this_WlanCommunicationType_1= ruleWlanCommunicationType )
             {
-            // InternalImplementationDescriptionParser.g:2237:2: (this_EthernetCommunicationType_0= ruleEthernetCommunicationType | this_WlanCommunicationType_1= ruleWlanCommunicationType )
-            int alt33=2;
-            int LA33_0 = input.LA(1);
+            // InternalImplementationDescriptionParser.g:2327:2: (this_EthernetCommunicationType_0= ruleEthernetCommunicationType | this_WlanCommunicationType_1= ruleWlanCommunicationType )
+            int alt34=2;
+            int LA34_0 = input.LA(1);
 
-            if ( (LA33_0==Ethernet) ) {
-                alt33=1;
+            if ( (LA34_0==Ethernet) ) {
+                alt34=1;
             }
-            else if ( (LA33_0==Wlan) ) {
-                alt33=2;
+            else if ( (LA34_0==Wlan) ) {
+                alt34=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 33, 0, input);
+                    new NoViableAltException("", 34, 0, input);
 
                 throw nvae;
             }
-            switch (alt33) {
+            switch (alt34) {
                 case 1 :
-                    // InternalImplementationDescriptionParser.g:2238:3: this_EthernetCommunicationType_0= ruleEthernetCommunicationType
+                    // InternalImplementationDescriptionParser.g:2328:3: this_EthernetCommunicationType_0= ruleEthernetCommunicationType
                     {
 
                                 newCompositeNode(grammarAccess.getNetworkCommunicationTypeAccess().getEthernetCommunicationTypeParserRuleCall_0());
@@ -5473,7 +5695,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
                     }
                     break;
                 case 2 :
-                    // InternalImplementationDescriptionParser.g:2247:3: this_WlanCommunicationType_1= ruleWlanCommunicationType
+                    // InternalImplementationDescriptionParser.g:2337:3: this_WlanCommunicationType_1= ruleWlanCommunicationType
                     {
 
                                 newCompositeNode(grammarAccess.getNetworkCommunicationTypeAccess().getWlanCommunicationTypeParserRuleCall_1());
@@ -5513,7 +5735,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
     // $ANTLR start "entryRuleEthernetCommunicationType"
-    // InternalImplementationDescriptionParser.g:2259:1: entryRuleEthernetCommunicationType returns [EObject current=null] : iv_ruleEthernetCommunicationType= ruleEthernetCommunicationType EOF ;
+    // InternalImplementationDescriptionParser.g:2349:1: entryRuleEthernetCommunicationType returns [EObject current=null] : iv_ruleEthernetCommunicationType= ruleEthernetCommunicationType EOF ;
     public final EObject entryRuleEthernetCommunicationType() throws RecognitionException {
         EObject current = null;
 
@@ -5521,8 +5743,8 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
         try {
-            // InternalImplementationDescriptionParser.g:2259:66: (iv_ruleEthernetCommunicationType= ruleEthernetCommunicationType EOF )
-            // InternalImplementationDescriptionParser.g:2260:2: iv_ruleEthernetCommunicationType= ruleEthernetCommunicationType EOF
+            // InternalImplementationDescriptionParser.g:2349:66: (iv_ruleEthernetCommunicationType= ruleEthernetCommunicationType EOF )
+            // InternalImplementationDescriptionParser.g:2350:2: iv_ruleEthernetCommunicationType= ruleEthernetCommunicationType EOF
             {
              newCompositeNode(grammarAccess.getEthernetCommunicationTypeRule());
             pushFollow(FOLLOW_1);
@@ -5549,7 +5771,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
     // $ANTLR start "ruleEthernetCommunicationType"
-    // InternalImplementationDescriptionParser.g:2266:1: ruleEthernetCommunicationType returns [EObject current=null] : ( () otherlv_1= Ethernet ) ;
+    // InternalImplementationDescriptionParser.g:2356:1: ruleEthernetCommunicationType returns [EObject current=null] : ( () otherlv_1= Ethernet ) ;
     public final EObject ruleEthernetCommunicationType() throws RecognitionException {
         EObject current = null;
 
@@ -5559,14 +5781,14 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
             enterRule();
 
         try {
-            // InternalImplementationDescriptionParser.g:2272:2: ( ( () otherlv_1= Ethernet ) )
-            // InternalImplementationDescriptionParser.g:2273:2: ( () otherlv_1= Ethernet )
+            // InternalImplementationDescriptionParser.g:2362:2: ( ( () otherlv_1= Ethernet ) )
+            // InternalImplementationDescriptionParser.g:2363:2: ( () otherlv_1= Ethernet )
             {
-            // InternalImplementationDescriptionParser.g:2273:2: ( () otherlv_1= Ethernet )
-            // InternalImplementationDescriptionParser.g:2274:3: () otherlv_1= Ethernet
+            // InternalImplementationDescriptionParser.g:2363:2: ( () otherlv_1= Ethernet )
+            // InternalImplementationDescriptionParser.g:2364:3: () otherlv_1= Ethernet
             {
-            // InternalImplementationDescriptionParser.g:2274:3: ()
-            // InternalImplementationDescriptionParser.g:2275:4:
+            // InternalImplementationDescriptionParser.g:2364:3: ()
+            // InternalImplementationDescriptionParser.g:2365:4:
             {
 
                             current = forceCreateModelElement(
@@ -5603,7 +5825,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
     // $ANTLR start "entryRuleWlanCommunicationType"
-    // InternalImplementationDescriptionParser.g:2289:1: entryRuleWlanCommunicationType returns [EObject current=null] : iv_ruleWlanCommunicationType= ruleWlanCommunicationType EOF ;
+    // InternalImplementationDescriptionParser.g:2379:1: entryRuleWlanCommunicationType returns [EObject current=null] : iv_ruleWlanCommunicationType= ruleWlanCommunicationType EOF ;
     public final EObject entryRuleWlanCommunicationType() throws RecognitionException {
         EObject current = null;
 
@@ -5611,8 +5833,8 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
         try {
-            // InternalImplementationDescriptionParser.g:2289:62: (iv_ruleWlanCommunicationType= ruleWlanCommunicationType EOF )
-            // InternalImplementationDescriptionParser.g:2290:2: iv_ruleWlanCommunicationType= ruleWlanCommunicationType EOF
+            // InternalImplementationDescriptionParser.g:2379:62: (iv_ruleWlanCommunicationType= ruleWlanCommunicationType EOF )
+            // InternalImplementationDescriptionParser.g:2380:2: iv_ruleWlanCommunicationType= ruleWlanCommunicationType EOF
             {
              newCompositeNode(grammarAccess.getWlanCommunicationTypeRule());
             pushFollow(FOLLOW_1);
@@ -5639,7 +5861,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
     // $ANTLR start "ruleWlanCommunicationType"
-    // InternalImplementationDescriptionParser.g:2296:1: ruleWlanCommunicationType returns [EObject current=null] : ( () otherlv_1= Wlan ) ;
+    // InternalImplementationDescriptionParser.g:2386:1: ruleWlanCommunicationType returns [EObject current=null] : ( () otherlv_1= Wlan ) ;
     public final EObject ruleWlanCommunicationType() throws RecognitionException {
         EObject current = null;
 
@@ -5649,14 +5871,14 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
             enterRule();
 
         try {
-            // InternalImplementationDescriptionParser.g:2302:2: ( ( () otherlv_1= Wlan ) )
-            // InternalImplementationDescriptionParser.g:2303:2: ( () otherlv_1= Wlan )
+            // InternalImplementationDescriptionParser.g:2392:2: ( ( () otherlv_1= Wlan ) )
+            // InternalImplementationDescriptionParser.g:2393:2: ( () otherlv_1= Wlan )
             {
-            // InternalImplementationDescriptionParser.g:2303:2: ( () otherlv_1= Wlan )
-            // InternalImplementationDescriptionParser.g:2304:3: () otherlv_1= Wlan
+            // InternalImplementationDescriptionParser.g:2393:2: ( () otherlv_1= Wlan )
+            // InternalImplementationDescriptionParser.g:2394:3: () otherlv_1= Wlan
             {
-            // InternalImplementationDescriptionParser.g:2304:3: ()
-            // InternalImplementationDescriptionParser.g:2305:4:
+            // InternalImplementationDescriptionParser.g:2394:3: ()
+            // InternalImplementationDescriptionParser.g:2395:4:
             {
 
                             current = forceCreateModelElement(
@@ -5693,7 +5915,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
     // $ANTLR start "entryRuleAttributeKind"
-    // InternalImplementationDescriptionParser.g:2319:1: entryRuleAttributeKind returns [EObject current=null] : iv_ruleAttributeKind= ruleAttributeKind EOF ;
+    // InternalImplementationDescriptionParser.g:2409:1: entryRuleAttributeKind returns [EObject current=null] : iv_ruleAttributeKind= ruleAttributeKind EOF ;
     public final EObject entryRuleAttributeKind() throws RecognitionException {
         EObject current = null;
 
@@ -5701,8 +5923,8 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
         try {
-            // InternalImplementationDescriptionParser.g:2319:54: (iv_ruleAttributeKind= ruleAttributeKind EOF )
-            // InternalImplementationDescriptionParser.g:2320:2: iv_ruleAttributeKind= ruleAttributeKind EOF
+            // InternalImplementationDescriptionParser.g:2409:54: (iv_ruleAttributeKind= ruleAttributeKind EOF )
+            // InternalImplementationDescriptionParser.g:2410:2: iv_ruleAttributeKind= ruleAttributeKind EOF
             {
              newCompositeNode(grammarAccess.getAttributeKindRule());
             pushFollow(FOLLOW_1);
@@ -5729,7 +5951,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
     // $ANTLR start "ruleAttributeKind"
-    // InternalImplementationDescriptionParser.g:2326:1: ruleAttributeKind returns [EObject current=null] : ( () otherlv_1= AttributeKind ) ;
+    // InternalImplementationDescriptionParser.g:2416:1: ruleAttributeKind returns [EObject current=null] : ( () otherlv_1= AttributeKind ) ;
     public final EObject ruleAttributeKind() throws RecognitionException {
         EObject current = null;
 
@@ -5739,14 +5961,14 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
             enterRule();
 
         try {
-            // InternalImplementationDescriptionParser.g:2332:2: ( ( () otherlv_1= AttributeKind ) )
-            // InternalImplementationDescriptionParser.g:2333:2: ( () otherlv_1= AttributeKind )
+            // InternalImplementationDescriptionParser.g:2422:2: ( ( () otherlv_1= AttributeKind ) )
+            // InternalImplementationDescriptionParser.g:2423:2: ( () otherlv_1= AttributeKind )
             {
-            // InternalImplementationDescriptionParser.g:2333:2: ( () otherlv_1= AttributeKind )
-            // InternalImplementationDescriptionParser.g:2334:3: () otherlv_1= AttributeKind
+            // InternalImplementationDescriptionParser.g:2423:2: ( () otherlv_1= AttributeKind )
+            // InternalImplementationDescriptionParser.g:2424:3: () otherlv_1= AttributeKind
             {
-            // InternalImplementationDescriptionParser.g:2334:3: ()
-            // InternalImplementationDescriptionParser.g:2335:4:
+            // InternalImplementationDescriptionParser.g:2424:3: ()
+            // InternalImplementationDescriptionParser.g:2425:4:
             {
 
                             current = forceCreateModelElement(
@@ -5783,7 +6005,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
     // $ANTLR start "entryRuleMaximumKind"
-    // InternalImplementationDescriptionParser.g:2349:1: entryRuleMaximumKind returns [EObject current=null] : iv_ruleMaximumKind= ruleMaximumKind EOF ;
+    // InternalImplementationDescriptionParser.g:2439:1: entryRuleMaximumKind returns [EObject current=null] : iv_ruleMaximumKind= ruleMaximumKind EOF ;
     public final EObject entryRuleMaximumKind() throws RecognitionException {
         EObject current = null;
 
@@ -5791,8 +6013,8 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
         try {
-            // InternalImplementationDescriptionParser.g:2349:52: (iv_ruleMaximumKind= ruleMaximumKind EOF )
-            // InternalImplementationDescriptionParser.g:2350:2: iv_ruleMaximumKind= ruleMaximumKind EOF
+            // InternalImplementationDescriptionParser.g:2439:52: (iv_ruleMaximumKind= ruleMaximumKind EOF )
+            // InternalImplementationDescriptionParser.g:2440:2: iv_ruleMaximumKind= ruleMaximumKind EOF
             {
              newCompositeNode(grammarAccess.getMaximumKindRule());
             pushFollow(FOLLOW_1);
@@ -5819,7 +6041,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
     // $ANTLR start "ruleMaximumKind"
-    // InternalImplementationDescriptionParser.g:2356:1: ruleMaximumKind returns [EObject current=null] : ( () otherlv_1= MaximumKind ) ;
+    // InternalImplementationDescriptionParser.g:2446:1: ruleMaximumKind returns [EObject current=null] : ( () otherlv_1= MaximumKind ) ;
     public final EObject ruleMaximumKind() throws RecognitionException {
         EObject current = null;
 
@@ -5829,14 +6051,14 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
             enterRule();
 
         try {
-            // InternalImplementationDescriptionParser.g:2362:2: ( ( () otherlv_1= MaximumKind ) )
-            // InternalImplementationDescriptionParser.g:2363:2: ( () otherlv_1= MaximumKind )
+            // InternalImplementationDescriptionParser.g:2452:2: ( ( () otherlv_1= MaximumKind ) )
+            // InternalImplementationDescriptionParser.g:2453:2: ( () otherlv_1= MaximumKind )
             {
-            // InternalImplementationDescriptionParser.g:2363:2: ( () otherlv_1= MaximumKind )
-            // InternalImplementationDescriptionParser.g:2364:3: () otherlv_1= MaximumKind
+            // InternalImplementationDescriptionParser.g:2453:2: ( () otherlv_1= MaximumKind )
+            // InternalImplementationDescriptionParser.g:2454:3: () otherlv_1= MaximumKind
             {
-            // InternalImplementationDescriptionParser.g:2364:3: ()
-            // InternalImplementationDescriptionParser.g:2365:4:
+            // InternalImplementationDescriptionParser.g:2454:3: ()
+            // InternalImplementationDescriptionParser.g:2455:4:
             {
 
                             current = forceCreateModelElement(
@@ -5873,7 +6095,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
     // $ANTLR start "entryRuleMinimumKind"
-    // InternalImplementationDescriptionParser.g:2379:1: entryRuleMinimumKind returns [EObject current=null] : iv_ruleMinimumKind= ruleMinimumKind EOF ;
+    // InternalImplementationDescriptionParser.g:2469:1: entryRuleMinimumKind returns [EObject current=null] : iv_ruleMinimumKind= ruleMinimumKind EOF ;
     public final EObject entryRuleMinimumKind() throws RecognitionException {
         EObject current = null;
 
@@ -5881,8 +6103,8 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
         try {
-            // InternalImplementationDescriptionParser.g:2379:52: (iv_ruleMinimumKind= ruleMinimumKind EOF )
-            // InternalImplementationDescriptionParser.g:2380:2: iv_ruleMinimumKind= ruleMinimumKind EOF
+            // InternalImplementationDescriptionParser.g:2469:52: (iv_ruleMinimumKind= ruleMinimumKind EOF )
+            // InternalImplementationDescriptionParser.g:2470:2: iv_ruleMinimumKind= ruleMinimumKind EOF
             {
              newCompositeNode(grammarAccess.getMinimumKindRule());
             pushFollow(FOLLOW_1);
@@ -5909,7 +6131,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
     // $ANTLR start "ruleMinimumKind"
-    // InternalImplementationDescriptionParser.g:2386:1: ruleMinimumKind returns [EObject current=null] : ( () otherlv_1= MinimumKind ) ;
+    // InternalImplementationDescriptionParser.g:2476:1: ruleMinimumKind returns [EObject current=null] : ( () otherlv_1= MinimumKind ) ;
     public final EObject ruleMinimumKind() throws RecognitionException {
         EObject current = null;
 
@@ -5919,14 +6141,14 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
             enterRule();
 
         try {
-            // InternalImplementationDescriptionParser.g:2392:2: ( ( () otherlv_1= MinimumKind ) )
-            // InternalImplementationDescriptionParser.g:2393:2: ( () otherlv_1= MinimumKind )
+            // InternalImplementationDescriptionParser.g:2482:2: ( ( () otherlv_1= MinimumKind ) )
+            // InternalImplementationDescriptionParser.g:2483:2: ( () otherlv_1= MinimumKind )
             {
-            // InternalImplementationDescriptionParser.g:2393:2: ( () otherlv_1= MinimumKind )
-            // InternalImplementationDescriptionParser.g:2394:3: () otherlv_1= MinimumKind
+            // InternalImplementationDescriptionParser.g:2483:2: ( () otherlv_1= MinimumKind )
+            // InternalImplementationDescriptionParser.g:2484:3: () otherlv_1= MinimumKind
             {
-            // InternalImplementationDescriptionParser.g:2394:3: ()
-            // InternalImplementationDescriptionParser.g:2395:4:
+            // InternalImplementationDescriptionParser.g:2484:3: ()
+            // InternalImplementationDescriptionParser.g:2485:4:
             {
 
                             current = forceCreateModelElement(
@@ -5963,7 +6185,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
     // $ANTLR start "entryRuleSelectionKind"
-    // InternalImplementationDescriptionParser.g:2409:1: entryRuleSelectionKind returns [EObject current=null] : iv_ruleSelectionKind= ruleSelectionKind EOF ;
+    // InternalImplementationDescriptionParser.g:2499:1: entryRuleSelectionKind returns [EObject current=null] : iv_ruleSelectionKind= ruleSelectionKind EOF ;
     public final EObject entryRuleSelectionKind() throws RecognitionException {
         EObject current = null;
 
@@ -5971,8 +6193,8 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
         try {
-            // InternalImplementationDescriptionParser.g:2409:54: (iv_ruleSelectionKind= ruleSelectionKind EOF )
-            // InternalImplementationDescriptionParser.g:2410:2: iv_ruleSelectionKind= ruleSelectionKind EOF
+            // InternalImplementationDescriptionParser.g:2499:54: (iv_ruleSelectionKind= ruleSelectionKind EOF )
+            // InternalImplementationDescriptionParser.g:2500:2: iv_ruleSelectionKind= ruleSelectionKind EOF
             {
              newCompositeNode(grammarAccess.getSelectionKindRule());
             pushFollow(FOLLOW_1);
@@ -5999,7 +6221,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
     // $ANTLR start "ruleSelectionKind"
-    // InternalImplementationDescriptionParser.g:2416:1: ruleSelectionKind returns [EObject current=null] : ( () otherlv_1= SelectionKind ) ;
+    // InternalImplementationDescriptionParser.g:2506:1: ruleSelectionKind returns [EObject current=null] : ( () otherlv_1= SelectionKind ) ;
     public final EObject ruleSelectionKind() throws RecognitionException {
         EObject current = null;
 
@@ -6009,14 +6231,14 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
             enterRule();
 
         try {
-            // InternalImplementationDescriptionParser.g:2422:2: ( ( () otherlv_1= SelectionKind ) )
-            // InternalImplementationDescriptionParser.g:2423:2: ( () otherlv_1= SelectionKind )
+            // InternalImplementationDescriptionParser.g:2512:2: ( ( () otherlv_1= SelectionKind ) )
+            // InternalImplementationDescriptionParser.g:2513:2: ( () otherlv_1= SelectionKind )
             {
-            // InternalImplementationDescriptionParser.g:2423:2: ( () otherlv_1= SelectionKind )
-            // InternalImplementationDescriptionParser.g:2424:3: () otherlv_1= SelectionKind
+            // InternalImplementationDescriptionParser.g:2513:2: ( () otherlv_1= SelectionKind )
+            // InternalImplementationDescriptionParser.g:2514:3: () otherlv_1= SelectionKind
             {
-            // InternalImplementationDescriptionParser.g:2424:3: ()
-            // InternalImplementationDescriptionParser.g:2425:4:
+            // InternalImplementationDescriptionParser.g:2514:3: ()
+            // InternalImplementationDescriptionParser.g:2515:4:
             {
 
                             current = forceCreateModelElement(
@@ -6053,7 +6275,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
     // $ANTLR start "entryRuleRangeKind"
-    // InternalImplementationDescriptionParser.g:2439:1: entryRuleRangeKind returns [EObject current=null] : iv_ruleRangeKind= ruleRangeKind EOF ;
+    // InternalImplementationDescriptionParser.g:2529:1: entryRuleRangeKind returns [EObject current=null] : iv_ruleRangeKind= ruleRangeKind EOF ;
     public final EObject entryRuleRangeKind() throws RecognitionException {
         EObject current = null;
 
@@ -6061,8 +6283,8 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
         try {
-            // InternalImplementationDescriptionParser.g:2439:50: (iv_ruleRangeKind= ruleRangeKind EOF )
-            // InternalImplementationDescriptionParser.g:2440:2: iv_ruleRangeKind= ruleRangeKind EOF
+            // InternalImplementationDescriptionParser.g:2529:50: (iv_ruleRangeKind= ruleRangeKind EOF )
+            // InternalImplementationDescriptionParser.g:2530:2: iv_ruleRangeKind= ruleRangeKind EOF
             {
              newCompositeNode(grammarAccess.getRangeKindRule());
             pushFollow(FOLLOW_1);
@@ -6089,7 +6311,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
     // $ANTLR start "ruleRangeKind"
-    // InternalImplementationDescriptionParser.g:2446:1: ruleRangeKind returns [EObject current=null] : ( () otherlv_1= RangeKind ) ;
+    // InternalImplementationDescriptionParser.g:2536:1: ruleRangeKind returns [EObject current=null] : ( () otherlv_1= RangeKind ) ;
     public final EObject ruleRangeKind() throws RecognitionException {
         EObject current = null;
 
@@ -6099,14 +6321,14 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
             enterRule();
 
         try {
-            // InternalImplementationDescriptionParser.g:2452:2: ( ( () otherlv_1= RangeKind ) )
-            // InternalImplementationDescriptionParser.g:2453:2: ( () otherlv_1= RangeKind )
+            // InternalImplementationDescriptionParser.g:2542:2: ( ( () otherlv_1= RangeKind ) )
+            // InternalImplementationDescriptionParser.g:2543:2: ( () otherlv_1= RangeKind )
             {
-            // InternalImplementationDescriptionParser.g:2453:2: ( () otherlv_1= RangeKind )
-            // InternalImplementationDescriptionParser.g:2454:3: () otherlv_1= RangeKind
+            // InternalImplementationDescriptionParser.g:2543:2: ( () otherlv_1= RangeKind )
+            // InternalImplementationDescriptionParser.g:2544:3: () otherlv_1= RangeKind
             {
-            // InternalImplementationDescriptionParser.g:2454:3: ()
-            // InternalImplementationDescriptionParser.g:2455:4:
+            // InternalImplementationDescriptionParser.g:2544:3: ()
+            // InternalImplementationDescriptionParser.g:2545:4:
             {
 
                             current = forceCreateModelElement(
@@ -6143,7 +6365,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
     // $ANTLR start "entryRuleLinuxDistributionValue"
-    // InternalImplementationDescriptionParser.g:2469:1: entryRuleLinuxDistributionValue returns [EObject current=null] : iv_ruleLinuxDistributionValue= ruleLinuxDistributionValue EOF ;
+    // InternalImplementationDescriptionParser.g:2559:1: entryRuleLinuxDistributionValue returns [EObject current=null] : iv_ruleLinuxDistributionValue= ruleLinuxDistributionValue EOF ;
     public final EObject entryRuleLinuxDistributionValue() throws RecognitionException {
         EObject current = null;
 
@@ -6151,8 +6373,8 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
         try {
-            // InternalImplementationDescriptionParser.g:2469:63: (iv_ruleLinuxDistributionValue= ruleLinuxDistributionValue EOF )
-            // InternalImplementationDescriptionParser.g:2470:2: iv_ruleLinuxDistributionValue= ruleLinuxDistributionValue EOF
+            // InternalImplementationDescriptionParser.g:2559:63: (iv_ruleLinuxDistributionValue= ruleLinuxDistributionValue EOF )
+            // InternalImplementationDescriptionParser.g:2560:2: iv_ruleLinuxDistributionValue= ruleLinuxDistributionValue EOF
             {
              newCompositeNode(grammarAccess.getLinuxDistributionValueRule());
             pushFollow(FOLLOW_1);
@@ -6179,7 +6401,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
     // $ANTLR start "ruleLinuxDistributionValue"
-    // InternalImplementationDescriptionParser.g:2476:1: ruleLinuxDistributionValue returns [EObject current=null] : ( () ( (lv_value_1_0= ruleLinuxDistribution ) ) ) ;
+    // InternalImplementationDescriptionParser.g:2566:1: ruleLinuxDistributionValue returns [EObject current=null] : ( () ( (lv_value_1_0= ruleLinuxDistribution ) ) ) ;
     public final EObject ruleLinuxDistributionValue() throws RecognitionException {
         EObject current = null;
 
@@ -6190,14 +6412,14 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
             enterRule();
 
         try {
-            // InternalImplementationDescriptionParser.g:2482:2: ( ( () ( (lv_value_1_0= ruleLinuxDistribution ) ) ) )
-            // InternalImplementationDescriptionParser.g:2483:2: ( () ( (lv_value_1_0= ruleLinuxDistribution ) ) )
+            // InternalImplementationDescriptionParser.g:2572:2: ( ( () ( (lv_value_1_0= ruleLinuxDistribution ) ) ) )
+            // InternalImplementationDescriptionParser.g:2573:2: ( () ( (lv_value_1_0= ruleLinuxDistribution ) ) )
             {
-            // InternalImplementationDescriptionParser.g:2483:2: ( () ( (lv_value_1_0= ruleLinuxDistribution ) ) )
-            // InternalImplementationDescriptionParser.g:2484:3: () ( (lv_value_1_0= ruleLinuxDistribution ) )
+            // InternalImplementationDescriptionParser.g:2573:2: ( () ( (lv_value_1_0= ruleLinuxDistribution ) ) )
+            // InternalImplementationDescriptionParser.g:2574:3: () ( (lv_value_1_0= ruleLinuxDistribution ) )
             {
-            // InternalImplementationDescriptionParser.g:2484:3: ()
-            // InternalImplementationDescriptionParser.g:2485:4:
+            // InternalImplementationDescriptionParser.g:2574:3: ()
+            // InternalImplementationDescriptionParser.g:2575:4:
             {
 
                             current = forceCreateModelElement(
@@ -6207,11 +6429,11 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
             }
 
-            // InternalImplementationDescriptionParser.g:2491:3: ( (lv_value_1_0= ruleLinuxDistribution ) )
-            // InternalImplementationDescriptionParser.g:2492:4: (lv_value_1_0= ruleLinuxDistribution )
+            // InternalImplementationDescriptionParser.g:2581:3: ( (lv_value_1_0= ruleLinuxDistribution ) )
+            // InternalImplementationDescriptionParser.g:2582:4: (lv_value_1_0= ruleLinuxDistribution )
             {
-            // InternalImplementationDescriptionParser.g:2492:4: (lv_value_1_0= ruleLinuxDistribution )
-            // InternalImplementationDescriptionParser.g:2493:5: lv_value_1_0= ruleLinuxDistribution
+            // InternalImplementationDescriptionParser.g:2582:4: (lv_value_1_0= ruleLinuxDistribution )
+            // InternalImplementationDescriptionParser.g:2583:5: lv_value_1_0= ruleLinuxDistribution
             {
 
                                 newCompositeNode(grammarAccess.getLinuxDistributionValueAccess().getValueLinuxDistributionEnumRuleCall_1_0());
@@ -6261,7 +6483,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
     // $ANTLR start "entryRuleUbuntuVersionValue"
-    // InternalImplementationDescriptionParser.g:2514:1: entryRuleUbuntuVersionValue returns [EObject current=null] : iv_ruleUbuntuVersionValue= ruleUbuntuVersionValue EOF ;
+    // InternalImplementationDescriptionParser.g:2604:1: entryRuleUbuntuVersionValue returns [EObject current=null] : iv_ruleUbuntuVersionValue= ruleUbuntuVersionValue EOF ;
     public final EObject entryRuleUbuntuVersionValue() throws RecognitionException {
         EObject current = null;
 
@@ -6269,8 +6491,8 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
         try {
-            // InternalImplementationDescriptionParser.g:2514:59: (iv_ruleUbuntuVersionValue= ruleUbuntuVersionValue EOF )
-            // InternalImplementationDescriptionParser.g:2515:2: iv_ruleUbuntuVersionValue= ruleUbuntuVersionValue EOF
+            // InternalImplementationDescriptionParser.g:2604:59: (iv_ruleUbuntuVersionValue= ruleUbuntuVersionValue EOF )
+            // InternalImplementationDescriptionParser.g:2605:2: iv_ruleUbuntuVersionValue= ruleUbuntuVersionValue EOF
             {
              newCompositeNode(grammarAccess.getUbuntuVersionValueRule());
             pushFollow(FOLLOW_1);
@@ -6297,7 +6519,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
     // $ANTLR start "ruleUbuntuVersionValue"
-    // InternalImplementationDescriptionParser.g:2521:1: ruleUbuntuVersionValue returns [EObject current=null] : ( () ( (lv_value_1_0= ruleUbuntuVersion ) ) ) ;
+    // InternalImplementationDescriptionParser.g:2611:1: ruleUbuntuVersionValue returns [EObject current=null] : ( () ( (lv_value_1_0= ruleUbuntuVersion ) ) ) ;
     public final EObject ruleUbuntuVersionValue() throws RecognitionException {
         EObject current = null;
 
@@ -6308,14 +6530,14 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
             enterRule();
 
         try {
-            // InternalImplementationDescriptionParser.g:2527:2: ( ( () ( (lv_value_1_0= ruleUbuntuVersion ) ) ) )
-            // InternalImplementationDescriptionParser.g:2528:2: ( () ( (lv_value_1_0= ruleUbuntuVersion ) ) )
+            // InternalImplementationDescriptionParser.g:2617:2: ( ( () ( (lv_value_1_0= ruleUbuntuVersion ) ) ) )
+            // InternalImplementationDescriptionParser.g:2618:2: ( () ( (lv_value_1_0= ruleUbuntuVersion ) ) )
             {
-            // InternalImplementationDescriptionParser.g:2528:2: ( () ( (lv_value_1_0= ruleUbuntuVersion ) ) )
-            // InternalImplementationDescriptionParser.g:2529:3: () ( (lv_value_1_0= ruleUbuntuVersion ) )
+            // InternalImplementationDescriptionParser.g:2618:2: ( () ( (lv_value_1_0= ruleUbuntuVersion ) ) )
+            // InternalImplementationDescriptionParser.g:2619:3: () ( (lv_value_1_0= ruleUbuntuVersion ) )
             {
-            // InternalImplementationDescriptionParser.g:2529:3: ()
-            // InternalImplementationDescriptionParser.g:2530:4:
+            // InternalImplementationDescriptionParser.g:2619:3: ()
+            // InternalImplementationDescriptionParser.g:2620:4:
             {
 
                             current = forceCreateModelElement(
@@ -6325,11 +6547,11 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
             }
 
-            // InternalImplementationDescriptionParser.g:2536:3: ( (lv_value_1_0= ruleUbuntuVersion ) )
-            // InternalImplementationDescriptionParser.g:2537:4: (lv_value_1_0= ruleUbuntuVersion )
+            // InternalImplementationDescriptionParser.g:2626:3: ( (lv_value_1_0= ruleUbuntuVersion ) )
+            // InternalImplementationDescriptionParser.g:2627:4: (lv_value_1_0= ruleUbuntuVersion )
             {
-            // InternalImplementationDescriptionParser.g:2537:4: (lv_value_1_0= ruleUbuntuVersion )
-            // InternalImplementationDescriptionParser.g:2538:5: lv_value_1_0= ruleUbuntuVersion
+            // InternalImplementationDescriptionParser.g:2627:4: (lv_value_1_0= ruleUbuntuVersion )
+            // InternalImplementationDescriptionParser.g:2628:5: lv_value_1_0= ruleUbuntuVersion
             {
 
                                 newCompositeNode(grammarAccess.getUbuntuVersionValueAccess().getValueUbuntuVersionEnumRuleCall_1_0());
@@ -6379,7 +6601,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
     // $ANTLR start "entryRuleDouble0"
-    // InternalImplementationDescriptionParser.g:2559:1: entryRuleDouble0 returns [String current=null] : iv_ruleDouble0= ruleDouble0 EOF ;
+    // InternalImplementationDescriptionParser.g:2649:1: entryRuleDouble0 returns [String current=null] : iv_ruleDouble0= ruleDouble0 EOF ;
     public final String entryRuleDouble0() throws RecognitionException {
         String current = null;
 
@@ -6387,8 +6609,8 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
         try {
-            // InternalImplementationDescriptionParser.g:2559:47: (iv_ruleDouble0= ruleDouble0 EOF )
-            // InternalImplementationDescriptionParser.g:2560:2: iv_ruleDouble0= ruleDouble0 EOF
+            // InternalImplementationDescriptionParser.g:2649:47: (iv_ruleDouble0= ruleDouble0 EOF )
+            // InternalImplementationDescriptionParser.g:2650:2: iv_ruleDouble0= ruleDouble0 EOF
             {
              newCompositeNode(grammarAccess.getDouble0Rule());
             pushFollow(FOLLOW_1);
@@ -6415,7 +6637,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
     // $ANTLR start "ruleDouble0"
-    // InternalImplementationDescriptionParser.g:2566:1: ruleDouble0 returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_DOUBLE_0= RULE_DOUBLE ;
+    // InternalImplementationDescriptionParser.g:2656:1: ruleDouble0 returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_DOUBLE_0= RULE_DOUBLE ;
     public final AntlrDatatypeRuleToken ruleDouble0() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -6425,8 +6647,8 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
             enterRule();
 
         try {
-            // InternalImplementationDescriptionParser.g:2572:2: (this_DOUBLE_0= RULE_DOUBLE )
-            // InternalImplementationDescriptionParser.g:2573:2: this_DOUBLE_0= RULE_DOUBLE
+            // InternalImplementationDescriptionParser.g:2662:2: (this_DOUBLE_0= RULE_DOUBLE )
+            // InternalImplementationDescriptionParser.g:2663:2: this_DOUBLE_0= RULE_DOUBLE
             {
             this_DOUBLE_0=(Token)match(input,RULE_DOUBLE,FOLLOW_2);
 
@@ -6455,7 +6677,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
     // $ANTLR start "entryRuleInteger0"
-    // InternalImplementationDescriptionParser.g:2583:1: entryRuleInteger0 returns [String current=null] : iv_ruleInteger0= ruleInteger0 EOF ;
+    // InternalImplementationDescriptionParser.g:2673:1: entryRuleInteger0 returns [String current=null] : iv_ruleInteger0= ruleInteger0 EOF ;
     public final String entryRuleInteger0() throws RecognitionException {
         String current = null;
 
@@ -6463,8 +6685,8 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
         try {
-            // InternalImplementationDescriptionParser.g:2583:48: (iv_ruleInteger0= ruleInteger0 EOF )
-            // InternalImplementationDescriptionParser.g:2584:2: iv_ruleInteger0= ruleInteger0 EOF
+            // InternalImplementationDescriptionParser.g:2673:48: (iv_ruleInteger0= ruleInteger0 EOF )
+            // InternalImplementationDescriptionParser.g:2674:2: iv_ruleInteger0= ruleInteger0 EOF
             {
              newCompositeNode(grammarAccess.getInteger0Rule());
             pushFollow(FOLLOW_1);
@@ -6491,7 +6713,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
     // $ANTLR start "ruleInteger0"
-    // InternalImplementationDescriptionParser.g:2590:1: ruleInteger0 returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_DECINT_0= RULE_DECINT ;
+    // InternalImplementationDescriptionParser.g:2680:1: ruleInteger0 returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_DECINT_0= RULE_DECINT ;
     public final AntlrDatatypeRuleToken ruleInteger0() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -6501,8 +6723,8 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
             enterRule();
 
         try {
-            // InternalImplementationDescriptionParser.g:2596:2: (this_DECINT_0= RULE_DECINT )
-            // InternalImplementationDescriptionParser.g:2597:2: this_DECINT_0= RULE_DECINT
+            // InternalImplementationDescriptionParser.g:2686:2: (this_DECINT_0= RULE_DECINT )
+            // InternalImplementationDescriptionParser.g:2687:2: this_DECINT_0= RULE_DECINT
             {
             this_DECINT_0=(Token)match(input,RULE_DECINT,FOLLOW_2);
 
@@ -6531,7 +6753,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
     // $ANTLR start "entryRuleEString"
-    // InternalImplementationDescriptionParser.g:2607:1: entryRuleEString returns [String current=null] : iv_ruleEString= ruleEString EOF ;
+    // InternalImplementationDescriptionParser.g:2697:1: entryRuleEString returns [String current=null] : iv_ruleEString= ruleEString EOF ;
     public final String entryRuleEString() throws RecognitionException {
         String current = null;
 
@@ -6539,8 +6761,8 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
         try {
-            // InternalImplementationDescriptionParser.g:2607:47: (iv_ruleEString= ruleEString EOF )
-            // InternalImplementationDescriptionParser.g:2608:2: iv_ruleEString= ruleEString EOF
+            // InternalImplementationDescriptionParser.g:2697:47: (iv_ruleEString= ruleEString EOF )
+            // InternalImplementationDescriptionParser.g:2698:2: iv_ruleEString= ruleEString EOF
             {
              newCompositeNode(grammarAccess.getEStringRule());
             pushFollow(FOLLOW_1);
@@ -6567,7 +6789,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
     // $ANTLR start "ruleEString"
-    // InternalImplementationDescriptionParser.g:2614:1: ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) ;
+    // InternalImplementationDescriptionParser.g:2704:1: ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) ;
     public final AntlrDatatypeRuleToken ruleEString() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -6578,28 +6800,28 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
             enterRule();
 
         try {
-            // InternalImplementationDescriptionParser.g:2620:2: ( (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) )
-            // InternalImplementationDescriptionParser.g:2621:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
+            // InternalImplementationDescriptionParser.g:2710:2: ( (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) )
+            // InternalImplementationDescriptionParser.g:2711:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
             {
-            // InternalImplementationDescriptionParser.g:2621:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
-            int alt34=2;
-            int LA34_0 = input.LA(1);
+            // InternalImplementationDescriptionParser.g:2711:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
+            int alt35=2;
+            int LA35_0 = input.LA(1);
 
-            if ( (LA34_0==RULE_STRING) ) {
-                alt34=1;
+            if ( (LA35_0==RULE_STRING) ) {
+                alt35=1;
             }
-            else if ( (LA34_0==RULE_ID) ) {
-                alt34=2;
+            else if ( (LA35_0==RULE_ID) ) {
+                alt35=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 34, 0, input);
+                    new NoViableAltException("", 35, 0, input);
 
                 throw nvae;
             }
-            switch (alt34) {
+            switch (alt35) {
                 case 1 :
-                    // InternalImplementationDescriptionParser.g:2622:3: this_STRING_0= RULE_STRING
+                    // InternalImplementationDescriptionParser.g:2712:3: this_STRING_0= RULE_STRING
                     {
                     this_STRING_0=(Token)match(input,RULE_STRING,FOLLOW_2);
 
@@ -6612,7 +6834,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
                     }
                     break;
                 case 2 :
-                    // InternalImplementationDescriptionParser.g:2630:3: this_ID_1= RULE_ID
+                    // InternalImplementationDescriptionParser.g:2720:3: this_ID_1= RULE_ID
                     {
                     this_ID_1=(Token)match(input,RULE_ID,FOLLOW_2);
 
@@ -6647,7 +6869,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
     // $ANTLR start "entryRulePreListElement"
-    // InternalImplementationDescriptionParser.g:2641:1: entryRulePreListElement returns [String current=null] : iv_rulePreListElement= rulePreListElement EOF ;
+    // InternalImplementationDescriptionParser.g:2731:1: entryRulePreListElement returns [String current=null] : iv_rulePreListElement= rulePreListElement EOF ;
     public final String entryRulePreListElement() throws RecognitionException {
         String current = null;
 
@@ -6658,8 +6880,8 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
             HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_SL_COMMENT");
 
         try {
-            // InternalImplementationDescriptionParser.g:2643:2: (iv_rulePreListElement= rulePreListElement EOF )
-            // InternalImplementationDescriptionParser.g:2644:2: iv_rulePreListElement= rulePreListElement EOF
+            // InternalImplementationDescriptionParser.g:2733:2: (iv_rulePreListElement= rulePreListElement EOF )
+            // InternalImplementationDescriptionParser.g:2734:2: iv_rulePreListElement= rulePreListElement EOF
             {
              newCompositeNode(grammarAccess.getPreListElementRule());
             pushFollow(FOLLOW_1);
@@ -6689,7 +6911,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
     // $ANTLR start "rulePreListElement"
-    // InternalImplementationDescriptionParser.g:2653:1: rulePreListElement returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= HyphenMinus ;
+    // InternalImplementationDescriptionParser.g:2743:1: rulePreListElement returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= HyphenMinus ;
     public final AntlrDatatypeRuleToken rulePreListElement() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -6700,8 +6922,8 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
             HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_SL_COMMENT");
 
         try {
-            // InternalImplementationDescriptionParser.g:2660:2: (kw= HyphenMinus )
-            // InternalImplementationDescriptionParser.g:2661:2: kw= HyphenMinus
+            // InternalImplementationDescriptionParser.g:2750:2: (kw= HyphenMinus )
+            // InternalImplementationDescriptionParser.g:2751:2: kw= HyphenMinus
             {
             kw=(Token)match(input,HyphenMinus,FOLLOW_2);
 
@@ -6731,7 +6953,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
     // $ANTLR start "ruleProcessorArchitectureType"
-    // InternalImplementationDescriptionParser.g:2672:1: ruleProcessorArchitectureType returns [Enumerator current=null] : ( (enumLiteral_0= X86 ) | (enumLiteral_1= Arm64 ) ) ;
+    // InternalImplementationDescriptionParser.g:2762:1: ruleProcessorArchitectureType returns [Enumerator current=null] : ( (enumLiteral_0= X86 ) | (enumLiteral_1= Arm64 ) ) ;
     public final Enumerator ruleProcessorArchitectureType() throws RecognitionException {
         Enumerator current = null;
 
@@ -6742,31 +6964,31 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
             enterRule();
 
         try {
-            // InternalImplementationDescriptionParser.g:2678:2: ( ( (enumLiteral_0= X86 ) | (enumLiteral_1= Arm64 ) ) )
-            // InternalImplementationDescriptionParser.g:2679:2: ( (enumLiteral_0= X86 ) | (enumLiteral_1= Arm64 ) )
+            // InternalImplementationDescriptionParser.g:2768:2: ( ( (enumLiteral_0= X86 ) | (enumLiteral_1= Arm64 ) ) )
+            // InternalImplementationDescriptionParser.g:2769:2: ( (enumLiteral_0= X86 ) | (enumLiteral_1= Arm64 ) )
             {
-            // InternalImplementationDescriptionParser.g:2679:2: ( (enumLiteral_0= X86 ) | (enumLiteral_1= Arm64 ) )
-            int alt35=2;
-            int LA35_0 = input.LA(1);
+            // InternalImplementationDescriptionParser.g:2769:2: ( (enumLiteral_0= X86 ) | (enumLiteral_1= Arm64 ) )
+            int alt36=2;
+            int LA36_0 = input.LA(1);
 
-            if ( (LA35_0==X86) ) {
-                alt35=1;
+            if ( (LA36_0==X86) ) {
+                alt36=1;
             }
-            else if ( (LA35_0==Arm64) ) {
-                alt35=2;
+            else if ( (LA36_0==Arm64) ) {
+                alt36=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 35, 0, input);
+                    new NoViableAltException("", 36, 0, input);
 
                 throw nvae;
             }
-            switch (alt35) {
+            switch (alt36) {
                 case 1 :
-                    // InternalImplementationDescriptionParser.g:2680:3: (enumLiteral_0= X86 )
+                    // InternalImplementationDescriptionParser.g:2770:3: (enumLiteral_0= X86 )
                     {
-                    // InternalImplementationDescriptionParser.g:2680:3: (enumLiteral_0= X86 )
-                    // InternalImplementationDescriptionParser.g:2681:4: enumLiteral_0= X86
+                    // InternalImplementationDescriptionParser.g:2770:3: (enumLiteral_0= X86 )
+                    // InternalImplementationDescriptionParser.g:2771:4: enumLiteral_0= X86
                     {
                     enumLiteral_0=(Token)match(input,X86,FOLLOW_2);
 
@@ -6780,10 +7002,10 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
                     }
                     break;
                 case 2 :
-                    // InternalImplementationDescriptionParser.g:2688:3: (enumLiteral_1= Arm64 )
+                    // InternalImplementationDescriptionParser.g:2778:3: (enumLiteral_1= Arm64 )
                     {
-                    // InternalImplementationDescriptionParser.g:2688:3: (enumLiteral_1= Arm64 )
-                    // InternalImplementationDescriptionParser.g:2689:4: enumLiteral_1= Arm64
+                    // InternalImplementationDescriptionParser.g:2778:3: (enumLiteral_1= Arm64 )
+                    // InternalImplementationDescriptionParser.g:2779:4: enumLiteral_1= Arm64
                     {
                     enumLiteral_1=(Token)match(input,Arm64,FOLLOW_2);
 
@@ -6819,7 +7041,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
     // $ANTLR start "ruleLinuxDistribution"
-    // InternalImplementationDescriptionParser.g:2699:1: ruleLinuxDistribution returns [Enumerator current=null] : ( (enumLiteral_0= Ubuntu ) | (enumLiteral_1= Debian ) ) ;
+    // InternalImplementationDescriptionParser.g:2789:1: ruleLinuxDistribution returns [Enumerator current=null] : ( (enumLiteral_0= Ubuntu ) | (enumLiteral_1= Debian ) ) ;
     public final Enumerator ruleLinuxDistribution() throws RecognitionException {
         Enumerator current = null;
 
@@ -6830,31 +7052,31 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
             enterRule();
 
         try {
-            // InternalImplementationDescriptionParser.g:2705:2: ( ( (enumLiteral_0= Ubuntu ) | (enumLiteral_1= Debian ) ) )
-            // InternalImplementationDescriptionParser.g:2706:2: ( (enumLiteral_0= Ubuntu ) | (enumLiteral_1= Debian ) )
+            // InternalImplementationDescriptionParser.g:2795:2: ( ( (enumLiteral_0= Ubuntu ) | (enumLiteral_1= Debian ) ) )
+            // InternalImplementationDescriptionParser.g:2796:2: ( (enumLiteral_0= Ubuntu ) | (enumLiteral_1= Debian ) )
             {
-            // InternalImplementationDescriptionParser.g:2706:2: ( (enumLiteral_0= Ubuntu ) | (enumLiteral_1= Debian ) )
-            int alt36=2;
-            int LA36_0 = input.LA(1);
+            // InternalImplementationDescriptionParser.g:2796:2: ( (enumLiteral_0= Ubuntu ) | (enumLiteral_1= Debian ) )
+            int alt37=2;
+            int LA37_0 = input.LA(1);
 
-            if ( (LA36_0==Ubuntu) ) {
-                alt36=1;
+            if ( (LA37_0==Ubuntu) ) {
+                alt37=1;
             }
-            else if ( (LA36_0==Debian) ) {
-                alt36=2;
+            else if ( (LA37_0==Debian) ) {
+                alt37=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 36, 0, input);
+                    new NoViableAltException("", 37, 0, input);
 
                 throw nvae;
             }
-            switch (alt36) {
+            switch (alt37) {
                 case 1 :
-                    // InternalImplementationDescriptionParser.g:2707:3: (enumLiteral_0= Ubuntu )
+                    // InternalImplementationDescriptionParser.g:2797:3: (enumLiteral_0= Ubuntu )
                     {
-                    // InternalImplementationDescriptionParser.g:2707:3: (enumLiteral_0= Ubuntu )
-                    // InternalImplementationDescriptionParser.g:2708:4: enumLiteral_0= Ubuntu
+                    // InternalImplementationDescriptionParser.g:2797:3: (enumLiteral_0= Ubuntu )
+                    // InternalImplementationDescriptionParser.g:2798:4: enumLiteral_0= Ubuntu
                     {
                     enumLiteral_0=(Token)match(input,Ubuntu,FOLLOW_2);
 
@@ -6868,10 +7090,10 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
                     }
                     break;
                 case 2 :
-                    // InternalImplementationDescriptionParser.g:2715:3: (enumLiteral_1= Debian )
+                    // InternalImplementationDescriptionParser.g:2805:3: (enumLiteral_1= Debian )
                     {
-                    // InternalImplementationDescriptionParser.g:2715:3: (enumLiteral_1= Debian )
-                    // InternalImplementationDescriptionParser.g:2716:4: enumLiteral_1= Debian
+                    // InternalImplementationDescriptionParser.g:2805:3: (enumLiteral_1= Debian )
+                    // InternalImplementationDescriptionParser.g:2806:4: enumLiteral_1= Debian
                     {
                     enumLiteral_1=(Token)match(input,Debian,FOLLOW_2);
 
@@ -6907,7 +7129,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
 
     // $ANTLR start "ruleUbuntuVersion"
-    // InternalImplementationDescriptionParser.g:2726:1: ruleUbuntuVersion returns [Enumerator current=null] : ( (enumLiteral_0= Focal ) | (enumLiteral_1= Jammy ) ) ;
+    // InternalImplementationDescriptionParser.g:2816:1: ruleUbuntuVersion returns [Enumerator current=null] : ( (enumLiteral_0= Focal ) | (enumLiteral_1= Jammy ) ) ;
     public final Enumerator ruleUbuntuVersion() throws RecognitionException {
         Enumerator current = null;
 
@@ -6918,31 +7140,31 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
             enterRule();
 
         try {
-            // InternalImplementationDescriptionParser.g:2732:2: ( ( (enumLiteral_0= Focal ) | (enumLiteral_1= Jammy ) ) )
-            // InternalImplementationDescriptionParser.g:2733:2: ( (enumLiteral_0= Focal ) | (enumLiteral_1= Jammy ) )
+            // InternalImplementationDescriptionParser.g:2822:2: ( ( (enumLiteral_0= Focal ) | (enumLiteral_1= Jammy ) ) )
+            // InternalImplementationDescriptionParser.g:2823:2: ( (enumLiteral_0= Focal ) | (enumLiteral_1= Jammy ) )
             {
-            // InternalImplementationDescriptionParser.g:2733:2: ( (enumLiteral_0= Focal ) | (enumLiteral_1= Jammy ) )
-            int alt37=2;
-            int LA37_0 = input.LA(1);
+            // InternalImplementationDescriptionParser.g:2823:2: ( (enumLiteral_0= Focal ) | (enumLiteral_1= Jammy ) )
+            int alt38=2;
+            int LA38_0 = input.LA(1);
 
-            if ( (LA37_0==Focal) ) {
-                alt37=1;
+            if ( (LA38_0==Focal) ) {
+                alt38=1;
             }
-            else if ( (LA37_0==Jammy) ) {
-                alt37=2;
+            else if ( (LA38_0==Jammy) ) {
+                alt38=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 37, 0, input);
+                    new NoViableAltException("", 38, 0, input);
 
                 throw nvae;
             }
-            switch (alt37) {
+            switch (alt38) {
                 case 1 :
-                    // InternalImplementationDescriptionParser.g:2734:3: (enumLiteral_0= Focal )
+                    // InternalImplementationDescriptionParser.g:2824:3: (enumLiteral_0= Focal )
                     {
-                    // InternalImplementationDescriptionParser.g:2734:3: (enumLiteral_0= Focal )
-                    // InternalImplementationDescriptionParser.g:2735:4: enumLiteral_0= Focal
+                    // InternalImplementationDescriptionParser.g:2824:3: (enumLiteral_0= Focal )
+                    // InternalImplementationDescriptionParser.g:2825:4: enumLiteral_0= Focal
                     {
                     enumLiteral_0=(Token)match(input,Focal,FOLLOW_2);
 
@@ -6956,10 +7178,10 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
                     }
                     break;
                 case 2 :
-                    // InternalImplementationDescriptionParser.g:2742:3: (enumLiteral_1= Jammy )
+                    // InternalImplementationDescriptionParser.g:2832:3: (enumLiteral_1= Jammy )
                     {
-                    // InternalImplementationDescriptionParser.g:2742:3: (enumLiteral_1= Jammy )
-                    // InternalImplementationDescriptionParser.g:2743:4: enumLiteral_1= Jammy
+                    // InternalImplementationDescriptionParser.g:2832:3: (enumLiteral_1= Jammy )
+                    // InternalImplementationDescriptionParser.g:2833:4: enumLiteral_1= Jammy
                     {
                     enumLiteral_1=(Token)match(input,Jammy,FOLLOW_2);
 
@@ -6998,8 +7220,8 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
     protected DFA14 dfa14 = new DFA14(this);
     static final String dfa_1s = "\14\uffff";
-    static final String dfa_2s = "\1\45\1\37\1\54\2\52\1\36\1\14\5\uffff";
-    static final String dfa_3s = "\1\45\1\37\1\56\2\52\1\36\1\24\5\uffff";
+    static final String dfa_2s = "\1\46\1\37\1\55\2\53\1\36\1\14\5\uffff";
+    static final String dfa_3s = "\1\46\1\37\1\57\2\53\1\36\1\24\5\uffff";
     static final String dfa_4s = "\7\uffff\1\4\1\3\1\2\1\5\1\1";
     static final String dfa_5s = "\14\uffff}>";
     static final String[] dfa_6s = {
@@ -7045,31 +7267,31 @@ public class InternalImplementationDescriptionParser extends AbstractInternalAnt
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000040000000000L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000080000000000L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000080000000L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000500000000000L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000A00000000000L});
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000082000000000L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000080000000000L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000004000000000L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000104000000000L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000100000000000L});
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000040000L});
     public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000080000000080L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000100000000080L});
     public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000000410L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000080000000410L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000100000000410L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000001000000000L});
     public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000400000000L});
     public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000800000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x00000C0000000000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000180000000000L});
     public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000000800L});
     public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000040000000L});
     public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000080004004000L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000080004000000L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x000051903B000000L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000080004004002L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000080004000002L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000080000000002L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000100004004000L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000100004000000L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000AB203B000000L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000100004004002L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000100004000002L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000100000000002L});
     public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000000008000L});
     public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000000010000L});
     public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000000002000L});
