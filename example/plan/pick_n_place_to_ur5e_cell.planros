@@ -4,6 +4,7 @@ DeploymentPlanWithRos:
     assignment:
         - name: ur5e_driver
           executedBy: "ur5e_cell.rwu_laptop"
+          version: "latest"
           softwareComponents:
               - ur5e_driver_rossystem:
                 executionConfiguration:
@@ -16,6 +17,7 @@ DeploymentPlanWithRos:
           opertingSystemType: ubuntu
         - name: realsense_driver
           executedBy: "ur5e_cell.rwu_laptop"
+          version: "latest"
           softwareComponents:
               - relsense_camera_driver:
                 executionConfiguration:
@@ -29,6 +31,7 @@ DeploymentPlanWithRos:
           opertingSystemType: ubuntu
         - name: marker_detection
           executedBy: "ur5e_cell.rwu_laptop"
+          version: "latest"
           softwareComponents:
               - aruco_marker_detection:
                 startCommand:
@@ -38,6 +41,7 @@ DeploymentPlanWithRos:
           opertingSystemType: ubuntu
         - name: pick_place_task
           executedBy: "ur5e_cell.rwu_laptop"
+          version: "latest"
           softwareComponents:
               - pick_place_rossystem:
                 startCommand:

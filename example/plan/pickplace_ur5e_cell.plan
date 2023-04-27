@@ -4,6 +4,7 @@ DeploymentPlan:
     assignment:
         - name: ur5e_pick_n_place
           executedBy: "ur5e_cell.rwu_laptop"
+          version: "latest"
           softwareComponents:
               - "pick_place_with_ur5e.ur_robot_driver":
                     executionConfiguration:
