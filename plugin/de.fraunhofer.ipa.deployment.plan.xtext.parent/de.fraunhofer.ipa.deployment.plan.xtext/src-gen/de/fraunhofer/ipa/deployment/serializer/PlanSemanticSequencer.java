@@ -249,6 +249,7 @@ public class PlanSemanticSequencer extends UtilSemanticSequencer {
      *     (
      *         name=EString
      *         executedBy=[ComputationDeviceInstance|EString]
+     *         version=EString
      *         softwareComponents+=ConfigSoftwareComponent
      *         softwareComponents+=ConfigSoftwareComponent*
      *         middleware=Middleware?

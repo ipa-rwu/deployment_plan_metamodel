@@ -1301,7 +1301,7 @@ public class ImplementationDescriptionGrammarAccess extends AbstractElementFinde
     //PropertyValueList returns PropertyValueList:
     //    INDENT
     //      PreListElement value+=PropertyValue
-    //          (PreListElement value+=PropertyValue)*
+    //        (PreListElement value+=PropertyValue)*
     //    DEDENT
     // ;
     public UtilGrammarAccess.PropertyValueListElements getPropertyValueListAccess() {

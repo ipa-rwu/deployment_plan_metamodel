@@ -387,34 +387,38 @@ public class PlanGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
         private final Assignment cExecutedByAssignment_5 = (Assignment)cGroup.eContents().get(5);
         private final CrossReference cExecutedByComputationDeviceInstanceCrossReference_5_0 = (CrossReference)cExecutedByAssignment_5.eContents().get(0);
         private final RuleCall cExecutedByComputationDeviceInstanceEStringParserRuleCall_5_0_1 = (RuleCall)cExecutedByComputationDeviceInstanceCrossReference_5_0.eContents().get(1);
-        private final Keyword cSoftwareComponentsKeyword_6 = (Keyword)cGroup.eContents().get(6);
-        private final RuleCall cINDENTTerminalRuleCall_7 = (RuleCall)cGroup.eContents().get(7);
-        private final RuleCall cPreListElementParserRuleCall_8 = (RuleCall)cGroup.eContents().get(8);
-        private final Assignment cSoftwareComponentsAssignment_9 = (Assignment)cGroup.eContents().get(9);
-        private final RuleCall cSoftwareComponentsConfigSoftwareComponentParserRuleCall_9_0 = (RuleCall)cSoftwareComponentsAssignment_9.eContents().get(0);
-        private final Group cGroup_10 = (Group)cGroup.eContents().get(10);
-        private final RuleCall cPreListElementParserRuleCall_10_0 = (RuleCall)cGroup_10.eContents().get(0);
-        private final Assignment cSoftwareComponentsAssignment_10_1 = (Assignment)cGroup_10.eContents().get(1);
-        private final RuleCall cSoftwareComponentsConfigSoftwareComponentParserRuleCall_10_1_0 = (RuleCall)cSoftwareComponentsAssignment_10_1.eContents().get(0);
-        private final RuleCall cDEDENTTerminalRuleCall_11 = (RuleCall)cGroup.eContents().get(11);
+        private final Keyword cVersionKeyword_6 = (Keyword)cGroup.eContents().get(6);
+        private final Assignment cVersionAssignment_7 = (Assignment)cGroup.eContents().get(7);
+        private final RuleCall cVersionEStringParserRuleCall_7_0 = (RuleCall)cVersionAssignment_7.eContents().get(0);
+        private final Keyword cSoftwareComponentsKeyword_8 = (Keyword)cGroup.eContents().get(8);
+        private final RuleCall cINDENTTerminalRuleCall_9 = (RuleCall)cGroup.eContents().get(9);
+        private final RuleCall cPreListElementParserRuleCall_10 = (RuleCall)cGroup.eContents().get(10);
+        private final Assignment cSoftwareComponentsAssignment_11 = (Assignment)cGroup.eContents().get(11);
+        private final RuleCall cSoftwareComponentsConfigSoftwareComponentParserRuleCall_11_0 = (RuleCall)cSoftwareComponentsAssignment_11.eContents().get(0);
         private final Group cGroup_12 = (Group)cGroup.eContents().get(12);
-        private final Keyword cMiddlewareKeyword_12_0 = (Keyword)cGroup_12.eContents().get(0);
-        private final Assignment cMiddlewareAssignment_12_1 = (Assignment)cGroup_12.eContents().get(1);
-        private final RuleCall cMiddlewareMiddlewareParserRuleCall_12_1_0 = (RuleCall)cMiddlewareAssignment_12_1.eContents().get(0);
-        private final Group cGroup_13 = (Group)cGroup.eContents().get(13);
-        private final Keyword cRuntimeTypeKeyword_13_0 = (Keyword)cGroup_13.eContents().get(0);
-        private final Assignment cRuntimeTypeAssignment_13_1 = (Assignment)cGroup_13.eContents().get(1);
-        private final RuleCall cRuntimeTypeRunTimeTypeEnumRuleCall_13_1_0 = (RuleCall)cRuntimeTypeAssignment_13_1.eContents().get(0);
+        private final RuleCall cPreListElementParserRuleCall_12_0 = (RuleCall)cGroup_12.eContents().get(0);
+        private final Assignment cSoftwareComponentsAssignment_12_1 = (Assignment)cGroup_12.eContents().get(1);
+        private final RuleCall cSoftwareComponentsConfigSoftwareComponentParserRuleCall_12_1_0 = (RuleCall)cSoftwareComponentsAssignment_12_1.eContents().get(0);
+        private final RuleCall cDEDENTTerminalRuleCall_13 = (RuleCall)cGroup.eContents().get(13);
         private final Group cGroup_14 = (Group)cGroup.eContents().get(14);
-        private final Keyword cOpertingSystemTypeKeyword_14_0 = (Keyword)cGroup_14.eContents().get(0);
-        private final Assignment cOpertingSystemTypeAssignment_14_1 = (Assignment)cGroup_14.eContents().get(1);
-        private final RuleCall cOpertingSystemTypeOpertingSystemNameParserRuleCall_14_1_0 = (RuleCall)cOpertingSystemTypeAssignment_14_1.eContents().get(0);
-        private final RuleCall cDEDENTTerminalRuleCall_15 = (RuleCall)cGroup.eContents().get(15);
+        private final Keyword cMiddlewareKeyword_14_0 = (Keyword)cGroup_14.eContents().get(0);
+        private final Assignment cMiddlewareAssignment_14_1 = (Assignment)cGroup_14.eContents().get(1);
+        private final RuleCall cMiddlewareMiddlewareParserRuleCall_14_1_0 = (RuleCall)cMiddlewareAssignment_14_1.eContents().get(0);
+        private final Group cGroup_15 = (Group)cGroup.eContents().get(15);
+        private final Keyword cRuntimeTypeKeyword_15_0 = (Keyword)cGroup_15.eContents().get(0);
+        private final Assignment cRuntimeTypeAssignment_15_1 = (Assignment)cGroup_15.eContents().get(1);
+        private final RuleCall cRuntimeTypeRunTimeTypeEnumRuleCall_15_1_0 = (RuleCall)cRuntimeTypeAssignment_15_1.eContents().get(0);
+        private final Group cGroup_16 = (Group)cGroup.eContents().get(16);
+        private final Keyword cOpertingSystemTypeKeyword_16_0 = (Keyword)cGroup_16.eContents().get(0);
+        private final Assignment cOpertingSystemTypeAssignment_16_1 = (Assignment)cGroup_16.eContents().get(1);
+        private final RuleCall cOpertingSystemTypeOpertingSystemNameParserRuleCall_16_1_0 = (RuleCall)cOpertingSystemTypeAssignment_16_1.eContents().get(0);
+        private final RuleCall cDEDENTTerminalRuleCall_17 = (RuleCall)cGroup.eContents().get(17);
 
         //ImplementationAssignment returns ImplementationAssignment:
         //    PreListElement 'name:' name = EString
         //  INDENT
         //    'executedBy:' executedBy=[targetEnvironment::ComputationDeviceInstance|EString]
+        //    'version:' version = EString
         //    'softwareComponents:'
         //        INDENT
         //            PreListElement softwareComponents+=ConfigSoftwareComponent
@@ -430,6 +434,7 @@ public class PlanGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
         //  PreListElement 'name:' name = EString
         //INDENT
         //  'executedBy:' executedBy=[targetEnvironment::ComputationDeviceInstance|EString]
+        //  'version:' version = EString
         //  'softwareComponents:'
         //      INDENT
         //          PreListElement softwareComponents+=ConfigSoftwareComponent
@@ -468,74 +473,83 @@ public class PlanGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
         //EString
         public RuleCall getExecutedByComputationDeviceInstanceEStringParserRuleCall_5_0_1() { return cExecutedByComputationDeviceInstanceEStringParserRuleCall_5_0_1; }
 
+        //'version:'
+        public Keyword getVersionKeyword_6() { return cVersionKeyword_6; }
+
+        //version = EString
+        public Assignment getVersionAssignment_7() { return cVersionAssignment_7; }
+
+        //EString
+        public RuleCall getVersionEStringParserRuleCall_7_0() { return cVersionEStringParserRuleCall_7_0; }
+
         //'softwareComponents:'
-        public Keyword getSoftwareComponentsKeyword_6() { return cSoftwareComponentsKeyword_6; }
+        public Keyword getSoftwareComponentsKeyword_8() { return cSoftwareComponentsKeyword_8; }
 
         //INDENT
-        public RuleCall getINDENTTerminalRuleCall_7() { return cINDENTTerminalRuleCall_7; }
+        public RuleCall getINDENTTerminalRuleCall_9() { return cINDENTTerminalRuleCall_9; }
 
         //PreListElement
-        public RuleCall getPreListElementParserRuleCall_8() { return cPreListElementParserRuleCall_8; }
+        public RuleCall getPreListElementParserRuleCall_10() { return cPreListElementParserRuleCall_10; }
 
         //softwareComponents+=ConfigSoftwareComponent
-        public Assignment getSoftwareComponentsAssignment_9() { return cSoftwareComponentsAssignment_9; }
+        public Assignment getSoftwareComponentsAssignment_11() { return cSoftwareComponentsAssignment_11; }
 
         //ConfigSoftwareComponent
-        public RuleCall getSoftwareComponentsConfigSoftwareComponentParserRuleCall_9_0() { return cSoftwareComponentsConfigSoftwareComponentParserRuleCall_9_0; }
+        public RuleCall getSoftwareComponentsConfigSoftwareComponentParserRuleCall_11_0() { return cSoftwareComponentsConfigSoftwareComponentParserRuleCall_11_0; }
 
         //(PreListElement softwareComponents+=ConfigSoftwareComponent)*
-        public Group getGroup_10() { return cGroup_10; }
-
-        //PreListElement
-        public RuleCall getPreListElementParserRuleCall_10_0() { return cPreListElementParserRuleCall_10_0; }
-
-        //softwareComponents+=ConfigSoftwareComponent
-        public Assignment getSoftwareComponentsAssignment_10_1() { return cSoftwareComponentsAssignment_10_1; }
-
-        //ConfigSoftwareComponent
-        public RuleCall getSoftwareComponentsConfigSoftwareComponentParserRuleCall_10_1_0() { return cSoftwareComponentsConfigSoftwareComponentParserRuleCall_10_1_0; }
-
-        //DEDENT
-        public RuleCall getDEDENTTerminalRuleCall_11() { return cDEDENTTerminalRuleCall_11; }
-
-        //('middleware:' middleware=Middleware)?
         public Group getGroup_12() { return cGroup_12; }
 
-        //'middleware:'
-        public Keyword getMiddlewareKeyword_12_0() { return cMiddlewareKeyword_12_0; }
+        //PreListElement
+        public RuleCall getPreListElementParserRuleCall_12_0() { return cPreListElementParserRuleCall_12_0; }
 
-        //middleware=Middleware
-        public Assignment getMiddlewareAssignment_12_1() { return cMiddlewareAssignment_12_1; }
+        //softwareComponents+=ConfigSoftwareComponent
+        public Assignment getSoftwareComponentsAssignment_12_1() { return cSoftwareComponentsAssignment_12_1; }
 
-        //Middleware
-        public RuleCall getMiddlewareMiddlewareParserRuleCall_12_1_0() { return cMiddlewareMiddlewareParserRuleCall_12_1_0; }
-
-        //('runtimeType:' runtimeType=RunTimeType)?
-        public Group getGroup_13() { return cGroup_13; }
-
-        //'runtimeType:'
-        public Keyword getRuntimeTypeKeyword_13_0() { return cRuntimeTypeKeyword_13_0; }
-
-        //runtimeType=RunTimeType
-        public Assignment getRuntimeTypeAssignment_13_1() { return cRuntimeTypeAssignment_13_1; }
-
-        //RunTimeType
-        public RuleCall getRuntimeTypeRunTimeTypeEnumRuleCall_13_1_0() { return cRuntimeTypeRunTimeTypeEnumRuleCall_13_1_0; }
-
-        //('opertingSystemType:' opertingSystemType=OpertingSystemName)?
-        public Group getGroup_14() { return cGroup_14; }
-
-        //'opertingSystemType:'
-        public Keyword getOpertingSystemTypeKeyword_14_0() { return cOpertingSystemTypeKeyword_14_0; }
-
-        //opertingSystemType=OpertingSystemName
-        public Assignment getOpertingSystemTypeAssignment_14_1() { return cOpertingSystemTypeAssignment_14_1; }
-
-        //OpertingSystemName
-        public RuleCall getOpertingSystemTypeOpertingSystemNameParserRuleCall_14_1_0() { return cOpertingSystemTypeOpertingSystemNameParserRuleCall_14_1_0; }
+        //ConfigSoftwareComponent
+        public RuleCall getSoftwareComponentsConfigSoftwareComponentParserRuleCall_12_1_0() { return cSoftwareComponentsConfigSoftwareComponentParserRuleCall_12_1_0; }
 
         //DEDENT
-        public RuleCall getDEDENTTerminalRuleCall_15() { return cDEDENTTerminalRuleCall_15; }
+        public RuleCall getDEDENTTerminalRuleCall_13() { return cDEDENTTerminalRuleCall_13; }
+
+        //('middleware:' middleware=Middleware)?
+        public Group getGroup_14() { return cGroup_14; }
+
+        //'middleware:'
+        public Keyword getMiddlewareKeyword_14_0() { return cMiddlewareKeyword_14_0; }
+
+        //middleware=Middleware
+        public Assignment getMiddlewareAssignment_14_1() { return cMiddlewareAssignment_14_1; }
+
+        //Middleware
+        public RuleCall getMiddlewareMiddlewareParserRuleCall_14_1_0() { return cMiddlewareMiddlewareParserRuleCall_14_1_0; }
+
+        //('runtimeType:' runtimeType=RunTimeType)?
+        public Group getGroup_15() { return cGroup_15; }
+
+        //'runtimeType:'
+        public Keyword getRuntimeTypeKeyword_15_0() { return cRuntimeTypeKeyword_15_0; }
+
+        //runtimeType=RunTimeType
+        public Assignment getRuntimeTypeAssignment_15_1() { return cRuntimeTypeAssignment_15_1; }
+
+        //RunTimeType
+        public RuleCall getRuntimeTypeRunTimeTypeEnumRuleCall_15_1_0() { return cRuntimeTypeRunTimeTypeEnumRuleCall_15_1_0; }
+
+        //('opertingSystemType:' opertingSystemType=OpertingSystemName)?
+        public Group getGroup_16() { return cGroup_16; }
+
+        //'opertingSystemType:'
+        public Keyword getOpertingSystemTypeKeyword_16_0() { return cOpertingSystemTypeKeyword_16_0; }
+
+        //opertingSystemType=OpertingSystemName
+        public Assignment getOpertingSystemTypeAssignment_16_1() { return cOpertingSystemTypeAssignment_16_1; }
+
+        //OpertingSystemName
+        public RuleCall getOpertingSystemTypeOpertingSystemNameParserRuleCall_16_1_0() { return cOpertingSystemTypeOpertingSystemNameParserRuleCall_16_1_0; }
+
+        //DEDENT
+        public RuleCall getDEDENTTerminalRuleCall_17() { return cDEDENTTerminalRuleCall_17; }
     }
     public class MiddlewareElements extends AbstractParserRuleElementFinder {
         private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Plan.Middleware");
@@ -884,6 +898,7 @@ public class PlanGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
     //    PreListElement 'name:' name = EString
     //  INDENT
     //    'executedBy:' executedBy=[targetEnvironment::ComputationDeviceInstance|EString]
+    //    'version:' version = EString
     //    'softwareComponents:'
     //        INDENT
     //            PreListElement softwareComponents+=ConfigSoftwareComponent
@@ -1196,7 +1211,7 @@ public class PlanGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
     //PropertyValueList returns PropertyValueList:
     //    INDENT
     //      PreListElement value+=PropertyValue
-    //          (PreListElement value+=PropertyValue)*
+    //        (PreListElement value+=PropertyValue)*
     //    DEDENT
     // ;
     public UtilGrammarAccess.PropertyValueListElements getPropertyValueListAccess() {

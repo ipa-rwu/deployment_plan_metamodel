@@ -55,6 +55,8 @@ DeployTo : 'deployTo:';
 
 Ethernet : 'Ethernet';
 
+Version : 'version:';
+
 Rolling : 'rolling';
 
 Debian : 'debian';

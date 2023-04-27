@@ -267,6 +267,7 @@ public class PlanWithRosmodelSemanticSequencer extends PlanSemanticSequencer {
      *     (
      *         name=EString
      *         executedBy=[ComputationDeviceInstance|EString]
+     *         version=EString
      *         softwareComponents+=ConfigRosSoftwareComponent
      *         softwareComponents+=ConfigRosSoftwareComponent*
      *         middleware=Middleware?
