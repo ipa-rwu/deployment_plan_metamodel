@@ -14,9 +14,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="ecore:EClass ../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//CommunicationType"
         derived="true" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
-        eType="#//ConnectionProperty" containment="true"/>
+        eType="#//AbstractConnectionProperty" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ConnectionProperty" eSuperTypes="../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//PropertyAttribute"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ConnectionProperty" eSuperTypes="../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//PropertyAttribute #//AbstractConnectionProperty"/>
   <eClassifiers xsi:type="ecore:EClass" name="ComputationDeviceType" eSuperTypes="#//DeviceType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="computationResource" lowerBound="1"
         upperBound="-1" eType="#//AbstractComputationResource" containment="true"/>
@@ -30,6 +30,18 @@
   <eClassifiers xsi:type="ecore:EClass" name="InterfaceNetworkProperty" eSuperTypes="../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//PropertyAttribute #//AbstractNetworkProperty"/>
   <eClassifiers xsi:type="ecore:EClass" name="AddressNetworkProperty" eSuperTypes="../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//PropertyAttribute #//AbstractNetworkProperty"/>
   <eClassifiers xsi:type="ecore:EClass" name="MacAddressNetworkProperty" eSuperTypes="../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//PropertyAttribute #//AbstractNetworkProperty"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PortNetworkProperty" eSuperTypes="../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//PropertyAttribute #//AbstractNetworkProperty"/>
+  <eClassifiers xsi:type="ecore:EClass" name="IdentityNameNetworkProperty" eSuperTypes="../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//PropertyAttribute #//AbstractNetworkProperty"/>
+  <eClassifiers xsi:type="ecore:EClass" name="GatewayNetworkProperty" eSuperTypes="../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//PropertyAttribute #//AbstractNetworkProperty"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SubnetMaskNetworkProperty" eSuperTypes="../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//PropertyAttribute #//AbstractNetworkProperty"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DNSServerNetworkProperty" eSuperTypes="../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//PropertySelection #//AbstractNetworkProperty"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UsbConnection" eSuperTypes="#//AbstractCommunicationConnection">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="ecore:EClass ../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//UsbCommunicationType"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
+        eType="#//AbstractUsbProperty" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DeviceVolumeUsbProperty" eSuperTypes="../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//PropertySelection #//AbstractUsbProperty"/>
   <eClassifiers xsi:type="ecore:EClass" name="Container" eSuperTypes="#//AbstractRuntimeEnviroment"/>
   <eClassifiers xsi:type="ecore:EClass" name="OperatingSystemResouce" eSuperTypes="#//AbstractComputationResource">
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="ecore:EClass ../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//OpertingSystemResouceType"
@@ -47,7 +59,10 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ArchitectureProcessorProperty" eSuperTypes="../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//PropertyAttribute #//AbstracProcessorProperty"/>
   <eClassifiers xsi:type="ecore:EClass" name="CoreProcessorProperty" eSuperTypes="../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//PropertyAttribute #//AbstracProcessorProperty"/>
-  <eClassifiers xsi:type="ecore:EClass" name="AbstractNetworkProperty" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractNetworkProperty" abstract="true"
+      eSuperTypes="#//AbstractConnectionProperty"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractUsbProperty" abstract="true"
+      eSuperTypes="#//AbstractConnectionProperty"/>
   <eClassifiers xsi:type="ecore:EClass" name="AbstractCommunicationConnection" abstract="true"
       eSuperTypes="../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//AbstractResource"/>
   <eClassifiers xsi:type="ecore:EClass" name="AbstractRuntimeEnviroment" abstract="true"/>
@@ -60,4 +75,5 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="communicationConnection"
         upperBound="-1" eType="#//AbstractCommunicationConnection" containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractConnectionProperty" abstract="true"/>
 </ecore:EPackage>
