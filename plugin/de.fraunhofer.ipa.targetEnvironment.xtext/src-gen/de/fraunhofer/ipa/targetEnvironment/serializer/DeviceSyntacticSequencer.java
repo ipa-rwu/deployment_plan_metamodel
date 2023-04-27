@@ -20,6 +20,8 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class DeviceSyntacticSequencer extends AbstractSyntacticSequencer {
 
     protected DeviceGrammarAccess grammarAccess;
+    protected AbstractElementAlias match_DNSServerNetworkProperty_DEDENTTerminalRuleCall_9_q;
+    protected AbstractElementAlias match_DeviceVolumeUsbProperty_DEDENTTerminalRuleCall_9_q;
     protected AbstractElementAlias match_PropertyAttribute_DEDENTTerminalRuleCall_8_q;
     protected AbstractElementAlias match_PropertyMaximun_DEDENTTerminalRuleCall_8_q;
     protected AbstractElementAlias match_PropertyMinimum_DEDENTTerminalRuleCall_8_q;
@@ -30,6 +32,8 @@ public class DeviceSyntacticSequencer extends AbstractSyntacticSequencer {
     @Inject
     protected void init(IGrammarAccess access) {
         grammarAccess = (DeviceGrammarAccess) access;
+        match_DNSServerNetworkProperty_DEDENTTerminalRuleCall_9_q = new TokenAlias(false, true, grammarAccess.getDNSServerNetworkPropertyAccess().getDEDENTTerminalRuleCall_9());
+        match_DeviceVolumeUsbProperty_DEDENTTerminalRuleCall_9_q = new TokenAlias(false, true, grammarAccess.getDeviceVolumeUsbPropertyAccess().getDEDENTTerminalRuleCall_9());
         match_PropertyAttribute_DEDENTTerminalRuleCall_8_q = new TokenAlias(false, true, grammarAccess.getPropertyAttributeAccess().getDEDENTTerminalRuleCall_8());
         match_PropertyMaximun_DEDENTTerminalRuleCall_8_q = new TokenAlias(false, true, grammarAccess.getPropertyMaximunAccess().getDEDENTTerminalRuleCall_8());
         match_PropertyMinimum_DEDENTTerminalRuleCall_8_q = new TokenAlias(false, true, grammarAccess.getPropertyMinimumAccess().getDEDENTTerminalRuleCall_8());
@@ -77,7 +81,11 @@ public class DeviceSyntacticSequencer extends AbstractSyntacticSequencer {
         List<INode> transitionNodes = collectNodes(fromNode, toNode);
         for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
             List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-            if (match_PropertyAttribute_DEDENTTerminalRuleCall_8_q.equals(syntax))
+            if (match_DNSServerNetworkProperty_DEDENTTerminalRuleCall_9_q.equals(syntax))
+                emit_DNSServerNetworkProperty_DEDENTTerminalRuleCall_9_q(semanticObject, getLastNavigableState(), syntaxNodes);
+            else if (match_DeviceVolumeUsbProperty_DEDENTTerminalRuleCall_9_q.equals(syntax))
+                emit_DeviceVolumeUsbProperty_DEDENTTerminalRuleCall_9_q(semanticObject, getLastNavigableState(), syntaxNodes);
+            else if (match_PropertyAttribute_DEDENTTerminalRuleCall_8_q.equals(syntax))
                 emit_PropertyAttribute_DEDENTTerminalRuleCall_8_q(semanticObject, getLastNavigableState(), syntaxNodes);
             else if (match_PropertyMaximun_DEDENTTerminalRuleCall_8_q.equals(syntax))
                 emit_PropertyMaximun_DEDENTTerminalRuleCall_8_q(semanticObject, getLastNavigableState(), syntaxNodes);
@@ -91,6 +99,38 @@ public class DeviceSyntacticSequencer extends AbstractSyntacticSequencer {
                 emit_Property_DEDENTTerminalRuleCall_8_q(semanticObject, getLastNavigableState(), syntaxNodes);
             else acceptNodes(getLastNavigableState(), syntaxNodes);
         }
+    }
+
+    /**
+     * <pre>
+     * Ambiguous syntax:
+     *     DEDENT?
+     *
+     * This ambiguous syntax occurs at:
+     *     description=EString (ambiguity) DEDENT (rule end)
+     *     kind=SelectionKind (ambiguity) DEDENT (rule end)
+     *     value+=PropertyValue DEDENT (ambiguity) DEDENT (rule end)
+
+     * </pre>
+     */
+    protected void emit_DNSServerNetworkProperty_DEDENTTerminalRuleCall_9_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+        acceptNodes(transition, nodes);
+    }
+
+    /**
+     * <pre>
+     * Ambiguous syntax:
+     *     DEDENT?
+     *
+     * This ambiguous syntax occurs at:
+     *     description=EString (ambiguity) DEDENT (rule end)
+     *     kind=SelectionKind (ambiguity) DEDENT (rule end)
+     *     value+=PropertyValue DEDENT (ambiguity) DEDENT (rule end)
+
+     * </pre>
+     */
+    protected void emit_DeviceVolumeUsbProperty_DEDENTTerminalRuleCall_9_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+        acceptNodes(transition, nodes);
     }
 
     /**

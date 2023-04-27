@@ -25,7 +25,7 @@ class TargetEnvironmentFormatter extends DeviceFormatter {
         for (abstractDeviceInstance : targetDeployEnviroment.includeDevice) {
             abstractDeviceInstance.format
         }
-        for (configConnection : targetDeployEnviroment.configConnection) {
+        for (configConnection : targetDeployEnviroment.configConnections) {
             configConnection.format
         }
     }

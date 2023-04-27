@@ -99,8 +99,8 @@ public class TargetEnvironmentGrammarAccess extends AbstractElementFinder.Abstra
         private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
         private final Keyword cConfigConnectionKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
         private final RuleCall cINDENTTerminalRuleCall_6_1 = (RuleCall)cGroup_6.eContents().get(1);
-        private final Assignment cConfigConnectionAssignment_6_2 = (Assignment)cGroup_6.eContents().get(2);
-        private final RuleCall cConfigConnectionConfigConnectionParserRuleCall_6_2_0 = (RuleCall)cConfigConnectionAssignment_6_2.eContents().get(0);
+        private final Assignment cConfigConnectionsAssignment_6_2 = (Assignment)cGroup_6.eContents().get(2);
+        private final RuleCall cConfigConnectionsConfigConnectionParserRuleCall_6_2_0 = (RuleCall)cConfigConnectionsAssignment_6_2.eContents().get(0);
         private final RuleCall cDEDENTTerminalRuleCall_6_3 = (RuleCall)cGroup_6.eContents().get(3);
         private final RuleCall cDEDENTTerminalRuleCall_7 = (RuleCall)cGroup.eContents().get(7);
 
@@ -123,7 +123,7 @@ public class TargetEnvironmentGrammarAccess extends AbstractElementFinder.Abstra
         //        )?
         //        ('configConnection:'
         //            INDENT
-        //            configConnection+=ConfigConnection+
+        //            configConnections+=ConfigConnection+
         //            DEDENT
         //        )?
         //    DEDENT
@@ -148,7 +148,7 @@ public class TargetEnvironmentGrammarAccess extends AbstractElementFinder.Abstra
         //    )?
         //    ('configConnection:'
         //        INDENT
-        //        configConnection+=ConfigConnection+
+        //        configConnections+=ConfigConnection+
         //        DEDENT
         //    )?
         //DEDENT
@@ -227,7 +227,7 @@ public class TargetEnvironmentGrammarAccess extends AbstractElementFinder.Abstra
 
         //('configConnection:'
         //    INDENT
-        //    configConnection+=ConfigConnection+
+        //    configConnections+=ConfigConnection+
         //    DEDENT
         //)?
         public Group getGroup_6() { return cGroup_6; }
@@ -238,11 +238,11 @@ public class TargetEnvironmentGrammarAccess extends AbstractElementFinder.Abstra
         //INDENT
         public RuleCall getINDENTTerminalRuleCall_6_1() { return cINDENTTerminalRuleCall_6_1; }
 
-        //configConnection+=ConfigConnection+
-        public Assignment getConfigConnectionAssignment_6_2() { return cConfigConnectionAssignment_6_2; }
+        //configConnections+=ConfigConnection+
+        public Assignment getConfigConnectionsAssignment_6_2() { return cConfigConnectionsAssignment_6_2; }
 
         //ConfigConnection
-        public RuleCall getConfigConnectionConfigConnectionParserRuleCall_6_2_0() { return cConfigConnectionConfigConnectionParserRuleCall_6_2_0; }
+        public RuleCall getConfigConnectionsConfigConnectionParserRuleCall_6_2_0() { return cConfigConnectionsConfigConnectionParserRuleCall_6_2_0; }
 
         //DEDENT
         public RuleCall getDEDENTTerminalRuleCall_6_3() { return cDEDENTTerminalRuleCall_6_3; }
@@ -914,7 +914,7 @@ public class TargetEnvironmentGrammarAccess extends AbstractElementFinder.Abstra
     //        )?
     //        ('configConnection:'
     //            INDENT
-    //            configConnection+=ConfigConnection+
+    //            configConnections+=ConfigConnection+
     //            DEDENT
     //        )?
     //    DEDENT
@@ -1068,7 +1068,7 @@ public class TargetEnvironmentGrammarAccess extends AbstractElementFinder.Abstra
     }
 
     //AbstractCommunicationConnection returns AbstractCommunicationConnection:
-    //    CommunicationConnection | NetworkConnection;
+    //    CommunicationConnection | NetworkConnection | UsbConnection;
     public DeviceGrammarAccess.AbstractCommunicationConnectionElements getAbstractCommunicationConnectionAccess() {
         return gaDevice.getAbstractCommunicationConnectionAccess();
     }
@@ -1078,7 +1078,10 @@ public class TargetEnvironmentGrammarAccess extends AbstractElementFinder.Abstra
     }
 
     //AbstractNetworkProperty returns AbstractNetworkProperty:
-    //    InterfaceNetworkProperty | AddressNetworkProperty;
+    //    IdentityNameNetworkProperty | InterfaceNetworkProperty
+    //    | AddressNetworkProperty | MacAddressNetworkProperty
+    //    | GatewayNetworkProperty | SubnetMaskNetworkProperty
+    //    | DNSServerNetworkProperty | PortNetworkProperty;
     public DeviceGrammarAccess.AbstractNetworkPropertyElements getAbstractNetworkPropertyAccess() {
         return gaDevice.getAbstractNetworkPropertyAccess();
     }
@@ -1087,9 +1090,20 @@ public class TargetEnvironmentGrammarAccess extends AbstractElementFinder.Abstra
         return getAbstractNetworkPropertyAccess().getRule();
     }
 
+    //AbstractUsbProperty returns AbstractUsbProperty:
+    //    DeviceVolumeUsbProperty
+    //;
+    public DeviceGrammarAccess.AbstractUsbPropertyElements getAbstractUsbPropertyAccess() {
+        return gaDevice.getAbstractUsbPropertyAccess();
+    }
+
+    public ParserRule getAbstractUsbPropertyRule() {
+        return getAbstractUsbPropertyAccess().getRule();
+    }
+
     //InterfaceNetworkProperty returns InterfaceNetworkProperty:
     //    {InterfaceNetworkProperty}
-    //    PreListElement "name:" name="interface"
+    //    PreListElement "name:" name="interface_name"
     //    INDENT
     //        'kind:' kind=AttributeKind
     //        (
@@ -1110,7 +1124,7 @@ public class TargetEnvironmentGrammarAccess extends AbstractElementFinder.Abstra
 
     //AddressNetworkProperty returns AddressNetworkProperty:
     //    {AddressNetworkProperty}
-    //    PreListElement "name:" name="address"
+    //    PreListElement "name:" name="ip_address"
     //    INDENT
     //        'kind:' kind=AttributeKind
     //        (
@@ -1127,6 +1141,157 @@ public class TargetEnvironmentGrammarAccess extends AbstractElementFinder.Abstra
 
     public ParserRule getAddressNetworkPropertyRule() {
         return getAddressNetworkPropertyAccess().getRule();
+    }
+
+    //IdentityNameNetworkProperty returns IdentityNameNetworkProperty:
+    //    {IdentityNameNetworkProperty}
+    //    PreListElement "name:" name="identity_name"
+    //    INDENT
+    //        'kind:' kind=AttributeKind
+    //        (
+    //        'description:' description=EString
+    //        )?
+    //    DEDENT
+    //    ;
+    public DeviceGrammarAccess.IdentityNameNetworkPropertyElements getIdentityNameNetworkPropertyAccess() {
+        return gaDevice.getIdentityNameNetworkPropertyAccess();
+    }
+
+    public ParserRule getIdentityNameNetworkPropertyRule() {
+        return getIdentityNameNetworkPropertyAccess().getRule();
+    }
+
+    //MacAddressNetworkProperty returns MacAddressNetworkProperty:
+    //    {MacAddressNetworkProperty}
+    //    PreListElement "name:" name="mac_address"
+    //    INDENT
+    //        'kind:' kind=AttributeKind
+    //        (
+    //        'description:' description=EString
+    //        )?
+    //    DEDENT
+    //    ;
+    public DeviceGrammarAccess.MacAddressNetworkPropertyElements getMacAddressNetworkPropertyAccess() {
+        return gaDevice.getMacAddressNetworkPropertyAccess();
+    }
+
+    public ParserRule getMacAddressNetworkPropertyRule() {
+        return getMacAddressNetworkPropertyAccess().getRule();
+    }
+
+    //GatewayNetworkProperty returns GatewayNetworkProperty:
+    //    {GatewayNetworkProperty}
+    //    PreListElement "name:" name="gateway"
+    //    INDENT
+    //        'kind:' kind=AttributeKind
+    //        (
+    //        'description:' description=EString
+    //        )?
+    //        (
+    //        'value:' value=PropertyValue
+    //        )?
+    //    DEDENT
+    //    ;
+    public DeviceGrammarAccess.GatewayNetworkPropertyElements getGatewayNetworkPropertyAccess() {
+        return gaDevice.getGatewayNetworkPropertyAccess();
+    }
+
+    public ParserRule getGatewayNetworkPropertyRule() {
+        return getGatewayNetworkPropertyAccess().getRule();
+    }
+
+    //SubnetMaskNetworkProperty returns SubnetMaskNetworkProperty:
+    //    {SubnetMaskNetworkProperty}
+    //    PreListElement "name:" name="subnet_mask"
+    //    INDENT
+    //        'kind:' kind=AttributeKind
+    //        (
+    //        'description:' description=EString
+    //        )?
+    //        (
+    //        'value:' value=PropertyValue
+    //        )?
+    //    DEDENT
+    //    ;
+    public DeviceGrammarAccess.SubnetMaskNetworkPropertyElements getSubnetMaskNetworkPropertyAccess() {
+        return gaDevice.getSubnetMaskNetworkPropertyAccess();
+    }
+
+    public ParserRule getSubnetMaskNetworkPropertyRule() {
+        return getSubnetMaskNetworkPropertyAccess().getRule();
+    }
+
+    //PortNetworkProperty returns PortNetworkProperty:
+    //    {PortNetworkProperty}
+    //    PreListElement "name:" name="port"
+    //    INDENT
+    //        'kind:' kind=AttributeKind
+    //        (
+    //        'description:' description=EString
+    //        )?
+    //        (
+    //        'value:' value=PropertyValueInt
+    //        )?
+    //    DEDENT
+    //    ;
+    public DeviceGrammarAccess.PortNetworkPropertyElements getPortNetworkPropertyAccess() {
+        return gaDevice.getPortNetworkPropertyAccess();
+    }
+
+    public ParserRule getPortNetworkPropertyRule() {
+        return getPortNetworkPropertyAccess().getRule();
+    }
+
+    //DNSServerNetworkProperty returns DNSServerNetworkProperty:
+    //    {DNSServerNetworkProperty}
+    //    PreListElement "name:" name="dns_server"
+    //    INDENT
+    //        'kind:' kind=SelectionKind
+    //        (
+    //        'description:' description=EString
+    //        )?
+    //        (
+    //          'value:'
+    //            INDENT
+    //            PreListElement value+=PropertyValue
+    //            ( PreListElement value+=PropertyValue)*
+    //            DEDENT
+    //            )?
+    //        (DEDENT)?
+    //    DEDENT
+    //    ;
+    public DeviceGrammarAccess.DNSServerNetworkPropertyElements getDNSServerNetworkPropertyAccess() {
+        return gaDevice.getDNSServerNetworkPropertyAccess();
+    }
+
+    public ParserRule getDNSServerNetworkPropertyRule() {
+        return getDNSServerNetworkPropertyAccess().getRule();
+    }
+
+    //DeviceVolumeUsbProperty returns DeviceVolumeUsbProperty:
+    //  {DeviceVolumeUsbProperty}
+    //  PreListElement "name:" name="device_volume"
+    //  INDENT
+    //      'kind:' kind=SelectionKind
+    //      (
+    //      'description:' description=EString
+    //      )?
+    //      (
+    //        'value:'
+    //          INDENT
+    //          PreListElement value+=PropertyValue
+    //          ( PreListElement value+=PropertyValue)*
+    //          DEDENT
+    //          )?
+    //      (DEDENT)?
+    //  DEDENT
+    //    ;
+    public DeviceGrammarAccess.DeviceVolumeUsbPropertyElements getDeviceVolumeUsbPropertyAccess() {
+        return gaDevice.getDeviceVolumeUsbPropertyAccess();
+    }
+
+    public ParserRule getDeviceVolumeUsbPropertyRule() {
+        return getDeviceVolumeUsbPropertyAccess().getRule();
     }
 
     //DeviceType_Impl returns DeviceType:
@@ -1290,6 +1455,26 @@ public class TargetEnvironmentGrammarAccess extends AbstractElementFinder.Abstra
         return getCommunicationConnectionAccess().getRule();
     }
 
+    //UsbConnection returns UsbConnection:
+    //    {UsbConnection}
+    //    PreListElement 'name:'  name=EString
+    //    INDENT
+    //        'type:' type=UsbCommunicationType
+    //        ('properties:'
+    //            INDENT
+    //            properties+=AbstractUsbProperty+
+    //            DEDENT
+    //            )?
+    //    DEDENT
+    //    ;
+    public DeviceGrammarAccess.UsbConnectionElements getUsbConnectionAccess() {
+        return gaDevice.getUsbConnectionAccess();
+    }
+
+    public ParserRule getUsbConnectionRule() {
+        return getUsbConnectionAccess().getRule();
+    }
+
     //OperatingSystemResouce returns OperatingSystemResouce:
     //    {OperatingSystemResouce}
     //    PreListElement 'name:'  name=EString
@@ -1437,7 +1622,7 @@ public class TargetEnvironmentGrammarAccess extends AbstractElementFinder.Abstra
     }
 
     //Resource returns Resource:
-    //    'name:'    name=EString
+    //    'name:' name=EString
     //    INDENT
     //        'type:' type=AbstractResouceType
     //        ('properties:'
@@ -1489,7 +1674,7 @@ public class TargetEnvironmentGrammarAccess extends AbstractElementFinder.Abstra
     }
 
     //Property returns Property:
-    //    PreListElement 'name:'    name=EString
+    //    PreListElement 'name:'  name=EString
     //    INDENT
     //        'kind:' kind=PropertyKind
     //        (
@@ -1513,7 +1698,7 @@ public class TargetEnvironmentGrammarAccess extends AbstractElementFinder.Abstra
     }
 
     //PropertyAttribute returns PropertyAttribute:
-    //    PreListElement 'name:'    name=EString
+    //    PreListElement 'name:'  name=EString
     //    INDENT
     //        'kind:' kind=AttributeKind
     //        (
@@ -1533,7 +1718,7 @@ public class TargetEnvironmentGrammarAccess extends AbstractElementFinder.Abstra
     }
 
     //PropertyMaximun returns PropertyMaximun:
-    //    PreListElement 'name:'    name=EString
+    //    PreListElement 'name:'  name=EString
     //    INDENT
     //        'kind:' kind=MaximumKind
     //        (
@@ -1553,7 +1738,7 @@ public class TargetEnvironmentGrammarAccess extends AbstractElementFinder.Abstra
     }
 
     //PropertyMinimum returns PropertyMinimum:
-    //    PreListElement 'name:'    name=EString
+    //    PreListElement 'name:'  name=EString
     //    INDENT
     //        'kind:' kind=MinimumKind
     //        (
@@ -1573,7 +1758,7 @@ public class TargetEnvironmentGrammarAccess extends AbstractElementFinder.Abstra
     }
 
     //PropertySelection returns PropertySelection:
-    //    PreListElement 'name:'    name=EString
+    //    PreListElement 'name:'  name=EString
     //    INDENT
     //        'kind:' kind=SelectionKind
     //        (
@@ -1597,7 +1782,7 @@ public class TargetEnvironmentGrammarAccess extends AbstractElementFinder.Abstra
     }
 
     //PropertyRange returns PropertyRange:
-    //    PreListElement 'name:'    name=EString
+    //    PreListElement 'name:'  name=EString
     //    INDENT
     //        'kind:' kind=RangeKind
     //        (
@@ -1621,7 +1806,10 @@ public class TargetEnvironmentGrammarAccess extends AbstractElementFinder.Abstra
     }
 
     //PropertyValue returns PropertyValue:
-    //    PropertyValueInt | PropertyValueDouble | PropertyValueString| ProcessorArchitectureValue | LinuxDistributionValue | UbuntuVersionValue;
+    //    PropertyValueInt | PropertyValueDouble
+    //    | PropertyValueString| ProcessorArchitectureValue
+    //    | LinuxDistributionValue | UbuntuVersionValue
+    //    | PropertyValueList;
     public UtilGrammarAccess.PropertyValueElements getPropertyValueAccess() {
         return gaUtil.getPropertyValueAccess();
     }
@@ -1659,6 +1847,20 @@ public class TargetEnvironmentGrammarAccess extends AbstractElementFinder.Abstra
 
     public ParserRule getPropertyValueStringRule() {
         return getPropertyValueStringAccess().getRule();
+    }
+
+    //PropertyValueList returns PropertyValueList:
+    //    INDENT
+    //      PreListElement value+=PropertyValue
+    //          (PreListElement value+=PropertyValue)*
+    //    DEDENT
+    // ;
+    public UtilGrammarAccess.PropertyValueListElements getPropertyValueListAccess() {
+        return gaUtil.getPropertyValueListAccess();
+    }
+
+    public ParserRule getPropertyValueListRule() {
+        return getPropertyValueListAccess().getRule();
     }
 
     //ProcessorArchitectureValue returns ProcessorArchitectureValue:
@@ -1796,6 +1998,18 @@ public class TargetEnvironmentGrammarAccess extends AbstractElementFinder.Abstra
 
     public ParserRule getWlanCommunicationTypeRule() {
         return getWlanCommunicationTypeAccess().getRule();
+    }
+
+    //UsbCommunicationType returns UsbCommunicationType:
+    //    {UsbCommunicationType}
+    //    'Usb'
+    //    ;
+    public UtilGrammarAccess.UsbCommunicationTypeElements getUsbCommunicationTypeAccess() {
+        return gaUtil.getUsbCommunicationTypeAccess();
+    }
+
+    public ParserRule getUsbCommunicationTypeRule() {
+        return getUsbCommunicationTypeAccess().getRule();
     }
 
     //AttributeKind returns AttributeKind:

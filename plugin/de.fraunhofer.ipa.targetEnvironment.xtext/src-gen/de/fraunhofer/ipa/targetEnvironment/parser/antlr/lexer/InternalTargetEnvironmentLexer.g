@@ -41,6 +41,8 @@ DeviceResouce : 'deviceResouce:';
 
 IncludeDevice : 'includeDevice:';
 
+Interface_name : 'interface_name';
+
 RefConnection : 'refConnection:';
 
 RefDeviceType : 'refDeviceType:';
@@ -48,6 +50,10 @@ RefDeviceType : 'refDeviceType:';
 AttributeKind : 'AttributeKind';
 
 SelectionKind : 'SelectionKind';
+
+Device_volume : 'device_volume';
+
+Identity_name : 'identity_name';
 
 Description : 'description:';
 
@@ -59,7 +65,15 @@ MinimumKind : 'MinimumKind';
 
 Core_number : 'core_number';
 
+Mac_address : 'mac_address';
+
 Properties : 'properties:';
+
+Subnet_mask : 'subnet_mask';
+
+Dns_server : 'dns_server';
+
+Ip_address : 'ip_address';
 
 Os_version : 'os_version';
 
@@ -71,13 +85,11 @@ RangeKind : 'RangeKind';
 
 Container : 'container';
 
-Interface : 'interface';
-
 Ethernet : 'Ethernet';
 
-Address : 'address';
-
 Device : 'device:';
+
+Gateway : 'gateway';
 
 Os_name : 'os_name';
 
@@ -103,7 +115,11 @@ Type : 'type:';
 
 Wlan : 'Wlan';
 
+Port : 'port';
+
 HyphenMinusHyphenMinusHyphenMinus : '---';
+
+Usb : 'Usb';
 
 X86 : 'x86';
 

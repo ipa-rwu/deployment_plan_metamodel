@@ -23,12 +23,14 @@ import de.fraunhofer.ipa.deployment.util.PropertyRange;
 import de.fraunhofer.ipa.deployment.util.PropertySelection;
 import de.fraunhofer.ipa.deployment.util.PropertyValueDouble;
 import de.fraunhofer.ipa.deployment.util.PropertyValueInt;
+import de.fraunhofer.ipa.deployment.util.PropertyValueList;
 import de.fraunhofer.ipa.deployment.util.PropertyValueString;
 import de.fraunhofer.ipa.deployment.util.RangeKind;
 import de.fraunhofer.ipa.deployment.util.Resource;
 import de.fraunhofer.ipa.deployment.util.ResourceType;
 import de.fraunhofer.ipa.deployment.util.SelectionKind;
 import de.fraunhofer.ipa.deployment.util.UbuntuVersionValue;
+import de.fraunhofer.ipa.deployment.util.UsbCommunicationType;
 import de.fraunhofer.ipa.deployment.util.UtilPackage;
 import de.fraunhofer.ipa.deployment.util.WlanCommunicationType;
 import de.fraunhofer.ipa.targetEnvironment.services.TargetEnvironmentGrammarAccess;
@@ -38,15 +40,23 @@ import device.CommunicationConnection;
 import device.ComputationDeviceType;
 import device.ConnectionProperty;
 import device.CoreProcessorProperty;
+import device.DNSServerNetworkProperty;
 import device.DevicePackage;
 import device.DeviceResource;
 import device.DeviceSet;
 import device.DeviceType;
+import device.DeviceVolumeUsbProperty;
+import device.GatewayNetworkProperty;
+import device.IdentityNameNetworkProperty;
 import device.InterfaceNetworkProperty;
+import device.MacAddressNetworkProperty;
 import device.NameOperatingSystemProperty;
 import device.NetworkConnection;
 import device.OperatingSystemResouce;
+import device.PortNetworkProperty;
 import device.ProcessorResouce;
+import device.SubnetMaskNetworkProperty;
+import device.UsbConnection;
 import device.VersionOperatingSystemProperty;
 import java.util.Set;
 import org.eclipse.emf.ecore.EObject;
@@ -99,6 +109,9 @@ public class TargetEnvironmentSemanticSequencer extends DeviceSemanticSequencer 
             case DevicePackage.CORE_PROCESSOR_PROPERTY:
                 sequence_CoreProcessorProperty(context, (CoreProcessorProperty) semanticObject);
                 return;
+            case DevicePackage.DNS_SERVER_NETWORK_PROPERTY:
+                sequence_DNSServerNetworkProperty(context, (DNSServerNetworkProperty) semanticObject);
+                return;
             case DevicePackage.DEVICE_RESOURCE:
                 sequence_DeviceResource(context, (DeviceResource) semanticObject);
                 return;
@@ -108,8 +121,20 @@ public class TargetEnvironmentSemanticSequencer extends DeviceSemanticSequencer 
             case DevicePackage.DEVICE_TYPE:
                 sequence_DeviceType_Impl(context, (DeviceType) semanticObject);
                 return;
+            case DevicePackage.DEVICE_VOLUME_USB_PROPERTY:
+                sequence_DeviceVolumeUsbProperty(context, (DeviceVolumeUsbProperty) semanticObject);
+                return;
+            case DevicePackage.GATEWAY_NETWORK_PROPERTY:
+                sequence_GatewayNetworkProperty(context, (GatewayNetworkProperty) semanticObject);
+                return;
+            case DevicePackage.IDENTITY_NAME_NETWORK_PROPERTY:
+                sequence_IdentityNameNetworkProperty(context, (IdentityNameNetworkProperty) semanticObject);
+                return;
             case DevicePackage.INTERFACE_NETWORK_PROPERTY:
                 sequence_InterfaceNetworkProperty(context, (InterfaceNetworkProperty) semanticObject);
+                return;
+            case DevicePackage.MAC_ADDRESS_NETWORK_PROPERTY:
+                sequence_MacAddressNetworkProperty(context, (MacAddressNetworkProperty) semanticObject);
                 return;
             case DevicePackage.NAME_OPERATING_SYSTEM_PROPERTY:
                 sequence_NameOperatingSystemProperty(context, (NameOperatingSystemProperty) semanticObject);
@@ -120,8 +145,17 @@ public class TargetEnvironmentSemanticSequencer extends DeviceSemanticSequencer 
             case DevicePackage.OPERATING_SYSTEM_RESOUCE:
                 sequence_OperatingSystemResouce(context, (OperatingSystemResouce) semanticObject);
                 return;
+            case DevicePackage.PORT_NETWORK_PROPERTY:
+                sequence_PortNetworkProperty(context, (PortNetworkProperty) semanticObject);
+                return;
             case DevicePackage.PROCESSOR_RESOUCE:
                 sequence_ProcessorResouce(context, (ProcessorResouce) semanticObject);
+                return;
+            case DevicePackage.SUBNET_MASK_NETWORK_PROPERTY:
+                sequence_SubnetMaskNetworkProperty(context, (SubnetMaskNetworkProperty) semanticObject);
+                return;
+            case DevicePackage.USB_CONNECTION:
+                sequence_UsbConnection(context, (UsbConnection) semanticObject);
                 return;
             case DevicePackage.VERSION_OPERATING_SYSTEM_PROPERTY:
                 sequence_VersionOperatingSystemProperty(context, (VersionOperatingSystemProperty) semanticObject);
@@ -213,6 +247,9 @@ public class TargetEnvironmentSemanticSequencer extends DeviceSemanticSequencer 
             case UtilPackage.PROPERTY_VALUE_INT:
                 sequence_PropertyValueInt(context, (PropertyValueInt) semanticObject);
                 return;
+            case UtilPackage.PROPERTY_VALUE_LIST:
+                sequence_PropertyValueList(context, (PropertyValueList) semanticObject);
+                return;
             case UtilPackage.PROPERTY_VALUE_STRING:
                 sequence_PropertyValueString(context, (PropertyValueString) semanticObject);
                 return;
@@ -230,6 +267,9 @@ public class TargetEnvironmentSemanticSequencer extends DeviceSemanticSequencer 
                 return;
             case UtilPackage.UBUNTU_VERSION_VALUE:
                 sequence_UbuntuVersionValue(context, (UbuntuVersionValue) semanticObject);
+                return;
+            case UtilPackage.USB_COMMUNICATION_TYPE:
+                sequence_UsbCommunicationType(context, (UsbCommunicationType) semanticObject);
                 return;
             case UtilPackage.WLAN_COMMUNICATION_TYPE:
                 sequence_WlanCommunicationType(context, (WlanCommunicationType) semanticObject);
@@ -344,7 +384,7 @@ public class TargetEnvironmentSemanticSequencer extends DeviceSemanticSequencer 
      *     TargetDeployEnviroment returns TargetDeployEnviroment
      *
      * Constraint:
-     *     (name=EString (includeDevice+=ComputationDeviceInstance+ includeDevice+=DeviceInstance+)? configConnection+=ConfigConnection*)
+     *     (name=EString (includeDevice+=ComputationDeviceInstance+ includeDevice+=DeviceInstance+)? configConnections+=ConfigConnection*)
      * </pre>
      */
     protected void sequence_TargetDeployEnviroment(ISerializationContext context, TargetDeployEnviroment semanticObject) {
