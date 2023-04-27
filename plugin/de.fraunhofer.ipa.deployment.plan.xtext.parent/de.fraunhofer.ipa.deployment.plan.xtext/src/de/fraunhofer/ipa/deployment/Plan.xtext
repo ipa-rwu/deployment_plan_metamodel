@@ -71,6 +71,7 @@ ImplementationAssignment returns ImplementationAssignment:
     PreListElement 'name:' name = EString
   INDENT
     'executedBy:' executedBy=[targetEnvironment::ComputationDeviceInstance|EString]
+    'version:' version = EString
     'softwareComponents:'
         INDENT
             PreListElement softwareComponents+=ConfigSoftwareComponent
