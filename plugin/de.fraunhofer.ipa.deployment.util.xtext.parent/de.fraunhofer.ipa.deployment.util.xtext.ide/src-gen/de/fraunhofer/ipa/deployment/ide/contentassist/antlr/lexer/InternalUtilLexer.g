@@ -55,6 +55,8 @@ Type : 'type:';
 
 Wlan : 'Wlan';
 
+Usb : 'Usb';
+
 X86 : 'x86';
 
 HyphenMinus : '-';
