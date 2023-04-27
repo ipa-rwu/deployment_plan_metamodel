@@ -124,15 +124,15 @@ public interface TargetEnvironmentPackage extends EPackage {
     int TARGET_DEPLOY_ENVIROMENT__INCLUDE_DEVICE = UtilPackage.DESCRIPTION_FEATURE_COUNT + 1;
 
     /**
-     * The feature id for the '<em><b>Config Connection</b></em>' containment reference list.
+     * The feature id for the '<em><b>Config Connections</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int TARGET_DEPLOY_ENVIROMENT__CONFIG_CONNECTION = UtilPackage.DESCRIPTION_FEATURE_COUNT + 2;
+    int TARGET_DEPLOY_ENVIROMENT__CONFIG_CONNECTIONS = UtilPackage.DESCRIPTION_FEATURE_COUNT + 2;
 
-    /**
+                /**
      * The number of structural features of the '<em>Target Deploy Enviroment</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -600,17 +600,17 @@ public interface TargetEnvironmentPackage extends EPackage {
     EReference getTargetDeployEnviroment_IncludeDevice();
 
     /**
-     * Returns the meta object for the containment reference list '{@link targetEnvironment.TargetDeployEnviroment#getConfigConnection <em>Config Connection</em>}'.
+     * Returns the meta object for the containment reference list '{@link targetEnvironment.TargetDeployEnviroment#getConfigConnections <em>Config Connections</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the containment reference list '<em>Config Connection</em>'.
-     * @see targetEnvironment.TargetDeployEnviroment#getConfigConnection()
+     * @return the meta object for the containment reference list '<em>Config Connections</em>'.
+     * @see targetEnvironment.TargetDeployEnviroment#getConfigConnections()
      * @see #getTargetDeployEnviroment()
      * @generated
      */
-    EReference getTargetDeployEnviroment_ConfigConnection();
+    EReference getTargetDeployEnviroment_ConfigConnections();
 
-    /**
+                /**
      * Returns the meta object for class '{@link targetEnvironment.ConfigConnection <em>Config Connection</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -923,14 +923,14 @@ public interface TargetEnvironmentPackage extends EPackage {
         EReference TARGET_DEPLOY_ENVIROMENT__INCLUDE_DEVICE = eINSTANCE.getTargetDeployEnviroment_IncludeDevice();
 
         /**
-         * The meta object literal for the '<em><b>Config Connection</b></em>' containment reference list feature.
+         * The meta object literal for the '<em><b>Config Connections</b></em>' containment reference list feature.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
          * @generated
          */
-        EReference TARGET_DEPLOY_ENVIROMENT__CONFIG_CONNECTION = eINSTANCE.getTargetDeployEnviroment_ConfigConnection();
+        EReference TARGET_DEPLOY_ENVIROMENT__CONFIG_CONNECTIONS = eINSTANCE.getTargetDeployEnviroment_ConfigConnections();
 
-        /**
+                                /**
          * The meta object literal for the '{@link targetEnvironment.impl.ConfigConnectionImpl <em>Config Connection</em>}' class.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->

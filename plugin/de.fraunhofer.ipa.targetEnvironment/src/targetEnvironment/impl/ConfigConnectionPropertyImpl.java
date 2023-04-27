@@ -4,8 +4,7 @@ package targetEnvironment.impl;
 
 import de.fraunhofer.ipa.deployment.util.PropertyValue;
 
-import device.ConnectionProperty;
-
+import device.AbstractConnectionProperty;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -61,7 +60,7 @@ public class ConfigConnectionPropertyImpl extends AbstractConfigPropertyImpl imp
      * @generated
      * @ordered
      */
-    protected ConnectionProperty refConnectionProperty;
+    protected AbstractConnectionProperty refConnectionProperty;
 
     /**
      * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
@@ -118,10 +117,10 @@ public class ConfigConnectionPropertyImpl extends AbstractConfigPropertyImpl imp
      * <!-- end-user-doc -->
      * @generated
      */
-    public ConnectionProperty getRefConnectionProperty() {
+    public AbstractConnectionProperty getRefConnectionProperty() {
         if (refConnectionProperty != null && refConnectionProperty.eIsProxy()) {
             InternalEObject oldRefConnectionProperty = (InternalEObject)refConnectionProperty;
-            refConnectionProperty = (ConnectionProperty)eResolveProxy(oldRefConnectionProperty);
+            refConnectionProperty = (AbstractConnectionProperty)eResolveProxy(oldRefConnectionProperty);
             if (refConnectionProperty != oldRefConnectionProperty) {
                 if (eNotificationRequired())
                     eNotify(new ENotificationImpl(this, Notification.RESOLVE, TargetEnvironmentPackage.CONFIG_CONNECTION_PROPERTY__REF_CONNECTION_PROPERTY, oldRefConnectionProperty, refConnectionProperty));
@@ -135,7 +134,7 @@ public class ConfigConnectionPropertyImpl extends AbstractConfigPropertyImpl imp
      * <!-- end-user-doc -->
      * @generated
      */
-    public ConnectionProperty basicGetRefConnectionProperty() {
+    public AbstractConnectionProperty basicGetRefConnectionProperty() {
         return refConnectionProperty;
     }
 
@@ -144,14 +143,14 @@ public class ConfigConnectionPropertyImpl extends AbstractConfigPropertyImpl imp
      * <!-- end-user-doc -->
      * @generated
      */
-    public void setRefConnectionProperty(ConnectionProperty newRefConnectionProperty) {
-        ConnectionProperty oldRefConnectionProperty = refConnectionProperty;
+    public void setRefConnectionProperty(AbstractConnectionProperty newRefConnectionProperty) {
+        AbstractConnectionProperty oldRefConnectionProperty = refConnectionProperty;
         refConnectionProperty = newRefConnectionProperty;
         if (eNotificationRequired())
             eNotify(new ENotificationImpl(this, Notification.SET, TargetEnvironmentPackage.CONFIG_CONNECTION_PROPERTY__REF_CONNECTION_PROPERTY, oldRefConnectionProperty, refConnectionProperty));
     }
 
-    /**
+                /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -239,7 +238,7 @@ public class ConfigConnectionPropertyImpl extends AbstractConfigPropertyImpl imp
                 setName((String)newValue);
                 return;
             case TargetEnvironmentPackage.CONFIG_CONNECTION_PROPERTY__REF_CONNECTION_PROPERTY:
-                setRefConnectionProperty((ConnectionProperty)newValue);
+                setRefConnectionProperty((AbstractConnectionProperty)newValue);
                 return;
             case TargetEnvironmentPackage.CONFIG_CONNECTION_PROPERTY__VALUE:
                 setValue((PropertyValue)newValue);
@@ -260,7 +259,7 @@ public class ConfigConnectionPropertyImpl extends AbstractConfigPropertyImpl imp
                 setName(NAME_EDEFAULT);
                 return;
             case TargetEnvironmentPackage.CONFIG_CONNECTION_PROPERTY__REF_CONNECTION_PROPERTY:
-                setRefConnectionProperty((ConnectionProperty)null);
+                setRefConnectionProperty((AbstractConnectionProperty)null);
                 return;
             case TargetEnvironmentPackage.CONFIG_CONNECTION_PROPERTY__VALUE:
                 setValue((PropertyValue)null);

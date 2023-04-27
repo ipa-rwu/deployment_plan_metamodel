@@ -3,25 +3,26 @@
 package device.impl;
 
 import de.fraunhofer.ipa.deployment.util.impl.PropertyAttributeImpl;
-import device.ConnectionProperty;
+
 import device.DevicePackage;
+import device.IdentityNameNetworkProperty;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Connection Property</b></em>'.
+ * An implementation of the model object '<em><b>Identity Name Network Property</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class ConnectionPropertyImpl extends PropertyAttributeImpl implements ConnectionProperty {
+public class IdentityNameNetworkPropertyImpl extends PropertyAttributeImpl implements IdentityNameNetworkProperty {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    protected ConnectionPropertyImpl() {
+    protected IdentityNameNetworkPropertyImpl() {
         super();
     }
 
@@ -32,7 +33,7 @@ public class ConnectionPropertyImpl extends PropertyAttributeImpl implements Con
      */
     @Override
     protected EClass eStaticClass() {
-        return DevicePackage.Literals.CONNECTION_PROPERTY;
+        return DevicePackage.Literals.IDENTITY_NAME_NETWORK_PROPERTY;
     }
 
-} //ConnectionPropertyImpl
+} //IdentityNameNetworkPropertyImpl

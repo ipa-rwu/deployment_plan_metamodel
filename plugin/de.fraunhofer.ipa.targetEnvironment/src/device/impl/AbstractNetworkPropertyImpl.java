@@ -7,8 +7,6 @@ import device.DevicePackage;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Abstract Network Property</b></em>'.
@@ -16,7 +14,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public abstract class AbstractNetworkPropertyImpl extends MinimalEObjectImpl.Container implements AbstractNetworkProperty {
+public abstract class AbstractNetworkPropertyImpl extends AbstractConnectionPropertyImpl implements AbstractNetworkProperty {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->

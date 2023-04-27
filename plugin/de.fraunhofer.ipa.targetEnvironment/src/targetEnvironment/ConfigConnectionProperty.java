@@ -4,7 +4,7 @@ package targetEnvironment;
 
 import de.fraunhofer.ipa.deployment.util.PropertyValue;
 
-import device.ConnectionProperty;
+import device.AbstractConnectionProperty;
 
 /**
  * <!-- begin-user-doc -->
@@ -52,12 +52,12 @@ public interface ConfigConnectionProperty extends AbstractConfigProperty {
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return the value of the '<em>Ref Connection Property</em>' reference.
-     * @see #setRefConnectionProperty(ConnectionProperty)
+     * @see #setRefConnectionProperty(AbstractConnectionProperty)
      * @see targetEnvironment.TargetEnvironmentPackage#getConfigConnectionProperty_RefConnectionProperty()
      * @model required="true" derived="true"
      * @generated
      */
-    ConnectionProperty getRefConnectionProperty();
+    AbstractConnectionProperty getRefConnectionProperty();
 
     /**
      * Sets the value of the '{@link targetEnvironment.ConfigConnectionProperty#getRefConnectionProperty <em>Ref Connection Property</em>}' reference.
@@ -67,9 +67,9 @@ public interface ConfigConnectionProperty extends AbstractConfigProperty {
      * @see #getRefConnectionProperty()
      * @generated
      */
-    void setRefConnectionProperty(ConnectionProperty value);
+    void setRefConnectionProperty(AbstractConnectionProperty value);
 
-    /**
+                /**
      * Returns the value of the '<em><b>Value</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->

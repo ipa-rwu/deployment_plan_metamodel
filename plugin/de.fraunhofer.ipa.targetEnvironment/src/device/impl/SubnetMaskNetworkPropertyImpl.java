@@ -3,25 +3,26 @@
 package device.impl;
 
 import de.fraunhofer.ipa.deployment.util.impl.PropertyAttributeImpl;
-import device.ConnectionProperty;
+
 import device.DevicePackage;
+import device.SubnetMaskNetworkProperty;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Connection Property</b></em>'.
+ * An implementation of the model object '<em><b>Subnet Mask Network Property</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class ConnectionPropertyImpl extends PropertyAttributeImpl implements ConnectionProperty {
+public class SubnetMaskNetworkPropertyImpl extends PropertyAttributeImpl implements SubnetMaskNetworkProperty {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    protected ConnectionPropertyImpl() {
+    protected SubnetMaskNetworkPropertyImpl() {
         super();
     }
 
@@ -32,7 +33,7 @@ public class ConnectionPropertyImpl extends PropertyAttributeImpl implements Con
      */
     @Override
     protected EClass eStaticClass() {
-        return DevicePackage.Literals.CONNECTION_PROPERTY;
+        return DevicePackage.Literals.SUBNET_MASK_NETWORK_PROPERTY;
     }
 
-} //ConnectionPropertyImpl
+} //SubnetMaskNetworkPropertyImpl

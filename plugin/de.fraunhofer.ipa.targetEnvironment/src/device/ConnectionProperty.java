@@ -14,5 +14,5 @@ import de.fraunhofer.ipa.deployment.util.PropertyAttribute;
  * @model
  * @generated
  */
-public interface ConnectionProperty extends PropertyAttribute {
+public interface ConnectionProperty extends PropertyAttribute, AbstractConnectionProperty {
 } // ConnectionProperty

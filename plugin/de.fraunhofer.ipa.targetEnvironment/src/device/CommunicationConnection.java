@@ -48,7 +48,7 @@ public interface CommunicationConnection extends AbstractCommunicationConnection
 
     /**
      * Returns the value of the '<em><b>Properties</b></em>' containment reference list.
-     * The list contents are of type {@link device.ConnectionProperty}.
+     * The list contents are of type {@link device.AbstractConnectionProperty}.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return the value of the '<em>Properties</em>' containment reference list.
@@ -56,6 +56,6 @@ public interface CommunicationConnection extends AbstractCommunicationConnection
      * @model containment="true"
      * @generated
      */
-    EList<ConnectionProperty> getProperties();
+    EList<AbstractConnectionProperty> getProperties();
 
 } // CommunicationConnection

@@ -2,26 +2,25 @@
  */
 package device.impl;
 
-import de.fraunhofer.ipa.deployment.util.impl.PropertyAttributeImpl;
-import device.ConnectionProperty;
+import device.AbstractUsbProperty;
 import device.DevicePackage;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Connection Property</b></em>'.
+ * An implementation of the model object '<em><b>Abstract Usb Property</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class ConnectionPropertyImpl extends PropertyAttributeImpl implements ConnectionProperty {
+public abstract class AbstractUsbPropertyImpl extends AbstractConnectionPropertyImpl implements AbstractUsbProperty {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    protected ConnectionPropertyImpl() {
+    protected AbstractUsbPropertyImpl() {
         super();
     }
 
@@ -32,7 +31,7 @@ public class ConnectionPropertyImpl extends PropertyAttributeImpl implements Con
      */
     @Override
     protected EClass eStaticClass() {
-        return DevicePackage.Literals.CONNECTION_PROPERTY;
+        return DevicePackage.Literals.ABSTRACT_USB_PROPERTY;
     }
 
-} //ConnectionPropertyImpl
+} //AbstractUsbPropertyImpl

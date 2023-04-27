@@ -2,11 +2,11 @@
  */
 package device.impl;
 
-import de.fraunhofer.ipa.deployment.util.CommunicationType;
+import de.fraunhofer.ipa.deployment.util.UsbCommunicationType;
 
-import device.AbstractConnectionProperty;
-import device.CommunicationConnection;
+import device.AbstractUsbProperty;
 import device.DevicePackage;
+import device.UsbConnection;
 
 import java.util.Collection;
 
@@ -25,19 +25,19 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Communication Connection</b></em>'.
+ * An implementation of the model object '<em><b>Usb Connection</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link device.impl.CommunicationConnectionImpl#getType <em>Type</em>}</li>
- *   <li>{@link device.impl.CommunicationConnectionImpl#getProperties <em>Properties</em>}</li>
+ *   <li>{@link device.impl.UsbConnectionImpl#getType <em>Type</em>}</li>
+ *   <li>{@link device.impl.UsbConnectionImpl#getProperties <em>Properties</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class CommunicationConnectionImpl extends AbstractCommunicationConnectionImpl implements CommunicationConnection {
+public class UsbConnectionImpl extends AbstractCommunicationConnectionImpl implements UsbConnection {
     /**
      * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
      * <!-- begin-user-doc -->
@@ -46,7 +46,7 @@ public class CommunicationConnectionImpl extends AbstractCommunicationConnection
      * @generated
      * @ordered
      */
-    protected CommunicationType type;
+    protected UsbCommunicationType type;
 
     /**
      * The cached value of the '{@link #getProperties() <em>Properties</em>}' containment reference list.
@@ -56,14 +56,14 @@ public class CommunicationConnectionImpl extends AbstractCommunicationConnection
      * @generated
      * @ordered
      */
-    protected EList<AbstractConnectionProperty> properties;
+    protected EList<AbstractUsbProperty> properties;
 
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    protected CommunicationConnectionImpl() {
+    protected UsbConnectionImpl() {
         super();
     }
 
@@ -74,7 +74,7 @@ public class CommunicationConnectionImpl extends AbstractCommunicationConnection
      */
     @Override
     protected EClass eStaticClass() {
-        return DevicePackage.Literals.COMMUNICATION_CONNECTION;
+        return DevicePackage.Literals.USB_CONNECTION;
     }
 
     /**
@@ -82,7 +82,7 @@ public class CommunicationConnectionImpl extends AbstractCommunicationConnection
      * <!-- end-user-doc -->
      * @generated
      */
-    public CommunicationType getType() {
+    public UsbCommunicationType getType() {
         return type;
     }
 
@@ -91,11 +91,11 @@ public class CommunicationConnectionImpl extends AbstractCommunicationConnection
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetType(CommunicationType newType, NotificationChain msgs) {
-        CommunicationType oldType = type;
+    public NotificationChain basicSetType(UsbCommunicationType newType, NotificationChain msgs) {
+        UsbCommunicationType oldType = type;
         type = newType;
         if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DevicePackage.COMMUNICATION_CONNECTION__TYPE, oldType, newType);
+            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DevicePackage.USB_CONNECTION__TYPE, oldType, newType);
             if (msgs == null) msgs = notification; else msgs.add(notification);
         }
         return msgs;
@@ -106,18 +106,18 @@ public class CommunicationConnectionImpl extends AbstractCommunicationConnection
      * <!-- end-user-doc -->
      * @generated
      */
-    public void setType(CommunicationType newType) {
+    public void setType(UsbCommunicationType newType) {
         if (newType != type) {
             NotificationChain msgs = null;
             if (type != null)
-                msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DevicePackage.COMMUNICATION_CONNECTION__TYPE, null, msgs);
+                msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DevicePackage.USB_CONNECTION__TYPE, null, msgs);
             if (newType != null)
-                msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DevicePackage.COMMUNICATION_CONNECTION__TYPE, null, msgs);
+                msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DevicePackage.USB_CONNECTION__TYPE, null, msgs);
             msgs = basicSetType(newType, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, DevicePackage.COMMUNICATION_CONNECTION__TYPE, newType, newType));
+            eNotify(new ENotificationImpl(this, Notification.SET, DevicePackage.USB_CONNECTION__TYPE, newType, newType));
     }
 
     /**
@@ -125,9 +125,9 @@ public class CommunicationConnectionImpl extends AbstractCommunicationConnection
      * <!-- end-user-doc -->
      * @generated
      */
-    public EList<AbstractConnectionProperty> getProperties() {
+    public EList<AbstractUsbProperty> getProperties() {
         if (properties == null) {
-            properties = new EObjectContainmentEList<AbstractConnectionProperty>(AbstractConnectionProperty.class, this, DevicePackage.COMMUNICATION_CONNECTION__PROPERTIES);
+            properties = new EObjectContainmentEList<AbstractUsbProperty>(AbstractUsbProperty.class, this, DevicePackage.USB_CONNECTION__PROPERTIES);
         }
         return properties;
     }
@@ -140,9 +140,9 @@ public class CommunicationConnectionImpl extends AbstractCommunicationConnection
     @Override
     public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
         switch (featureID) {
-            case DevicePackage.COMMUNICATION_CONNECTION__TYPE:
+            case DevicePackage.USB_CONNECTION__TYPE:
                 return basicSetType(null, msgs);
-            case DevicePackage.COMMUNICATION_CONNECTION__PROPERTIES:
+            case DevicePackage.USB_CONNECTION__PROPERTIES:
                 return ((InternalEList<?>)getProperties()).basicRemove(otherEnd, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -156,9 +156,9 @@ public class CommunicationConnectionImpl extends AbstractCommunicationConnection
     @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
         switch (featureID) {
-            case DevicePackage.COMMUNICATION_CONNECTION__TYPE:
+            case DevicePackage.USB_CONNECTION__TYPE:
                 return getType();
-            case DevicePackage.COMMUNICATION_CONNECTION__PROPERTIES:
+            case DevicePackage.USB_CONNECTION__PROPERTIES:
                 return getProperties();
         }
         return super.eGet(featureID, resolve, coreType);
@@ -173,12 +173,12 @@ public class CommunicationConnectionImpl extends AbstractCommunicationConnection
     @Override
     public void eSet(int featureID, Object newValue) {
         switch (featureID) {
-            case DevicePackage.COMMUNICATION_CONNECTION__TYPE:
-                setType((CommunicationType)newValue);
+            case DevicePackage.USB_CONNECTION__TYPE:
+                setType((UsbCommunicationType)newValue);
                 return;
-            case DevicePackage.COMMUNICATION_CONNECTION__PROPERTIES:
+            case DevicePackage.USB_CONNECTION__PROPERTIES:
                 getProperties().clear();
-                getProperties().addAll((Collection<? extends AbstractConnectionProperty>)newValue);
+                getProperties().addAll((Collection<? extends AbstractUsbProperty>)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -192,10 +192,10 @@ public class CommunicationConnectionImpl extends AbstractCommunicationConnection
     @Override
     public void eUnset(int featureID) {
         switch (featureID) {
-            case DevicePackage.COMMUNICATION_CONNECTION__TYPE:
-                setType((CommunicationType)null);
+            case DevicePackage.USB_CONNECTION__TYPE:
+                setType((UsbCommunicationType)null);
                 return;
-            case DevicePackage.COMMUNICATION_CONNECTION__PROPERTIES:
+            case DevicePackage.USB_CONNECTION__PROPERTIES:
                 getProperties().clear();
                 return;
         }
@@ -210,12 +210,12 @@ public class CommunicationConnectionImpl extends AbstractCommunicationConnection
     @Override
     public boolean eIsSet(int featureID) {
         switch (featureID) {
-            case DevicePackage.COMMUNICATION_CONNECTION__TYPE:
+            case DevicePackage.USB_CONNECTION__TYPE:
                 return type != null;
-            case DevicePackage.COMMUNICATION_CONNECTION__PROPERTIES:
+            case DevicePackage.USB_CONNECTION__PROPERTIES:
                 return properties != null && !properties.isEmpty();
         }
         return super.eIsSet(featureID);
     }
 
-} //CommunicationConnectionImpl
+} //UsbConnectionImpl
