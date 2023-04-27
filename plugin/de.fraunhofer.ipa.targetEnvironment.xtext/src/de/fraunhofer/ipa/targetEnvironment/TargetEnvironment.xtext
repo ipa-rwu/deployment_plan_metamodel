@@ -35,7 +35,7 @@ TargetDeployEnviroment returns TargetDeployEnviroment:
         )?
         ('configConnection:'
             INDENT
-            configConnection+=ConfigConnection+
+            configConnections+=ConfigConnection+
             DEDENT
         )?
     DEDENT
