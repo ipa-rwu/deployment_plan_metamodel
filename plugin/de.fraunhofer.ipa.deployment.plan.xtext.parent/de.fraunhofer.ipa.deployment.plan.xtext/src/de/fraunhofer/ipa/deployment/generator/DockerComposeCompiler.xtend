@@ -36,6 +36,8 @@ import targetEnvironment.ConfigDeviceProperty
 import targetEnvironment.ConnectedDevice
 import targetEnvironment.DeviceInstance
 import targetEnvironment.TargetDeployEnviroment
+import java.util.Set
+import java.util.HashSet
 
 class NetworkInfo {
     String InterfaceName
@@ -128,7 +130,7 @@ services:
 «var connectedCommunicatedComputationDevices = getCommunicationConnectionPerAssignment(assignment, compDev)»
   «var paramList = covertCollectExecutionEnvtoString(collectExecutionEnv(assignment))»
   «assignment.name»:
-    image: ${Registry}/«assignment.name»
+    image: ${Registry}/«assignment.name»:«assignment.version»
     volumes:
       - ./cyclonedds.xml:/cyclonedds.xml
     networks:
@@ -238,7 +240,7 @@ def createNetworkConfig(NetworkInfo netInfo)'''
     driver: default
 '''
 
-def addNetworks(List<ConnectedDevice> connectedComputationDevices)'''
+def addNetworks(Set<ConnectedDevice> connectedComputationDevices)'''
 «FOR connectedComputationDevice : connectedComputationDevices»
 «IF connectedComputationDevice.refConnection instanceof NetworkConnection»
 - «parserNetworkInfo(connectedComputationDevice).identityName»
@@ -246,32 +248,30 @@ def addNetworks(List<ConnectedDevice> connectedComputationDevices)'''
 «ENDFOR»
 '''
 
-def addPort(List<ConnectedDevice> connectedComputationDevices)'''
-  «FOR connectedComputationDevice : connectedComputationDevices»
-  «IF connectedComputationDevice.refConnection instanceof NetworkConnection»
-  «var netInfo = parserNetworkInfo(connectedComputationDevice)»
-  «IF netInfo.ports.size > 0»
+def addPort(Set<ConnectedDevice> connectedComputationDevices)'''
+«var connectedDevices = connectedComputationDevices.stream.filter[it.refConnection instanceof NetworkConnection].collect(Collectors.toList)»
+«var netinfos = new ArrayList»
+«FOR connectedDevice : connectedDevices»
+«{netinfos.add(parserNetworkInfo(connectedDevice)); ""}»
+«var ports = netinfos.stream.map[ports].collect(Collectors.toList).flatten»
+«IF ports.size > 0»
 ports:
-  «FOR port : netInfo.ports»
+  «FOR port : ports»
   - «port»:«port»
 «ENDFOR»
-«ENDIF»
 «ENDIF»
 «ENDFOR»
 '''
 
-def addDevice(List<ConnectedDevice> connectedComputationDevices)'''
-  «FOR connectedComputationDevice : connectedComputationDevices»
-  «IF connectedComputationDevice.refConnection instanceof UsbConnection»
-  «var volumes = connectedComputationDevice.getDeviceVolumes»
-  «IF volumes.size >0»
+def addDevice(Set<ConnectedDevice> connectedComputationDevices)'''
+«var usbConnections = connectedComputationDevices.stream.filter[it.refConnection instanceof UsbConnection].collect(Collectors.toList)»
+«var volumes = usbConnections.stream.map[getDeviceVolumes].collect(Collectors.toList).flatten»
+«IF volumes.size >0»
 devices:
-  «FOR volume : connectedComputationDevice.getDeviceVolumes»
+  «FOR volume : volumes»
   - «volume.valueFromPropertyValue»:«volume.valueFromPropertyValue»
 «ENDFOR»
 «ENDIF»
-«ENDIF»
-«ENDFOR»
 '''
 
 def getDeviceVolumes(ConnectedDevice connectedComputationDevice){
@@ -382,13 +382,15 @@ def getValueFromPropertyValueList(PropertyValue pv){
 }
 
 def getCommunicationConnectionPerAssignment(AbstractComputationAssignment assignment, ComputationDeviceInstance compDev){
-    var List<ConnectedDevice> connectedComputationDevices = new ArrayList<ConnectedDevice>()
+    var Set<ConnectedDevice> connectedComputationDevices = new HashSet<ConnectedDevice>()
     for(software: assignment.softwareComponents){
         if(software.executionConfiguration !== null){
             for(configExecParam : software.executionConfiguration){
                 var communicatedComputationDevice = getConnectedComputaionDeviceFromExecParam(configExecParam, compDev)
-                connectedComputationDevices.add(communicatedComputationDevice)
-                System.out.println(String.format("communicatedComputationDevice container: %s", communicatedComputationDevice.eContainer))
+                if(communicatedComputationDevice !== null){
+                    connectedComputationDevices.add(communicatedComputationDevice)
+                    System.out.println(String.format("communicatedComputationDevice container: %s", communicatedComputationDevice.eContainer))
+                }
             }
         }
     }
