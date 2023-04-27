@@ -15,7 +15,11 @@ import com.google.common.base.Predicate;
 import com.google.inject.Inject;
 
 import de.fraunhofer.ipa.deployment.util.AbstractProperty;
+import de.fraunhofer.ipa.deployment.util.PropertyAttribute;
 import de.fraunhofer.ipa.targetEnvironment.services.TargetEnvironmentGrammarAccess;
+import device.AbstractConnectionProperty;
+import device.AbstractNetworkProperty;
+import device.ConnectionProperty;
 import device.DeviceType;
 import targetEnvironment.ComputationDeviceInstance;
 import targetEnvironment.ConfigConnectionProperty;
@@ -43,8 +47,17 @@ public class TargetEnvironmentProposalProvider extends AbstractTargetEnvironment
     public void completeConfigConnectionProperty_Name(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
         super.completeConfigConnectionProperty_Name(model, assignment, context, acceptor);
         ConfigConnectionProperty ref_model = (ConfigConnectionProperty) model;
-        String from = ref_model.getRefConnectionProperty().getName();
-        acceptor.accept(createCompletionProposal(from, context));
+        AbstractConnectionProperty refConnProperty = ref_model.getRefConnectionProperty();
+        if(refConnProperty instanceof ConnectionProperty) {
+            ConnectionProperty property = (ConnectionProperty) refConnProperty;
+            String from = property.getName();
+            acceptor.accept(createCompletionProposal(from, context));
+        }
+        if(refConnProperty instanceof PropertyAttribute) {
+            PropertyAttribute property = (PropertyAttribute) refConnProperty;
+            String from = property.getName();
+            acceptor.accept(createCompletionProposal(from, context));
+        }
     }
 
     private ComputationDeviceInstance compDeviceIns=null;
@@ -67,6 +80,7 @@ public class TargetEnvironmentProposalProvider extends AbstractTargetEnvironment
             completeConfigDeviceProperty_From_Lookup(model, assignment, context, acceptor, deviceIns.getRefDeviceType());
         }
         }
+
     private void completeConfigDeviceProperty_From_Lookup(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor, DeviceType targetDev) {
         lookupCrossReference((CrossReference) assignment.getTerminal(),
                 context, acceptor, new Predicate<IEObjectDescription>() {
