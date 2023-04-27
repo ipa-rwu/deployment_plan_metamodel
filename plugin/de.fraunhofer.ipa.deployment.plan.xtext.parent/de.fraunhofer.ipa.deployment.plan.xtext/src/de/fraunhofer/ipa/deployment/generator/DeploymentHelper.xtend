@@ -26,6 +26,23 @@ import system.InterfaceReference
 import system.RosNode
 import system.impl.RosPublisherReferenceImpl
 import targetEnvironment.ComputationDeviceInstance
+import org.eclipse.emf.ecore.EObject
+import targetEnvironment.ConnectedDevice
+import device.NetworkConnection
+import targetEnvironment.ConfigConnectionProperty
+import device.InterfaceNetworkProperty
+import device.IdentityNameNetworkProperty
+import device.MacAddressNetworkProperty
+import device.AddressNetworkProperty
+import device.PortNetworkProperty
+import de.fraunhofer.ipa.deployment.util.PropertyValue
+import de.fraunhofer.ipa.deployment.util.PropertyValueDouble
+import de.fraunhofer.ipa.deployment.util.PropertyValueInt
+import de.fraunhofer.ipa.deployment.util.PropertyValueString
+import targetEnvironment.TargetDeployEnviroment
+import targetEnvironment.ConfigConnection
+import targetEnvironment.DeviceInstance
+import java.util.HashMap
 
 class OSInfo{
     String name
@@ -67,7 +84,79 @@ class SubProcessResult{
     }
 }
 
+class NetworkInfo {
+    String InterfaceName
+    String IdentityName
+    String MacAddress
+    String Address
+    EObject NetworkType
+    List<String> Ports = new ArrayList
 
+    def setInterfaceName(String name){
+        this.InterfaceName = name
+    }
+
+    def getInterfaceName(){
+        if(this.InterfaceName !== null)
+      return this.InterfaceName
+    else
+      throw new RuntimeException("Didn't set getInterfaceName yet")
+    }
+
+    def setIdentityName(String name){
+        this.IdentityName = name
+    }
+
+    def getIdentityName(){
+        if(this.IdentityName !== null)
+      return this.IdentityName
+    else
+      throw new RuntimeException("Didn't set IdentityName yet")
+    }
+
+    def setMacAddress(String name){
+        this.MacAddress = name
+    }
+
+    def getMacAddress(){
+        if(this.MacAddress !== null)
+      return this.MacAddress
+    else
+      throw new RuntimeException("Didn't set getMacAddress yet")
+    }
+    def setAddress(String name){
+        this.Address = name
+    }
+
+    def getAddress(){
+        if(this.Address !== null)
+      return this.Address
+    else
+      throw new RuntimeException("Didn't set Address yet")
+    }
+
+    def setNetworkType(EObject name){
+        this.NetworkType = name
+    }
+
+    def getNetworkType(){
+        if(this.NetworkType !== null)
+      return this.NetworkType
+    else
+      throw new RuntimeException("Didn't set NetworkType yet")
+    }
+
+    def setPorts(String port){
+        this.Ports.add(port)
+    }
+
+    def getPorts(){
+        if(this.Ports !== null)
+      return this.Ports
+    else
+      throw new RuntimeException("Didn't set ports yet")
+    }
+}
 
 class DeploymentHelper {
 
@@ -226,5 +315,70 @@ class DeploymentHelper {
              return info;
         }
 
+def parserNetworkInfo(ComputationDeviceInstance compDev){
+
+}
+
+def parserNetworkInfo(ConnectedDevice connectDev){
+    var netInfo = new NetworkInfo
+    if(connectDev.refConnection instanceof NetworkConnection){
+        var networkConn = connectDev.refConnection as NetworkConnection
+        for(ConfigConnectionProperty property: connectDev.properties){
+            if(property.refConnectionProperty instanceof InterfaceNetworkProperty){
+                netInfo.interfaceName = property.value.valueFromPropertyValue
+                System.out.println(String.format("property: %s", property.value))
+            }
+            if(property.refConnectionProperty instanceof IdentityNameNetworkProperty){
+                netInfo.identityName = property.value.valueFromPropertyValue
+                            System.out.println(String.format("property: %s", property.value))
+
+            }
+            if(property.refConnectionProperty instanceof MacAddressNetworkProperty){
+                netInfo.macAddress = property.value.valueFromPropertyValue
+                System.out.println(String.format("property: %s", property.value))
+
+            }
+            if(property.refConnectionProperty instanceof AddressNetworkProperty){
+                netInfo.address = property.value.valueFromPropertyValue
+                System.out.println(String.format("property: %s", property.value))
+            }
+
+            if(property.refConnectionProperty instanceof PortNetworkProperty){
+                netInfo.setPorts(property.value.valueFromPropertyValue)
+                System.out.println(String.format("property: %s", property.value))
+            }
+        }
+        netInfo.networkType = networkConn.type
+    }
+    return netInfo
+}
+
+def getValueFromPropertyValue(PropertyValue pv){
+    if(pv instanceof PropertyValueDouble)
+        return (pv as PropertyValueDouble).value.toString
+    if(pv instanceof PropertyValueInt)
+        return (pv as PropertyValueInt).value.toString
+    if(pv instanceof PropertyValueString)
+        return (pv as PropertyValueString).value
+}
+
+def getConnectionsIncludeDeviceInstanceFomTargetEnv(TargetDeployEnviroment tarEnv, DeviceInstance device){
+    var List<ConfigConnection> connections = new ArrayList<ConfigConnection>()
+    for(configConnection : tarEnv.configConnections){
+        if(configConnection.connectDevice.stream().anyMatch[it.refDevice == device]){
+            connections.add(configConnection)
+        }
+    }
+    return connections
+}
+
+def collectAssignmentPerExecutor(List<AbstractComputationAssignment> raw){
+    var Map<ComputationDeviceInstance, List<AbstractComputationAssignment>> collectAssignment
+        = new HashMap<ComputationDeviceInstance, List<AbstractComputationAssignment>>
+    for (AbstractComputationAssignment ass : raw) {
+    collectAssignment.computeIfAbsent(ass.executedBy)[new ArrayList<AbstractComputationAssignment>()].add(ass)
+    }
+    return collectAssignment
+}
 
 }

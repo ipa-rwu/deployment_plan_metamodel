@@ -36,7 +36,13 @@ class PlanGenerator extends AbstractGenerator {
     extension GitHubWorkflowCompiler
 
     @Inject
+    extension AnsibleCompiler
+
+    @Inject
     extension DockerComposeCompiler
+
+    @Inject
+    extension DeploymentHelper
 
     var NamingHelper namingHelper = new NamingHelper
 
@@ -72,6 +78,7 @@ class PlanGenerator extends AbstractGenerator {
       for(plan: plans){
         namingHelper.relativePlanFolderPath = plan.name
         generateWorkflow(plan, fsa)
+        generateAnsible(plan, fsa)
         var assignments = plan.realize.realizations
         for (assignment : assignments){
             generateRosInstall(assignment, plan, fsa)
@@ -122,4 +129,33 @@ class PlanGenerator extends AbstractGenerator {
                 assignmentList.dockerComposeCompiler(compDev))]
         }
 
+
+        def generateAnsible(AbstractDeploymentPlan plan, IFileSystemAccess2 fsa) {
+            var ansibleNaming = new AnsibleNamingHelper
+            ansibleNaming.relativeAnsibleFolerPath = plan.name
+            fsa.generateFile(
+                ansibleNaming.getConfigFilePath,
+                ansibleConfig
+                )
+            fsa.generateFile(
+                ansibleNaming.getInventoryFilePath,
+                plan.deployTo.inventory
+                )
+            fsa.generateFile(
+              ansibleNaming.playbookFilePath,
+              plan.playbook(ansibleNaming)
+                )
+            fsa.generateFile(
+                ansibleNaming.getTaskMainFilePath(ansibleNaming.taskCommonFolderPath),
+                ansibleNaming.taskRunCommonTasks
+                )
+            fsa.generateFile(
+              ansibleNaming.taskInstallDockerFilePath,
+              taskCheckInstallDocker
+                )
+            fsa.generateFile(
+                ansibleNaming.getTaskMainFilePath(ansibleNaming.taskDeploySoftwareFolderPath),
+                namingHelper.taskDeploySoftware
+                )
+        }
 }

@@ -2,30 +2,25 @@ package de.fraunhofer.ipa.deployment.generator
 
 import de.fraunhofer.ipa.deployment.util.EthernetCommunicationType
 import de.fraunhofer.ipa.deployment.util.PropertyValue
-import de.fraunhofer.ipa.deployment.util.PropertyValueDouble
-import de.fraunhofer.ipa.deployment.util.PropertyValueInt
 import de.fraunhofer.ipa.deployment.util.PropertyValueList
-import de.fraunhofer.ipa.deployment.util.PropertyValueString
 import deployPlanWithRosModel.ConfigRosParameter
 import deploymentPlan.AbstarctConfigSoftwareComponent
 import deploymentPlan.AbstractComputationAssignment
 import deploymentPlan.AbstractConfigExecutionParameter
 import deploymentPlan.ConfigExecutionParameter
-import device.AddressNetworkProperty
 import device.DeviceVolumeUsbProperty
-import device.IdentityNameNetworkProperty
-import device.InterfaceNetworkProperty
-import device.MacAddressNetworkProperty
 import device.NetworkConnection
-import device.PortNetworkProperty
 import device.UsbConnection
 import device.impl.NetworkConnectionImpl
 import implementationDescription.ExecutionParameter
 import java.util.ArrayList
 import java.util.HashMap
+import java.util.HashSet
 import java.util.List
 import java.util.Map
+import java.util.Set
 import java.util.stream.Collectors
+import javax.inject.Inject
 import org.eclipse.emf.ecore.EObject
 import system.RosParameter
 import targetEnvironment.AbstractConfigProperty
@@ -36,84 +31,11 @@ import targetEnvironment.ConfigDeviceProperty
 import targetEnvironment.ConnectedDevice
 import targetEnvironment.DeviceInstance
 import targetEnvironment.TargetDeployEnviroment
-import java.util.Set
-import java.util.HashSet
-
-class NetworkInfo {
-    String InterfaceName
-    String IdentityName
-    String MacAddress
-    String Address
-    EObject NetworkType
-    List<String> Ports = new ArrayList
-
-    def setInterfaceName(String name){
-        this.InterfaceName = name
-    }
-
-    def getInterfaceName(){
-        if(this.InterfaceName !== null)
-      return this.InterfaceName
-    else
-      throw new RuntimeException("Didn't set getInterfaceName yet")
-    }
-
-    def setIdentityName(String name){
-        this.IdentityName = name
-    }
-
-    def getIdentityName(){
-        if(this.IdentityName !== null)
-      return this.IdentityName
-    else
-      throw new RuntimeException("Didn't set IdentityName yet")
-    }
-
-    def setMacAddress(String name){
-        this.MacAddress = name
-    }
-
-    def getMacAddress(){
-        if(this.MacAddress !== null)
-      return this.MacAddress
-    else
-      throw new RuntimeException("Didn't set getMacAddress yet")
-    }
-    def setAddress(String name){
-        this.Address = name
-    }
-
-    def getAddress(){
-        if(this.Address !== null)
-      return this.Address
-    else
-      throw new RuntimeException("Didn't set Address yet")
-    }
-
-    def setNetworkType(EObject name){
-        this.NetworkType = name
-    }
-
-    def getNetworkType(){
-        if(this.NetworkType !== null)
-      return this.NetworkType
-    else
-      throw new RuntimeException("Didn't set NetworkType yet")
-    }
-
-    def setPorts(String port){
-        this.Ports.add(port)
-    }
-
-    def getPorts(){
-        if(this.Ports !== null)
-      return this.Ports
-    else
-      throw new RuntimeException("Didn't set ports yet")
-    }
-}
 
 class DockerComposeCompiler {
+
+@Inject
+extension DeploymentHelper
 
 def dockerComposeCompiler(List<AbstractComputationAssignment> assignments, ComputationDeviceInstance compDev)'''
 version: '3'
@@ -157,15 +79,6 @@ services:
 «ENDFOR»
 '''
 
-def collectAssignmentPerExecutor(List<AbstractComputationAssignment> raw){
-    var Map<ComputationDeviceInstance, List<AbstractComputationAssignment>> collectAssignment
-        = new HashMap<ComputationDeviceInstance, List<AbstractComputationAssignment>>
-    for (AbstractComputationAssignment ass : raw) {
-    collectAssignment.computeIfAbsent(ass.executedBy)[new ArrayList<AbstractComputationAssignment>()].add(ass)
-    }
-    return collectAssignment
-}
-
 def cycloneDDSConfig()'''
 <?xml version="1.0" encoding="UTF-8" ?>
   <CycloneDDS xmlns="https://cdds.io/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://cdds.io/config https://raw.githubusercontent.com/eclipse-cyclonedds/cyclonedds/master/etc/cyclonedds.xsd">
@@ -197,39 +110,7 @@ def collectConfigNetwork(ComputationDeviceInstance compDev){
     return networkConnections
 }
 
-def parserNetworkInfo(ConnectedDevice connectDev){
-    var netInfo = new NetworkInfo
-    if(connectDev.refConnection instanceof NetworkConnection){
-        var networkConn = connectDev.refConnection as NetworkConnectionImpl
-        for(ConfigConnectionProperty property: connectDev.properties){
-            if(property.refConnectionProperty instanceof InterfaceNetworkProperty){
-                netInfo.interfaceName = property.value.valueFromPropertyValue
-                System.out.println(String.format("property: %s", property.value))
-            }
-            if(property.refConnectionProperty instanceof IdentityNameNetworkProperty){
-                netInfo.identityName = property.value.valueFromPropertyValue
-                            System.out.println(String.format("property: %s", property.value))
 
-            }
-            if(property.refConnectionProperty instanceof MacAddressNetworkProperty){
-                netInfo.macAddress = property.value.valueFromPropertyValue
-                System.out.println(String.format("property: %s", property.value))
-
-            }
-            if(property.refConnectionProperty instanceof AddressNetworkProperty){
-                netInfo.address = property.value.valueFromPropertyValue
-                System.out.println(String.format("property: %s", property.value))
-            }
-
-            if(property.refConnectionProperty instanceof PortNetworkProperty){
-                netInfo.setPorts(property.value.valueFromPropertyValue)
-                System.out.println(String.format("property: %s", property.value))
-            }
-        }
-        netInfo.networkType = networkConn.type
-    }
-    return netInfo
-}
 
 def createNetworkConfig(NetworkInfo netInfo)'''
 «netInfo.identityName»:
@@ -367,14 +248,7 @@ def getValueFromTargetEnv(AbstractConfigProperty abP){
     }
 }
 
-def getValueFromPropertyValue(PropertyValue pv){
-    if(pv instanceof PropertyValueDouble)
-        return (pv as PropertyValueDouble).value.toString
-    if(pv instanceof PropertyValueInt)
-        return (pv as PropertyValueInt).value.toString
-    if(pv instanceof PropertyValueString)
-        return (pv as PropertyValueString).value
-}
+
 
 def getValueFromPropertyValueList(PropertyValue pv){
     if(pv instanceof PropertyValueList)
@@ -425,16 +299,6 @@ def getConnectedComputaionDeviceFromExecParam(AbstractConfigExecutionParameter c
             }
         }
         return communicatedComputationDevice
-}
-
-def getConnectionsIncludeDeviceInstanceFomTargetEnv(TargetDeployEnviroment tarEnv, DeviceInstance device){
-    var List<ConfigConnection> connections = new ArrayList<ConfigConnection>()
-    for(configConnection : tarEnv.configConnections){
-        if(configConnection.connectDevice.stream().anyMatch[it.refDevice == device]){
-            connections.add(configConnection)
-        }
-    }
-    return connections
 }
 
 def getConnectionsIncludeDeviceInstanceFomTargetEnv(TargetDeployEnviroment tarEnv, DeviceInstance device, ComputationDeviceInstance comp){
