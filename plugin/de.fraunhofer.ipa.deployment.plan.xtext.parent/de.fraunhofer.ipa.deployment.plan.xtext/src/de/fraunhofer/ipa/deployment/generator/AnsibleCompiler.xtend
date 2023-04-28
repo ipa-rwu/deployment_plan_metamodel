@@ -25,13 +25,12 @@ def inventory(TargetDeployEnviroment tarEnv)'''
     «FOR compDev: tarEnv.includeDevice.stream.filter[it instanceof ComputationDeviceInstance].collect(Collectors.toList)»
     «compDev.name»:
       ansible_host: #TODO: IP
-      ansible_become_pass: "{{ «compDev.name»_sudo }}"
-      ansible_user: #TODO: UserName
+      ansible_user: ansible #UserName
 «ENDFOR»
 '''
 
 def playbook(AbstractDeploymentPlan plan, AnsibleNamingHelper ansibleNaming)'''
-«{ansibleNaming.relativeAnsibleFolerPath = plan.name; ""}»
+«{ansibleNaming.relativeAnsibleFolderPath = plan.name; ""}»
 «var assPerExecutors = collectAssignmentPerExecutor(plan.realize.realizations)»
 «FOR entryset: assPerExecutors.entrySet()»
 «var compDev = entryset.key»
@@ -42,6 +41,7 @@ def playbook(AbstractDeploymentPlan plan, AnsibleNamingHelper ansibleNaming)'''
       ori_docker_compose_dir_path: "../{{ docker_compose_dir }}"
       «{ansibleNaming.setDestDeployFolderPath("{{ ansible_user }}", plan.name); ""}»
       dest_docker_compose_dir_path: "«ansibleNaming.destDeployFolderPath»/{{ docker_compose_dir }}"
+      ansible_become_pass: "{{ «compDev.name»_sudo }}"
   roles:
       - common
       - «ansibleNaming.appicationRoleName»
@@ -93,7 +93,15 @@ def taskDeploySoftware(NamingHelper naming)'''
       var: output
 '''
 
+def taskCheckSudo()'''
+- name: check_become_permission
+  become: true
+  command: id -u
+  register: id_output
+'''
+
 def taskRunCommonTasks(AnsibleNamingHelper ansibleNaming)'''
+- include_tasks: «ansibleNaming.taskCheckSudoFileName»
 - include_tasks: «ansibleNaming.taskInstallDockerFileName»
 '''
 
@@ -175,4 +183,10 @@ def taskCheckInstallDocker()'''
           - docker-compose
   when: docker_valid.failed
 '''
+
+    def gitignore()'''
+    vars/**/passwords.yaml
+    inventory.yaml
+    '''
+
 }
