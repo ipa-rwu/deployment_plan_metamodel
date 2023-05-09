@@ -29,17 +29,14 @@ This documentation is about deploying a software system consisting of
       - https://github.com/IntelRealSense/realsense-ros
       -
 
-  marker_detection:
+  pick_place_task:
 
-  .. list-table:: marker_detection
+  .. list-table:: pick_place_task
 
     * - component name
       - repository
       - version
 
-    * - aruco_ros
-      - https://github.com/ipa-rwu/aruco_ros
-      - humble-devel
 
   ur5e_driver:
 
@@ -53,10 +50,14 @@ This documentation is about deploying a software system consisting of
       - https://github.com/IntelRealSense/realsense-ros
       -
 
-  pick_place_task:
+  marker_detection:
 
-  .. list-table:: pick_place_task
+  .. list-table:: marker_detection
 
     * - component name
       - repository
       - version
+
+    * - aruco_ros
+      - https://github.com/ipa-rwu/aruco_ros
+      - humble-devel

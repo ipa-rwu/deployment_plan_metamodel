@@ -63,13 +63,13 @@ class RepoInstallCompiler {
 
 
     def RepoInstallCompiler(DeploymentPlan plan, List<AbstractComputationAssignmentTarget> targets)'''
-    repositories:
-      «FOR target: targets.collectSoftwareComponents»
-      «var imp = target as SoftwareComponent»
-      «var repo_info = getRepoInfo(imp)»
-      «createRepo(repo_info.name, repo_info.type, repo_info.url, repo_info.version)»
-    «ENDFOR»
-    '''
+repositories:
+«FOR target: targets.collectSoftwareComponents»
+«var imp = target as SoftwareComponent»
+«var repo_info = getRepoInfo(imp)»
+  «createRepo(repo_info.name, repo_info.type, repo_info.url, repo_info.version)»
+«ENDFOR»
+'''
 
         def collectSoftwareComponents(List<AbstractComputationAssignmentTarget> targets){
             var List<SoftwareComponent> all = new ArrayList
@@ -119,13 +119,13 @@ class RepoInstallCompiler {
         «ENDFOR»
         '''
 
-     def createRepo (String repoName, String type, String url, String version)
- '''
+     def createRepo (String repoName, String type, String url, String version)'''
 «repoName»:
   type: «type»
   url: «url»
-«IF version!==null»
+  «IF version!==null»
   version: «version»
+
 «ENDIF»
  '''
 

@@ -2,4 +2,4 @@ repositories:
   color_pose_estimation:
     type: git
     url: https://github.com/ipa-anm/color_pose_estimation.git
-  version: humble-devel
+    version: humble-devel
