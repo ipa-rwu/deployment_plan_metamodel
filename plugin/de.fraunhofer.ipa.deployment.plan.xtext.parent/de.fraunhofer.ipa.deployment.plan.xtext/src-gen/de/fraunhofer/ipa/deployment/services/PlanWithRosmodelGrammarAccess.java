@@ -94,6 +94,19 @@ public class PlanWithRosmodelGrammarAccess extends AbstractElementFinder.Abstrac
         //DEDENT
         public RuleCall getDEDENTTerminalRuleCall_7() { return cDEDENTTerminalRuleCall_7; }
     }
+    public class AbstarctConfigSoftwareComponentElements extends AbstractParserRuleElementFinder {
+        private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.PlanWithRosmodel.AbstarctConfigSoftwareComponent");
+        private final RuleCall cConfigRosSoftwareComponentParserRuleCall = (RuleCall)rule.eContents().get(1);
+
+        //@Override
+        //AbstarctConfigSoftwareComponent returns deploymentPlan::AbstarctConfigSoftwareComponent:
+        //    ConfigRosSoftwareComponent
+        //;
+        @Override public ParserRule getRule() { return rule; }
+
+        //ConfigRosSoftwareComponent
+        public RuleCall getConfigRosSoftwareComponentParserRuleCall() { return cConfigRosSoftwareComponentParserRuleCall; }
+    }
     public class ConfigRosSoftwareComponentElements extends AbstractParserRuleElementFinder {
         private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.PlanWithRosmodel.ConfigRosSoftwareComponent");
         private final Group cGroup = (Group)rule.eContents().get(1);
@@ -275,18 +288,18 @@ public class PlanWithRosmodelGrammarAccess extends AbstractElementFinder.Abstrac
     }
     public class AbstractComputationAssignmentElements extends AbstractParserRuleElementFinder {
         private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.PlanWithRosmodel.AbstractComputationAssignment");
-        private final RuleCall cRossystemAssignmentParserRuleCall = (RuleCall)rule.eContents().get(1);
+        private final RuleCall cRossystemImplementationAssignmentParserRuleCall = (RuleCall)rule.eContents().get(1);
 
         //@Override
         //AbstractComputationAssignment returns deploymentPlan::AbstractComputationAssignment:
-        //    RossystemAssignment;
+        //    RossystemImplementationAssignment;
         @Override public ParserRule getRule() { return rule; }
 
-        //RossystemAssignment
-        public RuleCall getRossystemAssignmentParserRuleCall() { return cRossystemAssignmentParserRuleCall; }
+        //RossystemImplementationAssignment
+        public RuleCall getRossystemImplementationAssignmentParserRuleCall() { return cRossystemImplementationAssignmentParserRuleCall; }
     }
-    public class RossystemAssignmentElements extends AbstractParserRuleElementFinder {
-        private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.PlanWithRosmodel.RossystemAssignment");
+    public class RossystemImplementationAssignmentElements extends AbstractParserRuleElementFinder {
+        private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.PlanWithRosmodel.RossystemImplementationAssignment");
         private final Group cGroup = (Group)rule.eContents().get(1);
         private final RuleCall cPreListElementParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
         private final Keyword cNameKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -320,7 +333,7 @@ public class PlanWithRosmodelGrammarAccess extends AbstractElementFinder.Abstrac
         private final RuleCall cRuntimeTypeAbstractRuntimeParserRuleCall_15_1_0 = (RuleCall)cRuntimeTypeAssignment_15_1.eContents().get(0);
         private final RuleCall cDEDENTTerminalRuleCall_16 = (RuleCall)cGroup.eContents().get(16);
 
-        //RossystemAssignment returns deploymentPlan::ImplementationAssignment:
+        //RossystemImplementationAssignment returns RossystemImplementationAssignment:
         //    PreListElement 'name:' name = EString
         //    INDENT
         //    'executedBy:' executedBy=[targetEnvironment::ComputationDeviceInstance|EString]
@@ -551,9 +564,10 @@ public class PlanWithRosmodelGrammarAccess extends AbstractElementFinder.Abstrac
 
 
     private final DeploymentPlanWithRosModelElements pDeploymentPlanWithRosModel;
+    private final AbstarctConfigSoftwareComponentElements pAbstarctConfigSoftwareComponent;
     private final ConfigRosSoftwareComponentElements pConfigRosSoftwareComponent;
     private final AbstractComputationAssignmentElements pAbstractComputationAssignment;
-    private final RossystemAssignmentElements pRossystemAssignment;
+    private final RossystemImplementationAssignmentElements pRossystemImplementationAssignment;
     private final ConfigRosParameterElements pConfigRosParameter;
 
     private final Grammar grammar;
@@ -574,9 +588,10 @@ public class PlanWithRosmodelGrammarAccess extends AbstractElementFinder.Abstrac
         this.gaUtil = gaUtil;
         this.gaTerminals = gaTerminals;
         this.pDeploymentPlanWithRosModel = new DeploymentPlanWithRosModelElements();
+        this.pAbstarctConfigSoftwareComponent = new AbstarctConfigSoftwareComponentElements();
         this.pConfigRosSoftwareComponent = new ConfigRosSoftwareComponentElements();
         this.pAbstractComputationAssignment = new AbstractComputationAssignmentElements();
-        this.pRossystemAssignment = new RossystemAssignmentElements();
+        this.pRossystemImplementationAssignment = new RossystemImplementationAssignmentElements();
         this.pConfigRosParameter = new ConfigRosParameterElements();
     }
 
@@ -631,6 +646,18 @@ public class PlanWithRosmodelGrammarAccess extends AbstractElementFinder.Abstrac
         return getDeploymentPlanWithRosModelAccess().getRule();
     }
 
+    //@Override
+    //AbstarctConfigSoftwareComponent returns deploymentPlan::AbstarctConfigSoftwareComponent:
+    //    ConfigRosSoftwareComponent
+    //;
+    public AbstarctConfigSoftwareComponentElements getAbstarctConfigSoftwareComponentAccess() {
+        return pAbstarctConfigSoftwareComponent;
+    }
+
+    public ParserRule getAbstarctConfigSoftwareComponentRule() {
+        return getAbstarctConfigSoftwareComponentAccess().getRule();
+    }
+
     //ConfigRosSoftwareComponent returns ConfigRosSoftwareComponent:
     //    {ConfigRosSoftwareComponent}
     //    component=[rossystem::System|EString] (":"
@@ -662,7 +689,7 @@ public class PlanWithRosmodelGrammarAccess extends AbstractElementFinder.Abstrac
 
     //@Override
     //AbstractComputationAssignment returns deploymentPlan::AbstractComputationAssignment:
-    //    RossystemAssignment;
+    //    RossystemImplementationAssignment;
     public AbstractComputationAssignmentElements getAbstractComputationAssignmentAccess() {
         return pAbstractComputationAssignment;
     }
@@ -671,7 +698,7 @@ public class PlanWithRosmodelGrammarAccess extends AbstractElementFinder.Abstrac
         return getAbstractComputationAssignmentAccess().getRule();
     }
 
-    //RossystemAssignment returns deploymentPlan::ImplementationAssignment:
+    //RossystemImplementationAssignment returns RossystemImplementationAssignment:
     //    PreListElement 'name:' name = EString
     //    INDENT
     //    'executedBy:' executedBy=[targetEnvironment::ComputationDeviceInstance|EString]
@@ -685,12 +712,12 @@ public class PlanWithRosmodelGrammarAccess extends AbstractElementFinder.Abstrac
     //        ('runtimeType:' runtimeType=AbstractRuntime)?
     //    DEDENT
     //;
-    public RossystemAssignmentElements getRossystemAssignmentAccess() {
-        return pRossystemAssignment;
+    public RossystemImplementationAssignmentElements getRossystemImplementationAssignmentAccess() {
+        return pRossystemImplementationAssignment;
     }
 
-    public ParserRule getRossystemAssignmentRule() {
-        return getRossystemAssignmentAccess().getRule();
+    public ParserRule getRossystemImplementationAssignmentRule() {
+        return getRossystemImplementationAssignmentAccess().getRule();
     }
 
     //ConfigRosParameter returns ConfigRosParameter:
@@ -726,17 +753,6 @@ public class PlanWithRosmodelGrammarAccess extends AbstractElementFinder.Abstrac
 
     public ParserRule getDeploymentPlanRule() {
         return getDeploymentPlanAccess().getRule();
-    }
-
-    //AbstarctConfigSoftwareComponent returns AbstarctConfigSoftwareComponent:
-    //    ConfigSoftwareComponent
-    //;
-    public PlanGrammarAccess.AbstarctConfigSoftwareComponentElements getAbstarctConfigSoftwareComponentAccess() {
-        return gaPlan.getAbstarctConfigSoftwareComponentAccess();
-    }
-
-    public ParserRule getAbstarctConfigSoftwareComponentRule() {
-        return getAbstarctConfigSoftwareComponentAccess().getRule();
     }
 
     //AbstractRealization returns AbstractRealization:

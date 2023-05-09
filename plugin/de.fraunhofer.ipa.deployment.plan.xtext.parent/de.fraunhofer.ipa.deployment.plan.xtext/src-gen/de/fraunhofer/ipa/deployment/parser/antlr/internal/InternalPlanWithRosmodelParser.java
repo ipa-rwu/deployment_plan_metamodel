@@ -740,30 +740,30 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "ruleAbstractComputationAssignment"
-    // InternalPlanWithRosmodelParser.g:315:1: ruleAbstractComputationAssignment returns [EObject current=null] : this_RossystemAssignment_0= ruleRossystemAssignment ;
+    // InternalPlanWithRosmodelParser.g:315:1: ruleAbstractComputationAssignment returns [EObject current=null] : this_RossystemImplementationAssignment_0= ruleRossystemImplementationAssignment ;
     public final EObject ruleAbstractComputationAssignment() throws RecognitionException {
         EObject current = null;
 
-        EObject this_RossystemAssignment_0 = null;
+        EObject this_RossystemImplementationAssignment_0 = null;
 
 
 
             enterRule();
 
         try {
-            // InternalPlanWithRosmodelParser.g:321:2: (this_RossystemAssignment_0= ruleRossystemAssignment )
-            // InternalPlanWithRosmodelParser.g:322:2: this_RossystemAssignment_0= ruleRossystemAssignment
+            // InternalPlanWithRosmodelParser.g:321:2: (this_RossystemImplementationAssignment_0= ruleRossystemImplementationAssignment )
+            // InternalPlanWithRosmodelParser.g:322:2: this_RossystemImplementationAssignment_0= ruleRossystemImplementationAssignment
             {
 
-                    newCompositeNode(grammarAccess.getAbstractComputationAssignmentAccess().getRossystemAssignmentParserRuleCall());
+                    newCompositeNode(grammarAccess.getAbstractComputationAssignmentAccess().getRossystemImplementationAssignmentParserRuleCall());
 
             pushFollow(FOLLOW_2);
-            this_RossystemAssignment_0=ruleRossystemAssignment();
+            this_RossystemImplementationAssignment_0=ruleRossystemImplementationAssignment();
 
             state._fsp--;
 
 
-                    current = this_RossystemAssignment_0;
+                    current = this_RossystemImplementationAssignment_0;
                     afterParserOrEnumRuleCall();
 
 
@@ -785,25 +785,25 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalAntlrParser 
     // $ANTLR end "ruleAbstractComputationAssignment"
 
 
-    // $ANTLR start "entryRuleRossystemAssignment"
-    // InternalPlanWithRosmodelParser.g:333:1: entryRuleRossystemAssignment returns [EObject current=null] : iv_ruleRossystemAssignment= ruleRossystemAssignment EOF ;
-    public final EObject entryRuleRossystemAssignment() throws RecognitionException {
+    // $ANTLR start "entryRuleRossystemImplementationAssignment"
+    // InternalPlanWithRosmodelParser.g:333:1: entryRuleRossystemImplementationAssignment returns [EObject current=null] : iv_ruleRossystemImplementationAssignment= ruleRossystemImplementationAssignment EOF ;
+    public final EObject entryRuleRossystemImplementationAssignment() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleRossystemAssignment = null;
+        EObject iv_ruleRossystemImplementationAssignment = null;
 
 
         try {
-            // InternalPlanWithRosmodelParser.g:333:60: (iv_ruleRossystemAssignment= ruleRossystemAssignment EOF )
-            // InternalPlanWithRosmodelParser.g:334:2: iv_ruleRossystemAssignment= ruleRossystemAssignment EOF
+            // InternalPlanWithRosmodelParser.g:333:74: (iv_ruleRossystemImplementationAssignment= ruleRossystemImplementationAssignment EOF )
+            // InternalPlanWithRosmodelParser.g:334:2: iv_ruleRossystemImplementationAssignment= ruleRossystemImplementationAssignment EOF
             {
-             newCompositeNode(grammarAccess.getRossystemAssignmentRule());
+             newCompositeNode(grammarAccess.getRossystemImplementationAssignmentRule());
             pushFollow(FOLLOW_1);
-            iv_ruleRossystemAssignment=ruleRossystemAssignment();
+            iv_ruleRossystemImplementationAssignment=ruleRossystemImplementationAssignment();
 
             state._fsp--;
 
-             current =iv_ruleRossystemAssignment;
+             current =iv_ruleRossystemImplementationAssignment;
             match(input,EOF,FOLLOW_2);
 
             }
@@ -818,12 +818,12 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalAntlrParser 
         }
         return current;
     }
-    // $ANTLR end "entryRuleRossystemAssignment"
+    // $ANTLR end "entryRuleRossystemImplementationAssignment"
 
 
-    // $ANTLR start "ruleRossystemAssignment"
-    // InternalPlanWithRosmodelParser.g:340:1: ruleRossystemAssignment returns [EObject current=null] : ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= ExecutedBy ( ( ruleEString ) ) otherlv_6= Version ( (lv_version_7_0= ruleEString ) ) otherlv_8= SoftwareComponents this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_softwareComponents_11_0= ruleConfigRosSoftwareComponent ) ) ( rulePreListElement ( (lv_softwareComponents_13_0= ruleConfigRosSoftwareComponent ) ) )* this_DEDENT_14= RULE_DEDENT (otherlv_15= Middleware ( (lv_middleware_16_0= ruleMiddleware ) ) )? (otherlv_17= RuntimeType ( (lv_runtimeType_18_0= ruleAbstractRuntime ) ) )? this_DEDENT_19= RULE_DEDENT ) ;
-    public final EObject ruleRossystemAssignment() throws RecognitionException {
+    // $ANTLR start "ruleRossystemImplementationAssignment"
+    // InternalPlanWithRosmodelParser.g:340:1: ruleRossystemImplementationAssignment returns [EObject current=null] : ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= ExecutedBy ( ( ruleEString ) ) otherlv_6= Version ( (lv_version_7_0= ruleEString ) ) otherlv_8= SoftwareComponents this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_softwareComponents_11_0= ruleConfigRosSoftwareComponent ) ) ( rulePreListElement ( (lv_softwareComponents_13_0= ruleConfigRosSoftwareComponent ) ) )* this_DEDENT_14= RULE_DEDENT (otherlv_15= Middleware ( (lv_middleware_16_0= ruleMiddleware ) ) )? (otherlv_17= RuntimeType ( (lv_runtimeType_18_0= ruleAbstractRuntime ) ) )? this_DEDENT_19= RULE_DEDENT ) ;
+    public final EObject ruleRossystemImplementationAssignment() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_1=null;
@@ -860,7 +860,7 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalAntlrParser 
             // InternalPlanWithRosmodelParser.g:348:3: rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= ExecutedBy ( ( ruleEString ) ) otherlv_6= Version ( (lv_version_7_0= ruleEString ) ) otherlv_8= SoftwareComponents this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_softwareComponents_11_0= ruleConfigRosSoftwareComponent ) ) ( rulePreListElement ( (lv_softwareComponents_13_0= ruleConfigRosSoftwareComponent ) ) )* this_DEDENT_14= RULE_DEDENT (otherlv_15= Middleware ( (lv_middleware_16_0= ruleMiddleware ) ) )? (otherlv_17= RuntimeType ( (lv_runtimeType_18_0= ruleAbstractRuntime ) ) )? this_DEDENT_19= RULE_DEDENT
             {
 
-                        newCompositeNode(grammarAccess.getRossystemAssignmentAccess().getPreListElementParserRuleCall_0());
+                        newCompositeNode(grammarAccess.getRossystemImplementationAssignmentAccess().getPreListElementParserRuleCall_0());
 
             pushFollow(FOLLOW_4);
             rulePreListElement();
@@ -872,7 +872,7 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalAntlrParser 
 
             otherlv_1=(Token)match(input,Name,FOLLOW_5);
 
-                        newLeafNode(otherlv_1, grammarAccess.getRossystemAssignmentAccess().getNameKeyword_1());
+                        newLeafNode(otherlv_1, grammarAccess.getRossystemImplementationAssignmentAccess().getNameKeyword_1());
 
             // InternalPlanWithRosmodelParser.g:359:3: ( (lv_name_2_0= ruleEString ) )
             // InternalPlanWithRosmodelParser.g:360:4: (lv_name_2_0= ruleEString )
@@ -881,7 +881,7 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalAntlrParser 
             // InternalPlanWithRosmodelParser.g:361:5: lv_name_2_0= ruleEString
             {
 
-                                newCompositeNode(grammarAccess.getRossystemAssignmentAccess().getNameEStringParserRuleCall_2_0());
+                                newCompositeNode(grammarAccess.getRossystemImplementationAssignmentAccess().getNameEStringParserRuleCall_2_0());
 
             pushFollow(FOLLOW_3);
             lv_name_2_0=ruleEString();
@@ -890,7 +890,7 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalAntlrParser 
 
 
                                 if (current==null) {
-                                    current = createModelElementForParent(grammarAccess.getRossystemAssignmentRule());
+                                    current = createModelElementForParent(grammarAccess.getRossystemImplementationAssignmentRule());
                                 }
                                 set(
                                     current,
@@ -907,11 +907,11 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalAntlrParser 
 
             this_INDENT_3=(Token)match(input,RULE_INDENT,FOLLOW_15);
 
-                        newLeafNode(this_INDENT_3, grammarAccess.getRossystemAssignmentAccess().getINDENTTerminalRuleCall_3());
+                        newLeafNode(this_INDENT_3, grammarAccess.getRossystemImplementationAssignmentAccess().getINDENTTerminalRuleCall_3());
 
             otherlv_4=(Token)match(input,ExecutedBy,FOLLOW_5);
 
-                        newLeafNode(otherlv_4, grammarAccess.getRossystemAssignmentAccess().getExecutedByKeyword_4());
+                        newLeafNode(otherlv_4, grammarAccess.getRossystemImplementationAssignmentAccess().getExecutedByKeyword_4());
 
             // InternalPlanWithRosmodelParser.g:386:3: ( ( ruleEString ) )
             // InternalPlanWithRosmodelParser.g:387:4: ( ruleEString )
@@ -921,11 +921,11 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalAntlrParser 
             {
 
                                 if (current==null) {
-                                    current = createModelElement(grammarAccess.getRossystemAssignmentRule());
+                                    current = createModelElement(grammarAccess.getRossystemImplementationAssignmentRule());
                                 }
 
 
-                                newCompositeNode(grammarAccess.getRossystemAssignmentAccess().getExecutedByComputationDeviceInstanceCrossReference_5_0());
+                                newCompositeNode(grammarAccess.getRossystemImplementationAssignmentAccess().getExecutedByComputationDeviceInstanceCrossReference_5_0());
 
             pushFollow(FOLLOW_16);
             ruleEString();
@@ -943,7 +943,7 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalAntlrParser 
 
             otherlv_6=(Token)match(input,Version,FOLLOW_5);
 
-                        newLeafNode(otherlv_6, grammarAccess.getRossystemAssignmentAccess().getVersionKeyword_6());
+                        newLeafNode(otherlv_6, grammarAccess.getRossystemImplementationAssignmentAccess().getVersionKeyword_6());
 
             // InternalPlanWithRosmodelParser.g:406:3: ( (lv_version_7_0= ruleEString ) )
             // InternalPlanWithRosmodelParser.g:407:4: (lv_version_7_0= ruleEString )
@@ -952,7 +952,7 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalAntlrParser 
             // InternalPlanWithRosmodelParser.g:408:5: lv_version_7_0= ruleEString
             {
 
-                                newCompositeNode(grammarAccess.getRossystemAssignmentAccess().getVersionEStringParserRuleCall_7_0());
+                                newCompositeNode(grammarAccess.getRossystemImplementationAssignmentAccess().getVersionEStringParserRuleCall_7_0());
 
             pushFollow(FOLLOW_17);
             lv_version_7_0=ruleEString();
@@ -961,7 +961,7 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalAntlrParser 
 
 
                                 if (current==null) {
-                                    current = createModelElementForParent(grammarAccess.getRossystemAssignmentRule());
+                                    current = createModelElementForParent(grammarAccess.getRossystemImplementationAssignmentRule());
                                 }
                                 set(
                                     current,
@@ -978,14 +978,14 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalAntlrParser 
 
             otherlv_8=(Token)match(input,SoftwareComponents,FOLLOW_3);
 
-                        newLeafNode(otherlv_8, grammarAccess.getRossystemAssignmentAccess().getSoftwareComponentsKeyword_8());
+                        newLeafNode(otherlv_8, grammarAccess.getRossystemImplementationAssignmentAccess().getSoftwareComponentsKeyword_8());
 
             this_INDENT_9=(Token)match(input,RULE_INDENT,FOLLOW_11);
 
-                        newLeafNode(this_INDENT_9, grammarAccess.getRossystemAssignmentAccess().getINDENTTerminalRuleCall_9());
+                        newLeafNode(this_INDENT_9, grammarAccess.getRossystemImplementationAssignmentAccess().getINDENTTerminalRuleCall_9());
 
 
-                        newCompositeNode(grammarAccess.getRossystemAssignmentAccess().getPreListElementParserRuleCall_10());
+                        newCompositeNode(grammarAccess.getRossystemImplementationAssignmentAccess().getPreListElementParserRuleCall_10());
 
             pushFollow(FOLLOW_5);
             rulePreListElement();
@@ -1002,7 +1002,7 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalAntlrParser 
             // InternalPlanWithRosmodelParser.g:442:5: lv_softwareComponents_11_0= ruleConfigRosSoftwareComponent
             {
 
-                                newCompositeNode(grammarAccess.getRossystemAssignmentAccess().getSoftwareComponentsConfigRosSoftwareComponentParserRuleCall_11_0());
+                                newCompositeNode(grammarAccess.getRossystemImplementationAssignmentAccess().getSoftwareComponentsConfigRosSoftwareComponentParserRuleCall_11_0());
 
             pushFollow(FOLLOW_12);
             lv_softwareComponents_11_0=ruleConfigRosSoftwareComponent();
@@ -1011,7 +1011,7 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalAntlrParser 
 
 
                                 if (current==null) {
-                                    current = createModelElementForParent(grammarAccess.getRossystemAssignmentRule());
+                                    current = createModelElementForParent(grammarAccess.getRossystemImplementationAssignmentRule());
                                 }
                                 add(
                                     current,
@@ -1042,7 +1042,7 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalAntlrParser 
                     // InternalPlanWithRosmodelParser.g:460:4: rulePreListElement ( (lv_softwareComponents_13_0= ruleConfigRosSoftwareComponent ) )
                     {
 
-                                    newCompositeNode(grammarAccess.getRossystemAssignmentAccess().getPreListElementParserRuleCall_12_0());
+                                    newCompositeNode(grammarAccess.getRossystemImplementationAssignmentAccess().getPreListElementParserRuleCall_12_0());
 
                     pushFollow(FOLLOW_5);
                     rulePreListElement();
@@ -1059,7 +1059,7 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalAntlrParser 
                     // InternalPlanWithRosmodelParser.g:469:6: lv_softwareComponents_13_0= ruleConfigRosSoftwareComponent
                     {
 
-                                            newCompositeNode(grammarAccess.getRossystemAssignmentAccess().getSoftwareComponentsConfigRosSoftwareComponentParserRuleCall_12_1_0());
+                                            newCompositeNode(grammarAccess.getRossystemImplementationAssignmentAccess().getSoftwareComponentsConfigRosSoftwareComponentParserRuleCall_12_1_0());
 
                     pushFollow(FOLLOW_12);
                     lv_softwareComponents_13_0=ruleConfigRosSoftwareComponent();
@@ -1068,7 +1068,7 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalAntlrParser 
 
 
                                             if (current==null) {
-                                                current = createModelElementForParent(grammarAccess.getRossystemAssignmentRule());
+                                                current = createModelElementForParent(grammarAccess.getRossystemImplementationAssignmentRule());
                                             }
                                             add(
                                                 current,
@@ -1094,7 +1094,7 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalAntlrParser 
 
             this_DEDENT_14=(Token)match(input,RULE_DEDENT,FOLLOW_18);
 
-                        newLeafNode(this_DEDENT_14, grammarAccess.getRossystemAssignmentAccess().getDEDENTTerminalRuleCall_13());
+                        newLeafNode(this_DEDENT_14, grammarAccess.getRossystemImplementationAssignmentAccess().getDEDENTTerminalRuleCall_13());
 
             // InternalPlanWithRosmodelParser.g:491:3: (otherlv_15= Middleware ( (lv_middleware_16_0= ruleMiddleware ) ) )?
             int alt8=2;
@@ -1109,7 +1109,7 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalAntlrParser 
                     {
                     otherlv_15=(Token)match(input,Middleware,FOLLOW_19);
 
-                                    newLeafNode(otherlv_15, grammarAccess.getRossystemAssignmentAccess().getMiddlewareKeyword_14_0());
+                                    newLeafNode(otherlv_15, grammarAccess.getRossystemImplementationAssignmentAccess().getMiddlewareKeyword_14_0());
 
                     // InternalPlanWithRosmodelParser.g:496:4: ( (lv_middleware_16_0= ruleMiddleware ) )
                     // InternalPlanWithRosmodelParser.g:497:5: (lv_middleware_16_0= ruleMiddleware )
@@ -1118,7 +1118,7 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalAntlrParser 
                     // InternalPlanWithRosmodelParser.g:498:6: lv_middleware_16_0= ruleMiddleware
                     {
 
-                                            newCompositeNode(grammarAccess.getRossystemAssignmentAccess().getMiddlewareMiddlewareParserRuleCall_14_1_0());
+                                            newCompositeNode(grammarAccess.getRossystemImplementationAssignmentAccess().getMiddlewareMiddlewareParserRuleCall_14_1_0());
 
                     pushFollow(FOLLOW_20);
                     lv_middleware_16_0=ruleMiddleware();
@@ -1127,7 +1127,7 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalAntlrParser 
 
 
                                             if (current==null) {
-                                                current = createModelElementForParent(grammarAccess.getRossystemAssignmentRule());
+                                                current = createModelElementForParent(grammarAccess.getRossystemImplementationAssignmentRule());
                                             }
                                             set(
                                                 current,
@@ -1161,7 +1161,7 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalAntlrParser 
                     {
                     otherlv_17=(Token)match(input,RuntimeType,FOLLOW_3);
 
-                                    newLeafNode(otherlv_17, grammarAccess.getRossystemAssignmentAccess().getRuntimeTypeKeyword_15_0());
+                                    newLeafNode(otherlv_17, grammarAccess.getRossystemImplementationAssignmentAccess().getRuntimeTypeKeyword_15_0());
 
                     // InternalPlanWithRosmodelParser.g:521:4: ( (lv_runtimeType_18_0= ruleAbstractRuntime ) )
                     // InternalPlanWithRosmodelParser.g:522:5: (lv_runtimeType_18_0= ruleAbstractRuntime )
@@ -1170,7 +1170,7 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalAntlrParser 
                     // InternalPlanWithRosmodelParser.g:523:6: lv_runtimeType_18_0= ruleAbstractRuntime
                     {
 
-                                            newCompositeNode(grammarAccess.getRossystemAssignmentAccess().getRuntimeTypeAbstractRuntimeParserRuleCall_15_1_0());
+                                            newCompositeNode(grammarAccess.getRossystemImplementationAssignmentAccess().getRuntimeTypeAbstractRuntimeParserRuleCall_15_1_0());
 
                     pushFollow(FOLLOW_8);
                     lv_runtimeType_18_0=ruleAbstractRuntime();
@@ -1179,7 +1179,7 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalAntlrParser 
 
 
                                             if (current==null) {
-                                                current = createModelElementForParent(grammarAccess.getRossystemAssignmentRule());
+                                                current = createModelElementForParent(grammarAccess.getRossystemImplementationAssignmentRule());
                                             }
                                             set(
                                                 current,
@@ -1202,7 +1202,7 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalAntlrParser 
 
             this_DEDENT_19=(Token)match(input,RULE_DEDENT,FOLLOW_2);
 
-                        newLeafNode(this_DEDENT_19, grammarAccess.getRossystemAssignmentAccess().getDEDENTTerminalRuleCall_16());
+                        newLeafNode(this_DEDENT_19, grammarAccess.getRossystemImplementationAssignmentAccess().getDEDENTTerminalRuleCall_16());
 
 
             }
@@ -1223,7 +1223,7 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalAntlrParser 
         }
         return current;
     }
-    // $ANTLR end "ruleRossystemAssignment"
+    // $ANTLR end "ruleRossystemImplementationAssignment"
 
 
     // $ANTLR start "entryRuleConfigRosParameter"

@@ -320,24 +320,24 @@ ruleAbstractComputationAssignment returns [EObject current=null]
     leaveRule();
 }:
     {
-        newCompositeNode(grammarAccess.getAbstractComputationAssignmentAccess().getRossystemAssignmentParserRuleCall());
+        newCompositeNode(grammarAccess.getAbstractComputationAssignmentAccess().getRossystemImplementationAssignmentParserRuleCall());
     }
-    this_RossystemAssignment_0=ruleRossystemAssignment
+    this_RossystemImplementationAssignment_0=ruleRossystemImplementationAssignment
     {
-        $current = $this_RossystemAssignment_0.current;
+        $current = $this_RossystemImplementationAssignment_0.current;
         afterParserOrEnumRuleCall();
     }
 ;
 
-// Entry rule entryRuleRossystemAssignment
-entryRuleRossystemAssignment returns [EObject current=null]:
-    { newCompositeNode(grammarAccess.getRossystemAssignmentRule()); }
-    iv_ruleRossystemAssignment=ruleRossystemAssignment
-    { $current=$iv_ruleRossystemAssignment.current; }
+// Entry rule entryRuleRossystemImplementationAssignment
+entryRuleRossystemImplementationAssignment returns [EObject current=null]:
+    { newCompositeNode(grammarAccess.getRossystemImplementationAssignmentRule()); }
+    iv_ruleRossystemImplementationAssignment=ruleRossystemImplementationAssignment
+    { $current=$iv_ruleRossystemImplementationAssignment.current; }
     EOF;
 
-// Rule RossystemAssignment
-ruleRossystemAssignment returns [EObject current=null]
+// Rule RossystemImplementationAssignment
+ruleRossystemImplementationAssignment returns [EObject current=null]
 @init {
     enterRule();
 }
@@ -346,7 +346,7 @@ ruleRossystemAssignment returns [EObject current=null]
 }:
     (
         {
-            newCompositeNode(grammarAccess.getRossystemAssignmentAccess().getPreListElementParserRuleCall_0());
+            newCompositeNode(grammarAccess.getRossystemImplementationAssignmentAccess().getPreListElementParserRuleCall_0());
         }
         rulePreListElement
         {
@@ -354,17 +354,17 @@ ruleRossystemAssignment returns [EObject current=null]
         }
         otherlv_1=Name
         {
-            newLeafNode(otherlv_1, grammarAccess.getRossystemAssignmentAccess().getNameKeyword_1());
+            newLeafNode(otherlv_1, grammarAccess.getRossystemImplementationAssignmentAccess().getNameKeyword_1());
         }
         (
             (
                 {
-                    newCompositeNode(grammarAccess.getRossystemAssignmentAccess().getNameEStringParserRuleCall_2_0());
+                    newCompositeNode(grammarAccess.getRossystemImplementationAssignmentAccess().getNameEStringParserRuleCall_2_0());
                 }
                 lv_name_2_0=ruleEString
                 {
                     if ($current==null) {
-                        $current = createModelElementForParent(grammarAccess.getRossystemAssignmentRule());
+                        $current = createModelElementForParent(grammarAccess.getRossystemImplementationAssignmentRule());
                     }
                     set(
                         $current,
@@ -377,21 +377,21 @@ ruleRossystemAssignment returns [EObject current=null]
         )
         this_INDENT_3=RULE_INDENT
         {
-            newLeafNode(this_INDENT_3, grammarAccess.getRossystemAssignmentAccess().getINDENTTerminalRuleCall_3());
+            newLeafNode(this_INDENT_3, grammarAccess.getRossystemImplementationAssignmentAccess().getINDENTTerminalRuleCall_3());
         }
         otherlv_4=ExecutedBy
         {
-            newLeafNode(otherlv_4, grammarAccess.getRossystemAssignmentAccess().getExecutedByKeyword_4());
+            newLeafNode(otherlv_4, grammarAccess.getRossystemImplementationAssignmentAccess().getExecutedByKeyword_4());
         }
         (
             (
                 {
                     if ($current==null) {
-                        $current = createModelElement(grammarAccess.getRossystemAssignmentRule());
+                        $current = createModelElement(grammarAccess.getRossystemImplementationAssignmentRule());
                     }
                 }
                 {
-                    newCompositeNode(grammarAccess.getRossystemAssignmentAccess().getExecutedByComputationDeviceInstanceCrossReference_5_0());
+                    newCompositeNode(grammarAccess.getRossystemImplementationAssignmentAccess().getExecutedByComputationDeviceInstanceCrossReference_5_0());
                 }
                 ruleEString
                 {
@@ -401,17 +401,17 @@ ruleRossystemAssignment returns [EObject current=null]
         )
         otherlv_6=Version
         {
-            newLeafNode(otherlv_6, grammarAccess.getRossystemAssignmentAccess().getVersionKeyword_6());
+            newLeafNode(otherlv_6, grammarAccess.getRossystemImplementationAssignmentAccess().getVersionKeyword_6());
         }
         (
             (
                 {
-                    newCompositeNode(grammarAccess.getRossystemAssignmentAccess().getVersionEStringParserRuleCall_7_0());
+                    newCompositeNode(grammarAccess.getRossystemImplementationAssignmentAccess().getVersionEStringParserRuleCall_7_0());
                 }
                 lv_version_7_0=ruleEString
                 {
                     if ($current==null) {
-                        $current = createModelElementForParent(grammarAccess.getRossystemAssignmentRule());
+                        $current = createModelElementForParent(grammarAccess.getRossystemImplementationAssignmentRule());
                     }
                     set(
                         $current,
@@ -424,14 +424,14 @@ ruleRossystemAssignment returns [EObject current=null]
         )
         otherlv_8=SoftwareComponents
         {
-            newLeafNode(otherlv_8, grammarAccess.getRossystemAssignmentAccess().getSoftwareComponentsKeyword_8());
+            newLeafNode(otherlv_8, grammarAccess.getRossystemImplementationAssignmentAccess().getSoftwareComponentsKeyword_8());
         }
         this_INDENT_9=RULE_INDENT
         {
-            newLeafNode(this_INDENT_9, grammarAccess.getRossystemAssignmentAccess().getINDENTTerminalRuleCall_9());
+            newLeafNode(this_INDENT_9, grammarAccess.getRossystemImplementationAssignmentAccess().getINDENTTerminalRuleCall_9());
         }
         {
-            newCompositeNode(grammarAccess.getRossystemAssignmentAccess().getPreListElementParserRuleCall_10());
+            newCompositeNode(grammarAccess.getRossystemImplementationAssignmentAccess().getPreListElementParserRuleCall_10());
         }
         rulePreListElement
         {
@@ -440,12 +440,12 @@ ruleRossystemAssignment returns [EObject current=null]
         (
             (
                 {
-                    newCompositeNode(grammarAccess.getRossystemAssignmentAccess().getSoftwareComponentsConfigRosSoftwareComponentParserRuleCall_11_0());
+                    newCompositeNode(grammarAccess.getRossystemImplementationAssignmentAccess().getSoftwareComponentsConfigRosSoftwareComponentParserRuleCall_11_0());
                 }
                 lv_softwareComponents_11_0=ruleConfigRosSoftwareComponent
                 {
                     if ($current==null) {
-                        $current = createModelElementForParent(grammarAccess.getRossystemAssignmentRule());
+                        $current = createModelElementForParent(grammarAccess.getRossystemImplementationAssignmentRule());
                     }
                     add(
                         $current,
@@ -458,7 +458,7 @@ ruleRossystemAssignment returns [EObject current=null]
         )
         (
             {
-                newCompositeNode(grammarAccess.getRossystemAssignmentAccess().getPreListElementParserRuleCall_12_0());
+                newCompositeNode(grammarAccess.getRossystemImplementationAssignmentAccess().getPreListElementParserRuleCall_12_0());
             }
             rulePreListElement
             {
@@ -467,12 +467,12 @@ ruleRossystemAssignment returns [EObject current=null]
             (
                 (
                     {
-                        newCompositeNode(grammarAccess.getRossystemAssignmentAccess().getSoftwareComponentsConfigRosSoftwareComponentParserRuleCall_12_1_0());
+                        newCompositeNode(grammarAccess.getRossystemImplementationAssignmentAccess().getSoftwareComponentsConfigRosSoftwareComponentParserRuleCall_12_1_0());
                     }
                     lv_softwareComponents_13_0=ruleConfigRosSoftwareComponent
                     {
                         if ($current==null) {
-                            $current = createModelElementForParent(grammarAccess.getRossystemAssignmentRule());
+                            $current = createModelElementForParent(grammarAccess.getRossystemImplementationAssignmentRule());
                         }
                         add(
                             $current,
@@ -486,22 +486,22 @@ ruleRossystemAssignment returns [EObject current=null]
         )*
         this_DEDENT_14=RULE_DEDENT
         {
-            newLeafNode(this_DEDENT_14, grammarAccess.getRossystemAssignmentAccess().getDEDENTTerminalRuleCall_13());
+            newLeafNode(this_DEDENT_14, grammarAccess.getRossystemImplementationAssignmentAccess().getDEDENTTerminalRuleCall_13());
         }
         (
             otherlv_15=Middleware
             {
-                newLeafNode(otherlv_15, grammarAccess.getRossystemAssignmentAccess().getMiddlewareKeyword_14_0());
+                newLeafNode(otherlv_15, grammarAccess.getRossystemImplementationAssignmentAccess().getMiddlewareKeyword_14_0());
             }
             (
                 (
                     {
-                        newCompositeNode(grammarAccess.getRossystemAssignmentAccess().getMiddlewareMiddlewareParserRuleCall_14_1_0());
+                        newCompositeNode(grammarAccess.getRossystemImplementationAssignmentAccess().getMiddlewareMiddlewareParserRuleCall_14_1_0());
                     }
                     lv_middleware_16_0=ruleMiddleware
                     {
                         if ($current==null) {
-                            $current = createModelElementForParent(grammarAccess.getRossystemAssignmentRule());
+                            $current = createModelElementForParent(grammarAccess.getRossystemImplementationAssignmentRule());
                         }
                         set(
                             $current,
@@ -516,17 +516,17 @@ ruleRossystemAssignment returns [EObject current=null]
         (
             otherlv_17=RuntimeType
             {
-                newLeafNode(otherlv_17, grammarAccess.getRossystemAssignmentAccess().getRuntimeTypeKeyword_15_0());
+                newLeafNode(otherlv_17, grammarAccess.getRossystemImplementationAssignmentAccess().getRuntimeTypeKeyword_15_0());
             }
             (
                 (
                     {
-                        newCompositeNode(grammarAccess.getRossystemAssignmentAccess().getRuntimeTypeAbstractRuntimeParserRuleCall_15_1_0());
+                        newCompositeNode(grammarAccess.getRossystemImplementationAssignmentAccess().getRuntimeTypeAbstractRuntimeParserRuleCall_15_1_0());
                     }
                     lv_runtimeType_18_0=ruleAbstractRuntime
                     {
                         if ($current==null) {
-                            $current = createModelElementForParent(grammarAccess.getRossystemAssignmentRule());
+                            $current = createModelElementForParent(grammarAccess.getRossystemImplementationAssignmentRule());
                         }
                         set(
                             $current,
@@ -540,7 +540,7 @@ ruleRossystemAssignment returns [EObject current=null]
         )?
         this_DEDENT_19=RULE_DEDENT
         {
-            newLeafNode(this_DEDENT_19, grammarAccess.getRossystemAssignmentAccess().getDEDENTTerminalRuleCall_16());
+            newLeafNode(this_DEDENT_19, grammarAccess.getRossystemImplementationAssignmentAccess().getDEDENTTerminalRuleCall_16());
         }
     )
 ;
