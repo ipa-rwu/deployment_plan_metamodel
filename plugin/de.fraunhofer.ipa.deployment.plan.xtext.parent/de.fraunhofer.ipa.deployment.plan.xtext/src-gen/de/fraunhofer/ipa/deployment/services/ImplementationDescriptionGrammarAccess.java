@@ -24,6 +24,50 @@ import org.eclipse.xtext.service.GrammarProvider;
 @Singleton
 public class ImplementationDescriptionGrammarAccess extends AbstractElementFinder.AbstractGrammarElementFinder {
 
+    public class ImplementationDescriptionSetElements extends AbstractParserRuleElementFinder {
+        private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.ImplementationDescription.ImplementationDescriptionSet");
+        private final Group cGroup = (Group)rule.eContents().get(1);
+        private final Assignment cImplementationsAssignment_0 = (Assignment)cGroup.eContents().get(0);
+        private final RuleCall cImplementationsImplementationDescriptionParserRuleCall_0_0 = (RuleCall)cImplementationsAssignment_0.eContents().get(0);
+        private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+        private final Keyword cHyphenMinusHyphenMinusHyphenMinusKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+        private final Assignment cImplementationsAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+        private final RuleCall cImplementationsImplementationDescriptionParserRuleCall_1_1_0 = (RuleCall)cImplementationsAssignment_1_1.eContents().get(0);
+
+        //ImplementationDescriptionSet returns ImplementationDescriptionSet:
+        //    implementations+=ImplementationDescription
+        //    ('---'
+        //    implementations+=ImplementationDescription
+        //    )*
+        //;
+        @Override public ParserRule getRule() { return rule; }
+
+        //implementations+=ImplementationDescription
+        //('---'
+        //implementations+=ImplementationDescription
+        //)*
+        public Group getGroup() { return cGroup; }
+
+        //implementations+=ImplementationDescription
+        public Assignment getImplementationsAssignment_0() { return cImplementationsAssignment_0; }
+
+        //ImplementationDescription
+        public RuleCall getImplementationsImplementationDescriptionParserRuleCall_0_0() { return cImplementationsImplementationDescriptionParserRuleCall_0_0; }
+
+        //('---'
+        //implementations+=ImplementationDescription
+        //)*
+        public Group getGroup_1() { return cGroup_1; }
+
+        //'---'
+        public Keyword getHyphenMinusHyphenMinusHyphenMinusKeyword_1_0() { return cHyphenMinusHyphenMinusHyphenMinusKeyword_1_0; }
+
+        //implementations+=ImplementationDescription
+        public Assignment getImplementationsAssignment_1_1() { return cImplementationsAssignment_1_1; }
+
+        //ImplementationDescription
+        public RuleCall getImplementationsImplementationDescriptionParserRuleCall_1_1_0() { return cImplementationsImplementationDescriptionParserRuleCall_1_1_0; }
+    }
     public class ImplementationDescriptionElements extends AbstractParserRuleElementFinder {
         private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.ImplementationDescription.ImplementationDescription");
         private final Group cGroup = (Group)rule.eContents().get(1);
@@ -788,6 +832,7 @@ public class ImplementationDescriptionGrammarAccess extends AbstractElementFinde
     }
 
 
+    private final ImplementationDescriptionSetElements pImplementationDescriptionSet;
     private final ImplementationDescriptionElements pImplementationDescription;
     private final ExecutionRequirementElements pExecutionRequirement;
     private final SoftwareComponentElements pSoftwareComponent;
@@ -813,6 +858,7 @@ public class ImplementationDescriptionGrammarAccess extends AbstractElementFinde
         this.grammar = internalFindGrammar(grammarProvider);
         this.gaUtil = gaUtil;
         this.gaTerminals = gaTerminals;
+        this.pImplementationDescriptionSet = new ImplementationDescriptionSetElements();
         this.pImplementationDescription = new ImplementationDescriptionElements();
         this.pExecutionRequirement = new ExecutionRequirementElements();
         this.pSoftwareComponent = new SoftwareComponentElements();
@@ -856,6 +902,20 @@ public class ImplementationDescriptionGrammarAccess extends AbstractElementFinde
         return gaTerminals;
     }
 
+
+    //ImplementationDescriptionSet returns ImplementationDescriptionSet:
+    //    implementations+=ImplementationDescription
+    //    ('---'
+    //    implementations+=ImplementationDescription
+    //    )*
+    //;
+    public ImplementationDescriptionSetElements getImplementationDescriptionSetAccess() {
+        return pImplementationDescriptionSet;
+    }
+
+    public ParserRule getImplementationDescriptionSetRule() {
+        return getImplementationDescriptionSetAccess().getRule();
+    }
 
     //ImplementationDescription returns ImplementationDescription:
     //    'ImplementationDescription:'
@@ -1099,6 +1159,79 @@ public class ImplementationDescriptionGrammarAccess extends AbstractElementFinde
 
     public ParserRule getAbstractComputationAssignmentTargetRule() {
         return getAbstractComputationAssignmentTargetAccess().getRule();
+    }
+
+    //OperatingSystemResouce returns OperatingSystemResouce:
+    //    {OperatingSystemResouce}
+    //    'name:'  name=EString
+    //    INDENT
+    //        'type:' type=OpertingSystemResouceType
+    //        ('properties:'
+    //            INDENT
+    //            properties+=AbstractOperatingSystemProperty+
+    //            DEDENT
+    //            )?
+    //    DEDENT
+    //    ;
+    public UtilGrammarAccess.OperatingSystemResouceElements getOperatingSystemResouceAccess() {
+        return gaUtil.getOperatingSystemResouceAccess();
+    }
+
+    public ParserRule getOperatingSystemResouceRule() {
+        return getOperatingSystemResouceAccess().getRule();
+    }
+
+    //AbstractOperatingSystemProperty returns AbstractOperatingSystemProperty:
+    //    NameOperatingSystemProperty |VersionOperatingSystemProperty
+    //;
+    public UtilGrammarAccess.AbstractOperatingSystemPropertyElements getAbstractOperatingSystemPropertyAccess() {
+        return gaUtil.getAbstractOperatingSystemPropertyAccess();
+    }
+
+    public ParserRule getAbstractOperatingSystemPropertyRule() {
+        return getAbstractOperatingSystemPropertyAccess().getRule();
+    }
+
+    //NameOperatingSystemProperty returns NameOperatingSystemProperty:
+    //    {NameOperatingSystemProperty}
+    //    PreListElement "name:" name="os_name"
+    //    INDENT
+    //        'kind:' kind=AttributeKind
+    //        (
+    //        'description:' description=EString
+    //        )?
+    //        (
+    //        'value:' value=PropertyValue
+    //        )?
+    //    DEDENT
+    //    ;
+    public UtilGrammarAccess.NameOperatingSystemPropertyElements getNameOperatingSystemPropertyAccess() {
+        return gaUtil.getNameOperatingSystemPropertyAccess();
+    }
+
+    public ParserRule getNameOperatingSystemPropertyRule() {
+        return getNameOperatingSystemPropertyAccess().getRule();
+    }
+
+    //VersionOperatingSystemProperty returns VersionOperatingSystemProperty:
+    //    {VersionOperatingSystemProperty}
+    //    PreListElement "name:" name="os_version"
+    //    INDENT
+    //        'kind:' kind=AttributeKind
+    //        (
+    //        'description:' description=EString
+    //        )?
+    //        (
+    //        'value:' value=PropertyValue
+    //        )?
+    //    DEDENT
+    //    ;
+    public UtilGrammarAccess.VersionOperatingSystemPropertyElements getVersionOperatingSystemPropertyAccess() {
+        return gaUtil.getVersionOperatingSystemPropertyAccess();
+    }
+
+    public ParserRule getVersionOperatingSystemPropertyRule() {
+        return getVersionOperatingSystemPropertyAccess().getRule();
     }
 
     //AbstractProperty returns AbstractProperty:

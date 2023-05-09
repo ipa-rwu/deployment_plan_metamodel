@@ -15,6 +15,8 @@ import de.fraunhofer.ipa.deployment.util.LinuxOpertingSystem;
 import de.fraunhofer.ipa.deployment.util.MacOSOpertingSystem;
 import de.fraunhofer.ipa.deployment.util.MaximumKind;
 import de.fraunhofer.ipa.deployment.util.MinimumKind;
+import de.fraunhofer.ipa.deployment.util.NameOperatingSystemProperty;
+import de.fraunhofer.ipa.deployment.util.OperatingSystemResouce;
 import de.fraunhofer.ipa.deployment.util.ProcessorArchitectureValue;
 import de.fraunhofer.ipa.deployment.util.ProcessorResouceType;
 import de.fraunhofer.ipa.deployment.util.Property;
@@ -34,9 +36,11 @@ import de.fraunhofer.ipa.deployment.util.SelectionKind;
 import de.fraunhofer.ipa.deployment.util.UbuntuVersionValue;
 import de.fraunhofer.ipa.deployment.util.UsbCommunicationType;
 import de.fraunhofer.ipa.deployment.util.UtilPackage;
+import de.fraunhofer.ipa.deployment.util.VersionOperatingSystemProperty;
 import de.fraunhofer.ipa.deployment.util.WlanCommunicationType;
 import deploymentPlan.ConfigExecutionParameter;
 import deploymentPlan.ConfigSoftwareComponent;
+import deploymentPlan.ContainerRuntime;
 import deploymentPlan.DeploymentPlan;
 import deploymentPlan.DeploymentPlanPackage;
 import deploymentPlan.ImplementationAssignment;
@@ -71,6 +75,9 @@ public class PlanSemanticSequencer extends UtilSemanticSequencer {
                 return;
             case DeploymentPlanPackage.CONFIG_SOFTWARE_COMPONENT:
                 sequence_ConfigSoftwareComponent(context, (ConfigSoftwareComponent) semanticObject);
+                return;
+            case DeploymentPlanPackage.CONTAINER_RUNTIME:
+                sequence_ContainerRuntime(context, (ContainerRuntime) semanticObject);
                 return;
             case DeploymentPlanPackage.DEPLOYMENT_PLAN:
                 sequence_DeploymentPlan(context, (DeploymentPlan) semanticObject);
@@ -116,6 +123,12 @@ public class PlanSemanticSequencer extends UtilSemanticSequencer {
                 return;
             case UtilPackage.MINIMUM_KIND:
                 sequence_MinimumKind(context, (MinimumKind) semanticObject);
+                return;
+            case UtilPackage.NAME_OPERATING_SYSTEM_PROPERTY:
+                sequence_NameOperatingSystemProperty(context, (NameOperatingSystemProperty) semanticObject);
+                return;
+            case UtilPackage.OPERATING_SYSTEM_RESOUCE:
+                sequence_OperatingSystemResouce(context, (OperatingSystemResouce) semanticObject);
                 return;
             case UtilPackage.PROCESSOR_ARCHITECTURE_VALUE:
                 sequence_ProcessorArchitectureValue(context, (ProcessorArchitectureValue) semanticObject);
@@ -171,6 +184,9 @@ public class PlanSemanticSequencer extends UtilSemanticSequencer {
             case UtilPackage.USB_COMMUNICATION_TYPE:
                 sequence_UsbCommunicationType(context, (UsbCommunicationType) semanticObject);
                 return;
+            case UtilPackage.VERSION_OPERATING_SYSTEM_PROPERTY:
+                sequence_VersionOperatingSystemProperty(context, (VersionOperatingSystemProperty) semanticObject);
+                return;
             case UtilPackage.WLAN_COMMUNICATION_TYPE:
                 sequence_WlanCommunicationType(context, (WlanCommunicationType) semanticObject);
                 return;
@@ -216,6 +232,21 @@ public class PlanSemanticSequencer extends UtilSemanticSequencer {
     /**
      * <pre>
      * Contexts:
+     *     AbstractRuntime returns ContainerRuntime
+     *     ContainerRuntime returns ContainerRuntime
+     *
+     * Constraint:
+     *     (type=RunTimeType (opertingSystemResource+=OperatingSystemResouce opertingSystemResource+=OperatingSystemResouce*)?)
+     * </pre>
+     */
+    protected void sequence_ContainerRuntime(ISerializationContext context, ContainerRuntime semanticObject) {
+        genericSequencer.createSequence(context, semanticObject);
+    }
+
+
+    /**
+     * <pre>
+     * Contexts:
      *     DeploymentPlan returns DeploymentPlan
      *
      * Constraint:
@@ -253,8 +284,7 @@ public class PlanSemanticSequencer extends UtilSemanticSequencer {
      *         softwareComponents+=ConfigSoftwareComponent
      *         softwareComponents+=ConfigSoftwareComponent*
      *         middleware=Middleware?
-     *         runtimeType=RunTimeType?
-     *         opertingSystemType=OpertingSystemName?
+     *         runtimeType=AbstractRuntime?
      *     )
      * </pre>
      */

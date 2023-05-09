@@ -21,6 +21,7 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class PlanWithRosmodelSyntacticSequencer extends AbstractSyntacticSequencer {
 
     protected PlanWithRosmodelGrammarAccess grammarAccess;
+    protected AbstractElementAlias match_ConfigRosParameter___INDENTTerminalRuleCall_3_0_DEDENTTerminalRuleCall_3_3__q;
     protected AbstractElementAlias match_ConfigRosSoftwareComponent_PreListElementParserRuleCall_2_3_4_0_q;
     protected AbstractElementAlias match_ConfigRosSoftwareComponent___ColonKeyword_2_0_INDENTTerminalRuleCall_2_1_DEDENTTerminalRuleCall_2_4__q;
     protected AbstractElementAlias match_ConfigSoftwareComponent_PreListElementParserRuleCall_1_2_4_0_q;
@@ -35,6 +36,7 @@ public class PlanWithRosmodelSyntacticSequencer extends AbstractSyntacticSequenc
     @Inject
     protected void init(IGrammarAccess access) {
         grammarAccess = (PlanWithRosmodelGrammarAccess) access;
+        match_ConfigRosParameter___INDENTTerminalRuleCall_3_0_DEDENTTerminalRuleCall_3_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getConfigRosParameterAccess().getINDENTTerminalRuleCall_3_0()), new TokenAlias(false, false, grammarAccess.getConfigRosParameterAccess().getDEDENTTerminalRuleCall_3_3()));
         match_ConfigRosSoftwareComponent_PreListElementParserRuleCall_2_3_4_0_q = new TokenAlias(false, true, grammarAccess.getConfigRosSoftwareComponentAccess().getPreListElementParserRuleCall_2_3_4_0());
         match_ConfigRosSoftwareComponent___ColonKeyword_2_0_INDENTTerminalRuleCall_2_1_DEDENTTerminalRuleCall_2_4__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getConfigRosSoftwareComponentAccess().getColonKeyword_2_0()), new TokenAlias(false, false, grammarAccess.getConfigRosSoftwareComponentAccess().getINDENTTerminalRuleCall_2_1()), new TokenAlias(false, false, grammarAccess.getConfigRosSoftwareComponentAccess().getDEDENTTerminalRuleCall_2_4()));
         match_ConfigSoftwareComponent_PreListElementParserRuleCall_1_2_4_0_q = new TokenAlias(false, true, grammarAccess.getConfigSoftwareComponentAccess().getPreListElementParserRuleCall_1_2_4_0());
@@ -86,7 +88,9 @@ public class PlanWithRosmodelSyntacticSequencer extends AbstractSyntacticSequenc
         List<INode> transitionNodes = collectNodes(fromNode, toNode);
         for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
             List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-            if (match_ConfigRosSoftwareComponent_PreListElementParserRuleCall_2_3_4_0_q.equals(syntax))
+            if (match_ConfigRosParameter___INDENTTerminalRuleCall_3_0_DEDENTTerminalRuleCall_3_3__q.equals(syntax))
+                emit_ConfigRosParameter___INDENTTerminalRuleCall_3_0_DEDENTTerminalRuleCall_3_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
+            else if (match_ConfigRosSoftwareComponent_PreListElementParserRuleCall_2_3_4_0_q.equals(syntax))
                 emit_ConfigRosSoftwareComponent_PreListElementParserRuleCall_2_3_4_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
             else if (match_ConfigRosSoftwareComponent___ColonKeyword_2_0_INDENTTerminalRuleCall_2_1_DEDENTTerminalRuleCall_2_4__q.equals(syntax))
                 emit_ConfigRosSoftwareComponent___ColonKeyword_2_0_INDENTTerminalRuleCall_2_1_DEDENTTerminalRuleCall_2_4__q(semanticObject, getLastNavigableState(), syntaxNodes);
@@ -108,6 +112,20 @@ public class PlanWithRosmodelSyntacticSequencer extends AbstractSyntacticSequenc
                 emit_Property_DEDENTTerminalRuleCall_8_q(semanticObject, getLastNavigableState(), syntaxNodes);
             else acceptNodes(getLastNavigableState(), syntaxNodes);
         }
+    }
+
+    /**
+     * <pre>
+     * Ambiguous syntax:
+     *     (INDENT DEDENT)?
+     *
+     * This ambiguous syntax occurs at:
+     *     from=[RosParameter|EString] (ambiguity) (rule end)
+
+     * </pre>
+     */
+    protected void emit_ConfigRosParameter___INDENTTerminalRuleCall_3_0_DEDENTTerminalRuleCall_3_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+        acceptNodes(transition, nodes);
     }
 
     /**
