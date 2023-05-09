@@ -1,89 +1,109 @@
 ComputationDeviceType:
-    name: PC
-    computationResouce:
-        - name: processor
-          type: Processor
-          properties:
-              - name: core_number
-                kind: AttributeKind
-              - name: processor_architecture
-                kind: AttributeKind
-        - name: operting_system
-          type: LinuxOpertingSystem
-          properties:
-              - name: os_name
-                kind: AttributeKind
-              - name: os_version
-                kind: AttributeKind
-    communicationConnection:
-        - name: ethernet
-          type: Ethernet
-          properties:
-              - name: ip_address
-                kind: AttributeKind
-              - name: interface_name
-                kind: AttributeKind
-              - name: mac_address
-                kind: AttributeKind
-              - name: identity_name
-                kind: AttributeKind
-              - name: port
-                kind: AttributeKind
-        - name: usb
-          type: Usb
-          properties:
-              - name: device_volume
-                kind: SelectionKind
----
-DeviceType:
-    name: Realsense_camera
-    deviceResouce:
-        - name: camera_info
-          type: CameraInfomation
-          properties:
-              - name: serial_number
-                kind: AttributeKind
-              - name: device_type
-                kind: AttributeKind
-    communicationConnection:
-        - name: usb
-          type: Usb
-          properties:
-              - name: device_volume
-                kind: SelectionKind
+  name: PC
+  computationResouce:
+    - name: operting_system
+      type: LinuxOpertingSystem
+      properties:
+        - name: os_name
+          kind: AttributeKind
+        - name: os_version
+          kind: AttributeKind
 
+    - name: processor
+      type: Processor
+      properties:
+        - name: core_number
+          kind: AttributeKind
+        - name: processor_architecture
+          kind: AttributeKind
+
+  communicationConnection:
+    - name: ethernet
+      type: Ethernet
+      properties:
+        - name: ip_address
+          kind: AttributeKind
+        - name: interface_name
+          kind: AttributeKind
+        - name: mac_address
+          kind: AttributeKind
+        - name: identity_name
+          kind: AttributeKind
+        - name: port
+          kind: AttributeKind
+        - name: gateway
+          kind: AttributeKind
+        - name: subnet_mask
+          kind: AttributeKind
+        - name: dns_server
+          kind: SelectionKind
+
+    - name: usb_01
+      type: Usb
+      properties:
+        - name: device_volume
+          kind: SelectionKind
 ---
 DeviceType:
-    name: UR5E
-    communicationConnection:
-        - name: io_tip
-          type: IO
-          properties:
-              - name: pin_dio_0
-                kind: AttributeKind
-                value: 0
-              - name: pin_dio_1
-                kind: AttributeKind
-        - name: ethernet
-          type: Ethernet
-          properties:
-              - name: ip_address
-                kind: AttributeKind
-              - name: interface_name
-                kind: AttributeKind
-              - name: mac_address
-                kind: AttributeKind
-              - name: identity_name
-                kind: AttributeKind
-              - name: gateway
-                kind: AttributeKind
-              - name: subnet_mask
-                kind: AttributeKind
-              - name: dns_server
-                kind: SelectionKind
+  name: UR5E
+  deviceResouce:
+    - name: device_info
+      type: DeviceInfomation
+      properties:
+        - name: type
+          kind: AttributeKind
+          value: ur5e
+  communicationConnection:
+    - name: io_tip
+      type: IO
+      properties:
+        - name: pin_dio_0
+          kind: AttributeKind
+          value: 0
+        - name: pin_dio_1
+          kind: AttributeKind
+
+    - name: ethernet
+      type: Ethernet
+      properties:
+        - name: ip_address
+          kind: AttributeKind
+        - name: interface_name
+          kind: AttributeKind
+        - name: mac_address
+          kind: AttributeKind
+        - name: identity_name
+          kind: AttributeKind
+        - name: gateway
+          kind: AttributeKind
+        - name: subnet_mask
+          kind: AttributeKind
+        - name: dns_server
+          kind: SelectionKind
 ---
 DeviceType:
-    name: EGP50
-    communicationConnection:
-        - name: io
-          type: IO
+  name: Asus_xtion
+  deviceResouce:
+    - name: camera_info
+      type: CameraInfomation
+      properties:
+        - name: vendor_id
+          kind: AttributeKind
+          value: "1d27"
+        - name: product_id
+          kind: AttributeKind
+          value: "0601"
+        - name: device_type
+          kind: AttributeKind
+  communicationConnection:
+    - name: usb
+      type: Usb
+      properties:
+        - name: device_volume
+          kind: SelectionKind
+---
+DeviceType:
+  name: EGP50
+  communicationConnection:
+    - name: io
+      type: IO
