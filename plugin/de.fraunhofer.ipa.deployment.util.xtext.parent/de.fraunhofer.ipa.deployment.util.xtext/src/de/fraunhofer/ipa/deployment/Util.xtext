@@ -26,6 +26,51 @@ AbstractComputationAssignmentTarget returns AbstractComputationAssignmentTarget:
     {AbstractComputationAssignmentTarget}
 ;
 
+OperatingSystemResouce returns OperatingSystemResouce:
+    {OperatingSystemResouce}
+    'name:'  name=EString
+    INDENT
+        'type:' type=OpertingSystemResouceType
+        ('properties:'
+            INDENT
+            properties+=AbstractOperatingSystemProperty+
+            DEDENT
+            )?
+    DEDENT
+    ;
+
+AbstractOperatingSystemProperty returns AbstractOperatingSystemProperty:
+    NameOperatingSystemProperty |VersionOperatingSystemProperty
+;
+
+NameOperatingSystemProperty returns NameOperatingSystemProperty:
+    {NameOperatingSystemProperty}
+    PreListElement "name:" name="os_name"
+    INDENT
+        'kind:' kind=AttributeKind
+        (
+        'description:' description=EString
+        )?
+        (
+        'value:' value=PropertyValue
+        )?
+    DEDENT
+    ;
+
+VersionOperatingSystemProperty returns VersionOperatingSystemProperty:
+    {VersionOperatingSystemProperty}
+    PreListElement "name:" name="os_version"
+    INDENT
+        'kind:' kind=AttributeKind
+        (
+        'description:' description=EString
+        )?
+        (
+        'value:' value=PropertyValue
+        )?
+    DEDENT
+    ;
+
 AbstractProperty returns AbstractProperty:
     PropertyAttribute | PropertyMaximun | PropertyMinimum | PropertySelection | PropertyRange;
 
