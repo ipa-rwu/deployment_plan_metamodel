@@ -2,25 +2,25 @@
  */
 package de.fraunhofer.ipa.deployment.util.impl;
 
-import de.fraunhofer.ipa.deployment.util.ContainerRuntime;
+import de.fraunhofer.ipa.deployment.util.NameOperatingSystemProperty;
 import de.fraunhofer.ipa.deployment.util.UtilPackage;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Container Runtime</b></em>'.
+ * An implementation of the model object '<em><b>Name Operating System Property</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class ContainerRuntimeImpl extends AbstractRuntimeEnviromentImpl implements ContainerRuntime {
+public class NameOperatingSystemPropertyImpl extends PropertyAttributeImpl implements NameOperatingSystemProperty {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    protected ContainerRuntimeImpl() {
+    protected NameOperatingSystemPropertyImpl() {
         super();
     }
 
@@ -31,7 +31,7 @@ public class ContainerRuntimeImpl extends AbstractRuntimeEnviromentImpl implemen
      */
     @Override
     protected EClass eStaticClass() {
-        return UtilPackage.Literals.CONTAINER_RUNTIME;
+        return UtilPackage.Literals.NAME_OPERATING_SYSTEM_PROPERTY;
     }
 
-} //ContainerRuntimeImpl
+} //NameOperatingSystemPropertyImpl

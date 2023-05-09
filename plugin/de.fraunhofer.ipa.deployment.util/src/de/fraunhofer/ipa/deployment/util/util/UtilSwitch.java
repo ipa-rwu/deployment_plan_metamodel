@@ -401,18 +401,62 @@ public class UtilSwitch<T> extends Switch<T> {
                 result = defaultCase(theEObject);
             return result;
         }
-        case UtilPackage.CONTAINER_RUNTIME: {
-            ContainerRuntime containerRuntime = (ContainerRuntime) theEObject;
-            T result = caseContainerRuntime(containerRuntime);
-            if (result == null)
-                result = caseAbstractRuntimeEnviroment(containerRuntime);
+        case UtilPackage.OPERTING_SYSTEM_NAME: {
+            OpertingSystemName opertingSystemName = (OpertingSystemName) theEObject;
+            T result = caseOpertingSystemName(opertingSystemName);
             if (result == null)
                 result = defaultCase(theEObject);
             return result;
         }
-        case UtilPackage.OPERTING_SYSTEM_NAME: {
-            OpertingSystemName opertingSystemName = (OpertingSystemName) theEObject;
-            T result = caseOpertingSystemName(opertingSystemName);
+        case UtilPackage.OPERATING_SYSTEM_RESOUCE: {
+            OperatingSystemResouce operatingSystemResouce = (OperatingSystemResouce) theEObject;
+            T result = caseOperatingSystemResouce(operatingSystemResouce);
+            if (result == null)
+                result = caseAbstractComputationResource(operatingSystemResouce);
+            if (result == null)
+                result = caseAbstractResource(operatingSystemResouce);
+            if (result == null)
+                result = defaultCase(theEObject);
+            return result;
+        }
+        case UtilPackage.ABSTRACT_OPERATING_SYSTEM_PROPERTY: {
+            AbstractOperatingSystemProperty abstractOperatingSystemProperty = (AbstractOperatingSystemProperty) theEObject;
+            T result = caseAbstractOperatingSystemProperty(abstractOperatingSystemProperty);
+            if (result == null)
+                result = defaultCase(theEObject);
+            return result;
+        }
+        case UtilPackage.ABSTRACT_COMPUTATION_RESOURCE: {
+            AbstractComputationResource abstractComputationResource = (AbstractComputationResource) theEObject;
+            T result = caseAbstractComputationResource(abstractComputationResource);
+            if (result == null)
+                result = caseAbstractResource(abstractComputationResource);
+            if (result == null)
+                result = defaultCase(theEObject);
+            return result;
+        }
+        case UtilPackage.VERSION_OPERATING_SYSTEM_PROPERTY: {
+            VersionOperatingSystemProperty versionOperatingSystemProperty = (VersionOperatingSystemProperty) theEObject;
+            T result = caseVersionOperatingSystemProperty(versionOperatingSystemProperty);
+            if (result == null)
+                result = casePropertyAttribute(versionOperatingSystemProperty);
+            if (result == null)
+                result = caseAbstractOperatingSystemProperty(versionOperatingSystemProperty);
+            if (result == null)
+                result = caseAbstractProperty(versionOperatingSystemProperty);
+            if (result == null)
+                result = defaultCase(theEObject);
+            return result;
+        }
+        case UtilPackage.NAME_OPERATING_SYSTEM_PROPERTY: {
+            NameOperatingSystemProperty nameOperatingSystemProperty = (NameOperatingSystemProperty) theEObject;
+            T result = caseNameOperatingSystemProperty(nameOperatingSystemProperty);
+            if (result == null)
+                result = casePropertyAttribute(nameOperatingSystemProperty);
+            if (result == null)
+                result = caseAbstractOperatingSystemProperty(nameOperatingSystemProperty);
+            if (result == null)
+                result = caseAbstractProperty(nameOperatingSystemProperty);
             if (result == null)
                 result = defaultCase(theEObject);
             return result;
@@ -524,6 +568,21 @@ public class UtilSwitch<T> extends Switch<T> {
      * @generated
      */
     public T caseAbstractRuntimeEnviroment(AbstractRuntimeEnviroment object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Operting System Resouce Type</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Operting System Resouce Type</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseOpertingSystemResouceType(OpertingSystemResouceType object) {
         return null;
     }
 
@@ -648,21 +707,6 @@ public class UtilSwitch<T> extends Switch<T> {
     }
 
     /**
-     * Returns the result of interpreting the object as an instance of '<em>Operting System Resouce Type</em>'.
-     * <!-- begin-user-doc -->
-     * This implementation returns null;
-     * returning a non-null result will terminate the switch.
-     * <!-- end-user-doc -->
-     * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Operting System Resouce Type</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-     * @generated
-     */
-    public T caseOpertingSystemResouceType(OpertingSystemResouceType object) {
-        return null;
-    }
-
-    /**
      * Returns the result of interpreting the object as an instance of '<em>Linux Operting System</em>'.
      * <!-- begin-user-doc -->
      * This implementation returns null;
@@ -738,17 +782,32 @@ public class UtilSwitch<T> extends Switch<T> {
     }
 
     /**
-     * Returns the result of interpreting the object as an instance of '<em>Property Kind</em>'.
+     * Returns the result of interpreting the object as an instance of '<em>Linux Distribution Value</em>'.
      * <!-- begin-user-doc -->
      * This implementation returns null;
      * returning a non-null result will terminate the switch.
      * <!-- end-user-doc -->
      * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Property Kind</em>'.
+     * @return the result of interpreting the object as an instance of '<em>Linux Distribution Value</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T casePropertyKind(PropertyKind object) {
+    public T caseLinuxDistributionValue(LinuxDistributionValue object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Ubuntu Version Value</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Ubuntu Version Value</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseUbuntuVersionValue(UbuntuVersionValue object) {
         return null;
     }
 
@@ -824,6 +883,21 @@ public class UtilSwitch<T> extends Switch<T> {
      * @generated
      */
     public T caseRangeKind(RangeKind object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Property Kind</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Property Kind</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T casePropertyKind(PropertyKind object) {
         return null;
     }
 
@@ -978,21 +1052,6 @@ public class UtilSwitch<T> extends Switch<T> {
     }
 
     /**
-     * Returns the result of interpreting the object as an instance of '<em>Container Runtime</em>'.
-     * <!-- begin-user-doc -->
-     * This implementation returns null;
-     * returning a non-null result will terminate the switch.
-     * <!-- end-user-doc -->
-     * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Container Runtime</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-     * @generated
-     */
-    public T caseContainerRuntime(ContainerRuntime object) {
-        return null;
-    }
-
-    /**
      * Returns the result of interpreting the object as an instance of '<em>Operting System Name</em>'.
      * <!-- begin-user-doc -->
      * This implementation returns null;
@@ -1008,32 +1067,77 @@ public class UtilSwitch<T> extends Switch<T> {
     }
 
     /**
-     * Returns the result of interpreting the object as an instance of '<em>Linux Distribution Value</em>'.
+     * Returns the result of interpreting the object as an instance of '<em>Operating System Resouce</em>'.
      * <!-- begin-user-doc -->
      * This implementation returns null;
      * returning a non-null result will terminate the switch.
      * <!-- end-user-doc -->
      * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Linux Distribution Value</em>'.
+     * @return the result of interpreting the object as an instance of '<em>Operating System Resouce</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseLinuxDistributionValue(LinuxDistributionValue object) {
+    public T caseOperatingSystemResouce(OperatingSystemResouce object) {
         return null;
     }
 
     /**
-     * Returns the result of interpreting the object as an instance of '<em>Ubuntu Version Value</em>'.
+     * Returns the result of interpreting the object as an instance of '<em>Abstract Operating System Property</em>'.
      * <!-- begin-user-doc -->
      * This implementation returns null;
      * returning a non-null result will terminate the switch.
      * <!-- end-user-doc -->
      * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Ubuntu Version Value</em>'.
+     * @return the result of interpreting the object as an instance of '<em>Abstract Operating System Property</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseUbuntuVersionValue(UbuntuVersionValue object) {
+    public T caseAbstractOperatingSystemProperty(AbstractOperatingSystemProperty object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Abstract Computation Resource</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Abstract Computation Resource</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseAbstractComputationResource(AbstractComputationResource object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Version Operating System Property</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Version Operating System Property</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseVersionOperatingSystemProperty(VersionOperatingSystemProperty object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Name Operating System Property</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Name Operating System Property</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseNameOperatingSystemProperty(NameOperatingSystemProperty object) {
         return null;
     }
 

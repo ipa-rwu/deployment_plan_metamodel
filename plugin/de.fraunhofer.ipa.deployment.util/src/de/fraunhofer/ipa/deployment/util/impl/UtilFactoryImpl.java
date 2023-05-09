@@ -110,8 +110,12 @@ public class UtilFactoryImpl extends EFactoryImpl implements UtilFactory {
             return createPropertyValueString();
         case UtilPackage.PROPERTY_VALUE_LIST:
             return createPropertyValueList();
-        case UtilPackage.CONTAINER_RUNTIME:
-            return createContainerRuntime();
+        case UtilPackage.OPERATING_SYSTEM_RESOUCE:
+            return createOperatingSystemResouce();
+        case UtilPackage.VERSION_OPERATING_SYSTEM_PROPERTY:
+            return createVersionOperatingSystemProperty();
+        case UtilPackage.NAME_OPERATING_SYSTEM_PROPERTY:
+            return createNameOperatingSystemProperty();
         default:
             throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
         }
@@ -434,9 +438,29 @@ public class UtilFactoryImpl extends EFactoryImpl implements UtilFactory {
      * <!-- end-user-doc -->
      * @generated
      */
-    public ContainerRuntime createContainerRuntime() {
-        ContainerRuntimeImpl containerRuntime = new ContainerRuntimeImpl();
-        return containerRuntime;
+    public OperatingSystemResouce createOperatingSystemResouce() {
+        OperatingSystemResouceImpl operatingSystemResouce = new OperatingSystemResouceImpl();
+        return operatingSystemResouce;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public VersionOperatingSystemProperty createVersionOperatingSystemProperty() {
+        VersionOperatingSystemPropertyImpl versionOperatingSystemProperty = new VersionOperatingSystemPropertyImpl();
+        return versionOperatingSystemProperty;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NameOperatingSystemProperty createNameOperatingSystemProperty() {
+        NameOperatingSystemPropertyImpl nameOperatingSystemProperty = new NameOperatingSystemPropertyImpl();
+        return nameOperatingSystemProperty;
     }
 
     /**

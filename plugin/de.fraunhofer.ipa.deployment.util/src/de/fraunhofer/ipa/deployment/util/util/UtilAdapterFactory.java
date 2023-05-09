@@ -262,13 +262,33 @@ public class UtilAdapterFactory extends AdapterFactoryImpl {
         }
 
         @Override
-        public Adapter caseContainerRuntime(ContainerRuntime object) {
-            return createContainerRuntimeAdapter();
+        public Adapter caseOpertingSystemName(OpertingSystemName object) {
+            return createOpertingSystemNameAdapter();
         }
 
         @Override
-        public Adapter caseOpertingSystemName(OpertingSystemName object) {
-            return createOpertingSystemNameAdapter();
+        public Adapter caseOperatingSystemResouce(OperatingSystemResouce object) {
+            return createOperatingSystemResouceAdapter();
+        }
+
+        @Override
+        public Adapter caseAbstractOperatingSystemProperty(AbstractOperatingSystemProperty object) {
+            return createAbstractOperatingSystemPropertyAdapter();
+        }
+
+        @Override
+        public Adapter caseAbstractComputationResource(AbstractComputationResource object) {
+            return createAbstractComputationResourceAdapter();
+        }
+
+        @Override
+        public Adapter caseVersionOperatingSystemProperty(VersionOperatingSystemProperty object) {
+            return createVersionOperatingSystemPropertyAdapter();
+        }
+
+        @Override
+        public Adapter caseNameOperatingSystemProperty(NameOperatingSystemProperty object) {
+            return createNameOperatingSystemPropertyAdapter();
         }
 
         @Override
@@ -389,6 +409,20 @@ public class UtilAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
+     * Creates a new adapter for an object of class '{@link de.fraunhofer.ipa.deployment.util.OpertingSystemResouceType <em>Operting System Resouce Type</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see de.fraunhofer.ipa.deployment.util.OpertingSystemResouceType
+     * @generated
+     */
+    public Adapter createOpertingSystemResouceTypeAdapter() {
+        return null;
+    }
+
+    /**
      * Creates a new adapter for an object of class '{@link de.fraunhofer.ipa.deployment.util.PropertyValue <em>Property Value</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
@@ -501,20 +535,6 @@ public class UtilAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
-     * Creates a new adapter for an object of class '{@link de.fraunhofer.ipa.deployment.util.OpertingSystemResouceType <em>Operting System Resouce Type</em>}'.
-     * <!-- begin-user-doc -->
-     * This default implementation returns null so that we can easily ignore cases;
-     * it's useful to ignore a case when inheritance will catch all the cases anyway.
-     * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see de.fraunhofer.ipa.deployment.util.OpertingSystemResouceType
-     * @generated
-     */
-    public Adapter createOpertingSystemResouceTypeAdapter() {
-        return null;
-    }
-
-    /**
      * Creates a new adapter for an object of class '{@link de.fraunhofer.ipa.deployment.util.LinuxOpertingSystem <em>Linux Operting System</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
@@ -585,16 +605,30 @@ public class UtilAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
-     * Creates a new adapter for an object of class '{@link de.fraunhofer.ipa.deployment.util.PropertyKind <em>Property Kind</em>}'.
+     * Creates a new adapter for an object of class '{@link de.fraunhofer.ipa.deployment.util.LinuxDistributionValue <em>Linux Distribution Value</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
      * it's useful to ignore a case when inheritance will catch all the cases anyway.
      * <!-- end-user-doc -->
      * @return the new adapter.
-     * @see de.fraunhofer.ipa.deployment.util.PropertyKind
+     * @see de.fraunhofer.ipa.deployment.util.LinuxDistributionValue
      * @generated
      */
-    public Adapter createPropertyKindAdapter() {
+    public Adapter createLinuxDistributionValueAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link de.fraunhofer.ipa.deployment.util.UbuntuVersionValue <em>Ubuntu Version Value</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see de.fraunhofer.ipa.deployment.util.UbuntuVersionValue
+     * @generated
+     */
+    public Adapter createUbuntuVersionValueAdapter() {
         return null;
     }
 
@@ -665,6 +699,20 @@ public class UtilAdapterFactory extends AdapterFactoryImpl {
      * @generated
      */
     public Adapter createRangeKindAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link de.fraunhofer.ipa.deployment.util.PropertyKind <em>Property Kind</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see de.fraunhofer.ipa.deployment.util.PropertyKind
+     * @generated
+     */
+    public Adapter createPropertyKindAdapter() {
         return null;
     }
 
@@ -809,20 +857,6 @@ public class UtilAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
-     * Creates a new adapter for an object of class '{@link de.fraunhofer.ipa.deployment.util.ContainerRuntime <em>Container Runtime</em>}'.
-     * <!-- begin-user-doc -->
-     * This default implementation returns null so that we can easily ignore cases;
-     * it's useful to ignore a case when inheritance will catch all the cases anyway.
-     * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see de.fraunhofer.ipa.deployment.util.ContainerRuntime
-     * @generated
-     */
-    public Adapter createContainerRuntimeAdapter() {
-        return null;
-    }
-
-    /**
      * Creates a new adapter for an object of class '{@link de.fraunhofer.ipa.deployment.util.OpertingSystemName <em>Operting System Name</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
@@ -837,30 +871,72 @@ public class UtilAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
-     * Creates a new adapter for an object of class '{@link de.fraunhofer.ipa.deployment.util.LinuxDistributionValue <em>Linux Distribution Value</em>}'.
+     * Creates a new adapter for an object of class '{@link de.fraunhofer.ipa.deployment.util.OperatingSystemResouce <em>Operating System Resouce</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
      * it's useful to ignore a case when inheritance will catch all the cases anyway.
      * <!-- end-user-doc -->
      * @return the new adapter.
-     * @see de.fraunhofer.ipa.deployment.util.LinuxDistributionValue
+     * @see de.fraunhofer.ipa.deployment.util.OperatingSystemResouce
      * @generated
      */
-    public Adapter createLinuxDistributionValueAdapter() {
+    public Adapter createOperatingSystemResouceAdapter() {
         return null;
     }
 
     /**
-     * Creates a new adapter for an object of class '{@link de.fraunhofer.ipa.deployment.util.UbuntuVersionValue <em>Ubuntu Version Value</em>}'.
+     * Creates a new adapter for an object of class '{@link de.fraunhofer.ipa.deployment.util.AbstractOperatingSystemProperty <em>Abstract Operating System Property</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
      * it's useful to ignore a case when inheritance will catch all the cases anyway.
      * <!-- end-user-doc -->
      * @return the new adapter.
-     * @see de.fraunhofer.ipa.deployment.util.UbuntuVersionValue
+     * @see de.fraunhofer.ipa.deployment.util.AbstractOperatingSystemProperty
      * @generated
      */
-    public Adapter createUbuntuVersionValueAdapter() {
+    public Adapter createAbstractOperatingSystemPropertyAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link de.fraunhofer.ipa.deployment.util.AbstractComputationResource <em>Abstract Computation Resource</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see de.fraunhofer.ipa.deployment.util.AbstractComputationResource
+     * @generated
+     */
+    public Adapter createAbstractComputationResourceAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link de.fraunhofer.ipa.deployment.util.VersionOperatingSystemProperty <em>Version Operating System Property</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see de.fraunhofer.ipa.deployment.util.VersionOperatingSystemProperty
+     * @generated
+     */
+    public Adapter createVersionOperatingSystemPropertyAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link de.fraunhofer.ipa.deployment.util.NameOperatingSystemProperty <em>Name Operating System Property</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see de.fraunhofer.ipa.deployment.util.NameOperatingSystemProperty
+     * @generated
+     */
+    public Adapter createNameOperatingSystemPropertyAdapter() {
         return null;
     }
 

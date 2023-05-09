@@ -112,6 +112,24 @@ public interface UtilFactory extends EFactory {
     ProcessorArchitectureValue createProcessorArchitectureValue();
 
     /**
+     * Returns a new object of class '<em>Linux Distribution Value</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Linux Distribution Value</em>'.
+     * @generated
+     */
+    LinuxDistributionValue createLinuxDistributionValue();
+
+    /**
+     * Returns a new object of class '<em>Ubuntu Version Value</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Ubuntu Version Value</em>'.
+     * @generated
+     */
+    UbuntuVersionValue createUbuntuVersionValue();
+
+    /**
      * Returns a new object of class '<em>Attribute Kind</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -247,31 +265,31 @@ public interface UtilFactory extends EFactory {
     PropertyValueList createPropertyValueList();
 
     /**
-     * Returns a new object of class '<em>Container Runtime</em>'.
+     * Returns a new object of class '<em>Operating System Resouce</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return a new object of class '<em>Container Runtime</em>'.
+     * @return a new object of class '<em>Operating System Resouce</em>'.
      * @generated
      */
-    ContainerRuntime createContainerRuntime();
+    OperatingSystemResouce createOperatingSystemResouce();
 
     /**
-     * Returns a new object of class '<em>Linux Distribution Value</em>'.
+     * Returns a new object of class '<em>Version Operating System Property</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return a new object of class '<em>Linux Distribution Value</em>'.
+     * @return a new object of class '<em>Version Operating System Property</em>'.
      * @generated
      */
-    LinuxDistributionValue createLinuxDistributionValue();
+    VersionOperatingSystemProperty createVersionOperatingSystemProperty();
 
     /**
-     * Returns a new object of class '<em>Ubuntu Version Value</em>'.
+     * Returns a new object of class '<em>Name Operating System Property</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return a new object of class '<em>Ubuntu Version Value</em>'.
+     * @return a new object of class '<em>Name Operating System Property</em>'.
      * @generated
      */
-    UbuntuVersionValue createUbuntuVersionValue();
+    NameOperatingSystemProperty createNameOperatingSystemProperty();
 
     /**
      * Returns the package supported by this factory.

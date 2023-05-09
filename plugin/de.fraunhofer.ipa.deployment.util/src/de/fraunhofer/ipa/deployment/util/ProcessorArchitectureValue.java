@@ -19,7 +19,6 @@ package de.fraunhofer.ipa.deployment.util;
  * @generated
  */
 public interface ProcessorArchitectureValue extends PropertyValue {
-
     /**
      * Returns the value of the '<em><b>Value</b></em>' attribute.
      * The literals are from the enumeration {@link de.fraunhofer.ipa.deployment.util.ProcessorArchitectureType}.
@@ -44,4 +43,5 @@ public interface ProcessorArchitectureValue extends PropertyValue {
      * @generated
      */
     void setValue(ProcessorArchitectureType value);
+
 } // ProcessorArchitectureValue
