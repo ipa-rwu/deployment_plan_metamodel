@@ -1319,7 +1319,7 @@ public class TargetEnvironmentGrammarAccess extends AbstractElementFinder.Abstra
         return getDeviceType_ImplAccess().getRule();
     }
 
-    //AbstractComputationResource returns AbstractComputationResource:
+    //AbstractComputationResource returns util::AbstractComputationResource:
     //  OperatingSystemResouce | ProcessorResouce
     //;
     public DeviceGrammarAccess.AbstractComputationResourceElements getAbstractComputationResourceAccess() {
@@ -1377,7 +1377,8 @@ public class TargetEnvironmentGrammarAccess extends AbstractElementFinder.Abstra
     //        )?
     //        ('computationResouce:'
     //            INDENT
-    //            computationResource+=AbstractComputationResource+
+    //            PreListElement computationResource+=AbstractComputationResource
+    //            (PreListElement computationResource+=AbstractComputationResource+)?
     //            DEDENT
     //        )?
     //        ('communicationConnection:'
@@ -1475,82 +1476,9 @@ public class TargetEnvironmentGrammarAccess extends AbstractElementFinder.Abstra
         return getUsbConnectionAccess().getRule();
     }
 
-    //OperatingSystemResouce returns OperatingSystemResouce:
-    //    {OperatingSystemResouce}
-    //    PreListElement 'name:'  name=EString
-    //    INDENT
-    //        'type:' type=OpertingSystemResouceType
-    //        ('properties:'
-    //            INDENT
-    //            properties+=AbstractOperatingSystemProperty+
-    //            DEDENT
-    //            )?
-    //    DEDENT
-    //    ;
-    public DeviceGrammarAccess.OperatingSystemResouceElements getOperatingSystemResouceAccess() {
-        return gaDevice.getOperatingSystemResouceAccess();
-    }
-
-    public ParserRule getOperatingSystemResouceRule() {
-        return getOperatingSystemResouceAccess().getRule();
-    }
-
-    //AbstractOperatingSystemProperty returns AbstractOperatingSystemProperty:
-    //    NameOperatingSystemProperty |VersionOperatingSystemProperty
-    //;
-    public DeviceGrammarAccess.AbstractOperatingSystemPropertyElements getAbstractOperatingSystemPropertyAccess() {
-        return gaDevice.getAbstractOperatingSystemPropertyAccess();
-    }
-
-    public ParserRule getAbstractOperatingSystemPropertyRule() {
-        return getAbstractOperatingSystemPropertyAccess().getRule();
-    }
-
-    //NameOperatingSystemProperty returns NameOperatingSystemProperty:
-    //    {NameOperatingSystemProperty}
-    //    PreListElement "name:" name="os_name"
-    //    INDENT
-    //        'kind:' kind=AttributeKind
-    //        (
-    //        'description:' description=EString
-    //        )?
-    //        (
-    //        'value:' value=PropertyValue
-    //        )?
-    //    DEDENT
-    //    ;
-    public DeviceGrammarAccess.NameOperatingSystemPropertyElements getNameOperatingSystemPropertyAccess() {
-        return gaDevice.getNameOperatingSystemPropertyAccess();
-    }
-
-    public ParserRule getNameOperatingSystemPropertyRule() {
-        return getNameOperatingSystemPropertyAccess().getRule();
-    }
-
-    //VersionOperatingSystemProperty returns VersionOperatingSystemProperty:
-    //    {VersionOperatingSystemProperty}
-    //    PreListElement "name:" name="os_version"
-    //    INDENT
-    //        'kind:' kind=AttributeKind
-    //        (
-    //        'description:' description=EString
-    //        )?
-    //        (
-    //        'value:' value=PropertyValue
-    //        )?
-    //    DEDENT
-    //    ;
-    public DeviceGrammarAccess.VersionOperatingSystemPropertyElements getVersionOperatingSystemPropertyAccess() {
-        return gaDevice.getVersionOperatingSystemPropertyAccess();
-    }
-
-    public ParserRule getVersionOperatingSystemPropertyRule() {
-        return getVersionOperatingSystemPropertyAccess().getRule();
-    }
-
     //ProcessorResouce returns ProcessorResouce:
     //    {ProcessorResouce}
-    //    PreListElement 'name:'  name=EString
+    //    'name:'  name=EString
     //    INDENT
     //        'type:' type=ProcessorResouceType
     //        ('properties:'
@@ -1650,6 +1578,79 @@ public class TargetEnvironmentGrammarAccess extends AbstractElementFinder.Abstra
 
     public ParserRule getAbstractComputationAssignmentTargetRule() {
         return getAbstractComputationAssignmentTargetAccess().getRule();
+    }
+
+    //OperatingSystemResouce returns OperatingSystemResouce:
+    //    {OperatingSystemResouce}
+    //    'name:'  name=EString
+    //    INDENT
+    //        'type:' type=OpertingSystemResouceType
+    //        ('properties:'
+    //            INDENT
+    //            properties+=AbstractOperatingSystemProperty+
+    //            DEDENT
+    //            )?
+    //    DEDENT
+    //    ;
+    public UtilGrammarAccess.OperatingSystemResouceElements getOperatingSystemResouceAccess() {
+        return gaUtil.getOperatingSystemResouceAccess();
+    }
+
+    public ParserRule getOperatingSystemResouceRule() {
+        return getOperatingSystemResouceAccess().getRule();
+    }
+
+    //AbstractOperatingSystemProperty returns AbstractOperatingSystemProperty:
+    //    NameOperatingSystemProperty |VersionOperatingSystemProperty
+    //;
+    public UtilGrammarAccess.AbstractOperatingSystemPropertyElements getAbstractOperatingSystemPropertyAccess() {
+        return gaUtil.getAbstractOperatingSystemPropertyAccess();
+    }
+
+    public ParserRule getAbstractOperatingSystemPropertyRule() {
+        return getAbstractOperatingSystemPropertyAccess().getRule();
+    }
+
+    //NameOperatingSystemProperty returns NameOperatingSystemProperty:
+    //    {NameOperatingSystemProperty}
+    //    PreListElement "name:" name="os_name"
+    //    INDENT
+    //        'kind:' kind=AttributeKind
+    //        (
+    //        'description:' description=EString
+    //        )?
+    //        (
+    //        'value:' value=PropertyValue
+    //        )?
+    //    DEDENT
+    //    ;
+    public UtilGrammarAccess.NameOperatingSystemPropertyElements getNameOperatingSystemPropertyAccess() {
+        return gaUtil.getNameOperatingSystemPropertyAccess();
+    }
+
+    public ParserRule getNameOperatingSystemPropertyRule() {
+        return getNameOperatingSystemPropertyAccess().getRule();
+    }
+
+    //VersionOperatingSystemProperty returns VersionOperatingSystemProperty:
+    //    {VersionOperatingSystemProperty}
+    //    PreListElement "name:" name="os_version"
+    //    INDENT
+    //        'kind:' kind=AttributeKind
+    //        (
+    //        'description:' description=EString
+    //        )?
+    //        (
+    //        'value:' value=PropertyValue
+    //        )?
+    //    DEDENT
+    //    ;
+    public UtilGrammarAccess.VersionOperatingSystemPropertyElements getVersionOperatingSystemPropertyAccess() {
+        return gaUtil.getVersionOperatingSystemPropertyAccess();
+    }
+
+    public ParserRule getVersionOperatingSystemPropertyRule() {
+        return getVersionOperatingSystemPropertyAccess().getRule();
     }
 
     //AbstractProperty returns AbstractProperty:
@@ -1852,7 +1853,7 @@ public class TargetEnvironmentGrammarAccess extends AbstractElementFinder.Abstra
     //PropertyValueList returns PropertyValueList:
     //    INDENT
     //      PreListElement value+=PropertyValue
-    //          (PreListElement value+=PropertyValue)*
+    //        (PreListElement value+=PropertyValue)*
     //    DEDENT
     // ;
     public UtilGrammarAccess.PropertyValueListElements getPropertyValueListAccess() {
