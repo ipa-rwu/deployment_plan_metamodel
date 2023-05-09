@@ -27,6 +27,8 @@ MinimumKind : 'MinimumKind';
 
 Properties : 'properties:';
 
+Os_version : 'os_version';
+
 Processor : 'Processor';
 
 RangeKind : 'RangeKind';
@@ -34,6 +36,8 @@ RangeKind : 'RangeKind';
 Container : 'container';
 
 Ethernet : 'Ethernet';
+
+Os_name : 'os_name';
 
 Debian : 'debian';
 
