@@ -27,5 +27,5 @@ class DeviceFormatter extends UtilFormatter {
         interfaceNetworkProperty.value.format
     }
 
-    // TODO: implement for AddressNetworkProperty, DeviceType, DeviceProperty, ComputationDeviceType, ConnectionProperty, NetworkConnection, CommunicationConnection
+    // TODO: implement for AddressNetworkProperty, IdentityNameNetworkProperty, MacAddressNetworkProperty, GatewayNetworkProperty, SubnetMaskNetworkProperty, PortNetworkProperty, DNSServerNetworkProperty, DeviceVolumeUsbProperty, DeviceType, DeviceResource, ComputationDeviceType, ConnectionProperty, NetworkConnection, CommunicationConnection, UsbConnection, ProcessorResouce, ArchitectureProcessorProperty, CoreProcessorProperty
 }

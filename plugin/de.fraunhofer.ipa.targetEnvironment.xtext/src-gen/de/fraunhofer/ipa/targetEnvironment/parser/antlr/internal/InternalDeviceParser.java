@@ -3099,15 +3099,15 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
                         if ( (LA20_5==RULE_DEDENT) ) {
                             int LA20_6 = input.LA(5);
 
-                            if ( (LA20_6==RULE_DEDENT) ) {
+                            if ( (LA20_6==EOF||LA20_6==HyphenMinus) ) {
+                                alt20=1;
+                            }
+                            else if ( (LA20_6==RULE_DEDENT) ) {
                                 int LA20_7 = input.LA(6);
 
                                 if ( (LA20_7==RULE_DEDENT) ) {
                                     alt20=1;
                                 }
-                            }
-                            else if ( (LA20_6==EOF||LA20_6==HyphenMinus) ) {
-                                alt20=1;
                             }
                         }
                     }
@@ -3509,13 +3509,10 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
                 if ( (LA24_1==RULE_DEDENT) ) {
                     int LA24_3 = input.LA(3);
 
-                    if ( (LA24_3==EOF||LA24_3==HyphenMinus) ) {
-                        alt24=1;
-                    }
-                    else if ( (LA24_3==RULE_DEDENT) ) {
-                        int LA24_5 = input.LA(4);
+                    if ( (LA24_3==RULE_DEDENT) ) {
+                        int LA24_4 = input.LA(4);
 
-                        if ( (LA24_5==RULE_DEDENT) ) {
+                        if ( (LA24_4==RULE_DEDENT) ) {
                             int LA24_6 = input.LA(5);
 
                             if ( (LA24_6==RULE_DEDENT) ) {
@@ -3529,6 +3526,9 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
                                 alt24=1;
                             }
                         }
+                    }
+                    else if ( (LA24_3==EOF||LA24_3==HyphenMinus) ) {
+                        alt24=1;
                     }
                 }
             }
@@ -3943,69 +3943,23 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
             int alt29=2;
             int LA29_0 = input.LA(1);
 
-            if ( (LA29_0==HyphenMinus) ) {
+            if ( (LA29_0==Name) ) {
                 int LA29_1 = input.LA(2);
 
-                if ( (LA29_1==Name) ) {
+                if ( (LA29_1==RULE_STRING) ) {
                     int LA29_2 = input.LA(3);
 
-                    if ( (LA29_2==RULE_STRING) ) {
-                        int LA29_3 = input.LA(4);
-
-                        if ( (LA29_3==RULE_INDENT) ) {
-                            int LA29_5 = input.LA(5);
-
-                            if ( (LA29_5==Type) ) {
-                                int LA29_6 = input.LA(6);
-
-                                if ( (LA29_6==Processor) ) {
-                                    alt29=2;
-                                }
-                                else if ( ((LA29_6>=LinuxOpertingSystem && LA29_6<=MacOSOpertingSystem)) ) {
-                                    alt29=1;
-                                }
-                                else {
-                                    NoViableAltException nvae =
-                                        new NoViableAltException("", 29, 6, input);
-
-                                    throw nvae;
-                                }
-                            }
-                            else {
-                                NoViableAltException nvae =
-                                    new NoViableAltException("", 29, 5, input);
-
-                                throw nvae;
-                            }
-                        }
-                        else {
-                            NoViableAltException nvae =
-                                new NoViableAltException("", 29, 3, input);
-
-                            throw nvae;
-                        }
-                    }
-                    else if ( (LA29_2==RULE_ID) ) {
+                    if ( (LA29_2==RULE_INDENT) ) {
                         int LA29_4 = input.LA(4);
 
-                        if ( (LA29_4==RULE_INDENT) ) {
+                        if ( (LA29_4==Type) ) {
                             int LA29_5 = input.LA(5);
 
-                            if ( (LA29_5==Type) ) {
-                                int LA29_6 = input.LA(6);
-
-                                if ( (LA29_6==Processor) ) {
-                                    alt29=2;
-                                }
-                                else if ( ((LA29_6>=LinuxOpertingSystem && LA29_6<=MacOSOpertingSystem)) ) {
-                                    alt29=1;
-                                }
-                                else {
-                                    NoViableAltException nvae =
-                                        new NoViableAltException("", 29, 6, input);
-
-                                    throw nvae;
-                                }
+                            if ( ((LA29_5>=LinuxOpertingSystem && LA29_5<=MacOSOpertingSystem)) ) {
+                                alt29=1;
+                            }
+                            else if ( (LA29_5==Processor) ) {
+                                alt29=2;
                             }
                             else {
                                 NoViableAltException nvae =
@@ -4024,6 +3978,42 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
                     else {
                         NoViableAltException nvae =
                             new NoViableAltException("", 29, 2, input);
+
+                        throw nvae;
+                    }
+                }
+                else if ( (LA29_1==RULE_ID) ) {
+                    int LA29_3 = input.LA(3);
+
+                    if ( (LA29_3==RULE_INDENT) ) {
+                        int LA29_4 = input.LA(4);
+
+                        if ( (LA29_4==Type) ) {
+                            int LA29_5 = input.LA(5);
+
+                            if ( ((LA29_5>=LinuxOpertingSystem && LA29_5<=MacOSOpertingSystem)) ) {
+                                alt29=1;
+                            }
+                            else if ( (LA29_5==Processor) ) {
+                                alt29=2;
+                            }
+                            else {
+                                NoViableAltException nvae =
+                                    new NoViableAltException("", 29, 5, input);
+
+                                throw nvae;
+                            }
+                        }
+                        else {
+                            NoViableAltException nvae =
+                                new NoViableAltException("", 29, 4, input);
+
+                            throw nvae;
+                        }
+                    }
+                    else {
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 29, 3, input);
 
                         throw nvae;
                     }
@@ -4424,7 +4414,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleComputationDeviceType"
-    // InternalDeviceParser.g:1855:1: ruleComputationDeviceType returns [EObject current=null] : (otherlv_0= ComputationDeviceType this_INDENT_1= RULE_INDENT otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) (otherlv_4= DeviceResouce this_INDENT_5= RULE_INDENT ( (lv_deviceResource_6_0= ruleDeviceResource ) )+ this_DEDENT_7= RULE_DEDENT )? (otherlv_8= ComputationResouce this_INDENT_9= RULE_INDENT ( (lv_computationResource_10_0= ruleAbstractComputationResource ) )+ this_DEDENT_11= RULE_DEDENT )? (otherlv_12= CommunicationConnection this_INDENT_13= RULE_INDENT ( (lv_communicationConnection_14_0= ruleAbstractCommunicationConnection ) )+ this_DEDENT_15= RULE_DEDENT )? this_DEDENT_16= RULE_DEDENT ) ;
+    // InternalDeviceParser.g:1855:1: ruleComputationDeviceType returns [EObject current=null] : (otherlv_0= ComputationDeviceType this_INDENT_1= RULE_INDENT otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) (otherlv_4= DeviceResouce this_INDENT_5= RULE_INDENT ( (lv_deviceResource_6_0= ruleDeviceResource ) )+ this_DEDENT_7= RULE_DEDENT )? (otherlv_8= ComputationResouce this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_computationResource_11_0= ruleAbstractComputationResource ) ) ( rulePreListElement ( (lv_computationResource_13_0= ruleAbstractComputationResource ) )+ )? this_DEDENT_14= RULE_DEDENT )? (otherlv_15= CommunicationConnection this_INDENT_16= RULE_INDENT ( (lv_communicationConnection_17_0= ruleAbstractCommunicationConnection ) )+ this_DEDENT_18= RULE_DEDENT )? this_DEDENT_19= RULE_DEDENT ) ;
     public final EObject ruleComputationDeviceType() throws RecognitionException {
         EObject current = null;
 
@@ -4436,29 +4426,31 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
         Token this_DEDENT_7=null;
         Token otherlv_8=null;
         Token this_INDENT_9=null;
-        Token this_DEDENT_11=null;
-        Token otherlv_12=null;
-        Token this_INDENT_13=null;
-        Token this_DEDENT_15=null;
-        Token this_DEDENT_16=null;
+        Token this_DEDENT_14=null;
+        Token otherlv_15=null;
+        Token this_INDENT_16=null;
+        Token this_DEDENT_18=null;
+        Token this_DEDENT_19=null;
         AntlrDatatypeRuleToken lv_name_3_0 = null;
 
         EObject lv_deviceResource_6_0 = null;
 
-        EObject lv_computationResource_10_0 = null;
+        EObject lv_computationResource_11_0 = null;
 
-        EObject lv_communicationConnection_14_0 = null;
+        EObject lv_computationResource_13_0 = null;
+
+        EObject lv_communicationConnection_17_0 = null;
 
 
 
             enterRule();
 
         try {
-            // InternalDeviceParser.g:1861:2: ( (otherlv_0= ComputationDeviceType this_INDENT_1= RULE_INDENT otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) (otherlv_4= DeviceResouce this_INDENT_5= RULE_INDENT ( (lv_deviceResource_6_0= ruleDeviceResource ) )+ this_DEDENT_7= RULE_DEDENT )? (otherlv_8= ComputationResouce this_INDENT_9= RULE_INDENT ( (lv_computationResource_10_0= ruleAbstractComputationResource ) )+ this_DEDENT_11= RULE_DEDENT )? (otherlv_12= CommunicationConnection this_INDENT_13= RULE_INDENT ( (lv_communicationConnection_14_0= ruleAbstractCommunicationConnection ) )+ this_DEDENT_15= RULE_DEDENT )? this_DEDENT_16= RULE_DEDENT ) )
-            // InternalDeviceParser.g:1862:2: (otherlv_0= ComputationDeviceType this_INDENT_1= RULE_INDENT otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) (otherlv_4= DeviceResouce this_INDENT_5= RULE_INDENT ( (lv_deviceResource_6_0= ruleDeviceResource ) )+ this_DEDENT_7= RULE_DEDENT )? (otherlv_8= ComputationResouce this_INDENT_9= RULE_INDENT ( (lv_computationResource_10_0= ruleAbstractComputationResource ) )+ this_DEDENT_11= RULE_DEDENT )? (otherlv_12= CommunicationConnection this_INDENT_13= RULE_INDENT ( (lv_communicationConnection_14_0= ruleAbstractCommunicationConnection ) )+ this_DEDENT_15= RULE_DEDENT )? this_DEDENT_16= RULE_DEDENT )
+            // InternalDeviceParser.g:1861:2: ( (otherlv_0= ComputationDeviceType this_INDENT_1= RULE_INDENT otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) (otherlv_4= DeviceResouce this_INDENT_5= RULE_INDENT ( (lv_deviceResource_6_0= ruleDeviceResource ) )+ this_DEDENT_7= RULE_DEDENT )? (otherlv_8= ComputationResouce this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_computationResource_11_0= ruleAbstractComputationResource ) ) ( rulePreListElement ( (lv_computationResource_13_0= ruleAbstractComputationResource ) )+ )? this_DEDENT_14= RULE_DEDENT )? (otherlv_15= CommunicationConnection this_INDENT_16= RULE_INDENT ( (lv_communicationConnection_17_0= ruleAbstractCommunicationConnection ) )+ this_DEDENT_18= RULE_DEDENT )? this_DEDENT_19= RULE_DEDENT ) )
+            // InternalDeviceParser.g:1862:2: (otherlv_0= ComputationDeviceType this_INDENT_1= RULE_INDENT otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) (otherlv_4= DeviceResouce this_INDENT_5= RULE_INDENT ( (lv_deviceResource_6_0= ruleDeviceResource ) )+ this_DEDENT_7= RULE_DEDENT )? (otherlv_8= ComputationResouce this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_computationResource_11_0= ruleAbstractComputationResource ) ) ( rulePreListElement ( (lv_computationResource_13_0= ruleAbstractComputationResource ) )+ )? this_DEDENT_14= RULE_DEDENT )? (otherlv_15= CommunicationConnection this_INDENT_16= RULE_INDENT ( (lv_communicationConnection_17_0= ruleAbstractCommunicationConnection ) )+ this_DEDENT_18= RULE_DEDENT )? this_DEDENT_19= RULE_DEDENT )
             {
-            // InternalDeviceParser.g:1862:2: (otherlv_0= ComputationDeviceType this_INDENT_1= RULE_INDENT otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) (otherlv_4= DeviceResouce this_INDENT_5= RULE_INDENT ( (lv_deviceResource_6_0= ruleDeviceResource ) )+ this_DEDENT_7= RULE_DEDENT )? (otherlv_8= ComputationResouce this_INDENT_9= RULE_INDENT ( (lv_computationResource_10_0= ruleAbstractComputationResource ) )+ this_DEDENT_11= RULE_DEDENT )? (otherlv_12= CommunicationConnection this_INDENT_13= RULE_INDENT ( (lv_communicationConnection_14_0= ruleAbstractCommunicationConnection ) )+ this_DEDENT_15= RULE_DEDENT )? this_DEDENT_16= RULE_DEDENT )
-            // InternalDeviceParser.g:1863:3: otherlv_0= ComputationDeviceType this_INDENT_1= RULE_INDENT otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) (otherlv_4= DeviceResouce this_INDENT_5= RULE_INDENT ( (lv_deviceResource_6_0= ruleDeviceResource ) )+ this_DEDENT_7= RULE_DEDENT )? (otherlv_8= ComputationResouce this_INDENT_9= RULE_INDENT ( (lv_computationResource_10_0= ruleAbstractComputationResource ) )+ this_DEDENT_11= RULE_DEDENT )? (otherlv_12= CommunicationConnection this_INDENT_13= RULE_INDENT ( (lv_communicationConnection_14_0= ruleAbstractCommunicationConnection ) )+ this_DEDENT_15= RULE_DEDENT )? this_DEDENT_16= RULE_DEDENT
+            // InternalDeviceParser.g:1862:2: (otherlv_0= ComputationDeviceType this_INDENT_1= RULE_INDENT otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) (otherlv_4= DeviceResouce this_INDENT_5= RULE_INDENT ( (lv_deviceResource_6_0= ruleDeviceResource ) )+ this_DEDENT_7= RULE_DEDENT )? (otherlv_8= ComputationResouce this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_computationResource_11_0= ruleAbstractComputationResource ) ) ( rulePreListElement ( (lv_computationResource_13_0= ruleAbstractComputationResource ) )+ )? this_DEDENT_14= RULE_DEDENT )? (otherlv_15= CommunicationConnection this_INDENT_16= RULE_INDENT ( (lv_communicationConnection_17_0= ruleAbstractCommunicationConnection ) )+ this_DEDENT_18= RULE_DEDENT )? this_DEDENT_19= RULE_DEDENT )
+            // InternalDeviceParser.g:1863:3: otherlv_0= ComputationDeviceType this_INDENT_1= RULE_INDENT otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) (otherlv_4= DeviceResouce this_INDENT_5= RULE_INDENT ( (lv_deviceResource_6_0= ruleDeviceResource ) )+ this_DEDENT_7= RULE_DEDENT )? (otherlv_8= ComputationResouce this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_computationResource_11_0= ruleAbstractComputationResource ) ) ( rulePreListElement ( (lv_computationResource_13_0= ruleAbstractComputationResource ) )+ )? this_DEDENT_14= RULE_DEDENT )? (otherlv_15= CommunicationConnection this_INDENT_16= RULE_INDENT ( (lv_communicationConnection_17_0= ruleAbstractCommunicationConnection ) )+ this_DEDENT_18= RULE_DEDENT )? this_DEDENT_19= RULE_DEDENT
             {
             otherlv_0=(Token)match(input,ComputationDeviceType,FOLLOW_7);
 
@@ -4586,16 +4578,16 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDeviceParser.g:1927:3: (otherlv_8= ComputationResouce this_INDENT_9= RULE_INDENT ( (lv_computationResource_10_0= ruleAbstractComputationResource ) )+ this_DEDENT_11= RULE_DEDENT )?
-            int alt35=2;
-            int LA35_0 = input.LA(1);
+            // InternalDeviceParser.g:1927:3: (otherlv_8= ComputationResouce this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_computationResource_11_0= ruleAbstractComputationResource ) ) ( rulePreListElement ( (lv_computationResource_13_0= ruleAbstractComputationResource ) )+ )? this_DEDENT_14= RULE_DEDENT )?
+            int alt36=2;
+            int LA36_0 = input.LA(1);
 
-            if ( (LA35_0==ComputationResouce) ) {
-                alt35=1;
+            if ( (LA36_0==ComputationResouce) ) {
+                alt36=1;
             }
-            switch (alt35) {
+            switch (alt36) {
                 case 1 :
-                    // InternalDeviceParser.g:1928:4: otherlv_8= ComputationResouce this_INDENT_9= RULE_INDENT ( (lv_computationResource_10_0= ruleAbstractComputationResource ) )+ this_DEDENT_11= RULE_DEDENT
+                    // InternalDeviceParser.g:1928:4: otherlv_8= ComputationResouce this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_computationResource_11_0= ruleAbstractComputationResource ) ) ( rulePreListElement ( (lv_computationResource_13_0= ruleAbstractComputationResource ) )+ )? this_DEDENT_14= RULE_DEDENT
                     {
                     otherlv_8=(Token)match(input,ComputationResouce,FOLLOW_7);
 
@@ -4605,63 +4597,133 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
                                     newLeafNode(this_INDENT_9, grammarAccess.getComputationDeviceTypeAccess().getINDENTTerminalRuleCall_5_1());
 
-                    // InternalDeviceParser.g:1936:4: ( (lv_computationResource_10_0= ruleAbstractComputationResource ) )+
-                    int cnt34=0;
-                    loop34:
-                    do {
-                        int alt34=2;
-                        int LA34_0 = input.LA(1);
 
-                        if ( (LA34_0==HyphenMinus) ) {
-                            alt34=1;
-                        }
+                                    newCompositeNode(grammarAccess.getComputationDeviceTypeAccess().getPreListElementParserRuleCall_5_2());
+
+                    pushFollow(FOLLOW_5);
+                    rulePreListElement();
+
+                    state._fsp--;
 
 
-                        switch (alt34) {
+                                    afterParserOrEnumRuleCall();
+
+                    // InternalDeviceParser.g:1943:4: ( (lv_computationResource_11_0= ruleAbstractComputationResource ) )
+                    // InternalDeviceParser.g:1944:5: (lv_computationResource_11_0= ruleAbstractComputationResource )
+                    {
+                    // InternalDeviceParser.g:1944:5: (lv_computationResource_11_0= ruleAbstractComputationResource )
+                    // InternalDeviceParser.g:1945:6: lv_computationResource_11_0= ruleAbstractComputationResource
+                    {
+
+                                            newCompositeNode(grammarAccess.getComputationDeviceTypeAccess().getComputationResourceAbstractComputationResourceParserRuleCall_5_3_0());
+
+                    pushFollow(FOLLOW_26);
+                    lv_computationResource_11_0=ruleAbstractComputationResource();
+
+                    state._fsp--;
+
+
+                                            if (current==null) {
+                                                current = createModelElementForParent(grammarAccess.getComputationDeviceTypeRule());
+                                            }
+                                            add(
+                                                current,
+                                                "computationResource",
+                                                lv_computationResource_11_0,
+                                                "de.fraunhofer.ipa.targetEnvironment.Device.AbstractComputationResource");
+                                            afterParserOrEnumRuleCall();
+
+
+                    }
+
+
+                    }
+
+                    // InternalDeviceParser.g:1962:4: ( rulePreListElement ( (lv_computationResource_13_0= ruleAbstractComputationResource ) )+ )?
+                    int alt35=2;
+                    int LA35_0 = input.LA(1);
+
+                    if ( (LA35_0==HyphenMinus) ) {
+                        alt35=1;
+                    }
+                    switch (alt35) {
                         case 1 :
-                            // InternalDeviceParser.g:1937:5: (lv_computationResource_10_0= ruleAbstractComputationResource )
-                            {
-                            // InternalDeviceParser.g:1937:5: (lv_computationResource_10_0= ruleAbstractComputationResource )
-                            // InternalDeviceParser.g:1938:6: lv_computationResource_10_0= ruleAbstractComputationResource
+                            // InternalDeviceParser.g:1963:5: rulePreListElement ( (lv_computationResource_13_0= ruleAbstractComputationResource ) )+
                             {
 
-                                                    newCompositeNode(grammarAccess.getComputationDeviceTypeAccess().getComputationResourceAbstractComputationResourceParserRuleCall_5_2_0());
+                                                newCompositeNode(grammarAccess.getComputationDeviceTypeAccess().getPreListElementParserRuleCall_5_4_0());
 
-                            pushFollow(FOLLOW_26);
-                            lv_computationResource_10_0=ruleAbstractComputationResource();
+                            pushFollow(FOLLOW_5);
+                            rulePreListElement();
 
                             state._fsp--;
 
 
-                                                    if (current==null) {
-                                                        current = createModelElementForParent(grammarAccess.getComputationDeviceTypeRule());
-                                                    }
-                                                    add(
-                                                        current,
-                                                        "computationResource",
-                                                        lv_computationResource_10_0,
-                                                        "de.fraunhofer.ipa.targetEnvironment.Device.AbstractComputationResource");
-                                                    afterParserOrEnumRuleCall();
+                                                afterParserOrEnumRuleCall();
+
+                            // InternalDeviceParser.g:1970:5: ( (lv_computationResource_13_0= ruleAbstractComputationResource ) )+
+                            int cnt34=0;
+                            loop34:
+                            do {
+                                int alt34=2;
+                                int LA34_0 = input.LA(1);
+
+                                if ( (LA34_0==Name) ) {
+                                    alt34=1;
+                                }
 
 
-                            }
+                                switch (alt34) {
+                                case 1 :
+                                    // InternalDeviceParser.g:1971:6: (lv_computationResource_13_0= ruleAbstractComputationResource )
+                                    {
+                                    // InternalDeviceParser.g:1971:6: (lv_computationResource_13_0= ruleAbstractComputationResource )
+                                    // InternalDeviceParser.g:1972:7: lv_computationResource_13_0= ruleAbstractComputationResource
+                                    {
+
+                                                                newCompositeNode(grammarAccess.getComputationDeviceTypeAccess().getComputationResourceAbstractComputationResourceParserRuleCall_5_4_1_0());
+
+                                    pushFollow(FOLLOW_34);
+                                    lv_computationResource_13_0=ruleAbstractComputationResource();
+
+                                    state._fsp--;
+
+
+                                                                if (current==null) {
+                                                                    current = createModelElementForParent(grammarAccess.getComputationDeviceTypeRule());
+                                                                }
+                                                                add(
+                                                                    current,
+                                                                    "computationResource",
+                                                                    lv_computationResource_13_0,
+                                                                    "de.fraunhofer.ipa.targetEnvironment.Device.AbstractComputationResource");
+                                                                afterParserOrEnumRuleCall();
+
+
+                                    }
+
+
+                                    }
+                                    break;
+
+                                default :
+                                    if ( cnt34 >= 1 ) break loop34;
+                                        EarlyExitException eee =
+                                            new EarlyExitException(34, input);
+                                        throw eee;
+                                }
+                                cnt34++;
+                            } while (true);
 
 
                             }
                             break;
 
-                        default :
-                            if ( cnt34 >= 1 ) break loop34;
-                                EarlyExitException eee =
-                                    new EarlyExitException(34, input);
-                                throw eee;
-                        }
-                        cnt34++;
-                    } while (true);
+                    }
 
-                    this_DEDENT_11=(Token)match(input,RULE_DEDENT,FOLLOW_29);
+                    this_DEDENT_14=(Token)match(input,RULE_DEDENT,FOLLOW_29);
 
-                                    newLeafNode(this_DEDENT_11, grammarAccess.getComputationDeviceTypeAccess().getDEDENTTerminalRuleCall_5_3());
+                                    newLeafNode(this_DEDENT_14, grammarAccess.getComputationDeviceTypeAccess().getDEDENTTerminalRuleCall_5_5());
 
 
                     }
@@ -4669,49 +4731,49 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDeviceParser.g:1960:3: (otherlv_12= CommunicationConnection this_INDENT_13= RULE_INDENT ( (lv_communicationConnection_14_0= ruleAbstractCommunicationConnection ) )+ this_DEDENT_15= RULE_DEDENT )?
-            int alt37=2;
-            int LA37_0 = input.LA(1);
+            // InternalDeviceParser.g:1995:3: (otherlv_15= CommunicationConnection this_INDENT_16= RULE_INDENT ( (lv_communicationConnection_17_0= ruleAbstractCommunicationConnection ) )+ this_DEDENT_18= RULE_DEDENT )?
+            int alt38=2;
+            int LA38_0 = input.LA(1);
 
-            if ( (LA37_0==CommunicationConnection) ) {
-                alt37=1;
+            if ( (LA38_0==CommunicationConnection) ) {
+                alt38=1;
             }
-            switch (alt37) {
+            switch (alt38) {
                 case 1 :
-                    // InternalDeviceParser.g:1961:4: otherlv_12= CommunicationConnection this_INDENT_13= RULE_INDENT ( (lv_communicationConnection_14_0= ruleAbstractCommunicationConnection ) )+ this_DEDENT_15= RULE_DEDENT
+                    // InternalDeviceParser.g:1996:4: otherlv_15= CommunicationConnection this_INDENT_16= RULE_INDENT ( (lv_communicationConnection_17_0= ruleAbstractCommunicationConnection ) )+ this_DEDENT_18= RULE_DEDENT
                     {
-                    otherlv_12=(Token)match(input,CommunicationConnection,FOLLOW_7);
+                    otherlv_15=(Token)match(input,CommunicationConnection,FOLLOW_7);
 
-                                    newLeafNode(otherlv_12, grammarAccess.getComputationDeviceTypeAccess().getCommunicationConnectionKeyword_6_0());
+                                    newLeafNode(otherlv_15, grammarAccess.getComputationDeviceTypeAccess().getCommunicationConnectionKeyword_6_0());
 
-                    this_INDENT_13=(Token)match(input,RULE_INDENT,FOLLOW_25);
+                    this_INDENT_16=(Token)match(input,RULE_INDENT,FOLLOW_25);
 
-                                    newLeafNode(this_INDENT_13, grammarAccess.getComputationDeviceTypeAccess().getINDENTTerminalRuleCall_6_1());
+                                    newLeafNode(this_INDENT_16, grammarAccess.getComputationDeviceTypeAccess().getINDENTTerminalRuleCall_6_1());
 
-                    // InternalDeviceParser.g:1969:4: ( (lv_communicationConnection_14_0= ruleAbstractCommunicationConnection ) )+
-                    int cnt36=0;
-                    loop36:
+                    // InternalDeviceParser.g:2004:4: ( (lv_communicationConnection_17_0= ruleAbstractCommunicationConnection ) )+
+                    int cnt37=0;
+                    loop37:
                     do {
-                        int alt36=2;
-                        int LA36_0 = input.LA(1);
+                        int alt37=2;
+                        int LA37_0 = input.LA(1);
 
-                        if ( (LA36_0==HyphenMinus) ) {
-                            alt36=1;
+                        if ( (LA37_0==HyphenMinus) ) {
+                            alt37=1;
                         }
 
 
-                        switch (alt36) {
+                        switch (alt37) {
                         case 1 :
-                            // InternalDeviceParser.g:1970:5: (lv_communicationConnection_14_0= ruleAbstractCommunicationConnection )
+                            // InternalDeviceParser.g:2005:5: (lv_communicationConnection_17_0= ruleAbstractCommunicationConnection )
                             {
-                            // InternalDeviceParser.g:1970:5: (lv_communicationConnection_14_0= ruleAbstractCommunicationConnection )
-                            // InternalDeviceParser.g:1971:6: lv_communicationConnection_14_0= ruleAbstractCommunicationConnection
+                            // InternalDeviceParser.g:2005:5: (lv_communicationConnection_17_0= ruleAbstractCommunicationConnection )
+                            // InternalDeviceParser.g:2006:6: lv_communicationConnection_17_0= ruleAbstractCommunicationConnection
                             {
 
                                                     newCompositeNode(grammarAccess.getComputationDeviceTypeAccess().getCommunicationConnectionAbstractCommunicationConnectionParserRuleCall_6_2_0());
 
                             pushFollow(FOLLOW_26);
-                            lv_communicationConnection_14_0=ruleAbstractCommunicationConnection();
+                            lv_communicationConnection_17_0=ruleAbstractCommunicationConnection();
 
                             state._fsp--;
 
@@ -4722,7 +4784,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
                                                     add(
                                                         current,
                                                         "communicationConnection",
-                                                        lv_communicationConnection_14_0,
+                                                        lv_communicationConnection_17_0,
                                                         "de.fraunhofer.ipa.targetEnvironment.Device.AbstractCommunicationConnection");
                                                     afterParserOrEnumRuleCall();
 
@@ -4734,17 +4796,17 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
                             break;
 
                         default :
-                            if ( cnt36 >= 1 ) break loop36;
+                            if ( cnt37 >= 1 ) break loop37;
                                 EarlyExitException eee =
-                                    new EarlyExitException(36, input);
+                                    new EarlyExitException(37, input);
                                 throw eee;
                         }
-                        cnt36++;
+                        cnt37++;
                     } while (true);
 
-                    this_DEDENT_15=(Token)match(input,RULE_DEDENT,FOLLOW_14);
+                    this_DEDENT_18=(Token)match(input,RULE_DEDENT,FOLLOW_14);
 
-                                    newLeafNode(this_DEDENT_15, grammarAccess.getComputationDeviceTypeAccess().getDEDENTTerminalRuleCall_6_3());
+                                    newLeafNode(this_DEDENT_18, grammarAccess.getComputationDeviceTypeAccess().getDEDENTTerminalRuleCall_6_3());
 
 
                     }
@@ -4752,9 +4814,9 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
             }
 
-            this_DEDENT_16=(Token)match(input,RULE_DEDENT,FOLLOW_2);
+            this_DEDENT_19=(Token)match(input,RULE_DEDENT,FOLLOW_2);
 
-                        newLeafNode(this_DEDENT_16, grammarAccess.getComputationDeviceTypeAccess().getDEDENTTerminalRuleCall_7());
+                        newLeafNode(this_DEDENT_19, grammarAccess.getComputationDeviceTypeAccess().getDEDENTTerminalRuleCall_7());
 
 
             }
@@ -4779,7 +4841,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleConnectionProperty"
-    // InternalDeviceParser.g:2001:1: entryRuleConnectionProperty returns [EObject current=null] : iv_ruleConnectionProperty= ruleConnectionProperty EOF ;
+    // InternalDeviceParser.g:2036:1: entryRuleConnectionProperty returns [EObject current=null] : iv_ruleConnectionProperty= ruleConnectionProperty EOF ;
     public final EObject entryRuleConnectionProperty() throws RecognitionException {
         EObject current = null;
 
@@ -4787,8 +4849,8 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDeviceParser.g:2001:59: (iv_ruleConnectionProperty= ruleConnectionProperty EOF )
-            // InternalDeviceParser.g:2002:2: iv_ruleConnectionProperty= ruleConnectionProperty EOF
+            // InternalDeviceParser.g:2036:59: (iv_ruleConnectionProperty= ruleConnectionProperty EOF )
+            // InternalDeviceParser.g:2037:2: iv_ruleConnectionProperty= ruleConnectionProperty EOF
             {
              newCompositeNode(grammarAccess.getConnectionPropertyRule());
             pushFollow(FOLLOW_1);
@@ -4815,7 +4877,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleConnectionProperty"
-    // InternalDeviceParser.g:2008:1: ruleConnectionProperty returns [EObject current=null] : ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT ) ;
+    // InternalDeviceParser.g:2043:1: ruleConnectionProperty returns [EObject current=null] : ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT ) ;
     public final EObject ruleConnectionProperty() throws RecognitionException {
         EObject current = null;
 
@@ -4838,14 +4900,14 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
             enterRule();
 
         try {
-            // InternalDeviceParser.g:2014:2: ( ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT ) )
-            // InternalDeviceParser.g:2015:2: ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT )
+            // InternalDeviceParser.g:2049:2: ( ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT ) )
+            // InternalDeviceParser.g:2050:2: ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT )
             {
-            // InternalDeviceParser.g:2015:2: ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT )
-            // InternalDeviceParser.g:2016:3: () rulePreListElement otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT
+            // InternalDeviceParser.g:2050:2: ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT )
+            // InternalDeviceParser.g:2051:3: () rulePreListElement otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT
             {
-            // InternalDeviceParser.g:2016:3: ()
-            // InternalDeviceParser.g:2017:4:
+            // InternalDeviceParser.g:2051:3: ()
+            // InternalDeviceParser.g:2052:4:
             {
 
                             current = forceCreateModelElement(
@@ -4870,11 +4932,11 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
                         newLeafNode(otherlv_2, grammarAccess.getConnectionPropertyAccess().getNameKeyword_2());
 
-            // InternalDeviceParser.g:2034:3: ( (lv_name_3_0= ruleEString ) )
-            // InternalDeviceParser.g:2035:4: (lv_name_3_0= ruleEString )
+            // InternalDeviceParser.g:2069:3: ( (lv_name_3_0= ruleEString ) )
+            // InternalDeviceParser.g:2070:4: (lv_name_3_0= ruleEString )
             {
-            // InternalDeviceParser.g:2035:4: (lv_name_3_0= ruleEString )
-            // InternalDeviceParser.g:2036:5: lv_name_3_0= ruleEString
+            // InternalDeviceParser.g:2070:4: (lv_name_3_0= ruleEString )
+            // InternalDeviceParser.g:2071:5: lv_name_3_0= ruleEString
             {
 
                                 newCompositeNode(grammarAccess.getConnectionPropertyAccess().getNameEStringParserRuleCall_3_0());
@@ -4909,11 +4971,11 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
                         newLeafNode(otherlv_5, grammarAccess.getConnectionPropertyAccess().getKindKeyword_5());
 
-            // InternalDeviceParser.g:2061:3: ( (lv_kind_6_0= ruleAttributeKind ) )
-            // InternalDeviceParser.g:2062:4: (lv_kind_6_0= ruleAttributeKind )
+            // InternalDeviceParser.g:2096:3: ( (lv_kind_6_0= ruleAttributeKind ) )
+            // InternalDeviceParser.g:2097:4: (lv_kind_6_0= ruleAttributeKind )
             {
-            // InternalDeviceParser.g:2062:4: (lv_kind_6_0= ruleAttributeKind )
-            // InternalDeviceParser.g:2063:5: lv_kind_6_0= ruleAttributeKind
+            // InternalDeviceParser.g:2097:4: (lv_kind_6_0= ruleAttributeKind )
+            // InternalDeviceParser.g:2098:5: lv_kind_6_0= ruleAttributeKind
             {
 
                                 newCompositeNode(grammarAccess.getConnectionPropertyAccess().getKindAttributeKindParserRuleCall_6_0());
@@ -4940,26 +5002,26 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDeviceParser.g:2080:3: (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )?
-            int alt38=2;
-            int LA38_0 = input.LA(1);
+            // InternalDeviceParser.g:2115:3: (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )?
+            int alt39=2;
+            int LA39_0 = input.LA(1);
 
-            if ( (LA38_0==Description) ) {
-                alt38=1;
+            if ( (LA39_0==Description) ) {
+                alt39=1;
             }
-            switch (alt38) {
+            switch (alt39) {
                 case 1 :
-                    // InternalDeviceParser.g:2081:4: otherlv_7= Description ( (lv_description_8_0= ruleEString ) )
+                    // InternalDeviceParser.g:2116:4: otherlv_7= Description ( (lv_description_8_0= ruleEString ) )
                     {
                     otherlv_7=(Token)match(input,Description,FOLLOW_11);
 
                                     newLeafNode(otherlv_7, grammarAccess.getConnectionPropertyAccess().getDescriptionKeyword_7_0());
 
-                    // InternalDeviceParser.g:2085:4: ( (lv_description_8_0= ruleEString ) )
-                    // InternalDeviceParser.g:2086:5: (lv_description_8_0= ruleEString )
+                    // InternalDeviceParser.g:2120:4: ( (lv_description_8_0= ruleEString ) )
+                    // InternalDeviceParser.g:2121:5: (lv_description_8_0= ruleEString )
                     {
-                    // InternalDeviceParser.g:2086:5: (lv_description_8_0= ruleEString )
-                    // InternalDeviceParser.g:2087:6: lv_description_8_0= ruleEString
+                    // InternalDeviceParser.g:2121:5: (lv_description_8_0= ruleEString )
+                    // InternalDeviceParser.g:2122:6: lv_description_8_0= ruleEString
                     {
 
                                             newCompositeNode(grammarAccess.getConnectionPropertyAccess().getDescriptionEStringParserRuleCall_7_1_0());
@@ -4992,26 +5054,26 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDeviceParser.g:2105:3: (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )?
-            int alt39=2;
-            int LA39_0 = input.LA(1);
+            // InternalDeviceParser.g:2140:3: (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )?
+            int alt40=2;
+            int LA40_0 = input.LA(1);
 
-            if ( (LA39_0==Value) ) {
-                alt39=1;
+            if ( (LA40_0==Value) ) {
+                alt40=1;
             }
-            switch (alt39) {
+            switch (alt40) {
                 case 1 :
-                    // InternalDeviceParser.g:2106:4: otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) )
+                    // InternalDeviceParser.g:2141:4: otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) )
                     {
                     otherlv_9=(Token)match(input,Value,FOLLOW_13);
 
                                     newLeafNode(otherlv_9, grammarAccess.getConnectionPropertyAccess().getValueKeyword_8_0());
 
-                    // InternalDeviceParser.g:2110:4: ( (lv_value_10_0= rulePropertyValue ) )
-                    // InternalDeviceParser.g:2111:5: (lv_value_10_0= rulePropertyValue )
+                    // InternalDeviceParser.g:2145:4: ( (lv_value_10_0= rulePropertyValue ) )
+                    // InternalDeviceParser.g:2146:5: (lv_value_10_0= rulePropertyValue )
                     {
-                    // InternalDeviceParser.g:2111:5: (lv_value_10_0= rulePropertyValue )
-                    // InternalDeviceParser.g:2112:6: lv_value_10_0= rulePropertyValue
+                    // InternalDeviceParser.g:2146:5: (lv_value_10_0= rulePropertyValue )
+                    // InternalDeviceParser.g:2147:6: lv_value_10_0= rulePropertyValue
                     {
 
                                             newCompositeNode(grammarAccess.getConnectionPropertyAccess().getValuePropertyValueParserRuleCall_8_1_0());
@@ -5071,7 +5133,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNetworkConnection"
-    // InternalDeviceParser.g:2138:1: entryRuleNetworkConnection returns [EObject current=null] : iv_ruleNetworkConnection= ruleNetworkConnection EOF ;
+    // InternalDeviceParser.g:2173:1: entryRuleNetworkConnection returns [EObject current=null] : iv_ruleNetworkConnection= ruleNetworkConnection EOF ;
     public final EObject entryRuleNetworkConnection() throws RecognitionException {
         EObject current = null;
 
@@ -5079,8 +5141,8 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDeviceParser.g:2138:58: (iv_ruleNetworkConnection= ruleNetworkConnection EOF )
-            // InternalDeviceParser.g:2139:2: iv_ruleNetworkConnection= ruleNetworkConnection EOF
+            // InternalDeviceParser.g:2173:58: (iv_ruleNetworkConnection= ruleNetworkConnection EOF )
+            // InternalDeviceParser.g:2174:2: iv_ruleNetworkConnection= ruleNetworkConnection EOF
             {
              newCompositeNode(grammarAccess.getNetworkConnectionRule());
             pushFollow(FOLLOW_1);
@@ -5107,7 +5169,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNetworkConnection"
-    // InternalDeviceParser.g:2145:1: ruleNetworkConnection returns [EObject current=null] : ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) this_INDENT_4= RULE_INDENT otherlv_5= Type ( (lv_type_6_0= ruleNetworkCommunicationType ) ) (otherlv_7= Properties this_INDENT_8= RULE_INDENT ( (lv_properties_9_0= ruleAbstractNetworkProperty ) )+ this_DEDENT_10= RULE_DEDENT )? this_DEDENT_11= RULE_DEDENT ) ;
+    // InternalDeviceParser.g:2180:1: ruleNetworkConnection returns [EObject current=null] : ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) this_INDENT_4= RULE_INDENT otherlv_5= Type ( (lv_type_6_0= ruleNetworkCommunicationType ) ) (otherlv_7= Properties this_INDENT_8= RULE_INDENT ( (lv_properties_9_0= ruleAbstractNetworkProperty ) )+ this_DEDENT_10= RULE_DEDENT )? this_DEDENT_11= RULE_DEDENT ) ;
     public final EObject ruleNetworkConnection() throws RecognitionException {
         EObject current = null;
 
@@ -5129,14 +5191,14 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
             enterRule();
 
         try {
-            // InternalDeviceParser.g:2151:2: ( ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) this_INDENT_4= RULE_INDENT otherlv_5= Type ( (lv_type_6_0= ruleNetworkCommunicationType ) ) (otherlv_7= Properties this_INDENT_8= RULE_INDENT ( (lv_properties_9_0= ruleAbstractNetworkProperty ) )+ this_DEDENT_10= RULE_DEDENT )? this_DEDENT_11= RULE_DEDENT ) )
-            // InternalDeviceParser.g:2152:2: ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) this_INDENT_4= RULE_INDENT otherlv_5= Type ( (lv_type_6_0= ruleNetworkCommunicationType ) ) (otherlv_7= Properties this_INDENT_8= RULE_INDENT ( (lv_properties_9_0= ruleAbstractNetworkProperty ) )+ this_DEDENT_10= RULE_DEDENT )? this_DEDENT_11= RULE_DEDENT )
+            // InternalDeviceParser.g:2186:2: ( ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) this_INDENT_4= RULE_INDENT otherlv_5= Type ( (lv_type_6_0= ruleNetworkCommunicationType ) ) (otherlv_7= Properties this_INDENT_8= RULE_INDENT ( (lv_properties_9_0= ruleAbstractNetworkProperty ) )+ this_DEDENT_10= RULE_DEDENT )? this_DEDENT_11= RULE_DEDENT ) )
+            // InternalDeviceParser.g:2187:2: ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) this_INDENT_4= RULE_INDENT otherlv_5= Type ( (lv_type_6_0= ruleNetworkCommunicationType ) ) (otherlv_7= Properties this_INDENT_8= RULE_INDENT ( (lv_properties_9_0= ruleAbstractNetworkProperty ) )+ this_DEDENT_10= RULE_DEDENT )? this_DEDENT_11= RULE_DEDENT )
             {
-            // InternalDeviceParser.g:2152:2: ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) this_INDENT_4= RULE_INDENT otherlv_5= Type ( (lv_type_6_0= ruleNetworkCommunicationType ) ) (otherlv_7= Properties this_INDENT_8= RULE_INDENT ( (lv_properties_9_0= ruleAbstractNetworkProperty ) )+ this_DEDENT_10= RULE_DEDENT )? this_DEDENT_11= RULE_DEDENT )
-            // InternalDeviceParser.g:2153:3: () rulePreListElement otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) this_INDENT_4= RULE_INDENT otherlv_5= Type ( (lv_type_6_0= ruleNetworkCommunicationType ) ) (otherlv_7= Properties this_INDENT_8= RULE_INDENT ( (lv_properties_9_0= ruleAbstractNetworkProperty ) )+ this_DEDENT_10= RULE_DEDENT )? this_DEDENT_11= RULE_DEDENT
+            // InternalDeviceParser.g:2187:2: ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) this_INDENT_4= RULE_INDENT otherlv_5= Type ( (lv_type_6_0= ruleNetworkCommunicationType ) ) (otherlv_7= Properties this_INDENT_8= RULE_INDENT ( (lv_properties_9_0= ruleAbstractNetworkProperty ) )+ this_DEDENT_10= RULE_DEDENT )? this_DEDENT_11= RULE_DEDENT )
+            // InternalDeviceParser.g:2188:3: () rulePreListElement otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) this_INDENT_4= RULE_INDENT otherlv_5= Type ( (lv_type_6_0= ruleNetworkCommunicationType ) ) (otherlv_7= Properties this_INDENT_8= RULE_INDENT ( (lv_properties_9_0= ruleAbstractNetworkProperty ) )+ this_DEDENT_10= RULE_DEDENT )? this_DEDENT_11= RULE_DEDENT
             {
-            // InternalDeviceParser.g:2153:3: ()
-            // InternalDeviceParser.g:2154:4:
+            // InternalDeviceParser.g:2188:3: ()
+            // InternalDeviceParser.g:2189:4:
             {
 
                             current = forceCreateModelElement(
@@ -5161,11 +5223,11 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
                         newLeafNode(otherlv_2, grammarAccess.getNetworkConnectionAccess().getNameKeyword_2());
 
-            // InternalDeviceParser.g:2171:3: ( (lv_name_3_0= ruleEString ) )
-            // InternalDeviceParser.g:2172:4: (lv_name_3_0= ruleEString )
+            // InternalDeviceParser.g:2206:3: ( (lv_name_3_0= ruleEString ) )
+            // InternalDeviceParser.g:2207:4: (lv_name_3_0= ruleEString )
             {
-            // InternalDeviceParser.g:2172:4: (lv_name_3_0= ruleEString )
-            // InternalDeviceParser.g:2173:5: lv_name_3_0= ruleEString
+            // InternalDeviceParser.g:2207:4: (lv_name_3_0= ruleEString )
+            // InternalDeviceParser.g:2208:5: lv_name_3_0= ruleEString
             {
 
                                 newCompositeNode(grammarAccess.getNetworkConnectionAccess().getNameEStringParserRuleCall_3_0());
@@ -5196,15 +5258,15 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
                         newLeafNode(this_INDENT_4, grammarAccess.getNetworkConnectionAccess().getINDENTTerminalRuleCall_4());
 
-            otherlv_5=(Token)match(input,Type,FOLLOW_34);
+            otherlv_5=(Token)match(input,Type,FOLLOW_35);
 
                         newLeafNode(otherlv_5, grammarAccess.getNetworkConnectionAccess().getTypeKeyword_5());
 
-            // InternalDeviceParser.g:2198:3: ( (lv_type_6_0= ruleNetworkCommunicationType ) )
-            // InternalDeviceParser.g:2199:4: (lv_type_6_0= ruleNetworkCommunicationType )
+            // InternalDeviceParser.g:2233:3: ( (lv_type_6_0= ruleNetworkCommunicationType ) )
+            // InternalDeviceParser.g:2234:4: (lv_type_6_0= ruleNetworkCommunicationType )
             {
-            // InternalDeviceParser.g:2199:4: (lv_type_6_0= ruleNetworkCommunicationType )
-            // InternalDeviceParser.g:2200:5: lv_type_6_0= ruleNetworkCommunicationType
+            // InternalDeviceParser.g:2234:4: (lv_type_6_0= ruleNetworkCommunicationType )
+            // InternalDeviceParser.g:2235:5: lv_type_6_0= ruleNetworkCommunicationType
             {
 
                                 newCompositeNode(grammarAccess.getNetworkConnectionAccess().getTypeNetworkCommunicationTypeParserRuleCall_6_0());
@@ -5231,16 +5293,16 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDeviceParser.g:2217:3: (otherlv_7= Properties this_INDENT_8= RULE_INDENT ( (lv_properties_9_0= ruleAbstractNetworkProperty ) )+ this_DEDENT_10= RULE_DEDENT )?
-            int alt41=2;
-            int LA41_0 = input.LA(1);
+            // InternalDeviceParser.g:2252:3: (otherlv_7= Properties this_INDENT_8= RULE_INDENT ( (lv_properties_9_0= ruleAbstractNetworkProperty ) )+ this_DEDENT_10= RULE_DEDENT )?
+            int alt42=2;
+            int LA42_0 = input.LA(1);
 
-            if ( (LA41_0==Properties) ) {
-                alt41=1;
+            if ( (LA42_0==Properties) ) {
+                alt42=1;
             }
-            switch (alt41) {
+            switch (alt42) {
                 case 1 :
-                    // InternalDeviceParser.g:2218:4: otherlv_7= Properties this_INDENT_8= RULE_INDENT ( (lv_properties_9_0= ruleAbstractNetworkProperty ) )+ this_DEDENT_10= RULE_DEDENT
+                    // InternalDeviceParser.g:2253:4: otherlv_7= Properties this_INDENT_8= RULE_INDENT ( (lv_properties_9_0= ruleAbstractNetworkProperty ) )+ this_DEDENT_10= RULE_DEDENT
                     {
                     otherlv_7=(Token)match(input,Properties,FOLLOW_7);
 
@@ -5250,24 +5312,24 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
                                     newLeafNode(this_INDENT_8, grammarAccess.getNetworkConnectionAccess().getINDENTTerminalRuleCall_7_1());
 
-                    // InternalDeviceParser.g:2226:4: ( (lv_properties_9_0= ruleAbstractNetworkProperty ) )+
-                    int cnt40=0;
-                    loop40:
+                    // InternalDeviceParser.g:2261:4: ( (lv_properties_9_0= ruleAbstractNetworkProperty ) )+
+                    int cnt41=0;
+                    loop41:
                     do {
-                        int alt40=2;
-                        int LA40_0 = input.LA(1);
+                        int alt41=2;
+                        int LA41_0 = input.LA(1);
 
-                        if ( (LA40_0==HyphenMinus) ) {
-                            alt40=1;
+                        if ( (LA41_0==HyphenMinus) ) {
+                            alt41=1;
                         }
 
 
-                        switch (alt40) {
+                        switch (alt41) {
                         case 1 :
-                            // InternalDeviceParser.g:2227:5: (lv_properties_9_0= ruleAbstractNetworkProperty )
+                            // InternalDeviceParser.g:2262:5: (lv_properties_9_0= ruleAbstractNetworkProperty )
                             {
-                            // InternalDeviceParser.g:2227:5: (lv_properties_9_0= ruleAbstractNetworkProperty )
-                            // InternalDeviceParser.g:2228:6: lv_properties_9_0= ruleAbstractNetworkProperty
+                            // InternalDeviceParser.g:2262:5: (lv_properties_9_0= ruleAbstractNetworkProperty )
+                            // InternalDeviceParser.g:2263:6: lv_properties_9_0= ruleAbstractNetworkProperty
                             {
 
                                                     newCompositeNode(grammarAccess.getNetworkConnectionAccess().getPropertiesAbstractNetworkPropertyParserRuleCall_7_2_0());
@@ -5296,12 +5358,12 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
                             break;
 
                         default :
-                            if ( cnt40 >= 1 ) break loop40;
+                            if ( cnt41 >= 1 ) break loop41;
                                 EarlyExitException eee =
-                                    new EarlyExitException(40, input);
+                                    new EarlyExitException(41, input);
                                 throw eee;
                         }
-                        cnt40++;
+                        cnt41++;
                     } while (true);
 
                     this_DEDENT_10=(Token)match(input,RULE_DEDENT,FOLLOW_14);
@@ -5341,7 +5403,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCommunicationConnection"
-    // InternalDeviceParser.g:2258:1: entryRuleCommunicationConnection returns [EObject current=null] : iv_ruleCommunicationConnection= ruleCommunicationConnection EOF ;
+    // InternalDeviceParser.g:2293:1: entryRuleCommunicationConnection returns [EObject current=null] : iv_ruleCommunicationConnection= ruleCommunicationConnection EOF ;
     public final EObject entryRuleCommunicationConnection() throws RecognitionException {
         EObject current = null;
 
@@ -5349,8 +5411,8 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDeviceParser.g:2258:64: (iv_ruleCommunicationConnection= ruleCommunicationConnection EOF )
-            // InternalDeviceParser.g:2259:2: iv_ruleCommunicationConnection= ruleCommunicationConnection EOF
+            // InternalDeviceParser.g:2293:64: (iv_ruleCommunicationConnection= ruleCommunicationConnection EOF )
+            // InternalDeviceParser.g:2294:2: iv_ruleCommunicationConnection= ruleCommunicationConnection EOF
             {
              newCompositeNode(grammarAccess.getCommunicationConnectionRule());
             pushFollow(FOLLOW_1);
@@ -5377,7 +5439,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCommunicationConnection"
-    // InternalDeviceParser.g:2265:1: ruleCommunicationConnection returns [EObject current=null] : ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) this_INDENT_4= RULE_INDENT otherlv_5= Type ( (lv_type_6_0= ruleCommunicationType ) ) (otherlv_7= Properties this_INDENT_8= RULE_INDENT ( (lv_properties_9_0= ruleConnectionProperty ) )+ this_DEDENT_10= RULE_DEDENT )? this_DEDENT_11= RULE_DEDENT ) ;
+    // InternalDeviceParser.g:2300:1: ruleCommunicationConnection returns [EObject current=null] : ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) this_INDENT_4= RULE_INDENT otherlv_5= Type ( (lv_type_6_0= ruleCommunicationType ) ) (otherlv_7= Properties this_INDENT_8= RULE_INDENT ( (lv_properties_9_0= ruleConnectionProperty ) )+ this_DEDENT_10= RULE_DEDENT )? this_DEDENT_11= RULE_DEDENT ) ;
     public final EObject ruleCommunicationConnection() throws RecognitionException {
         EObject current = null;
 
@@ -5399,14 +5461,14 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
             enterRule();
 
         try {
-            // InternalDeviceParser.g:2271:2: ( ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) this_INDENT_4= RULE_INDENT otherlv_5= Type ( (lv_type_6_0= ruleCommunicationType ) ) (otherlv_7= Properties this_INDENT_8= RULE_INDENT ( (lv_properties_9_0= ruleConnectionProperty ) )+ this_DEDENT_10= RULE_DEDENT )? this_DEDENT_11= RULE_DEDENT ) )
-            // InternalDeviceParser.g:2272:2: ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) this_INDENT_4= RULE_INDENT otherlv_5= Type ( (lv_type_6_0= ruleCommunicationType ) ) (otherlv_7= Properties this_INDENT_8= RULE_INDENT ( (lv_properties_9_0= ruleConnectionProperty ) )+ this_DEDENT_10= RULE_DEDENT )? this_DEDENT_11= RULE_DEDENT )
+            // InternalDeviceParser.g:2306:2: ( ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) this_INDENT_4= RULE_INDENT otherlv_5= Type ( (lv_type_6_0= ruleCommunicationType ) ) (otherlv_7= Properties this_INDENT_8= RULE_INDENT ( (lv_properties_9_0= ruleConnectionProperty ) )+ this_DEDENT_10= RULE_DEDENT )? this_DEDENT_11= RULE_DEDENT ) )
+            // InternalDeviceParser.g:2307:2: ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) this_INDENT_4= RULE_INDENT otherlv_5= Type ( (lv_type_6_0= ruleCommunicationType ) ) (otherlv_7= Properties this_INDENT_8= RULE_INDENT ( (lv_properties_9_0= ruleConnectionProperty ) )+ this_DEDENT_10= RULE_DEDENT )? this_DEDENT_11= RULE_DEDENT )
             {
-            // InternalDeviceParser.g:2272:2: ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) this_INDENT_4= RULE_INDENT otherlv_5= Type ( (lv_type_6_0= ruleCommunicationType ) ) (otherlv_7= Properties this_INDENT_8= RULE_INDENT ( (lv_properties_9_0= ruleConnectionProperty ) )+ this_DEDENT_10= RULE_DEDENT )? this_DEDENT_11= RULE_DEDENT )
-            // InternalDeviceParser.g:2273:3: () rulePreListElement otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) this_INDENT_4= RULE_INDENT otherlv_5= Type ( (lv_type_6_0= ruleCommunicationType ) ) (otherlv_7= Properties this_INDENT_8= RULE_INDENT ( (lv_properties_9_0= ruleConnectionProperty ) )+ this_DEDENT_10= RULE_DEDENT )? this_DEDENT_11= RULE_DEDENT
+            // InternalDeviceParser.g:2307:2: ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) this_INDENT_4= RULE_INDENT otherlv_5= Type ( (lv_type_6_0= ruleCommunicationType ) ) (otherlv_7= Properties this_INDENT_8= RULE_INDENT ( (lv_properties_9_0= ruleConnectionProperty ) )+ this_DEDENT_10= RULE_DEDENT )? this_DEDENT_11= RULE_DEDENT )
+            // InternalDeviceParser.g:2308:3: () rulePreListElement otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) this_INDENT_4= RULE_INDENT otherlv_5= Type ( (lv_type_6_0= ruleCommunicationType ) ) (otherlv_7= Properties this_INDENT_8= RULE_INDENT ( (lv_properties_9_0= ruleConnectionProperty ) )+ this_DEDENT_10= RULE_DEDENT )? this_DEDENT_11= RULE_DEDENT
             {
-            // InternalDeviceParser.g:2273:3: ()
-            // InternalDeviceParser.g:2274:4:
+            // InternalDeviceParser.g:2308:3: ()
+            // InternalDeviceParser.g:2309:4:
             {
 
                             current = forceCreateModelElement(
@@ -5431,11 +5493,11 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
                         newLeafNode(otherlv_2, grammarAccess.getCommunicationConnectionAccess().getNameKeyword_2());
 
-            // InternalDeviceParser.g:2291:3: ( (lv_name_3_0= ruleEString ) )
-            // InternalDeviceParser.g:2292:4: (lv_name_3_0= ruleEString )
+            // InternalDeviceParser.g:2326:3: ( (lv_name_3_0= ruleEString ) )
+            // InternalDeviceParser.g:2327:4: (lv_name_3_0= ruleEString )
             {
-            // InternalDeviceParser.g:2292:4: (lv_name_3_0= ruleEString )
-            // InternalDeviceParser.g:2293:5: lv_name_3_0= ruleEString
+            // InternalDeviceParser.g:2327:4: (lv_name_3_0= ruleEString )
+            // InternalDeviceParser.g:2328:5: lv_name_3_0= ruleEString
             {
 
                                 newCompositeNode(grammarAccess.getCommunicationConnectionAccess().getNameEStringParserRuleCall_3_0());
@@ -5470,11 +5532,11 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
                         newLeafNode(otherlv_5, grammarAccess.getCommunicationConnectionAccess().getTypeKeyword_5());
 
-            // InternalDeviceParser.g:2318:3: ( (lv_type_6_0= ruleCommunicationType ) )
-            // InternalDeviceParser.g:2319:4: (lv_type_6_0= ruleCommunicationType )
+            // InternalDeviceParser.g:2353:3: ( (lv_type_6_0= ruleCommunicationType ) )
+            // InternalDeviceParser.g:2354:4: (lv_type_6_0= ruleCommunicationType )
             {
-            // InternalDeviceParser.g:2319:4: (lv_type_6_0= ruleCommunicationType )
-            // InternalDeviceParser.g:2320:5: lv_type_6_0= ruleCommunicationType
+            // InternalDeviceParser.g:2354:4: (lv_type_6_0= ruleCommunicationType )
+            // InternalDeviceParser.g:2355:5: lv_type_6_0= ruleCommunicationType
             {
 
                                 newCompositeNode(grammarAccess.getCommunicationConnectionAccess().getTypeCommunicationTypeParserRuleCall_6_0());
@@ -5501,16 +5563,16 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDeviceParser.g:2337:3: (otherlv_7= Properties this_INDENT_8= RULE_INDENT ( (lv_properties_9_0= ruleConnectionProperty ) )+ this_DEDENT_10= RULE_DEDENT )?
-            int alt43=2;
-            int LA43_0 = input.LA(1);
+            // InternalDeviceParser.g:2372:3: (otherlv_7= Properties this_INDENT_8= RULE_INDENT ( (lv_properties_9_0= ruleConnectionProperty ) )+ this_DEDENT_10= RULE_DEDENT )?
+            int alt44=2;
+            int LA44_0 = input.LA(1);
 
-            if ( (LA43_0==Properties) ) {
-                alt43=1;
+            if ( (LA44_0==Properties) ) {
+                alt44=1;
             }
-            switch (alt43) {
+            switch (alt44) {
                 case 1 :
-                    // InternalDeviceParser.g:2338:4: otherlv_7= Properties this_INDENT_8= RULE_INDENT ( (lv_properties_9_0= ruleConnectionProperty ) )+ this_DEDENT_10= RULE_DEDENT
+                    // InternalDeviceParser.g:2373:4: otherlv_7= Properties this_INDENT_8= RULE_INDENT ( (lv_properties_9_0= ruleConnectionProperty ) )+ this_DEDENT_10= RULE_DEDENT
                     {
                     otherlv_7=(Token)match(input,Properties,FOLLOW_7);
 
@@ -5520,24 +5582,24 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
                                     newLeafNode(this_INDENT_8, grammarAccess.getCommunicationConnectionAccess().getINDENTTerminalRuleCall_7_1());
 
-                    // InternalDeviceParser.g:2346:4: ( (lv_properties_9_0= ruleConnectionProperty ) )+
-                    int cnt42=0;
-                    loop42:
+                    // InternalDeviceParser.g:2381:4: ( (lv_properties_9_0= ruleConnectionProperty ) )+
+                    int cnt43=0;
+                    loop43:
                     do {
-                        int alt42=2;
-                        int LA42_0 = input.LA(1);
+                        int alt43=2;
+                        int LA43_0 = input.LA(1);
 
-                        if ( (LA42_0==HyphenMinus) ) {
-                            alt42=1;
+                        if ( (LA43_0==HyphenMinus) ) {
+                            alt43=1;
                         }
 
 
-                        switch (alt42) {
+                        switch (alt43) {
                         case 1 :
-                            // InternalDeviceParser.g:2347:5: (lv_properties_9_0= ruleConnectionProperty )
+                            // InternalDeviceParser.g:2382:5: (lv_properties_9_0= ruleConnectionProperty )
                             {
-                            // InternalDeviceParser.g:2347:5: (lv_properties_9_0= ruleConnectionProperty )
-                            // InternalDeviceParser.g:2348:6: lv_properties_9_0= ruleConnectionProperty
+                            // InternalDeviceParser.g:2382:5: (lv_properties_9_0= ruleConnectionProperty )
+                            // InternalDeviceParser.g:2383:6: lv_properties_9_0= ruleConnectionProperty
                             {
 
                                                     newCompositeNode(grammarAccess.getCommunicationConnectionAccess().getPropertiesConnectionPropertyParserRuleCall_7_2_0());
@@ -5566,12 +5628,12 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
                             break;
 
                         default :
-                            if ( cnt42 >= 1 ) break loop42;
+                            if ( cnt43 >= 1 ) break loop43;
                                 EarlyExitException eee =
-                                    new EarlyExitException(42, input);
+                                    new EarlyExitException(43, input);
                                 throw eee;
                         }
-                        cnt42++;
+                        cnt43++;
                     } while (true);
 
                     this_DEDENT_10=(Token)match(input,RULE_DEDENT,FOLLOW_14);
@@ -5611,7 +5673,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleUsbConnection"
-    // InternalDeviceParser.g:2378:1: entryRuleUsbConnection returns [EObject current=null] : iv_ruleUsbConnection= ruleUsbConnection EOF ;
+    // InternalDeviceParser.g:2413:1: entryRuleUsbConnection returns [EObject current=null] : iv_ruleUsbConnection= ruleUsbConnection EOF ;
     public final EObject entryRuleUsbConnection() throws RecognitionException {
         EObject current = null;
 
@@ -5619,8 +5681,8 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDeviceParser.g:2378:54: (iv_ruleUsbConnection= ruleUsbConnection EOF )
-            // InternalDeviceParser.g:2379:2: iv_ruleUsbConnection= ruleUsbConnection EOF
+            // InternalDeviceParser.g:2413:54: (iv_ruleUsbConnection= ruleUsbConnection EOF )
+            // InternalDeviceParser.g:2414:2: iv_ruleUsbConnection= ruleUsbConnection EOF
             {
              newCompositeNode(grammarAccess.getUsbConnectionRule());
             pushFollow(FOLLOW_1);
@@ -5647,7 +5709,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleUsbConnection"
-    // InternalDeviceParser.g:2385:1: ruleUsbConnection returns [EObject current=null] : ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) this_INDENT_4= RULE_INDENT otherlv_5= Type ( (lv_type_6_0= ruleUsbCommunicationType ) ) (otherlv_7= Properties this_INDENT_8= RULE_INDENT ( (lv_properties_9_0= ruleAbstractUsbProperty ) )+ this_DEDENT_10= RULE_DEDENT )? this_DEDENT_11= RULE_DEDENT ) ;
+    // InternalDeviceParser.g:2420:1: ruleUsbConnection returns [EObject current=null] : ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) this_INDENT_4= RULE_INDENT otherlv_5= Type ( (lv_type_6_0= ruleUsbCommunicationType ) ) (otherlv_7= Properties this_INDENT_8= RULE_INDENT ( (lv_properties_9_0= ruleAbstractUsbProperty ) )+ this_DEDENT_10= RULE_DEDENT )? this_DEDENT_11= RULE_DEDENT ) ;
     public final EObject ruleUsbConnection() throws RecognitionException {
         EObject current = null;
 
@@ -5669,14 +5731,14 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
             enterRule();
 
         try {
-            // InternalDeviceParser.g:2391:2: ( ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) this_INDENT_4= RULE_INDENT otherlv_5= Type ( (lv_type_6_0= ruleUsbCommunicationType ) ) (otherlv_7= Properties this_INDENT_8= RULE_INDENT ( (lv_properties_9_0= ruleAbstractUsbProperty ) )+ this_DEDENT_10= RULE_DEDENT )? this_DEDENT_11= RULE_DEDENT ) )
-            // InternalDeviceParser.g:2392:2: ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) this_INDENT_4= RULE_INDENT otherlv_5= Type ( (lv_type_6_0= ruleUsbCommunicationType ) ) (otherlv_7= Properties this_INDENT_8= RULE_INDENT ( (lv_properties_9_0= ruleAbstractUsbProperty ) )+ this_DEDENT_10= RULE_DEDENT )? this_DEDENT_11= RULE_DEDENT )
+            // InternalDeviceParser.g:2426:2: ( ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) this_INDENT_4= RULE_INDENT otherlv_5= Type ( (lv_type_6_0= ruleUsbCommunicationType ) ) (otherlv_7= Properties this_INDENT_8= RULE_INDENT ( (lv_properties_9_0= ruleAbstractUsbProperty ) )+ this_DEDENT_10= RULE_DEDENT )? this_DEDENT_11= RULE_DEDENT ) )
+            // InternalDeviceParser.g:2427:2: ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) this_INDENT_4= RULE_INDENT otherlv_5= Type ( (lv_type_6_0= ruleUsbCommunicationType ) ) (otherlv_7= Properties this_INDENT_8= RULE_INDENT ( (lv_properties_9_0= ruleAbstractUsbProperty ) )+ this_DEDENT_10= RULE_DEDENT )? this_DEDENT_11= RULE_DEDENT )
             {
-            // InternalDeviceParser.g:2392:2: ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) this_INDENT_4= RULE_INDENT otherlv_5= Type ( (lv_type_6_0= ruleUsbCommunicationType ) ) (otherlv_7= Properties this_INDENT_8= RULE_INDENT ( (lv_properties_9_0= ruleAbstractUsbProperty ) )+ this_DEDENT_10= RULE_DEDENT )? this_DEDENT_11= RULE_DEDENT )
-            // InternalDeviceParser.g:2393:3: () rulePreListElement otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) this_INDENT_4= RULE_INDENT otherlv_5= Type ( (lv_type_6_0= ruleUsbCommunicationType ) ) (otherlv_7= Properties this_INDENT_8= RULE_INDENT ( (lv_properties_9_0= ruleAbstractUsbProperty ) )+ this_DEDENT_10= RULE_DEDENT )? this_DEDENT_11= RULE_DEDENT
+            // InternalDeviceParser.g:2427:2: ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) this_INDENT_4= RULE_INDENT otherlv_5= Type ( (lv_type_6_0= ruleUsbCommunicationType ) ) (otherlv_7= Properties this_INDENT_8= RULE_INDENT ( (lv_properties_9_0= ruleAbstractUsbProperty ) )+ this_DEDENT_10= RULE_DEDENT )? this_DEDENT_11= RULE_DEDENT )
+            // InternalDeviceParser.g:2428:3: () rulePreListElement otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) this_INDENT_4= RULE_INDENT otherlv_5= Type ( (lv_type_6_0= ruleUsbCommunicationType ) ) (otherlv_7= Properties this_INDENT_8= RULE_INDENT ( (lv_properties_9_0= ruleAbstractUsbProperty ) )+ this_DEDENT_10= RULE_DEDENT )? this_DEDENT_11= RULE_DEDENT
             {
-            // InternalDeviceParser.g:2393:3: ()
-            // InternalDeviceParser.g:2394:4:
+            // InternalDeviceParser.g:2428:3: ()
+            // InternalDeviceParser.g:2429:4:
             {
 
                             current = forceCreateModelElement(
@@ -5701,11 +5763,11 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
                         newLeafNode(otherlv_2, grammarAccess.getUsbConnectionAccess().getNameKeyword_2());
 
-            // InternalDeviceParser.g:2411:3: ( (lv_name_3_0= ruleEString ) )
-            // InternalDeviceParser.g:2412:4: (lv_name_3_0= ruleEString )
+            // InternalDeviceParser.g:2446:3: ( (lv_name_3_0= ruleEString ) )
+            // InternalDeviceParser.g:2447:4: (lv_name_3_0= ruleEString )
             {
-            // InternalDeviceParser.g:2412:4: (lv_name_3_0= ruleEString )
-            // InternalDeviceParser.g:2413:5: lv_name_3_0= ruleEString
+            // InternalDeviceParser.g:2447:4: (lv_name_3_0= ruleEString )
+            // InternalDeviceParser.g:2448:5: lv_name_3_0= ruleEString
             {
 
                                 newCompositeNode(grammarAccess.getUsbConnectionAccess().getNameEStringParserRuleCall_3_0());
@@ -5736,15 +5798,15 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
                         newLeafNode(this_INDENT_4, grammarAccess.getUsbConnectionAccess().getINDENTTerminalRuleCall_4());
 
-            otherlv_5=(Token)match(input,Type,FOLLOW_35);
+            otherlv_5=(Token)match(input,Type,FOLLOW_36);
 
                         newLeafNode(otherlv_5, grammarAccess.getUsbConnectionAccess().getTypeKeyword_5());
 
-            // InternalDeviceParser.g:2438:3: ( (lv_type_6_0= ruleUsbCommunicationType ) )
-            // InternalDeviceParser.g:2439:4: (lv_type_6_0= ruleUsbCommunicationType )
+            // InternalDeviceParser.g:2473:3: ( (lv_type_6_0= ruleUsbCommunicationType ) )
+            // InternalDeviceParser.g:2474:4: (lv_type_6_0= ruleUsbCommunicationType )
             {
-            // InternalDeviceParser.g:2439:4: (lv_type_6_0= ruleUsbCommunicationType )
-            // InternalDeviceParser.g:2440:5: lv_type_6_0= ruleUsbCommunicationType
+            // InternalDeviceParser.g:2474:4: (lv_type_6_0= ruleUsbCommunicationType )
+            // InternalDeviceParser.g:2475:5: lv_type_6_0= ruleUsbCommunicationType
             {
 
                                 newCompositeNode(grammarAccess.getUsbConnectionAccess().getTypeUsbCommunicationTypeParserRuleCall_6_0());
@@ -5771,16 +5833,16 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDeviceParser.g:2457:3: (otherlv_7= Properties this_INDENT_8= RULE_INDENT ( (lv_properties_9_0= ruleAbstractUsbProperty ) )+ this_DEDENT_10= RULE_DEDENT )?
-            int alt45=2;
-            int LA45_0 = input.LA(1);
+            // InternalDeviceParser.g:2492:3: (otherlv_7= Properties this_INDENT_8= RULE_INDENT ( (lv_properties_9_0= ruleAbstractUsbProperty ) )+ this_DEDENT_10= RULE_DEDENT )?
+            int alt46=2;
+            int LA46_0 = input.LA(1);
 
-            if ( (LA45_0==Properties) ) {
-                alt45=1;
+            if ( (LA46_0==Properties) ) {
+                alt46=1;
             }
-            switch (alt45) {
+            switch (alt46) {
                 case 1 :
-                    // InternalDeviceParser.g:2458:4: otherlv_7= Properties this_INDENT_8= RULE_INDENT ( (lv_properties_9_0= ruleAbstractUsbProperty ) )+ this_DEDENT_10= RULE_DEDENT
+                    // InternalDeviceParser.g:2493:4: otherlv_7= Properties this_INDENT_8= RULE_INDENT ( (lv_properties_9_0= ruleAbstractUsbProperty ) )+ this_DEDENT_10= RULE_DEDENT
                     {
                     otherlv_7=(Token)match(input,Properties,FOLLOW_7);
 
@@ -5790,24 +5852,24 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
                                     newLeafNode(this_INDENT_8, grammarAccess.getUsbConnectionAccess().getINDENTTerminalRuleCall_7_1());
 
-                    // InternalDeviceParser.g:2466:4: ( (lv_properties_9_0= ruleAbstractUsbProperty ) )+
-                    int cnt44=0;
-                    loop44:
+                    // InternalDeviceParser.g:2501:4: ( (lv_properties_9_0= ruleAbstractUsbProperty ) )+
+                    int cnt45=0;
+                    loop45:
                     do {
-                        int alt44=2;
-                        int LA44_0 = input.LA(1);
+                        int alt45=2;
+                        int LA45_0 = input.LA(1);
 
-                        if ( (LA44_0==HyphenMinus) ) {
-                            alt44=1;
+                        if ( (LA45_0==HyphenMinus) ) {
+                            alt45=1;
                         }
 
 
-                        switch (alt44) {
+                        switch (alt45) {
                         case 1 :
-                            // InternalDeviceParser.g:2467:5: (lv_properties_9_0= ruleAbstractUsbProperty )
+                            // InternalDeviceParser.g:2502:5: (lv_properties_9_0= ruleAbstractUsbProperty )
                             {
-                            // InternalDeviceParser.g:2467:5: (lv_properties_9_0= ruleAbstractUsbProperty )
-                            // InternalDeviceParser.g:2468:6: lv_properties_9_0= ruleAbstractUsbProperty
+                            // InternalDeviceParser.g:2502:5: (lv_properties_9_0= ruleAbstractUsbProperty )
+                            // InternalDeviceParser.g:2503:6: lv_properties_9_0= ruleAbstractUsbProperty
                             {
 
                                                     newCompositeNode(grammarAccess.getUsbConnectionAccess().getPropertiesAbstractUsbPropertyParserRuleCall_7_2_0());
@@ -5836,12 +5898,12 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
                             break;
 
                         default :
-                            if ( cnt44 >= 1 ) break loop44;
+                            if ( cnt45 >= 1 ) break loop45;
                                 EarlyExitException eee =
-                                    new EarlyExitException(44, input);
+                                    new EarlyExitException(45, input);
                                 throw eee;
                         }
-                        cnt44++;
+                        cnt45++;
                     } while (true);
 
                     this_DEDENT_10=(Token)match(input,RULE_DEDENT,FOLLOW_14);
@@ -5880,990 +5942,8 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleUsbConnection"
 
 
-    // $ANTLR start "entryRuleOperatingSystemResouce"
-    // InternalDeviceParser.g:2498:1: entryRuleOperatingSystemResouce returns [EObject current=null] : iv_ruleOperatingSystemResouce= ruleOperatingSystemResouce EOF ;
-    public final EObject entryRuleOperatingSystemResouce() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleOperatingSystemResouce = null;
-
-
-        try {
-            // InternalDeviceParser.g:2498:63: (iv_ruleOperatingSystemResouce= ruleOperatingSystemResouce EOF )
-            // InternalDeviceParser.g:2499:2: iv_ruleOperatingSystemResouce= ruleOperatingSystemResouce EOF
-            {
-             newCompositeNode(grammarAccess.getOperatingSystemResouceRule());
-            pushFollow(FOLLOW_1);
-            iv_ruleOperatingSystemResouce=ruleOperatingSystemResouce();
-
-            state._fsp--;
-
-             current =iv_ruleOperatingSystemResouce;
-            match(input,EOF,FOLLOW_2);
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleOperatingSystemResouce"
-
-
-    // $ANTLR start "ruleOperatingSystemResouce"
-    // InternalDeviceParser.g:2505:1: ruleOperatingSystemResouce returns [EObject current=null] : ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) this_INDENT_4= RULE_INDENT otherlv_5= Type ( (lv_type_6_0= ruleOpertingSystemResouceType ) ) (otherlv_7= Properties this_INDENT_8= RULE_INDENT ( (lv_properties_9_0= ruleAbstractOperatingSystemProperty ) )+ this_DEDENT_10= RULE_DEDENT )? this_DEDENT_11= RULE_DEDENT ) ;
-    public final EObject ruleOperatingSystemResouce() throws RecognitionException {
-        EObject current = null;
-
-        Token otherlv_2=null;
-        Token this_INDENT_4=null;
-        Token otherlv_5=null;
-        Token otherlv_7=null;
-        Token this_INDENT_8=null;
-        Token this_DEDENT_10=null;
-        Token this_DEDENT_11=null;
-        AntlrDatatypeRuleToken lv_name_3_0 = null;
-
-        EObject lv_type_6_0 = null;
-
-        EObject lv_properties_9_0 = null;
-
-
-
-            enterRule();
-
-        try {
-            // InternalDeviceParser.g:2511:2: ( ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) this_INDENT_4= RULE_INDENT otherlv_5= Type ( (lv_type_6_0= ruleOpertingSystemResouceType ) ) (otherlv_7= Properties this_INDENT_8= RULE_INDENT ( (lv_properties_9_0= ruleAbstractOperatingSystemProperty ) )+ this_DEDENT_10= RULE_DEDENT )? this_DEDENT_11= RULE_DEDENT ) )
-            // InternalDeviceParser.g:2512:2: ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) this_INDENT_4= RULE_INDENT otherlv_5= Type ( (lv_type_6_0= ruleOpertingSystemResouceType ) ) (otherlv_7= Properties this_INDENT_8= RULE_INDENT ( (lv_properties_9_0= ruleAbstractOperatingSystemProperty ) )+ this_DEDENT_10= RULE_DEDENT )? this_DEDENT_11= RULE_DEDENT )
-            {
-            // InternalDeviceParser.g:2512:2: ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) this_INDENT_4= RULE_INDENT otherlv_5= Type ( (lv_type_6_0= ruleOpertingSystemResouceType ) ) (otherlv_7= Properties this_INDENT_8= RULE_INDENT ( (lv_properties_9_0= ruleAbstractOperatingSystemProperty ) )+ this_DEDENT_10= RULE_DEDENT )? this_DEDENT_11= RULE_DEDENT )
-            // InternalDeviceParser.g:2513:3: () rulePreListElement otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) this_INDENT_4= RULE_INDENT otherlv_5= Type ( (lv_type_6_0= ruleOpertingSystemResouceType ) ) (otherlv_7= Properties this_INDENT_8= RULE_INDENT ( (lv_properties_9_0= ruleAbstractOperatingSystemProperty ) )+ this_DEDENT_10= RULE_DEDENT )? this_DEDENT_11= RULE_DEDENT
-            {
-            // InternalDeviceParser.g:2513:3: ()
-            // InternalDeviceParser.g:2514:4:
-            {
-
-                            current = forceCreateModelElement(
-                                grammarAccess.getOperatingSystemResouceAccess().getOperatingSystemResouceAction_0(),
-                                current);
-
-
-            }
-
-
-                        newCompositeNode(grammarAccess.getOperatingSystemResouceAccess().getPreListElementParserRuleCall_1());
-
-            pushFollow(FOLLOW_5);
-            rulePreListElement();
-
-            state._fsp--;
-
-
-                        afterParserOrEnumRuleCall();
-
-            otherlv_2=(Token)match(input,Name,FOLLOW_11);
-
-                        newLeafNode(otherlv_2, grammarAccess.getOperatingSystemResouceAccess().getNameKeyword_2());
-
-            // InternalDeviceParser.g:2531:3: ( (lv_name_3_0= ruleEString ) )
-            // InternalDeviceParser.g:2532:4: (lv_name_3_0= ruleEString )
-            {
-            // InternalDeviceParser.g:2532:4: (lv_name_3_0= ruleEString )
-            // InternalDeviceParser.g:2533:5: lv_name_3_0= ruleEString
-            {
-
-                                newCompositeNode(grammarAccess.getOperatingSystemResouceAccess().getNameEStringParserRuleCall_3_0());
-
-            pushFollow(FOLLOW_7);
-            lv_name_3_0=ruleEString();
-
-            state._fsp--;
-
-
-                                if (current==null) {
-                                    current = createModelElementForParent(grammarAccess.getOperatingSystemResouceRule());
-                                }
-                                set(
-                                    current,
-                                    "name",
-                                    lv_name_3_0,
-                                    "de.fraunhofer.ipa.deployment.Util.EString");
-                                afterParserOrEnumRuleCall();
-
-
-            }
-
-
-            }
-
-            this_INDENT_4=(Token)match(input,RULE_INDENT,FOLLOW_30);
-
-                        newLeafNode(this_INDENT_4, grammarAccess.getOperatingSystemResouceAccess().getINDENTTerminalRuleCall_4());
-
-            otherlv_5=(Token)match(input,Type,FOLLOW_36);
-
-                        newLeafNode(otherlv_5, grammarAccess.getOperatingSystemResouceAccess().getTypeKeyword_5());
-
-            // InternalDeviceParser.g:2558:3: ( (lv_type_6_0= ruleOpertingSystemResouceType ) )
-            // InternalDeviceParser.g:2559:4: (lv_type_6_0= ruleOpertingSystemResouceType )
-            {
-            // InternalDeviceParser.g:2559:4: (lv_type_6_0= ruleOpertingSystemResouceType )
-            // InternalDeviceParser.g:2560:5: lv_type_6_0= ruleOpertingSystemResouceType
-            {
-
-                                newCompositeNode(grammarAccess.getOperatingSystemResouceAccess().getTypeOpertingSystemResouceTypeParserRuleCall_6_0());
-
-            pushFollow(FOLLOW_31);
-            lv_type_6_0=ruleOpertingSystemResouceType();
-
-            state._fsp--;
-
-
-                                if (current==null) {
-                                    current = createModelElementForParent(grammarAccess.getOperatingSystemResouceRule());
-                                }
-                                set(
-                                    current,
-                                    "type",
-                                    lv_type_6_0,
-                                    "de.fraunhofer.ipa.deployment.Util.OpertingSystemResouceType");
-                                afterParserOrEnumRuleCall();
-
-
-            }
-
-
-            }
-
-            // InternalDeviceParser.g:2577:3: (otherlv_7= Properties this_INDENT_8= RULE_INDENT ( (lv_properties_9_0= ruleAbstractOperatingSystemProperty ) )+ this_DEDENT_10= RULE_DEDENT )?
-            int alt47=2;
-            int LA47_0 = input.LA(1);
-
-            if ( (LA47_0==Properties) ) {
-                alt47=1;
-            }
-            switch (alt47) {
-                case 1 :
-                    // InternalDeviceParser.g:2578:4: otherlv_7= Properties this_INDENT_8= RULE_INDENT ( (lv_properties_9_0= ruleAbstractOperatingSystemProperty ) )+ this_DEDENT_10= RULE_DEDENT
-                    {
-                    otherlv_7=(Token)match(input,Properties,FOLLOW_7);
-
-                                    newLeafNode(otherlv_7, grammarAccess.getOperatingSystemResouceAccess().getPropertiesKeyword_7_0());
-
-                    this_INDENT_8=(Token)match(input,RULE_INDENT,FOLLOW_25);
-
-                                    newLeafNode(this_INDENT_8, grammarAccess.getOperatingSystemResouceAccess().getINDENTTerminalRuleCall_7_1());
-
-                    // InternalDeviceParser.g:2586:4: ( (lv_properties_9_0= ruleAbstractOperatingSystemProperty ) )+
-                    int cnt46=0;
-                    loop46:
-                    do {
-                        int alt46=2;
-                        int LA46_0 = input.LA(1);
-
-                        if ( (LA46_0==HyphenMinus) ) {
-                            alt46=1;
-                        }
-
-
-                        switch (alt46) {
-                        case 1 :
-                            // InternalDeviceParser.g:2587:5: (lv_properties_9_0= ruleAbstractOperatingSystemProperty )
-                            {
-                            // InternalDeviceParser.g:2587:5: (lv_properties_9_0= ruleAbstractOperatingSystemProperty )
-                            // InternalDeviceParser.g:2588:6: lv_properties_9_0= ruleAbstractOperatingSystemProperty
-                            {
-
-                                                    newCompositeNode(grammarAccess.getOperatingSystemResouceAccess().getPropertiesAbstractOperatingSystemPropertyParserRuleCall_7_2_0());
-
-                            pushFollow(FOLLOW_26);
-                            lv_properties_9_0=ruleAbstractOperatingSystemProperty();
-
-                            state._fsp--;
-
-
-                                                    if (current==null) {
-                                                        current = createModelElementForParent(grammarAccess.getOperatingSystemResouceRule());
-                                                    }
-                                                    add(
-                                                        current,
-                                                        "properties",
-                                                        lv_properties_9_0,
-                                                        "de.fraunhofer.ipa.targetEnvironment.Device.AbstractOperatingSystemProperty");
-                                                    afterParserOrEnumRuleCall();
-
-
-                            }
-
-
-                            }
-                            break;
-
-                        default :
-                            if ( cnt46 >= 1 ) break loop46;
-                                EarlyExitException eee =
-                                    new EarlyExitException(46, input);
-                                throw eee;
-                        }
-                        cnt46++;
-                    } while (true);
-
-                    this_DEDENT_10=(Token)match(input,RULE_DEDENT,FOLLOW_14);
-
-                                    newLeafNode(this_DEDENT_10, grammarAccess.getOperatingSystemResouceAccess().getDEDENTTerminalRuleCall_7_3());
-
-
-                    }
-                    break;
-
-            }
-
-            this_DEDENT_11=(Token)match(input,RULE_DEDENT,FOLLOW_2);
-
-                        newLeafNode(this_DEDENT_11, grammarAccess.getOperatingSystemResouceAccess().getDEDENTTerminalRuleCall_8());
-
-
-            }
-
-
-            }
-
-
-                leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleOperatingSystemResouce"
-
-
-    // $ANTLR start "entryRuleAbstractOperatingSystemProperty"
-    // InternalDeviceParser.g:2618:1: entryRuleAbstractOperatingSystemProperty returns [EObject current=null] : iv_ruleAbstractOperatingSystemProperty= ruleAbstractOperatingSystemProperty EOF ;
-    public final EObject entryRuleAbstractOperatingSystemProperty() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleAbstractOperatingSystemProperty = null;
-
-
-        try {
-            // InternalDeviceParser.g:2618:72: (iv_ruleAbstractOperatingSystemProperty= ruleAbstractOperatingSystemProperty EOF )
-            // InternalDeviceParser.g:2619:2: iv_ruleAbstractOperatingSystemProperty= ruleAbstractOperatingSystemProperty EOF
-            {
-             newCompositeNode(grammarAccess.getAbstractOperatingSystemPropertyRule());
-            pushFollow(FOLLOW_1);
-            iv_ruleAbstractOperatingSystemProperty=ruleAbstractOperatingSystemProperty();
-
-            state._fsp--;
-
-             current =iv_ruleAbstractOperatingSystemProperty;
-            match(input,EOF,FOLLOW_2);
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleAbstractOperatingSystemProperty"
-
-
-    // $ANTLR start "ruleAbstractOperatingSystemProperty"
-    // InternalDeviceParser.g:2625:1: ruleAbstractOperatingSystemProperty returns [EObject current=null] : (this_NameOperatingSystemProperty_0= ruleNameOperatingSystemProperty | this_VersionOperatingSystemProperty_1= ruleVersionOperatingSystemProperty ) ;
-    public final EObject ruleAbstractOperatingSystemProperty() throws RecognitionException {
-        EObject current = null;
-
-        EObject this_NameOperatingSystemProperty_0 = null;
-
-        EObject this_VersionOperatingSystemProperty_1 = null;
-
-
-
-            enterRule();
-
-        try {
-            // InternalDeviceParser.g:2631:2: ( (this_NameOperatingSystemProperty_0= ruleNameOperatingSystemProperty | this_VersionOperatingSystemProperty_1= ruleVersionOperatingSystemProperty ) )
-            // InternalDeviceParser.g:2632:2: (this_NameOperatingSystemProperty_0= ruleNameOperatingSystemProperty | this_VersionOperatingSystemProperty_1= ruleVersionOperatingSystemProperty )
-            {
-            // InternalDeviceParser.g:2632:2: (this_NameOperatingSystemProperty_0= ruleNameOperatingSystemProperty | this_VersionOperatingSystemProperty_1= ruleVersionOperatingSystemProperty )
-            int alt48=2;
-            int LA48_0 = input.LA(1);
-
-            if ( (LA48_0==HyphenMinus) ) {
-                int LA48_1 = input.LA(2);
-
-                if ( (LA48_1==Name) ) {
-                    int LA48_2 = input.LA(3);
-
-                    if ( (LA48_2==Os_version) ) {
-                        alt48=2;
-                    }
-                    else if ( (LA48_2==Os_name) ) {
-                        alt48=1;
-                    }
-                    else {
-                        NoViableAltException nvae =
-                            new NoViableAltException("", 48, 2, input);
-
-                        throw nvae;
-                    }
-                }
-                else {
-                    NoViableAltException nvae =
-                        new NoViableAltException("", 48, 1, input);
-
-                    throw nvae;
-                }
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 48, 0, input);
-
-                throw nvae;
-            }
-            switch (alt48) {
-                case 1 :
-                    // InternalDeviceParser.g:2633:3: this_NameOperatingSystemProperty_0= ruleNameOperatingSystemProperty
-                    {
-
-                                newCompositeNode(grammarAccess.getAbstractOperatingSystemPropertyAccess().getNameOperatingSystemPropertyParserRuleCall_0());
-
-                    pushFollow(FOLLOW_2);
-                    this_NameOperatingSystemProperty_0=ruleNameOperatingSystemProperty();
-
-                    state._fsp--;
-
-
-                                current = this_NameOperatingSystemProperty_0;
-                                afterParserOrEnumRuleCall();
-
-
-                    }
-                    break;
-                case 2 :
-                    // InternalDeviceParser.g:2642:3: this_VersionOperatingSystemProperty_1= ruleVersionOperatingSystemProperty
-                    {
-
-                                newCompositeNode(grammarAccess.getAbstractOperatingSystemPropertyAccess().getVersionOperatingSystemPropertyParserRuleCall_1());
-
-                    pushFollow(FOLLOW_2);
-                    this_VersionOperatingSystemProperty_1=ruleVersionOperatingSystemProperty();
-
-                    state._fsp--;
-
-
-                                current = this_VersionOperatingSystemProperty_1;
-                                afterParserOrEnumRuleCall();
-
-
-                    }
-                    break;
-
-            }
-
-
-            }
-
-
-                leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleAbstractOperatingSystemProperty"
-
-
-    // $ANTLR start "entryRuleNameOperatingSystemProperty"
-    // InternalDeviceParser.g:2654:1: entryRuleNameOperatingSystemProperty returns [EObject current=null] : iv_ruleNameOperatingSystemProperty= ruleNameOperatingSystemProperty EOF ;
-    public final EObject entryRuleNameOperatingSystemProperty() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleNameOperatingSystemProperty = null;
-
-
-        try {
-            // InternalDeviceParser.g:2654:68: (iv_ruleNameOperatingSystemProperty= ruleNameOperatingSystemProperty EOF )
-            // InternalDeviceParser.g:2655:2: iv_ruleNameOperatingSystemProperty= ruleNameOperatingSystemProperty EOF
-            {
-             newCompositeNode(grammarAccess.getNameOperatingSystemPropertyRule());
-            pushFollow(FOLLOW_1);
-            iv_ruleNameOperatingSystemProperty=ruleNameOperatingSystemProperty();
-
-            state._fsp--;
-
-             current =iv_ruleNameOperatingSystemProperty;
-            match(input,EOF,FOLLOW_2);
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleNameOperatingSystemProperty"
-
-
-    // $ANTLR start "ruleNameOperatingSystemProperty"
-    // InternalDeviceParser.g:2661:1: ruleNameOperatingSystemProperty returns [EObject current=null] : ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= Os_name ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT ) ;
-    public final EObject ruleNameOperatingSystemProperty() throws RecognitionException {
-        EObject current = null;
-
-        Token otherlv_2=null;
-        Token lv_name_3_0=null;
-        Token this_INDENT_4=null;
-        Token otherlv_5=null;
-        Token otherlv_7=null;
-        Token otherlv_9=null;
-        Token this_DEDENT_11=null;
-        EObject lv_kind_6_0 = null;
-
-        AntlrDatatypeRuleToken lv_description_8_0 = null;
-
-        EObject lv_value_10_0 = null;
-
-
-
-            enterRule();
-
-        try {
-            // InternalDeviceParser.g:2667:2: ( ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= Os_name ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT ) )
-            // InternalDeviceParser.g:2668:2: ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= Os_name ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT )
-            {
-            // InternalDeviceParser.g:2668:2: ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= Os_name ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT )
-            // InternalDeviceParser.g:2669:3: () rulePreListElement otherlv_2= Name ( (lv_name_3_0= Os_name ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT
-            {
-            // InternalDeviceParser.g:2669:3: ()
-            // InternalDeviceParser.g:2670:4:
-            {
-
-                            current = forceCreateModelElement(
-                                grammarAccess.getNameOperatingSystemPropertyAccess().getNameOperatingSystemPropertyAction_0(),
-                                current);
-
-
-            }
-
-
-                        newCompositeNode(grammarAccess.getNameOperatingSystemPropertyAccess().getPreListElementParserRuleCall_1());
-
-            pushFollow(FOLLOW_5);
-            rulePreListElement();
-
-            state._fsp--;
-
-
-                        afterParserOrEnumRuleCall();
-
-            otherlv_2=(Token)match(input,Name,FOLLOW_37);
-
-                        newLeafNode(otherlv_2, grammarAccess.getNameOperatingSystemPropertyAccess().getNameKeyword_2());
-
-            // InternalDeviceParser.g:2687:3: ( (lv_name_3_0= Os_name ) )
-            // InternalDeviceParser.g:2688:4: (lv_name_3_0= Os_name )
-            {
-            // InternalDeviceParser.g:2688:4: (lv_name_3_0= Os_name )
-            // InternalDeviceParser.g:2689:5: lv_name_3_0= Os_name
-            {
-            lv_name_3_0=(Token)match(input,Os_name,FOLLOW_7);
-
-                                newLeafNode(lv_name_3_0, grammarAccess.getNameOperatingSystemPropertyAccess().getNameOs_nameKeyword_3_0());
-
-
-                                if (current==null) {
-                                    current = createModelElement(grammarAccess.getNameOperatingSystemPropertyRule());
-                                }
-                                setWithLastConsumed(current, "name", lv_name_3_0, "os_name");
-
-
-            }
-
-
-            }
-
-            this_INDENT_4=(Token)match(input,RULE_INDENT,FOLLOW_8);
-
-                        newLeafNode(this_INDENT_4, grammarAccess.getNameOperatingSystemPropertyAccess().getINDENTTerminalRuleCall_4());
-
-            otherlv_5=(Token)match(input,Kind,FOLLOW_9);
-
-                        newLeafNode(otherlv_5, grammarAccess.getNameOperatingSystemPropertyAccess().getKindKeyword_5());
-
-            // InternalDeviceParser.g:2709:3: ( (lv_kind_6_0= ruleAttributeKind ) )
-            // InternalDeviceParser.g:2710:4: (lv_kind_6_0= ruleAttributeKind )
-            {
-            // InternalDeviceParser.g:2710:4: (lv_kind_6_0= ruleAttributeKind )
-            // InternalDeviceParser.g:2711:5: lv_kind_6_0= ruleAttributeKind
-            {
-
-                                newCompositeNode(grammarAccess.getNameOperatingSystemPropertyAccess().getKindAttributeKindParserRuleCall_6_0());
-
-            pushFollow(FOLLOW_10);
-            lv_kind_6_0=ruleAttributeKind();
-
-            state._fsp--;
-
-
-                                if (current==null) {
-                                    current = createModelElementForParent(grammarAccess.getNameOperatingSystemPropertyRule());
-                                }
-                                set(
-                                    current,
-                                    "kind",
-                                    lv_kind_6_0,
-                                    "de.fraunhofer.ipa.deployment.Util.AttributeKind");
-                                afterParserOrEnumRuleCall();
-
-
-            }
-
-
-            }
-
-            // InternalDeviceParser.g:2728:3: (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )?
-            int alt49=2;
-            int LA49_0 = input.LA(1);
-
-            if ( (LA49_0==Description) ) {
-                alt49=1;
-            }
-            switch (alt49) {
-                case 1 :
-                    // InternalDeviceParser.g:2729:4: otherlv_7= Description ( (lv_description_8_0= ruleEString ) )
-                    {
-                    otherlv_7=(Token)match(input,Description,FOLLOW_11);
-
-                                    newLeafNode(otherlv_7, grammarAccess.getNameOperatingSystemPropertyAccess().getDescriptionKeyword_7_0());
-
-                    // InternalDeviceParser.g:2733:4: ( (lv_description_8_0= ruleEString ) )
-                    // InternalDeviceParser.g:2734:5: (lv_description_8_0= ruleEString )
-                    {
-                    // InternalDeviceParser.g:2734:5: (lv_description_8_0= ruleEString )
-                    // InternalDeviceParser.g:2735:6: lv_description_8_0= ruleEString
-                    {
-
-                                            newCompositeNode(grammarAccess.getNameOperatingSystemPropertyAccess().getDescriptionEStringParserRuleCall_7_1_0());
-
-                    pushFollow(FOLLOW_12);
-                    lv_description_8_0=ruleEString();
-
-                    state._fsp--;
-
-
-                                            if (current==null) {
-                                                current = createModelElementForParent(grammarAccess.getNameOperatingSystemPropertyRule());
-                                            }
-                                            set(
-                                                current,
-                                                "description",
-                                                lv_description_8_0,
-                                                "de.fraunhofer.ipa.deployment.Util.EString");
-                                            afterParserOrEnumRuleCall();
-
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-            // InternalDeviceParser.g:2753:3: (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )?
-            int alt50=2;
-            int LA50_0 = input.LA(1);
-
-            if ( (LA50_0==Value) ) {
-                alt50=1;
-            }
-            switch (alt50) {
-                case 1 :
-                    // InternalDeviceParser.g:2754:4: otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) )
-                    {
-                    otherlv_9=(Token)match(input,Value,FOLLOW_13);
-
-                                    newLeafNode(otherlv_9, grammarAccess.getNameOperatingSystemPropertyAccess().getValueKeyword_8_0());
-
-                    // InternalDeviceParser.g:2758:4: ( (lv_value_10_0= rulePropertyValue ) )
-                    // InternalDeviceParser.g:2759:5: (lv_value_10_0= rulePropertyValue )
-                    {
-                    // InternalDeviceParser.g:2759:5: (lv_value_10_0= rulePropertyValue )
-                    // InternalDeviceParser.g:2760:6: lv_value_10_0= rulePropertyValue
-                    {
-
-                                            newCompositeNode(grammarAccess.getNameOperatingSystemPropertyAccess().getValuePropertyValueParserRuleCall_8_1_0());
-
-                    pushFollow(FOLLOW_14);
-                    lv_value_10_0=rulePropertyValue();
-
-                    state._fsp--;
-
-
-                                            if (current==null) {
-                                                current = createModelElementForParent(grammarAccess.getNameOperatingSystemPropertyRule());
-                                            }
-                                            set(
-                                                current,
-                                                "value",
-                                                lv_value_10_0,
-                                                "de.fraunhofer.ipa.deployment.Util.PropertyValue");
-                                            afterParserOrEnumRuleCall();
-
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-            this_DEDENT_11=(Token)match(input,RULE_DEDENT,FOLLOW_2);
-
-                        newLeafNode(this_DEDENT_11, grammarAccess.getNameOperatingSystemPropertyAccess().getDEDENTTerminalRuleCall_9());
-
-
-            }
-
-
-            }
-
-
-                leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleNameOperatingSystemProperty"
-
-
-    // $ANTLR start "entryRuleVersionOperatingSystemProperty"
-    // InternalDeviceParser.g:2786:1: entryRuleVersionOperatingSystemProperty returns [EObject current=null] : iv_ruleVersionOperatingSystemProperty= ruleVersionOperatingSystemProperty EOF ;
-    public final EObject entryRuleVersionOperatingSystemProperty() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleVersionOperatingSystemProperty = null;
-
-
-        try {
-            // InternalDeviceParser.g:2786:71: (iv_ruleVersionOperatingSystemProperty= ruleVersionOperatingSystemProperty EOF )
-            // InternalDeviceParser.g:2787:2: iv_ruleVersionOperatingSystemProperty= ruleVersionOperatingSystemProperty EOF
-            {
-             newCompositeNode(grammarAccess.getVersionOperatingSystemPropertyRule());
-            pushFollow(FOLLOW_1);
-            iv_ruleVersionOperatingSystemProperty=ruleVersionOperatingSystemProperty();
-
-            state._fsp--;
-
-             current =iv_ruleVersionOperatingSystemProperty;
-            match(input,EOF,FOLLOW_2);
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleVersionOperatingSystemProperty"
-
-
-    // $ANTLR start "ruleVersionOperatingSystemProperty"
-    // InternalDeviceParser.g:2793:1: ruleVersionOperatingSystemProperty returns [EObject current=null] : ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= Os_version ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT ) ;
-    public final EObject ruleVersionOperatingSystemProperty() throws RecognitionException {
-        EObject current = null;
-
-        Token otherlv_2=null;
-        Token lv_name_3_0=null;
-        Token this_INDENT_4=null;
-        Token otherlv_5=null;
-        Token otherlv_7=null;
-        Token otherlv_9=null;
-        Token this_DEDENT_11=null;
-        EObject lv_kind_6_0 = null;
-
-        AntlrDatatypeRuleToken lv_description_8_0 = null;
-
-        EObject lv_value_10_0 = null;
-
-
-
-            enterRule();
-
-        try {
-            // InternalDeviceParser.g:2799:2: ( ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= Os_version ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT ) )
-            // InternalDeviceParser.g:2800:2: ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= Os_version ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT )
-            {
-            // InternalDeviceParser.g:2800:2: ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= Os_version ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT )
-            // InternalDeviceParser.g:2801:3: () rulePreListElement otherlv_2= Name ( (lv_name_3_0= Os_version ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT
-            {
-            // InternalDeviceParser.g:2801:3: ()
-            // InternalDeviceParser.g:2802:4:
-            {
-
-                            current = forceCreateModelElement(
-                                grammarAccess.getVersionOperatingSystemPropertyAccess().getVersionOperatingSystemPropertyAction_0(),
-                                current);
-
-
-            }
-
-
-                        newCompositeNode(grammarAccess.getVersionOperatingSystemPropertyAccess().getPreListElementParserRuleCall_1());
-
-            pushFollow(FOLLOW_5);
-            rulePreListElement();
-
-            state._fsp--;
-
-
-                        afterParserOrEnumRuleCall();
-
-            otherlv_2=(Token)match(input,Name,FOLLOW_38);
-
-                        newLeafNode(otherlv_2, grammarAccess.getVersionOperatingSystemPropertyAccess().getNameKeyword_2());
-
-            // InternalDeviceParser.g:2819:3: ( (lv_name_3_0= Os_version ) )
-            // InternalDeviceParser.g:2820:4: (lv_name_3_0= Os_version )
-            {
-            // InternalDeviceParser.g:2820:4: (lv_name_3_0= Os_version )
-            // InternalDeviceParser.g:2821:5: lv_name_3_0= Os_version
-            {
-            lv_name_3_0=(Token)match(input,Os_version,FOLLOW_7);
-
-                                newLeafNode(lv_name_3_0, grammarAccess.getVersionOperatingSystemPropertyAccess().getNameOs_versionKeyword_3_0());
-
-
-                                if (current==null) {
-                                    current = createModelElement(grammarAccess.getVersionOperatingSystemPropertyRule());
-                                }
-                                setWithLastConsumed(current, "name", lv_name_3_0, "os_version");
-
-
-            }
-
-
-            }
-
-            this_INDENT_4=(Token)match(input,RULE_INDENT,FOLLOW_8);
-
-                        newLeafNode(this_INDENT_4, grammarAccess.getVersionOperatingSystemPropertyAccess().getINDENTTerminalRuleCall_4());
-
-            otherlv_5=(Token)match(input,Kind,FOLLOW_9);
-
-                        newLeafNode(otherlv_5, grammarAccess.getVersionOperatingSystemPropertyAccess().getKindKeyword_5());
-
-            // InternalDeviceParser.g:2841:3: ( (lv_kind_6_0= ruleAttributeKind ) )
-            // InternalDeviceParser.g:2842:4: (lv_kind_6_0= ruleAttributeKind )
-            {
-            // InternalDeviceParser.g:2842:4: (lv_kind_6_0= ruleAttributeKind )
-            // InternalDeviceParser.g:2843:5: lv_kind_6_0= ruleAttributeKind
-            {
-
-                                newCompositeNode(grammarAccess.getVersionOperatingSystemPropertyAccess().getKindAttributeKindParserRuleCall_6_0());
-
-            pushFollow(FOLLOW_10);
-            lv_kind_6_0=ruleAttributeKind();
-
-            state._fsp--;
-
-
-                                if (current==null) {
-                                    current = createModelElementForParent(grammarAccess.getVersionOperatingSystemPropertyRule());
-                                }
-                                set(
-                                    current,
-                                    "kind",
-                                    lv_kind_6_0,
-                                    "de.fraunhofer.ipa.deployment.Util.AttributeKind");
-                                afterParserOrEnumRuleCall();
-
-
-            }
-
-
-            }
-
-            // InternalDeviceParser.g:2860:3: (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )?
-            int alt51=2;
-            int LA51_0 = input.LA(1);
-
-            if ( (LA51_0==Description) ) {
-                alt51=1;
-            }
-            switch (alt51) {
-                case 1 :
-                    // InternalDeviceParser.g:2861:4: otherlv_7= Description ( (lv_description_8_0= ruleEString ) )
-                    {
-                    otherlv_7=(Token)match(input,Description,FOLLOW_11);
-
-                                    newLeafNode(otherlv_7, grammarAccess.getVersionOperatingSystemPropertyAccess().getDescriptionKeyword_7_0());
-
-                    // InternalDeviceParser.g:2865:4: ( (lv_description_8_0= ruleEString ) )
-                    // InternalDeviceParser.g:2866:5: (lv_description_8_0= ruleEString )
-                    {
-                    // InternalDeviceParser.g:2866:5: (lv_description_8_0= ruleEString )
-                    // InternalDeviceParser.g:2867:6: lv_description_8_0= ruleEString
-                    {
-
-                                            newCompositeNode(grammarAccess.getVersionOperatingSystemPropertyAccess().getDescriptionEStringParserRuleCall_7_1_0());
-
-                    pushFollow(FOLLOW_12);
-                    lv_description_8_0=ruleEString();
-
-                    state._fsp--;
-
-
-                                            if (current==null) {
-                                                current = createModelElementForParent(grammarAccess.getVersionOperatingSystemPropertyRule());
-                                            }
-                                            set(
-                                                current,
-                                                "description",
-                                                lv_description_8_0,
-                                                "de.fraunhofer.ipa.deployment.Util.EString");
-                                            afterParserOrEnumRuleCall();
-
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-            // InternalDeviceParser.g:2885:3: (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )?
-            int alt52=2;
-            int LA52_0 = input.LA(1);
-
-            if ( (LA52_0==Value) ) {
-                alt52=1;
-            }
-            switch (alt52) {
-                case 1 :
-                    // InternalDeviceParser.g:2886:4: otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) )
-                    {
-                    otherlv_9=(Token)match(input,Value,FOLLOW_13);
-
-                                    newLeafNode(otherlv_9, grammarAccess.getVersionOperatingSystemPropertyAccess().getValueKeyword_8_0());
-
-                    // InternalDeviceParser.g:2890:4: ( (lv_value_10_0= rulePropertyValue ) )
-                    // InternalDeviceParser.g:2891:5: (lv_value_10_0= rulePropertyValue )
-                    {
-                    // InternalDeviceParser.g:2891:5: (lv_value_10_0= rulePropertyValue )
-                    // InternalDeviceParser.g:2892:6: lv_value_10_0= rulePropertyValue
-                    {
-
-                                            newCompositeNode(grammarAccess.getVersionOperatingSystemPropertyAccess().getValuePropertyValueParserRuleCall_8_1_0());
-
-                    pushFollow(FOLLOW_14);
-                    lv_value_10_0=rulePropertyValue();
-
-                    state._fsp--;
-
-
-                                            if (current==null) {
-                                                current = createModelElementForParent(grammarAccess.getVersionOperatingSystemPropertyRule());
-                                            }
-                                            set(
-                                                current,
-                                                "value",
-                                                lv_value_10_0,
-                                                "de.fraunhofer.ipa.deployment.Util.PropertyValue");
-                                            afterParserOrEnumRuleCall();
-
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-            this_DEDENT_11=(Token)match(input,RULE_DEDENT,FOLLOW_2);
-
-                        newLeafNode(this_DEDENT_11, grammarAccess.getVersionOperatingSystemPropertyAccess().getDEDENTTerminalRuleCall_9());
-
-
-            }
-
-
-            }
-
-
-                leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleVersionOperatingSystemProperty"
-
-
     // $ANTLR start "entryRuleProcessorResouce"
-    // InternalDeviceParser.g:2918:1: entryRuleProcessorResouce returns [EObject current=null] : iv_ruleProcessorResouce= ruleProcessorResouce EOF ;
+    // InternalDeviceParser.g:2533:1: entryRuleProcessorResouce returns [EObject current=null] : iv_ruleProcessorResouce= ruleProcessorResouce EOF ;
     public final EObject entryRuleProcessorResouce() throws RecognitionException {
         EObject current = null;
 
@@ -6871,8 +5951,8 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDeviceParser.g:2918:57: (iv_ruleProcessorResouce= ruleProcessorResouce EOF )
-            // InternalDeviceParser.g:2919:2: iv_ruleProcessorResouce= ruleProcessorResouce EOF
+            // InternalDeviceParser.g:2533:57: (iv_ruleProcessorResouce= ruleProcessorResouce EOF )
+            // InternalDeviceParser.g:2534:2: iv_ruleProcessorResouce= ruleProcessorResouce EOF
             {
              newCompositeNode(grammarAccess.getProcessorResouceRule());
             pushFollow(FOLLOW_1);
@@ -6899,36 +5979,36 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleProcessorResouce"
-    // InternalDeviceParser.g:2925:1: ruleProcessorResouce returns [EObject current=null] : ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) this_INDENT_4= RULE_INDENT otherlv_5= Type ( (lv_type_6_0= ruleProcessorResouceType ) ) (otherlv_7= Properties this_INDENT_8= RULE_INDENT ( (lv_properties_9_0= ruleAbstracProcessorProperty ) )+ this_DEDENT_10= RULE_DEDENT )? this_DEDENT_11= RULE_DEDENT ) ;
+    // InternalDeviceParser.g:2540:1: ruleProcessorResouce returns [EObject current=null] : ( () otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Type ( (lv_type_5_0= ruleProcessorResouceType ) ) (otherlv_6= Properties this_INDENT_7= RULE_INDENT ( (lv_properties_8_0= ruleAbstracProcessorProperty ) )+ this_DEDENT_9= RULE_DEDENT )? this_DEDENT_10= RULE_DEDENT ) ;
     public final EObject ruleProcessorResouce() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_2=null;
-        Token this_INDENT_4=null;
-        Token otherlv_5=null;
-        Token otherlv_7=null;
-        Token this_INDENT_8=null;
+        Token otherlv_1=null;
+        Token this_INDENT_3=null;
+        Token otherlv_4=null;
+        Token otherlv_6=null;
+        Token this_INDENT_7=null;
+        Token this_DEDENT_9=null;
         Token this_DEDENT_10=null;
-        Token this_DEDENT_11=null;
-        AntlrDatatypeRuleToken lv_name_3_0 = null;
+        AntlrDatatypeRuleToken lv_name_2_0 = null;
 
-        EObject lv_type_6_0 = null;
+        EObject lv_type_5_0 = null;
 
-        EObject lv_properties_9_0 = null;
+        EObject lv_properties_8_0 = null;
 
 
 
             enterRule();
 
         try {
-            // InternalDeviceParser.g:2931:2: ( ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) this_INDENT_4= RULE_INDENT otherlv_5= Type ( (lv_type_6_0= ruleProcessorResouceType ) ) (otherlv_7= Properties this_INDENT_8= RULE_INDENT ( (lv_properties_9_0= ruleAbstracProcessorProperty ) )+ this_DEDENT_10= RULE_DEDENT )? this_DEDENT_11= RULE_DEDENT ) )
-            // InternalDeviceParser.g:2932:2: ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) this_INDENT_4= RULE_INDENT otherlv_5= Type ( (lv_type_6_0= ruleProcessorResouceType ) ) (otherlv_7= Properties this_INDENT_8= RULE_INDENT ( (lv_properties_9_0= ruleAbstracProcessorProperty ) )+ this_DEDENT_10= RULE_DEDENT )? this_DEDENT_11= RULE_DEDENT )
+            // InternalDeviceParser.g:2546:2: ( ( () otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Type ( (lv_type_5_0= ruleProcessorResouceType ) ) (otherlv_6= Properties this_INDENT_7= RULE_INDENT ( (lv_properties_8_0= ruleAbstracProcessorProperty ) )+ this_DEDENT_9= RULE_DEDENT )? this_DEDENT_10= RULE_DEDENT ) )
+            // InternalDeviceParser.g:2547:2: ( () otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Type ( (lv_type_5_0= ruleProcessorResouceType ) ) (otherlv_6= Properties this_INDENT_7= RULE_INDENT ( (lv_properties_8_0= ruleAbstracProcessorProperty ) )+ this_DEDENT_9= RULE_DEDENT )? this_DEDENT_10= RULE_DEDENT )
             {
-            // InternalDeviceParser.g:2932:2: ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) this_INDENT_4= RULE_INDENT otherlv_5= Type ( (lv_type_6_0= ruleProcessorResouceType ) ) (otherlv_7= Properties this_INDENT_8= RULE_INDENT ( (lv_properties_9_0= ruleAbstracProcessorProperty ) )+ this_DEDENT_10= RULE_DEDENT )? this_DEDENT_11= RULE_DEDENT )
-            // InternalDeviceParser.g:2933:3: () rulePreListElement otherlv_2= Name ( (lv_name_3_0= ruleEString ) ) this_INDENT_4= RULE_INDENT otherlv_5= Type ( (lv_type_6_0= ruleProcessorResouceType ) ) (otherlv_7= Properties this_INDENT_8= RULE_INDENT ( (lv_properties_9_0= ruleAbstracProcessorProperty ) )+ this_DEDENT_10= RULE_DEDENT )? this_DEDENT_11= RULE_DEDENT
+            // InternalDeviceParser.g:2547:2: ( () otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Type ( (lv_type_5_0= ruleProcessorResouceType ) ) (otherlv_6= Properties this_INDENT_7= RULE_INDENT ( (lv_properties_8_0= ruleAbstracProcessorProperty ) )+ this_DEDENT_9= RULE_DEDENT )? this_DEDENT_10= RULE_DEDENT )
+            // InternalDeviceParser.g:2548:3: () otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Type ( (lv_type_5_0= ruleProcessorResouceType ) ) (otherlv_6= Properties this_INDENT_7= RULE_INDENT ( (lv_properties_8_0= ruleAbstracProcessorProperty ) )+ this_DEDENT_9= RULE_DEDENT )? this_DEDENT_10= RULE_DEDENT
             {
-            // InternalDeviceParser.g:2933:3: ()
-            // InternalDeviceParser.g:2934:4:
+            // InternalDeviceParser.g:2548:3: ()
+            // InternalDeviceParser.g:2549:4:
             {
 
                             current = forceCreateModelElement(
@@ -6938,32 +6018,21 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
             }
 
+            otherlv_1=(Token)match(input,Name,FOLLOW_11);
 
-                        newCompositeNode(grammarAccess.getProcessorResouceAccess().getPreListElementParserRuleCall_1());
+                        newLeafNode(otherlv_1, grammarAccess.getProcessorResouceAccess().getNameKeyword_1());
 
-            pushFollow(FOLLOW_5);
-            rulePreListElement();
-
-            state._fsp--;
-
-
-                        afterParserOrEnumRuleCall();
-
-            otherlv_2=(Token)match(input,Name,FOLLOW_11);
-
-                        newLeafNode(otherlv_2, grammarAccess.getProcessorResouceAccess().getNameKeyword_2());
-
-            // InternalDeviceParser.g:2951:3: ( (lv_name_3_0= ruleEString ) )
-            // InternalDeviceParser.g:2952:4: (lv_name_3_0= ruleEString )
+            // InternalDeviceParser.g:2559:3: ( (lv_name_2_0= ruleEString ) )
+            // InternalDeviceParser.g:2560:4: (lv_name_2_0= ruleEString )
             {
-            // InternalDeviceParser.g:2952:4: (lv_name_3_0= ruleEString )
-            // InternalDeviceParser.g:2953:5: lv_name_3_0= ruleEString
+            // InternalDeviceParser.g:2560:4: (lv_name_2_0= ruleEString )
+            // InternalDeviceParser.g:2561:5: lv_name_2_0= ruleEString
             {
 
-                                newCompositeNode(grammarAccess.getProcessorResouceAccess().getNameEStringParserRuleCall_3_0());
+                                newCompositeNode(grammarAccess.getProcessorResouceAccess().getNameEStringParserRuleCall_2_0());
 
             pushFollow(FOLLOW_7);
-            lv_name_3_0=ruleEString();
+            lv_name_2_0=ruleEString();
 
             state._fsp--;
 
@@ -6974,7 +6043,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
                                 set(
                                     current,
                                     "name",
-                                    lv_name_3_0,
+                                    lv_name_2_0,
                                     "de.fraunhofer.ipa.deployment.Util.EString");
                                 afterParserOrEnumRuleCall();
 
@@ -6984,25 +6053,25 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
             }
 
-            this_INDENT_4=(Token)match(input,RULE_INDENT,FOLLOW_30);
+            this_INDENT_3=(Token)match(input,RULE_INDENT,FOLLOW_30);
 
-                        newLeafNode(this_INDENT_4, grammarAccess.getProcessorResouceAccess().getINDENTTerminalRuleCall_4());
+                        newLeafNode(this_INDENT_3, grammarAccess.getProcessorResouceAccess().getINDENTTerminalRuleCall_3());
 
-            otherlv_5=(Token)match(input,Type,FOLLOW_39);
+            otherlv_4=(Token)match(input,Type,FOLLOW_37);
 
-                        newLeafNode(otherlv_5, grammarAccess.getProcessorResouceAccess().getTypeKeyword_5());
+                        newLeafNode(otherlv_4, grammarAccess.getProcessorResouceAccess().getTypeKeyword_4());
 
-            // InternalDeviceParser.g:2978:3: ( (lv_type_6_0= ruleProcessorResouceType ) )
-            // InternalDeviceParser.g:2979:4: (lv_type_6_0= ruleProcessorResouceType )
+            // InternalDeviceParser.g:2586:3: ( (lv_type_5_0= ruleProcessorResouceType ) )
+            // InternalDeviceParser.g:2587:4: (lv_type_5_0= ruleProcessorResouceType )
             {
-            // InternalDeviceParser.g:2979:4: (lv_type_6_0= ruleProcessorResouceType )
-            // InternalDeviceParser.g:2980:5: lv_type_6_0= ruleProcessorResouceType
+            // InternalDeviceParser.g:2587:4: (lv_type_5_0= ruleProcessorResouceType )
+            // InternalDeviceParser.g:2588:5: lv_type_5_0= ruleProcessorResouceType
             {
 
-                                newCompositeNode(grammarAccess.getProcessorResouceAccess().getTypeProcessorResouceTypeParserRuleCall_6_0());
+                                newCompositeNode(grammarAccess.getProcessorResouceAccess().getTypeProcessorResouceTypeParserRuleCall_5_0());
 
             pushFollow(FOLLOW_31);
-            lv_type_6_0=ruleProcessorResouceType();
+            lv_type_5_0=ruleProcessorResouceType();
 
             state._fsp--;
 
@@ -7013,7 +6082,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
                                 set(
                                     current,
                                     "type",
-                                    lv_type_6_0,
+                                    lv_type_5_0,
                                     "de.fraunhofer.ipa.deployment.Util.ProcessorResouceType");
                                 afterParserOrEnumRuleCall();
 
@@ -7023,49 +6092,49 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDeviceParser.g:2997:3: (otherlv_7= Properties this_INDENT_8= RULE_INDENT ( (lv_properties_9_0= ruleAbstracProcessorProperty ) )+ this_DEDENT_10= RULE_DEDENT )?
-            int alt54=2;
-            int LA54_0 = input.LA(1);
+            // InternalDeviceParser.g:2605:3: (otherlv_6= Properties this_INDENT_7= RULE_INDENT ( (lv_properties_8_0= ruleAbstracProcessorProperty ) )+ this_DEDENT_9= RULE_DEDENT )?
+            int alt48=2;
+            int LA48_0 = input.LA(1);
 
-            if ( (LA54_0==Properties) ) {
-                alt54=1;
+            if ( (LA48_0==Properties) ) {
+                alt48=1;
             }
-            switch (alt54) {
+            switch (alt48) {
                 case 1 :
-                    // InternalDeviceParser.g:2998:4: otherlv_7= Properties this_INDENT_8= RULE_INDENT ( (lv_properties_9_0= ruleAbstracProcessorProperty ) )+ this_DEDENT_10= RULE_DEDENT
+                    // InternalDeviceParser.g:2606:4: otherlv_6= Properties this_INDENT_7= RULE_INDENT ( (lv_properties_8_0= ruleAbstracProcessorProperty ) )+ this_DEDENT_9= RULE_DEDENT
                     {
-                    otherlv_7=(Token)match(input,Properties,FOLLOW_7);
+                    otherlv_6=(Token)match(input,Properties,FOLLOW_7);
 
-                                    newLeafNode(otherlv_7, grammarAccess.getProcessorResouceAccess().getPropertiesKeyword_7_0());
+                                    newLeafNode(otherlv_6, grammarAccess.getProcessorResouceAccess().getPropertiesKeyword_6_0());
 
-                    this_INDENT_8=(Token)match(input,RULE_INDENT,FOLLOW_25);
+                    this_INDENT_7=(Token)match(input,RULE_INDENT,FOLLOW_25);
 
-                                    newLeafNode(this_INDENT_8, grammarAccess.getProcessorResouceAccess().getINDENTTerminalRuleCall_7_1());
+                                    newLeafNode(this_INDENT_7, grammarAccess.getProcessorResouceAccess().getINDENTTerminalRuleCall_6_1());
 
-                    // InternalDeviceParser.g:3006:4: ( (lv_properties_9_0= ruleAbstracProcessorProperty ) )+
-                    int cnt53=0;
-                    loop53:
+                    // InternalDeviceParser.g:2614:4: ( (lv_properties_8_0= ruleAbstracProcessorProperty ) )+
+                    int cnt47=0;
+                    loop47:
                     do {
-                        int alt53=2;
-                        int LA53_0 = input.LA(1);
+                        int alt47=2;
+                        int LA47_0 = input.LA(1);
 
-                        if ( (LA53_0==HyphenMinus) ) {
-                            alt53=1;
+                        if ( (LA47_0==HyphenMinus) ) {
+                            alt47=1;
                         }
 
 
-                        switch (alt53) {
+                        switch (alt47) {
                         case 1 :
-                            // InternalDeviceParser.g:3007:5: (lv_properties_9_0= ruleAbstracProcessorProperty )
+                            // InternalDeviceParser.g:2615:5: (lv_properties_8_0= ruleAbstracProcessorProperty )
                             {
-                            // InternalDeviceParser.g:3007:5: (lv_properties_9_0= ruleAbstracProcessorProperty )
-                            // InternalDeviceParser.g:3008:6: lv_properties_9_0= ruleAbstracProcessorProperty
+                            // InternalDeviceParser.g:2615:5: (lv_properties_8_0= ruleAbstracProcessorProperty )
+                            // InternalDeviceParser.g:2616:6: lv_properties_8_0= ruleAbstracProcessorProperty
                             {
 
-                                                    newCompositeNode(grammarAccess.getProcessorResouceAccess().getPropertiesAbstracProcessorPropertyParserRuleCall_7_2_0());
+                                                    newCompositeNode(grammarAccess.getProcessorResouceAccess().getPropertiesAbstracProcessorPropertyParserRuleCall_6_2_0());
 
                             pushFollow(FOLLOW_26);
-                            lv_properties_9_0=ruleAbstracProcessorProperty();
+                            lv_properties_8_0=ruleAbstracProcessorProperty();
 
                             state._fsp--;
 
@@ -7076,7 +6145,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
                                                     add(
                                                         current,
                                                         "properties",
-                                                        lv_properties_9_0,
+                                                        lv_properties_8_0,
                                                         "de.fraunhofer.ipa.targetEnvironment.Device.AbstracProcessorProperty");
                                                     afterParserOrEnumRuleCall();
 
@@ -7088,17 +6157,17 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
                             break;
 
                         default :
-                            if ( cnt53 >= 1 ) break loop53;
+                            if ( cnt47 >= 1 ) break loop47;
                                 EarlyExitException eee =
-                                    new EarlyExitException(53, input);
+                                    new EarlyExitException(47, input);
                                 throw eee;
                         }
-                        cnt53++;
+                        cnt47++;
                     } while (true);
 
-                    this_DEDENT_10=(Token)match(input,RULE_DEDENT,FOLLOW_14);
+                    this_DEDENT_9=(Token)match(input,RULE_DEDENT,FOLLOW_14);
 
-                                    newLeafNode(this_DEDENT_10, grammarAccess.getProcessorResouceAccess().getDEDENTTerminalRuleCall_7_3());
+                                    newLeafNode(this_DEDENT_9, grammarAccess.getProcessorResouceAccess().getDEDENTTerminalRuleCall_6_3());
 
 
                     }
@@ -7106,9 +6175,9 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
             }
 
-            this_DEDENT_11=(Token)match(input,RULE_DEDENT,FOLLOW_2);
+            this_DEDENT_10=(Token)match(input,RULE_DEDENT,FOLLOW_2);
 
-                        newLeafNode(this_DEDENT_11, grammarAccess.getProcessorResouceAccess().getDEDENTTerminalRuleCall_8());
+                        newLeafNode(this_DEDENT_10, grammarAccess.getProcessorResouceAccess().getDEDENTTerminalRuleCall_7());
 
 
             }
@@ -7133,7 +6202,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAbstracProcessorProperty"
-    // InternalDeviceParser.g:3038:1: entryRuleAbstracProcessorProperty returns [EObject current=null] : iv_ruleAbstracProcessorProperty= ruleAbstracProcessorProperty EOF ;
+    // InternalDeviceParser.g:2646:1: entryRuleAbstracProcessorProperty returns [EObject current=null] : iv_ruleAbstracProcessorProperty= ruleAbstracProcessorProperty EOF ;
     public final EObject entryRuleAbstracProcessorProperty() throws RecognitionException {
         EObject current = null;
 
@@ -7141,8 +6210,8 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDeviceParser.g:3038:65: (iv_ruleAbstracProcessorProperty= ruleAbstracProcessorProperty EOF )
-            // InternalDeviceParser.g:3039:2: iv_ruleAbstracProcessorProperty= ruleAbstracProcessorProperty EOF
+            // InternalDeviceParser.g:2646:65: (iv_ruleAbstracProcessorProperty= ruleAbstracProcessorProperty EOF )
+            // InternalDeviceParser.g:2647:2: iv_ruleAbstracProcessorProperty= ruleAbstracProcessorProperty EOF
             {
              newCompositeNode(grammarAccess.getAbstracProcessorPropertyRule());
             pushFollow(FOLLOW_1);
@@ -7169,7 +6238,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAbstracProcessorProperty"
-    // InternalDeviceParser.g:3045:1: ruleAbstracProcessorProperty returns [EObject current=null] : (this_ArchitectureProcessorProperty_0= ruleArchitectureProcessorProperty | this_CoreProcessorProperty_1= ruleCoreProcessorProperty ) ;
+    // InternalDeviceParser.g:2653:1: ruleAbstracProcessorProperty returns [EObject current=null] : (this_ArchitectureProcessorProperty_0= ruleArchitectureProcessorProperty | this_CoreProcessorProperty_1= ruleCoreProcessorProperty ) ;
     public final EObject ruleAbstracProcessorProperty() throws RecognitionException {
         EObject current = null;
 
@@ -7182,48 +6251,48 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
             enterRule();
 
         try {
-            // InternalDeviceParser.g:3051:2: ( (this_ArchitectureProcessorProperty_0= ruleArchitectureProcessorProperty | this_CoreProcessorProperty_1= ruleCoreProcessorProperty ) )
-            // InternalDeviceParser.g:3052:2: (this_ArchitectureProcessorProperty_0= ruleArchitectureProcessorProperty | this_CoreProcessorProperty_1= ruleCoreProcessorProperty )
+            // InternalDeviceParser.g:2659:2: ( (this_ArchitectureProcessorProperty_0= ruleArchitectureProcessorProperty | this_CoreProcessorProperty_1= ruleCoreProcessorProperty ) )
+            // InternalDeviceParser.g:2660:2: (this_ArchitectureProcessorProperty_0= ruleArchitectureProcessorProperty | this_CoreProcessorProperty_1= ruleCoreProcessorProperty )
             {
-            // InternalDeviceParser.g:3052:2: (this_ArchitectureProcessorProperty_0= ruleArchitectureProcessorProperty | this_CoreProcessorProperty_1= ruleCoreProcessorProperty )
-            int alt55=2;
-            int LA55_0 = input.LA(1);
+            // InternalDeviceParser.g:2660:2: (this_ArchitectureProcessorProperty_0= ruleArchitectureProcessorProperty | this_CoreProcessorProperty_1= ruleCoreProcessorProperty )
+            int alt49=2;
+            int LA49_0 = input.LA(1);
 
-            if ( (LA55_0==HyphenMinus) ) {
-                int LA55_1 = input.LA(2);
+            if ( (LA49_0==HyphenMinus) ) {
+                int LA49_1 = input.LA(2);
 
-                if ( (LA55_1==Name) ) {
-                    int LA55_2 = input.LA(3);
+                if ( (LA49_1==Name) ) {
+                    int LA49_2 = input.LA(3);
 
-                    if ( (LA55_2==Core_number) ) {
-                        alt55=2;
+                    if ( (LA49_2==Processor_architecture) ) {
+                        alt49=1;
                     }
-                    else if ( (LA55_2==Processor_architecture) ) {
-                        alt55=1;
+                    else if ( (LA49_2==Core_number) ) {
+                        alt49=2;
                     }
                     else {
                         NoViableAltException nvae =
-                            new NoViableAltException("", 55, 2, input);
+                            new NoViableAltException("", 49, 2, input);
 
                         throw nvae;
                     }
                 }
                 else {
                     NoViableAltException nvae =
-                        new NoViableAltException("", 55, 1, input);
+                        new NoViableAltException("", 49, 1, input);
 
                     throw nvae;
                 }
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 55, 0, input);
+                    new NoViableAltException("", 49, 0, input);
 
                 throw nvae;
             }
-            switch (alt55) {
+            switch (alt49) {
                 case 1 :
-                    // InternalDeviceParser.g:3053:3: this_ArchitectureProcessorProperty_0= ruleArchitectureProcessorProperty
+                    // InternalDeviceParser.g:2661:3: this_ArchitectureProcessorProperty_0= ruleArchitectureProcessorProperty
                     {
 
                                 newCompositeNode(grammarAccess.getAbstracProcessorPropertyAccess().getArchitectureProcessorPropertyParserRuleCall_0());
@@ -7241,7 +6310,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalDeviceParser.g:3062:3: this_CoreProcessorProperty_1= ruleCoreProcessorProperty
+                    // InternalDeviceParser.g:2670:3: this_CoreProcessorProperty_1= ruleCoreProcessorProperty
                     {
 
                                 newCompositeNode(grammarAccess.getAbstracProcessorPropertyAccess().getCoreProcessorPropertyParserRuleCall_1());
@@ -7281,7 +6350,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleArchitectureProcessorProperty"
-    // InternalDeviceParser.g:3074:1: entryRuleArchitectureProcessorProperty returns [EObject current=null] : iv_ruleArchitectureProcessorProperty= ruleArchitectureProcessorProperty EOF ;
+    // InternalDeviceParser.g:2682:1: entryRuleArchitectureProcessorProperty returns [EObject current=null] : iv_ruleArchitectureProcessorProperty= ruleArchitectureProcessorProperty EOF ;
     public final EObject entryRuleArchitectureProcessorProperty() throws RecognitionException {
         EObject current = null;
 
@@ -7289,8 +6358,8 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDeviceParser.g:3074:70: (iv_ruleArchitectureProcessorProperty= ruleArchitectureProcessorProperty EOF )
-            // InternalDeviceParser.g:3075:2: iv_ruleArchitectureProcessorProperty= ruleArchitectureProcessorProperty EOF
+            // InternalDeviceParser.g:2682:70: (iv_ruleArchitectureProcessorProperty= ruleArchitectureProcessorProperty EOF )
+            // InternalDeviceParser.g:2683:2: iv_ruleArchitectureProcessorProperty= ruleArchitectureProcessorProperty EOF
             {
              newCompositeNode(grammarAccess.getArchitectureProcessorPropertyRule());
             pushFollow(FOLLOW_1);
@@ -7317,7 +6386,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleArchitectureProcessorProperty"
-    // InternalDeviceParser.g:3081:1: ruleArchitectureProcessorProperty returns [EObject current=null] : ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= Processor_architecture ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT ) ;
+    // InternalDeviceParser.g:2689:1: ruleArchitectureProcessorProperty returns [EObject current=null] : ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= Processor_architecture ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT ) ;
     public final EObject ruleArchitectureProcessorProperty() throws RecognitionException {
         EObject current = null;
 
@@ -7339,14 +6408,14 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
             enterRule();
 
         try {
-            // InternalDeviceParser.g:3087:2: ( ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= Processor_architecture ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT ) )
-            // InternalDeviceParser.g:3088:2: ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= Processor_architecture ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT )
+            // InternalDeviceParser.g:2695:2: ( ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= Processor_architecture ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT ) )
+            // InternalDeviceParser.g:2696:2: ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= Processor_architecture ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT )
             {
-            // InternalDeviceParser.g:3088:2: ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= Processor_architecture ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT )
-            // InternalDeviceParser.g:3089:3: () rulePreListElement otherlv_2= Name ( (lv_name_3_0= Processor_architecture ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT
+            // InternalDeviceParser.g:2696:2: ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= Processor_architecture ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT )
+            // InternalDeviceParser.g:2697:3: () rulePreListElement otherlv_2= Name ( (lv_name_3_0= Processor_architecture ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT
             {
-            // InternalDeviceParser.g:3089:3: ()
-            // InternalDeviceParser.g:3090:4:
+            // InternalDeviceParser.g:2697:3: ()
+            // InternalDeviceParser.g:2698:4:
             {
 
                             current = forceCreateModelElement(
@@ -7367,15 +6436,15 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
                         afterParserOrEnumRuleCall();
 
-            otherlv_2=(Token)match(input,Name,FOLLOW_40);
+            otherlv_2=(Token)match(input,Name,FOLLOW_38);
 
                         newLeafNode(otherlv_2, grammarAccess.getArchitectureProcessorPropertyAccess().getNameKeyword_2());
 
-            // InternalDeviceParser.g:3107:3: ( (lv_name_3_0= Processor_architecture ) )
-            // InternalDeviceParser.g:3108:4: (lv_name_3_0= Processor_architecture )
+            // InternalDeviceParser.g:2715:3: ( (lv_name_3_0= Processor_architecture ) )
+            // InternalDeviceParser.g:2716:4: (lv_name_3_0= Processor_architecture )
             {
-            // InternalDeviceParser.g:3108:4: (lv_name_3_0= Processor_architecture )
-            // InternalDeviceParser.g:3109:5: lv_name_3_0= Processor_architecture
+            // InternalDeviceParser.g:2716:4: (lv_name_3_0= Processor_architecture )
+            // InternalDeviceParser.g:2717:5: lv_name_3_0= Processor_architecture
             {
             lv_name_3_0=(Token)match(input,Processor_architecture,FOLLOW_7);
 
@@ -7401,11 +6470,11 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
                         newLeafNode(otherlv_5, grammarAccess.getArchitectureProcessorPropertyAccess().getKindKeyword_5());
 
-            // InternalDeviceParser.g:3129:3: ( (lv_kind_6_0= ruleAttributeKind ) )
-            // InternalDeviceParser.g:3130:4: (lv_kind_6_0= ruleAttributeKind )
+            // InternalDeviceParser.g:2737:3: ( (lv_kind_6_0= ruleAttributeKind ) )
+            // InternalDeviceParser.g:2738:4: (lv_kind_6_0= ruleAttributeKind )
             {
-            // InternalDeviceParser.g:3130:4: (lv_kind_6_0= ruleAttributeKind )
-            // InternalDeviceParser.g:3131:5: lv_kind_6_0= ruleAttributeKind
+            // InternalDeviceParser.g:2738:4: (lv_kind_6_0= ruleAttributeKind )
+            // InternalDeviceParser.g:2739:5: lv_kind_6_0= ruleAttributeKind
             {
 
                                 newCompositeNode(grammarAccess.getArchitectureProcessorPropertyAccess().getKindAttributeKindParserRuleCall_6_0());
@@ -7432,26 +6501,26 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDeviceParser.g:3148:3: (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )?
-            int alt56=2;
-            int LA56_0 = input.LA(1);
+            // InternalDeviceParser.g:2756:3: (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )?
+            int alt50=2;
+            int LA50_0 = input.LA(1);
 
-            if ( (LA56_0==Description) ) {
-                alt56=1;
+            if ( (LA50_0==Description) ) {
+                alt50=1;
             }
-            switch (alt56) {
+            switch (alt50) {
                 case 1 :
-                    // InternalDeviceParser.g:3149:4: otherlv_7= Description ( (lv_description_8_0= ruleEString ) )
+                    // InternalDeviceParser.g:2757:4: otherlv_7= Description ( (lv_description_8_0= ruleEString ) )
                     {
                     otherlv_7=(Token)match(input,Description,FOLLOW_11);
 
                                     newLeafNode(otherlv_7, grammarAccess.getArchitectureProcessorPropertyAccess().getDescriptionKeyword_7_0());
 
-                    // InternalDeviceParser.g:3153:4: ( (lv_description_8_0= ruleEString ) )
-                    // InternalDeviceParser.g:3154:5: (lv_description_8_0= ruleEString )
+                    // InternalDeviceParser.g:2761:4: ( (lv_description_8_0= ruleEString ) )
+                    // InternalDeviceParser.g:2762:5: (lv_description_8_0= ruleEString )
                     {
-                    // InternalDeviceParser.g:3154:5: (lv_description_8_0= ruleEString )
-                    // InternalDeviceParser.g:3155:6: lv_description_8_0= ruleEString
+                    // InternalDeviceParser.g:2762:5: (lv_description_8_0= ruleEString )
+                    // InternalDeviceParser.g:2763:6: lv_description_8_0= ruleEString
                     {
 
                                             newCompositeNode(grammarAccess.getArchitectureProcessorPropertyAccess().getDescriptionEStringParserRuleCall_7_1_0());
@@ -7484,26 +6553,26 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDeviceParser.g:3173:3: (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )?
-            int alt57=2;
-            int LA57_0 = input.LA(1);
+            // InternalDeviceParser.g:2781:3: (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )?
+            int alt51=2;
+            int LA51_0 = input.LA(1);
 
-            if ( (LA57_0==Value) ) {
-                alt57=1;
+            if ( (LA51_0==Value) ) {
+                alt51=1;
             }
-            switch (alt57) {
+            switch (alt51) {
                 case 1 :
-                    // InternalDeviceParser.g:3174:4: otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) )
+                    // InternalDeviceParser.g:2782:4: otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) )
                     {
                     otherlv_9=(Token)match(input,Value,FOLLOW_13);
 
                                     newLeafNode(otherlv_9, grammarAccess.getArchitectureProcessorPropertyAccess().getValueKeyword_8_0());
 
-                    // InternalDeviceParser.g:3178:4: ( (lv_value_10_0= rulePropertyValue ) )
-                    // InternalDeviceParser.g:3179:5: (lv_value_10_0= rulePropertyValue )
+                    // InternalDeviceParser.g:2786:4: ( (lv_value_10_0= rulePropertyValue ) )
+                    // InternalDeviceParser.g:2787:5: (lv_value_10_0= rulePropertyValue )
                     {
-                    // InternalDeviceParser.g:3179:5: (lv_value_10_0= rulePropertyValue )
-                    // InternalDeviceParser.g:3180:6: lv_value_10_0= rulePropertyValue
+                    // InternalDeviceParser.g:2787:5: (lv_value_10_0= rulePropertyValue )
+                    // InternalDeviceParser.g:2788:6: lv_value_10_0= rulePropertyValue
                     {
 
                                             newCompositeNode(grammarAccess.getArchitectureProcessorPropertyAccess().getValuePropertyValueParserRuleCall_8_1_0());
@@ -7563,7 +6632,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCoreProcessorProperty"
-    // InternalDeviceParser.g:3206:1: entryRuleCoreProcessorProperty returns [EObject current=null] : iv_ruleCoreProcessorProperty= ruleCoreProcessorProperty EOF ;
+    // InternalDeviceParser.g:2814:1: entryRuleCoreProcessorProperty returns [EObject current=null] : iv_ruleCoreProcessorProperty= ruleCoreProcessorProperty EOF ;
     public final EObject entryRuleCoreProcessorProperty() throws RecognitionException {
         EObject current = null;
 
@@ -7571,8 +6640,8 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDeviceParser.g:3206:62: (iv_ruleCoreProcessorProperty= ruleCoreProcessorProperty EOF )
-            // InternalDeviceParser.g:3207:2: iv_ruleCoreProcessorProperty= ruleCoreProcessorProperty EOF
+            // InternalDeviceParser.g:2814:62: (iv_ruleCoreProcessorProperty= ruleCoreProcessorProperty EOF )
+            // InternalDeviceParser.g:2815:2: iv_ruleCoreProcessorProperty= ruleCoreProcessorProperty EOF
             {
              newCompositeNode(grammarAccess.getCoreProcessorPropertyRule());
             pushFollow(FOLLOW_1);
@@ -7599,7 +6668,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCoreProcessorProperty"
-    // InternalDeviceParser.g:3213:1: ruleCoreProcessorProperty returns [EObject current=null] : ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= Core_number ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT ) ;
+    // InternalDeviceParser.g:2821:1: ruleCoreProcessorProperty returns [EObject current=null] : ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= Core_number ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT ) ;
     public final EObject ruleCoreProcessorProperty() throws RecognitionException {
         EObject current = null;
 
@@ -7621,14 +6690,14 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
             enterRule();
 
         try {
-            // InternalDeviceParser.g:3219:2: ( ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= Core_number ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT ) )
-            // InternalDeviceParser.g:3220:2: ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= Core_number ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT )
+            // InternalDeviceParser.g:2827:2: ( ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= Core_number ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT ) )
+            // InternalDeviceParser.g:2828:2: ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= Core_number ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT )
             {
-            // InternalDeviceParser.g:3220:2: ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= Core_number ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT )
-            // InternalDeviceParser.g:3221:3: () rulePreListElement otherlv_2= Name ( (lv_name_3_0= Core_number ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT
+            // InternalDeviceParser.g:2828:2: ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= Core_number ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT )
+            // InternalDeviceParser.g:2829:3: () rulePreListElement otherlv_2= Name ( (lv_name_3_0= Core_number ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT
             {
-            // InternalDeviceParser.g:3221:3: ()
-            // InternalDeviceParser.g:3222:4:
+            // InternalDeviceParser.g:2829:3: ()
+            // InternalDeviceParser.g:2830:4:
             {
 
                             current = forceCreateModelElement(
@@ -7649,15 +6718,15 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
                         afterParserOrEnumRuleCall();
 
-            otherlv_2=(Token)match(input,Name,FOLLOW_41);
+            otherlv_2=(Token)match(input,Name,FOLLOW_39);
 
                         newLeafNode(otherlv_2, grammarAccess.getCoreProcessorPropertyAccess().getNameKeyword_2());
 
-            // InternalDeviceParser.g:3239:3: ( (lv_name_3_0= Core_number ) )
-            // InternalDeviceParser.g:3240:4: (lv_name_3_0= Core_number )
+            // InternalDeviceParser.g:2847:3: ( (lv_name_3_0= Core_number ) )
+            // InternalDeviceParser.g:2848:4: (lv_name_3_0= Core_number )
             {
-            // InternalDeviceParser.g:3240:4: (lv_name_3_0= Core_number )
-            // InternalDeviceParser.g:3241:5: lv_name_3_0= Core_number
+            // InternalDeviceParser.g:2848:4: (lv_name_3_0= Core_number )
+            // InternalDeviceParser.g:2849:5: lv_name_3_0= Core_number
             {
             lv_name_3_0=(Token)match(input,Core_number,FOLLOW_7);
 
@@ -7683,11 +6752,11 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
                         newLeafNode(otherlv_5, grammarAccess.getCoreProcessorPropertyAccess().getKindKeyword_5());
 
-            // InternalDeviceParser.g:3261:3: ( (lv_kind_6_0= ruleAttributeKind ) )
-            // InternalDeviceParser.g:3262:4: (lv_kind_6_0= ruleAttributeKind )
+            // InternalDeviceParser.g:2869:3: ( (lv_kind_6_0= ruleAttributeKind ) )
+            // InternalDeviceParser.g:2870:4: (lv_kind_6_0= ruleAttributeKind )
             {
-            // InternalDeviceParser.g:3262:4: (lv_kind_6_0= ruleAttributeKind )
-            // InternalDeviceParser.g:3263:5: lv_kind_6_0= ruleAttributeKind
+            // InternalDeviceParser.g:2870:4: (lv_kind_6_0= ruleAttributeKind )
+            // InternalDeviceParser.g:2871:5: lv_kind_6_0= ruleAttributeKind
             {
 
                                 newCompositeNode(grammarAccess.getCoreProcessorPropertyAccess().getKindAttributeKindParserRuleCall_6_0());
@@ -7714,26 +6783,26 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDeviceParser.g:3280:3: (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )?
-            int alt58=2;
-            int LA58_0 = input.LA(1);
+            // InternalDeviceParser.g:2888:3: (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )?
+            int alt52=2;
+            int LA52_0 = input.LA(1);
 
-            if ( (LA58_0==Description) ) {
-                alt58=1;
+            if ( (LA52_0==Description) ) {
+                alt52=1;
             }
-            switch (alt58) {
+            switch (alt52) {
                 case 1 :
-                    // InternalDeviceParser.g:3281:4: otherlv_7= Description ( (lv_description_8_0= ruleEString ) )
+                    // InternalDeviceParser.g:2889:4: otherlv_7= Description ( (lv_description_8_0= ruleEString ) )
                     {
                     otherlv_7=(Token)match(input,Description,FOLLOW_11);
 
                                     newLeafNode(otherlv_7, grammarAccess.getCoreProcessorPropertyAccess().getDescriptionKeyword_7_0());
 
-                    // InternalDeviceParser.g:3285:4: ( (lv_description_8_0= ruleEString ) )
-                    // InternalDeviceParser.g:3286:5: (lv_description_8_0= ruleEString )
+                    // InternalDeviceParser.g:2893:4: ( (lv_description_8_0= ruleEString ) )
+                    // InternalDeviceParser.g:2894:5: (lv_description_8_0= ruleEString )
                     {
-                    // InternalDeviceParser.g:3286:5: (lv_description_8_0= ruleEString )
-                    // InternalDeviceParser.g:3287:6: lv_description_8_0= ruleEString
+                    // InternalDeviceParser.g:2894:5: (lv_description_8_0= ruleEString )
+                    // InternalDeviceParser.g:2895:6: lv_description_8_0= ruleEString
                     {
 
                                             newCompositeNode(grammarAccess.getCoreProcessorPropertyAccess().getDescriptionEStringParserRuleCall_7_1_0());
@@ -7766,26 +6835,26 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDeviceParser.g:3305:3: (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )?
-            int alt59=2;
-            int LA59_0 = input.LA(1);
+            // InternalDeviceParser.g:2913:3: (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )?
+            int alt53=2;
+            int LA53_0 = input.LA(1);
 
-            if ( (LA59_0==Value) ) {
-                alt59=1;
+            if ( (LA53_0==Value) ) {
+                alt53=1;
             }
-            switch (alt59) {
+            switch (alt53) {
                 case 1 :
-                    // InternalDeviceParser.g:3306:4: otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) )
+                    // InternalDeviceParser.g:2914:4: otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) )
                     {
                     otherlv_9=(Token)match(input,Value,FOLLOW_13);
 
                                     newLeafNode(otherlv_9, grammarAccess.getCoreProcessorPropertyAccess().getValueKeyword_8_0());
 
-                    // InternalDeviceParser.g:3310:4: ( (lv_value_10_0= rulePropertyValue ) )
-                    // InternalDeviceParser.g:3311:5: (lv_value_10_0= rulePropertyValue )
+                    // InternalDeviceParser.g:2918:4: ( (lv_value_10_0= rulePropertyValue ) )
+                    // InternalDeviceParser.g:2919:5: (lv_value_10_0= rulePropertyValue )
                     {
-                    // InternalDeviceParser.g:3311:5: (lv_value_10_0= rulePropertyValue )
-                    // InternalDeviceParser.g:3312:6: lv_value_10_0= rulePropertyValue
+                    // InternalDeviceParser.g:2919:5: (lv_value_10_0= rulePropertyValue )
+                    // InternalDeviceParser.g:2920:6: lv_value_10_0= rulePropertyValue
                     {
 
                                             newCompositeNode(grammarAccess.getCoreProcessorPropertyAccess().getValuePropertyValueParserRuleCall_8_1_0());
@@ -7844,8 +6913,979 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleCoreProcessorProperty"
 
 
+    // $ANTLR start "entryRuleOperatingSystemResouce"
+    // InternalDeviceParser.g:2946:1: entryRuleOperatingSystemResouce returns [EObject current=null] : iv_ruleOperatingSystemResouce= ruleOperatingSystemResouce EOF ;
+    public final EObject entryRuleOperatingSystemResouce() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleOperatingSystemResouce = null;
+
+
+        try {
+            // InternalDeviceParser.g:2946:63: (iv_ruleOperatingSystemResouce= ruleOperatingSystemResouce EOF )
+            // InternalDeviceParser.g:2947:2: iv_ruleOperatingSystemResouce= ruleOperatingSystemResouce EOF
+            {
+             newCompositeNode(grammarAccess.getOperatingSystemResouceRule());
+            pushFollow(FOLLOW_1);
+            iv_ruleOperatingSystemResouce=ruleOperatingSystemResouce();
+
+            state._fsp--;
+
+             current =iv_ruleOperatingSystemResouce;
+            match(input,EOF,FOLLOW_2);
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleOperatingSystemResouce"
+
+
+    // $ANTLR start "ruleOperatingSystemResouce"
+    // InternalDeviceParser.g:2953:1: ruleOperatingSystemResouce returns [EObject current=null] : ( () otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Type ( (lv_type_5_0= ruleOpertingSystemResouceType ) ) (otherlv_6= Properties this_INDENT_7= RULE_INDENT ( (lv_properties_8_0= ruleAbstractOperatingSystemProperty ) )+ this_DEDENT_9= RULE_DEDENT )? this_DEDENT_10= RULE_DEDENT ) ;
+    public final EObject ruleOperatingSystemResouce() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_1=null;
+        Token this_INDENT_3=null;
+        Token otherlv_4=null;
+        Token otherlv_6=null;
+        Token this_INDENT_7=null;
+        Token this_DEDENT_9=null;
+        Token this_DEDENT_10=null;
+        AntlrDatatypeRuleToken lv_name_2_0 = null;
+
+        EObject lv_type_5_0 = null;
+
+        EObject lv_properties_8_0 = null;
+
+
+
+            enterRule();
+
+        try {
+            // InternalDeviceParser.g:2959:2: ( ( () otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Type ( (lv_type_5_0= ruleOpertingSystemResouceType ) ) (otherlv_6= Properties this_INDENT_7= RULE_INDENT ( (lv_properties_8_0= ruleAbstractOperatingSystemProperty ) )+ this_DEDENT_9= RULE_DEDENT )? this_DEDENT_10= RULE_DEDENT ) )
+            // InternalDeviceParser.g:2960:2: ( () otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Type ( (lv_type_5_0= ruleOpertingSystemResouceType ) ) (otherlv_6= Properties this_INDENT_7= RULE_INDENT ( (lv_properties_8_0= ruleAbstractOperatingSystemProperty ) )+ this_DEDENT_9= RULE_DEDENT )? this_DEDENT_10= RULE_DEDENT )
+            {
+            // InternalDeviceParser.g:2960:2: ( () otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Type ( (lv_type_5_0= ruleOpertingSystemResouceType ) ) (otherlv_6= Properties this_INDENT_7= RULE_INDENT ( (lv_properties_8_0= ruleAbstractOperatingSystemProperty ) )+ this_DEDENT_9= RULE_DEDENT )? this_DEDENT_10= RULE_DEDENT )
+            // InternalDeviceParser.g:2961:3: () otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Type ( (lv_type_5_0= ruleOpertingSystemResouceType ) ) (otherlv_6= Properties this_INDENT_7= RULE_INDENT ( (lv_properties_8_0= ruleAbstractOperatingSystemProperty ) )+ this_DEDENT_9= RULE_DEDENT )? this_DEDENT_10= RULE_DEDENT
+            {
+            // InternalDeviceParser.g:2961:3: ()
+            // InternalDeviceParser.g:2962:4:
+            {
+
+                            current = forceCreateModelElement(
+                                grammarAccess.getOperatingSystemResouceAccess().getOperatingSystemResouceAction_0(),
+                                current);
+
+
+            }
+
+            otherlv_1=(Token)match(input,Name,FOLLOW_11);
+
+                        newLeafNode(otherlv_1, grammarAccess.getOperatingSystemResouceAccess().getNameKeyword_1());
+
+            // InternalDeviceParser.g:2972:3: ( (lv_name_2_0= ruleEString ) )
+            // InternalDeviceParser.g:2973:4: (lv_name_2_0= ruleEString )
+            {
+            // InternalDeviceParser.g:2973:4: (lv_name_2_0= ruleEString )
+            // InternalDeviceParser.g:2974:5: lv_name_2_0= ruleEString
+            {
+
+                                newCompositeNode(grammarAccess.getOperatingSystemResouceAccess().getNameEStringParserRuleCall_2_0());
+
+            pushFollow(FOLLOW_7);
+            lv_name_2_0=ruleEString();
+
+            state._fsp--;
+
+
+                                if (current==null) {
+                                    current = createModelElementForParent(grammarAccess.getOperatingSystemResouceRule());
+                                }
+                                set(
+                                    current,
+                                    "name",
+                                    lv_name_2_0,
+                                    "de.fraunhofer.ipa.deployment.Util.EString");
+                                afterParserOrEnumRuleCall();
+
+
+            }
+
+
+            }
+
+            this_INDENT_3=(Token)match(input,RULE_INDENT,FOLLOW_30);
+
+                        newLeafNode(this_INDENT_3, grammarAccess.getOperatingSystemResouceAccess().getINDENTTerminalRuleCall_3());
+
+            otherlv_4=(Token)match(input,Type,FOLLOW_40);
+
+                        newLeafNode(otherlv_4, grammarAccess.getOperatingSystemResouceAccess().getTypeKeyword_4());
+
+            // InternalDeviceParser.g:2999:3: ( (lv_type_5_0= ruleOpertingSystemResouceType ) )
+            // InternalDeviceParser.g:3000:4: (lv_type_5_0= ruleOpertingSystemResouceType )
+            {
+            // InternalDeviceParser.g:3000:4: (lv_type_5_0= ruleOpertingSystemResouceType )
+            // InternalDeviceParser.g:3001:5: lv_type_5_0= ruleOpertingSystemResouceType
+            {
+
+                                newCompositeNode(grammarAccess.getOperatingSystemResouceAccess().getTypeOpertingSystemResouceTypeParserRuleCall_5_0());
+
+            pushFollow(FOLLOW_31);
+            lv_type_5_0=ruleOpertingSystemResouceType();
+
+            state._fsp--;
+
+
+                                if (current==null) {
+                                    current = createModelElementForParent(grammarAccess.getOperatingSystemResouceRule());
+                                }
+                                set(
+                                    current,
+                                    "type",
+                                    lv_type_5_0,
+                                    "de.fraunhofer.ipa.deployment.Util.OpertingSystemResouceType");
+                                afterParserOrEnumRuleCall();
+
+
+            }
+
+
+            }
+
+            // InternalDeviceParser.g:3018:3: (otherlv_6= Properties this_INDENT_7= RULE_INDENT ( (lv_properties_8_0= ruleAbstractOperatingSystemProperty ) )+ this_DEDENT_9= RULE_DEDENT )?
+            int alt55=2;
+            int LA55_0 = input.LA(1);
+
+            if ( (LA55_0==Properties) ) {
+                alt55=1;
+            }
+            switch (alt55) {
+                case 1 :
+                    // InternalDeviceParser.g:3019:4: otherlv_6= Properties this_INDENT_7= RULE_INDENT ( (lv_properties_8_0= ruleAbstractOperatingSystemProperty ) )+ this_DEDENT_9= RULE_DEDENT
+                    {
+                    otherlv_6=(Token)match(input,Properties,FOLLOW_7);
+
+                                    newLeafNode(otherlv_6, grammarAccess.getOperatingSystemResouceAccess().getPropertiesKeyword_6_0());
+
+                    this_INDENT_7=(Token)match(input,RULE_INDENT,FOLLOW_25);
+
+                                    newLeafNode(this_INDENT_7, grammarAccess.getOperatingSystemResouceAccess().getINDENTTerminalRuleCall_6_1());
+
+                    // InternalDeviceParser.g:3027:4: ( (lv_properties_8_0= ruleAbstractOperatingSystemProperty ) )+
+                    int cnt54=0;
+                    loop54:
+                    do {
+                        int alt54=2;
+                        int LA54_0 = input.LA(1);
+
+                        if ( (LA54_0==HyphenMinus) ) {
+                            alt54=1;
+                        }
+
+
+                        switch (alt54) {
+                        case 1 :
+                            // InternalDeviceParser.g:3028:5: (lv_properties_8_0= ruleAbstractOperatingSystemProperty )
+                            {
+                            // InternalDeviceParser.g:3028:5: (lv_properties_8_0= ruleAbstractOperatingSystemProperty )
+                            // InternalDeviceParser.g:3029:6: lv_properties_8_0= ruleAbstractOperatingSystemProperty
+                            {
+
+                                                    newCompositeNode(grammarAccess.getOperatingSystemResouceAccess().getPropertiesAbstractOperatingSystemPropertyParserRuleCall_6_2_0());
+
+                            pushFollow(FOLLOW_26);
+                            lv_properties_8_0=ruleAbstractOperatingSystemProperty();
+
+                            state._fsp--;
+
+
+                                                    if (current==null) {
+                                                        current = createModelElementForParent(grammarAccess.getOperatingSystemResouceRule());
+                                                    }
+                                                    add(
+                                                        current,
+                                                        "properties",
+                                                        lv_properties_8_0,
+                                                        "de.fraunhofer.ipa.deployment.Util.AbstractOperatingSystemProperty");
+                                                    afterParserOrEnumRuleCall();
+
+
+                            }
+
+
+                            }
+                            break;
+
+                        default :
+                            if ( cnt54 >= 1 ) break loop54;
+                                EarlyExitException eee =
+                                    new EarlyExitException(54, input);
+                                throw eee;
+                        }
+                        cnt54++;
+                    } while (true);
+
+                    this_DEDENT_9=(Token)match(input,RULE_DEDENT,FOLLOW_14);
+
+                                    newLeafNode(this_DEDENT_9, grammarAccess.getOperatingSystemResouceAccess().getDEDENTTerminalRuleCall_6_3());
+
+
+                    }
+                    break;
+
+            }
+
+            this_DEDENT_10=(Token)match(input,RULE_DEDENT,FOLLOW_2);
+
+                        newLeafNode(this_DEDENT_10, grammarAccess.getOperatingSystemResouceAccess().getDEDENTTerminalRuleCall_7());
+
+
+            }
+
+
+            }
+
+
+                leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleOperatingSystemResouce"
+
+
+    // $ANTLR start "entryRuleAbstractOperatingSystemProperty"
+    // InternalDeviceParser.g:3059:1: entryRuleAbstractOperatingSystemProperty returns [EObject current=null] : iv_ruleAbstractOperatingSystemProperty= ruleAbstractOperatingSystemProperty EOF ;
+    public final EObject entryRuleAbstractOperatingSystemProperty() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleAbstractOperatingSystemProperty = null;
+
+
+        try {
+            // InternalDeviceParser.g:3059:72: (iv_ruleAbstractOperatingSystemProperty= ruleAbstractOperatingSystemProperty EOF )
+            // InternalDeviceParser.g:3060:2: iv_ruleAbstractOperatingSystemProperty= ruleAbstractOperatingSystemProperty EOF
+            {
+             newCompositeNode(grammarAccess.getAbstractOperatingSystemPropertyRule());
+            pushFollow(FOLLOW_1);
+            iv_ruleAbstractOperatingSystemProperty=ruleAbstractOperatingSystemProperty();
+
+            state._fsp--;
+
+             current =iv_ruleAbstractOperatingSystemProperty;
+            match(input,EOF,FOLLOW_2);
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleAbstractOperatingSystemProperty"
+
+
+    // $ANTLR start "ruleAbstractOperatingSystemProperty"
+    // InternalDeviceParser.g:3066:1: ruleAbstractOperatingSystemProperty returns [EObject current=null] : (this_NameOperatingSystemProperty_0= ruleNameOperatingSystemProperty | this_VersionOperatingSystemProperty_1= ruleVersionOperatingSystemProperty ) ;
+    public final EObject ruleAbstractOperatingSystemProperty() throws RecognitionException {
+        EObject current = null;
+
+        EObject this_NameOperatingSystemProperty_0 = null;
+
+        EObject this_VersionOperatingSystemProperty_1 = null;
+
+
+
+            enterRule();
+
+        try {
+            // InternalDeviceParser.g:3072:2: ( (this_NameOperatingSystemProperty_0= ruleNameOperatingSystemProperty | this_VersionOperatingSystemProperty_1= ruleVersionOperatingSystemProperty ) )
+            // InternalDeviceParser.g:3073:2: (this_NameOperatingSystemProperty_0= ruleNameOperatingSystemProperty | this_VersionOperatingSystemProperty_1= ruleVersionOperatingSystemProperty )
+            {
+            // InternalDeviceParser.g:3073:2: (this_NameOperatingSystemProperty_0= ruleNameOperatingSystemProperty | this_VersionOperatingSystemProperty_1= ruleVersionOperatingSystemProperty )
+            int alt56=2;
+            int LA56_0 = input.LA(1);
+
+            if ( (LA56_0==HyphenMinus) ) {
+                int LA56_1 = input.LA(2);
+
+                if ( (LA56_1==Name) ) {
+                    int LA56_2 = input.LA(3);
+
+                    if ( (LA56_2==Os_version) ) {
+                        alt56=2;
+                    }
+                    else if ( (LA56_2==Os_name) ) {
+                        alt56=1;
+                    }
+                    else {
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 56, 2, input);
+
+                        throw nvae;
+                    }
+                }
+                else {
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 56, 1, input);
+
+                    throw nvae;
+                }
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 56, 0, input);
+
+                throw nvae;
+            }
+            switch (alt56) {
+                case 1 :
+                    // InternalDeviceParser.g:3074:3: this_NameOperatingSystemProperty_0= ruleNameOperatingSystemProperty
+                    {
+
+                                newCompositeNode(grammarAccess.getAbstractOperatingSystemPropertyAccess().getNameOperatingSystemPropertyParserRuleCall_0());
+
+                    pushFollow(FOLLOW_2);
+                    this_NameOperatingSystemProperty_0=ruleNameOperatingSystemProperty();
+
+                    state._fsp--;
+
+
+                                current = this_NameOperatingSystemProperty_0;
+                                afterParserOrEnumRuleCall();
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalDeviceParser.g:3083:3: this_VersionOperatingSystemProperty_1= ruleVersionOperatingSystemProperty
+                    {
+
+                                newCompositeNode(grammarAccess.getAbstractOperatingSystemPropertyAccess().getVersionOperatingSystemPropertyParserRuleCall_1());
+
+                    pushFollow(FOLLOW_2);
+                    this_VersionOperatingSystemProperty_1=ruleVersionOperatingSystemProperty();
+
+                    state._fsp--;
+
+
+                                current = this_VersionOperatingSystemProperty_1;
+                                afterParserOrEnumRuleCall();
+
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+                leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleAbstractOperatingSystemProperty"
+
+
+    // $ANTLR start "entryRuleNameOperatingSystemProperty"
+    // InternalDeviceParser.g:3095:1: entryRuleNameOperatingSystemProperty returns [EObject current=null] : iv_ruleNameOperatingSystemProperty= ruleNameOperatingSystemProperty EOF ;
+    public final EObject entryRuleNameOperatingSystemProperty() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleNameOperatingSystemProperty = null;
+
+
+        try {
+            // InternalDeviceParser.g:3095:68: (iv_ruleNameOperatingSystemProperty= ruleNameOperatingSystemProperty EOF )
+            // InternalDeviceParser.g:3096:2: iv_ruleNameOperatingSystemProperty= ruleNameOperatingSystemProperty EOF
+            {
+             newCompositeNode(grammarAccess.getNameOperatingSystemPropertyRule());
+            pushFollow(FOLLOW_1);
+            iv_ruleNameOperatingSystemProperty=ruleNameOperatingSystemProperty();
+
+            state._fsp--;
+
+             current =iv_ruleNameOperatingSystemProperty;
+            match(input,EOF,FOLLOW_2);
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleNameOperatingSystemProperty"
+
+
+    // $ANTLR start "ruleNameOperatingSystemProperty"
+    // InternalDeviceParser.g:3102:1: ruleNameOperatingSystemProperty returns [EObject current=null] : ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= Os_name ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT ) ;
+    public final EObject ruleNameOperatingSystemProperty() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_2=null;
+        Token lv_name_3_0=null;
+        Token this_INDENT_4=null;
+        Token otherlv_5=null;
+        Token otherlv_7=null;
+        Token otherlv_9=null;
+        Token this_DEDENT_11=null;
+        EObject lv_kind_6_0 = null;
+
+        AntlrDatatypeRuleToken lv_description_8_0 = null;
+
+        EObject lv_value_10_0 = null;
+
+
+
+            enterRule();
+
+        try {
+            // InternalDeviceParser.g:3108:2: ( ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= Os_name ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT ) )
+            // InternalDeviceParser.g:3109:2: ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= Os_name ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT )
+            {
+            // InternalDeviceParser.g:3109:2: ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= Os_name ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT )
+            // InternalDeviceParser.g:3110:3: () rulePreListElement otherlv_2= Name ( (lv_name_3_0= Os_name ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT
+            {
+            // InternalDeviceParser.g:3110:3: ()
+            // InternalDeviceParser.g:3111:4:
+            {
+
+                            current = forceCreateModelElement(
+                                grammarAccess.getNameOperatingSystemPropertyAccess().getNameOperatingSystemPropertyAction_0(),
+                                current);
+
+
+            }
+
+
+                        newCompositeNode(grammarAccess.getNameOperatingSystemPropertyAccess().getPreListElementParserRuleCall_1());
+
+            pushFollow(FOLLOW_5);
+            rulePreListElement();
+
+            state._fsp--;
+
+
+                        afterParserOrEnumRuleCall();
+
+            otherlv_2=(Token)match(input,Name,FOLLOW_41);
+
+                        newLeafNode(otherlv_2, grammarAccess.getNameOperatingSystemPropertyAccess().getNameKeyword_2());
+
+            // InternalDeviceParser.g:3128:3: ( (lv_name_3_0= Os_name ) )
+            // InternalDeviceParser.g:3129:4: (lv_name_3_0= Os_name )
+            {
+            // InternalDeviceParser.g:3129:4: (lv_name_3_0= Os_name )
+            // InternalDeviceParser.g:3130:5: lv_name_3_0= Os_name
+            {
+            lv_name_3_0=(Token)match(input,Os_name,FOLLOW_7);
+
+                                newLeafNode(lv_name_3_0, grammarAccess.getNameOperatingSystemPropertyAccess().getNameOs_nameKeyword_3_0());
+
+
+                                if (current==null) {
+                                    current = createModelElement(grammarAccess.getNameOperatingSystemPropertyRule());
+                                }
+                                setWithLastConsumed(current, "name", lv_name_3_0, "os_name");
+
+
+            }
+
+
+            }
+
+            this_INDENT_4=(Token)match(input,RULE_INDENT,FOLLOW_8);
+
+                        newLeafNode(this_INDENT_4, grammarAccess.getNameOperatingSystemPropertyAccess().getINDENTTerminalRuleCall_4());
+
+            otherlv_5=(Token)match(input,Kind,FOLLOW_9);
+
+                        newLeafNode(otherlv_5, grammarAccess.getNameOperatingSystemPropertyAccess().getKindKeyword_5());
+
+            // InternalDeviceParser.g:3150:3: ( (lv_kind_6_0= ruleAttributeKind ) )
+            // InternalDeviceParser.g:3151:4: (lv_kind_6_0= ruleAttributeKind )
+            {
+            // InternalDeviceParser.g:3151:4: (lv_kind_6_0= ruleAttributeKind )
+            // InternalDeviceParser.g:3152:5: lv_kind_6_0= ruleAttributeKind
+            {
+
+                                newCompositeNode(grammarAccess.getNameOperatingSystemPropertyAccess().getKindAttributeKindParserRuleCall_6_0());
+
+            pushFollow(FOLLOW_10);
+            lv_kind_6_0=ruleAttributeKind();
+
+            state._fsp--;
+
+
+                                if (current==null) {
+                                    current = createModelElementForParent(grammarAccess.getNameOperatingSystemPropertyRule());
+                                }
+                                set(
+                                    current,
+                                    "kind",
+                                    lv_kind_6_0,
+                                    "de.fraunhofer.ipa.deployment.Util.AttributeKind");
+                                afterParserOrEnumRuleCall();
+
+
+            }
+
+
+            }
+
+            // InternalDeviceParser.g:3169:3: (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )?
+            int alt57=2;
+            int LA57_0 = input.LA(1);
+
+            if ( (LA57_0==Description) ) {
+                alt57=1;
+            }
+            switch (alt57) {
+                case 1 :
+                    // InternalDeviceParser.g:3170:4: otherlv_7= Description ( (lv_description_8_0= ruleEString ) )
+                    {
+                    otherlv_7=(Token)match(input,Description,FOLLOW_11);
+
+                                    newLeafNode(otherlv_7, grammarAccess.getNameOperatingSystemPropertyAccess().getDescriptionKeyword_7_0());
+
+                    // InternalDeviceParser.g:3174:4: ( (lv_description_8_0= ruleEString ) )
+                    // InternalDeviceParser.g:3175:5: (lv_description_8_0= ruleEString )
+                    {
+                    // InternalDeviceParser.g:3175:5: (lv_description_8_0= ruleEString )
+                    // InternalDeviceParser.g:3176:6: lv_description_8_0= ruleEString
+                    {
+
+                                            newCompositeNode(grammarAccess.getNameOperatingSystemPropertyAccess().getDescriptionEStringParserRuleCall_7_1_0());
+
+                    pushFollow(FOLLOW_12);
+                    lv_description_8_0=ruleEString();
+
+                    state._fsp--;
+
+
+                                            if (current==null) {
+                                                current = createModelElementForParent(grammarAccess.getNameOperatingSystemPropertyRule());
+                                            }
+                                            set(
+                                                current,
+                                                "description",
+                                                lv_description_8_0,
+                                                "de.fraunhofer.ipa.deployment.Util.EString");
+                                            afterParserOrEnumRuleCall();
+
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+            // InternalDeviceParser.g:3194:3: (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )?
+            int alt58=2;
+            int LA58_0 = input.LA(1);
+
+            if ( (LA58_0==Value) ) {
+                alt58=1;
+            }
+            switch (alt58) {
+                case 1 :
+                    // InternalDeviceParser.g:3195:4: otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) )
+                    {
+                    otherlv_9=(Token)match(input,Value,FOLLOW_13);
+
+                                    newLeafNode(otherlv_9, grammarAccess.getNameOperatingSystemPropertyAccess().getValueKeyword_8_0());
+
+                    // InternalDeviceParser.g:3199:4: ( (lv_value_10_0= rulePropertyValue ) )
+                    // InternalDeviceParser.g:3200:5: (lv_value_10_0= rulePropertyValue )
+                    {
+                    // InternalDeviceParser.g:3200:5: (lv_value_10_0= rulePropertyValue )
+                    // InternalDeviceParser.g:3201:6: lv_value_10_0= rulePropertyValue
+                    {
+
+                                            newCompositeNode(grammarAccess.getNameOperatingSystemPropertyAccess().getValuePropertyValueParserRuleCall_8_1_0());
+
+                    pushFollow(FOLLOW_14);
+                    lv_value_10_0=rulePropertyValue();
+
+                    state._fsp--;
+
+
+                                            if (current==null) {
+                                                current = createModelElementForParent(grammarAccess.getNameOperatingSystemPropertyRule());
+                                            }
+                                            set(
+                                                current,
+                                                "value",
+                                                lv_value_10_0,
+                                                "de.fraunhofer.ipa.deployment.Util.PropertyValue");
+                                            afterParserOrEnumRuleCall();
+
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+            this_DEDENT_11=(Token)match(input,RULE_DEDENT,FOLLOW_2);
+
+                        newLeafNode(this_DEDENT_11, grammarAccess.getNameOperatingSystemPropertyAccess().getDEDENTTerminalRuleCall_9());
+
+
+            }
+
+
+            }
+
+
+                leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleNameOperatingSystemProperty"
+
+
+    // $ANTLR start "entryRuleVersionOperatingSystemProperty"
+    // InternalDeviceParser.g:3227:1: entryRuleVersionOperatingSystemProperty returns [EObject current=null] : iv_ruleVersionOperatingSystemProperty= ruleVersionOperatingSystemProperty EOF ;
+    public final EObject entryRuleVersionOperatingSystemProperty() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleVersionOperatingSystemProperty = null;
+
+
+        try {
+            // InternalDeviceParser.g:3227:71: (iv_ruleVersionOperatingSystemProperty= ruleVersionOperatingSystemProperty EOF )
+            // InternalDeviceParser.g:3228:2: iv_ruleVersionOperatingSystemProperty= ruleVersionOperatingSystemProperty EOF
+            {
+             newCompositeNode(grammarAccess.getVersionOperatingSystemPropertyRule());
+            pushFollow(FOLLOW_1);
+            iv_ruleVersionOperatingSystemProperty=ruleVersionOperatingSystemProperty();
+
+            state._fsp--;
+
+             current =iv_ruleVersionOperatingSystemProperty;
+            match(input,EOF,FOLLOW_2);
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleVersionOperatingSystemProperty"
+
+
+    // $ANTLR start "ruleVersionOperatingSystemProperty"
+    // InternalDeviceParser.g:3234:1: ruleVersionOperatingSystemProperty returns [EObject current=null] : ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= Os_version ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT ) ;
+    public final EObject ruleVersionOperatingSystemProperty() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_2=null;
+        Token lv_name_3_0=null;
+        Token this_INDENT_4=null;
+        Token otherlv_5=null;
+        Token otherlv_7=null;
+        Token otherlv_9=null;
+        Token this_DEDENT_11=null;
+        EObject lv_kind_6_0 = null;
+
+        AntlrDatatypeRuleToken lv_description_8_0 = null;
+
+        EObject lv_value_10_0 = null;
+
+
+
+            enterRule();
+
+        try {
+            // InternalDeviceParser.g:3240:2: ( ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= Os_version ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT ) )
+            // InternalDeviceParser.g:3241:2: ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= Os_version ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT )
+            {
+            // InternalDeviceParser.g:3241:2: ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= Os_version ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT )
+            // InternalDeviceParser.g:3242:3: () rulePreListElement otherlv_2= Name ( (lv_name_3_0= Os_version ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT
+            {
+            // InternalDeviceParser.g:3242:3: ()
+            // InternalDeviceParser.g:3243:4:
+            {
+
+                            current = forceCreateModelElement(
+                                grammarAccess.getVersionOperatingSystemPropertyAccess().getVersionOperatingSystemPropertyAction_0(),
+                                current);
+
+
+            }
+
+
+                        newCompositeNode(grammarAccess.getVersionOperatingSystemPropertyAccess().getPreListElementParserRuleCall_1());
+
+            pushFollow(FOLLOW_5);
+            rulePreListElement();
+
+            state._fsp--;
+
+
+                        afterParserOrEnumRuleCall();
+
+            otherlv_2=(Token)match(input,Name,FOLLOW_42);
+
+                        newLeafNode(otherlv_2, grammarAccess.getVersionOperatingSystemPropertyAccess().getNameKeyword_2());
+
+            // InternalDeviceParser.g:3260:3: ( (lv_name_3_0= Os_version ) )
+            // InternalDeviceParser.g:3261:4: (lv_name_3_0= Os_version )
+            {
+            // InternalDeviceParser.g:3261:4: (lv_name_3_0= Os_version )
+            // InternalDeviceParser.g:3262:5: lv_name_3_0= Os_version
+            {
+            lv_name_3_0=(Token)match(input,Os_version,FOLLOW_7);
+
+                                newLeafNode(lv_name_3_0, grammarAccess.getVersionOperatingSystemPropertyAccess().getNameOs_versionKeyword_3_0());
+
+
+                                if (current==null) {
+                                    current = createModelElement(grammarAccess.getVersionOperatingSystemPropertyRule());
+                                }
+                                setWithLastConsumed(current, "name", lv_name_3_0, "os_version");
+
+
+            }
+
+
+            }
+
+            this_INDENT_4=(Token)match(input,RULE_INDENT,FOLLOW_8);
+
+                        newLeafNode(this_INDENT_4, grammarAccess.getVersionOperatingSystemPropertyAccess().getINDENTTerminalRuleCall_4());
+
+            otherlv_5=(Token)match(input,Kind,FOLLOW_9);
+
+                        newLeafNode(otherlv_5, grammarAccess.getVersionOperatingSystemPropertyAccess().getKindKeyword_5());
+
+            // InternalDeviceParser.g:3282:3: ( (lv_kind_6_0= ruleAttributeKind ) )
+            // InternalDeviceParser.g:3283:4: (lv_kind_6_0= ruleAttributeKind )
+            {
+            // InternalDeviceParser.g:3283:4: (lv_kind_6_0= ruleAttributeKind )
+            // InternalDeviceParser.g:3284:5: lv_kind_6_0= ruleAttributeKind
+            {
+
+                                newCompositeNode(grammarAccess.getVersionOperatingSystemPropertyAccess().getKindAttributeKindParserRuleCall_6_0());
+
+            pushFollow(FOLLOW_10);
+            lv_kind_6_0=ruleAttributeKind();
+
+            state._fsp--;
+
+
+                                if (current==null) {
+                                    current = createModelElementForParent(grammarAccess.getVersionOperatingSystemPropertyRule());
+                                }
+                                set(
+                                    current,
+                                    "kind",
+                                    lv_kind_6_0,
+                                    "de.fraunhofer.ipa.deployment.Util.AttributeKind");
+                                afterParserOrEnumRuleCall();
+
+
+            }
+
+
+            }
+
+            // InternalDeviceParser.g:3301:3: (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )?
+            int alt59=2;
+            int LA59_0 = input.LA(1);
+
+            if ( (LA59_0==Description) ) {
+                alt59=1;
+            }
+            switch (alt59) {
+                case 1 :
+                    // InternalDeviceParser.g:3302:4: otherlv_7= Description ( (lv_description_8_0= ruleEString ) )
+                    {
+                    otherlv_7=(Token)match(input,Description,FOLLOW_11);
+
+                                    newLeafNode(otherlv_7, grammarAccess.getVersionOperatingSystemPropertyAccess().getDescriptionKeyword_7_0());
+
+                    // InternalDeviceParser.g:3306:4: ( (lv_description_8_0= ruleEString ) )
+                    // InternalDeviceParser.g:3307:5: (lv_description_8_0= ruleEString )
+                    {
+                    // InternalDeviceParser.g:3307:5: (lv_description_8_0= ruleEString )
+                    // InternalDeviceParser.g:3308:6: lv_description_8_0= ruleEString
+                    {
+
+                                            newCompositeNode(grammarAccess.getVersionOperatingSystemPropertyAccess().getDescriptionEStringParserRuleCall_7_1_0());
+
+                    pushFollow(FOLLOW_12);
+                    lv_description_8_0=ruleEString();
+
+                    state._fsp--;
+
+
+                                            if (current==null) {
+                                                current = createModelElementForParent(grammarAccess.getVersionOperatingSystemPropertyRule());
+                                            }
+                                            set(
+                                                current,
+                                                "description",
+                                                lv_description_8_0,
+                                                "de.fraunhofer.ipa.deployment.Util.EString");
+                                            afterParserOrEnumRuleCall();
+
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+            // InternalDeviceParser.g:3326:3: (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )?
+            int alt60=2;
+            int LA60_0 = input.LA(1);
+
+            if ( (LA60_0==Value) ) {
+                alt60=1;
+            }
+            switch (alt60) {
+                case 1 :
+                    // InternalDeviceParser.g:3327:4: otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) )
+                    {
+                    otherlv_9=(Token)match(input,Value,FOLLOW_13);
+
+                                    newLeafNode(otherlv_9, grammarAccess.getVersionOperatingSystemPropertyAccess().getValueKeyword_8_0());
+
+                    // InternalDeviceParser.g:3331:4: ( (lv_value_10_0= rulePropertyValue ) )
+                    // InternalDeviceParser.g:3332:5: (lv_value_10_0= rulePropertyValue )
+                    {
+                    // InternalDeviceParser.g:3332:5: (lv_value_10_0= rulePropertyValue )
+                    // InternalDeviceParser.g:3333:6: lv_value_10_0= rulePropertyValue
+                    {
+
+                                            newCompositeNode(grammarAccess.getVersionOperatingSystemPropertyAccess().getValuePropertyValueParserRuleCall_8_1_0());
+
+                    pushFollow(FOLLOW_14);
+                    lv_value_10_0=rulePropertyValue();
+
+                    state._fsp--;
+
+
+                                            if (current==null) {
+                                                current = createModelElementForParent(grammarAccess.getVersionOperatingSystemPropertyRule());
+                                            }
+                                            set(
+                                                current,
+                                                "value",
+                                                lv_value_10_0,
+                                                "de.fraunhofer.ipa.deployment.Util.PropertyValue");
+                                            afterParserOrEnumRuleCall();
+
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+            this_DEDENT_11=(Token)match(input,RULE_DEDENT,FOLLOW_2);
+
+                        newLeafNode(this_DEDENT_11, grammarAccess.getVersionOperatingSystemPropertyAccess().getDEDENTTerminalRuleCall_9());
+
+
+            }
+
+
+            }
+
+
+                leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleVersionOperatingSystemProperty"
+
+
     // $ANTLR start "entryRuleAbstractProperty"
-    // InternalDeviceParser.g:3338:1: entryRuleAbstractProperty returns [EObject current=null] : iv_ruleAbstractProperty= ruleAbstractProperty EOF ;
+    // InternalDeviceParser.g:3359:1: entryRuleAbstractProperty returns [EObject current=null] : iv_ruleAbstractProperty= ruleAbstractProperty EOF ;
     public final EObject entryRuleAbstractProperty() throws RecognitionException {
         EObject current = null;
 
@@ -7853,8 +7893,8 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDeviceParser.g:3338:57: (iv_ruleAbstractProperty= ruleAbstractProperty EOF )
-            // InternalDeviceParser.g:3339:2: iv_ruleAbstractProperty= ruleAbstractProperty EOF
+            // InternalDeviceParser.g:3359:57: (iv_ruleAbstractProperty= ruleAbstractProperty EOF )
+            // InternalDeviceParser.g:3360:2: iv_ruleAbstractProperty= ruleAbstractProperty EOF
             {
              newCompositeNode(grammarAccess.getAbstractPropertyRule());
             pushFollow(FOLLOW_1);
@@ -7881,7 +7921,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAbstractProperty"
-    // InternalDeviceParser.g:3345:1: ruleAbstractProperty returns [EObject current=null] : (this_PropertyAttribute_0= rulePropertyAttribute | this_PropertyMaximun_1= rulePropertyMaximun | this_PropertyMinimum_2= rulePropertyMinimum | this_PropertySelection_3= rulePropertySelection | this_PropertyRange_4= rulePropertyRange ) ;
+    // InternalDeviceParser.g:3366:1: ruleAbstractProperty returns [EObject current=null] : (this_PropertyAttribute_0= rulePropertyAttribute | this_PropertyMaximun_1= rulePropertyMaximun | this_PropertyMinimum_2= rulePropertyMinimum | this_PropertySelection_3= rulePropertySelection | this_PropertyRange_4= rulePropertyRange ) ;
     public final EObject ruleAbstractProperty() throws RecognitionException {
         EObject current = null;
 
@@ -7900,15 +7940,15 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
             enterRule();
 
         try {
-            // InternalDeviceParser.g:3351:2: ( (this_PropertyAttribute_0= rulePropertyAttribute | this_PropertyMaximun_1= rulePropertyMaximun | this_PropertyMinimum_2= rulePropertyMinimum | this_PropertySelection_3= rulePropertySelection | this_PropertyRange_4= rulePropertyRange ) )
-            // InternalDeviceParser.g:3352:2: (this_PropertyAttribute_0= rulePropertyAttribute | this_PropertyMaximun_1= rulePropertyMaximun | this_PropertyMinimum_2= rulePropertyMinimum | this_PropertySelection_3= rulePropertySelection | this_PropertyRange_4= rulePropertyRange )
+            // InternalDeviceParser.g:3372:2: ( (this_PropertyAttribute_0= rulePropertyAttribute | this_PropertyMaximun_1= rulePropertyMaximun | this_PropertyMinimum_2= rulePropertyMinimum | this_PropertySelection_3= rulePropertySelection | this_PropertyRange_4= rulePropertyRange ) )
+            // InternalDeviceParser.g:3373:2: (this_PropertyAttribute_0= rulePropertyAttribute | this_PropertyMaximun_1= rulePropertyMaximun | this_PropertyMinimum_2= rulePropertyMinimum | this_PropertySelection_3= rulePropertySelection | this_PropertyRange_4= rulePropertyRange )
             {
-            // InternalDeviceParser.g:3352:2: (this_PropertyAttribute_0= rulePropertyAttribute | this_PropertyMaximun_1= rulePropertyMaximun | this_PropertyMinimum_2= rulePropertyMinimum | this_PropertySelection_3= rulePropertySelection | this_PropertyRange_4= rulePropertyRange )
-            int alt60=5;
-            alt60 = dfa60.predict(input);
-            switch (alt60) {
+            // InternalDeviceParser.g:3373:2: (this_PropertyAttribute_0= rulePropertyAttribute | this_PropertyMaximun_1= rulePropertyMaximun | this_PropertyMinimum_2= rulePropertyMinimum | this_PropertySelection_3= rulePropertySelection | this_PropertyRange_4= rulePropertyRange )
+            int alt61=5;
+            alt61 = dfa61.predict(input);
+            switch (alt61) {
                 case 1 :
-                    // InternalDeviceParser.g:3353:3: this_PropertyAttribute_0= rulePropertyAttribute
+                    // InternalDeviceParser.g:3374:3: this_PropertyAttribute_0= rulePropertyAttribute
                     {
 
                                 newCompositeNode(grammarAccess.getAbstractPropertyAccess().getPropertyAttributeParserRuleCall_0());
@@ -7926,7 +7966,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalDeviceParser.g:3362:3: this_PropertyMaximun_1= rulePropertyMaximun
+                    // InternalDeviceParser.g:3383:3: this_PropertyMaximun_1= rulePropertyMaximun
                     {
 
                                 newCompositeNode(grammarAccess.getAbstractPropertyAccess().getPropertyMaximunParserRuleCall_1());
@@ -7944,7 +7984,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalDeviceParser.g:3371:3: this_PropertyMinimum_2= rulePropertyMinimum
+                    // InternalDeviceParser.g:3392:3: this_PropertyMinimum_2= rulePropertyMinimum
                     {
 
                                 newCompositeNode(grammarAccess.getAbstractPropertyAccess().getPropertyMinimumParserRuleCall_2());
@@ -7962,7 +8002,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalDeviceParser.g:3380:3: this_PropertySelection_3= rulePropertySelection
+                    // InternalDeviceParser.g:3401:3: this_PropertySelection_3= rulePropertySelection
                     {
 
                                 newCompositeNode(grammarAccess.getAbstractPropertyAccess().getPropertySelectionParserRuleCall_3());
@@ -7980,7 +8020,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalDeviceParser.g:3389:3: this_PropertyRange_4= rulePropertyRange
+                    // InternalDeviceParser.g:3410:3: this_PropertyRange_4= rulePropertyRange
                     {
 
                                 newCompositeNode(grammarAccess.getAbstractPropertyAccess().getPropertyRangeParserRuleCall_4());
@@ -8020,7 +8060,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePropertyKind"
-    // InternalDeviceParser.g:3401:1: entryRulePropertyKind returns [EObject current=null] : iv_rulePropertyKind= rulePropertyKind EOF ;
+    // InternalDeviceParser.g:3422:1: entryRulePropertyKind returns [EObject current=null] : iv_rulePropertyKind= rulePropertyKind EOF ;
     public final EObject entryRulePropertyKind() throws RecognitionException {
         EObject current = null;
 
@@ -8028,8 +8068,8 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDeviceParser.g:3401:53: (iv_rulePropertyKind= rulePropertyKind EOF )
-            // InternalDeviceParser.g:3402:2: iv_rulePropertyKind= rulePropertyKind EOF
+            // InternalDeviceParser.g:3422:53: (iv_rulePropertyKind= rulePropertyKind EOF )
+            // InternalDeviceParser.g:3423:2: iv_rulePropertyKind= rulePropertyKind EOF
             {
              newCompositeNode(grammarAccess.getPropertyKindRule());
             pushFollow(FOLLOW_1);
@@ -8056,7 +8096,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePropertyKind"
-    // InternalDeviceParser.g:3408:1: rulePropertyKind returns [EObject current=null] : (this_AttributeKind_0= ruleAttributeKind | this_MaximumKind_1= ruleMaximumKind | this_MinimumKind_2= ruleMinimumKind | this_RangeKind_3= ruleRangeKind | this_SelectionKind_4= ruleSelectionKind ) ;
+    // InternalDeviceParser.g:3429:1: rulePropertyKind returns [EObject current=null] : (this_AttributeKind_0= ruleAttributeKind | this_MaximumKind_1= ruleMaximumKind | this_MinimumKind_2= ruleMinimumKind | this_RangeKind_3= ruleRangeKind | this_SelectionKind_4= ruleSelectionKind ) ;
     public final EObject rulePropertyKind() throws RecognitionException {
         EObject current = null;
 
@@ -8075,47 +8115,47 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
             enterRule();
 
         try {
-            // InternalDeviceParser.g:3414:2: ( (this_AttributeKind_0= ruleAttributeKind | this_MaximumKind_1= ruleMaximumKind | this_MinimumKind_2= ruleMinimumKind | this_RangeKind_3= ruleRangeKind | this_SelectionKind_4= ruleSelectionKind ) )
-            // InternalDeviceParser.g:3415:2: (this_AttributeKind_0= ruleAttributeKind | this_MaximumKind_1= ruleMaximumKind | this_MinimumKind_2= ruleMinimumKind | this_RangeKind_3= ruleRangeKind | this_SelectionKind_4= ruleSelectionKind )
+            // InternalDeviceParser.g:3435:2: ( (this_AttributeKind_0= ruleAttributeKind | this_MaximumKind_1= ruleMaximumKind | this_MinimumKind_2= ruleMinimumKind | this_RangeKind_3= ruleRangeKind | this_SelectionKind_4= ruleSelectionKind ) )
+            // InternalDeviceParser.g:3436:2: (this_AttributeKind_0= ruleAttributeKind | this_MaximumKind_1= ruleMaximumKind | this_MinimumKind_2= ruleMinimumKind | this_RangeKind_3= ruleRangeKind | this_SelectionKind_4= ruleSelectionKind )
             {
-            // InternalDeviceParser.g:3415:2: (this_AttributeKind_0= ruleAttributeKind | this_MaximumKind_1= ruleMaximumKind | this_MinimumKind_2= ruleMinimumKind | this_RangeKind_3= ruleRangeKind | this_SelectionKind_4= ruleSelectionKind )
-            int alt61=5;
+            // InternalDeviceParser.g:3436:2: (this_AttributeKind_0= ruleAttributeKind | this_MaximumKind_1= ruleMaximumKind | this_MinimumKind_2= ruleMinimumKind | this_RangeKind_3= ruleRangeKind | this_SelectionKind_4= ruleSelectionKind )
+            int alt62=5;
             switch ( input.LA(1) ) {
             case AttributeKind:
                 {
-                alt61=1;
+                alt62=1;
                 }
                 break;
             case MaximumKind:
                 {
-                alt61=2;
+                alt62=2;
                 }
                 break;
             case MinimumKind:
                 {
-                alt61=3;
+                alt62=3;
                 }
                 break;
             case RangeKind:
                 {
-                alt61=4;
+                alt62=4;
                 }
                 break;
             case SelectionKind:
                 {
-                alt61=5;
+                alt62=5;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 61, 0, input);
+                    new NoViableAltException("", 62, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt61) {
+            switch (alt62) {
                 case 1 :
-                    // InternalDeviceParser.g:3416:3: this_AttributeKind_0= ruleAttributeKind
+                    // InternalDeviceParser.g:3437:3: this_AttributeKind_0= ruleAttributeKind
                     {
 
                                 newCompositeNode(grammarAccess.getPropertyKindAccess().getAttributeKindParserRuleCall_0());
@@ -8133,7 +8173,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalDeviceParser.g:3425:3: this_MaximumKind_1= ruleMaximumKind
+                    // InternalDeviceParser.g:3446:3: this_MaximumKind_1= ruleMaximumKind
                     {
 
                                 newCompositeNode(grammarAccess.getPropertyKindAccess().getMaximumKindParserRuleCall_1());
@@ -8151,7 +8191,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalDeviceParser.g:3434:3: this_MinimumKind_2= ruleMinimumKind
+                    // InternalDeviceParser.g:3455:3: this_MinimumKind_2= ruleMinimumKind
                     {
 
                                 newCompositeNode(grammarAccess.getPropertyKindAccess().getMinimumKindParserRuleCall_2());
@@ -8169,7 +8209,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalDeviceParser.g:3443:3: this_RangeKind_3= ruleRangeKind
+                    // InternalDeviceParser.g:3464:3: this_RangeKind_3= ruleRangeKind
                     {
 
                                 newCompositeNode(grammarAccess.getPropertyKindAccess().getRangeKindParserRuleCall_3());
@@ -8187,7 +8227,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalDeviceParser.g:3452:3: this_SelectionKind_4= ruleSelectionKind
+                    // InternalDeviceParser.g:3473:3: this_SelectionKind_4= ruleSelectionKind
                     {
 
                                 newCompositeNode(grammarAccess.getPropertyKindAccess().getSelectionKindParserRuleCall_4());
@@ -8227,7 +8267,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePropertyAttribute"
-    // InternalDeviceParser.g:3464:1: entryRulePropertyAttribute returns [EObject current=null] : iv_rulePropertyAttribute= rulePropertyAttribute EOF ;
+    // InternalDeviceParser.g:3485:1: entryRulePropertyAttribute returns [EObject current=null] : iv_rulePropertyAttribute= rulePropertyAttribute EOF ;
     public final EObject entryRulePropertyAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -8235,8 +8275,8 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDeviceParser.g:3464:58: (iv_rulePropertyAttribute= rulePropertyAttribute EOF )
-            // InternalDeviceParser.g:3465:2: iv_rulePropertyAttribute= rulePropertyAttribute EOF
+            // InternalDeviceParser.g:3485:58: (iv_rulePropertyAttribute= rulePropertyAttribute EOF )
+            // InternalDeviceParser.g:3486:2: iv_rulePropertyAttribute= rulePropertyAttribute EOF
             {
              newCompositeNode(grammarAccess.getPropertyAttributeRule());
             pushFollow(FOLLOW_1);
@@ -8263,7 +8303,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePropertyAttribute"
-    // InternalDeviceParser.g:3471:1: rulePropertyAttribute returns [EObject current=null] : ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleAttributeKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )? ) ;
+    // InternalDeviceParser.g:3492:1: rulePropertyAttribute returns [EObject current=null] : ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleAttributeKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )? ) ;
     public final EObject rulePropertyAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -8286,11 +8326,11 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
             enterRule();
 
         try {
-            // InternalDeviceParser.g:3477:2: ( ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleAttributeKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )? ) )
-            // InternalDeviceParser.g:3478:2: ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleAttributeKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )? )
+            // InternalDeviceParser.g:3498:2: ( ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleAttributeKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )? ) )
+            // InternalDeviceParser.g:3499:2: ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleAttributeKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )? )
             {
-            // InternalDeviceParser.g:3478:2: ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleAttributeKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )? )
-            // InternalDeviceParser.g:3479:3: rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleAttributeKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )?
+            // InternalDeviceParser.g:3499:2: ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleAttributeKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )? )
+            // InternalDeviceParser.g:3500:3: rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleAttributeKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )?
             {
 
                         newCompositeNode(grammarAccess.getPropertyAttributeAccess().getPreListElementParserRuleCall_0());
@@ -8307,11 +8347,11 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
                         newLeafNode(otherlv_1, grammarAccess.getPropertyAttributeAccess().getNameKeyword_1());
 
-            // InternalDeviceParser.g:3490:3: ( (lv_name_2_0= ruleEString ) )
-            // InternalDeviceParser.g:3491:4: (lv_name_2_0= ruleEString )
+            // InternalDeviceParser.g:3511:3: ( (lv_name_2_0= ruleEString ) )
+            // InternalDeviceParser.g:3512:4: (lv_name_2_0= ruleEString )
             {
-            // InternalDeviceParser.g:3491:4: (lv_name_2_0= ruleEString )
-            // InternalDeviceParser.g:3492:5: lv_name_2_0= ruleEString
+            // InternalDeviceParser.g:3512:4: (lv_name_2_0= ruleEString )
+            // InternalDeviceParser.g:3513:5: lv_name_2_0= ruleEString
             {
 
                                 newCompositeNode(grammarAccess.getPropertyAttributeAccess().getNameEStringParserRuleCall_2_0());
@@ -8346,16 +8386,16 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
                         newLeafNode(otherlv_4, grammarAccess.getPropertyAttributeAccess().getKindKeyword_4());
 
-            // InternalDeviceParser.g:3517:3: ( (lv_kind_5_0= ruleAttributeKind ) )
-            // InternalDeviceParser.g:3518:4: (lv_kind_5_0= ruleAttributeKind )
+            // InternalDeviceParser.g:3538:3: ( (lv_kind_5_0= ruleAttributeKind ) )
+            // InternalDeviceParser.g:3539:4: (lv_kind_5_0= ruleAttributeKind )
             {
-            // InternalDeviceParser.g:3518:4: (lv_kind_5_0= ruleAttributeKind )
-            // InternalDeviceParser.g:3519:5: lv_kind_5_0= ruleAttributeKind
+            // InternalDeviceParser.g:3539:4: (lv_kind_5_0= ruleAttributeKind )
+            // InternalDeviceParser.g:3540:5: lv_kind_5_0= ruleAttributeKind
             {
 
                                 newCompositeNode(grammarAccess.getPropertyAttributeAccess().getKindAttributeKindParserRuleCall_5_0());
 
-            pushFollow(FOLLOW_42);
+            pushFollow(FOLLOW_43);
             lv_kind_5_0=ruleAttributeKind();
 
             state._fsp--;
@@ -8377,31 +8417,31 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDeviceParser.g:3536:3: (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )?
-            int alt62=2;
-            int LA62_0 = input.LA(1);
+            // InternalDeviceParser.g:3557:3: (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )?
+            int alt63=2;
+            int LA63_0 = input.LA(1);
 
-            if ( (LA62_0==Description) ) {
-                alt62=1;
+            if ( (LA63_0==Description) ) {
+                alt63=1;
             }
-            switch (alt62) {
+            switch (alt63) {
                 case 1 :
-                    // InternalDeviceParser.g:3537:4: otherlv_6= Description ( (lv_description_7_0= ruleEString ) )
+                    // InternalDeviceParser.g:3558:4: otherlv_6= Description ( (lv_description_7_0= ruleEString ) )
                     {
                     otherlv_6=(Token)match(input,Description,FOLLOW_11);
 
                                     newLeafNode(otherlv_6, grammarAccess.getPropertyAttributeAccess().getDescriptionKeyword_6_0());
 
-                    // InternalDeviceParser.g:3541:4: ( (lv_description_7_0= ruleEString ) )
-                    // InternalDeviceParser.g:3542:5: (lv_description_7_0= ruleEString )
+                    // InternalDeviceParser.g:3562:4: ( (lv_description_7_0= ruleEString ) )
+                    // InternalDeviceParser.g:3563:5: (lv_description_7_0= ruleEString )
                     {
-                    // InternalDeviceParser.g:3542:5: (lv_description_7_0= ruleEString )
-                    // InternalDeviceParser.g:3543:6: lv_description_7_0= ruleEString
+                    // InternalDeviceParser.g:3563:5: (lv_description_7_0= ruleEString )
+                    // InternalDeviceParser.g:3564:6: lv_description_7_0= ruleEString
                     {
 
                                             newCompositeNode(grammarAccess.getPropertyAttributeAccess().getDescriptionEStringParserRuleCall_6_1_0());
 
-                    pushFollow(FOLLOW_43);
+                    pushFollow(FOLLOW_44);
                     lv_description_7_0=ruleEString();
 
                     state._fsp--;
@@ -8429,31 +8469,31 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDeviceParser.g:3561:3: (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )?
-            int alt63=2;
-            int LA63_0 = input.LA(1);
+            // InternalDeviceParser.g:3582:3: (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )?
+            int alt64=2;
+            int LA64_0 = input.LA(1);
 
-            if ( (LA63_0==Value) ) {
-                alt63=1;
+            if ( (LA64_0==Value) ) {
+                alt64=1;
             }
-            switch (alt63) {
+            switch (alt64) {
                 case 1 :
-                    // InternalDeviceParser.g:3562:4: otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) )
+                    // InternalDeviceParser.g:3583:4: otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) )
                     {
                     otherlv_8=(Token)match(input,Value,FOLLOW_13);
 
                                     newLeafNode(otherlv_8, grammarAccess.getPropertyAttributeAccess().getValueKeyword_7_0());
 
-                    // InternalDeviceParser.g:3566:4: ( (lv_value_9_0= rulePropertyValue ) )
-                    // InternalDeviceParser.g:3567:5: (lv_value_9_0= rulePropertyValue )
+                    // InternalDeviceParser.g:3587:4: ( (lv_value_9_0= rulePropertyValue ) )
+                    // InternalDeviceParser.g:3588:5: (lv_value_9_0= rulePropertyValue )
                     {
-                    // InternalDeviceParser.g:3567:5: (lv_value_9_0= rulePropertyValue )
-                    // InternalDeviceParser.g:3568:6: lv_value_9_0= rulePropertyValue
+                    // InternalDeviceParser.g:3588:5: (lv_value_9_0= rulePropertyValue )
+                    // InternalDeviceParser.g:3589:6: lv_value_9_0= rulePropertyValue
                     {
 
                                             newCompositeNode(grammarAccess.getPropertyAttributeAccess().getValuePropertyValueParserRuleCall_7_1_0());
 
-                    pushFollow(FOLLOW_44);
+                    pushFollow(FOLLOW_45);
                     lv_value_9_0=rulePropertyValue();
 
                     state._fsp--;
@@ -8481,38 +8521,38 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDeviceParser.g:3586:3: (this_DEDENT_10= RULE_DEDENT )?
-            int alt64=2;
-            int LA64_0 = input.LA(1);
+            // InternalDeviceParser.g:3607:3: (this_DEDENT_10= RULE_DEDENT )?
+            int alt65=2;
+            int LA65_0 = input.LA(1);
 
-            if ( (LA64_0==RULE_DEDENT) ) {
-                int LA64_1 = input.LA(2);
+            if ( (LA65_0==RULE_DEDENT) ) {
+                int LA65_1 = input.LA(2);
 
-                if ( (LA64_1==EOF||LA64_1==HyphenMinus) ) {
-                    alt64=1;
-                }
-                else if ( (LA64_1==RULE_DEDENT) ) {
-                    int LA64_4 = input.LA(3);
+                if ( (LA65_1==RULE_DEDENT) ) {
+                    int LA65_3 = input.LA(3);
 
-                    if ( (LA64_4==RULE_DEDENT) ) {
-                        int LA64_5 = input.LA(4);
+                    if ( (LA65_3==RULE_DEDENT) ) {
+                        int LA65_5 = input.LA(4);
 
-                        if ( (LA64_5==RULE_DEDENT) ) {
-                            int LA64_6 = input.LA(5);
+                        if ( (LA65_5==RULE_DEDENT) ) {
+                            int LA65_6 = input.LA(5);
 
-                            if ( (LA64_6==CommunicationConnection||LA64_6==ComputationResouce||LA64_6==RULE_DEDENT) ) {
-                                alt64=1;
+                            if ( (LA65_6==CommunicationConnection||LA65_6==ComputationResouce||LA65_6==RULE_DEDENT) ) {
+                                alt65=1;
                             }
                         }
-                        else if ( (LA64_5==EOF||LA64_5==HyphenMinus) ) {
-                            alt64=1;
+                        else if ( (LA65_5==EOF||LA65_5==HyphenMinus) ) {
+                            alt65=1;
                         }
                     }
                 }
+                else if ( (LA65_1==EOF||LA65_1==HyphenMinus) ) {
+                    alt65=1;
+                }
             }
-            switch (alt64) {
+            switch (alt65) {
                 case 1 :
-                    // InternalDeviceParser.g:3587:4: this_DEDENT_10= RULE_DEDENT
+                    // InternalDeviceParser.g:3608:4: this_DEDENT_10= RULE_DEDENT
                     {
                     this_DEDENT_10=(Token)match(input,RULE_DEDENT,FOLLOW_2);
 
@@ -8547,7 +8587,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePropertyMaximun"
-    // InternalDeviceParser.g:3596:1: entryRulePropertyMaximun returns [EObject current=null] : iv_rulePropertyMaximun= rulePropertyMaximun EOF ;
+    // InternalDeviceParser.g:3617:1: entryRulePropertyMaximun returns [EObject current=null] : iv_rulePropertyMaximun= rulePropertyMaximun EOF ;
     public final EObject entryRulePropertyMaximun() throws RecognitionException {
         EObject current = null;
 
@@ -8555,8 +8595,8 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDeviceParser.g:3596:56: (iv_rulePropertyMaximun= rulePropertyMaximun EOF )
-            // InternalDeviceParser.g:3597:2: iv_rulePropertyMaximun= rulePropertyMaximun EOF
+            // InternalDeviceParser.g:3617:56: (iv_rulePropertyMaximun= rulePropertyMaximun EOF )
+            // InternalDeviceParser.g:3618:2: iv_rulePropertyMaximun= rulePropertyMaximun EOF
             {
              newCompositeNode(grammarAccess.getPropertyMaximunRule());
             pushFollow(FOLLOW_1);
@@ -8583,7 +8623,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePropertyMaximun"
-    // InternalDeviceParser.g:3603:1: rulePropertyMaximun returns [EObject current=null] : ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleMaximumKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )? ) ;
+    // InternalDeviceParser.g:3624:1: rulePropertyMaximun returns [EObject current=null] : ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleMaximumKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )? ) ;
     public final EObject rulePropertyMaximun() throws RecognitionException {
         EObject current = null;
 
@@ -8606,11 +8646,11 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
             enterRule();
 
         try {
-            // InternalDeviceParser.g:3609:2: ( ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleMaximumKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )? ) )
-            // InternalDeviceParser.g:3610:2: ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleMaximumKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )? )
+            // InternalDeviceParser.g:3630:2: ( ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleMaximumKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )? ) )
+            // InternalDeviceParser.g:3631:2: ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleMaximumKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )? )
             {
-            // InternalDeviceParser.g:3610:2: ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleMaximumKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )? )
-            // InternalDeviceParser.g:3611:3: rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleMaximumKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )?
+            // InternalDeviceParser.g:3631:2: ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleMaximumKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )? )
+            // InternalDeviceParser.g:3632:3: rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleMaximumKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )?
             {
 
                         newCompositeNode(grammarAccess.getPropertyMaximunAccess().getPreListElementParserRuleCall_0());
@@ -8627,11 +8667,11 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
                         newLeafNode(otherlv_1, grammarAccess.getPropertyMaximunAccess().getNameKeyword_1());
 
-            // InternalDeviceParser.g:3622:3: ( (lv_name_2_0= ruleEString ) )
-            // InternalDeviceParser.g:3623:4: (lv_name_2_0= ruleEString )
+            // InternalDeviceParser.g:3643:3: ( (lv_name_2_0= ruleEString ) )
+            // InternalDeviceParser.g:3644:4: (lv_name_2_0= ruleEString )
             {
-            // InternalDeviceParser.g:3623:4: (lv_name_2_0= ruleEString )
-            // InternalDeviceParser.g:3624:5: lv_name_2_0= ruleEString
+            // InternalDeviceParser.g:3644:4: (lv_name_2_0= ruleEString )
+            // InternalDeviceParser.g:3645:5: lv_name_2_0= ruleEString
             {
 
                                 newCompositeNode(grammarAccess.getPropertyMaximunAccess().getNameEStringParserRuleCall_2_0());
@@ -8662,20 +8702,20 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
                         newLeafNode(this_INDENT_3, grammarAccess.getPropertyMaximunAccess().getINDENTTerminalRuleCall_3());
 
-            otherlv_4=(Token)match(input,Kind,FOLLOW_45);
+            otherlv_4=(Token)match(input,Kind,FOLLOW_46);
 
                         newLeafNode(otherlv_4, grammarAccess.getPropertyMaximunAccess().getKindKeyword_4());
 
-            // InternalDeviceParser.g:3649:3: ( (lv_kind_5_0= ruleMaximumKind ) )
-            // InternalDeviceParser.g:3650:4: (lv_kind_5_0= ruleMaximumKind )
+            // InternalDeviceParser.g:3670:3: ( (lv_kind_5_0= ruleMaximumKind ) )
+            // InternalDeviceParser.g:3671:4: (lv_kind_5_0= ruleMaximumKind )
             {
-            // InternalDeviceParser.g:3650:4: (lv_kind_5_0= ruleMaximumKind )
-            // InternalDeviceParser.g:3651:5: lv_kind_5_0= ruleMaximumKind
+            // InternalDeviceParser.g:3671:4: (lv_kind_5_0= ruleMaximumKind )
+            // InternalDeviceParser.g:3672:5: lv_kind_5_0= ruleMaximumKind
             {
 
                                 newCompositeNode(grammarAccess.getPropertyMaximunAccess().getKindMaximumKindParserRuleCall_5_0());
 
-            pushFollow(FOLLOW_42);
+            pushFollow(FOLLOW_43);
             lv_kind_5_0=ruleMaximumKind();
 
             state._fsp--;
@@ -8697,31 +8737,31 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDeviceParser.g:3668:3: (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )?
-            int alt65=2;
-            int LA65_0 = input.LA(1);
+            // InternalDeviceParser.g:3689:3: (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )?
+            int alt66=2;
+            int LA66_0 = input.LA(1);
 
-            if ( (LA65_0==Description) ) {
-                alt65=1;
+            if ( (LA66_0==Description) ) {
+                alt66=1;
             }
-            switch (alt65) {
+            switch (alt66) {
                 case 1 :
-                    // InternalDeviceParser.g:3669:4: otherlv_6= Description ( (lv_description_7_0= ruleEString ) )
+                    // InternalDeviceParser.g:3690:4: otherlv_6= Description ( (lv_description_7_0= ruleEString ) )
                     {
                     otherlv_6=(Token)match(input,Description,FOLLOW_11);
 
                                     newLeafNode(otherlv_6, grammarAccess.getPropertyMaximunAccess().getDescriptionKeyword_6_0());
 
-                    // InternalDeviceParser.g:3673:4: ( (lv_description_7_0= ruleEString ) )
-                    // InternalDeviceParser.g:3674:5: (lv_description_7_0= ruleEString )
+                    // InternalDeviceParser.g:3694:4: ( (lv_description_7_0= ruleEString ) )
+                    // InternalDeviceParser.g:3695:5: (lv_description_7_0= ruleEString )
                     {
-                    // InternalDeviceParser.g:3674:5: (lv_description_7_0= ruleEString )
-                    // InternalDeviceParser.g:3675:6: lv_description_7_0= ruleEString
+                    // InternalDeviceParser.g:3695:5: (lv_description_7_0= ruleEString )
+                    // InternalDeviceParser.g:3696:6: lv_description_7_0= ruleEString
                     {
 
                                             newCompositeNode(grammarAccess.getPropertyMaximunAccess().getDescriptionEStringParserRuleCall_6_1_0());
 
-                    pushFollow(FOLLOW_43);
+                    pushFollow(FOLLOW_44);
                     lv_description_7_0=ruleEString();
 
                     state._fsp--;
@@ -8749,31 +8789,31 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDeviceParser.g:3693:3: (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )?
-            int alt66=2;
-            int LA66_0 = input.LA(1);
+            // InternalDeviceParser.g:3714:3: (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )?
+            int alt67=2;
+            int LA67_0 = input.LA(1);
 
-            if ( (LA66_0==Value) ) {
-                alt66=1;
+            if ( (LA67_0==Value) ) {
+                alt67=1;
             }
-            switch (alt66) {
+            switch (alt67) {
                 case 1 :
-                    // InternalDeviceParser.g:3694:4: otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) )
+                    // InternalDeviceParser.g:3715:4: otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) )
                     {
                     otherlv_8=(Token)match(input,Value,FOLLOW_13);
 
                                     newLeafNode(otherlv_8, grammarAccess.getPropertyMaximunAccess().getValueKeyword_7_0());
 
-                    // InternalDeviceParser.g:3698:4: ( (lv_value_9_0= rulePropertyValue ) )
-                    // InternalDeviceParser.g:3699:5: (lv_value_9_0= rulePropertyValue )
+                    // InternalDeviceParser.g:3719:4: ( (lv_value_9_0= rulePropertyValue ) )
+                    // InternalDeviceParser.g:3720:5: (lv_value_9_0= rulePropertyValue )
                     {
-                    // InternalDeviceParser.g:3699:5: (lv_value_9_0= rulePropertyValue )
-                    // InternalDeviceParser.g:3700:6: lv_value_9_0= rulePropertyValue
+                    // InternalDeviceParser.g:3720:5: (lv_value_9_0= rulePropertyValue )
+                    // InternalDeviceParser.g:3721:6: lv_value_9_0= rulePropertyValue
                     {
 
                                             newCompositeNode(grammarAccess.getPropertyMaximunAccess().getValuePropertyValueParserRuleCall_7_1_0());
 
-                    pushFollow(FOLLOW_44);
+                    pushFollow(FOLLOW_45);
                     lv_value_9_0=rulePropertyValue();
 
                     state._fsp--;
@@ -8801,38 +8841,38 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDeviceParser.g:3718:3: (this_DEDENT_10= RULE_DEDENT )?
-            int alt67=2;
-            int LA67_0 = input.LA(1);
+            // InternalDeviceParser.g:3739:3: (this_DEDENT_10= RULE_DEDENT )?
+            int alt68=2;
+            int LA68_0 = input.LA(1);
 
-            if ( (LA67_0==RULE_DEDENT) ) {
-                int LA67_1 = input.LA(2);
+            if ( (LA68_0==RULE_DEDENT) ) {
+                int LA68_1 = input.LA(2);
 
-                if ( (LA67_1==EOF||LA67_1==HyphenMinus) ) {
-                    alt67=1;
+                if ( (LA68_1==EOF||LA68_1==HyphenMinus) ) {
+                    alt68=1;
                 }
-                else if ( (LA67_1==RULE_DEDENT) ) {
-                    int LA67_4 = input.LA(3);
+                else if ( (LA68_1==RULE_DEDENT) ) {
+                    int LA68_4 = input.LA(3);
 
-                    if ( (LA67_4==RULE_DEDENT) ) {
-                        int LA67_5 = input.LA(4);
+                    if ( (LA68_4==RULE_DEDENT) ) {
+                        int LA68_5 = input.LA(4);
 
-                        if ( (LA67_5==RULE_DEDENT) ) {
-                            int LA67_6 = input.LA(5);
+                        if ( (LA68_5==RULE_DEDENT) ) {
+                            int LA68_6 = input.LA(5);
 
-                            if ( (LA67_6==CommunicationConnection||LA67_6==ComputationResouce||LA67_6==RULE_DEDENT) ) {
-                                alt67=1;
+                            if ( (LA68_6==CommunicationConnection||LA68_6==ComputationResouce||LA68_6==RULE_DEDENT) ) {
+                                alt68=1;
                             }
                         }
-                        else if ( (LA67_5==EOF||LA67_5==HyphenMinus) ) {
-                            alt67=1;
+                        else if ( (LA68_5==EOF||LA68_5==HyphenMinus) ) {
+                            alt68=1;
                         }
                     }
                 }
             }
-            switch (alt67) {
+            switch (alt68) {
                 case 1 :
-                    // InternalDeviceParser.g:3719:4: this_DEDENT_10= RULE_DEDENT
+                    // InternalDeviceParser.g:3740:4: this_DEDENT_10= RULE_DEDENT
                     {
                     this_DEDENT_10=(Token)match(input,RULE_DEDENT,FOLLOW_2);
 
@@ -8867,7 +8907,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePropertyMinimum"
-    // InternalDeviceParser.g:3728:1: entryRulePropertyMinimum returns [EObject current=null] : iv_rulePropertyMinimum= rulePropertyMinimum EOF ;
+    // InternalDeviceParser.g:3749:1: entryRulePropertyMinimum returns [EObject current=null] : iv_rulePropertyMinimum= rulePropertyMinimum EOF ;
     public final EObject entryRulePropertyMinimum() throws RecognitionException {
         EObject current = null;
 
@@ -8875,8 +8915,8 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDeviceParser.g:3728:56: (iv_rulePropertyMinimum= rulePropertyMinimum EOF )
-            // InternalDeviceParser.g:3729:2: iv_rulePropertyMinimum= rulePropertyMinimum EOF
+            // InternalDeviceParser.g:3749:56: (iv_rulePropertyMinimum= rulePropertyMinimum EOF )
+            // InternalDeviceParser.g:3750:2: iv_rulePropertyMinimum= rulePropertyMinimum EOF
             {
              newCompositeNode(grammarAccess.getPropertyMinimumRule());
             pushFollow(FOLLOW_1);
@@ -8903,7 +8943,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePropertyMinimum"
-    // InternalDeviceParser.g:3735:1: rulePropertyMinimum returns [EObject current=null] : ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleMinimumKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )? ) ;
+    // InternalDeviceParser.g:3756:1: rulePropertyMinimum returns [EObject current=null] : ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleMinimumKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )? ) ;
     public final EObject rulePropertyMinimum() throws RecognitionException {
         EObject current = null;
 
@@ -8926,11 +8966,11 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
             enterRule();
 
         try {
-            // InternalDeviceParser.g:3741:2: ( ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleMinimumKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )? ) )
-            // InternalDeviceParser.g:3742:2: ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleMinimumKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )? )
+            // InternalDeviceParser.g:3762:2: ( ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleMinimumKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )? ) )
+            // InternalDeviceParser.g:3763:2: ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleMinimumKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )? )
             {
-            // InternalDeviceParser.g:3742:2: ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleMinimumKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )? )
-            // InternalDeviceParser.g:3743:3: rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleMinimumKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )?
+            // InternalDeviceParser.g:3763:2: ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleMinimumKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )? )
+            // InternalDeviceParser.g:3764:3: rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleMinimumKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )?
             {
 
                         newCompositeNode(grammarAccess.getPropertyMinimumAccess().getPreListElementParserRuleCall_0());
@@ -8947,11 +8987,11 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
                         newLeafNode(otherlv_1, grammarAccess.getPropertyMinimumAccess().getNameKeyword_1());
 
-            // InternalDeviceParser.g:3754:3: ( (lv_name_2_0= ruleEString ) )
-            // InternalDeviceParser.g:3755:4: (lv_name_2_0= ruleEString )
+            // InternalDeviceParser.g:3775:3: ( (lv_name_2_0= ruleEString ) )
+            // InternalDeviceParser.g:3776:4: (lv_name_2_0= ruleEString )
             {
-            // InternalDeviceParser.g:3755:4: (lv_name_2_0= ruleEString )
-            // InternalDeviceParser.g:3756:5: lv_name_2_0= ruleEString
+            // InternalDeviceParser.g:3776:4: (lv_name_2_0= ruleEString )
+            // InternalDeviceParser.g:3777:5: lv_name_2_0= ruleEString
             {
 
                                 newCompositeNode(grammarAccess.getPropertyMinimumAccess().getNameEStringParserRuleCall_2_0());
@@ -8982,20 +9022,20 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
                         newLeafNode(this_INDENT_3, grammarAccess.getPropertyMinimumAccess().getINDENTTerminalRuleCall_3());
 
-            otherlv_4=(Token)match(input,Kind,FOLLOW_46);
+            otherlv_4=(Token)match(input,Kind,FOLLOW_47);
 
                         newLeafNode(otherlv_4, grammarAccess.getPropertyMinimumAccess().getKindKeyword_4());
 
-            // InternalDeviceParser.g:3781:3: ( (lv_kind_5_0= ruleMinimumKind ) )
-            // InternalDeviceParser.g:3782:4: (lv_kind_5_0= ruleMinimumKind )
+            // InternalDeviceParser.g:3802:3: ( (lv_kind_5_0= ruleMinimumKind ) )
+            // InternalDeviceParser.g:3803:4: (lv_kind_5_0= ruleMinimumKind )
             {
-            // InternalDeviceParser.g:3782:4: (lv_kind_5_0= ruleMinimumKind )
-            // InternalDeviceParser.g:3783:5: lv_kind_5_0= ruleMinimumKind
+            // InternalDeviceParser.g:3803:4: (lv_kind_5_0= ruleMinimumKind )
+            // InternalDeviceParser.g:3804:5: lv_kind_5_0= ruleMinimumKind
             {
 
                                 newCompositeNode(grammarAccess.getPropertyMinimumAccess().getKindMinimumKindParserRuleCall_5_0());
 
-            pushFollow(FOLLOW_42);
+            pushFollow(FOLLOW_43);
             lv_kind_5_0=ruleMinimumKind();
 
             state._fsp--;
@@ -9017,31 +9057,31 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDeviceParser.g:3800:3: (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )?
-            int alt68=2;
-            int LA68_0 = input.LA(1);
+            // InternalDeviceParser.g:3821:3: (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )?
+            int alt69=2;
+            int LA69_0 = input.LA(1);
 
-            if ( (LA68_0==Description) ) {
-                alt68=1;
+            if ( (LA69_0==Description) ) {
+                alt69=1;
             }
-            switch (alt68) {
+            switch (alt69) {
                 case 1 :
-                    // InternalDeviceParser.g:3801:4: otherlv_6= Description ( (lv_description_7_0= ruleEString ) )
+                    // InternalDeviceParser.g:3822:4: otherlv_6= Description ( (lv_description_7_0= ruleEString ) )
                     {
                     otherlv_6=(Token)match(input,Description,FOLLOW_11);
 
                                     newLeafNode(otherlv_6, grammarAccess.getPropertyMinimumAccess().getDescriptionKeyword_6_0());
 
-                    // InternalDeviceParser.g:3805:4: ( (lv_description_7_0= ruleEString ) )
-                    // InternalDeviceParser.g:3806:5: (lv_description_7_0= ruleEString )
+                    // InternalDeviceParser.g:3826:4: ( (lv_description_7_0= ruleEString ) )
+                    // InternalDeviceParser.g:3827:5: (lv_description_7_0= ruleEString )
                     {
-                    // InternalDeviceParser.g:3806:5: (lv_description_7_0= ruleEString )
-                    // InternalDeviceParser.g:3807:6: lv_description_7_0= ruleEString
+                    // InternalDeviceParser.g:3827:5: (lv_description_7_0= ruleEString )
+                    // InternalDeviceParser.g:3828:6: lv_description_7_0= ruleEString
                     {
 
                                             newCompositeNode(grammarAccess.getPropertyMinimumAccess().getDescriptionEStringParserRuleCall_6_1_0());
 
-                    pushFollow(FOLLOW_43);
+                    pushFollow(FOLLOW_44);
                     lv_description_7_0=ruleEString();
 
                     state._fsp--;
@@ -9069,31 +9109,31 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDeviceParser.g:3825:3: (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )?
-            int alt69=2;
-            int LA69_0 = input.LA(1);
+            // InternalDeviceParser.g:3846:3: (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )?
+            int alt70=2;
+            int LA70_0 = input.LA(1);
 
-            if ( (LA69_0==Value) ) {
-                alt69=1;
+            if ( (LA70_0==Value) ) {
+                alt70=1;
             }
-            switch (alt69) {
+            switch (alt70) {
                 case 1 :
-                    // InternalDeviceParser.g:3826:4: otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) )
+                    // InternalDeviceParser.g:3847:4: otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) )
                     {
                     otherlv_8=(Token)match(input,Value,FOLLOW_13);
 
                                     newLeafNode(otherlv_8, grammarAccess.getPropertyMinimumAccess().getValueKeyword_7_0());
 
-                    // InternalDeviceParser.g:3830:4: ( (lv_value_9_0= rulePropertyValue ) )
-                    // InternalDeviceParser.g:3831:5: (lv_value_9_0= rulePropertyValue )
+                    // InternalDeviceParser.g:3851:4: ( (lv_value_9_0= rulePropertyValue ) )
+                    // InternalDeviceParser.g:3852:5: (lv_value_9_0= rulePropertyValue )
                     {
-                    // InternalDeviceParser.g:3831:5: (lv_value_9_0= rulePropertyValue )
-                    // InternalDeviceParser.g:3832:6: lv_value_9_0= rulePropertyValue
+                    // InternalDeviceParser.g:3852:5: (lv_value_9_0= rulePropertyValue )
+                    // InternalDeviceParser.g:3853:6: lv_value_9_0= rulePropertyValue
                     {
 
                                             newCompositeNode(grammarAccess.getPropertyMinimumAccess().getValuePropertyValueParserRuleCall_7_1_0());
 
-                    pushFollow(FOLLOW_44);
+                    pushFollow(FOLLOW_45);
                     lv_value_9_0=rulePropertyValue();
 
                     state._fsp--;
@@ -9121,38 +9161,38 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDeviceParser.g:3850:3: (this_DEDENT_10= RULE_DEDENT )?
-            int alt70=2;
-            int LA70_0 = input.LA(1);
+            // InternalDeviceParser.g:3871:3: (this_DEDENT_10= RULE_DEDENT )?
+            int alt71=2;
+            int LA71_0 = input.LA(1);
 
-            if ( (LA70_0==RULE_DEDENT) ) {
-                int LA70_1 = input.LA(2);
+            if ( (LA71_0==RULE_DEDENT) ) {
+                int LA71_1 = input.LA(2);
 
-                if ( (LA70_1==EOF||LA70_1==HyphenMinus) ) {
-                    alt70=1;
-                }
-                else if ( (LA70_1==RULE_DEDENT) ) {
-                    int LA70_4 = input.LA(3);
+                if ( (LA71_1==RULE_DEDENT) ) {
+                    int LA71_3 = input.LA(3);
 
-                    if ( (LA70_4==RULE_DEDENT) ) {
-                        int LA70_5 = input.LA(4);
+                    if ( (LA71_3==RULE_DEDENT) ) {
+                        int LA71_5 = input.LA(4);
 
-                        if ( (LA70_5==RULE_DEDENT) ) {
-                            int LA70_6 = input.LA(5);
+                        if ( (LA71_5==RULE_DEDENT) ) {
+                            int LA71_6 = input.LA(5);
 
-                            if ( (LA70_6==CommunicationConnection||LA70_6==ComputationResouce||LA70_6==RULE_DEDENT) ) {
-                                alt70=1;
+                            if ( (LA71_6==CommunicationConnection||LA71_6==ComputationResouce||LA71_6==RULE_DEDENT) ) {
+                                alt71=1;
                             }
                         }
-                        else if ( (LA70_5==EOF||LA70_5==HyphenMinus) ) {
-                            alt70=1;
+                        else if ( (LA71_5==EOF||LA71_5==HyphenMinus) ) {
+                            alt71=1;
                         }
                     }
                 }
+                else if ( (LA71_1==EOF||LA71_1==HyphenMinus) ) {
+                    alt71=1;
+                }
             }
-            switch (alt70) {
+            switch (alt71) {
                 case 1 :
-                    // InternalDeviceParser.g:3851:4: this_DEDENT_10= RULE_DEDENT
+                    // InternalDeviceParser.g:3872:4: this_DEDENT_10= RULE_DEDENT
                     {
                     this_DEDENT_10=(Token)match(input,RULE_DEDENT,FOLLOW_2);
 
@@ -9187,7 +9227,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePropertySelection"
-    // InternalDeviceParser.g:3860:1: entryRulePropertySelection returns [EObject current=null] : iv_rulePropertySelection= rulePropertySelection EOF ;
+    // InternalDeviceParser.g:3881:1: entryRulePropertySelection returns [EObject current=null] : iv_rulePropertySelection= rulePropertySelection EOF ;
     public final EObject entryRulePropertySelection() throws RecognitionException {
         EObject current = null;
 
@@ -9195,8 +9235,8 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDeviceParser.g:3860:58: (iv_rulePropertySelection= rulePropertySelection EOF )
-            // InternalDeviceParser.g:3861:2: iv_rulePropertySelection= rulePropertySelection EOF
+            // InternalDeviceParser.g:3881:58: (iv_rulePropertySelection= rulePropertySelection EOF )
+            // InternalDeviceParser.g:3882:2: iv_rulePropertySelection= rulePropertySelection EOF
             {
              newCompositeNode(grammarAccess.getPropertySelectionRule());
             pushFollow(FOLLOW_1);
@@ -9223,7 +9263,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePropertySelection"
-    // InternalDeviceParser.g:3867:1: rulePropertySelection returns [EObject current=null] : ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleSelectionKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_value_11_0= rulePropertyValue ) ) ( rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) )* this_DEDENT_14= RULE_DEDENT )? (this_DEDENT_15= RULE_DEDENT )? ) ;
+    // InternalDeviceParser.g:3888:1: rulePropertySelection returns [EObject current=null] : ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleSelectionKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_value_11_0= rulePropertyValue ) ) ( rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) )* this_DEDENT_14= RULE_DEDENT )? (this_DEDENT_15= RULE_DEDENT )? ) ;
     public final EObject rulePropertySelection() throws RecognitionException {
         EObject current = null;
 
@@ -9250,11 +9290,11 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
             enterRule();
 
         try {
-            // InternalDeviceParser.g:3873:2: ( ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleSelectionKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_value_11_0= rulePropertyValue ) ) ( rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) )* this_DEDENT_14= RULE_DEDENT )? (this_DEDENT_15= RULE_DEDENT )? ) )
-            // InternalDeviceParser.g:3874:2: ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleSelectionKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_value_11_0= rulePropertyValue ) ) ( rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) )* this_DEDENT_14= RULE_DEDENT )? (this_DEDENT_15= RULE_DEDENT )? )
+            // InternalDeviceParser.g:3894:2: ( ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleSelectionKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_value_11_0= rulePropertyValue ) ) ( rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) )* this_DEDENT_14= RULE_DEDENT )? (this_DEDENT_15= RULE_DEDENT )? ) )
+            // InternalDeviceParser.g:3895:2: ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleSelectionKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_value_11_0= rulePropertyValue ) ) ( rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) )* this_DEDENT_14= RULE_DEDENT )? (this_DEDENT_15= RULE_DEDENT )? )
             {
-            // InternalDeviceParser.g:3874:2: ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleSelectionKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_value_11_0= rulePropertyValue ) ) ( rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) )* this_DEDENT_14= RULE_DEDENT )? (this_DEDENT_15= RULE_DEDENT )? )
-            // InternalDeviceParser.g:3875:3: rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleSelectionKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_value_11_0= rulePropertyValue ) ) ( rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) )* this_DEDENT_14= RULE_DEDENT )? (this_DEDENT_15= RULE_DEDENT )?
+            // InternalDeviceParser.g:3895:2: ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleSelectionKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_value_11_0= rulePropertyValue ) ) ( rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) )* this_DEDENT_14= RULE_DEDENT )? (this_DEDENT_15= RULE_DEDENT )? )
+            // InternalDeviceParser.g:3896:3: rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleSelectionKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_value_11_0= rulePropertyValue ) ) ( rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) )* this_DEDENT_14= RULE_DEDENT )? (this_DEDENT_15= RULE_DEDENT )?
             {
 
                         newCompositeNode(grammarAccess.getPropertySelectionAccess().getPreListElementParserRuleCall_0());
@@ -9271,11 +9311,11 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
                         newLeafNode(otherlv_1, grammarAccess.getPropertySelectionAccess().getNameKeyword_1());
 
-            // InternalDeviceParser.g:3886:3: ( (lv_name_2_0= ruleEString ) )
-            // InternalDeviceParser.g:3887:4: (lv_name_2_0= ruleEString )
+            // InternalDeviceParser.g:3907:3: ( (lv_name_2_0= ruleEString ) )
+            // InternalDeviceParser.g:3908:4: (lv_name_2_0= ruleEString )
             {
-            // InternalDeviceParser.g:3887:4: (lv_name_2_0= ruleEString )
-            // InternalDeviceParser.g:3888:5: lv_name_2_0= ruleEString
+            // InternalDeviceParser.g:3908:4: (lv_name_2_0= ruleEString )
+            // InternalDeviceParser.g:3909:5: lv_name_2_0= ruleEString
             {
 
                                 newCompositeNode(grammarAccess.getPropertySelectionAccess().getNameEStringParserRuleCall_2_0());
@@ -9310,16 +9350,16 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
                         newLeafNode(otherlv_4, grammarAccess.getPropertySelectionAccess().getKindKeyword_4());
 
-            // InternalDeviceParser.g:3913:3: ( (lv_kind_5_0= ruleSelectionKind ) )
-            // InternalDeviceParser.g:3914:4: (lv_kind_5_0= ruleSelectionKind )
+            // InternalDeviceParser.g:3934:3: ( (lv_kind_5_0= ruleSelectionKind ) )
+            // InternalDeviceParser.g:3935:4: (lv_kind_5_0= ruleSelectionKind )
             {
-            // InternalDeviceParser.g:3914:4: (lv_kind_5_0= ruleSelectionKind )
-            // InternalDeviceParser.g:3915:5: lv_kind_5_0= ruleSelectionKind
+            // InternalDeviceParser.g:3935:4: (lv_kind_5_0= ruleSelectionKind )
+            // InternalDeviceParser.g:3936:5: lv_kind_5_0= ruleSelectionKind
             {
 
                                 newCompositeNode(grammarAccess.getPropertySelectionAccess().getKindSelectionKindParserRuleCall_5_0());
 
-            pushFollow(FOLLOW_42);
+            pushFollow(FOLLOW_43);
             lv_kind_5_0=ruleSelectionKind();
 
             state._fsp--;
@@ -9341,31 +9381,31 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDeviceParser.g:3932:3: (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )?
-            int alt71=2;
-            int LA71_0 = input.LA(1);
+            // InternalDeviceParser.g:3953:3: (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )?
+            int alt72=2;
+            int LA72_0 = input.LA(1);
 
-            if ( (LA71_0==Description) ) {
-                alt71=1;
+            if ( (LA72_0==Description) ) {
+                alt72=1;
             }
-            switch (alt71) {
+            switch (alt72) {
                 case 1 :
-                    // InternalDeviceParser.g:3933:4: otherlv_6= Description ( (lv_description_7_0= ruleEString ) )
+                    // InternalDeviceParser.g:3954:4: otherlv_6= Description ( (lv_description_7_0= ruleEString ) )
                     {
                     otherlv_6=(Token)match(input,Description,FOLLOW_11);
 
                                     newLeafNode(otherlv_6, grammarAccess.getPropertySelectionAccess().getDescriptionKeyword_6_0());
 
-                    // InternalDeviceParser.g:3937:4: ( (lv_description_7_0= ruleEString ) )
-                    // InternalDeviceParser.g:3938:5: (lv_description_7_0= ruleEString )
+                    // InternalDeviceParser.g:3958:4: ( (lv_description_7_0= ruleEString ) )
+                    // InternalDeviceParser.g:3959:5: (lv_description_7_0= ruleEString )
                     {
-                    // InternalDeviceParser.g:3938:5: (lv_description_7_0= ruleEString )
-                    // InternalDeviceParser.g:3939:6: lv_description_7_0= ruleEString
+                    // InternalDeviceParser.g:3959:5: (lv_description_7_0= ruleEString )
+                    // InternalDeviceParser.g:3960:6: lv_description_7_0= ruleEString
                     {
 
                                             newCompositeNode(grammarAccess.getPropertySelectionAccess().getDescriptionEStringParserRuleCall_6_1_0());
 
-                    pushFollow(FOLLOW_43);
+                    pushFollow(FOLLOW_44);
                     lv_description_7_0=ruleEString();
 
                     state._fsp--;
@@ -9393,16 +9433,16 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDeviceParser.g:3957:3: (otherlv_8= Value this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_value_11_0= rulePropertyValue ) ) ( rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) )* this_DEDENT_14= RULE_DEDENT )?
-            int alt73=2;
-            int LA73_0 = input.LA(1);
+            // InternalDeviceParser.g:3978:3: (otherlv_8= Value this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_value_11_0= rulePropertyValue ) ) ( rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) )* this_DEDENT_14= RULE_DEDENT )?
+            int alt74=2;
+            int LA74_0 = input.LA(1);
 
-            if ( (LA73_0==Value) ) {
-                alt73=1;
+            if ( (LA74_0==Value) ) {
+                alt74=1;
             }
-            switch (alt73) {
+            switch (alt74) {
                 case 1 :
-                    // InternalDeviceParser.g:3958:4: otherlv_8= Value this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_value_11_0= rulePropertyValue ) ) ( rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) )* this_DEDENT_14= RULE_DEDENT
+                    // InternalDeviceParser.g:3979:4: otherlv_8= Value this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_value_11_0= rulePropertyValue ) ) ( rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) )* this_DEDENT_14= RULE_DEDENT
                     {
                     otherlv_8=(Token)match(input,Value,FOLLOW_7);
 
@@ -9423,11 +9463,11 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
                                     afterParserOrEnumRuleCall();
 
-                    // InternalDeviceParser.g:3973:4: ( (lv_value_11_0= rulePropertyValue ) )
-                    // InternalDeviceParser.g:3974:5: (lv_value_11_0= rulePropertyValue )
+                    // InternalDeviceParser.g:3994:4: ( (lv_value_11_0= rulePropertyValue ) )
+                    // InternalDeviceParser.g:3995:5: (lv_value_11_0= rulePropertyValue )
                     {
-                    // InternalDeviceParser.g:3974:5: (lv_value_11_0= rulePropertyValue )
-                    // InternalDeviceParser.g:3975:6: lv_value_11_0= rulePropertyValue
+                    // InternalDeviceParser.g:3995:5: (lv_value_11_0= rulePropertyValue )
+                    // InternalDeviceParser.g:3996:6: lv_value_11_0= rulePropertyValue
                     {
 
                                             newCompositeNode(grammarAccess.getPropertySelectionAccess().getValuePropertyValueParserRuleCall_7_3_0());
@@ -9454,20 +9494,20 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalDeviceParser.g:3992:4: ( rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) )*
-                    loop72:
+                    // InternalDeviceParser.g:4013:4: ( rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) )*
+                    loop73:
                     do {
-                        int alt72=2;
-                        int LA72_0 = input.LA(1);
+                        int alt73=2;
+                        int LA73_0 = input.LA(1);
 
-                        if ( (LA72_0==HyphenMinus) ) {
-                            alt72=1;
+                        if ( (LA73_0==HyphenMinus) ) {
+                            alt73=1;
                         }
 
 
-                        switch (alt72) {
+                        switch (alt73) {
                         case 1 :
-                            // InternalDeviceParser.g:3993:5: rulePreListElement ( (lv_value_13_0= rulePropertyValue ) )
+                            // InternalDeviceParser.g:4014:5: rulePreListElement ( (lv_value_13_0= rulePropertyValue ) )
                             {
 
                                                 newCompositeNode(grammarAccess.getPropertySelectionAccess().getPreListElementParserRuleCall_7_4_0());
@@ -9480,11 +9520,11 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
                                                 afterParserOrEnumRuleCall();
 
-                            // InternalDeviceParser.g:4000:5: ( (lv_value_13_0= rulePropertyValue ) )
-                            // InternalDeviceParser.g:4001:6: (lv_value_13_0= rulePropertyValue )
+                            // InternalDeviceParser.g:4021:5: ( (lv_value_13_0= rulePropertyValue ) )
+                            // InternalDeviceParser.g:4022:6: (lv_value_13_0= rulePropertyValue )
                             {
-                            // InternalDeviceParser.g:4001:6: (lv_value_13_0= rulePropertyValue )
-                            // InternalDeviceParser.g:4002:7: lv_value_13_0= rulePropertyValue
+                            // InternalDeviceParser.g:4022:6: (lv_value_13_0= rulePropertyValue )
+                            // InternalDeviceParser.g:4023:7: lv_value_13_0= rulePropertyValue
                             {
 
                                                         newCompositeNode(grammarAccess.getPropertySelectionAccess().getValuePropertyValueParserRuleCall_7_4_1_0());
@@ -9516,11 +9556,11 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
                             break;
 
                         default :
-                            break loop72;
+                            break loop73;
                         }
                     } while (true);
 
-                    this_DEDENT_14=(Token)match(input,RULE_DEDENT,FOLLOW_44);
+                    this_DEDENT_14=(Token)match(input,RULE_DEDENT,FOLLOW_45);
 
                                     newLeafNode(this_DEDENT_14, grammarAccess.getPropertySelectionAccess().getDEDENTTerminalRuleCall_7_5());
 
@@ -9530,38 +9570,38 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDeviceParser.g:4025:3: (this_DEDENT_15= RULE_DEDENT )?
-            int alt74=2;
-            int LA74_0 = input.LA(1);
+            // InternalDeviceParser.g:4046:3: (this_DEDENT_15= RULE_DEDENT )?
+            int alt75=2;
+            int LA75_0 = input.LA(1);
 
-            if ( (LA74_0==RULE_DEDENT) ) {
-                int LA74_1 = input.LA(2);
+            if ( (LA75_0==RULE_DEDENT) ) {
+                int LA75_1 = input.LA(2);
 
-                if ( (LA74_1==RULE_DEDENT) ) {
-                    int LA74_3 = input.LA(3);
+                if ( (LA75_1==EOF||LA75_1==HyphenMinus) ) {
+                    alt75=1;
+                }
+                else if ( (LA75_1==RULE_DEDENT) ) {
+                    int LA75_4 = input.LA(3);
 
-                    if ( (LA74_3==RULE_DEDENT) ) {
-                        int LA74_5 = input.LA(4);
+                    if ( (LA75_4==RULE_DEDENT) ) {
+                        int LA75_5 = input.LA(4);
 
-                        if ( (LA74_5==RULE_DEDENT) ) {
-                            int LA74_6 = input.LA(5);
+                        if ( (LA75_5==RULE_DEDENT) ) {
+                            int LA75_6 = input.LA(5);
 
-                            if ( (LA74_6==CommunicationConnection||LA74_6==ComputationResouce||LA74_6==RULE_DEDENT) ) {
-                                alt74=1;
+                            if ( (LA75_6==CommunicationConnection||LA75_6==ComputationResouce||LA75_6==RULE_DEDENT) ) {
+                                alt75=1;
                             }
                         }
-                        else if ( (LA74_5==EOF||LA74_5==HyphenMinus) ) {
-                            alt74=1;
+                        else if ( (LA75_5==EOF||LA75_5==HyphenMinus) ) {
+                            alt75=1;
                         }
                     }
                 }
-                else if ( (LA74_1==EOF||LA74_1==HyphenMinus) ) {
-                    alt74=1;
-                }
             }
-            switch (alt74) {
+            switch (alt75) {
                 case 1 :
-                    // InternalDeviceParser.g:4026:4: this_DEDENT_15= RULE_DEDENT
+                    // InternalDeviceParser.g:4047:4: this_DEDENT_15= RULE_DEDENT
                     {
                     this_DEDENT_15=(Token)match(input,RULE_DEDENT,FOLLOW_2);
 
@@ -9596,7 +9636,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePropertyRange"
-    // InternalDeviceParser.g:4035:1: entryRulePropertyRange returns [EObject current=null] : iv_rulePropertyRange= rulePropertyRange EOF ;
+    // InternalDeviceParser.g:4056:1: entryRulePropertyRange returns [EObject current=null] : iv_rulePropertyRange= rulePropertyRange EOF ;
     public final EObject entryRulePropertyRange() throws RecognitionException {
         EObject current = null;
 
@@ -9604,8 +9644,8 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDeviceParser.g:4035:54: (iv_rulePropertyRange= rulePropertyRange EOF )
-            // InternalDeviceParser.g:4036:2: iv_rulePropertyRange= rulePropertyRange EOF
+            // InternalDeviceParser.g:4056:54: (iv_rulePropertyRange= rulePropertyRange EOF )
+            // InternalDeviceParser.g:4057:2: iv_rulePropertyRange= rulePropertyRange EOF
             {
              newCompositeNode(grammarAccess.getPropertyRangeRule());
             pushFollow(FOLLOW_1);
@@ -9632,7 +9672,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePropertyRange"
-    // InternalDeviceParser.g:4042:1: rulePropertyRange returns [EObject current=null] : ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleRangeKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_value_11_0= rulePropertyValue ) ) rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) this_DEDENT_14= RULE_DEDENT )? (this_DEDENT_15= RULE_DEDENT )? ) ;
+    // InternalDeviceParser.g:4063:1: rulePropertyRange returns [EObject current=null] : ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleRangeKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_value_11_0= rulePropertyValue ) ) rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) this_DEDENT_14= RULE_DEDENT )? (this_DEDENT_15= RULE_DEDENT )? ) ;
     public final EObject rulePropertyRange() throws RecognitionException {
         EObject current = null;
 
@@ -9659,11 +9699,11 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
             enterRule();
 
         try {
-            // InternalDeviceParser.g:4048:2: ( ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleRangeKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_value_11_0= rulePropertyValue ) ) rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) this_DEDENT_14= RULE_DEDENT )? (this_DEDENT_15= RULE_DEDENT )? ) )
-            // InternalDeviceParser.g:4049:2: ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleRangeKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_value_11_0= rulePropertyValue ) ) rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) this_DEDENT_14= RULE_DEDENT )? (this_DEDENT_15= RULE_DEDENT )? )
+            // InternalDeviceParser.g:4069:2: ( ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleRangeKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_value_11_0= rulePropertyValue ) ) rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) this_DEDENT_14= RULE_DEDENT )? (this_DEDENT_15= RULE_DEDENT )? ) )
+            // InternalDeviceParser.g:4070:2: ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleRangeKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_value_11_0= rulePropertyValue ) ) rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) this_DEDENT_14= RULE_DEDENT )? (this_DEDENT_15= RULE_DEDENT )? )
             {
-            // InternalDeviceParser.g:4049:2: ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleRangeKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_value_11_0= rulePropertyValue ) ) rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) this_DEDENT_14= RULE_DEDENT )? (this_DEDENT_15= RULE_DEDENT )? )
-            // InternalDeviceParser.g:4050:3: rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleRangeKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_value_11_0= rulePropertyValue ) ) rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) this_DEDENT_14= RULE_DEDENT )? (this_DEDENT_15= RULE_DEDENT )?
+            // InternalDeviceParser.g:4070:2: ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleRangeKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_value_11_0= rulePropertyValue ) ) rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) this_DEDENT_14= RULE_DEDENT )? (this_DEDENT_15= RULE_DEDENT )? )
+            // InternalDeviceParser.g:4071:3: rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleRangeKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_value_11_0= rulePropertyValue ) ) rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) this_DEDENT_14= RULE_DEDENT )? (this_DEDENT_15= RULE_DEDENT )?
             {
 
                         newCompositeNode(grammarAccess.getPropertyRangeAccess().getPreListElementParserRuleCall_0());
@@ -9680,11 +9720,11 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
                         newLeafNode(otherlv_1, grammarAccess.getPropertyRangeAccess().getNameKeyword_1());
 
-            // InternalDeviceParser.g:4061:3: ( (lv_name_2_0= ruleEString ) )
-            // InternalDeviceParser.g:4062:4: (lv_name_2_0= ruleEString )
+            // InternalDeviceParser.g:4082:3: ( (lv_name_2_0= ruleEString ) )
+            // InternalDeviceParser.g:4083:4: (lv_name_2_0= ruleEString )
             {
-            // InternalDeviceParser.g:4062:4: (lv_name_2_0= ruleEString )
-            // InternalDeviceParser.g:4063:5: lv_name_2_0= ruleEString
+            // InternalDeviceParser.g:4083:4: (lv_name_2_0= ruleEString )
+            // InternalDeviceParser.g:4084:5: lv_name_2_0= ruleEString
             {
 
                                 newCompositeNode(grammarAccess.getPropertyRangeAccess().getNameEStringParserRuleCall_2_0());
@@ -9715,20 +9755,20 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
                         newLeafNode(this_INDENT_3, grammarAccess.getPropertyRangeAccess().getINDENTTerminalRuleCall_3());
 
-            otherlv_4=(Token)match(input,Kind,FOLLOW_47);
+            otherlv_4=(Token)match(input,Kind,FOLLOW_48);
 
                         newLeafNode(otherlv_4, grammarAccess.getPropertyRangeAccess().getKindKeyword_4());
 
-            // InternalDeviceParser.g:4088:3: ( (lv_kind_5_0= ruleRangeKind ) )
-            // InternalDeviceParser.g:4089:4: (lv_kind_5_0= ruleRangeKind )
+            // InternalDeviceParser.g:4109:3: ( (lv_kind_5_0= ruleRangeKind ) )
+            // InternalDeviceParser.g:4110:4: (lv_kind_5_0= ruleRangeKind )
             {
-            // InternalDeviceParser.g:4089:4: (lv_kind_5_0= ruleRangeKind )
-            // InternalDeviceParser.g:4090:5: lv_kind_5_0= ruleRangeKind
+            // InternalDeviceParser.g:4110:4: (lv_kind_5_0= ruleRangeKind )
+            // InternalDeviceParser.g:4111:5: lv_kind_5_0= ruleRangeKind
             {
 
                                 newCompositeNode(grammarAccess.getPropertyRangeAccess().getKindRangeKindParserRuleCall_5_0());
 
-            pushFollow(FOLLOW_42);
+            pushFollow(FOLLOW_43);
             lv_kind_5_0=ruleRangeKind();
 
             state._fsp--;
@@ -9750,31 +9790,31 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDeviceParser.g:4107:3: (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )?
-            int alt75=2;
-            int LA75_0 = input.LA(1);
+            // InternalDeviceParser.g:4128:3: (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )?
+            int alt76=2;
+            int LA76_0 = input.LA(1);
 
-            if ( (LA75_0==Description) ) {
-                alt75=1;
+            if ( (LA76_0==Description) ) {
+                alt76=1;
             }
-            switch (alt75) {
+            switch (alt76) {
                 case 1 :
-                    // InternalDeviceParser.g:4108:4: otherlv_6= Description ( (lv_description_7_0= ruleEString ) )
+                    // InternalDeviceParser.g:4129:4: otherlv_6= Description ( (lv_description_7_0= ruleEString ) )
                     {
                     otherlv_6=(Token)match(input,Description,FOLLOW_11);
 
                                     newLeafNode(otherlv_6, grammarAccess.getPropertyRangeAccess().getDescriptionKeyword_6_0());
 
-                    // InternalDeviceParser.g:4112:4: ( (lv_description_7_0= ruleEString ) )
-                    // InternalDeviceParser.g:4113:5: (lv_description_7_0= ruleEString )
+                    // InternalDeviceParser.g:4133:4: ( (lv_description_7_0= ruleEString ) )
+                    // InternalDeviceParser.g:4134:5: (lv_description_7_0= ruleEString )
                     {
-                    // InternalDeviceParser.g:4113:5: (lv_description_7_0= ruleEString )
-                    // InternalDeviceParser.g:4114:6: lv_description_7_0= ruleEString
+                    // InternalDeviceParser.g:4134:5: (lv_description_7_0= ruleEString )
+                    // InternalDeviceParser.g:4135:6: lv_description_7_0= ruleEString
                     {
 
                                             newCompositeNode(grammarAccess.getPropertyRangeAccess().getDescriptionEStringParserRuleCall_6_1_0());
 
-                    pushFollow(FOLLOW_43);
+                    pushFollow(FOLLOW_44);
                     lv_description_7_0=ruleEString();
 
                     state._fsp--;
@@ -9802,16 +9842,16 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDeviceParser.g:4132:3: (otherlv_8= Value this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_value_11_0= rulePropertyValue ) ) rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) this_DEDENT_14= RULE_DEDENT )?
-            int alt76=2;
-            int LA76_0 = input.LA(1);
+            // InternalDeviceParser.g:4153:3: (otherlv_8= Value this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_value_11_0= rulePropertyValue ) ) rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) this_DEDENT_14= RULE_DEDENT )?
+            int alt77=2;
+            int LA77_0 = input.LA(1);
 
-            if ( (LA76_0==Value) ) {
-                alt76=1;
+            if ( (LA77_0==Value) ) {
+                alt77=1;
             }
-            switch (alt76) {
+            switch (alt77) {
                 case 1 :
-                    // InternalDeviceParser.g:4133:4: otherlv_8= Value this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_value_11_0= rulePropertyValue ) ) rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) this_DEDENT_14= RULE_DEDENT
+                    // InternalDeviceParser.g:4154:4: otherlv_8= Value this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_value_11_0= rulePropertyValue ) ) rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) this_DEDENT_14= RULE_DEDENT
                     {
                     otherlv_8=(Token)match(input,Value,FOLLOW_7);
 
@@ -9832,11 +9872,11 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
                                     afterParserOrEnumRuleCall();
 
-                    // InternalDeviceParser.g:4148:4: ( (lv_value_11_0= rulePropertyValue ) )
-                    // InternalDeviceParser.g:4149:5: (lv_value_11_0= rulePropertyValue )
+                    // InternalDeviceParser.g:4169:4: ( (lv_value_11_0= rulePropertyValue ) )
+                    // InternalDeviceParser.g:4170:5: (lv_value_11_0= rulePropertyValue )
                     {
-                    // InternalDeviceParser.g:4149:5: (lv_value_11_0= rulePropertyValue )
-                    // InternalDeviceParser.g:4150:6: lv_value_11_0= rulePropertyValue
+                    // InternalDeviceParser.g:4170:5: (lv_value_11_0= rulePropertyValue )
+                    // InternalDeviceParser.g:4171:6: lv_value_11_0= rulePropertyValue
                     {
 
                                             newCompositeNode(grammarAccess.getPropertyRangeAccess().getValuePropertyValueParserRuleCall_7_3_0());
@@ -9874,11 +9914,11 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
                                     afterParserOrEnumRuleCall();
 
-                    // InternalDeviceParser.g:4174:4: ( (lv_value_13_0= rulePropertyValue ) )
-                    // InternalDeviceParser.g:4175:5: (lv_value_13_0= rulePropertyValue )
+                    // InternalDeviceParser.g:4195:4: ( (lv_value_13_0= rulePropertyValue ) )
+                    // InternalDeviceParser.g:4196:5: (lv_value_13_0= rulePropertyValue )
                     {
-                    // InternalDeviceParser.g:4175:5: (lv_value_13_0= rulePropertyValue )
-                    // InternalDeviceParser.g:4176:6: lv_value_13_0= rulePropertyValue
+                    // InternalDeviceParser.g:4196:5: (lv_value_13_0= rulePropertyValue )
+                    // InternalDeviceParser.g:4197:6: lv_value_13_0= rulePropertyValue
                     {
 
                                             newCompositeNode(grammarAccess.getPropertyRangeAccess().getValuePropertyValueParserRuleCall_7_5_0());
@@ -9905,7 +9945,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    this_DEDENT_14=(Token)match(input,RULE_DEDENT,FOLLOW_44);
+                    this_DEDENT_14=(Token)match(input,RULE_DEDENT,FOLLOW_45);
 
                                     newLeafNode(this_DEDENT_14, grammarAccess.getPropertyRangeAccess().getDEDENTTerminalRuleCall_7_6());
 
@@ -9915,38 +9955,38 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDeviceParser.g:4198:3: (this_DEDENT_15= RULE_DEDENT )?
-            int alt77=2;
-            int LA77_0 = input.LA(1);
+            // InternalDeviceParser.g:4219:3: (this_DEDENT_15= RULE_DEDENT )?
+            int alt78=2;
+            int LA78_0 = input.LA(1);
 
-            if ( (LA77_0==RULE_DEDENT) ) {
-                int LA77_1 = input.LA(2);
+            if ( (LA78_0==RULE_DEDENT) ) {
+                int LA78_1 = input.LA(2);
 
-                if ( (LA77_1==EOF||LA77_1==HyphenMinus) ) {
-                    alt77=1;
-                }
-                else if ( (LA77_1==RULE_DEDENT) ) {
-                    int LA77_4 = input.LA(3);
+                if ( (LA78_1==RULE_DEDENT) ) {
+                    int LA78_3 = input.LA(3);
 
-                    if ( (LA77_4==RULE_DEDENT) ) {
-                        int LA77_5 = input.LA(4);
+                    if ( (LA78_3==RULE_DEDENT) ) {
+                        int LA78_5 = input.LA(4);
 
-                        if ( (LA77_5==RULE_DEDENT) ) {
-                            int LA77_6 = input.LA(5);
+                        if ( (LA78_5==RULE_DEDENT) ) {
+                            int LA78_6 = input.LA(5);
 
-                            if ( (LA77_6==CommunicationConnection||LA77_6==ComputationResouce||LA77_6==RULE_DEDENT) ) {
-                                alt77=1;
+                            if ( (LA78_6==CommunicationConnection||LA78_6==ComputationResouce||LA78_6==RULE_DEDENT) ) {
+                                alt78=1;
                             }
                         }
-                        else if ( (LA77_5==EOF||LA77_5==HyphenMinus) ) {
-                            alt77=1;
+                        else if ( (LA78_5==EOF||LA78_5==HyphenMinus) ) {
+                            alt78=1;
                         }
                     }
                 }
+                else if ( (LA78_1==EOF||LA78_1==HyphenMinus) ) {
+                    alt78=1;
+                }
             }
-            switch (alt77) {
+            switch (alt78) {
                 case 1 :
-                    // InternalDeviceParser.g:4199:4: this_DEDENT_15= RULE_DEDENT
+                    // InternalDeviceParser.g:4220:4: this_DEDENT_15= RULE_DEDENT
                     {
                     this_DEDENT_15=(Token)match(input,RULE_DEDENT,FOLLOW_2);
 
@@ -9981,7 +10021,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePropertyValue"
-    // InternalDeviceParser.g:4208:1: entryRulePropertyValue returns [EObject current=null] : iv_rulePropertyValue= rulePropertyValue EOF ;
+    // InternalDeviceParser.g:4229:1: entryRulePropertyValue returns [EObject current=null] : iv_rulePropertyValue= rulePropertyValue EOF ;
     public final EObject entryRulePropertyValue() throws RecognitionException {
         EObject current = null;
 
@@ -9989,8 +10029,8 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDeviceParser.g:4208:54: (iv_rulePropertyValue= rulePropertyValue EOF )
-            // InternalDeviceParser.g:4209:2: iv_rulePropertyValue= rulePropertyValue EOF
+            // InternalDeviceParser.g:4229:54: (iv_rulePropertyValue= rulePropertyValue EOF )
+            // InternalDeviceParser.g:4230:2: iv_rulePropertyValue= rulePropertyValue EOF
             {
              newCompositeNode(grammarAccess.getPropertyValueRule());
             pushFollow(FOLLOW_1);
@@ -10017,7 +10057,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePropertyValue"
-    // InternalDeviceParser.g:4215:1: rulePropertyValue returns [EObject current=null] : (this_PropertyValueInt_0= rulePropertyValueInt | this_PropertyValueDouble_1= rulePropertyValueDouble | this_PropertyValueString_2= rulePropertyValueString | this_ProcessorArchitectureValue_3= ruleProcessorArchitectureValue | this_LinuxDistributionValue_4= ruleLinuxDistributionValue | this_UbuntuVersionValue_5= ruleUbuntuVersionValue | this_PropertyValueList_6= rulePropertyValueList ) ;
+    // InternalDeviceParser.g:4236:1: rulePropertyValue returns [EObject current=null] : (this_PropertyValueInt_0= rulePropertyValueInt | this_PropertyValueDouble_1= rulePropertyValueDouble | this_PropertyValueString_2= rulePropertyValueString | this_ProcessorArchitectureValue_3= ruleProcessorArchitectureValue | this_LinuxDistributionValue_4= ruleLinuxDistributionValue | this_UbuntuVersionValue_5= ruleUbuntuVersionValue | this_PropertyValueList_6= rulePropertyValueList ) ;
     public final EObject rulePropertyValue() throws RecognitionException {
         EObject current = null;
 
@@ -10040,61 +10080,61 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
             enterRule();
 
         try {
-            // InternalDeviceParser.g:4221:2: ( (this_PropertyValueInt_0= rulePropertyValueInt | this_PropertyValueDouble_1= rulePropertyValueDouble | this_PropertyValueString_2= rulePropertyValueString | this_ProcessorArchitectureValue_3= ruleProcessorArchitectureValue | this_LinuxDistributionValue_4= ruleLinuxDistributionValue | this_UbuntuVersionValue_5= ruleUbuntuVersionValue | this_PropertyValueList_6= rulePropertyValueList ) )
-            // InternalDeviceParser.g:4222:2: (this_PropertyValueInt_0= rulePropertyValueInt | this_PropertyValueDouble_1= rulePropertyValueDouble | this_PropertyValueString_2= rulePropertyValueString | this_ProcessorArchitectureValue_3= ruleProcessorArchitectureValue | this_LinuxDistributionValue_4= ruleLinuxDistributionValue | this_UbuntuVersionValue_5= ruleUbuntuVersionValue | this_PropertyValueList_6= rulePropertyValueList )
+            // InternalDeviceParser.g:4242:2: ( (this_PropertyValueInt_0= rulePropertyValueInt | this_PropertyValueDouble_1= rulePropertyValueDouble | this_PropertyValueString_2= rulePropertyValueString | this_ProcessorArchitectureValue_3= ruleProcessorArchitectureValue | this_LinuxDistributionValue_4= ruleLinuxDistributionValue | this_UbuntuVersionValue_5= ruleUbuntuVersionValue | this_PropertyValueList_6= rulePropertyValueList ) )
+            // InternalDeviceParser.g:4243:2: (this_PropertyValueInt_0= rulePropertyValueInt | this_PropertyValueDouble_1= rulePropertyValueDouble | this_PropertyValueString_2= rulePropertyValueString | this_ProcessorArchitectureValue_3= ruleProcessorArchitectureValue | this_LinuxDistributionValue_4= ruleLinuxDistributionValue | this_UbuntuVersionValue_5= ruleUbuntuVersionValue | this_PropertyValueList_6= rulePropertyValueList )
             {
-            // InternalDeviceParser.g:4222:2: (this_PropertyValueInt_0= rulePropertyValueInt | this_PropertyValueDouble_1= rulePropertyValueDouble | this_PropertyValueString_2= rulePropertyValueString | this_ProcessorArchitectureValue_3= ruleProcessorArchitectureValue | this_LinuxDistributionValue_4= ruleLinuxDistributionValue | this_UbuntuVersionValue_5= ruleUbuntuVersionValue | this_PropertyValueList_6= rulePropertyValueList )
-            int alt78=7;
+            // InternalDeviceParser.g:4243:2: (this_PropertyValueInt_0= rulePropertyValueInt | this_PropertyValueDouble_1= rulePropertyValueDouble | this_PropertyValueString_2= rulePropertyValueString | this_ProcessorArchitectureValue_3= ruleProcessorArchitectureValue | this_LinuxDistributionValue_4= ruleLinuxDistributionValue | this_UbuntuVersionValue_5= ruleUbuntuVersionValue | this_PropertyValueList_6= rulePropertyValueList )
+            int alt79=7;
             switch ( input.LA(1) ) {
             case RULE_DECINT:
                 {
-                alt78=1;
+                alt79=1;
                 }
                 break;
             case RULE_DOUBLE:
                 {
-                alt78=2;
+                alt79=2;
                 }
                 break;
             case RULE_ID:
             case RULE_STRING:
                 {
-                alt78=3;
+                alt79=3;
                 }
                 break;
             case Arm64:
             case X86:
                 {
-                alt78=4;
+                alt79=4;
                 }
                 break;
             case Debian:
             case Ubuntu:
                 {
-                alt78=5;
+                alt79=5;
                 }
                 break;
             case Focal:
             case Jammy:
                 {
-                alt78=6;
+                alt79=6;
                 }
                 break;
             case RULE_INDENT:
                 {
-                alt78=7;
+                alt79=7;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 78, 0, input);
+                    new NoViableAltException("", 79, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt78) {
+            switch (alt79) {
                 case 1 :
-                    // InternalDeviceParser.g:4223:3: this_PropertyValueInt_0= rulePropertyValueInt
+                    // InternalDeviceParser.g:4244:3: this_PropertyValueInt_0= rulePropertyValueInt
                     {
 
                                 newCompositeNode(grammarAccess.getPropertyValueAccess().getPropertyValueIntParserRuleCall_0());
@@ -10112,7 +10152,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalDeviceParser.g:4232:3: this_PropertyValueDouble_1= rulePropertyValueDouble
+                    // InternalDeviceParser.g:4253:3: this_PropertyValueDouble_1= rulePropertyValueDouble
                     {
 
                                 newCompositeNode(grammarAccess.getPropertyValueAccess().getPropertyValueDoubleParserRuleCall_1());
@@ -10130,7 +10170,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalDeviceParser.g:4241:3: this_PropertyValueString_2= rulePropertyValueString
+                    // InternalDeviceParser.g:4262:3: this_PropertyValueString_2= rulePropertyValueString
                     {
 
                                 newCompositeNode(grammarAccess.getPropertyValueAccess().getPropertyValueStringParserRuleCall_2());
@@ -10148,7 +10188,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalDeviceParser.g:4250:3: this_ProcessorArchitectureValue_3= ruleProcessorArchitectureValue
+                    // InternalDeviceParser.g:4271:3: this_ProcessorArchitectureValue_3= ruleProcessorArchitectureValue
                     {
 
                                 newCompositeNode(grammarAccess.getPropertyValueAccess().getProcessorArchitectureValueParserRuleCall_3());
@@ -10166,7 +10206,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalDeviceParser.g:4259:3: this_LinuxDistributionValue_4= ruleLinuxDistributionValue
+                    // InternalDeviceParser.g:4280:3: this_LinuxDistributionValue_4= ruleLinuxDistributionValue
                     {
 
                                 newCompositeNode(grammarAccess.getPropertyValueAccess().getLinuxDistributionValueParserRuleCall_4());
@@ -10184,7 +10224,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalDeviceParser.g:4268:3: this_UbuntuVersionValue_5= ruleUbuntuVersionValue
+                    // InternalDeviceParser.g:4289:3: this_UbuntuVersionValue_5= ruleUbuntuVersionValue
                     {
 
                                 newCompositeNode(grammarAccess.getPropertyValueAccess().getUbuntuVersionValueParserRuleCall_5());
@@ -10202,7 +10242,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalDeviceParser.g:4277:3: this_PropertyValueList_6= rulePropertyValueList
+                    // InternalDeviceParser.g:4298:3: this_PropertyValueList_6= rulePropertyValueList
                     {
 
                                 newCompositeNode(grammarAccess.getPropertyValueAccess().getPropertyValueListParserRuleCall_6());
@@ -10242,7 +10282,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePropertyValueInt"
-    // InternalDeviceParser.g:4289:1: entryRulePropertyValueInt returns [EObject current=null] : iv_rulePropertyValueInt= rulePropertyValueInt EOF ;
+    // InternalDeviceParser.g:4310:1: entryRulePropertyValueInt returns [EObject current=null] : iv_rulePropertyValueInt= rulePropertyValueInt EOF ;
     public final EObject entryRulePropertyValueInt() throws RecognitionException {
         EObject current = null;
 
@@ -10250,8 +10290,8 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDeviceParser.g:4289:57: (iv_rulePropertyValueInt= rulePropertyValueInt EOF )
-            // InternalDeviceParser.g:4290:2: iv_rulePropertyValueInt= rulePropertyValueInt EOF
+            // InternalDeviceParser.g:4310:57: (iv_rulePropertyValueInt= rulePropertyValueInt EOF )
+            // InternalDeviceParser.g:4311:2: iv_rulePropertyValueInt= rulePropertyValueInt EOF
             {
              newCompositeNode(grammarAccess.getPropertyValueIntRule());
             pushFollow(FOLLOW_1);
@@ -10278,7 +10318,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePropertyValueInt"
-    // InternalDeviceParser.g:4296:1: rulePropertyValueInt returns [EObject current=null] : ( (lv_value_0_0= ruleInteger0 ) ) ;
+    // InternalDeviceParser.g:4317:1: rulePropertyValueInt returns [EObject current=null] : ( (lv_value_0_0= ruleInteger0 ) ) ;
     public final EObject rulePropertyValueInt() throws RecognitionException {
         EObject current = null;
 
@@ -10289,14 +10329,14 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
             enterRule();
 
         try {
-            // InternalDeviceParser.g:4302:2: ( ( (lv_value_0_0= ruleInteger0 ) ) )
-            // InternalDeviceParser.g:4303:2: ( (lv_value_0_0= ruleInteger0 ) )
+            // InternalDeviceParser.g:4323:2: ( ( (lv_value_0_0= ruleInteger0 ) ) )
+            // InternalDeviceParser.g:4324:2: ( (lv_value_0_0= ruleInteger0 ) )
             {
-            // InternalDeviceParser.g:4303:2: ( (lv_value_0_0= ruleInteger0 ) )
-            // InternalDeviceParser.g:4304:3: (lv_value_0_0= ruleInteger0 )
+            // InternalDeviceParser.g:4324:2: ( (lv_value_0_0= ruleInteger0 ) )
+            // InternalDeviceParser.g:4325:3: (lv_value_0_0= ruleInteger0 )
             {
-            // InternalDeviceParser.g:4304:3: (lv_value_0_0= ruleInteger0 )
-            // InternalDeviceParser.g:4305:4: lv_value_0_0= ruleInteger0
+            // InternalDeviceParser.g:4325:3: (lv_value_0_0= ruleInteger0 )
+            // InternalDeviceParser.g:4326:4: lv_value_0_0= ruleInteger0
             {
 
                             newCompositeNode(grammarAccess.getPropertyValueIntAccess().getValueInteger0ParserRuleCall_0());
@@ -10343,7 +10383,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePropertyValueDouble"
-    // InternalDeviceParser.g:4325:1: entryRulePropertyValueDouble returns [EObject current=null] : iv_rulePropertyValueDouble= rulePropertyValueDouble EOF ;
+    // InternalDeviceParser.g:4346:1: entryRulePropertyValueDouble returns [EObject current=null] : iv_rulePropertyValueDouble= rulePropertyValueDouble EOF ;
     public final EObject entryRulePropertyValueDouble() throws RecognitionException {
         EObject current = null;
 
@@ -10351,8 +10391,8 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDeviceParser.g:4325:60: (iv_rulePropertyValueDouble= rulePropertyValueDouble EOF )
-            // InternalDeviceParser.g:4326:2: iv_rulePropertyValueDouble= rulePropertyValueDouble EOF
+            // InternalDeviceParser.g:4346:60: (iv_rulePropertyValueDouble= rulePropertyValueDouble EOF )
+            // InternalDeviceParser.g:4347:2: iv_rulePropertyValueDouble= rulePropertyValueDouble EOF
             {
              newCompositeNode(grammarAccess.getPropertyValueDoubleRule());
             pushFollow(FOLLOW_1);
@@ -10379,7 +10419,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePropertyValueDouble"
-    // InternalDeviceParser.g:4332:1: rulePropertyValueDouble returns [EObject current=null] : ( (lv_value_0_0= ruleDouble0 ) ) ;
+    // InternalDeviceParser.g:4353:1: rulePropertyValueDouble returns [EObject current=null] : ( (lv_value_0_0= ruleDouble0 ) ) ;
     public final EObject rulePropertyValueDouble() throws RecognitionException {
         EObject current = null;
 
@@ -10390,14 +10430,14 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
             enterRule();
 
         try {
-            // InternalDeviceParser.g:4338:2: ( ( (lv_value_0_0= ruleDouble0 ) ) )
-            // InternalDeviceParser.g:4339:2: ( (lv_value_0_0= ruleDouble0 ) )
+            // InternalDeviceParser.g:4359:2: ( ( (lv_value_0_0= ruleDouble0 ) ) )
+            // InternalDeviceParser.g:4360:2: ( (lv_value_0_0= ruleDouble0 ) )
             {
-            // InternalDeviceParser.g:4339:2: ( (lv_value_0_0= ruleDouble0 ) )
-            // InternalDeviceParser.g:4340:3: (lv_value_0_0= ruleDouble0 )
+            // InternalDeviceParser.g:4360:2: ( (lv_value_0_0= ruleDouble0 ) )
+            // InternalDeviceParser.g:4361:3: (lv_value_0_0= ruleDouble0 )
             {
-            // InternalDeviceParser.g:4340:3: (lv_value_0_0= ruleDouble0 )
-            // InternalDeviceParser.g:4341:4: lv_value_0_0= ruleDouble0
+            // InternalDeviceParser.g:4361:3: (lv_value_0_0= ruleDouble0 )
+            // InternalDeviceParser.g:4362:4: lv_value_0_0= ruleDouble0
             {
 
                             newCompositeNode(grammarAccess.getPropertyValueDoubleAccess().getValueDouble0ParserRuleCall_0());
@@ -10444,7 +10484,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePropertyValueString"
-    // InternalDeviceParser.g:4361:1: entryRulePropertyValueString returns [EObject current=null] : iv_rulePropertyValueString= rulePropertyValueString EOF ;
+    // InternalDeviceParser.g:4382:1: entryRulePropertyValueString returns [EObject current=null] : iv_rulePropertyValueString= rulePropertyValueString EOF ;
     public final EObject entryRulePropertyValueString() throws RecognitionException {
         EObject current = null;
 
@@ -10452,8 +10492,8 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDeviceParser.g:4361:60: (iv_rulePropertyValueString= rulePropertyValueString EOF )
-            // InternalDeviceParser.g:4362:2: iv_rulePropertyValueString= rulePropertyValueString EOF
+            // InternalDeviceParser.g:4382:60: (iv_rulePropertyValueString= rulePropertyValueString EOF )
+            // InternalDeviceParser.g:4383:2: iv_rulePropertyValueString= rulePropertyValueString EOF
             {
              newCompositeNode(grammarAccess.getPropertyValueStringRule());
             pushFollow(FOLLOW_1);
@@ -10480,7 +10520,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePropertyValueString"
-    // InternalDeviceParser.g:4368:1: rulePropertyValueString returns [EObject current=null] : ( (lv_value_0_0= ruleEString ) ) ;
+    // InternalDeviceParser.g:4389:1: rulePropertyValueString returns [EObject current=null] : ( (lv_value_0_0= ruleEString ) ) ;
     public final EObject rulePropertyValueString() throws RecognitionException {
         EObject current = null;
 
@@ -10491,14 +10531,14 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
             enterRule();
 
         try {
-            // InternalDeviceParser.g:4374:2: ( ( (lv_value_0_0= ruleEString ) ) )
-            // InternalDeviceParser.g:4375:2: ( (lv_value_0_0= ruleEString ) )
+            // InternalDeviceParser.g:4395:2: ( ( (lv_value_0_0= ruleEString ) ) )
+            // InternalDeviceParser.g:4396:2: ( (lv_value_0_0= ruleEString ) )
             {
-            // InternalDeviceParser.g:4375:2: ( (lv_value_0_0= ruleEString ) )
-            // InternalDeviceParser.g:4376:3: (lv_value_0_0= ruleEString )
+            // InternalDeviceParser.g:4396:2: ( (lv_value_0_0= ruleEString ) )
+            // InternalDeviceParser.g:4397:3: (lv_value_0_0= ruleEString )
             {
-            // InternalDeviceParser.g:4376:3: (lv_value_0_0= ruleEString )
-            // InternalDeviceParser.g:4377:4: lv_value_0_0= ruleEString
+            // InternalDeviceParser.g:4397:3: (lv_value_0_0= ruleEString )
+            // InternalDeviceParser.g:4398:4: lv_value_0_0= ruleEString
             {
 
                             newCompositeNode(grammarAccess.getPropertyValueStringAccess().getValueEStringParserRuleCall_0());
@@ -10545,7 +10585,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePropertyValueList"
-    // InternalDeviceParser.g:4397:1: entryRulePropertyValueList returns [EObject current=null] : iv_rulePropertyValueList= rulePropertyValueList EOF ;
+    // InternalDeviceParser.g:4418:1: entryRulePropertyValueList returns [EObject current=null] : iv_rulePropertyValueList= rulePropertyValueList EOF ;
     public final EObject entryRulePropertyValueList() throws RecognitionException {
         EObject current = null;
 
@@ -10553,8 +10593,8 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDeviceParser.g:4397:58: (iv_rulePropertyValueList= rulePropertyValueList EOF )
-            // InternalDeviceParser.g:4398:2: iv_rulePropertyValueList= rulePropertyValueList EOF
+            // InternalDeviceParser.g:4418:58: (iv_rulePropertyValueList= rulePropertyValueList EOF )
+            // InternalDeviceParser.g:4419:2: iv_rulePropertyValueList= rulePropertyValueList EOF
             {
              newCompositeNode(grammarAccess.getPropertyValueListRule());
             pushFollow(FOLLOW_1);
@@ -10581,7 +10621,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePropertyValueList"
-    // InternalDeviceParser.g:4404:1: rulePropertyValueList returns [EObject current=null] : (this_INDENT_0= RULE_INDENT rulePreListElement ( (lv_value_2_0= rulePropertyValue ) ) ( rulePreListElement ( (lv_value_4_0= rulePropertyValue ) ) )* this_DEDENT_5= RULE_DEDENT ) ;
+    // InternalDeviceParser.g:4425:1: rulePropertyValueList returns [EObject current=null] : (this_INDENT_0= RULE_INDENT rulePreListElement ( (lv_value_2_0= rulePropertyValue ) ) ( rulePreListElement ( (lv_value_4_0= rulePropertyValue ) ) )* this_DEDENT_5= RULE_DEDENT ) ;
     public final EObject rulePropertyValueList() throws RecognitionException {
         EObject current = null;
 
@@ -10596,11 +10636,11 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
             enterRule();
 
         try {
-            // InternalDeviceParser.g:4410:2: ( (this_INDENT_0= RULE_INDENT rulePreListElement ( (lv_value_2_0= rulePropertyValue ) ) ( rulePreListElement ( (lv_value_4_0= rulePropertyValue ) ) )* this_DEDENT_5= RULE_DEDENT ) )
-            // InternalDeviceParser.g:4411:2: (this_INDENT_0= RULE_INDENT rulePreListElement ( (lv_value_2_0= rulePropertyValue ) ) ( rulePreListElement ( (lv_value_4_0= rulePropertyValue ) ) )* this_DEDENT_5= RULE_DEDENT )
+            // InternalDeviceParser.g:4431:2: ( (this_INDENT_0= RULE_INDENT rulePreListElement ( (lv_value_2_0= rulePropertyValue ) ) ( rulePreListElement ( (lv_value_4_0= rulePropertyValue ) ) )* this_DEDENT_5= RULE_DEDENT ) )
+            // InternalDeviceParser.g:4432:2: (this_INDENT_0= RULE_INDENT rulePreListElement ( (lv_value_2_0= rulePropertyValue ) ) ( rulePreListElement ( (lv_value_4_0= rulePropertyValue ) ) )* this_DEDENT_5= RULE_DEDENT )
             {
-            // InternalDeviceParser.g:4411:2: (this_INDENT_0= RULE_INDENT rulePreListElement ( (lv_value_2_0= rulePropertyValue ) ) ( rulePreListElement ( (lv_value_4_0= rulePropertyValue ) ) )* this_DEDENT_5= RULE_DEDENT )
-            // InternalDeviceParser.g:4412:3: this_INDENT_0= RULE_INDENT rulePreListElement ( (lv_value_2_0= rulePropertyValue ) ) ( rulePreListElement ( (lv_value_4_0= rulePropertyValue ) ) )* this_DEDENT_5= RULE_DEDENT
+            // InternalDeviceParser.g:4432:2: (this_INDENT_0= RULE_INDENT rulePreListElement ( (lv_value_2_0= rulePropertyValue ) ) ( rulePreListElement ( (lv_value_4_0= rulePropertyValue ) ) )* this_DEDENT_5= RULE_DEDENT )
+            // InternalDeviceParser.g:4433:3: this_INDENT_0= RULE_INDENT rulePreListElement ( (lv_value_2_0= rulePropertyValue ) ) ( rulePreListElement ( (lv_value_4_0= rulePropertyValue ) ) )* this_DEDENT_5= RULE_DEDENT
             {
             this_INDENT_0=(Token)match(input,RULE_INDENT,FOLLOW_25);
 
@@ -10617,11 +10657,11 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
                         afterParserOrEnumRuleCall();
 
-            // InternalDeviceParser.g:4423:3: ( (lv_value_2_0= rulePropertyValue ) )
-            // InternalDeviceParser.g:4424:4: (lv_value_2_0= rulePropertyValue )
+            // InternalDeviceParser.g:4444:3: ( (lv_value_2_0= rulePropertyValue ) )
+            // InternalDeviceParser.g:4445:4: (lv_value_2_0= rulePropertyValue )
             {
-            // InternalDeviceParser.g:4424:4: (lv_value_2_0= rulePropertyValue )
-            // InternalDeviceParser.g:4425:5: lv_value_2_0= rulePropertyValue
+            // InternalDeviceParser.g:4445:4: (lv_value_2_0= rulePropertyValue )
+            // InternalDeviceParser.g:4446:5: lv_value_2_0= rulePropertyValue
             {
 
                                 newCompositeNode(grammarAccess.getPropertyValueListAccess().getValuePropertyValueParserRuleCall_2_0());
@@ -10648,20 +10688,20 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDeviceParser.g:4442:3: ( rulePreListElement ( (lv_value_4_0= rulePropertyValue ) ) )*
-            loop79:
+            // InternalDeviceParser.g:4463:3: ( rulePreListElement ( (lv_value_4_0= rulePropertyValue ) ) )*
+            loop80:
             do {
-                int alt79=2;
-                int LA79_0 = input.LA(1);
+                int alt80=2;
+                int LA80_0 = input.LA(1);
 
-                if ( (LA79_0==HyphenMinus) ) {
-                    alt79=1;
+                if ( (LA80_0==HyphenMinus) ) {
+                    alt80=1;
                 }
 
 
-                switch (alt79) {
+                switch (alt80) {
                 case 1 :
-                    // InternalDeviceParser.g:4443:4: rulePreListElement ( (lv_value_4_0= rulePropertyValue ) )
+                    // InternalDeviceParser.g:4464:4: rulePreListElement ( (lv_value_4_0= rulePropertyValue ) )
                     {
 
                                     newCompositeNode(grammarAccess.getPropertyValueListAccess().getPreListElementParserRuleCall_3_0());
@@ -10674,11 +10714,11 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
                                     afterParserOrEnumRuleCall();
 
-                    // InternalDeviceParser.g:4450:4: ( (lv_value_4_0= rulePropertyValue ) )
-                    // InternalDeviceParser.g:4451:5: (lv_value_4_0= rulePropertyValue )
+                    // InternalDeviceParser.g:4471:4: ( (lv_value_4_0= rulePropertyValue ) )
+                    // InternalDeviceParser.g:4472:5: (lv_value_4_0= rulePropertyValue )
                     {
-                    // InternalDeviceParser.g:4451:5: (lv_value_4_0= rulePropertyValue )
-                    // InternalDeviceParser.g:4452:6: lv_value_4_0= rulePropertyValue
+                    // InternalDeviceParser.g:4472:5: (lv_value_4_0= rulePropertyValue )
+                    // InternalDeviceParser.g:4473:6: lv_value_4_0= rulePropertyValue
                     {
 
                                             newCompositeNode(grammarAccess.getPropertyValueListAccess().getValuePropertyValueParserRuleCall_3_1_0());
@@ -10710,7 +10750,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
                     break;
 
                 default :
-                    break loop79;
+                    break loop80;
                 }
             } while (true);
 
@@ -10741,7 +10781,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleProcessorArchitectureValue"
-    // InternalDeviceParser.g:4478:1: entryRuleProcessorArchitectureValue returns [EObject current=null] : iv_ruleProcessorArchitectureValue= ruleProcessorArchitectureValue EOF ;
+    // InternalDeviceParser.g:4499:1: entryRuleProcessorArchitectureValue returns [EObject current=null] : iv_ruleProcessorArchitectureValue= ruleProcessorArchitectureValue EOF ;
     public final EObject entryRuleProcessorArchitectureValue() throws RecognitionException {
         EObject current = null;
 
@@ -10749,8 +10789,8 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDeviceParser.g:4478:67: (iv_ruleProcessorArchitectureValue= ruleProcessorArchitectureValue EOF )
-            // InternalDeviceParser.g:4479:2: iv_ruleProcessorArchitectureValue= ruleProcessorArchitectureValue EOF
+            // InternalDeviceParser.g:4499:67: (iv_ruleProcessorArchitectureValue= ruleProcessorArchitectureValue EOF )
+            // InternalDeviceParser.g:4500:2: iv_ruleProcessorArchitectureValue= ruleProcessorArchitectureValue EOF
             {
              newCompositeNode(grammarAccess.getProcessorArchitectureValueRule());
             pushFollow(FOLLOW_1);
@@ -10777,7 +10817,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleProcessorArchitectureValue"
-    // InternalDeviceParser.g:4485:1: ruleProcessorArchitectureValue returns [EObject current=null] : ( (lv_value_0_0= ruleProcessorArchitectureType ) ) ;
+    // InternalDeviceParser.g:4506:1: ruleProcessorArchitectureValue returns [EObject current=null] : ( (lv_value_0_0= ruleProcessorArchitectureType ) ) ;
     public final EObject ruleProcessorArchitectureValue() throws RecognitionException {
         EObject current = null;
 
@@ -10788,14 +10828,14 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
             enterRule();
 
         try {
-            // InternalDeviceParser.g:4491:2: ( ( (lv_value_0_0= ruleProcessorArchitectureType ) ) )
-            // InternalDeviceParser.g:4492:2: ( (lv_value_0_0= ruleProcessorArchitectureType ) )
+            // InternalDeviceParser.g:4512:2: ( ( (lv_value_0_0= ruleProcessorArchitectureType ) ) )
+            // InternalDeviceParser.g:4513:2: ( (lv_value_0_0= ruleProcessorArchitectureType ) )
             {
-            // InternalDeviceParser.g:4492:2: ( (lv_value_0_0= ruleProcessorArchitectureType ) )
-            // InternalDeviceParser.g:4493:3: (lv_value_0_0= ruleProcessorArchitectureType )
+            // InternalDeviceParser.g:4513:2: ( (lv_value_0_0= ruleProcessorArchitectureType ) )
+            // InternalDeviceParser.g:4514:3: (lv_value_0_0= ruleProcessorArchitectureType )
             {
-            // InternalDeviceParser.g:4493:3: (lv_value_0_0= ruleProcessorArchitectureType )
-            // InternalDeviceParser.g:4494:4: lv_value_0_0= ruleProcessorArchitectureType
+            // InternalDeviceParser.g:4514:3: (lv_value_0_0= ruleProcessorArchitectureType )
+            // InternalDeviceParser.g:4515:4: lv_value_0_0= ruleProcessorArchitectureType
             {
 
                             newCompositeNode(grammarAccess.getProcessorArchitectureValueAccess().getValueProcessorArchitectureTypeEnumRuleCall_0());
@@ -10842,7 +10882,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAbstractResouceType"
-    // InternalDeviceParser.g:4514:1: entryRuleAbstractResouceType returns [EObject current=null] : iv_ruleAbstractResouceType= ruleAbstractResouceType EOF ;
+    // InternalDeviceParser.g:4535:1: entryRuleAbstractResouceType returns [EObject current=null] : iv_ruleAbstractResouceType= ruleAbstractResouceType EOF ;
     public final EObject entryRuleAbstractResouceType() throws RecognitionException {
         EObject current = null;
 
@@ -10850,8 +10890,8 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDeviceParser.g:4514:60: (iv_ruleAbstractResouceType= ruleAbstractResouceType EOF )
-            // InternalDeviceParser.g:4515:2: iv_ruleAbstractResouceType= ruleAbstractResouceType EOF
+            // InternalDeviceParser.g:4535:60: (iv_ruleAbstractResouceType= ruleAbstractResouceType EOF )
+            // InternalDeviceParser.g:4536:2: iv_ruleAbstractResouceType= ruleAbstractResouceType EOF
             {
              newCompositeNode(grammarAccess.getAbstractResouceTypeRule());
             pushFollow(FOLLOW_1);
@@ -10878,7 +10918,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAbstractResouceType"
-    // InternalDeviceParser.g:4521:1: ruleAbstractResouceType returns [EObject current=null] : this_ResourceType_0= ruleResourceType ;
+    // InternalDeviceParser.g:4542:1: ruleAbstractResouceType returns [EObject current=null] : this_ResourceType_0= ruleResourceType ;
     public final EObject ruleAbstractResouceType() throws RecognitionException {
         EObject current = null;
 
@@ -10889,8 +10929,8 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
             enterRule();
 
         try {
-            // InternalDeviceParser.g:4527:2: (this_ResourceType_0= ruleResourceType )
-            // InternalDeviceParser.g:4528:2: this_ResourceType_0= ruleResourceType
+            // InternalDeviceParser.g:4548:2: (this_ResourceType_0= ruleResourceType )
+            // InternalDeviceParser.g:4549:2: this_ResourceType_0= ruleResourceType
             {
 
                     newCompositeNode(grammarAccess.getAbstractResouceTypeAccess().getResourceTypeParserRuleCall());
@@ -10924,7 +10964,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleOpertingSystemResouceType"
-    // InternalDeviceParser.g:4539:1: entryRuleOpertingSystemResouceType returns [EObject current=null] : iv_ruleOpertingSystemResouceType= ruleOpertingSystemResouceType EOF ;
+    // InternalDeviceParser.g:4560:1: entryRuleOpertingSystemResouceType returns [EObject current=null] : iv_ruleOpertingSystemResouceType= ruleOpertingSystemResouceType EOF ;
     public final EObject entryRuleOpertingSystemResouceType() throws RecognitionException {
         EObject current = null;
 
@@ -10932,8 +10972,8 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDeviceParser.g:4539:66: (iv_ruleOpertingSystemResouceType= ruleOpertingSystemResouceType EOF )
-            // InternalDeviceParser.g:4540:2: iv_ruleOpertingSystemResouceType= ruleOpertingSystemResouceType EOF
+            // InternalDeviceParser.g:4560:66: (iv_ruleOpertingSystemResouceType= ruleOpertingSystemResouceType EOF )
+            // InternalDeviceParser.g:4561:2: iv_ruleOpertingSystemResouceType= ruleOpertingSystemResouceType EOF
             {
              newCompositeNode(grammarAccess.getOpertingSystemResouceTypeRule());
             pushFollow(FOLLOW_1);
@@ -10960,7 +11000,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleOpertingSystemResouceType"
-    // InternalDeviceParser.g:4546:1: ruleOpertingSystemResouceType returns [EObject current=null] : (this_LinuxOpertingSystem_0= ruleLinuxOpertingSystem | this_MacOSOpertingSystem_1= ruleMacOSOpertingSystem ) ;
+    // InternalDeviceParser.g:4567:1: ruleOpertingSystemResouceType returns [EObject current=null] : (this_LinuxOpertingSystem_0= ruleLinuxOpertingSystem | this_MacOSOpertingSystem_1= ruleMacOSOpertingSystem ) ;
     public final EObject ruleOpertingSystemResouceType() throws RecognitionException {
         EObject current = null;
 
@@ -10973,28 +11013,28 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
             enterRule();
 
         try {
-            // InternalDeviceParser.g:4552:2: ( (this_LinuxOpertingSystem_0= ruleLinuxOpertingSystem | this_MacOSOpertingSystem_1= ruleMacOSOpertingSystem ) )
-            // InternalDeviceParser.g:4553:2: (this_LinuxOpertingSystem_0= ruleLinuxOpertingSystem | this_MacOSOpertingSystem_1= ruleMacOSOpertingSystem )
+            // InternalDeviceParser.g:4573:2: ( (this_LinuxOpertingSystem_0= ruleLinuxOpertingSystem | this_MacOSOpertingSystem_1= ruleMacOSOpertingSystem ) )
+            // InternalDeviceParser.g:4574:2: (this_LinuxOpertingSystem_0= ruleLinuxOpertingSystem | this_MacOSOpertingSystem_1= ruleMacOSOpertingSystem )
             {
-            // InternalDeviceParser.g:4553:2: (this_LinuxOpertingSystem_0= ruleLinuxOpertingSystem | this_MacOSOpertingSystem_1= ruleMacOSOpertingSystem )
-            int alt80=2;
-            int LA80_0 = input.LA(1);
+            // InternalDeviceParser.g:4574:2: (this_LinuxOpertingSystem_0= ruleLinuxOpertingSystem | this_MacOSOpertingSystem_1= ruleMacOSOpertingSystem )
+            int alt81=2;
+            int LA81_0 = input.LA(1);
 
-            if ( (LA80_0==LinuxOpertingSystem) ) {
-                alt80=1;
+            if ( (LA81_0==LinuxOpertingSystem) ) {
+                alt81=1;
             }
-            else if ( (LA80_0==MacOSOpertingSystem) ) {
-                alt80=2;
+            else if ( (LA81_0==MacOSOpertingSystem) ) {
+                alt81=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 80, 0, input);
+                    new NoViableAltException("", 81, 0, input);
 
                 throw nvae;
             }
-            switch (alt80) {
+            switch (alt81) {
                 case 1 :
-                    // InternalDeviceParser.g:4554:3: this_LinuxOpertingSystem_0= ruleLinuxOpertingSystem
+                    // InternalDeviceParser.g:4575:3: this_LinuxOpertingSystem_0= ruleLinuxOpertingSystem
                     {
 
                                 newCompositeNode(grammarAccess.getOpertingSystemResouceTypeAccess().getLinuxOpertingSystemParserRuleCall_0());
@@ -11012,7 +11052,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalDeviceParser.g:4563:3: this_MacOSOpertingSystem_1= ruleMacOSOpertingSystem
+                    // InternalDeviceParser.g:4584:3: this_MacOSOpertingSystem_1= ruleMacOSOpertingSystem
                     {
 
                                 newCompositeNode(grammarAccess.getOpertingSystemResouceTypeAccess().getMacOSOpertingSystemParserRuleCall_1());
@@ -11052,7 +11092,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleResourceType"
-    // InternalDeviceParser.g:4575:1: entryRuleResourceType returns [EObject current=null] : iv_ruleResourceType= ruleResourceType EOF ;
+    // InternalDeviceParser.g:4596:1: entryRuleResourceType returns [EObject current=null] : iv_ruleResourceType= ruleResourceType EOF ;
     public final EObject entryRuleResourceType() throws RecognitionException {
         EObject current = null;
 
@@ -11060,8 +11100,8 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDeviceParser.g:4575:53: (iv_ruleResourceType= ruleResourceType EOF )
-            // InternalDeviceParser.g:4576:2: iv_ruleResourceType= ruleResourceType EOF
+            // InternalDeviceParser.g:4596:53: (iv_ruleResourceType= ruleResourceType EOF )
+            // InternalDeviceParser.g:4597:2: iv_ruleResourceType= ruleResourceType EOF
             {
              newCompositeNode(grammarAccess.getResourceTypeRule());
             pushFollow(FOLLOW_1);
@@ -11088,7 +11128,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleResourceType"
-    // InternalDeviceParser.g:4582:1: ruleResourceType returns [EObject current=null] : ( () ( (lv_name_1_0= ruleEString ) ) ) ;
+    // InternalDeviceParser.g:4603:1: ruleResourceType returns [EObject current=null] : ( () ( (lv_name_1_0= ruleEString ) ) ) ;
     public final EObject ruleResourceType() throws RecognitionException {
         EObject current = null;
 
@@ -11099,14 +11139,14 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
             enterRule();
 
         try {
-            // InternalDeviceParser.g:4588:2: ( ( () ( (lv_name_1_0= ruleEString ) ) ) )
-            // InternalDeviceParser.g:4589:2: ( () ( (lv_name_1_0= ruleEString ) ) )
+            // InternalDeviceParser.g:4609:2: ( ( () ( (lv_name_1_0= ruleEString ) ) ) )
+            // InternalDeviceParser.g:4610:2: ( () ( (lv_name_1_0= ruleEString ) ) )
             {
-            // InternalDeviceParser.g:4589:2: ( () ( (lv_name_1_0= ruleEString ) ) )
-            // InternalDeviceParser.g:4590:3: () ( (lv_name_1_0= ruleEString ) )
+            // InternalDeviceParser.g:4610:2: ( () ( (lv_name_1_0= ruleEString ) ) )
+            // InternalDeviceParser.g:4611:3: () ( (lv_name_1_0= ruleEString ) )
             {
-            // InternalDeviceParser.g:4590:3: ()
-            // InternalDeviceParser.g:4591:4:
+            // InternalDeviceParser.g:4611:3: ()
+            // InternalDeviceParser.g:4612:4:
             {
 
                             current = forceCreateModelElement(
@@ -11116,11 +11156,11 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDeviceParser.g:4597:3: ( (lv_name_1_0= ruleEString ) )
-            // InternalDeviceParser.g:4598:4: (lv_name_1_0= ruleEString )
+            // InternalDeviceParser.g:4618:3: ( (lv_name_1_0= ruleEString ) )
+            // InternalDeviceParser.g:4619:4: (lv_name_1_0= ruleEString )
             {
-            // InternalDeviceParser.g:4598:4: (lv_name_1_0= ruleEString )
-            // InternalDeviceParser.g:4599:5: lv_name_1_0= ruleEString
+            // InternalDeviceParser.g:4619:4: (lv_name_1_0= ruleEString )
+            // InternalDeviceParser.g:4620:5: lv_name_1_0= ruleEString
             {
 
                                 newCompositeNode(grammarAccess.getResourceTypeAccess().getNameEStringParserRuleCall_1_0());
@@ -11170,7 +11210,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleProcessorResouceType"
-    // InternalDeviceParser.g:4620:1: entryRuleProcessorResouceType returns [EObject current=null] : iv_ruleProcessorResouceType= ruleProcessorResouceType EOF ;
+    // InternalDeviceParser.g:4641:1: entryRuleProcessorResouceType returns [EObject current=null] : iv_ruleProcessorResouceType= ruleProcessorResouceType EOF ;
     public final EObject entryRuleProcessorResouceType() throws RecognitionException {
         EObject current = null;
 
@@ -11178,8 +11218,8 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDeviceParser.g:4620:61: (iv_ruleProcessorResouceType= ruleProcessorResouceType EOF )
-            // InternalDeviceParser.g:4621:2: iv_ruleProcessorResouceType= ruleProcessorResouceType EOF
+            // InternalDeviceParser.g:4641:61: (iv_ruleProcessorResouceType= ruleProcessorResouceType EOF )
+            // InternalDeviceParser.g:4642:2: iv_ruleProcessorResouceType= ruleProcessorResouceType EOF
             {
              newCompositeNode(grammarAccess.getProcessorResouceTypeRule());
             pushFollow(FOLLOW_1);
@@ -11206,7 +11246,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleProcessorResouceType"
-    // InternalDeviceParser.g:4627:1: ruleProcessorResouceType returns [EObject current=null] : ( () otherlv_1= Processor ) ;
+    // InternalDeviceParser.g:4648:1: ruleProcessorResouceType returns [EObject current=null] : ( () otherlv_1= Processor ) ;
     public final EObject ruleProcessorResouceType() throws RecognitionException {
         EObject current = null;
 
@@ -11216,14 +11256,14 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
             enterRule();
 
         try {
-            // InternalDeviceParser.g:4633:2: ( ( () otherlv_1= Processor ) )
-            // InternalDeviceParser.g:4634:2: ( () otherlv_1= Processor )
+            // InternalDeviceParser.g:4654:2: ( ( () otherlv_1= Processor ) )
+            // InternalDeviceParser.g:4655:2: ( () otherlv_1= Processor )
             {
-            // InternalDeviceParser.g:4634:2: ( () otherlv_1= Processor )
-            // InternalDeviceParser.g:4635:3: () otherlv_1= Processor
+            // InternalDeviceParser.g:4655:2: ( () otherlv_1= Processor )
+            // InternalDeviceParser.g:4656:3: () otherlv_1= Processor
             {
-            // InternalDeviceParser.g:4635:3: ()
-            // InternalDeviceParser.g:4636:4:
+            // InternalDeviceParser.g:4656:3: ()
+            // InternalDeviceParser.g:4657:4:
             {
 
                             current = forceCreateModelElement(
@@ -11260,7 +11300,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleLinuxOpertingSystem"
-    // InternalDeviceParser.g:4650:1: entryRuleLinuxOpertingSystem returns [EObject current=null] : iv_ruleLinuxOpertingSystem= ruleLinuxOpertingSystem EOF ;
+    // InternalDeviceParser.g:4671:1: entryRuleLinuxOpertingSystem returns [EObject current=null] : iv_ruleLinuxOpertingSystem= ruleLinuxOpertingSystem EOF ;
     public final EObject entryRuleLinuxOpertingSystem() throws RecognitionException {
         EObject current = null;
 
@@ -11268,8 +11308,8 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDeviceParser.g:4650:60: (iv_ruleLinuxOpertingSystem= ruleLinuxOpertingSystem EOF )
-            // InternalDeviceParser.g:4651:2: iv_ruleLinuxOpertingSystem= ruleLinuxOpertingSystem EOF
+            // InternalDeviceParser.g:4671:60: (iv_ruleLinuxOpertingSystem= ruleLinuxOpertingSystem EOF )
+            // InternalDeviceParser.g:4672:2: iv_ruleLinuxOpertingSystem= ruleLinuxOpertingSystem EOF
             {
              newCompositeNode(grammarAccess.getLinuxOpertingSystemRule());
             pushFollow(FOLLOW_1);
@@ -11296,7 +11336,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLinuxOpertingSystem"
-    // InternalDeviceParser.g:4657:1: ruleLinuxOpertingSystem returns [EObject current=null] : ( () otherlv_1= LinuxOpertingSystem ) ;
+    // InternalDeviceParser.g:4678:1: ruleLinuxOpertingSystem returns [EObject current=null] : ( () otherlv_1= LinuxOpertingSystem ) ;
     public final EObject ruleLinuxOpertingSystem() throws RecognitionException {
         EObject current = null;
 
@@ -11306,14 +11346,14 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
             enterRule();
 
         try {
-            // InternalDeviceParser.g:4663:2: ( ( () otherlv_1= LinuxOpertingSystem ) )
-            // InternalDeviceParser.g:4664:2: ( () otherlv_1= LinuxOpertingSystem )
+            // InternalDeviceParser.g:4684:2: ( ( () otherlv_1= LinuxOpertingSystem ) )
+            // InternalDeviceParser.g:4685:2: ( () otherlv_1= LinuxOpertingSystem )
             {
-            // InternalDeviceParser.g:4664:2: ( () otherlv_1= LinuxOpertingSystem )
-            // InternalDeviceParser.g:4665:3: () otherlv_1= LinuxOpertingSystem
+            // InternalDeviceParser.g:4685:2: ( () otherlv_1= LinuxOpertingSystem )
+            // InternalDeviceParser.g:4686:3: () otherlv_1= LinuxOpertingSystem
             {
-            // InternalDeviceParser.g:4665:3: ()
-            // InternalDeviceParser.g:4666:4:
+            // InternalDeviceParser.g:4686:3: ()
+            // InternalDeviceParser.g:4687:4:
             {
 
                             current = forceCreateModelElement(
@@ -11350,7 +11390,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleMacOSOpertingSystem"
-    // InternalDeviceParser.g:4680:1: entryRuleMacOSOpertingSystem returns [EObject current=null] : iv_ruleMacOSOpertingSystem= ruleMacOSOpertingSystem EOF ;
+    // InternalDeviceParser.g:4701:1: entryRuleMacOSOpertingSystem returns [EObject current=null] : iv_ruleMacOSOpertingSystem= ruleMacOSOpertingSystem EOF ;
     public final EObject entryRuleMacOSOpertingSystem() throws RecognitionException {
         EObject current = null;
 
@@ -11358,8 +11398,8 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDeviceParser.g:4680:60: (iv_ruleMacOSOpertingSystem= ruleMacOSOpertingSystem EOF )
-            // InternalDeviceParser.g:4681:2: iv_ruleMacOSOpertingSystem= ruleMacOSOpertingSystem EOF
+            // InternalDeviceParser.g:4701:60: (iv_ruleMacOSOpertingSystem= ruleMacOSOpertingSystem EOF )
+            // InternalDeviceParser.g:4702:2: iv_ruleMacOSOpertingSystem= ruleMacOSOpertingSystem EOF
             {
              newCompositeNode(grammarAccess.getMacOSOpertingSystemRule());
             pushFollow(FOLLOW_1);
@@ -11386,7 +11426,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMacOSOpertingSystem"
-    // InternalDeviceParser.g:4687:1: ruleMacOSOpertingSystem returns [EObject current=null] : ( () otherlv_1= MacOSOpertingSystem ) ;
+    // InternalDeviceParser.g:4708:1: ruleMacOSOpertingSystem returns [EObject current=null] : ( () otherlv_1= MacOSOpertingSystem ) ;
     public final EObject ruleMacOSOpertingSystem() throws RecognitionException {
         EObject current = null;
 
@@ -11396,14 +11436,14 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
             enterRule();
 
         try {
-            // InternalDeviceParser.g:4693:2: ( ( () otherlv_1= MacOSOpertingSystem ) )
-            // InternalDeviceParser.g:4694:2: ( () otherlv_1= MacOSOpertingSystem )
+            // InternalDeviceParser.g:4714:2: ( ( () otherlv_1= MacOSOpertingSystem ) )
+            // InternalDeviceParser.g:4715:2: ( () otherlv_1= MacOSOpertingSystem )
             {
-            // InternalDeviceParser.g:4694:2: ( () otherlv_1= MacOSOpertingSystem )
-            // InternalDeviceParser.g:4695:3: () otherlv_1= MacOSOpertingSystem
+            // InternalDeviceParser.g:4715:2: ( () otherlv_1= MacOSOpertingSystem )
+            // InternalDeviceParser.g:4716:3: () otherlv_1= MacOSOpertingSystem
             {
-            // InternalDeviceParser.g:4695:3: ()
-            // InternalDeviceParser.g:4696:4:
+            // InternalDeviceParser.g:4716:3: ()
+            // InternalDeviceParser.g:4717:4:
             {
 
                             current = forceCreateModelElement(
@@ -11440,7 +11480,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCommunicationType"
-    // InternalDeviceParser.g:4710:1: entryRuleCommunicationType returns [EObject current=null] : iv_ruleCommunicationType= ruleCommunicationType EOF ;
+    // InternalDeviceParser.g:4731:1: entryRuleCommunicationType returns [EObject current=null] : iv_ruleCommunicationType= ruleCommunicationType EOF ;
     public final EObject entryRuleCommunicationType() throws RecognitionException {
         EObject current = null;
 
@@ -11448,8 +11488,8 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDeviceParser.g:4710:58: (iv_ruleCommunicationType= ruleCommunicationType EOF )
-            // InternalDeviceParser.g:4711:2: iv_ruleCommunicationType= ruleCommunicationType EOF
+            // InternalDeviceParser.g:4731:58: (iv_ruleCommunicationType= ruleCommunicationType EOF )
+            // InternalDeviceParser.g:4732:2: iv_ruleCommunicationType= ruleCommunicationType EOF
             {
              newCompositeNode(grammarAccess.getCommunicationTypeRule());
             pushFollow(FOLLOW_1);
@@ -11476,7 +11516,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCommunicationType"
-    // InternalDeviceParser.g:4717:1: ruleCommunicationType returns [EObject current=null] : ( () ( (lv_name_1_0= ruleEString ) ) ) ;
+    // InternalDeviceParser.g:4738:1: ruleCommunicationType returns [EObject current=null] : ( () ( (lv_name_1_0= ruleEString ) ) ) ;
     public final EObject ruleCommunicationType() throws RecognitionException {
         EObject current = null;
 
@@ -11487,14 +11527,14 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
             enterRule();
 
         try {
-            // InternalDeviceParser.g:4723:2: ( ( () ( (lv_name_1_0= ruleEString ) ) ) )
-            // InternalDeviceParser.g:4724:2: ( () ( (lv_name_1_0= ruleEString ) ) )
+            // InternalDeviceParser.g:4744:2: ( ( () ( (lv_name_1_0= ruleEString ) ) ) )
+            // InternalDeviceParser.g:4745:2: ( () ( (lv_name_1_0= ruleEString ) ) )
             {
-            // InternalDeviceParser.g:4724:2: ( () ( (lv_name_1_0= ruleEString ) ) )
-            // InternalDeviceParser.g:4725:3: () ( (lv_name_1_0= ruleEString ) )
+            // InternalDeviceParser.g:4745:2: ( () ( (lv_name_1_0= ruleEString ) ) )
+            // InternalDeviceParser.g:4746:3: () ( (lv_name_1_0= ruleEString ) )
             {
-            // InternalDeviceParser.g:4725:3: ()
-            // InternalDeviceParser.g:4726:4:
+            // InternalDeviceParser.g:4746:3: ()
+            // InternalDeviceParser.g:4747:4:
             {
 
                             current = forceCreateModelElement(
@@ -11504,11 +11544,11 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDeviceParser.g:4732:3: ( (lv_name_1_0= ruleEString ) )
-            // InternalDeviceParser.g:4733:4: (lv_name_1_0= ruleEString )
+            // InternalDeviceParser.g:4753:3: ( (lv_name_1_0= ruleEString ) )
+            // InternalDeviceParser.g:4754:4: (lv_name_1_0= ruleEString )
             {
-            // InternalDeviceParser.g:4733:4: (lv_name_1_0= ruleEString )
-            // InternalDeviceParser.g:4734:5: lv_name_1_0= ruleEString
+            // InternalDeviceParser.g:4754:4: (lv_name_1_0= ruleEString )
+            // InternalDeviceParser.g:4755:5: lv_name_1_0= ruleEString
             {
 
                                 newCompositeNode(grammarAccess.getCommunicationTypeAccess().getNameEStringParserRuleCall_1_0());
@@ -11558,7 +11598,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNetworkCommunicationType"
-    // InternalDeviceParser.g:4755:1: entryRuleNetworkCommunicationType returns [EObject current=null] : iv_ruleNetworkCommunicationType= ruleNetworkCommunicationType EOF ;
+    // InternalDeviceParser.g:4776:1: entryRuleNetworkCommunicationType returns [EObject current=null] : iv_ruleNetworkCommunicationType= ruleNetworkCommunicationType EOF ;
     public final EObject entryRuleNetworkCommunicationType() throws RecognitionException {
         EObject current = null;
 
@@ -11566,8 +11606,8 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDeviceParser.g:4755:65: (iv_ruleNetworkCommunicationType= ruleNetworkCommunicationType EOF )
-            // InternalDeviceParser.g:4756:2: iv_ruleNetworkCommunicationType= ruleNetworkCommunicationType EOF
+            // InternalDeviceParser.g:4776:65: (iv_ruleNetworkCommunicationType= ruleNetworkCommunicationType EOF )
+            // InternalDeviceParser.g:4777:2: iv_ruleNetworkCommunicationType= ruleNetworkCommunicationType EOF
             {
              newCompositeNode(grammarAccess.getNetworkCommunicationTypeRule());
             pushFollow(FOLLOW_1);
@@ -11594,7 +11634,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNetworkCommunicationType"
-    // InternalDeviceParser.g:4762:1: ruleNetworkCommunicationType returns [EObject current=null] : (this_EthernetCommunicationType_0= ruleEthernetCommunicationType | this_WlanCommunicationType_1= ruleWlanCommunicationType ) ;
+    // InternalDeviceParser.g:4783:1: ruleNetworkCommunicationType returns [EObject current=null] : (this_EthernetCommunicationType_0= ruleEthernetCommunicationType | this_WlanCommunicationType_1= ruleWlanCommunicationType ) ;
     public final EObject ruleNetworkCommunicationType() throws RecognitionException {
         EObject current = null;
 
@@ -11607,28 +11647,28 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
             enterRule();
 
         try {
-            // InternalDeviceParser.g:4768:2: ( (this_EthernetCommunicationType_0= ruleEthernetCommunicationType | this_WlanCommunicationType_1= ruleWlanCommunicationType ) )
-            // InternalDeviceParser.g:4769:2: (this_EthernetCommunicationType_0= ruleEthernetCommunicationType | this_WlanCommunicationType_1= ruleWlanCommunicationType )
+            // InternalDeviceParser.g:4789:2: ( (this_EthernetCommunicationType_0= ruleEthernetCommunicationType | this_WlanCommunicationType_1= ruleWlanCommunicationType ) )
+            // InternalDeviceParser.g:4790:2: (this_EthernetCommunicationType_0= ruleEthernetCommunicationType | this_WlanCommunicationType_1= ruleWlanCommunicationType )
             {
-            // InternalDeviceParser.g:4769:2: (this_EthernetCommunicationType_0= ruleEthernetCommunicationType | this_WlanCommunicationType_1= ruleWlanCommunicationType )
-            int alt81=2;
-            int LA81_0 = input.LA(1);
+            // InternalDeviceParser.g:4790:2: (this_EthernetCommunicationType_0= ruleEthernetCommunicationType | this_WlanCommunicationType_1= ruleWlanCommunicationType )
+            int alt82=2;
+            int LA82_0 = input.LA(1);
 
-            if ( (LA81_0==Ethernet) ) {
-                alt81=1;
+            if ( (LA82_0==Ethernet) ) {
+                alt82=1;
             }
-            else if ( (LA81_0==Wlan) ) {
-                alt81=2;
+            else if ( (LA82_0==Wlan) ) {
+                alt82=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 81, 0, input);
+                    new NoViableAltException("", 82, 0, input);
 
                 throw nvae;
             }
-            switch (alt81) {
+            switch (alt82) {
                 case 1 :
-                    // InternalDeviceParser.g:4770:3: this_EthernetCommunicationType_0= ruleEthernetCommunicationType
+                    // InternalDeviceParser.g:4791:3: this_EthernetCommunicationType_0= ruleEthernetCommunicationType
                     {
 
                                 newCompositeNode(grammarAccess.getNetworkCommunicationTypeAccess().getEthernetCommunicationTypeParserRuleCall_0());
@@ -11646,7 +11686,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalDeviceParser.g:4779:3: this_WlanCommunicationType_1= ruleWlanCommunicationType
+                    // InternalDeviceParser.g:4800:3: this_WlanCommunicationType_1= ruleWlanCommunicationType
                     {
 
                                 newCompositeNode(grammarAccess.getNetworkCommunicationTypeAccess().getWlanCommunicationTypeParserRuleCall_1());
@@ -11686,7 +11726,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEthernetCommunicationType"
-    // InternalDeviceParser.g:4791:1: entryRuleEthernetCommunicationType returns [EObject current=null] : iv_ruleEthernetCommunicationType= ruleEthernetCommunicationType EOF ;
+    // InternalDeviceParser.g:4812:1: entryRuleEthernetCommunicationType returns [EObject current=null] : iv_ruleEthernetCommunicationType= ruleEthernetCommunicationType EOF ;
     public final EObject entryRuleEthernetCommunicationType() throws RecognitionException {
         EObject current = null;
 
@@ -11694,8 +11734,8 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDeviceParser.g:4791:66: (iv_ruleEthernetCommunicationType= ruleEthernetCommunicationType EOF )
-            // InternalDeviceParser.g:4792:2: iv_ruleEthernetCommunicationType= ruleEthernetCommunicationType EOF
+            // InternalDeviceParser.g:4812:66: (iv_ruleEthernetCommunicationType= ruleEthernetCommunicationType EOF )
+            // InternalDeviceParser.g:4813:2: iv_ruleEthernetCommunicationType= ruleEthernetCommunicationType EOF
             {
              newCompositeNode(grammarAccess.getEthernetCommunicationTypeRule());
             pushFollow(FOLLOW_1);
@@ -11722,7 +11762,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEthernetCommunicationType"
-    // InternalDeviceParser.g:4798:1: ruleEthernetCommunicationType returns [EObject current=null] : ( () otherlv_1= Ethernet ) ;
+    // InternalDeviceParser.g:4819:1: ruleEthernetCommunicationType returns [EObject current=null] : ( () otherlv_1= Ethernet ) ;
     public final EObject ruleEthernetCommunicationType() throws RecognitionException {
         EObject current = null;
 
@@ -11732,14 +11772,14 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
             enterRule();
 
         try {
-            // InternalDeviceParser.g:4804:2: ( ( () otherlv_1= Ethernet ) )
-            // InternalDeviceParser.g:4805:2: ( () otherlv_1= Ethernet )
+            // InternalDeviceParser.g:4825:2: ( ( () otherlv_1= Ethernet ) )
+            // InternalDeviceParser.g:4826:2: ( () otherlv_1= Ethernet )
             {
-            // InternalDeviceParser.g:4805:2: ( () otherlv_1= Ethernet )
-            // InternalDeviceParser.g:4806:3: () otherlv_1= Ethernet
+            // InternalDeviceParser.g:4826:2: ( () otherlv_1= Ethernet )
+            // InternalDeviceParser.g:4827:3: () otherlv_1= Ethernet
             {
-            // InternalDeviceParser.g:4806:3: ()
-            // InternalDeviceParser.g:4807:4:
+            // InternalDeviceParser.g:4827:3: ()
+            // InternalDeviceParser.g:4828:4:
             {
 
                             current = forceCreateModelElement(
@@ -11776,7 +11816,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleWlanCommunicationType"
-    // InternalDeviceParser.g:4821:1: entryRuleWlanCommunicationType returns [EObject current=null] : iv_ruleWlanCommunicationType= ruleWlanCommunicationType EOF ;
+    // InternalDeviceParser.g:4842:1: entryRuleWlanCommunicationType returns [EObject current=null] : iv_ruleWlanCommunicationType= ruleWlanCommunicationType EOF ;
     public final EObject entryRuleWlanCommunicationType() throws RecognitionException {
         EObject current = null;
 
@@ -11784,8 +11824,8 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDeviceParser.g:4821:62: (iv_ruleWlanCommunicationType= ruleWlanCommunicationType EOF )
-            // InternalDeviceParser.g:4822:2: iv_ruleWlanCommunicationType= ruleWlanCommunicationType EOF
+            // InternalDeviceParser.g:4842:62: (iv_ruleWlanCommunicationType= ruleWlanCommunicationType EOF )
+            // InternalDeviceParser.g:4843:2: iv_ruleWlanCommunicationType= ruleWlanCommunicationType EOF
             {
              newCompositeNode(grammarAccess.getWlanCommunicationTypeRule());
             pushFollow(FOLLOW_1);
@@ -11812,7 +11852,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleWlanCommunicationType"
-    // InternalDeviceParser.g:4828:1: ruleWlanCommunicationType returns [EObject current=null] : ( () otherlv_1= Wlan ) ;
+    // InternalDeviceParser.g:4849:1: ruleWlanCommunicationType returns [EObject current=null] : ( () otherlv_1= Wlan ) ;
     public final EObject ruleWlanCommunicationType() throws RecognitionException {
         EObject current = null;
 
@@ -11822,14 +11862,14 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
             enterRule();
 
         try {
-            // InternalDeviceParser.g:4834:2: ( ( () otherlv_1= Wlan ) )
-            // InternalDeviceParser.g:4835:2: ( () otherlv_1= Wlan )
+            // InternalDeviceParser.g:4855:2: ( ( () otherlv_1= Wlan ) )
+            // InternalDeviceParser.g:4856:2: ( () otherlv_1= Wlan )
             {
-            // InternalDeviceParser.g:4835:2: ( () otherlv_1= Wlan )
-            // InternalDeviceParser.g:4836:3: () otherlv_1= Wlan
+            // InternalDeviceParser.g:4856:2: ( () otherlv_1= Wlan )
+            // InternalDeviceParser.g:4857:3: () otherlv_1= Wlan
             {
-            // InternalDeviceParser.g:4836:3: ()
-            // InternalDeviceParser.g:4837:4:
+            // InternalDeviceParser.g:4857:3: ()
+            // InternalDeviceParser.g:4858:4:
             {
 
                             current = forceCreateModelElement(
@@ -11866,7 +11906,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleUsbCommunicationType"
-    // InternalDeviceParser.g:4851:1: entryRuleUsbCommunicationType returns [EObject current=null] : iv_ruleUsbCommunicationType= ruleUsbCommunicationType EOF ;
+    // InternalDeviceParser.g:4872:1: entryRuleUsbCommunicationType returns [EObject current=null] : iv_ruleUsbCommunicationType= ruleUsbCommunicationType EOF ;
     public final EObject entryRuleUsbCommunicationType() throws RecognitionException {
         EObject current = null;
 
@@ -11874,8 +11914,8 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDeviceParser.g:4851:61: (iv_ruleUsbCommunicationType= ruleUsbCommunicationType EOF )
-            // InternalDeviceParser.g:4852:2: iv_ruleUsbCommunicationType= ruleUsbCommunicationType EOF
+            // InternalDeviceParser.g:4872:61: (iv_ruleUsbCommunicationType= ruleUsbCommunicationType EOF )
+            // InternalDeviceParser.g:4873:2: iv_ruleUsbCommunicationType= ruleUsbCommunicationType EOF
             {
              newCompositeNode(grammarAccess.getUsbCommunicationTypeRule());
             pushFollow(FOLLOW_1);
@@ -11902,7 +11942,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleUsbCommunicationType"
-    // InternalDeviceParser.g:4858:1: ruleUsbCommunicationType returns [EObject current=null] : ( () otherlv_1= Usb ) ;
+    // InternalDeviceParser.g:4879:1: ruleUsbCommunicationType returns [EObject current=null] : ( () otherlv_1= Usb ) ;
     public final EObject ruleUsbCommunicationType() throws RecognitionException {
         EObject current = null;
 
@@ -11912,14 +11952,14 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
             enterRule();
 
         try {
-            // InternalDeviceParser.g:4864:2: ( ( () otherlv_1= Usb ) )
-            // InternalDeviceParser.g:4865:2: ( () otherlv_1= Usb )
+            // InternalDeviceParser.g:4885:2: ( ( () otherlv_1= Usb ) )
+            // InternalDeviceParser.g:4886:2: ( () otherlv_1= Usb )
             {
-            // InternalDeviceParser.g:4865:2: ( () otherlv_1= Usb )
-            // InternalDeviceParser.g:4866:3: () otherlv_1= Usb
+            // InternalDeviceParser.g:4886:2: ( () otherlv_1= Usb )
+            // InternalDeviceParser.g:4887:3: () otherlv_1= Usb
             {
-            // InternalDeviceParser.g:4866:3: ()
-            // InternalDeviceParser.g:4867:4:
+            // InternalDeviceParser.g:4887:3: ()
+            // InternalDeviceParser.g:4888:4:
             {
 
                             current = forceCreateModelElement(
@@ -11956,7 +11996,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAttributeKind"
-    // InternalDeviceParser.g:4881:1: entryRuleAttributeKind returns [EObject current=null] : iv_ruleAttributeKind= ruleAttributeKind EOF ;
+    // InternalDeviceParser.g:4902:1: entryRuleAttributeKind returns [EObject current=null] : iv_ruleAttributeKind= ruleAttributeKind EOF ;
     public final EObject entryRuleAttributeKind() throws RecognitionException {
         EObject current = null;
 
@@ -11964,8 +12004,8 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDeviceParser.g:4881:54: (iv_ruleAttributeKind= ruleAttributeKind EOF )
-            // InternalDeviceParser.g:4882:2: iv_ruleAttributeKind= ruleAttributeKind EOF
+            // InternalDeviceParser.g:4902:54: (iv_ruleAttributeKind= ruleAttributeKind EOF )
+            // InternalDeviceParser.g:4903:2: iv_ruleAttributeKind= ruleAttributeKind EOF
             {
              newCompositeNode(grammarAccess.getAttributeKindRule());
             pushFollow(FOLLOW_1);
@@ -11992,7 +12032,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAttributeKind"
-    // InternalDeviceParser.g:4888:1: ruleAttributeKind returns [EObject current=null] : ( () otherlv_1= AttributeKind ) ;
+    // InternalDeviceParser.g:4909:1: ruleAttributeKind returns [EObject current=null] : ( () otherlv_1= AttributeKind ) ;
     public final EObject ruleAttributeKind() throws RecognitionException {
         EObject current = null;
 
@@ -12002,14 +12042,14 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
             enterRule();
 
         try {
-            // InternalDeviceParser.g:4894:2: ( ( () otherlv_1= AttributeKind ) )
-            // InternalDeviceParser.g:4895:2: ( () otherlv_1= AttributeKind )
+            // InternalDeviceParser.g:4915:2: ( ( () otherlv_1= AttributeKind ) )
+            // InternalDeviceParser.g:4916:2: ( () otherlv_1= AttributeKind )
             {
-            // InternalDeviceParser.g:4895:2: ( () otherlv_1= AttributeKind )
-            // InternalDeviceParser.g:4896:3: () otherlv_1= AttributeKind
+            // InternalDeviceParser.g:4916:2: ( () otherlv_1= AttributeKind )
+            // InternalDeviceParser.g:4917:3: () otherlv_1= AttributeKind
             {
-            // InternalDeviceParser.g:4896:3: ()
-            // InternalDeviceParser.g:4897:4:
+            // InternalDeviceParser.g:4917:3: ()
+            // InternalDeviceParser.g:4918:4:
             {
 
                             current = forceCreateModelElement(
@@ -12046,7 +12086,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleMaximumKind"
-    // InternalDeviceParser.g:4911:1: entryRuleMaximumKind returns [EObject current=null] : iv_ruleMaximumKind= ruleMaximumKind EOF ;
+    // InternalDeviceParser.g:4932:1: entryRuleMaximumKind returns [EObject current=null] : iv_ruleMaximumKind= ruleMaximumKind EOF ;
     public final EObject entryRuleMaximumKind() throws RecognitionException {
         EObject current = null;
 
@@ -12054,8 +12094,8 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDeviceParser.g:4911:52: (iv_ruleMaximumKind= ruleMaximumKind EOF )
-            // InternalDeviceParser.g:4912:2: iv_ruleMaximumKind= ruleMaximumKind EOF
+            // InternalDeviceParser.g:4932:52: (iv_ruleMaximumKind= ruleMaximumKind EOF )
+            // InternalDeviceParser.g:4933:2: iv_ruleMaximumKind= ruleMaximumKind EOF
             {
              newCompositeNode(grammarAccess.getMaximumKindRule());
             pushFollow(FOLLOW_1);
@@ -12082,7 +12122,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMaximumKind"
-    // InternalDeviceParser.g:4918:1: ruleMaximumKind returns [EObject current=null] : ( () otherlv_1= MaximumKind ) ;
+    // InternalDeviceParser.g:4939:1: ruleMaximumKind returns [EObject current=null] : ( () otherlv_1= MaximumKind ) ;
     public final EObject ruleMaximumKind() throws RecognitionException {
         EObject current = null;
 
@@ -12092,14 +12132,14 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
             enterRule();
 
         try {
-            // InternalDeviceParser.g:4924:2: ( ( () otherlv_1= MaximumKind ) )
-            // InternalDeviceParser.g:4925:2: ( () otherlv_1= MaximumKind )
+            // InternalDeviceParser.g:4945:2: ( ( () otherlv_1= MaximumKind ) )
+            // InternalDeviceParser.g:4946:2: ( () otherlv_1= MaximumKind )
             {
-            // InternalDeviceParser.g:4925:2: ( () otherlv_1= MaximumKind )
-            // InternalDeviceParser.g:4926:3: () otherlv_1= MaximumKind
+            // InternalDeviceParser.g:4946:2: ( () otherlv_1= MaximumKind )
+            // InternalDeviceParser.g:4947:3: () otherlv_1= MaximumKind
             {
-            // InternalDeviceParser.g:4926:3: ()
-            // InternalDeviceParser.g:4927:4:
+            // InternalDeviceParser.g:4947:3: ()
+            // InternalDeviceParser.g:4948:4:
             {
 
                             current = forceCreateModelElement(
@@ -12136,7 +12176,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleMinimumKind"
-    // InternalDeviceParser.g:4941:1: entryRuleMinimumKind returns [EObject current=null] : iv_ruleMinimumKind= ruleMinimumKind EOF ;
+    // InternalDeviceParser.g:4962:1: entryRuleMinimumKind returns [EObject current=null] : iv_ruleMinimumKind= ruleMinimumKind EOF ;
     public final EObject entryRuleMinimumKind() throws RecognitionException {
         EObject current = null;
 
@@ -12144,8 +12184,8 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDeviceParser.g:4941:52: (iv_ruleMinimumKind= ruleMinimumKind EOF )
-            // InternalDeviceParser.g:4942:2: iv_ruleMinimumKind= ruleMinimumKind EOF
+            // InternalDeviceParser.g:4962:52: (iv_ruleMinimumKind= ruleMinimumKind EOF )
+            // InternalDeviceParser.g:4963:2: iv_ruleMinimumKind= ruleMinimumKind EOF
             {
              newCompositeNode(grammarAccess.getMinimumKindRule());
             pushFollow(FOLLOW_1);
@@ -12172,7 +12212,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMinimumKind"
-    // InternalDeviceParser.g:4948:1: ruleMinimumKind returns [EObject current=null] : ( () otherlv_1= MinimumKind ) ;
+    // InternalDeviceParser.g:4969:1: ruleMinimumKind returns [EObject current=null] : ( () otherlv_1= MinimumKind ) ;
     public final EObject ruleMinimumKind() throws RecognitionException {
         EObject current = null;
 
@@ -12182,14 +12222,14 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
             enterRule();
 
         try {
-            // InternalDeviceParser.g:4954:2: ( ( () otherlv_1= MinimumKind ) )
-            // InternalDeviceParser.g:4955:2: ( () otherlv_1= MinimumKind )
+            // InternalDeviceParser.g:4975:2: ( ( () otherlv_1= MinimumKind ) )
+            // InternalDeviceParser.g:4976:2: ( () otherlv_1= MinimumKind )
             {
-            // InternalDeviceParser.g:4955:2: ( () otherlv_1= MinimumKind )
-            // InternalDeviceParser.g:4956:3: () otherlv_1= MinimumKind
+            // InternalDeviceParser.g:4976:2: ( () otherlv_1= MinimumKind )
+            // InternalDeviceParser.g:4977:3: () otherlv_1= MinimumKind
             {
-            // InternalDeviceParser.g:4956:3: ()
-            // InternalDeviceParser.g:4957:4:
+            // InternalDeviceParser.g:4977:3: ()
+            // InternalDeviceParser.g:4978:4:
             {
 
                             current = forceCreateModelElement(
@@ -12226,7 +12266,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSelectionKind"
-    // InternalDeviceParser.g:4971:1: entryRuleSelectionKind returns [EObject current=null] : iv_ruleSelectionKind= ruleSelectionKind EOF ;
+    // InternalDeviceParser.g:4992:1: entryRuleSelectionKind returns [EObject current=null] : iv_ruleSelectionKind= ruleSelectionKind EOF ;
     public final EObject entryRuleSelectionKind() throws RecognitionException {
         EObject current = null;
 
@@ -12234,8 +12274,8 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDeviceParser.g:4971:54: (iv_ruleSelectionKind= ruleSelectionKind EOF )
-            // InternalDeviceParser.g:4972:2: iv_ruleSelectionKind= ruleSelectionKind EOF
+            // InternalDeviceParser.g:4992:54: (iv_ruleSelectionKind= ruleSelectionKind EOF )
+            // InternalDeviceParser.g:4993:2: iv_ruleSelectionKind= ruleSelectionKind EOF
             {
              newCompositeNode(grammarAccess.getSelectionKindRule());
             pushFollow(FOLLOW_1);
@@ -12262,7 +12302,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSelectionKind"
-    // InternalDeviceParser.g:4978:1: ruleSelectionKind returns [EObject current=null] : ( () otherlv_1= SelectionKind ) ;
+    // InternalDeviceParser.g:4999:1: ruleSelectionKind returns [EObject current=null] : ( () otherlv_1= SelectionKind ) ;
     public final EObject ruleSelectionKind() throws RecognitionException {
         EObject current = null;
 
@@ -12272,14 +12312,14 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
             enterRule();
 
         try {
-            // InternalDeviceParser.g:4984:2: ( ( () otherlv_1= SelectionKind ) )
-            // InternalDeviceParser.g:4985:2: ( () otherlv_1= SelectionKind )
+            // InternalDeviceParser.g:5005:2: ( ( () otherlv_1= SelectionKind ) )
+            // InternalDeviceParser.g:5006:2: ( () otherlv_1= SelectionKind )
             {
-            // InternalDeviceParser.g:4985:2: ( () otherlv_1= SelectionKind )
-            // InternalDeviceParser.g:4986:3: () otherlv_1= SelectionKind
+            // InternalDeviceParser.g:5006:2: ( () otherlv_1= SelectionKind )
+            // InternalDeviceParser.g:5007:3: () otherlv_1= SelectionKind
             {
-            // InternalDeviceParser.g:4986:3: ()
-            // InternalDeviceParser.g:4987:4:
+            // InternalDeviceParser.g:5007:3: ()
+            // InternalDeviceParser.g:5008:4:
             {
 
                             current = forceCreateModelElement(
@@ -12316,7 +12356,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRangeKind"
-    // InternalDeviceParser.g:5001:1: entryRuleRangeKind returns [EObject current=null] : iv_ruleRangeKind= ruleRangeKind EOF ;
+    // InternalDeviceParser.g:5022:1: entryRuleRangeKind returns [EObject current=null] : iv_ruleRangeKind= ruleRangeKind EOF ;
     public final EObject entryRuleRangeKind() throws RecognitionException {
         EObject current = null;
 
@@ -12324,8 +12364,8 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDeviceParser.g:5001:50: (iv_ruleRangeKind= ruleRangeKind EOF )
-            // InternalDeviceParser.g:5002:2: iv_ruleRangeKind= ruleRangeKind EOF
+            // InternalDeviceParser.g:5022:50: (iv_ruleRangeKind= ruleRangeKind EOF )
+            // InternalDeviceParser.g:5023:2: iv_ruleRangeKind= ruleRangeKind EOF
             {
              newCompositeNode(grammarAccess.getRangeKindRule());
             pushFollow(FOLLOW_1);
@@ -12352,7 +12392,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRangeKind"
-    // InternalDeviceParser.g:5008:1: ruleRangeKind returns [EObject current=null] : ( () otherlv_1= RangeKind ) ;
+    // InternalDeviceParser.g:5029:1: ruleRangeKind returns [EObject current=null] : ( () otherlv_1= RangeKind ) ;
     public final EObject ruleRangeKind() throws RecognitionException {
         EObject current = null;
 
@@ -12362,14 +12402,14 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
             enterRule();
 
         try {
-            // InternalDeviceParser.g:5014:2: ( ( () otherlv_1= RangeKind ) )
-            // InternalDeviceParser.g:5015:2: ( () otherlv_1= RangeKind )
+            // InternalDeviceParser.g:5035:2: ( ( () otherlv_1= RangeKind ) )
+            // InternalDeviceParser.g:5036:2: ( () otherlv_1= RangeKind )
             {
-            // InternalDeviceParser.g:5015:2: ( () otherlv_1= RangeKind )
-            // InternalDeviceParser.g:5016:3: () otherlv_1= RangeKind
+            // InternalDeviceParser.g:5036:2: ( () otherlv_1= RangeKind )
+            // InternalDeviceParser.g:5037:3: () otherlv_1= RangeKind
             {
-            // InternalDeviceParser.g:5016:3: ()
-            // InternalDeviceParser.g:5017:4:
+            // InternalDeviceParser.g:5037:3: ()
+            // InternalDeviceParser.g:5038:4:
             {
 
                             current = forceCreateModelElement(
@@ -12406,7 +12446,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleLinuxDistributionValue"
-    // InternalDeviceParser.g:5031:1: entryRuleLinuxDistributionValue returns [EObject current=null] : iv_ruleLinuxDistributionValue= ruleLinuxDistributionValue EOF ;
+    // InternalDeviceParser.g:5052:1: entryRuleLinuxDistributionValue returns [EObject current=null] : iv_ruleLinuxDistributionValue= ruleLinuxDistributionValue EOF ;
     public final EObject entryRuleLinuxDistributionValue() throws RecognitionException {
         EObject current = null;
 
@@ -12414,8 +12454,8 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDeviceParser.g:5031:63: (iv_ruleLinuxDistributionValue= ruleLinuxDistributionValue EOF )
-            // InternalDeviceParser.g:5032:2: iv_ruleLinuxDistributionValue= ruleLinuxDistributionValue EOF
+            // InternalDeviceParser.g:5052:63: (iv_ruleLinuxDistributionValue= ruleLinuxDistributionValue EOF )
+            // InternalDeviceParser.g:5053:2: iv_ruleLinuxDistributionValue= ruleLinuxDistributionValue EOF
             {
              newCompositeNode(grammarAccess.getLinuxDistributionValueRule());
             pushFollow(FOLLOW_1);
@@ -12442,7 +12482,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLinuxDistributionValue"
-    // InternalDeviceParser.g:5038:1: ruleLinuxDistributionValue returns [EObject current=null] : ( () ( (lv_value_1_0= ruleLinuxDistribution ) ) ) ;
+    // InternalDeviceParser.g:5059:1: ruleLinuxDistributionValue returns [EObject current=null] : ( () ( (lv_value_1_0= ruleLinuxDistribution ) ) ) ;
     public final EObject ruleLinuxDistributionValue() throws RecognitionException {
         EObject current = null;
 
@@ -12453,14 +12493,14 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
             enterRule();
 
         try {
-            // InternalDeviceParser.g:5044:2: ( ( () ( (lv_value_1_0= ruleLinuxDistribution ) ) ) )
-            // InternalDeviceParser.g:5045:2: ( () ( (lv_value_1_0= ruleLinuxDistribution ) ) )
+            // InternalDeviceParser.g:5065:2: ( ( () ( (lv_value_1_0= ruleLinuxDistribution ) ) ) )
+            // InternalDeviceParser.g:5066:2: ( () ( (lv_value_1_0= ruleLinuxDistribution ) ) )
             {
-            // InternalDeviceParser.g:5045:2: ( () ( (lv_value_1_0= ruleLinuxDistribution ) ) )
-            // InternalDeviceParser.g:5046:3: () ( (lv_value_1_0= ruleLinuxDistribution ) )
+            // InternalDeviceParser.g:5066:2: ( () ( (lv_value_1_0= ruleLinuxDistribution ) ) )
+            // InternalDeviceParser.g:5067:3: () ( (lv_value_1_0= ruleLinuxDistribution ) )
             {
-            // InternalDeviceParser.g:5046:3: ()
-            // InternalDeviceParser.g:5047:4:
+            // InternalDeviceParser.g:5067:3: ()
+            // InternalDeviceParser.g:5068:4:
             {
 
                             current = forceCreateModelElement(
@@ -12470,11 +12510,11 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDeviceParser.g:5053:3: ( (lv_value_1_0= ruleLinuxDistribution ) )
-            // InternalDeviceParser.g:5054:4: (lv_value_1_0= ruleLinuxDistribution )
+            // InternalDeviceParser.g:5074:3: ( (lv_value_1_0= ruleLinuxDistribution ) )
+            // InternalDeviceParser.g:5075:4: (lv_value_1_0= ruleLinuxDistribution )
             {
-            // InternalDeviceParser.g:5054:4: (lv_value_1_0= ruleLinuxDistribution )
-            // InternalDeviceParser.g:5055:5: lv_value_1_0= ruleLinuxDistribution
+            // InternalDeviceParser.g:5075:4: (lv_value_1_0= ruleLinuxDistribution )
+            // InternalDeviceParser.g:5076:5: lv_value_1_0= ruleLinuxDistribution
             {
 
                                 newCompositeNode(grammarAccess.getLinuxDistributionValueAccess().getValueLinuxDistributionEnumRuleCall_1_0());
@@ -12524,7 +12564,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleUbuntuVersionValue"
-    // InternalDeviceParser.g:5076:1: entryRuleUbuntuVersionValue returns [EObject current=null] : iv_ruleUbuntuVersionValue= ruleUbuntuVersionValue EOF ;
+    // InternalDeviceParser.g:5097:1: entryRuleUbuntuVersionValue returns [EObject current=null] : iv_ruleUbuntuVersionValue= ruleUbuntuVersionValue EOF ;
     public final EObject entryRuleUbuntuVersionValue() throws RecognitionException {
         EObject current = null;
 
@@ -12532,8 +12572,8 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDeviceParser.g:5076:59: (iv_ruleUbuntuVersionValue= ruleUbuntuVersionValue EOF )
-            // InternalDeviceParser.g:5077:2: iv_ruleUbuntuVersionValue= ruleUbuntuVersionValue EOF
+            // InternalDeviceParser.g:5097:59: (iv_ruleUbuntuVersionValue= ruleUbuntuVersionValue EOF )
+            // InternalDeviceParser.g:5098:2: iv_ruleUbuntuVersionValue= ruleUbuntuVersionValue EOF
             {
              newCompositeNode(grammarAccess.getUbuntuVersionValueRule());
             pushFollow(FOLLOW_1);
@@ -12560,7 +12600,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleUbuntuVersionValue"
-    // InternalDeviceParser.g:5083:1: ruleUbuntuVersionValue returns [EObject current=null] : ( () ( (lv_value_1_0= ruleUbuntuVersion ) ) ) ;
+    // InternalDeviceParser.g:5104:1: ruleUbuntuVersionValue returns [EObject current=null] : ( () ( (lv_value_1_0= ruleUbuntuVersion ) ) ) ;
     public final EObject ruleUbuntuVersionValue() throws RecognitionException {
         EObject current = null;
 
@@ -12571,14 +12611,14 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
             enterRule();
 
         try {
-            // InternalDeviceParser.g:5089:2: ( ( () ( (lv_value_1_0= ruleUbuntuVersion ) ) ) )
-            // InternalDeviceParser.g:5090:2: ( () ( (lv_value_1_0= ruleUbuntuVersion ) ) )
+            // InternalDeviceParser.g:5110:2: ( ( () ( (lv_value_1_0= ruleUbuntuVersion ) ) ) )
+            // InternalDeviceParser.g:5111:2: ( () ( (lv_value_1_0= ruleUbuntuVersion ) ) )
             {
-            // InternalDeviceParser.g:5090:2: ( () ( (lv_value_1_0= ruleUbuntuVersion ) ) )
-            // InternalDeviceParser.g:5091:3: () ( (lv_value_1_0= ruleUbuntuVersion ) )
+            // InternalDeviceParser.g:5111:2: ( () ( (lv_value_1_0= ruleUbuntuVersion ) ) )
+            // InternalDeviceParser.g:5112:3: () ( (lv_value_1_0= ruleUbuntuVersion ) )
             {
-            // InternalDeviceParser.g:5091:3: ()
-            // InternalDeviceParser.g:5092:4:
+            // InternalDeviceParser.g:5112:3: ()
+            // InternalDeviceParser.g:5113:4:
             {
 
                             current = forceCreateModelElement(
@@ -12588,11 +12628,11 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDeviceParser.g:5098:3: ( (lv_value_1_0= ruleUbuntuVersion ) )
-            // InternalDeviceParser.g:5099:4: (lv_value_1_0= ruleUbuntuVersion )
+            // InternalDeviceParser.g:5119:3: ( (lv_value_1_0= ruleUbuntuVersion ) )
+            // InternalDeviceParser.g:5120:4: (lv_value_1_0= ruleUbuntuVersion )
             {
-            // InternalDeviceParser.g:5099:4: (lv_value_1_0= ruleUbuntuVersion )
-            // InternalDeviceParser.g:5100:5: lv_value_1_0= ruleUbuntuVersion
+            // InternalDeviceParser.g:5120:4: (lv_value_1_0= ruleUbuntuVersion )
+            // InternalDeviceParser.g:5121:5: lv_value_1_0= ruleUbuntuVersion
             {
 
                                 newCompositeNode(grammarAccess.getUbuntuVersionValueAccess().getValueUbuntuVersionEnumRuleCall_1_0());
@@ -12642,7 +12682,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDouble0"
-    // InternalDeviceParser.g:5121:1: entryRuleDouble0 returns [String current=null] : iv_ruleDouble0= ruleDouble0 EOF ;
+    // InternalDeviceParser.g:5142:1: entryRuleDouble0 returns [String current=null] : iv_ruleDouble0= ruleDouble0 EOF ;
     public final String entryRuleDouble0() throws RecognitionException {
         String current = null;
 
@@ -12650,8 +12690,8 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDeviceParser.g:5121:47: (iv_ruleDouble0= ruleDouble0 EOF )
-            // InternalDeviceParser.g:5122:2: iv_ruleDouble0= ruleDouble0 EOF
+            // InternalDeviceParser.g:5142:47: (iv_ruleDouble0= ruleDouble0 EOF )
+            // InternalDeviceParser.g:5143:2: iv_ruleDouble0= ruleDouble0 EOF
             {
              newCompositeNode(grammarAccess.getDouble0Rule());
             pushFollow(FOLLOW_1);
@@ -12678,7 +12718,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDouble0"
-    // InternalDeviceParser.g:5128:1: ruleDouble0 returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_DOUBLE_0= RULE_DOUBLE ;
+    // InternalDeviceParser.g:5149:1: ruleDouble0 returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_DOUBLE_0= RULE_DOUBLE ;
     public final AntlrDatatypeRuleToken ruleDouble0() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -12688,8 +12728,8 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
             enterRule();
 
         try {
-            // InternalDeviceParser.g:5134:2: (this_DOUBLE_0= RULE_DOUBLE )
-            // InternalDeviceParser.g:5135:2: this_DOUBLE_0= RULE_DOUBLE
+            // InternalDeviceParser.g:5155:2: (this_DOUBLE_0= RULE_DOUBLE )
+            // InternalDeviceParser.g:5156:2: this_DOUBLE_0= RULE_DOUBLE
             {
             this_DOUBLE_0=(Token)match(input,RULE_DOUBLE,FOLLOW_2);
 
@@ -12718,7 +12758,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleInteger0"
-    // InternalDeviceParser.g:5145:1: entryRuleInteger0 returns [String current=null] : iv_ruleInteger0= ruleInteger0 EOF ;
+    // InternalDeviceParser.g:5166:1: entryRuleInteger0 returns [String current=null] : iv_ruleInteger0= ruleInteger0 EOF ;
     public final String entryRuleInteger0() throws RecognitionException {
         String current = null;
 
@@ -12726,8 +12766,8 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDeviceParser.g:5145:48: (iv_ruleInteger0= ruleInteger0 EOF )
-            // InternalDeviceParser.g:5146:2: iv_ruleInteger0= ruleInteger0 EOF
+            // InternalDeviceParser.g:5166:48: (iv_ruleInteger0= ruleInteger0 EOF )
+            // InternalDeviceParser.g:5167:2: iv_ruleInteger0= ruleInteger0 EOF
             {
              newCompositeNode(grammarAccess.getInteger0Rule());
             pushFollow(FOLLOW_1);
@@ -12754,7 +12794,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleInteger0"
-    // InternalDeviceParser.g:5152:1: ruleInteger0 returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_DECINT_0= RULE_DECINT ;
+    // InternalDeviceParser.g:5173:1: ruleInteger0 returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_DECINT_0= RULE_DECINT ;
     public final AntlrDatatypeRuleToken ruleInteger0() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -12764,8 +12804,8 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
             enterRule();
 
         try {
-            // InternalDeviceParser.g:5158:2: (this_DECINT_0= RULE_DECINT )
-            // InternalDeviceParser.g:5159:2: this_DECINT_0= RULE_DECINT
+            // InternalDeviceParser.g:5179:2: (this_DECINT_0= RULE_DECINT )
+            // InternalDeviceParser.g:5180:2: this_DECINT_0= RULE_DECINT
             {
             this_DECINT_0=(Token)match(input,RULE_DECINT,FOLLOW_2);
 
@@ -12794,7 +12834,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEString"
-    // InternalDeviceParser.g:5169:1: entryRuleEString returns [String current=null] : iv_ruleEString= ruleEString EOF ;
+    // InternalDeviceParser.g:5190:1: entryRuleEString returns [String current=null] : iv_ruleEString= ruleEString EOF ;
     public final String entryRuleEString() throws RecognitionException {
         String current = null;
 
@@ -12802,8 +12842,8 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDeviceParser.g:5169:47: (iv_ruleEString= ruleEString EOF )
-            // InternalDeviceParser.g:5170:2: iv_ruleEString= ruleEString EOF
+            // InternalDeviceParser.g:5190:47: (iv_ruleEString= ruleEString EOF )
+            // InternalDeviceParser.g:5191:2: iv_ruleEString= ruleEString EOF
             {
              newCompositeNode(grammarAccess.getEStringRule());
             pushFollow(FOLLOW_1);
@@ -12830,7 +12870,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEString"
-    // InternalDeviceParser.g:5176:1: ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) ;
+    // InternalDeviceParser.g:5197:1: ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) ;
     public final AntlrDatatypeRuleToken ruleEString() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -12841,28 +12881,28 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
             enterRule();
 
         try {
-            // InternalDeviceParser.g:5182:2: ( (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) )
-            // InternalDeviceParser.g:5183:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
+            // InternalDeviceParser.g:5203:2: ( (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) )
+            // InternalDeviceParser.g:5204:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
             {
-            // InternalDeviceParser.g:5183:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
-            int alt82=2;
-            int LA82_0 = input.LA(1);
+            // InternalDeviceParser.g:5204:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
+            int alt83=2;
+            int LA83_0 = input.LA(1);
 
-            if ( (LA82_0==RULE_STRING) ) {
-                alt82=1;
+            if ( (LA83_0==RULE_STRING) ) {
+                alt83=1;
             }
-            else if ( (LA82_0==RULE_ID) ) {
-                alt82=2;
+            else if ( (LA83_0==RULE_ID) ) {
+                alt83=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 82, 0, input);
+                    new NoViableAltException("", 83, 0, input);
 
                 throw nvae;
             }
-            switch (alt82) {
+            switch (alt83) {
                 case 1 :
-                    // InternalDeviceParser.g:5184:3: this_STRING_0= RULE_STRING
+                    // InternalDeviceParser.g:5205:3: this_STRING_0= RULE_STRING
                     {
                     this_STRING_0=(Token)match(input,RULE_STRING,FOLLOW_2);
 
@@ -12875,7 +12915,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalDeviceParser.g:5192:3: this_ID_1= RULE_ID
+                    // InternalDeviceParser.g:5213:3: this_ID_1= RULE_ID
                     {
                     this_ID_1=(Token)match(input,RULE_ID,FOLLOW_2);
 
@@ -12910,7 +12950,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePreListElement"
-    // InternalDeviceParser.g:5203:1: entryRulePreListElement returns [String current=null] : iv_rulePreListElement= rulePreListElement EOF ;
+    // InternalDeviceParser.g:5224:1: entryRulePreListElement returns [String current=null] : iv_rulePreListElement= rulePreListElement EOF ;
     public final String entryRulePreListElement() throws RecognitionException {
         String current = null;
 
@@ -12921,8 +12961,8 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
             HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_SL_COMMENT");
 
         try {
-            // InternalDeviceParser.g:5205:2: (iv_rulePreListElement= rulePreListElement EOF )
-            // InternalDeviceParser.g:5206:2: iv_rulePreListElement= rulePreListElement EOF
+            // InternalDeviceParser.g:5226:2: (iv_rulePreListElement= rulePreListElement EOF )
+            // InternalDeviceParser.g:5227:2: iv_rulePreListElement= rulePreListElement EOF
             {
              newCompositeNode(grammarAccess.getPreListElementRule());
             pushFollow(FOLLOW_1);
@@ -12952,7 +12992,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePreListElement"
-    // InternalDeviceParser.g:5215:1: rulePreListElement returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= HyphenMinus ;
+    // InternalDeviceParser.g:5236:1: rulePreListElement returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= HyphenMinus ;
     public final AntlrDatatypeRuleToken rulePreListElement() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -12963,8 +13003,8 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
             HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_SL_COMMENT");
 
         try {
-            // InternalDeviceParser.g:5222:2: (kw= HyphenMinus )
-            // InternalDeviceParser.g:5223:2: kw= HyphenMinus
+            // InternalDeviceParser.g:5243:2: (kw= HyphenMinus )
+            // InternalDeviceParser.g:5244:2: kw= HyphenMinus
             {
             kw=(Token)match(input,HyphenMinus,FOLLOW_2);
 
@@ -12994,7 +13034,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleProcessorArchitectureType"
-    // InternalDeviceParser.g:5234:1: ruleProcessorArchitectureType returns [Enumerator current=null] : ( (enumLiteral_0= X86 ) | (enumLiteral_1= Arm64 ) ) ;
+    // InternalDeviceParser.g:5255:1: ruleProcessorArchitectureType returns [Enumerator current=null] : ( (enumLiteral_0= X86 ) | (enumLiteral_1= Arm64 ) ) ;
     public final Enumerator ruleProcessorArchitectureType() throws RecognitionException {
         Enumerator current = null;
 
@@ -13005,31 +13045,31 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
             enterRule();
 
         try {
-            // InternalDeviceParser.g:5240:2: ( ( (enumLiteral_0= X86 ) | (enumLiteral_1= Arm64 ) ) )
-            // InternalDeviceParser.g:5241:2: ( (enumLiteral_0= X86 ) | (enumLiteral_1= Arm64 ) )
+            // InternalDeviceParser.g:5261:2: ( ( (enumLiteral_0= X86 ) | (enumLiteral_1= Arm64 ) ) )
+            // InternalDeviceParser.g:5262:2: ( (enumLiteral_0= X86 ) | (enumLiteral_1= Arm64 ) )
             {
-            // InternalDeviceParser.g:5241:2: ( (enumLiteral_0= X86 ) | (enumLiteral_1= Arm64 ) )
-            int alt83=2;
-            int LA83_0 = input.LA(1);
+            // InternalDeviceParser.g:5262:2: ( (enumLiteral_0= X86 ) | (enumLiteral_1= Arm64 ) )
+            int alt84=2;
+            int LA84_0 = input.LA(1);
 
-            if ( (LA83_0==X86) ) {
-                alt83=1;
+            if ( (LA84_0==X86) ) {
+                alt84=1;
             }
-            else if ( (LA83_0==Arm64) ) {
-                alt83=2;
+            else if ( (LA84_0==Arm64) ) {
+                alt84=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 83, 0, input);
+                    new NoViableAltException("", 84, 0, input);
 
                 throw nvae;
             }
-            switch (alt83) {
+            switch (alt84) {
                 case 1 :
-                    // InternalDeviceParser.g:5242:3: (enumLiteral_0= X86 )
+                    // InternalDeviceParser.g:5263:3: (enumLiteral_0= X86 )
                     {
-                    // InternalDeviceParser.g:5242:3: (enumLiteral_0= X86 )
-                    // InternalDeviceParser.g:5243:4: enumLiteral_0= X86
+                    // InternalDeviceParser.g:5263:3: (enumLiteral_0= X86 )
+                    // InternalDeviceParser.g:5264:4: enumLiteral_0= X86
                     {
                     enumLiteral_0=(Token)match(input,X86,FOLLOW_2);
 
@@ -13043,10 +13083,10 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalDeviceParser.g:5250:3: (enumLiteral_1= Arm64 )
+                    // InternalDeviceParser.g:5271:3: (enumLiteral_1= Arm64 )
                     {
-                    // InternalDeviceParser.g:5250:3: (enumLiteral_1= Arm64 )
-                    // InternalDeviceParser.g:5251:4: enumLiteral_1= Arm64
+                    // InternalDeviceParser.g:5271:3: (enumLiteral_1= Arm64 )
+                    // InternalDeviceParser.g:5272:4: enumLiteral_1= Arm64
                     {
                     enumLiteral_1=(Token)match(input,Arm64,FOLLOW_2);
 
@@ -13082,7 +13122,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLinuxDistribution"
-    // InternalDeviceParser.g:5261:1: ruleLinuxDistribution returns [Enumerator current=null] : ( (enumLiteral_0= Ubuntu ) | (enumLiteral_1= Debian ) ) ;
+    // InternalDeviceParser.g:5282:1: ruleLinuxDistribution returns [Enumerator current=null] : ( (enumLiteral_0= Ubuntu ) | (enumLiteral_1= Debian ) ) ;
     public final Enumerator ruleLinuxDistribution() throws RecognitionException {
         Enumerator current = null;
 
@@ -13093,31 +13133,31 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
             enterRule();
 
         try {
-            // InternalDeviceParser.g:5267:2: ( ( (enumLiteral_0= Ubuntu ) | (enumLiteral_1= Debian ) ) )
-            // InternalDeviceParser.g:5268:2: ( (enumLiteral_0= Ubuntu ) | (enumLiteral_1= Debian ) )
+            // InternalDeviceParser.g:5288:2: ( ( (enumLiteral_0= Ubuntu ) | (enumLiteral_1= Debian ) ) )
+            // InternalDeviceParser.g:5289:2: ( (enumLiteral_0= Ubuntu ) | (enumLiteral_1= Debian ) )
             {
-            // InternalDeviceParser.g:5268:2: ( (enumLiteral_0= Ubuntu ) | (enumLiteral_1= Debian ) )
-            int alt84=2;
-            int LA84_0 = input.LA(1);
+            // InternalDeviceParser.g:5289:2: ( (enumLiteral_0= Ubuntu ) | (enumLiteral_1= Debian ) )
+            int alt85=2;
+            int LA85_0 = input.LA(1);
 
-            if ( (LA84_0==Ubuntu) ) {
-                alt84=1;
+            if ( (LA85_0==Ubuntu) ) {
+                alt85=1;
             }
-            else if ( (LA84_0==Debian) ) {
-                alt84=2;
+            else if ( (LA85_0==Debian) ) {
+                alt85=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 84, 0, input);
+                    new NoViableAltException("", 85, 0, input);
 
                 throw nvae;
             }
-            switch (alt84) {
+            switch (alt85) {
                 case 1 :
-                    // InternalDeviceParser.g:5269:3: (enumLiteral_0= Ubuntu )
+                    // InternalDeviceParser.g:5290:3: (enumLiteral_0= Ubuntu )
                     {
-                    // InternalDeviceParser.g:5269:3: (enumLiteral_0= Ubuntu )
-                    // InternalDeviceParser.g:5270:4: enumLiteral_0= Ubuntu
+                    // InternalDeviceParser.g:5290:3: (enumLiteral_0= Ubuntu )
+                    // InternalDeviceParser.g:5291:4: enumLiteral_0= Ubuntu
                     {
                     enumLiteral_0=(Token)match(input,Ubuntu,FOLLOW_2);
 
@@ -13131,10 +13171,10 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalDeviceParser.g:5277:3: (enumLiteral_1= Debian )
+                    // InternalDeviceParser.g:5298:3: (enumLiteral_1= Debian )
                     {
-                    // InternalDeviceParser.g:5277:3: (enumLiteral_1= Debian )
-                    // InternalDeviceParser.g:5278:4: enumLiteral_1= Debian
+                    // InternalDeviceParser.g:5298:3: (enumLiteral_1= Debian )
+                    // InternalDeviceParser.g:5299:4: enumLiteral_1= Debian
                     {
                     enumLiteral_1=(Token)match(input,Debian,FOLLOW_2);
 
@@ -13170,7 +13210,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleUbuntuVersion"
-    // InternalDeviceParser.g:5288:1: ruleUbuntuVersion returns [Enumerator current=null] : ( (enumLiteral_0= Focal ) | (enumLiteral_1= Jammy ) ) ;
+    // InternalDeviceParser.g:5309:1: ruleUbuntuVersion returns [Enumerator current=null] : ( (enumLiteral_0= Focal ) | (enumLiteral_1= Jammy ) ) ;
     public final Enumerator ruleUbuntuVersion() throws RecognitionException {
         Enumerator current = null;
 
@@ -13181,31 +13221,31 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
             enterRule();
 
         try {
-            // InternalDeviceParser.g:5294:2: ( ( (enumLiteral_0= Focal ) | (enumLiteral_1= Jammy ) ) )
-            // InternalDeviceParser.g:5295:2: ( (enumLiteral_0= Focal ) | (enumLiteral_1= Jammy ) )
+            // InternalDeviceParser.g:5315:2: ( ( (enumLiteral_0= Focal ) | (enumLiteral_1= Jammy ) ) )
+            // InternalDeviceParser.g:5316:2: ( (enumLiteral_0= Focal ) | (enumLiteral_1= Jammy ) )
             {
-            // InternalDeviceParser.g:5295:2: ( (enumLiteral_0= Focal ) | (enumLiteral_1= Jammy ) )
-            int alt85=2;
-            int LA85_0 = input.LA(1);
+            // InternalDeviceParser.g:5316:2: ( (enumLiteral_0= Focal ) | (enumLiteral_1= Jammy ) )
+            int alt86=2;
+            int LA86_0 = input.LA(1);
 
-            if ( (LA85_0==Focal) ) {
-                alt85=1;
+            if ( (LA86_0==Focal) ) {
+                alt86=1;
             }
-            else if ( (LA85_0==Jammy) ) {
-                alt85=2;
+            else if ( (LA86_0==Jammy) ) {
+                alt86=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 85, 0, input);
+                    new NoViableAltException("", 86, 0, input);
 
                 throw nvae;
             }
-            switch (alt85) {
+            switch (alt86) {
                 case 1 :
-                    // InternalDeviceParser.g:5296:3: (enumLiteral_0= Focal )
+                    // InternalDeviceParser.g:5317:3: (enumLiteral_0= Focal )
                     {
-                    // InternalDeviceParser.g:5296:3: (enumLiteral_0= Focal )
-                    // InternalDeviceParser.g:5297:4: enumLiteral_0= Focal
+                    // InternalDeviceParser.g:5317:3: (enumLiteral_0= Focal )
+                    // InternalDeviceParser.g:5318:4: enumLiteral_0= Focal
                     {
                     enumLiteral_0=(Token)match(input,Focal,FOLLOW_2);
 
@@ -13219,10 +13259,10 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalDeviceParser.g:5304:3: (enumLiteral_1= Jammy )
+                    // InternalDeviceParser.g:5325:3: (enumLiteral_1= Jammy )
                     {
-                    // InternalDeviceParser.g:5304:3: (enumLiteral_1= Jammy )
-                    // InternalDeviceParser.g:5305:4: enumLiteral_1= Jammy
+                    // InternalDeviceParser.g:5325:3: (enumLiteral_1= Jammy )
+                    // InternalDeviceParser.g:5326:4: enumLiteral_1= Jammy
                     {
                     enumLiteral_1=(Token)match(input,Jammy,FOLLOW_2);
 
@@ -13261,7 +13301,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
 
     protected DFA3 dfa3 = new DFA3(this);
     protected DFA4 dfa4 = new DFA4(this);
-    protected DFA60 dfa60 = new DFA60(this);
+    protected DFA61 dfa61 = new DFA61(this);
     static final String dfa_1s = "\12\uffff";
     static final String dfa_2s = "\1\57\1\50\1\66\2\64\1\51\1\36\3\uffff";
     static final String dfa_3s = "\1\57\1\50\1\70\2\64\1\51\1\70\3\uffff";
@@ -13374,11 +13414,11 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
     static final short[] dfa_17 = DFA.unpackEncodedString(dfa_17s);
     static final short[][] dfa_18 = unpackEncodedStringArray(dfa_18s);
 
-    class DFA60 extends DFA {
+    class DFA61 extends DFA {
 
-        public DFA60(BaseRecognizer recognizer) {
+        public DFA61(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 60;
+            this.decisionNumber = 61;
             this.eot = dfa_13;
             this.eof = dfa_13;
             this.min = dfa_14;
@@ -13388,7 +13428,7 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
             this.transition = dfa_18;
         }
         public String getDescription() {
-            return "3352:2: (this_PropertyAttribute_0= rulePropertyAttribute | this_PropertyMaximun_1= rulePropertyMaximun | this_PropertyMinimum_2= rulePropertyMinimum | this_PropertySelection_3= rulePropertySelection | this_PropertyRange_4= rulePropertyRange )";
+            return "3373:2: (this_PropertyAttribute_0= rulePropertyAttribute | this_PropertyMaximun_1= rulePropertyMaximun | this_PropertyMinimum_2= rulePropertyMinimum | this_PropertySelection_3= rulePropertySelection | this_PropertyRange_4= rulePropertyRange )";
         }
     }
 
@@ -13426,19 +13466,20 @@ public class InternalDeviceParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0020000000400000L});
     public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0020000000000610L});
     public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0020000000000210L});
-    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000040040000000L});
-    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000200000000000L});
-    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0000000000000180L});
-    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0020000800010002L});
-    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x0020000800000002L});
-    public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x0020000000000002L});
-    public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_47 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0020010000000000L});
+    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000040040000000L});
+    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0000200000000000L});
+    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0000000000000180L});
+    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x0020000800010002L});
+    public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x0020000800000002L});
+    public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x0020000000000002L});
+    public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_47 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_48 = new BitSet(new long[]{0x0000000010000000L});
 
 }
