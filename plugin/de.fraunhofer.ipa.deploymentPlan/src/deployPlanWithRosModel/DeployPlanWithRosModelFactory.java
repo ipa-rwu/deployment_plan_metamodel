@@ -22,24 +22,6 @@ public interface DeployPlanWithRosModelFactory extends EFactory {
     DeployPlanWithRosModelFactory eINSTANCE = deployPlanWithRosModel.impl.DeployPlanWithRosModelFactoryImpl.init();
 
     /**
-     * Returns a new object of class '<em>Deployment Plan With Ros Model</em>'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return a new object of class '<em>Deployment Plan With Ros Model</em>'.
-     * @generated
-     */
-    DeploymentPlanWithRosModel createDeploymentPlanWithRosModel();
-
-    /**
-     * Returns a new object of class '<em>Rossystem Assignment</em>'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return a new object of class '<em>Rossystem Assignment</em>'.
-     * @generated
-     */
-    RossystemAssignment createRossystemAssignment();
-
-    /**
      * Returns a new object of class '<em>Rospackage Implementation</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->

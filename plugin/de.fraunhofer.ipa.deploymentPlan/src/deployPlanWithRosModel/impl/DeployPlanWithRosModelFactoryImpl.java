@@ -56,34 +56,12 @@ public class DeployPlanWithRosModelFactoryImpl extends EFactoryImpl implements D
     @Override
     public EObject create(EClass eClass) {
         switch (eClass.getClassifierID()) {
-            case DeployPlanWithRosModelPackage.DEPLOYMENT_PLAN_WITH_ROS_MODEL: return createDeploymentPlanWithRosModel();
-            case DeployPlanWithRosModelPackage.ROSSYSTEM_ASSIGNMENT: return createRossystemAssignment();
             case DeployPlanWithRosModelPackage.ROSPACKAGE_IMPLEMENTATION: return createRospackageImplementation();
             case DeployPlanWithRosModelPackage.CONFIG_ROS_PARAMETER: return createConfigRosParameter();
             case DeployPlanWithRosModelPackage.CONFIG_ROS_SOFTWARE_COMPONENT: return createConfigRosSoftwareComponent();
             default:
                 throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
         }
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public DeploymentPlanWithRosModel createDeploymentPlanWithRosModel() {
-        DeploymentPlanWithRosModelImpl deploymentPlanWithRosModel = new DeploymentPlanWithRosModelImpl();
-        return deploymentPlanWithRosModel;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public RossystemAssignment createRossystemAssignment() {
-        RossystemAssignmentImpl rossystemAssignment = new RossystemAssignmentImpl();
-        return rossystemAssignment;
     }
 
     /**

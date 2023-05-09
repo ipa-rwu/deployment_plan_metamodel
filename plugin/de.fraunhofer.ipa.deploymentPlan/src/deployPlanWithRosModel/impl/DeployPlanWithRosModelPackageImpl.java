@@ -8,10 +8,7 @@ import deployPlanWithRosModel.ConfigRosParameter;
 import deployPlanWithRosModel.ConfigRosSoftwareComponent;
 import deployPlanWithRosModel.DeployPlanWithRosModelFactory;
 import deployPlanWithRosModel.DeployPlanWithRosModelPackage;
-import deployPlanWithRosModel.DeploymentPlanWithRosModel;
 import deployPlanWithRosModel.RospackageImplementation;
-import deployPlanWithRosModel.RossystemAssignment;
-
 import deploymentPlan.DeploymentPlanPackage;
 
 import device.DevicePackage;
@@ -23,7 +20,6 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import primitives.PrimitivesPackage;
 
 import ros.RosPackage;
@@ -39,20 +35,6 @@ import targetEnvironment.TargetEnvironmentPackage;
  * @generated
  */
 public class DeployPlanWithRosModelPackageImpl extends EPackageImpl implements DeployPlanWithRosModelPackage {
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    private EClass deploymentPlanWithRosModelEClass = null;
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    private EClass rossystemAssignmentEClass = null;
-
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -149,24 +131,6 @@ public class DeployPlanWithRosModelPackageImpl extends EPackageImpl implements D
      * <!-- end-user-doc -->
      * @generated
      */
-    public EClass getDeploymentPlanWithRosModel() {
-        return deploymentPlanWithRosModelEClass;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public EClass getRossystemAssignment() {
-        return rossystemAssignmentEClass;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
     public EClass getRospackageImplementation() {
         return rospackageImplementationEClass;
     }
@@ -253,10 +217,6 @@ public class DeployPlanWithRosModelPackageImpl extends EPackageImpl implements D
         isCreated = true;
 
         // Create classes and their features
-        deploymentPlanWithRosModelEClass = createEClass(DEPLOYMENT_PLAN_WITH_ROS_MODEL);
-
-        rossystemAssignmentEClass = createEClass(ROSSYSTEM_ASSIGNMENT);
-
         rospackageImplementationEClass = createEClass(ROSPACKAGE_IMPLEMENTATION);
 
         configRosParameterEClass = createEClass(CONFIG_ROS_PARAMETER);
@@ -302,22 +262,16 @@ public class DeployPlanWithRosModelPackageImpl extends EPackageImpl implements D
         // Set bounds for type parameters
 
         // Add supertypes to classes
-        deploymentPlanWithRosModelEClass.getESuperTypes().add(theDeploymentPlanPackage.getAbstractDeploymentPlan());
-        rossystemAssignmentEClass.getESuperTypes().add(theDeploymentPlanPackage.getAbstractComputationAssignment());
         rospackageImplementationEClass.getESuperTypes().add(theDeploymentPlanPackage.getAbstractComputationAssignment());
         configRosParameterEClass.getESuperTypes().add(theDeploymentPlanPackage.getAbstractConfigExecutionParameter());
         configRosSoftwareComponentEClass.getESuperTypes().add(theDeploymentPlanPackage.getAbstarctConfigSoftwareComponent());
 
         // Initialize classes, features, and operations; add parameters
-        initEClass(deploymentPlanWithRosModelEClass, DeploymentPlanWithRosModel.class, "DeploymentPlanWithRosModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-        initEClass(rossystemAssignmentEClass, RossystemAssignment.class, "RossystemAssignment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
         initEClass(rospackageImplementationEClass, RospackageImplementation.class, "RospackageImplementation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
         initEClass(configRosParameterEClass, ConfigRosParameter.class, "ConfigRosParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEReference(getConfigRosParameter_From(), theRossystemPackage.getRosParameter(), null, "from", null, 1, 1, ConfigRosParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        initEReference(getConfigRosParameter_To(), theTargetEnvironmentPackage.getAbstractConfigProperty(), null, "to", null, 1, 1, ConfigRosParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEReference(getConfigRosParameter_To(), theTargetEnvironmentPackage.getAbstractConfigProperty(), null, "to", null, 0, 1, ConfigRosParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEReference(getConfigRosParameter_Value(), theUtilPackage.getPropertyValue(), null, "value", null, 0, 1, ConfigRosParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(configRosSoftwareComponentEClass, ConfigRosSoftwareComponent.class, "ConfigRosSoftwareComponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

@@ -150,6 +150,19 @@ public class DeploymentPlanSwitch<T> extends Switch<T> {
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
+            case DeploymentPlanPackage.ABSTRACT_RUNTIME: {
+                AbstractRuntime abstractRuntime = (AbstractRuntime)theEObject;
+                T result = caseAbstractRuntime(abstractRuntime);
+                if (result == null) result = defaultCase(theEObject);
+                return result;
+            }
+            case DeploymentPlanPackage.CONTAINER_RUNTIME: {
+                ContainerRuntime containerRuntime = (ContainerRuntime)theEObject;
+                T result = caseContainerRuntime(containerRuntime);
+                if (result == null) result = caseAbstractRuntime(containerRuntime);
+                if (result == null) result = defaultCase(theEObject);
+                return result;
+            }
             default: return defaultCase(theEObject);
         }
     }
@@ -350,6 +363,36 @@ public class DeploymentPlanSwitch<T> extends Switch<T> {
     }
 
     /**
+     * Returns the result of interpreting the object as an instance of '<em>Abstract Runtime</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Abstract Runtime</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseAbstractRuntime(AbstractRuntime object) {
+        return null;
+    }
+
+                /**
+     * Returns the result of interpreting the object as an instance of '<em>Container Runtime</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Container Runtime</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseContainerRuntime(ContainerRuntime object) {
+        return null;
+    }
+
+                /**
      * Returns the result of interpreting the object as an instance of '<em>EObject</em>'.
      * <!-- begin-user-doc -->
      * This implementation returns null;

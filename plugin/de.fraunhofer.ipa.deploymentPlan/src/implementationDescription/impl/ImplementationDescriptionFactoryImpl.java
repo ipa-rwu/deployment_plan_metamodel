@@ -56,6 +56,7 @@ public class ImplementationDescriptionFactoryImpl extends EFactoryImpl implement
     @Override
     public EObject create(EClass eClass) {
         switch (eClass.getClassifierID()) {
+            case ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION_SET: return createImplementationDescriptionSet();
             case ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION: return createImplementationDescription();
             case ImplementationDescriptionPackage.SOFTWARE_COMPONENT: return createSoftwareComponent();
             case ImplementationDescriptionPackage.DEVICE_REQUIREMENT: return createDeviceRequirement();
@@ -65,12 +66,23 @@ public class ImplementationDescriptionFactoryImpl extends EFactoryImpl implement
             case ImplementationDescriptionPackage.EXECUTION_PARAMETER: return createExecutionParameter();
             case ImplementationDescriptionPackage.REPOSITORY: return createRepository();
             case ImplementationDescriptionPackage.GIT_REPOSITORY_TYPE: return createGitRepositoryType();
+            case ImplementationDescriptionPackage.APT_REPOSITORY_TYPE: return createAptRepositoryType();
             default:
                 throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
         }
     }
 
     /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public ImplementationDescriptionSet createImplementationDescriptionSet() {
+        ImplementationDescriptionSetImpl implementationDescriptionSet = new ImplementationDescriptionSetImpl();
+        return implementationDescriptionSet;
+    }
+
+                /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -161,6 +173,16 @@ public class ImplementationDescriptionFactoryImpl extends EFactoryImpl implement
     }
 
     /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public AptRepositoryType createAptRepositoryType() {
+        AptRepositoryTypeImpl aptRepositoryType = new AptRepositoryTypeImpl();
+        return aptRepositoryType;
+    }
+
+                /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated

@@ -7,8 +7,6 @@ import deployPlanWithRosModel.*;
 import deploymentPlan.AbstarctConfigSoftwareComponent;
 import deploymentPlan.AbstractComputationAssignment;
 import deploymentPlan.AbstractConfigExecutionParameter;
-import deploymentPlan.AbstractDeploymentPlan;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -71,20 +69,6 @@ public class DeployPlanWithRosModelSwitch<T> extends Switch<T> {
     @Override
     protected T doSwitch(int classifierID, EObject theEObject) {
         switch (classifierID) {
-            case DeployPlanWithRosModelPackage.DEPLOYMENT_PLAN_WITH_ROS_MODEL: {
-                DeploymentPlanWithRosModel deploymentPlanWithRosModel = (DeploymentPlanWithRosModel)theEObject;
-                T result = caseDeploymentPlanWithRosModel(deploymentPlanWithRosModel);
-                if (result == null) result = caseAbstractDeploymentPlan(deploymentPlanWithRosModel);
-                if (result == null) result = defaultCase(theEObject);
-                return result;
-            }
-            case DeployPlanWithRosModelPackage.ROSSYSTEM_ASSIGNMENT: {
-                RossystemAssignment rossystemAssignment = (RossystemAssignment)theEObject;
-                T result = caseRossystemAssignment(rossystemAssignment);
-                if (result == null) result = caseAbstractComputationAssignment(rossystemAssignment);
-                if (result == null) result = defaultCase(theEObject);
-                return result;
-            }
             case DeployPlanWithRosModelPackage.ROSPACKAGE_IMPLEMENTATION: {
                 RospackageImplementation rospackageImplementation = (RospackageImplementation)theEObject;
                 T result = caseRospackageImplementation(rospackageImplementation);
@@ -108,36 +92,6 @@ public class DeployPlanWithRosModelSwitch<T> extends Switch<T> {
             }
             default: return defaultCase(theEObject);
         }
-    }
-
-    /**
-     * Returns the result of interpreting the object as an instance of '<em>Deployment Plan With Ros Model</em>'.
-     * <!-- begin-user-doc -->
-     * This implementation returns null;
-     * returning a non-null result will terminate the switch.
-     * <!-- end-user-doc -->
-     * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Deployment Plan With Ros Model</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-     * @generated
-     */
-    public T caseDeploymentPlanWithRosModel(DeploymentPlanWithRosModel object) {
-        return null;
-    }
-
-    /**
-     * Returns the result of interpreting the object as an instance of '<em>Rossystem Assignment</em>'.
-     * <!-- begin-user-doc -->
-     * This implementation returns null;
-     * returning a non-null result will terminate the switch.
-     * <!-- end-user-doc -->
-     * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Rossystem Assignment</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-     * @generated
-     */
-    public T caseRossystemAssignment(RossystemAssignment object) {
-        return null;
     }
 
     /**
@@ -182,21 +136,6 @@ public class DeployPlanWithRosModelSwitch<T> extends Switch<T> {
      * @generated
      */
     public T caseConfigRosSoftwareComponent(ConfigRosSoftwareComponent object) {
-        return null;
-    }
-
-    /**
-     * Returns the result of interpreting the object as an instance of '<em>Abstract Deployment Plan</em>'.
-     * <!-- begin-user-doc -->
-     * This implementation returns null;
-     * returning a non-null result will terminate the switch.
-     * <!-- end-user-doc -->
-     * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Abstract Deployment Plan</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-     * @generated
-     */
-    public T caseAbstractDeploymentPlan(AbstractDeploymentPlan object) {
         return null;
     }
 
