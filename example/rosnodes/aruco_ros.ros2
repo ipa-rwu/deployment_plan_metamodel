@@ -1,5 +1,5 @@
 aruco_ros:
-    fromGitRepo: "https://github.com/ipa-rwu/aruco_ros.git"
+    fromGitRepo: "https://github.com/ipa-rwu/aruco_ros.git:humble-devel"
     artifacts:
         marker_publisher:
             node: marker_publisher
