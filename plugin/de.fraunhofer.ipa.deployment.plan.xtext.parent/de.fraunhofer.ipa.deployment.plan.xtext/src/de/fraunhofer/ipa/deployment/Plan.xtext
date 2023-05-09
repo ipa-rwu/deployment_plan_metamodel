@@ -69,18 +69,17 @@ ConfigSoftwareComponent returns ConfigSoftwareComponent:
 
 ImplementationAssignment returns ImplementationAssignment:
     PreListElement 'name:' name = EString
-  INDENT
-    'executedBy:' executedBy=[targetEnvironment::ComputationDeviceInstance|EString]
-    'version:' version = EString
-    'softwareComponents:'
-        INDENT
-            PreListElement softwareComponents+=ConfigSoftwareComponent
-            (PreListElement softwareComponents+=ConfigSoftwareComponent)*
-        DEDENT
-    ('middleware:' middleware=Middleware)?
-    ('runtimeType:' runtimeType=RunTimeType)?
-    ('opertingSystemType:' opertingSystemType=OpertingSystemName)?
-  DEDENT
+    INDENT
+        'executedBy:' executedBy=[targetEnvironment::ComputationDeviceInstance|EString]
+        'version:' version = EString
+        'softwareComponents:'
+            INDENT
+                PreListElement softwareComponents+=ConfigSoftwareComponent
+                (PreListElement softwareComponents+=ConfigSoftwareComponent)*
+            DEDENT
+                ('middleware:' middleware=Middleware)?
+                ('runtimeType:' runtimeType=AbstractRuntime)?
+    DEDENT
 ;
 
 Middleware returns Middleware:
@@ -90,6 +89,24 @@ Middleware returns Middleware:
 RosMiddleware returns RosMiddleware:
     value=ROSDistro
     ;
+
+AbstractRuntime returns AbstractRuntime:
+ ContainerRuntime
+;
+
+ContainerRuntime returns ContainerRuntime:
+    {ContainerRuntime}
+    INDENT
+    'type:' type=RunTimeType
+    ('resource:'
+     INDENT
+        PreListElement opertingSystemResource+=OperatingSystemResouce
+        (PreListElement opertingSystemResource+=OperatingSystemResouce+)?
+     DEDENT
+     )?
+     DEDENT
+;
+
 
 enum ROSDistro returns ROSDistro:
     noetic = 'noetic' | humble = 'humble' | rolling = 'rolling';
