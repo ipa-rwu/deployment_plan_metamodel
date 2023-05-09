@@ -2,7 +2,7 @@ name: deploy_pick_n_place_to_ur5e_cell_with_rostooling
 on:
     push:
         paths:
-            - "examples/src-gen/deploy_pick_n_place_to_ur5e_cell_with_rostooling/**"
+            - "example/src-gen/deploy_pick_n_place_to_ur5e_cell_with_rostooling/**"
 env:
     BUILDER_PREFIX: "ghcr.io/ipa-rwu/"
     BUILDER_SUFFIX: ":latest"

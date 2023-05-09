@@ -63,7 +63,6 @@ public class DeploymentPlanFactoryImpl extends EFactoryImpl implements Deploymen
             case DeploymentPlanPackage.IMPLEMENTATION_ASSIGNMENT: return createImplementationAssignment();
             case DeploymentPlanPackage.CONFIG_EXECUTION_PARAMETER: return createConfigExecutionParameter();
             case DeploymentPlanPackage.CONFIG_SOFTWARE_COMPONENT: return createConfigSoftwareComponent();
-            case DeploymentPlanPackage.ABSTARCT_CONFIG_SOFTWARE_COMPONENT: return createAbstarctConfigSoftwareComponent();
             case DeploymentPlanPackage.ROS_MIDDLEWARE: return createRosMiddleware();
             default:
                 throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -158,16 +157,6 @@ public class DeploymentPlanFactoryImpl extends EFactoryImpl implements Deploymen
     public ConfigSoftwareComponent createConfigSoftwareComponent() {
         ConfigSoftwareComponentImpl configSoftwareComponent = new ConfigSoftwareComponentImpl();
         return configSoftwareComponent;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public AbstarctConfigSoftwareComponent createAbstarctConfigSoftwareComponent() {
-        AbstarctConfigSoftwareComponentImpl abstarctConfigSoftwareComponent = new AbstarctConfigSoftwareComponentImpl();
-        return abstarctConfigSoftwareComponent;
     }
 
     /**

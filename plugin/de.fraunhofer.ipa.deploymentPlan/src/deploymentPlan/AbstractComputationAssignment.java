@@ -22,6 +22,7 @@ import targetEnvironment.ComputationDeviceInstance;
  * <ul>
  *   <li>{@link deploymentPlan.AbstractComputationAssignment#getName <em>Name</em>}</li>
  *   <li>{@link deploymentPlan.AbstractComputationAssignment#getExecutedBy <em>Executed By</em>}</li>
+ *   <li>{@link deploymentPlan.AbstractComputationAssignment#getVersion <em>Version</em>}</li>
  *   <li>{@link deploymentPlan.AbstractComputationAssignment#getSoftwareComponents <em>Software Components</em>}</li>
  *   <li>{@link deploymentPlan.AbstractComputationAssignment#getOpertingSystemVersion <em>Operting System Version</em>}</li>
  *   <li>{@link deploymentPlan.AbstractComputationAssignment#getRuntimeType <em>Runtime Type</em>}</li>
@@ -79,6 +80,28 @@ public interface AbstractComputationAssignment extends EObject {
     void setExecutedBy(ComputationDeviceInstance value);
 
     /**
+     * Returns the value of the '<em><b>Version</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Version</em>' attribute.
+     * @see #setVersion(String)
+     * @see deploymentPlan.DeploymentPlanPackage#getAbstractComputationAssignment_Version()
+     * @model
+     * @generated
+     */
+    String getVersion();
+
+                /**
+     * Sets the value of the '{@link deploymentPlan.AbstractComputationAssignment#getVersion <em>Version</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Version</em>' attribute.
+     * @see #getVersion()
+     * @generated
+     */
+    void setVersion(String value);
+
+                /**
      * Returns the value of the '<em><b>Software Components</b></em>' containment reference list.
      * The list contents are of type {@link deploymentPlan.AbstarctConfigSoftwareComponent}.
      * <!-- begin-user-doc -->

@@ -36,7 +36,13 @@ class PlanGenerator extends AbstractGenerator {
     extension GitHubWorkflowCompiler
 
     @Inject
+    extension AnsibleCompiler
+
+    @Inject
     extension DockerComposeCompiler
+
+    @Inject
+    extension DeploymentHelper
 
     var NamingHelper namingHelper = new NamingHelper
 
@@ -70,8 +76,9 @@ class PlanGenerator extends AbstractGenerator {
 
     def generateFiles(List<AbstractDeploymentPlan> plans, IFileSystemAccess2 fsa){
       for(plan: plans){
-        namingHelper.relativeRootFolderPath = plan.name
+        namingHelper.relativePlanFolderPath = plan.name
         generateWorkflow(plan, fsa)
+        generateAnsible(plan, fsa)
         var assignments = plan.realize.realizations
         for (assignment : assignments){
             generateRosInstall(assignment, plan, fsa)
@@ -119,7 +126,36 @@ class PlanGenerator extends AbstractGenerator {
                 cycloneDDSConfig)
             fsa.generateFile(
                     namingHelper.getDockerComposePath(compDev.name),
-                assignmentList.dockerComposeCompiler)]
+                assignmentList.dockerComposeCompiler(compDev))]
         }
 
+
+        def generateAnsible(AbstractDeploymentPlan plan, IFileSystemAccess2 fsa) {
+            var ansibleNaming = new AnsibleNamingHelper
+            ansibleNaming.relativeAnsibleFolerPath = plan.name
+            fsa.generateFile(
+                ansibleNaming.getConfigFilePath,
+                ansibleConfig
+                )
+            fsa.generateFile(
+                ansibleNaming.getInventoryFilePath,
+                plan.deployTo.inventory
+                )
+            fsa.generateFile(
+              ansibleNaming.playbookFilePath,
+              plan.playbook(ansibleNaming)
+                )
+            fsa.generateFile(
+                ansibleNaming.getTaskMainFilePath(ansibleNaming.taskCommonFolderPath),
+                ansibleNaming.taskRunCommonTasks
+                )
+            fsa.generateFile(
+              ansibleNaming.taskInstallDockerFilePath,
+              taskCheckInstallDocker
+                )
+            fsa.generateFile(
+                ansibleNaming.getTaskMainFilePath(ansibleNaming.taskDeploySoftwareFolderPath),
+                namingHelper.taskDeploySoftware
+                )
+        }
 }

@@ -44,6 +44,9 @@ public abstract class AbstractPlanProposalProvider extends UtilProposalProvider 
     public void completeImplementationAssignment_ExecutedBy(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
         lookupCrossReference(((CrossReference)assignment.getTerminal()), context, acceptor);
     }
+    public void completeImplementationAssignment_Version(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+        completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
+    }
     public void completeImplementationAssignment_SoftwareComponents(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
         completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
     }

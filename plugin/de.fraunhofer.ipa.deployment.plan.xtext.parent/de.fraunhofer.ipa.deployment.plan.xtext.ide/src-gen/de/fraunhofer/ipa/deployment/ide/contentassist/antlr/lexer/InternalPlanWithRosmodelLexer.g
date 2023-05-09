@@ -57,6 +57,8 @@ DeployTo : 'deployTo:';
 
 Ethernet : 'Ethernet';
 
+Version : 'version:';
+
 Rolling : 'rolling';
 
 Debian : 'debian';
@@ -84,6 +86,8 @@ Name : 'name:';
 Type : 'type:';
 
 Wlan : 'Wlan';
+
+Usb : 'Usb';
 
 To : 'to:';
 

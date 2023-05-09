@@ -307,13 +307,22 @@ public interface DeploymentPlanPackage extends EPackage {
     int ABSTRACT_COMPUTATION_ASSIGNMENT__EXECUTED_BY = 1;
 
     /**
+     * The feature id for the '<em><b>Version</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_COMPUTATION_ASSIGNMENT__VERSION = 2;
+
+                /**
      * The feature id for the '<em><b>Software Components</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int ABSTRACT_COMPUTATION_ASSIGNMENT__SOFTWARE_COMPONENTS = 2;
+    int ABSTRACT_COMPUTATION_ASSIGNMENT__SOFTWARE_COMPONENTS = 3;
 
     /**
      * The feature id for the '<em><b>Operting System Version</b></em>' attribute.
@@ -322,7 +331,7 @@ public interface DeploymentPlanPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int ABSTRACT_COMPUTATION_ASSIGNMENT__OPERTING_SYSTEM_VERSION = 3;
+    int ABSTRACT_COMPUTATION_ASSIGNMENT__OPERTING_SYSTEM_VERSION = 4;
 
     /**
      * The feature id for the '<em><b>Runtime Type</b></em>' attribute.
@@ -331,7 +340,7 @@ public interface DeploymentPlanPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int ABSTRACT_COMPUTATION_ASSIGNMENT__RUNTIME_TYPE = 4;
+    int ABSTRACT_COMPUTATION_ASSIGNMENT__RUNTIME_TYPE = 5;
 
     /**
      * The feature id for the '<em><b>Middleware</b></em>' containment reference.
@@ -340,7 +349,7 @@ public interface DeploymentPlanPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int ABSTRACT_COMPUTATION_ASSIGNMENT__MIDDLEWARE = 5;
+    int ABSTRACT_COMPUTATION_ASSIGNMENT__MIDDLEWARE = 6;
 
     /**
      * The feature id for the '<em><b>Operting System Type</b></em>' containment reference.
@@ -349,7 +358,7 @@ public interface DeploymentPlanPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int ABSTRACT_COMPUTATION_ASSIGNMENT__OPERTING_SYSTEM_TYPE = 6;
+    int ABSTRACT_COMPUTATION_ASSIGNMENT__OPERTING_SYSTEM_TYPE = 7;
 
     /**
      * The number of structural features of the '<em>Abstract Computation Assignment</em>' class.
@@ -358,7 +367,7 @@ public interface DeploymentPlanPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int ABSTRACT_COMPUTATION_ASSIGNMENT_FEATURE_COUNT = 7;
+    int ABSTRACT_COMPUTATION_ASSIGNMENT_FEATURE_COUNT = 8;
 
     /**
      * The number of operations of the '<em>Abstract Computation Assignment</em>' class.
@@ -398,6 +407,15 @@ public interface DeploymentPlanPackage extends EPackage {
     int IMPLEMENTATION_ASSIGNMENT__EXECUTED_BY = ABSTRACT_COMPUTATION_ASSIGNMENT__EXECUTED_BY;
 
     /**
+     * The feature id for the '<em><b>Version</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int IMPLEMENTATION_ASSIGNMENT__VERSION = ABSTRACT_COMPUTATION_ASSIGNMENT__VERSION;
+
+                /**
      * The feature id for the '<em><b>Software Components</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -909,6 +927,17 @@ public interface DeploymentPlanPackage extends EPackage {
     EReference getAbstractComputationAssignment_ExecutedBy();
 
     /**
+     * Returns the meta object for the attribute '{@link deploymentPlan.AbstractComputationAssignment#getVersion <em>Version</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Version</em>'.
+     * @see deploymentPlan.AbstractComputationAssignment#getVersion()
+     * @see #getAbstractComputationAssignment()
+     * @generated
+     */
+    EAttribute getAbstractComputationAssignment_Version();
+
+                /**
      * Returns the meta object for the containment reference list '{@link deploymentPlan.AbstractComputationAssignment#getSoftwareComponents <em>Software Components</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1257,6 +1286,14 @@ public interface DeploymentPlanPackage extends EPackage {
         EReference ABSTRACT_COMPUTATION_ASSIGNMENT__EXECUTED_BY = eINSTANCE.getAbstractComputationAssignment_ExecutedBy();
 
         /**
+         * The meta object literal for the '<em><b>Version</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute ABSTRACT_COMPUTATION_ASSIGNMENT__VERSION = eINSTANCE.getAbstractComputationAssignment_Version();
+
+                                /**
          * The meta object literal for the '<em><b>Software Components</b></em>' containment reference list feature.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->

@@ -38,6 +38,7 @@ import targetEnvironment.ComputationDeviceInstance;
  * <ul>
  *   <li>{@link deploymentPlan.impl.AbstractComputationAssignmentImpl#getName <em>Name</em>}</li>
  *   <li>{@link deploymentPlan.impl.AbstractComputationAssignmentImpl#getExecutedBy <em>Executed By</em>}</li>
+ *   <li>{@link deploymentPlan.impl.AbstractComputationAssignmentImpl#getVersion <em>Version</em>}</li>
  *   <li>{@link deploymentPlan.impl.AbstractComputationAssignmentImpl#getSoftwareComponents <em>Software Components</em>}</li>
  *   <li>{@link deploymentPlan.impl.AbstractComputationAssignmentImpl#getOpertingSystemVersion <em>Operting System Version</em>}</li>
  *   <li>{@link deploymentPlan.impl.AbstractComputationAssignmentImpl#getRuntimeType <em>Runtime Type</em>}</li>
@@ -79,6 +80,26 @@ public abstract class AbstractComputationAssignmentImpl extends MinimalEObjectIm
     protected ComputationDeviceInstance executedBy;
 
     /**
+     * The default value of the '{@link #getVersion() <em>Version</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getVersion()
+     * @generated
+     * @ordered
+     */
+    protected static final String VERSION_EDEFAULT = null;
+
+                /**
+     * The cached value of the '{@link #getVersion() <em>Version</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getVersion()
+     * @generated
+     * @ordered
+     */
+    protected String version = VERSION_EDEFAULT;
+
+                /**
      * The cached value of the '{@link #getSoftwareComponents() <em>Software Components</em>}' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -227,6 +248,27 @@ public abstract class AbstractComputationAssignmentImpl extends MinimalEObjectIm
     }
 
     /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public String getVersion() {
+        return version;
+    }
+
+                /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void setVersion(String newVersion) {
+        String oldVersion = version;
+        version = newVersion;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__VERSION, oldVersion, version));
+    }
+
+                /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -397,6 +439,8 @@ public abstract class AbstractComputationAssignmentImpl extends MinimalEObjectIm
             case DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__EXECUTED_BY:
                 if (resolve) return getExecutedBy();
                 return basicGetExecutedBy();
+            case DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__VERSION:
+                return getVersion();
             case DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__SOFTWARE_COMPONENTS:
                 return getSoftwareComponents();
             case DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__OPERTING_SYSTEM_VERSION:
@@ -425,6 +469,9 @@ public abstract class AbstractComputationAssignmentImpl extends MinimalEObjectIm
                 return;
             case DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__EXECUTED_BY:
                 setExecutedBy((ComputationDeviceInstance)newValue);
+                return;
+            case DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__VERSION:
+                setVersion((String)newValue);
                 return;
             case DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__SOFTWARE_COMPONENTS:
                 getSoftwareComponents().clear();
@@ -460,6 +507,9 @@ public abstract class AbstractComputationAssignmentImpl extends MinimalEObjectIm
             case DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__EXECUTED_BY:
                 setExecutedBy((ComputationDeviceInstance)null);
                 return;
+            case DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__VERSION:
+                setVersion(VERSION_EDEFAULT);
+                return;
             case DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__SOFTWARE_COMPONENTS:
                 getSoftwareComponents().clear();
                 return;
@@ -491,6 +541,8 @@ public abstract class AbstractComputationAssignmentImpl extends MinimalEObjectIm
                 return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
             case DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__EXECUTED_BY:
                 return executedBy != null;
+            case DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__VERSION:
+                return VERSION_EDEFAULT == null ? version != null : !VERSION_EDEFAULT.equals(version);
             case DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__SOFTWARE_COMPONENTS:
                 return softwareComponents != null && !softwareComponents.isEmpty();
             case DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__OPERTING_SYSTEM_VERSION:
@@ -517,6 +569,8 @@ public abstract class AbstractComputationAssignmentImpl extends MinimalEObjectIm
         StringBuilder result = new StringBuilder(super.toString());
         result.append(" (name: ");
         result.append(name);
+        result.append(", version: ");
+        result.append(version);
         result.append(", opertingSystemVersion: ");
         result.append(opertingSystemVersion);
         result.append(", runtimeType: ");

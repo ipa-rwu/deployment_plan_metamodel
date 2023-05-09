@@ -70,7 +70,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="AbstracProcessorProperty" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="AbstractComputationResource" abstract="true"
       eSuperTypes="../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//AbstractResource"/>
-  <eClassifiers xsi:type="ecore:EClass" name="AbstractDeviceType">
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractDeviceType" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="communicationConnection"
         upperBound="-1" eType="#//AbstractCommunicationConnection" containment="true"/>

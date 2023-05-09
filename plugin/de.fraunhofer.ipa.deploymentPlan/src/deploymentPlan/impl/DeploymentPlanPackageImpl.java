@@ -373,8 +373,17 @@ public class DeploymentPlanPackageImpl extends EPackageImpl implements Deploymen
      * <!-- end-user-doc -->
      * @generated
      */
+    public EAttribute getAbstractComputationAssignment_Version() {
+        return (EAttribute)abstractComputationAssignmentEClass.getEStructuralFeatures().get(2);
+    }
+
+                /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public EReference getAbstractComputationAssignment_SoftwareComponents() {
-        return (EReference)abstractComputationAssignmentEClass.getEStructuralFeatures().get(2);
+        return (EReference)abstractComputationAssignmentEClass.getEStructuralFeatures().get(3);
     }
 
     /**
@@ -383,15 +392,6 @@ public class DeploymentPlanPackageImpl extends EPackageImpl implements Deploymen
      * @generated
      */
     public EAttribute getAbstractComputationAssignment_OpertingSystemVersion() {
-        return (EAttribute)abstractComputationAssignmentEClass.getEStructuralFeatures().get(3);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public EAttribute getAbstractComputationAssignment_RuntimeType() {
         return (EAttribute)abstractComputationAssignmentEClass.getEStructuralFeatures().get(4);
     }
 
@@ -400,8 +400,17 @@ public class DeploymentPlanPackageImpl extends EPackageImpl implements Deploymen
      * <!-- end-user-doc -->
      * @generated
      */
+    public EAttribute getAbstractComputationAssignment_RuntimeType() {
+        return (EAttribute)abstractComputationAssignmentEClass.getEStructuralFeatures().get(5);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public EReference getAbstractComputationAssignment_Middleware() {
-        return (EReference)abstractComputationAssignmentEClass.getEStructuralFeatures().get(5);
+        return (EReference)abstractComputationAssignmentEClass.getEStructuralFeatures().get(6);
     }
 
     /**
@@ -410,7 +419,7 @@ public class DeploymentPlanPackageImpl extends EPackageImpl implements Deploymen
      * @generated
      */
     public EReference getAbstractComputationAssignment_OpertingSystemType() {
-        return (EReference)abstractComputationAssignmentEClass.getEStructuralFeatures().get(6);
+        return (EReference)abstractComputationAssignmentEClass.getEStructuralFeatures().get(7);
     }
 
     /**
@@ -558,6 +567,7 @@ public class DeploymentPlanPackageImpl extends EPackageImpl implements Deploymen
         abstractComputationAssignmentEClass = createEClass(ABSTRACT_COMPUTATION_ASSIGNMENT);
         createEAttribute(abstractComputationAssignmentEClass, ABSTRACT_COMPUTATION_ASSIGNMENT__NAME);
         createEReference(abstractComputationAssignmentEClass, ABSTRACT_COMPUTATION_ASSIGNMENT__EXECUTED_BY);
+        createEAttribute(abstractComputationAssignmentEClass, ABSTRACT_COMPUTATION_ASSIGNMENT__VERSION);
         createEReference(abstractComputationAssignmentEClass, ABSTRACT_COMPUTATION_ASSIGNMENT__SOFTWARE_COMPONENTS);
         createEAttribute(abstractComputationAssignmentEClass, ABSTRACT_COMPUTATION_ASSIGNMENT__OPERTING_SYSTEM_VERSION);
         createEAttribute(abstractComputationAssignmentEClass, ABSTRACT_COMPUTATION_ASSIGNMENT__RUNTIME_TYPE);
@@ -648,6 +658,7 @@ public class DeploymentPlanPackageImpl extends EPackageImpl implements Deploymen
         initEClass(abstractComputationAssignmentEClass, AbstractComputationAssignment.class, "AbstractComputationAssignment", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEAttribute(getAbstractComputationAssignment_Name(), ecorePackage.getEString(), "name", null, 1, 1, AbstractComputationAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEReference(getAbstractComputationAssignment_ExecutedBy(), theTargetEnvironmentPackage.getComputationDeviceInstance(), null, "executedBy", null, 1, 1, AbstractComputationAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getAbstractComputationAssignment_Version(), ecorePackage.getEString(), "version", null, 0, 1, AbstractComputationAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEReference(getAbstractComputationAssignment_SoftwareComponents(), this.getAbstarctConfigSoftwareComponent(), null, "softwareComponents", null, 1, -1, AbstractComputationAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEAttribute(getAbstractComputationAssignment_OpertingSystemVersion(), ecorePackage.getEString(), "opertingSystemVersion", null, 0, 1, AbstractComputationAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEAttribute(getAbstractComputationAssignment_RuntimeType(), theUtilPackage.getRunTimeType(), "runtimeType", null, 0, 1, AbstractComputationAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -659,7 +670,7 @@ public class DeploymentPlanPackageImpl extends EPackageImpl implements Deploymen
         initEReference(getAbstractDeploymentPlan_DeployTo(), theTargetEnvironmentPackage.getTargetDeployEnviroment(), null, "deployTo", null, 1, 1, AbstractDeploymentPlan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEReference(getAbstractDeploymentPlan_Realize(), this.getAbstractRealization(), null, "realize", null, 1, 1, AbstractDeploymentPlan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-        initEClass(abstarctConfigSoftwareComponentEClass, AbstarctConfigSoftwareComponent.class, "AbstarctConfigSoftwareComponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEClass(abstarctConfigSoftwareComponentEClass, AbstarctConfigSoftwareComponent.class, "AbstarctConfigSoftwareComponent", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEReference(getAbstarctConfigSoftwareComponent_ExecutionConfiguration(), this.getAbstractConfigExecutionParameter(), null, "executionConfiguration", null, 0, -1, AbstarctConfigSoftwareComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEAttribute(getAbstarctConfigSoftwareComponent_StartCommand(), ecorePackage.getEString(), "startCommand", null, 0, -1, AbstarctConfigSoftwareComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

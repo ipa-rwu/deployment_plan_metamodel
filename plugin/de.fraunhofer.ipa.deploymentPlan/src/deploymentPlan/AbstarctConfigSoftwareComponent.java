@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see deploymentPlan.DeploymentPlanPackage#getAbstarctConfigSoftwareComponent()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface AbstarctConfigSoftwareComponent extends EObject {
