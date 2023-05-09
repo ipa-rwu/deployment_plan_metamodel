@@ -15,15 +15,10 @@ import com.google.common.base.Predicate;
 
 import deployPlanWithRosModel.impl.ConfigRosParameterImpl;
 import deployPlanWithRosModel.impl.ConfigRosSoftwareComponentImpl;
-import deploymentPlan.AbstractDeploymentPlan;
-import deploymentPlan.ImplementationAssignment;
-import system.RosSystem;
 //import deployPlanWithRosModel.impl.ConfigRosParameterImpl;
 //import deployPlanWithRosModel.impl.ConfigRosSoftwareComponentImpl;
 import system.System;
 import system.impl.RosParameterImpl;
-import system.impl.RosSystemImpl;
-import targetEnvironment.ComputationDeviceInstance;
 
 /**
  * See https://www.eclipse.org/Xtext/documentation/310_eclipse_support.html#content-assist
@@ -56,7 +51,7 @@ public class PlanWithRosmodelProposalProvider extends AbstractPlanWithRosmodelPr
   }
 
       @Override
-  public void completeRossystemAssignment_ExecutedBy(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+  public void completeRossystemImplementationAssignment_ExecutedBy(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
       completeImplementationAssignment_ExecutedBy(model, assignment, context, acceptor);
   }
 }

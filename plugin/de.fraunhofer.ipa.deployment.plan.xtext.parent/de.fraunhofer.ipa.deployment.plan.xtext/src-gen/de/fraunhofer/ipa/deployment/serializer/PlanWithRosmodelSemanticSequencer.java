@@ -41,6 +41,7 @@ import de.fraunhofer.ipa.deployment.util.WlanCommunicationType;
 import deployPlanWithRosModel.ConfigRosParameter;
 import deployPlanWithRosModel.ConfigRosSoftwareComponent;
 import deployPlanWithRosModel.DeployPlanWithRosModelPackage;
+import deployPlanWithRosModel.RossystemImplementationAssignment;
 import deploymentPlan.ConfigExecutionParameter;
 import deploymentPlan.ConfigSoftwareComponent;
 import deploymentPlan.ContainerRuntime;
@@ -79,6 +80,9 @@ public class PlanWithRosmodelSemanticSequencer extends PlanSemanticSequencer {
             case DeployPlanWithRosModelPackage.CONFIG_ROS_SOFTWARE_COMPONENT:
                 sequence_ConfigRosSoftwareComponent(context, (ConfigRosSoftwareComponent) semanticObject);
                 return;
+            case DeployPlanWithRosModelPackage.ROSSYSTEM_IMPLEMENTATION_ASSIGNMENT:
+                sequence_RossystemImplementationAssignment(context, (RossystemImplementationAssignment) semanticObject);
+                return;
             }
         else if (epackage == DeploymentPlanPackage.eINSTANCE)
             switch (semanticObject.eClass().getClassifierID()) {
@@ -102,16 +106,8 @@ public class PlanWithRosmodelSemanticSequencer extends PlanSemanticSequencer {
                 }
                 else break;
             case DeploymentPlanPackage.IMPLEMENTATION_ASSIGNMENT:
-                if (rule == grammarAccess.getImplementationAssignmentRule()) {
-                    sequence_ImplementationAssignment(context, (ImplementationAssignment) semanticObject);
-                    return;
-                }
-                else if (rule == grammarAccess.getAbstractComputationAssignmentRule()
-                        || rule == grammarAccess.getRossystemAssignmentRule()) {
-                    sequence_RossystemAssignment(context, (ImplementationAssignment) semanticObject);
-                    return;
-                }
-                else break;
+                sequence_ImplementationAssignment(context, (ImplementationAssignment) semanticObject);
+                return;
             case DeploymentPlanPackage.REALIZATION:
                 sequence_Realization(context, (Realization) semanticObject);
                 return;
@@ -239,6 +235,7 @@ public class PlanWithRosmodelSemanticSequencer extends PlanSemanticSequencer {
     /**
      * <pre>
      * Contexts:
+     *     AbstarctConfigSoftwareComponent returns ConfigRosSoftwareComponent
      *     ConfigRosSoftwareComponent returns ConfigRosSoftwareComponent
      *
      * Constraint:
@@ -279,8 +276,8 @@ public class PlanWithRosmodelSemanticSequencer extends PlanSemanticSequencer {
     /**
      * <pre>
      * Contexts:
-     *     AbstractComputationAssignment returns ImplementationAssignment
-     *     RossystemAssignment returns ImplementationAssignment
+     *     AbstractComputationAssignment returns RossystemImplementationAssignment
+     *     RossystemImplementationAssignment returns RossystemImplementationAssignment
      *
      * Constraint:
      *     (
@@ -294,7 +291,7 @@ public class PlanWithRosmodelSemanticSequencer extends PlanSemanticSequencer {
      *     )
      * </pre>
      */
-    protected void sequence_RossystemAssignment(ISerializationContext context, ImplementationAssignment semanticObject) {
+    protected void sequence_RossystemImplementationAssignment(ISerializationContext context, RossystemImplementationAssignment semanticObject) {
         genericSequencer.createSequence(context, semanticObject);
     }
 
