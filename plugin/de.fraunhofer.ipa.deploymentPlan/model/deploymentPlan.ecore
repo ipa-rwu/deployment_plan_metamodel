@@ -7,7 +7,8 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DeploymentPlan" eSuperTypes="#//AbstractDeploymentPlan"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Realization" eSuperTypes="#//AbstractRealization"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Realization" abstract="true" interface="true"
+      eSuperTypes="#//AbstractRealization"/>
   <eClassifiers xsi:type="ecore:EClass" name="ImplementationAssignment" eSuperTypes="#//AbstractComputationAssignment"/>
   <eClassifiers xsi:type="ecore:EClass" name="ConfigExecutionParameter" eSuperTypes="#//AbstractConfigExecutionParameter">
     <eStructuralFeatures xsi:type="ecore:EReference" name="from" lowerBound="1" eType="ecore:EClass ImplementationDescription.ecore#//ExecutionParameter"/>
@@ -32,12 +33,9 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="softwareComponents" lowerBound="1"
         upperBound="-1" eType="#//AbstarctConfigSoftwareComponent" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="opertingSystemVersion"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="runtimeType" eType="ecore:EEnum ../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//RunTimeType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="middleware" eType="#//Middleware"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="opertingSystemType" eType="ecore:EClass ../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//OpertingSystemName"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="runtimeType" eType="#//AbstractRuntime"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AbstractDeploymentPlan" abstract="true">
@@ -61,5 +59,13 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RosMiddleware" eSuperTypes="#//Middleware">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="#//ROSDistro"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractRuntime" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="ecore:EEnum ../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//RunTimeType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ContainerRuntime" eSuperTypes="#//AbstractRuntime">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="opertingSystemResource"
+        upperBound="2" eType="ecore:EClass ../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//OperatingSystemResouce"
+        containment="true"/>
   </eClassifiers>
 </ecore:EPackage>
