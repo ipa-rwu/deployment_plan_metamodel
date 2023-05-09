@@ -6,7 +6,7 @@ repos:
     rev: 0.2.2
     hooks:
       - id: yamlfmt
-        args: [--mapping, "2", --sequence, "4", --offset, "2", --implicit_start, --preserve-quotes]
+        args: [--mapping, "2", --sequence, "4", --offset, "2", --implicit_start, --preserve-quotes, --width, "1000"]
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.4.0
