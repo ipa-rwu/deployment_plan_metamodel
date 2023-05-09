@@ -185,7 +185,7 @@ DeviceType_Impl returns DeviceType:
     DEDENT
     ;
 
-AbstractComputationResource returns AbstractComputationResource:
+AbstractComputationResource returns util::AbstractComputationResource:
   OperatingSystemResouce | ProcessorResouce
 ;
 
@@ -229,7 +229,8 @@ ComputationDeviceType returns ComputationDeviceType:
         )?
         ('computationResouce:'
             INDENT
-            computationResource+=AbstractComputationResource+
+            PreListElement computationResource+=AbstractComputationResource
+            (PreListElement computationResource+=AbstractComputationResource+)?
             DEDENT
         )?
         ('communicationConnection:'
@@ -294,54 +295,9 @@ UsbConnection returns UsbConnection:
     DEDENT
     ;
 
-OperatingSystemResouce returns OperatingSystemResouce:
-    {OperatingSystemResouce}
-    PreListElement 'name:'  name=EString
-    INDENT
-        'type:' type=OpertingSystemResouceType
-        ('properties:'
-            INDENT
-            properties+=AbstractOperatingSystemProperty+
-            DEDENT
-            )?
-    DEDENT
-    ;
-
-AbstractOperatingSystemProperty returns AbstractOperatingSystemProperty:
-    NameOperatingSystemProperty |VersionOperatingSystemProperty
-;
-
-NameOperatingSystemProperty returns NameOperatingSystemProperty:
-    {NameOperatingSystemProperty}
-    PreListElement "name:" name="os_name"
-    INDENT
-        'kind:' kind=AttributeKind
-        (
-        'description:' description=EString
-        )?
-        (
-        'value:' value=PropertyValue
-        )?
-    DEDENT
-    ;
-
-VersionOperatingSystemProperty returns VersionOperatingSystemProperty:
-    {VersionOperatingSystemProperty}
-    PreListElement "name:" name="os_version"
-    INDENT
-        'kind:' kind=AttributeKind
-        (
-        'description:' description=EString
-        )?
-        (
-        'value:' value=PropertyValue
-        )?
-    DEDENT
-    ;
-
 ProcessorResouce returns ProcessorResouce:
     {ProcessorResouce}
-    PreListElement 'name:'  name=EString
+    'name:'  name=EString
     INDENT
         'type:' type=ProcessorResouceType
         ('properties:'
