@@ -2,6 +2,7 @@
  */
 package device;
 
+import de.fraunhofer.ipa.deployment.util.AbstractComputationResource;
 import de.fraunhofer.ipa.deployment.util.ProcessorResouceType;
 
 import org.eclipse.emf.common.util.EList;

@@ -3,6 +3,7 @@
 package device.impl;
 
 import de.fraunhofer.ipa.deployment.util.impl.PropertySelectionImpl;
+
 import device.DNSServerNetworkProperty;
 import device.DevicePackage;
 

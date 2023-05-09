@@ -69,7 +69,7 @@ public interface ConfigConnectionProperty extends AbstractConfigProperty {
      */
     void setRefConnectionProperty(AbstractConnectionProperty value);
 
-                /**
+    /**
      * Returns the value of the '<em><b>Value</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->

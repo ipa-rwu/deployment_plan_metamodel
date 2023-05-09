@@ -5,6 +5,7 @@ package targetEnvironment.impl;
 import de.fraunhofer.ipa.deployment.util.PropertyValue;
 
 import device.AbstractConnectionProperty;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -150,7 +151,7 @@ public class ConfigConnectionPropertyImpl extends AbstractConfigPropertyImpl imp
             eNotify(new ENotificationImpl(this, Notification.SET, TargetEnvironmentPackage.CONFIG_CONNECTION_PROPERTY__REF_CONNECTION_PROPERTY, oldRefConnectionProperty, refConnectionProperty));
     }
 
-                /**
+    /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
