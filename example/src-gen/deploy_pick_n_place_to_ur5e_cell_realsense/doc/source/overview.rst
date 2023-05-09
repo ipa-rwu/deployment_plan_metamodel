@@ -63,5 +63,5 @@ This documentation is about deploying a software system consisting of
       - version
 
     * - ur_robot_driver
-      - https://github.com/UniversalRobots/ Universal_Robots_ROS2_Driver.git
+      - https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver.git
       - humble

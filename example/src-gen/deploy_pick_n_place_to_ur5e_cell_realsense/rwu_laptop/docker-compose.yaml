@@ -19,16 +19,16 @@ services:
       - ros-network
     environment:
       - NETINTERFACE=eth0
-      - reference_frame=world
       - camera_info_topic=color_depth_optical_frame
       - detect_colors=yellow, pink, green, white
+      - reference_frame=world
     command:
       - bash
       - -c
       - |
         export CYCLONEDDS_URI=file:///cyclonedds.xml
         source /ros_entrypoint.sh
-        ros2 launch color_pose_estimation marker_publisher.launch.py reference_frame:=world camera_info_topic:=color_depth_optical_frame detect_colors:=yellow, pink, green, white
+        ros2 launch color_pose_estimation marker_publisher.launch.py camera_info_topic:=color_depth_optical_frame detect_colors:=yellow, pink, green, white reference_frame:=world
   pick_place_task:
     image: ${Registry}/pick_place_task:latest
     volumes:
@@ -66,16 +66,16 @@ services:
       - /dev/video7:/dev/video7
     environment:
       - NETINTERFACE=eth0
-      - ur_type=UR5E
       - robot_ip=192.168.56.2
-      - device_type=D435
-      - camera_name=camera_realsense
+      - ur_type=UR5E
       - publish_tf=false
+      - camera_name=camera_realsense
+      - device_type=D435
     command:
       - bash
       - -c
       - |
         export CYCLONEDDS_URI=file:///cyclonedds.xml
         source /ros_entrypoint.sh
-        ros2 launch realsense2_camera rs_launch.py device_type:=D435 camera_name:=camera_realsense publish_tf:=false
-        ros2 launch ur_robot_driver ur5e.launch.py ur_type:=UR5E robot_ip:=192.168.56.2
+        ros2 launch realsense2_camera rs_launch.py publish_tf:=false camera_name:=camera_realsense device_type:=D435
+        ros2 launch ur_robot_driver ur5e.launch.py robot_ip:=192.168.56.2 ur_type:=UR5E
