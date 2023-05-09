@@ -3,6 +3,14 @@
  */
 package de.fraunhofer.ipa.deployment.validation;
 
+import javax.inject.Inject;
+
+import org.eclipse.xtext.validation.Check;
+import org.eclipse.xtext.xbase.lib.Extension;
+
+import deploymentPlan.ConfigSoftwareComponent;
+import deploymentPlan.DeploymentPlan;
+import deploymentPlan.DeploymentPlanPackage;
 
 /**
  * This class contains custom validation rules.
@@ -10,16 +18,35 @@ package de.fraunhofer.ipa.deployment.validation;
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#validation
  */
 public class PlanValidator extends AbstractPlanValidator {
+    @Inject
+    @Extension
+    private PlanValidatorFunctions  valFun;
 
-//  public static final String INVALID_NAME = "invalidName";
-//
-//  @Check
-//  public void checkGreetingStartsWithCapital(Greeting greeting) {
-//      if (!Character.isUpperCase(greeting.getName().charAt(0))) {
-//          warning("Name should start with a capital",
-//                  PlanPackage.Literals.GREETING__NAME,
-//                  INVALID_NAME);
-//      }
-//  }
+
+
+    public static final String INVALID_NAME = "invalidName";
+    public static final String DUPLICATES = "duplicates";
+    public static final String MISSING_ENTITY = "missingEntity";
+    public static final String NOT_DEFINE = "notDefine";
+
+  @Check
+  public void checkSatisfyImplemtationWithHWReqest(ConfigSoftwareComponent configComponent) {
+      ValidationMsg resMsg = valFun.ifSatisfyImplemtationWithHWReqest(configComponent);
+      if (!resMsg.getValid()) {
+          error(resMsg.getMsg(),
+            DeploymentPlanPackage.Literals.CONFIG_SOFTWARE_COMPONENT__COMPONENT,
+            MISSING_ENTITY);
+      }
+  }
+
+  @Check
+  public void checkTarEnvSatisfyImplemtationWithHWReqest(ConfigSoftwareComponent configComponent) {
+      ValidationMsg resMsg = valFun.TarEnvSatisfyImplemtationWithHWReqest(configComponent);
+      if (!resMsg.getValid()) {
+          error(resMsg.getMsg(),
+            DeploymentPlanPackage.Literals.CONFIG_SOFTWARE_COMPONENT__COMPONENT,
+            MISSING_ENTITY);
+      }
+  }
 
 }
