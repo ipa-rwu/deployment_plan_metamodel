@@ -7,16 +7,11 @@ import de.fraunhofer.ipa.deployment.util.UbuntuVersion
 import deploymentPlan.AbstractComputationAssignment
 import deploymentPlan.DeploymentPlan
 import deploymentPlan.RosMiddleware
-import deployPlanWithRosModel.ConfigRosSoftwareComponent
+import implementationDescription.ImplementationDescription
 import implementationDescription.SoftwareComponent
-import implementationDescription.impl.GitRepositoryTypeImpl
 import java.util.ArrayList
-import java.util.Arrays
 import java.util.List
 import javax.inject.Inject
-import org.eclipse.emf.ecore.EObject
-import ros.impl.PackageImpl
-import implementationDescription.ImplementationDescription
 
 class RepoInfo{
     String name

@@ -12,6 +12,7 @@ import java.util.Map
 import java.util.HashMap
 import deploymentPlan.AbstractDeploymentPlan
 import de.fraunhofer.ipa.deployment.generator.DeploymentHelper
+import deployPlanWithRosModel.RossystemImplementationAssignment
 
 class NamingHelper {
     String RelativeRootFolderPath = null
@@ -110,11 +111,14 @@ class NamingHelper {
             var rosdistro= (assignment.middleware as RosMiddleware).value.getName
           var os = deployHelper.getOSFromRosDistro(deployHelper.getOS(assignment).name, rosdistro)
           var List<RepoInfo> RossystemRepoInfosPerAssignment =  new ArrayList
+          if(assignment instanceof RossystemImplementationAssignment){
           for(sys: assignment.softwareComponents.map[it as ConfigRosSoftwareComponent].map[component]){
-                var repos = deployHelper.getRepoinfosFromRossystem(sys, os, rosdistro)
-                RossystemRepoInfosPerAssignment.addAll(repos)
+              var repos = deployHelper.getRepoinfosFromRossystem(sys, os, rosdistro)
+              RossystemRepoInfosPerAssignment.addAll(repos)
+              }
+              this.AssignmentRossystemRepoInfoMap.put(assignment, RossystemRepoInfosPerAssignment)
           }
-          this.AssignmentRossystemRepoInfoMap.put(assignment, RossystemRepoInfosPerAssignment)
+
         }
     }
 

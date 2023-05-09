@@ -13,6 +13,7 @@ import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
 import deploymentPlan.AbstractDeploymentPlan
 import deploymentPlan.AbstractComputationAssignment
+import deployPlanWithRosModel.RossystemImplementationAssignment
 
 /**
  * Generates code from your model files on save.
@@ -60,11 +61,10 @@ class PlanWithRosmodelGenerator extends PlanGenerator {
             if(repos.filter[it.checkIfReleased==true].size > 0){
                 ifRunBash = true
             }
-            if(assignment.runtimeType == RunTimeType.CONTAINER){
-
-                fsa.generateFile(
-            String.format("%s/%s/Dockerfile", plan.getName(), assignment.name),
-            assignment.dockerFileCompiler(ifRunBash))
+            if(assignment.runtimeType.type == RunTimeType.CONTAINER && assignment instanceof RossystemImplementationAssignment){
+            fsa.generateFile(
+                String.format("%s/%s/Dockerfile", plan.getName(), assignment.name),
+                assignment.dockerFileCompiler(ifRunBash))
             }
         }
 

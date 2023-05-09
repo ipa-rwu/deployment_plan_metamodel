@@ -1,24 +1,23 @@
 package de.fraunhofer.ipa.deployment.generator
 
-import java.util.Set
-import java.util.stream.Collectors
-import targetEnvironment.ComputationDeviceInstance
-import targetEnvironment.TargetDeployEnviroment
-import deploymentPlan.AbstractDeploymentPlan
-import javax.inject.Inject
-import targetEnvironment.DeviceInstance
-import deploymentPlan.ConfigSoftwareComponent
-import implementationDescription.SoftwareComponent
-import deployPlanWithRosModel.ConfigRosSoftwareComponent
-import system.RosSystem
-import java.util.Map
+import deployPlanWithRosModel.RossystemImplementationAssignment
 import deploymentPlan.AbstractComputationAssignment
-import java.util.List
-import de.fraunhofer.ipa.deployment.util.NetworkCommunicationType
-import targetEnvironment.ConnectedDevice
+import deploymentPlan.AbstractDeploymentPlan
+import deploymentPlan.ConfigSoftwareComponent
+import deploymentPlan.ImplementationAssignment
 import device.NetworkConnection
 import device.UsbConnection
+import implementationDescription.SoftwareComponent
 import java.util.ArrayList
+import java.util.List
+import java.util.Map
+import java.util.Set
+import java.util.stream.Collectors
+import javax.inject.Inject
+import org.eclipse.emf.ecore.EObject
+import targetEnvironment.ComputationDeviceInstance
+import targetEnvironment.ConnectedDevice
+import targetEnvironment.TargetDeployEnviroment
 
 class DeploymentDocumentCompiler {
 
@@ -33,8 +32,7 @@ Deployment overview
 ############################
 
 This documentation is about deploying a software system consisting of
-    «plan.realize.realizations.stream.map[softwareComponents].
-    collect(Collectors.toList).flatten.map[component|getAbstarctConfigSoftwareComponentName(component)]
+    «plan.getConfiguedSoftwareComponent.map[component|getAbstarctConfigSoftwareComponentName(component)]
     .toList.stream.collect(Collectors.joining("\n* ","* ", ""))»
   to a target environment including devices as follows:
 
@@ -43,7 +41,7 @@ This documentation is about deploying a software system consisting of
   «ENDFOR»
 
   The sources of components are as follows:
-  «FOR component : plan.realize.realizations.stream.map[softwareComponents].collect(Collectors.toList).flatten»
+  «FOR component : plan.getConfiguedSoftwareComponent»
   «IF component instanceof ConfigSoftwareComponent && (component as ConfigSoftwareComponent).component instanceof SoftwareComponent»
   «var software = ((component as ConfigSoftwareComponent).component as SoftwareComponent)»
 
@@ -81,6 +79,17 @@ This documentation is about deploying a software system consisting of
 «ENDIF»
 
 '''
+
+def getConfiguedSoftwareComponent(AbstractDeploymentPlan plan){
+    var List<EObject> res = new ArrayList
+    res.addAll(plan.realize.realizations.stream.filter[it instanceof ImplementationAssignment]
+    .map[(it as ImplementationAssignment).softwareComponents].collect(Collectors.toList).flatten
+    )
+    res.addAll(plan.realize.realizations.stream.filter[it instanceof RossystemImplementationAssignment]
+    .map[(it as RossystemImplementationAssignment).softwareComponents].collect(Collectors.toList).flatten
+    )
+    return res
+}
 
 def targetEnvriomentDescription(TargetDeployEnviroment tarEnv, String targetEnvConfigFileName)'''
 .. _«targetEnvConfigFileName.substring(0, targetEnvConfigFileName.lastIndexOf('.'))»:
