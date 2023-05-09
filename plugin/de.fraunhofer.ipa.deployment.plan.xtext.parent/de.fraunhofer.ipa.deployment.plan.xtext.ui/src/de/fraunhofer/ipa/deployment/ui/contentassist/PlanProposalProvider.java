@@ -14,9 +14,12 @@ import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
 import com.google.common.base.Predicate;
 
 import de.fraunhofer.ipa.deployment.util.AbstractComputationAssignmentTarget;
+import deploymentPlan.AbstractDeploymentPlan;
+import deploymentPlan.ImplementationAssignment;
 import deploymentPlan.impl.ConfigExecutionParameterImpl;
 import deploymentPlan.impl.ConfigSoftwareComponentImpl;
 import implementationDescription.impl.ExecutionParameterImpl;
+import targetEnvironment.ComputationDeviceInstance;
 
 /**
  * See https://www.eclipse.org/Xtext/documentation/310_eclipse_support.html#content-assist
@@ -47,4 +50,24 @@ public class PlanProposalProvider extends AbstractPlanProposalProvider {
         });
         }
 
+    @Override
+    public void completeImplementationAssignment_ExecutedBy(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+        ImplementationAssignment implAssign = (ImplementationAssignment) model;
+        AbstractDeploymentPlan plan = (AbstractDeploymentPlan) implAssign.eContainer().eContainer();
+        lookupCrossReference((CrossReference) assignment.getTerminal(),
+                context, acceptor, new Predicate<IEObjectDescription>() {
+                    @Override
+                    public boolean apply(IEObjectDescription input) {
+                        ComputationDeviceInstance inputObj = (ComputationDeviceInstance) input.getEObjectOrProxy();
+                        if(inputObj.eIsProxy()) {
+                            EObject obj = EcoreUtil.resolve(inputObj, model);
+                            if(plan.getDeployTo() == obj.eContainer()) {
+                                return true;
+                            }
+                        }
+                        return false;
+                    }
+
+        });
+    }
 }

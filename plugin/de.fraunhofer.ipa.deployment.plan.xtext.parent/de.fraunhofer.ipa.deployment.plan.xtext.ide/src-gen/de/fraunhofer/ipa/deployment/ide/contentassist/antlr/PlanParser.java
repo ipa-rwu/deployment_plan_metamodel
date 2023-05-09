@@ -33,6 +33,7 @@ public class PlanParser extends AbstractContentAssistParser {
         }
 
         private static void init(ImmutableMap.Builder<AbstractElement, String> builder, PlanGrammarAccess grammarAccess) {
+            builder.put(grammarAccess.getAbstractOperatingSystemPropertyAccess().getAlternatives(), "rule__AbstractOperatingSystemProperty__Alternatives");
             builder.put(grammarAccess.getAbstractPropertyAccess().getAlternatives(), "rule__AbstractProperty__Alternatives");
             builder.put(grammarAccess.getPropertyKindAccess().getAlternatives(), "rule__PropertyKind__Alternatives");
             builder.put(grammarAccess.getPropertyValueAccess().getAlternatives(), "rule__PropertyValue__Alternatives");
@@ -56,12 +57,22 @@ public class PlanParser extends AbstractContentAssistParser {
             builder.put(grammarAccess.getImplementationAssignmentAccess().getGroup_12(), "rule__ImplementationAssignment__Group_12__0");
             builder.put(grammarAccess.getImplementationAssignmentAccess().getGroup_14(), "rule__ImplementationAssignment__Group_14__0");
             builder.put(grammarAccess.getImplementationAssignmentAccess().getGroup_15(), "rule__ImplementationAssignment__Group_15__0");
-            builder.put(grammarAccess.getImplementationAssignmentAccess().getGroup_16(), "rule__ImplementationAssignment__Group_16__0");
+            builder.put(grammarAccess.getContainerRuntimeAccess().getGroup(), "rule__ContainerRuntime__Group__0");
+            builder.put(grammarAccess.getContainerRuntimeAccess().getGroup_4(), "rule__ContainerRuntime__Group_4__0");
+            builder.put(grammarAccess.getContainerRuntimeAccess().getGroup_4_4(), "rule__ContainerRuntime__Group_4_4__0");
             builder.put(grammarAccess.getConfigExecutionParameterAccess().getGroup(), "rule__ConfigExecutionParameter__Group__0");
             builder.put(grammarAccess.getConfigExecutionParameterAccess().getGroup_5(), "rule__ConfigExecutionParameter__Group_5__0");
             builder.put(grammarAccess.getConfigExecutionParameterAccess().getGroup_6(), "rule__ConfigExecutionParameter__Group_6__0");
             builder.put(grammarAccess.getResourceAccess().getGroup(), "rule__Resource__Group__0");
             builder.put(grammarAccess.getResourceAccess().getGroup_5(), "rule__Resource__Group_5__0");
+            builder.put(grammarAccess.getOperatingSystemResouceAccess().getGroup(), "rule__OperatingSystemResouce__Group__0");
+            builder.put(grammarAccess.getOperatingSystemResouceAccess().getGroup_6(), "rule__OperatingSystemResouce__Group_6__0");
+            builder.put(grammarAccess.getNameOperatingSystemPropertyAccess().getGroup(), "rule__NameOperatingSystemProperty__Group__0");
+            builder.put(grammarAccess.getNameOperatingSystemPropertyAccess().getGroup_7(), "rule__NameOperatingSystemProperty__Group_7__0");
+            builder.put(grammarAccess.getNameOperatingSystemPropertyAccess().getGroup_8(), "rule__NameOperatingSystemProperty__Group_8__0");
+            builder.put(grammarAccess.getVersionOperatingSystemPropertyAccess().getGroup(), "rule__VersionOperatingSystemProperty__Group__0");
+            builder.put(grammarAccess.getVersionOperatingSystemPropertyAccess().getGroup_7(), "rule__VersionOperatingSystemProperty__Group_7__0");
+            builder.put(grammarAccess.getVersionOperatingSystemPropertyAccess().getGroup_8(), "rule__VersionOperatingSystemProperty__Group_8__0");
             builder.put(grammarAccess.getPropertyAccess().getGroup(), "rule__Property__Group__0");
             builder.put(grammarAccess.getPropertyAccess().getGroup_6(), "rule__Property__Group_6__0");
             builder.put(grammarAccess.getPropertyAccess().getGroup_7(), "rule__Property__Group_7__0");
@@ -114,8 +125,10 @@ public class PlanParser extends AbstractContentAssistParser {
             builder.put(grammarAccess.getImplementationAssignmentAccess().getSoftwareComponentsAssignment_12_1(), "rule__ImplementationAssignment__SoftwareComponentsAssignment_12_1");
             builder.put(grammarAccess.getImplementationAssignmentAccess().getMiddlewareAssignment_14_1(), "rule__ImplementationAssignment__MiddlewareAssignment_14_1");
             builder.put(grammarAccess.getImplementationAssignmentAccess().getRuntimeTypeAssignment_15_1(), "rule__ImplementationAssignment__RuntimeTypeAssignment_15_1");
-            builder.put(grammarAccess.getImplementationAssignmentAccess().getOpertingSystemTypeAssignment_16_1(), "rule__ImplementationAssignment__OpertingSystemTypeAssignment_16_1");
             builder.put(grammarAccess.getRosMiddlewareAccess().getValueAssignment(), "rule__RosMiddleware__ValueAssignment");
+            builder.put(grammarAccess.getContainerRuntimeAccess().getTypeAssignment_3(), "rule__ContainerRuntime__TypeAssignment_3");
+            builder.put(grammarAccess.getContainerRuntimeAccess().getOpertingSystemResourceAssignment_4_3(), "rule__ContainerRuntime__OpertingSystemResourceAssignment_4_3");
+            builder.put(grammarAccess.getContainerRuntimeAccess().getOpertingSystemResourceAssignment_4_4_1(), "rule__ContainerRuntime__OpertingSystemResourceAssignment_4_4_1");
             builder.put(grammarAccess.getConfigExecutionParameterAccess().getFromAssignment_3(), "rule__ConfigExecutionParameter__FromAssignment_3");
             builder.put(grammarAccess.getConfigExecutionParameterAccess().getToAssignment_5_1(), "rule__ConfigExecutionParameter__ToAssignment_5_1");
             builder.put(grammarAccess.getConfigExecutionParameterAccess().getValueAssignment_6_1(), "rule__ConfigExecutionParameter__ValueAssignment_6_1");
@@ -123,6 +136,17 @@ public class PlanParser extends AbstractContentAssistParser {
             builder.put(grammarAccess.getResourceAccess().getTypeAssignment_4(), "rule__Resource__TypeAssignment_4");
             builder.put(grammarAccess.getResourceAccess().getPropertiesAssignment_5_2(), "rule__Resource__PropertiesAssignment_5_2");
             builder.put(grammarAccess.getResourceAccess().getPropertiesAssignment_5_3(), "rule__Resource__PropertiesAssignment_5_3");
+            builder.put(grammarAccess.getOperatingSystemResouceAccess().getNameAssignment_2(), "rule__OperatingSystemResouce__NameAssignment_2");
+            builder.put(grammarAccess.getOperatingSystemResouceAccess().getTypeAssignment_5(), "rule__OperatingSystemResouce__TypeAssignment_5");
+            builder.put(grammarAccess.getOperatingSystemResouceAccess().getPropertiesAssignment_6_2(), "rule__OperatingSystemResouce__PropertiesAssignment_6_2");
+            builder.put(grammarAccess.getNameOperatingSystemPropertyAccess().getNameAssignment_3(), "rule__NameOperatingSystemProperty__NameAssignment_3");
+            builder.put(grammarAccess.getNameOperatingSystemPropertyAccess().getKindAssignment_6(), "rule__NameOperatingSystemProperty__KindAssignment_6");
+            builder.put(grammarAccess.getNameOperatingSystemPropertyAccess().getDescriptionAssignment_7_1(), "rule__NameOperatingSystemProperty__DescriptionAssignment_7_1");
+            builder.put(grammarAccess.getNameOperatingSystemPropertyAccess().getValueAssignment_8_1(), "rule__NameOperatingSystemProperty__ValueAssignment_8_1");
+            builder.put(grammarAccess.getVersionOperatingSystemPropertyAccess().getNameAssignment_3(), "rule__VersionOperatingSystemProperty__NameAssignment_3");
+            builder.put(grammarAccess.getVersionOperatingSystemPropertyAccess().getKindAssignment_6(), "rule__VersionOperatingSystemProperty__KindAssignment_6");
+            builder.put(grammarAccess.getVersionOperatingSystemPropertyAccess().getDescriptionAssignment_7_1(), "rule__VersionOperatingSystemProperty__DescriptionAssignment_7_1");
+            builder.put(grammarAccess.getVersionOperatingSystemPropertyAccess().getValueAssignment_8_1(), "rule__VersionOperatingSystemProperty__ValueAssignment_8_1");
             builder.put(grammarAccess.getPropertyAccess().getNameAssignment_2(), "rule__Property__NameAssignment_2");
             builder.put(grammarAccess.getPropertyAccess().getKindAssignment_5(), "rule__Property__KindAssignment_5");
             builder.put(grammarAccess.getPropertyAccess().getDescriptionAssignment_6_1(), "rule__Property__DescriptionAssignment_6_1");

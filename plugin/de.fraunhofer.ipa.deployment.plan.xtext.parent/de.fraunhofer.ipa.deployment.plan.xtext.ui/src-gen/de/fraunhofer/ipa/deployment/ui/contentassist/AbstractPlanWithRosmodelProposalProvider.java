@@ -53,9 +53,6 @@ public abstract class AbstractPlanWithRosmodelProposalProvider extends PlanPropo
     public void completeRossystemAssignment_RuntimeType(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
         completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
     }
-    public void completeRossystemAssignment_OpertingSystemType(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-        completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
-    }
     public void completeConfigRosParameter_From(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
         lookupCrossReference(((CrossReference)assignment.getTerminal()), context, acceptor);
     }

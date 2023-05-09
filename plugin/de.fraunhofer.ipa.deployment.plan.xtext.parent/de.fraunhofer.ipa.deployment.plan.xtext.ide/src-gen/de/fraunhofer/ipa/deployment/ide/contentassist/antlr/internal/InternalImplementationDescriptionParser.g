@@ -32,6 +32,7 @@ import de.fraunhofer.ipa.deployment.services.ImplementationDescriptionGrammarAcc
 
     {
         tokenNameToValue.put("HyphenMinus", "'-'");
+        tokenNameToValue.put("HyphenMinusHyphenMinusHyphenMinus", "'---'");
         tokenNameToValue.put("Usb", "'Usb'");
         tokenNameToValue.put("Git", "'git'");
         tokenNameToValue.put("X86", "'x86'");
@@ -46,11 +47,13 @@ import de.fraunhofer.ipa.deployment.services.ImplementationDescriptionGrammarAcc
         tokenNameToValue.put("Debian", "'debian'");
         tokenNameToValue.put("Ubuntu", "'ubuntu'");
         tokenNameToValue.put("Value", "'value:'");
+        tokenNameToValue.put("Os_name", "'os_name'");
         tokenNameToValue.put("Ethernet", "'Ethernet'");
         tokenNameToValue.put("Version", "'version:'");
         tokenNameToValue.put("Processor", "'Processor'");
         tokenNameToValue.put("RangeKind", "'RangeKind'");
         tokenNameToValue.put("Container", "'container'");
+        tokenNameToValue.put("Os_version", "'os_version'");
         tokenNameToValue.put("MaximumKind", "'MaximumKind'");
         tokenNameToValue.put("MinimumKind", "'MinimumKind'");
         tokenNameToValue.put("Properties", "'properties:'");
@@ -84,6 +87,31 @@ import de.fraunhofer.ipa.deployment.services.ImplementationDescriptionGrammarAcc
             result = tokenName;
         return result;
     }
+}
+
+// Entry rule entryRuleImplementationDescriptionSet
+entryRuleImplementationDescriptionSet
+:
+{ before(grammarAccess.getImplementationDescriptionSetRule()); }
+     ruleImplementationDescriptionSet
+{ after(grammarAccess.getImplementationDescriptionSetRule()); }
+     EOF
+;
+
+// Rule ImplementationDescriptionSet
+ruleImplementationDescriptionSet
+    @init {
+        int stackSize = keepStackSize();
+    }
+    :
+    (
+        { before(grammarAccess.getImplementationDescriptionSetAccess().getGroup()); }
+        (rule__ImplementationDescriptionSet__Group__0)
+        { after(grammarAccess.getImplementationDescriptionSetAccess().getGroup()); }
+    )
+;
+finally {
+    restoreStackSize(stackSize);
 }
 
 // Entry rule entryRuleImplementationDescription
@@ -330,6 +358,81 @@ ruleSoftwareExecutionParemeter
         { before(grammarAccess.getSoftwareExecutionParemeterAccess().getGroup()); }
         (rule__SoftwareExecutionParemeter__Group__0)
         { after(grammarAccess.getSoftwareExecutionParemeterAccess().getGroup()); }
+    )
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+// Entry rule entryRuleAbstractOperatingSystemProperty
+entryRuleAbstractOperatingSystemProperty
+:
+{ before(grammarAccess.getAbstractOperatingSystemPropertyRule()); }
+     ruleAbstractOperatingSystemProperty
+{ after(grammarAccess.getAbstractOperatingSystemPropertyRule()); }
+     EOF
+;
+
+// Rule AbstractOperatingSystemProperty
+ruleAbstractOperatingSystemProperty
+    @init {
+        int stackSize = keepStackSize();
+    }
+    :
+    (
+        { before(grammarAccess.getAbstractOperatingSystemPropertyAccess().getAlternatives()); }
+        (rule__AbstractOperatingSystemProperty__Alternatives)
+        { after(grammarAccess.getAbstractOperatingSystemPropertyAccess().getAlternatives()); }
+    )
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+// Entry rule entryRuleNameOperatingSystemProperty
+entryRuleNameOperatingSystemProperty
+:
+{ before(grammarAccess.getNameOperatingSystemPropertyRule()); }
+     ruleNameOperatingSystemProperty
+{ after(grammarAccess.getNameOperatingSystemPropertyRule()); }
+     EOF
+;
+
+// Rule NameOperatingSystemProperty
+ruleNameOperatingSystemProperty
+    @init {
+        int stackSize = keepStackSize();
+    }
+    :
+    (
+        { before(grammarAccess.getNameOperatingSystemPropertyAccess().getGroup()); }
+        (rule__NameOperatingSystemProperty__Group__0)
+        { after(grammarAccess.getNameOperatingSystemPropertyAccess().getGroup()); }
+    )
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+// Entry rule entryRuleVersionOperatingSystemProperty
+entryRuleVersionOperatingSystemProperty
+:
+{ before(grammarAccess.getVersionOperatingSystemPropertyRule()); }
+     ruleVersionOperatingSystemProperty
+{ after(grammarAccess.getVersionOperatingSystemPropertyRule()); }
+     EOF
+;
+
+// Rule VersionOperatingSystemProperty
+ruleVersionOperatingSystemProperty
+    @init {
+        int stackSize = keepStackSize();
+    }
+    :
+    (
+        { before(grammarAccess.getVersionOperatingSystemPropertyAccess().getGroup()); }
+        (rule__VersionOperatingSystemProperty__Group__0)
+        { after(grammarAccess.getVersionOperatingSystemPropertyAccess().getGroup()); }
     )
 ;
 finally {
@@ -680,6 +783,31 @@ ruleAbstractResouceType
         { before(grammarAccess.getAbstractResouceTypeAccess().getResourceTypeParserRuleCall()); }
         ruleResourceType
         { after(grammarAccess.getAbstractResouceTypeAccess().getResourceTypeParserRuleCall()); }
+    )
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+// Entry rule entryRuleOpertingSystemResouceType
+entryRuleOpertingSystemResouceType
+:
+{ before(grammarAccess.getOpertingSystemResouceTypeRule()); }
+     ruleOpertingSystemResouceType
+{ after(grammarAccess.getOpertingSystemResouceTypeRule()); }
+     EOF
+;
+
+// Rule OpertingSystemResouceType
+ruleOpertingSystemResouceType
+    @init {
+        int stackSize = keepStackSize();
+    }
+    :
+    (
+        { before(grammarAccess.getOpertingSystemResouceTypeAccess().getAlternatives()); }
+        (rule__OpertingSystemResouceType__Alternatives)
+        { after(grammarAccess.getOpertingSystemResouceTypeAccess().getAlternatives()); }
     )
 ;
 finally {
@@ -1213,6 +1341,27 @@ finally {
     restoreStackSize(stackSize);
 }
 
+rule__AbstractOperatingSystemProperty__Alternatives
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+    (
+        { before(grammarAccess.getAbstractOperatingSystemPropertyAccess().getNameOperatingSystemPropertyParserRuleCall_0()); }
+        ruleNameOperatingSystemProperty
+        { after(grammarAccess.getAbstractOperatingSystemPropertyAccess().getNameOperatingSystemPropertyParserRuleCall_0()); }
+    )
+    |
+    (
+        { before(grammarAccess.getAbstractOperatingSystemPropertyAccess().getVersionOperatingSystemPropertyParserRuleCall_1()); }
+        ruleVersionOperatingSystemProperty
+        { after(grammarAccess.getAbstractOperatingSystemPropertyAccess().getVersionOperatingSystemPropertyParserRuleCall_1()); }
+    )
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
 rule__AbstractProperty__Alternatives
     @init {
         int stackSize = keepStackSize();
@@ -1342,6 +1491,27 @@ finally {
     restoreStackSize(stackSize);
 }
 
+rule__OpertingSystemResouceType__Alternatives
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+    (
+        { before(grammarAccess.getOpertingSystemResouceTypeAccess().getLinuxOpertingSystemParserRuleCall_0()); }
+        ruleLinuxOpertingSystem
+        { after(grammarAccess.getOpertingSystemResouceTypeAccess().getLinuxOpertingSystemParserRuleCall_0()); }
+    )
+    |
+    (
+        { before(grammarAccess.getOpertingSystemResouceTypeAccess().getMacOSOpertingSystemParserRuleCall_1()); }
+        ruleMacOSOpertingSystem
+        { after(grammarAccess.getOpertingSystemResouceTypeAccess().getMacOSOpertingSystemParserRuleCall_1()); }
+    )
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
 rule__NetworkCommunicationType__Alternatives
     @init {
         int stackSize = keepStackSize();
@@ -1446,6 +1616,114 @@ rule__UbuntuVersion__Alternatives
 finally {
     restoreStackSize(stackSize);
 }
+
+rule__ImplementationDescriptionSet__Group__0
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+    rule__ImplementationDescriptionSet__Group__0__Impl
+    rule__ImplementationDescriptionSet__Group__1
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__ImplementationDescriptionSet__Group__0__Impl
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+(
+    { before(grammarAccess.getImplementationDescriptionSetAccess().getImplementationsAssignment_0()); }
+    (rule__ImplementationDescriptionSet__ImplementationsAssignment_0)
+    { after(grammarAccess.getImplementationDescriptionSetAccess().getImplementationsAssignment_0()); }
+)
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__ImplementationDescriptionSet__Group__1
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+    rule__ImplementationDescriptionSet__Group__1__Impl
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__ImplementationDescriptionSet__Group__1__Impl
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+(
+    { before(grammarAccess.getImplementationDescriptionSetAccess().getGroup_1()); }
+    (rule__ImplementationDescriptionSet__Group_1__0)*
+    { after(grammarAccess.getImplementationDescriptionSetAccess().getGroup_1()); }
+)
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+
+rule__ImplementationDescriptionSet__Group_1__0
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+    rule__ImplementationDescriptionSet__Group_1__0__Impl
+    rule__ImplementationDescriptionSet__Group_1__1
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__ImplementationDescriptionSet__Group_1__0__Impl
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+(
+    { before(grammarAccess.getImplementationDescriptionSetAccess().getHyphenMinusHyphenMinusHyphenMinusKeyword_1_0()); }
+    HyphenMinusHyphenMinusHyphenMinus
+    { after(grammarAccess.getImplementationDescriptionSetAccess().getHyphenMinusHyphenMinusHyphenMinusKeyword_1_0()); }
+)
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__ImplementationDescriptionSet__Group_1__1
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+    rule__ImplementationDescriptionSet__Group_1__1__Impl
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__ImplementationDescriptionSet__Group_1__1__Impl
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+(
+    { before(grammarAccess.getImplementationDescriptionSetAccess().getImplementationsAssignment_1_1()); }
+    (rule__ImplementationDescriptionSet__ImplementationsAssignment_1_1)
+    { after(grammarAccess.getImplementationDescriptionSetAccess().getImplementationsAssignment_1_1()); }
+)
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
 
 rule__ImplementationDescription__Group__0
     @init {
@@ -3871,6 +4149,762 @@ rule__SoftwareExecutionParemeter__Group_8_4__1__Impl
     { before(grammarAccess.getSoftwareExecutionParemeterAccess().getValueAssignment_8_4_1()); }
     (rule__SoftwareExecutionParemeter__ValueAssignment_8_4_1)
     { after(grammarAccess.getSoftwareExecutionParemeterAccess().getValueAssignment_8_4_1()); }
+)
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+
+rule__NameOperatingSystemProperty__Group__0
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+    rule__NameOperatingSystemProperty__Group__0__Impl
+    rule__NameOperatingSystemProperty__Group__1
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__NameOperatingSystemProperty__Group__0__Impl
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+(
+    { before(grammarAccess.getNameOperatingSystemPropertyAccess().getNameOperatingSystemPropertyAction_0()); }
+    ()
+    { after(grammarAccess.getNameOperatingSystemPropertyAccess().getNameOperatingSystemPropertyAction_0()); }
+)
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__NameOperatingSystemProperty__Group__1
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+    rule__NameOperatingSystemProperty__Group__1__Impl
+    rule__NameOperatingSystemProperty__Group__2
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__NameOperatingSystemProperty__Group__1__Impl
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+(
+    { before(grammarAccess.getNameOperatingSystemPropertyAccess().getPreListElementParserRuleCall_1()); }
+    rulePreListElement
+    { after(grammarAccess.getNameOperatingSystemPropertyAccess().getPreListElementParserRuleCall_1()); }
+)
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__NameOperatingSystemProperty__Group__2
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+    rule__NameOperatingSystemProperty__Group__2__Impl
+    rule__NameOperatingSystemProperty__Group__3
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__NameOperatingSystemProperty__Group__2__Impl
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+(
+    { before(grammarAccess.getNameOperatingSystemPropertyAccess().getNameKeyword_2()); }
+    Name
+    { after(grammarAccess.getNameOperatingSystemPropertyAccess().getNameKeyword_2()); }
+)
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__NameOperatingSystemProperty__Group__3
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+    rule__NameOperatingSystemProperty__Group__3__Impl
+    rule__NameOperatingSystemProperty__Group__4
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__NameOperatingSystemProperty__Group__3__Impl
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+(
+    { before(grammarAccess.getNameOperatingSystemPropertyAccess().getNameAssignment_3()); }
+    (rule__NameOperatingSystemProperty__NameAssignment_3)
+    { after(grammarAccess.getNameOperatingSystemPropertyAccess().getNameAssignment_3()); }
+)
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__NameOperatingSystemProperty__Group__4
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+    rule__NameOperatingSystemProperty__Group__4__Impl
+    rule__NameOperatingSystemProperty__Group__5
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__NameOperatingSystemProperty__Group__4__Impl
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+(
+    { before(grammarAccess.getNameOperatingSystemPropertyAccess().getINDENTTerminalRuleCall_4()); }
+    RULE_INDENT
+    { after(grammarAccess.getNameOperatingSystemPropertyAccess().getINDENTTerminalRuleCall_4()); }
+)
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__NameOperatingSystemProperty__Group__5
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+    rule__NameOperatingSystemProperty__Group__5__Impl
+    rule__NameOperatingSystemProperty__Group__6
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__NameOperatingSystemProperty__Group__5__Impl
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+(
+    { before(grammarAccess.getNameOperatingSystemPropertyAccess().getKindKeyword_5()); }
+    Kind
+    { after(grammarAccess.getNameOperatingSystemPropertyAccess().getKindKeyword_5()); }
+)
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__NameOperatingSystemProperty__Group__6
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+    rule__NameOperatingSystemProperty__Group__6__Impl
+    rule__NameOperatingSystemProperty__Group__7
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__NameOperatingSystemProperty__Group__6__Impl
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+(
+    { before(grammarAccess.getNameOperatingSystemPropertyAccess().getKindAssignment_6()); }
+    (rule__NameOperatingSystemProperty__KindAssignment_6)
+    { after(grammarAccess.getNameOperatingSystemPropertyAccess().getKindAssignment_6()); }
+)
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__NameOperatingSystemProperty__Group__7
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+    rule__NameOperatingSystemProperty__Group__7__Impl
+    rule__NameOperatingSystemProperty__Group__8
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__NameOperatingSystemProperty__Group__7__Impl
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+(
+    { before(grammarAccess.getNameOperatingSystemPropertyAccess().getGroup_7()); }
+    (rule__NameOperatingSystemProperty__Group_7__0)?
+    { after(grammarAccess.getNameOperatingSystemPropertyAccess().getGroup_7()); }
+)
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__NameOperatingSystemProperty__Group__8
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+    rule__NameOperatingSystemProperty__Group__8__Impl
+    rule__NameOperatingSystemProperty__Group__9
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__NameOperatingSystemProperty__Group__8__Impl
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+(
+    { before(grammarAccess.getNameOperatingSystemPropertyAccess().getGroup_8()); }
+    (rule__NameOperatingSystemProperty__Group_8__0)?
+    { after(grammarAccess.getNameOperatingSystemPropertyAccess().getGroup_8()); }
+)
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__NameOperatingSystemProperty__Group__9
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+    rule__NameOperatingSystemProperty__Group__9__Impl
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__NameOperatingSystemProperty__Group__9__Impl
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+(
+    { before(grammarAccess.getNameOperatingSystemPropertyAccess().getDEDENTTerminalRuleCall_9()); }
+    RULE_DEDENT
+    { after(grammarAccess.getNameOperatingSystemPropertyAccess().getDEDENTTerminalRuleCall_9()); }
+)
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+
+rule__NameOperatingSystemProperty__Group_7__0
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+    rule__NameOperatingSystemProperty__Group_7__0__Impl
+    rule__NameOperatingSystemProperty__Group_7__1
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__NameOperatingSystemProperty__Group_7__0__Impl
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+(
+    { before(grammarAccess.getNameOperatingSystemPropertyAccess().getDescriptionKeyword_7_0()); }
+    Description
+    { after(grammarAccess.getNameOperatingSystemPropertyAccess().getDescriptionKeyword_7_0()); }
+)
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__NameOperatingSystemProperty__Group_7__1
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+    rule__NameOperatingSystemProperty__Group_7__1__Impl
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__NameOperatingSystemProperty__Group_7__1__Impl
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+(
+    { before(grammarAccess.getNameOperatingSystemPropertyAccess().getDescriptionAssignment_7_1()); }
+    (rule__NameOperatingSystemProperty__DescriptionAssignment_7_1)
+    { after(grammarAccess.getNameOperatingSystemPropertyAccess().getDescriptionAssignment_7_1()); }
+)
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+
+rule__NameOperatingSystemProperty__Group_8__0
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+    rule__NameOperatingSystemProperty__Group_8__0__Impl
+    rule__NameOperatingSystemProperty__Group_8__1
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__NameOperatingSystemProperty__Group_8__0__Impl
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+(
+    { before(grammarAccess.getNameOperatingSystemPropertyAccess().getValueKeyword_8_0()); }
+    Value
+    { after(grammarAccess.getNameOperatingSystemPropertyAccess().getValueKeyword_8_0()); }
+)
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__NameOperatingSystemProperty__Group_8__1
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+    rule__NameOperatingSystemProperty__Group_8__1__Impl
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__NameOperatingSystemProperty__Group_8__1__Impl
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+(
+    { before(grammarAccess.getNameOperatingSystemPropertyAccess().getValueAssignment_8_1()); }
+    (rule__NameOperatingSystemProperty__ValueAssignment_8_1)
+    { after(grammarAccess.getNameOperatingSystemPropertyAccess().getValueAssignment_8_1()); }
+)
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+
+rule__VersionOperatingSystemProperty__Group__0
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+    rule__VersionOperatingSystemProperty__Group__0__Impl
+    rule__VersionOperatingSystemProperty__Group__1
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__VersionOperatingSystemProperty__Group__0__Impl
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+(
+    { before(grammarAccess.getVersionOperatingSystemPropertyAccess().getVersionOperatingSystemPropertyAction_0()); }
+    ()
+    { after(grammarAccess.getVersionOperatingSystemPropertyAccess().getVersionOperatingSystemPropertyAction_0()); }
+)
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__VersionOperatingSystemProperty__Group__1
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+    rule__VersionOperatingSystemProperty__Group__1__Impl
+    rule__VersionOperatingSystemProperty__Group__2
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__VersionOperatingSystemProperty__Group__1__Impl
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+(
+    { before(grammarAccess.getVersionOperatingSystemPropertyAccess().getPreListElementParserRuleCall_1()); }
+    rulePreListElement
+    { after(grammarAccess.getVersionOperatingSystemPropertyAccess().getPreListElementParserRuleCall_1()); }
+)
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__VersionOperatingSystemProperty__Group__2
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+    rule__VersionOperatingSystemProperty__Group__2__Impl
+    rule__VersionOperatingSystemProperty__Group__3
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__VersionOperatingSystemProperty__Group__2__Impl
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+(
+    { before(grammarAccess.getVersionOperatingSystemPropertyAccess().getNameKeyword_2()); }
+    Name
+    { after(grammarAccess.getVersionOperatingSystemPropertyAccess().getNameKeyword_2()); }
+)
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__VersionOperatingSystemProperty__Group__3
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+    rule__VersionOperatingSystemProperty__Group__3__Impl
+    rule__VersionOperatingSystemProperty__Group__4
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__VersionOperatingSystemProperty__Group__3__Impl
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+(
+    { before(grammarAccess.getVersionOperatingSystemPropertyAccess().getNameAssignment_3()); }
+    (rule__VersionOperatingSystemProperty__NameAssignment_3)
+    { after(grammarAccess.getVersionOperatingSystemPropertyAccess().getNameAssignment_3()); }
+)
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__VersionOperatingSystemProperty__Group__4
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+    rule__VersionOperatingSystemProperty__Group__4__Impl
+    rule__VersionOperatingSystemProperty__Group__5
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__VersionOperatingSystemProperty__Group__4__Impl
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+(
+    { before(grammarAccess.getVersionOperatingSystemPropertyAccess().getINDENTTerminalRuleCall_4()); }
+    RULE_INDENT
+    { after(grammarAccess.getVersionOperatingSystemPropertyAccess().getINDENTTerminalRuleCall_4()); }
+)
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__VersionOperatingSystemProperty__Group__5
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+    rule__VersionOperatingSystemProperty__Group__5__Impl
+    rule__VersionOperatingSystemProperty__Group__6
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__VersionOperatingSystemProperty__Group__5__Impl
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+(
+    { before(grammarAccess.getVersionOperatingSystemPropertyAccess().getKindKeyword_5()); }
+    Kind
+    { after(grammarAccess.getVersionOperatingSystemPropertyAccess().getKindKeyword_5()); }
+)
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__VersionOperatingSystemProperty__Group__6
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+    rule__VersionOperatingSystemProperty__Group__6__Impl
+    rule__VersionOperatingSystemProperty__Group__7
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__VersionOperatingSystemProperty__Group__6__Impl
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+(
+    { before(grammarAccess.getVersionOperatingSystemPropertyAccess().getKindAssignment_6()); }
+    (rule__VersionOperatingSystemProperty__KindAssignment_6)
+    { after(grammarAccess.getVersionOperatingSystemPropertyAccess().getKindAssignment_6()); }
+)
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__VersionOperatingSystemProperty__Group__7
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+    rule__VersionOperatingSystemProperty__Group__7__Impl
+    rule__VersionOperatingSystemProperty__Group__8
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__VersionOperatingSystemProperty__Group__7__Impl
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+(
+    { before(grammarAccess.getVersionOperatingSystemPropertyAccess().getGroup_7()); }
+    (rule__VersionOperatingSystemProperty__Group_7__0)?
+    { after(grammarAccess.getVersionOperatingSystemPropertyAccess().getGroup_7()); }
+)
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__VersionOperatingSystemProperty__Group__8
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+    rule__VersionOperatingSystemProperty__Group__8__Impl
+    rule__VersionOperatingSystemProperty__Group__9
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__VersionOperatingSystemProperty__Group__8__Impl
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+(
+    { before(grammarAccess.getVersionOperatingSystemPropertyAccess().getGroup_8()); }
+    (rule__VersionOperatingSystemProperty__Group_8__0)?
+    { after(grammarAccess.getVersionOperatingSystemPropertyAccess().getGroup_8()); }
+)
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__VersionOperatingSystemProperty__Group__9
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+    rule__VersionOperatingSystemProperty__Group__9__Impl
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__VersionOperatingSystemProperty__Group__9__Impl
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+(
+    { before(grammarAccess.getVersionOperatingSystemPropertyAccess().getDEDENTTerminalRuleCall_9()); }
+    RULE_DEDENT
+    { after(grammarAccess.getVersionOperatingSystemPropertyAccess().getDEDENTTerminalRuleCall_9()); }
+)
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+
+rule__VersionOperatingSystemProperty__Group_7__0
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+    rule__VersionOperatingSystemProperty__Group_7__0__Impl
+    rule__VersionOperatingSystemProperty__Group_7__1
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__VersionOperatingSystemProperty__Group_7__0__Impl
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+(
+    { before(grammarAccess.getVersionOperatingSystemPropertyAccess().getDescriptionKeyword_7_0()); }
+    Description
+    { after(grammarAccess.getVersionOperatingSystemPropertyAccess().getDescriptionKeyword_7_0()); }
+)
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__VersionOperatingSystemProperty__Group_7__1
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+    rule__VersionOperatingSystemProperty__Group_7__1__Impl
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__VersionOperatingSystemProperty__Group_7__1__Impl
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+(
+    { before(grammarAccess.getVersionOperatingSystemPropertyAccess().getDescriptionAssignment_7_1()); }
+    (rule__VersionOperatingSystemProperty__DescriptionAssignment_7_1)
+    { after(grammarAccess.getVersionOperatingSystemPropertyAccess().getDescriptionAssignment_7_1()); }
+)
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+
+rule__VersionOperatingSystemProperty__Group_8__0
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+    rule__VersionOperatingSystemProperty__Group_8__0__Impl
+    rule__VersionOperatingSystemProperty__Group_8__1
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__VersionOperatingSystemProperty__Group_8__0__Impl
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+(
+    { before(grammarAccess.getVersionOperatingSystemPropertyAccess().getValueKeyword_8_0()); }
+    Value
+    { after(grammarAccess.getVersionOperatingSystemPropertyAccess().getValueKeyword_8_0()); }
+)
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__VersionOperatingSystemProperty__Group_8__1
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+    rule__VersionOperatingSystemProperty__Group_8__1__Impl
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__VersionOperatingSystemProperty__Group_8__1__Impl
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+(
+    { before(grammarAccess.getVersionOperatingSystemPropertyAccess().getValueAssignment_8_1()); }
+    (rule__VersionOperatingSystemProperty__ValueAssignment_8_1)
+    { after(grammarAccess.getVersionOperatingSystemPropertyAccess().getValueAssignment_8_1()); }
 )
 ;
 finally {
@@ -6821,6 +7855,36 @@ finally {
 }
 
 
+rule__ImplementationDescriptionSet__ImplementationsAssignment_0
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+    (
+        { before(grammarAccess.getImplementationDescriptionSetAccess().getImplementationsImplementationDescriptionParserRuleCall_0_0()); }
+        ruleImplementationDescription
+        { after(grammarAccess.getImplementationDescriptionSetAccess().getImplementationsImplementationDescriptionParserRuleCall_0_0()); }
+    )
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__ImplementationDescriptionSet__ImplementationsAssignment_1_1
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+    (
+        { before(grammarAccess.getImplementationDescriptionSetAccess().getImplementationsImplementationDescriptionParserRuleCall_1_1_0()); }
+        ruleImplementationDescription
+        { after(grammarAccess.getImplementationDescriptionSetAccess().getImplementationsImplementationDescriptionParserRuleCall_1_1_0()); }
+    )
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
 rule__ImplementationDescription__NameAssignment_3
     @init {
         int stackSize = keepStackSize();
@@ -7130,6 +8194,134 @@ rule__SoftwareExecutionParemeter__ValueAssignment_8_4_1
         { before(grammarAccess.getSoftwareExecutionParemeterAccess().getValuePropertyValueParserRuleCall_8_4_1_0()); }
         rulePropertyValue
         { after(grammarAccess.getSoftwareExecutionParemeterAccess().getValuePropertyValueParserRuleCall_8_4_1_0()); }
+    )
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__NameOperatingSystemProperty__NameAssignment_3
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+    (
+        { before(grammarAccess.getNameOperatingSystemPropertyAccess().getNameOs_nameKeyword_3_0()); }
+        (
+            { before(grammarAccess.getNameOperatingSystemPropertyAccess().getNameOs_nameKeyword_3_0()); }
+            Os_name
+            { after(grammarAccess.getNameOperatingSystemPropertyAccess().getNameOs_nameKeyword_3_0()); }
+        )
+        { after(grammarAccess.getNameOperatingSystemPropertyAccess().getNameOs_nameKeyword_3_0()); }
+    )
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__NameOperatingSystemProperty__KindAssignment_6
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+    (
+        { before(grammarAccess.getNameOperatingSystemPropertyAccess().getKindAttributeKindParserRuleCall_6_0()); }
+        ruleAttributeKind
+        { after(grammarAccess.getNameOperatingSystemPropertyAccess().getKindAttributeKindParserRuleCall_6_0()); }
+    )
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__NameOperatingSystemProperty__DescriptionAssignment_7_1
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+    (
+        { before(grammarAccess.getNameOperatingSystemPropertyAccess().getDescriptionEStringParserRuleCall_7_1_0()); }
+        ruleEString
+        { after(grammarAccess.getNameOperatingSystemPropertyAccess().getDescriptionEStringParserRuleCall_7_1_0()); }
+    )
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__NameOperatingSystemProperty__ValueAssignment_8_1
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+    (
+        { before(grammarAccess.getNameOperatingSystemPropertyAccess().getValuePropertyValueParserRuleCall_8_1_0()); }
+        rulePropertyValue
+        { after(grammarAccess.getNameOperatingSystemPropertyAccess().getValuePropertyValueParserRuleCall_8_1_0()); }
+    )
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__VersionOperatingSystemProperty__NameAssignment_3
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+    (
+        { before(grammarAccess.getVersionOperatingSystemPropertyAccess().getNameOs_versionKeyword_3_0()); }
+        (
+            { before(grammarAccess.getVersionOperatingSystemPropertyAccess().getNameOs_versionKeyword_3_0()); }
+            Os_version
+            { after(grammarAccess.getVersionOperatingSystemPropertyAccess().getNameOs_versionKeyword_3_0()); }
+        )
+        { after(grammarAccess.getVersionOperatingSystemPropertyAccess().getNameOs_versionKeyword_3_0()); }
+    )
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__VersionOperatingSystemProperty__KindAssignment_6
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+    (
+        { before(grammarAccess.getVersionOperatingSystemPropertyAccess().getKindAttributeKindParserRuleCall_6_0()); }
+        ruleAttributeKind
+        { after(grammarAccess.getVersionOperatingSystemPropertyAccess().getKindAttributeKindParserRuleCall_6_0()); }
+    )
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__VersionOperatingSystemProperty__DescriptionAssignment_7_1
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+    (
+        { before(grammarAccess.getVersionOperatingSystemPropertyAccess().getDescriptionEStringParserRuleCall_7_1_0()); }
+        ruleEString
+        { after(grammarAccess.getVersionOperatingSystemPropertyAccess().getDescriptionEStringParserRuleCall_7_1_0()); }
+    )
+;
+finally {
+    restoreStackSize(stackSize);
+}
+
+rule__VersionOperatingSystemProperty__ValueAssignment_8_1
+    @init {
+        int stackSize = keepStackSize();
+    }
+:
+    (
+        { before(grammarAccess.getVersionOperatingSystemPropertyAccess().getValuePropertyValueParserRuleCall_8_1_0()); }
+        rulePropertyValue
+        { after(grammarAccess.getVersionOperatingSystemPropertyAccess().getValuePropertyValueParserRuleCall_8_1_0()); }
     )
 ;
 finally {
