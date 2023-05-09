@@ -109,7 +109,14 @@
     <genClasses ecoreClass="util.ecore#//PropertyValueList">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference util.ecore#//PropertyValueList/value"/>
     </genClasses>
-    <genClasses ecoreClass="util.ecore#//ContainerRuntime"/>
     <genClasses ecoreClass="util.ecore#//OpertingSystemName"/>
+    <genClasses ecoreClass="util.ecore#//OperatingSystemResouce">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference util.ecore#//OperatingSystemResouce/type"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference util.ecore#//OperatingSystemResouce/properties"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="util.ecore#//AbstractOperatingSystemProperty"/>
+    <genClasses image="false" ecoreClass="util.ecore#//AbstractComputationResource"/>
+    <genClasses ecoreClass="util.ecore#//VersionOperatingSystemProperty"/>
+    <genClasses ecoreClass="util.ecore#//NameOperatingSystemProperty"/>
   </genPackages>
 </genmodel:GenModel>

@@ -9,7 +9,11 @@
   <eClassifiers xsi:type="ecore:EClass" name="AbstractCommunicationType" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="AbstractImplementation" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="AbstractComputationAssignmentTarget"
-      abstract="true"/>
+      abstract="true">
+    <eAnnotations source="http://www.obeo.fr/dsl/dnc/archetype">
+      <details key="archetype" value="Description"/>
+    </eAnnotations>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AbstractResource" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
@@ -102,7 +106,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1" upperBound="-1"
         eType="#//PropertyValue" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ContainerRuntime" eSuperTypes="#//AbstractRuntimeEnviroment"/>
   <eClassifiers xsi:type="ecore:EEnum" name="UbuntuVersion">
     <eLiterals name="focal" value="18"/>
     <eLiterals name="jammy" value="20"/>
@@ -121,4 +124,15 @@
     <eLiterals name="arm32"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OpertingSystemName" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OperatingSystemResouce" eSuperTypes="#//AbstractComputationResource">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//OpertingSystemResouceType"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="properties" lowerBound="1"
+        upperBound="-1" eType="#//AbstractOperatingSystemProperty" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractOperatingSystemProperty" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractComputationResource" abstract="true"
+      eSuperTypes="#//AbstractResource"/>
+  <eClassifiers xsi:type="ecore:EClass" name="VersionOperatingSystemProperty" eSuperTypes="#//PropertyAttribute #//AbstractOperatingSystemProperty"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NameOperatingSystemProperty" eSuperTypes="#//PropertyAttribute #//AbstractOperatingSystemProperty"/>
 </ecore:EPackage>
