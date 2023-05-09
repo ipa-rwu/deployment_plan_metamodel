@@ -1,0 +1,28 @@
+ImplementationDescription:
+  name: skill_based_tasks
+  includeSoftwareComponent:
+    - name: ur5e_cell_moveit_config
+      repository:
+        type: git
+        url: "https://github.com/ipa-cmh/ur5e_cell"
+        version: "main"
+      executionRequirement:
+        deviceRequirement:
+          - type: UR5E
+
+    - name: robot_skills
+      repository:
+        type: git
+        url: "https://github.com/ipa-rwu/pick_place_ros2"
+        version: "humble-devel"
+      executionRequirement:
+        deviceRequirement:
+          - type: UR5E
+            HWSWParemeter:
+              - name: ur_type
+                kind: AttributeKind
+        softwareConfigurationParameter:
+          - name: object_marker_id
+            kind: AttributeKind
+          - name: place_marker_id
+            kind: AttributeKind
