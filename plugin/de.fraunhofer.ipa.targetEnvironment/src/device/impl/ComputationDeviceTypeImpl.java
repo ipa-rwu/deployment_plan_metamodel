@@ -2,7 +2,8 @@
  */
 package device.impl;
 
-import device.AbstractComputationResource;
+import de.fraunhofer.ipa.deployment.util.AbstractComputationResource;
+
 import device.ComputationDeviceType;
 import device.DevicePackage;
 

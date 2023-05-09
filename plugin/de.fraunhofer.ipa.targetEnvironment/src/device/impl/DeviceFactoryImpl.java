@@ -74,13 +74,10 @@ public class DeviceFactoryImpl extends EFactoryImpl implements DeviceFactory {
             case DevicePackage.USB_CONNECTION: return createUsbConnection();
             case DevicePackage.DEVICE_VOLUME_USB_PROPERTY: return createDeviceVolumeUsbProperty();
             case DevicePackage.CONTAINER: return createContainer();
-            case DevicePackage.OPERATING_SYSTEM_RESOUCE: return createOperatingSystemResouce();
             case DevicePackage.NAME_OPERATING_SYSTEM_PROPERTY: return createNameOperatingSystemProperty();
-            case DevicePackage.VERSION_OPERATING_SYSTEM_PROPERTY: return createVersionOperatingSystemProperty();
             case DevicePackage.PROCESSOR_RESOUCE: return createProcessorResouce();
             case DevicePackage.ARCHITECTURE_PROCESSOR_PROPERTY: return createArchitectureProcessorProperty();
             case DevicePackage.CORE_PROCESSOR_PROPERTY: return createCoreProcessorProperty();
-            case DevicePackage.ABSTRACT_DEVICE_TYPE: return createAbstractDeviceType();
             default:
                 throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
         }
@@ -191,6 +188,76 @@ public class DeviceFactoryImpl extends EFactoryImpl implements DeviceFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    public PortNetworkProperty createPortNetworkProperty() {
+        PortNetworkPropertyImpl portNetworkProperty = new PortNetworkPropertyImpl();
+        return portNetworkProperty;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public IdentityNameNetworkProperty createIdentityNameNetworkProperty() {
+        IdentityNameNetworkPropertyImpl identityNameNetworkProperty = new IdentityNameNetworkPropertyImpl();
+        return identityNameNetworkProperty;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public GatewayNetworkProperty createGatewayNetworkProperty() {
+        GatewayNetworkPropertyImpl gatewayNetworkProperty = new GatewayNetworkPropertyImpl();
+        return gatewayNetworkProperty;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public SubnetMaskNetworkProperty createSubnetMaskNetworkProperty() {
+        SubnetMaskNetworkPropertyImpl subnetMaskNetworkProperty = new SubnetMaskNetworkPropertyImpl();
+        return subnetMaskNetworkProperty;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public DNSServerNetworkProperty createDNSServerNetworkProperty() {
+        DNSServerNetworkPropertyImpl dnsServerNetworkProperty = new DNSServerNetworkPropertyImpl();
+        return dnsServerNetworkProperty;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public UsbConnection createUsbConnection() {
+        UsbConnectionImpl usbConnection = new UsbConnectionImpl();
+        return usbConnection;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public DeviceVolumeUsbProperty createDeviceVolumeUsbProperty() {
+        DeviceVolumeUsbPropertyImpl deviceVolumeUsbProperty = new DeviceVolumeUsbPropertyImpl();
+        return deviceVolumeUsbProperty;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public device.Container createContainer() {
         ContainerImpl container = new ContainerImpl();
         return container;
@@ -201,39 +268,9 @@ public class DeviceFactoryImpl extends EFactoryImpl implements DeviceFactory {
      * <!-- end-user-doc -->
      * @generated
      */
-    public PortNetworkProperty createPortNetworkProperty() {
-        PortNetworkPropertyImpl portNetworkProperty = new PortNetworkPropertyImpl();
-        return portNetworkProperty;
-    }
-
-                /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public OperatingSystemResouce createOperatingSystemResouce() {
-        OperatingSystemResouceImpl operatingSystemResouce = new OperatingSystemResouceImpl();
-        return operatingSystemResouce;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
     public NameOperatingSystemProperty createNameOperatingSystemProperty() {
         NameOperatingSystemPropertyImpl nameOperatingSystemProperty = new NameOperatingSystemPropertyImpl();
         return nameOperatingSystemProperty;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public VersionOperatingSystemProperty createVersionOperatingSystemProperty() {
-        VersionOperatingSystemPropertyImpl versionOperatingSystemProperty = new VersionOperatingSystemPropertyImpl();
-        return versionOperatingSystemProperty;
     }
 
     /**
@@ -267,76 +304,6 @@ public class DeviceFactoryImpl extends EFactoryImpl implements DeviceFactory {
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public AbstractDeviceType createAbstractDeviceType() {
-        AbstractDeviceTypeImpl abstractDeviceType = new AbstractDeviceTypeImpl();
-        return abstractDeviceType;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public IdentityNameNetworkProperty createIdentityNameNetworkProperty() {
-        IdentityNameNetworkPropertyImpl identityNameNetworkProperty = new IdentityNameNetworkPropertyImpl();
-        return identityNameNetworkProperty;
-    }
-
-                /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public GatewayNetworkProperty createGatewayNetworkProperty() {
-        GatewayNetworkPropertyImpl gatewayNetworkProperty = new GatewayNetworkPropertyImpl();
-        return gatewayNetworkProperty;
-    }
-
-                /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public SubnetMaskNetworkProperty createSubnetMaskNetworkProperty() {
-        SubnetMaskNetworkPropertyImpl subnetMaskNetworkProperty = new SubnetMaskNetworkPropertyImpl();
-        return subnetMaskNetworkProperty;
-    }
-
-                /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public DNSServerNetworkProperty createDNSServerNetworkProperty() {
-        DNSServerNetworkPropertyImpl dnsServerNetworkProperty = new DNSServerNetworkPropertyImpl();
-        return dnsServerNetworkProperty;
-    }
-
-                /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public UsbConnection createUsbConnection() {
-        UsbConnectionImpl usbConnection = new UsbConnectionImpl();
-        return usbConnection;
-    }
-
-                                                                /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public DeviceVolumeUsbProperty createDeviceVolumeUsbProperty() {
-        DeviceVolumeUsbPropertyImpl deviceVolumeUsbProperty = new DeviceVolumeUsbPropertyImpl();
-        return deviceVolumeUsbProperty;
-    }
-
-                                                                /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated

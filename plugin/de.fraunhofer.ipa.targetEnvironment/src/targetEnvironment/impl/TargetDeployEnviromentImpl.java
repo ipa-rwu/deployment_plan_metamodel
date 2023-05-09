@@ -80,7 +80,7 @@ public class TargetDeployEnviromentImpl extends DescriptionImpl implements Targe
      */
     protected EList<ConfigConnection> configConnections;
 
-                /**
+    /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -144,7 +144,7 @@ public class TargetDeployEnviromentImpl extends DescriptionImpl implements Targe
         return configConnections;
     }
 
-                /**
+    /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
