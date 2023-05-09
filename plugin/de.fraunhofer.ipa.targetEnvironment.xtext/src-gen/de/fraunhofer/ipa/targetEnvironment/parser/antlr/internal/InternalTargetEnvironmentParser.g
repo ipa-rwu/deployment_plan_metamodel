@@ -277,17 +277,17 @@ ruleTargetDeployEnviroment returns [EObject current=null]
             (
                 (
                     {
-                        newCompositeNode(grammarAccess.getTargetDeployEnviromentAccess().getConfigConnectionConfigConnectionParserRuleCall_6_2_0());
+                        newCompositeNode(grammarAccess.getTargetDeployEnviromentAccess().getConfigConnectionsConfigConnectionParserRuleCall_6_2_0());
                     }
-                    lv_configConnection_18_0=ruleConfigConnection
+                    lv_configConnections_18_0=ruleConfigConnection
                     {
                         if ($current==null) {
                             $current = createModelElementForParent(grammarAccess.getTargetDeployEnviromentRule());
                         }
                         add(
                             $current,
-                            "configConnection",
-                            lv_configConnection_18_0,
+                            "configConnections",
+                            lv_configConnections_18_0,
                             "de.fraunhofer.ipa.targetEnvironment.TargetEnvironment.ConfigConnection");
                         afterParserOrEnumRuleCall();
                     }
@@ -1061,6 +1061,15 @@ ruleAbstractCommunicationConnection returns [EObject current=null]
             $current = $this_NetworkConnection_1.current;
             afterParserOrEnumRuleCall();
         }
+            |
+        {
+            newCompositeNode(grammarAccess.getAbstractCommunicationConnectionAccess().getUsbConnectionParserRuleCall_2());
+        }
+        this_UsbConnection_2=ruleUsbConnection
+        {
+            $current = $this_UsbConnection_2.current;
+            afterParserOrEnumRuleCall();
+        }
     )
 ;
 
@@ -1081,23 +1090,102 @@ ruleAbstractNetworkProperty returns [EObject current=null]
 }:
     (
         {
-            newCompositeNode(grammarAccess.getAbstractNetworkPropertyAccess().getInterfaceNetworkPropertyParserRuleCall_0());
+            newCompositeNode(grammarAccess.getAbstractNetworkPropertyAccess().getIdentityNameNetworkPropertyParserRuleCall_0());
         }
-        this_InterfaceNetworkProperty_0=ruleInterfaceNetworkProperty
+        this_IdentityNameNetworkProperty_0=ruleIdentityNameNetworkProperty
         {
-            $current = $this_InterfaceNetworkProperty_0.current;
+            $current = $this_IdentityNameNetworkProperty_0.current;
             afterParserOrEnumRuleCall();
         }
             |
         {
-            newCompositeNode(grammarAccess.getAbstractNetworkPropertyAccess().getAddressNetworkPropertyParserRuleCall_1());
+            newCompositeNode(grammarAccess.getAbstractNetworkPropertyAccess().getInterfaceNetworkPropertyParserRuleCall_1());
         }
-        this_AddressNetworkProperty_1=ruleAddressNetworkProperty
+        this_InterfaceNetworkProperty_1=ruleInterfaceNetworkProperty
         {
-            $current = $this_AddressNetworkProperty_1.current;
+            $current = $this_InterfaceNetworkProperty_1.current;
+            afterParserOrEnumRuleCall();
+        }
+            |
+        {
+            newCompositeNode(grammarAccess.getAbstractNetworkPropertyAccess().getAddressNetworkPropertyParserRuleCall_2());
+        }
+        this_AddressNetworkProperty_2=ruleAddressNetworkProperty
+        {
+            $current = $this_AddressNetworkProperty_2.current;
+            afterParserOrEnumRuleCall();
+        }
+            |
+        {
+            newCompositeNode(grammarAccess.getAbstractNetworkPropertyAccess().getMacAddressNetworkPropertyParserRuleCall_3());
+        }
+        this_MacAddressNetworkProperty_3=ruleMacAddressNetworkProperty
+        {
+            $current = $this_MacAddressNetworkProperty_3.current;
+            afterParserOrEnumRuleCall();
+        }
+            |
+        {
+            newCompositeNode(grammarAccess.getAbstractNetworkPropertyAccess().getGatewayNetworkPropertyParserRuleCall_4());
+        }
+        this_GatewayNetworkProperty_4=ruleGatewayNetworkProperty
+        {
+            $current = $this_GatewayNetworkProperty_4.current;
+            afterParserOrEnumRuleCall();
+        }
+            |
+        {
+            newCompositeNode(grammarAccess.getAbstractNetworkPropertyAccess().getSubnetMaskNetworkPropertyParserRuleCall_5());
+        }
+        this_SubnetMaskNetworkProperty_5=ruleSubnetMaskNetworkProperty
+        {
+            $current = $this_SubnetMaskNetworkProperty_5.current;
+            afterParserOrEnumRuleCall();
+        }
+            |
+        {
+            newCompositeNode(grammarAccess.getAbstractNetworkPropertyAccess().getDNSServerNetworkPropertyParserRuleCall_6());
+        }
+        this_DNSServerNetworkProperty_6=ruleDNSServerNetworkProperty
+        {
+            $current = $this_DNSServerNetworkProperty_6.current;
+            afterParserOrEnumRuleCall();
+        }
+            |
+        {
+            newCompositeNode(grammarAccess.getAbstractNetworkPropertyAccess().getPortNetworkPropertyParserRuleCall_7());
+        }
+        this_PortNetworkProperty_7=rulePortNetworkProperty
+        {
+            $current = $this_PortNetworkProperty_7.current;
             afterParserOrEnumRuleCall();
         }
     )
+;
+
+// Entry rule entryRuleAbstractUsbProperty
+entryRuleAbstractUsbProperty returns [EObject current=null]:
+    { newCompositeNode(grammarAccess.getAbstractUsbPropertyRule()); }
+    iv_ruleAbstractUsbProperty=ruleAbstractUsbProperty
+    { $current=$iv_ruleAbstractUsbProperty.current; }
+    EOF;
+
+// Rule AbstractUsbProperty
+ruleAbstractUsbProperty returns [EObject current=null]
+@init {
+    enterRule();
+}
+@after {
+    leaveRule();
+}:
+    {
+        newCompositeNode(grammarAccess.getAbstractUsbPropertyAccess().getDeviceVolumeUsbPropertyParserRuleCall());
+    }
+    this_DeviceVolumeUsbProperty_0=ruleDeviceVolumeUsbProperty
+    {
+        $current = $this_DeviceVolumeUsbProperty_0.current;
+        afterParserOrEnumRuleCall();
+    }
 ;
 
 // Entry rule entryRuleInterfaceNetworkProperty
@@ -1136,15 +1224,15 @@ ruleInterfaceNetworkProperty returns [EObject current=null]
         }
         (
             (
-                lv_name_3_0=Interface
+                lv_name_3_0=Interface_name
                 {
-                    newLeafNode(lv_name_3_0, grammarAccess.getInterfaceNetworkPropertyAccess().getNameInterfaceKeyword_3_0());
+                    newLeafNode(lv_name_3_0, grammarAccess.getInterfaceNetworkPropertyAccess().getNameInterface_nameKeyword_3_0());
                 }
                 {
                     if ($current==null) {
                         $current = createModelElement(grammarAccess.getInterfaceNetworkPropertyRule());
                     }
-                    setWithLastConsumed($current, "name", lv_name_3_0, "interface");
+                    setWithLastConsumed($current, "name", lv_name_3_0, "interface_name");
                 }
             )
         )
@@ -1268,15 +1356,15 @@ ruleAddressNetworkProperty returns [EObject current=null]
         }
         (
             (
-                lv_name_3_0=Address
+                lv_name_3_0=Ip_address
                 {
-                    newLeafNode(lv_name_3_0, grammarAccess.getAddressNetworkPropertyAccess().getNameAddressKeyword_3_0());
+                    newLeafNode(lv_name_3_0, grammarAccess.getAddressNetworkPropertyAccess().getNameIp_addressKeyword_3_0());
                 }
                 {
                     if ($current==null) {
                         $current = createModelElement(grammarAccess.getAddressNetworkPropertyRule());
                     }
-                    setWithLastConsumed($current, "name", lv_name_3_0, "address");
+                    setWithLastConsumed($current, "name", lv_name_3_0, "ip_address");
                 }
             )
         )
@@ -1360,6 +1448,978 @@ ruleAddressNetworkProperty returns [EObject current=null]
         this_DEDENT_11=RULE_DEDENT
         {
             newLeafNode(this_DEDENT_11, grammarAccess.getAddressNetworkPropertyAccess().getDEDENTTerminalRuleCall_9());
+        }
+    )
+;
+
+// Entry rule entryRuleIdentityNameNetworkProperty
+entryRuleIdentityNameNetworkProperty returns [EObject current=null]:
+    { newCompositeNode(grammarAccess.getIdentityNameNetworkPropertyRule()); }
+    iv_ruleIdentityNameNetworkProperty=ruleIdentityNameNetworkProperty
+    { $current=$iv_ruleIdentityNameNetworkProperty.current; }
+    EOF;
+
+// Rule IdentityNameNetworkProperty
+ruleIdentityNameNetworkProperty returns [EObject current=null]
+@init {
+    enterRule();
+}
+@after {
+    leaveRule();
+}:
+    (
+        (
+            {
+                $current = forceCreateModelElement(
+                    grammarAccess.getIdentityNameNetworkPropertyAccess().getIdentityNameNetworkPropertyAction_0(),
+                    $current);
+            }
+        )
+        {
+            newCompositeNode(grammarAccess.getIdentityNameNetworkPropertyAccess().getPreListElementParserRuleCall_1());
+        }
+        rulePreListElement
+        {
+            afterParserOrEnumRuleCall();
+        }
+        otherlv_2=Name
+        {
+            newLeafNode(otherlv_2, grammarAccess.getIdentityNameNetworkPropertyAccess().getNameKeyword_2());
+        }
+        (
+            (
+                lv_name_3_0=Identity_name
+                {
+                    newLeafNode(lv_name_3_0, grammarAccess.getIdentityNameNetworkPropertyAccess().getNameIdentity_nameKeyword_3_0());
+                }
+                {
+                    if ($current==null) {
+                        $current = createModelElement(grammarAccess.getIdentityNameNetworkPropertyRule());
+                    }
+                    setWithLastConsumed($current, "name", lv_name_3_0, "identity_name");
+                }
+            )
+        )
+        this_INDENT_4=RULE_INDENT
+        {
+            newLeafNode(this_INDENT_4, grammarAccess.getIdentityNameNetworkPropertyAccess().getINDENTTerminalRuleCall_4());
+        }
+        otherlv_5=Kind
+        {
+            newLeafNode(otherlv_5, grammarAccess.getIdentityNameNetworkPropertyAccess().getKindKeyword_5());
+        }
+        (
+            (
+                {
+                    newCompositeNode(grammarAccess.getIdentityNameNetworkPropertyAccess().getKindAttributeKindParserRuleCall_6_0());
+                }
+                lv_kind_6_0=ruleAttributeKind
+                {
+                    if ($current==null) {
+                        $current = createModelElementForParent(grammarAccess.getIdentityNameNetworkPropertyRule());
+                    }
+                    set(
+                        $current,
+                        "kind",
+                        lv_kind_6_0,
+                        "de.fraunhofer.ipa.deployment.Util.AttributeKind");
+                    afterParserOrEnumRuleCall();
+                }
+            )
+        )
+        (
+            otherlv_7=Description
+            {
+                newLeafNode(otherlv_7, grammarAccess.getIdentityNameNetworkPropertyAccess().getDescriptionKeyword_7_0());
+            }
+            (
+                (
+                    {
+                        newCompositeNode(grammarAccess.getIdentityNameNetworkPropertyAccess().getDescriptionEStringParserRuleCall_7_1_0());
+                    }
+                    lv_description_8_0=ruleEString
+                    {
+                        if ($current==null) {
+                            $current = createModelElementForParent(grammarAccess.getIdentityNameNetworkPropertyRule());
+                        }
+                        set(
+                            $current,
+                            "description",
+                            lv_description_8_0,
+                            "de.fraunhofer.ipa.deployment.Util.EString");
+                        afterParserOrEnumRuleCall();
+                    }
+                )
+            )
+        )?
+        this_DEDENT_9=RULE_DEDENT
+        {
+            newLeafNode(this_DEDENT_9, grammarAccess.getIdentityNameNetworkPropertyAccess().getDEDENTTerminalRuleCall_8());
+        }
+    )
+;
+
+// Entry rule entryRuleMacAddressNetworkProperty
+entryRuleMacAddressNetworkProperty returns [EObject current=null]:
+    { newCompositeNode(grammarAccess.getMacAddressNetworkPropertyRule()); }
+    iv_ruleMacAddressNetworkProperty=ruleMacAddressNetworkProperty
+    { $current=$iv_ruleMacAddressNetworkProperty.current; }
+    EOF;
+
+// Rule MacAddressNetworkProperty
+ruleMacAddressNetworkProperty returns [EObject current=null]
+@init {
+    enterRule();
+}
+@after {
+    leaveRule();
+}:
+    (
+        (
+            {
+                $current = forceCreateModelElement(
+                    grammarAccess.getMacAddressNetworkPropertyAccess().getMacAddressNetworkPropertyAction_0(),
+                    $current);
+            }
+        )
+        {
+            newCompositeNode(grammarAccess.getMacAddressNetworkPropertyAccess().getPreListElementParserRuleCall_1());
+        }
+        rulePreListElement
+        {
+            afterParserOrEnumRuleCall();
+        }
+        otherlv_2=Name
+        {
+            newLeafNode(otherlv_2, grammarAccess.getMacAddressNetworkPropertyAccess().getNameKeyword_2());
+        }
+        (
+            (
+                lv_name_3_0=Mac_address
+                {
+                    newLeafNode(lv_name_3_0, grammarAccess.getMacAddressNetworkPropertyAccess().getNameMac_addressKeyword_3_0());
+                }
+                {
+                    if ($current==null) {
+                        $current = createModelElement(grammarAccess.getMacAddressNetworkPropertyRule());
+                    }
+                    setWithLastConsumed($current, "name", lv_name_3_0, "mac_address");
+                }
+            )
+        )
+        this_INDENT_4=RULE_INDENT
+        {
+            newLeafNode(this_INDENT_4, grammarAccess.getMacAddressNetworkPropertyAccess().getINDENTTerminalRuleCall_4());
+        }
+        otherlv_5=Kind
+        {
+            newLeafNode(otherlv_5, grammarAccess.getMacAddressNetworkPropertyAccess().getKindKeyword_5());
+        }
+        (
+            (
+                {
+                    newCompositeNode(grammarAccess.getMacAddressNetworkPropertyAccess().getKindAttributeKindParserRuleCall_6_0());
+                }
+                lv_kind_6_0=ruleAttributeKind
+                {
+                    if ($current==null) {
+                        $current = createModelElementForParent(grammarAccess.getMacAddressNetworkPropertyRule());
+                    }
+                    set(
+                        $current,
+                        "kind",
+                        lv_kind_6_0,
+                        "de.fraunhofer.ipa.deployment.Util.AttributeKind");
+                    afterParserOrEnumRuleCall();
+                }
+            )
+        )
+        (
+            otherlv_7=Description
+            {
+                newLeafNode(otherlv_7, grammarAccess.getMacAddressNetworkPropertyAccess().getDescriptionKeyword_7_0());
+            }
+            (
+                (
+                    {
+                        newCompositeNode(grammarAccess.getMacAddressNetworkPropertyAccess().getDescriptionEStringParserRuleCall_7_1_0());
+                    }
+                    lv_description_8_0=ruleEString
+                    {
+                        if ($current==null) {
+                            $current = createModelElementForParent(grammarAccess.getMacAddressNetworkPropertyRule());
+                        }
+                        set(
+                            $current,
+                            "description",
+                            lv_description_8_0,
+                            "de.fraunhofer.ipa.deployment.Util.EString");
+                        afterParserOrEnumRuleCall();
+                    }
+                )
+            )
+        )?
+        this_DEDENT_9=RULE_DEDENT
+        {
+            newLeafNode(this_DEDENT_9, grammarAccess.getMacAddressNetworkPropertyAccess().getDEDENTTerminalRuleCall_8());
+        }
+    )
+;
+
+// Entry rule entryRuleGatewayNetworkProperty
+entryRuleGatewayNetworkProperty returns [EObject current=null]:
+    { newCompositeNode(grammarAccess.getGatewayNetworkPropertyRule()); }
+    iv_ruleGatewayNetworkProperty=ruleGatewayNetworkProperty
+    { $current=$iv_ruleGatewayNetworkProperty.current; }
+    EOF;
+
+// Rule GatewayNetworkProperty
+ruleGatewayNetworkProperty returns [EObject current=null]
+@init {
+    enterRule();
+}
+@after {
+    leaveRule();
+}:
+    (
+        (
+            {
+                $current = forceCreateModelElement(
+                    grammarAccess.getGatewayNetworkPropertyAccess().getGatewayNetworkPropertyAction_0(),
+                    $current);
+            }
+        )
+        {
+            newCompositeNode(grammarAccess.getGatewayNetworkPropertyAccess().getPreListElementParserRuleCall_1());
+        }
+        rulePreListElement
+        {
+            afterParserOrEnumRuleCall();
+        }
+        otherlv_2=Name
+        {
+            newLeafNode(otherlv_2, grammarAccess.getGatewayNetworkPropertyAccess().getNameKeyword_2());
+        }
+        (
+            (
+                lv_name_3_0=Gateway
+                {
+                    newLeafNode(lv_name_3_0, grammarAccess.getGatewayNetworkPropertyAccess().getNameGatewayKeyword_3_0());
+                }
+                {
+                    if ($current==null) {
+                        $current = createModelElement(grammarAccess.getGatewayNetworkPropertyRule());
+                    }
+                    setWithLastConsumed($current, "name", lv_name_3_0, "gateway");
+                }
+            )
+        )
+        this_INDENT_4=RULE_INDENT
+        {
+            newLeafNode(this_INDENT_4, grammarAccess.getGatewayNetworkPropertyAccess().getINDENTTerminalRuleCall_4());
+        }
+        otherlv_5=Kind
+        {
+            newLeafNode(otherlv_5, grammarAccess.getGatewayNetworkPropertyAccess().getKindKeyword_5());
+        }
+        (
+            (
+                {
+                    newCompositeNode(grammarAccess.getGatewayNetworkPropertyAccess().getKindAttributeKindParserRuleCall_6_0());
+                }
+                lv_kind_6_0=ruleAttributeKind
+                {
+                    if ($current==null) {
+                        $current = createModelElementForParent(grammarAccess.getGatewayNetworkPropertyRule());
+                    }
+                    set(
+                        $current,
+                        "kind",
+                        lv_kind_6_0,
+                        "de.fraunhofer.ipa.deployment.Util.AttributeKind");
+                    afterParserOrEnumRuleCall();
+                }
+            )
+        )
+        (
+            otherlv_7=Description
+            {
+                newLeafNode(otherlv_7, grammarAccess.getGatewayNetworkPropertyAccess().getDescriptionKeyword_7_0());
+            }
+            (
+                (
+                    {
+                        newCompositeNode(grammarAccess.getGatewayNetworkPropertyAccess().getDescriptionEStringParserRuleCall_7_1_0());
+                    }
+                    lv_description_8_0=ruleEString
+                    {
+                        if ($current==null) {
+                            $current = createModelElementForParent(grammarAccess.getGatewayNetworkPropertyRule());
+                        }
+                        set(
+                            $current,
+                            "description",
+                            lv_description_8_0,
+                            "de.fraunhofer.ipa.deployment.Util.EString");
+                        afterParserOrEnumRuleCall();
+                    }
+                )
+            )
+        )?
+        (
+            otherlv_9=Value
+            {
+                newLeafNode(otherlv_9, grammarAccess.getGatewayNetworkPropertyAccess().getValueKeyword_8_0());
+            }
+            (
+                (
+                    {
+                        newCompositeNode(grammarAccess.getGatewayNetworkPropertyAccess().getValuePropertyValueParserRuleCall_8_1_0());
+                    }
+                    lv_value_10_0=rulePropertyValue
+                    {
+                        if ($current==null) {
+                            $current = createModelElementForParent(grammarAccess.getGatewayNetworkPropertyRule());
+                        }
+                        set(
+                            $current,
+                            "value",
+                            lv_value_10_0,
+                            "de.fraunhofer.ipa.deployment.Util.PropertyValue");
+                        afterParserOrEnumRuleCall();
+                    }
+                )
+            )
+        )?
+        this_DEDENT_11=RULE_DEDENT
+        {
+            newLeafNode(this_DEDENT_11, grammarAccess.getGatewayNetworkPropertyAccess().getDEDENTTerminalRuleCall_9());
+        }
+    )
+;
+
+// Entry rule entryRuleSubnetMaskNetworkProperty
+entryRuleSubnetMaskNetworkProperty returns [EObject current=null]:
+    { newCompositeNode(grammarAccess.getSubnetMaskNetworkPropertyRule()); }
+    iv_ruleSubnetMaskNetworkProperty=ruleSubnetMaskNetworkProperty
+    { $current=$iv_ruleSubnetMaskNetworkProperty.current; }
+    EOF;
+
+// Rule SubnetMaskNetworkProperty
+ruleSubnetMaskNetworkProperty returns [EObject current=null]
+@init {
+    enterRule();
+}
+@after {
+    leaveRule();
+}:
+    (
+        (
+            {
+                $current = forceCreateModelElement(
+                    grammarAccess.getSubnetMaskNetworkPropertyAccess().getSubnetMaskNetworkPropertyAction_0(),
+                    $current);
+            }
+        )
+        {
+            newCompositeNode(grammarAccess.getSubnetMaskNetworkPropertyAccess().getPreListElementParserRuleCall_1());
+        }
+        rulePreListElement
+        {
+            afterParserOrEnumRuleCall();
+        }
+        otherlv_2=Name
+        {
+            newLeafNode(otherlv_2, grammarAccess.getSubnetMaskNetworkPropertyAccess().getNameKeyword_2());
+        }
+        (
+            (
+                lv_name_3_0=Subnet_mask
+                {
+                    newLeafNode(lv_name_3_0, grammarAccess.getSubnetMaskNetworkPropertyAccess().getNameSubnet_maskKeyword_3_0());
+                }
+                {
+                    if ($current==null) {
+                        $current = createModelElement(grammarAccess.getSubnetMaskNetworkPropertyRule());
+                    }
+                    setWithLastConsumed($current, "name", lv_name_3_0, "subnet_mask");
+                }
+            )
+        )
+        this_INDENT_4=RULE_INDENT
+        {
+            newLeafNode(this_INDENT_4, grammarAccess.getSubnetMaskNetworkPropertyAccess().getINDENTTerminalRuleCall_4());
+        }
+        otherlv_5=Kind
+        {
+            newLeafNode(otherlv_5, grammarAccess.getSubnetMaskNetworkPropertyAccess().getKindKeyword_5());
+        }
+        (
+            (
+                {
+                    newCompositeNode(grammarAccess.getSubnetMaskNetworkPropertyAccess().getKindAttributeKindParserRuleCall_6_0());
+                }
+                lv_kind_6_0=ruleAttributeKind
+                {
+                    if ($current==null) {
+                        $current = createModelElementForParent(grammarAccess.getSubnetMaskNetworkPropertyRule());
+                    }
+                    set(
+                        $current,
+                        "kind",
+                        lv_kind_6_0,
+                        "de.fraunhofer.ipa.deployment.Util.AttributeKind");
+                    afterParserOrEnumRuleCall();
+                }
+            )
+        )
+        (
+            otherlv_7=Description
+            {
+                newLeafNode(otherlv_7, grammarAccess.getSubnetMaskNetworkPropertyAccess().getDescriptionKeyword_7_0());
+            }
+            (
+                (
+                    {
+                        newCompositeNode(grammarAccess.getSubnetMaskNetworkPropertyAccess().getDescriptionEStringParserRuleCall_7_1_0());
+                    }
+                    lv_description_8_0=ruleEString
+                    {
+                        if ($current==null) {
+                            $current = createModelElementForParent(grammarAccess.getSubnetMaskNetworkPropertyRule());
+                        }
+                        set(
+                            $current,
+                            "description",
+                            lv_description_8_0,
+                            "de.fraunhofer.ipa.deployment.Util.EString");
+                        afterParserOrEnumRuleCall();
+                    }
+                )
+            )
+        )?
+        (
+            otherlv_9=Value
+            {
+                newLeafNode(otherlv_9, grammarAccess.getSubnetMaskNetworkPropertyAccess().getValueKeyword_8_0());
+            }
+            (
+                (
+                    {
+                        newCompositeNode(grammarAccess.getSubnetMaskNetworkPropertyAccess().getValuePropertyValueParserRuleCall_8_1_0());
+                    }
+                    lv_value_10_0=rulePropertyValue
+                    {
+                        if ($current==null) {
+                            $current = createModelElementForParent(grammarAccess.getSubnetMaskNetworkPropertyRule());
+                        }
+                        set(
+                            $current,
+                            "value",
+                            lv_value_10_0,
+                            "de.fraunhofer.ipa.deployment.Util.PropertyValue");
+                        afterParserOrEnumRuleCall();
+                    }
+                )
+            )
+        )?
+        this_DEDENT_11=RULE_DEDENT
+        {
+            newLeafNode(this_DEDENT_11, grammarAccess.getSubnetMaskNetworkPropertyAccess().getDEDENTTerminalRuleCall_9());
+        }
+    )
+;
+
+// Entry rule entryRulePortNetworkProperty
+entryRulePortNetworkProperty returns [EObject current=null]:
+    { newCompositeNode(grammarAccess.getPortNetworkPropertyRule()); }
+    iv_rulePortNetworkProperty=rulePortNetworkProperty
+    { $current=$iv_rulePortNetworkProperty.current; }
+    EOF;
+
+// Rule PortNetworkProperty
+rulePortNetworkProperty returns [EObject current=null]
+@init {
+    enterRule();
+}
+@after {
+    leaveRule();
+}:
+    (
+        (
+            {
+                $current = forceCreateModelElement(
+                    grammarAccess.getPortNetworkPropertyAccess().getPortNetworkPropertyAction_0(),
+                    $current);
+            }
+        )
+        {
+            newCompositeNode(grammarAccess.getPortNetworkPropertyAccess().getPreListElementParserRuleCall_1());
+        }
+        rulePreListElement
+        {
+            afterParserOrEnumRuleCall();
+        }
+        otherlv_2=Name
+        {
+            newLeafNode(otherlv_2, grammarAccess.getPortNetworkPropertyAccess().getNameKeyword_2());
+        }
+        (
+            (
+                lv_name_3_0=Port
+                {
+                    newLeafNode(lv_name_3_0, grammarAccess.getPortNetworkPropertyAccess().getNamePortKeyword_3_0());
+                }
+                {
+                    if ($current==null) {
+                        $current = createModelElement(grammarAccess.getPortNetworkPropertyRule());
+                    }
+                    setWithLastConsumed($current, "name", lv_name_3_0, "port");
+                }
+            )
+        )
+        this_INDENT_4=RULE_INDENT
+        {
+            newLeafNode(this_INDENT_4, grammarAccess.getPortNetworkPropertyAccess().getINDENTTerminalRuleCall_4());
+        }
+        otherlv_5=Kind
+        {
+            newLeafNode(otherlv_5, grammarAccess.getPortNetworkPropertyAccess().getKindKeyword_5());
+        }
+        (
+            (
+                {
+                    newCompositeNode(grammarAccess.getPortNetworkPropertyAccess().getKindAttributeKindParserRuleCall_6_0());
+                }
+                lv_kind_6_0=ruleAttributeKind
+                {
+                    if ($current==null) {
+                        $current = createModelElementForParent(grammarAccess.getPortNetworkPropertyRule());
+                    }
+                    set(
+                        $current,
+                        "kind",
+                        lv_kind_6_0,
+                        "de.fraunhofer.ipa.deployment.Util.AttributeKind");
+                    afterParserOrEnumRuleCall();
+                }
+            )
+        )
+        (
+            otherlv_7=Description
+            {
+                newLeafNode(otherlv_7, grammarAccess.getPortNetworkPropertyAccess().getDescriptionKeyword_7_0());
+            }
+            (
+                (
+                    {
+                        newCompositeNode(grammarAccess.getPortNetworkPropertyAccess().getDescriptionEStringParserRuleCall_7_1_0());
+                    }
+                    lv_description_8_0=ruleEString
+                    {
+                        if ($current==null) {
+                            $current = createModelElementForParent(grammarAccess.getPortNetworkPropertyRule());
+                        }
+                        set(
+                            $current,
+                            "description",
+                            lv_description_8_0,
+                            "de.fraunhofer.ipa.deployment.Util.EString");
+                        afterParserOrEnumRuleCall();
+                    }
+                )
+            )
+        )?
+        (
+            otherlv_9=Value
+            {
+                newLeafNode(otherlv_9, grammarAccess.getPortNetworkPropertyAccess().getValueKeyword_8_0());
+            }
+            (
+                (
+                    {
+                        newCompositeNode(grammarAccess.getPortNetworkPropertyAccess().getValuePropertyValueIntParserRuleCall_8_1_0());
+                    }
+                    lv_value_10_0=rulePropertyValueInt
+                    {
+                        if ($current==null) {
+                            $current = createModelElementForParent(grammarAccess.getPortNetworkPropertyRule());
+                        }
+                        set(
+                            $current,
+                            "value",
+                            lv_value_10_0,
+                            "de.fraunhofer.ipa.deployment.Util.PropertyValueInt");
+                        afterParserOrEnumRuleCall();
+                    }
+                )
+            )
+        )?
+        this_DEDENT_11=RULE_DEDENT
+        {
+            newLeafNode(this_DEDENT_11, grammarAccess.getPortNetworkPropertyAccess().getDEDENTTerminalRuleCall_9());
+        }
+    )
+;
+
+// Entry rule entryRuleDNSServerNetworkProperty
+entryRuleDNSServerNetworkProperty returns [EObject current=null]:
+    { newCompositeNode(grammarAccess.getDNSServerNetworkPropertyRule()); }
+    iv_ruleDNSServerNetworkProperty=ruleDNSServerNetworkProperty
+    { $current=$iv_ruleDNSServerNetworkProperty.current; }
+    EOF;
+
+// Rule DNSServerNetworkProperty
+ruleDNSServerNetworkProperty returns [EObject current=null]
+@init {
+    enterRule();
+}
+@after {
+    leaveRule();
+}:
+    (
+        (
+            {
+                $current = forceCreateModelElement(
+                    grammarAccess.getDNSServerNetworkPropertyAccess().getDNSServerNetworkPropertyAction_0(),
+                    $current);
+            }
+        )
+        {
+            newCompositeNode(grammarAccess.getDNSServerNetworkPropertyAccess().getPreListElementParserRuleCall_1());
+        }
+        rulePreListElement
+        {
+            afterParserOrEnumRuleCall();
+        }
+        otherlv_2=Name
+        {
+            newLeafNode(otherlv_2, grammarAccess.getDNSServerNetworkPropertyAccess().getNameKeyword_2());
+        }
+        (
+            (
+                lv_name_3_0=Dns_server
+                {
+                    newLeafNode(lv_name_3_0, grammarAccess.getDNSServerNetworkPropertyAccess().getNameDns_serverKeyword_3_0());
+                }
+                {
+                    if ($current==null) {
+                        $current = createModelElement(grammarAccess.getDNSServerNetworkPropertyRule());
+                    }
+                    setWithLastConsumed($current, "name", lv_name_3_0, "dns_server");
+                }
+            )
+        )
+        this_INDENT_4=RULE_INDENT
+        {
+            newLeafNode(this_INDENT_4, grammarAccess.getDNSServerNetworkPropertyAccess().getINDENTTerminalRuleCall_4());
+        }
+        otherlv_5=Kind
+        {
+            newLeafNode(otherlv_5, grammarAccess.getDNSServerNetworkPropertyAccess().getKindKeyword_5());
+        }
+        (
+            (
+                {
+                    newCompositeNode(grammarAccess.getDNSServerNetworkPropertyAccess().getKindSelectionKindParserRuleCall_6_0());
+                }
+                lv_kind_6_0=ruleSelectionKind
+                {
+                    if ($current==null) {
+                        $current = createModelElementForParent(grammarAccess.getDNSServerNetworkPropertyRule());
+                    }
+                    set(
+                        $current,
+                        "kind",
+                        lv_kind_6_0,
+                        "de.fraunhofer.ipa.deployment.Util.SelectionKind");
+                    afterParserOrEnumRuleCall();
+                }
+            )
+        )
+        (
+            otherlv_7=Description
+            {
+                newLeafNode(otherlv_7, grammarAccess.getDNSServerNetworkPropertyAccess().getDescriptionKeyword_7_0());
+            }
+            (
+                (
+                    {
+                        newCompositeNode(grammarAccess.getDNSServerNetworkPropertyAccess().getDescriptionEStringParserRuleCall_7_1_0());
+                    }
+                    lv_description_8_0=ruleEString
+                    {
+                        if ($current==null) {
+                            $current = createModelElementForParent(grammarAccess.getDNSServerNetworkPropertyRule());
+                        }
+                        set(
+                            $current,
+                            "description",
+                            lv_description_8_0,
+                            "de.fraunhofer.ipa.deployment.Util.EString");
+                        afterParserOrEnumRuleCall();
+                    }
+                )
+            )
+        )?
+        (
+            otherlv_9=Value
+            {
+                newLeafNode(otherlv_9, grammarAccess.getDNSServerNetworkPropertyAccess().getValueKeyword_8_0());
+            }
+            this_INDENT_10=RULE_INDENT
+            {
+                newLeafNode(this_INDENT_10, grammarAccess.getDNSServerNetworkPropertyAccess().getINDENTTerminalRuleCall_8_1());
+            }
+            {
+                newCompositeNode(grammarAccess.getDNSServerNetworkPropertyAccess().getPreListElementParserRuleCall_8_2());
+            }
+            rulePreListElement
+            {
+                afterParserOrEnumRuleCall();
+            }
+            (
+                (
+                    {
+                        newCompositeNode(grammarAccess.getDNSServerNetworkPropertyAccess().getValuePropertyValueParserRuleCall_8_3_0());
+                    }
+                    lv_value_12_0=rulePropertyValue
+                    {
+                        if ($current==null) {
+                            $current = createModelElementForParent(grammarAccess.getDNSServerNetworkPropertyRule());
+                        }
+                        add(
+                            $current,
+                            "value",
+                            lv_value_12_0,
+                            "de.fraunhofer.ipa.deployment.Util.PropertyValue");
+                        afterParserOrEnumRuleCall();
+                    }
+                )
+            )
+            (
+                {
+                    newCompositeNode(grammarAccess.getDNSServerNetworkPropertyAccess().getPreListElementParserRuleCall_8_4_0());
+                }
+                rulePreListElement
+                {
+                    afterParserOrEnumRuleCall();
+                }
+                (
+                    (
+                        {
+                            newCompositeNode(grammarAccess.getDNSServerNetworkPropertyAccess().getValuePropertyValueParserRuleCall_8_4_1_0());
+                        }
+                        lv_value_14_0=rulePropertyValue
+                        {
+                            if ($current==null) {
+                                $current = createModelElementForParent(grammarAccess.getDNSServerNetworkPropertyRule());
+                            }
+                            add(
+                                $current,
+                                "value",
+                                lv_value_14_0,
+                                "de.fraunhofer.ipa.deployment.Util.PropertyValue");
+                            afterParserOrEnumRuleCall();
+                        }
+                    )
+                )
+            )*
+            this_DEDENT_15=RULE_DEDENT
+            {
+                newLeafNode(this_DEDENT_15, grammarAccess.getDNSServerNetworkPropertyAccess().getDEDENTTerminalRuleCall_8_5());
+            }
+        )?
+        (
+            this_DEDENT_16=RULE_DEDENT
+            {
+                newLeafNode(this_DEDENT_16, grammarAccess.getDNSServerNetworkPropertyAccess().getDEDENTTerminalRuleCall_9());
+            }
+        )?
+        this_DEDENT_17=RULE_DEDENT
+        {
+            newLeafNode(this_DEDENT_17, grammarAccess.getDNSServerNetworkPropertyAccess().getDEDENTTerminalRuleCall_10());
+        }
+    )
+;
+
+// Entry rule entryRuleDeviceVolumeUsbProperty
+entryRuleDeviceVolumeUsbProperty returns [EObject current=null]:
+    { newCompositeNode(grammarAccess.getDeviceVolumeUsbPropertyRule()); }
+    iv_ruleDeviceVolumeUsbProperty=ruleDeviceVolumeUsbProperty
+    { $current=$iv_ruleDeviceVolumeUsbProperty.current; }
+    EOF;
+
+// Rule DeviceVolumeUsbProperty
+ruleDeviceVolumeUsbProperty returns [EObject current=null]
+@init {
+    enterRule();
+}
+@after {
+    leaveRule();
+}:
+    (
+        (
+            {
+                $current = forceCreateModelElement(
+                    grammarAccess.getDeviceVolumeUsbPropertyAccess().getDeviceVolumeUsbPropertyAction_0(),
+                    $current);
+            }
+        )
+        {
+            newCompositeNode(grammarAccess.getDeviceVolumeUsbPropertyAccess().getPreListElementParserRuleCall_1());
+        }
+        rulePreListElement
+        {
+            afterParserOrEnumRuleCall();
+        }
+        otherlv_2=Name
+        {
+            newLeafNode(otherlv_2, grammarAccess.getDeviceVolumeUsbPropertyAccess().getNameKeyword_2());
+        }
+        (
+            (
+                lv_name_3_0=Device_volume
+                {
+                    newLeafNode(lv_name_3_0, grammarAccess.getDeviceVolumeUsbPropertyAccess().getNameDevice_volumeKeyword_3_0());
+                }
+                {
+                    if ($current==null) {
+                        $current = createModelElement(grammarAccess.getDeviceVolumeUsbPropertyRule());
+                    }
+                    setWithLastConsumed($current, "name", lv_name_3_0, "device_volume");
+                }
+            )
+        )
+        this_INDENT_4=RULE_INDENT
+        {
+            newLeafNode(this_INDENT_4, grammarAccess.getDeviceVolumeUsbPropertyAccess().getINDENTTerminalRuleCall_4());
+        }
+        otherlv_5=Kind
+        {
+            newLeafNode(otherlv_5, grammarAccess.getDeviceVolumeUsbPropertyAccess().getKindKeyword_5());
+        }
+        (
+            (
+                {
+                    newCompositeNode(grammarAccess.getDeviceVolumeUsbPropertyAccess().getKindSelectionKindParserRuleCall_6_0());
+                }
+                lv_kind_6_0=ruleSelectionKind
+                {
+                    if ($current==null) {
+                        $current = createModelElementForParent(grammarAccess.getDeviceVolumeUsbPropertyRule());
+                    }
+                    set(
+                        $current,
+                        "kind",
+                        lv_kind_6_0,
+                        "de.fraunhofer.ipa.deployment.Util.SelectionKind");
+                    afterParserOrEnumRuleCall();
+                }
+            )
+        )
+        (
+            otherlv_7=Description
+            {
+                newLeafNode(otherlv_7, grammarAccess.getDeviceVolumeUsbPropertyAccess().getDescriptionKeyword_7_0());
+            }
+            (
+                (
+                    {
+                        newCompositeNode(grammarAccess.getDeviceVolumeUsbPropertyAccess().getDescriptionEStringParserRuleCall_7_1_0());
+                    }
+                    lv_description_8_0=ruleEString
+                    {
+                        if ($current==null) {
+                            $current = createModelElementForParent(grammarAccess.getDeviceVolumeUsbPropertyRule());
+                        }
+                        set(
+                            $current,
+                            "description",
+                            lv_description_8_0,
+                            "de.fraunhofer.ipa.deployment.Util.EString");
+                        afterParserOrEnumRuleCall();
+                    }
+                )
+            )
+        )?
+        (
+            otherlv_9=Value
+            {
+                newLeafNode(otherlv_9, grammarAccess.getDeviceVolumeUsbPropertyAccess().getValueKeyword_8_0());
+            }
+            this_INDENT_10=RULE_INDENT
+            {
+                newLeafNode(this_INDENT_10, grammarAccess.getDeviceVolumeUsbPropertyAccess().getINDENTTerminalRuleCall_8_1());
+            }
+            {
+                newCompositeNode(grammarAccess.getDeviceVolumeUsbPropertyAccess().getPreListElementParserRuleCall_8_2());
+            }
+            rulePreListElement
+            {
+                afterParserOrEnumRuleCall();
+            }
+            (
+                (
+                    {
+                        newCompositeNode(grammarAccess.getDeviceVolumeUsbPropertyAccess().getValuePropertyValueParserRuleCall_8_3_0());
+                    }
+                    lv_value_12_0=rulePropertyValue
+                    {
+                        if ($current==null) {
+                            $current = createModelElementForParent(grammarAccess.getDeviceVolumeUsbPropertyRule());
+                        }
+                        add(
+                            $current,
+                            "value",
+                            lv_value_12_0,
+                            "de.fraunhofer.ipa.deployment.Util.PropertyValue");
+                        afterParserOrEnumRuleCall();
+                    }
+                )
+            )
+            (
+                {
+                    newCompositeNode(grammarAccess.getDeviceVolumeUsbPropertyAccess().getPreListElementParserRuleCall_8_4_0());
+                }
+                rulePreListElement
+                {
+                    afterParserOrEnumRuleCall();
+                }
+                (
+                    (
+                        {
+                            newCompositeNode(grammarAccess.getDeviceVolumeUsbPropertyAccess().getValuePropertyValueParserRuleCall_8_4_1_0());
+                        }
+                        lv_value_14_0=rulePropertyValue
+                        {
+                            if ($current==null) {
+                                $current = createModelElementForParent(grammarAccess.getDeviceVolumeUsbPropertyRule());
+                            }
+                            add(
+                                $current,
+                                "value",
+                                lv_value_14_0,
+                                "de.fraunhofer.ipa.deployment.Util.PropertyValue");
+                            afterParserOrEnumRuleCall();
+                        }
+                    )
+                )
+            )*
+            this_DEDENT_15=RULE_DEDENT
+            {
+                newLeafNode(this_DEDENT_15, grammarAccess.getDeviceVolumeUsbPropertyAccess().getDEDENTTerminalRuleCall_8_5());
+            }
+        )?
+        (
+            this_DEDENT_16=RULE_DEDENT
+            {
+                newLeafNode(this_DEDENT_16, grammarAccess.getDeviceVolumeUsbPropertyAccess().getDEDENTTerminalRuleCall_9());
+            }
+        )?
+        this_DEDENT_17=RULE_DEDENT
+        {
+            newLeafNode(this_DEDENT_17, grammarAccess.getDeviceVolumeUsbPropertyAccess().getDEDENTTerminalRuleCall_10());
         }
     )
 ;
@@ -2185,6 +3245,126 @@ ruleCommunicationConnection returns [EObject current=null]
         this_DEDENT_11=RULE_DEDENT
         {
             newLeafNode(this_DEDENT_11, grammarAccess.getCommunicationConnectionAccess().getDEDENTTerminalRuleCall_8());
+        }
+    )
+;
+
+// Entry rule entryRuleUsbConnection
+entryRuleUsbConnection returns [EObject current=null]:
+    { newCompositeNode(grammarAccess.getUsbConnectionRule()); }
+    iv_ruleUsbConnection=ruleUsbConnection
+    { $current=$iv_ruleUsbConnection.current; }
+    EOF;
+
+// Rule UsbConnection
+ruleUsbConnection returns [EObject current=null]
+@init {
+    enterRule();
+}
+@after {
+    leaveRule();
+}:
+    (
+        (
+            {
+                $current = forceCreateModelElement(
+                    grammarAccess.getUsbConnectionAccess().getUsbConnectionAction_0(),
+                    $current);
+            }
+        )
+        {
+            newCompositeNode(grammarAccess.getUsbConnectionAccess().getPreListElementParserRuleCall_1());
+        }
+        rulePreListElement
+        {
+            afterParserOrEnumRuleCall();
+        }
+        otherlv_2=Name
+        {
+            newLeafNode(otherlv_2, grammarAccess.getUsbConnectionAccess().getNameKeyword_2());
+        }
+        (
+            (
+                {
+                    newCompositeNode(grammarAccess.getUsbConnectionAccess().getNameEStringParserRuleCall_3_0());
+                }
+                lv_name_3_0=ruleEString
+                {
+                    if ($current==null) {
+                        $current = createModelElementForParent(grammarAccess.getUsbConnectionRule());
+                    }
+                    set(
+                        $current,
+                        "name",
+                        lv_name_3_0,
+                        "de.fraunhofer.ipa.deployment.Util.EString");
+                    afterParserOrEnumRuleCall();
+                }
+            )
+        )
+        this_INDENT_4=RULE_INDENT
+        {
+            newLeafNode(this_INDENT_4, grammarAccess.getUsbConnectionAccess().getINDENTTerminalRuleCall_4());
+        }
+        otherlv_5=Type
+        {
+            newLeafNode(otherlv_5, grammarAccess.getUsbConnectionAccess().getTypeKeyword_5());
+        }
+        (
+            (
+                {
+                    newCompositeNode(grammarAccess.getUsbConnectionAccess().getTypeUsbCommunicationTypeParserRuleCall_6_0());
+                }
+                lv_type_6_0=ruleUsbCommunicationType
+                {
+                    if ($current==null) {
+                        $current = createModelElementForParent(grammarAccess.getUsbConnectionRule());
+                    }
+                    set(
+                        $current,
+                        "type",
+                        lv_type_6_0,
+                        "de.fraunhofer.ipa.deployment.Util.UsbCommunicationType");
+                    afterParserOrEnumRuleCall();
+                }
+            )
+        )
+        (
+            otherlv_7=Properties
+            {
+                newLeafNode(otherlv_7, grammarAccess.getUsbConnectionAccess().getPropertiesKeyword_7_0());
+            }
+            this_INDENT_8=RULE_INDENT
+            {
+                newLeafNode(this_INDENT_8, grammarAccess.getUsbConnectionAccess().getINDENTTerminalRuleCall_7_1());
+            }
+            (
+                (
+                    {
+                        newCompositeNode(grammarAccess.getUsbConnectionAccess().getPropertiesAbstractUsbPropertyParserRuleCall_7_2_0());
+                    }
+                    lv_properties_9_0=ruleAbstractUsbProperty
+                    {
+                        if ($current==null) {
+                            $current = createModelElementForParent(grammarAccess.getUsbConnectionRule());
+                        }
+                        add(
+                            $current,
+                            "properties",
+                            lv_properties_9_0,
+                            "de.fraunhofer.ipa.targetEnvironment.Device.AbstractUsbProperty");
+                        afterParserOrEnumRuleCall();
+                    }
+                )
+            )+
+            this_DEDENT_10=RULE_DEDENT
+            {
+                newLeafNode(this_DEDENT_10, grammarAccess.getUsbConnectionAccess().getDEDENTTerminalRuleCall_7_3());
+            }
+        )?
+        this_DEDENT_11=RULE_DEDENT
+        {
+            newLeafNode(this_DEDENT_11, grammarAccess.getUsbConnectionAccess().getDEDENTTerminalRuleCall_8());
         }
     )
 ;
@@ -3968,6 +5148,15 @@ rulePropertyValue returns [EObject current=null]
             $current = $this_UbuntuVersionValue_5.current;
             afterParserOrEnumRuleCall();
         }
+            |
+        {
+            newCompositeNode(grammarAccess.getPropertyValueAccess().getPropertyValueListParserRuleCall_6());
+        }
+        this_PropertyValueList_6=rulePropertyValueList
+        {
+            $current = $this_PropertyValueList_6.current;
+            afterParserOrEnumRuleCall();
+        }
     )
 ;
 
@@ -4076,6 +5265,87 @@ rulePropertyValueString returns [EObject current=null]
                 afterParserOrEnumRuleCall();
             }
         )
+    )
+;
+
+// Entry rule entryRulePropertyValueList
+entryRulePropertyValueList returns [EObject current=null]:
+    { newCompositeNode(grammarAccess.getPropertyValueListRule()); }
+    iv_rulePropertyValueList=rulePropertyValueList
+    { $current=$iv_rulePropertyValueList.current; }
+    EOF;
+
+// Rule PropertyValueList
+rulePropertyValueList returns [EObject current=null]
+@init {
+    enterRule();
+}
+@after {
+    leaveRule();
+}:
+    (
+        this_INDENT_0=RULE_INDENT
+        {
+            newLeafNode(this_INDENT_0, grammarAccess.getPropertyValueListAccess().getINDENTTerminalRuleCall_0());
+        }
+        {
+            newCompositeNode(grammarAccess.getPropertyValueListAccess().getPreListElementParserRuleCall_1());
+        }
+        rulePreListElement
+        {
+            afterParserOrEnumRuleCall();
+        }
+        (
+            (
+                {
+                    newCompositeNode(grammarAccess.getPropertyValueListAccess().getValuePropertyValueParserRuleCall_2_0());
+                }
+                lv_value_2_0=rulePropertyValue
+                {
+                    if ($current==null) {
+                        $current = createModelElementForParent(grammarAccess.getPropertyValueListRule());
+                    }
+                    add(
+                        $current,
+                        "value",
+                        lv_value_2_0,
+                        "de.fraunhofer.ipa.deployment.Util.PropertyValue");
+                    afterParserOrEnumRuleCall();
+                }
+            )
+        )
+        (
+            {
+                newCompositeNode(grammarAccess.getPropertyValueListAccess().getPreListElementParserRuleCall_3_0());
+            }
+            rulePreListElement
+            {
+                afterParserOrEnumRuleCall();
+            }
+            (
+                (
+                    {
+                        newCompositeNode(grammarAccess.getPropertyValueListAccess().getValuePropertyValueParserRuleCall_3_1_0());
+                    }
+                    lv_value_4_0=rulePropertyValue
+                    {
+                        if ($current==null) {
+                            $current = createModelElementForParent(grammarAccess.getPropertyValueListRule());
+                        }
+                        add(
+                            $current,
+                            "value",
+                            lv_value_4_0,
+                            "de.fraunhofer.ipa.deployment.Util.PropertyValue");
+                        afterParserOrEnumRuleCall();
+                    }
+                )
+            )
+        )*
+        this_DEDENT_5=RULE_DEDENT
+        {
+            newLeafNode(this_DEDENT_5, grammarAccess.getPropertyValueListAccess().getDEDENTTerminalRuleCall_4());
+        }
     )
 ;
 
@@ -4448,6 +5718,36 @@ ruleWlanCommunicationType returns [EObject current=null]
         otherlv_1=Wlan
         {
             newLeafNode(otherlv_1, grammarAccess.getWlanCommunicationTypeAccess().getWlanKeyword_1());
+        }
+    )
+;
+
+// Entry rule entryRuleUsbCommunicationType
+entryRuleUsbCommunicationType returns [EObject current=null]:
+    { newCompositeNode(grammarAccess.getUsbCommunicationTypeRule()); }
+    iv_ruleUsbCommunicationType=ruleUsbCommunicationType
+    { $current=$iv_ruleUsbCommunicationType.current; }
+    EOF;
+
+// Rule UsbCommunicationType
+ruleUsbCommunicationType returns [EObject current=null]
+@init {
+    enterRule();
+}
+@after {
+    leaveRule();
+}:
+    (
+        (
+            {
+                $current = forceCreateModelElement(
+                    grammarAccess.getUsbCommunicationTypeAccess().getUsbCommunicationTypeAction_0(),
+                    $current);
+            }
+        )
+        otherlv_1=Usb
+        {
+            newLeafNode(otherlv_1, grammarAccess.getUsbCommunicationTypeAccess().getUsbKeyword_1());
         }
     )
 ;

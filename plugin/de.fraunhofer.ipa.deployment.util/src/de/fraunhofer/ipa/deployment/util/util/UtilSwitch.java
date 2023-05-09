@@ -185,6 +185,15 @@ public class UtilSwitch<T> extends Switch<T> {
                 result = defaultCase(theEObject);
             return result;
         }
+        case UtilPackage.USB_COMMUNICATION_TYPE: {
+            UsbCommunicationType usbCommunicationType = (UsbCommunicationType) theEObject;
+            T result = caseUsbCommunicationType(usbCommunicationType);
+            if (result == null)
+                result = caseAbstractCommunicationType(usbCommunicationType);
+            if (result == null)
+                result = defaultCase(theEObject);
+            return result;
+        }
         case UtilPackage.LINUX_OPERTING_SYSTEM: {
             LinuxOpertingSystem linuxOpertingSystem = (LinuxOpertingSystem) theEObject;
             T result = caseLinuxOpertingSystem(linuxOpertingSystem);
@@ -250,13 +259,6 @@ public class UtilSwitch<T> extends Switch<T> {
                 result = defaultCase(theEObject);
             return result;
         }
-        case UtilPackage.PROPERTY_KIND: {
-            PropertyKind propertyKind = (PropertyKind) theEObject;
-            T result = casePropertyKind(propertyKind);
-            if (result == null)
-                result = defaultCase(theEObject);
-            return result;
-        }
         case UtilPackage.ATTRIBUTE_KIND: {
             AttributeKind attributeKind = (AttributeKind) theEObject;
             T result = caseAttributeKind(attributeKind);
@@ -298,6 +300,13 @@ public class UtilSwitch<T> extends Switch<T> {
             T result = caseRangeKind(rangeKind);
             if (result == null)
                 result = casePropertyKind(rangeKind);
+            if (result == null)
+                result = defaultCase(theEObject);
+            return result;
+        }
+        case UtilPackage.PROPERTY_KIND: {
+            PropertyKind propertyKind = (PropertyKind) theEObject;
+            T result = casePropertyKind(propertyKind);
             if (result == null)
                 result = defaultCase(theEObject);
             return result;
@@ -379,6 +388,15 @@ public class UtilSwitch<T> extends Switch<T> {
             T result = casePropertyValueString(propertyValueString);
             if (result == null)
                 result = casePropertyValue(propertyValueString);
+            if (result == null)
+                result = defaultCase(theEObject);
+            return result;
+        }
+        case UtilPackage.PROPERTY_VALUE_LIST: {
+            PropertyValueList propertyValueList = (PropertyValueList) theEObject;
+            T result = casePropertyValueList(propertyValueList);
+            if (result == null)
+                result = casePropertyValue(propertyValueList);
             if (result == null)
                 result = defaultCase(theEObject);
             return result;
@@ -611,6 +629,21 @@ public class UtilSwitch<T> extends Switch<T> {
      * @generated
      */
     public T caseWlanCommunicationType(WlanCommunicationType object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Usb Communication Type</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Usb Communication Type</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseUsbCommunicationType(UsbCommunicationType object) {
         return null;
     }
 
@@ -926,6 +959,21 @@ public class UtilSwitch<T> extends Switch<T> {
      * @generated
      */
     public T casePropertyValueString(PropertyValueString object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Property Value List</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Property Value List</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T casePropertyValueList(PropertyValueList object) {
         return null;
     }
 

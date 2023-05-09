@@ -124,7 +124,10 @@ PropertyRange returns PropertyRange:
     ;
 
 PropertyValue returns PropertyValue:
-    PropertyValueInt | PropertyValueDouble | PropertyValueString| ProcessorArchitectureValue | LinuxDistributionValue | UbuntuVersionValue;
+    PropertyValueInt | PropertyValueDouble
+    | PropertyValueString| ProcessorArchitectureValue
+    | LinuxDistributionValue | UbuntuVersionValue
+    | PropertyValueList;
 
 PropertyValueInt returns PropertyValueInt:
     value=Integer0;
@@ -135,6 +138,13 @@ PropertyValueDouble returns PropertyValueDouble:
 
 PropertyValueString returns PropertyValueString:
     value=EString;
+
+PropertyValueList returns PropertyValueList:
+    INDENT
+      PreListElement value+=PropertyValue
+        (PreListElement value+=PropertyValue)*
+    DEDENT
+ ;
 
 ProcessorArchitectureValue returns ProcessorArchitectureValue:
     value=ProcessorArchitectureType
@@ -190,6 +200,11 @@ EthernetCommunicationType returns EthernetCommunicationType:
 WlanCommunicationType returns WlanCommunicationType:
     {WlanCommunicationType}
     'Wlan'
+    ;
+
+UsbCommunicationType returns UsbCommunicationType:
+    {UsbCommunicationType}
+    'Usb'
     ;
 
 AttributeKind returns AttributeKind:

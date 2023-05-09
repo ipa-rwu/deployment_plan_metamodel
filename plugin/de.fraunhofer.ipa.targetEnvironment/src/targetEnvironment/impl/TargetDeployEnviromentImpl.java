@@ -34,7 +34,7 @@ import targetEnvironment.TargetEnvironmentPackage;
  * <ul>
  *   <li>{@link targetEnvironment.impl.TargetDeployEnviromentImpl#getName <em>Name</em>}</li>
  *   <li>{@link targetEnvironment.impl.TargetDeployEnviromentImpl#getIncludeDevice <em>Include Device</em>}</li>
- *   <li>{@link targetEnvironment.impl.TargetDeployEnviromentImpl#getConfigConnection <em>Config Connection</em>}</li>
+ *   <li>{@link targetEnvironment.impl.TargetDeployEnviromentImpl#getConfigConnections <em>Config Connections</em>}</li>
  * </ul>
  *
  * @generated
@@ -71,16 +71,16 @@ public class TargetDeployEnviromentImpl extends DescriptionImpl implements Targe
     protected EList<AbstractDeviceInstance> includeDevice;
 
     /**
-     * The cached value of the '{@link #getConfigConnection() <em>Config Connection</em>}' containment reference list.
+     * The cached value of the '{@link #getConfigConnections() <em>Config Connections</em>}' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getConfigConnection()
+     * @see #getConfigConnections()
      * @generated
      * @ordered
      */
-    protected EList<ConfigConnection> configConnection;
+    protected EList<ConfigConnection> configConnections;
 
-    /**
+                /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -137,14 +137,14 @@ public class TargetDeployEnviromentImpl extends DescriptionImpl implements Targe
      * <!-- end-user-doc -->
      * @generated
      */
-    public EList<ConfigConnection> getConfigConnection() {
-        if (configConnection == null) {
-            configConnection = new EObjectContainmentEList<ConfigConnection>(ConfigConnection.class, this, TargetEnvironmentPackage.TARGET_DEPLOY_ENVIROMENT__CONFIG_CONNECTION);
+    public EList<ConfigConnection> getConfigConnections() {
+        if (configConnections == null) {
+            configConnections = new EObjectContainmentEList<ConfigConnection>(ConfigConnection.class, this, TargetEnvironmentPackage.TARGET_DEPLOY_ENVIROMENT__CONFIG_CONNECTIONS);
         }
-        return configConnection;
+        return configConnections;
     }
 
-    /**
+                /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -154,8 +154,8 @@ public class TargetDeployEnviromentImpl extends DescriptionImpl implements Targe
         switch (featureID) {
             case TargetEnvironmentPackage.TARGET_DEPLOY_ENVIROMENT__INCLUDE_DEVICE:
                 return ((InternalEList<?>)getIncludeDevice()).basicRemove(otherEnd, msgs);
-            case TargetEnvironmentPackage.TARGET_DEPLOY_ENVIROMENT__CONFIG_CONNECTION:
-                return ((InternalEList<?>)getConfigConnection()).basicRemove(otherEnd, msgs);
+            case TargetEnvironmentPackage.TARGET_DEPLOY_ENVIROMENT__CONFIG_CONNECTIONS:
+                return ((InternalEList<?>)getConfigConnections()).basicRemove(otherEnd, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -172,8 +172,8 @@ public class TargetDeployEnviromentImpl extends DescriptionImpl implements Targe
                 return getName();
             case TargetEnvironmentPackage.TARGET_DEPLOY_ENVIROMENT__INCLUDE_DEVICE:
                 return getIncludeDevice();
-            case TargetEnvironmentPackage.TARGET_DEPLOY_ENVIROMENT__CONFIG_CONNECTION:
-                return getConfigConnection();
+            case TargetEnvironmentPackage.TARGET_DEPLOY_ENVIROMENT__CONFIG_CONNECTIONS:
+                return getConfigConnections();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -194,9 +194,9 @@ public class TargetDeployEnviromentImpl extends DescriptionImpl implements Targe
                 getIncludeDevice().clear();
                 getIncludeDevice().addAll((Collection<? extends AbstractDeviceInstance>)newValue);
                 return;
-            case TargetEnvironmentPackage.TARGET_DEPLOY_ENVIROMENT__CONFIG_CONNECTION:
-                getConfigConnection().clear();
-                getConfigConnection().addAll((Collection<? extends ConfigConnection>)newValue);
+            case TargetEnvironmentPackage.TARGET_DEPLOY_ENVIROMENT__CONFIG_CONNECTIONS:
+                getConfigConnections().clear();
+                getConfigConnections().addAll((Collection<? extends ConfigConnection>)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -216,8 +216,8 @@ public class TargetDeployEnviromentImpl extends DescriptionImpl implements Targe
             case TargetEnvironmentPackage.TARGET_DEPLOY_ENVIROMENT__INCLUDE_DEVICE:
                 getIncludeDevice().clear();
                 return;
-            case TargetEnvironmentPackage.TARGET_DEPLOY_ENVIROMENT__CONFIG_CONNECTION:
-                getConfigConnection().clear();
+            case TargetEnvironmentPackage.TARGET_DEPLOY_ENVIROMENT__CONFIG_CONNECTIONS:
+                getConfigConnections().clear();
                 return;
         }
         super.eUnset(featureID);
@@ -235,8 +235,8 @@ public class TargetDeployEnviromentImpl extends DescriptionImpl implements Targe
                 return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
             case TargetEnvironmentPackage.TARGET_DEPLOY_ENVIROMENT__INCLUDE_DEVICE:
                 return includeDevice != null && !includeDevice.isEmpty();
-            case TargetEnvironmentPackage.TARGET_DEPLOY_ENVIROMENT__CONFIG_CONNECTION:
-                return configConnection != null && !configConnection.isEmpty();
+            case TargetEnvironmentPackage.TARGET_DEPLOY_ENVIROMENT__CONFIG_CONNECTIONS:
+                return configConnections != null && !configConnections.isEmpty();
         }
         return super.eIsSet(featureID);
     }

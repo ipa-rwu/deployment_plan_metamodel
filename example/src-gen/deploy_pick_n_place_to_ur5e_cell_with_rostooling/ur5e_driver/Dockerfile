@@ -37,8 +37,9 @@ RUN apt-get update -qq && \
 
 FROM base as deploy
 COPY --from=install /root/ws/DEPENDS /root/ws/DEPENDS
+COPY --from=install /ros_entrypoint.sh /ros_entrypoint.sh
 COPY --from=builder workspace.bash /builder/workspace.bash
 RUN apt-get update -qq && \
     /builder/workspace.bash install_depends /root/ws && \
     rm -rf /var/lib/apt/lists/*
-COPY --from=install /opt/ros/$ROS_DISTRO /opt/ros/$ROS_DISTRO
+COPY --from=install /root/ws/install /root/ws/install

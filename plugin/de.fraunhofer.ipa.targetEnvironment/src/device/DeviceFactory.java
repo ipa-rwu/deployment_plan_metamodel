@@ -121,6 +121,15 @@ public interface DeviceFactory extends EFactory {
     Container createContainer();
 
     /**
+     * Returns a new object of class '<em>Port Network Property</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Port Network Property</em>'.
+     * @generated
+     */
+    PortNetworkProperty createPortNetworkProperty();
+
+                /**
      * Returns a new object of class '<em>Operating System Resouce</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -184,6 +193,60 @@ public interface DeviceFactory extends EFactory {
     AbstractDeviceType createAbstractDeviceType();
 
     /**
+     * Returns a new object of class '<em>Identity Name Network Property</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Identity Name Network Property</em>'.
+     * @generated
+     */
+    IdentityNameNetworkProperty createIdentityNameNetworkProperty();
+
+                /**
+     * Returns a new object of class '<em>Gateway Network Property</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Gateway Network Property</em>'.
+     * @generated
+     */
+    GatewayNetworkProperty createGatewayNetworkProperty();
+
+                /**
+     * Returns a new object of class '<em>Subnet Mask Network Property</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Subnet Mask Network Property</em>'.
+     * @generated
+     */
+    SubnetMaskNetworkProperty createSubnetMaskNetworkProperty();
+
+                /**
+     * Returns a new object of class '<em>DNS Server Network Property</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>DNS Server Network Property</em>'.
+     * @generated
+     */
+    DNSServerNetworkProperty createDNSServerNetworkProperty();
+
+                /**
+     * Returns a new object of class '<em>Usb Connection</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Usb Connection</em>'.
+     * @generated
+     */
+    UsbConnection createUsbConnection();
+
+                                                                /**
+     * Returns a new object of class '<em>Volume Usb Property</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Volume Usb Property</em>'.
+     * @generated
+     */
+    DeviceVolumeUsbProperty createDeviceVolumeUsbProperty();
+
+                                                                /**
      * Returns the package supported by this factory.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->

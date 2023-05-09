@@ -4,8 +4,8 @@ package device.impl;
 
 import de.fraunhofer.ipa.deployment.util.CommunicationType;
 
+import device.AbstractConnectionProperty;
 import device.CommunicationConnection;
-import device.ConnectionProperty;
 import device.DevicePackage;
 
 import java.util.Collection;
@@ -56,7 +56,7 @@ public class CommunicationConnectionImpl extends AbstractCommunicationConnection
      * @generated
      * @ordered
      */
-    protected EList<ConnectionProperty> properties;
+    protected EList<AbstractConnectionProperty> properties;
 
     /**
      * <!-- begin-user-doc -->
@@ -125,9 +125,9 @@ public class CommunicationConnectionImpl extends AbstractCommunicationConnection
      * <!-- end-user-doc -->
      * @generated
      */
-    public EList<ConnectionProperty> getProperties() {
+    public EList<AbstractConnectionProperty> getProperties() {
         if (properties == null) {
-            properties = new EObjectContainmentEList<ConnectionProperty>(ConnectionProperty.class, this, DevicePackage.COMMUNICATION_CONNECTION__PROPERTIES);
+            properties = new EObjectContainmentEList<AbstractConnectionProperty>(AbstractConnectionProperty.class, this, DevicePackage.COMMUNICATION_CONNECTION__PROPERTIES);
         }
         return properties;
     }
@@ -178,7 +178,7 @@ public class CommunicationConnectionImpl extends AbstractCommunicationConnection
                 return;
             case DevicePackage.COMMUNICATION_CONNECTION__PROPERTIES:
                 getProperties().clear();
-                getProperties().addAll((Collection<? extends ConnectionProperty>)newValue);
+                getProperties().addAll((Collection<? extends AbstractConnectionProperty>)newValue);
                 return;
         }
         super.eSet(featureID, newValue);

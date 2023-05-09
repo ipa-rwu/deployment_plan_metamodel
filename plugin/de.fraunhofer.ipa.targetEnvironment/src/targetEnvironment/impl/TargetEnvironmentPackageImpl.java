@@ -217,11 +217,11 @@ public class TargetEnvironmentPackageImpl extends EPackageImpl implements Target
      * <!-- end-user-doc -->
      * @generated
      */
-    public EReference getTargetDeployEnviroment_ConfigConnection() {
+    public EReference getTargetDeployEnviroment_ConfigConnections() {
         return (EReference)targetDeployEnviromentEClass.getEStructuralFeatures().get(2);
     }
 
-    /**
+                /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -462,7 +462,7 @@ public class TargetEnvironmentPackageImpl extends EPackageImpl implements Target
         targetDeployEnviromentEClass = createEClass(TARGET_DEPLOY_ENVIROMENT);
         createEAttribute(targetDeployEnviromentEClass, TARGET_DEPLOY_ENVIROMENT__NAME);
         createEReference(targetDeployEnviromentEClass, TARGET_DEPLOY_ENVIROMENT__INCLUDE_DEVICE);
-        createEReference(targetDeployEnviromentEClass, TARGET_DEPLOY_ENVIROMENT__CONFIG_CONNECTION);
+        createEReference(targetDeployEnviromentEClass, TARGET_DEPLOY_ENVIROMENT__CONFIG_CONNECTIONS);
 
         configConnectionEClass = createEClass(CONFIG_CONNECTION);
         createEAttribute(configConnectionEClass, CONFIG_CONNECTION__NAME);
@@ -541,7 +541,7 @@ public class TargetEnvironmentPackageImpl extends EPackageImpl implements Target
         initEClass(targetDeployEnviromentEClass, TargetDeployEnviroment.class, "TargetDeployEnviroment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEAttribute(getTargetDeployEnviroment_Name(), ecorePackage.getEString(), "name", null, 0, 1, TargetDeployEnviroment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEReference(getTargetDeployEnviroment_IncludeDevice(), this.getAbstractDeviceInstance(), null, "includeDevice", null, 0, -1, TargetDeployEnviroment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        initEReference(getTargetDeployEnviroment_ConfigConnection(), this.getConfigConnection(), null, "configConnection", null, 0, -1, TargetDeployEnviroment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEReference(getTargetDeployEnviroment_ConfigConnections(), this.getConfigConnection(), null, "configConnections", null, 0, -1, TargetDeployEnviroment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(configConnectionEClass, ConfigConnection.class, "ConfigConnection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEAttribute(getConfigConnection_Name(), ecorePackage.getEString(), "name", null, 1, 1, ConfigConnection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -554,7 +554,7 @@ public class TargetEnvironmentPackageImpl extends EPackageImpl implements Target
 
         initEClass(configConnectionPropertyEClass, ConfigConnectionProperty.class, "ConfigConnectionProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEAttribute(getConfigConnectionProperty_Name(), ecorePackage.getEString(), "name", null, 1, 1, ConfigConnectionProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        initEReference(getConfigConnectionProperty_RefConnectionProperty(), theDevicePackage.getConnectionProperty(), null, "refConnectionProperty", null, 1, 1, ConfigConnectionProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+        initEReference(getConfigConnectionProperty_RefConnectionProperty(), theDevicePackage.getAbstractConnectionProperty(), null, "refConnectionProperty", null, 1, 1, ConfigConnectionProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
         initEReference(getConfigConnectionProperty_Value(), theUtilPackage.getPropertyValue(), null, "value", null, 1, 1, ConfigConnectionProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(computationDeviceInstanceEClass, ComputationDeviceInstance.class, "ComputationDeviceInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

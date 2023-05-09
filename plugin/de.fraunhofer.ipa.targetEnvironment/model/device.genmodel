@@ -29,6 +29,16 @@
     <genClasses ecoreClass="device.ecore#//InterfaceNetworkProperty"/>
     <genClasses ecoreClass="device.ecore#//AddressNetworkProperty"/>
     <genClasses ecoreClass="device.ecore#//MacAddressNetworkProperty"/>
+    <genClasses ecoreClass="device.ecore#//PortNetworkProperty"/>
+    <genClasses ecoreClass="device.ecore#//IdentityNameNetworkProperty"/>
+    <genClasses ecoreClass="device.ecore#//GatewayNetworkProperty"/>
+    <genClasses ecoreClass="device.ecore#//SubnetMaskNetworkProperty"/>
+    <genClasses ecoreClass="device.ecore#//DNSServerNetworkProperty"/>
+    <genClasses ecoreClass="device.ecore#//UsbConnection">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//UsbConnection/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//UsbConnection/properties"/>
+    </genClasses>
+    <genClasses ecoreClass="device.ecore#//DeviceVolumeUsbProperty"/>
     <genClasses ecoreClass="device.ecore#//Container"/>
     <genClasses ecoreClass="device.ecore#//OperatingSystemResouce">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//OperatingSystemResouce/type"/>
@@ -43,6 +53,7 @@
     <genClasses ecoreClass="device.ecore#//ArchitectureProcessorProperty"/>
     <genClasses ecoreClass="device.ecore#//CoreProcessorProperty"/>
     <genClasses image="false" ecoreClass="device.ecore#//AbstractNetworkProperty"/>
+    <genClasses image="false" ecoreClass="device.ecore#//AbstractUsbProperty"/>
     <genClasses image="false" ecoreClass="device.ecore#//AbstractCommunicationConnection"/>
     <genClasses image="false" ecoreClass="device.ecore#//AbstractRuntimeEnviroment"/>
     <genClasses image="false" ecoreClass="device.ecore#//AbstractOperatingSystemProperty"/>
@@ -52,5 +63,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//AbstractDeviceType/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//AbstractDeviceType/communicationConnection"/>
     </genClasses>
+    <genClasses image="false" ecoreClass="device.ecore#//AbstractConnectionProperty"/>
   </genPackages>
 </genmodel:GenModel>

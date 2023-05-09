@@ -66,6 +66,13 @@ public class DeviceFactoryImpl extends EFactoryImpl implements DeviceFactory {
             case DevicePackage.INTERFACE_NETWORK_PROPERTY: return createInterfaceNetworkProperty();
             case DevicePackage.ADDRESS_NETWORK_PROPERTY: return createAddressNetworkProperty();
             case DevicePackage.MAC_ADDRESS_NETWORK_PROPERTY: return createMacAddressNetworkProperty();
+            case DevicePackage.PORT_NETWORK_PROPERTY: return createPortNetworkProperty();
+            case DevicePackage.IDENTITY_NAME_NETWORK_PROPERTY: return createIdentityNameNetworkProperty();
+            case DevicePackage.GATEWAY_NETWORK_PROPERTY: return createGatewayNetworkProperty();
+            case DevicePackage.SUBNET_MASK_NETWORK_PROPERTY: return createSubnetMaskNetworkProperty();
+            case DevicePackage.DNS_SERVER_NETWORK_PROPERTY: return createDNSServerNetworkProperty();
+            case DevicePackage.USB_CONNECTION: return createUsbConnection();
+            case DevicePackage.DEVICE_VOLUME_USB_PROPERTY: return createDeviceVolumeUsbProperty();
             case DevicePackage.CONTAINER: return createContainer();
             case DevicePackage.OPERATING_SYSTEM_RESOUCE: return createOperatingSystemResouce();
             case DevicePackage.NAME_OPERATING_SYSTEM_PROPERTY: return createNameOperatingSystemProperty();
@@ -194,6 +201,16 @@ public class DeviceFactoryImpl extends EFactoryImpl implements DeviceFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    public PortNetworkProperty createPortNetworkProperty() {
+        PortNetworkPropertyImpl portNetworkProperty = new PortNetworkPropertyImpl();
+        return portNetworkProperty;
+    }
+
+                /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public OperatingSystemResouce createOperatingSystemResouce() {
         OperatingSystemResouceImpl operatingSystemResouce = new OperatingSystemResouceImpl();
         return operatingSystemResouce;
@@ -260,6 +277,66 @@ public class DeviceFactoryImpl extends EFactoryImpl implements DeviceFactory {
     }
 
     /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public IdentityNameNetworkProperty createIdentityNameNetworkProperty() {
+        IdentityNameNetworkPropertyImpl identityNameNetworkProperty = new IdentityNameNetworkPropertyImpl();
+        return identityNameNetworkProperty;
+    }
+
+                /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public GatewayNetworkProperty createGatewayNetworkProperty() {
+        GatewayNetworkPropertyImpl gatewayNetworkProperty = new GatewayNetworkPropertyImpl();
+        return gatewayNetworkProperty;
+    }
+
+                /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public SubnetMaskNetworkProperty createSubnetMaskNetworkProperty() {
+        SubnetMaskNetworkPropertyImpl subnetMaskNetworkProperty = new SubnetMaskNetworkPropertyImpl();
+        return subnetMaskNetworkProperty;
+    }
+
+                /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public DNSServerNetworkProperty createDNSServerNetworkProperty() {
+        DNSServerNetworkPropertyImpl dnsServerNetworkProperty = new DNSServerNetworkPropertyImpl();
+        return dnsServerNetworkProperty;
+    }
+
+                /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public UsbConnection createUsbConnection() {
+        UsbConnectionImpl usbConnection = new UsbConnectionImpl();
+        return usbConnection;
+    }
+
+                                                                /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public DeviceVolumeUsbProperty createDeviceVolumeUsbProperty() {
+        DeviceVolumeUsbPropertyImpl deviceVolumeUsbProperty = new DeviceVolumeUsbPropertyImpl();
+        return deviceVolumeUsbProperty;
+    }
+
+                                                                /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated

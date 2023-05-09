@@ -51,6 +51,7 @@
     <genClasses image="false" ecoreClass="util.ecore#//NetworkCommunicationType"/>
     <genClasses ecoreClass="util.ecore#//EthernetCommunicationType"/>
     <genClasses ecoreClass="util.ecore#//WlanCommunicationType"/>
+    <genClasses image="false" ecoreClass="util.ecore#//UsbCommunicationType"/>
     <genClasses ecoreClass="util.ecore#//LinuxOpertingSystem"/>
     <genClasses ecoreClass="util.ecore#//MacOSOpertingSystem"/>
     <genClasses ecoreClass="util.ecore#//ProcessorResouceType"/>
@@ -66,12 +67,12 @@
     <genClasses ecoreClass="util.ecore#//UbuntuVersionValue">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute util.ecore#//UbuntuVersionValue/value"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="util.ecore#//PropertyKind"/>
     <genClasses ecoreClass="util.ecore#//AttributeKind"/>
     <genClasses ecoreClass="util.ecore#//MaximumKind"/>
     <genClasses ecoreClass="util.ecore#//MinimumKind"/>
     <genClasses ecoreClass="util.ecore#//SelectionKind"/>
     <genClasses ecoreClass="util.ecore#//RangeKind"/>
+    <genClasses image="false" ecoreClass="util.ecore#//PropertyKind"/>
     <genClasses ecoreClass="util.ecore#//PropertyAttribute">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference util.ecore#//PropertyAttribute/kind"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference util.ecore#//PropertyAttribute/value"/>
@@ -104,6 +105,9 @@
     </genClasses>
     <genClasses ecoreClass="util.ecore#//PropertyValueString">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute util.ecore#//PropertyValueString/value"/>
+    </genClasses>
+    <genClasses ecoreClass="util.ecore#//PropertyValueList">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference util.ecore#//PropertyValueList/value"/>
     </genClasses>
     <genClasses ecoreClass="util.ecore#//ContainerRuntime"/>
     <genClasses ecoreClass="util.ecore#//OpertingSystemName"/>

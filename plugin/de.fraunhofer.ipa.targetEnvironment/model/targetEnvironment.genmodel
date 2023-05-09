@@ -13,7 +13,7 @@
     <genClasses ecoreClass="targetEnvironment.ecore#//TargetDeployEnviroment">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute targetEnvironment.ecore#//TargetDeployEnviroment/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference targetEnvironment.ecore#//TargetDeployEnviroment/includeDevice"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference targetEnvironment.ecore#//TargetDeployEnviroment/configConnection"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference targetEnvironment.ecore#//TargetDeployEnviroment/configConnections"/>
     </genClasses>
     <genClasses ecoreClass="targetEnvironment.ecore#//ConfigConnection">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute targetEnvironment.ecore#//ConfigConnection/name"/>

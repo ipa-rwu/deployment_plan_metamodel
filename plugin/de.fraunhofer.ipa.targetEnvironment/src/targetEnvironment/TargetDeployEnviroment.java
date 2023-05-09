@@ -17,7 +17,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link targetEnvironment.TargetDeployEnviroment#getName <em>Name</em>}</li>
  *   <li>{@link targetEnvironment.TargetDeployEnviroment#getIncludeDevice <em>Include Device</em>}</li>
- *   <li>{@link targetEnvironment.TargetDeployEnviroment#getConfigConnection <em>Config Connection</em>}</li>
+ *   <li>{@link targetEnvironment.TargetDeployEnviroment#getConfigConnections <em>Config Connections</em>}</li>
  * </ul>
  *
  * @see targetEnvironment.TargetEnvironmentPackage#getTargetDeployEnviroment()
@@ -60,15 +60,15 @@ public interface TargetDeployEnviroment extends Description {
     EList<AbstractDeviceInstance> getIncludeDevice();
 
     /**
-     * Returns the value of the '<em><b>Config Connection</b></em>' containment reference list.
+     * Returns the value of the '<em><b>Config Connections</b></em>' containment reference list.
      * The list contents are of type {@link targetEnvironment.ConfigConnection}.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Config Connection</em>' containment reference list.
-     * @see targetEnvironment.TargetEnvironmentPackage#getTargetDeployEnviroment_ConfigConnection()
+     * @return the value of the '<em>Config Connections</em>' containment reference list.
+     * @see targetEnvironment.TargetEnvironmentPackage#getTargetDeployEnviroment_ConfigConnections()
      * @model containment="true"
      * @generated
      */
-    EList<ConfigConnection> getConfigConnection();
+    EList<ConfigConnection> getConfigConnections();
 
 } // TargetDeployEnviroment

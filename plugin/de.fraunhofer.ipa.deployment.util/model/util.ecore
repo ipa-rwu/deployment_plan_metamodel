@@ -31,6 +31,7 @@
       eSuperTypes="#//AbstractCommunicationType"/>
   <eClassifiers xsi:type="ecore:EClass" name="EthernetCommunicationType" eSuperTypes="#//NetworkCommunicationType"/>
   <eClassifiers xsi:type="ecore:EClass" name="WlanCommunicationType" eSuperTypes="#//NetworkCommunicationType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UsbCommunicationType" eSuperTypes="#//AbstractCommunicationType"/>
   <eClassifiers xsi:type="ecore:EClass" name="LinuxOpertingSystem" eSuperTypes="#//OpertingSystemResouceType"/>
   <eClassifiers xsi:type="ecore:EClass" name="MacOSOpertingSystem" eSuperTypes="#//OpertingSystemResouceType"/>
   <eClassifiers xsi:type="ecore:EClass" name="ProcessorResouceType" eSuperTypes="#//AbstractResouceType"/>
@@ -46,12 +47,12 @@
   <eClassifiers xsi:type="ecore:EClass" name="UbuntuVersionValue" eSuperTypes="#//PropertyValue">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="#//UbuntuVersion"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PropertyKind" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="AttributeKind" eSuperTypes="#//PropertyKind"/>
   <eClassifiers xsi:type="ecore:EClass" name="MaximumKind" eSuperTypes="#//PropertyKind"/>
   <eClassifiers xsi:type="ecore:EClass" name="MinimumKind" eSuperTypes="#//PropertyKind"/>
   <eClassifiers xsi:type="ecore:EClass" name="SelectionKind" eSuperTypes="#//PropertyKind"/>
   <eClassifiers xsi:type="ecore:EClass" name="RangeKind" eSuperTypes="#//PropertyKind"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PropertyKind" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="PropertyAttribute" eSuperTypes="#//AbstractProperty">
     <eStructuralFeatures xsi:type="ecore:EReference" name="kind" lowerBound="1" eType="#//AttributeKind"
         containment="true"/>
@@ -96,6 +97,10 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PropertyValueString" eSuperTypes="#//PropertyValue">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PropertyValueList" eSuperTypes="#//PropertyValue">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1" upperBound="-1"
+        eType="#//PropertyValue" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ContainerRuntime" eSuperTypes="#//AbstractRuntimeEnviroment"/>
   <eClassifiers xsi:type="ecore:EEnum" name="UbuntuVersion">

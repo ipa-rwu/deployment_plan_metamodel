@@ -24,15 +24,22 @@ DeviceType returns DeviceType:
     DeviceType_Impl | ComputationDeviceType;
 
 AbstractCommunicationConnection returns AbstractCommunicationConnection:
-    CommunicationConnection | NetworkConnection;
+    CommunicationConnection | NetworkConnection | UsbConnection;
 
 
 AbstractNetworkProperty returns AbstractNetworkProperty:
-    InterfaceNetworkProperty | AddressNetworkProperty;
+    IdentityNameNetworkProperty | InterfaceNetworkProperty
+    | AddressNetworkProperty | MacAddressNetworkProperty
+    | GatewayNetworkProperty | SubnetMaskNetworkProperty
+    | DNSServerNetworkProperty | PortNetworkProperty;
+
+AbstractUsbProperty returns AbstractUsbProperty:
+    DeviceVolumeUsbProperty
+;
 
 InterfaceNetworkProperty returns InterfaceNetworkProperty:
     {InterfaceNetworkProperty}
-    PreListElement "name:" name="interface"
+    PreListElement "name:" name="interface_name"
     INDENT
         'kind:' kind=AttributeKind
         (
@@ -46,7 +53,7 @@ InterfaceNetworkProperty returns InterfaceNetworkProperty:
 
 AddressNetworkProperty returns AddressNetworkProperty:
     {AddressNetworkProperty}
-    PreListElement "name:" name="address"
+    PreListElement "name:" name="ip_address"
     INDENT
         'kind:' kind=AttributeKind
         (
@@ -56,6 +63,108 @@ AddressNetworkProperty returns AddressNetworkProperty:
         'value:' value=PropertyValue
         )?
     DEDENT
+    ;
+
+IdentityNameNetworkProperty returns IdentityNameNetworkProperty:
+    {IdentityNameNetworkProperty}
+    PreListElement "name:" name="identity_name"
+    INDENT
+        'kind:' kind=AttributeKind
+        (
+        'description:' description=EString
+        )?
+    DEDENT
+    ;
+
+MacAddressNetworkProperty returns MacAddressNetworkProperty:
+    {MacAddressNetworkProperty}
+    PreListElement "name:" name="mac_address"
+    INDENT
+        'kind:' kind=AttributeKind
+        (
+        'description:' description=EString
+        )?
+    DEDENT
+    ;
+
+GatewayNetworkProperty returns GatewayNetworkProperty:
+    {GatewayNetworkProperty}
+    PreListElement "name:" name="gateway"
+    INDENT
+        'kind:' kind=AttributeKind
+        (
+        'description:' description=EString
+        )?
+        (
+        'value:' value=PropertyValue
+        )?
+    DEDENT
+    ;
+
+SubnetMaskNetworkProperty returns SubnetMaskNetworkProperty:
+    {SubnetMaskNetworkProperty}
+    PreListElement "name:" name="subnet_mask"
+    INDENT
+        'kind:' kind=AttributeKind
+        (
+        'description:' description=EString
+        )?
+        (
+        'value:' value=PropertyValue
+        )?
+    DEDENT
+    ;
+
+PortNetworkProperty returns PortNetworkProperty:
+    {PortNetworkProperty}
+    PreListElement "name:" name="port"
+    INDENT
+        'kind:' kind=AttributeKind
+        (
+        'description:' description=EString
+        )?
+        (
+        'value:' value=PropertyValueInt
+        )?
+    DEDENT
+    ;
+
+DNSServerNetworkProperty returns DNSServerNetworkProperty:
+    {DNSServerNetworkProperty}
+    PreListElement "name:" name="dns_server"
+    INDENT
+        'kind:' kind=SelectionKind
+        (
+        'description:' description=EString
+        )?
+        (
+          'value:'
+            INDENT
+            PreListElement value+=PropertyValue
+            ( PreListElement value+=PropertyValue)*
+            DEDENT
+            )?
+        (DEDENT)?
+    DEDENT
+    ;
+
+DeviceVolumeUsbProperty returns DeviceVolumeUsbProperty:
+  {DeviceVolumeUsbProperty}
+  PreListElement "name:" name="device_volume"
+  INDENT
+      'kind:' kind=SelectionKind
+      (
+      'description:' description=EString
+      )?
+      (
+        'value:'
+          INDENT
+          PreListElement value+=PropertyValue
+          ( PreListElement value+=PropertyValue)*
+          DEDENT
+          )?
+      (DEDENT)?
+  DEDENT
     ;
 
 DeviceType_Impl returns DeviceType:
@@ -171,6 +280,19 @@ CommunicationConnection returns CommunicationConnection:
             DEDENT
             )?
     DEDENT;
+
+UsbConnection returns UsbConnection:
+    {UsbConnection}
+    PreListElement 'name:'  name=EString
+    INDENT
+        'type:' type=UsbCommunicationType
+        ('properties:'
+            INDENT
+            properties+=AbstractUsbProperty+
+            DEDENT
+            )?
+    DEDENT
+    ;
 
 OperatingSystemResouce returns OperatingSystemResouce:
     {OperatingSystemResouce}

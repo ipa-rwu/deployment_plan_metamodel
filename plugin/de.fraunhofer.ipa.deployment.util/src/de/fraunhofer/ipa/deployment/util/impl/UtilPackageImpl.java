@@ -36,6 +36,7 @@ import de.fraunhofer.ipa.deployment.util.PropertySelection;
 import de.fraunhofer.ipa.deployment.util.PropertyValue;
 import de.fraunhofer.ipa.deployment.util.PropertyValueDouble;
 import de.fraunhofer.ipa.deployment.util.PropertyValueInt;
+import de.fraunhofer.ipa.deployment.util.PropertyValueList;
 import de.fraunhofer.ipa.deployment.util.PropertyValueString;
 import de.fraunhofer.ipa.deployment.util.RangeKind;
 import de.fraunhofer.ipa.deployment.util.Resource;
@@ -44,6 +45,7 @@ import de.fraunhofer.ipa.deployment.util.RunTimeType;
 import de.fraunhofer.ipa.deployment.util.SelectionKind;
 import de.fraunhofer.ipa.deployment.util.UbuntuVersion;
 import de.fraunhofer.ipa.deployment.util.UbuntuVersionValue;
+import de.fraunhofer.ipa.deployment.util.UsbCommunicationType;
 import de.fraunhofer.ipa.deployment.util.UtilFactory;
 import de.fraunhofer.ipa.deployment.util.UtilPackage;
 import de.fraunhofer.ipa.deployment.util.WlanCommunicationType;
@@ -169,6 +171,13 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
      * @generated
      */
     private EClass wlanCommunicationTypeEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass usbCommunicationTypeEClass = null;
 
     /**
      * <!-- begin-user-doc -->
@@ -323,6 +332,13 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
      * @generated
      */
     private EClass propertyValueStringEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass propertyValueListEClass = null;
 
     /**
      * <!-- begin-user-doc -->
@@ -620,6 +636,15 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
      */
     public EClass getWlanCommunicationType() {
         return wlanCommunicationTypeEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getUsbCommunicationType() {
+        return usbCommunicationTypeEClass;
     }
 
     /**
@@ -996,6 +1021,24 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    public EClass getPropertyValueList() {
+        return propertyValueListEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EReference getPropertyValueList_Value() {
+        return (EReference) propertyValueListEClass.getEStructuralFeatures().get(0);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public EClass getContainerRuntime() {
         return containerRuntimeEClass;
     }
@@ -1110,6 +1153,8 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 
         wlanCommunicationTypeEClass = createEClass(WLAN_COMMUNICATION_TYPE);
 
+        usbCommunicationTypeEClass = createEClass(USB_COMMUNICATION_TYPE);
+
         linuxOpertingSystemEClass = createEClass(LINUX_OPERTING_SYSTEM);
 
         macOSOpertingSystemEClass = createEClass(MAC_OS_OPERTING_SYSTEM);
@@ -1128,8 +1173,6 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
         ubuntuVersionValueEClass = createEClass(UBUNTU_VERSION_VALUE);
         createEAttribute(ubuntuVersionValueEClass, UBUNTU_VERSION_VALUE__VALUE);
 
-        propertyKindEClass = createEClass(PROPERTY_KIND);
-
         attributeKindEClass = createEClass(ATTRIBUTE_KIND);
 
         maximumKindEClass = createEClass(MAXIMUM_KIND);
@@ -1139,6 +1182,8 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
         selectionKindEClass = createEClass(SELECTION_KIND);
 
         rangeKindEClass = createEClass(RANGE_KIND);
+
+        propertyKindEClass = createEClass(PROPERTY_KIND);
 
         propertyAttributeEClass = createEClass(PROPERTY_ATTRIBUTE);
         createEReference(propertyAttributeEClass, PROPERTY_ATTRIBUTE__KIND);
@@ -1172,6 +1217,9 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 
         propertyValueStringEClass = createEClass(PROPERTY_VALUE_STRING);
         createEAttribute(propertyValueStringEClass, PROPERTY_VALUE_STRING__VALUE);
+
+        propertyValueListEClass = createEClass(PROPERTY_VALUE_LIST);
+        createEReference(propertyValueListEClass, PROPERTY_VALUE_LIST__VALUE);
 
         containerRuntimeEClass = createEClass(CONTAINER_RUNTIME);
 
@@ -1222,6 +1270,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
         networkCommunicationTypeEClass.getESuperTypes().add(this.getAbstractCommunicationType());
         ethernetCommunicationTypeEClass.getESuperTypes().add(this.getNetworkCommunicationType());
         wlanCommunicationTypeEClass.getESuperTypes().add(this.getNetworkCommunicationType());
+        usbCommunicationTypeEClass.getESuperTypes().add(this.getAbstractCommunicationType());
         linuxOpertingSystemEClass.getESuperTypes().add(this.getOpertingSystemResouceType());
         macOSOpertingSystemEClass.getESuperTypes().add(this.getOpertingSystemResouceType());
         processorResouceTypeEClass.getESuperTypes().add(this.getAbstractResouceType());
@@ -1244,6 +1293,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
         propertyValueIntEClass.getESuperTypes().add(this.getPropertyValue());
         propertyValueDoubleEClass.getESuperTypes().add(this.getPropertyValue());
         propertyValueStringEClass.getESuperTypes().add(this.getPropertyValue());
+        propertyValueListEClass.getESuperTypes().add(this.getPropertyValue());
         containerRuntimeEClass.getESuperTypes().add(this.getAbstractRuntimeEnviroment());
 
         // Initialize classes, features, and operations; add parameters
@@ -1310,6 +1360,9 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
         initEClass(wlanCommunicationTypeEClass, WlanCommunicationType.class, "WlanCommunicationType", !IS_ABSTRACT,
                 !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+        initEClass(usbCommunicationTypeEClass, UsbCommunicationType.class, "UsbCommunicationType", !IS_ABSTRACT,
+                !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
         initEClass(linuxOpertingSystemEClass, LinuxOpertingSystem.class, "LinuxOpertingSystem", !IS_ABSTRACT,
                 !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1342,9 +1395,6 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
                 UbuntuVersionValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
                 !IS_DERIVED, IS_ORDERED);
 
-        initEClass(propertyKindEClass, PropertyKind.class, "PropertyKind", IS_ABSTRACT, !IS_INTERFACE,
-                IS_GENERATED_INSTANCE_CLASS);
-
         initEClass(attributeKindEClass, AttributeKind.class, "AttributeKind", !IS_ABSTRACT, !IS_INTERFACE,
                 IS_GENERATED_INSTANCE_CLASS);
 
@@ -1358,6 +1408,9 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
                 IS_GENERATED_INSTANCE_CLASS);
 
         initEClass(rangeKindEClass, RangeKind.class, "RangeKind", !IS_ABSTRACT, !IS_INTERFACE,
+                IS_GENERATED_INSTANCE_CLASS);
+
+        initEClass(propertyKindEClass, PropertyKind.class, "PropertyKind", IS_ABSTRACT, !IS_INTERFACE,
                 IS_GENERATED_INSTANCE_CLASS);
 
         initEClass(propertyAttributeEClass, PropertyAttribute.class, "PropertyAttribute", !IS_ABSTRACT, !IS_INTERFACE,
@@ -1431,6 +1484,12 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
         initEAttribute(getPropertyValueString_Value(), ecorePackage.getEString(), "value", null, 1, 1,
                 PropertyValueString.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
                 IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+        initEClass(propertyValueListEClass, PropertyValueList.class, "PropertyValueList", !IS_ABSTRACT, !IS_INTERFACE,
+                IS_GENERATED_INSTANCE_CLASS);
+        initEReference(getPropertyValueList_Value(), this.getPropertyValue(), null, "value", null, 1, -1,
+                PropertyValueList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+                !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(containerRuntimeEClass, ContainerRuntime.class, "ContainerRuntime", !IS_ABSTRACT, !IS_INTERFACE,
                 IS_GENERATED_INSTANCE_CLASS);
