@@ -4,6 +4,8 @@ package device.impl;
 
 import de.fraunhofer.ipa.deployment.util.ProcessorResouceType;
 
+import de.fraunhofer.ipa.deployment.util.impl.AbstractComputationResourceImpl;
+
 import device.AbstracProcessorProperty;
 import device.DevicePackage;
 import device.ProcessorResouce;

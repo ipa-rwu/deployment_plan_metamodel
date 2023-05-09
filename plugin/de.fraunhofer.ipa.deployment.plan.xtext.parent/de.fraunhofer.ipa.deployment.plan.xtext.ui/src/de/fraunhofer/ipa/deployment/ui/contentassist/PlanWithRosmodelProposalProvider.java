@@ -19,7 +19,6 @@ import deployPlanWithRosModel.impl.ConfigRosSoftwareComponentImpl;
 //import deployPlanWithRosModel.impl.ConfigRosSoftwareComponentImpl;
 import system.System;
 import system.impl.RosParameterImpl;
-import system.impl.RosSystemImpl;
 
 /**
  * See https://www.eclipse.org/Xtext/documentation/310_eclipse_support.html#content-assist
@@ -32,6 +31,7 @@ public class PlanWithRosmodelProposalProvider extends AbstractPlanWithRosmodelPr
       ConfigRosParameterImpl ref_model = (ConfigRosParameterImpl) model;
       ConfigRosSoftwareComponentImpl config_comp = (ConfigRosSoftwareComponentImpl) ref_model.eContainer();
       System comp = config_comp.getComponent();
+
       lookupCrossReference((CrossReference) assignment.getTerminal(),
               context, acceptor, new Predicate<IEObjectDescription>() {
                   @Override
@@ -39,7 +39,7 @@ public class PlanWithRosmodelProposalProvider extends AbstractPlanWithRosmodelPr
                       RosParameterImpl param_impl = (RosParameterImpl) input.getEObjectOrProxy();
                       if(param_impl.eIsProxy()) {
                           EObject obj = EcoreUtil.resolve(param_impl, model);
-                          RosSystemImpl tmp = (RosSystemImpl) obj.eContainer().eContainer();
+                          System tmp = (System) obj.eContainer().eContainer();
                           if(tmp == comp) {
                               return true;
                           }
@@ -48,5 +48,10 @@ public class PlanWithRosmodelProposalProvider extends AbstractPlanWithRosmodelPr
                   }
 
       });
-      }
-    }
+  }
+
+      @Override
+  public void completeRossystemImplementationAssignment_ExecutedBy(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+      completeImplementationAssignment_ExecutedBy(model, assignment, context, acceptor);
+  }
+}

@@ -221,7 +221,7 @@ public class TargetEnvironmentPackageImpl extends EPackageImpl implements Target
         return (EReference)targetDeployEnviromentEClass.getEStructuralFeatures().get(2);
     }
 
-                /**
+    /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated

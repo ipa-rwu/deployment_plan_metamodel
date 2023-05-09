@@ -2,11 +2,6 @@
  */
 package deploymentPlan;
 
-import de.fraunhofer.ipa.deployment.util.OpertingSystemName;
-import de.fraunhofer.ipa.deployment.util.RunTimeType;
-
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 import targetEnvironment.ComputationDeviceInstance;
@@ -23,11 +18,8 @@ import targetEnvironment.ComputationDeviceInstance;
  *   <li>{@link deploymentPlan.AbstractComputationAssignment#getName <em>Name</em>}</li>
  *   <li>{@link deploymentPlan.AbstractComputationAssignment#getExecutedBy <em>Executed By</em>}</li>
  *   <li>{@link deploymentPlan.AbstractComputationAssignment#getVersion <em>Version</em>}</li>
- *   <li>{@link deploymentPlan.AbstractComputationAssignment#getSoftwareComponents <em>Software Components</em>}</li>
- *   <li>{@link deploymentPlan.AbstractComputationAssignment#getOpertingSystemVersion <em>Operting System Version</em>}</li>
- *   <li>{@link deploymentPlan.AbstractComputationAssignment#getRuntimeType <em>Runtime Type</em>}</li>
  *   <li>{@link deploymentPlan.AbstractComputationAssignment#getMiddleware <em>Middleware</em>}</li>
- *   <li>{@link deploymentPlan.AbstractComputationAssignment#getOpertingSystemType <em>Operting System Type</em>}</li>
+ *   <li>{@link deploymentPlan.AbstractComputationAssignment#getRuntimeType <em>Runtime Type</em>}</li>
  * </ul>
  *
  * @see deploymentPlan.DeploymentPlanPackage#getAbstractComputationAssignment()
@@ -102,65 +94,28 @@ public interface AbstractComputationAssignment extends EObject {
     void setVersion(String value);
 
                 /**
-     * Returns the value of the '<em><b>Software Components</b></em>' containment reference list.
-     * The list contents are of type {@link deploymentPlan.AbstarctConfigSoftwareComponent}.
+     * Returns the value of the '<em><b>Runtime Type</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Software Components</em>' containment reference list.
-     * @see deploymentPlan.DeploymentPlanPackage#getAbstractComputationAssignment_SoftwareComponents()
-     * @model containment="true" required="true"
-     * @generated
-     */
-    EList<AbstarctConfigSoftwareComponent> getSoftwareComponents();
-
-    /**
-     * Returns the value of the '<em><b>Operting System Version</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Operting System Version</em>' attribute.
-     * @see #setOpertingSystemVersion(String)
-     * @see deploymentPlan.DeploymentPlanPackage#getAbstractComputationAssignment_OpertingSystemVersion()
-     * @model
-     * @generated
-     */
-    String getOpertingSystemVersion();
-
-    /**
-     * Sets the value of the '{@link deploymentPlan.AbstractComputationAssignment#getOpertingSystemVersion <em>Operting System Version</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Operting System Version</em>' attribute.
-     * @see #getOpertingSystemVersion()
-     * @generated
-     */
-    void setOpertingSystemVersion(String value);
-
-    /**
-     * Returns the value of the '<em><b>Runtime Type</b></em>' attribute.
-     * The literals are from the enumeration {@link de.fraunhofer.ipa.deployment.util.RunTimeType}.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Runtime Type</em>' attribute.
-     * @see de.fraunhofer.ipa.deployment.util.RunTimeType
-     * @see #setRuntimeType(RunTimeType)
+     * @return the value of the '<em>Runtime Type</em>' containment reference.
+     * @see #setRuntimeType(AbstractRuntime)
      * @see deploymentPlan.DeploymentPlanPackage#getAbstractComputationAssignment_RuntimeType()
-     * @model
+     * @model containment="true"
      * @generated
      */
-    RunTimeType getRuntimeType();
+    AbstractRuntime getRuntimeType();
 
     /**
-     * Sets the value of the '{@link deploymentPlan.AbstractComputationAssignment#getRuntimeType <em>Runtime Type</em>}' attribute.
+     * Sets the value of the '{@link deploymentPlan.AbstractComputationAssignment#getRuntimeType <em>Runtime Type</em>}' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Runtime Type</em>' attribute.
-     * @see de.fraunhofer.ipa.deployment.util.RunTimeType
+     * @param value the new value of the '<em>Runtime Type</em>' containment reference.
      * @see #getRuntimeType()
      * @generated
      */
-    void setRuntimeType(RunTimeType value);
+    void setRuntimeType(AbstractRuntime value);
 
-    /**
+                /**
      * Returns the value of the '<em><b>Middleware</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -181,27 +136,5 @@ public interface AbstractComputationAssignment extends EObject {
      * @generated
      */
     void setMiddleware(Middleware value);
-
-    /**
-     * Returns the value of the '<em><b>Operting System Type</b></em>' containment reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Operting System Type</em>' containment reference.
-     * @see #setOpertingSystemType(OpertingSystemName)
-     * @see deploymentPlan.DeploymentPlanPackage#getAbstractComputationAssignment_OpertingSystemType()
-     * @model containment="true"
-     * @generated
-     */
-    OpertingSystemName getOpertingSystemType();
-
-    /**
-     * Sets the value of the '{@link deploymentPlan.AbstractComputationAssignment#getOpertingSystemType <em>Operting System Type</em>}' containment reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Operting System Type</em>' containment reference.
-     * @see #getOpertingSystemType()
-     * @generated
-     */
-    void setOpertingSystemType(OpertingSystemName value);
 
 } // AbstractComputationAssignment

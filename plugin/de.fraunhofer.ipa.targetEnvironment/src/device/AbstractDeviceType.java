@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see device.DevicePackage#getAbstractDeviceType()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface AbstractDeviceType extends EObject {

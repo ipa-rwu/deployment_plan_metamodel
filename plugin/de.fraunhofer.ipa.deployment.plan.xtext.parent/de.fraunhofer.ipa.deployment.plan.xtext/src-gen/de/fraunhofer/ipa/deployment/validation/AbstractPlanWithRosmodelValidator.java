@@ -12,8 +12,8 @@ public abstract class AbstractPlanWithRosmodelValidator extends PlanValidator {
     @Override
     protected List<EPackage> getEPackages() {
         List<EPackage> result = new ArrayList<EPackage>(super.getEPackages());
-        result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.ipa.fraunhofer.de/DeployPlanWithRosModel"));
         result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.ipa.fraunhofer.de/DeploymentPlan"));
+        result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.ipa.fraunhofer.de/DeployPlanWithRosModel"));
         result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.ipa.fraunhofer.de/Util"));
         return result;
     }

@@ -2,6 +2,7 @@
  */
 package device;
 
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Abstract Network Property</b></em>'.

@@ -31,6 +31,9 @@ import targetEnvironment.ConfigDeviceProperty
 import targetEnvironment.ConnectedDevice
 import targetEnvironment.DeviceInstance
 import targetEnvironment.TargetDeployEnviroment
+import system.impl.RosParameterImpl
+import deploymentPlan.ImplementationAssignment
+import deployPlanWithRosModel.RossystemImplementationAssignment
 
 class DockerComposeCompiler {
 
@@ -71,13 +74,20 @@ services:
       - |
         export CYCLONEDDS_URI=file:///cyclonedds.xml
         source /ros_entrypoint.sh
-        «FOR software: assignment.softwareComponents»
+        «FOR software: assignment.getSoftwareFromAssignemnt»
         «var paramPerSoftware = covertCollectExecutionEnvtoString(collectExecutionEnv(software))»
         «String.join(" & \n", software.startCommand)» «
         »«IF software.startCommand.size > 0»«FOR param : paramPerSoftware»«param.key»:=«param.value» «ENDFOR»«ENDIF»
         «ENDFOR»
 «ENDFOR»
 '''
+
+def getSoftwareFromAssignemnt(AbstractComputationAssignment assignment){
+    if(assignment instanceof ImplementationAssignment)
+        return assignment.softwareComponents
+    if(assignment instanceof RossystemImplementationAssignment)
+        return assignment.softwareComponents
+}
 
 def cycloneDDSConfig()'''
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -146,23 +156,18 @@ ports:
 
 def addDevice(Set<ConnectedDevice> connectedComputationDevices)'''
 «var usbConnections = connectedComputationDevices.stream.filter[it.refConnection instanceof UsbConnection].collect(Collectors.toList)»
-«var volumes = usbConnections.stream.map[getDeviceVolumes].collect(Collectors.toList).flatten»
+«var volumes = usbConnections.stream.map[getDeviceVolumes].collect(Collectors.toList)»
 «IF volumes.size >0»
+«FOR v: volumes»
+«IF v !== null && v.size >0»
 devices:
-  «FOR volume : volumes»
+  «FOR volume : v»
   - «volume.valueFromPropertyValue»:«volume.valueFromPropertyValue»
 «ENDFOR»
 «ENDIF»
+«ENDFOR»
+«ENDIF»
 '''
-
-def getDeviceVolumes(ConnectedDevice connectedComputationDevice){
-    for(property : connectedComputationDevice.properties){
-        if(property.refConnectionProperty instanceof DeviceVolumeUsbProperty){
-            System.out.println(String.format("Volumes: %s", property.value))
-            return (property.value as PropertyValueList).value
-        }
-    }
-}
 
 def collectExecutionEnv(AbstarctConfigSoftwareComponent software){
     var raw = software.executionConfiguration
@@ -190,13 +195,12 @@ def collectExecutionEnv(AbstarctConfigSoftwareComponent software){
             ]
         }
     }
-    System.out.println(String.format("res: %s", res.keySet.toString))
     return res
 }
 
 
 def collectExecutionEnv(AbstractComputationAssignment assignment){
-    var raw = assignment.softwareComponents.map[executionConfiguration].flatten
+    var raw = assignment.getSoftwareFromAssignemnt.map[executionConfiguration].flatten
     var Map<EObject, PropertyValue> res
         = new HashMap<EObject, PropertyValue>
     for(AbstractConfigExecutionParameter p: raw){
@@ -221,17 +225,16 @@ def collectExecutionEnv(AbstractComputationAssignment assignment){
             ]
         }
     }
-    System.out.println(String.format("res: %s", res.keySet.toString))
     return res
 }
 
 def covertCollectExecutionEnvtoString(Map<EObject, PropertyValue> res){
-    var List<Pair<String,String>> converted = new ArrayList<Pair<String,String>>();
+  var List<Pair<String,String>> converted = new ArrayList<Pair<String,String>>();
   for(Map.Entry<EObject, PropertyValue> entry : res.entrySet()){
-    if(entry.key instanceof RosParameter){
-            converted.add(new Pair((entry.key as RosParameter).name, getValueFromPropertyValue(entry.value)))
-        }
-    else if(entry.getKey() instanceof ExecutionParameter){
+    if(entry.key instanceof RosParameterImpl){
+        converted.add(new Pair((entry.key as RosParameter).name, getValueFromPropertyValue(entry.value)))
+    }
+    else if(entry.key instanceof ExecutionParameter){
             converted.add(new Pair((entry.key as ExecutionParameter).name, getValueFromPropertyValue(entry.value)))
         }
     }
@@ -257,13 +260,12 @@ def getValueFromPropertyValueList(PropertyValue pv){
 
 def getCommunicationConnectionPerAssignment(AbstractComputationAssignment assignment, ComputationDeviceInstance compDev){
     var Set<ConnectedDevice> connectedComputationDevices = new HashSet<ConnectedDevice>()
-    for(software: assignment.softwareComponents){
+    for(software: assignment.getSoftwareFromAssignemnt){
         if(software.executionConfiguration !== null){
             for(configExecParam : software.executionConfiguration){
                 var communicatedComputationDevice = getConnectedComputaionDeviceFromExecParam(configExecParam, compDev)
                 if(communicatedComputationDevice !== null){
                     connectedComputationDevices.add(communicatedComputationDevice)
-                    System.out.println(String.format("communicatedComputationDevice container: %s", communicatedComputationDevice.eContainer))
                 }
             }
         }
@@ -307,8 +309,10 @@ def getConnectionsIncludeDeviceInstanceFomTargetEnv(TargetDeployEnviroment tarEn
     if(all !== null && all.size > 0){
         for(connection: all){
             var res = connection.connectDevice.stream.filter[it.refDevice == comp]
-            .collect(Collectors.toList()).get(0)
-            connectedComputationDevices.add(res)
+            .collect(Collectors.toList())
+            if(res.size >0){
+                connectedComputationDevices.add(res.get(0))
+            }
         }
     }
     return connectedComputationDevices

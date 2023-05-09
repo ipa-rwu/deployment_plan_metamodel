@@ -56,9 +56,7 @@ public class DeployPlanWithRosModelFactoryImpl extends EFactoryImpl implements D
     @Override
     public EObject create(EClass eClass) {
         switch (eClass.getClassifierID()) {
-            case DeployPlanWithRosModelPackage.DEPLOYMENT_PLAN_WITH_ROS_MODEL: return createDeploymentPlanWithRosModel();
-            case DeployPlanWithRosModelPackage.ROSSYSTEM_ASSIGNMENT: return createRossystemAssignment();
-            case DeployPlanWithRosModelPackage.ROSPACKAGE_IMPLEMENTATION: return createRospackageImplementation();
+            case DeployPlanWithRosModelPackage.ROSSYSTEM_IMPLEMENTATION_ASSIGNMENT: return createRossystemImplementationAssignment();
             case DeployPlanWithRosModelPackage.CONFIG_ROS_PARAMETER: return createConfigRosParameter();
             case DeployPlanWithRosModelPackage.CONFIG_ROS_SOFTWARE_COMPONENT: return createConfigRosSoftwareComponent();
             default:
@@ -71,32 +69,12 @@ public class DeployPlanWithRosModelFactoryImpl extends EFactoryImpl implements D
      * <!-- end-user-doc -->
      * @generated
      */
-    public DeploymentPlanWithRosModel createDeploymentPlanWithRosModel() {
-        DeploymentPlanWithRosModelImpl deploymentPlanWithRosModel = new DeploymentPlanWithRosModelImpl();
-        return deploymentPlanWithRosModel;
+    public RossystemImplementationAssignment createRossystemImplementationAssignment() {
+        RossystemImplementationAssignmentImpl rossystemImplementationAssignment = new RossystemImplementationAssignmentImpl();
+        return rossystemImplementationAssignment;
     }
 
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public RossystemAssignment createRossystemAssignment() {
-        RossystemAssignmentImpl rossystemAssignment = new RossystemAssignmentImpl();
-        return rossystemAssignment;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public RospackageImplementation createRospackageImplementation() {
-        RospackageImplementationImpl rospackageImplementation = new RospackageImplementationImpl();
-        return rospackageImplementation;
-    }
-
-    /**
+                /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated

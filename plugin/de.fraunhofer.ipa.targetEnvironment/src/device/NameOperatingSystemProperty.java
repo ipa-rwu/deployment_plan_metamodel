@@ -14,5 +14,5 @@ import de.fraunhofer.ipa.deployment.util.PropertyAttribute;
  * @model
  * @generated
  */
-public interface NameOperatingSystemProperty extends PropertyAttribute, AbstractOperatingSystemProperty {
+public interface NameOperatingSystemProperty extends PropertyAttribute {
 } // NameOperatingSystemProperty

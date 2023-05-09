@@ -40,12 +40,7 @@
     </genClasses>
     <genClasses ecoreClass="device.ecore#//DeviceVolumeUsbProperty"/>
     <genClasses ecoreClass="device.ecore#//Container"/>
-    <genClasses ecoreClass="device.ecore#//OperatingSystemResouce">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//OperatingSystemResouce/type"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//OperatingSystemResouce/properties"/>
-    </genClasses>
     <genClasses ecoreClass="device.ecore#//NameOperatingSystemProperty"/>
-    <genClasses ecoreClass="device.ecore#//VersionOperatingSystemProperty"/>
     <genClasses ecoreClass="device.ecore#//ProcessorResouce">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//ProcessorResouce/type"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//ProcessorResouce/properties"/>
@@ -56,9 +51,7 @@
     <genClasses image="false" ecoreClass="device.ecore#//AbstractUsbProperty"/>
     <genClasses image="false" ecoreClass="device.ecore#//AbstractCommunicationConnection"/>
     <genClasses image="false" ecoreClass="device.ecore#//AbstractRuntimeEnviroment"/>
-    <genClasses image="false" ecoreClass="device.ecore#//AbstractOperatingSystemProperty"/>
     <genClasses image="false" ecoreClass="device.ecore#//AbstracProcessorProperty"/>
-    <genClasses image="false" ecoreClass="device.ecore#//AbstractComputationResource"/>
     <genClasses ecoreClass="device.ecore#//AbstractDeviceType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//AbstractDeviceType/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//AbstractDeviceType/communicationConnection"/>

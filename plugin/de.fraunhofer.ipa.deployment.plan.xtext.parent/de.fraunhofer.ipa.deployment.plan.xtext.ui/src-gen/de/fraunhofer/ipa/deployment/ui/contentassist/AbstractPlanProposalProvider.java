@@ -56,10 +56,13 @@ public abstract class AbstractPlanProposalProvider extends UtilProposalProvider 
     public void completeImplementationAssignment_RuntimeType(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
         completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
     }
-    public void completeImplementationAssignment_OpertingSystemType(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+    public void completeRosMiddleware_Value(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
         completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
     }
-    public void completeRosMiddleware_Value(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+    public void completeContainerRuntime_Type(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+        completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
+    }
+    public void completeContainerRuntime_OpertingSystemResource(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
         completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
     }
     public void completeConfigExecutionParameter_From(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
@@ -100,6 +103,12 @@ public abstract class AbstractPlanProposalProvider extends UtilProposalProvider 
         // subclasses may override
     }
     public void complete_RosMiddleware(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+        // subclasses may override
+    }
+    public void complete_AbstractRuntime(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+        // subclasses may override
+    }
+    public void complete_ContainerRuntime(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
         // subclasses may override
     }
     public void complete_ROSDistro(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {

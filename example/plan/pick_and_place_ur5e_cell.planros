@@ -1,0 +1,61 @@
+DeploymentPlanWithRos:
+    name: deploy_pick_n_place_to_ur5e_cell_with_rostooling
+    deployTo: ur5e_cell_with_realsense
+    assignment:
+        - name: ur5e_driver
+          executedBy: "ur5e_cell_with_realsense.rwu_laptop"
+          version: "latest"
+          softwareComponents:
+              - realsense_camera_driver:
+                executionConfiguration:
+                    - from: "pick_place_application.ur5e_driver_rossystem.dashboard_client.robot_ip"
+                      to: "ur5e_cell_with_realsense.connect_arm_pc.robot_ip"
+                startCommand:
+                    - "ros2 launch ur_robot_driver ur5e.launch.py"
+          middleware: humble
+          runtimeType:
+            type: container
+        - name: realsense_driver
+          executedBy: "ur5e_cell_with_realsense.rwu_laptop"
+          version: "latest"
+          softwareComponents:
+              - realsense_camera_driver:
+                executionConfiguration:
+                    - from: "realsense_camera_driver.realsense_camera.device_type"
+                      to: "ur5e_cell_with_realsense.camera_realsense.device_type"
+                startCommand:
+                    - "ros2 run tf2_ros static_transform_publisher -0.00640796 -0.0551158 0.00796752 -0.529877 0.53423 -0.467606 -0.463867 tool0 camera_link"
+                    - "ros2 launch realsense2_camera rs_launch.py publish_tf:=false"
+          middleware: humble
+          runtimeType:
+            type: container
+        - name: marker_detection
+          executedBy: "ur5e_cell_with_realsense.rwu_laptop"
+          version: "latest"
+          softwareComponents:
+              - aruco_marker_detection:
+                startCommand:
+                    - "ros2 launch aruco_ros marker_publisher.launch.py camera_frame:=camera_color_optical_frame reference_frame:=world marker_size_arg:=0.02"
+          middleware: humble
+          runtimeType:
+            type: container
+        - name: pick_place_task
+          executedBy: "ur5e_cell_with_realsense.rwu_laptop"
+          version: "latest"
+          softwareComponents:
+              - pick_place_application:
+                startCommand:
+                    - "ros2 launch pick_place_app pick_place_demo_ur5e.launch.py"
+          middleware: humble
+          runtimeType:
+                type: container
+                resource:
+                  - name: operting_system
+                    type: LinuxOpertingSystem
+                    properties:
+                      - name: os_name
+                        kind: AttributeKind
+                        value: ubuntu
+                      - name: os_version
+                            kind: AttributeKind
+                            value: jammy

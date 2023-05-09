@@ -16,6 +16,9 @@ import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
  */
 public abstract class AbstractImplementationDescriptionProposalProvider extends UtilProposalProvider {
 
+    public void completeImplementationDescriptionSet_Implementations(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+        completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
+    }
     public void completeImplementationDescription_Name(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
         completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
     }
@@ -74,6 +77,9 @@ public abstract class AbstractImplementationDescriptionProposalProvider extends 
         completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
     }
 
+    public void complete_ImplementationDescriptionSet(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+        // subclasses may override
+    }
     public void complete_ImplementationDescription(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
         // subclasses may override
     }

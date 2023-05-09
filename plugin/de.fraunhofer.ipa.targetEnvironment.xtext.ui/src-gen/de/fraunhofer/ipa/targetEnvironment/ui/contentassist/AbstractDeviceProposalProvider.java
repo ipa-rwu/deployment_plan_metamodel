@@ -191,39 +191,6 @@ public abstract class AbstractDeviceProposalProvider extends UtilProposalProvide
     public void completeUsbConnection_Properties(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
         completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
     }
-    public void completeOperatingSystemResouce_Name(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-        completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
-    }
-    public void completeOperatingSystemResouce_Type(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-        completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
-    }
-    public void completeOperatingSystemResouce_Properties(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-        completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
-    }
-    public void completeNameOperatingSystemProperty_Name(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-        // subclasses may override
-    }
-    public void completeNameOperatingSystemProperty_Kind(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-        completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
-    }
-    public void completeNameOperatingSystemProperty_Description(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-        completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
-    }
-    public void completeNameOperatingSystemProperty_Value(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-        completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
-    }
-    public void completeVersionOperatingSystemProperty_Name(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-        // subclasses may override
-    }
-    public void completeVersionOperatingSystemProperty_Kind(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-        completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
-    }
-    public void completeVersionOperatingSystemProperty_Description(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-        completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
-    }
-    public void completeVersionOperatingSystemProperty_Value(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-        completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
-    }
     public void completeProcessorResouce_Name(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
         completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
     }
@@ -322,18 +289,6 @@ public abstract class AbstractDeviceProposalProvider extends UtilProposalProvide
         // subclasses may override
     }
     public void complete_UsbConnection(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-        // subclasses may override
-    }
-    public void complete_OperatingSystemResouce(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-        // subclasses may override
-    }
-    public void complete_AbstractOperatingSystemProperty(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-        // subclasses may override
-    }
-    public void complete_NameOperatingSystemProperty(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-        // subclasses may override
-    }
-    public void complete_VersionOperatingSystemProperty(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
         // subclasses may override
     }
     public void complete_ProcessorResouce(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {

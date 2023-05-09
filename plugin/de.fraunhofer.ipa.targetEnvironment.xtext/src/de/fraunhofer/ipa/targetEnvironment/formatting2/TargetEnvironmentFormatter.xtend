@@ -30,5 +30,5 @@ class TargetEnvironmentFormatter extends DeviceFormatter {
         }
     }
 
-    // TODO: implement for DeviceInstance, ConfigConnection, ConnectedDevice, ConfigConnectionProperty, ConfigDeviceProperty
+    // TODO: implement for DeviceInstance, ComputationDeviceInstance, ConfigConnection, ConnectedDevice, ConfigConnectionProperty, ConfigDeviceProperty
 }

@@ -1,0 +1,16 @@
+ImplementationDescription:
+  name: marker_detection
+  includeSoftwareComponent:
+    - name: color_pose_estimation
+      repository:
+        type: git
+        url: "https://github.com/ipa-anm/color_pose_estimation.git"
+        version: "humble-devel"
+      executionRequirement:
+        softwareConfigurationParameter:
+          - name: camera_info_topic
+            kind: AttributeKind
+          - name: reference_frame
+            kind: AttributeKind
+          - name: detect_colors
+            kind: AttributeKind

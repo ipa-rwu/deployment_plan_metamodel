@@ -1,0 +1,4 @@
+repositories:
+  realsense-ros:
+    type: git
+    url: https://github.com/IntelRealSense/realsense-ros

@@ -6,11 +6,9 @@ import de.fraunhofer.ipa.deployment.util.UtilPackage;
 
 import device.AbstracProcessorProperty;
 import device.AbstractCommunicationConnection;
-import device.AbstractComputationResource;
 import device.AbstractConnectionProperty;
 import device.AbstractDeviceType;
 import device.AbstractNetworkProperty;
-import device.AbstractOperatingSystemProperty;
 import device.AbstractRuntimeEnviroment;
 import device.AbstractUsbProperty;
 import device.AddressNetworkProperty;
@@ -32,12 +30,10 @@ import device.InterfaceNetworkProperty;
 import device.MacAddressNetworkProperty;
 import device.NameOperatingSystemProperty;
 import device.NetworkConnection;
-import device.OperatingSystemResouce;
 import device.PortNetworkProperty;
 import device.ProcessorResouce;
 import device.SubnetMaskNetworkProperty;
 import device.UsbConnection;
-import device.VersionOperatingSystemProperty;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -128,6 +124,55 @@ public class DevicePackageImpl extends EPackageImpl implements DevicePackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    private EClass portNetworkPropertyEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass identityNameNetworkPropertyEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass gatewayNetworkPropertyEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass subnetMaskNetworkPropertyEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass dnsServerNetworkPropertyEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass usbConnectionEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass deviceVolumeUsbPropertyEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     private EClass containerEClass = null;
 
     /**
@@ -135,28 +180,7 @@ public class DevicePackageImpl extends EPackageImpl implements DevicePackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    private EClass portNetworkPropertyEClass = null;
-
-                /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    private EClass operatingSystemResouceEClass = null;
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
     private EClass nameOperatingSystemPropertyEClass = null;
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    private EClass versionOperatingSystemPropertyEClass = null;
 
     /**
      * <!-- begin-user-doc -->
@@ -193,7 +217,7 @@ public class DevicePackageImpl extends EPackageImpl implements DevicePackage {
      */
     private EClass abstractUsbPropertyEClass = null;
 
-                /**
+    /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -212,21 +236,7 @@ public class DevicePackageImpl extends EPackageImpl implements DevicePackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    private EClass abstractOperatingSystemPropertyEClass = null;
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
     private EClass abstracProcessorPropertyEClass = null;
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    private EClass abstractComputationResourceEClass = null;
 
     /**
      * <!-- begin-user-doc -->
@@ -240,51 +250,9 @@ public class DevicePackageImpl extends EPackageImpl implements DevicePackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    private EClass identityNameNetworkPropertyEClass = null;
-
-                /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    private EClass gatewayNetworkPropertyEClass = null;
-
-                /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    private EClass subnetMaskNetworkPropertyEClass = null;
-
-                /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    private EClass dnsServerNetworkPropertyEClass = null;
-
-                /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    private EClass usbConnectionEClass = null;
-
-                                                                /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    private EClass deviceVolumeUsbPropertyEClass = null;
-
-                                                                /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
     private EClass abstractConnectionPropertyEClass = null;
 
-                /**
+    /**
      * Creates an instance of the model <b>Package</b>, registered with
      * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
      * package URI value.
@@ -505,6 +473,87 @@ public class DevicePackageImpl extends EPackageImpl implements DevicePackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    public EClass getPortNetworkProperty() {
+        return portNetworkPropertyEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getIdentityNameNetworkProperty() {
+        return identityNameNetworkPropertyEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getGatewayNetworkProperty() {
+        return gatewayNetworkPropertyEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getSubnetMaskNetworkProperty() {
+        return subnetMaskNetworkPropertyEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getDNSServerNetworkProperty() {
+        return dnsServerNetworkPropertyEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getUsbConnection() {
+        return usbConnectionEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EReference getUsbConnection_Type() {
+        return (EReference)usbConnectionEClass.getEStructuralFeatures().get(0);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EReference getUsbConnection_Properties() {
+        return (EReference)usbConnectionEClass.getEStructuralFeatures().get(1);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getDeviceVolumeUsbProperty() {
+        return deviceVolumeUsbPropertyEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public EClass getContainer() {
         return containerEClass;
     }
@@ -514,53 +563,8 @@ public class DevicePackageImpl extends EPackageImpl implements DevicePackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    public EClass getPortNetworkProperty() {
-        return portNetworkPropertyEClass;
-    }
-
-                /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public EClass getOperatingSystemResouce() {
-        return operatingSystemResouceEClass;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public EReference getOperatingSystemResouce_Type() {
-        return (EReference)operatingSystemResouceEClass.getEStructuralFeatures().get(0);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public EReference getOperatingSystemResouce_Properties() {
-        return (EReference)operatingSystemResouceEClass.getEStructuralFeatures().get(1);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
     public EClass getNameOperatingSystemProperty() {
         return nameOperatingSystemPropertyEClass;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public EClass getVersionOperatingSystemProperty() {
-        return versionOperatingSystemPropertyEClass;
     }
 
     /**
@@ -626,7 +630,7 @@ public class DevicePackageImpl extends EPackageImpl implements DevicePackage {
         return abstractUsbPropertyEClass;
     }
 
-                /**
+    /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -649,26 +653,8 @@ public class DevicePackageImpl extends EPackageImpl implements DevicePackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    public EClass getAbstractOperatingSystemProperty() {
-        return abstractOperatingSystemPropertyEClass;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
     public EClass getAbstracProcessorProperty() {
         return abstracProcessorPropertyEClass;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public EClass getAbstractComputationResource() {
-        return abstractComputationResourceEClass;
     }
 
     /**
@@ -703,83 +689,11 @@ public class DevicePackageImpl extends EPackageImpl implements DevicePackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    public EClass getIdentityNameNetworkProperty() {
-        return identityNameNetworkPropertyEClass;
-    }
-
-                /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public EClass getGatewayNetworkProperty() {
-        return gatewayNetworkPropertyEClass;
-    }
-
-                /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public EClass getSubnetMaskNetworkProperty() {
-        return subnetMaskNetworkPropertyEClass;
-    }
-
-                /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public EClass getDNSServerNetworkProperty() {
-        return dnsServerNetworkPropertyEClass;
-    }
-
-                /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public EClass getUsbConnection() {
-        return usbConnectionEClass;
-    }
-
-                                                                /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public EReference getUsbConnection_Type() {
-        return (EReference)usbConnectionEClass.getEStructuralFeatures().get(0);
-    }
-
-                                                                /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public EReference getUsbConnection_Properties() {
-        return (EReference)usbConnectionEClass.getEStructuralFeatures().get(1);
-    }
-
-                                                                /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public EClass getDeviceVolumeUsbProperty() {
-        return deviceVolumeUsbPropertyEClass;
-    }
-
-                                                                /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
     public EClass getAbstractConnectionProperty() {
         return abstractConnectionPropertyEClass;
     }
 
-                /**
+    /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -852,13 +766,7 @@ public class DevicePackageImpl extends EPackageImpl implements DevicePackage {
 
         containerEClass = createEClass(CONTAINER);
 
-        operatingSystemResouceEClass = createEClass(OPERATING_SYSTEM_RESOUCE);
-        createEReference(operatingSystemResouceEClass, OPERATING_SYSTEM_RESOUCE__TYPE);
-        createEReference(operatingSystemResouceEClass, OPERATING_SYSTEM_RESOUCE__PROPERTIES);
-
         nameOperatingSystemPropertyEClass = createEClass(NAME_OPERATING_SYSTEM_PROPERTY);
-
-        versionOperatingSystemPropertyEClass = createEClass(VERSION_OPERATING_SYSTEM_PROPERTY);
 
         processorResouceEClass = createEClass(PROCESSOR_RESOUCE);
         createEReference(processorResouceEClass, PROCESSOR_RESOUCE__TYPE);
@@ -876,11 +784,7 @@ public class DevicePackageImpl extends EPackageImpl implements DevicePackage {
 
         abstractRuntimeEnviromentEClass = createEClass(ABSTRACT_RUNTIME_ENVIROMENT);
 
-        abstractOperatingSystemPropertyEClass = createEClass(ABSTRACT_OPERATING_SYSTEM_PROPERTY);
-
         abstracProcessorPropertyEClass = createEClass(ABSTRAC_PROCESSOR_PROPERTY);
-
-        abstractComputationResourceEClass = createEClass(ABSTRACT_COMPUTATION_RESOURCE);
 
         abstractDeviceTypeEClass = createEClass(ABSTRACT_DEVICE_TYPE);
         createEAttribute(abstractDeviceTypeEClass, ABSTRACT_DEVICE_TYPE__NAME);
@@ -948,12 +852,8 @@ public class DevicePackageImpl extends EPackageImpl implements DevicePackage {
         deviceVolumeUsbPropertyEClass.getESuperTypes().add(theUtilPackage.getPropertySelection());
         deviceVolumeUsbPropertyEClass.getESuperTypes().add(this.getAbstractUsbProperty());
         containerEClass.getESuperTypes().add(this.getAbstractRuntimeEnviroment());
-        operatingSystemResouceEClass.getESuperTypes().add(this.getAbstractComputationResource());
         nameOperatingSystemPropertyEClass.getESuperTypes().add(theUtilPackage.getPropertyAttribute());
-        nameOperatingSystemPropertyEClass.getESuperTypes().add(this.getAbstractOperatingSystemProperty());
-        versionOperatingSystemPropertyEClass.getESuperTypes().add(theUtilPackage.getPropertyAttribute());
-        versionOperatingSystemPropertyEClass.getESuperTypes().add(this.getAbstractOperatingSystemProperty());
-        processorResouceEClass.getESuperTypes().add(this.getAbstractComputationResource());
+        processorResouceEClass.getESuperTypes().add(theUtilPackage.getAbstractComputationResource());
         architectureProcessorPropertyEClass.getESuperTypes().add(theUtilPackage.getPropertyAttribute());
         architectureProcessorPropertyEClass.getESuperTypes().add(this.getAbstracProcessorProperty());
         coreProcessorPropertyEClass.getESuperTypes().add(theUtilPackage.getPropertyAttribute());
@@ -961,7 +861,6 @@ public class DevicePackageImpl extends EPackageImpl implements DevicePackage {
         abstractNetworkPropertyEClass.getESuperTypes().add(this.getAbstractConnectionProperty());
         abstractUsbPropertyEClass.getESuperTypes().add(this.getAbstractConnectionProperty());
         abstractCommunicationConnectionEClass.getESuperTypes().add(theUtilPackage.getAbstractResource());
-        abstractComputationResourceEClass.getESuperTypes().add(theUtilPackage.getAbstractResource());
 
         // Initialize classes, features, and operations; add parameters
         initEClass(deviceSetEClass, DeviceSet.class, "DeviceSet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -979,7 +878,7 @@ public class DevicePackageImpl extends EPackageImpl implements DevicePackage {
         initEClass(connectionPropertyEClass, ConnectionProperty.class, "ConnectionProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
         initEClass(computationDeviceTypeEClass, ComputationDeviceType.class, "ComputationDeviceType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEReference(getComputationDeviceType_ComputationResource(), this.getAbstractComputationResource(), null, "computationResource", null, 1, -1, ComputationDeviceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEReference(getComputationDeviceType_ComputationResource(), theUtilPackage.getAbstractComputationResource(), null, "computationResource", null, 1, -1, ComputationDeviceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(networkConnectionEClass, NetworkConnection.class, "NetworkConnection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEReference(getNetworkConnection_Type(), theUtilPackage.getNetworkCommunicationType(), null, "type", null, 1, 1, NetworkConnection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1009,13 +908,7 @@ public class DevicePackageImpl extends EPackageImpl implements DevicePackage {
 
         initEClass(containerEClass, device.Container.class, "Container", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-        initEClass(operatingSystemResouceEClass, OperatingSystemResouce.class, "OperatingSystemResouce", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEReference(getOperatingSystemResouce_Type(), theUtilPackage.getOpertingSystemResouceType(), null, "type", null, 1, 1, OperatingSystemResouce.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        initEReference(getOperatingSystemResouce_Properties(), this.getAbstractOperatingSystemProperty(), null, "properties", null, 0, -1, OperatingSystemResouce.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
         initEClass(nameOperatingSystemPropertyEClass, NameOperatingSystemProperty.class, "NameOperatingSystemProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-        initEClass(versionOperatingSystemPropertyEClass, VersionOperatingSystemProperty.class, "VersionOperatingSystemProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
         initEClass(processorResouceEClass, ProcessorResouce.class, "ProcessorResouce", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEReference(getProcessorResouce_Type(), theUtilPackage.getProcessorResouceType(), null, "type", null, 1, 1, ProcessorResouce.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1033,13 +926,9 @@ public class DevicePackageImpl extends EPackageImpl implements DevicePackage {
 
         initEClass(abstractRuntimeEnviromentEClass, AbstractRuntimeEnviroment.class, "AbstractRuntimeEnviroment", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-        initEClass(abstractOperatingSystemPropertyEClass, AbstractOperatingSystemProperty.class, "AbstractOperatingSystemProperty", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
         initEClass(abstracProcessorPropertyEClass, AbstracProcessorProperty.class, "AbstracProcessorProperty", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-        initEClass(abstractComputationResourceEClass, AbstractComputationResource.class, "AbstractComputationResource", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-        initEClass(abstractDeviceTypeEClass, AbstractDeviceType.class, "AbstractDeviceType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEClass(abstractDeviceTypeEClass, AbstractDeviceType.class, "AbstractDeviceType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEAttribute(getAbstractDeviceType_Name(), ecorePackage.getEString(), "name", null, 1, 1, AbstractDeviceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEReference(getAbstractDeviceType_CommunicationConnection(), this.getAbstractCommunicationConnection(), null, "communicationConnection", null, 0, -1, AbstractDeviceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

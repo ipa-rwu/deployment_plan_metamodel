@@ -3,7 +3,7 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.fraunhofer.ipa.deploymentPlan/src" modelPluginID="de.fraunhofer.ipa.deploymentPlan"
     modelName="DeploymentPlan" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
-    usedGenPackages="../../de.fraunhofer.ipa.targetEnvironment/model/device.genmodel#//device ImplementationDescription.genmodel#//implementationDescription ../../de.fraunhofer.ipa.targetEnvironment/model/targetEnvironment.genmodel#//targetEnvironment ../../de.fraunhofer.ipa.deployment.util/model/util.genmodel#//util"
+    usedGenPackages="../../de.fraunhofer.ipa.targetEnvironment/model/device.genmodel#//device ImplementationDescription.genmodel#//implementationDescription ../../de.fraunhofer.ipa.targetEnvironment/model/targetEnvironment.genmodel#//targetEnvironment ../../de.fraunhofer.ipa.deployment.util/model/util.genmodel#//util ../../org.eclipse.emf.ecore/model/XMLType.genmodel#//type"
     operationReflection="true" importOrganizing="true">
   <foreignModel>deploymentPlan.ecore</foreignModel>
   <genPackages prefix="DeploymentPlan" disposableProviderFactory="true" ecorePackage="deploymentPlan.ecore#/">
@@ -18,7 +18,9 @@
     </genClasses>
     <genClasses ecoreClass="deploymentPlan.ecore#//DeploymentPlan"/>
     <genClasses ecoreClass="deploymentPlan.ecore#//Realization"/>
-    <genClasses ecoreClass="deploymentPlan.ecore#//ImplementationAssignment"/>
+    <genClasses ecoreClass="deploymentPlan.ecore#//ImplementationAssignment">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference deploymentPlan.ecore#//ImplementationAssignment/softwareComponents"/>
+    </genClasses>
     <genClasses ecoreClass="deploymentPlan.ecore#//ConfigExecutionParameter">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference deploymentPlan.ecore#//ConfigExecutionParameter/from"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference deploymentPlan.ecore#//ConfigExecutionParameter/to"/>
@@ -36,11 +38,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute deploymentPlan.ecore#//AbstractComputationAssignment/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference deploymentPlan.ecore#//AbstractComputationAssignment/executedBy"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute deploymentPlan.ecore#//AbstractComputationAssignment/version"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference deploymentPlan.ecore#//AbstractComputationAssignment/softwareComponents"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute deploymentPlan.ecore#//AbstractComputationAssignment/opertingSystemVersion"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute deploymentPlan.ecore#//AbstractComputationAssignment/runtimeType"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference deploymentPlan.ecore#//AbstractComputationAssignment/middleware"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EReference deploymentPlan.ecore#//AbstractComputationAssignment/opertingSystemType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference deploymentPlan.ecore#//AbstractComputationAssignment/runtimeType"/>
     </genClasses>
     <genClasses image="false" ecoreClass="deploymentPlan.ecore#//AbstractDeploymentPlan">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute deploymentPlan.ecore#//AbstractDeploymentPlan/name"/>
@@ -53,6 +52,12 @@
     </genClasses>
     <genClasses ecoreClass="deploymentPlan.ecore#//RosMiddleware">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute deploymentPlan.ecore#//RosMiddleware/value"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="deploymentPlan.ecore#//AbstractRuntime">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute deploymentPlan.ecore#//AbstractRuntime/type"/>
+    </genClasses>
+    <genClasses ecoreClass="deploymentPlan.ecore#//ContainerRuntime">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference deploymentPlan.ecore#//ContainerRuntime/opertingSystemResource"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

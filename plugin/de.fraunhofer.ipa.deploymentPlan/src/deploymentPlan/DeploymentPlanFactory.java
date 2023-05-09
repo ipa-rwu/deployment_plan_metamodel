@@ -48,7 +48,7 @@ public interface DeploymentPlanFactory extends EFactory {
      */
     Realization createRealization();
 
-    /**
+                /**
      * Returns a new object of class '<em>Implementation Assignment</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -85,6 +85,15 @@ public interface DeploymentPlanFactory extends EFactory {
     RosMiddleware createRosMiddleware();
 
     /**
+     * Returns a new object of class '<em>Container Runtime</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Container Runtime</em>'.
+     * @generated
+     */
+    ContainerRuntime createContainerRuntime();
+
+                /**
      * Returns the package supported by this factory.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->

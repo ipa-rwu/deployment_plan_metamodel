@@ -9,8 +9,10 @@ import deploymentPlan.AbstractComputationAssignment;
 import deploymentPlan.AbstractConfigExecutionParameter;
 import deploymentPlan.AbstractDeploymentPlan;
 import deploymentPlan.AbstractRealization;
+import deploymentPlan.AbstractRuntime;
 import deploymentPlan.ConfigExecutionParameter;
 import deploymentPlan.ConfigSoftwareComponent;
+import deploymentPlan.ContainerRuntime;
 import deploymentPlan.DeploymentPlan;
 import deploymentPlan.DeploymentPlanFactory;
 import deploymentPlan.DeploymentPlanPackage;
@@ -33,6 +35,7 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import org.eclipse.emf.ecore.xml.type.XMLTypePackage;
 import targetEnvironment.TargetEnvironmentPackage;
 
 /**
@@ -138,6 +141,20 @@ public class DeploymentPlanPackageImpl extends EPackageImpl implements Deploymen
      * <!-- end-user-doc -->
      * @generated
      */
+    private EClass abstractRuntimeEClass = null;
+
+                /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass containerRuntimeEClass = null;
+
+                /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     private EEnum rosDistroEEnum = null;
 
     /**
@@ -191,6 +208,7 @@ public class DeploymentPlanPackageImpl extends EPackageImpl implements Deploymen
         ImplementationDescriptionPackage.eINSTANCE.eClass();
         TargetEnvironmentPackage.eINSTANCE.eClass();
         UtilPackage.eINSTANCE.eClass();
+        XMLTypePackage.eINSTANCE.eClass();
 
         // Create package meta-data objects
         theDeploymentPlanPackage.createPackageContents();
@@ -252,6 +270,15 @@ public class DeploymentPlanPackageImpl extends EPackageImpl implements Deploymen
     }
 
     /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EReference getImplementationAssignment_SoftwareComponents() {
+        return (EReference)implementationAssignmentEClass.getEStructuralFeatures().get(0);
+    }
+
+                /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -382,26 +409,8 @@ public class DeploymentPlanPackageImpl extends EPackageImpl implements Deploymen
      * <!-- end-user-doc -->
      * @generated
      */
-    public EReference getAbstractComputationAssignment_SoftwareComponents() {
-        return (EReference)abstractComputationAssignmentEClass.getEStructuralFeatures().get(3);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public EAttribute getAbstractComputationAssignment_OpertingSystemVersion() {
-        return (EAttribute)abstractComputationAssignmentEClass.getEStructuralFeatures().get(4);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public EAttribute getAbstractComputationAssignment_RuntimeType() {
-        return (EAttribute)abstractComputationAssignmentEClass.getEStructuralFeatures().get(5);
+    public EReference getAbstractComputationAssignment_RuntimeType() {
+        return (EReference)abstractComputationAssignmentEClass.getEStructuralFeatures().get(4);
     }
 
     /**
@@ -410,16 +419,7 @@ public class DeploymentPlanPackageImpl extends EPackageImpl implements Deploymen
      * @generated
      */
     public EReference getAbstractComputationAssignment_Middleware() {
-        return (EReference)abstractComputationAssignmentEClass.getEStructuralFeatures().get(6);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public EReference getAbstractComputationAssignment_OpertingSystemType() {
-        return (EReference)abstractComputationAssignmentEClass.getEStructuralFeatures().get(7);
+        return (EReference)abstractComputationAssignmentEClass.getEStructuralFeatures().get(3);
     }
 
     /**
@@ -508,6 +508,42 @@ public class DeploymentPlanPackageImpl extends EPackageImpl implements Deploymen
      * <!-- end-user-doc -->
      * @generated
      */
+    public EClass getAbstractRuntime() {
+        return abstractRuntimeEClass;
+    }
+
+                /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getAbstractRuntime_Type() {
+        return (EAttribute)abstractRuntimeEClass.getEStructuralFeatures().get(0);
+    }
+
+                /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getContainerRuntime() {
+        return containerRuntimeEClass;
+    }
+
+                /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EReference getContainerRuntime_OpertingSystemResource() {
+        return (EReference)containerRuntimeEClass.getEStructuralFeatures().get(0);
+    }
+
+                /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public EEnum getROSDistro() {
         return rosDistroEEnum;
     }
@@ -548,6 +584,7 @@ public class DeploymentPlanPackageImpl extends EPackageImpl implements Deploymen
         realizationEClass = createEClass(REALIZATION);
 
         implementationAssignmentEClass = createEClass(IMPLEMENTATION_ASSIGNMENT);
+        createEReference(implementationAssignmentEClass, IMPLEMENTATION_ASSIGNMENT__SOFTWARE_COMPONENTS);
 
         configExecutionParameterEClass = createEClass(CONFIG_EXECUTION_PARAMETER);
         createEReference(configExecutionParameterEClass, CONFIG_EXECUTION_PARAMETER__FROM);
@@ -568,11 +605,8 @@ public class DeploymentPlanPackageImpl extends EPackageImpl implements Deploymen
         createEAttribute(abstractComputationAssignmentEClass, ABSTRACT_COMPUTATION_ASSIGNMENT__NAME);
         createEReference(abstractComputationAssignmentEClass, ABSTRACT_COMPUTATION_ASSIGNMENT__EXECUTED_BY);
         createEAttribute(abstractComputationAssignmentEClass, ABSTRACT_COMPUTATION_ASSIGNMENT__VERSION);
-        createEReference(abstractComputationAssignmentEClass, ABSTRACT_COMPUTATION_ASSIGNMENT__SOFTWARE_COMPONENTS);
-        createEAttribute(abstractComputationAssignmentEClass, ABSTRACT_COMPUTATION_ASSIGNMENT__OPERTING_SYSTEM_VERSION);
-        createEAttribute(abstractComputationAssignmentEClass, ABSTRACT_COMPUTATION_ASSIGNMENT__RUNTIME_TYPE);
         createEReference(abstractComputationAssignmentEClass, ABSTRACT_COMPUTATION_ASSIGNMENT__MIDDLEWARE);
-        createEReference(abstractComputationAssignmentEClass, ABSTRACT_COMPUTATION_ASSIGNMENT__OPERTING_SYSTEM_TYPE);
+        createEReference(abstractComputationAssignmentEClass, ABSTRACT_COMPUTATION_ASSIGNMENT__RUNTIME_TYPE);
 
         abstractDeploymentPlanEClass = createEClass(ABSTRACT_DEPLOYMENT_PLAN);
         createEAttribute(abstractDeploymentPlanEClass, ABSTRACT_DEPLOYMENT_PLAN__NAME);
@@ -585,6 +619,12 @@ public class DeploymentPlanPackageImpl extends EPackageImpl implements Deploymen
 
         rosMiddlewareEClass = createEClass(ROS_MIDDLEWARE);
         createEAttribute(rosMiddlewareEClass, ROS_MIDDLEWARE__VALUE);
+
+        abstractRuntimeEClass = createEClass(ABSTRACT_RUNTIME);
+        createEAttribute(abstractRuntimeEClass, ABSTRACT_RUNTIME__TYPE);
+
+        containerRuntimeEClass = createEClass(CONTAINER_RUNTIME);
+        createEReference(containerRuntimeEClass, CONTAINER_RUNTIME__OPERTING_SYSTEM_RESOURCE);
 
         // Create enums
         rosDistroEEnum = createEEnum(ROS_DISTRO);
@@ -629,6 +669,7 @@ public class DeploymentPlanPackageImpl extends EPackageImpl implements Deploymen
         configExecutionParameterEClass.getESuperTypes().add(this.getAbstractConfigExecutionParameter());
         configSoftwareComponentEClass.getESuperTypes().add(this.getAbstarctConfigSoftwareComponent());
         rosMiddlewareEClass.getESuperTypes().add(this.getMiddleware());
+        containerRuntimeEClass.getESuperTypes().add(this.getAbstractRuntime());
 
         // Initialize classes, features, and operations; add parameters
         initEClass(planEClass, Plan.class, "Plan", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -639,6 +680,7 @@ public class DeploymentPlanPackageImpl extends EPackageImpl implements Deploymen
         initEClass(realizationEClass, Realization.class, "Realization", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
         initEClass(implementationAssignmentEClass, ImplementationAssignment.class, "ImplementationAssignment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEReference(getImplementationAssignment_SoftwareComponents(), this.getConfigSoftwareComponent(), null, "softwareComponents", null, 1, -1, ImplementationAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(configExecutionParameterEClass, ConfigExecutionParameter.class, "ConfigExecutionParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEReference(getConfigExecutionParameter_From(), theImplementationDescriptionPackage.getExecutionParameter(), null, "from", null, 1, 1, ConfigExecutionParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -659,11 +701,8 @@ public class DeploymentPlanPackageImpl extends EPackageImpl implements Deploymen
         initEAttribute(getAbstractComputationAssignment_Name(), ecorePackage.getEString(), "name", null, 1, 1, AbstractComputationAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEReference(getAbstractComputationAssignment_ExecutedBy(), theTargetEnvironmentPackage.getComputationDeviceInstance(), null, "executedBy", null, 1, 1, AbstractComputationAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEAttribute(getAbstractComputationAssignment_Version(), ecorePackage.getEString(), "version", null, 0, 1, AbstractComputationAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        initEReference(getAbstractComputationAssignment_SoftwareComponents(), this.getAbstarctConfigSoftwareComponent(), null, "softwareComponents", null, 1, -1, AbstractComputationAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        initEAttribute(getAbstractComputationAssignment_OpertingSystemVersion(), ecorePackage.getEString(), "opertingSystemVersion", null, 0, 1, AbstractComputationAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        initEAttribute(getAbstractComputationAssignment_RuntimeType(), theUtilPackage.getRunTimeType(), "runtimeType", null, 0, 1, AbstractComputationAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEReference(getAbstractComputationAssignment_Middleware(), this.getMiddleware(), null, "middleware", null, 0, 1, AbstractComputationAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        initEReference(getAbstractComputationAssignment_OpertingSystemType(), theUtilPackage.getOpertingSystemName(), null, "opertingSystemType", null, 0, 1, AbstractComputationAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEReference(getAbstractComputationAssignment_RuntimeType(), this.getAbstractRuntime(), null, "runtimeType", null, 0, 1, AbstractComputationAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(abstractDeploymentPlanEClass, AbstractDeploymentPlan.class, "AbstractDeploymentPlan", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEAttribute(getAbstractDeploymentPlan_Name(), ecorePackage.getEString(), "name", null, 1, 1, AbstractDeploymentPlan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -676,6 +715,12 @@ public class DeploymentPlanPackageImpl extends EPackageImpl implements Deploymen
 
         initEClass(rosMiddlewareEClass, RosMiddleware.class, "RosMiddleware", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEAttribute(getRosMiddleware_Value(), this.getROSDistro(), "value", null, 1, 1, RosMiddleware.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+        initEClass(abstractRuntimeEClass, AbstractRuntime.class, "AbstractRuntime", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEAttribute(getAbstractRuntime_Type(), theUtilPackage.getRunTimeType(), "type", null, 1, 1, AbstractRuntime.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+        initEClass(containerRuntimeEClass, ContainerRuntime.class, "ContainerRuntime", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEReference(getContainerRuntime_OpertingSystemResource(), theUtilPackage.getOperatingSystemResouce(), null, "opertingSystemResource", null, 0, 2, ContainerRuntime.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         // Initialize enums and add enum literals
         initEEnum(rosDistroEEnum, ROSDistro.class, "ROSDistro");

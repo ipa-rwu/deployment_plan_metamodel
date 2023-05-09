@@ -120,6 +120,14 @@ public class DeploymentPlanAdapterFactory extends AdapterFactoryImpl {
                 return createRosMiddlewareAdapter();
             }
             @Override
+            public Adapter caseAbstractRuntime(AbstractRuntime object) {
+                return createAbstractRuntimeAdapter();
+            }
+            @Override
+            public Adapter caseContainerRuntime(ContainerRuntime object) {
+                return createContainerRuntimeAdapter();
+            }
+            @Override
             public Adapter defaultCase(EObject object) {
                 return createEObjectAdapter();
             }
@@ -322,6 +330,34 @@ public class DeploymentPlanAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
+     * Creates a new adapter for an object of class '{@link deploymentPlan.AbstractRuntime <em>Abstract Runtime</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see deploymentPlan.AbstractRuntime
+     * @generated
+     */
+    public Adapter createAbstractRuntimeAdapter() {
+        return null;
+    }
+
+                /**
+     * Creates a new adapter for an object of class '{@link deploymentPlan.ContainerRuntime <em>Container Runtime</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see deploymentPlan.ContainerRuntime
+     * @generated
+     */
+    public Adapter createContainerRuntimeAdapter() {
+        return null;
+    }
+
+                /**
      * Creates a new adapter for the default case.
      * <!-- begin-user-doc -->
      * This default implementation returns null.

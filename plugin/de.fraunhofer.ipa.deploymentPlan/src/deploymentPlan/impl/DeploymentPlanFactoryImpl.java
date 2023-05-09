@@ -64,6 +64,7 @@ public class DeploymentPlanFactoryImpl extends EFactoryImpl implements Deploymen
             case DeploymentPlanPackage.CONFIG_EXECUTION_PARAMETER: return createConfigExecutionParameter();
             case DeploymentPlanPackage.CONFIG_SOFTWARE_COMPONENT: return createConfigSoftwareComponent();
             case DeploymentPlanPackage.ROS_MIDDLEWARE: return createRosMiddleware();
+            case DeploymentPlanPackage.CONTAINER_RUNTIME: return createContainerRuntime();
             default:
                 throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
         }
@@ -129,7 +130,7 @@ public class DeploymentPlanFactoryImpl extends EFactoryImpl implements Deploymen
         return realization;
     }
 
-    /**
+                /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -170,6 +171,16 @@ public class DeploymentPlanFactoryImpl extends EFactoryImpl implements Deploymen
     }
 
     /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public ContainerRuntime createContainerRuntime() {
+        ContainerRuntimeImpl containerRuntime = new ContainerRuntimeImpl();
+        return containerRuntime;
+    }
+
+                /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated

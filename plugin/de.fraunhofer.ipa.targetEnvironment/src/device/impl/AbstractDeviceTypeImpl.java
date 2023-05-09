@@ -36,7 +36,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class AbstractDeviceTypeImpl extends MinimalEObjectImpl.Container implements AbstractDeviceType {
+public abstract class AbstractDeviceTypeImpl extends MinimalEObjectImpl.Container implements AbstractDeviceType {
     /**
      * The default value of the '{@link #getName() <em>Name</em>}' attribute.
      * <!-- begin-user-doc -->

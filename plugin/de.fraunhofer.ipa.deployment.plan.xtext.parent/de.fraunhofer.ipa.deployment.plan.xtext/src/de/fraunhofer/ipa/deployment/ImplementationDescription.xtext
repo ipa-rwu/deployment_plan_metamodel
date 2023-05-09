@@ -5,6 +5,13 @@ import "http://www.ipa.fraunhofer.de/ImplementationDescription"
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 import "http://www.ipa.fraunhofer.de/Util" as util
 
+ImplementationDescriptionSet returns ImplementationDescriptionSet:
+    implementations+=ImplementationDescription
+    ('---'
+    implementations+=ImplementationDescription
+    )*
+;
+
 ImplementationDescription returns ImplementationDescription:
     'ImplementationDescription:'
     INDENT

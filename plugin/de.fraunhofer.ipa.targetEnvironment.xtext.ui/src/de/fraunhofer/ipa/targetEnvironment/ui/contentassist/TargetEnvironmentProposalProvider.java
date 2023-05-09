@@ -3,6 +3,7 @@
  */
 package de.fraunhofer.ipa.targetEnvironment.ui.contentassist;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.xtext.Assignment;
@@ -17,15 +18,18 @@ import com.google.inject.Inject;
 import de.fraunhofer.ipa.deployment.util.AbstractProperty;
 import de.fraunhofer.ipa.deployment.util.PropertyAttribute;
 import de.fraunhofer.ipa.targetEnvironment.services.TargetEnvironmentGrammarAccess;
+import device.AbstractCommunicationConnection;
 import device.AbstractConnectionProperty;
 import device.AbstractNetworkProperty;
 import device.ConnectionProperty;
 import device.DeviceType;
+import targetEnvironment.AbstractDeviceInstance;
 import targetEnvironment.ComputationDeviceInstance;
+import targetEnvironment.ConfigConnection;
 import targetEnvironment.ConfigConnectionProperty;
 import targetEnvironment.ConfigDeviceProperty;
+import targetEnvironment.ConnectedDevice;
 import targetEnvironment.DeviceInstance;
-import targetEnvironment.impl.ConfigDevicePropertyImpl;
 
 /**
  * See https://www.eclipse.org/Xtext/documentation/310_eclipse_support.html#content-assist
@@ -90,7 +94,6 @@ public class TargetEnvironmentProposalProvider extends AbstractTargetEnvironment
                         if(param_impl.eIsProxy()) {
                             EObject obj = EcoreUtil.resolve(param_impl, model);
                             if(obj.eContainer().eContainer() == targetDev) {
-                                System.out.print(obj.eContainer().toString());
                                 return true;
                             }
                         }
@@ -99,4 +102,57 @@ public class TargetEnvironmentProposalProvider extends AbstractTargetEnvironment
             });
     }
 
+    @Override
+    public void completeConnectedDevice_RefConnection(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+        ConnectedDevice connectDevice =  (ConnectedDevice) model;
+        compDeviceIns=null;
+        deviceIns=null;
+        if(connectDevice.getRefDevice() instanceof DeviceInstance) {
+            deviceIns = (DeviceInstance) connectDevice.getRefDevice();
+            completeConfigDeviceProperty_RefConnection_Lookup(model, assignment, context, acceptor, deviceIns.getRefDeviceType());
+        }
+        if(connectDevice.getRefDevice() instanceof ComputationDeviceInstance) {
+            compDeviceIns = (ComputationDeviceInstance) connectDevice.getRefDevice();
+            completeConfigDeviceProperty_RefConnection_Lookup(model, assignment, context, acceptor, compDeviceIns.getRefDeviceType());
+        }
+    }
+
+    private void completeConfigDeviceProperty_RefConnection_Lookup(
+            EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor, DeviceType targetDev) {
+        lookupCrossReference((CrossReference) assignment.getTerminal(),
+                context, acceptor, new Predicate<IEObjectDescription>() {
+                    @Override
+                    public boolean apply(IEObjectDescription input) {
+                        AbstractCommunicationConnection connection = (AbstractCommunicationConnection) input.getEObjectOrProxy();
+                        if(connection.eIsProxy()) {
+                            EObject obj = EcoreUtil.resolve(connection, model);
+                            if(obj.eContainer() == targetDev) {
+                                return true;
+                                }
+                        }
+                        return false;
+                    }
+        });
+    }
+
+    @Override
+    public void completeConfigConnectionProperty_RefConnectionProperty(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+        ConfigConnectionProperty configConnectionProperty =  (ConfigConnectionProperty) model;
+        ConnectedDevice connectDevice= (ConnectedDevice) configConnectionProperty.eContainer();
+        lookupCrossReference((CrossReference) assignment.getTerminal(),
+                context, acceptor, new Predicate<IEObjectDescription>() {
+                    @Override
+                    public boolean apply(IEObjectDescription input) {
+                        if(input.getEObjectOrProxy().eIsProxy()) {
+                            EObject obj = EcoreUtil.resolve(input.getEObjectOrProxy(), model);
+                            System.out.println(obj.eContainer());
+                            System.out.println(String.format("ref device: %s", connectDevice.getRefConnection()));
+                            if(obj.eContainer() == connectDevice.getRefConnection()) {
+                                return true;
+                                }
+                        }
+                        return false;
+                    }
+        });
+    }
 }

@@ -15,6 +15,8 @@ import de.fraunhofer.ipa.deployment.util.LinuxOpertingSystem;
 import de.fraunhofer.ipa.deployment.util.MacOSOpertingSystem;
 import de.fraunhofer.ipa.deployment.util.MaximumKind;
 import de.fraunhofer.ipa.deployment.util.MinimumKind;
+import de.fraunhofer.ipa.deployment.util.NameOperatingSystemProperty;
+import de.fraunhofer.ipa.deployment.util.OperatingSystemResouce;
 import de.fraunhofer.ipa.deployment.util.ProcessorArchitectureValue;
 import de.fraunhofer.ipa.deployment.util.ProcessorResouceType;
 import de.fraunhofer.ipa.deployment.util.Property;
@@ -34,6 +36,7 @@ import de.fraunhofer.ipa.deployment.util.SelectionKind;
 import de.fraunhofer.ipa.deployment.util.UbuntuVersionValue;
 import de.fraunhofer.ipa.deployment.util.UsbCommunicationType;
 import de.fraunhofer.ipa.deployment.util.UtilPackage;
+import de.fraunhofer.ipa.deployment.util.VersionOperatingSystemProperty;
 import de.fraunhofer.ipa.deployment.util.WlanCommunicationType;
 import java.util.Set;
 import org.eclipse.emf.ecore.EObject;
@@ -90,6 +93,12 @@ public class UtilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
             case UtilPackage.MINIMUM_KIND:
                 sequence_MinimumKind(context, (MinimumKind) semanticObject);
                 return;
+            case UtilPackage.NAME_OPERATING_SYSTEM_PROPERTY:
+                sequence_NameOperatingSystemProperty(context, (NameOperatingSystemProperty) semanticObject);
+                return;
+            case UtilPackage.OPERATING_SYSTEM_RESOUCE:
+                sequence_OperatingSystemResouce(context, (OperatingSystemResouce) semanticObject);
+                return;
             case UtilPackage.PROCESSOR_ARCHITECTURE_VALUE:
                 sequence_ProcessorArchitectureValue(context, (ProcessorArchitectureValue) semanticObject);
                 return;
@@ -143,6 +152,9 @@ public class UtilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
                 return;
             case UtilPackage.USB_COMMUNICATION_TYPE:
                 sequence_UsbCommunicationType(context, (UsbCommunicationType) semanticObject);
+                return;
+            case UtilPackage.VERSION_OPERATING_SYSTEM_PROPERTY:
+                sequence_VersionOperatingSystemProperty(context, (VersionOperatingSystemProperty) semanticObject);
                 return;
             case UtilPackage.WLAN_COMMUNICATION_TYPE:
                 sequence_WlanCommunicationType(context, (WlanCommunicationType) semanticObject);
@@ -310,6 +322,35 @@ public class UtilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
      * </pre>
      */
     protected void sequence_MinimumKind(ISerializationContext context, MinimumKind semanticObject) {
+        genericSequencer.createSequence(context, semanticObject);
+    }
+
+
+    /**
+     * <pre>
+     * Contexts:
+     *     AbstractOperatingSystemProperty returns NameOperatingSystemProperty
+     *     NameOperatingSystemProperty returns NameOperatingSystemProperty
+     *
+     * Constraint:
+     *     (name='os_name' kind=AttributeKind description=EString? value=PropertyValue?)
+     * </pre>
+     */
+    protected void sequence_NameOperatingSystemProperty(ISerializationContext context, NameOperatingSystemProperty semanticObject) {
+        genericSequencer.createSequence(context, semanticObject);
+    }
+
+
+    /**
+     * <pre>
+     * Contexts:
+     *     OperatingSystemResouce returns OperatingSystemResouce
+     *
+     * Constraint:
+     *     (name=EString type=OpertingSystemResouceType properties+=AbstractOperatingSystemProperty*)
+     * </pre>
+     */
+    protected void sequence_OperatingSystemResouce(ISerializationContext context, OperatingSystemResouce semanticObject) {
         genericSequencer.createSequence(context, semanticObject);
     }
 
@@ -612,6 +653,21 @@ public class UtilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
      * </pre>
      */
     protected void sequence_UsbCommunicationType(ISerializationContext context, UsbCommunicationType semanticObject) {
+        genericSequencer.createSequence(context, semanticObject);
+    }
+
+
+    /**
+     * <pre>
+     * Contexts:
+     *     AbstractOperatingSystemProperty returns VersionOperatingSystemProperty
+     *     VersionOperatingSystemProperty returns VersionOperatingSystemProperty
+     *
+     * Constraint:
+     *     (name='os_version' kind=AttributeKind description=EString? value=PropertyValue?)
+     * </pre>
+     */
+    protected void sequence_VersionOperatingSystemProperty(ISerializationContext context, VersionOperatingSystemProperty semanticObject) {
         genericSequencer.createSequence(context, semanticObject);
     }
 

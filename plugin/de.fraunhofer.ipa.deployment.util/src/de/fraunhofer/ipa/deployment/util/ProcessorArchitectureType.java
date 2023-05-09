@@ -37,19 +37,21 @@ public enum ProcessorArchitectureType implements Enumerator {
      * @ordered
      */
     ARM64(0, "arm64", "arm64"),
+
     /**
      * The '<em><b>Arm64v8</b></em>' literal object.
      * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @see #ARM64V8_VALUE
      * @generated
      * @ordered
      */
     ARM64V8(0, "arm64v8", "arm64v8"),
+
     /**
      * The '<em><b>Arm32</b></em>' literal object.
      * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @see #ARM32_VALUE
      * @generated
      * @ordered

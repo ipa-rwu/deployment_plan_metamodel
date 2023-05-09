@@ -13,6 +13,7 @@ import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
 import deploymentPlan.AbstractDeploymentPlan
 import deploymentPlan.AbstractComputationAssignment
+import deployPlanWithRosModel.RossystemImplementationAssignment
 
 /**
  * Generates code from your model files on save.
@@ -27,7 +28,10 @@ class PlanWithRosmodelGenerator extends PlanGenerator {
   @Inject
   extension DockerFileCompiler
 
-    override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
+    @Inject
+  extension DeploymentDocumentCompiler docCompiler
+
+  override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
             val plans = resource.allContents.toIterable.filter(AbstractDeploymentPlan)
             generateFiles(plans.toList, fsa)
 
@@ -36,7 +40,10 @@ class PlanWithRosmodelGenerator extends PlanGenerator {
     List<RepoInfo> repos = new ArrayList
 
     override generateRosInstall(AbstractComputationAssignment assignment, AbstractDeploymentPlan plan, IFileSystemAccess2 fsa) {
-        repos = assignment.collectRepoFromRossystem
+            namingHelper.reset
+        namingHelper.assignmentRossystemRepoInfoMap = plan
+
+        repos = namingHelper.assignmentRossystemRepoInfoMap.get(assignment)
         var unreleasedRepos = repos.filter[it.checkIfReleased==false]
         var releasedRepos = repos.filter[it.checkIfReleased==true]
         if(unreleasedRepos!==null && unreleasedRepos.size > 0){
@@ -54,12 +61,18 @@ class PlanWithRosmodelGenerator extends PlanGenerator {
             if(repos.filter[it.checkIfReleased==true].size > 0){
                 ifRunBash = true
             }
-            if(assignment.runtimeType == RunTimeType.CONTAINER){
-
-                fsa.generateFile(
-            String.format("%s/%s/Dockerfile", plan.getName(), assignment.name),
-            assignment.dockerFileCompiler(ifRunBash))
+            if(assignment.runtimeType.type == RunTimeType.CONTAINER && assignment instanceof RossystemImplementationAssignment){
+            fsa.generateFile(
+                String.format("%s/%s/Dockerfile", plan.getName(), assignment.name),
+                assignment.dockerFileCompiler(ifRunBash))
             }
         }
 
+            override generateOverviewDocum(AbstractDeploymentPlan plan, IFileSystemAccess2 fsa, DocumentNamingHelper docNaming){
+                    var repoMap = namingHelper.assignmentRossystemRepoInfoMap
+                    fsa.generateFile(
+                docNaming.overviewFilePath,
+                docCompiler.deploymentIntroduction(plan, docNaming.overviewFileName, repoMap)
+          )
+            }
 }

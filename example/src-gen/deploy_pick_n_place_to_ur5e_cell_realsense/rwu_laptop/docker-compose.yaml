@@ -1,0 +1,81 @@
+version: '3'
+networks:
+  ros-network:
+    external: false
+    driver: "bridge"
+  ur5e:
+    driver: macvlan
+    driver_opts:
+      parent: enp0s31f6
+    ipam:
+      driver: default
+
+services:
+  marker_detection:
+    image: ${Registry}/marker_detection:latest
+    volumes:
+      - ./cyclonedds.xml:/cyclonedds.xml
+    networks:
+      - ros-network
+    environment:
+      - NETINTERFACE=eth0
+      - reference_frame=world
+      - camera_info_topic=color_depth_optical_frame
+      - detect_colors=yellow, pink, green, white
+    command:
+      - bash
+      - -c
+      - |
+        export CYCLONEDDS_URI=file:///cyclonedds.xml
+        source /ros_entrypoint.sh
+        ros2 launch color_pose_estimation marker_publisher.launch.py reference_frame:=world camera_info_topic:=color_depth_optical_frame detect_colors:=yellow, pink, green, white
+  pick_place_task:
+    image: ${Registry}/pick_place_task:latest
+    volumes:
+      - ./cyclonedds.xml:/cyclonedds.xml
+    networks:
+      - ros-network
+      - ur5e
+    ports:
+      - 50002:50002
+    environment:
+      - NETINTERFACE=eth0
+      - ur_type=UR5E
+    command:
+      - bash
+      - -c
+      - |
+        export CYCLONEDDS_URI=file:///cyclonedds.xml
+        source /ros_entrypoint.sh
+        ros2 launch pick_place_app pick_place_demo.launch.py ur_type:=UR5E
+  drivers:
+    image: ${Registry}/drivers:latest
+    volumes:
+      - ./cyclonedds.xml:/cyclonedds.xml
+    networks:
+      - ros-network
+      - ur5e
+    ports:
+      - 50002:50002
+    devices:
+      - /dev/video2:/dev/video2
+      - /dev/video3:/dev/video3
+      - /dev/video4:/dev/video4
+      - /dev/video5:/dev/video5
+      - /dev/video6:/dev/video6
+      - /dev/video7:/dev/video7
+    environment:
+      - NETINTERFACE=eth0
+      - ur_type=UR5E
+      - robot_ip=192.168.56.2
+      - device_type=D435
+      - camera_name=camera_realsense
+      - publish_tf=false
+    command:
+      - bash
+      - -c
+      - |
+        export CYCLONEDDS_URI=file:///cyclonedds.xml
+        source /ros_entrypoint.sh
+        ros2 launch realsense2_camera rs_launch.py device_type:=D435 camera_name:=camera_realsense publish_tf:=false
+        ros2 launch ur_robot_driver ur5e.launch.py ur_type:=UR5E robot_ip:=192.168.56.2

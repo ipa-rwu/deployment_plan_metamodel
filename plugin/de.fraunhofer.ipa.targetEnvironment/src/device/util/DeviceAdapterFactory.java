@@ -2,6 +2,7 @@
  */
 package device.util;
 
+import de.fraunhofer.ipa.deployment.util.AbstractComputationResource;
 import de.fraunhofer.ipa.deployment.util.AbstractProperty;
 import de.fraunhofer.ipa.deployment.util.AbstractResource;
 import de.fraunhofer.ipa.deployment.util.Description;
@@ -147,16 +148,8 @@ public class DeviceAdapterFactory extends AdapterFactoryImpl {
                 return createContainerAdapter();
             }
             @Override
-            public Adapter caseOperatingSystemResouce(OperatingSystemResouce object) {
-                return createOperatingSystemResouceAdapter();
-            }
-            @Override
             public Adapter caseNameOperatingSystemProperty(NameOperatingSystemProperty object) {
                 return createNameOperatingSystemPropertyAdapter();
-            }
-            @Override
-            public Adapter caseVersionOperatingSystemProperty(VersionOperatingSystemProperty object) {
-                return createVersionOperatingSystemPropertyAdapter();
             }
             @Override
             public Adapter caseProcessorResouce(ProcessorResouce object) {
@@ -187,16 +180,8 @@ public class DeviceAdapterFactory extends AdapterFactoryImpl {
                 return createAbstractRuntimeEnviromentAdapter();
             }
             @Override
-            public Adapter caseAbstractOperatingSystemProperty(AbstractOperatingSystemProperty object) {
-                return createAbstractOperatingSystemPropertyAdapter();
-            }
-            @Override
             public Adapter caseAbstracProcessorProperty(AbstracProcessorProperty object) {
                 return createAbstracProcessorPropertyAdapter();
-            }
-            @Override
-            public Adapter caseAbstractComputationResource(AbstractComputationResource object) {
-                return createAbstractComputationResourceAdapter();
             }
             @Override
             public Adapter caseAbstractDeviceType(AbstractDeviceType object) {
@@ -229,6 +214,10 @@ public class DeviceAdapterFactory extends AdapterFactoryImpl {
             @Override
             public Adapter casePropertySelection(PropertySelection object) {
                 return createPropertySelectionAdapter();
+            }
+            @Override
+            public Adapter caseAbstractComputationResource(AbstractComputationResource object) {
+                return createAbstractComputationResourceAdapter();
             }
             @Override
             public Adapter defaultCase(EObject object) {
@@ -391,6 +380,104 @@ public class DeviceAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
+     * Creates a new adapter for an object of class '{@link device.PortNetworkProperty <em>Port Network Property</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see device.PortNetworkProperty
+     * @generated
+     */
+    public Adapter createPortNetworkPropertyAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link device.IdentityNameNetworkProperty <em>Identity Name Network Property</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see device.IdentityNameNetworkProperty
+     * @generated
+     */
+    public Adapter createIdentityNameNetworkPropertyAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link device.GatewayNetworkProperty <em>Gateway Network Property</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see device.GatewayNetworkProperty
+     * @generated
+     */
+    public Adapter createGatewayNetworkPropertyAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link device.SubnetMaskNetworkProperty <em>Subnet Mask Network Property</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see device.SubnetMaskNetworkProperty
+     * @generated
+     */
+    public Adapter createSubnetMaskNetworkPropertyAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link device.DNSServerNetworkProperty <em>DNS Server Network Property</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see device.DNSServerNetworkProperty
+     * @generated
+     */
+    public Adapter createDNSServerNetworkPropertyAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link device.UsbConnection <em>Usb Connection</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see device.UsbConnection
+     * @generated
+     */
+    public Adapter createUsbConnectionAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link device.DeviceVolumeUsbProperty <em>Volume Usb Property</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see device.DeviceVolumeUsbProperty
+     * @generated
+     */
+    public Adapter createDeviceVolumeUsbPropertyAdapter() {
+        return null;
+    }
+
+    /**
      * Creates a new adapter for an object of class '{@link device.Container <em>Container</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
@@ -405,34 +492,6 @@ public class DeviceAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
-     * Creates a new adapter for an object of class '{@link device.PortNetworkProperty <em>Port Network Property</em>}'.
-     * <!-- begin-user-doc -->
-     * This default implementation returns null so that we can easily ignore cases;
-     * it's useful to ignore a case when inheritance will catch all the cases anyway.
-     * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see device.PortNetworkProperty
-     * @generated
-     */
-    public Adapter createPortNetworkPropertyAdapter() {
-        return null;
-    }
-
-                /**
-     * Creates a new adapter for an object of class '{@link device.OperatingSystemResouce <em>Operating System Resouce</em>}'.
-     * <!-- begin-user-doc -->
-     * This default implementation returns null so that we can easily ignore cases;
-     * it's useful to ignore a case when inheritance will catch all the cases anyway.
-     * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see device.OperatingSystemResouce
-     * @generated
-     */
-    public Adapter createOperatingSystemResouceAdapter() {
-        return null;
-    }
-
-    /**
      * Creates a new adapter for an object of class '{@link device.NameOperatingSystemProperty <em>Name Operating System Property</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
@@ -443,20 +502,6 @@ public class DeviceAdapterFactory extends AdapterFactoryImpl {
      * @generated
      */
     public Adapter createNameOperatingSystemPropertyAdapter() {
-        return null;
-    }
-
-    /**
-     * Creates a new adapter for an object of class '{@link device.VersionOperatingSystemProperty <em>Version Operating System Property</em>}'.
-     * <!-- begin-user-doc -->
-     * This default implementation returns null so that we can easily ignore cases;
-     * it's useful to ignore a case when inheritance will catch all the cases anyway.
-     * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see device.VersionOperatingSystemProperty
-     * @generated
-     */
-    public Adapter createVersionOperatingSystemPropertyAdapter() {
         return null;
     }
 
@@ -530,7 +575,7 @@ public class DeviceAdapterFactory extends AdapterFactoryImpl {
         return null;
     }
 
-                /**
+    /**
      * Creates a new adapter for an object of class '{@link device.AbstractCommunicationConnection <em>Abstract Communication Connection</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
@@ -559,20 +604,6 @@ public class DeviceAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
-     * Creates a new adapter for an object of class '{@link device.AbstractOperatingSystemProperty <em>Abstract Operating System Property</em>}'.
-     * <!-- begin-user-doc -->
-     * This default implementation returns null so that we can easily ignore cases;
-     * it's useful to ignore a case when inheritance will catch all the cases anyway.
-     * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see device.AbstractOperatingSystemProperty
-     * @generated
-     */
-    public Adapter createAbstractOperatingSystemPropertyAdapter() {
-        return null;
-    }
-
-    /**
      * Creates a new adapter for an object of class '{@link device.AbstracProcessorProperty <em>Abstrac Processor Property</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
@@ -583,20 +614,6 @@ public class DeviceAdapterFactory extends AdapterFactoryImpl {
      * @generated
      */
     public Adapter createAbstracProcessorPropertyAdapter() {
-        return null;
-    }
-
-    /**
-     * Creates a new adapter for an object of class '{@link device.AbstractComputationResource <em>Abstract Computation Resource</em>}'.
-     * <!-- begin-user-doc -->
-     * This default implementation returns null so that we can easily ignore cases;
-     * it's useful to ignore a case when inheritance will catch all the cases anyway.
-     * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see device.AbstractComputationResource
-     * @generated
-     */
-    public Adapter createAbstractComputationResourceAdapter() {
         return null;
     }
 
@@ -615,90 +632,6 @@ public class DeviceAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
-     * Creates a new adapter for an object of class '{@link device.IdentityNameNetworkProperty <em>Identity Name Network Property</em>}'.
-     * <!-- begin-user-doc -->
-     * This default implementation returns null so that we can easily ignore cases;
-     * it's useful to ignore a case when inheritance will catch all the cases anyway.
-     * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see device.IdentityNameNetworkProperty
-     * @generated
-     */
-    public Adapter createIdentityNameNetworkPropertyAdapter() {
-        return null;
-    }
-
-                /**
-     * Creates a new adapter for an object of class '{@link device.GatewayNetworkProperty <em>Gateway Network Property</em>}'.
-     * <!-- begin-user-doc -->
-     * This default implementation returns null so that we can easily ignore cases;
-     * it's useful to ignore a case when inheritance will catch all the cases anyway.
-     * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see device.GatewayNetworkProperty
-     * @generated
-     */
-    public Adapter createGatewayNetworkPropertyAdapter() {
-        return null;
-    }
-
-                /**
-     * Creates a new adapter for an object of class '{@link device.SubnetMaskNetworkProperty <em>Subnet Mask Network Property</em>}'.
-     * <!-- begin-user-doc -->
-     * This default implementation returns null so that we can easily ignore cases;
-     * it's useful to ignore a case when inheritance will catch all the cases anyway.
-     * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see device.SubnetMaskNetworkProperty
-     * @generated
-     */
-    public Adapter createSubnetMaskNetworkPropertyAdapter() {
-        return null;
-    }
-
-                /**
-     * Creates a new adapter for an object of class '{@link device.DNSServerNetworkProperty <em>DNS Server Network Property</em>}'.
-     * <!-- begin-user-doc -->
-     * This default implementation returns null so that we can easily ignore cases;
-     * it's useful to ignore a case when inheritance will catch all the cases anyway.
-     * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see device.DNSServerNetworkProperty
-     * @generated
-     */
-    public Adapter createDNSServerNetworkPropertyAdapter() {
-        return null;
-    }
-
-                /**
-     * Creates a new adapter for an object of class '{@link device.UsbConnection <em>Usb Connection</em>}'.
-     * <!-- begin-user-doc -->
-     * This default implementation returns null so that we can easily ignore cases;
-     * it's useful to ignore a case when inheritance will catch all the cases anyway.
-     * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see device.UsbConnection
-     * @generated
-     */
-    public Adapter createUsbConnectionAdapter() {
-        return null;
-    }
-
-                                                                /**
-     * Creates a new adapter for an object of class '{@link device.DeviceVolumeUsbProperty <em>Volume Usb Property</em>}'.
-     * <!-- begin-user-doc -->
-     * This default implementation returns null so that we can easily ignore cases;
-     * it's useful to ignore a case when inheritance will catch all the cases anyway.
-     * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see device.DeviceVolumeUsbProperty
-     * @generated
-     */
-    public Adapter createDeviceVolumeUsbPropertyAdapter() {
-        return null;
-    }
-
-                                                                /**
      * Creates a new adapter for an object of class '{@link device.AbstractConnectionProperty <em>Abstract Connection Property</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
@@ -712,7 +645,7 @@ public class DeviceAdapterFactory extends AdapterFactoryImpl {
         return null;
     }
 
-                /**
+    /**
      * Creates a new adapter for an object of class '{@link de.fraunhofer.ipa.deployment.util.Description <em>Description</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
@@ -796,7 +729,21 @@ public class DeviceAdapterFactory extends AdapterFactoryImpl {
         return null;
     }
 
-                /**
+    /**
+     * Creates a new adapter for an object of class '{@link de.fraunhofer.ipa.deployment.util.AbstractComputationResource <em>Abstract Computation Resource</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see de.fraunhofer.ipa.deployment.util.AbstractComputationResource
+     * @generated
+     */
+    public Adapter createAbstractComputationResourceAdapter() {
+        return null;
+    }
+
+    /**
      * Creates a new adapter for the default case.
      * <!-- begin-user-doc -->
      * This default implementation returns null.

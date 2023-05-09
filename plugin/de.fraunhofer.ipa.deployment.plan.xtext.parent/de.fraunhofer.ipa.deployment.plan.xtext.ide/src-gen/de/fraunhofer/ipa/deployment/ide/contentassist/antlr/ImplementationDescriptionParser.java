@@ -35,6 +35,7 @@ public class ImplementationDescriptionParser extends AbstractContentAssistParser
         private static void init(ImmutableMap.Builder<AbstractElement, String> builder, ImplementationDescriptionGrammarAccess grammarAccess) {
             builder.put(grammarAccess.getExecutionRequirementAccess().getAlternatives(), "rule__ExecutionRequirement__Alternatives");
             builder.put(grammarAccess.getExecutionParameterAccess().getAlternatives(), "rule__ExecutionParameter__Alternatives");
+            builder.put(grammarAccess.getAbstractOperatingSystemPropertyAccess().getAlternatives(), "rule__AbstractOperatingSystemProperty__Alternatives");
             builder.put(grammarAccess.getAbstractPropertyAccess().getAlternatives(), "rule__AbstractProperty__Alternatives");
             builder.put(grammarAccess.getPropertyKindAccess().getAlternatives(), "rule__PropertyKind__Alternatives");
             builder.put(grammarAccess.getPropertyValueAccess().getAlternatives(), "rule__PropertyValue__Alternatives");
@@ -45,6 +46,8 @@ public class ImplementationDescriptionParser extends AbstractContentAssistParser
             builder.put(grammarAccess.getProcessorArchitectureTypeAccess().getAlternatives(), "rule__ProcessorArchitectureType__Alternatives");
             builder.put(grammarAccess.getLinuxDistributionAccess().getAlternatives(), "rule__LinuxDistribution__Alternatives");
             builder.put(grammarAccess.getUbuntuVersionAccess().getAlternatives(), "rule__UbuntuVersion__Alternatives");
+            builder.put(grammarAccess.getImplementationDescriptionSetAccess().getGroup(), "rule__ImplementationDescriptionSet__Group__0");
+            builder.put(grammarAccess.getImplementationDescriptionSetAccess().getGroup_1(), "rule__ImplementationDescriptionSet__Group_1__0");
             builder.put(grammarAccess.getImplementationDescriptionAccess().getGroup(), "rule__ImplementationDescription__Group__0");
             builder.put(grammarAccess.getSoftwareComponentAccess().getGroup(), "rule__SoftwareComponent__Group__0");
             builder.put(grammarAccess.getSoftwareComponentAccess().getGroup_9(), "rule__SoftwareComponent__Group_9__0");
@@ -63,6 +66,14 @@ public class ImplementationDescriptionParser extends AbstractContentAssistParser
             builder.put(grammarAccess.getSoftwareExecutionParemeterAccess().getGroup_8_4(), "rule__SoftwareExecutionParemeter__Group_8_4__0");
             builder.put(grammarAccess.getResourceAccess().getGroup(), "rule__Resource__Group__0");
             builder.put(grammarAccess.getResourceAccess().getGroup_5(), "rule__Resource__Group_5__0");
+            builder.put(grammarAccess.getOperatingSystemResouceAccess().getGroup(), "rule__OperatingSystemResouce__Group__0");
+            builder.put(grammarAccess.getOperatingSystemResouceAccess().getGroup_6(), "rule__OperatingSystemResouce__Group_6__0");
+            builder.put(grammarAccess.getNameOperatingSystemPropertyAccess().getGroup(), "rule__NameOperatingSystemProperty__Group__0");
+            builder.put(grammarAccess.getNameOperatingSystemPropertyAccess().getGroup_7(), "rule__NameOperatingSystemProperty__Group_7__0");
+            builder.put(grammarAccess.getNameOperatingSystemPropertyAccess().getGroup_8(), "rule__NameOperatingSystemProperty__Group_8__0");
+            builder.put(grammarAccess.getVersionOperatingSystemPropertyAccess().getGroup(), "rule__VersionOperatingSystemProperty__Group__0");
+            builder.put(grammarAccess.getVersionOperatingSystemPropertyAccess().getGroup_7(), "rule__VersionOperatingSystemProperty__Group_7__0");
+            builder.put(grammarAccess.getVersionOperatingSystemPropertyAccess().getGroup_8(), "rule__VersionOperatingSystemProperty__Group_8__0");
             builder.put(grammarAccess.getPropertyAccess().getGroup(), "rule__Property__Group__0");
             builder.put(grammarAccess.getPropertyAccess().getGroup_6(), "rule__Property__Group_6__0");
             builder.put(grammarAccess.getPropertyAccess().getGroup_7(), "rule__Property__Group_7__0");
@@ -100,6 +111,8 @@ public class ImplementationDescriptionParser extends AbstractContentAssistParser
             builder.put(grammarAccess.getRangeKindAccess().getGroup(), "rule__RangeKind__Group__0");
             builder.put(grammarAccess.getLinuxDistributionValueAccess().getGroup(), "rule__LinuxDistributionValue__Group__0");
             builder.put(grammarAccess.getUbuntuVersionValueAccess().getGroup(), "rule__UbuntuVersionValue__Group__0");
+            builder.put(grammarAccess.getImplementationDescriptionSetAccess().getImplementationsAssignment_0(), "rule__ImplementationDescriptionSet__ImplementationsAssignment_0");
+            builder.put(grammarAccess.getImplementationDescriptionSetAccess().getImplementationsAssignment_1_1(), "rule__ImplementationDescriptionSet__ImplementationsAssignment_1_1");
             builder.put(grammarAccess.getImplementationDescriptionAccess().getNameAssignment_3(), "rule__ImplementationDescription__NameAssignment_3");
             builder.put(grammarAccess.getImplementationDescriptionAccess().getIncludeSoftwareComponentsAssignment_6(), "rule__ImplementationDescription__IncludeSoftwareComponentsAssignment_6");
             builder.put(grammarAccess.getSoftwareComponentAccess().getNameAssignment_3(), "rule__SoftwareComponent__NameAssignment_3");
@@ -125,6 +138,17 @@ public class ImplementationDescriptionParser extends AbstractContentAssistParser
             builder.put(grammarAccess.getResourceAccess().getTypeAssignment_4(), "rule__Resource__TypeAssignment_4");
             builder.put(grammarAccess.getResourceAccess().getPropertiesAssignment_5_2(), "rule__Resource__PropertiesAssignment_5_2");
             builder.put(grammarAccess.getResourceAccess().getPropertiesAssignment_5_3(), "rule__Resource__PropertiesAssignment_5_3");
+            builder.put(grammarAccess.getOperatingSystemResouceAccess().getNameAssignment_2(), "rule__OperatingSystemResouce__NameAssignment_2");
+            builder.put(grammarAccess.getOperatingSystemResouceAccess().getTypeAssignment_5(), "rule__OperatingSystemResouce__TypeAssignment_5");
+            builder.put(grammarAccess.getOperatingSystemResouceAccess().getPropertiesAssignment_6_2(), "rule__OperatingSystemResouce__PropertiesAssignment_6_2");
+            builder.put(grammarAccess.getNameOperatingSystemPropertyAccess().getNameAssignment_3(), "rule__NameOperatingSystemProperty__NameAssignment_3");
+            builder.put(grammarAccess.getNameOperatingSystemPropertyAccess().getKindAssignment_6(), "rule__NameOperatingSystemProperty__KindAssignment_6");
+            builder.put(grammarAccess.getNameOperatingSystemPropertyAccess().getDescriptionAssignment_7_1(), "rule__NameOperatingSystemProperty__DescriptionAssignment_7_1");
+            builder.put(grammarAccess.getNameOperatingSystemPropertyAccess().getValueAssignment_8_1(), "rule__NameOperatingSystemProperty__ValueAssignment_8_1");
+            builder.put(grammarAccess.getVersionOperatingSystemPropertyAccess().getNameAssignment_3(), "rule__VersionOperatingSystemProperty__NameAssignment_3");
+            builder.put(grammarAccess.getVersionOperatingSystemPropertyAccess().getKindAssignment_6(), "rule__VersionOperatingSystemProperty__KindAssignment_6");
+            builder.put(grammarAccess.getVersionOperatingSystemPropertyAccess().getDescriptionAssignment_7_1(), "rule__VersionOperatingSystemProperty__DescriptionAssignment_7_1");
+            builder.put(grammarAccess.getVersionOperatingSystemPropertyAccess().getValueAssignment_8_1(), "rule__VersionOperatingSystemProperty__ValueAssignment_8_1");
             builder.put(grammarAccess.getPropertyAccess().getNameAssignment_2(), "rule__Property__NameAssignment_2");
             builder.put(grammarAccess.getPropertyAccess().getKindAssignment_5(), "rule__Property__KindAssignment_5");
             builder.put(grammarAccess.getPropertyAccess().getDescriptionAssignment_6_1(), "rule__Property__DescriptionAssignment_6_1");

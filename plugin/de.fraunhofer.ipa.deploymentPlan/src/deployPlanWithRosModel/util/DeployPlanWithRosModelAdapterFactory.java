@@ -7,8 +7,6 @@ import deployPlanWithRosModel.*;
 import deploymentPlan.AbstarctConfigSoftwareComponent;
 import deploymentPlan.AbstractComputationAssignment;
 import deploymentPlan.AbstractConfigExecutionParameter;
-import deploymentPlan.AbstractDeploymentPlan;
-
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 
@@ -73,16 +71,8 @@ public class DeployPlanWithRosModelAdapterFactory extends AdapterFactoryImpl {
     protected DeployPlanWithRosModelSwitch<Adapter> modelSwitch =
         new DeployPlanWithRosModelSwitch<Adapter>() {
             @Override
-            public Adapter caseDeploymentPlanWithRosModel(DeploymentPlanWithRosModel object) {
-                return createDeploymentPlanWithRosModelAdapter();
-            }
-            @Override
-            public Adapter caseRossystemAssignment(RossystemAssignment object) {
-                return createRossystemAssignmentAdapter();
-            }
-            @Override
-            public Adapter caseRospackageImplementation(RospackageImplementation object) {
-                return createRospackageImplementationAdapter();
+            public Adapter caseRossystemImplementationAssignment(RossystemImplementationAssignment object) {
+                return createRossystemImplementationAssignmentAdapter();
             }
             @Override
             public Adapter caseConfigRosParameter(ConfigRosParameter object) {
@@ -91,10 +81,6 @@ public class DeployPlanWithRosModelAdapterFactory extends AdapterFactoryImpl {
             @Override
             public Adapter caseConfigRosSoftwareComponent(ConfigRosSoftwareComponent object) {
                 return createConfigRosSoftwareComponentAdapter();
-            }
-            @Override
-            public Adapter caseAbstractDeploymentPlan(AbstractDeploymentPlan object) {
-                return createAbstractDeploymentPlanAdapter();
             }
             @Override
             public Adapter caseAbstractComputationAssignment(AbstractComputationAssignment object) {
@@ -129,48 +115,20 @@ public class DeployPlanWithRosModelAdapterFactory extends AdapterFactoryImpl {
 
 
     /**
-     * Creates a new adapter for an object of class '{@link deployPlanWithRosModel.DeploymentPlanWithRosModel <em>Deployment Plan With Ros Model</em>}'.
+     * Creates a new adapter for an object of class '{@link deployPlanWithRosModel.RossystemImplementationAssignment <em>Rossystem Implementation Assignment</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
      * it's useful to ignore a case when inheritance will catch all the cases anyway.
      * <!-- end-user-doc -->
      * @return the new adapter.
-     * @see deployPlanWithRosModel.DeploymentPlanWithRosModel
+     * @see deployPlanWithRosModel.RossystemImplementationAssignment
      * @generated
      */
-    public Adapter createDeploymentPlanWithRosModelAdapter() {
+    public Adapter createRossystemImplementationAssignmentAdapter() {
         return null;
     }
 
-    /**
-     * Creates a new adapter for an object of class '{@link deployPlanWithRosModel.RossystemAssignment <em>Rossystem Assignment</em>}'.
-     * <!-- begin-user-doc -->
-     * This default implementation returns null so that we can easily ignore cases;
-     * it's useful to ignore a case when inheritance will catch all the cases anyway.
-     * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see deployPlanWithRosModel.RossystemAssignment
-     * @generated
-     */
-    public Adapter createRossystemAssignmentAdapter() {
-        return null;
-    }
-
-    /**
-     * Creates a new adapter for an object of class '{@link deployPlanWithRosModel.RospackageImplementation <em>Rospackage Implementation</em>}'.
-     * <!-- begin-user-doc -->
-     * This default implementation returns null so that we can easily ignore cases;
-     * it's useful to ignore a case when inheritance will catch all the cases anyway.
-     * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see deployPlanWithRosModel.RospackageImplementation
-     * @generated
-     */
-    public Adapter createRospackageImplementationAdapter() {
-        return null;
-    }
-
-    /**
+                /**
      * Creates a new adapter for an object of class '{@link deployPlanWithRosModel.ConfigRosParameter <em>Config Ros Parameter</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
@@ -195,20 +153,6 @@ public class DeployPlanWithRosModelAdapterFactory extends AdapterFactoryImpl {
      * @generated
      */
     public Adapter createConfigRosSoftwareComponentAdapter() {
-        return null;
-    }
-
-    /**
-     * Creates a new adapter for an object of class '{@link deploymentPlan.AbstractDeploymentPlan <em>Abstract Deployment Plan</em>}'.
-     * <!-- begin-user-doc -->
-     * This default implementation returns null so that we can easily ignore cases;
-     * it's useful to ignore a case when inheritance will catch all the cases anyway.
-     * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see deploymentPlan.AbstractDeploymentPlan
-     * @generated
-     */
-    public Adapter createAbstractDeploymentPlanAdapter() {
         return null;
     }
 
