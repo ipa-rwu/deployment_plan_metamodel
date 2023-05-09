@@ -19,7 +19,6 @@ package de.fraunhofer.ipa.deployment.util;
  * @generated
  */
 public interface LinuxDistributionValue extends PropertyValue, OpertingSystemName {
-
     /**
      * Returns the value of the '<em><b>Value</b></em>' attribute.
      * The literals are from the enumeration {@link de.fraunhofer.ipa.deployment.util.LinuxDistribution}.
@@ -44,4 +43,5 @@ public interface LinuxDistributionValue extends PropertyValue, OpertingSystemNam
      * @generated
      */
     void setValue(LinuxDistribution value);
+
 } // LinuxDistributionValue

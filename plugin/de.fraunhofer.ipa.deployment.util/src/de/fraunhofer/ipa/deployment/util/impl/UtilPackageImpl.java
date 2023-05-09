@@ -4,14 +4,15 @@ package de.fraunhofer.ipa.deployment.util.impl;
 
 import de.fraunhofer.ipa.deployment.util.AbstractCommunicationType;
 import de.fraunhofer.ipa.deployment.util.AbstractComputationAssignmentTarget;
+import de.fraunhofer.ipa.deployment.util.AbstractComputationResource;
 import de.fraunhofer.ipa.deployment.util.AbstractImplementation;
+import de.fraunhofer.ipa.deployment.util.AbstractOperatingSystemProperty;
 import de.fraunhofer.ipa.deployment.util.AbstractProperty;
 import de.fraunhofer.ipa.deployment.util.AbstractResouceType;
 import de.fraunhofer.ipa.deployment.util.AbstractResource;
 import de.fraunhofer.ipa.deployment.util.AbstractRuntimeEnviroment;
 import de.fraunhofer.ipa.deployment.util.AttributeKind;
 import de.fraunhofer.ipa.deployment.util.CommunicationType;
-import de.fraunhofer.ipa.deployment.util.ContainerRuntime;
 import de.fraunhofer.ipa.deployment.util.Description;
 import de.fraunhofer.ipa.deployment.util.EthernetCommunicationType;
 import de.fraunhofer.ipa.deployment.util.LinuxDistribution;
@@ -20,7 +21,9 @@ import de.fraunhofer.ipa.deployment.util.LinuxOpertingSystem;
 import de.fraunhofer.ipa.deployment.util.MacOSOpertingSystem;
 import de.fraunhofer.ipa.deployment.util.MaximumKind;
 import de.fraunhofer.ipa.deployment.util.MinimumKind;
+import de.fraunhofer.ipa.deployment.util.NameOperatingSystemProperty;
 import de.fraunhofer.ipa.deployment.util.NetworkCommunicationType;
+import de.fraunhofer.ipa.deployment.util.OperatingSystemResouce;
 import de.fraunhofer.ipa.deployment.util.OpertingSystemName;
 import de.fraunhofer.ipa.deployment.util.OpertingSystemResouceType;
 import de.fraunhofer.ipa.deployment.util.ProcessorArchitectureType;
@@ -48,6 +51,7 @@ import de.fraunhofer.ipa.deployment.util.UbuntuVersionValue;
 import de.fraunhofer.ipa.deployment.util.UsbCommunicationType;
 import de.fraunhofer.ipa.deployment.util.UtilFactory;
 import de.fraunhofer.ipa.deployment.util.UtilPackage;
+import de.fraunhofer.ipa.deployment.util.VersionOperatingSystemProperty;
 import de.fraunhofer.ipa.deployment.util.WlanCommunicationType;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -233,13 +237,6 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    private EClass propertyKindEClass = null;
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
     private EClass attributeKindEClass = null;
 
     /**
@@ -269,6 +266,13 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
      * @generated
      */
     private EClass rangeKindEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass propertyKindEClass = null;
 
     /**
      * <!-- begin-user-doc -->
@@ -345,14 +349,42 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    private EClass containerRuntimeEClass = null;
+    private EClass opertingSystemNameEClass = null;
 
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    private EClass opertingSystemNameEClass = null;
+    private EClass operatingSystemResouceEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass abstractOperatingSystemPropertyEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass abstractComputationResourceEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass versionOperatingSystemPropertyEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass nameOperatingSystemPropertyEClass = null;
 
     /**
      * <!-- begin-user-doc -->
@@ -751,15 +783,6 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    public EClass getPropertyKind() {
-        return propertyKindEClass;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
     public EClass getAttributeKind() {
         return attributeKindEClass;
     }
@@ -798,6 +821,15 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
      */
     public EClass getRangeKind() {
         return rangeKindEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getPropertyKind() {
+        return propertyKindEClass;
     }
 
     /**
@@ -1039,8 +1071,8 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    public EClass getContainerRuntime() {
-        return containerRuntimeEClass;
+    public EClass getOpertingSystemName() {
+        return opertingSystemNameEClass;
     }
 
     /**
@@ -1048,8 +1080,62 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    public EClass getOpertingSystemName() {
-        return opertingSystemNameEClass;
+    public EClass getOperatingSystemResouce() {
+        return operatingSystemResouceEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EReference getOperatingSystemResouce_Type() {
+        return (EReference) operatingSystemResouceEClass.getEStructuralFeatures().get(0);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EReference getOperatingSystemResouce_Properties() {
+        return (EReference) operatingSystemResouceEClass.getEStructuralFeatures().get(1);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getAbstractOperatingSystemProperty() {
+        return abstractOperatingSystemPropertyEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getAbstractComputationResource() {
+        return abstractComputationResourceEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getVersionOperatingSystemProperty() {
+        return versionOperatingSystemPropertyEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getNameOperatingSystemProperty() {
+        return nameOperatingSystemPropertyEClass;
     }
 
     /**
@@ -1221,9 +1307,19 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
         propertyValueListEClass = createEClass(PROPERTY_VALUE_LIST);
         createEReference(propertyValueListEClass, PROPERTY_VALUE_LIST__VALUE);
 
-        containerRuntimeEClass = createEClass(CONTAINER_RUNTIME);
-
         opertingSystemNameEClass = createEClass(OPERTING_SYSTEM_NAME);
+
+        operatingSystemResouceEClass = createEClass(OPERATING_SYSTEM_RESOUCE);
+        createEReference(operatingSystemResouceEClass, OPERATING_SYSTEM_RESOUCE__TYPE);
+        createEReference(operatingSystemResouceEClass, OPERATING_SYSTEM_RESOUCE__PROPERTIES);
+
+        abstractOperatingSystemPropertyEClass = createEClass(ABSTRACT_OPERATING_SYSTEM_PROPERTY);
+
+        abstractComputationResourceEClass = createEClass(ABSTRACT_COMPUTATION_RESOURCE);
+
+        versionOperatingSystemPropertyEClass = createEClass(VERSION_OPERATING_SYSTEM_PROPERTY);
+
+        nameOperatingSystemPropertyEClass = createEClass(NAME_OPERATING_SYSTEM_PROPERTY);
 
         // Create enums
         ubuntuVersionEEnum = createEEnum(UBUNTU_VERSION);
@@ -1294,7 +1390,12 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
         propertyValueDoubleEClass.getESuperTypes().add(this.getPropertyValue());
         propertyValueStringEClass.getESuperTypes().add(this.getPropertyValue());
         propertyValueListEClass.getESuperTypes().add(this.getPropertyValue());
-        containerRuntimeEClass.getESuperTypes().add(this.getAbstractRuntimeEnviroment());
+        operatingSystemResouceEClass.getESuperTypes().add(this.getAbstractComputationResource());
+        abstractComputationResourceEClass.getESuperTypes().add(this.getAbstractResource());
+        versionOperatingSystemPropertyEClass.getESuperTypes().add(this.getPropertyAttribute());
+        versionOperatingSystemPropertyEClass.getESuperTypes().add(this.getAbstractOperatingSystemProperty());
+        nameOperatingSystemPropertyEClass.getESuperTypes().add(this.getPropertyAttribute());
+        nameOperatingSystemPropertyEClass.getESuperTypes().add(this.getAbstractOperatingSystemProperty());
 
         // Initialize classes, features, and operations; add parameters
         initEClass(abstractPropertyEClass, AbstractProperty.class, "AbstractProperty", IS_ABSTRACT, !IS_INTERFACE,
@@ -1491,11 +1592,29 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
                 PropertyValueList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
                 !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-        initEClass(containerRuntimeEClass, ContainerRuntime.class, "ContainerRuntime", !IS_ABSTRACT, !IS_INTERFACE,
-                IS_GENERATED_INSTANCE_CLASS);
-
         initEClass(opertingSystemNameEClass, OpertingSystemName.class, "OpertingSystemName", IS_ABSTRACT, !IS_INTERFACE,
                 IS_GENERATED_INSTANCE_CLASS);
+
+        initEClass(operatingSystemResouceEClass, OperatingSystemResouce.class, "OperatingSystemResouce", !IS_ABSTRACT,
+                !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEReference(getOperatingSystemResouce_Type(), this.getOpertingSystemResouceType(), null, "type", null, 0, 1,
+                OperatingSystemResouce.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+                !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEReference(getOperatingSystemResouce_Properties(), this.getAbstractOperatingSystemProperty(), null,
+                "properties", null, 1, -1, OperatingSystemResouce.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+                IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+        initEClass(abstractOperatingSystemPropertyEClass, AbstractOperatingSystemProperty.class,
+                "AbstractOperatingSystemProperty", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+        initEClass(abstractComputationResourceEClass, AbstractComputationResource.class, "AbstractComputationResource",
+                IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+        initEClass(versionOperatingSystemPropertyEClass, VersionOperatingSystemProperty.class,
+                "VersionOperatingSystemProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+        initEClass(nameOperatingSystemPropertyEClass, NameOperatingSystemProperty.class, "NameOperatingSystemProperty",
+                !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
         // Initialize enums and add enum literals
         initEEnum(ubuntuVersionEEnum, UbuntuVersion.class, "UbuntuVersion");
@@ -1517,6 +1636,21 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 
         // Create resource
         createResource(eNS_URI);
+
+        // Create annotations
+        // http://www.obeo.fr/dsl/dnc/archetype
+        createArchetypeAnnotations();
+    }
+
+    /**
+     * Initializes the annotations for <b>http://www.obeo.fr/dsl/dnc/archetype</b>.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void createArchetypeAnnotations() {
+        String source = "http://www.obeo.fr/dsl/dnc/archetype";
+        addAnnotation(abstractComputationAssignmentTargetEClass, source, new String[] { "archetype", "Description" });
     }
 
 } //UtilPackageImpl

@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * @see de.fraunhofer.ipa.deployment.util.UtilPackage#getAbstractComputationAssignmentTarget()
  * @model abstract="true"
+ *        annotation="http://www.obeo.fr/dsl/dnc/archetype archetype='Description'"
  * @generated
  */
 public interface AbstractComputationAssignmentTarget extends EObject {
