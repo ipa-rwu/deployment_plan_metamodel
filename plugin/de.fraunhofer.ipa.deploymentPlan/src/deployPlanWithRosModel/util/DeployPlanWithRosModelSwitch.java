@@ -69,10 +69,10 @@ public class DeployPlanWithRosModelSwitch<T> extends Switch<T> {
     @Override
     protected T doSwitch(int classifierID, EObject theEObject) {
         switch (classifierID) {
-            case DeployPlanWithRosModelPackage.ROSPACKAGE_IMPLEMENTATION: {
-                RospackageImplementation rospackageImplementation = (RospackageImplementation)theEObject;
-                T result = caseRospackageImplementation(rospackageImplementation);
-                if (result == null) result = caseAbstractComputationAssignment(rospackageImplementation);
+            case DeployPlanWithRosModelPackage.ROSSYSTEM_IMPLEMENTATION_ASSIGNMENT: {
+                RossystemImplementationAssignment rossystemImplementationAssignment = (RossystemImplementationAssignment)theEObject;
+                T result = caseRossystemImplementationAssignment(rossystemImplementationAssignment);
+                if (result == null) result = caseAbstractComputationAssignment(rossystemImplementationAssignment);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -95,21 +95,21 @@ public class DeployPlanWithRosModelSwitch<T> extends Switch<T> {
     }
 
     /**
-     * Returns the result of interpreting the object as an instance of '<em>Rospackage Implementation</em>'.
+     * Returns the result of interpreting the object as an instance of '<em>Rossystem Implementation Assignment</em>'.
      * <!-- begin-user-doc -->
      * This implementation returns null;
      * returning a non-null result will terminate the switch.
      * <!-- end-user-doc -->
      * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Rospackage Implementation</em>'.
+     * @return the result of interpreting the object as an instance of '<em>Rossystem Implementation Assignment</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseRospackageImplementation(RospackageImplementation object) {
+    public T caseRossystemImplementationAssignment(RossystemImplementationAssignment object) {
         return null;
     }
 
-    /**
+                /**
      * Returns the result of interpreting the object as an instance of '<em>Config Ros Parameter</em>'.
      * <!-- begin-user-doc -->
      * This implementation returns null;

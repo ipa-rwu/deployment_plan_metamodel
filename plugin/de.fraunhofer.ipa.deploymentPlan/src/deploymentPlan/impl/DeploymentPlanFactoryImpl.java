@@ -59,6 +59,7 @@ public class DeploymentPlanFactoryImpl extends EFactoryImpl implements Deploymen
         switch (eClass.getClassifierID()) {
             case DeploymentPlanPackage.PLAN: return createPlan();
             case DeploymentPlanPackage.DEPLOYMENT_PLAN: return createDeploymentPlan();
+            case DeploymentPlanPackage.REALIZATION: return createRealization();
             case DeploymentPlanPackage.IMPLEMENTATION_ASSIGNMENT: return createImplementationAssignment();
             case DeploymentPlanPackage.CONFIG_EXECUTION_PARAMETER: return createConfigExecutionParameter();
             case DeploymentPlanPackage.CONFIG_SOFTWARE_COMPONENT: return createConfigSoftwareComponent();
@@ -120,6 +121,16 @@ public class DeploymentPlanFactoryImpl extends EFactoryImpl implements Deploymen
     }
 
     /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public Realization createRealization() {
+        RealizationImpl realization = new RealizationImpl();
+        return realization;
+    }
+
+                /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated

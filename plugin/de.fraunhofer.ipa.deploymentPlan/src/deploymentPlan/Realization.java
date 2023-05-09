@@ -10,7 +10,7 @@ package deploymentPlan;
  *
  *
  * @see deploymentPlan.DeploymentPlanPackage#getRealization()
- * @model interface="true" abstract="true"
+ * @model
  * @generated
  */
 public interface Realization extends AbstractRealization {

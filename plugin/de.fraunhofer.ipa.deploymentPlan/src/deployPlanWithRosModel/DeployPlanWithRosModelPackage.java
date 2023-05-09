@@ -56,59 +56,50 @@ public interface DeployPlanWithRosModelPackage extends EPackage {
     DeployPlanWithRosModelPackage eINSTANCE = deployPlanWithRosModel.impl.DeployPlanWithRosModelPackageImpl.init();
 
     /**
-     * The meta object id for the '{@link deployPlanWithRosModel.impl.RospackageImplementationImpl <em>Rospackage Implementation</em>}' class.
+     * The meta object id for the '{@link deployPlanWithRosModel.impl.RossystemImplementationAssignmentImpl <em>Rossystem Implementation Assignment</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see deployPlanWithRosModel.impl.RospackageImplementationImpl
-     * @see deployPlanWithRosModel.impl.DeployPlanWithRosModelPackageImpl#getRospackageImplementation()
+     * @see deployPlanWithRosModel.impl.RossystemImplementationAssignmentImpl
+     * @see deployPlanWithRosModel.impl.DeployPlanWithRosModelPackageImpl#getRossystemImplementationAssignment()
      * @generated
      */
-    int ROSPACKAGE_IMPLEMENTATION = 0;
+    int ROSSYSTEM_IMPLEMENTATION_ASSIGNMENT = 0;
 
-    /**
+                /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int ROSPACKAGE_IMPLEMENTATION__NAME = DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__NAME;
+    int ROSSYSTEM_IMPLEMENTATION_ASSIGNMENT__NAME = DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__NAME;
 
-    /**
+                /**
      * The feature id for the '<em><b>Executed By</b></em>' reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int ROSPACKAGE_IMPLEMENTATION__EXECUTED_BY = DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__EXECUTED_BY;
+    int ROSSYSTEM_IMPLEMENTATION_ASSIGNMENT__EXECUTED_BY = DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__EXECUTED_BY;
 
-    /**
+                /**
      * The feature id for the '<em><b>Version</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int ROSPACKAGE_IMPLEMENTATION__VERSION = DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__VERSION;
+    int ROSSYSTEM_IMPLEMENTATION_ASSIGNMENT__VERSION = DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__VERSION;
 
-    /**
-     * The feature id for the '<em><b>Software Components</b></em>' containment reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int ROSPACKAGE_IMPLEMENTATION__SOFTWARE_COMPONENTS = DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__SOFTWARE_COMPONENTS;
-
-    /**
+                /**
      * The feature id for the '<em><b>Middleware</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int ROSPACKAGE_IMPLEMENTATION__MIDDLEWARE = DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__MIDDLEWARE;
+    int ROSSYSTEM_IMPLEMENTATION_ASSIGNMENT__MIDDLEWARE = DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__MIDDLEWARE;
 
                 /**
      * The feature id for the '<em><b>Runtime Type</b></em>' containment reference.
@@ -117,27 +108,36 @@ public interface DeployPlanWithRosModelPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int ROSPACKAGE_IMPLEMENTATION__RUNTIME_TYPE = DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__RUNTIME_TYPE;
+    int ROSSYSTEM_IMPLEMENTATION_ASSIGNMENT__RUNTIME_TYPE = DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__RUNTIME_TYPE;
 
-    /**
-     * The number of structural features of the '<em>Rospackage Implementation</em>' class.
+                /**
+     * The feature id for the '<em><b>Software Components</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int ROSPACKAGE_IMPLEMENTATION_FEATURE_COUNT = DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT_FEATURE_COUNT + 0;
+    int ROSSYSTEM_IMPLEMENTATION_ASSIGNMENT__SOFTWARE_COMPONENTS = DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT_FEATURE_COUNT + 0;
 
-    /**
-     * The number of operations of the '<em>Rospackage Implementation</em>' class.
+                /**
+     * The number of structural features of the '<em>Rossystem Implementation Assignment</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int ROSPACKAGE_IMPLEMENTATION_OPERATION_COUNT = DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT_OPERATION_COUNT + 0;
+    int ROSSYSTEM_IMPLEMENTATION_ASSIGNMENT_FEATURE_COUNT = DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT_FEATURE_COUNT + 1;
 
-    /**
+                /**
+     * The number of operations of the '<em>Rossystem Implementation Assignment</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ROSSYSTEM_IMPLEMENTATION_ASSIGNMENT_OPERATION_COUNT = DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT_OPERATION_COUNT + 0;
+
+                /**
      * The meta object id for the '{@link deployPlanWithRosModel.impl.ConfigRosParameterImpl <em>Config Ros Parameter</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -249,16 +249,27 @@ public interface DeployPlanWithRosModelPackage extends EPackage {
 
 
     /**
-     * Returns the meta object for class '{@link deployPlanWithRosModel.RospackageImplementation <em>Rospackage Implementation</em>}'.
+     * Returns the meta object for class '{@link deployPlanWithRosModel.RossystemImplementationAssignment <em>Rossystem Implementation Assignment</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for class '<em>Rospackage Implementation</em>'.
-     * @see deployPlanWithRosModel.RospackageImplementation
+     * @return the meta object for class '<em>Rossystem Implementation Assignment</em>'.
+     * @see deployPlanWithRosModel.RossystemImplementationAssignment
      * @generated
      */
-    EClass getRospackageImplementation();
+    EClass getRossystemImplementationAssignment();
 
-    /**
+                /**
+     * Returns the meta object for the containment reference list '{@link deployPlanWithRosModel.RossystemImplementationAssignment#getSoftwareComponents <em>Software Components</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the containment reference list '<em>Software Components</em>'.
+     * @see deployPlanWithRosModel.RossystemImplementationAssignment#getSoftwareComponents()
+     * @see #getRossystemImplementationAssignment()
+     * @generated
+     */
+    EReference getRossystemImplementationAssignment_SoftwareComponents();
+
+                /**
      * Returns the meta object for class '{@link deployPlanWithRosModel.ConfigRosParameter <em>Config Ros Parameter</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -346,16 +357,24 @@ public interface DeployPlanWithRosModelPackage extends EPackage {
      */
     interface Literals {
         /**
-         * The meta object literal for the '{@link deployPlanWithRosModel.impl.RospackageImplementationImpl <em>Rospackage Implementation</em>}' class.
+         * The meta object literal for the '{@link deployPlanWithRosModel.impl.RossystemImplementationAssignmentImpl <em>Rossystem Implementation Assignment</em>}' class.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @see deployPlanWithRosModel.impl.RospackageImplementationImpl
-         * @see deployPlanWithRosModel.impl.DeployPlanWithRosModelPackageImpl#getRospackageImplementation()
+         * @see deployPlanWithRosModel.impl.RossystemImplementationAssignmentImpl
+         * @see deployPlanWithRosModel.impl.DeployPlanWithRosModelPackageImpl#getRossystemImplementationAssignment()
          * @generated
          */
-        EClass ROSPACKAGE_IMPLEMENTATION = eINSTANCE.getRospackageImplementation();
+        EClass ROSSYSTEM_IMPLEMENTATION_ASSIGNMENT = eINSTANCE.getRossystemImplementationAssignment();
 
-        /**
+                    /**
+         * The meta object literal for the '<em><b>Software Components</b></em>' containment reference list feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference ROSSYSTEM_IMPLEMENTATION_ASSIGNMENT__SOFTWARE_COMPONENTS = eINSTANCE.getRossystemImplementationAssignment_SoftwareComponents();
+
+                                /**
          * The meta object literal for the '{@link deployPlanWithRosModel.impl.ConfigRosParameterImpl <em>Config Ros Parameter</em>}' class.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->

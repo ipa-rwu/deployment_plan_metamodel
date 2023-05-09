@@ -56,7 +56,7 @@ public class DeployPlanWithRosModelFactoryImpl extends EFactoryImpl implements D
     @Override
     public EObject create(EClass eClass) {
         switch (eClass.getClassifierID()) {
-            case DeployPlanWithRosModelPackage.ROSPACKAGE_IMPLEMENTATION: return createRospackageImplementation();
+            case DeployPlanWithRosModelPackage.ROSSYSTEM_IMPLEMENTATION_ASSIGNMENT: return createRossystemImplementationAssignment();
             case DeployPlanWithRosModelPackage.CONFIG_ROS_PARAMETER: return createConfigRosParameter();
             case DeployPlanWithRosModelPackage.CONFIG_ROS_SOFTWARE_COMPONENT: return createConfigRosSoftwareComponent();
             default:
@@ -69,12 +69,12 @@ public class DeployPlanWithRosModelFactoryImpl extends EFactoryImpl implements D
      * <!-- end-user-doc -->
      * @generated
      */
-    public RospackageImplementation createRospackageImplementation() {
-        RospackageImplementationImpl rospackageImplementation = new RospackageImplementationImpl();
-        return rospackageImplementation;
+    public RossystemImplementationAssignment createRossystemImplementationAssignment() {
+        RossystemImplementationAssignmentImpl rossystemImplementationAssignment = new RossystemImplementationAssignmentImpl();
+        return rossystemImplementationAssignment;
     }
 
-    /**
+                /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
