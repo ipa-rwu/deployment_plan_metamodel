@@ -14,8 +14,6 @@ ARG CI_JOB_TOKEN=
 ENV CI_JOB_TOKEN $CI_JOB_TOKEN
 RUN apt-get update -qq && \
     /builder/workspace.bash install_from_rosinstall_folder /root/ws
-RUN apt-get update -qq && \
-    /builder/workspace.bash run_sh_files /root/ws realsense_driver_rwu_laptop.sh
 RUN rm -rf /var/lib/apt/lists/*
 
 FROM pre_build as build

@@ -1,5 +1,0 @@
-repositories:
-  pick_place_ros2:
-    type: git
-    url: https://github.com/ipa-rwu/pick_place_ros2
-    version: humble-devel
