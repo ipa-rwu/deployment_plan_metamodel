@@ -22,6 +22,7 @@ repos:
       - id: forbid-crlf
       - id: remove-crlf
       - id: forbid-tabs
+        exclude: "Makefile$|DocMakefileCompiler.xtend"
       - id: remove-tabs
         args: [--whitespaces-count, "4"]
         exclude: "Makefile$|DocMakefileCompiler.xtend"
