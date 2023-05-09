@@ -42,7 +42,7 @@ public class ImplementationDescriptionParser extends AbstractAntlrParser {
 
     @Override
     protected String getDefaultRuleName() {
-        return "ImplementationDescription";
+        return "ImplementationDescriptionSet";
     }
 
     public ImplementationDescriptionGrammarAccess getGrammarAccess() {

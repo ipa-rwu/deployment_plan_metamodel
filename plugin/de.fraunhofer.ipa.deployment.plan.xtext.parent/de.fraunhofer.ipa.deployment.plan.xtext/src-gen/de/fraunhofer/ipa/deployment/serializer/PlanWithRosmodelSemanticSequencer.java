@@ -15,6 +15,8 @@ import de.fraunhofer.ipa.deployment.util.LinuxOpertingSystem;
 import de.fraunhofer.ipa.deployment.util.MacOSOpertingSystem;
 import de.fraunhofer.ipa.deployment.util.MaximumKind;
 import de.fraunhofer.ipa.deployment.util.MinimumKind;
+import de.fraunhofer.ipa.deployment.util.NameOperatingSystemProperty;
+import de.fraunhofer.ipa.deployment.util.OperatingSystemResouce;
 import de.fraunhofer.ipa.deployment.util.ProcessorArchitectureValue;
 import de.fraunhofer.ipa.deployment.util.ProcessorResouceType;
 import de.fraunhofer.ipa.deployment.util.Property;
@@ -34,13 +36,14 @@ import de.fraunhofer.ipa.deployment.util.SelectionKind;
 import de.fraunhofer.ipa.deployment.util.UbuntuVersionValue;
 import de.fraunhofer.ipa.deployment.util.UsbCommunicationType;
 import de.fraunhofer.ipa.deployment.util.UtilPackage;
+import de.fraunhofer.ipa.deployment.util.VersionOperatingSystemProperty;
 import de.fraunhofer.ipa.deployment.util.WlanCommunicationType;
 import deployPlanWithRosModel.ConfigRosParameter;
 import deployPlanWithRosModel.ConfigRosSoftwareComponent;
 import deployPlanWithRosModel.DeployPlanWithRosModelPackage;
-import deployPlanWithRosModel.DeploymentPlanWithRosModel;
 import deploymentPlan.ConfigExecutionParameter;
 import deploymentPlan.ConfigSoftwareComponent;
+import deploymentPlan.ContainerRuntime;
 import deploymentPlan.DeploymentPlan;
 import deploymentPlan.DeploymentPlanPackage;
 import deploymentPlan.ImplementationAssignment;
@@ -76,9 +79,6 @@ public class PlanWithRosmodelSemanticSequencer extends PlanSemanticSequencer {
             case DeployPlanWithRosModelPackage.CONFIG_ROS_SOFTWARE_COMPONENT:
                 sequence_ConfigRosSoftwareComponent(context, (ConfigRosSoftwareComponent) semanticObject);
                 return;
-            case DeployPlanWithRosModelPackage.DEPLOYMENT_PLAN_WITH_ROS_MODEL:
-                sequence_DeploymentPlanWithRosModel(context, (DeploymentPlanWithRosModel) semanticObject);
-                return;
             }
         else if (epackage == DeploymentPlanPackage.eINSTANCE)
             switch (semanticObject.eClass().getClassifierID()) {
@@ -88,9 +88,19 @@ public class PlanWithRosmodelSemanticSequencer extends PlanSemanticSequencer {
             case DeploymentPlanPackage.CONFIG_SOFTWARE_COMPONENT:
                 sequence_ConfigSoftwareComponent(context, (ConfigSoftwareComponent) semanticObject);
                 return;
-            case DeploymentPlanPackage.DEPLOYMENT_PLAN:
-                sequence_DeploymentPlan(context, (DeploymentPlan) semanticObject);
+            case DeploymentPlanPackage.CONTAINER_RUNTIME:
+                sequence_ContainerRuntime(context, (ContainerRuntime) semanticObject);
                 return;
+            case DeploymentPlanPackage.DEPLOYMENT_PLAN:
+                if (rule == grammarAccess.getDeploymentPlanWithRosModelRule()) {
+                    sequence_DeploymentPlanWithRosModel(context, (DeploymentPlan) semanticObject);
+                    return;
+                }
+                else if (rule == grammarAccess.getDeploymentPlanRule()) {
+                    sequence_DeploymentPlan(context, (DeploymentPlan) semanticObject);
+                    return;
+                }
+                else break;
             case DeploymentPlanPackage.IMPLEMENTATION_ASSIGNMENT:
                 if (rule == grammarAccess.getImplementationAssignmentRule()) {
                     sequence_ImplementationAssignment(context, (ImplementationAssignment) semanticObject);
@@ -140,6 +150,12 @@ public class PlanWithRosmodelSemanticSequencer extends PlanSemanticSequencer {
                 return;
             case UtilPackage.MINIMUM_KIND:
                 sequence_MinimumKind(context, (MinimumKind) semanticObject);
+                return;
+            case UtilPackage.NAME_OPERATING_SYSTEM_PROPERTY:
+                sequence_NameOperatingSystemProperty(context, (NameOperatingSystemProperty) semanticObject);
+                return;
+            case UtilPackage.OPERATING_SYSTEM_RESOUCE:
+                sequence_OperatingSystemResouce(context, (OperatingSystemResouce) semanticObject);
                 return;
             case UtilPackage.PROCESSOR_ARCHITECTURE_VALUE:
                 sequence_ProcessorArchitectureValue(context, (ProcessorArchitectureValue) semanticObject);
@@ -195,6 +211,9 @@ public class PlanWithRosmodelSemanticSequencer extends PlanSemanticSequencer {
             case UtilPackage.USB_COMMUNICATION_TYPE:
                 sequence_UsbCommunicationType(context, (UsbCommunicationType) semanticObject);
                 return;
+            case UtilPackage.VERSION_OPERATING_SYSTEM_PROPERTY:
+                sequence_VersionOperatingSystemProperty(context, (VersionOperatingSystemProperty) semanticObject);
+                return;
             case UtilPackage.WLAN_COMMUNICATION_TYPE:
                 sequence_WlanCommunicationType(context, (WlanCommunicationType) semanticObject);
                 return;
@@ -209,7 +228,7 @@ public class PlanWithRosmodelSemanticSequencer extends PlanSemanticSequencer {
      *     ConfigRosParameter returns ConfigRosParameter
      *
      * Constraint:
-     *     (from=[RosParameter|EString] (to=[AbstractConfigProperty|EString] value=PropertyValue?)?)
+     *     (from=[RosParameter|EString] to=[AbstractConfigProperty|EString]? value=PropertyValue?)
      * </pre>
      */
     protected void sequence_ConfigRosParameter(ISerializationContext context, ConfigRosParameter semanticObject) {
@@ -234,13 +253,13 @@ public class PlanWithRosmodelSemanticSequencer extends PlanSemanticSequencer {
     /**
      * <pre>
      * Contexts:
-     *     DeploymentPlanWithRosModel returns DeploymentPlanWithRosModel
+     *     DeploymentPlanWithRosModel returns DeploymentPlan
      *
      * Constraint:
      *     (name=EString deployTo=[TargetDeployEnviroment|EString] realize=AbstractRealization)
      * </pre>
      */
-    protected void sequence_DeploymentPlanWithRosModel(ISerializationContext context, DeploymentPlanWithRosModel semanticObject) {
+    protected void sequence_DeploymentPlanWithRosModel(ISerializationContext context, DeploymentPlan semanticObject) {
         if (errorAcceptor != null) {
             if (transientValues.isValueTransient(semanticObject, DeploymentPlanPackage.Literals.ABSTRACT_DEPLOYMENT_PLAN__NAME) == ValueTransient.YES)
                 errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DeploymentPlanPackage.Literals.ABSTRACT_DEPLOYMENT_PLAN__NAME));
@@ -271,8 +290,7 @@ public class PlanWithRosmodelSemanticSequencer extends PlanSemanticSequencer {
      *         softwareComponents+=ConfigRosSoftwareComponent
      *         softwareComponents+=ConfigRosSoftwareComponent*
      *         middleware=Middleware?
-     *         runtimeType=RunTimeType?
-     *         opertingSystemType=OpertingSystemName?
+     *         runtimeType=AbstractRuntime?
      *     )
      * </pre>
      */

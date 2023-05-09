@@ -19,8 +19,6 @@ LinuxOpertingSystem : 'LinuxOpertingSystem';
 
 MacOSOpertingSystem : 'MacOSOpertingSystem';
 
-OpertingSystemType : 'opertingSystemType:';
-
 SoftwareComponents : 'softwareComponents:';
 
 DeploymentPlan : 'DeploymentPlan:';
@@ -47,6 +45,8 @@ Middleware : 'middleware:';
 
 Properties : 'properties:';
 
+Os_version : 'os_version';
+
 Processor : 'Processor';
 
 RangeKind : 'RangeKind';
@@ -55,9 +55,13 @@ Container : 'container';
 
 DeployTo : 'deployTo:';
 
+Resource : 'resource:';
+
 Ethernet : 'Ethernet';
 
 Version : 'version:';
+
+Os_name : 'os_name';
 
 Rolling : 'rolling';
 

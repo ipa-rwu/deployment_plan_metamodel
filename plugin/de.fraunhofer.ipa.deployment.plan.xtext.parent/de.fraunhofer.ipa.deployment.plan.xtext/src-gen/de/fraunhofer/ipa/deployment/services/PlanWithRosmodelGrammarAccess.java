@@ -40,7 +40,7 @@ public class PlanWithRosmodelGrammarAccess extends AbstractElementFinder.Abstrac
         private final RuleCall cRealizeAbstractRealizationParserRuleCall_6_0 = (RuleCall)cRealizeAssignment_6.eContents().get(0);
         private final RuleCall cDEDENTTerminalRuleCall_7 = (RuleCall)cGroup.eContents().get(7);
 
-        //DeploymentPlanWithRosModel returns DeploymentPlanWithRosModel:
+        //DeploymentPlanWithRosModel returns deploymentPlan::DeploymentPlan:
         //    'DeploymentPlanWithRos:'
         //    INDENT
         //        'name:' name=EString
@@ -317,12 +317,8 @@ public class PlanWithRosmodelGrammarAccess extends AbstractElementFinder.Abstrac
         private final Group cGroup_15 = (Group)cGroup.eContents().get(15);
         private final Keyword cRuntimeTypeKeyword_15_0 = (Keyword)cGroup_15.eContents().get(0);
         private final Assignment cRuntimeTypeAssignment_15_1 = (Assignment)cGroup_15.eContents().get(1);
-        private final RuleCall cRuntimeTypeRunTimeTypeEnumRuleCall_15_1_0 = (RuleCall)cRuntimeTypeAssignment_15_1.eContents().get(0);
-        private final Group cGroup_16 = (Group)cGroup.eContents().get(16);
-        private final Keyword cOpertingSystemTypeKeyword_16_0 = (Keyword)cGroup_16.eContents().get(0);
-        private final Assignment cOpertingSystemTypeAssignment_16_1 = (Assignment)cGroup_16.eContents().get(1);
-        private final RuleCall cOpertingSystemTypeOpertingSystemNameParserRuleCall_16_1_0 = (RuleCall)cOpertingSystemTypeAssignment_16_1.eContents().get(0);
-        private final RuleCall cDEDENTTerminalRuleCall_17 = (RuleCall)cGroup.eContents().get(17);
+        private final RuleCall cRuntimeTypeAbstractRuntimeParserRuleCall_15_1_0 = (RuleCall)cRuntimeTypeAssignment_15_1.eContents().get(0);
+        private final RuleCall cDEDENTTerminalRuleCall_16 = (RuleCall)cGroup.eContents().get(16);
 
         //RossystemAssignment returns deploymentPlan::ImplementationAssignment:
         //    PreListElement 'name:' name = EString
@@ -330,13 +326,12 @@ public class PlanWithRosmodelGrammarAccess extends AbstractElementFinder.Abstrac
         //    'executedBy:' executedBy=[targetEnvironment::ComputationDeviceInstance|EString]
         //    'version:' version = EString
         //    'softwareComponents:'
-        //            INDENT
-        //                PreListElement softwareComponents+= ConfigRosSoftwareComponent
-        //                (PreListElement softwareComponents+=ConfigRosSoftwareComponent)*
-        //            DEDENT
-        //    ('middleware:' middleware=Middleware)?
-        //        ('runtimeType:' runtimeType=RunTimeType)?
-        //        ('opertingSystemType:' opertingSystemType=OpertingSystemName)?
+        //        INDENT
+        //            PreListElement softwareComponents+= ConfigRosSoftwareComponent
+        //            (PreListElement softwareComponents+=ConfigRosSoftwareComponent)*
+        //        DEDENT
+        //        ('middleware:' middleware=Middleware)?
+        //        ('runtimeType:' runtimeType=AbstractRuntime)?
         //    DEDENT
         //;
         @Override public ParserRule getRule() { return rule; }
@@ -346,13 +341,12 @@ public class PlanWithRosmodelGrammarAccess extends AbstractElementFinder.Abstrac
         //'executedBy:' executedBy=[targetEnvironment::ComputationDeviceInstance|EString]
         //'version:' version = EString
         //'softwareComponents:'
-        //        INDENT
-        //            PreListElement softwareComponents+= ConfigRosSoftwareComponent
-        //            (PreListElement softwareComponents+=ConfigRosSoftwareComponent)*
-        //        DEDENT
-        //('middleware:' middleware=Middleware)?
-        //    ('runtimeType:' runtimeType=RunTimeType)?
-        //    ('opertingSystemType:' opertingSystemType=OpertingSystemName)?
+        //    INDENT
+        //        PreListElement softwareComponents+= ConfigRosSoftwareComponent
+        //        (PreListElement softwareComponents+=ConfigRosSoftwareComponent)*
+        //    DEDENT
+        //    ('middleware:' middleware=Middleware)?
+        //    ('runtimeType:' runtimeType=AbstractRuntime)?
         //DEDENT
         public Group getGroup() { return cGroup; }
 
@@ -434,32 +428,20 @@ public class PlanWithRosmodelGrammarAccess extends AbstractElementFinder.Abstrac
         //Middleware
         public RuleCall getMiddlewareMiddlewareParserRuleCall_14_1_0() { return cMiddlewareMiddlewareParserRuleCall_14_1_0; }
 
-        //('runtimeType:' runtimeType=RunTimeType)?
+        //('runtimeType:' runtimeType=AbstractRuntime)?
         public Group getGroup_15() { return cGroup_15; }
 
         //'runtimeType:'
         public Keyword getRuntimeTypeKeyword_15_0() { return cRuntimeTypeKeyword_15_0; }
 
-        //runtimeType=RunTimeType
+        //runtimeType=AbstractRuntime
         public Assignment getRuntimeTypeAssignment_15_1() { return cRuntimeTypeAssignment_15_1; }
 
-        //RunTimeType
-        public RuleCall getRuntimeTypeRunTimeTypeEnumRuleCall_15_1_0() { return cRuntimeTypeRunTimeTypeEnumRuleCall_15_1_0; }
-
-        //('opertingSystemType:' opertingSystemType=OpertingSystemName)?
-        public Group getGroup_16() { return cGroup_16; }
-
-        //'opertingSystemType:'
-        public Keyword getOpertingSystemTypeKeyword_16_0() { return cOpertingSystemTypeKeyword_16_0; }
-
-        //opertingSystemType=OpertingSystemName
-        public Assignment getOpertingSystemTypeAssignment_16_1() { return cOpertingSystemTypeAssignment_16_1; }
-
-        //OpertingSystemName
-        public RuleCall getOpertingSystemTypeOpertingSystemNameParserRuleCall_16_1_0() { return cOpertingSystemTypeOpertingSystemNameParserRuleCall_16_1_0; }
+        //AbstractRuntime
+        public RuleCall getRuntimeTypeAbstractRuntimeParserRuleCall_15_1_0() { return cRuntimeTypeAbstractRuntimeParserRuleCall_15_1_0; }
 
         //DEDENT
-        public RuleCall getDEDENTTerminalRuleCall_17() { return cDEDENTTerminalRuleCall_17; }
+        public RuleCall getDEDENTTerminalRuleCall_16() { return cDEDENTTerminalRuleCall_16; }
     }
     public class ConfigRosParameterElements extends AbstractParserRuleElementFinder {
         private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.PlanWithRosmodel.ConfigRosParameter");
@@ -471,21 +453,22 @@ public class PlanWithRosmodelGrammarAccess extends AbstractElementFinder.Abstrac
         private final RuleCall cFromRosParameterEStringParserRuleCall_2_0_1 = (RuleCall)cFromRosParameterCrossReference_2_0.eContents().get(1);
         private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
         private final RuleCall cINDENTTerminalRuleCall_3_0 = (RuleCall)cGroup_3.eContents().get(0);
-        private final Keyword cToKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
-        private final Assignment cToAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
-        private final CrossReference cToAbstractConfigPropertyCrossReference_3_2_0 = (CrossReference)cToAssignment_3_2.eContents().get(0);
-        private final RuleCall cToAbstractConfigPropertyEStringParserRuleCall_3_2_0_1 = (RuleCall)cToAbstractConfigPropertyCrossReference_3_2_0.eContents().get(1);
-        private final Group cGroup_3_3 = (Group)cGroup_3.eContents().get(3);
-        private final Keyword cValueKeyword_3_3_0 = (Keyword)cGroup_3_3.eContents().get(0);
-        private final Assignment cValueAssignment_3_3_1 = (Assignment)cGroup_3_3.eContents().get(1);
-        private final RuleCall cValuePropertyValueParserRuleCall_3_3_1_0 = (RuleCall)cValueAssignment_3_3_1.eContents().get(0);
-        private final RuleCall cDEDENTTerminalRuleCall_3_4 = (RuleCall)cGroup_3.eContents().get(4);
+        private final Group cGroup_3_1 = (Group)cGroup_3.eContents().get(1);
+        private final Keyword cToKeyword_3_1_0 = (Keyword)cGroup_3_1.eContents().get(0);
+        private final Assignment cToAssignment_3_1_1 = (Assignment)cGroup_3_1.eContents().get(1);
+        private final CrossReference cToAbstractConfigPropertyCrossReference_3_1_1_0 = (CrossReference)cToAssignment_3_1_1.eContents().get(0);
+        private final RuleCall cToAbstractConfigPropertyEStringParserRuleCall_3_1_1_0_1 = (RuleCall)cToAbstractConfigPropertyCrossReference_3_1_1_0.eContents().get(1);
+        private final Group cGroup_3_2 = (Group)cGroup_3.eContents().get(2);
+        private final Keyword cValueKeyword_3_2_0 = (Keyword)cGroup_3_2.eContents().get(0);
+        private final Assignment cValueAssignment_3_2_1 = (Assignment)cGroup_3_2.eContents().get(1);
+        private final RuleCall cValuePropertyValueParserRuleCall_3_2_1_0 = (RuleCall)cValueAssignment_3_2_1.eContents().get(0);
+        private final RuleCall cDEDENTTerminalRuleCall_3_3 = (RuleCall)cGroup_3.eContents().get(3);
 
         //ConfigRosParameter returns ConfigRosParameter:
         //    PreListElement 'from:' from=[rossystem::RosParameter|EString]
         //        (
         //        INDENT
-        //            'to:' to=[targetEnvironment::AbstractConfigProperty|EString]
+        //            ('to:' to=[targetEnvironment::AbstractConfigProperty|EString])?
         //            (
         //            'value:' value=PropertyValue
         //            )?
@@ -497,7 +480,7 @@ public class PlanWithRosmodelGrammarAccess extends AbstractElementFinder.Abstrac
         //PreListElement 'from:' from=[rossystem::RosParameter|EString]
         //    (
         //    INDENT
-        //        'to:' to=[targetEnvironment::AbstractConfigProperty|EString]
+        //        ('to:' to=[targetEnvironment::AbstractConfigProperty|EString])?
         //        (
         //        'value:' value=PropertyValue
         //        )?
@@ -522,7 +505,7 @@ public class PlanWithRosmodelGrammarAccess extends AbstractElementFinder.Abstrac
 
         //(
         //INDENT
-        //    'to:' to=[targetEnvironment::AbstractConfigProperty|EString]
+        //    ('to:' to=[targetEnvironment::AbstractConfigProperty|EString])?
         //    (
         //    'value:' value=PropertyValue
         //    )?
@@ -533,34 +516,37 @@ public class PlanWithRosmodelGrammarAccess extends AbstractElementFinder.Abstrac
         //INDENT
         public RuleCall getINDENTTerminalRuleCall_3_0() { return cINDENTTerminalRuleCall_3_0; }
 
+        //('to:' to=[targetEnvironment::AbstractConfigProperty|EString])?
+        public Group getGroup_3_1() { return cGroup_3_1; }
+
         //'to:'
-        public Keyword getToKeyword_3_1() { return cToKeyword_3_1; }
+        public Keyword getToKeyword_3_1_0() { return cToKeyword_3_1_0; }
 
         //to=[targetEnvironment::AbstractConfigProperty|EString]
-        public Assignment getToAssignment_3_2() { return cToAssignment_3_2; }
+        public Assignment getToAssignment_3_1_1() { return cToAssignment_3_1_1; }
 
         //[targetEnvironment::AbstractConfigProperty|EString]
-        public CrossReference getToAbstractConfigPropertyCrossReference_3_2_0() { return cToAbstractConfigPropertyCrossReference_3_2_0; }
+        public CrossReference getToAbstractConfigPropertyCrossReference_3_1_1_0() { return cToAbstractConfigPropertyCrossReference_3_1_1_0; }
 
         //EString
-        public RuleCall getToAbstractConfigPropertyEStringParserRuleCall_3_2_0_1() { return cToAbstractConfigPropertyEStringParserRuleCall_3_2_0_1; }
+        public RuleCall getToAbstractConfigPropertyEStringParserRuleCall_3_1_1_0_1() { return cToAbstractConfigPropertyEStringParserRuleCall_3_1_1_0_1; }
 
         //(
         //'value:' value=PropertyValue
         //)?
-        public Group getGroup_3_3() { return cGroup_3_3; }
+        public Group getGroup_3_2() { return cGroup_3_2; }
 
         //'value:'
-        public Keyword getValueKeyword_3_3_0() { return cValueKeyword_3_3_0; }
+        public Keyword getValueKeyword_3_2_0() { return cValueKeyword_3_2_0; }
 
         //value=PropertyValue
-        public Assignment getValueAssignment_3_3_1() { return cValueAssignment_3_3_1; }
+        public Assignment getValueAssignment_3_2_1() { return cValueAssignment_3_2_1; }
 
         //PropertyValue
-        public RuleCall getValuePropertyValueParserRuleCall_3_3_1_0() { return cValuePropertyValueParserRuleCall_3_3_1_0; }
+        public RuleCall getValuePropertyValueParserRuleCall_3_2_1_0() { return cValuePropertyValueParserRuleCall_3_2_1_0; }
 
         //DEDENT
-        public RuleCall getDEDENTTerminalRuleCall_3_4() { return cDEDENTTerminalRuleCall_3_4; }
+        public RuleCall getDEDENTTerminalRuleCall_3_3() { return cDEDENTTerminalRuleCall_3_3; }
     }
 
 
@@ -629,7 +615,7 @@ public class PlanWithRosmodelGrammarAccess extends AbstractElementFinder.Abstrac
     }
 
 
-    //DeploymentPlanWithRosModel returns DeploymentPlanWithRosModel:
+    //DeploymentPlanWithRosModel returns deploymentPlan::DeploymentPlan:
     //    'DeploymentPlanWithRos:'
     //    INDENT
     //        'name:' name=EString
@@ -691,13 +677,12 @@ public class PlanWithRosmodelGrammarAccess extends AbstractElementFinder.Abstrac
     //    'executedBy:' executedBy=[targetEnvironment::ComputationDeviceInstance|EString]
     //    'version:' version = EString
     //    'softwareComponents:'
-    //            INDENT
-    //                PreListElement softwareComponents+= ConfigRosSoftwareComponent
-    //                (PreListElement softwareComponents+=ConfigRosSoftwareComponent)*
-    //            DEDENT
-    //    ('middleware:' middleware=Middleware)?
-    //        ('runtimeType:' runtimeType=RunTimeType)?
-    //        ('opertingSystemType:' opertingSystemType=OpertingSystemName)?
+    //        INDENT
+    //            PreListElement softwareComponents+= ConfigRosSoftwareComponent
+    //            (PreListElement softwareComponents+=ConfigRosSoftwareComponent)*
+    //        DEDENT
+    //        ('middleware:' middleware=Middleware)?
+    //        ('runtimeType:' runtimeType=AbstractRuntime)?
     //    DEDENT
     //;
     public RossystemAssignmentElements getRossystemAssignmentAccess() {
@@ -712,7 +697,7 @@ public class PlanWithRosmodelGrammarAccess extends AbstractElementFinder.Abstrac
     //    PreListElement 'from:' from=[rossystem::RosParameter|EString]
     //        (
     //        INDENT
-    //            'to:' to=[targetEnvironment::AbstractConfigProperty|EString]
+    //            ('to:' to=[targetEnvironment::AbstractConfigProperty|EString])?
     //            (
     //            'value:' value=PropertyValue
     //            )?
@@ -824,18 +809,17 @@ public class PlanWithRosmodelGrammarAccess extends AbstractElementFinder.Abstrac
 
     //ImplementationAssignment returns ImplementationAssignment:
     //    PreListElement 'name:' name = EString
-    //  INDENT
-    //    'executedBy:' executedBy=[targetEnvironment::ComputationDeviceInstance|EString]
-    //    'version:' version = EString
-    //    'softwareComponents:'
-    //        INDENT
-    //            PreListElement softwareComponents+=ConfigSoftwareComponent
-    //            (PreListElement softwareComponents+=ConfigSoftwareComponent)*
-    //        DEDENT
-    //    ('middleware:' middleware=Middleware)?
-    //    ('runtimeType:' runtimeType=RunTimeType)?
-    //    ('opertingSystemType:' opertingSystemType=OpertingSystemName)?
-    //  DEDENT
+    //    INDENT
+    //        'executedBy:' executedBy=[targetEnvironment::ComputationDeviceInstance|EString]
+    //        'version:' version = EString
+    //        'softwareComponents:'
+    //            INDENT
+    //                PreListElement softwareComponents+=ConfigSoftwareComponent
+    //                (PreListElement softwareComponents+=ConfigSoftwareComponent)*
+    //            DEDENT
+    //                ('middleware:' middleware=Middleware)?
+    //                ('runtimeType:' runtimeType=AbstractRuntime)?
+    //    DEDENT
     //;
     public PlanGrammarAccess.ImplementationAssignmentElements getImplementationAssignmentAccess() {
         return gaPlan.getImplementationAssignmentAccess();
@@ -865,6 +849,37 @@ public class PlanWithRosmodelGrammarAccess extends AbstractElementFinder.Abstrac
 
     public ParserRule getRosMiddlewareRule() {
         return getRosMiddlewareAccess().getRule();
+    }
+
+    //AbstractRuntime returns AbstractRuntime:
+    // ContainerRuntime
+    //;
+    public PlanGrammarAccess.AbstractRuntimeElements getAbstractRuntimeAccess() {
+        return gaPlan.getAbstractRuntimeAccess();
+    }
+
+    public ParserRule getAbstractRuntimeRule() {
+        return getAbstractRuntimeAccess().getRule();
+    }
+
+    //ContainerRuntime returns ContainerRuntime:
+    //    {ContainerRuntime}
+    //    INDENT
+    //    'type:' type=RunTimeType
+    //    ('resource:'
+    //     INDENT
+    //        PreListElement opertingSystemResource+=OperatingSystemResouce
+    //        (PreListElement opertingSystemResource+=OperatingSystemResouce+)?
+    //     DEDENT
+    //     )?
+    //     DEDENT
+    //;
+    public PlanGrammarAccess.ContainerRuntimeElements getContainerRuntimeAccess() {
+        return gaPlan.getContainerRuntimeAccess();
+    }
+
+    public ParserRule getContainerRuntimeRule() {
+        return getContainerRuntimeAccess().getRule();
     }
 
     //enum ROSDistro returns ROSDistro:
@@ -937,6 +952,79 @@ public class PlanWithRosmodelGrammarAccess extends AbstractElementFinder.Abstrac
 
     public ParserRule getAbstractComputationAssignmentTargetRule() {
         return getAbstractComputationAssignmentTargetAccess().getRule();
+    }
+
+    //OperatingSystemResouce returns OperatingSystemResouce:
+    //    {OperatingSystemResouce}
+    //    'name:'  name=EString
+    //    INDENT
+    //        'type:' type=OpertingSystemResouceType
+    //        ('properties:'
+    //            INDENT
+    //            properties+=AbstractOperatingSystemProperty+
+    //            DEDENT
+    //            )?
+    //    DEDENT
+    //    ;
+    public UtilGrammarAccess.OperatingSystemResouceElements getOperatingSystemResouceAccess() {
+        return gaUtil.getOperatingSystemResouceAccess();
+    }
+
+    public ParserRule getOperatingSystemResouceRule() {
+        return getOperatingSystemResouceAccess().getRule();
+    }
+
+    //AbstractOperatingSystemProperty returns AbstractOperatingSystemProperty:
+    //    NameOperatingSystemProperty |VersionOperatingSystemProperty
+    //;
+    public UtilGrammarAccess.AbstractOperatingSystemPropertyElements getAbstractOperatingSystemPropertyAccess() {
+        return gaUtil.getAbstractOperatingSystemPropertyAccess();
+    }
+
+    public ParserRule getAbstractOperatingSystemPropertyRule() {
+        return getAbstractOperatingSystemPropertyAccess().getRule();
+    }
+
+    //NameOperatingSystemProperty returns NameOperatingSystemProperty:
+    //    {NameOperatingSystemProperty}
+    //    PreListElement "name:" name="os_name"
+    //    INDENT
+    //        'kind:' kind=AttributeKind
+    //        (
+    //        'description:' description=EString
+    //        )?
+    //        (
+    //        'value:' value=PropertyValue
+    //        )?
+    //    DEDENT
+    //    ;
+    public UtilGrammarAccess.NameOperatingSystemPropertyElements getNameOperatingSystemPropertyAccess() {
+        return gaUtil.getNameOperatingSystemPropertyAccess();
+    }
+
+    public ParserRule getNameOperatingSystemPropertyRule() {
+        return getNameOperatingSystemPropertyAccess().getRule();
+    }
+
+    //VersionOperatingSystemProperty returns VersionOperatingSystemProperty:
+    //    {VersionOperatingSystemProperty}
+    //    PreListElement "name:" name="os_version"
+    //    INDENT
+    //        'kind:' kind=AttributeKind
+    //        (
+    //        'description:' description=EString
+    //        )?
+    //        (
+    //        'value:' value=PropertyValue
+    //        )?
+    //    DEDENT
+    //    ;
+    public UtilGrammarAccess.VersionOperatingSystemPropertyElements getVersionOperatingSystemPropertyAccess() {
+        return gaUtil.getVersionOperatingSystemPropertyAccess();
+    }
+
+    public ParserRule getVersionOperatingSystemPropertyRule() {
+        return getVersionOperatingSystemPropertyAccess().getRule();
     }
 
     //AbstractProperty returns AbstractProperty:
