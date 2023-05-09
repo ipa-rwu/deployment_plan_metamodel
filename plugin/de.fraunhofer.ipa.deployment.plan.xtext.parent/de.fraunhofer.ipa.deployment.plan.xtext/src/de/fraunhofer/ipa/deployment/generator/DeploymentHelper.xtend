@@ -430,6 +430,12 @@ def collectAssignmentPerExecutor(List<AbstractComputationAssignment> raw){
     return collectAssignment
 }
 
+def getAbstarctConfigSoftwareComponentName(EObject component){
+    if (component instanceof AbstarctConfigSoftwareComponent){
+        return getAbstarctConfigSoftwareComponentName(component)
+    }
+}
+
 def getAbstarctConfigSoftwareComponentName(AbstarctConfigSoftwareComponent component){
     if(component instanceof ConfigSoftwareComponent){
         var comcomp = (component as ConfigSoftwareComponent).component

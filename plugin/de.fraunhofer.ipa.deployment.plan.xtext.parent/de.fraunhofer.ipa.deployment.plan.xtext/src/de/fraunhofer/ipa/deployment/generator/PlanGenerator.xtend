@@ -8,6 +8,9 @@ import deploymentPlan.AbstractComputationAssignment
 import deploymentPlan.AbstractDeploymentPlan
 import deploymentPlan.ConfigSoftwareComponent
 import deploymentPlan.DeploymentPlan
+import deploymentPlan.ImplementationAssignment
+import java.util.ArrayList
+import java.util.Arrays
 import java.util.List
 import java.util.stream.Collectors
 import javax.inject.Inject
@@ -15,8 +18,6 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
-import java.util.ArrayList
-import java.util.Arrays
 
 /**
  * Generates code from your model files on save.
@@ -100,17 +101,20 @@ class PlanGenerator extends AbstractGenerator {
 
 
       def generateRosInstall(AbstractComputationAssignment assignment, AbstractDeploymentPlan plan, IFileSystemAccess2 fsa) {
-        var scs = assignment.softwareComponents
-        var impls = scs.map[it as ConfigSoftwareComponent].stream.map[component].collect(Collectors.toList())
-        fsa.generateFile(
-                namingHelper.getReposFile(assignment.name, assignment.executedBy.name),
-            (plan as DeploymentPlan).RepoInstallCompiler(impls)
-        )
+        if(assignment instanceof ImplementationAssignment)
+        {
+            var scs = assignment.softwareComponents
+            var impls = scs.map[it as ConfigSoftwareComponent].stream.map[component].collect(Collectors.toList())
+            fsa.generateFile(
+                    namingHelper.getReposFile(assignment.name, assignment.executedBy.name),
+                (plan as DeploymentPlan).RepoInstallCompiler(impls)
+            )
+        }
       }
 
         def generateDockerFile(AbstractComputationAssignment assignment, AbstractDeploymentPlan plan, IFileSystemAccess2 fsa) {
-            if(assignment.runtimeType.type == RunTimeType.CONTAINER){
-            var impls = assignment.softwareComponents.map[it as ConfigSoftwareComponent].stream.map[component].collect(Collectors.toList())
+            if(assignment.runtimeType.type == RunTimeType.CONTAINER && assignment instanceof ImplementationAssignment){
+            var impls = (assignment as ImplementationAssignment).softwareComponents.map[it as ConfigSoftwareComponent].stream.map[component].collect(Collectors.toList())
             fsa.generateFile(namingHelper.getRelativeDockerfilePath(assignment.name),
                 assignment.dockerFileCompiler
                 )

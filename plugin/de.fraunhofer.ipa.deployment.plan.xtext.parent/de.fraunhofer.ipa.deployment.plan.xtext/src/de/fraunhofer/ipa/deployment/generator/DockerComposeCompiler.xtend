@@ -32,6 +32,8 @@ import targetEnvironment.ConnectedDevice
 import targetEnvironment.DeviceInstance
 import targetEnvironment.TargetDeployEnviroment
 import system.impl.RosParameterImpl
+import deploymentPlan.ImplementationAssignment
+import deployPlanWithRosModel.RossystemImplementationAssignment
 
 class DockerComposeCompiler {
 
@@ -72,13 +74,20 @@ services:
       - |
         export CYCLONEDDS_URI=file:///cyclonedds.xml
         source /ros_entrypoint.sh
-        «FOR software: assignment.softwareComponents»
+        «FOR software: assignment.getSoftwareFromAssignemnt»
         «var paramPerSoftware = covertCollectExecutionEnvtoString(collectExecutionEnv(software))»
         «String.join(" & \n", software.startCommand)» «
         »«IF software.startCommand.size > 0»«FOR param : paramPerSoftware»«param.key»:=«param.value» «ENDFOR»«ENDIF»
         «ENDFOR»
 «ENDFOR»
 '''
+
+def getSoftwareFromAssignemnt(AbstractComputationAssignment assignment){
+    if(assignment instanceof ImplementationAssignment)
+        return assignment.softwareComponents
+    if(assignment instanceof RossystemImplementationAssignment)
+        return assignment.softwareComponents
+}
 
 def cycloneDDSConfig()'''
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -191,7 +200,7 @@ def collectExecutionEnv(AbstarctConfigSoftwareComponent software){
 
 
 def collectExecutionEnv(AbstractComputationAssignment assignment){
-    var raw = assignment.softwareComponents.map[executionConfiguration].flatten
+    var raw = assignment.getSoftwareFromAssignemnt.map[executionConfiguration].flatten
     var Map<EObject, PropertyValue> res
         = new HashMap<EObject, PropertyValue>
     for(AbstractConfigExecutionParameter p: raw){
@@ -251,7 +260,7 @@ def getValueFromPropertyValueList(PropertyValue pv){
 
 def getCommunicationConnectionPerAssignment(AbstractComputationAssignment assignment, ComputationDeviceInstance compDev){
     var Set<ConnectedDevice> connectedComputationDevices = new HashSet<ConnectedDevice>()
-    for(software: assignment.softwareComponents){
+    for(software: assignment.getSoftwareFromAssignemnt){
         if(software.executionConfiguration !== null){
             for(configExecParam : software.executionConfiguration){
                 var communicatedComputationDevice = getConnectedComputaionDeviceFromExecParam(configExecParam, compDev)
