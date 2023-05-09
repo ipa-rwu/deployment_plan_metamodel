@@ -27,7 +27,10 @@ class PlanWithRosmodelGenerator extends PlanGenerator {
   @Inject
   extension DockerFileCompiler
 
-    override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
+    @Inject
+  extension DeploymentDocumentCompiler docCompiler
+
+  override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
             val plans = resource.allContents.toIterable.filter(AbstractDeploymentPlan)
             generateFiles(plans.toList, fsa)
 
@@ -36,7 +39,10 @@ class PlanWithRosmodelGenerator extends PlanGenerator {
     List<RepoInfo> repos = new ArrayList
 
     override generateRosInstall(AbstractComputationAssignment assignment, AbstractDeploymentPlan plan, IFileSystemAccess2 fsa) {
-        repos = assignment.collectRepoFromRossystem
+            namingHelper.reset
+        namingHelper.assignmentRossystemRepoInfoMap = plan
+
+        repos = namingHelper.assignmentRossystemRepoInfoMap.get(assignment)
         var unreleasedRepos = repos.filter[it.checkIfReleased==false]
         var releasedRepos = repos.filter[it.checkIfReleased==true]
         if(unreleasedRepos!==null && unreleasedRepos.size > 0){
@@ -62,4 +68,11 @@ class PlanWithRosmodelGenerator extends PlanGenerator {
             }
         }
 
+            override generateOverviewDocum(AbstractDeploymentPlan plan, IFileSystemAccess2 fsa, DocumentNamingHelper docNaming){
+                    var repoMap = namingHelper.assignmentRossystemRepoInfoMap
+                    fsa.generateFile(
+                docNaming.overviewFilePath,
+                docCompiler.deploymentIntroduction(plan, docNaming.overviewFileName, repoMap)
+          )
+            }
 }
