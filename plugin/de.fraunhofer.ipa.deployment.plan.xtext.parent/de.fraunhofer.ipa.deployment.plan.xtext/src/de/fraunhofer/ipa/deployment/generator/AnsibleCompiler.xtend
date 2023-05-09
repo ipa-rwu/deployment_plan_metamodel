@@ -147,8 +147,7 @@ def taskCheckInstallDocker()'''
 - name: Add Docker repository
   become: true
   apt_repository:
-      repo: "deb [arch=amd64] https://download.docker.com/{{ ansible_system | lower }}/{{ ansible_distribution | lower }} {{ ansible_distribution_release\
-          \ }} stable"
+      repo: "deb [arch=amd64] https://download.docker.com/{{ ansible_system | lower }}/{{ ansible_distribution | lower }} {{ ansible_distribution_release }} stable"
       state: present
       update_cache: yes
       mode: 0644
