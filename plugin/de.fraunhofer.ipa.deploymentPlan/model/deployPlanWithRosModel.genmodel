@@ -7,7 +7,9 @@
     operationReflection="true" importOrganizing="true">
   <foreignModel>deployPlanWithRosModel.ecore</foreignModel>
   <genPackages prefix="DeployPlanWithRosModel" disposableProviderFactory="true" ecorePackage="deployPlanWithRosModel.ecore#/">
-    <genClasses ecoreClass="deployPlanWithRosModel.ecore#//RospackageImplementation"/>
+    <genClasses ecoreClass="deployPlanWithRosModel.ecore#//RossystemImplementationAssignment">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference deployPlanWithRosModel.ecore#//RossystemImplementationAssignment/softwareComponents"/>
+    </genClasses>
     <genClasses ecoreClass="deployPlanWithRosModel.ecore#//ConfigRosParameter">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference deployPlanWithRosModel.ecore#//ConfigRosParameter/from"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference deployPlanWithRosModel.ecore#//ConfigRosParameter/to"/>

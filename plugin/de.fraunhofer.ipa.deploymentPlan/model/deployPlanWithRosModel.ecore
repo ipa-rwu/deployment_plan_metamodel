@@ -2,7 +2,10 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="deployPlanWithRosModel" nsURI="http://www.ipa.fraunhofer.de/DeployPlanWithRosModel"
     nsPrefix="DeployPlanWithRosModel">
-  <eClassifiers xsi:type="ecore:EClass" name="RospackageImplementation" eSuperTypes="deploymentPlan.ecore#//AbstractComputationAssignment"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RossystemImplementationAssignment" eSuperTypes="deploymentPlan.ecore#//AbstractComputationAssignment">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="softwareComponents" lowerBound="1"
+        upperBound="-1" eType="#//ConfigRosSoftwareComponent" containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ConfigRosParameter" eSuperTypes="deploymentPlan.ecore#//AbstractConfigExecutionParameter">
     <eStructuralFeatures xsi:type="ecore:EReference" name="from" lowerBound="1" eType="ecore:EClass ../../de.fraunhofer.ipa.rossystem/model/rossystem.ecore#//RosParameter"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="to" eType="ecore:EClass ../../de.fraunhofer.ipa.targetEnvironment/model/targetEnvironment.ecore#//AbstractConfigProperty"/>

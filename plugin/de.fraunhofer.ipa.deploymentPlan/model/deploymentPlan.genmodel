@@ -18,7 +18,9 @@
     </genClasses>
     <genClasses ecoreClass="deploymentPlan.ecore#//DeploymentPlan"/>
     <genClasses ecoreClass="deploymentPlan.ecore#//Realization"/>
-    <genClasses ecoreClass="deploymentPlan.ecore#//ImplementationAssignment"/>
+    <genClasses ecoreClass="deploymentPlan.ecore#//ImplementationAssignment">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference deploymentPlan.ecore#//ImplementationAssignment/softwareComponents"/>
+    </genClasses>
     <genClasses ecoreClass="deploymentPlan.ecore#//ConfigExecutionParameter">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference deploymentPlan.ecore#//ConfigExecutionParameter/from"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference deploymentPlan.ecore#//ConfigExecutionParameter/to"/>
@@ -36,7 +38,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute deploymentPlan.ecore#//AbstractComputationAssignment/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference deploymentPlan.ecore#//AbstractComputationAssignment/executedBy"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute deploymentPlan.ecore#//AbstractComputationAssignment/version"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference deploymentPlan.ecore#//AbstractComputationAssignment/softwareComponents"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference deploymentPlan.ecore#//AbstractComputationAssignment/middleware"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference deploymentPlan.ecore#//AbstractComputationAssignment/runtimeType"/>
     </genClasses>
