@@ -2,12 +2,22 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="implementationDescription" nsURI="http://www.ipa.fraunhofer.de/ImplementationDescription"
     nsPrefix="ImplementationDescription">
+  <eClassifiers xsi:type="ecore:EClass" name="ImplementationDescriptionSet">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="implementations" lowerBound="1"
+        upperBound="-1" eType="#//ImplementationDescription" containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ImplementationDescription" eSuperTypes="../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//AbstractImplementation ../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//AbstractComputationAssignmentTarget">
+    <eAnnotations source="http://www.obeo.fr/dsl/dnc/archetype">
+      <details key="archetype" value="Description"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="includeSoftwareComponents"
         lowerBound="1" upperBound="-1" eType="#//SoftwareComponent" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SoftwareComponent" eSuperTypes="../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//AbstractComputationAssignmentTarget">
+    <eAnnotations source="http://www.obeo.fr/dsl/dnc/archetype">
+      <details key="archetype" value="Description"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="repository" lowerBound="1"
         eType="#//Repository" containment="true"/>
@@ -36,4 +46,5 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RepositoryType" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="GitRepositoryType" eSuperTypes="#//RepositoryType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AptRepositoryType" eSuperTypes="#//RepositoryType"/>
 </ecore:EPackage>

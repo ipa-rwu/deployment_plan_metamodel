@@ -8,6 +8,9 @@
   <foreignModel>ImplementationDescription.ecore</foreignModel>
   <genPackages prefix="ImplementationDescription" disposableProviderFactory="true"
       ecorePackage="ImplementationDescription.ecore#/">
+    <genClasses ecoreClass="ImplementationDescription.ecore#//ImplementationDescriptionSet">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ImplementationDescription.ecore#//ImplementationDescriptionSet/implementations"/>
+    </genClasses>
     <genClasses ecoreClass="ImplementationDescription.ecore#//ImplementationDescription">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ImplementationDescription.ecore#//ImplementationDescription/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ImplementationDescription.ecore#//ImplementationDescription/includeSoftwareComponents"/>
@@ -35,5 +38,6 @@
     </genClasses>
     <genClasses image="false" ecoreClass="ImplementationDescription.ecore#//RepositoryType"/>
     <genClasses ecoreClass="ImplementationDescription.ecore#//GitRepositoryType"/>
+    <genClasses ecoreClass="ImplementationDescription.ecore#//AptRepositoryType"/>
   </genPackages>
 </genmodel:GenModel>
