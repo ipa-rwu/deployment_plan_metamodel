@@ -9,7 +9,7 @@ import "http://www.ipa.fraunhofer.de/TargetEnvironment" as targetEnvironment
 import "http://www.ipa.fraunhofer.de/DeploymentPlan" as deploymentPlan
 import "http://www.ipa.fraunhofer.de/rossystem" as rossystem
 
-DeploymentPlanWithRosModel returns DeploymentPlanWithRosModel:
+DeploymentPlanWithRosModel returns deploymentPlan::DeploymentPlan:
     'DeploymentPlanWithRos:'
     INDENT
         'name:' name=EString
@@ -52,13 +52,12 @@ RossystemAssignment returns deploymentPlan::ImplementationAssignment:
     'executedBy:' executedBy=[targetEnvironment::ComputationDeviceInstance|EString]
     'version:' version = EString
     'softwareComponents:'
-            INDENT
-                PreListElement softwareComponents+= ConfigRosSoftwareComponent
-                (PreListElement softwareComponents+=ConfigRosSoftwareComponent)*
-            DEDENT
-    ('middleware:' middleware=Middleware)?
-        ('runtimeType:' runtimeType=RunTimeType)?
-        ('opertingSystemType:' opertingSystemType=OpertingSystemName)?
+        INDENT
+            PreListElement softwareComponents+= ConfigRosSoftwareComponent
+            (PreListElement softwareComponents+=ConfigRosSoftwareComponent)*
+        DEDENT
+        ('middleware:' middleware=Middleware)?
+        ('runtimeType:' runtimeType=AbstractRuntime)?
     DEDENT
 ;
 
@@ -66,7 +65,7 @@ ConfigRosParameter returns ConfigRosParameter:
     PreListElement 'from:' from=[rossystem::RosParameter|EString]
         (
         INDENT
-            'to:' to=[targetEnvironment::AbstractConfigProperty|EString]
+            ('to:' to=[targetEnvironment::AbstractConfigProperty|EString])?
             (
             'value:' value=PropertyValue
             )?
