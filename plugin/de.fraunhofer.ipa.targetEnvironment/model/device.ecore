@@ -19,7 +19,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="ConnectionProperty" eSuperTypes="../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//PropertyAttribute #//AbstractConnectionProperty"/>
   <eClassifiers xsi:type="ecore:EClass" name="ComputationDeviceType" eSuperTypes="#//DeviceType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="computationResource" lowerBound="1"
-        upperBound="-1" eType="#//AbstractComputationResource" containment="true"/>
+        upperBound="-1" eType="ecore:EClass ../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//AbstractComputationResource"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NetworkConnection" eSuperTypes="#//AbstractCommunicationConnection">
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="ecore:EClass ../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//NetworkCommunicationType"
@@ -43,15 +44,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DeviceVolumeUsbProperty" eSuperTypes="../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//PropertySelection #//AbstractUsbProperty"/>
   <eClassifiers xsi:type="ecore:EClass" name="Container" eSuperTypes="#//AbstractRuntimeEnviroment"/>
-  <eClassifiers xsi:type="ecore:EClass" name="OperatingSystemResouce" eSuperTypes="#//AbstractComputationResource">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="ecore:EClass ../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//OpertingSystemResouceType"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
-        eType="#//AbstractOperatingSystemProperty" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="NameOperatingSystemProperty" eSuperTypes="../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//PropertyAttribute #//AbstractOperatingSystemProperty"/>
-  <eClassifiers xsi:type="ecore:EClass" name="VersionOperatingSystemProperty" eSuperTypes="../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//PropertyAttribute #//AbstractOperatingSystemProperty"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ProcessorResouce" eSuperTypes="#//AbstractComputationResource">
+  <eClassifiers xsi:type="ecore:EClass" name="NameOperatingSystemProperty" eSuperTypes="../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//PropertyAttribute"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ProcessorResouce" eSuperTypes="../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//AbstractComputationResource">
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="ecore:EClass ../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//ProcessorResouceType"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
@@ -66,10 +60,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="AbstractCommunicationConnection" abstract="true"
       eSuperTypes="../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//AbstractResource"/>
   <eClassifiers xsi:type="ecore:EClass" name="AbstractRuntimeEnviroment" abstract="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="AbstractOperatingSystemProperty" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="AbstracProcessorProperty" abstract="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="AbstractComputationResource" abstract="true"
-      eSuperTypes="../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//AbstractResource"/>
   <eClassifiers xsi:type="ecore:EClass" name="AbstractDeviceType" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="communicationConnection"
