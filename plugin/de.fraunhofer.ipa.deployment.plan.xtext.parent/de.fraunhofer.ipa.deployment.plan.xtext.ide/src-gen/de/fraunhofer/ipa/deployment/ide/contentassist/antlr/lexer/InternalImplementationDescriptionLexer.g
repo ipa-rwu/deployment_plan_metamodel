@@ -41,6 +41,8 @@ Properties : 'properties:';
 
 Repository : 'repository:';
 
+Os_version : 'os_version';
+
 Processor : 'Processor';
 
 RangeKind : 'RangeKind';
@@ -50,6 +52,8 @@ Container : 'container';
 Ethernet : 'Ethernet';
 
 Version : 'version:';
+
+Os_name : 'os_name';
 
 Debian : 'debian';
 
@@ -72,6 +76,8 @@ Type : 'type:';
 Wlan : 'Wlan';
 
 Url : 'url:';
+
+HyphenMinusHyphenMinusHyphenMinus : '---';
 
 Usb : 'Usb';
 
