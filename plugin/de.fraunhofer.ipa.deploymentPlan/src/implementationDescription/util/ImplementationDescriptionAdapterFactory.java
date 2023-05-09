@@ -73,6 +73,10 @@ public class ImplementationDescriptionAdapterFactory extends AdapterFactoryImpl 
     protected ImplementationDescriptionSwitch<Adapter> modelSwitch =
         new ImplementationDescriptionSwitch<Adapter>() {
             @Override
+            public Adapter caseImplementationDescriptionSet(ImplementationDescriptionSet object) {
+                return createImplementationDescriptionSetAdapter();
+            }
+            @Override
             public Adapter caseImplementationDescription(ImplementationDescription object) {
                 return createImplementationDescriptionAdapter();
             }
@@ -117,6 +121,10 @@ public class ImplementationDescriptionAdapterFactory extends AdapterFactoryImpl 
                 return createGitRepositoryTypeAdapter();
             }
             @Override
+            public Adapter caseAptRepositoryType(AptRepositoryType object) {
+                return createAptRepositoryTypeAdapter();
+            }
+            @Override
             public Adapter caseAbstractImplementation(AbstractImplementation object) {
                 return createAbstractImplementationAdapter();
             }
@@ -153,6 +161,20 @@ public class ImplementationDescriptionAdapterFactory extends AdapterFactoryImpl 
 
 
     /**
+     * Creates a new adapter for an object of class '{@link implementationDescription.ImplementationDescriptionSet <em>Set</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see implementationDescription.ImplementationDescriptionSet
+     * @generated
+     */
+    public Adapter createImplementationDescriptionSetAdapter() {
+        return null;
+    }
+
+                /**
      * Creates a new adapter for an object of class '{@link implementationDescription.ImplementationDescription <em>Implementation Description</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
@@ -307,6 +329,20 @@ public class ImplementationDescriptionAdapterFactory extends AdapterFactoryImpl 
     }
 
     /**
+     * Creates a new adapter for an object of class '{@link implementationDescription.AptRepositoryType <em>Apt Repository Type</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see implementationDescription.AptRepositoryType
+     * @generated
+     */
+    public Adapter createAptRepositoryTypeAdapter() {
+        return null;
+    }
+
+                /**
      * Creates a new adapter for an object of class '{@link de.fraunhofer.ipa.deployment.util.AbstractImplementation <em>Abstract Implementation</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;

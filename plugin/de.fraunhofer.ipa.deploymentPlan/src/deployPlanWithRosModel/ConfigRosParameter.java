@@ -58,7 +58,7 @@ public interface ConfigRosParameter extends AbstractConfigExecutionParameter {
      * @return the value of the '<em>To</em>' reference.
      * @see #setTo(AbstractConfigProperty)
      * @see deployPlanWithRosModel.DeployPlanWithRosModelPackage#getConfigRosParameter_To()
-     * @model required="true"
+     * @model
      * @generated
      */
     AbstractConfigProperty getTo();

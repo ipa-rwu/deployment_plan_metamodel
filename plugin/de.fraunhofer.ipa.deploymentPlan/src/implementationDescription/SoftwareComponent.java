@@ -21,7 +21,7 @@ import org.eclipse.emf.common.util.EList;
  * </ul>
  *
  * @see implementationDescription.ImplementationDescriptionPackage#getSoftwareComponent()
- * @model
+ * @model annotation="http://www.obeo.fr/dsl/dnc/archetype archetype='Description'"
  * @generated
  */
 public interface SoftwareComponent extends AbstractComputationAssignmentTarget {

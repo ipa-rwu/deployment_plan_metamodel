@@ -59,6 +59,43 @@ public interface ImplementationDescriptionPackage extends EPackage {
     ImplementationDescriptionPackage eINSTANCE = implementationDescription.impl.ImplementationDescriptionPackageImpl.init();
 
     /**
+     * The meta object id for the '{@link implementationDescription.impl.ImplementationDescriptionSetImpl <em>Set</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see implementationDescription.impl.ImplementationDescriptionSetImpl
+     * @see implementationDescription.impl.ImplementationDescriptionPackageImpl#getImplementationDescriptionSet()
+     * @generated
+     */
+    int IMPLEMENTATION_DESCRIPTION_SET = 0;
+
+                /**
+     * The feature id for the '<em><b>Implementations</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int IMPLEMENTATION_DESCRIPTION_SET__IMPLEMENTATIONS = 0;
+
+                /**
+     * The number of structural features of the '<em>Set</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int IMPLEMENTATION_DESCRIPTION_SET_FEATURE_COUNT = 1;
+
+                /**
+     * The number of operations of the '<em>Set</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int IMPLEMENTATION_DESCRIPTION_SET_OPERATION_COUNT = 0;
+
+                /**
      * The meta object id for the '{@link implementationDescription.impl.ImplementationDescriptionImpl <em>Implementation Description</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -66,7 +103,7 @@ public interface ImplementationDescriptionPackage extends EPackage {
      * @see implementationDescription.impl.ImplementationDescriptionPackageImpl#getImplementationDescription()
      * @generated
      */
-    int IMPLEMENTATION_DESCRIPTION = 0;
+    int IMPLEMENTATION_DESCRIPTION = 1;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -112,7 +149,7 @@ public interface ImplementationDescriptionPackage extends EPackage {
      * @see implementationDescription.impl.ImplementationDescriptionPackageImpl#getSoftwareComponent()
      * @generated
      */
-    int SOFTWARE_COMPONENT = 1;
+    int SOFTWARE_COMPONENT = 2;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -167,7 +204,7 @@ public interface ImplementationDescriptionPackage extends EPackage {
      * @see implementationDescription.impl.ImplementationDescriptionPackageImpl#getExecutionRequirement()
      * @generated
      */
-    int EXECUTION_REQUIREMENT = 7;
+    int EXECUTION_REQUIREMENT = 8;
 
     /**
      * The number of structural features of the '<em>Execution Requirement</em>' class.
@@ -195,7 +232,7 @@ public interface ImplementationDescriptionPackage extends EPackage {
      * @see implementationDescription.impl.ImplementationDescriptionPackageImpl#getDeviceRequirement()
      * @generated
      */
-    int DEVICE_REQUIREMENT = 2;
+    int DEVICE_REQUIREMENT = 3;
 
     /**
      * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -241,7 +278,7 @@ public interface ImplementationDescriptionPackage extends EPackage {
      * @see implementationDescription.impl.ImplementationDescriptionPackageImpl#getSoftwareConfigurationRequirement()
      * @generated
      */
-    int SOFTWARE_CONFIGURATION_REQUIREMENT = 3;
+    int SOFTWARE_CONFIGURATION_REQUIREMENT = 4;
 
     /**
      * The feature id for the '<em><b>Parameter</b></em>' containment reference list.
@@ -278,7 +315,7 @@ public interface ImplementationDescriptionPackage extends EPackage {
      * @see implementationDescription.impl.ImplementationDescriptionPackageImpl#getExecutionParameter()
      * @generated
      */
-    int EXECUTION_PARAMETER = 6;
+    int EXECUTION_PARAMETER = 7;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -342,7 +379,7 @@ public interface ImplementationDescriptionPackage extends EPackage {
      * @see implementationDescription.impl.ImplementationDescriptionPackageImpl#getHWSWParemeter()
      * @generated
      */
-    int HWSW_PAREMETER = 4;
+    int HWSW_PAREMETER = 5;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -406,7 +443,7 @@ public interface ImplementationDescriptionPackage extends EPackage {
      * @see implementationDescription.impl.ImplementationDescriptionPackageImpl#getSoftwareExecutionParemeter()
      * @generated
      */
-    int SOFTWARE_EXECUTION_PAREMETER = 5;
+    int SOFTWARE_EXECUTION_PAREMETER = 6;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -470,7 +507,7 @@ public interface ImplementationDescriptionPackage extends EPackage {
      * @see implementationDescription.impl.ImplementationDescriptionPackageImpl#getRepository()
      * @generated
      */
-    int REPOSITORY = 8;
+    int REPOSITORY = 9;
 
     /**
      * The feature id for the '<em><b>Url</b></em>' attribute.
@@ -525,7 +562,7 @@ public interface ImplementationDescriptionPackage extends EPackage {
      * @see implementationDescription.impl.ImplementationDescriptionPackageImpl#getRepositoryType()
      * @generated
      */
-    int REPOSITORY_TYPE = 9;
+    int REPOSITORY_TYPE = 10;
 
     /**
      * The number of structural features of the '<em>Repository Type</em>' class.
@@ -553,7 +590,7 @@ public interface ImplementationDescriptionPackage extends EPackage {
      * @see implementationDescription.impl.ImplementationDescriptionPackageImpl#getGitRepositoryType()
      * @generated
      */
-    int GIT_REPOSITORY_TYPE = 10;
+    int GIT_REPOSITORY_TYPE = 11;
 
     /**
      * The number of structural features of the '<em>Git Repository Type</em>' class.
@@ -575,6 +612,56 @@ public interface ImplementationDescriptionPackage extends EPackage {
 
 
     /**
+     * The meta object id for the '{@link implementationDescription.impl.AptRepositoryTypeImpl <em>Apt Repository Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see implementationDescription.impl.AptRepositoryTypeImpl
+     * @see implementationDescription.impl.ImplementationDescriptionPackageImpl#getAptRepositoryType()
+     * @generated
+     */
+    int APT_REPOSITORY_TYPE = 12;
+
+                /**
+     * The number of structural features of the '<em>Apt Repository Type</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int APT_REPOSITORY_TYPE_FEATURE_COUNT = REPOSITORY_TYPE_FEATURE_COUNT + 0;
+
+                /**
+     * The number of operations of the '<em>Apt Repository Type</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int APT_REPOSITORY_TYPE_OPERATION_COUNT = REPOSITORY_TYPE_OPERATION_COUNT + 0;
+
+
+                /**
+     * Returns the meta object for class '{@link implementationDescription.ImplementationDescriptionSet <em>Set</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Set</em>'.
+     * @see implementationDescription.ImplementationDescriptionSet
+     * @generated
+     */
+    EClass getImplementationDescriptionSet();
+
+                /**
+     * Returns the meta object for the containment reference list '{@link implementationDescription.ImplementationDescriptionSet#getImplementations <em>Implementations</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the containment reference list '<em>Implementations</em>'.
+     * @see implementationDescription.ImplementationDescriptionSet#getImplementations()
+     * @see #getImplementationDescriptionSet()
+     * @generated
+     */
+    EReference getImplementationDescriptionSet_Implementations();
+
+                /**
      * Returns the meta object for class '{@link implementationDescription.ImplementationDescription <em>Implementation Description</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -806,6 +893,16 @@ public interface ImplementationDescriptionPackage extends EPackage {
     EClass getGitRepositoryType();
 
     /**
+     * Returns the meta object for class '{@link implementationDescription.AptRepositoryType <em>Apt Repository Type</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Apt Repository Type</em>'.
+     * @see implementationDescription.AptRepositoryType
+     * @generated
+     */
+    EClass getAptRepositoryType();
+
+                /**
      * Returns the factory that creates the instances of the model.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -829,6 +926,24 @@ public interface ImplementationDescriptionPackage extends EPackage {
      */
     interface Literals {
         /**
+         * The meta object literal for the '{@link implementationDescription.impl.ImplementationDescriptionSetImpl <em>Set</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see implementationDescription.impl.ImplementationDescriptionSetImpl
+         * @see implementationDescription.impl.ImplementationDescriptionPackageImpl#getImplementationDescriptionSet()
+         * @generated
+         */
+        EClass IMPLEMENTATION_DESCRIPTION_SET = eINSTANCE.getImplementationDescriptionSet();
+
+                    /**
+         * The meta object literal for the '<em><b>Implementations</b></em>' containment reference list feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference IMPLEMENTATION_DESCRIPTION_SET__IMPLEMENTATIONS = eINSTANCE.getImplementationDescriptionSet_Implementations();
+
+                                /**
          * The meta object literal for the '{@link implementationDescription.impl.ImplementationDescriptionImpl <em>Implementation Description</em>}' class.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
@@ -1025,6 +1140,16 @@ public interface ImplementationDescriptionPackage extends EPackage {
          * @generated
          */
         EClass GIT_REPOSITORY_TYPE = eINSTANCE.getGitRepositoryType();
+
+                                /**
+         * The meta object literal for the '{@link implementationDescription.impl.AptRepositoryTypeImpl <em>Apt Repository Type</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see implementationDescription.impl.AptRepositoryTypeImpl
+         * @see implementationDescription.impl.ImplementationDescriptionPackageImpl#getAptRepositoryType()
+         * @generated
+         */
+        EClass APT_REPOSITORY_TYPE = eINSTANCE.getAptRepositoryType();
 
     }
 

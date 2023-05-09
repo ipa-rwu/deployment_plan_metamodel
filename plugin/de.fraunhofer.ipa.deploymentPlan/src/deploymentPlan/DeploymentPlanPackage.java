@@ -242,10 +242,10 @@ public interface DeploymentPlanPackage extends EPackage {
     int ABSTRACT_REALIZATION_OPERATION_COUNT = 0;
 
     /**
-     * The meta object id for the '{@link deploymentPlan.impl.RealizationImpl <em>Realization</em>}' class.
+     * The meta object id for the '{@link deploymentPlan.Realization <em>Realization</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see deploymentPlan.impl.RealizationImpl
+     * @see deploymentPlan.Realization
      * @see deploymentPlan.impl.DeploymentPlanPackageImpl#getRealization()
      * @generated
      */
@@ -325,16 +325,16 @@ public interface DeploymentPlanPackage extends EPackage {
     int ABSTRACT_COMPUTATION_ASSIGNMENT__SOFTWARE_COMPONENTS = 3;
 
     /**
-     * The feature id for the '<em><b>Operting System Version</b></em>' attribute.
+     * The feature id for the '<em><b>Middleware</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int ABSTRACT_COMPUTATION_ASSIGNMENT__OPERTING_SYSTEM_VERSION = 4;
+    int ABSTRACT_COMPUTATION_ASSIGNMENT__MIDDLEWARE = 4;
 
-    /**
-     * The feature id for the '<em><b>Runtime Type</b></em>' attribute.
+                /**
+     * The feature id for the '<em><b>Runtime Type</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -343,31 +343,13 @@ public interface DeploymentPlanPackage extends EPackage {
     int ABSTRACT_COMPUTATION_ASSIGNMENT__RUNTIME_TYPE = 5;
 
     /**
-     * The feature id for the '<em><b>Middleware</b></em>' containment reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int ABSTRACT_COMPUTATION_ASSIGNMENT__MIDDLEWARE = 6;
-
-    /**
-     * The feature id for the '<em><b>Operting System Type</b></em>' containment reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int ABSTRACT_COMPUTATION_ASSIGNMENT__OPERTING_SYSTEM_TYPE = 7;
-
-    /**
      * The number of structural features of the '<em>Abstract Computation Assignment</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int ABSTRACT_COMPUTATION_ASSIGNMENT_FEATURE_COUNT = 8;
+    int ABSTRACT_COMPUTATION_ASSIGNMENT_FEATURE_COUNT = 6;
 
     /**
      * The number of operations of the '<em>Abstract Computation Assignment</em>' class.
@@ -425,24 +407,6 @@ public interface DeploymentPlanPackage extends EPackage {
     int IMPLEMENTATION_ASSIGNMENT__SOFTWARE_COMPONENTS = ABSTRACT_COMPUTATION_ASSIGNMENT__SOFTWARE_COMPONENTS;
 
     /**
-     * The feature id for the '<em><b>Operting System Version</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int IMPLEMENTATION_ASSIGNMENT__OPERTING_SYSTEM_VERSION = ABSTRACT_COMPUTATION_ASSIGNMENT__OPERTING_SYSTEM_VERSION;
-
-    /**
-     * The feature id for the '<em><b>Runtime Type</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int IMPLEMENTATION_ASSIGNMENT__RUNTIME_TYPE = ABSTRACT_COMPUTATION_ASSIGNMENT__RUNTIME_TYPE;
-
-    /**
      * The feature id for the '<em><b>Middleware</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -451,14 +415,14 @@ public interface DeploymentPlanPackage extends EPackage {
      */
     int IMPLEMENTATION_ASSIGNMENT__MIDDLEWARE = ABSTRACT_COMPUTATION_ASSIGNMENT__MIDDLEWARE;
 
-    /**
-     * The feature id for the '<em><b>Operting System Type</b></em>' containment reference.
+                /**
+     * The feature id for the '<em><b>Runtime Type</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int IMPLEMENTATION_ASSIGNMENT__OPERTING_SYSTEM_TYPE = ABSTRACT_COMPUTATION_ASSIGNMENT__OPERTING_SYSTEM_TYPE;
+    int IMPLEMENTATION_ASSIGNMENT__RUNTIME_TYPE = ABSTRACT_COMPUTATION_ASSIGNMENT__RUNTIME_TYPE;
 
     /**
      * The number of structural features of the '<em>Implementation Assignment</em>' class.
@@ -728,6 +692,89 @@ public interface DeploymentPlanPackage extends EPackage {
     int ROS_MIDDLEWARE_OPERATION_COUNT = MIDDLEWARE_OPERATION_COUNT + 0;
 
     /**
+     * The meta object id for the '{@link deploymentPlan.impl.AbstractRuntimeImpl <em>Abstract Runtime</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see deploymentPlan.impl.AbstractRuntimeImpl
+     * @see deploymentPlan.impl.DeploymentPlanPackageImpl#getAbstractRuntime()
+     * @generated
+     */
+    int ABSTRACT_RUNTIME = 13;
+
+                /**
+     * The feature id for the '<em><b>Type</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_RUNTIME__TYPE = 0;
+
+                /**
+     * The number of structural features of the '<em>Abstract Runtime</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_RUNTIME_FEATURE_COUNT = 1;
+
+                /**
+     * The number of operations of the '<em>Abstract Runtime</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_RUNTIME_OPERATION_COUNT = 0;
+
+                /**
+     * The meta object id for the '{@link deploymentPlan.impl.ContainerRuntimeImpl <em>Container Runtime</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see deploymentPlan.impl.ContainerRuntimeImpl
+     * @see deploymentPlan.impl.DeploymentPlanPackageImpl#getContainerRuntime()
+     * @generated
+     */
+    int CONTAINER_RUNTIME = 14;
+
+                /**
+     * The feature id for the '<em><b>Type</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONTAINER_RUNTIME__TYPE = ABSTRACT_RUNTIME__TYPE;
+
+                /**
+     * The feature id for the '<em><b>Operting System Resource</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONTAINER_RUNTIME__OPERTING_SYSTEM_RESOURCE = ABSTRACT_RUNTIME_FEATURE_COUNT + 0;
+
+                /**
+     * The number of structural features of the '<em>Container Runtime</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONTAINER_RUNTIME_FEATURE_COUNT = ABSTRACT_RUNTIME_FEATURE_COUNT + 1;
+
+                /**
+     * The number of operations of the '<em>Container Runtime</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONTAINER_RUNTIME_OPERATION_COUNT = ABSTRACT_RUNTIME_OPERATION_COUNT + 0;
+
+                /**
      * The meta object id for the '{@link deploymentPlan.ROSDistro <em>ROS Distro</em>}' enum.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -735,7 +782,7 @@ public interface DeploymentPlanPackage extends EPackage {
      * @see deploymentPlan.impl.DeploymentPlanPackageImpl#getROSDistro()
      * @generated
      */
-    int ROS_DISTRO = 13;
+    int ROS_DISTRO = 15;
 
 
     /**
@@ -949,26 +996,15 @@ public interface DeploymentPlanPackage extends EPackage {
     EReference getAbstractComputationAssignment_SoftwareComponents();
 
     /**
-     * Returns the meta object for the attribute '{@link deploymentPlan.AbstractComputationAssignment#getOpertingSystemVersion <em>Operting System Version</em>}'.
+     * Returns the meta object for the containment reference '{@link deploymentPlan.AbstractComputationAssignment#getRuntimeType <em>Runtime Type</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Operting System Version</em>'.
-     * @see deploymentPlan.AbstractComputationAssignment#getOpertingSystemVersion()
-     * @see #getAbstractComputationAssignment()
-     * @generated
-     */
-    EAttribute getAbstractComputationAssignment_OpertingSystemVersion();
-
-    /**
-     * Returns the meta object for the attribute '{@link deploymentPlan.AbstractComputationAssignment#getRuntimeType <em>Runtime Type</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Runtime Type</em>'.
+     * @return the meta object for the containment reference '<em>Runtime Type</em>'.
      * @see deploymentPlan.AbstractComputationAssignment#getRuntimeType()
      * @see #getAbstractComputationAssignment()
      * @generated
      */
-    EAttribute getAbstractComputationAssignment_RuntimeType();
+    EReference getAbstractComputationAssignment_RuntimeType();
 
     /**
      * Returns the meta object for the containment reference '{@link deploymentPlan.AbstractComputationAssignment#getMiddleware <em>Middleware</em>}'.
@@ -980,17 +1016,6 @@ public interface DeploymentPlanPackage extends EPackage {
      * @generated
      */
     EReference getAbstractComputationAssignment_Middleware();
-
-    /**
-     * Returns the meta object for the containment reference '{@link deploymentPlan.AbstractComputationAssignment#getOpertingSystemType <em>Operting System Type</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the containment reference '<em>Operting System Type</em>'.
-     * @see deploymentPlan.AbstractComputationAssignment#getOpertingSystemType()
-     * @see #getAbstractComputationAssignment()
-     * @generated
-     */
-    EReference getAbstractComputationAssignment_OpertingSystemType();
 
     /**
      * Returns the meta object for class '{@link deploymentPlan.AbstractDeploymentPlan <em>Abstract Deployment Plan</em>}'.
@@ -1089,6 +1114,48 @@ public interface DeploymentPlanPackage extends EPackage {
     EAttribute getRosMiddleware_Value();
 
     /**
+     * Returns the meta object for class '{@link deploymentPlan.AbstractRuntime <em>Abstract Runtime</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Abstract Runtime</em>'.
+     * @see deploymentPlan.AbstractRuntime
+     * @generated
+     */
+    EClass getAbstractRuntime();
+
+                /**
+     * Returns the meta object for the attribute '{@link deploymentPlan.AbstractRuntime#getType <em>Type</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Type</em>'.
+     * @see deploymentPlan.AbstractRuntime#getType()
+     * @see #getAbstractRuntime()
+     * @generated
+     */
+    EAttribute getAbstractRuntime_Type();
+
+                /**
+     * Returns the meta object for class '{@link deploymentPlan.ContainerRuntime <em>Container Runtime</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Container Runtime</em>'.
+     * @see deploymentPlan.ContainerRuntime
+     * @generated
+     */
+    EClass getContainerRuntime();
+
+                /**
+     * Returns the meta object for the containment reference list '{@link deploymentPlan.ContainerRuntime#getOpertingSystemResource <em>Operting System Resource</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the containment reference list '<em>Operting System Resource</em>'.
+     * @see deploymentPlan.ContainerRuntime#getOpertingSystemResource()
+     * @see #getContainerRuntime()
+     * @generated
+     */
+    EReference getContainerRuntime_OpertingSystemResource();
+
+                /**
      * Returns the meta object for enum '{@link deploymentPlan.ROSDistro <em>ROS Distro</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1150,10 +1217,10 @@ public interface DeploymentPlanPackage extends EPackage {
         EClass DEPLOYMENT_PLAN = eINSTANCE.getDeploymentPlan();
 
         /**
-         * The meta object literal for the '{@link deploymentPlan.impl.RealizationImpl <em>Realization</em>}' class.
+         * The meta object literal for the '{@link deploymentPlan.Realization <em>Realization</em>}' class.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @see deploymentPlan.impl.RealizationImpl
+         * @see deploymentPlan.Realization
          * @see deploymentPlan.impl.DeploymentPlanPackageImpl#getRealization()
          * @generated
          */
@@ -1302,20 +1369,12 @@ public interface DeploymentPlanPackage extends EPackage {
         EReference ABSTRACT_COMPUTATION_ASSIGNMENT__SOFTWARE_COMPONENTS = eINSTANCE.getAbstractComputationAssignment_SoftwareComponents();
 
         /**
-         * The meta object literal for the '<em><b>Operting System Version</b></em>' attribute feature.
+         * The meta object literal for the '<em><b>Runtime Type</b></em>' containment reference feature.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
          * @generated
          */
-        EAttribute ABSTRACT_COMPUTATION_ASSIGNMENT__OPERTING_SYSTEM_VERSION = eINSTANCE.getAbstractComputationAssignment_OpertingSystemVersion();
-
-        /**
-         * The meta object literal for the '<em><b>Runtime Type</b></em>' attribute feature.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @generated
-         */
-        EAttribute ABSTRACT_COMPUTATION_ASSIGNMENT__RUNTIME_TYPE = eINSTANCE.getAbstractComputationAssignment_RuntimeType();
+        EReference ABSTRACT_COMPUTATION_ASSIGNMENT__RUNTIME_TYPE = eINSTANCE.getAbstractComputationAssignment_RuntimeType();
 
         /**
          * The meta object literal for the '<em><b>Middleware</b></em>' containment reference feature.
@@ -1324,14 +1383,6 @@ public interface DeploymentPlanPackage extends EPackage {
          * @generated
          */
         EReference ABSTRACT_COMPUTATION_ASSIGNMENT__MIDDLEWARE = eINSTANCE.getAbstractComputationAssignment_Middleware();
-
-        /**
-         * The meta object literal for the '<em><b>Operting System Type</b></em>' containment reference feature.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @generated
-         */
-        EReference ABSTRACT_COMPUTATION_ASSIGNMENT__OPERTING_SYSTEM_TYPE = eINSTANCE.getAbstractComputationAssignment_OpertingSystemType();
 
         /**
          * The meta object literal for the '{@link deploymentPlan.impl.AbstractDeploymentPlanImpl <em>Abstract Deployment Plan</em>}' class.
@@ -1412,6 +1463,42 @@ public interface DeploymentPlanPackage extends EPackage {
         EAttribute ROS_MIDDLEWARE__VALUE = eINSTANCE.getRosMiddleware_Value();
 
         /**
+         * The meta object literal for the '{@link deploymentPlan.impl.AbstractRuntimeImpl <em>Abstract Runtime</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see deploymentPlan.impl.AbstractRuntimeImpl
+         * @see deploymentPlan.impl.DeploymentPlanPackageImpl#getAbstractRuntime()
+         * @generated
+         */
+        EClass ABSTRACT_RUNTIME = eINSTANCE.getAbstractRuntime();
+
+                                /**
+         * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute ABSTRACT_RUNTIME__TYPE = eINSTANCE.getAbstractRuntime_Type();
+
+                                /**
+         * The meta object literal for the '{@link deploymentPlan.impl.ContainerRuntimeImpl <em>Container Runtime</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see deploymentPlan.impl.ContainerRuntimeImpl
+         * @see deploymentPlan.impl.DeploymentPlanPackageImpl#getContainerRuntime()
+         * @generated
+         */
+        EClass CONTAINER_RUNTIME = eINSTANCE.getContainerRuntime();
+
+                                /**
+         * The meta object literal for the '<em><b>Operting System Resource</b></em>' containment reference list feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference CONTAINER_RUNTIME__OPERTING_SYSTEM_RESOURCE = eINSTANCE.getContainerRuntime_OpertingSystemResource();
+
+                                /**
          * The meta object literal for the '{@link deploymentPlan.ROSDistro <em>ROS Distro</em>}' enum.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->

@@ -4,6 +4,7 @@ package implementationDescription.impl;
 
 import de.fraunhofer.ipa.deployment.util.UtilPackage;
 
+import implementationDescription.AptRepositoryType;
 import implementationDescription.DeviceRequirement;
 import implementationDescription.ExecutionParameter;
 import implementationDescription.ExecutionRequirement;
@@ -12,6 +13,7 @@ import implementationDescription.HWSWParemeter;
 import implementationDescription.ImplementationDescription;
 import implementationDescription.ImplementationDescriptionFactory;
 import implementationDescription.ImplementationDescriptionPackage;
+import implementationDescription.ImplementationDescriptionSet;
 import implementationDescription.Repository;
 import implementationDescription.RepositoryType;
 import implementationDescription.SoftwareComponent;
@@ -33,6 +35,13 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
  */
 public class ImplementationDescriptionPackageImpl extends EPackageImpl implements ImplementationDescriptionPackage {
     /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass implementationDescriptionSetEClass = null;
+
+                /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -110,6 +119,13 @@ public class ImplementationDescriptionPackageImpl extends EPackageImpl implement
     private EClass gitRepositoryTypeEClass = null;
 
     /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass aptRepositoryTypeEClass = null;
+
+                /**
      * Creates an instance of the model <b>Package</b>, registered with
      * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
      * package URI value.
@@ -173,6 +189,24 @@ public class ImplementationDescriptionPackageImpl extends EPackageImpl implement
     }
 
     /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getImplementationDescriptionSet() {
+        return implementationDescriptionSetEClass;
+    }
+
+                /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EReference getImplementationDescriptionSet_Implementations() {
+        return (EReference)implementationDescriptionSetEClass.getEStructuralFeatures().get(0);
+    }
+
+                /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -375,6 +409,15 @@ public class ImplementationDescriptionPackageImpl extends EPackageImpl implement
      * <!-- end-user-doc -->
      * @generated
      */
+    public EClass getAptRepositoryType() {
+        return aptRepositoryTypeEClass;
+    }
+
+                /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public ImplementationDescriptionFactory getImplementationDescriptionFactory() {
         return (ImplementationDescriptionFactory)getEFactoryInstance();
     }
@@ -398,6 +441,9 @@ public class ImplementationDescriptionPackageImpl extends EPackageImpl implement
         isCreated = true;
 
         // Create classes and their features
+        implementationDescriptionSetEClass = createEClass(IMPLEMENTATION_DESCRIPTION_SET);
+        createEReference(implementationDescriptionSetEClass, IMPLEMENTATION_DESCRIPTION_SET__IMPLEMENTATIONS);
+
         implementationDescriptionEClass = createEClass(IMPLEMENTATION_DESCRIPTION);
         createEAttribute(implementationDescriptionEClass, IMPLEMENTATION_DESCRIPTION__NAME);
         createEReference(implementationDescriptionEClass, IMPLEMENTATION_DESCRIPTION__INCLUDE_SOFTWARE_COMPONENTS);
@@ -430,6 +476,8 @@ public class ImplementationDescriptionPackageImpl extends EPackageImpl implement
         repositoryTypeEClass = createEClass(REPOSITORY_TYPE);
 
         gitRepositoryTypeEClass = createEClass(GIT_REPOSITORY_TYPE);
+
+        aptRepositoryTypeEClass = createEClass(APT_REPOSITORY_TYPE);
     }
 
     /**
@@ -472,8 +520,12 @@ public class ImplementationDescriptionPackageImpl extends EPackageImpl implement
         softwareExecutionParemeterEClass.getESuperTypes().add(this.getExecutionParameter());
         executionParameterEClass.getESuperTypes().add(theUtilPackage.getProperty());
         gitRepositoryTypeEClass.getESuperTypes().add(this.getRepositoryType());
+        aptRepositoryTypeEClass.getESuperTypes().add(this.getRepositoryType());
 
         // Initialize classes, features, and operations; add parameters
+        initEClass(implementationDescriptionSetEClass, ImplementationDescriptionSet.class, "ImplementationDescriptionSet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEReference(getImplementationDescriptionSet_Implementations(), this.getImplementationDescription(), null, "implementations", null, 1, -1, ImplementationDescriptionSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
         initEClass(implementationDescriptionEClass, ImplementationDescription.class, "ImplementationDescription", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEAttribute(getImplementationDescription_Name(), ecorePackage.getEString(), "name", null, 1, 1, ImplementationDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEReference(getImplementationDescription_IncludeSoftwareComponents(), this.getSoftwareComponent(), null, "includeSoftwareComponents", null, 1, -1, ImplementationDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -507,8 +559,36 @@ public class ImplementationDescriptionPackageImpl extends EPackageImpl implement
 
         initEClass(gitRepositoryTypeEClass, GitRepositoryType.class, "GitRepositoryType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+        initEClass(aptRepositoryTypeEClass, AptRepositoryType.class, "AptRepositoryType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
         // Create resource
         createResource(eNS_URI);
+
+        // Create annotations
+        // http://www.obeo.fr/dsl/dnc/archetype
+        createArchetypeAnnotations();
+    }
+
+                /**
+     * Initializes the annotations for <b>http://www.obeo.fr/dsl/dnc/archetype</b>.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void createArchetypeAnnotations() {
+        String source = "http://www.obeo.fr/dsl/dnc/archetype";
+        addAnnotation
+          (implementationDescriptionEClass,
+           source,
+           new String[] {
+               "archetype", "Description"
+           });
+        addAnnotation
+          (softwareComponentEClass,
+           source,
+           new String[] {
+               "archetype", "Description"
+           });
     }
 
 } //ImplementationDescriptionPackageImpl

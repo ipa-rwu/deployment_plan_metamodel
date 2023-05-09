@@ -59,11 +59,11 @@ public class DeploymentPlanFactoryImpl extends EFactoryImpl implements Deploymen
         switch (eClass.getClassifierID()) {
             case DeploymentPlanPackage.PLAN: return createPlan();
             case DeploymentPlanPackage.DEPLOYMENT_PLAN: return createDeploymentPlan();
-            case DeploymentPlanPackage.REALIZATION: return createRealization();
             case DeploymentPlanPackage.IMPLEMENTATION_ASSIGNMENT: return createImplementationAssignment();
             case DeploymentPlanPackage.CONFIG_EXECUTION_PARAMETER: return createConfigExecutionParameter();
             case DeploymentPlanPackage.CONFIG_SOFTWARE_COMPONENT: return createConfigSoftwareComponent();
             case DeploymentPlanPackage.ROS_MIDDLEWARE: return createRosMiddleware();
+            case DeploymentPlanPackage.CONTAINER_RUNTIME: return createContainerRuntime();
             default:
                 throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
         }
@@ -124,16 +124,6 @@ public class DeploymentPlanFactoryImpl extends EFactoryImpl implements Deploymen
      * <!-- end-user-doc -->
      * @generated
      */
-    public Realization createRealization() {
-        RealizationImpl realization = new RealizationImpl();
-        return realization;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
     public ImplementationAssignment createImplementationAssignment() {
         ImplementationAssignmentImpl implementationAssignment = new ImplementationAssignmentImpl();
         return implementationAssignment;
@@ -170,6 +160,16 @@ public class DeploymentPlanFactoryImpl extends EFactoryImpl implements Deploymen
     }
 
     /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public ContainerRuntime createContainerRuntime() {
+        ContainerRuntimeImpl containerRuntime = new ContainerRuntimeImpl();
+        return containerRuntime;
+    }
+
+                /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated

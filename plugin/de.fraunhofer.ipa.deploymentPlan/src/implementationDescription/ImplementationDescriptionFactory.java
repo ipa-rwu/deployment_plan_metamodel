@@ -22,6 +22,15 @@ public interface ImplementationDescriptionFactory extends EFactory {
     ImplementationDescriptionFactory eINSTANCE = implementationDescription.impl.ImplementationDescriptionFactoryImpl.init();
 
     /**
+     * Returns a new object of class '<em>Set</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Set</em>'.
+     * @generated
+     */
+    ImplementationDescriptionSet createImplementationDescriptionSet();
+
+                /**
      * Returns a new object of class '<em>Implementation Description</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -103,6 +112,15 @@ public interface ImplementationDescriptionFactory extends EFactory {
     GitRepositoryType createGitRepositoryType();
 
     /**
+     * Returns a new object of class '<em>Apt Repository Type</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Apt Repository Type</em>'.
+     * @generated
+     */
+    AptRepositoryType createAptRepositoryType();
+
+                /**
      * Returns the package supported by this factory.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
