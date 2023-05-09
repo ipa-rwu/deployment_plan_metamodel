@@ -18,6 +18,11 @@ DeploymentPlanWithRosModel returns deploymentPlan::DeploymentPlan:
     DEDENT
 ;
 
+@Override
+AbstarctConfigSoftwareComponent returns deploymentPlan::AbstarctConfigSoftwareComponent:
+    ConfigRosSoftwareComponent
+;
+
 ConfigRosSoftwareComponent returns ConfigRosSoftwareComponent:
     {ConfigRosSoftwareComponent}
     component=[rossystem::System|EString] (":"
@@ -44,9 +49,9 @@ ConfigRosSoftwareComponent returns ConfigRosSoftwareComponent:
 
 @Override
 AbstractComputationAssignment returns deploymentPlan::AbstractComputationAssignment:
-    RossystemAssignment;
+    RossystemImplementationAssignment;
 
-RossystemAssignment returns deploymentPlan::ImplementationAssignment:
+RossystemImplementationAssignment returns RossystemImplementationAssignment:
     PreListElement 'name:' name = EString
     INDENT
     'executedBy:' executedBy=[targetEnvironment::ComputationDeviceInstance|EString]
