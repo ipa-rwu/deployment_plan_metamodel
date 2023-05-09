@@ -2,28 +2,17 @@
  */
 package deploymentPlan.impl;
 
-import deploymentPlan.AbstarctConfigSoftwareComponent;
 import deploymentPlan.AbstractComputationAssignment;
 import deploymentPlan.AbstractRuntime;
 import deploymentPlan.DeploymentPlanPackage;
 import deploymentPlan.Middleware;
-
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
-
 import targetEnvironment.ComputationDeviceInstance;
 
 /**
@@ -37,7 +26,6 @@ import targetEnvironment.ComputationDeviceInstance;
  *   <li>{@link deploymentPlan.impl.AbstractComputationAssignmentImpl#getName <em>Name</em>}</li>
  *   <li>{@link deploymentPlan.impl.AbstractComputationAssignmentImpl#getExecutedBy <em>Executed By</em>}</li>
  *   <li>{@link deploymentPlan.impl.AbstractComputationAssignmentImpl#getVersion <em>Version</em>}</li>
- *   <li>{@link deploymentPlan.impl.AbstractComputationAssignmentImpl#getSoftwareComponents <em>Software Components</em>}</li>
  *   <li>{@link deploymentPlan.impl.AbstractComputationAssignmentImpl#getMiddleware <em>Middleware</em>}</li>
  *   <li>{@link deploymentPlan.impl.AbstractComputationAssignmentImpl#getRuntimeType <em>Runtime Type</em>}</li>
  * </ul>
@@ -96,16 +84,6 @@ public abstract class AbstractComputationAssignmentImpl extends MinimalEObjectIm
     protected String version = VERSION_EDEFAULT;
 
                 /**
-     * The cached value of the '{@link #getSoftwareComponents() <em>Software Components</em>}' containment reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getSoftwareComponents()
-     * @generated
-     * @ordered
-     */
-    protected EList<AbstarctConfigSoftwareComponent> softwareComponents;
-
-    /**
      * The cached value of the '{@link #getMiddleware() <em>Middleware</em>}' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -229,18 +207,6 @@ public abstract class AbstractComputationAssignmentImpl extends MinimalEObjectIm
      * <!-- end-user-doc -->
      * @generated
      */
-    public EList<AbstarctConfigSoftwareComponent> getSoftwareComponents() {
-        if (softwareComponents == null) {
-            softwareComponents = new EObjectContainmentEList<AbstarctConfigSoftwareComponent>(AbstarctConfigSoftwareComponent.class, this, DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__SOFTWARE_COMPONENTS);
-        }
-        return softwareComponents;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
     public AbstractRuntime getRuntimeType() {
         return runtimeType;
     }
@@ -330,8 +296,6 @@ public abstract class AbstractComputationAssignmentImpl extends MinimalEObjectIm
     @Override
     public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
         switch (featureID) {
-            case DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__SOFTWARE_COMPONENTS:
-                return ((InternalEList<?>)getSoftwareComponents()).basicRemove(otherEnd, msgs);
             case DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__MIDDLEWARE:
                 return basicSetMiddleware(null, msgs);
             case DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__RUNTIME_TYPE:
@@ -355,8 +319,6 @@ public abstract class AbstractComputationAssignmentImpl extends MinimalEObjectIm
                 return basicGetExecutedBy();
             case DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__VERSION:
                 return getVersion();
-            case DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__SOFTWARE_COMPONENTS:
-                return getSoftwareComponents();
             case DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__MIDDLEWARE:
                 return getMiddleware();
             case DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__RUNTIME_TYPE:
@@ -382,10 +344,6 @@ public abstract class AbstractComputationAssignmentImpl extends MinimalEObjectIm
                 return;
             case DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__VERSION:
                 setVersion((String)newValue);
-                return;
-            case DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__SOFTWARE_COMPONENTS:
-                getSoftwareComponents().clear();
-                getSoftwareComponents().addAll((Collection<? extends AbstarctConfigSoftwareComponent>)newValue);
                 return;
             case DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__MIDDLEWARE:
                 setMiddleware((Middleware)newValue);
@@ -414,9 +372,6 @@ public abstract class AbstractComputationAssignmentImpl extends MinimalEObjectIm
             case DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__VERSION:
                 setVersion(VERSION_EDEFAULT);
                 return;
-            case DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__SOFTWARE_COMPONENTS:
-                getSoftwareComponents().clear();
-                return;
             case DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__MIDDLEWARE:
                 setMiddleware((Middleware)null);
                 return;
@@ -441,8 +396,6 @@ public abstract class AbstractComputationAssignmentImpl extends MinimalEObjectIm
                 return executedBy != null;
             case DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__VERSION:
                 return VERSION_EDEFAULT == null ? version != null : !VERSION_EDEFAULT.equals(version);
-            case DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__SOFTWARE_COMPONENTS:
-                return softwareComponents != null && !softwareComponents.isEmpty();
             case DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__MIDDLEWARE:
                 return middleware != null;
             case DeploymentPlanPackage.ABSTRACT_COMPUTATION_ASSIGNMENT__RUNTIME_TYPE:

@@ -242,10 +242,10 @@ public interface DeploymentPlanPackage extends EPackage {
     int ABSTRACT_REALIZATION_OPERATION_COUNT = 0;
 
     /**
-     * The meta object id for the '{@link deploymentPlan.Realization <em>Realization</em>}' class.
+     * The meta object id for the '{@link deploymentPlan.impl.RealizationImpl <em>Realization</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see deploymentPlan.Realization
+     * @see deploymentPlan.impl.RealizationImpl
      * @see deploymentPlan.impl.DeploymentPlanPackageImpl#getRealization()
      * @generated
      */
@@ -316,22 +316,13 @@ public interface DeploymentPlanPackage extends EPackage {
     int ABSTRACT_COMPUTATION_ASSIGNMENT__VERSION = 2;
 
                 /**
-     * The feature id for the '<em><b>Software Components</b></em>' containment reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int ABSTRACT_COMPUTATION_ASSIGNMENT__SOFTWARE_COMPONENTS = 3;
-
-    /**
      * The feature id for the '<em><b>Middleware</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int ABSTRACT_COMPUTATION_ASSIGNMENT__MIDDLEWARE = 4;
+    int ABSTRACT_COMPUTATION_ASSIGNMENT__MIDDLEWARE = 3;
 
                 /**
      * The feature id for the '<em><b>Runtime Type</b></em>' containment reference.
@@ -340,7 +331,7 @@ public interface DeploymentPlanPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int ABSTRACT_COMPUTATION_ASSIGNMENT__RUNTIME_TYPE = 5;
+    int ABSTRACT_COMPUTATION_ASSIGNMENT__RUNTIME_TYPE = 4;
 
     /**
      * The number of structural features of the '<em>Abstract Computation Assignment</em>' class.
@@ -349,7 +340,7 @@ public interface DeploymentPlanPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int ABSTRACT_COMPUTATION_ASSIGNMENT_FEATURE_COUNT = 6;
+    int ABSTRACT_COMPUTATION_ASSIGNMENT_FEATURE_COUNT = 5;
 
     /**
      * The number of operations of the '<em>Abstract Computation Assignment</em>' class.
@@ -398,15 +389,6 @@ public interface DeploymentPlanPackage extends EPackage {
     int IMPLEMENTATION_ASSIGNMENT__VERSION = ABSTRACT_COMPUTATION_ASSIGNMENT__VERSION;
 
                 /**
-     * The feature id for the '<em><b>Software Components</b></em>' containment reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int IMPLEMENTATION_ASSIGNMENT__SOFTWARE_COMPONENTS = ABSTRACT_COMPUTATION_ASSIGNMENT__SOFTWARE_COMPONENTS;
-
-    /**
      * The feature id for the '<em><b>Middleware</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -424,6 +406,15 @@ public interface DeploymentPlanPackage extends EPackage {
      */
     int IMPLEMENTATION_ASSIGNMENT__RUNTIME_TYPE = ABSTRACT_COMPUTATION_ASSIGNMENT__RUNTIME_TYPE;
 
+                                                                /**
+     * The feature id for the '<em><b>Software Components</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int IMPLEMENTATION_ASSIGNMENT__SOFTWARE_COMPONENTS = ABSTRACT_COMPUTATION_ASSIGNMENT_FEATURE_COUNT + 0;
+
     /**
      * The number of structural features of the '<em>Implementation Assignment</em>' class.
      * <!-- begin-user-doc -->
@@ -431,7 +422,7 @@ public interface DeploymentPlanPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int IMPLEMENTATION_ASSIGNMENT_FEATURE_COUNT = ABSTRACT_COMPUTATION_ASSIGNMENT_FEATURE_COUNT + 0;
+    int IMPLEMENTATION_ASSIGNMENT_FEATURE_COUNT = ABSTRACT_COMPUTATION_ASSIGNMENT_FEATURE_COUNT + 1;
 
     /**
      * The number of operations of the '<em>Implementation Assignment</em>' class.
@@ -837,6 +828,17 @@ public interface DeploymentPlanPackage extends EPackage {
     EClass getImplementationAssignment();
 
     /**
+     * Returns the meta object for the containment reference list '{@link deploymentPlan.ImplementationAssignment#getSoftwareComponents <em>Software Components</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the containment reference list '<em>Software Components</em>'.
+     * @see deploymentPlan.ImplementationAssignment#getSoftwareComponents()
+     * @see #getImplementationAssignment()
+     * @generated
+     */
+    EReference getImplementationAssignment_SoftwareComponents();
+
+                /**
      * Returns the meta object for class '{@link deploymentPlan.ConfigExecutionParameter <em>Config Execution Parameter</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -985,17 +987,6 @@ public interface DeploymentPlanPackage extends EPackage {
     EAttribute getAbstractComputationAssignment_Version();
 
                 /**
-     * Returns the meta object for the containment reference list '{@link deploymentPlan.AbstractComputationAssignment#getSoftwareComponents <em>Software Components</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the containment reference list '<em>Software Components</em>'.
-     * @see deploymentPlan.AbstractComputationAssignment#getSoftwareComponents()
-     * @see #getAbstractComputationAssignment()
-     * @generated
-     */
-    EReference getAbstractComputationAssignment_SoftwareComponents();
-
-    /**
      * Returns the meta object for the containment reference '{@link deploymentPlan.AbstractComputationAssignment#getRuntimeType <em>Runtime Type</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1217,10 +1208,10 @@ public interface DeploymentPlanPackage extends EPackage {
         EClass DEPLOYMENT_PLAN = eINSTANCE.getDeploymentPlan();
 
         /**
-         * The meta object literal for the '{@link deploymentPlan.Realization <em>Realization</em>}' class.
+         * The meta object literal for the '{@link deploymentPlan.impl.RealizationImpl <em>Realization</em>}' class.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @see deploymentPlan.Realization
+         * @see deploymentPlan.impl.RealizationImpl
          * @see deploymentPlan.impl.DeploymentPlanPackageImpl#getRealization()
          * @generated
          */
@@ -1237,6 +1228,14 @@ public interface DeploymentPlanPackage extends EPackage {
         EClass IMPLEMENTATION_ASSIGNMENT = eINSTANCE.getImplementationAssignment();
 
         /**
+         * The meta object literal for the '<em><b>Software Components</b></em>' containment reference list feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference IMPLEMENTATION_ASSIGNMENT__SOFTWARE_COMPONENTS = eINSTANCE.getImplementationAssignment_SoftwareComponents();
+
+                                /**
          * The meta object literal for the '{@link deploymentPlan.impl.ConfigExecutionParameterImpl <em>Config Execution Parameter</em>}' class.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
@@ -1361,14 +1360,6 @@ public interface DeploymentPlanPackage extends EPackage {
         EAttribute ABSTRACT_COMPUTATION_ASSIGNMENT__VERSION = eINSTANCE.getAbstractComputationAssignment_Version();
 
                                 /**
-         * The meta object literal for the '<em><b>Software Components</b></em>' containment reference list feature.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @generated
-         */
-        EReference ABSTRACT_COMPUTATION_ASSIGNMENT__SOFTWARE_COMPONENTS = eINSTANCE.getAbstractComputationAssignment_SoftwareComponents();
-
-        /**
          * The meta object literal for the '<em><b>Runtime Type</b></em>' containment reference feature.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->

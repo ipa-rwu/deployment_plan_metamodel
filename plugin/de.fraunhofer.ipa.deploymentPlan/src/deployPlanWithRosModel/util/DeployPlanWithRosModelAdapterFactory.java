@@ -71,8 +71,8 @@ public class DeployPlanWithRosModelAdapterFactory extends AdapterFactoryImpl {
     protected DeployPlanWithRosModelSwitch<Adapter> modelSwitch =
         new DeployPlanWithRosModelSwitch<Adapter>() {
             @Override
-            public Adapter caseRospackageImplementation(RospackageImplementation object) {
-                return createRospackageImplementationAdapter();
+            public Adapter caseRossystemImplementationAssignment(RossystemImplementationAssignment object) {
+                return createRossystemImplementationAssignmentAdapter();
             }
             @Override
             public Adapter caseConfigRosParameter(ConfigRosParameter object) {
@@ -115,20 +115,20 @@ public class DeployPlanWithRosModelAdapterFactory extends AdapterFactoryImpl {
 
 
     /**
-     * Creates a new adapter for an object of class '{@link deployPlanWithRosModel.RospackageImplementation <em>Rospackage Implementation</em>}'.
+     * Creates a new adapter for an object of class '{@link deployPlanWithRosModel.RossystemImplementationAssignment <em>Rossystem Implementation Assignment</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
      * it's useful to ignore a case when inheritance will catch all the cases anyway.
      * <!-- end-user-doc -->
      * @return the new adapter.
-     * @see deployPlanWithRosModel.RospackageImplementation
+     * @see deployPlanWithRosModel.RossystemImplementationAssignment
      * @generated
      */
-    public Adapter createRospackageImplementationAdapter() {
+    public Adapter createRossystemImplementationAssignmentAdapter() {
         return null;
     }
 
-    /**
+                /**
      * Creates a new adapter for an object of class '{@link deployPlanWithRosModel.ConfigRosParameter <em>Config Ros Parameter</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;

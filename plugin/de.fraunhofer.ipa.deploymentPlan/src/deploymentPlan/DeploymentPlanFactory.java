@@ -40,6 +40,15 @@ public interface DeploymentPlanFactory extends EFactory {
     DeploymentPlan createDeploymentPlan();
 
     /**
+     * Returns a new object of class '<em>Realization</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Realization</em>'.
+     * @generated
+     */
+    Realization createRealization();
+
+                /**
      * Returns a new object of class '<em>Implementation Assignment</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->

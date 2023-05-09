@@ -2,8 +2,6 @@
  */
 package deploymentPlan;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 import targetEnvironment.ComputationDeviceInstance;
@@ -20,7 +18,6 @@ import targetEnvironment.ComputationDeviceInstance;
  *   <li>{@link deploymentPlan.AbstractComputationAssignment#getName <em>Name</em>}</li>
  *   <li>{@link deploymentPlan.AbstractComputationAssignment#getExecutedBy <em>Executed By</em>}</li>
  *   <li>{@link deploymentPlan.AbstractComputationAssignment#getVersion <em>Version</em>}</li>
- *   <li>{@link deploymentPlan.AbstractComputationAssignment#getSoftwareComponents <em>Software Components</em>}</li>
  *   <li>{@link deploymentPlan.AbstractComputationAssignment#getMiddleware <em>Middleware</em>}</li>
  *   <li>{@link deploymentPlan.AbstractComputationAssignment#getRuntimeType <em>Runtime Type</em>}</li>
  * </ul>
@@ -97,18 +94,6 @@ public interface AbstractComputationAssignment extends EObject {
     void setVersion(String value);
 
                 /**
-     * Returns the value of the '<em><b>Software Components</b></em>' containment reference list.
-     * The list contents are of type {@link deploymentPlan.AbstarctConfigSoftwareComponent}.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Software Components</em>' containment reference list.
-     * @see deploymentPlan.DeploymentPlanPackage#getAbstractComputationAssignment_SoftwareComponents()
-     * @model containment="true" required="true"
-     * @generated
-     */
-    EList<AbstarctConfigSoftwareComponent> getSoftwareComponents();
-
-    /**
      * Returns the value of the '<em><b>Runtime Type</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
