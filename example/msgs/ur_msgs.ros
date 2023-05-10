@@ -2,11 +2,11 @@ ur_msgs:
     specs:
       - msg: IOStates
         message:
-          "digital_in_states": "Digital"[]
-          "digital_out_states": "Digital"[]
-          "flag_states": "Digital"[]
-          "analog_in_states": "Analog"[]
-          "analog_out_states": "Analog"[]
+          "digital_in_states": ["Digital"]
+          "digital_out_states": ["Digital"]
+          "flag_states": ["Digital"]
+          "analog_in_states": ["Analog"]
+          "analog_out_states": ["Analog"]
       - msg: Digital
         message:
           "pin": uint8
@@ -14,24 +14,24 @@ ur_msgs:
       - msg: RobotStateRTMsg
         message:
           "time": float64
-          "q_target": float64[]
-          "qd_target": float64[]
-          "qdd_target": float64[]
-          "i_target": float64[]
-          "m_target": float64[]
-          "q_actual": float64[]
-          "qd_actual": float64[]
-          "i_actual": float64[]
-          "tool_acc_values": float64[]
-          "tcp_force": float64[]
-          "tool_vector": float64[]
-          "tcp_speed": float64[]
+          "q_target": [float64]
+          "qd_target": [float64]
+          "qdd_target": [float64]
+          "i_target": [float64]
+          "m_target": [float64]
+          "q_actual": [float64]
+          "qd_actual": [float64]
+          "i_actual": [float64]
+          "tool_acc_values": [float64]
+          "tcp_force": [float64]
+          "tool_vector": [float64]
+          "tcp_speed": [float64]
           "digital_input_bits": float64
-          "motor_temperatures": float64[]
+          "motor_temperatures": [float64]
           "controller_timer": float64
           "test_value": float64
           "robot_mode": float64
-          "joint_modes": float64[]
+          "joint_modes": [float64]
       - msg: Analog
         message:
           "pin": uint8
@@ -91,6 +91,6 @@ ur_msgs:
       - srv: SetPayload
         request:
           "mass": float32
-          "center_of_gravity": "geometry_msgs.Vector3"[]
+          "center_of_gravity": ["geometry_msgs.Vector3"]
         response:
           "success": bool

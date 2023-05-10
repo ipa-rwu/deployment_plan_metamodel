@@ -2,7 +2,7 @@ tf2_msgs:
     specs:
       - msg: TFMessage
         message:
-          "transforms": "geometry_msgs.TransformStamped"[]
+          "transforms": ["geometry_msgs.TransformStamped"]
       - msg: TF2Error
         message:
           "error": uint8
@@ -16,12 +16,12 @@ tf2_msgs:
         goal:
           "target_frame": string
           "source_frame": string
-          "source_time": "builtin_interfaces.Time"[]
-          "timeout": "builtin_interfaces.Duration"[]
-          "target_time": "builtin_interfaces.Time"[]
+          "source_time": ["builtin_interfaces.Time"]
+          "timeout": ["builtin_interfaces.Duration"]
+          "target_time": ["builtin_interfaces.Time"]
           "fixed_frame": string
           "advanced": bool
         result:
-          "transform": "geometry_msgs.TransformStamped"[]
-          "error": "tf2_msgs.TF2Error"[]
+          "transform": ["geometry_msgs.TransformStamped"]
+          "error": ["tf2_msgs.TF2Error"]
         feedback:

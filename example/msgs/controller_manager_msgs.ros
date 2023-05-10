@@ -8,27 +8,27 @@ controller_manager_msgs:
       - msg: ChainConnection
         message:
           "name": string
-          "reference_interfaces": string[]
+          "reference_interfaces": [string]
       - msg: HardwareComponentState
         message:
           "name": string
           "type": string
           "class_type": string
-          "state": "lifecycle_msgs.State"[]
-          "command_interfaces": "HardwareInterface"[]
-          "state_interfaces": "HardwareInterface"[]
+          "state": ["lifecycle_msgs.State"]
+          "command_interfaces": ["HardwareInterface"]
+          "state_interfaces": ["HardwareInterface"]
       - msg: ControllerState
         message:
           "name": string
           "state": string
           "type": string
-          "claimed_interfaces": string[]
-          "required_command_interfaces": string[]
-          "required_state_interfaces": string[]
+          "claimed_interfaces": [string]
+          "required_command_interfaces": [string]
+          "required_state_interfaces": [string]
           "is_chainable": bool
           "is_chained": bool
-          "reference_interfaces": string[]
-          "chain_connections": "ChainConnection"[]
+          "reference_interfaces": [string]
+          "chain_connections": ["ChainConnection"]
       - srv: UnloadController
         request:
           "name": string
@@ -37,28 +37,28 @@ controller_manager_msgs:
       - srv: ListHardwareInterfaces
         request:
         response:
-          "command_interfaces": "HardwareInterface"[]
-          "state_interfaces": "HardwareInterface"[]
+          "command_interfaces": ["HardwareInterface"]
+          "state_interfaces": ["HardwareInterface"]
       - srv: SwitchController
         request:
-          "activate_controllers": string[]
-          "deactivate_controllers": string[]
-          "start_controllers": string[]
-          "stop_controllers": string[]
+          "activate_controllers": [string]
+          "deactivate_controllers": [string]
+          "start_controllers": [string]
+          "stop_controllers": [string]
           "strictness": int32
           "start_asap": bool
           "activate_asap": bool
-          "timeout": "builtin_interfaces.Duration"[]
+          "timeout": ["builtin_interfaces.Duration"]
         response:
           "ok": bool
       - srv: ListHardwareComponents
         request:
         response:
-          "component": "HardwareComponentState"[]
+          "component": ["HardwareComponentState"]
       - srv: ListControllers
         request:
         response:
-          "controller": "controller_manager_msgs.ControllerState"[]
+          "controller": ["controller_manager_msgs.ControllerState"]
       - srv: ReloadControllerLibraries
         request:
           "force_kill": bool
@@ -72,15 +72,15 @@ controller_manager_msgs:
       - srv: ListControllerTypes
         request:
         response:
-          "types": string[]
-          "base_classes": string[]
+          "types": [string]
+          "base_classes": [string]
       - srv: SetHardwareComponentState
         request:
           "name": string
-          "target_state": "lifecycle_msgs.State"[]
+          "target_state": ["lifecycle_msgs.State"]
         response:
           "ok": bool
-          "state": "lifecycle_msgs.State"[]
+          "state": ["lifecycle_msgs.State"]
       - srv: ConfigureController
         request:
           "name": string

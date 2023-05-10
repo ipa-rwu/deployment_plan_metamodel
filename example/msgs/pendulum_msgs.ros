@@ -10,9 +10,9 @@ pendulum_msgs:
           "position": float64
       - msg: RttestResults
         message:
-          "stamp": "builtin_interfaces.Time"[]
-          "command": "JointCommand"[]
-          "state": "JointState"[]
+          "stamp": ["builtin_interfaces.Time"]
+          "command": ["JointCommand"]
+          "state": ["JointState"]
           "cur_latency": uint64
           "mean_latency": float64
           "min_latency": uint64

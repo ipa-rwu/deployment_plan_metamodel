@@ -1,14 +1,14 @@
 geometry_msgs:
   specs:
-    - msg: Accel
-      message:
-        linear: Vector3
-        angular: Vector3
     - msg: Vector3
       message:
         x: float64
         y: float64
         z: float64
+    - msg: Accel
+      message:
+        linear: Vector3
+        angular: Vector3
     - msg: AccelStamped
       message:
         header: Header
@@ -16,7 +16,7 @@ geometry_msgs:
     - msg: AccelWithCovariance
       message:
         accel: Accel
-        covariance: float64[]
+        covariance: [float64]
     - msg: AccelWithCovarianceStamped
       message:
         header: Header
@@ -51,7 +51,7 @@ geometry_msgs:
         point: Point
     - msg: Polygon
       message:
-        points: Point32[]
+        points: [Point32]
     - msg: PolygonStamped
       message:
         header: Header
@@ -68,7 +68,7 @@ geometry_msgs:
     - msg: PoseArray
       message:
         header: Header
-        poses: Pose[]
+        poses: [Pose]
     - msg: PoseStamped
       message:
         header: Header
@@ -76,7 +76,7 @@ geometry_msgs:
     - msg: PoseWithCovariance
       message:
        pose: Pose
-       covariance: float64[]
+       covariance: [float64]
     - msg: PoseWithCovarianceStamped
       message:
         header: Header
@@ -111,7 +111,7 @@ geometry_msgs:
     - msg: TwistWithCovariance
       message:
         twist: Twist
-        covariance: float64[]
+        covariance: [float64]
     - msg: TwistWithCovarianceStamped
       message:
         header: Header
@@ -165,7 +165,7 @@ sensor_msgs:
         power_supply_health: uint8
         power_supply_technology: uint8
         present: bool
-        cell_voltage: float32[]
+        cell_voltage: [float32]
         location: string
         serial_number: string
     - msg: CameraInfo
@@ -174,22 +174,22 @@ sensor_msgs:
         height: uint32
         width: uint32
         distortion_model: string
-        D: float64[]
-        K: float64[]
-        R: float64[]
-        P: float64[]
+        D: [float64]
+        K: [float64]
+        R: [float64]
+        P: [float64]
         binning_x: uint32
         binning_y: uint32
         roi: RegionOfInterest
     - msg: ChannelFloat32
       message:
         name: string
-        values: float32[]
+        values: [float64]
     - msg: CompressedImage
       message:
         header: Header
         format: string
-        data: uint8[]
+        data: [uint8]
     - msg: FluidPressure
       message:
         header: Header
@@ -208,28 +208,28 @@ sensor_msgs:
         encoding: string
         is_bigendian: uint8
         step: uint32
-        data: uint8[]
+        data: [uint8]
     - msg: Imu
       message:
         header: Header
         orientation: "geometry_msgs.Quaternion"
-        orientation_covariance: float64[]
+        orientation_covariance: [float64]
         angular_velocity: "geometry_msgs.Vector3"
-        angular_velocity_covariance: float64[]
+        angular_velocity_covariance: [float64]
         linear_acceleration: "geometry_msgs.Vector3"
-        linear_acceleration_covariance: float64[]
+        linear_acceleration_covariance: [float64]
     - msg: JointState
       message:
         header: Header
-        name: string[]
-        position: float64[]
-        velocity: float64[]
-        effort: float64[]
+        name: [string]
+        position: [float64]
+        velocity: [float64]
+        effort: [float64]
     - msg: Joy
       message:
         header: Header
-        axes: float32[]
-        buttons: int32[]
+        axes: [float32]
+        buttons: [int32]
     - msg: JoyFeedback
       message:
         TYPE_LED: uint8
@@ -240,10 +240,10 @@ sensor_msgs:
         intensity: float32
     - msg: JoyFeedbackArray
       message:
-        array: JoyFeedback[]
+        array: [JoyFeedback]
     - msg: LaserEcho
       message:
-        echoes: float32[]
+        echoes: [float32]
     - msg: LaserScan
       message:
         header: Header
@@ -254,20 +254,20 @@ sensor_msgs:
         scan_time: float32
         range_min: float32
         range_max: float32
-        ranges: float32[]
-        intensities: float32[]
+        ranges: [float32]
+        intensities: [float32]
     - msg: MagneticField
       message:
         header: Header
         magnetic_field: "geometry_msgs.Vector3"
-        magnetic_field_covariance: float64[]
+        magnetic_field_covariance: [float64]
     - msg: MultiDOFJointState
       message:
         header: Header
-        joint_names: string[]
-        transforms: "geometry_msgs.Transform"[]
-        twist: "geometry_msgs.Twist"[]
-        wrench: "geometry_msgs.Wrench"[]
+        joint_names: [string]
+        transforms: ["geometry_msgs.Transform"]
+        twist: ["geometry_msgs.Twist"]
+        wrench: ["geometry_msgs.Wrench"]
     - msg: MultiEchoLaserScan
       message:
         header: Header
@@ -278,23 +278,23 @@ sensor_msgs:
         scan_time: float32
         range_min: float32
         range_max: float32
-        ranges: LaserEcho[]
-        intensities: LaserEcho[]
+        ranges: [LaserEcho]
+        intensities: [LaserEcho]
     - msg: PointCloud
       message:
         header: Header
-        points: "geometry_msgs.Point32"[]
-        channels: ChannelFloat32[]
+        points: ["geometry_msgs.Point32"]
+        channels: [ChannelFloat32]
     - msg: PointCloud2
       message:
         header: Header
         height: uint32
         width: uint32
-        fields: PointField[]
+        fields: [PointField]
         is_bigendian: bool
         point_step: uint32
         row_step: uint32
-        data: uint8[]
+        data: [uint8]
         is_dense: bool
     - msg: PointField
       message:

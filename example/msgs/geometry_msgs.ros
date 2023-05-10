@@ -3,11 +3,11 @@ geometry_msgs:
       - msg: QuaternionStamped
         message:
           "header": "std_msgs.Header"
-          "quaternion": "Quaternion"[]
+          "quaternion": ["Quaternion"]
       - msg: Inertia
         message:
           "m": float64
-          "com": "geometry_msgs.Vector3"[]
+          "com": ["geometry_msgs.Vector3"]
           "ixx": float64
           "ixy": float64
           "ixz": float64
@@ -17,7 +17,7 @@ geometry_msgs:
       - msg: PointStamped
         message:
           "header": "std_msgs.Header"
-          "point": "Point"[]
+          "point": ["Point"]
       - msg: Point
         message:
           "x": float64
@@ -25,19 +25,19 @@ geometry_msgs:
           "z": float64
       - msg: Polygon
         message:
-          "points": "Point32"[]
+          "points": ["Point32"]
       - msg: TwistStamped
         message:
           "header": "std_msgs.Header"
-          "twist": "Twist"[]
+          "twist": ["Twist"]
       - msg: AccelStamped
         message:
           "header": "std_msgs.Header"
-          "accel": "Accel"[]
+          "accel": ["Accel"]
       - msg: Vector3Stamped
         message:
           "header": "std_msgs.Header"
-          "vector": "Vector3"[]
+          "vector": ["Vector3"]
       - msg: Pose2D
         message:
           "x": float64
@@ -51,16 +51,16 @@ geometry_msgs:
           "w 1": float64
       - msg: AccelWithCovariance
         message:
-          "accel": "Accel"[]
-          "covariance": float64[]
+          "accel": ["Accel"]
+          "covariance": [float64]
       - msg: Wrench
         message:
-          "force": "Vector3"[]
-          "torque": "Vector3"[]
+          "force": ["Vector3"]
+          "torque": ["Vector3"]
       - msg: PolygonStamped
         message:
           "header": "std_msgs.Header"
-          "polygon": "Polygon"[]
+          "polygon": ["Polygon"]
       - msg: Vector3
         message:
           "x": float64
@@ -68,44 +68,44 @@ geometry_msgs:
           "z": float64
       - msg: TwistWithCovariance
         message:
-          "twist": "Twist"[]
-          "covariance": float64[]
+          "twist": ["Twist"]
+          "covariance": [float64]
       - msg: PoseStamped
         message:
           "header": "std_msgs.Header"
-          "pose": "Pose"[]
+          "pose": ["Pose"]
       - msg: TwistWithCovarianceStamped
         message:
           "header": "std_msgs.Header"
-          "twist": "TwistWithCovariance"[]
+          "twist": ["TwistWithCovariance"]
       - msg: PoseWithCovariance
         message:
-          "pose": "Pose"[]
-          "covariance": float64[]
+          "pose": ["Pose"]
+          "covariance": [float64]
       - msg: WrenchStamped
         message:
           "header": "std_msgs.Header"
-          "wrench": "Wrench"[]
+          "wrench": ["Wrench"]
       - msg: Accel
         message:
-          "linear": "Vector3"[]
-          "angular": "Vector3"[]
+          "linear": ["Vector3"]
+          "angular": ["Vector3"]
       - msg: Transform
         message:
-          "translation": "Vector3"[]
-          "rotation": "Quaternion"[]
+          "translation": ["Vector3"]
+          "rotation": ["Quaternion"]
       - msg: Twist
         message:
-          "linear": "Vector3"[]
-          "angular": "Vector3"[]
+          "linear": ["Vector3"]
+          "angular": ["Vector3"]
       - msg: Pose
         message:
-          "position": "Point"[]
-          "orientation": "Quaternion"[]
+          "position": ["Point"]
+          "orientation": ["Quaternion"]
       - msg: PoseArray
         message:
           "header": "std_msgs.Header"
-          "poses": "Pose"[]
+          "poses": ["Pose"]
       - msg: Point32
         message:
           "x": float32
@@ -115,16 +115,16 @@ geometry_msgs:
         message:
           "header": "std_msgs.Header"
           "child_frame_id": string
-          "transform": "Transform"[]
+          "transform": ["Transform"]
       - msg: InertiaStamped
         message:
           "header": "std_msgs.Header"
-          "inertia": "Inertia"[]
+          "inertia": ["Inertia"]
       - msg: PoseWithCovarianceStamped
         message:
           "header": "std_msgs.Header"
-          "pose": "PoseWithCovariance"[]
+          "pose": ["PoseWithCovariance"]
       - msg: AccelWithCovarianceStamped
         message:
           "header": "std_msgs.Header"
-          "accel": "AccelWithCovariance"[]
+          "accel": ["AccelWithCovariance"]

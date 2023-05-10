@@ -11,6 +11,6 @@ statistics_msgs:
           "measurement_source_name": string
           "metrics_source": string
           "unit": string
-          "window_start": "builtin_interfaces.Time"[]
-          "window_stop": "builtin_interfaces.Time"[]
-          "statistics": "StatisticDataPoint"[]
+          "window_start": ["builtin_interfaces.Time"]
+          "window_stop": ["builtin_interfaces.Time"]
+          "statistics": ["StatisticDataPoint"]

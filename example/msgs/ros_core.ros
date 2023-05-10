@@ -6,10 +6,19 @@ std_msgs:
     - msg: Byte
       message:
         data: byte
+    - msg: MultiArrayDimension
+      message:
+        label: string
+        size: uint32
+        stride: uint32
+    - msg: MultiArrayLayout
+      message:
+        dim: [MultiArrayDimension]
+        data_offset: uint32
     - msg: ByteMultiArray
       message:
         layout: MultiArrayLayout
-        data: byte[]
+        data: [byte]
     - msg: ColorRGBA
       message:
         r: float32
@@ -25,14 +34,14 @@ std_msgs:
     - msg: Float32MultiArray
       message:
         layout: MultiArrayLayout
-        data: float32[]
+        data: [float32]
     - msg: Float64
       message:
         data: float64
     - msg: Float64MultiArray
       message:
         layout: MultiArrayLayout
-        data: float64[]
+        data: [float64]
     - msg: Int8
       message:
         data: int8
@@ -53,7 +62,7 @@ std_msgs:
     - msg: Int32MultiArray
       message:
         layout: MultiArrayLayout
-        data: int32[]
+        data: [int32]
     - msg: UInt8
       message:
         data: uint8
@@ -74,7 +83,7 @@ std_msgs:
     - msg: UInt32MultiArray
       message:
         layout: MultiArrayLayout
-        data: uint32[]
+        data: [uint32]
     - msg: String
       message:
         data: string
@@ -86,15 +95,6 @@ std_msgs:
         seq: uint32
         stamp: time
         frame_id: string
-    - msg: MultiArrayDimension
-      message:
-        label: string
-        size: uint32
-        stride: uint32
-    - msg: MultiArrayLayout
-      message:
-        dim: MultiArrayDimension[]
-        data_offset: uint32
 
 std_srvs:
   specs:

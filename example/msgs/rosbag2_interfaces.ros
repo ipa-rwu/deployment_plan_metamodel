@@ -36,7 +36,7 @@ rosbag2_interfaces:
         response:
       - srv: Seek
         request:
-          "time": "builtin_interfaces.Time"[]
+          "time": ["builtin_interfaces.Time"]
         response:
           "success": bool
       - srv: Snapshot

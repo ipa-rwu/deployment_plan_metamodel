@@ -3,14 +3,14 @@ shape_msgs:
       - msg: SolidPrimitive
         message:
           "type": uint8
-          "polygon": "geometry_msgs.Polygon"[]
+          "polygon": ["geometry_msgs.Polygon"]
       - msg: Plane
         message:
-          "coef": float64[]
+          "coef": [float64]
       - msg: Mesh
         message:
-          "triangles": "MeshTriangle"[]
-          "vertices": "geometry_msgs.Point"[]
+          "triangles": ["MeshTriangle"]
+          "vertices": ["geometry_msgs.Point"]
       - msg: MeshTriangle
         message:
-          "vertex_indices": uint32[]
+          "vertex_indices": [uint32]

@@ -3,13 +3,13 @@ realsense2_camera_msgs:
       - msg: IMUInfo
         message:
           "header": "std_msgs.Header"
-          "data": float64[]
-          "noise_variances": float64[]
-          "bias_variances": float64[]
+          "data": [float64]
+          "noise_variances": [float64]
+          "bias_variances": [float64]
       - msg: Extrinsics
         message:
-          "rotation": float64[]
-          "translation": float64[]
+          "rotation": [float64]
+          "translation": [float64]
       - msg: Metadata
         message:
           "header": "std_msgs.Header"

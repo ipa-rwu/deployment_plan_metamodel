@@ -2,4 +2,4 @@ rosgraph_msgs:
     specs:
       - msg: Clock
         message:
-          "clock": "builtin_interfaces.Time"[]
+          "clock": ["builtin_interfaces.Time"]
