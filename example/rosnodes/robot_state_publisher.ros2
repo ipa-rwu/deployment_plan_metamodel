@@ -19,7 +19,7 @@ robot_state_publisher:
           type: "tf2_msgs.TFMessage"
         "tf_static":
           type: "tf2_msgs.TFMessage"
-      serviceservers:
+      serviceServers:
         "describe_parameters":
           type: "rcl_interfaces.DescribeParameters"
         "get_parameter_types":

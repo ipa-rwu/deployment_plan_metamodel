@@ -15,123 +15,123 @@ point_to_point_task:
             type: "visualization_msgs.MarkerArray"
           "display_planned_path":
             type: "moveit_msgs.DisplayTrajectory"
-        serviceclients:
+        serviceClients:
             "/io_and_status_controller/set_io":
              type: "ur_msgs.SetIO"
         parameters:
             "arm_group_name":
                 type: String
-                value: "arm"
+                default: "arm"
             "object_marker_id":
                 type: Integer
-                value: 42
+                default: 42
             "place_marker_id":
                 type: Integer
-                value: 43
+                default: 43
             "ik_frame":
                 type: String
-                value: "tool_tip"
+                default: "tool_tip"
             "pre_pick_offset":
                 type:
                     Array: Double
-                value: [0.002, -0.013, 0.15]
+                default: [0.002, -0.013, 0.15]
             "pick_offset":
                 type:
                     Array: Double
-                value: [0.0, 0.0, 0.040]
+                default: [0.0, 0.0, 0.040]
             "pre_place_offset":
                 type:
                     Array: Double
-                value: [0.006, -0.008, 0.15]
+                default: [0.006, -0.008, 0.15]
             "place_offset":
                 type:
                     Array: Double
-                value: [0.0, 0.0, 0.08]
+                default: [0.0, 0.0, 0.08]
             "retreat_offset":
                 type:
                     Array: Double
-                value: [0.0, 0.0, 0.3]
+                default: [0.0, 0.0, 0.3]
             "box_size":
                 type:
                     Array: Double
-                value: [0.017, 0.017, 0.017]
+                default: [0.017, 0.017, 0.017]
             "io_gripper_with_ur_skill.io_service_name":
                 type: String
-                value: "/io_and_status_controller/set_io"
+                default: "/io_and_status_controller/set_io"
             "chomp.enable_failure_recovery":
                 type: Boolean
-                value: True
+                default: True
             "chomp.jiggle_fraction":
                 type: Double
-                value: 0.05
+                default: 0.05
             "chomp.planning_plugin":
                 type: String
-                value: "chomp_interface/CHOMPPlanner"
+                default: "chomp_interface/CHOMPPlanner"
             "chomp.request_adapters":
                 type: String
             "chomp.ridge_factor":
                 type: Double
-                value: 0.01
+                default: 0.01
           "chomp.start_state_max_bounds_error":
             type: Double
-            value: 0.1
+            default: 0.1
           "compute_path_moveitcpp_skill.max_acceleration_scaling_factor":
             type: Double
-            value: 0.3
+            default: 0.3
           "compute_path_moveitcpp_skill.max_velocity_scaling_factor":
             type: Double
-            value: 0.1
+            default: 0.1
           "compute_path_moveitcpp_skill.min_fraction":
             type: Double
-            value: 0.5
+            default: 0.5
           "compute_path_moveitcpp_skill.planner_id":
             type: String
-            value: LIN
+            default: LIN
           "compute_path_moveitcpp_skill.planning_attempts":
             type: Integer
-            value: 10
+            default: 10
           "compute_path_moveitcpp_skill.planning_pipeline":
             type: String
-            value: ompl
+            default: ompl
           "compute_path_moveitcpp_skill.planning_time":
             type: Double
-            value: 1.0
+            default: 1.0
           "compute_path_moveitcpp_skill.step_size":
             type: Double
-            value: 0.005
+            default: 0.005
           "default_planning_pipeline":
             type: String
-            value: ompl
+            default: ompl
           "ik_frame":
             type: String
-            value: tool_tip
+            default: tool_tip
           "moveit_controller_manager":
             type: String
-            value: "moveit_simple_controller_manager/MoveItSimpleControllerManager"
+            default: "moveit_simple_controller_manager/MoveItSimpleControllerManager"
           "moveit_manage_controllers":
             type: Boolean
-            value: True
+            default: True
           "moveit_simple_controller_manager.controller_names":
             type:
                 Array: String
           "moveit_simple_controller_manager.joint_trajectory_controller.action_ns":
             type: String
-            value: follow_joint_trajectory
+            default: follow_joint_trajectory
           "moveit_simple_controller_manager.joint_trajectory_controller.default":
             type: Boolean
-            value: True
+            default: True
           "moveit_simple_controller_manager.joint_trajectory_controller.joints":
             type:
                 Array: String
           "moveit_simple_controller_manager.joint_trajectory_controller.type":
             type: String
-            value: FollowJointTrajectory
+            default: FollowJointTrajectory
           "offset":
             type: Double
-            value: 0.02
+            default: 0.02
           "ompl.arm.longest_valid_segment_fraction":
             type: Double
-            value: 0.01
+            default: 0.01
           "ompl.arm.planner_configs":
             type:
                 Array: String
@@ -139,209 +139,209 @@ point_to_point_task:
             type: String
           "ompl.planner_configs.BKPIECEkConfigDefault.border_fraction":
             type: Double
-            value: 0.9
+            default: 0.9
           "ompl.planner_configs.BKPIECEkConfigDefault.failed_expansion_score_factor":
             type: Double
-            value: 0.5
+            default: 0.5
           "ompl.planner_configs.BKPIECEkConfigDefault.min_valid_path_fraction":
             type: Double
-            value: 0.5
+            default: 0.5
           "ompl.planner_configs.BKPIECEkConfigDefault.range":
             type: Double
-            value: 0.0
+            default: 0.0
           "ompl.planner_configs.BKPIECEkConfigDefault.type":
             type: String
-            value: "geometric::BKPIECE"
+            default: "geometric::BKPIECE"
           "ompl.planner_configs.ESTkConfigDefault.goal_bias":
             type: Double
-            value: 0.05
+            default: 0.05
           "ompl.planner_configs.ESTkConfigDefault.range":
             type: Double
-            value: 0.0
+            default: 0.0
           "ompl.planner_configs.ESTkConfigDefault.type":
             type: String
-            value: "geometric::EST"
+            default: "geometric::EST"
           "ompl.planner_configs.KPIECEkConfigDefault.border_fraction":
             type: Double
-            value: 0.9
+            default: 0.9
           "ompl.planner_configs.KPIECEkConfigDefault.failed_expansion_score_factor":
             type: Double
-            value: 0.5
+            default: 0.5
           "ompl.planner_configs.KPIECEkConfigDefault.goal_bias":
             type: Double
-            value: 0.05
+            default: 0.05
           "ompl.planner_configs.KPIECEkConfigDefault.min_valid_path_fraction":
             type: Double
-            value: 0.5
+            default: 0.5
           "ompl.planner_configs.KPIECEkConfigDefault.range":
             type: Double
-            value: 0.0
+            default: 0.0
           "ompl.planner_configs.KPIECEkConfigDefault.type":
             type: String
-            value: "geometric::KPIECE"
+            default: "geometric::KPIECE"
           "ompl.planner_configs.LBKPIECEkConfigDefault.border_fraction":
             type: Double
-            value: 0.9
+            default: 0.9
           "ompl.planner_configs.LBKPIECEkConfigDefault.min_valid_path_fraction":
             type: Double
-            value: 0.5
+            default: 0.5
           "ompl.planner_configs.LBKPIECEkConfigDefault.range":
             type: Double
-            value: 0.0
+            default: 0.0
           "ompl.planner_configs.LBKPIECEkConfigDefault.type":
             type: String
-            value: "geometric::LBKPIECE"
+            default: "geometric::LBKPIECE"
           "ompl.planner_configs.PRMkConfigDefault.max_nearest_neighbors":
             type: Integer
-            value: 10
+            default: 10
           "ompl.planner_configs.PRMkConfigDefault.type":
             type: String
-            value: "geometric::PRM"
+            default: "geometric::PRM"
           "ompl.planner_configs.PRMstarkConfigDefault.type":
             type: String
-            value: "geometric::PRMstar"
+            default: "geometric::PRMstar"
           "ompl.planner_configs.RRTConnectkConfigDefault.range":
             type: Double
-            value: 0.0
+            default: 0.0
           "ompl.planner_configs.RRTConnectkConfigDefault.type":
             type: String
-            value: "geometric::RRTConnect"
+            default: "geometric::RRTConnect"
           "ompl.planner_configs.RRTkConfigDefault.goal_bias":
             type: Double
-            value: 0.05
+            default: 0.05
           "ompl.planner_configs.RRTkConfigDefault.range":
             type: Double
-            value: 0.0
+            default: 0.0
           "ompl.planner_configs.RRTkConfigDefault.type":
             type: String
-            value: "geometric::RRT"
+            default: "geometric::RRT"
           "ompl.planner_configs.RRTstarkConfigDefault.delay_collision_checking":
             type: Integer
-            value: 1
+            default: 1
           "ompl.planner_configs.RRTstarkConfigDefault.goal_bias":
             type: Double
-            value: 0.05
+            default: 0.05
           "ompl.planner_configs.RRTstarkConfigDefault.range":
             type: Double
-            value: 0.0
+            default: 0.0
           "ompl.planner_configs.RRTstarkConfigDefault.type":
             type: String
-            value: "geometric::RRTstar"
+            default: "geometric::RRTstar"
           "ompl.planner_configs.SBLkConfigDefault.range":
             type: Double
-            value: 0.0
+            default: 0.0
           "ompl.planner_configs.SBLkConfigDefault.type":
             type: String
-            value: "geometric::SBL"
+            default: "geometric::SBL"
           "ompl.planner_configs.TRRTkConfigDefault.frountierNodeRatio":
             type: Double
-            value: 0.1
+            default: 0.1
           "ompl.planner_configs.TRRTkConfigDefault.frountier_threshold":
             type: Double
-            value: 0.0
+            default: 0.0
           "ompl.planner_configs.TRRTkConfigDefault.goal_bias":
             type: Double
-            value: 0.05
+            default: 0.05
           "ompl.planner_configs.TRRTkConfigDefault.init_temperature":
             type: Double
-            value: 0.0
+            default: 0.0
           "ompl.planner_configs.TRRTkConfigDefault.k_constant":
             type: Double
-            value: 0.0
+            default: 0.0
           "ompl.planner_configs.TRRTkConfigDefault.max_states_failed":
             type: Integer
-            value: 10
+            default: 10
           "ompl.planner_configs.TRRTkConfigDefault.min_temperature":
             type: Double
-            value: 0.0
+            default: 0.0
           "ompl.planner_configs.TRRTkConfigDefault.range":
             type: Double
-            value: 0.0
+            default: 0.0
           "ompl.planner_configs.TRRTkConfigDefault.temp_change_factor":
             type: Double
-            value: 2.0
+            default: 2.0
           "ompl.planner_configs.TRRTkConfigDefault.type":
             type: String
-            value: "geometric::TRRT"
+            default: "geometric::TRRT"
           "ompl.planning_plugin":
             type: String
-            value: "ompl_interface/OMPLPlanner"
+            default: "ompl_interface/OMPLPlanner"
           "ompl.request_adapters":
             type: String
           "ompl.start_state_max_bounds_error":
             type: Double
-            value: 0.1
+            default: 0.1
           "pilz_industrial_motion_planner.capabilities":
             type: String
-            value: "pilz_industrial_motion_planner/MoveGroupSequenceAction pilz_industrial_motion_planner/MoveGroupSequenceService"
+            default: "pilz_industrial_motion_planner/MoveGroupSequenceAction pilz_industrial_motion_planner/MoveGroupSequenceService"
           "pilz_industrial_motion_planner.default_planner_config":
             type: String
-            value: PTP
+            default: PTP
           "pilz_industrial_motion_planner.planning_plugin":
             type: String
-            value: "pilz_industrial_motion_planner/CommandPlanner"
+            default: "pilz_industrial_motion_planner/CommandPlanner"
           "pilz_industrial_motion_planner.request_adapters":
             type: String
-            value:
+            default:
           "plan_group":
             type: String
-            value: arm
+            default: arm
           "plan_request_params.planner_id":
             type: String
-            value: LIN
+            default: LIN
           "plan_request_params.planning_attempts":
             type: Integer
-            value: 1
+            default: 1
           "plan_request_params.planning_pipeline":
             type: String
-            value: pilz_industrial_motion_planner
+            default: pilz_industrial_motion_planner
           "plan_request_params.range":
             type: Double
-            value: 0.0
+            default: 0.0
           "planning_pipelines.pipeline_names":
             type:
                 Array: String
           "planning_scene_monitor_options.attached_collision_object_topic":
             type: String
-            value: "/moveit_cpp/planning_scene_monitor"
+            default: "/moveit_cpp/planning_scene_monitor"
           "planning_scene_monitor_options.joint_state_topic":
             type: String
-            value: "joint_states"
+            default: "joint_states"
           "planning_scene_monitor_options.monitored_planning_scene_topic":
             type: String
-            value: "/moveit_cpp/monitored_planning_scene"
+            default: "/moveit_cpp/monitored_planning_scene"
           "planning_scene_monitor_options.name":
             type: String
-            value: planning_scene_monitor
+            default: planning_scene_monitor
           "planning_scene_monitor_options.publish_planning_scene_topic":
             type: String
-            value: "/moveit_cpp/publish_planning_scene"
+            default: "/moveit_cpp/publish_planning_scene"
           "planning_scene_monitor_options.robot_description":
             type: String
-            value: robot_description
+            default: robot_description
           "planning_scene_monitor_options.wait_for_initial_state_timeout":
             type: Double
           "publish_geometry_updates":
             type: Boolean
-            value: True
+            default: True
           "publish_planning_scene":
             type: Boolean
-            value: True
+            default: True
           "publish_robot_description":
             type: Boolean
-            value: False
+            default: False
           "publish_robot_description_semantic":
             type: Boolean
-            value: False
+            default: False
           "publish_state_updates":
             type: Boolean
-            value: True
+            default: True
           "publish_transforms_updates":
             type: Boolean
-            value: True
+            default: True
           "qos_overrides./parameter_events.publisher.depth":
             type: Integer
-            value: 1000
+            default: 1000
           "qos_overrides./parameter_events.publisher.durability":
             type: String
           "qos_overrides./parameter_events.publisher.history":
@@ -352,162 +352,162 @@ point_to_point_task:
             type: String
           "robot_description_kinematics.arm.kinematics_solver":
             type: String
-            value: "kdl_kinematics_plugin/KDLKinematicsPlugin"
+            default: "kdl_kinematics_plugin/KDLKinematicsPlugin"
           "robot_description_kinematics.arm.kinematics_solver_search_resolution":
             type: Double
-            value: 0.005
+            default: 0.005
           "robot_description_kinematics.arm.kinematics_solver_timeout":
             type: Double
-            value: 0.005
+            default: 0.005
           "robot_description_planning.cartesian_limits.max_rot_vel":
             type: Double
-            value: 1.57
+            default: 1.57
           "robot_description_planning.cartesian_limits.max_trans_acc":
             type: Double
-            value: 2.25
+            default: 2.25
           "robot_description_planning.cartesian_limits.max_trans_dec":
             type: Double
           "robot_description_planning.cartesian_limits.max_trans_vel":
             type: Double
-            value: 1.0
+            default: 1.0
           "robot_description_planning.joint_limits.elbow_joint.has_acceleration_limits":
             type: Boolean
-            value: True
+            default: True
           "robot_description_planning.joint_limits.elbow_joint.has_effort_limits":
             type: Boolean
-            value: True
+            default: True
           "robot_description_planning.joint_limits.elbow_joint.has_position_limits":
             type: Boolean
-            value: True
+            default: True
           "robot_description_planning.joint_limits.elbow_joint.has_velocity_limits":
             type: Boolean
-            value: True
+            default: True
           "robot_description_planning.joint_limits.elbow_joint.max_acceleration":
             type: Double
-            value: 5.0
+            default: 5.0
           "robot_description_planning.joint_limits.elbow_joint.max_effort":
             type: Double
           "robot_description_planning.joint_limits.elbow_joint.max_position":
             type: Double
-            value: 0.0
+            default: 0.0
           "robot_description_planning.joint_limits.elbow_joint.max_velocity":
             type: Double
-            value: 1.57079632679
+            default: 1.57079632679
           "robot_description_planning.joint_limits.elbow_joint.min_position":
             type: Double
           "robot_description_planning.joint_limits.shoulder_lift_joint.has_acceleration_limits":
             type: Boolean
-            value: True
+            default: True
           "robot_description_planning.joint_limits.shoulder_lift_joint.has_effort_limits":
             type: Boolean
-            value: True
+            default: True
           "robot_description_planning.joint_limits.shoulder_lift_joint.has_position_limits":
             type: Boolean
-            value: True
+            default: True
           "robot_description_planning.joint_limits.shoulder_lift_joint.has_velocity_limits":
             type: Boolean
-            value: True
+            default: True
           "robot_description_planning.joint_limits.shoulder_lift_joint.max_acceleration":
             type: Double
-            value: 5.0
+            default: 5.0
           "robot_description_planning.joint_limits.shoulder_lift_joint.max_effort":
             type: Double
           "robot_description_planning.joint_limits.shoulder_lift_joint.max_position":
             type: Double
-            value: 0.0
+            default: 0.0
           "robot_description_planning.joint_limits.shoulder_lift_joint.max_velocity":
             type: Double
-            value: 1.57079632679
+            default: 1.57079632679
           "robot_description_planning.joint_limits.shoulder_lift_joint.min_position":
             type: Double
           "robot_description_planning.joint_limits.shoulder_pan_joint.has_acceleration_limits":
             type: Boolean
-            value: True
+            default: True
           "robot_description_planning.joint_limits.shoulder_pan_joint.has_effort_limits":
             type: Boolean
-            value: True
+            default: True
           "robot_description_planning.joint_limits.shoulder_pan_joint.has_position_limits":
             type: Boolean
-            value: True
+            default: True
           "robot_description_planning.joint_limits.shoulder_pan_joint.has_velocity_limits":
             type: Boolean
-            value: True
+            default: True
           "robot_description_planning.joint_limits.shoulder_pan_joint.max_acceleration":
             type: Double
-            value: 5.0
+            default: 5.0
           "robot_description_planning.joint_limits.shoulder_pan_joint.max_effort":
             type: Double
           "robot_description_planning.joint_limits.shoulder_pan_joint.max_position":
             type: Double
           "robot_description_planning.joint_limits.shoulder_pan_joint.max_velocity":
             type: Double
-            value: 1.57079632679
+            default: 1.57079632679
           "robot_description_planning.joint_limits.shoulder_pan_joint.min_position":
             type: Double
           "robot_description_planning.joint_limits.wrist_1_joint.has_acceleration_limits":
             type: Boolean
-            value: True
+            default: True
           "robot_description_planning.joint_limits.wrist_1_joint.has_effort_limits":
             type: Boolean
-            value: True
+            default: True
           "robot_description_planning.joint_limits.wrist_1_joint.has_position_limits":
             type: Boolean
-            value: True
+            default: True
           "robot_description_planning.joint_limits.wrist_1_joint.has_velocity_limits":
             type: Boolean
-            value: True
+            default: True
           "robot_description_planning.joint_limits.wrist_1_joint.max_acceleration":
             type: Double
-            value: 5.0
+            default: 5.0
           "robot_description_planning.joint_limits.wrist_1_joint.max_effort":
             type: Double
           "robot_description_planning.joint_limits.wrist_1_joint.max_position":
             type: Double
-            value: 3.14159265359
+            default: 3.14159265359
           "robot_description_planning.joint_limits.wrist_1_joint.max_velocity":
             type: Double
-            value: 1.57079632679
+            default: 1.57079632679
           "robot_description_planning.joint_limits.wrist_1_joint.min_position":
             type: Double
           "robot_description_planning.joint_limits.wrist_2_joint.has_acceleration_limits":
             type: Boolean
-            value: True
+            default: True
           "robot_description_planning.joint_limits.wrist_2_joint.has_effort_limits":
             type: Boolean
-            value: True
+            default: True
           "robot_description_planning.joint_limits.wrist_2_joint.has_position_limits":
             type: Boolean
-            value: True
+            default: True
           "robot_description_planning.joint_limits.wrist_2_joint.has_velocity_limits":
             type: Boolean
-            value: True
+            default: True
           "robot_description_planning.joint_limits.wrist_2_joint.max_acceleration":
             type: Double
-            value: 5.0
+            default: 5.0
           "robot_description_planning.joint_limits.wrist_2_joint.max_effort":
             type: Double
           "robot_description_planning.joint_limits.wrist_2_joint.max_position":
             type: Double
           "robot_description_planning.joint_limits.wrist_2_joint.max_velocity":
             type: Double
-            value: 1.57079632679
+            default: 1.57079632679
           "robot_description_planning.joint_limits.wrist_2_joint.min_position":
             type: Double
           "robot_description_planning.joint_limits.wrist_3_joint.has_acceleration_limits":
             type: Boolean
-            value: True
+            default: True
           "robot_description_planning.joint_limits.wrist_3_joint.has_effort_limits":
             type: Boolean
-            value: True
+            default: True
           "robot_description_planning.joint_limits.wrist_3_joint.has_position_limits":
             type: Boolean
-            value: True
+            default: True
           "robot_description_planning.joint_limits.wrist_3_joint.has_velocity_limits":
             type: Boolean
-            value: True
+            default: True
           "robot_description_planning.joint_limits.wrist_3_joint.max_acceleration":
             type: Double
-            value: 5.0
+            default: 5.0
           "robot_description_planning.joint_limits.wrist_3_joint.max_effort":
             type: Double
           "robot_description_planning.joint_limits.wrist_3_joint.max_position":
@@ -520,10 +520,10 @@ point_to_point_task:
             type: String
           "detect_state_name":
             type: String
-            value: detect
+            default: detect
           "use_sim_time":
             type: Boolean
-            value: False
+            default: False
           "waypoints_file":
             type: String
-            value: "waypoints.yaml"
+            default: "waypoints.yaml"

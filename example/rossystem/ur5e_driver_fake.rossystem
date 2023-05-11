@@ -41,9 +41,9 @@ ur5e_driver_fake:
       from: "position_controllers.plugin.JointGroupPositionController"
       parameters:
         - joints: "position_controllers.plugin.JointGroupPositionController.joints"
-          value: [shoulder_pan_joint, shoulder_lift_joint, elbow_joint, wrist_1_joint, wrist_2_joint, wrist_3_joint]
+          value: ["shoulder_pan_joint", "shoulder_lift_joint", "elbow_joint", "wrist_1_joint", "wrist_2_joint", "wrist_3_joint"]
     joint_trajectory_controller:
       from: "joint_trajectory_controller.plugin.JointTrajectoryController"
       parameters:
         - joints: "joint_trajectory_controller.plugin.JointTrajectoryController.joints"
-          value: [shoulder_pan_joint, shoulder_lift_joint, elbow_joint, wrist_1_joint, wrist_2_joint, wrist_3_joint]
+          value: ["shoulder_pan_joint", "shoulder_lift_joint", "elbow_joint", "wrist_1_joint", "wrist_2_joint", "wrist_3_joint"]

@@ -31,3 +31,7 @@ realsense_camera_driver:
           value: "-0.467606"
         - "rotation.w": "tf2_ros.static_transform_publisher.static_transform_publisher.rotation.w"
           value: "-0.463867"
+  processes:
+    image_process:
+      nodes: [realsense_camera, realsence_tf]
+      threads: 1

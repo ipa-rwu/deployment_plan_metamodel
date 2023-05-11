@@ -75,8 +75,8 @@ geometry_msgs:
         pose: Pose
     - msg: PoseWithCovariance
       message:
-       pose: Pose
-       covariance: [float64]
+        pose: Pose
+        covariance: [float64]
     - msg: PoseWithCovarianceStamped
       message:
         header: Header
@@ -102,7 +102,7 @@ geometry_msgs:
         transform: Transform
     - msg: Twist
       message:
-        linear : Vector3
+        linear: Vector3
         angular: Vector3
     - msg: TwistStamped
       message:
@@ -122,7 +122,7 @@ geometry_msgs:
         vector: Vector3
     - msg: Wrench
       message:
-        force : Vector3
+        force: Vector3
         torque: Vector3
     - msg: WrenchStamped
       message:

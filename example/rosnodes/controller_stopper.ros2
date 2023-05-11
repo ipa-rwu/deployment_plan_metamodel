@@ -6,18 +6,18 @@ ur_robot_driver:
       subscribers:
         "io_and_status_controller/robot_program_running":
           type: "std_msgs.Bool"
-      serviceclients:
+      serviceClients:
         "controller_manager/list_controllers":
-            type: "controller_manager_msgs.ListControllers"
+          type: "controller_manager_msgs.ListControllers"
         "controller_manager/switch_controller":
-            type: "controller_manager_msgs.SwitchController"
+          type: "controller_manager_msgs.SwitchController"
       parameters:
         "consistent_controllers":
-            type:
-                Array: String
+          type:
+            Array: String
         "headless_mode":
-            type: Boolean
+          type: Boolean
         "joint_controller_active":
-            type: Boolean
+          type: Boolean
         "use_sim_time":
-            type: Boolean
+          type: Boolean

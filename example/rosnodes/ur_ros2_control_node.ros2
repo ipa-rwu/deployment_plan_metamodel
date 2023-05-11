@@ -3,7 +3,7 @@ ur_robot_driver:
   artifacts:
     ur_ros2_control_node:
       node: controller_manager
-      serviceservers:
+      serviceServers:
         "configure_controller":
           type: "controller_manager_msgs.ConfigureController"
         "list_controller_types":

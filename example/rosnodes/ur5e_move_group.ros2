@@ -15,7 +15,7 @@ ur5e_cell_moveit_config:
           type: "moveit_msgs.MotionPlanRequest"
         "robot_description_semantic":
           type: "std_msgs.String"
-      serviceservers:
+      serviceServers:
         "apply_planning_scene":
           type: "moveit_msgs.ApplyPlanningScene"
         "check_state_validity":
