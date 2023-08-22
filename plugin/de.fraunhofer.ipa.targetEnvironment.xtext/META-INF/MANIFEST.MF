@@ -7,10 +7,10 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: de.fraunhofer.ipa.targetEnvironment.xtext; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: de.fraunhofer.ipa.targetEnvironment,
- org.eclipse.xtext;bundle-version="2.30.0",
+ org.eclipse.xtext,
  org.eclipse.xtext.xbase,
- org.eclipse.equinox.common;bundle-version="3.17.0",
- org.eclipse.xtext.xbase.lib;bundle-version="2.30.0",
+ org.eclipse.equinox.common,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
  org.eclipse.xtext.util,
  org.antlr.runtime;bundle-version="4.7.2",
  de.fraunhofer.ipa.deployment.util.xtext;bundle-version="1.0.0",
