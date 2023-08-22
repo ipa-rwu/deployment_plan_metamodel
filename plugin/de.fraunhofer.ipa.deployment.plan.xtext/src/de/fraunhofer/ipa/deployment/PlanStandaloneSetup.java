@@ -3,6 +3,11 @@
  */
 package de.fraunhofer.ipa.deployment;
 
+import org.eclipse.emf.ecore.EPackage;
+
+import com.google.inject.Injector;
+
+import deploymentPlan.DeploymentPlanPackage;
 
 /**
  * Initialization support for running Xtext languages without Equinox extension registry.
@@ -11,5 +16,12 @@ public class PlanStandaloneSetup extends PlanStandaloneSetupGenerated {
 
     public static void doSetup() {
         new PlanStandaloneSetup().createInjectorAndDoEMFRegistration();
+    }
+
+    public void register(Injector injector) {
+        if (!EPackage.Registry.INSTANCE.containsKey("http://www.ipa.fraunhofer.de/DeploymentPlan")) {
+            EPackage.Registry.INSTANCE.put("http://www.ipa.fraunhofer.de/DeploymentPlan", DeploymentPlanPackage.eINSTANCE);
+        }
+        super.register(injector);
     }
 }
