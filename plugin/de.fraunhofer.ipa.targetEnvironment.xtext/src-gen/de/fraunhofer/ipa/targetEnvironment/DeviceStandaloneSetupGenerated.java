@@ -31,7 +31,7 @@ public class DeviceStandaloneSetupGenerated implements ISetup {
         IResourceFactory resourceFactory = injector.getInstance(IResourceFactory.class);
         IResourceServiceProvider serviceProvider = injector.getInstance(IResourceServiceProvider.class);
 
-        Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("device", resourceFactory);
-        IResourceServiceProvider.Registry.INSTANCE.getExtensionToFactoryMap().put("device", serviceProvider);
+        Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("dev", resourceFactory);
+        IResourceServiceProvider.Registry.INSTANCE.getExtensionToFactoryMap().put("dev", serviceProvider);
     }
 }
