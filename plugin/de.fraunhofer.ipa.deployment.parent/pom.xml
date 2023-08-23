@@ -42,6 +42,8 @@
 
 
     <module>../de.fraunhofer.ipa.deploymentPlan</module>
+
+    <module>../de.fraunhofer.ipa.deployment.standalone</module>
     </modules>
 
 
