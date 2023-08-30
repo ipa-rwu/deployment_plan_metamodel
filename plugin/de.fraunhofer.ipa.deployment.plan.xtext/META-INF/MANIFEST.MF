@@ -8,7 +8,6 @@ Bundle-SymbolicName: de.fraunhofer.ipa.deployment.plan.xtext; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: de.fraunhofer.ipa.targetEnvironment,
  de.fraunhofer.ipa.deploymentPlan,
- de.fraunhofer.ipa.rossystem,
  org.eclipse.xtext,
  org.eclipse.xtext.xbase,
  org.eclipse.equinox.common;bundle-version="3.16.0",

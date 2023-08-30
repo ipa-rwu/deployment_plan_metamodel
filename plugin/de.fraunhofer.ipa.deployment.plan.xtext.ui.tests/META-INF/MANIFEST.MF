@@ -9,7 +9,6 @@ Bundle-ActivationPolicy: lazy
 Require-Bundle: de.fraunhofer.ipa.deployment.plan.xtext.ui,
  de.fraunhofer.ipa.targetEnvironment,
  de.fraunhofer.ipa.deploymentPlan,
- de.fraunhofer.ipa.rossystem,
  org.eclipse.xtext.testing,
  org.eclipse.xtext.ui.testing,
  org.eclipse.xtext.xbase.testing,
