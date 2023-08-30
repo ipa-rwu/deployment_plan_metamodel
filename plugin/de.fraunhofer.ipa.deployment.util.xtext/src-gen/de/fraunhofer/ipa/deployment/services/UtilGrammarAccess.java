@@ -25,2147 +25,37 @@ import org.eclipse.xtext.service.GrammarProvider;
 @Singleton
 public class UtilGrammarAccess extends AbstractElementFinder.AbstractGrammarElementFinder {
 
-    public class DescriptionElements extends AbstractParserRuleElementFinder {
-        private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.Description");
-        private final Action cDescriptionAction = (Action)rule.eContents().get(1);
-
-        //Description returns Description:
-        //    {Description}
-        //;
-        @Override public ParserRule getRule() { return rule; }
-
-        //{Description}
-        public Action getDescriptionAction() { return cDescriptionAction; }
-    }
-    public class ResourceElements extends AbstractParserRuleElementFinder {
-        private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.Resource");
-        private final Group cGroup = (Group)rule.eContents().get(1);
-        private final Keyword cNameKeyword_0 = (Keyword)cGroup.eContents().get(0);
-        private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-        private final RuleCall cNameEStringParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-        private final RuleCall cINDENTTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
-        private final Keyword cTypeKeyword_3 = (Keyword)cGroup.eContents().get(3);
-        private final Assignment cTypeAssignment_4 = (Assignment)cGroup.eContents().get(4);
-        private final RuleCall cTypeAbstractResouceTypeParserRuleCall_4_0 = (RuleCall)cTypeAssignment_4.eContents().get(0);
-        private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-        private final Keyword cPropertiesKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-        private final RuleCall cINDENTTerminalRuleCall_5_1 = (RuleCall)cGroup_5.eContents().get(1);
-        private final Assignment cPropertiesAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
-        private final RuleCall cPropertiesAbstractPropertyParserRuleCall_5_2_0 = (RuleCall)cPropertiesAssignment_5_2.eContents().get(0);
-        private final Assignment cPropertiesAssignment_5_3 = (Assignment)cGroup_5.eContents().get(3);
-        private final RuleCall cPropertiesAbstractPropertyParserRuleCall_5_3_0 = (RuleCall)cPropertiesAssignment_5_3.eContents().get(0);
-        private final RuleCall cDEDENTTerminalRuleCall_5_4 = (RuleCall)cGroup_5.eContents().get(4);
-        private final RuleCall cDEDENTTerminalRuleCall_6 = (RuleCall)cGroup.eContents().get(6);
-
-        //Resource returns Resource:
-        //    'name:' name=EString
-        //    INDENT
-        //        'type:' type=AbstractResouceType
-        //        ('properties:'
-        //            INDENT
-        //            properties+=AbstractProperty
-        //            (properties+=AbstractProperty)*
-        //            DEDENT
-        //            )?
-        //    DEDENT
-        //    ;
-        @Override public ParserRule getRule() { return rule; }
-
-        //'name:' name=EString
-        //INDENT
-        //    'type:' type=AbstractResouceType
-        //    ('properties:'
-        //        INDENT
-        //        properties+=AbstractProperty
-        //        (properties+=AbstractProperty)*
-        //        DEDENT
-        //        )?
-        //DEDENT
-        public Group getGroup() { return cGroup; }
-
-        //'name:'
-        public Keyword getNameKeyword_0() { return cNameKeyword_0; }
-
-        //name=EString
-        public Assignment getNameAssignment_1() { return cNameAssignment_1; }
-
-        //EString
-        public RuleCall getNameEStringParserRuleCall_1_0() { return cNameEStringParserRuleCall_1_0; }
-
-        //INDENT
-        public RuleCall getINDENTTerminalRuleCall_2() { return cINDENTTerminalRuleCall_2; }
-
-        //'type:'
-        public Keyword getTypeKeyword_3() { return cTypeKeyword_3; }
-
-        //type=AbstractResouceType
-        public Assignment getTypeAssignment_4() { return cTypeAssignment_4; }
-
-        //AbstractResouceType
-        public RuleCall getTypeAbstractResouceTypeParserRuleCall_4_0() { return cTypeAbstractResouceTypeParserRuleCall_4_0; }
-
-        //('properties:'
-        //    INDENT
-        //    properties+=AbstractProperty
-        //    (properties+=AbstractProperty)*
-        //    DEDENT
-        //    )?
-        public Group getGroup_5() { return cGroup_5; }
-
-        //'properties:'
-        public Keyword getPropertiesKeyword_5_0() { return cPropertiesKeyword_5_0; }
-
-        //INDENT
-        public RuleCall getINDENTTerminalRuleCall_5_1() { return cINDENTTerminalRuleCall_5_1; }
-
-        //properties+=AbstractProperty
-        public Assignment getPropertiesAssignment_5_2() { return cPropertiesAssignment_5_2; }
-
-        //AbstractProperty
-        public RuleCall getPropertiesAbstractPropertyParserRuleCall_5_2_0() { return cPropertiesAbstractPropertyParserRuleCall_5_2_0; }
-
-        //(properties+=AbstractProperty)*
-        public Assignment getPropertiesAssignment_5_3() { return cPropertiesAssignment_5_3; }
-
-        //AbstractProperty
-        public RuleCall getPropertiesAbstractPropertyParserRuleCall_5_3_0() { return cPropertiesAbstractPropertyParserRuleCall_5_3_0; }
-
-        //DEDENT
-        public RuleCall getDEDENTTerminalRuleCall_5_4() { return cDEDENTTerminalRuleCall_5_4; }
-
-        //DEDENT
-        public RuleCall getDEDENTTerminalRuleCall_6() { return cDEDENTTerminalRuleCall_6; }
-    }
-    public class AbstractComputationAssignmentTargetElements extends AbstractParserRuleElementFinder {
-        private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.AbstractComputationAssignmentTarget");
-        private final Action cAbstractComputationAssignmentTargetAction = (Action)rule.eContents().get(1);
-
-        //AbstractComputationAssignmentTarget returns AbstractComputationAssignmentTarget:
-        //    {AbstractComputationAssignmentTarget}
-        //;
-        @Override public ParserRule getRule() { return rule; }
-
-        //{AbstractComputationAssignmentTarget}
-        public Action getAbstractComputationAssignmentTargetAction() { return cAbstractComputationAssignmentTargetAction; }
-    }
-    public class OperatingSystemResouceElements extends AbstractParserRuleElementFinder {
-        private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.OperatingSystemResouce");
-        private final Group cGroup = (Group)rule.eContents().get(1);
-        private final Action cOperatingSystemResouceAction_0 = (Action)cGroup.eContents().get(0);
-        private final Keyword cNameKeyword_1 = (Keyword)cGroup.eContents().get(1);
-        private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-        private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-        private final RuleCall cINDENTTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
-        private final Keyword cTypeKeyword_4 = (Keyword)cGroup.eContents().get(4);
-        private final Assignment cTypeAssignment_5 = (Assignment)cGroup.eContents().get(5);
-        private final RuleCall cTypeOpertingSystemResouceTypeParserRuleCall_5_0 = (RuleCall)cTypeAssignment_5.eContents().get(0);
-        private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-        private final Keyword cPropertiesKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-        private final RuleCall cINDENTTerminalRuleCall_6_1 = (RuleCall)cGroup_6.eContents().get(1);
-        private final Assignment cPropertiesAssignment_6_2 = (Assignment)cGroup_6.eContents().get(2);
-        private final RuleCall cPropertiesAbstractOperatingSystemPropertyParserRuleCall_6_2_0 = (RuleCall)cPropertiesAssignment_6_2.eContents().get(0);
-        private final RuleCall cDEDENTTerminalRuleCall_6_3 = (RuleCall)cGroup_6.eContents().get(3);
-        private final RuleCall cDEDENTTerminalRuleCall_7 = (RuleCall)cGroup.eContents().get(7);
-
-        //OperatingSystemResouce returns OperatingSystemResouce:
-        //    {OperatingSystemResouce}
-        //    'name:'  name=EString
-        //    INDENT
-        //        'type:' type=OpertingSystemResouceType
-        //        ('properties:'
-        //            INDENT
-        //            properties+=AbstractOperatingSystemProperty+
-        //            DEDENT
-        //            )?
-        //    DEDENT
-        //    ;
-        @Override public ParserRule getRule() { return rule; }
-
-        //{OperatingSystemResouce}
-        //'name:'  name=EString
-        //INDENT
-        //    'type:' type=OpertingSystemResouceType
-        //    ('properties:'
-        //        INDENT
-        //        properties+=AbstractOperatingSystemProperty+
-        //        DEDENT
-        //        )?
-        //DEDENT
-        public Group getGroup() { return cGroup; }
-
-        //{OperatingSystemResouce}
-        public Action getOperatingSystemResouceAction_0() { return cOperatingSystemResouceAction_0; }
-
-        //'name:'
-        public Keyword getNameKeyword_1() { return cNameKeyword_1; }
-
-        //name=EString
-        public Assignment getNameAssignment_2() { return cNameAssignment_2; }
-
-        //EString
-        public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
-
-        //INDENT
-        public RuleCall getINDENTTerminalRuleCall_3() { return cINDENTTerminalRuleCall_3; }
-
-        //'type:'
-        public Keyword getTypeKeyword_4() { return cTypeKeyword_4; }
-
-        //type=OpertingSystemResouceType
-        public Assignment getTypeAssignment_5() { return cTypeAssignment_5; }
-
-        //OpertingSystemResouceType
-        public RuleCall getTypeOpertingSystemResouceTypeParserRuleCall_5_0() { return cTypeOpertingSystemResouceTypeParserRuleCall_5_0; }
-
-        //('properties:'
-        //    INDENT
-        //    properties+=AbstractOperatingSystemProperty+
-        //    DEDENT
-        //    )?
-        public Group getGroup_6() { return cGroup_6; }
-
-        //'properties:'
-        public Keyword getPropertiesKeyword_6_0() { return cPropertiesKeyword_6_0; }
-
-        //INDENT
-        public RuleCall getINDENTTerminalRuleCall_6_1() { return cINDENTTerminalRuleCall_6_1; }
-
-        //properties+=AbstractOperatingSystemProperty+
-        public Assignment getPropertiesAssignment_6_2() { return cPropertiesAssignment_6_2; }
-
-        //AbstractOperatingSystemProperty
-        public RuleCall getPropertiesAbstractOperatingSystemPropertyParserRuleCall_6_2_0() { return cPropertiesAbstractOperatingSystemPropertyParserRuleCall_6_2_0; }
-
-        //DEDENT
-        public RuleCall getDEDENTTerminalRuleCall_6_3() { return cDEDENTTerminalRuleCall_6_3; }
-
-        //DEDENT
-        public RuleCall getDEDENTTerminalRuleCall_7() { return cDEDENTTerminalRuleCall_7; }
-    }
-    public class AbstractOperatingSystemPropertyElements extends AbstractParserRuleElementFinder {
-        private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.AbstractOperatingSystemProperty");
-        private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-        private final RuleCall cNameOperatingSystemPropertyParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-        private final RuleCall cVersionOperatingSystemPropertyParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-
-        //AbstractOperatingSystemProperty returns AbstractOperatingSystemProperty:
-        //    NameOperatingSystemProperty |VersionOperatingSystemProperty
-        //;
-        @Override public ParserRule getRule() { return rule; }
-
-        //NameOperatingSystemProperty |VersionOperatingSystemProperty
-        public Alternatives getAlternatives() { return cAlternatives; }
-
-        //NameOperatingSystemProperty
-        public RuleCall getNameOperatingSystemPropertyParserRuleCall_0() { return cNameOperatingSystemPropertyParserRuleCall_0; }
-
-        //VersionOperatingSystemProperty
-        public RuleCall getVersionOperatingSystemPropertyParserRuleCall_1() { return cVersionOperatingSystemPropertyParserRuleCall_1; }
-    }
-    public class NameOperatingSystemPropertyElements extends AbstractParserRuleElementFinder {
-        private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.NameOperatingSystemProperty");
-        private final Group cGroup = (Group)rule.eContents().get(1);
-        private final Action cNameOperatingSystemPropertyAction_0 = (Action)cGroup.eContents().get(0);
-        private final RuleCall cPreListElementParserRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
-        private final Keyword cNameKeyword_2 = (Keyword)cGroup.eContents().get(2);
-        private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
-        private final Keyword cNameOs_nameKeyword_3_0 = (Keyword)cNameAssignment_3.eContents().get(0);
-        private final RuleCall cINDENTTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
-        private final Keyword cKindKeyword_5 = (Keyword)cGroup.eContents().get(5);
-        private final Assignment cKindAssignment_6 = (Assignment)cGroup.eContents().get(6);
-        private final RuleCall cKindAttributeKindParserRuleCall_6_0 = (RuleCall)cKindAssignment_6.eContents().get(0);
-        private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-        private final Keyword cDescriptionKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
-        private final Assignment cDescriptionAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
-        private final RuleCall cDescriptionEStringParserRuleCall_7_1_0 = (RuleCall)cDescriptionAssignment_7_1.eContents().get(0);
-        private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
-        private final Keyword cValueKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
-        private final Assignment cValueAssignment_8_1 = (Assignment)cGroup_8.eContents().get(1);
-        private final RuleCall cValuePropertyValueParserRuleCall_8_1_0 = (RuleCall)cValueAssignment_8_1.eContents().get(0);
-        private final RuleCall cDEDENTTerminalRuleCall_9 = (RuleCall)cGroup.eContents().get(9);
-
-        //NameOperatingSystemProperty returns NameOperatingSystemProperty:
-        //    {NameOperatingSystemProperty}
-        //    PreListElement "name:" name="os_name"
-        //    INDENT
-        //        'kind:' kind=AttributeKind
-        //        (
-        //        'description:' description=EString
-        //        )?
-        //        (
-        //        'value:' value=PropertyValue
-        //        )?
-        //    DEDENT
-        //    ;
-        @Override public ParserRule getRule() { return rule; }
-
-        //{NameOperatingSystemProperty}
-        //PreListElement "name:" name="os_name"
-        //INDENT
-        //    'kind:' kind=AttributeKind
-        //    (
-        //    'description:' description=EString
-        //    )?
-        //    (
-        //    'value:' value=PropertyValue
-        //    )?
-        //DEDENT
-        public Group getGroup() { return cGroup; }
-
-        //{NameOperatingSystemProperty}
-        public Action getNameOperatingSystemPropertyAction_0() { return cNameOperatingSystemPropertyAction_0; }
-
-        //PreListElement
-        public RuleCall getPreListElementParserRuleCall_1() { return cPreListElementParserRuleCall_1; }
-
-        //"name:"
-        public Keyword getNameKeyword_2() { return cNameKeyword_2; }
-
-        //name="os_name"
-        public Assignment getNameAssignment_3() { return cNameAssignment_3; }
-
-        //"os_name"
-        public Keyword getNameOs_nameKeyword_3_0() { return cNameOs_nameKeyword_3_0; }
-
-        //INDENT
-        public RuleCall getINDENTTerminalRuleCall_4() { return cINDENTTerminalRuleCall_4; }
-
-        //'kind:'
-        public Keyword getKindKeyword_5() { return cKindKeyword_5; }
-
-        //kind=AttributeKind
-        public Assignment getKindAssignment_6() { return cKindAssignment_6; }
-
-        //AttributeKind
-        public RuleCall getKindAttributeKindParserRuleCall_6_0() { return cKindAttributeKindParserRuleCall_6_0; }
-
-        //(
-        //'description:' description=EString
-        //)?
-        public Group getGroup_7() { return cGroup_7; }
-
-        //'description:'
-        public Keyword getDescriptionKeyword_7_0() { return cDescriptionKeyword_7_0; }
-
-        //description=EString
-        public Assignment getDescriptionAssignment_7_1() { return cDescriptionAssignment_7_1; }
-
-        //EString
-        public RuleCall getDescriptionEStringParserRuleCall_7_1_0() { return cDescriptionEStringParserRuleCall_7_1_0; }
-
-        //(
-        //'value:' value=PropertyValue
-        //)?
-        public Group getGroup_8() { return cGroup_8; }
-
-        //'value:'
-        public Keyword getValueKeyword_8_0() { return cValueKeyword_8_0; }
-
-        //value=PropertyValue
-        public Assignment getValueAssignment_8_1() { return cValueAssignment_8_1; }
-
-        //PropertyValue
-        public RuleCall getValuePropertyValueParserRuleCall_8_1_0() { return cValuePropertyValueParserRuleCall_8_1_0; }
-
-        //DEDENT
-        public RuleCall getDEDENTTerminalRuleCall_9() { return cDEDENTTerminalRuleCall_9; }
-    }
-    public class VersionOperatingSystemPropertyElements extends AbstractParserRuleElementFinder {
-        private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.VersionOperatingSystemProperty");
-        private final Group cGroup = (Group)rule.eContents().get(1);
-        private final Action cVersionOperatingSystemPropertyAction_0 = (Action)cGroup.eContents().get(0);
-        private final RuleCall cPreListElementParserRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
-        private final Keyword cNameKeyword_2 = (Keyword)cGroup.eContents().get(2);
-        private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
-        private final Keyword cNameOs_versionKeyword_3_0 = (Keyword)cNameAssignment_3.eContents().get(0);
-        private final RuleCall cINDENTTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
-        private final Keyword cKindKeyword_5 = (Keyword)cGroup.eContents().get(5);
-        private final Assignment cKindAssignment_6 = (Assignment)cGroup.eContents().get(6);
-        private final RuleCall cKindAttributeKindParserRuleCall_6_0 = (RuleCall)cKindAssignment_6.eContents().get(0);
-        private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-        private final Keyword cDescriptionKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
-        private final Assignment cDescriptionAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
-        private final RuleCall cDescriptionEStringParserRuleCall_7_1_0 = (RuleCall)cDescriptionAssignment_7_1.eContents().get(0);
-        private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
-        private final Keyword cValueKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
-        private final Assignment cValueAssignment_8_1 = (Assignment)cGroup_8.eContents().get(1);
-        private final RuleCall cValuePropertyValueParserRuleCall_8_1_0 = (RuleCall)cValueAssignment_8_1.eContents().get(0);
-        private final RuleCall cDEDENTTerminalRuleCall_9 = (RuleCall)cGroup.eContents().get(9);
-
-        //VersionOperatingSystemProperty returns VersionOperatingSystemProperty:
-        //    {VersionOperatingSystemProperty}
-        //    PreListElement "name:" name="os_version"
-        //    INDENT
-        //        'kind:' kind=AttributeKind
-        //        (
-        //        'description:' description=EString
-        //        )?
-        //        (
-        //        'value:' value=PropertyValue
-        //        )?
-        //    DEDENT
-        //    ;
-        @Override public ParserRule getRule() { return rule; }
-
-        //{VersionOperatingSystemProperty}
-        //PreListElement "name:" name="os_version"
-        //INDENT
-        //    'kind:' kind=AttributeKind
-        //    (
-        //    'description:' description=EString
-        //    )?
-        //    (
-        //    'value:' value=PropertyValue
-        //    )?
-        //DEDENT
-        public Group getGroup() { return cGroup; }
-
-        //{VersionOperatingSystemProperty}
-        public Action getVersionOperatingSystemPropertyAction_0() { return cVersionOperatingSystemPropertyAction_0; }
-
-        //PreListElement
-        public RuleCall getPreListElementParserRuleCall_1() { return cPreListElementParserRuleCall_1; }
-
-        //"name:"
-        public Keyword getNameKeyword_2() { return cNameKeyword_2; }
-
-        //name="os_version"
-        public Assignment getNameAssignment_3() { return cNameAssignment_3; }
-
-        //"os_version"
-        public Keyword getNameOs_versionKeyword_3_0() { return cNameOs_versionKeyword_3_0; }
-
-        //INDENT
-        public RuleCall getINDENTTerminalRuleCall_4() { return cINDENTTerminalRuleCall_4; }
-
-        //'kind:'
-        public Keyword getKindKeyword_5() { return cKindKeyword_5; }
-
-        //kind=AttributeKind
-        public Assignment getKindAssignment_6() { return cKindAssignment_6; }
-
-        //AttributeKind
-        public RuleCall getKindAttributeKindParserRuleCall_6_0() { return cKindAttributeKindParserRuleCall_6_0; }
-
-        //(
-        //'description:' description=EString
-        //)?
-        public Group getGroup_7() { return cGroup_7; }
-
-        //'description:'
-        public Keyword getDescriptionKeyword_7_0() { return cDescriptionKeyword_7_0; }
-
-        //description=EString
-        public Assignment getDescriptionAssignment_7_1() { return cDescriptionAssignment_7_1; }
-
-        //EString
-        public RuleCall getDescriptionEStringParserRuleCall_7_1_0() { return cDescriptionEStringParserRuleCall_7_1_0; }
-
-        //(
-        //'value:' value=PropertyValue
-        //)?
-        public Group getGroup_8() { return cGroup_8; }
-
-        //'value:'
-        public Keyword getValueKeyword_8_0() { return cValueKeyword_8_0; }
-
-        //value=PropertyValue
-        public Assignment getValueAssignment_8_1() { return cValueAssignment_8_1; }
-
-        //PropertyValue
-        public RuleCall getValuePropertyValueParserRuleCall_8_1_0() { return cValuePropertyValueParserRuleCall_8_1_0; }
-
-        //DEDENT
-        public RuleCall getDEDENTTerminalRuleCall_9() { return cDEDENTTerminalRuleCall_9; }
-    }
-    public class AbstractPropertyElements extends AbstractParserRuleElementFinder {
-        private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.AbstractProperty");
-        private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-        private final RuleCall cPropertyAttributeParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-        private final RuleCall cPropertyMaximunParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-        private final RuleCall cPropertyMinimumParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-        private final RuleCall cPropertySelectionParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
-        private final RuleCall cPropertyRangeParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
-
-        //AbstractProperty returns AbstractProperty:
-        //    PropertyAttribute | PropertyMaximun | PropertyMinimum | PropertySelection | PropertyRange;
-        @Override public ParserRule getRule() { return rule; }
-
-        //PropertyAttribute | PropertyMaximun | PropertyMinimum | PropertySelection | PropertyRange
-        public Alternatives getAlternatives() { return cAlternatives; }
-
-        //PropertyAttribute
-        public RuleCall getPropertyAttributeParserRuleCall_0() { return cPropertyAttributeParserRuleCall_0; }
-
-        //PropertyMaximun
-        public RuleCall getPropertyMaximunParserRuleCall_1() { return cPropertyMaximunParserRuleCall_1; }
-
-        //PropertyMinimum
-        public RuleCall getPropertyMinimumParserRuleCall_2() { return cPropertyMinimumParserRuleCall_2; }
-
-        //PropertySelection
-        public RuleCall getPropertySelectionParserRuleCall_3() { return cPropertySelectionParserRuleCall_3; }
-
-        //PropertyRange
-        public RuleCall getPropertyRangeParserRuleCall_4() { return cPropertyRangeParserRuleCall_4; }
-    }
-    public class PropertyKindElements extends AbstractParserRuleElementFinder {
-        private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.PropertyKind");
-        private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-        private final RuleCall cAttributeKindParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-        private final RuleCall cMaximumKindParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-        private final RuleCall cMinimumKindParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-        private final RuleCall cRangeKindParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
-        private final RuleCall cSelectionKindParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
-
-        //PropertyKind returns PropertyKind:
-        //    AttributeKind | MaximumKind | MinimumKind | RangeKind | SelectionKind
-        //;
-        @Override public ParserRule getRule() { return rule; }
-
-        //AttributeKind | MaximumKind | MinimumKind | RangeKind | SelectionKind
-        public Alternatives getAlternatives() { return cAlternatives; }
-
-        //AttributeKind
-        public RuleCall getAttributeKindParserRuleCall_0() { return cAttributeKindParserRuleCall_0; }
-
-        //MaximumKind
-        public RuleCall getMaximumKindParserRuleCall_1() { return cMaximumKindParserRuleCall_1; }
-
-        //MinimumKind
-        public RuleCall getMinimumKindParserRuleCall_2() { return cMinimumKindParserRuleCall_2; }
-
-        //RangeKind
-        public RuleCall getRangeKindParserRuleCall_3() { return cRangeKindParserRuleCall_3; }
-
-        //SelectionKind
-        public RuleCall getSelectionKindParserRuleCall_4() { return cSelectionKindParserRuleCall_4; }
-    }
-    public class PropertyElements extends AbstractParserRuleElementFinder {
-        private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.Property");
-        private final Group cGroup = (Group)rule.eContents().get(1);
-        private final RuleCall cPreListElementParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
-        private final Keyword cNameKeyword_1 = (Keyword)cGroup.eContents().get(1);
-        private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-        private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-        private final RuleCall cINDENTTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
-        private final Keyword cKindKeyword_4 = (Keyword)cGroup.eContents().get(4);
-        private final Assignment cKindAssignment_5 = (Assignment)cGroup.eContents().get(5);
-        private final RuleCall cKindPropertyKindParserRuleCall_5_0 = (RuleCall)cKindAssignment_5.eContents().get(0);
-        private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-        private final Keyword cDescriptionKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-        private final Assignment cDescriptionAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
-        private final RuleCall cDescriptionEStringParserRuleCall_6_1_0 = (RuleCall)cDescriptionAssignment_6_1.eContents().get(0);
-        private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-        private final Keyword cValueKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
-        private final RuleCall cINDENTTerminalRuleCall_7_1 = (RuleCall)cGroup_7.eContents().get(1);
-        private final RuleCall cPreListElementParserRuleCall_7_2 = (RuleCall)cGroup_7.eContents().get(2);
-        private final Assignment cValueAssignment_7_3 = (Assignment)cGroup_7.eContents().get(3);
-        private final RuleCall cValuePropertyValueParserRuleCall_7_3_0 = (RuleCall)cValueAssignment_7_3.eContents().get(0);
-        private final Group cGroup_7_4 = (Group)cGroup_7.eContents().get(4);
-        private final RuleCall cPreListElementParserRuleCall_7_4_0 = (RuleCall)cGroup_7_4.eContents().get(0);
-        private final Assignment cValueAssignment_7_4_1 = (Assignment)cGroup_7_4.eContents().get(1);
-        private final RuleCall cValuePropertyValueParserRuleCall_7_4_1_0 = (RuleCall)cValueAssignment_7_4_1.eContents().get(0);
-        private final RuleCall cDEDENTTerminalRuleCall_7_5 = (RuleCall)cGroup_7.eContents().get(5);
-        private final RuleCall cDEDENTTerminalRuleCall_8 = (RuleCall)cGroup.eContents().get(8);
-
-        //Property returns Property:
-        //    PreListElement 'name:'  name=EString
-        //    INDENT
-        //        'kind:' kind=PropertyKind
-        //        (
-        //        'description:' description=EString
-        //        )?
-        //        (
-        //            'value:'
-        //            INDENT
-        //            PreListElement value+=PropertyValue
-        //            ( PreListElement value+=PropertyValue)*
-        //            DEDENT
-        //            )?
-        //        (DEDENT)?
-        //    ;
-        @Override public ParserRule getRule() { return rule; }
-
-        //PreListElement 'name:'  name=EString
-        //INDENT
-        //    'kind:' kind=PropertyKind
-        //    (
-        //    'description:' description=EString
-        //    )?
-        //    (
-        //        'value:'
-        //        INDENT
-        //        PreListElement value+=PropertyValue
-        //        ( PreListElement value+=PropertyValue)*
-        //        DEDENT
-        //        )?
-        //    (DEDENT)?
-        public Group getGroup() { return cGroup; }
-
-        //PreListElement
-        public RuleCall getPreListElementParserRuleCall_0() { return cPreListElementParserRuleCall_0; }
-
-        //'name:'
-        public Keyword getNameKeyword_1() { return cNameKeyword_1; }
-
-        //name=EString
-        public Assignment getNameAssignment_2() { return cNameAssignment_2; }
-
-        //EString
-        public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
-
-        //INDENT
-        public RuleCall getINDENTTerminalRuleCall_3() { return cINDENTTerminalRuleCall_3; }
-
-        //'kind:'
-        public Keyword getKindKeyword_4() { return cKindKeyword_4; }
-
-        //kind=PropertyKind
-        public Assignment getKindAssignment_5() { return cKindAssignment_5; }
-
-        //PropertyKind
-        public RuleCall getKindPropertyKindParserRuleCall_5_0() { return cKindPropertyKindParserRuleCall_5_0; }
-
-        //(
-        //'description:' description=EString
-        //)?
-        public Group getGroup_6() { return cGroup_6; }
-
-        //'description:'
-        public Keyword getDescriptionKeyword_6_0() { return cDescriptionKeyword_6_0; }
-
-        //description=EString
-        public Assignment getDescriptionAssignment_6_1() { return cDescriptionAssignment_6_1; }
-
-        //EString
-        public RuleCall getDescriptionEStringParserRuleCall_6_1_0() { return cDescriptionEStringParserRuleCall_6_1_0; }
-
-        //(
-        //    'value:'
-        //    INDENT
-        //    PreListElement value+=PropertyValue
-        //    ( PreListElement value+=PropertyValue)*
-        //    DEDENT
-        //    )?
-        public Group getGroup_7() { return cGroup_7; }
-
-        //'value:'
-        public Keyword getValueKeyword_7_0() { return cValueKeyword_7_0; }
-
-        //INDENT
-        public RuleCall getINDENTTerminalRuleCall_7_1() { return cINDENTTerminalRuleCall_7_1; }
-
-        //PreListElement
-        public RuleCall getPreListElementParserRuleCall_7_2() { return cPreListElementParserRuleCall_7_2; }
-
-        //value+=PropertyValue
-        public Assignment getValueAssignment_7_3() { return cValueAssignment_7_3; }
-
-        //PropertyValue
-        public RuleCall getValuePropertyValueParserRuleCall_7_3_0() { return cValuePropertyValueParserRuleCall_7_3_0; }
-
-        //( PreListElement value+=PropertyValue)*
-        public Group getGroup_7_4() { return cGroup_7_4; }
-
-        //PreListElement
-        public RuleCall getPreListElementParserRuleCall_7_4_0() { return cPreListElementParserRuleCall_7_4_0; }
-
-        //value+=PropertyValue
-        public Assignment getValueAssignment_7_4_1() { return cValueAssignment_7_4_1; }
-
-        //PropertyValue
-        public RuleCall getValuePropertyValueParserRuleCall_7_4_1_0() { return cValuePropertyValueParserRuleCall_7_4_1_0; }
-
-        //DEDENT
-        public RuleCall getDEDENTTerminalRuleCall_7_5() { return cDEDENTTerminalRuleCall_7_5; }
-
-        //(DEDENT)?
-        public RuleCall getDEDENTTerminalRuleCall_8() { return cDEDENTTerminalRuleCall_8; }
-    }
-    public class PropertyAttributeElements extends AbstractParserRuleElementFinder {
-        private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.PropertyAttribute");
-        private final Group cGroup = (Group)rule.eContents().get(1);
-        private final RuleCall cPreListElementParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
-        private final Keyword cNameKeyword_1 = (Keyword)cGroup.eContents().get(1);
-        private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-        private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-        private final RuleCall cINDENTTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
-        private final Keyword cKindKeyword_4 = (Keyword)cGroup.eContents().get(4);
-        private final Assignment cKindAssignment_5 = (Assignment)cGroup.eContents().get(5);
-        private final RuleCall cKindAttributeKindParserRuleCall_5_0 = (RuleCall)cKindAssignment_5.eContents().get(0);
-        private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-        private final Keyword cDescriptionKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-        private final Assignment cDescriptionAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
-        private final RuleCall cDescriptionEStringParserRuleCall_6_1_0 = (RuleCall)cDescriptionAssignment_6_1.eContents().get(0);
-        private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-        private final Keyword cValueKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
-        private final Assignment cValueAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
-        private final RuleCall cValuePropertyValueParserRuleCall_7_1_0 = (RuleCall)cValueAssignment_7_1.eContents().get(0);
-        private final RuleCall cDEDENTTerminalRuleCall_8 = (RuleCall)cGroup.eContents().get(8);
-
-        //PropertyAttribute returns PropertyAttribute:
-        //    PreListElement 'name:'  name=EString
-        //    INDENT
-        //        'kind:' kind=AttributeKind
-        //        (
-        //        'description:' description=EString
-        //        )?
-        //        (
-        //        'value:' value=PropertyValue
-        //        )?
-        //        (DEDENT)?
-        //;
-        @Override public ParserRule getRule() { return rule; }
-
-        //PreListElement 'name:'  name=EString
-        //INDENT
-        //    'kind:' kind=AttributeKind
-        //    (
-        //    'description:' description=EString
-        //    )?
-        //    (
-        //    'value:' value=PropertyValue
-        //    )?
-        //    (DEDENT)?
-        public Group getGroup() { return cGroup; }
-
-        //PreListElement
-        public RuleCall getPreListElementParserRuleCall_0() { return cPreListElementParserRuleCall_0; }
-
-        //'name:'
-        public Keyword getNameKeyword_1() { return cNameKeyword_1; }
-
-        //name=EString
-        public Assignment getNameAssignment_2() { return cNameAssignment_2; }
-
-        //EString
-        public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
-
-        //INDENT
-        public RuleCall getINDENTTerminalRuleCall_3() { return cINDENTTerminalRuleCall_3; }
-
-        //'kind:'
-        public Keyword getKindKeyword_4() { return cKindKeyword_4; }
-
-        //kind=AttributeKind
-        public Assignment getKindAssignment_5() { return cKindAssignment_5; }
-
-        //AttributeKind
-        public RuleCall getKindAttributeKindParserRuleCall_5_0() { return cKindAttributeKindParserRuleCall_5_0; }
-
-        //(
-        //'description:' description=EString
-        //)?
-        public Group getGroup_6() { return cGroup_6; }
-
-        //'description:'
-        public Keyword getDescriptionKeyword_6_0() { return cDescriptionKeyword_6_0; }
-
-        //description=EString
-        public Assignment getDescriptionAssignment_6_1() { return cDescriptionAssignment_6_1; }
-
-        //EString
-        public RuleCall getDescriptionEStringParserRuleCall_6_1_0() { return cDescriptionEStringParserRuleCall_6_1_0; }
-
-        //(
-        //'value:' value=PropertyValue
-        //)?
-        public Group getGroup_7() { return cGroup_7; }
-
-        //'value:'
-        public Keyword getValueKeyword_7_0() { return cValueKeyword_7_0; }
-
-        //value=PropertyValue
-        public Assignment getValueAssignment_7_1() { return cValueAssignment_7_1; }
-
-        //PropertyValue
-        public RuleCall getValuePropertyValueParserRuleCall_7_1_0() { return cValuePropertyValueParserRuleCall_7_1_0; }
-
-        //(DEDENT)?
-        public RuleCall getDEDENTTerminalRuleCall_8() { return cDEDENTTerminalRuleCall_8; }
-    }
-    public class PropertyMaximunElements extends AbstractParserRuleElementFinder {
-        private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.PropertyMaximun");
-        private final Group cGroup = (Group)rule.eContents().get(1);
-        private final RuleCall cPreListElementParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
-        private final Keyword cNameKeyword_1 = (Keyword)cGroup.eContents().get(1);
-        private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-        private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-        private final RuleCall cINDENTTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
-        private final Keyword cKindKeyword_4 = (Keyword)cGroup.eContents().get(4);
-        private final Assignment cKindAssignment_5 = (Assignment)cGroup.eContents().get(5);
-        private final RuleCall cKindMaximumKindParserRuleCall_5_0 = (RuleCall)cKindAssignment_5.eContents().get(0);
-        private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-        private final Keyword cDescriptionKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-        private final Assignment cDescriptionAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
-        private final RuleCall cDescriptionEStringParserRuleCall_6_1_0 = (RuleCall)cDescriptionAssignment_6_1.eContents().get(0);
-        private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-        private final Keyword cValueKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
-        private final Assignment cValueAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
-        private final RuleCall cValuePropertyValueParserRuleCall_7_1_0 = (RuleCall)cValueAssignment_7_1.eContents().get(0);
-        private final RuleCall cDEDENTTerminalRuleCall_8 = (RuleCall)cGroup.eContents().get(8);
-
-        //PropertyMaximun returns PropertyMaximun:
-        //    PreListElement 'name:'  name=EString
-        //    INDENT
-        //        'kind:' kind=MaximumKind
-        //        (
-        //        'description:' description=EString
-        //        )?
-        //        (
-        //        'value:' value=PropertyValue
-        //        )?
-        //        (DEDENT)?
-        //        ;
-        @Override public ParserRule getRule() { return rule; }
-
-        //PreListElement 'name:'  name=EString
-        //INDENT
-        //    'kind:' kind=MaximumKind
-        //    (
-        //    'description:' description=EString
-        //    )?
-        //    (
-        //    'value:' value=PropertyValue
-        //    )?
-        //    (DEDENT)?
-        public Group getGroup() { return cGroup; }
-
-        //PreListElement
-        public RuleCall getPreListElementParserRuleCall_0() { return cPreListElementParserRuleCall_0; }
-
-        //'name:'
-        public Keyword getNameKeyword_1() { return cNameKeyword_1; }
-
-        //name=EString
-        public Assignment getNameAssignment_2() { return cNameAssignment_2; }
-
-        //EString
-        public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
-
-        //INDENT
-        public RuleCall getINDENTTerminalRuleCall_3() { return cINDENTTerminalRuleCall_3; }
-
-        //'kind:'
-        public Keyword getKindKeyword_4() { return cKindKeyword_4; }
-
-        //kind=MaximumKind
-        public Assignment getKindAssignment_5() { return cKindAssignment_5; }
-
-        //MaximumKind
-        public RuleCall getKindMaximumKindParserRuleCall_5_0() { return cKindMaximumKindParserRuleCall_5_0; }
-
-        //(
-        //'description:' description=EString
-        //)?
-        public Group getGroup_6() { return cGroup_6; }
-
-        //'description:'
-        public Keyword getDescriptionKeyword_6_0() { return cDescriptionKeyword_6_0; }
-
-        //description=EString
-        public Assignment getDescriptionAssignment_6_1() { return cDescriptionAssignment_6_1; }
-
-        //EString
-        public RuleCall getDescriptionEStringParserRuleCall_6_1_0() { return cDescriptionEStringParserRuleCall_6_1_0; }
-
-        //(
-        //'value:' value=PropertyValue
-        //)?
-        public Group getGroup_7() { return cGroup_7; }
-
-        //'value:'
-        public Keyword getValueKeyword_7_0() { return cValueKeyword_7_0; }
-
-        //value=PropertyValue
-        public Assignment getValueAssignment_7_1() { return cValueAssignment_7_1; }
-
-        //PropertyValue
-        public RuleCall getValuePropertyValueParserRuleCall_7_1_0() { return cValuePropertyValueParserRuleCall_7_1_0; }
-
-        //(DEDENT)?
-        public RuleCall getDEDENTTerminalRuleCall_8() { return cDEDENTTerminalRuleCall_8; }
-    }
-    public class PropertyMinimumElements extends AbstractParserRuleElementFinder {
-        private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.PropertyMinimum");
-        private final Group cGroup = (Group)rule.eContents().get(1);
-        private final RuleCall cPreListElementParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
-        private final Keyword cNameKeyword_1 = (Keyword)cGroup.eContents().get(1);
-        private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-        private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-        private final RuleCall cINDENTTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
-        private final Keyword cKindKeyword_4 = (Keyword)cGroup.eContents().get(4);
-        private final Assignment cKindAssignment_5 = (Assignment)cGroup.eContents().get(5);
-        private final RuleCall cKindMinimumKindParserRuleCall_5_0 = (RuleCall)cKindAssignment_5.eContents().get(0);
-        private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-        private final Keyword cDescriptionKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-        private final Assignment cDescriptionAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
-        private final RuleCall cDescriptionEStringParserRuleCall_6_1_0 = (RuleCall)cDescriptionAssignment_6_1.eContents().get(0);
-        private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-        private final Keyword cValueKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
-        private final Assignment cValueAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
-        private final RuleCall cValuePropertyValueParserRuleCall_7_1_0 = (RuleCall)cValueAssignment_7_1.eContents().get(0);
-        private final RuleCall cDEDENTTerminalRuleCall_8 = (RuleCall)cGroup.eContents().get(8);
-
-        //PropertyMinimum returns PropertyMinimum:
-        //    PreListElement 'name:'  name=EString
-        //    INDENT
-        //        'kind:' kind=MinimumKind
-        //        (
-        //        'description:' description=EString
-        //        )?
-        //        (
-        //        'value:' value=PropertyValue
-        //        )?
-        //        (DEDENT)?
-        //        ;
-        @Override public ParserRule getRule() { return rule; }
-
-        //PreListElement 'name:'  name=EString
-        //INDENT
-        //    'kind:' kind=MinimumKind
-        //    (
-        //    'description:' description=EString
-        //    )?
-        //    (
-        //    'value:' value=PropertyValue
-        //    )?
-        //    (DEDENT)?
-        public Group getGroup() { return cGroup; }
-
-        //PreListElement
-        public RuleCall getPreListElementParserRuleCall_0() { return cPreListElementParserRuleCall_0; }
-
-        //'name:'
-        public Keyword getNameKeyword_1() { return cNameKeyword_1; }
-
-        //name=EString
-        public Assignment getNameAssignment_2() { return cNameAssignment_2; }
-
-        //EString
-        public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
-
-        //INDENT
-        public RuleCall getINDENTTerminalRuleCall_3() { return cINDENTTerminalRuleCall_3; }
-
-        //'kind:'
-        public Keyword getKindKeyword_4() { return cKindKeyword_4; }
-
-        //kind=MinimumKind
-        public Assignment getKindAssignment_5() { return cKindAssignment_5; }
-
-        //MinimumKind
-        public RuleCall getKindMinimumKindParserRuleCall_5_0() { return cKindMinimumKindParserRuleCall_5_0; }
-
-        //(
-        //'description:' description=EString
-        //)?
-        public Group getGroup_6() { return cGroup_6; }
-
-        //'description:'
-        public Keyword getDescriptionKeyword_6_0() { return cDescriptionKeyword_6_0; }
-
-        //description=EString
-        public Assignment getDescriptionAssignment_6_1() { return cDescriptionAssignment_6_1; }
-
-        //EString
-        public RuleCall getDescriptionEStringParserRuleCall_6_1_0() { return cDescriptionEStringParserRuleCall_6_1_0; }
-
-        //(
-        //'value:' value=PropertyValue
-        //)?
-        public Group getGroup_7() { return cGroup_7; }
-
-        //'value:'
-        public Keyword getValueKeyword_7_0() { return cValueKeyword_7_0; }
-
-        //value=PropertyValue
-        public Assignment getValueAssignment_7_1() { return cValueAssignment_7_1; }
-
-        //PropertyValue
-        public RuleCall getValuePropertyValueParserRuleCall_7_1_0() { return cValuePropertyValueParserRuleCall_7_1_0; }
-
-        //(DEDENT)?
-        public RuleCall getDEDENTTerminalRuleCall_8() { return cDEDENTTerminalRuleCall_8; }
-    }
-    public class PropertySelectionElements extends AbstractParserRuleElementFinder {
-        private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.PropertySelection");
-        private final Group cGroup = (Group)rule.eContents().get(1);
-        private final RuleCall cPreListElementParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
-        private final Keyword cNameKeyword_1 = (Keyword)cGroup.eContents().get(1);
-        private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-        private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-        private final RuleCall cINDENTTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
-        private final Keyword cKindKeyword_4 = (Keyword)cGroup.eContents().get(4);
-        private final Assignment cKindAssignment_5 = (Assignment)cGroup.eContents().get(5);
-        private final RuleCall cKindSelectionKindParserRuleCall_5_0 = (RuleCall)cKindAssignment_5.eContents().get(0);
-        private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-        private final Keyword cDescriptionKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-        private final Assignment cDescriptionAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
-        private final RuleCall cDescriptionEStringParserRuleCall_6_1_0 = (RuleCall)cDescriptionAssignment_6_1.eContents().get(0);
-        private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-        private final Keyword cValueKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
-        private final RuleCall cINDENTTerminalRuleCall_7_1 = (RuleCall)cGroup_7.eContents().get(1);
-        private final RuleCall cPreListElementParserRuleCall_7_2 = (RuleCall)cGroup_7.eContents().get(2);
-        private final Assignment cValueAssignment_7_3 = (Assignment)cGroup_7.eContents().get(3);
-        private final RuleCall cValuePropertyValueParserRuleCall_7_3_0 = (RuleCall)cValueAssignment_7_3.eContents().get(0);
-        private final Group cGroup_7_4 = (Group)cGroup_7.eContents().get(4);
-        private final RuleCall cPreListElementParserRuleCall_7_4_0 = (RuleCall)cGroup_7_4.eContents().get(0);
-        private final Assignment cValueAssignment_7_4_1 = (Assignment)cGroup_7_4.eContents().get(1);
-        private final RuleCall cValuePropertyValueParserRuleCall_7_4_1_0 = (RuleCall)cValueAssignment_7_4_1.eContents().get(0);
-        private final RuleCall cDEDENTTerminalRuleCall_7_5 = (RuleCall)cGroup_7.eContents().get(5);
-        private final RuleCall cDEDENTTerminalRuleCall_8 = (RuleCall)cGroup.eContents().get(8);
-
-        //PropertySelection returns PropertySelection:
-        //    PreListElement 'name:'  name=EString
-        //    INDENT
-        //        'kind:' kind=SelectionKind
-        //        (
-        //        'description:' description=EString
-        //        )?
-        //        (
-        //            'value:'
-        //            INDENT
-        //            PreListElement value+=PropertyValue
-        //            ( PreListElement value+=PropertyValue)*
-        //            DEDENT
-        //            )?
-        //        (DEDENT)?
-        //    ;
-        @Override public ParserRule getRule() { return rule; }
-
-        //PreListElement 'name:'  name=EString
-        //INDENT
-        //    'kind:' kind=SelectionKind
-        //    (
-        //    'description:' description=EString
-        //    )?
-        //    (
-        //        'value:'
-        //        INDENT
-        //        PreListElement value+=PropertyValue
-        //        ( PreListElement value+=PropertyValue)*
-        //        DEDENT
-        //        )?
-        //    (DEDENT)?
-        public Group getGroup() { return cGroup; }
-
-        //PreListElement
-        public RuleCall getPreListElementParserRuleCall_0() { return cPreListElementParserRuleCall_0; }
-
-        //'name:'
-        public Keyword getNameKeyword_1() { return cNameKeyword_1; }
-
-        //name=EString
-        public Assignment getNameAssignment_2() { return cNameAssignment_2; }
-
-        //EString
-        public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
-
-        //INDENT
-        public RuleCall getINDENTTerminalRuleCall_3() { return cINDENTTerminalRuleCall_3; }
-
-        //'kind:'
-        public Keyword getKindKeyword_4() { return cKindKeyword_4; }
-
-        //kind=SelectionKind
-        public Assignment getKindAssignment_5() { return cKindAssignment_5; }
-
-        //SelectionKind
-        public RuleCall getKindSelectionKindParserRuleCall_5_0() { return cKindSelectionKindParserRuleCall_5_0; }
-
-        //(
-        //'description:' description=EString
-        //)?
-        public Group getGroup_6() { return cGroup_6; }
-
-        //'description:'
-        public Keyword getDescriptionKeyword_6_0() { return cDescriptionKeyword_6_0; }
-
-        //description=EString
-        public Assignment getDescriptionAssignment_6_1() { return cDescriptionAssignment_6_1; }
-
-        //EString
-        public RuleCall getDescriptionEStringParserRuleCall_6_1_0() { return cDescriptionEStringParserRuleCall_6_1_0; }
-
-        //(
-        //    'value:'
-        //    INDENT
-        //    PreListElement value+=PropertyValue
-        //    ( PreListElement value+=PropertyValue)*
-        //    DEDENT
-        //    )?
-        public Group getGroup_7() { return cGroup_7; }
-
-        //'value:'
-        public Keyword getValueKeyword_7_0() { return cValueKeyword_7_0; }
-
-        //INDENT
-        public RuleCall getINDENTTerminalRuleCall_7_1() { return cINDENTTerminalRuleCall_7_1; }
-
-        //PreListElement
-        public RuleCall getPreListElementParserRuleCall_7_2() { return cPreListElementParserRuleCall_7_2; }
-
-        //value+=PropertyValue
-        public Assignment getValueAssignment_7_3() { return cValueAssignment_7_3; }
-
-        //PropertyValue
-        public RuleCall getValuePropertyValueParserRuleCall_7_3_0() { return cValuePropertyValueParserRuleCall_7_3_0; }
-
-        //( PreListElement value+=PropertyValue)*
-        public Group getGroup_7_4() { return cGroup_7_4; }
-
-        //PreListElement
-        public RuleCall getPreListElementParserRuleCall_7_4_0() { return cPreListElementParserRuleCall_7_4_0; }
-
-        //value+=PropertyValue
-        public Assignment getValueAssignment_7_4_1() { return cValueAssignment_7_4_1; }
-
-        //PropertyValue
-        public RuleCall getValuePropertyValueParserRuleCall_7_4_1_0() { return cValuePropertyValueParserRuleCall_7_4_1_0; }
-
-        //DEDENT
-        public RuleCall getDEDENTTerminalRuleCall_7_5() { return cDEDENTTerminalRuleCall_7_5; }
-
-        //(DEDENT)?
-        public RuleCall getDEDENTTerminalRuleCall_8() { return cDEDENTTerminalRuleCall_8; }
-    }
-    public class PropertyRangeElements extends AbstractParserRuleElementFinder {
-        private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.PropertyRange");
-        private final Group cGroup = (Group)rule.eContents().get(1);
-        private final RuleCall cPreListElementParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
-        private final Keyword cNameKeyword_1 = (Keyword)cGroup.eContents().get(1);
-        private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-        private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-        private final RuleCall cINDENTTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
-        private final Keyword cKindKeyword_4 = (Keyword)cGroup.eContents().get(4);
-        private final Assignment cKindAssignment_5 = (Assignment)cGroup.eContents().get(5);
-        private final RuleCall cKindRangeKindParserRuleCall_5_0 = (RuleCall)cKindAssignment_5.eContents().get(0);
-        private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-        private final Keyword cDescriptionKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-        private final Assignment cDescriptionAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
-        private final RuleCall cDescriptionEStringParserRuleCall_6_1_0 = (RuleCall)cDescriptionAssignment_6_1.eContents().get(0);
-        private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-        private final Keyword cValueKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
-        private final RuleCall cINDENTTerminalRuleCall_7_1 = (RuleCall)cGroup_7.eContents().get(1);
-        private final RuleCall cPreListElementParserRuleCall_7_2 = (RuleCall)cGroup_7.eContents().get(2);
-        private final Assignment cValueAssignment_7_3 = (Assignment)cGroup_7.eContents().get(3);
-        private final RuleCall cValuePropertyValueParserRuleCall_7_3_0 = (RuleCall)cValueAssignment_7_3.eContents().get(0);
-        private final RuleCall cPreListElementParserRuleCall_7_4 = (RuleCall)cGroup_7.eContents().get(4);
-        private final Assignment cValueAssignment_7_5 = (Assignment)cGroup_7.eContents().get(5);
-        private final RuleCall cValuePropertyValueParserRuleCall_7_5_0 = (RuleCall)cValueAssignment_7_5.eContents().get(0);
-        private final RuleCall cDEDENTTerminalRuleCall_7_6 = (RuleCall)cGroup_7.eContents().get(6);
-        private final RuleCall cDEDENTTerminalRuleCall_8 = (RuleCall)cGroup.eContents().get(8);
-
-        //PropertyRange returns PropertyRange:
-        //    PreListElement 'name:'  name=EString
-        //    INDENT
-        //        'kind:' kind=RangeKind
-        //        (
-        //        'description:' description=EString
-        //        )?
-        //        (
-        //            'value:'
-        //            INDENT
-        //            PreListElement value+=PropertyValue
-        //            PreListElement value+=PropertyValue
-        //            DEDENT
-        //            )?
-        //        (DEDENT)?
-        //    ;
-        @Override public ParserRule getRule() { return rule; }
-
-        //PreListElement 'name:'  name=EString
-        //INDENT
-        //    'kind:' kind=RangeKind
-        //    (
-        //    'description:' description=EString
-        //    )?
-        //    (
-        //        'value:'
-        //        INDENT
-        //        PreListElement value+=PropertyValue
-        //        PreListElement value+=PropertyValue
-        //        DEDENT
-        //        )?
-        //    (DEDENT)?
-        public Group getGroup() { return cGroup; }
-
-        //PreListElement
-        public RuleCall getPreListElementParserRuleCall_0() { return cPreListElementParserRuleCall_0; }
-
-        //'name:'
-        public Keyword getNameKeyword_1() { return cNameKeyword_1; }
-
-        //name=EString
-        public Assignment getNameAssignment_2() { return cNameAssignment_2; }
-
-        //EString
-        public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
-
-        //INDENT
-        public RuleCall getINDENTTerminalRuleCall_3() { return cINDENTTerminalRuleCall_3; }
-
-        //'kind:'
-        public Keyword getKindKeyword_4() { return cKindKeyword_4; }
-
-        //kind=RangeKind
-        public Assignment getKindAssignment_5() { return cKindAssignment_5; }
-
-        //RangeKind
-        public RuleCall getKindRangeKindParserRuleCall_5_0() { return cKindRangeKindParserRuleCall_5_0; }
-
-        //(
-        //'description:' description=EString
-        //)?
-        public Group getGroup_6() { return cGroup_6; }
-
-        //'description:'
-        public Keyword getDescriptionKeyword_6_0() { return cDescriptionKeyword_6_0; }
-
-        //description=EString
-        public Assignment getDescriptionAssignment_6_1() { return cDescriptionAssignment_6_1; }
-
-        //EString
-        public RuleCall getDescriptionEStringParserRuleCall_6_1_0() { return cDescriptionEStringParserRuleCall_6_1_0; }
-
-        //(
-        //    'value:'
-        //    INDENT
-        //    PreListElement value+=PropertyValue
-        //    PreListElement value+=PropertyValue
-        //    DEDENT
-        //    )?
-        public Group getGroup_7() { return cGroup_7; }
-
-        //'value:'
-        public Keyword getValueKeyword_7_0() { return cValueKeyword_7_0; }
-
-        //INDENT
-        public RuleCall getINDENTTerminalRuleCall_7_1() { return cINDENTTerminalRuleCall_7_1; }
-
-        //PreListElement
-        public RuleCall getPreListElementParserRuleCall_7_2() { return cPreListElementParserRuleCall_7_2; }
-
-        //value+=PropertyValue
-        public Assignment getValueAssignment_7_3() { return cValueAssignment_7_3; }
-
-        //PropertyValue
-        public RuleCall getValuePropertyValueParserRuleCall_7_3_0() { return cValuePropertyValueParserRuleCall_7_3_0; }
-
-        //PreListElement
-        public RuleCall getPreListElementParserRuleCall_7_4() { return cPreListElementParserRuleCall_7_4; }
-
-        //value+=PropertyValue
-        public Assignment getValueAssignment_7_5() { return cValueAssignment_7_5; }
-
-        //PropertyValue
-        public RuleCall getValuePropertyValueParserRuleCall_7_5_0() { return cValuePropertyValueParserRuleCall_7_5_0; }
-
-        //DEDENT
-        public RuleCall getDEDENTTerminalRuleCall_7_6() { return cDEDENTTerminalRuleCall_7_6; }
-
-        //(DEDENT)?
-        public RuleCall getDEDENTTerminalRuleCall_8() { return cDEDENTTerminalRuleCall_8; }
-    }
-    public class PropertyValueElements extends AbstractParserRuleElementFinder {
-        private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.PropertyValue");
-        private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-        private final RuleCall cPropertyValueIntParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-        private final RuleCall cPropertyValueDoubleParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-        private final RuleCall cPropertyValueStringParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-        private final RuleCall cProcessorArchitectureValueParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
-        private final RuleCall cLinuxDistributionValueParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
-        private final RuleCall cUbuntuVersionValueParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
-        private final RuleCall cPropertyValueListParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
-
-        //PropertyValue returns PropertyValue:
-        //    PropertyValueInt | PropertyValueDouble
-        //    | PropertyValueString| ProcessorArchitectureValue
-        //    | LinuxDistributionValue | UbuntuVersionValue
-        //    | PropertyValueList;
-        @Override public ParserRule getRule() { return rule; }
-
-        //PropertyValueInt | PropertyValueDouble
-        //| PropertyValueString| ProcessorArchitectureValue
-        //| LinuxDistributionValue | UbuntuVersionValue
-        //| PropertyValueList
-        public Alternatives getAlternatives() { return cAlternatives; }
-
-        //PropertyValueInt
-        public RuleCall getPropertyValueIntParserRuleCall_0() { return cPropertyValueIntParserRuleCall_0; }
-
-        //PropertyValueDouble
-        public RuleCall getPropertyValueDoubleParserRuleCall_1() { return cPropertyValueDoubleParserRuleCall_1; }
-
-        //PropertyValueString
-        public RuleCall getPropertyValueStringParserRuleCall_2() { return cPropertyValueStringParserRuleCall_2; }
-
-        //ProcessorArchitectureValue
-        public RuleCall getProcessorArchitectureValueParserRuleCall_3() { return cProcessorArchitectureValueParserRuleCall_3; }
-
-        //LinuxDistributionValue
-        public RuleCall getLinuxDistributionValueParserRuleCall_4() { return cLinuxDistributionValueParserRuleCall_4; }
-
-        //UbuntuVersionValue
-        public RuleCall getUbuntuVersionValueParserRuleCall_5() { return cUbuntuVersionValueParserRuleCall_5; }
-
-        //PropertyValueList
-        public RuleCall getPropertyValueListParserRuleCall_6() { return cPropertyValueListParserRuleCall_6; }
-    }
-    public class PropertyValueIntElements extends AbstractParserRuleElementFinder {
-        private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.PropertyValueInt");
-        private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
-        private final RuleCall cValueInteger0ParserRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
-
-        //PropertyValueInt returns PropertyValueInt:
-        //    value=Integer0;
-        @Override public ParserRule getRule() { return rule; }
-
-        //value=Integer0
-        public Assignment getValueAssignment() { return cValueAssignment; }
-
-        //Integer0
-        public RuleCall getValueInteger0ParserRuleCall_0() { return cValueInteger0ParserRuleCall_0; }
-    }
-    public class PropertyValueDoubleElements extends AbstractParserRuleElementFinder {
-        private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.PropertyValueDouble");
-        private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
-        private final RuleCall cValueDouble0ParserRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
-
-        //PropertyValueDouble returns PropertyValueDouble:
-        //    value=Double0
-        //;
-        @Override public ParserRule getRule() { return rule; }
-
-        //value=Double0
-        public Assignment getValueAssignment() { return cValueAssignment; }
-
-        //Double0
-        public RuleCall getValueDouble0ParserRuleCall_0() { return cValueDouble0ParserRuleCall_0; }
-    }
-    public class PropertyValueStringElements extends AbstractParserRuleElementFinder {
-        private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.PropertyValueString");
-        private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
-        private final RuleCall cValueEStringParserRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
-
-        //PropertyValueString returns PropertyValueString:
-        //    value=EString;
-        @Override public ParserRule getRule() { return rule; }
-
-        //value=EString
-        public Assignment getValueAssignment() { return cValueAssignment; }
-
-        //EString
-        public RuleCall getValueEStringParserRuleCall_0() { return cValueEStringParserRuleCall_0; }
-    }
-    public class PropertyValueListElements extends AbstractParserRuleElementFinder {
-        private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.PropertyValueList");
-        private final Group cGroup = (Group)rule.eContents().get(1);
-        private final RuleCall cINDENTTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
-        private final RuleCall cPreListElementParserRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
-        private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
-        private final RuleCall cValuePropertyValueParserRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
-        private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-        private final RuleCall cPreListElementParserRuleCall_3_0 = (RuleCall)cGroup_3.eContents().get(0);
-        private final Assignment cValueAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-        private final RuleCall cValuePropertyValueParserRuleCall_3_1_0 = (RuleCall)cValueAssignment_3_1.eContents().get(0);
-        private final RuleCall cDEDENTTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
-
-        //PropertyValueList returns PropertyValueList:
-        //    INDENT
-        //      PreListElement value+=PropertyValue
-        //        (PreListElement value+=PropertyValue)*
-        //    DEDENT
-        // ;
-        @Override public ParserRule getRule() { return rule; }
-
-        //INDENT
-        //  PreListElement value+=PropertyValue
-        //    (PreListElement value+=PropertyValue)*
-        //DEDENT
-        public Group getGroup() { return cGroup; }
-
-        //INDENT
-        public RuleCall getINDENTTerminalRuleCall_0() { return cINDENTTerminalRuleCall_0; }
-
-        //PreListElement
-        public RuleCall getPreListElementParserRuleCall_1() { return cPreListElementParserRuleCall_1; }
-
-        //value+=PropertyValue
-        public Assignment getValueAssignment_2() { return cValueAssignment_2; }
-
-        //PropertyValue
-        public RuleCall getValuePropertyValueParserRuleCall_2_0() { return cValuePropertyValueParserRuleCall_2_0; }
-
-        //(PreListElement value+=PropertyValue)*
-        public Group getGroup_3() { return cGroup_3; }
-
-        //PreListElement
-        public RuleCall getPreListElementParserRuleCall_3_0() { return cPreListElementParserRuleCall_3_0; }
-
-        //value+=PropertyValue
-        public Assignment getValueAssignment_3_1() { return cValueAssignment_3_1; }
-
-        //PropertyValue
-        public RuleCall getValuePropertyValueParserRuleCall_3_1_0() { return cValuePropertyValueParserRuleCall_3_1_0; }
-
-        //DEDENT
-        public RuleCall getDEDENTTerminalRuleCall_4() { return cDEDENTTerminalRuleCall_4; }
-    }
-    public class ProcessorArchitectureValueElements extends AbstractParserRuleElementFinder {
-        private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.ProcessorArchitectureValue");
-        private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
-        private final RuleCall cValueProcessorArchitectureTypeEnumRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
-
-        //ProcessorArchitectureValue returns ProcessorArchitectureValue:
-        //    value=ProcessorArchitectureType
-        //;
-        @Override public ParserRule getRule() { return rule; }
-
-        //value=ProcessorArchitectureType
-        public Assignment getValueAssignment() { return cValueAssignment; }
-
-        //ProcessorArchitectureType
-        public RuleCall getValueProcessorArchitectureTypeEnumRuleCall_0() { return cValueProcessorArchitectureTypeEnumRuleCall_0; }
-    }
-    public class AbstractResouceTypeElements extends AbstractParserRuleElementFinder {
-        private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.AbstractResouceType");
-        private final RuleCall cResourceTypeParserRuleCall = (RuleCall)rule.eContents().get(1);
-
-        //AbstractResouceType returns AbstractResouceType:
-        // ResourceType;
-        @Override public ParserRule getRule() { return rule; }
-
-        //ResourceType
-        public RuleCall getResourceTypeParserRuleCall() { return cResourceTypeParserRuleCall; }
-    }
-    public class OpertingSystemResouceTypeElements extends AbstractParserRuleElementFinder {
-        private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.OpertingSystemResouceType");
-        private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-        private final RuleCall cLinuxOpertingSystemParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-        private final RuleCall cMacOSOpertingSystemParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-
-        //OpertingSystemResouceType returns OpertingSystemResouceType:
-        //    LinuxOpertingSystem | MacOSOpertingSystem
-        //;
-        @Override public ParserRule getRule() { return rule; }
-
-        //LinuxOpertingSystem | MacOSOpertingSystem
-        public Alternatives getAlternatives() { return cAlternatives; }
-
-        //LinuxOpertingSystem
-        public RuleCall getLinuxOpertingSystemParserRuleCall_0() { return cLinuxOpertingSystemParserRuleCall_0; }
-
-        //MacOSOpertingSystem
-        public RuleCall getMacOSOpertingSystemParserRuleCall_1() { return cMacOSOpertingSystemParserRuleCall_1; }
-    }
-    public class ResourceTypeElements extends AbstractParserRuleElementFinder {
-        private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.ResourceType");
-        private final Group cGroup = (Group)rule.eContents().get(1);
-        private final Action cResourceTypeAction_0 = (Action)cGroup.eContents().get(0);
-        private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-        private final RuleCall cNameEStringParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-
-        //ResourceType returns ResourceType:
-        //    {ResourceType}
-        //    name=EString
-        //;
-        @Override public ParserRule getRule() { return rule; }
-
-        //{ResourceType}
-        //name=EString
-        public Group getGroup() { return cGroup; }
-
-        //{ResourceType}
-        public Action getResourceTypeAction_0() { return cResourceTypeAction_0; }
-
-        //name=EString
-        public Assignment getNameAssignment_1() { return cNameAssignment_1; }
-
-        //EString
-        public RuleCall getNameEStringParserRuleCall_1_0() { return cNameEStringParserRuleCall_1_0; }
-    }
-    public class ProcessorResouceTypeElements extends AbstractParserRuleElementFinder {
-        private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.ProcessorResouceType");
-        private final Group cGroup = (Group)rule.eContents().get(1);
-        private final Action cProcessorResouceTypeAction_0 = (Action)cGroup.eContents().get(0);
-        private final Keyword cProcessorKeyword_1 = (Keyword)cGroup.eContents().get(1);
-
-        //ProcessorResouceType returns ProcessorResouceType:
-        //    {ProcessorResouceType}
-        //    "Processor"
-        //    ;
-        @Override public ParserRule getRule() { return rule; }
-
-        //{ProcessorResouceType}
-        //"Processor"
-        public Group getGroup() { return cGroup; }
-
-        //{ProcessorResouceType}
-        public Action getProcessorResouceTypeAction_0() { return cProcessorResouceTypeAction_0; }
-
-        //"Processor"
-        public Keyword getProcessorKeyword_1() { return cProcessorKeyword_1; }
-    }
-    public class AbstractCommunicationTypeElements extends AbstractParserRuleElementFinder {
-        private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.AbstractCommunicationType");
-        private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-        private final RuleCall cCommunicationTypeParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-        private final RuleCall cNetworkCommunicationTypeParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-
-        //AbstractCommunicationType returns AbstractCommunicationType:
-        //    CommunicationType | NetworkCommunicationType
-        //;
-        @Override public ParserRule getRule() { return rule; }
-
-        //CommunicationType | NetworkCommunicationType
-        public Alternatives getAlternatives() { return cAlternatives; }
-
-        //CommunicationType
-        public RuleCall getCommunicationTypeParserRuleCall_0() { return cCommunicationTypeParserRuleCall_0; }
-
-        //NetworkCommunicationType
-        public RuleCall getNetworkCommunicationTypeParserRuleCall_1() { return cNetworkCommunicationTypeParserRuleCall_1; }
-    }
-    public class LinuxOpertingSystemElements extends AbstractParserRuleElementFinder {
-        private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.LinuxOpertingSystem");
-        private final Group cGroup = (Group)rule.eContents().get(1);
-        private final Action cLinuxOpertingSystemAction_0 = (Action)cGroup.eContents().get(0);
-        private final Keyword cLinuxOpertingSystemKeyword_1 = (Keyword)cGroup.eContents().get(1);
-
-        //LinuxOpertingSystem returns LinuxOpertingSystem:
-        //    {LinuxOpertingSystem}
-        //    "LinuxOpertingSystem"
-        //;
-        @Override public ParserRule getRule() { return rule; }
-
-        //{LinuxOpertingSystem}
-        //"LinuxOpertingSystem"
-        public Group getGroup() { return cGroup; }
-
-        //{LinuxOpertingSystem}
-        public Action getLinuxOpertingSystemAction_0() { return cLinuxOpertingSystemAction_0; }
-
-        //"LinuxOpertingSystem"
-        public Keyword getLinuxOpertingSystemKeyword_1() { return cLinuxOpertingSystemKeyword_1; }
-    }
-    public class MacOSOpertingSystemElements extends AbstractParserRuleElementFinder {
-        private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.MacOSOpertingSystem");
-        private final Group cGroup = (Group)rule.eContents().get(1);
-        private final Action cMacOSOpertingSystemAction_0 = (Action)cGroup.eContents().get(0);
-        private final Keyword cMacOSOpertingSystemKeyword_1 = (Keyword)cGroup.eContents().get(1);
-
-        //MacOSOpertingSystem returns MacOSOpertingSystem:
-        //    {MacOSOpertingSystem}
-        //    "MacOSOpertingSystem"
-        //    ;
-        @Override public ParserRule getRule() { return rule; }
-
-        //{MacOSOpertingSystem}
-        //"MacOSOpertingSystem"
-        public Group getGroup() { return cGroup; }
-
-        //{MacOSOpertingSystem}
-        public Action getMacOSOpertingSystemAction_0() { return cMacOSOpertingSystemAction_0; }
-
-        //"MacOSOpertingSystem"
-        public Keyword getMacOSOpertingSystemKeyword_1() { return cMacOSOpertingSystemKeyword_1; }
-    }
-    public class CommunicationTypeElements extends AbstractParserRuleElementFinder {
-        private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.CommunicationType");
-        private final Group cGroup = (Group)rule.eContents().get(1);
-        private final Action cCommunicationTypeAction_0 = (Action)cGroup.eContents().get(0);
-        private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-        private final RuleCall cNameEStringParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-
-        //CommunicationType returns CommunicationType:
-        //    {CommunicationType}
-        //    name=EString
-        //    ;
-        @Override public ParserRule getRule() { return rule; }
-
-        //{CommunicationType}
-        //name=EString
-        public Group getGroup() { return cGroup; }
-
-        //{CommunicationType}
-        public Action getCommunicationTypeAction_0() { return cCommunicationTypeAction_0; }
-
-        //name=EString
-        public Assignment getNameAssignment_1() { return cNameAssignment_1; }
-
-        //EString
-        public RuleCall getNameEStringParserRuleCall_1_0() { return cNameEStringParserRuleCall_1_0; }
-    }
-    public class NetworkCommunicationTypeElements extends AbstractParserRuleElementFinder {
-        private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.NetworkCommunicationType");
-        private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-        private final RuleCall cEthernetCommunicationTypeParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-        private final RuleCall cWlanCommunicationTypeParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-
-        //NetworkCommunicationType returns NetworkCommunicationType:
-        //    EthernetCommunicationType | WlanCommunicationType;
-        @Override public ParserRule getRule() { return rule; }
-
-        //EthernetCommunicationType | WlanCommunicationType
-        public Alternatives getAlternatives() { return cAlternatives; }
-
-        //EthernetCommunicationType
-        public RuleCall getEthernetCommunicationTypeParserRuleCall_0() { return cEthernetCommunicationTypeParserRuleCall_0; }
-
-        //WlanCommunicationType
-        public RuleCall getWlanCommunicationTypeParserRuleCall_1() { return cWlanCommunicationTypeParserRuleCall_1; }
-    }
-    public class EthernetCommunicationTypeElements extends AbstractParserRuleElementFinder {
-        private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.EthernetCommunicationType");
-        private final Group cGroup = (Group)rule.eContents().get(1);
-        private final Action cEthernetCommunicationTypeAction_0 = (Action)cGroup.eContents().get(0);
-        private final Keyword cEthernetKeyword_1 = (Keyword)cGroup.eContents().get(1);
-
-        //EthernetCommunicationType returns EthernetCommunicationType:
-        //    {EthernetCommunicationType}
-        //    'Ethernet'
-        //    ;
-        @Override public ParserRule getRule() { return rule; }
-
-        //{EthernetCommunicationType}
-        //'Ethernet'
-        public Group getGroup() { return cGroup; }
-
-        //{EthernetCommunicationType}
-        public Action getEthernetCommunicationTypeAction_0() { return cEthernetCommunicationTypeAction_0; }
-
-        //'Ethernet'
-        public Keyword getEthernetKeyword_1() { return cEthernetKeyword_1; }
-    }
-    public class WlanCommunicationTypeElements extends AbstractParserRuleElementFinder {
-        private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.WlanCommunicationType");
-        private final Group cGroup = (Group)rule.eContents().get(1);
-        private final Action cWlanCommunicationTypeAction_0 = (Action)cGroup.eContents().get(0);
-        private final Keyword cWlanKeyword_1 = (Keyword)cGroup.eContents().get(1);
-
-        //WlanCommunicationType returns WlanCommunicationType:
-        //    {WlanCommunicationType}
-        //    'Wlan'
-        //    ;
-        @Override public ParserRule getRule() { return rule; }
-
-        //{WlanCommunicationType}
-        //'Wlan'
-        public Group getGroup() { return cGroup; }
-
-        //{WlanCommunicationType}
-        public Action getWlanCommunicationTypeAction_0() { return cWlanCommunicationTypeAction_0; }
-
-        //'Wlan'
-        public Keyword getWlanKeyword_1() { return cWlanKeyword_1; }
-    }
-    public class UsbCommunicationTypeElements extends AbstractParserRuleElementFinder {
-        private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.UsbCommunicationType");
-        private final Group cGroup = (Group)rule.eContents().get(1);
-        private final Action cUsbCommunicationTypeAction_0 = (Action)cGroup.eContents().get(0);
-        private final Keyword cUsbKeyword_1 = (Keyword)cGroup.eContents().get(1);
-
-        //UsbCommunicationType returns UsbCommunicationType:
-        //    {UsbCommunicationType}
-        //    'Usb'
-        //    ;
-        @Override public ParserRule getRule() { return rule; }
-
-        //{UsbCommunicationType}
-        //'Usb'
-        public Group getGroup() { return cGroup; }
-
-        //{UsbCommunicationType}
-        public Action getUsbCommunicationTypeAction_0() { return cUsbCommunicationTypeAction_0; }
-
-        //'Usb'
-        public Keyword getUsbKeyword_1() { return cUsbKeyword_1; }
-    }
-    public class AttributeKindElements extends AbstractParserRuleElementFinder {
-        private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.AttributeKind");
-        private final Group cGroup = (Group)rule.eContents().get(1);
-        private final Action cAttributeKindAction_0 = (Action)cGroup.eContents().get(0);
-        private final Keyword cAttributeKindKeyword_1 = (Keyword)cGroup.eContents().get(1);
-
-        //AttributeKind returns AttributeKind:
-        //    {AttributeKind}
-        //    'AttributeKind'
-        //    ;
-        @Override public ParserRule getRule() { return rule; }
-
-        //{AttributeKind}
-        //'AttributeKind'
-        public Group getGroup() { return cGroup; }
-
-        //{AttributeKind}
-        public Action getAttributeKindAction_0() { return cAttributeKindAction_0; }
-
-        //'AttributeKind'
-        public Keyword getAttributeKindKeyword_1() { return cAttributeKindKeyword_1; }
-    }
-    public class MaximumKindElements extends AbstractParserRuleElementFinder {
-        private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.MaximumKind");
-        private final Group cGroup = (Group)rule.eContents().get(1);
-        private final Action cMaximumKindAction_0 = (Action)cGroup.eContents().get(0);
-        private final Keyword cMaximumKindKeyword_1 = (Keyword)cGroup.eContents().get(1);
-
-        //MaximumKind returns MaximumKind:
-        //    {MaximumKind}
-        //    'MaximumKind'
-        //    ;
-        @Override public ParserRule getRule() { return rule; }
-
-        //{MaximumKind}
-        //'MaximumKind'
-        public Group getGroup() { return cGroup; }
-
-        //{MaximumKind}
-        public Action getMaximumKindAction_0() { return cMaximumKindAction_0; }
-
-        //'MaximumKind'
-        public Keyword getMaximumKindKeyword_1() { return cMaximumKindKeyword_1; }
-    }
-    public class MinimumKindElements extends AbstractParserRuleElementFinder {
-        private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.MinimumKind");
-        private final Group cGroup = (Group)rule.eContents().get(1);
-        private final Action cMinimumKindAction_0 = (Action)cGroup.eContents().get(0);
-        private final Keyword cMinimumKindKeyword_1 = (Keyword)cGroup.eContents().get(1);
-
-        //MinimumKind returns MinimumKind:
-        //    {MinimumKind}
-        //    'MinimumKind'
-        //    ;
-        @Override public ParserRule getRule() { return rule; }
-
-        //{MinimumKind}
-        //'MinimumKind'
-        public Group getGroup() { return cGroup; }
-
-        //{MinimumKind}
-        public Action getMinimumKindAction_0() { return cMinimumKindAction_0; }
-
-        //'MinimumKind'
-        public Keyword getMinimumKindKeyword_1() { return cMinimumKindKeyword_1; }
-    }
-    public class SelectionKindElements extends AbstractParserRuleElementFinder {
-        private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.SelectionKind");
-        private final Group cGroup = (Group)rule.eContents().get(1);
-        private final Action cSelectionKindAction_0 = (Action)cGroup.eContents().get(0);
-        private final Keyword cSelectionKindKeyword_1 = (Keyword)cGroup.eContents().get(1);
-
-        //SelectionKind returns SelectionKind:
-        //    {SelectionKind}
-        //    'SelectionKind'
-        //    ;
-        @Override public ParserRule getRule() { return rule; }
-
-        //{SelectionKind}
-        //'SelectionKind'
-        public Group getGroup() { return cGroup; }
-
-        //{SelectionKind}
-        public Action getSelectionKindAction_0() { return cSelectionKindAction_0; }
-
-        //'SelectionKind'
-        public Keyword getSelectionKindKeyword_1() { return cSelectionKindKeyword_1; }
-    }
-    public class RangeKindElements extends AbstractParserRuleElementFinder {
-        private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.RangeKind");
-        private final Group cGroup = (Group)rule.eContents().get(1);
-        private final Action cRangeKindAction_0 = (Action)cGroup.eContents().get(0);
-        private final Keyword cRangeKindKeyword_1 = (Keyword)cGroup.eContents().get(1);
-
-        //RangeKind returns RangeKind:
-        //    {RangeKind}
-        //    'RangeKind'
-        //    ;
-        @Override public ParserRule getRule() { return rule; }
-
-        //{RangeKind}
-        //'RangeKind'
-        public Group getGroup() { return cGroup; }
-
-        //{RangeKind}
-        public Action getRangeKindAction_0() { return cRangeKindAction_0; }
-
-        //'RangeKind'
-        public Keyword getRangeKindKeyword_1() { return cRangeKindKeyword_1; }
-    }
-    public class LinuxDistributionValueElements extends AbstractParserRuleElementFinder {
-        private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.LinuxDistributionValue");
-        private final Group cGroup = (Group)rule.eContents().get(1);
-        private final Action cLinuxDistributionValueAction_0 = (Action)cGroup.eContents().get(0);
-        private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
-        private final RuleCall cValueLinuxDistributionEnumRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
-
-        //LinuxDistributionValue returns LinuxDistributionValue:
-        //    {LinuxDistributionValue}
-        //    value=LinuxDistribution
-        //    ;
-        @Override public ParserRule getRule() { return rule; }
-
-        //{LinuxDistributionValue}
-        //value=LinuxDistribution
-        public Group getGroup() { return cGroup; }
-
-        //{LinuxDistributionValue}
-        public Action getLinuxDistributionValueAction_0() { return cLinuxDistributionValueAction_0; }
-
-        //value=LinuxDistribution
-        public Assignment getValueAssignment_1() { return cValueAssignment_1; }
-
-        //LinuxDistribution
-        public RuleCall getValueLinuxDistributionEnumRuleCall_1_0() { return cValueLinuxDistributionEnumRuleCall_1_0; }
-    }
-    public class UbuntuVersionValueElements extends AbstractParserRuleElementFinder {
-        private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.UbuntuVersionValue");
-        private final Group cGroup = (Group)rule.eContents().get(1);
-        private final Action cUbuntuVersionValueAction_0 = (Action)cGroup.eContents().get(0);
-        private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
-        private final RuleCall cValueUbuntuVersionEnumRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
-
-        //UbuntuVersionValue returns UbuntuVersionValue:
-        //    {UbuntuVersionValue}
-        //    value=UbuntuVersion;
-        @Override public ParserRule getRule() { return rule; }
-
-        //{UbuntuVersionValue}
-        //value=UbuntuVersion
-        public Group getGroup() { return cGroup; }
-
-        //{UbuntuVersionValue}
-        public Action getUbuntuVersionValueAction_0() { return cUbuntuVersionValueAction_0; }
-
-        //value=UbuntuVersion
-        public Assignment getValueAssignment_1() { return cValueAssignment_1; }
-
-        //UbuntuVersion
-        public RuleCall getValueUbuntuVersionEnumRuleCall_1_0() { return cValueUbuntuVersionEnumRuleCall_1_0; }
-    }
-    public class OpertingSystemNameElements extends AbstractParserRuleElementFinder {
-        private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.OpertingSystemName");
-        private final RuleCall cLinuxDistributionValueParserRuleCall = (RuleCall)rule.eContents().get(1);
-
-        //OpertingSystemName returns OpertingSystemName:
-        //    LinuxDistributionValue
-        //;
-        @Override public ParserRule getRule() { return rule; }
-
-        //LinuxDistributionValue
-        public RuleCall getLinuxDistributionValueParserRuleCall() { return cLinuxDistributionValueParserRuleCall; }
-    }
-    public class Double0Elements extends AbstractParserRuleElementFinder {
-        private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.Double0");
-        private final RuleCall cDOUBLETerminalRuleCall = (RuleCall)rule.eContents().get(1);
-
-        //Double0 returns type::Double:
-        //    DOUBLE;
-        @Override public ParserRule getRule() { return rule; }
-
-        //DOUBLE
-        public RuleCall getDOUBLETerminalRuleCall() { return cDOUBLETerminalRuleCall; }
-    }
-    public class Integer0Elements extends AbstractParserRuleElementFinder {
-        private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.Integer0");
-        private final RuleCall cDECINTTerminalRuleCall = (RuleCall)rule.eContents().get(1);
-
-        //Integer0 returns type::Int:
-        //    DECINT;
-        @Override public ParserRule getRule() { return rule; }
-
-        //DECINT
-        public RuleCall getDECINTTerminalRuleCall() { return cDECINTTerminalRuleCall; }
-    }
-    public class EStringElements extends AbstractParserRuleElementFinder {
-        private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.EString");
-        private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-        private final RuleCall cSTRINGTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-        private final RuleCall cIDTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-
-        //EString returns ecore::EString:
-        //    STRING | ID;
-        @Override public ParserRule getRule() { return rule; }
-
-        //STRING | ID
-        public Alternatives getAlternatives() { return cAlternatives; }
-
-        //STRING
-        public RuleCall getSTRINGTerminalRuleCall_0() { return cSTRINGTerminalRuleCall_0; }
-
-        //ID
-        public RuleCall getIDTerminalRuleCall_1() { return cIDTerminalRuleCall_1; }
-    }
-    public class PreListElementElements extends AbstractParserRuleElementFinder {
-        private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.PreListElement");
-        private final Keyword cHyphenMinusKeyword = (Keyword)rule.eContents().get(1);
-
-        //PreListElement hidden(SL_COMMENT):
-        //  '-';
-        @Override public ParserRule getRule() { return rule; }
-
-        //'-'
-        public Keyword getHyphenMinusKeyword() { return cHyphenMinusKeyword; }
-    }
-
-    public class RunTimeTypeElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
-        private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.RunTimeType");
-        private final EnumLiteralDeclaration cContainerEnumLiteralDeclaration = (EnumLiteralDeclaration)rule.eContents().get(1);
-        private final Keyword cContainerContainerKeyword_0 = (Keyword)cContainerEnumLiteralDeclaration.eContents().get(0);
-
-        //enum RunTimeType returns RunTimeType:
-        //                container = 'container';
-        public EnumRule getRule() { return rule; }
-
-        //container = 'container'
-        public EnumLiteralDeclaration getContainerEnumLiteralDeclaration() { return cContainerEnumLiteralDeclaration; }
-
-        //'container'
-        public Keyword getContainerContainerKeyword_0() { return cContainerContainerKeyword_0; }
-    }
-    public class ProcessorArchitectureTypeElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
-        private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.ProcessorArchitectureType");
-        private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-        private final EnumLiteralDeclaration cX86EnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
-        private final Keyword cX86X86Keyword_0_0 = (Keyword)cX86EnumLiteralDeclaration_0.eContents().get(0);
-        private final EnumLiteralDeclaration cArm64EnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
-        private final Keyword cArm64Arm64Keyword_1_0 = (Keyword)cArm64EnumLiteralDeclaration_1.eContents().get(0);
-
-        //enum ProcessorArchitectureType returns ProcessorArchitectureType:
-        //                x86 = 'x86' | arm64 = 'arm64';
-        public EnumRule getRule() { return rule; }
-
-        //x86 = 'x86' | arm64 = 'arm64'
-        public Alternatives getAlternatives() { return cAlternatives; }
-
-        //x86 = 'x86'
-        public EnumLiteralDeclaration getX86EnumLiteralDeclaration_0() { return cX86EnumLiteralDeclaration_0; }
-
-        //'x86'
-        public Keyword getX86X86Keyword_0_0() { return cX86X86Keyword_0_0; }
-
-        //arm64 = 'arm64'
-        public EnumLiteralDeclaration getArm64EnumLiteralDeclaration_1() { return cArm64EnumLiteralDeclaration_1; }
-
-        //'arm64'
-        public Keyword getArm64Arm64Keyword_1_0() { return cArm64Arm64Keyword_1_0; }
-    }
-    public class LinuxDistributionElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
-        private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.LinuxDistribution");
-        private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-        private final EnumLiteralDeclaration cUbuntuEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
-        private final Keyword cUbuntuUbuntuKeyword_0_0 = (Keyword)cUbuntuEnumLiteralDeclaration_0.eContents().get(0);
-        private final EnumLiteralDeclaration cDebianEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
-        private final Keyword cDebianDebianKeyword_1_0 = (Keyword)cDebianEnumLiteralDeclaration_1.eContents().get(0);
-
-        //enum LinuxDistribution returns LinuxDistribution:
-        //                ubuntu = 'ubuntu' | debian = 'debian';
-        public EnumRule getRule() { return rule; }
-
-        //ubuntu = 'ubuntu' | debian = 'debian'
-        public Alternatives getAlternatives() { return cAlternatives; }
-
-        //ubuntu = 'ubuntu'
-        public EnumLiteralDeclaration getUbuntuEnumLiteralDeclaration_0() { return cUbuntuEnumLiteralDeclaration_0; }
-
-        //'ubuntu'
-        public Keyword getUbuntuUbuntuKeyword_0_0() { return cUbuntuUbuntuKeyword_0_0; }
-
-        //debian = 'debian'
-        public EnumLiteralDeclaration getDebianEnumLiteralDeclaration_1() { return cDebianEnumLiteralDeclaration_1; }
-
-        //'debian'
-        public Keyword getDebianDebianKeyword_1_0() { return cDebianDebianKeyword_1_0; }
-    }
-    public class UbuntuVersionElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
-        private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.UbuntuVersion");
-        private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-        private final EnumLiteralDeclaration cFocalEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
-        private final Keyword cFocalFocalKeyword_0_0 = (Keyword)cFocalEnumLiteralDeclaration_0.eContents().get(0);
-        private final EnumLiteralDeclaration cJammyEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
-        private final Keyword cJammyJammyKeyword_1_0 = (Keyword)cJammyEnumLiteralDeclaration_1.eContents().get(0);
-
-        //enum UbuntuVersion returns UbuntuVersion:
-        //                focal = 'focal' | jammy = 'jammy';
-        public EnumRule getRule() { return rule; }
-
-        //focal = 'focal' | jammy = 'jammy'
-        public Alternatives getAlternatives() { return cAlternatives; }
-
-        //focal = 'focal'
-        public EnumLiteralDeclaration getFocalEnumLiteralDeclaration_0() { return cFocalEnumLiteralDeclaration_0; }
-
-        //'focal'
-        public Keyword getFocalFocalKeyword_0_0() { return cFocalFocalKeyword_0_0; }
-
-        //jammy = 'jammy'
-        public EnumLiteralDeclaration getJammyEnumLiteralDeclaration_1() { return cJammyEnumLiteralDeclaration_1; }
-
-        //'jammy'
-        public Keyword getJammyJammyKeyword_1_0() { return cJammyJammyKeyword_1_0; }
-    }
-
-    private final DescriptionElements pDescription;
-    private final ResourceElements pResource;
-    private final AbstractComputationAssignmentTargetElements pAbstractComputationAssignmentTarget;
-    private final OperatingSystemResouceElements pOperatingSystemResouce;
-    private final AbstractOperatingSystemPropertyElements pAbstractOperatingSystemProperty;
-    private final NameOperatingSystemPropertyElements pNameOperatingSystemProperty;
-    private final VersionOperatingSystemPropertyElements pVersionOperatingSystemProperty;
-    private final AbstractPropertyElements pAbstractProperty;
-    private final PropertyKindElements pPropertyKind;
-    private final PropertyElements pProperty;
-    private final PropertyAttributeElements pPropertyAttribute;
-    private final PropertyMaximunElements pPropertyMaximun;
-    private final PropertyMinimumElements pPropertyMinimum;
-    private final PropertySelectionElements pPropertySelection;
-    private final PropertyRangeElements pPropertyRange;
-    private final PropertyValueElements pPropertyValue;
-    private final PropertyValueIntElements pPropertyValueInt;
-    private final PropertyValueDoubleElements pPropertyValueDouble;
-    private final PropertyValueStringElements pPropertyValueString;
-    private final PropertyValueListElements pPropertyValueList;
-    private final ProcessorArchitectureValueElements pProcessorArchitectureValue;
-    private final AbstractResouceTypeElements pAbstractResouceType;
-    private final OpertingSystemResouceTypeElements pOpertingSystemResouceType;
-    private final ResourceTypeElements pResourceType;
-    private final ProcessorResouceTypeElements pProcessorResouceType;
-    private final AbstractCommunicationTypeElements pAbstractCommunicationType;
-    private final LinuxOpertingSystemElements pLinuxOpertingSystem;
-    private final MacOSOpertingSystemElements pMacOSOpertingSystem;
-    private final CommunicationTypeElements pCommunicationType;
-    private final NetworkCommunicationTypeElements pNetworkCommunicationType;
-    private final EthernetCommunicationTypeElements pEthernetCommunicationType;
-    private final WlanCommunicationTypeElements pWlanCommunicationType;
-    private final UsbCommunicationTypeElements pUsbCommunicationType;
-    private final AttributeKindElements pAttributeKind;
-    private final MaximumKindElements pMaximumKind;
-    private final MinimumKindElements pMinimumKind;
-    private final SelectionKindElements pSelectionKind;
-    private final RangeKindElements pRangeKind;
-    private final LinuxDistributionValueElements pLinuxDistributionValue;
-    private final UbuntuVersionValueElements pUbuntuVersionValue;
-    private final OpertingSystemNameElements pOpertingSystemName;
-    private final RunTimeTypeElements eRunTimeType;
-    private final ProcessorArchitectureTypeElements eProcessorArchitectureType;
-    private final LinuxDistributionElements eLinuxDistribution;
-    private final UbuntuVersionElements eUbuntuVersion;
-    private final TerminalRule tDIGIT;
-    private final TerminalRule tDOUBLE;
-    private final TerminalRule tDECINT;
-    private final Double0Elements pDouble0;
-    private final Integer0Elements pInteger0;
-    private final EStringElements pEString;
-    private final TerminalRule tSL_COMMENT;
-    private final TerminalRule tINDENT;
-    private final TerminalRule tDEDENT;
-    private final PreListElementElements pPreListElement;
-
-    private final Grammar grammar;
-
-    private final TerminalsGrammarAccess gaTerminals;
-
-    @Inject
-    public UtilGrammarAccess(GrammarProvider grammarProvider,
-            TerminalsGrammarAccess gaTerminals) {
-        this.grammar = internalFindGrammar(grammarProvider);
-        this.gaTerminals = gaTerminals;
-        this.pDescription = new DescriptionElements();
-        this.pResource = new ResourceElements();
-        this.pAbstractComputationAssignmentTarget = new AbstractComputationAssignmentTargetElements();
-        this.pOperatingSystemResouce = new OperatingSystemResouceElements();
-        this.pAbstractOperatingSystemProperty = new AbstractOperatingSystemPropertyElements();
-        this.pNameOperatingSystemProperty = new NameOperatingSystemPropertyElements();
-        this.pVersionOperatingSystemProperty = new VersionOperatingSystemPropertyElements();
-        this.pAbstractProperty = new AbstractPropertyElements();
-        this.pPropertyKind = new PropertyKindElements();
-        this.pProperty = new PropertyElements();
-        this.pPropertyAttribute = new PropertyAttributeElements();
-        this.pPropertyMaximun = new PropertyMaximunElements();
-        this.pPropertyMinimum = new PropertyMinimumElements();
-        this.pPropertySelection = new PropertySelectionElements();
-        this.pPropertyRange = new PropertyRangeElements();
-        this.pPropertyValue = new PropertyValueElements();
-        this.pPropertyValueInt = new PropertyValueIntElements();
-        this.pPropertyValueDouble = new PropertyValueDoubleElements();
-        this.pPropertyValueString = new PropertyValueStringElements();
-        this.pPropertyValueList = new PropertyValueListElements();
-        this.pProcessorArchitectureValue = new ProcessorArchitectureValueElements();
-        this.pAbstractResouceType = new AbstractResouceTypeElements();
-        this.pOpertingSystemResouceType = new OpertingSystemResouceTypeElements();
-        this.pResourceType = new ResourceTypeElements();
-        this.pProcessorResouceType = new ProcessorResouceTypeElements();
-        this.pAbstractCommunicationType = new AbstractCommunicationTypeElements();
-        this.pLinuxOpertingSystem = new LinuxOpertingSystemElements();
-        this.pMacOSOpertingSystem = new MacOSOpertingSystemElements();
-        this.pCommunicationType = new CommunicationTypeElements();
-        this.pNetworkCommunicationType = new NetworkCommunicationTypeElements();
-        this.pEthernetCommunicationType = new EthernetCommunicationTypeElements();
-        this.pWlanCommunicationType = new WlanCommunicationTypeElements();
-        this.pUsbCommunicationType = new UsbCommunicationTypeElements();
-        this.pAttributeKind = new AttributeKindElements();
-        this.pMaximumKind = new MaximumKindElements();
-        this.pMinimumKind = new MinimumKindElements();
-        this.pSelectionKind = new SelectionKindElements();
-        this.pRangeKind = new RangeKindElements();
-        this.pLinuxDistributionValue = new LinuxDistributionValueElements();
-        this.pUbuntuVersionValue = new UbuntuVersionValueElements();
-        this.pOpertingSystemName = new OpertingSystemNameElements();
-        this.eRunTimeType = new RunTimeTypeElements();
-        this.eProcessorArchitectureType = new ProcessorArchitectureTypeElements();
-        this.eLinuxDistribution = new LinuxDistributionElements();
-        this.eUbuntuVersion = new UbuntuVersionElements();
-        this.tDIGIT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.DIGIT");
-        this.tDOUBLE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.DOUBLE");
-        this.tDECINT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.DECINT");
-        this.pDouble0 = new Double0Elements();
-        this.pInteger0 = new Integer0Elements();
-        this.pEString = new EStringElements();
-        this.tSL_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.SL_COMMENT");
-        this.tINDENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.INDENT");
-        this.tDEDENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.DEDENT");
-        this.pPreListElement = new PreListElementElements();
-    }
-
-    protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
-        Grammar grammar = grammarProvider.getGrammar(this);
-        while (grammar != null) {
-            if ("de.fraunhofer.ipa.deployment.Util".equals(grammar.getName())) {
-                return grammar;
-            }
-            List<Grammar> grammars = grammar.getUsedGrammars();
-            if (!grammars.isEmpty()) {
-                grammar = grammars.iterator().next();
-            } else {
-                return null;
-            }
-        }
-        return grammar;
-    }
-
-    @Override
-    public Grammar getGrammar() {
-        return grammar;
-    }
-
-
-    public TerminalsGrammarAccess getTerminalsGrammarAccess() {
-        return gaTerminals;
-    }
-
+  public class DescriptionElements extends AbstractParserRuleElementFinder {
+    private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.Description");
+    private final Action cDescriptionAction = (Action)rule.eContents().get(1);
 
     //Description returns Description:
     //    {Description}
     //;
-    public DescriptionElements getDescriptionAccess() {
-        return pDescription;
-    }
+    @Override public ParserRule getRule() { return rule; }
 
-    public ParserRule getDescriptionRule() {
-        return getDescriptionAccess().getRule();
-    }
+    //{Description}
+    public Action getDescriptionAction() { return cDescriptionAction; }
+  }
+  public class ResourceElements extends AbstractParserRuleElementFinder {
+    private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.Resource");
+    private final Group cGroup = (Group)rule.eContents().get(1);
+    private final Keyword cNameKeyword_0 = (Keyword)cGroup.eContents().get(0);
+    private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+    private final RuleCall cNameEStringParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+    private final RuleCall cINDENTTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+    private final Keyword cTypeKeyword_3 = (Keyword)cGroup.eContents().get(3);
+    private final Assignment cTypeAssignment_4 = (Assignment)cGroup.eContents().get(4);
+    private final RuleCall cTypeAbstractResouceTypeParserRuleCall_4_0 = (RuleCall)cTypeAssignment_4.eContents().get(0);
+    private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+    private final Keyword cPropertiesKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+    private final RuleCall cINDENTTerminalRuleCall_5_1 = (RuleCall)cGroup_5.eContents().get(1);
+    private final Assignment cPropertiesAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
+    private final RuleCall cPropertiesAbstractPropertyParserRuleCall_5_2_0 = (RuleCall)cPropertiesAssignment_5_2.eContents().get(0);
+    private final Assignment cPropertiesAssignment_5_3 = (Assignment)cGroup_5.eContents().get(3);
+    private final RuleCall cPropertiesAbstractPropertyParserRuleCall_5_3_0 = (RuleCall)cPropertiesAssignment_5_3.eContents().get(0);
+    private final RuleCall cDEDENTTerminalRuleCall_5_4 = (RuleCall)cGroup_5.eContents().get(4);
+    private final RuleCall cDEDENTTerminalRuleCall_6 = (RuleCall)cGroup.eContents().get(6);
 
     //Resource returns Resource:
     //    'name:' name=EString
@@ -2179,24 +69,103 @@ public class UtilGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
     //            )?
     //    DEDENT
     //    ;
-    public ResourceElements getResourceAccess() {
-        return pResource;
-    }
+    @Override public ParserRule getRule() { return rule; }
 
-    public ParserRule getResourceRule() {
-        return getResourceAccess().getRule();
-    }
+    //'name:' name=EString
+    //INDENT
+    //    'type:' type=AbstractResouceType
+    //    ('properties:'
+    //        INDENT
+    //        properties+=AbstractProperty
+    //        (properties+=AbstractProperty)*
+    //        DEDENT
+    //        )?
+    //DEDENT
+    public Group getGroup() { return cGroup; }
+
+    //'name:'
+    public Keyword getNameKeyword_0() { return cNameKeyword_0; }
+
+    //name=EString
+    public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+
+    //EString
+    public RuleCall getNameEStringParserRuleCall_1_0() { return cNameEStringParserRuleCall_1_0; }
+
+    //INDENT
+    public RuleCall getINDENTTerminalRuleCall_2() { return cINDENTTerminalRuleCall_2; }
+
+    //'type:'
+    public Keyword getTypeKeyword_3() { return cTypeKeyword_3; }
+
+    //type=AbstractResouceType
+    public Assignment getTypeAssignment_4() { return cTypeAssignment_4; }
+
+    //AbstractResouceType
+    public RuleCall getTypeAbstractResouceTypeParserRuleCall_4_0() { return cTypeAbstractResouceTypeParserRuleCall_4_0; }
+
+    //('properties:'
+    //    INDENT
+    //    properties+=AbstractProperty
+    //    (properties+=AbstractProperty)*
+    //    DEDENT
+    //    )?
+    public Group getGroup_5() { return cGroup_5; }
+
+    //'properties:'
+    public Keyword getPropertiesKeyword_5_0() { return cPropertiesKeyword_5_0; }
+
+    //INDENT
+    public RuleCall getINDENTTerminalRuleCall_5_1() { return cINDENTTerminalRuleCall_5_1; }
+
+    //properties+=AbstractProperty
+    public Assignment getPropertiesAssignment_5_2() { return cPropertiesAssignment_5_2; }
+
+    //AbstractProperty
+    public RuleCall getPropertiesAbstractPropertyParserRuleCall_5_2_0() { return cPropertiesAbstractPropertyParserRuleCall_5_2_0; }
+
+    //(properties+=AbstractProperty)*
+    public Assignment getPropertiesAssignment_5_3() { return cPropertiesAssignment_5_3; }
+
+    //AbstractProperty
+    public RuleCall getPropertiesAbstractPropertyParserRuleCall_5_3_0() { return cPropertiesAbstractPropertyParserRuleCall_5_3_0; }
+
+    //DEDENT
+    public RuleCall getDEDENTTerminalRuleCall_5_4() { return cDEDENTTerminalRuleCall_5_4; }
+
+    //DEDENT
+    public RuleCall getDEDENTTerminalRuleCall_6() { return cDEDENTTerminalRuleCall_6; }
+  }
+  public class AbstractComputationAssignmentTargetElements extends AbstractParserRuleElementFinder {
+    private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.AbstractComputationAssignmentTarget");
+    private final Action cAbstractComputationAssignmentTargetAction = (Action)rule.eContents().get(1);
 
     //AbstractComputationAssignmentTarget returns AbstractComputationAssignmentTarget:
     //    {AbstractComputationAssignmentTarget}
     //;
-    public AbstractComputationAssignmentTargetElements getAbstractComputationAssignmentTargetAccess() {
-        return pAbstractComputationAssignmentTarget;
-    }
+    @Override public ParserRule getRule() { return rule; }
 
-    public ParserRule getAbstractComputationAssignmentTargetRule() {
-        return getAbstractComputationAssignmentTargetAccess().getRule();
-    }
+    //{AbstractComputationAssignmentTarget}
+    public Action getAbstractComputationAssignmentTargetAction() { return cAbstractComputationAssignmentTargetAction; }
+  }
+  public class OperatingSystemResouceElements extends AbstractParserRuleElementFinder {
+    private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.OperatingSystemResouce");
+    private final Group cGroup = (Group)rule.eContents().get(1);
+    private final Action cOperatingSystemResouceAction_0 = (Action)cGroup.eContents().get(0);
+    private final Keyword cNameKeyword_1 = (Keyword)cGroup.eContents().get(1);
+    private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+    private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+    private final RuleCall cINDENTTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
+    private final Keyword cTypeKeyword_4 = (Keyword)cGroup.eContents().get(4);
+    private final Assignment cTypeAssignment_5 = (Assignment)cGroup.eContents().get(5);
+    private final RuleCall cTypeOpertingSystemResouceTypeParserRuleCall_5_0 = (RuleCall)cTypeAssignment_5.eContents().get(0);
+    private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
+    private final Keyword cPropertiesKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+    private final RuleCall cINDENTTerminalRuleCall_6_1 = (RuleCall)cGroup_6.eContents().get(1);
+    private final Assignment cPropertiesAssignment_6_2 = (Assignment)cGroup_6.eContents().get(2);
+    private final RuleCall cPropertiesAbstractOperatingSystemPropertyParserRuleCall_6_2_0 = (RuleCall)cPropertiesAssignment_6_2.eContents().get(0);
+    private final RuleCall cDEDENTTerminalRuleCall_6_3 = (RuleCall)cGroup_6.eContents().get(3);
+    private final RuleCall cDEDENTTerminalRuleCall_7 = (RuleCall)cGroup.eContents().get(7);
 
     //OperatingSystemResouce returns OperatingSystemResouce:
     //    {OperatingSystemResouce}
@@ -2210,24 +179,110 @@ public class UtilGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
     //            )?
     //    DEDENT
     //    ;
-    public OperatingSystemResouceElements getOperatingSystemResouceAccess() {
-        return pOperatingSystemResouce;
-    }
+    @Override public ParserRule getRule() { return rule; }
 
-    public ParserRule getOperatingSystemResouceRule() {
-        return getOperatingSystemResouceAccess().getRule();
-    }
+    //{OperatingSystemResouce}
+    //'name:'  name=EString
+    //INDENT
+    //    'type:' type=OpertingSystemResouceType
+    //    ('properties:'
+    //        INDENT
+    //        properties+=AbstractOperatingSystemProperty+
+    //        DEDENT
+    //        )?
+    //DEDENT
+    public Group getGroup() { return cGroup; }
+
+    //{OperatingSystemResouce}
+    public Action getOperatingSystemResouceAction_0() { return cOperatingSystemResouceAction_0; }
+
+    //'name:'
+    public Keyword getNameKeyword_1() { return cNameKeyword_1; }
+
+    //name=EString
+    public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+
+    //EString
+    public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
+
+    //INDENT
+    public RuleCall getINDENTTerminalRuleCall_3() { return cINDENTTerminalRuleCall_3; }
+
+    //'type:'
+    public Keyword getTypeKeyword_4() { return cTypeKeyword_4; }
+
+    //type=OpertingSystemResouceType
+    public Assignment getTypeAssignment_5() { return cTypeAssignment_5; }
+
+    //OpertingSystemResouceType
+    public RuleCall getTypeOpertingSystemResouceTypeParserRuleCall_5_0() { return cTypeOpertingSystemResouceTypeParserRuleCall_5_0; }
+
+    //('properties:'
+    //    INDENT
+    //    properties+=AbstractOperatingSystemProperty+
+    //    DEDENT
+    //    )?
+    public Group getGroup_6() { return cGroup_6; }
+
+    //'properties:'
+    public Keyword getPropertiesKeyword_6_0() { return cPropertiesKeyword_6_0; }
+
+    //INDENT
+    public RuleCall getINDENTTerminalRuleCall_6_1() { return cINDENTTerminalRuleCall_6_1; }
+
+    //properties+=AbstractOperatingSystemProperty+
+    public Assignment getPropertiesAssignment_6_2() { return cPropertiesAssignment_6_2; }
+
+    //AbstractOperatingSystemProperty
+    public RuleCall getPropertiesAbstractOperatingSystemPropertyParserRuleCall_6_2_0() { return cPropertiesAbstractOperatingSystemPropertyParserRuleCall_6_2_0; }
+
+    //DEDENT
+    public RuleCall getDEDENTTerminalRuleCall_6_3() { return cDEDENTTerminalRuleCall_6_3; }
+
+    //DEDENT
+    public RuleCall getDEDENTTerminalRuleCall_7() { return cDEDENTTerminalRuleCall_7; }
+  }
+  public class AbstractOperatingSystemPropertyElements extends AbstractParserRuleElementFinder {
+    private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.AbstractOperatingSystemProperty");
+    private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+    private final RuleCall cNameOperatingSystemPropertyParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+    private final RuleCall cVersionOperatingSystemPropertyParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 
     //AbstractOperatingSystemProperty returns AbstractOperatingSystemProperty:
     //    NameOperatingSystemProperty |VersionOperatingSystemProperty
     //;
-    public AbstractOperatingSystemPropertyElements getAbstractOperatingSystemPropertyAccess() {
-        return pAbstractOperatingSystemProperty;
-    }
+    @Override public ParserRule getRule() { return rule; }
 
-    public ParserRule getAbstractOperatingSystemPropertyRule() {
-        return getAbstractOperatingSystemPropertyAccess().getRule();
-    }
+    //NameOperatingSystemProperty |VersionOperatingSystemProperty
+    public Alternatives getAlternatives() { return cAlternatives; }
+
+    //NameOperatingSystemProperty
+    public RuleCall getNameOperatingSystemPropertyParserRuleCall_0() { return cNameOperatingSystemPropertyParserRuleCall_0; }
+
+    //VersionOperatingSystemProperty
+    public RuleCall getVersionOperatingSystemPropertyParserRuleCall_1() { return cVersionOperatingSystemPropertyParserRuleCall_1; }
+  }
+  public class NameOperatingSystemPropertyElements extends AbstractParserRuleElementFinder {
+    private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.NameOperatingSystemProperty");
+    private final Group cGroup = (Group)rule.eContents().get(1);
+    private final Action cNameOperatingSystemPropertyAction_0 = (Action)cGroup.eContents().get(0);
+    private final RuleCall cPreListElementParserRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+    private final Keyword cNameKeyword_2 = (Keyword)cGroup.eContents().get(2);
+    private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
+    private final Keyword cNameOs_nameKeyword_3_0 = (Keyword)cNameAssignment_3.eContents().get(0);
+    private final RuleCall cINDENTTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
+    private final Keyword cKindKeyword_5 = (Keyword)cGroup.eContents().get(5);
+    private final Assignment cKindAssignment_6 = (Assignment)cGroup.eContents().get(6);
+    private final RuleCall cKindAttributeKindParserRuleCall_6_0 = (RuleCall)cKindAssignment_6.eContents().get(0);
+    private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
+    private final Keyword cDescriptionKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+    private final Assignment cDescriptionAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
+    private final RuleCall cDescriptionEStringParserRuleCall_7_1_0 = (RuleCall)cDescriptionAssignment_7_1.eContents().get(0);
+    private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
+    private final Keyword cValueKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
+    private final Assignment cValueAssignment_8_1 = (Assignment)cGroup_8.eContents().get(1);
+    private final RuleCall cValuePropertyValueParserRuleCall_8_1_0 = (RuleCall)cValueAssignment_8_1.eContents().get(0);
+    private final RuleCall cDEDENTTerminalRuleCall_9 = (RuleCall)cGroup.eContents().get(9);
 
     //NameOperatingSystemProperty returns NameOperatingSystemProperty:
     //    {NameOperatingSystemProperty}
@@ -2242,13 +297,100 @@ public class UtilGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
     //        )?
     //    DEDENT
     //    ;
-    public NameOperatingSystemPropertyElements getNameOperatingSystemPropertyAccess() {
-        return pNameOperatingSystemProperty;
-    }
+    @Override public ParserRule getRule() { return rule; }
 
-    public ParserRule getNameOperatingSystemPropertyRule() {
-        return getNameOperatingSystemPropertyAccess().getRule();
-    }
+    //{NameOperatingSystemProperty}
+    //PreListElement "name:" name="os_name"
+    //INDENT
+    //    'kind:' kind=AttributeKind
+    //    (
+    //    'description:' description=EString
+    //    )?
+    //    (
+    //    'value:' value=PropertyValue
+    //    )?
+    //DEDENT
+    public Group getGroup() { return cGroup; }
+
+    //{NameOperatingSystemProperty}
+    public Action getNameOperatingSystemPropertyAction_0() { return cNameOperatingSystemPropertyAction_0; }
+
+    //PreListElement
+    public RuleCall getPreListElementParserRuleCall_1() { return cPreListElementParserRuleCall_1; }
+
+    //"name:"
+    public Keyword getNameKeyword_2() { return cNameKeyword_2; }
+
+    //name="os_name"
+    public Assignment getNameAssignment_3() { return cNameAssignment_3; }
+
+    //"os_name"
+    public Keyword getNameOs_nameKeyword_3_0() { return cNameOs_nameKeyword_3_0; }
+
+    //INDENT
+    public RuleCall getINDENTTerminalRuleCall_4() { return cINDENTTerminalRuleCall_4; }
+
+    //'kind:'
+    public Keyword getKindKeyword_5() { return cKindKeyword_5; }
+
+    //kind=AttributeKind
+    public Assignment getKindAssignment_6() { return cKindAssignment_6; }
+
+    //AttributeKind
+    public RuleCall getKindAttributeKindParserRuleCall_6_0() { return cKindAttributeKindParserRuleCall_6_0; }
+
+    //(
+    //'description:' description=EString
+    //)?
+    public Group getGroup_7() { return cGroup_7; }
+
+    //'description:'
+    public Keyword getDescriptionKeyword_7_0() { return cDescriptionKeyword_7_0; }
+
+    //description=EString
+    public Assignment getDescriptionAssignment_7_1() { return cDescriptionAssignment_7_1; }
+
+    //EString
+    public RuleCall getDescriptionEStringParserRuleCall_7_1_0() { return cDescriptionEStringParserRuleCall_7_1_0; }
+
+    //(
+    //'value:' value=PropertyValue
+    //)?
+    public Group getGroup_8() { return cGroup_8; }
+
+    //'value:'
+    public Keyword getValueKeyword_8_0() { return cValueKeyword_8_0; }
+
+    //value=PropertyValue
+    public Assignment getValueAssignment_8_1() { return cValueAssignment_8_1; }
+
+    //PropertyValue
+    public RuleCall getValuePropertyValueParserRuleCall_8_1_0() { return cValuePropertyValueParserRuleCall_8_1_0; }
+
+    //DEDENT
+    public RuleCall getDEDENTTerminalRuleCall_9() { return cDEDENTTerminalRuleCall_9; }
+  }
+  public class VersionOperatingSystemPropertyElements extends AbstractParserRuleElementFinder {
+    private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.VersionOperatingSystemProperty");
+    private final Group cGroup = (Group)rule.eContents().get(1);
+    private final Action cVersionOperatingSystemPropertyAction_0 = (Action)cGroup.eContents().get(0);
+    private final RuleCall cPreListElementParserRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+    private final Keyword cNameKeyword_2 = (Keyword)cGroup.eContents().get(2);
+    private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
+    private final Keyword cNameOs_versionKeyword_3_0 = (Keyword)cNameAssignment_3.eContents().get(0);
+    private final RuleCall cINDENTTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
+    private final Keyword cKindKeyword_5 = (Keyword)cGroup.eContents().get(5);
+    private final Assignment cKindAssignment_6 = (Assignment)cGroup.eContents().get(6);
+    private final RuleCall cKindAttributeKindParserRuleCall_6_0 = (RuleCall)cKindAssignment_6.eContents().get(0);
+    private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
+    private final Keyword cDescriptionKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+    private final Assignment cDescriptionAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
+    private final RuleCall cDescriptionEStringParserRuleCall_7_1_0 = (RuleCall)cDescriptionAssignment_7_1.eContents().get(0);
+    private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
+    private final Keyword cValueKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
+    private final Assignment cValueAssignment_8_1 = (Assignment)cGroup_8.eContents().get(1);
+    private final RuleCall cValuePropertyValueParserRuleCall_8_1_0 = (RuleCall)cValueAssignment_8_1.eContents().get(0);
+    private final RuleCall cDEDENTTerminalRuleCall_9 = (RuleCall)cGroup.eContents().get(9);
 
     //VersionOperatingSystemProperty returns VersionOperatingSystemProperty:
     //    {VersionOperatingSystemProperty}
@@ -2263,34 +405,169 @@ public class UtilGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
     //        )?
     //    DEDENT
     //    ;
-    public VersionOperatingSystemPropertyElements getVersionOperatingSystemPropertyAccess() {
-        return pVersionOperatingSystemProperty;
-    }
+    @Override public ParserRule getRule() { return rule; }
 
-    public ParserRule getVersionOperatingSystemPropertyRule() {
-        return getVersionOperatingSystemPropertyAccess().getRule();
-    }
+    //{VersionOperatingSystemProperty}
+    //PreListElement "name:" name="os_version"
+    //INDENT
+    //    'kind:' kind=AttributeKind
+    //    (
+    //    'description:' description=EString
+    //    )?
+    //    (
+    //    'value:' value=PropertyValue
+    //    )?
+    //DEDENT
+    public Group getGroup() { return cGroup; }
+
+    //{VersionOperatingSystemProperty}
+    public Action getVersionOperatingSystemPropertyAction_0() { return cVersionOperatingSystemPropertyAction_0; }
+
+    //PreListElement
+    public RuleCall getPreListElementParserRuleCall_1() { return cPreListElementParserRuleCall_1; }
+
+    //"name:"
+    public Keyword getNameKeyword_2() { return cNameKeyword_2; }
+
+    //name="os_version"
+    public Assignment getNameAssignment_3() { return cNameAssignment_3; }
+
+    //"os_version"
+    public Keyword getNameOs_versionKeyword_3_0() { return cNameOs_versionKeyword_3_0; }
+
+    //INDENT
+    public RuleCall getINDENTTerminalRuleCall_4() { return cINDENTTerminalRuleCall_4; }
+
+    //'kind:'
+    public Keyword getKindKeyword_5() { return cKindKeyword_5; }
+
+    //kind=AttributeKind
+    public Assignment getKindAssignment_6() { return cKindAssignment_6; }
+
+    //AttributeKind
+    public RuleCall getKindAttributeKindParserRuleCall_6_0() { return cKindAttributeKindParserRuleCall_6_0; }
+
+    //(
+    //'description:' description=EString
+    //)?
+    public Group getGroup_7() { return cGroup_7; }
+
+    //'description:'
+    public Keyword getDescriptionKeyword_7_0() { return cDescriptionKeyword_7_0; }
+
+    //description=EString
+    public Assignment getDescriptionAssignment_7_1() { return cDescriptionAssignment_7_1; }
+
+    //EString
+    public RuleCall getDescriptionEStringParserRuleCall_7_1_0() { return cDescriptionEStringParserRuleCall_7_1_0; }
+
+    //(
+    //'value:' value=PropertyValue
+    //)?
+    public Group getGroup_8() { return cGroup_8; }
+
+    //'value:'
+    public Keyword getValueKeyword_8_0() { return cValueKeyword_8_0; }
+
+    //value=PropertyValue
+    public Assignment getValueAssignment_8_1() { return cValueAssignment_8_1; }
+
+    //PropertyValue
+    public RuleCall getValuePropertyValueParserRuleCall_8_1_0() { return cValuePropertyValueParserRuleCall_8_1_0; }
+
+    //DEDENT
+    public RuleCall getDEDENTTerminalRuleCall_9() { return cDEDENTTerminalRuleCall_9; }
+  }
+  public class AbstractPropertyElements extends AbstractParserRuleElementFinder {
+    private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.AbstractProperty");
+    private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+    private final RuleCall cPropertyAttributeParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+    private final RuleCall cPropertyMaximunParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+    private final RuleCall cPropertyMinimumParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+    private final RuleCall cPropertySelectionParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+    private final RuleCall cPropertyRangeParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 
     //AbstractProperty returns AbstractProperty:
     //    PropertyAttribute | PropertyMaximun | PropertyMinimum | PropertySelection | PropertyRange;
-    public AbstractPropertyElements getAbstractPropertyAccess() {
-        return pAbstractProperty;
-    }
+    @Override public ParserRule getRule() { return rule; }
 
-    public ParserRule getAbstractPropertyRule() {
-        return getAbstractPropertyAccess().getRule();
-    }
+    //PropertyAttribute | PropertyMaximun | PropertyMinimum | PropertySelection | PropertyRange
+    public Alternatives getAlternatives() { return cAlternatives; }
+
+    //PropertyAttribute
+    public RuleCall getPropertyAttributeParserRuleCall_0() { return cPropertyAttributeParserRuleCall_0; }
+
+    //PropertyMaximun
+    public RuleCall getPropertyMaximunParserRuleCall_1() { return cPropertyMaximunParserRuleCall_1; }
+
+    //PropertyMinimum
+    public RuleCall getPropertyMinimumParserRuleCall_2() { return cPropertyMinimumParserRuleCall_2; }
+
+    //PropertySelection
+    public RuleCall getPropertySelectionParserRuleCall_3() { return cPropertySelectionParserRuleCall_3; }
+
+    //PropertyRange
+    public RuleCall getPropertyRangeParserRuleCall_4() { return cPropertyRangeParserRuleCall_4; }
+  }
+  public class PropertyKindElements extends AbstractParserRuleElementFinder {
+    private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.PropertyKind");
+    private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+    private final RuleCall cAttributeKindParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+    private final RuleCall cMaximumKindParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+    private final RuleCall cMinimumKindParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+    private final RuleCall cRangeKindParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+    private final RuleCall cSelectionKindParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 
     //PropertyKind returns PropertyKind:
     //    AttributeKind | MaximumKind | MinimumKind | RangeKind | SelectionKind
     //;
-    public PropertyKindElements getPropertyKindAccess() {
-        return pPropertyKind;
-    }
+    @Override public ParserRule getRule() { return rule; }
 
-    public ParserRule getPropertyKindRule() {
-        return getPropertyKindAccess().getRule();
-    }
+    //AttributeKind | MaximumKind | MinimumKind | RangeKind | SelectionKind
+    public Alternatives getAlternatives() { return cAlternatives; }
+
+    //AttributeKind
+    public RuleCall getAttributeKindParserRuleCall_0() { return cAttributeKindParserRuleCall_0; }
+
+    //MaximumKind
+    public RuleCall getMaximumKindParserRuleCall_1() { return cMaximumKindParserRuleCall_1; }
+
+    //MinimumKind
+    public RuleCall getMinimumKindParserRuleCall_2() { return cMinimumKindParserRuleCall_2; }
+
+    //RangeKind
+    public RuleCall getRangeKindParserRuleCall_3() { return cRangeKindParserRuleCall_3; }
+
+    //SelectionKind
+    public RuleCall getSelectionKindParserRuleCall_4() { return cSelectionKindParserRuleCall_4; }
+  }
+  public class PropertyElements extends AbstractParserRuleElementFinder {
+    private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.Property");
+    private final Group cGroup = (Group)rule.eContents().get(1);
+    private final RuleCall cPreListElementParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+    private final Keyword cNameKeyword_1 = (Keyword)cGroup.eContents().get(1);
+    private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+    private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+    private final RuleCall cINDENTTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
+    private final Keyword cKindKeyword_4 = (Keyword)cGroup.eContents().get(4);
+    private final Assignment cKindAssignment_5 = (Assignment)cGroup.eContents().get(5);
+    private final RuleCall cKindPropertyKindParserRuleCall_5_0 = (RuleCall)cKindAssignment_5.eContents().get(0);
+    private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
+    private final Keyword cDescriptionKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+    private final Assignment cDescriptionAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+    private final RuleCall cDescriptionEStringParserRuleCall_6_1_0 = (RuleCall)cDescriptionAssignment_6_1.eContents().get(0);
+    private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
+    private final Keyword cValueKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+    private final RuleCall cINDENTTerminalRuleCall_7_1 = (RuleCall)cGroup_7.eContents().get(1);
+    private final RuleCall cPreListElementParserRuleCall_7_2 = (RuleCall)cGroup_7.eContents().get(2);
+    private final Assignment cValueAssignment_7_3 = (Assignment)cGroup_7.eContents().get(3);
+    private final RuleCall cValuePropertyValueParserRuleCall_7_3_0 = (RuleCall)cValueAssignment_7_3.eContents().get(0);
+    private final Group cGroup_7_4 = (Group)cGroup_7.eContents().get(4);
+    private final RuleCall cPreListElementParserRuleCall_7_4_0 = (RuleCall)cGroup_7_4.eContents().get(0);
+    private final Assignment cValueAssignment_7_4_1 = (Assignment)cGroup_7_4.eContents().get(1);
+    private final RuleCall cValuePropertyValueParserRuleCall_7_4_1_0 = (RuleCall)cValueAssignment_7_4_1.eContents().get(0);
+    private final RuleCall cDEDENTTerminalRuleCall_7_5 = (RuleCall)cGroup_7.eContents().get(5);
+    private final RuleCall cDEDENTTerminalRuleCall_8 = (RuleCall)cGroup.eContents().get(8);
 
     //Property returns Property:
     //    PreListElement 'name:'  name=EString
@@ -2308,13 +585,124 @@ public class UtilGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
     //            )?
     //        (DEDENT)?
     //    ;
-    public PropertyElements getPropertyAccess() {
-        return pProperty;
-    }
+    @Override public ParserRule getRule() { return rule; }
 
-    public ParserRule getPropertyRule() {
-        return getPropertyAccess().getRule();
-    }
+    //PreListElement 'name:'  name=EString
+    //INDENT
+    //    'kind:' kind=PropertyKind
+    //    (
+    //    'description:' description=EString
+    //    )?
+    //    (
+    //        'value:'
+    //        INDENT
+    //        PreListElement value+=PropertyValue
+    //        ( PreListElement value+=PropertyValue)*
+    //        DEDENT
+    //        )?
+    //    (DEDENT)?
+    public Group getGroup() { return cGroup; }
+
+    //PreListElement
+    public RuleCall getPreListElementParserRuleCall_0() { return cPreListElementParserRuleCall_0; }
+
+    //'name:'
+    public Keyword getNameKeyword_1() { return cNameKeyword_1; }
+
+    //name=EString
+    public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+
+    //EString
+    public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
+
+    //INDENT
+    public RuleCall getINDENTTerminalRuleCall_3() { return cINDENTTerminalRuleCall_3; }
+
+    //'kind:'
+    public Keyword getKindKeyword_4() { return cKindKeyword_4; }
+
+    //kind=PropertyKind
+    public Assignment getKindAssignment_5() { return cKindAssignment_5; }
+
+    //PropertyKind
+    public RuleCall getKindPropertyKindParserRuleCall_5_0() { return cKindPropertyKindParserRuleCall_5_0; }
+
+    //(
+    //'description:' description=EString
+    //)?
+    public Group getGroup_6() { return cGroup_6; }
+
+    //'description:'
+    public Keyword getDescriptionKeyword_6_0() { return cDescriptionKeyword_6_0; }
+
+    //description=EString
+    public Assignment getDescriptionAssignment_6_1() { return cDescriptionAssignment_6_1; }
+
+    //EString
+    public RuleCall getDescriptionEStringParserRuleCall_6_1_0() { return cDescriptionEStringParserRuleCall_6_1_0; }
+
+    //(
+    //    'value:'
+    //    INDENT
+    //    PreListElement value+=PropertyValue
+    //    ( PreListElement value+=PropertyValue)*
+    //    DEDENT
+    //    )?
+    public Group getGroup_7() { return cGroup_7; }
+
+    //'value:'
+    public Keyword getValueKeyword_7_0() { return cValueKeyword_7_0; }
+
+    //INDENT
+    public RuleCall getINDENTTerminalRuleCall_7_1() { return cINDENTTerminalRuleCall_7_1; }
+
+    //PreListElement
+    public RuleCall getPreListElementParserRuleCall_7_2() { return cPreListElementParserRuleCall_7_2; }
+
+    //value+=PropertyValue
+    public Assignment getValueAssignment_7_3() { return cValueAssignment_7_3; }
+
+    //PropertyValue
+    public RuleCall getValuePropertyValueParserRuleCall_7_3_0() { return cValuePropertyValueParserRuleCall_7_3_0; }
+
+    //( PreListElement value+=PropertyValue)*
+    public Group getGroup_7_4() { return cGroup_7_4; }
+
+    //PreListElement
+    public RuleCall getPreListElementParserRuleCall_7_4_0() { return cPreListElementParserRuleCall_7_4_0; }
+
+    //value+=PropertyValue
+    public Assignment getValueAssignment_7_4_1() { return cValueAssignment_7_4_1; }
+
+    //PropertyValue
+    public RuleCall getValuePropertyValueParserRuleCall_7_4_1_0() { return cValuePropertyValueParserRuleCall_7_4_1_0; }
+
+    //DEDENT
+    public RuleCall getDEDENTTerminalRuleCall_7_5() { return cDEDENTTerminalRuleCall_7_5; }
+
+    //(DEDENT)?
+    public RuleCall getDEDENTTerminalRuleCall_8() { return cDEDENTTerminalRuleCall_8; }
+  }
+  public class PropertyAttributeElements extends AbstractParserRuleElementFinder {
+    private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.PropertyAttribute");
+    private final Group cGroup = (Group)rule.eContents().get(1);
+    private final RuleCall cPreListElementParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+    private final Keyword cNameKeyword_1 = (Keyword)cGroup.eContents().get(1);
+    private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+    private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+    private final RuleCall cINDENTTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
+    private final Keyword cKindKeyword_4 = (Keyword)cGroup.eContents().get(4);
+    private final Assignment cKindAssignment_5 = (Assignment)cGroup.eContents().get(5);
+    private final RuleCall cKindAttributeKindParserRuleCall_5_0 = (RuleCall)cKindAssignment_5.eContents().get(0);
+    private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
+    private final Keyword cDescriptionKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+    private final Assignment cDescriptionAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+    private final RuleCall cDescriptionEStringParserRuleCall_6_1_0 = (RuleCall)cDescriptionAssignment_6_1.eContents().get(0);
+    private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
+    private final Keyword cValueKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+    private final Assignment cValueAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
+    private final RuleCall cValuePropertyValueParserRuleCall_7_1_0 = (RuleCall)cValueAssignment_7_1.eContents().get(0);
+    private final RuleCall cDEDENTTerminalRuleCall_8 = (RuleCall)cGroup.eContents().get(8);
 
     //PropertyAttribute returns PropertyAttribute:
     //    PreListElement 'name:'  name=EString
@@ -2328,13 +716,95 @@ public class UtilGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
     //        )?
     //        (DEDENT)?
     //;
-    public PropertyAttributeElements getPropertyAttributeAccess() {
-        return pPropertyAttribute;
-    }
+    @Override public ParserRule getRule() { return rule; }
 
-    public ParserRule getPropertyAttributeRule() {
-        return getPropertyAttributeAccess().getRule();
-    }
+    //PreListElement 'name:'  name=EString
+    //INDENT
+    //    'kind:' kind=AttributeKind
+    //    (
+    //    'description:' description=EString
+    //    )?
+    //    (
+    //    'value:' value=PropertyValue
+    //    )?
+    //    (DEDENT)?
+    public Group getGroup() { return cGroup; }
+
+    //PreListElement
+    public RuleCall getPreListElementParserRuleCall_0() { return cPreListElementParserRuleCall_0; }
+
+    //'name:'
+    public Keyword getNameKeyword_1() { return cNameKeyword_1; }
+
+    //name=EString
+    public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+
+    //EString
+    public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
+
+    //INDENT
+    public RuleCall getINDENTTerminalRuleCall_3() { return cINDENTTerminalRuleCall_3; }
+
+    //'kind:'
+    public Keyword getKindKeyword_4() { return cKindKeyword_4; }
+
+    //kind=AttributeKind
+    public Assignment getKindAssignment_5() { return cKindAssignment_5; }
+
+    //AttributeKind
+    public RuleCall getKindAttributeKindParserRuleCall_5_0() { return cKindAttributeKindParserRuleCall_5_0; }
+
+    //(
+    //'description:' description=EString
+    //)?
+    public Group getGroup_6() { return cGroup_6; }
+
+    //'description:'
+    public Keyword getDescriptionKeyword_6_0() { return cDescriptionKeyword_6_0; }
+
+    //description=EString
+    public Assignment getDescriptionAssignment_6_1() { return cDescriptionAssignment_6_1; }
+
+    //EString
+    public RuleCall getDescriptionEStringParserRuleCall_6_1_0() { return cDescriptionEStringParserRuleCall_6_1_0; }
+
+    //(
+    //'value:' value=PropertyValue
+    //)?
+    public Group getGroup_7() { return cGroup_7; }
+
+    //'value:'
+    public Keyword getValueKeyword_7_0() { return cValueKeyword_7_0; }
+
+    //value=PropertyValue
+    public Assignment getValueAssignment_7_1() { return cValueAssignment_7_1; }
+
+    //PropertyValue
+    public RuleCall getValuePropertyValueParserRuleCall_7_1_0() { return cValuePropertyValueParserRuleCall_7_1_0; }
+
+    //(DEDENT)?
+    public RuleCall getDEDENTTerminalRuleCall_8() { return cDEDENTTerminalRuleCall_8; }
+  }
+  public class PropertyMaximunElements extends AbstractParserRuleElementFinder {
+    private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.PropertyMaximun");
+    private final Group cGroup = (Group)rule.eContents().get(1);
+    private final RuleCall cPreListElementParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+    private final Keyword cNameKeyword_1 = (Keyword)cGroup.eContents().get(1);
+    private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+    private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+    private final RuleCall cINDENTTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
+    private final Keyword cKindKeyword_4 = (Keyword)cGroup.eContents().get(4);
+    private final Assignment cKindAssignment_5 = (Assignment)cGroup.eContents().get(5);
+    private final RuleCall cKindMaximumKindParserRuleCall_5_0 = (RuleCall)cKindAssignment_5.eContents().get(0);
+    private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
+    private final Keyword cDescriptionKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+    private final Assignment cDescriptionAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+    private final RuleCall cDescriptionEStringParserRuleCall_6_1_0 = (RuleCall)cDescriptionAssignment_6_1.eContents().get(0);
+    private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
+    private final Keyword cValueKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+    private final Assignment cValueAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
+    private final RuleCall cValuePropertyValueParserRuleCall_7_1_0 = (RuleCall)cValueAssignment_7_1.eContents().get(0);
+    private final RuleCall cDEDENTTerminalRuleCall_8 = (RuleCall)cGroup.eContents().get(8);
 
     //PropertyMaximun returns PropertyMaximun:
     //    PreListElement 'name:'  name=EString
@@ -2348,13 +818,95 @@ public class UtilGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
     //        )?
     //        (DEDENT)?
     //        ;
-    public PropertyMaximunElements getPropertyMaximunAccess() {
-        return pPropertyMaximun;
-    }
+    @Override public ParserRule getRule() { return rule; }
 
-    public ParserRule getPropertyMaximunRule() {
-        return getPropertyMaximunAccess().getRule();
-    }
+    //PreListElement 'name:'  name=EString
+    //INDENT
+    //    'kind:' kind=MaximumKind
+    //    (
+    //    'description:' description=EString
+    //    )?
+    //    (
+    //    'value:' value=PropertyValue
+    //    )?
+    //    (DEDENT)?
+    public Group getGroup() { return cGroup; }
+
+    //PreListElement
+    public RuleCall getPreListElementParserRuleCall_0() { return cPreListElementParserRuleCall_0; }
+
+    //'name:'
+    public Keyword getNameKeyword_1() { return cNameKeyword_1; }
+
+    //name=EString
+    public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+
+    //EString
+    public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
+
+    //INDENT
+    public RuleCall getINDENTTerminalRuleCall_3() { return cINDENTTerminalRuleCall_3; }
+
+    //'kind:'
+    public Keyword getKindKeyword_4() { return cKindKeyword_4; }
+
+    //kind=MaximumKind
+    public Assignment getKindAssignment_5() { return cKindAssignment_5; }
+
+    //MaximumKind
+    public RuleCall getKindMaximumKindParserRuleCall_5_0() { return cKindMaximumKindParserRuleCall_5_0; }
+
+    //(
+    //'description:' description=EString
+    //)?
+    public Group getGroup_6() { return cGroup_6; }
+
+    //'description:'
+    public Keyword getDescriptionKeyword_6_0() { return cDescriptionKeyword_6_0; }
+
+    //description=EString
+    public Assignment getDescriptionAssignment_6_1() { return cDescriptionAssignment_6_1; }
+
+    //EString
+    public RuleCall getDescriptionEStringParserRuleCall_6_1_0() { return cDescriptionEStringParserRuleCall_6_1_0; }
+
+    //(
+    //'value:' value=PropertyValue
+    //)?
+    public Group getGroup_7() { return cGroup_7; }
+
+    //'value:'
+    public Keyword getValueKeyword_7_0() { return cValueKeyword_7_0; }
+
+    //value=PropertyValue
+    public Assignment getValueAssignment_7_1() { return cValueAssignment_7_1; }
+
+    //PropertyValue
+    public RuleCall getValuePropertyValueParserRuleCall_7_1_0() { return cValuePropertyValueParserRuleCall_7_1_0; }
+
+    //(DEDENT)?
+    public RuleCall getDEDENTTerminalRuleCall_8() { return cDEDENTTerminalRuleCall_8; }
+  }
+  public class PropertyMinimumElements extends AbstractParserRuleElementFinder {
+    private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.PropertyMinimum");
+    private final Group cGroup = (Group)rule.eContents().get(1);
+    private final RuleCall cPreListElementParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+    private final Keyword cNameKeyword_1 = (Keyword)cGroup.eContents().get(1);
+    private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+    private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+    private final RuleCall cINDENTTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
+    private final Keyword cKindKeyword_4 = (Keyword)cGroup.eContents().get(4);
+    private final Assignment cKindAssignment_5 = (Assignment)cGroup.eContents().get(5);
+    private final RuleCall cKindMinimumKindParserRuleCall_5_0 = (RuleCall)cKindAssignment_5.eContents().get(0);
+    private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
+    private final Keyword cDescriptionKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+    private final Assignment cDescriptionAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+    private final RuleCall cDescriptionEStringParserRuleCall_6_1_0 = (RuleCall)cDescriptionAssignment_6_1.eContents().get(0);
+    private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
+    private final Keyword cValueKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+    private final Assignment cValueAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
+    private final RuleCall cValuePropertyValueParserRuleCall_7_1_0 = (RuleCall)cValueAssignment_7_1.eContents().get(0);
+    private final RuleCall cDEDENTTerminalRuleCall_8 = (RuleCall)cGroup.eContents().get(8);
 
     //PropertyMinimum returns PropertyMinimum:
     //    PreListElement 'name:'  name=EString
@@ -2368,13 +920,102 @@ public class UtilGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
     //        )?
     //        (DEDENT)?
     //        ;
-    public PropertyMinimumElements getPropertyMinimumAccess() {
-        return pPropertyMinimum;
-    }
+    @Override public ParserRule getRule() { return rule; }
 
-    public ParserRule getPropertyMinimumRule() {
-        return getPropertyMinimumAccess().getRule();
-    }
+    //PreListElement 'name:'  name=EString
+    //INDENT
+    //    'kind:' kind=MinimumKind
+    //    (
+    //    'description:' description=EString
+    //    )?
+    //    (
+    //    'value:' value=PropertyValue
+    //    )?
+    //    (DEDENT)?
+    public Group getGroup() { return cGroup; }
+
+    //PreListElement
+    public RuleCall getPreListElementParserRuleCall_0() { return cPreListElementParserRuleCall_0; }
+
+    //'name:'
+    public Keyword getNameKeyword_1() { return cNameKeyword_1; }
+
+    //name=EString
+    public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+
+    //EString
+    public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
+
+    //INDENT
+    public RuleCall getINDENTTerminalRuleCall_3() { return cINDENTTerminalRuleCall_3; }
+
+    //'kind:'
+    public Keyword getKindKeyword_4() { return cKindKeyword_4; }
+
+    //kind=MinimumKind
+    public Assignment getKindAssignment_5() { return cKindAssignment_5; }
+
+    //MinimumKind
+    public RuleCall getKindMinimumKindParserRuleCall_5_0() { return cKindMinimumKindParserRuleCall_5_0; }
+
+    //(
+    //'description:' description=EString
+    //)?
+    public Group getGroup_6() { return cGroup_6; }
+
+    //'description:'
+    public Keyword getDescriptionKeyword_6_0() { return cDescriptionKeyword_6_0; }
+
+    //description=EString
+    public Assignment getDescriptionAssignment_6_1() { return cDescriptionAssignment_6_1; }
+
+    //EString
+    public RuleCall getDescriptionEStringParserRuleCall_6_1_0() { return cDescriptionEStringParserRuleCall_6_1_0; }
+
+    //(
+    //'value:' value=PropertyValue
+    //)?
+    public Group getGroup_7() { return cGroup_7; }
+
+    //'value:'
+    public Keyword getValueKeyword_7_0() { return cValueKeyword_7_0; }
+
+    //value=PropertyValue
+    public Assignment getValueAssignment_7_1() { return cValueAssignment_7_1; }
+
+    //PropertyValue
+    public RuleCall getValuePropertyValueParserRuleCall_7_1_0() { return cValuePropertyValueParserRuleCall_7_1_0; }
+
+    //(DEDENT)?
+    public RuleCall getDEDENTTerminalRuleCall_8() { return cDEDENTTerminalRuleCall_8; }
+  }
+  public class PropertySelectionElements extends AbstractParserRuleElementFinder {
+    private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.PropertySelection");
+    private final Group cGroup = (Group)rule.eContents().get(1);
+    private final RuleCall cPreListElementParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+    private final Keyword cNameKeyword_1 = (Keyword)cGroup.eContents().get(1);
+    private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+    private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+    private final RuleCall cINDENTTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
+    private final Keyword cKindKeyword_4 = (Keyword)cGroup.eContents().get(4);
+    private final Assignment cKindAssignment_5 = (Assignment)cGroup.eContents().get(5);
+    private final RuleCall cKindSelectionKindParserRuleCall_5_0 = (RuleCall)cKindAssignment_5.eContents().get(0);
+    private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
+    private final Keyword cDescriptionKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+    private final Assignment cDescriptionAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+    private final RuleCall cDescriptionEStringParserRuleCall_6_1_0 = (RuleCall)cDescriptionAssignment_6_1.eContents().get(0);
+    private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
+    private final Keyword cValueKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+    private final RuleCall cINDENTTerminalRuleCall_7_1 = (RuleCall)cGroup_7.eContents().get(1);
+    private final RuleCall cPreListElementParserRuleCall_7_2 = (RuleCall)cGroup_7.eContents().get(2);
+    private final Assignment cValueAssignment_7_3 = (Assignment)cGroup_7.eContents().get(3);
+    private final RuleCall cValuePropertyValueParserRuleCall_7_3_0 = (RuleCall)cValueAssignment_7_3.eContents().get(0);
+    private final Group cGroup_7_4 = (Group)cGroup_7.eContents().get(4);
+    private final RuleCall cPreListElementParserRuleCall_7_4_0 = (RuleCall)cGroup_7_4.eContents().get(0);
+    private final Assignment cValueAssignment_7_4_1 = (Assignment)cGroup_7_4.eContents().get(1);
+    private final RuleCall cValuePropertyValueParserRuleCall_7_4_1_0 = (RuleCall)cValueAssignment_7_4_1.eContents().get(0);
+    private final RuleCall cDEDENTTerminalRuleCall_7_5 = (RuleCall)cGroup_7.eContents().get(5);
+    private final RuleCall cDEDENTTerminalRuleCall_8 = (RuleCall)cGroup.eContents().get(8);
 
     //PropertySelection returns PropertySelection:
     //    PreListElement 'name:'  name=EString
@@ -2392,13 +1033,130 @@ public class UtilGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
     //            )?
     //        (DEDENT)?
     //    ;
-    public PropertySelectionElements getPropertySelectionAccess() {
-        return pPropertySelection;
-    }
+    @Override public ParserRule getRule() { return rule; }
 
-    public ParserRule getPropertySelectionRule() {
-        return getPropertySelectionAccess().getRule();
-    }
+    //PreListElement 'name:'  name=EString
+    //INDENT
+    //    'kind:' kind=SelectionKind
+    //    (
+    //    'description:' description=EString
+    //    )?
+    //    (
+    //        'value:'
+    //        INDENT
+    //        PreListElement value+=PropertyValue
+    //        ( PreListElement value+=PropertyValue)*
+    //        DEDENT
+    //        )?
+    //    (DEDENT)?
+    public Group getGroup() { return cGroup; }
+
+    //PreListElement
+    public RuleCall getPreListElementParserRuleCall_0() { return cPreListElementParserRuleCall_0; }
+
+    //'name:'
+    public Keyword getNameKeyword_1() { return cNameKeyword_1; }
+
+    //name=EString
+    public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+
+    //EString
+    public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
+
+    //INDENT
+    public RuleCall getINDENTTerminalRuleCall_3() { return cINDENTTerminalRuleCall_3; }
+
+    //'kind:'
+    public Keyword getKindKeyword_4() { return cKindKeyword_4; }
+
+    //kind=SelectionKind
+    public Assignment getKindAssignment_5() { return cKindAssignment_5; }
+
+    //SelectionKind
+    public RuleCall getKindSelectionKindParserRuleCall_5_0() { return cKindSelectionKindParserRuleCall_5_0; }
+
+    //(
+    //'description:' description=EString
+    //)?
+    public Group getGroup_6() { return cGroup_6; }
+
+    //'description:'
+    public Keyword getDescriptionKeyword_6_0() { return cDescriptionKeyword_6_0; }
+
+    //description=EString
+    public Assignment getDescriptionAssignment_6_1() { return cDescriptionAssignment_6_1; }
+
+    //EString
+    public RuleCall getDescriptionEStringParserRuleCall_6_1_0() { return cDescriptionEStringParserRuleCall_6_1_0; }
+
+    //(
+    //    'value:'
+    //    INDENT
+    //    PreListElement value+=PropertyValue
+    //    ( PreListElement value+=PropertyValue)*
+    //    DEDENT
+    //    )?
+    public Group getGroup_7() { return cGroup_7; }
+
+    //'value:'
+    public Keyword getValueKeyword_7_0() { return cValueKeyword_7_0; }
+
+    //INDENT
+    public RuleCall getINDENTTerminalRuleCall_7_1() { return cINDENTTerminalRuleCall_7_1; }
+
+    //PreListElement
+    public RuleCall getPreListElementParserRuleCall_7_2() { return cPreListElementParserRuleCall_7_2; }
+
+    //value+=PropertyValue
+    public Assignment getValueAssignment_7_3() { return cValueAssignment_7_3; }
+
+    //PropertyValue
+    public RuleCall getValuePropertyValueParserRuleCall_7_3_0() { return cValuePropertyValueParserRuleCall_7_3_0; }
+
+    //( PreListElement value+=PropertyValue)*
+    public Group getGroup_7_4() { return cGroup_7_4; }
+
+    //PreListElement
+    public RuleCall getPreListElementParserRuleCall_7_4_0() { return cPreListElementParserRuleCall_7_4_0; }
+
+    //value+=PropertyValue
+    public Assignment getValueAssignment_7_4_1() { return cValueAssignment_7_4_1; }
+
+    //PropertyValue
+    public RuleCall getValuePropertyValueParserRuleCall_7_4_1_0() { return cValuePropertyValueParserRuleCall_7_4_1_0; }
+
+    //DEDENT
+    public RuleCall getDEDENTTerminalRuleCall_7_5() { return cDEDENTTerminalRuleCall_7_5; }
+
+    //(DEDENT)?
+    public RuleCall getDEDENTTerminalRuleCall_8() { return cDEDENTTerminalRuleCall_8; }
+  }
+  public class PropertyRangeElements extends AbstractParserRuleElementFinder {
+    private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.PropertyRange");
+    private final Group cGroup = (Group)rule.eContents().get(1);
+    private final RuleCall cPreListElementParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+    private final Keyword cNameKeyword_1 = (Keyword)cGroup.eContents().get(1);
+    private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+    private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+    private final RuleCall cINDENTTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
+    private final Keyword cKindKeyword_4 = (Keyword)cGroup.eContents().get(4);
+    private final Assignment cKindAssignment_5 = (Assignment)cGroup.eContents().get(5);
+    private final RuleCall cKindRangeKindParserRuleCall_5_0 = (RuleCall)cKindAssignment_5.eContents().get(0);
+    private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
+    private final Keyword cDescriptionKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+    private final Assignment cDescriptionAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+    private final RuleCall cDescriptionEStringParserRuleCall_6_1_0 = (RuleCall)cDescriptionAssignment_6_1.eContents().get(0);
+    private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
+    private final Keyword cValueKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+    private final RuleCall cINDENTTerminalRuleCall_7_1 = (RuleCall)cGroup_7.eContents().get(1);
+    private final RuleCall cPreListElementParserRuleCall_7_2 = (RuleCall)cGroup_7.eContents().get(2);
+    private final Assignment cValueAssignment_7_3 = (Assignment)cGroup_7.eContents().get(3);
+    private final RuleCall cValuePropertyValueParserRuleCall_7_3_0 = (RuleCall)cValueAssignment_7_3.eContents().get(0);
+    private final RuleCall cPreListElementParserRuleCall_7_4 = (RuleCall)cGroup_7.eContents().get(4);
+    private final Assignment cValueAssignment_7_5 = (Assignment)cGroup_7.eContents().get(5);
+    private final RuleCall cValuePropertyValueParserRuleCall_7_5_0 = (RuleCall)cValueAssignment_7_5.eContents().get(0);
+    private final RuleCall cDEDENTTerminalRuleCall_7_6 = (RuleCall)cGroup_7.eContents().get(6);
+    private final RuleCall cDEDENTTerminalRuleCall_8 = (RuleCall)cGroup.eContents().get(8);
 
     //PropertyRange returns PropertyRange:
     //    PreListElement 'name:'  name=EString
@@ -2416,57 +1174,204 @@ public class UtilGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
     //            )?
     //        (DEDENT)?
     //    ;
-    public PropertyRangeElements getPropertyRangeAccess() {
-        return pPropertyRange;
-    }
+    @Override public ParserRule getRule() { return rule; }
 
-    public ParserRule getPropertyRangeRule() {
-        return getPropertyRangeAccess().getRule();
-    }
+    //PreListElement 'name:'  name=EString
+    //INDENT
+    //    'kind:' kind=RangeKind
+    //    (
+    //    'description:' description=EString
+    //    )?
+    //    (
+    //        'value:'
+    //        INDENT
+    //        PreListElement value+=PropertyValue
+    //        PreListElement value+=PropertyValue
+    //        DEDENT
+    //        )?
+    //    (DEDENT)?
+    public Group getGroup() { return cGroup; }
+
+    //PreListElement
+    public RuleCall getPreListElementParserRuleCall_0() { return cPreListElementParserRuleCall_0; }
+
+    //'name:'
+    public Keyword getNameKeyword_1() { return cNameKeyword_1; }
+
+    //name=EString
+    public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+
+    //EString
+    public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
+
+    //INDENT
+    public RuleCall getINDENTTerminalRuleCall_3() { return cINDENTTerminalRuleCall_3; }
+
+    //'kind:'
+    public Keyword getKindKeyword_4() { return cKindKeyword_4; }
+
+    //kind=RangeKind
+    public Assignment getKindAssignment_5() { return cKindAssignment_5; }
+
+    //RangeKind
+    public RuleCall getKindRangeKindParserRuleCall_5_0() { return cKindRangeKindParserRuleCall_5_0; }
+
+    //(
+    //'description:' description=EString
+    //)?
+    public Group getGroup_6() { return cGroup_6; }
+
+    //'description:'
+    public Keyword getDescriptionKeyword_6_0() { return cDescriptionKeyword_6_0; }
+
+    //description=EString
+    public Assignment getDescriptionAssignment_6_1() { return cDescriptionAssignment_6_1; }
+
+    //EString
+    public RuleCall getDescriptionEStringParserRuleCall_6_1_0() { return cDescriptionEStringParserRuleCall_6_1_0; }
+
+    //(
+    //    'value:'
+    //    INDENT
+    //    PreListElement value+=PropertyValue
+    //    PreListElement value+=PropertyValue
+    //    DEDENT
+    //    )?
+    public Group getGroup_7() { return cGroup_7; }
+
+    //'value:'
+    public Keyword getValueKeyword_7_0() { return cValueKeyword_7_0; }
+
+    //INDENT
+    public RuleCall getINDENTTerminalRuleCall_7_1() { return cINDENTTerminalRuleCall_7_1; }
+
+    //PreListElement
+    public RuleCall getPreListElementParserRuleCall_7_2() { return cPreListElementParserRuleCall_7_2; }
+
+    //value+=PropertyValue
+    public Assignment getValueAssignment_7_3() { return cValueAssignment_7_3; }
+
+    //PropertyValue
+    public RuleCall getValuePropertyValueParserRuleCall_7_3_0() { return cValuePropertyValueParserRuleCall_7_3_0; }
+
+    //PreListElement
+    public RuleCall getPreListElementParserRuleCall_7_4() { return cPreListElementParserRuleCall_7_4; }
+
+    //value+=PropertyValue
+    public Assignment getValueAssignment_7_5() { return cValueAssignment_7_5; }
+
+    //PropertyValue
+    public RuleCall getValuePropertyValueParserRuleCall_7_5_0() { return cValuePropertyValueParserRuleCall_7_5_0; }
+
+    //DEDENT
+    public RuleCall getDEDENTTerminalRuleCall_7_6() { return cDEDENTTerminalRuleCall_7_6; }
+
+    //(DEDENT)?
+    public RuleCall getDEDENTTerminalRuleCall_8() { return cDEDENTTerminalRuleCall_8; }
+  }
+  public class PropertyValueElements extends AbstractParserRuleElementFinder {
+    private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.PropertyValue");
+    private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+    private final RuleCall cPropertyValueIntParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+    private final RuleCall cPropertyValueDoubleParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+    private final RuleCall cPropertyValueStringParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+    private final RuleCall cProcessorArchitectureValueParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+    private final RuleCall cLinuxDistributionValueParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+    private final RuleCall cUbuntuVersionValueParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
+    private final RuleCall cPropertyValueListParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
 
     //PropertyValue returns PropertyValue:
     //    PropertyValueInt | PropertyValueDouble
     //    | PropertyValueString| ProcessorArchitectureValue
     //    | LinuxDistributionValue | UbuntuVersionValue
     //    | PropertyValueList;
-    public PropertyValueElements getPropertyValueAccess() {
-        return pPropertyValue;
-    }
+    @Override public ParserRule getRule() { return rule; }
 
-    public ParserRule getPropertyValueRule() {
-        return getPropertyValueAccess().getRule();
-    }
+    //PropertyValueInt | PropertyValueDouble
+    //| PropertyValueString| ProcessorArchitectureValue
+    //| LinuxDistributionValue | UbuntuVersionValue
+    //| PropertyValueList
+    public Alternatives getAlternatives() { return cAlternatives; }
+
+    //PropertyValueInt
+    public RuleCall getPropertyValueIntParserRuleCall_0() { return cPropertyValueIntParserRuleCall_0; }
+
+    //PropertyValueDouble
+    public RuleCall getPropertyValueDoubleParserRuleCall_1() { return cPropertyValueDoubleParserRuleCall_1; }
+
+    //PropertyValueString
+    public RuleCall getPropertyValueStringParserRuleCall_2() { return cPropertyValueStringParserRuleCall_2; }
+
+    //ProcessorArchitectureValue
+    public RuleCall getProcessorArchitectureValueParserRuleCall_3() { return cProcessorArchitectureValueParserRuleCall_3; }
+
+    //LinuxDistributionValue
+    public RuleCall getLinuxDistributionValueParserRuleCall_4() { return cLinuxDistributionValueParserRuleCall_4; }
+
+    //UbuntuVersionValue
+    public RuleCall getUbuntuVersionValueParserRuleCall_5() { return cUbuntuVersionValueParserRuleCall_5; }
+
+    //PropertyValueList
+    public RuleCall getPropertyValueListParserRuleCall_6() { return cPropertyValueListParserRuleCall_6; }
+  }
+  public class PropertyValueIntElements extends AbstractParserRuleElementFinder {
+    private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.PropertyValueInt");
+    private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
+    private final RuleCall cValueInteger0ParserRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
 
     //PropertyValueInt returns PropertyValueInt:
     //    value=Integer0;
-    public PropertyValueIntElements getPropertyValueIntAccess() {
-        return pPropertyValueInt;
-    }
+    @Override public ParserRule getRule() { return rule; }
 
-    public ParserRule getPropertyValueIntRule() {
-        return getPropertyValueIntAccess().getRule();
-    }
+    //value=Integer0
+    public Assignment getValueAssignment() { return cValueAssignment; }
+
+    //Integer0
+    public RuleCall getValueInteger0ParserRuleCall_0() { return cValueInteger0ParserRuleCall_0; }
+  }
+  public class PropertyValueDoubleElements extends AbstractParserRuleElementFinder {
+    private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.PropertyValueDouble");
+    private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
+    private final RuleCall cValueDouble0ParserRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
 
     //PropertyValueDouble returns PropertyValueDouble:
     //    value=Double0
     //;
-    public PropertyValueDoubleElements getPropertyValueDoubleAccess() {
-        return pPropertyValueDouble;
-    }
+    @Override public ParserRule getRule() { return rule; }
 
-    public ParserRule getPropertyValueDoubleRule() {
-        return getPropertyValueDoubleAccess().getRule();
-    }
+    //value=Double0
+    public Assignment getValueAssignment() { return cValueAssignment; }
+
+    //Double0
+    public RuleCall getValueDouble0ParserRuleCall_0() { return cValueDouble0ParserRuleCall_0; }
+  }
+  public class PropertyValueStringElements extends AbstractParserRuleElementFinder {
+    private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.PropertyValueString");
+    private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
+    private final RuleCall cValueEStringParserRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
 
     //PropertyValueString returns PropertyValueString:
     //    value=EString;
-    public PropertyValueStringElements getPropertyValueStringAccess() {
-        return pPropertyValueString;
-    }
+    @Override public ParserRule getRule() { return rule; }
 
-    public ParserRule getPropertyValueStringRule() {
-        return getPropertyValueStringAccess().getRule();
-    }
+    //value=EString
+    public Assignment getValueAssignment() { return cValueAssignment; }
+
+    //EString
+    public RuleCall getValueEStringParserRuleCall_0() { return cValueEStringParserRuleCall_0; }
+  }
+  public class PropertyValueListElements extends AbstractParserRuleElementFinder {
+    private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.PropertyValueList");
+    private final Group cGroup = (Group)rule.eContents().get(1);
+    private final RuleCall cINDENTTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+    private final RuleCall cPreListElementParserRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+    private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
+    private final RuleCall cValuePropertyValueParserRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
+    private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+    private final RuleCall cPreListElementParserRuleCall_3_0 = (RuleCall)cGroup_3.eContents().get(0);
+    private final Assignment cValueAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+    private final RuleCall cValuePropertyValueParserRuleCall_3_1_0 = (RuleCall)cValueAssignment_3_1.eContents().get(0);
+    private final RuleCall cDEDENTTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
 
     //PropertyValueList returns PropertyValueList:
     //    INDENT
@@ -2474,399 +1379,1494 @@ public class UtilGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
     //        (PreListElement value+=PropertyValue)*
     //    DEDENT
     // ;
-    public PropertyValueListElements getPropertyValueListAccess() {
-        return pPropertyValueList;
-    }
+    @Override public ParserRule getRule() { return rule; }
 
-    public ParserRule getPropertyValueListRule() {
-        return getPropertyValueListAccess().getRule();
-    }
+    //INDENT
+    //  PreListElement value+=PropertyValue
+    //    (PreListElement value+=PropertyValue)*
+    //DEDENT
+    public Group getGroup() { return cGroup; }
+
+    //INDENT
+    public RuleCall getINDENTTerminalRuleCall_0() { return cINDENTTerminalRuleCall_0; }
+
+    //PreListElement
+    public RuleCall getPreListElementParserRuleCall_1() { return cPreListElementParserRuleCall_1; }
+
+    //value+=PropertyValue
+    public Assignment getValueAssignment_2() { return cValueAssignment_2; }
+
+    //PropertyValue
+    public RuleCall getValuePropertyValueParserRuleCall_2_0() { return cValuePropertyValueParserRuleCall_2_0; }
+
+    //(PreListElement value+=PropertyValue)*
+    public Group getGroup_3() { return cGroup_3; }
+
+    //PreListElement
+    public RuleCall getPreListElementParserRuleCall_3_0() { return cPreListElementParserRuleCall_3_0; }
+
+    //value+=PropertyValue
+    public Assignment getValueAssignment_3_1() { return cValueAssignment_3_1; }
+
+    //PropertyValue
+    public RuleCall getValuePropertyValueParserRuleCall_3_1_0() { return cValuePropertyValueParserRuleCall_3_1_0; }
+
+    //DEDENT
+    public RuleCall getDEDENTTerminalRuleCall_4() { return cDEDENTTerminalRuleCall_4; }
+  }
+  public class ProcessorArchitectureValueElements extends AbstractParserRuleElementFinder {
+    private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.ProcessorArchitectureValue");
+    private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
+    private final RuleCall cValueProcessorArchitectureTypeEnumRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
 
     //ProcessorArchitectureValue returns ProcessorArchitectureValue:
     //    value=ProcessorArchitectureType
     //;
-    public ProcessorArchitectureValueElements getProcessorArchitectureValueAccess() {
-        return pProcessorArchitectureValue;
-    }
+    @Override public ParserRule getRule() { return rule; }
 
-    public ParserRule getProcessorArchitectureValueRule() {
-        return getProcessorArchitectureValueAccess().getRule();
-    }
+    //value=ProcessorArchitectureType
+    public Assignment getValueAssignment() { return cValueAssignment; }
+
+    //ProcessorArchitectureType
+    public RuleCall getValueProcessorArchitectureTypeEnumRuleCall_0() { return cValueProcessorArchitectureTypeEnumRuleCall_0; }
+  }
+  public class AbstractResouceTypeElements extends AbstractParserRuleElementFinder {
+    private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.AbstractResouceType");
+    private final RuleCall cResourceTypeParserRuleCall = (RuleCall)rule.eContents().get(1);
 
     //AbstractResouceType returns AbstractResouceType:
     // ResourceType;
-    public AbstractResouceTypeElements getAbstractResouceTypeAccess() {
-        return pAbstractResouceType;
-    }
+    @Override public ParserRule getRule() { return rule; }
 
-    public ParserRule getAbstractResouceTypeRule() {
-        return getAbstractResouceTypeAccess().getRule();
-    }
+    //ResourceType
+    public RuleCall getResourceTypeParserRuleCall() { return cResourceTypeParserRuleCall; }
+  }
+  public class OpertingSystemResouceTypeElements extends AbstractParserRuleElementFinder {
+    private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.OpertingSystemResouceType");
+    private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+    private final RuleCall cLinuxOpertingSystemParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+    private final RuleCall cMacOSOpertingSystemParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 
     //OpertingSystemResouceType returns OpertingSystemResouceType:
     //    LinuxOpertingSystem | MacOSOpertingSystem
     //;
-    public OpertingSystemResouceTypeElements getOpertingSystemResouceTypeAccess() {
-        return pOpertingSystemResouceType;
-    }
+    @Override public ParserRule getRule() { return rule; }
 
-    public ParserRule getOpertingSystemResouceTypeRule() {
-        return getOpertingSystemResouceTypeAccess().getRule();
-    }
+    //LinuxOpertingSystem | MacOSOpertingSystem
+    public Alternatives getAlternatives() { return cAlternatives; }
+
+    //LinuxOpertingSystem
+    public RuleCall getLinuxOpertingSystemParserRuleCall_0() { return cLinuxOpertingSystemParserRuleCall_0; }
+
+    //MacOSOpertingSystem
+    public RuleCall getMacOSOpertingSystemParserRuleCall_1() { return cMacOSOpertingSystemParserRuleCall_1; }
+  }
+  public class ResourceTypeElements extends AbstractParserRuleElementFinder {
+    private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.ResourceType");
+    private final Group cGroup = (Group)rule.eContents().get(1);
+    private final Action cResourceTypeAction_0 = (Action)cGroup.eContents().get(0);
+    private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+    private final RuleCall cNameEStringParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 
     //ResourceType returns ResourceType:
     //    {ResourceType}
     //    name=EString
     //;
-    public ResourceTypeElements getResourceTypeAccess() {
-        return pResourceType;
-    }
+    @Override public ParserRule getRule() { return rule; }
 
-    public ParserRule getResourceTypeRule() {
-        return getResourceTypeAccess().getRule();
-    }
+    //{ResourceType}
+    //name=EString
+    public Group getGroup() { return cGroup; }
+
+    //{ResourceType}
+    public Action getResourceTypeAction_0() { return cResourceTypeAction_0; }
+
+    //name=EString
+    public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+
+    //EString
+    public RuleCall getNameEStringParserRuleCall_1_0() { return cNameEStringParserRuleCall_1_0; }
+  }
+  public class ProcessorResouceTypeElements extends AbstractParserRuleElementFinder {
+    private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.ProcessorResouceType");
+    private final Group cGroup = (Group)rule.eContents().get(1);
+    private final Action cProcessorResouceTypeAction_0 = (Action)cGroup.eContents().get(0);
+    private final Keyword cProcessorKeyword_1 = (Keyword)cGroup.eContents().get(1);
 
     //ProcessorResouceType returns ProcessorResouceType:
     //    {ProcessorResouceType}
     //    "Processor"
     //    ;
-    public ProcessorResouceTypeElements getProcessorResouceTypeAccess() {
-        return pProcessorResouceType;
-    }
+    @Override public ParserRule getRule() { return rule; }
 
-    public ParserRule getProcessorResouceTypeRule() {
-        return getProcessorResouceTypeAccess().getRule();
-    }
+    //{ProcessorResouceType}
+    //"Processor"
+    public Group getGroup() { return cGroup; }
+
+    //{ProcessorResouceType}
+    public Action getProcessorResouceTypeAction_0() { return cProcessorResouceTypeAction_0; }
+
+    //"Processor"
+    public Keyword getProcessorKeyword_1() { return cProcessorKeyword_1; }
+  }
+  public class AbstractCommunicationTypeElements extends AbstractParserRuleElementFinder {
+    private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.AbstractCommunicationType");
+    private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+    private final RuleCall cCommunicationTypeParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+    private final RuleCall cNetworkCommunicationTypeParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 
     //AbstractCommunicationType returns AbstractCommunicationType:
     //    CommunicationType | NetworkCommunicationType
     //;
-    public AbstractCommunicationTypeElements getAbstractCommunicationTypeAccess() {
-        return pAbstractCommunicationType;
-    }
+    @Override public ParserRule getRule() { return rule; }
 
-    public ParserRule getAbstractCommunicationTypeRule() {
-        return getAbstractCommunicationTypeAccess().getRule();
-    }
+    //CommunicationType | NetworkCommunicationType
+    public Alternatives getAlternatives() { return cAlternatives; }
+
+    //CommunicationType
+    public RuleCall getCommunicationTypeParserRuleCall_0() { return cCommunicationTypeParserRuleCall_0; }
+
+    //NetworkCommunicationType
+    public RuleCall getNetworkCommunicationTypeParserRuleCall_1() { return cNetworkCommunicationTypeParserRuleCall_1; }
+  }
+  public class LinuxOpertingSystemElements extends AbstractParserRuleElementFinder {
+    private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.LinuxOpertingSystem");
+    private final Group cGroup = (Group)rule.eContents().get(1);
+    private final Action cLinuxOpertingSystemAction_0 = (Action)cGroup.eContents().get(0);
+    private final Keyword cLinuxOpertingSystemKeyword_1 = (Keyword)cGroup.eContents().get(1);
 
     //LinuxOpertingSystem returns LinuxOpertingSystem:
     //    {LinuxOpertingSystem}
     //    "LinuxOpertingSystem"
     //;
-    public LinuxOpertingSystemElements getLinuxOpertingSystemAccess() {
-        return pLinuxOpertingSystem;
-    }
+    @Override public ParserRule getRule() { return rule; }
 
-    public ParserRule getLinuxOpertingSystemRule() {
-        return getLinuxOpertingSystemAccess().getRule();
-    }
+    //{LinuxOpertingSystem}
+    //"LinuxOpertingSystem"
+    public Group getGroup() { return cGroup; }
+
+    //{LinuxOpertingSystem}
+    public Action getLinuxOpertingSystemAction_0() { return cLinuxOpertingSystemAction_0; }
+
+    //"LinuxOpertingSystem"
+    public Keyword getLinuxOpertingSystemKeyword_1() { return cLinuxOpertingSystemKeyword_1; }
+  }
+  public class MacOSOpertingSystemElements extends AbstractParserRuleElementFinder {
+    private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.MacOSOpertingSystem");
+    private final Group cGroup = (Group)rule.eContents().get(1);
+    private final Action cMacOSOpertingSystemAction_0 = (Action)cGroup.eContents().get(0);
+    private final Keyword cMacOSOpertingSystemKeyword_1 = (Keyword)cGroup.eContents().get(1);
 
     //MacOSOpertingSystem returns MacOSOpertingSystem:
     //    {MacOSOpertingSystem}
     //    "MacOSOpertingSystem"
     //    ;
-    public MacOSOpertingSystemElements getMacOSOpertingSystemAccess() {
-        return pMacOSOpertingSystem;
-    }
+    @Override public ParserRule getRule() { return rule; }
 
-    public ParserRule getMacOSOpertingSystemRule() {
-        return getMacOSOpertingSystemAccess().getRule();
-    }
+    //{MacOSOpertingSystem}
+    //"MacOSOpertingSystem"
+    public Group getGroup() { return cGroup; }
+
+    //{MacOSOpertingSystem}
+    public Action getMacOSOpertingSystemAction_0() { return cMacOSOpertingSystemAction_0; }
+
+    //"MacOSOpertingSystem"
+    public Keyword getMacOSOpertingSystemKeyword_1() { return cMacOSOpertingSystemKeyword_1; }
+  }
+  public class CommunicationTypeElements extends AbstractParserRuleElementFinder {
+    private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.CommunicationType");
+    private final Group cGroup = (Group)rule.eContents().get(1);
+    private final Action cCommunicationTypeAction_0 = (Action)cGroup.eContents().get(0);
+    private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+    private final RuleCall cNameEStringParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 
     //CommunicationType returns CommunicationType:
     //    {CommunicationType}
     //    name=EString
     //    ;
-    public CommunicationTypeElements getCommunicationTypeAccess() {
-        return pCommunicationType;
-    }
+    @Override public ParserRule getRule() { return rule; }
 
-    public ParserRule getCommunicationTypeRule() {
-        return getCommunicationTypeAccess().getRule();
-    }
+    //{CommunicationType}
+    //name=EString
+    public Group getGroup() { return cGroup; }
+
+    //{CommunicationType}
+    public Action getCommunicationTypeAction_0() { return cCommunicationTypeAction_0; }
+
+    //name=EString
+    public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+
+    //EString
+    public RuleCall getNameEStringParserRuleCall_1_0() { return cNameEStringParserRuleCall_1_0; }
+  }
+  public class NetworkCommunicationTypeElements extends AbstractParserRuleElementFinder {
+    private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.NetworkCommunicationType");
+    private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+    private final RuleCall cEthernetCommunicationTypeParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+    private final RuleCall cWlanCommunicationTypeParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 
     //NetworkCommunicationType returns NetworkCommunicationType:
     //    EthernetCommunicationType | WlanCommunicationType;
-    public NetworkCommunicationTypeElements getNetworkCommunicationTypeAccess() {
-        return pNetworkCommunicationType;
-    }
+    @Override public ParserRule getRule() { return rule; }
 
-    public ParserRule getNetworkCommunicationTypeRule() {
-        return getNetworkCommunicationTypeAccess().getRule();
-    }
+    //EthernetCommunicationType | WlanCommunicationType
+    public Alternatives getAlternatives() { return cAlternatives; }
+
+    //EthernetCommunicationType
+    public RuleCall getEthernetCommunicationTypeParserRuleCall_0() { return cEthernetCommunicationTypeParserRuleCall_0; }
+
+    //WlanCommunicationType
+    public RuleCall getWlanCommunicationTypeParserRuleCall_1() { return cWlanCommunicationTypeParserRuleCall_1; }
+  }
+  public class EthernetCommunicationTypeElements extends AbstractParserRuleElementFinder {
+    private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.EthernetCommunicationType");
+    private final Group cGroup = (Group)rule.eContents().get(1);
+    private final Action cEthernetCommunicationTypeAction_0 = (Action)cGroup.eContents().get(0);
+    private final Keyword cEthernetKeyword_1 = (Keyword)cGroup.eContents().get(1);
 
     //EthernetCommunicationType returns EthernetCommunicationType:
     //    {EthernetCommunicationType}
     //    'Ethernet'
     //    ;
-    public EthernetCommunicationTypeElements getEthernetCommunicationTypeAccess() {
-        return pEthernetCommunicationType;
-    }
+    @Override public ParserRule getRule() { return rule; }
 
-    public ParserRule getEthernetCommunicationTypeRule() {
-        return getEthernetCommunicationTypeAccess().getRule();
-    }
+    //{EthernetCommunicationType}
+    //'Ethernet'
+    public Group getGroup() { return cGroup; }
+
+    //{EthernetCommunicationType}
+    public Action getEthernetCommunicationTypeAction_0() { return cEthernetCommunicationTypeAction_0; }
+
+    //'Ethernet'
+    public Keyword getEthernetKeyword_1() { return cEthernetKeyword_1; }
+  }
+  public class WlanCommunicationTypeElements extends AbstractParserRuleElementFinder {
+    private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.WlanCommunicationType");
+    private final Group cGroup = (Group)rule.eContents().get(1);
+    private final Action cWlanCommunicationTypeAction_0 = (Action)cGroup.eContents().get(0);
+    private final Keyword cWlanKeyword_1 = (Keyword)cGroup.eContents().get(1);
 
     //WlanCommunicationType returns WlanCommunicationType:
     //    {WlanCommunicationType}
     //    'Wlan'
     //    ;
-    public WlanCommunicationTypeElements getWlanCommunicationTypeAccess() {
-        return pWlanCommunicationType;
-    }
+    @Override public ParserRule getRule() { return rule; }
 
-    public ParserRule getWlanCommunicationTypeRule() {
-        return getWlanCommunicationTypeAccess().getRule();
-    }
+    //{WlanCommunicationType}
+    //'Wlan'
+    public Group getGroup() { return cGroup; }
+
+    //{WlanCommunicationType}
+    public Action getWlanCommunicationTypeAction_0() { return cWlanCommunicationTypeAction_0; }
+
+    //'Wlan'
+    public Keyword getWlanKeyword_1() { return cWlanKeyword_1; }
+  }
+  public class UsbCommunicationTypeElements extends AbstractParserRuleElementFinder {
+    private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.UsbCommunicationType");
+    private final Group cGroup = (Group)rule.eContents().get(1);
+    private final Action cUsbCommunicationTypeAction_0 = (Action)cGroup.eContents().get(0);
+    private final Keyword cUsbKeyword_1 = (Keyword)cGroup.eContents().get(1);
 
     //UsbCommunicationType returns UsbCommunicationType:
     //    {UsbCommunicationType}
     //    'Usb'
     //    ;
-    public UsbCommunicationTypeElements getUsbCommunicationTypeAccess() {
-        return pUsbCommunicationType;
-    }
+    @Override public ParserRule getRule() { return rule; }
 
-    public ParserRule getUsbCommunicationTypeRule() {
-        return getUsbCommunicationTypeAccess().getRule();
-    }
+    //{UsbCommunicationType}
+    //'Usb'
+    public Group getGroup() { return cGroup; }
+
+    //{UsbCommunicationType}
+    public Action getUsbCommunicationTypeAction_0() { return cUsbCommunicationTypeAction_0; }
+
+    //'Usb'
+    public Keyword getUsbKeyword_1() { return cUsbKeyword_1; }
+  }
+  public class AttributeKindElements extends AbstractParserRuleElementFinder {
+    private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.AttributeKind");
+    private final Group cGroup = (Group)rule.eContents().get(1);
+    private final Action cAttributeKindAction_0 = (Action)cGroup.eContents().get(0);
+    private final Keyword cAttributeKindKeyword_1 = (Keyword)cGroup.eContents().get(1);
 
     //AttributeKind returns AttributeKind:
     //    {AttributeKind}
     //    'AttributeKind'
     //    ;
-    public AttributeKindElements getAttributeKindAccess() {
-        return pAttributeKind;
-    }
+    @Override public ParserRule getRule() { return rule; }
 
-    public ParserRule getAttributeKindRule() {
-        return getAttributeKindAccess().getRule();
-    }
+    //{AttributeKind}
+    //'AttributeKind'
+    public Group getGroup() { return cGroup; }
+
+    //{AttributeKind}
+    public Action getAttributeKindAction_0() { return cAttributeKindAction_0; }
+
+    //'AttributeKind'
+    public Keyword getAttributeKindKeyword_1() { return cAttributeKindKeyword_1; }
+  }
+  public class MaximumKindElements extends AbstractParserRuleElementFinder {
+    private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.MaximumKind");
+    private final Group cGroup = (Group)rule.eContents().get(1);
+    private final Action cMaximumKindAction_0 = (Action)cGroup.eContents().get(0);
+    private final Keyword cMaximumKindKeyword_1 = (Keyword)cGroup.eContents().get(1);
 
     //MaximumKind returns MaximumKind:
     //    {MaximumKind}
     //    'MaximumKind'
     //    ;
-    public MaximumKindElements getMaximumKindAccess() {
-        return pMaximumKind;
-    }
+    @Override public ParserRule getRule() { return rule; }
 
-    public ParserRule getMaximumKindRule() {
-        return getMaximumKindAccess().getRule();
-    }
+    //{MaximumKind}
+    //'MaximumKind'
+    public Group getGroup() { return cGroup; }
+
+    //{MaximumKind}
+    public Action getMaximumKindAction_0() { return cMaximumKindAction_0; }
+
+    //'MaximumKind'
+    public Keyword getMaximumKindKeyword_1() { return cMaximumKindKeyword_1; }
+  }
+  public class MinimumKindElements extends AbstractParserRuleElementFinder {
+    private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.MinimumKind");
+    private final Group cGroup = (Group)rule.eContents().get(1);
+    private final Action cMinimumKindAction_0 = (Action)cGroup.eContents().get(0);
+    private final Keyword cMinimumKindKeyword_1 = (Keyword)cGroup.eContents().get(1);
 
     //MinimumKind returns MinimumKind:
     //    {MinimumKind}
     //    'MinimumKind'
     //    ;
-    public MinimumKindElements getMinimumKindAccess() {
-        return pMinimumKind;
-    }
+    @Override public ParserRule getRule() { return rule; }
 
-    public ParserRule getMinimumKindRule() {
-        return getMinimumKindAccess().getRule();
-    }
+    //{MinimumKind}
+    //'MinimumKind'
+    public Group getGroup() { return cGroup; }
+
+    //{MinimumKind}
+    public Action getMinimumKindAction_0() { return cMinimumKindAction_0; }
+
+    //'MinimumKind'
+    public Keyword getMinimumKindKeyword_1() { return cMinimumKindKeyword_1; }
+  }
+  public class SelectionKindElements extends AbstractParserRuleElementFinder {
+    private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.SelectionKind");
+    private final Group cGroup = (Group)rule.eContents().get(1);
+    private final Action cSelectionKindAction_0 = (Action)cGroup.eContents().get(0);
+    private final Keyword cSelectionKindKeyword_1 = (Keyword)cGroup.eContents().get(1);
 
     //SelectionKind returns SelectionKind:
     //    {SelectionKind}
     //    'SelectionKind'
     //    ;
-    public SelectionKindElements getSelectionKindAccess() {
-        return pSelectionKind;
-    }
+    @Override public ParserRule getRule() { return rule; }
 
-    public ParserRule getSelectionKindRule() {
-        return getSelectionKindAccess().getRule();
-    }
+    //{SelectionKind}
+    //'SelectionKind'
+    public Group getGroup() { return cGroup; }
+
+    //{SelectionKind}
+    public Action getSelectionKindAction_0() { return cSelectionKindAction_0; }
+
+    //'SelectionKind'
+    public Keyword getSelectionKindKeyword_1() { return cSelectionKindKeyword_1; }
+  }
+  public class RangeKindElements extends AbstractParserRuleElementFinder {
+    private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.RangeKind");
+    private final Group cGroup = (Group)rule.eContents().get(1);
+    private final Action cRangeKindAction_0 = (Action)cGroup.eContents().get(0);
+    private final Keyword cRangeKindKeyword_1 = (Keyword)cGroup.eContents().get(1);
 
     //RangeKind returns RangeKind:
     //    {RangeKind}
     //    'RangeKind'
     //    ;
-    public RangeKindElements getRangeKindAccess() {
-        return pRangeKind;
-    }
+    @Override public ParserRule getRule() { return rule; }
 
-    public ParserRule getRangeKindRule() {
-        return getRangeKindAccess().getRule();
-    }
+    //{RangeKind}
+    //'RangeKind'
+    public Group getGroup() { return cGroup; }
+
+    //{RangeKind}
+    public Action getRangeKindAction_0() { return cRangeKindAction_0; }
+
+    //'RangeKind'
+    public Keyword getRangeKindKeyword_1() { return cRangeKindKeyword_1; }
+  }
+  public class LinuxDistributionValueElements extends AbstractParserRuleElementFinder {
+    private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.LinuxDistributionValue");
+    private final Group cGroup = (Group)rule.eContents().get(1);
+    private final Action cLinuxDistributionValueAction_0 = (Action)cGroup.eContents().get(0);
+    private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
+    private final RuleCall cValueLinuxDistributionEnumRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
 
     //LinuxDistributionValue returns LinuxDistributionValue:
     //    {LinuxDistributionValue}
     //    value=LinuxDistribution
     //    ;
-    public LinuxDistributionValueElements getLinuxDistributionValueAccess() {
-        return pLinuxDistributionValue;
-    }
+    @Override public ParserRule getRule() { return rule; }
 
-    public ParserRule getLinuxDistributionValueRule() {
-        return getLinuxDistributionValueAccess().getRule();
-    }
+    //{LinuxDistributionValue}
+    //value=LinuxDistribution
+    public Group getGroup() { return cGroup; }
+
+    //{LinuxDistributionValue}
+    public Action getLinuxDistributionValueAction_0() { return cLinuxDistributionValueAction_0; }
+
+    //value=LinuxDistribution
+    public Assignment getValueAssignment_1() { return cValueAssignment_1; }
+
+    //LinuxDistribution
+    public RuleCall getValueLinuxDistributionEnumRuleCall_1_0() { return cValueLinuxDistributionEnumRuleCall_1_0; }
+  }
+  public class UbuntuVersionValueElements extends AbstractParserRuleElementFinder {
+    private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.UbuntuVersionValue");
+    private final Group cGroup = (Group)rule.eContents().get(1);
+    private final Action cUbuntuVersionValueAction_0 = (Action)cGroup.eContents().get(0);
+    private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
+    private final RuleCall cValueUbuntuVersionEnumRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
 
     //UbuntuVersionValue returns UbuntuVersionValue:
     //    {UbuntuVersionValue}
     //    value=UbuntuVersion;
-    public UbuntuVersionValueElements getUbuntuVersionValueAccess() {
-        return pUbuntuVersionValue;
-    }
+    @Override public ParserRule getRule() { return rule; }
 
-    public ParserRule getUbuntuVersionValueRule() {
-        return getUbuntuVersionValueAccess().getRule();
-    }
+    //{UbuntuVersionValue}
+    //value=UbuntuVersion
+    public Group getGroup() { return cGroup; }
+
+    //{UbuntuVersionValue}
+    public Action getUbuntuVersionValueAction_0() { return cUbuntuVersionValueAction_0; }
+
+    //value=UbuntuVersion
+    public Assignment getValueAssignment_1() { return cValueAssignment_1; }
+
+    //UbuntuVersion
+    public RuleCall getValueUbuntuVersionEnumRuleCall_1_0() { return cValueUbuntuVersionEnumRuleCall_1_0; }
+  }
+  public class OpertingSystemNameElements extends AbstractParserRuleElementFinder {
+    private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.OpertingSystemName");
+    private final RuleCall cLinuxDistributionValueParserRuleCall = (RuleCall)rule.eContents().get(1);
 
     //OpertingSystemName returns OpertingSystemName:
     //    LinuxDistributionValue
     //;
-    public OpertingSystemNameElements getOpertingSystemNameAccess() {
-        return pOpertingSystemName;
-    }
+    @Override public ParserRule getRule() { return rule; }
 
-    public ParserRule getOpertingSystemNameRule() {
-        return getOpertingSystemNameAccess().getRule();
-    }
-
-    //enum RunTimeType returns RunTimeType:
-    //                container = 'container';
-    public RunTimeTypeElements getRunTimeTypeAccess() {
-        return eRunTimeType;
-    }
-
-    public EnumRule getRunTimeTypeRule() {
-        return getRunTimeTypeAccess().getRule();
-    }
-
-    //enum ProcessorArchitectureType returns ProcessorArchitectureType:
-    //                x86 = 'x86' | arm64 = 'arm64';
-    public ProcessorArchitectureTypeElements getProcessorArchitectureTypeAccess() {
-        return eProcessorArchitectureType;
-    }
-
-    public EnumRule getProcessorArchitectureTypeRule() {
-        return getProcessorArchitectureTypeAccess().getRule();
-    }
-
-    //enum LinuxDistribution returns LinuxDistribution:
-    //                ubuntu = 'ubuntu' | debian = 'debian';
-    public LinuxDistributionElements getLinuxDistributionAccess() {
-        return eLinuxDistribution;
-    }
-
-    public EnumRule getLinuxDistributionRule() {
-        return getLinuxDistributionAccess().getRule();
-    }
-
-    //enum UbuntuVersion returns UbuntuVersion:
-    //                focal = 'focal' | jammy = 'jammy';
-    public UbuntuVersionElements getUbuntuVersionAccess() {
-        return eUbuntuVersion;
-    }
-
-    public EnumRule getUbuntuVersionRule() {
-        return getUbuntuVersionAccess().getRule();
-    }
-
-    //terminal DIGIT: '0'..'9';
-    public TerminalRule getDIGITRule() {
-        return tDIGIT;
-    }
-
-    //terminal DOUBLE returns ecore::EDouble: DIGIT (('.' DECINT*) | (('.' DIGIT*)? ('E'|'e') ('-'|'+')? DIGIT));
-    public TerminalRule getDOUBLERule() {
-        return tDOUBLE;
-    }
-
-    //  // Use terminal to avoid 'e' turning into a keyword
-    //terminal DECINT: '0' | ('1'..'9' DIGIT*) | ('-''0'..'9' DIGIT*) ;
-    public TerminalRule getDECINTRule() {
-        return tDECINT;
-    }
+    //LinuxDistributionValue
+    public RuleCall getLinuxDistributionValueParserRuleCall() { return cLinuxDistributionValueParserRuleCall; }
+  }
+  public class Double0Elements extends AbstractParserRuleElementFinder {
+    private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.Double0");
+    private final RuleCall cDOUBLETerminalRuleCall = (RuleCall)rule.eContents().get(1);
 
     //Double0 returns type::Double:
     //    DOUBLE;
-    public Double0Elements getDouble0Access() {
-        return pDouble0;
-    }
+    @Override public ParserRule getRule() { return rule; }
 
-    public ParserRule getDouble0Rule() {
-        return getDouble0Access().getRule();
-    }
+    //DOUBLE
+    public RuleCall getDOUBLETerminalRuleCall() { return cDOUBLETerminalRuleCall; }
+  }
+  public class Integer0Elements extends AbstractParserRuleElementFinder {
+    private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.Integer0");
+    private final RuleCall cDECINTTerminalRuleCall = (RuleCall)rule.eContents().get(1);
 
     //Integer0 returns type::Int:
     //    DECINT;
-    public Integer0Elements getInteger0Access() {
-        return pInteger0;
-    }
+    @Override public ParserRule getRule() { return rule; }
 
-    public ParserRule getInteger0Rule() {
-        return getInteger0Access().getRule();
-    }
+    //DECINT
+    public RuleCall getDECINTTerminalRuleCall() { return cDECINTTerminalRuleCall; }
+  }
+  public class EStringElements extends AbstractParserRuleElementFinder {
+    private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.EString");
+    private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+    private final RuleCall cSTRINGTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+    private final RuleCall cIDTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 
     //EString returns ecore::EString:
     //    STRING | ID;
-    public EStringElements getEStringAccess() {
-        return pEString;
-    }
+    @Override public ParserRule getRule() { return rule; }
 
-    public ParserRule getEStringRule() {
-        return getEStringAccess().getRule();
-    }
+    //STRING | ID
+    public Alternatives getAlternatives() { return cAlternatives; }
 
-    //@Override
-    //terminal SL_COMMENT: '#' !('\n'|'\r')*;
-    public TerminalRule getSL_COMMENTRule() {
-        return tSL_COMMENT;
-    }
+    //STRING
+    public RuleCall getSTRINGTerminalRuleCall_0() { return cSTRINGTerminalRuleCall_0; }
 
-    //terminal INDENT: 'synthetic:INDENT';
-    public TerminalRule getINDENTRule() {
-        return tINDENT;
-    }
-
-    //terminal DEDENT: 'synthetic:DEDENT';
-    public TerminalRule getDEDENTRule() {
-        return tDEDENT;
-    }
+    //ID
+    public RuleCall getIDTerminalRuleCall_1() { return cIDTerminalRuleCall_1; }
+  }
+  public class PreListElementElements extends AbstractParserRuleElementFinder {
+    private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.PreListElement");
+    private final Keyword cHyphenMinusKeyword = (Keyword)rule.eContents().get(1);
 
     //PreListElement hidden(SL_COMMENT):
     //  '-';
-    public PreListElementElements getPreListElementAccess() {
-        return pPreListElement;
-    }
+    @Override public ParserRule getRule() { return rule; }
 
-    public ParserRule getPreListElementRule() {
-        return getPreListElementAccess().getRule();
-    }
+    //'-'
+    public Keyword getHyphenMinusKeyword() { return cHyphenMinusKeyword; }
+  }
 
-    //terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
-    public TerminalRule getIDRule() {
-        return gaTerminals.getIDRule();
-    }
+  public class RunTimeTypeElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
+    private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.RunTimeType");
+    private final EnumLiteralDeclaration cContainerEnumLiteralDeclaration = (EnumLiteralDeclaration)rule.eContents().get(1);
+    private final Keyword cContainerContainerKeyword_0 = (Keyword)cContainerEnumLiteralDeclaration.eContents().get(0);
 
-    //terminal INT returns ecore::EInt: ('0'..'9')+;
-    public TerminalRule getINTRule() {
-        return gaTerminals.getINTRule();
-    }
+    //enum RunTimeType returns RunTimeType:
+    //                container = 'container';
+    public EnumRule getRule() { return rule; }
 
-    //terminal STRING:
-    //            '"' ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|'"') )* '"' |
-    //            "'" ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|"'") )* "'"
-    //        ;
-    public TerminalRule getSTRINGRule() {
-        return gaTerminals.getSTRINGRule();
-    }
+    //container = 'container'
+    public EnumLiteralDeclaration getContainerEnumLiteralDeclaration() { return cContainerEnumLiteralDeclaration; }
 
-    //terminal ML_COMMENT : '/*' -> '*/';
-    public TerminalRule getML_COMMENTRule() {
-        return gaTerminals.getML_COMMENTRule();
-    }
+    //'container'
+    public Keyword getContainerContainerKeyword_0() { return cContainerContainerKeyword_0; }
+  }
+  public class ProcessorArchitectureTypeElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
+    private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.ProcessorArchitectureType");
+    private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+    private final EnumLiteralDeclaration cX86EnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+    private final Keyword cX86X86Keyword_0_0 = (Keyword)cX86EnumLiteralDeclaration_0.eContents().get(0);
+    private final EnumLiteralDeclaration cArm64EnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+    private final Keyword cArm64Arm64Keyword_1_0 = (Keyword)cArm64EnumLiteralDeclaration_1.eContents().get(0);
 
-    //terminal WS         : (' '|'\t'|'\r'|'\n')+;
-    public TerminalRule getWSRule() {
-        return gaTerminals.getWSRule();
-    }
+    //enum ProcessorArchitectureType returns ProcessorArchitectureType:
+    //                x86 = 'x86' | arm64 = 'arm64';
+    public EnumRule getRule() { return rule; }
 
-    //terminal ANY_OTHER: .;
-    public TerminalRule getANY_OTHERRule() {
-        return gaTerminals.getANY_OTHERRule();
+    //x86 = 'x86' | arm64 = 'arm64'
+    public Alternatives getAlternatives() { return cAlternatives; }
+
+    //x86 = 'x86'
+    public EnumLiteralDeclaration getX86EnumLiteralDeclaration_0() { return cX86EnumLiteralDeclaration_0; }
+
+    //'x86'
+    public Keyword getX86X86Keyword_0_0() { return cX86X86Keyword_0_0; }
+
+    //arm64 = 'arm64'
+    public EnumLiteralDeclaration getArm64EnumLiteralDeclaration_1() { return cArm64EnumLiteralDeclaration_1; }
+
+    //'arm64'
+    public Keyword getArm64Arm64Keyword_1_0() { return cArm64Arm64Keyword_1_0; }
+  }
+  public class LinuxDistributionElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
+    private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.LinuxDistribution");
+    private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+    private final EnumLiteralDeclaration cUbuntuEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+    private final Keyword cUbuntuUbuntuKeyword_0_0 = (Keyword)cUbuntuEnumLiteralDeclaration_0.eContents().get(0);
+    private final EnumLiteralDeclaration cDebianEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+    private final Keyword cDebianDebianKeyword_1_0 = (Keyword)cDebianEnumLiteralDeclaration_1.eContents().get(0);
+
+    //enum LinuxDistribution returns LinuxDistribution:
+    //                ubuntu = 'ubuntu' | debian = 'debian';
+    public EnumRule getRule() { return rule; }
+
+    //ubuntu = 'ubuntu' | debian = 'debian'
+    public Alternatives getAlternatives() { return cAlternatives; }
+
+    //ubuntu = 'ubuntu'
+    public EnumLiteralDeclaration getUbuntuEnumLiteralDeclaration_0() { return cUbuntuEnumLiteralDeclaration_0; }
+
+    //'ubuntu'
+    public Keyword getUbuntuUbuntuKeyword_0_0() { return cUbuntuUbuntuKeyword_0_0; }
+
+    //debian = 'debian'
+    public EnumLiteralDeclaration getDebianEnumLiteralDeclaration_1() { return cDebianEnumLiteralDeclaration_1; }
+
+    //'debian'
+    public Keyword getDebianDebianKeyword_1_0() { return cDebianDebianKeyword_1_0; }
+  }
+  public class UbuntuVersionElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
+    private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.UbuntuVersion");
+    private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+    private final EnumLiteralDeclaration cFocalEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+    private final Keyword cFocalFocalKeyword_0_0 = (Keyword)cFocalEnumLiteralDeclaration_0.eContents().get(0);
+    private final EnumLiteralDeclaration cJammyEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+    private final Keyword cJammyJammyKeyword_1_0 = (Keyword)cJammyEnumLiteralDeclaration_1.eContents().get(0);
+
+    //enum UbuntuVersion returns UbuntuVersion:
+    //                focal = 'focal' | jammy = 'jammy';
+    public EnumRule getRule() { return rule; }
+
+    //focal = 'focal' | jammy = 'jammy'
+    public Alternatives getAlternatives() { return cAlternatives; }
+
+    //focal = 'focal'
+    public EnumLiteralDeclaration getFocalEnumLiteralDeclaration_0() { return cFocalEnumLiteralDeclaration_0; }
+
+    //'focal'
+    public Keyword getFocalFocalKeyword_0_0() { return cFocalFocalKeyword_0_0; }
+
+    //jammy = 'jammy'
+    public EnumLiteralDeclaration getJammyEnumLiteralDeclaration_1() { return cJammyEnumLiteralDeclaration_1; }
+
+    //'jammy'
+    public Keyword getJammyJammyKeyword_1_0() { return cJammyJammyKeyword_1_0; }
+  }
+
+  private final DescriptionElements pDescription;
+  private final ResourceElements pResource;
+  private final AbstractComputationAssignmentTargetElements pAbstractComputationAssignmentTarget;
+  private final OperatingSystemResouceElements pOperatingSystemResouce;
+  private final AbstractOperatingSystemPropertyElements pAbstractOperatingSystemProperty;
+  private final NameOperatingSystemPropertyElements pNameOperatingSystemProperty;
+  private final VersionOperatingSystemPropertyElements pVersionOperatingSystemProperty;
+  private final AbstractPropertyElements pAbstractProperty;
+  private final PropertyKindElements pPropertyKind;
+  private final PropertyElements pProperty;
+  private final PropertyAttributeElements pPropertyAttribute;
+  private final PropertyMaximunElements pPropertyMaximun;
+  private final PropertyMinimumElements pPropertyMinimum;
+  private final PropertySelectionElements pPropertySelection;
+  private final PropertyRangeElements pPropertyRange;
+  private final PropertyValueElements pPropertyValue;
+  private final PropertyValueIntElements pPropertyValueInt;
+  private final PropertyValueDoubleElements pPropertyValueDouble;
+  private final PropertyValueStringElements pPropertyValueString;
+  private final PropertyValueListElements pPropertyValueList;
+  private final ProcessorArchitectureValueElements pProcessorArchitectureValue;
+  private final AbstractResouceTypeElements pAbstractResouceType;
+  private final OpertingSystemResouceTypeElements pOpertingSystemResouceType;
+  private final ResourceTypeElements pResourceType;
+  private final ProcessorResouceTypeElements pProcessorResouceType;
+  private final AbstractCommunicationTypeElements pAbstractCommunicationType;
+  private final LinuxOpertingSystemElements pLinuxOpertingSystem;
+  private final MacOSOpertingSystemElements pMacOSOpertingSystem;
+  private final CommunicationTypeElements pCommunicationType;
+  private final NetworkCommunicationTypeElements pNetworkCommunicationType;
+  private final EthernetCommunicationTypeElements pEthernetCommunicationType;
+  private final WlanCommunicationTypeElements pWlanCommunicationType;
+  private final UsbCommunicationTypeElements pUsbCommunicationType;
+  private final AttributeKindElements pAttributeKind;
+  private final MaximumKindElements pMaximumKind;
+  private final MinimumKindElements pMinimumKind;
+  private final SelectionKindElements pSelectionKind;
+  private final RangeKindElements pRangeKind;
+  private final LinuxDistributionValueElements pLinuxDistributionValue;
+  private final UbuntuVersionValueElements pUbuntuVersionValue;
+  private final OpertingSystemNameElements pOpertingSystemName;
+  private final RunTimeTypeElements eRunTimeType;
+  private final ProcessorArchitectureTypeElements eProcessorArchitectureType;
+  private final LinuxDistributionElements eLinuxDistribution;
+  private final UbuntuVersionElements eUbuntuVersion;
+  private final TerminalRule tDIGIT;
+  private final TerminalRule tDOUBLE;
+  private final TerminalRule tDECINT;
+  private final Double0Elements pDouble0;
+  private final Integer0Elements pInteger0;
+  private final EStringElements pEString;
+  private final TerminalRule tSL_COMMENT;
+  private final TerminalRule tINDENT;
+  private final TerminalRule tDEDENT;
+  private final PreListElementElements pPreListElement;
+
+  private final Grammar grammar;
+
+  private final TerminalsGrammarAccess gaTerminals;
+
+  @Inject
+  public UtilGrammarAccess(GrammarProvider grammarProvider,
+      TerminalsGrammarAccess gaTerminals) {
+    this.grammar = internalFindGrammar(grammarProvider);
+    this.gaTerminals = gaTerminals;
+    this.pDescription = new DescriptionElements();
+    this.pResource = new ResourceElements();
+    this.pAbstractComputationAssignmentTarget = new AbstractComputationAssignmentTargetElements();
+    this.pOperatingSystemResouce = new OperatingSystemResouceElements();
+    this.pAbstractOperatingSystemProperty = new AbstractOperatingSystemPropertyElements();
+    this.pNameOperatingSystemProperty = new NameOperatingSystemPropertyElements();
+    this.pVersionOperatingSystemProperty = new VersionOperatingSystemPropertyElements();
+    this.pAbstractProperty = new AbstractPropertyElements();
+    this.pPropertyKind = new PropertyKindElements();
+    this.pProperty = new PropertyElements();
+    this.pPropertyAttribute = new PropertyAttributeElements();
+    this.pPropertyMaximun = new PropertyMaximunElements();
+    this.pPropertyMinimum = new PropertyMinimumElements();
+    this.pPropertySelection = new PropertySelectionElements();
+    this.pPropertyRange = new PropertyRangeElements();
+    this.pPropertyValue = new PropertyValueElements();
+    this.pPropertyValueInt = new PropertyValueIntElements();
+    this.pPropertyValueDouble = new PropertyValueDoubleElements();
+    this.pPropertyValueString = new PropertyValueStringElements();
+    this.pPropertyValueList = new PropertyValueListElements();
+    this.pProcessorArchitectureValue = new ProcessorArchitectureValueElements();
+    this.pAbstractResouceType = new AbstractResouceTypeElements();
+    this.pOpertingSystemResouceType = new OpertingSystemResouceTypeElements();
+    this.pResourceType = new ResourceTypeElements();
+    this.pProcessorResouceType = new ProcessorResouceTypeElements();
+    this.pAbstractCommunicationType = new AbstractCommunicationTypeElements();
+    this.pLinuxOpertingSystem = new LinuxOpertingSystemElements();
+    this.pMacOSOpertingSystem = new MacOSOpertingSystemElements();
+    this.pCommunicationType = new CommunicationTypeElements();
+    this.pNetworkCommunicationType = new NetworkCommunicationTypeElements();
+    this.pEthernetCommunicationType = new EthernetCommunicationTypeElements();
+    this.pWlanCommunicationType = new WlanCommunicationTypeElements();
+    this.pUsbCommunicationType = new UsbCommunicationTypeElements();
+    this.pAttributeKind = new AttributeKindElements();
+    this.pMaximumKind = new MaximumKindElements();
+    this.pMinimumKind = new MinimumKindElements();
+    this.pSelectionKind = new SelectionKindElements();
+    this.pRangeKind = new RangeKindElements();
+    this.pLinuxDistributionValue = new LinuxDistributionValueElements();
+    this.pUbuntuVersionValue = new UbuntuVersionValueElements();
+    this.pOpertingSystemName = new OpertingSystemNameElements();
+    this.eRunTimeType = new RunTimeTypeElements();
+    this.eProcessorArchitectureType = new ProcessorArchitectureTypeElements();
+    this.eLinuxDistribution = new LinuxDistributionElements();
+    this.eUbuntuVersion = new UbuntuVersionElements();
+    this.tDIGIT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.DIGIT");
+    this.tDOUBLE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.DOUBLE");
+    this.tDECINT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.DECINT");
+    this.pDouble0 = new Double0Elements();
+    this.pInteger0 = new Integer0Elements();
+    this.pEString = new EStringElements();
+    this.tSL_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.SL_COMMENT");
+    this.tINDENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.INDENT");
+    this.tDEDENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Util.DEDENT");
+    this.pPreListElement = new PreListElementElements();
+  }
+
+  protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
+    Grammar grammar = grammarProvider.getGrammar(this);
+    while (grammar != null) {
+      if ("de.fraunhofer.ipa.deployment.Util".equals(grammar.getName())) {
+        return grammar;
+      }
+      List<Grammar> grammars = grammar.getUsedGrammars();
+      if (!grammars.isEmpty()) {
+        grammar = grammars.iterator().next();
+      } else {
+        return null;
+      }
     }
+    return grammar;
+  }
+
+  @Override
+  public Grammar getGrammar() {
+    return grammar;
+  }
+
+
+  public TerminalsGrammarAccess getTerminalsGrammarAccess() {
+    return gaTerminals;
+  }
+
+
+  //Description returns Description:
+  //    {Description}
+  //;
+  public DescriptionElements getDescriptionAccess() {
+    return pDescription;
+  }
+
+  public ParserRule getDescriptionRule() {
+    return getDescriptionAccess().getRule();
+  }
+
+  //Resource returns Resource:
+  //    'name:' name=EString
+  //    INDENT
+  //        'type:' type=AbstractResouceType
+  //        ('properties:'
+  //            INDENT
+  //            properties+=AbstractProperty
+  //            (properties+=AbstractProperty)*
+  //            DEDENT
+  //            )?
+  //    DEDENT
+  //    ;
+  public ResourceElements getResourceAccess() {
+    return pResource;
+  }
+
+  public ParserRule getResourceRule() {
+    return getResourceAccess().getRule();
+  }
+
+  //AbstractComputationAssignmentTarget returns AbstractComputationAssignmentTarget:
+  //    {AbstractComputationAssignmentTarget}
+  //;
+  public AbstractComputationAssignmentTargetElements getAbstractComputationAssignmentTargetAccess() {
+    return pAbstractComputationAssignmentTarget;
+  }
+
+  public ParserRule getAbstractComputationAssignmentTargetRule() {
+    return getAbstractComputationAssignmentTargetAccess().getRule();
+  }
+
+  //OperatingSystemResouce returns OperatingSystemResouce:
+  //    {OperatingSystemResouce}
+  //    'name:'  name=EString
+  //    INDENT
+  //        'type:' type=OpertingSystemResouceType
+  //        ('properties:'
+  //            INDENT
+  //            properties+=AbstractOperatingSystemProperty+
+  //            DEDENT
+  //            )?
+  //    DEDENT
+  //    ;
+  public OperatingSystemResouceElements getOperatingSystemResouceAccess() {
+    return pOperatingSystemResouce;
+  }
+
+  public ParserRule getOperatingSystemResouceRule() {
+    return getOperatingSystemResouceAccess().getRule();
+  }
+
+  //AbstractOperatingSystemProperty returns AbstractOperatingSystemProperty:
+  //    NameOperatingSystemProperty |VersionOperatingSystemProperty
+  //;
+  public AbstractOperatingSystemPropertyElements getAbstractOperatingSystemPropertyAccess() {
+    return pAbstractOperatingSystemProperty;
+  }
+
+  public ParserRule getAbstractOperatingSystemPropertyRule() {
+    return getAbstractOperatingSystemPropertyAccess().getRule();
+  }
+
+  //NameOperatingSystemProperty returns NameOperatingSystemProperty:
+  //    {NameOperatingSystemProperty}
+  //    PreListElement "name:" name="os_name"
+  //    INDENT
+  //        'kind:' kind=AttributeKind
+  //        (
+  //        'description:' description=EString
+  //        )?
+  //        (
+  //        'value:' value=PropertyValue
+  //        )?
+  //    DEDENT
+  //    ;
+  public NameOperatingSystemPropertyElements getNameOperatingSystemPropertyAccess() {
+    return pNameOperatingSystemProperty;
+  }
+
+  public ParserRule getNameOperatingSystemPropertyRule() {
+    return getNameOperatingSystemPropertyAccess().getRule();
+  }
+
+  //VersionOperatingSystemProperty returns VersionOperatingSystemProperty:
+  //    {VersionOperatingSystemProperty}
+  //    PreListElement "name:" name="os_version"
+  //    INDENT
+  //        'kind:' kind=AttributeKind
+  //        (
+  //        'description:' description=EString
+  //        )?
+  //        (
+  //        'value:' value=PropertyValue
+  //        )?
+  //    DEDENT
+  //    ;
+  public VersionOperatingSystemPropertyElements getVersionOperatingSystemPropertyAccess() {
+    return pVersionOperatingSystemProperty;
+  }
+
+  public ParserRule getVersionOperatingSystemPropertyRule() {
+    return getVersionOperatingSystemPropertyAccess().getRule();
+  }
+
+  //AbstractProperty returns AbstractProperty:
+  //    PropertyAttribute | PropertyMaximun | PropertyMinimum | PropertySelection | PropertyRange;
+  public AbstractPropertyElements getAbstractPropertyAccess() {
+    return pAbstractProperty;
+  }
+
+  public ParserRule getAbstractPropertyRule() {
+    return getAbstractPropertyAccess().getRule();
+  }
+
+  //PropertyKind returns PropertyKind:
+  //    AttributeKind | MaximumKind | MinimumKind | RangeKind | SelectionKind
+  //;
+  public PropertyKindElements getPropertyKindAccess() {
+    return pPropertyKind;
+  }
+
+  public ParserRule getPropertyKindRule() {
+    return getPropertyKindAccess().getRule();
+  }
+
+  //Property returns Property:
+  //    PreListElement 'name:'  name=EString
+  //    INDENT
+  //        'kind:' kind=PropertyKind
+  //        (
+  //        'description:' description=EString
+  //        )?
+  //        (
+  //            'value:'
+  //            INDENT
+  //            PreListElement value+=PropertyValue
+  //            ( PreListElement value+=PropertyValue)*
+  //            DEDENT
+  //            )?
+  //        (DEDENT)?
+  //    ;
+  public PropertyElements getPropertyAccess() {
+    return pProperty;
+  }
+
+  public ParserRule getPropertyRule() {
+    return getPropertyAccess().getRule();
+  }
+
+  //PropertyAttribute returns PropertyAttribute:
+  //    PreListElement 'name:'  name=EString
+  //    INDENT
+  //        'kind:' kind=AttributeKind
+  //        (
+  //        'description:' description=EString
+  //        )?
+  //        (
+  //        'value:' value=PropertyValue
+  //        )?
+  //        (DEDENT)?
+  //;
+  public PropertyAttributeElements getPropertyAttributeAccess() {
+    return pPropertyAttribute;
+  }
+
+  public ParserRule getPropertyAttributeRule() {
+    return getPropertyAttributeAccess().getRule();
+  }
+
+  //PropertyMaximun returns PropertyMaximun:
+  //    PreListElement 'name:'  name=EString
+  //    INDENT
+  //        'kind:' kind=MaximumKind
+  //        (
+  //        'description:' description=EString
+  //        )?
+  //        (
+  //        'value:' value=PropertyValue
+  //        )?
+  //        (DEDENT)?
+  //        ;
+  public PropertyMaximunElements getPropertyMaximunAccess() {
+    return pPropertyMaximun;
+  }
+
+  public ParserRule getPropertyMaximunRule() {
+    return getPropertyMaximunAccess().getRule();
+  }
+
+  //PropertyMinimum returns PropertyMinimum:
+  //    PreListElement 'name:'  name=EString
+  //    INDENT
+  //        'kind:' kind=MinimumKind
+  //        (
+  //        'description:' description=EString
+  //        )?
+  //        (
+  //        'value:' value=PropertyValue
+  //        )?
+  //        (DEDENT)?
+  //        ;
+  public PropertyMinimumElements getPropertyMinimumAccess() {
+    return pPropertyMinimum;
+  }
+
+  public ParserRule getPropertyMinimumRule() {
+    return getPropertyMinimumAccess().getRule();
+  }
+
+  //PropertySelection returns PropertySelection:
+  //    PreListElement 'name:'  name=EString
+  //    INDENT
+  //        'kind:' kind=SelectionKind
+  //        (
+  //        'description:' description=EString
+  //        )?
+  //        (
+  //            'value:'
+  //            INDENT
+  //            PreListElement value+=PropertyValue
+  //            ( PreListElement value+=PropertyValue)*
+  //            DEDENT
+  //            )?
+  //        (DEDENT)?
+  //    ;
+  public PropertySelectionElements getPropertySelectionAccess() {
+    return pPropertySelection;
+  }
+
+  public ParserRule getPropertySelectionRule() {
+    return getPropertySelectionAccess().getRule();
+  }
+
+  //PropertyRange returns PropertyRange:
+  //    PreListElement 'name:'  name=EString
+  //    INDENT
+  //        'kind:' kind=RangeKind
+  //        (
+  //        'description:' description=EString
+  //        )?
+  //        (
+  //            'value:'
+  //            INDENT
+  //            PreListElement value+=PropertyValue
+  //            PreListElement value+=PropertyValue
+  //            DEDENT
+  //            )?
+  //        (DEDENT)?
+  //    ;
+  public PropertyRangeElements getPropertyRangeAccess() {
+    return pPropertyRange;
+  }
+
+  public ParserRule getPropertyRangeRule() {
+    return getPropertyRangeAccess().getRule();
+  }
+
+  //PropertyValue returns PropertyValue:
+  //    PropertyValueInt | PropertyValueDouble
+  //    | PropertyValueString| ProcessorArchitectureValue
+  //    | LinuxDistributionValue | UbuntuVersionValue
+  //    | PropertyValueList;
+  public PropertyValueElements getPropertyValueAccess() {
+    return pPropertyValue;
+  }
+
+  public ParserRule getPropertyValueRule() {
+    return getPropertyValueAccess().getRule();
+  }
+
+  //PropertyValueInt returns PropertyValueInt:
+  //    value=Integer0;
+  public PropertyValueIntElements getPropertyValueIntAccess() {
+    return pPropertyValueInt;
+  }
+
+  public ParserRule getPropertyValueIntRule() {
+    return getPropertyValueIntAccess().getRule();
+  }
+
+  //PropertyValueDouble returns PropertyValueDouble:
+  //    value=Double0
+  //;
+  public PropertyValueDoubleElements getPropertyValueDoubleAccess() {
+    return pPropertyValueDouble;
+  }
+
+  public ParserRule getPropertyValueDoubleRule() {
+    return getPropertyValueDoubleAccess().getRule();
+  }
+
+  //PropertyValueString returns PropertyValueString:
+  //    value=EString;
+  public PropertyValueStringElements getPropertyValueStringAccess() {
+    return pPropertyValueString;
+  }
+
+  public ParserRule getPropertyValueStringRule() {
+    return getPropertyValueStringAccess().getRule();
+  }
+
+  //PropertyValueList returns PropertyValueList:
+  //    INDENT
+  //      PreListElement value+=PropertyValue
+  //        (PreListElement value+=PropertyValue)*
+  //    DEDENT
+  // ;
+  public PropertyValueListElements getPropertyValueListAccess() {
+    return pPropertyValueList;
+  }
+
+  public ParserRule getPropertyValueListRule() {
+    return getPropertyValueListAccess().getRule();
+  }
+
+  //ProcessorArchitectureValue returns ProcessorArchitectureValue:
+  //    value=ProcessorArchitectureType
+  //;
+  public ProcessorArchitectureValueElements getProcessorArchitectureValueAccess() {
+    return pProcessorArchitectureValue;
+  }
+
+  public ParserRule getProcessorArchitectureValueRule() {
+    return getProcessorArchitectureValueAccess().getRule();
+  }
+
+  //AbstractResouceType returns AbstractResouceType:
+  // ResourceType;
+  public AbstractResouceTypeElements getAbstractResouceTypeAccess() {
+    return pAbstractResouceType;
+  }
+
+  public ParserRule getAbstractResouceTypeRule() {
+    return getAbstractResouceTypeAccess().getRule();
+  }
+
+  //OpertingSystemResouceType returns OpertingSystemResouceType:
+  //    LinuxOpertingSystem | MacOSOpertingSystem
+  //;
+  public OpertingSystemResouceTypeElements getOpertingSystemResouceTypeAccess() {
+    return pOpertingSystemResouceType;
+  }
+
+  public ParserRule getOpertingSystemResouceTypeRule() {
+    return getOpertingSystemResouceTypeAccess().getRule();
+  }
+
+  //ResourceType returns ResourceType:
+  //    {ResourceType}
+  //    name=EString
+  //;
+  public ResourceTypeElements getResourceTypeAccess() {
+    return pResourceType;
+  }
+
+  public ParserRule getResourceTypeRule() {
+    return getResourceTypeAccess().getRule();
+  }
+
+  //ProcessorResouceType returns ProcessorResouceType:
+  //    {ProcessorResouceType}
+  //    "Processor"
+  //    ;
+  public ProcessorResouceTypeElements getProcessorResouceTypeAccess() {
+    return pProcessorResouceType;
+  }
+
+  public ParserRule getProcessorResouceTypeRule() {
+    return getProcessorResouceTypeAccess().getRule();
+  }
+
+  //AbstractCommunicationType returns AbstractCommunicationType:
+  //    CommunicationType | NetworkCommunicationType
+  //;
+  public AbstractCommunicationTypeElements getAbstractCommunicationTypeAccess() {
+    return pAbstractCommunicationType;
+  }
+
+  public ParserRule getAbstractCommunicationTypeRule() {
+    return getAbstractCommunicationTypeAccess().getRule();
+  }
+
+  //LinuxOpertingSystem returns LinuxOpertingSystem:
+  //    {LinuxOpertingSystem}
+  //    "LinuxOpertingSystem"
+  //;
+  public LinuxOpertingSystemElements getLinuxOpertingSystemAccess() {
+    return pLinuxOpertingSystem;
+  }
+
+  public ParserRule getLinuxOpertingSystemRule() {
+    return getLinuxOpertingSystemAccess().getRule();
+  }
+
+  //MacOSOpertingSystem returns MacOSOpertingSystem:
+  //    {MacOSOpertingSystem}
+  //    "MacOSOpertingSystem"
+  //    ;
+  public MacOSOpertingSystemElements getMacOSOpertingSystemAccess() {
+    return pMacOSOpertingSystem;
+  }
+
+  public ParserRule getMacOSOpertingSystemRule() {
+    return getMacOSOpertingSystemAccess().getRule();
+  }
+
+  //CommunicationType returns CommunicationType:
+  //    {CommunicationType}
+  //    name=EString
+  //    ;
+  public CommunicationTypeElements getCommunicationTypeAccess() {
+    return pCommunicationType;
+  }
+
+  public ParserRule getCommunicationTypeRule() {
+    return getCommunicationTypeAccess().getRule();
+  }
+
+  //NetworkCommunicationType returns NetworkCommunicationType:
+  //    EthernetCommunicationType | WlanCommunicationType;
+  public NetworkCommunicationTypeElements getNetworkCommunicationTypeAccess() {
+    return pNetworkCommunicationType;
+  }
+
+  public ParserRule getNetworkCommunicationTypeRule() {
+    return getNetworkCommunicationTypeAccess().getRule();
+  }
+
+  //EthernetCommunicationType returns EthernetCommunicationType:
+  //    {EthernetCommunicationType}
+  //    'Ethernet'
+  //    ;
+  public EthernetCommunicationTypeElements getEthernetCommunicationTypeAccess() {
+    return pEthernetCommunicationType;
+  }
+
+  public ParserRule getEthernetCommunicationTypeRule() {
+    return getEthernetCommunicationTypeAccess().getRule();
+  }
+
+  //WlanCommunicationType returns WlanCommunicationType:
+  //    {WlanCommunicationType}
+  //    'Wlan'
+  //    ;
+  public WlanCommunicationTypeElements getWlanCommunicationTypeAccess() {
+    return pWlanCommunicationType;
+  }
+
+  public ParserRule getWlanCommunicationTypeRule() {
+    return getWlanCommunicationTypeAccess().getRule();
+  }
+
+  //UsbCommunicationType returns UsbCommunicationType:
+  //    {UsbCommunicationType}
+  //    'Usb'
+  //    ;
+  public UsbCommunicationTypeElements getUsbCommunicationTypeAccess() {
+    return pUsbCommunicationType;
+  }
+
+  public ParserRule getUsbCommunicationTypeRule() {
+    return getUsbCommunicationTypeAccess().getRule();
+  }
+
+  //AttributeKind returns AttributeKind:
+  //    {AttributeKind}
+  //    'AttributeKind'
+  //    ;
+  public AttributeKindElements getAttributeKindAccess() {
+    return pAttributeKind;
+  }
+
+  public ParserRule getAttributeKindRule() {
+    return getAttributeKindAccess().getRule();
+  }
+
+  //MaximumKind returns MaximumKind:
+  //    {MaximumKind}
+  //    'MaximumKind'
+  //    ;
+  public MaximumKindElements getMaximumKindAccess() {
+    return pMaximumKind;
+  }
+
+  public ParserRule getMaximumKindRule() {
+    return getMaximumKindAccess().getRule();
+  }
+
+  //MinimumKind returns MinimumKind:
+  //    {MinimumKind}
+  //    'MinimumKind'
+  //    ;
+  public MinimumKindElements getMinimumKindAccess() {
+    return pMinimumKind;
+  }
+
+  public ParserRule getMinimumKindRule() {
+    return getMinimumKindAccess().getRule();
+  }
+
+  //SelectionKind returns SelectionKind:
+  //    {SelectionKind}
+  //    'SelectionKind'
+  //    ;
+  public SelectionKindElements getSelectionKindAccess() {
+    return pSelectionKind;
+  }
+
+  public ParserRule getSelectionKindRule() {
+    return getSelectionKindAccess().getRule();
+  }
+
+  //RangeKind returns RangeKind:
+  //    {RangeKind}
+  //    'RangeKind'
+  //    ;
+  public RangeKindElements getRangeKindAccess() {
+    return pRangeKind;
+  }
+
+  public ParserRule getRangeKindRule() {
+    return getRangeKindAccess().getRule();
+  }
+
+  //LinuxDistributionValue returns LinuxDistributionValue:
+  //    {LinuxDistributionValue}
+  //    value=LinuxDistribution
+  //    ;
+  public LinuxDistributionValueElements getLinuxDistributionValueAccess() {
+    return pLinuxDistributionValue;
+  }
+
+  public ParserRule getLinuxDistributionValueRule() {
+    return getLinuxDistributionValueAccess().getRule();
+  }
+
+  //UbuntuVersionValue returns UbuntuVersionValue:
+  //    {UbuntuVersionValue}
+  //    value=UbuntuVersion;
+  public UbuntuVersionValueElements getUbuntuVersionValueAccess() {
+    return pUbuntuVersionValue;
+  }
+
+  public ParserRule getUbuntuVersionValueRule() {
+    return getUbuntuVersionValueAccess().getRule();
+  }
+
+  //OpertingSystemName returns OpertingSystemName:
+  //    LinuxDistributionValue
+  //;
+  public OpertingSystemNameElements getOpertingSystemNameAccess() {
+    return pOpertingSystemName;
+  }
+
+  public ParserRule getOpertingSystemNameRule() {
+    return getOpertingSystemNameAccess().getRule();
+  }
+
+  //enum RunTimeType returns RunTimeType:
+  //                container = 'container';
+  public RunTimeTypeElements getRunTimeTypeAccess() {
+    return eRunTimeType;
+  }
+
+  public EnumRule getRunTimeTypeRule() {
+    return getRunTimeTypeAccess().getRule();
+  }
+
+  //enum ProcessorArchitectureType returns ProcessorArchitectureType:
+  //                x86 = 'x86' | arm64 = 'arm64';
+  public ProcessorArchitectureTypeElements getProcessorArchitectureTypeAccess() {
+    return eProcessorArchitectureType;
+  }
+
+  public EnumRule getProcessorArchitectureTypeRule() {
+    return getProcessorArchitectureTypeAccess().getRule();
+  }
+
+  //enum LinuxDistribution returns LinuxDistribution:
+  //                ubuntu = 'ubuntu' | debian = 'debian';
+  public LinuxDistributionElements getLinuxDistributionAccess() {
+    return eLinuxDistribution;
+  }
+
+  public EnumRule getLinuxDistributionRule() {
+    return getLinuxDistributionAccess().getRule();
+  }
+
+  //enum UbuntuVersion returns UbuntuVersion:
+  //                focal = 'focal' | jammy = 'jammy';
+  public UbuntuVersionElements getUbuntuVersionAccess() {
+    return eUbuntuVersion;
+  }
+
+  public EnumRule getUbuntuVersionRule() {
+    return getUbuntuVersionAccess().getRule();
+  }
+
+  //terminal DIGIT: '0'..'9';
+  public TerminalRule getDIGITRule() {
+    return tDIGIT;
+  }
+
+  //terminal DOUBLE returns ecore::EDouble: (DIGIT* | ('-' DIGIT*) ) (('.' DECINT*) | (('.' DIGIT*)? ('E'|'e') ('-'|'+')? DIGIT*));
+  public TerminalRule getDOUBLERule() {
+    return tDOUBLE;
+  }
+
+  //  // Use terminal to avoid 'e' turning into a keyword
+  //terminal DECINT: '0' | ('1'..'9' DIGIT*) | ('-''0'..'9' DIGIT*) ;
+  public TerminalRule getDECINTRule() {
+    return tDECINT;
+  }
+
+  //Double0 returns type::Double:
+  //    DOUBLE;
+  public Double0Elements getDouble0Access() {
+    return pDouble0;
+  }
+
+  public ParserRule getDouble0Rule() {
+    return getDouble0Access().getRule();
+  }
+
+  //Integer0 returns type::Int:
+  //    DECINT;
+  public Integer0Elements getInteger0Access() {
+    return pInteger0;
+  }
+
+  public ParserRule getInteger0Rule() {
+    return getInteger0Access().getRule();
+  }
+
+  //EString returns ecore::EString:
+  //    STRING | ID;
+  public EStringElements getEStringAccess() {
+    return pEString;
+  }
+
+  public ParserRule getEStringRule() {
+    return getEStringAccess().getRule();
+  }
+
+  //@Override
+  //terminal SL_COMMENT: '#' !('\n'|'\r')*;
+  public TerminalRule getSL_COMMENTRule() {
+    return tSL_COMMENT;
+  }
+
+  //terminal INDENT: 'synthetic:INDENT';
+  public TerminalRule getINDENTRule() {
+    return tINDENT;
+  }
+
+  //terminal DEDENT: 'synthetic:DEDENT';
+  public TerminalRule getDEDENTRule() {
+    return tDEDENT;
+  }
+
+  //PreListElement hidden(SL_COMMENT):
+  //  '-';
+  public PreListElementElements getPreListElementAccess() {
+    return pPreListElement;
+  }
+
+  public ParserRule getPreListElementRule() {
+    return getPreListElementAccess().getRule();
+  }
+
+  //terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+  public TerminalRule getIDRule() {
+    return gaTerminals.getIDRule();
+  }
+
+  //terminal INT returns ecore::EInt: ('0'..'9')+;
+  public TerminalRule getINTRule() {
+    return gaTerminals.getINTRule();
+  }
+
+  //terminal STRING:
+  //            '"' ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|'"') )* '"' |
+  //            "'" ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|"'") )* "'"
+  //        ;
+  public TerminalRule getSTRINGRule() {
+    return gaTerminals.getSTRINGRule();
+  }
+
+  //terminal ML_COMMENT : '/*' -> '*/';
+  public TerminalRule getML_COMMENTRule() {
+    return gaTerminals.getML_COMMENTRule();
+  }
+
+  //terminal WS         : (' '|'\t'|'\r'|'\n')+;
+  public TerminalRule getWSRule() {
+    return gaTerminals.getWSRule();
+  }
+
+  //terminal ANY_OTHER: .;
+  public TerminalRule getANY_OTHERRule() {
+    return gaTerminals.getANY_OTHERRule();
+  }
 }

@@ -2,12 +2,14 @@ package de.fraunhofer.ipa.deployment.generator
 
 import java.util.HashSet
 import java.util.Set
-import javax.inject.Inject
 
 class NamingHelper {
     String RelativeRootFolderPath = null
     String AbsoluteRootPrefix = "example/src-gen"
     String AbsoluteDefaultGithubWorkflowPath = "./.github/workflows"
+    String AbsoluteDefaultGitlabTemplateFolderPath = "./ci/gitlab_templates/"
+    String GitlabRuleTemplate = "RULES.yml"
+    String GitlabJobTemplate = "JOB_TEMPLATE.yml"
     String ReuseableTestBuildWorkflowName = "test_code_build_image_workflow_reuse.yaml"
     String AbsoluteDefaultGithubReuseableWorkflowPath = String.format("%s/%s", AbsoluteDefaultGithubWorkflowPath, ReuseableTestBuildWorkflowName)
     String DefaultRegistry = "ghcr.io"
@@ -15,10 +17,6 @@ class NamingHelper {
     String DockerComposePath
     String CyclonConfigFileName = "cyclonedds.xml"
     String DockerComposeFileName = "docker-compose.yaml"
-
-    @Inject
-    extension DeploymentHelper deployHelper
-
 
 
     def setRelativePlanFolderPath(String planName){
@@ -92,6 +90,18 @@ class NamingHelper {
 
     def getDockerComposeFileName(){
         return this.DockerComposeFileName
+    }
+
+    def getAbsoluteDefaultGitlabTemplateFolderPath(){
+      return this.AbsoluteDefaultGitlabTemplateFolderPath
+    }
+
+    def getGitlabRuleTemplatePath(){
+      return String.format("%s/%s", getAbsoluteDefaultGitlabTemplateFolderPath, this.GitlabRuleTemplate)
+    }
+
+    def getGitlabJobTemplatePath(){
+      return String.format("%s/%s", getAbsoluteDefaultGitlabTemplateFolderPath, this.GitlabJobTemplate)
     }
 }
 

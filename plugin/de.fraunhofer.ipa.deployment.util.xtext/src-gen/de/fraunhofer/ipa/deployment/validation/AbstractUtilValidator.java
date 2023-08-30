@@ -10,10 +10,10 @@ import org.eclipse.xtext.validation.AbstractDeclarativeValidator;
 
 public abstract class AbstractUtilValidator extends AbstractDeclarativeValidator {
 
-    @Override
-    protected List<EPackage> getEPackages() {
-        List<EPackage> result = new ArrayList<EPackage>();
-        result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.ipa.fraunhofer.de/Util"));
-        return result;
-    }
+  @Override
+  protected List<EPackage> getEPackages() {
+    List<EPackage> result = new ArrayList<EPackage>();
+    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.ipa.fraunhofer.de/Util"));
+    return result;
+  }
 }

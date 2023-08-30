@@ -1,0 +1,69 @@
+DeploymentPlan:
+  name: deploy_pick_n_place_to_ur5e_cell_realsense
+  deployTo: ur5e_cell_with_realsense
+  assignment:
+    - name: marker_detection
+      executedBy: "ur5e_cell_with_realsense.rwu_laptop"
+      version: "latest"
+      softwareComponents:
+        - "marker_detection.color_pose_estimation":
+          executionConfiguration:
+            - from: "marker_detection.color_pose_estimation.camera_info_topic"
+              value: "color_depth_optical_frame"
+            - from: "marker_detection.color_pose_estimation.reference_frame"
+              value: "world"
+            - from: "marker_detection.color_pose_estimation.detect_colors"
+              value: "yellow, pink, green, white"
+          startCommand:
+            - "ros2 launch color_pose_estimation marker_publisher.launch.py"
+      middleware: humble
+      runtimeType:
+        type: container
+    - name: pick_place_task
+      executedBy: "ur5e_cell_with_realsense.rwu_laptop"
+      version: "latest"
+      softwareComponents:
+        - "skill_based_tasks.robot_skills":
+          executionConfiguration:
+            - from: "skill_based_tasks.robot_skills.ur_type"
+              to: "ur5e_cell_with_realsense.arm.device_type"
+          startCommand:
+            - "ros2 launch pick_place_app pick_place_demo.launch.py"
+      middleware: humble
+      runtimeType:
+        type: container
+        resource:
+          - name: operting_system
+            type: LinuxOpertingSystem
+            properties:
+              - name: os_name
+                kind: AttributeKind
+                value: ubuntu
+              - name: os_version
+                    kind: AttributeKind
+                    value: jammy
+    - name: drivers
+      executedBy: "ur5e_cell_with_realsense.rwu_laptop"
+      version: "latest"
+      softwareComponents:
+        - "realsense_driver.realsense2_camera_driver":
+          executionConfiguration:
+            - from: "realsense_driver.realsense2_camera_driver.camera_name"
+              value: "camera_realsense"
+            - from: "realsense_driver.realsense2_camera_driver.device_type"
+              to: "ur5e_cell_with_realsense.camera_realsense.device_type"
+            - from: "realsense_driver.realsense2_camera_driver.publish_tf"
+              value: false
+          startCommand:
+            - "ros2 launch realsense2_camera rs_launch.py"
+        - "ur5e_robot_driver.ur_robot_driver":
+          executionConfiguration:
+            - from: "ur5e_robot_driver.ur_robot_driver.robot_ip"
+              to: "ur5e_cell_with_realsense.connect_arm_pc.robot_ip"
+            - from: "ur5e_robot_driver.ur_robot_driver.ur_type"
+              to: "ur5e_cell_with_realsense.arm.device_type"
+          startCommand:
+            - "ros2 launch ur_robot_driver ur5e.launch.py"
+      middleware: humble
+      runtimeType:
+        type: container
