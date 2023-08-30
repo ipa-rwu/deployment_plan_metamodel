@@ -2,7 +2,6 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>de.fraunhofer.ipa.deployment.util.xtext</groupId>
-    <version>1.0.0-SNAPSHOT</version>
     <artifactId>de.fraunhofer.ipa.deployment.util.xtext.parent</artifactId>
     <packaging>pom</packaging>
 
@@ -13,7 +12,7 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <!-- Tycho settings -->
-        <tycho-version>3.0.3</tycho-version>
+        <tycho-version>2.7.4</tycho-version>
         <!-- Define overridable properties for tycho-surefire-plugin -->
         <platformSystemProperties></platformSystemProperties>
         <moduleProperties></moduleProperties>
@@ -21,12 +20,13 @@
         <additionalTestArguments></additionalTestArguments>
     </properties>
     <modules>
+        <module>de.fraunhofer.ipa.deployment.util</module>
         <module>de.fraunhofer.ipa.deployment.util.xtext</module>
         <module>de.fraunhofer.ipa.deployment.util.xtext.ide</module>
-        <module>de.fraunhofer.ipa.deployment.util.xtext.ui</module>
         <module>de.fraunhofer.ipa.deployment.util.xtext.target</module>
         <module>de.fraunhofer.ipa.deployment.util.xtext.tests</module>
         <module>de.fraunhofer.ipa.deployment.util.xtext.ui.tests</module>
+        <module>de.fraunhofer.ipa.deployment.util.xtext.ui</module>
     </modules>
     <dependencyManagement>
         <dependencies>
@@ -296,4 +296,9 @@
 
     <dependencies>
     </dependencies>
+    <parent>
+        <groupId>de.fraunhofer.ipa.deployment</groupId>
+        <artifactId>de.fraunhofer.ipa.deployment.parent</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
 </project>
