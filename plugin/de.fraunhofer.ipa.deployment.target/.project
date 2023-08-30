@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-    <name>de.fraunhofer.ipa.targetEnvironment.xtext.target</name>
+    <name>de.fraunhofer.ipa.deployment.target</name>
     <comment></comment>
     <projects>
     </projects>

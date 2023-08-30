@@ -60,6 +60,7 @@ Workflow {
 
         language = StandardLanguage {
             name = "de.fraunhofer.ipa.targetEnvironment.Device"
+            fileExtensions = "dev"
             referencedResource = "platform:/resource/de.fraunhofer.ipa.targetEnvironment/model/device.genmodel"
             referencedResource = "platform:/resource/de.fraunhofer.ipa.deployment.util/model/util.genmodel"
 
