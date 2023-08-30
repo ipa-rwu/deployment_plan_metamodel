@@ -15,15 +15,15 @@ import org.osgi.framework.FrameworkUtil;
  */
 public class ImplementationDescriptionExecutableExtensionFactory extends AbstractGuiceAwareExecutableExtensionFactory {
 
-    @Override
-    protected Bundle getBundle() {
-        return FrameworkUtil.getBundle(XtextActivator.class);
-    }
+  @Override
+  protected Bundle getBundle() {
+    return FrameworkUtil.getBundle(XtextActivator.class);
+  }
 
-    @Override
-    protected Injector getInjector() {
-        XtextActivator activator = XtextActivator.getInstance();
-        return activator != null ? activator.getInjector(XtextActivator.DE_FRAUNHOFER_IPA_DEPLOYMENT_IMPLEMENTATIONDESCRIPTION) : null;
-    }
+  @Override
+  protected Injector getInjector() {
+    XtextActivator activator = XtextActivator.getInstance();
+    return activator != null ? activator.getInjector(XtextActivator.DE_FRAUNHOFER_IPA_DEPLOYMENT_IMPLEMENTATIONDESCRIPTION) : null;
+  }
 
 }

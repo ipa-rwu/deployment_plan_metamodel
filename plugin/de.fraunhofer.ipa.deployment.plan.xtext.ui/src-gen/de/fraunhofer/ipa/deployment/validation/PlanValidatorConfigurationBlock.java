@@ -10,26 +10,26 @@ import org.eclipse.xtext.ui.validation.AbstractValidatorConfigurationBlock;
 @SuppressWarnings("restriction")
 public class PlanValidatorConfigurationBlock extends AbstractValidatorConfigurationBlock {
 
-    protected static final String SETTINGS_SECTION_NAME = "Plan";
+  protected static final String SETTINGS_SECTION_NAME = "Plan";
 
-    @Override
-    protected void fillSettingsPage(Composite composite, int nColumns, int defaultIndent) {
-        addComboBox(PlanConfigurableIssueCodesProvider.DEPRECATED_MODEL_PART, "Deprecated Model Part", composite, defaultIndent);
-    }
+  @Override
+  protected void fillSettingsPage(Composite composite, int nColumns, int defaultIndent) {
+    addComboBox(PlanConfigurableIssueCodesProvider.DEPRECATED_MODEL_PART, "Deprecated Model Part", composite, defaultIndent);
+  }
 
-    @Override
-    public void dispose() {
-        storeSectionExpansionStates(getDialogSettings());
-        super.dispose();
-    }
+  @Override
+  public void dispose() {
+    storeSectionExpansionStates(getDialogSettings());
+    super.dispose();
+  }
 
-    @Override
-    protected IDialogSettings getDialogSettings() {
-        IDialogSettings dialogSettings = super.getDialogSettings();
-        IDialogSettings section = dialogSettings.getSection(SETTINGS_SECTION_NAME);
-        if (section == null) {
-            return dialogSettings.addNewSection(SETTINGS_SECTION_NAME);
-        }
-        return section;
+  @Override
+  protected IDialogSettings getDialogSettings() {
+    IDialogSettings dialogSettings = super.getDialogSettings();
+    IDialogSettings section = dialogSettings.getSection(SETTINGS_SECTION_NAME);
+    if (section == null) {
+      return dialogSettings.addNewSection(SETTINGS_SECTION_NAME);
     }
+    return section;
+  }
 }

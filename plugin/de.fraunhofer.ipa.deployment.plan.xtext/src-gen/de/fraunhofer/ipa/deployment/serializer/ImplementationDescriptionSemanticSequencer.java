@@ -61,289 +61,289 @@ import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransi
 @SuppressWarnings("all")
 public class ImplementationDescriptionSemanticSequencer extends UtilSemanticSequencer {
 
-    @Inject
-    private ImplementationDescriptionGrammarAccess grammarAccess;
+  @Inject
+  private ImplementationDescriptionGrammarAccess grammarAccess;
 
-    @Override
-    public void sequence(ISerializationContext context, EObject semanticObject) {
-        EPackage epackage = semanticObject.eClass().getEPackage();
-        ParserRule rule = context.getParserRule();
-        Action action = context.getAssignedAction();
-        Set<Parameter> parameters = context.getEnabledBooleanParameters();
-        if (epackage == ImplementationDescriptionPackage.eINSTANCE)
-            switch (semanticObject.eClass().getClassifierID()) {
-            case ImplementationDescriptionPackage.DEVICE_REQUIREMENT:
-                sequence_DeviceRequirement(context, (DeviceRequirement) semanticObject);
-                return;
-            case ImplementationDescriptionPackage.GIT_REPOSITORY_TYPE:
-                sequence_GitRepositoryType(context, (GitRepositoryType) semanticObject);
-                return;
-            case ImplementationDescriptionPackage.HWSW_PAREMETER:
-                sequence_HWSWParemeter(context, (HWSWParemeter) semanticObject);
-                return;
-            case ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION:
-                sequence_ImplementationDescription(context, (ImplementationDescription) semanticObject);
-                return;
-            case ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION_SET:
-                sequence_ImplementationDescriptionSet(context, (ImplementationDescriptionSet) semanticObject);
-                return;
-            case ImplementationDescriptionPackage.REPOSITORY:
-                sequence_Repository(context, (Repository) semanticObject);
-                return;
-            case ImplementationDescriptionPackage.SOFTWARE_COMPONENT:
-                sequence_SoftwareComponent(context, (SoftwareComponent) semanticObject);
-                return;
-            case ImplementationDescriptionPackage.SOFTWARE_CONFIGURATION_REQUIREMENT:
-                sequence_SoftwareConfigurationRequirement(context, (SoftwareConfigurationRequirement) semanticObject);
-                return;
-            case ImplementationDescriptionPackage.SOFTWARE_EXECUTION_PAREMETER:
-                sequence_SoftwareExecutionParemeter(context, (SoftwareExecutionParemeter) semanticObject);
-                return;
-            }
-        else if (epackage == UtilPackage.eINSTANCE)
-            switch (semanticObject.eClass().getClassifierID()) {
-            case UtilPackage.ABSTRACT_COMPUTATION_ASSIGNMENT_TARGET:
-                sequence_AbstractComputationAssignmentTarget(context, (AbstractComputationAssignmentTarget) semanticObject);
-                return;
-            case UtilPackage.ATTRIBUTE_KIND:
-                sequence_AttributeKind(context, (AttributeKind) semanticObject);
-                return;
-            case UtilPackage.COMMUNICATION_TYPE:
-                sequence_CommunicationType(context, (CommunicationType) semanticObject);
-                return;
-            case UtilPackage.DESCRIPTION:
-                sequence_Description(context, (Description) semanticObject);
-                return;
-            case UtilPackage.ETHERNET_COMMUNICATION_TYPE:
-                sequence_EthernetCommunicationType(context, (EthernetCommunicationType) semanticObject);
-                return;
-            case UtilPackage.LINUX_DISTRIBUTION_VALUE:
-                sequence_LinuxDistributionValue(context, (LinuxDistributionValue) semanticObject);
-                return;
-            case UtilPackage.LINUX_OPERTING_SYSTEM:
-                sequence_LinuxOpertingSystem(context, (LinuxOpertingSystem) semanticObject);
-                return;
-            case UtilPackage.MAC_OS_OPERTING_SYSTEM:
-                sequence_MacOSOpertingSystem(context, (MacOSOpertingSystem) semanticObject);
-                return;
-            case UtilPackage.MAXIMUM_KIND:
-                sequence_MaximumKind(context, (MaximumKind) semanticObject);
-                return;
-            case UtilPackage.MINIMUM_KIND:
-                sequence_MinimumKind(context, (MinimumKind) semanticObject);
-                return;
-            case UtilPackage.NAME_OPERATING_SYSTEM_PROPERTY:
-                sequence_NameOperatingSystemProperty(context, (NameOperatingSystemProperty) semanticObject);
-                return;
-            case UtilPackage.OPERATING_SYSTEM_RESOUCE:
-                sequence_OperatingSystemResouce(context, (OperatingSystemResouce) semanticObject);
-                return;
-            case UtilPackage.PROCESSOR_ARCHITECTURE_VALUE:
-                sequence_ProcessorArchitectureValue(context, (ProcessorArchitectureValue) semanticObject);
-                return;
-            case UtilPackage.PROCESSOR_RESOUCE_TYPE:
-                sequence_ProcessorResouceType(context, (ProcessorResouceType) semanticObject);
-                return;
-            case UtilPackage.PROPERTY:
-                sequence_Property(context, (Property) semanticObject);
-                return;
-            case UtilPackage.PROPERTY_ATTRIBUTE:
-                sequence_PropertyAttribute(context, (PropertyAttribute) semanticObject);
-                return;
-            case UtilPackage.PROPERTY_MAXIMUN:
-                sequence_PropertyMaximun(context, (PropertyMaximun) semanticObject);
-                return;
-            case UtilPackage.PROPERTY_MINIMUM:
-                sequence_PropertyMinimum(context, (PropertyMinimum) semanticObject);
-                return;
-            case UtilPackage.PROPERTY_RANGE:
-                sequence_PropertyRange(context, (PropertyRange) semanticObject);
-                return;
-            case UtilPackage.PROPERTY_SELECTION:
-                sequence_PropertySelection(context, (PropertySelection) semanticObject);
-                return;
-            case UtilPackage.PROPERTY_VALUE_DOUBLE:
-                sequence_PropertyValueDouble(context, (PropertyValueDouble) semanticObject);
-                return;
-            case UtilPackage.PROPERTY_VALUE_INT:
-                sequence_PropertyValueInt(context, (PropertyValueInt) semanticObject);
-                return;
-            case UtilPackage.PROPERTY_VALUE_LIST:
-                sequence_PropertyValueList(context, (PropertyValueList) semanticObject);
-                return;
-            case UtilPackage.PROPERTY_VALUE_STRING:
-                sequence_PropertyValueString(context, (PropertyValueString) semanticObject);
-                return;
-            case UtilPackage.RANGE_KIND:
-                sequence_RangeKind(context, (RangeKind) semanticObject);
-                return;
-            case UtilPackage.RESOURCE:
-                sequence_Resource(context, (Resource) semanticObject);
-                return;
-            case UtilPackage.RESOURCE_TYPE:
-                sequence_ResourceType(context, (ResourceType) semanticObject);
-                return;
-            case UtilPackage.SELECTION_KIND:
-                sequence_SelectionKind(context, (SelectionKind) semanticObject);
-                return;
-            case UtilPackage.UBUNTU_VERSION_VALUE:
-                sequence_UbuntuVersionValue(context, (UbuntuVersionValue) semanticObject);
-                return;
-            case UtilPackage.USB_COMMUNICATION_TYPE:
-                sequence_UsbCommunicationType(context, (UsbCommunicationType) semanticObject);
-                return;
-            case UtilPackage.VERSION_OPERATING_SYSTEM_PROPERTY:
-                sequence_VersionOperatingSystemProperty(context, (VersionOperatingSystemProperty) semanticObject);
-                return;
-            case UtilPackage.WLAN_COMMUNICATION_TYPE:
-                sequence_WlanCommunicationType(context, (WlanCommunicationType) semanticObject);
-                return;
-            }
-        if (errorAcceptor != null)
-            errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
+  @Override
+  public void sequence(ISerializationContext context, EObject semanticObject) {
+    EPackage epackage = semanticObject.eClass().getEPackage();
+    ParserRule rule = context.getParserRule();
+    Action action = context.getAssignedAction();
+    Set<Parameter> parameters = context.getEnabledBooleanParameters();
+    if (epackage == ImplementationDescriptionPackage.eINSTANCE)
+      switch (semanticObject.eClass().getClassifierID()) {
+      case ImplementationDescriptionPackage.DEVICE_REQUIREMENT:
+        sequence_DeviceRequirement(context, (DeviceRequirement) semanticObject);
+        return;
+      case ImplementationDescriptionPackage.GIT_REPOSITORY_TYPE:
+        sequence_GitRepositoryType(context, (GitRepositoryType) semanticObject);
+        return;
+      case ImplementationDescriptionPackage.HWSW_PAREMETER:
+        sequence_HWSWParemeter(context, (HWSWParemeter) semanticObject);
+        return;
+      case ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION:
+        sequence_ImplementationDescription(context, (ImplementationDescription) semanticObject);
+        return;
+      case ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION_SET:
+        sequence_ImplementationDescriptionSet(context, (ImplementationDescriptionSet) semanticObject);
+        return;
+      case ImplementationDescriptionPackage.REPOSITORY:
+        sequence_Repository(context, (Repository) semanticObject);
+        return;
+      case ImplementationDescriptionPackage.SOFTWARE_COMPONENT:
+        sequence_SoftwareComponent(context, (SoftwareComponent) semanticObject);
+        return;
+      case ImplementationDescriptionPackage.SOFTWARE_CONFIGURATION_REQUIREMENT:
+        sequence_SoftwareConfigurationRequirement(context, (SoftwareConfigurationRequirement) semanticObject);
+        return;
+      case ImplementationDescriptionPackage.SOFTWARE_EXECUTION_PAREMETER:
+        sequence_SoftwareExecutionParemeter(context, (SoftwareExecutionParemeter) semanticObject);
+        return;
+      }
+    else if (epackage == UtilPackage.eINSTANCE)
+      switch (semanticObject.eClass().getClassifierID()) {
+      case UtilPackage.ABSTRACT_COMPUTATION_ASSIGNMENT_TARGET:
+        sequence_AbstractComputationAssignmentTarget(context, (AbstractComputationAssignmentTarget) semanticObject);
+        return;
+      case UtilPackage.ATTRIBUTE_KIND:
+        sequence_AttributeKind(context, (AttributeKind) semanticObject);
+        return;
+      case UtilPackage.COMMUNICATION_TYPE:
+        sequence_CommunicationType(context, (CommunicationType) semanticObject);
+        return;
+      case UtilPackage.DESCRIPTION:
+        sequence_Description(context, (Description) semanticObject);
+        return;
+      case UtilPackage.ETHERNET_COMMUNICATION_TYPE:
+        sequence_EthernetCommunicationType(context, (EthernetCommunicationType) semanticObject);
+        return;
+      case UtilPackage.LINUX_DISTRIBUTION_VALUE:
+        sequence_LinuxDistributionValue(context, (LinuxDistributionValue) semanticObject);
+        return;
+      case UtilPackage.LINUX_OPERTING_SYSTEM:
+        sequence_LinuxOpertingSystem(context, (LinuxOpertingSystem) semanticObject);
+        return;
+      case UtilPackage.MAC_OS_OPERTING_SYSTEM:
+        sequence_MacOSOpertingSystem(context, (MacOSOpertingSystem) semanticObject);
+        return;
+      case UtilPackage.MAXIMUM_KIND:
+        sequence_MaximumKind(context, (MaximumKind) semanticObject);
+        return;
+      case UtilPackage.MINIMUM_KIND:
+        sequence_MinimumKind(context, (MinimumKind) semanticObject);
+        return;
+      case UtilPackage.NAME_OPERATING_SYSTEM_PROPERTY:
+        sequence_NameOperatingSystemProperty(context, (NameOperatingSystemProperty) semanticObject);
+        return;
+      case UtilPackage.OPERATING_SYSTEM_RESOUCE:
+        sequence_OperatingSystemResouce(context, (OperatingSystemResouce) semanticObject);
+        return;
+      case UtilPackage.PROCESSOR_ARCHITECTURE_VALUE:
+        sequence_ProcessorArchitectureValue(context, (ProcessorArchitectureValue) semanticObject);
+        return;
+      case UtilPackage.PROCESSOR_RESOUCE_TYPE:
+        sequence_ProcessorResouceType(context, (ProcessorResouceType) semanticObject);
+        return;
+      case UtilPackage.PROPERTY:
+        sequence_Property(context, (Property) semanticObject);
+        return;
+      case UtilPackage.PROPERTY_ATTRIBUTE:
+        sequence_PropertyAttribute(context, (PropertyAttribute) semanticObject);
+        return;
+      case UtilPackage.PROPERTY_MAXIMUN:
+        sequence_PropertyMaximun(context, (PropertyMaximun) semanticObject);
+        return;
+      case UtilPackage.PROPERTY_MINIMUM:
+        sequence_PropertyMinimum(context, (PropertyMinimum) semanticObject);
+        return;
+      case UtilPackage.PROPERTY_RANGE:
+        sequence_PropertyRange(context, (PropertyRange) semanticObject);
+        return;
+      case UtilPackage.PROPERTY_SELECTION:
+        sequence_PropertySelection(context, (PropertySelection) semanticObject);
+        return;
+      case UtilPackage.PROPERTY_VALUE_DOUBLE:
+        sequence_PropertyValueDouble(context, (PropertyValueDouble) semanticObject);
+        return;
+      case UtilPackage.PROPERTY_VALUE_INT:
+        sequence_PropertyValueInt(context, (PropertyValueInt) semanticObject);
+        return;
+      case UtilPackage.PROPERTY_VALUE_LIST:
+        sequence_PropertyValueList(context, (PropertyValueList) semanticObject);
+        return;
+      case UtilPackage.PROPERTY_VALUE_STRING:
+        sequence_PropertyValueString(context, (PropertyValueString) semanticObject);
+        return;
+      case UtilPackage.RANGE_KIND:
+        sequence_RangeKind(context, (RangeKind) semanticObject);
+        return;
+      case UtilPackage.RESOURCE:
+        sequence_Resource(context, (Resource) semanticObject);
+        return;
+      case UtilPackage.RESOURCE_TYPE:
+        sequence_ResourceType(context, (ResourceType) semanticObject);
+        return;
+      case UtilPackage.SELECTION_KIND:
+        sequence_SelectionKind(context, (SelectionKind) semanticObject);
+        return;
+      case UtilPackage.UBUNTU_VERSION_VALUE:
+        sequence_UbuntuVersionValue(context, (UbuntuVersionValue) semanticObject);
+        return;
+      case UtilPackage.USB_COMMUNICATION_TYPE:
+        sequence_UsbCommunicationType(context, (UsbCommunicationType) semanticObject);
+        return;
+      case UtilPackage.VERSION_OPERATING_SYSTEM_PROPERTY:
+        sequence_VersionOperatingSystemProperty(context, (VersionOperatingSystemProperty) semanticObject);
+        return;
+      case UtilPackage.WLAN_COMMUNICATION_TYPE:
+        sequence_WlanCommunicationType(context, (WlanCommunicationType) semanticObject);
+        return;
+      }
+    if (errorAcceptor != null)
+      errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
+  }
+
+  /**
+   * <pre>
+   * Contexts:
+   *     ExecutionRequirement returns DeviceRequirement
+   *     DeviceRequirement returns DeviceRequirement
+   *
+   * Constraint:
+   *     (type=EString parameter+=HWSWParemeter*)
+   * </pre>
+   */
+  protected void sequence_DeviceRequirement(ISerializationContext context, DeviceRequirement semanticObject) {
+    genericSequencer.createSequence(context, semanticObject);
+  }
+
+
+  /**
+   * <pre>
+   * Contexts:
+   *     RepositoryType returns GitRepositoryType
+   *     GitRepositoryType returns GitRepositoryType
+   *
+   * Constraint:
+   *     {GitRepositoryType}
+   * </pre>
+   */
+  protected void sequence_GitRepositoryType(ISerializationContext context, GitRepositoryType semanticObject) {
+    genericSequencer.createSequence(context, semanticObject);
+  }
+
+
+  /**
+   * <pre>
+   * Contexts:
+   *     ExecutionParameter returns HWSWParemeter
+   *     HWSWParemeter returns HWSWParemeter
+   *
+   * Constraint:
+   *     (name=EString kind=AttributeKind description=EString? (value+=PropertyValue value+=PropertyValue*)?)
+   * </pre>
+   */
+  protected void sequence_HWSWParemeter(ISerializationContext context, HWSWParemeter semanticObject) {
+    genericSequencer.createSequence(context, semanticObject);
+  }
+
+
+  /**
+   * <pre>
+   * Contexts:
+   *     ImplementationDescriptionSet returns ImplementationDescriptionSet
+   *
+   * Constraint:
+   *     (implementations+=ImplementationDescription implementations+=ImplementationDescription*)
+   * </pre>
+   */
+  protected void sequence_ImplementationDescriptionSet(ISerializationContext context, ImplementationDescriptionSet semanticObject) {
+    genericSequencer.createSequence(context, semanticObject);
+  }
+
+
+  /**
+   * <pre>
+   * Contexts:
+   *     ImplementationDescription returns ImplementationDescription
+   *
+   * Constraint:
+   *     (name=EString includeSoftwareComponents+=SoftwareComponent+)
+   * </pre>
+   */
+  protected void sequence_ImplementationDescription(ISerializationContext context, ImplementationDescription semanticObject) {
+    genericSequencer.createSequence(context, semanticObject);
+  }
+
+
+  /**
+   * <pre>
+   * Contexts:
+   *     Repository returns Repository
+   *
+   * Constraint:
+   *     (type=RepositoryType url=EString version=EString)
+   * </pre>
+   */
+  protected void sequence_Repository(ISerializationContext context, Repository semanticObject) {
+    if (errorAcceptor != null) {
+      if (transientValues.isValueTransient(semanticObject, ImplementationDescriptionPackage.Literals.REPOSITORY__TYPE) == ValueTransient.YES)
+        errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ImplementationDescriptionPackage.Literals.REPOSITORY__TYPE));
+      if (transientValues.isValueTransient(semanticObject, ImplementationDescriptionPackage.Literals.REPOSITORY__URL) == ValueTransient.YES)
+        errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ImplementationDescriptionPackage.Literals.REPOSITORY__URL));
+      if (transientValues.isValueTransient(semanticObject, ImplementationDescriptionPackage.Literals.REPOSITORY__VERSION) == ValueTransient.YES)
+        errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ImplementationDescriptionPackage.Literals.REPOSITORY__VERSION));
     }
-
-    /**
-     * <pre>
-     * Contexts:
-     *     ExecutionRequirement returns DeviceRequirement
-     *     DeviceRequirement returns DeviceRequirement
-     *
-     * Constraint:
-     *     (type=EString parameter+=HWSWParemeter*)
-     * </pre>
-     */
-    protected void sequence_DeviceRequirement(ISerializationContext context, DeviceRequirement semanticObject) {
-        genericSequencer.createSequence(context, semanticObject);
-    }
+    SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+    feeder.accept(grammarAccess.getRepositoryAccess().getTypeRepositoryTypeParserRuleCall_1_0(), semanticObject.getType());
+    feeder.accept(grammarAccess.getRepositoryAccess().getUrlEStringParserRuleCall_3_0(), semanticObject.getUrl());
+    feeder.accept(grammarAccess.getRepositoryAccess().getVersionEStringParserRuleCall_5_0(), semanticObject.getVersion());
+    feeder.finish();
+  }
 
 
-    /**
-     * <pre>
-     * Contexts:
-     *     RepositoryType returns GitRepositoryType
-     *     GitRepositoryType returns GitRepositoryType
-     *
-     * Constraint:
-     *     {GitRepositoryType}
-     * </pre>
-     */
-    protected void sequence_GitRepositoryType(ISerializationContext context, GitRepositoryType semanticObject) {
-        genericSequencer.createSequence(context, semanticObject);
-    }
+  /**
+   * <pre>
+   * Contexts:
+   *     SoftwareComponent returns SoftwareComponent
+   *
+   * Constraint:
+   *     (name=EString repository=Repository executionRequirement+=ExecutionRequirement*)
+   * </pre>
+   */
+  protected void sequence_SoftwareComponent(ISerializationContext context, SoftwareComponent semanticObject) {
+    genericSequencer.createSequence(context, semanticObject);
+  }
 
 
-    /**
-     * <pre>
-     * Contexts:
-     *     ExecutionParameter returns HWSWParemeter
-     *     HWSWParemeter returns HWSWParemeter
-     *
-     * Constraint:
-     *     (name=EString kind=AttributeKind description=EString? (value+=PropertyValue value+=PropertyValue*)?)
-     * </pre>
-     */
-    protected void sequence_HWSWParemeter(ISerializationContext context, HWSWParemeter semanticObject) {
-        genericSequencer.createSequence(context, semanticObject);
-    }
+  /**
+   * <pre>
+   * Contexts:
+   *     ExecutionRequirement returns SoftwareConfigurationRequirement
+   *     SoftwareConfigurationRequirement returns SoftwareConfigurationRequirement
+   *
+   * Constraint:
+   *     parameter+=SoftwareExecutionParemeter+
+   * </pre>
+   */
+  protected void sequence_SoftwareConfigurationRequirement(ISerializationContext context, SoftwareConfigurationRequirement semanticObject) {
+    genericSequencer.createSequence(context, semanticObject);
+  }
 
 
-    /**
-     * <pre>
-     * Contexts:
-     *     ImplementationDescriptionSet returns ImplementationDescriptionSet
-     *
-     * Constraint:
-     *     (implementations+=ImplementationDescription implementations+=ImplementationDescription*)
-     * </pre>
-     */
-    protected void sequence_ImplementationDescriptionSet(ISerializationContext context, ImplementationDescriptionSet semanticObject) {
-        genericSequencer.createSequence(context, semanticObject);
-    }
-
-
-    /**
-     * <pre>
-     * Contexts:
-     *     ImplementationDescription returns ImplementationDescription
-     *
-     * Constraint:
-     *     (name=EString includeSoftwareComponents+=SoftwareComponent+)
-     * </pre>
-     */
-    protected void sequence_ImplementationDescription(ISerializationContext context, ImplementationDescription semanticObject) {
-        genericSequencer.createSequence(context, semanticObject);
-    }
-
-
-    /**
-     * <pre>
-     * Contexts:
-     *     Repository returns Repository
-     *
-     * Constraint:
-     *     (type=RepositoryType url=EString version=EString)
-     * </pre>
-     */
-    protected void sequence_Repository(ISerializationContext context, Repository semanticObject) {
-        if (errorAcceptor != null) {
-            if (transientValues.isValueTransient(semanticObject, ImplementationDescriptionPackage.Literals.REPOSITORY__TYPE) == ValueTransient.YES)
-                errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ImplementationDescriptionPackage.Literals.REPOSITORY__TYPE));
-            if (transientValues.isValueTransient(semanticObject, ImplementationDescriptionPackage.Literals.REPOSITORY__URL) == ValueTransient.YES)
-                errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ImplementationDescriptionPackage.Literals.REPOSITORY__URL));
-            if (transientValues.isValueTransient(semanticObject, ImplementationDescriptionPackage.Literals.REPOSITORY__VERSION) == ValueTransient.YES)
-                errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ImplementationDescriptionPackage.Literals.REPOSITORY__VERSION));
-        }
-        SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-        feeder.accept(grammarAccess.getRepositoryAccess().getTypeRepositoryTypeParserRuleCall_1_0(), semanticObject.getType());
-        feeder.accept(grammarAccess.getRepositoryAccess().getUrlEStringParserRuleCall_3_0(), semanticObject.getUrl());
-        feeder.accept(grammarAccess.getRepositoryAccess().getVersionEStringParserRuleCall_5_0(), semanticObject.getVersion());
-        feeder.finish();
-    }
-
-
-    /**
-     * <pre>
-     * Contexts:
-     *     SoftwareComponent returns SoftwareComponent
-     *
-     * Constraint:
-     *     (name=EString repository=Repository executionRequirement+=ExecutionRequirement*)
-     * </pre>
-     */
-    protected void sequence_SoftwareComponent(ISerializationContext context, SoftwareComponent semanticObject) {
-        genericSequencer.createSequence(context, semanticObject);
-    }
-
-
-    /**
-     * <pre>
-     * Contexts:
-     *     ExecutionRequirement returns SoftwareConfigurationRequirement
-     *     SoftwareConfigurationRequirement returns SoftwareConfigurationRequirement
-     *
-     * Constraint:
-     *     parameter+=SoftwareExecutionParemeter+
-     * </pre>
-     */
-    protected void sequence_SoftwareConfigurationRequirement(ISerializationContext context, SoftwareConfigurationRequirement semanticObject) {
-        genericSequencer.createSequence(context, semanticObject);
-    }
-
-
-    /**
-     * <pre>
-     * Contexts:
-     *     ExecutionParameter returns SoftwareExecutionParemeter
-     *     SoftwareExecutionParemeter returns SoftwareExecutionParemeter
-     *
-     * Constraint:
-     *     (name=EString kind=AttributeKind description=EString? (value+=PropertyValue value+=PropertyValue*)?)
-     * </pre>
-     */
-    protected void sequence_SoftwareExecutionParemeter(ISerializationContext context, SoftwareExecutionParemeter semanticObject) {
-        genericSequencer.createSequence(context, semanticObject);
-    }
+  /**
+   * <pre>
+   * Contexts:
+   *     ExecutionParameter returns SoftwareExecutionParemeter
+   *     SoftwareExecutionParemeter returns SoftwareExecutionParemeter
+   *
+   * Constraint:
+   *     (name=EString kind=AttributeKind description=EString? (value+=PropertyValue value+=PropertyValue*)?)
+   * </pre>
+   */
+  protected void sequence_SoftwareExecutionParemeter(ISerializationContext context, SoftwareExecutionParemeter semanticObject) {
+    genericSequencer.createSequence(context, semanticObject);
+  }
 
 
 }

@@ -9,9 +9,9 @@ import org.eclipse.xtext.testing.IInjectorProvider;
 
 public class ImplementationDescriptionUiInjectorProvider implements IInjectorProvider {
 
-    @Override
-    public Injector getInjector() {
-        return XtextActivator.getInstance().getInjector("de.fraunhofer.ipa.deployment.ImplementationDescription");
-    }
+  @Override
+  public Injector getInjector() {
+    return XtextActivator.getInstance().getInjector("de.fraunhofer.ipa.deployment.ImplementationDescription");
+  }
 
 }

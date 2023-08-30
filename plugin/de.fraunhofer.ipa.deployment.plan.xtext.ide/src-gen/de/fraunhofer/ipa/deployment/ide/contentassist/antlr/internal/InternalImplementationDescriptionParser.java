@@ -95,66 +95,66 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     public String getGrammarFileName() { return "InternalImplementationDescriptionParser.g"; }
 
 
-        private ImplementationDescriptionGrammarAccess grammarAccess;
-        private final Map<String, String> tokenNameToValue = new HashMap<String, String>();
+      private ImplementationDescriptionGrammarAccess grammarAccess;
+      private final Map<String, String> tokenNameToValue = new HashMap<String, String>();
 
-        {
-            tokenNameToValue.put("HyphenMinus", "'-'");
-            tokenNameToValue.put("HyphenMinusHyphenMinusHyphenMinus", "'---'");
-            tokenNameToValue.put("Usb", "'Usb'");
-            tokenNameToValue.put("Git", "'git'");
-            tokenNameToValue.put("X86", "'x86'");
-            tokenNameToValue.put("Wlan", "'Wlan'");
-            tokenNameToValue.put("Url", "'url:'");
-            tokenNameToValue.put("Arm64", "'arm64'");
-            tokenNameToValue.put("Focal", "'focal'");
-            tokenNameToValue.put("Jammy", "'jammy'");
-            tokenNameToValue.put("Kind", "'kind:'");
-            tokenNameToValue.put("Name", "'name:'");
-            tokenNameToValue.put("Type", "'type:'");
-            tokenNameToValue.put("Debian", "'debian'");
-            tokenNameToValue.put("Ubuntu", "'ubuntu'");
-            tokenNameToValue.put("Value", "'value:'");
-            tokenNameToValue.put("Os_name", "'os_name'");
-            tokenNameToValue.put("Ethernet", "'Ethernet'");
-            tokenNameToValue.put("Version", "'version:'");
-            tokenNameToValue.put("Processor", "'Processor'");
-            tokenNameToValue.put("RangeKind", "'RangeKind'");
-            tokenNameToValue.put("Container", "'container'");
-            tokenNameToValue.put("Os_version", "'os_version'");
-            tokenNameToValue.put("MaximumKind", "'MaximumKind'");
-            tokenNameToValue.put("MinimumKind", "'MinimumKind'");
-            tokenNameToValue.put("Properties", "'properties:'");
-            tokenNameToValue.put("Repository", "'repository:'");
-            tokenNameToValue.put("Description", "'description:'");
-            tokenNameToValue.put("AttributeKind", "'AttributeKind'");
-            tokenNameToValue.put("SelectionKind", "'SelectionKind'");
-            tokenNameToValue.put("HWSWParemeter", "'HWSWParemeter:'");
-            tokenNameToValue.put("DeviceRequirement", "'deviceRequirement:'");
-            tokenNameToValue.put("LinuxOpertingSystem", "'LinuxOpertingSystem'");
-            tokenNameToValue.put("MacOSOpertingSystem", "'MacOSOpertingSystem'");
-            tokenNameToValue.put("ExecutionRequirement", "'executionRequirement:'");
-            tokenNameToValue.put("IncludeSoftwareComponent", "'includeSoftwareComponent:'");
-            tokenNameToValue.put("ImplementationDescription", "'ImplementationDescription:'");
-            tokenNameToValue.put("SoftwareConfigurationParameter", "'softwareConfigurationParameter:'");
-        }
+      {
+        tokenNameToValue.put("HyphenMinus", "'-'");
+        tokenNameToValue.put("HyphenMinusHyphenMinusHyphenMinus", "'---'");
+        tokenNameToValue.put("Usb", "'Usb'");
+        tokenNameToValue.put("Git", "'git'");
+        tokenNameToValue.put("X86", "'x86'");
+        tokenNameToValue.put("Wlan", "'Wlan'");
+        tokenNameToValue.put("Url", "'url:'");
+        tokenNameToValue.put("Arm64", "'arm64'");
+        tokenNameToValue.put("Focal", "'focal'");
+        tokenNameToValue.put("Jammy", "'jammy'");
+        tokenNameToValue.put("Kind", "'kind:'");
+        tokenNameToValue.put("Name", "'name:'");
+        tokenNameToValue.put("Type", "'type:'");
+        tokenNameToValue.put("Debian", "'debian'");
+        tokenNameToValue.put("Ubuntu", "'ubuntu'");
+        tokenNameToValue.put("Value", "'value:'");
+        tokenNameToValue.put("Os_name", "'os_name'");
+        tokenNameToValue.put("Ethernet", "'Ethernet'");
+        tokenNameToValue.put("Version", "'version:'");
+        tokenNameToValue.put("Processor", "'Processor'");
+        tokenNameToValue.put("RangeKind", "'RangeKind'");
+        tokenNameToValue.put("Container", "'container'");
+        tokenNameToValue.put("Os_version", "'os_version'");
+        tokenNameToValue.put("MaximumKind", "'MaximumKind'");
+        tokenNameToValue.put("MinimumKind", "'MinimumKind'");
+        tokenNameToValue.put("Properties", "'properties:'");
+        tokenNameToValue.put("Repository", "'repository:'");
+        tokenNameToValue.put("Description", "'description:'");
+        tokenNameToValue.put("AttributeKind", "'AttributeKind'");
+        tokenNameToValue.put("SelectionKind", "'SelectionKind'");
+        tokenNameToValue.put("HWSWParemeter", "'HWSWParemeter:'");
+        tokenNameToValue.put("DeviceRequirement", "'deviceRequirement:'");
+        tokenNameToValue.put("LinuxOpertingSystem", "'LinuxOpertingSystem'");
+        tokenNameToValue.put("MacOSOpertingSystem", "'MacOSOpertingSystem'");
+        tokenNameToValue.put("ExecutionRequirement", "'executionRequirement:'");
+        tokenNameToValue.put("IncludeSoftwareComponent", "'includeSoftwareComponent:'");
+        tokenNameToValue.put("ImplementationDescription", "'ImplementationDescription:'");
+        tokenNameToValue.put("SoftwareConfigurationParameter", "'softwareConfigurationParameter:'");
+      }
 
-        public void setGrammarAccess(ImplementationDescriptionGrammarAccess grammarAccess) {
-            this.grammarAccess = grammarAccess;
-        }
+      public void setGrammarAccess(ImplementationDescriptionGrammarAccess grammarAccess) {
+        this.grammarAccess = grammarAccess;
+      }
 
-        @Override
-        protected Grammar getGrammar() {
-            return grammarAccess.getGrammar();
-        }
+      @Override
+      protected Grammar getGrammar() {
+        return grammarAccess.getGrammar();
+      }
 
-        @Override
-        protected String getValueForTokenName(String tokenName) {
-            String result = tokenNameToValue.get(tokenName);
-            if (result == null)
-                result = tokenName;
-            return result;
-        }
+      @Override
+      protected String getValueForTokenName(String tokenName) {
+        String result = tokenNameToValue.get(tokenName);
+        if (result == null)
+          result = tokenName;
+        return result;
+      }
 
 
 
@@ -192,7 +192,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:102:1: ruleImplementationDescriptionSet : ( ( rule__ImplementationDescriptionSet__Group__0 ) ) ;
     public final void ruleImplementationDescriptionSet() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:106:2: ( ( ( rule__ImplementationDescriptionSet__Group__0 ) ) )
@@ -227,7 +227,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -269,7 +269,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:127:1: ruleImplementationDescription : ( ( rule__ImplementationDescription__Group__0 ) ) ;
     public final void ruleImplementationDescription() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:131:2: ( ( ( rule__ImplementationDescription__Group__0 ) ) )
@@ -304,7 +304,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -346,7 +346,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:152:1: ruleExecutionRequirement : ( ( rule__ExecutionRequirement__Alternatives ) ) ;
     public final void ruleExecutionRequirement() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:156:2: ( ( ( rule__ExecutionRequirement__Alternatives ) ) )
@@ -381,7 +381,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -423,7 +423,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:177:1: ruleSoftwareComponent : ( ( rule__SoftwareComponent__Group__0 ) ) ;
     public final void ruleSoftwareComponent() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:181:2: ( ( ( rule__SoftwareComponent__Group__0 ) ) )
@@ -458,7 +458,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -500,7 +500,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:202:1: ruleRepository : ( ( rule__Repository__Group__0 ) ) ;
     public final void ruleRepository() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:206:2: ( ( ( rule__Repository__Group__0 ) ) )
@@ -535,7 +535,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -577,7 +577,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:227:1: ruleRepositoryType : ( ruleGitRepositoryType ) ;
     public final void ruleRepositoryType() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:231:2: ( ( ruleGitRepositoryType ) )
@@ -606,7 +606,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -648,7 +648,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:252:1: ruleGitRepositoryType : ( ( rule__GitRepositoryType__Group__0 ) ) ;
     public final void ruleGitRepositoryType() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:256:2: ( ( ( rule__GitRepositoryType__Group__0 ) ) )
@@ -683,7 +683,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -725,7 +725,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:277:1: ruleDeviceRequirement : ( ( rule__DeviceRequirement__Group__0 ) ) ;
     public final void ruleDeviceRequirement() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:281:2: ( ( ( rule__DeviceRequirement__Group__0 ) ) )
@@ -760,7 +760,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -802,7 +802,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:302:1: ruleSoftwareConfigurationRequirement : ( ( rule__SoftwareConfigurationRequirement__Group__0 ) ) ;
     public final void ruleSoftwareConfigurationRequirement() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:306:2: ( ( ( rule__SoftwareConfigurationRequirement__Group__0 ) ) )
@@ -837,7 +837,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -879,7 +879,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:327:1: ruleHWSWParemeter : ( ( rule__HWSWParemeter__Group__0 ) ) ;
     public final void ruleHWSWParemeter() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:331:2: ( ( ( rule__HWSWParemeter__Group__0 ) ) )
@@ -914,7 +914,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -956,7 +956,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:352:1: ruleSoftwareExecutionParemeter : ( ( rule__SoftwareExecutionParemeter__Group__0 ) ) ;
     public final void ruleSoftwareExecutionParemeter() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:356:2: ( ( ( rule__SoftwareExecutionParemeter__Group__0 ) ) )
@@ -991,7 +991,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -1033,7 +1033,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:377:1: ruleAbstractOperatingSystemProperty : ( ( rule__AbstractOperatingSystemProperty__Alternatives ) ) ;
     public final void ruleAbstractOperatingSystemProperty() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:381:2: ( ( ( rule__AbstractOperatingSystemProperty__Alternatives ) ) )
@@ -1068,7 +1068,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -1110,7 +1110,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:402:1: ruleNameOperatingSystemProperty : ( ( rule__NameOperatingSystemProperty__Group__0 ) ) ;
     public final void ruleNameOperatingSystemProperty() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:406:2: ( ( ( rule__NameOperatingSystemProperty__Group__0 ) ) )
@@ -1145,7 +1145,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -1187,7 +1187,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:427:1: ruleVersionOperatingSystemProperty : ( ( rule__VersionOperatingSystemProperty__Group__0 ) ) ;
     public final void ruleVersionOperatingSystemProperty() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:431:2: ( ( ( rule__VersionOperatingSystemProperty__Group__0 ) ) )
@@ -1222,7 +1222,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -1264,7 +1264,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:452:1: ruleAbstractProperty : ( ( rule__AbstractProperty__Alternatives ) ) ;
     public final void ruleAbstractProperty() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:456:2: ( ( ( rule__AbstractProperty__Alternatives ) ) )
@@ -1299,7 +1299,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -1341,7 +1341,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:477:1: rulePropertyKind : ( ( rule__PropertyKind__Alternatives ) ) ;
     public final void rulePropertyKind() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:481:2: ( ( ( rule__PropertyKind__Alternatives ) ) )
@@ -1376,7 +1376,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -1418,7 +1418,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:502:1: rulePropertyAttribute : ( ( rule__PropertyAttribute__Group__0 ) ) ;
     public final void rulePropertyAttribute() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:506:2: ( ( ( rule__PropertyAttribute__Group__0 ) ) )
@@ -1453,7 +1453,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -1495,7 +1495,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:527:1: rulePropertyMaximun : ( ( rule__PropertyMaximun__Group__0 ) ) ;
     public final void rulePropertyMaximun() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:531:2: ( ( ( rule__PropertyMaximun__Group__0 ) ) )
@@ -1530,7 +1530,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -1572,7 +1572,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:552:1: rulePropertyMinimum : ( ( rule__PropertyMinimum__Group__0 ) ) ;
     public final void rulePropertyMinimum() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:556:2: ( ( ( rule__PropertyMinimum__Group__0 ) ) )
@@ -1607,7 +1607,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -1649,7 +1649,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:577:1: rulePropertySelection : ( ( rule__PropertySelection__Group__0 ) ) ;
     public final void rulePropertySelection() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:581:2: ( ( ( rule__PropertySelection__Group__0 ) ) )
@@ -1684,7 +1684,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -1726,7 +1726,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:602:1: rulePropertyRange : ( ( rule__PropertyRange__Group__0 ) ) ;
     public final void rulePropertyRange() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:606:2: ( ( ( rule__PropertyRange__Group__0 ) ) )
@@ -1761,7 +1761,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -1803,7 +1803,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:627:1: rulePropertyValue : ( ( rule__PropertyValue__Alternatives ) ) ;
     public final void rulePropertyValue() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:631:2: ( ( ( rule__PropertyValue__Alternatives ) ) )
@@ -1838,7 +1838,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -1880,7 +1880,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:652:1: rulePropertyValueInt : ( ( rule__PropertyValueInt__ValueAssignment ) ) ;
     public final void rulePropertyValueInt() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:656:2: ( ( ( rule__PropertyValueInt__ValueAssignment ) ) )
@@ -1915,7 +1915,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -1957,7 +1957,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:677:1: rulePropertyValueDouble : ( ( rule__PropertyValueDouble__ValueAssignment ) ) ;
     public final void rulePropertyValueDouble() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:681:2: ( ( ( rule__PropertyValueDouble__ValueAssignment ) ) )
@@ -1992,7 +1992,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -2034,7 +2034,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:702:1: rulePropertyValueString : ( ( rule__PropertyValueString__ValueAssignment ) ) ;
     public final void rulePropertyValueString() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:706:2: ( ( ( rule__PropertyValueString__ValueAssignment ) ) )
@@ -2069,7 +2069,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -2111,7 +2111,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:727:1: rulePropertyValueList : ( ( rule__PropertyValueList__Group__0 ) ) ;
     public final void rulePropertyValueList() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:731:2: ( ( ( rule__PropertyValueList__Group__0 ) ) )
@@ -2146,7 +2146,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -2188,7 +2188,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:752:1: ruleProcessorArchitectureValue : ( ( rule__ProcessorArchitectureValue__ValueAssignment ) ) ;
     public final void ruleProcessorArchitectureValue() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:756:2: ( ( ( rule__ProcessorArchitectureValue__ValueAssignment ) ) )
@@ -2223,7 +2223,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -2265,7 +2265,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:777:1: ruleAbstractResouceType : ( ruleResourceType ) ;
     public final void ruleAbstractResouceType() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:781:2: ( ( ruleResourceType ) )
@@ -2294,7 +2294,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -2336,7 +2336,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:802:1: ruleOpertingSystemResouceType : ( ( rule__OpertingSystemResouceType__Alternatives ) ) ;
     public final void ruleOpertingSystemResouceType() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:806:2: ( ( ( rule__OpertingSystemResouceType__Alternatives ) ) )
@@ -2371,7 +2371,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -2413,7 +2413,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:827:1: ruleResourceType : ( ( rule__ResourceType__Group__0 ) ) ;
     public final void ruleResourceType() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:831:2: ( ( ( rule__ResourceType__Group__0 ) ) )
@@ -2448,7 +2448,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -2490,7 +2490,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:852:1: ruleLinuxOpertingSystem : ( ( rule__LinuxOpertingSystem__Group__0 ) ) ;
     public final void ruleLinuxOpertingSystem() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:856:2: ( ( ( rule__LinuxOpertingSystem__Group__0 ) ) )
@@ -2525,7 +2525,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -2567,7 +2567,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:877:1: ruleMacOSOpertingSystem : ( ( rule__MacOSOpertingSystem__Group__0 ) ) ;
     public final void ruleMacOSOpertingSystem() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:881:2: ( ( ( rule__MacOSOpertingSystem__Group__0 ) ) )
@@ -2602,7 +2602,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -2644,7 +2644,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:902:1: ruleCommunicationType : ( ( rule__CommunicationType__Group__0 ) ) ;
     public final void ruleCommunicationType() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:906:2: ( ( ( rule__CommunicationType__Group__0 ) ) )
@@ -2679,7 +2679,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -2721,7 +2721,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:927:1: ruleNetworkCommunicationType : ( ( rule__NetworkCommunicationType__Alternatives ) ) ;
     public final void ruleNetworkCommunicationType() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:931:2: ( ( ( rule__NetworkCommunicationType__Alternatives ) ) )
@@ -2756,7 +2756,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -2798,7 +2798,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:952:1: ruleEthernetCommunicationType : ( ( rule__EthernetCommunicationType__Group__0 ) ) ;
     public final void ruleEthernetCommunicationType() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:956:2: ( ( ( rule__EthernetCommunicationType__Group__0 ) ) )
@@ -2833,7 +2833,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -2875,7 +2875,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:977:1: ruleWlanCommunicationType : ( ( rule__WlanCommunicationType__Group__0 ) ) ;
     public final void ruleWlanCommunicationType() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:981:2: ( ( ( rule__WlanCommunicationType__Group__0 ) ) )
@@ -2910,7 +2910,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -2952,7 +2952,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:1002:1: ruleAttributeKind : ( ( rule__AttributeKind__Group__0 ) ) ;
     public final void ruleAttributeKind() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:1006:2: ( ( ( rule__AttributeKind__Group__0 ) ) )
@@ -2987,7 +2987,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -3029,7 +3029,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:1027:1: ruleMaximumKind : ( ( rule__MaximumKind__Group__0 ) ) ;
     public final void ruleMaximumKind() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:1031:2: ( ( ( rule__MaximumKind__Group__0 ) ) )
@@ -3064,7 +3064,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -3106,7 +3106,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:1052:1: ruleMinimumKind : ( ( rule__MinimumKind__Group__0 ) ) ;
     public final void ruleMinimumKind() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:1056:2: ( ( ( rule__MinimumKind__Group__0 ) ) )
@@ -3141,7 +3141,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -3183,7 +3183,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:1077:1: ruleSelectionKind : ( ( rule__SelectionKind__Group__0 ) ) ;
     public final void ruleSelectionKind() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:1081:2: ( ( ( rule__SelectionKind__Group__0 ) ) )
@@ -3218,7 +3218,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -3260,7 +3260,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:1102:1: ruleRangeKind : ( ( rule__RangeKind__Group__0 ) ) ;
     public final void ruleRangeKind() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:1106:2: ( ( ( rule__RangeKind__Group__0 ) ) )
@@ -3295,7 +3295,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -3337,7 +3337,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:1127:1: ruleLinuxDistributionValue : ( ( rule__LinuxDistributionValue__Group__0 ) ) ;
     public final void ruleLinuxDistributionValue() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:1131:2: ( ( ( rule__LinuxDistributionValue__Group__0 ) ) )
@@ -3372,7 +3372,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -3414,7 +3414,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:1152:1: ruleUbuntuVersionValue : ( ( rule__UbuntuVersionValue__Group__0 ) ) ;
     public final void ruleUbuntuVersionValue() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:1156:2: ( ( ( rule__UbuntuVersionValue__Group__0 ) ) )
@@ -3449,7 +3449,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -3491,7 +3491,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:1177:1: ruleDouble0 : ( RULE_DOUBLE ) ;
     public final void ruleDouble0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:1181:2: ( ( RULE_DOUBLE ) )
@@ -3516,7 +3516,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -3558,7 +3558,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:1202:1: ruleInteger0 : ( RULE_DECINT ) ;
     public final void ruleInteger0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:1206:2: ( ( RULE_DECINT ) )
@@ -3583,7 +3583,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -3625,7 +3625,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:1227:1: ruleEString : ( ( rule__EString__Alternatives ) ) ;
     public final void ruleEString() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:1231:2: ( ( ( rule__EString__Alternatives ) ) )
@@ -3660,7 +3660,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -3672,7 +3672,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:1243:1: entryRulePreListElement : rulePreListElement EOF ;
     public final void entryRulePreListElement() throws RecognitionException {
 
-            HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_SL_COMMENT");
+          HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_SL_COMMENT");
 
         try {
             // InternalImplementationDescriptionParser.g:1247:1: ( rulePreListElement EOF )
@@ -3696,7 +3696,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                myHiddenTokenState.restore();
+              myHiddenTokenState.restore();
 
         }
         return ;
@@ -3708,8 +3708,8 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:1258:1: rulePreListElement : ( HyphenMinus ) ;
     public final void rulePreListElement() throws RecognitionException {
 
-                HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_SL_COMMENT");
-                int stackSize = keepStackSize();
+            HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_SL_COMMENT");
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:1263:2: ( ( HyphenMinus ) )
@@ -3734,8 +3734,8 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
-                myHiddenTokenState.restore();
+              restoreStackSize(stackSize);
+              myHiddenTokenState.restore();
 
         }
         return ;
@@ -3747,7 +3747,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:1276:1: ruleProcessorArchitectureType : ( ( rule__ProcessorArchitectureType__Alternatives ) ) ;
     public final void ruleProcessorArchitectureType() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:1280:1: ( ( ( rule__ProcessorArchitectureType__Alternatives ) ) )
@@ -3782,7 +3782,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -3794,7 +3794,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:1292:1: ruleLinuxDistribution : ( ( rule__LinuxDistribution__Alternatives ) ) ;
     public final void ruleLinuxDistribution() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:1296:1: ( ( ( rule__LinuxDistribution__Alternatives ) ) )
@@ -3829,7 +3829,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -3841,7 +3841,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:1308:1: ruleUbuntuVersion : ( ( rule__UbuntuVersion__Alternatives ) ) ;
     public final void ruleUbuntuVersion() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:1312:1: ( ( ( rule__UbuntuVersion__Alternatives ) ) )
@@ -3876,7 +3876,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -3888,7 +3888,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:1323:1: rule__ExecutionRequirement__Alternatives : ( ( ruleDeviceRequirement ) | ( ruleSoftwareConfigurationRequirement ) );
     public final void rule__ExecutionRequirement__Alternatives() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:1327:1: ( ( ruleDeviceRequirement ) | ( ruleSoftwareConfigurationRequirement ) )
@@ -3955,7 +3955,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -3967,7 +3967,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:1344:1: rule__AbstractOperatingSystemProperty__Alternatives : ( ( ruleNameOperatingSystemProperty ) | ( ruleVersionOperatingSystemProperty ) );
     public final void rule__AbstractOperatingSystemProperty__Alternatives() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:1348:1: ( ( ruleNameOperatingSystemProperty ) | ( ruleVersionOperatingSystemProperty ) )
@@ -4054,7 +4054,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -4066,7 +4066,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:1365:1: rule__AbstractProperty__Alternatives : ( ( rulePropertyAttribute ) | ( rulePropertyMaximun ) | ( rulePropertyMinimum ) | ( rulePropertySelection ) | ( rulePropertyRange ) );
     public final void rule__AbstractProperty__Alternatives() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:1369:1: ( ( rulePropertyAttribute ) | ( rulePropertyMaximun ) | ( rulePropertyMinimum ) | ( rulePropertySelection ) | ( rulePropertyRange ) )
@@ -4177,7 +4177,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -4189,7 +4189,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:1404:1: rule__PropertyKind__Alternatives : ( ( ruleAttributeKind ) | ( ruleMaximumKind ) | ( ruleMinimumKind ) | ( ruleRangeKind ) | ( ruleSelectionKind ) );
     public final void rule__PropertyKind__Alternatives() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:1408:1: ( ( ruleAttributeKind ) | ( ruleMaximumKind ) | ( ruleMinimumKind ) | ( ruleRangeKind ) | ( ruleSelectionKind ) )
@@ -4332,7 +4332,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -4344,7 +4344,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:1443:1: rule__PropertyValue__Alternatives : ( ( rulePropertyValueInt ) | ( rulePropertyValueDouble ) | ( rulePropertyValueString ) | ( ruleProcessorArchitectureValue ) | ( ruleLinuxDistributionValue ) | ( ruleUbuntuVersionValue ) | ( rulePropertyValueList ) );
     public final void rule__PropertyValue__Alternatives() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:1447:1: ( ( rulePropertyValueInt ) | ( rulePropertyValueDouble ) | ( rulePropertyValueString ) | ( ruleProcessorArchitectureValue ) | ( ruleLinuxDistributionValue ) | ( ruleUbuntuVersionValue ) | ( rulePropertyValueList ) )
@@ -4539,7 +4539,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -4551,7 +4551,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:1494:1: rule__OpertingSystemResouceType__Alternatives : ( ( ruleLinuxOpertingSystem ) | ( ruleMacOSOpertingSystem ) );
     public final void rule__OpertingSystemResouceType__Alternatives() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:1498:1: ( ( ruleLinuxOpertingSystem ) | ( ruleMacOSOpertingSystem ) )
@@ -4618,7 +4618,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -4630,7 +4630,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:1515:1: rule__NetworkCommunicationType__Alternatives : ( ( ruleEthernetCommunicationType ) | ( ruleWlanCommunicationType ) );
     public final void rule__NetworkCommunicationType__Alternatives() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:1519:1: ( ( ruleEthernetCommunicationType ) | ( ruleWlanCommunicationType ) )
@@ -4697,7 +4697,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -4709,7 +4709,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:1536:1: rule__EString__Alternatives : ( ( RULE_STRING ) | ( RULE_ID ) );
     public final void rule__EString__Alternatives() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:1540:1: ( ( RULE_STRING ) | ( RULE_ID ) )
@@ -4768,7 +4768,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -4780,7 +4780,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:1557:1: rule__ProcessorArchitectureType__Alternatives : ( ( ( X86 ) ) | ( ( Arm64 ) ) );
     public final void rule__ProcessorArchitectureType__Alternatives() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:1561:1: ( ( ( X86 ) ) | ( ( Arm64 ) ) )
@@ -4851,7 +4851,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -4863,7 +4863,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:1578:1: rule__LinuxDistribution__Alternatives : ( ( ( Ubuntu ) ) | ( ( Debian ) ) );
     public final void rule__LinuxDistribution__Alternatives() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:1582:1: ( ( ( Ubuntu ) ) | ( ( Debian ) ) )
@@ -4934,7 +4934,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -4946,7 +4946,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:1599:1: rule__UbuntuVersion__Alternatives : ( ( ( Focal ) ) | ( ( Jammy ) ) );
     public final void rule__UbuntuVersion__Alternatives() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:1603:1: ( ( ( Focal ) ) | ( ( Jammy ) ) )
@@ -5017,7 +5017,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -5029,7 +5029,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:1620:1: rule__ImplementationDescriptionSet__Group__0 : rule__ImplementationDescriptionSet__Group__0__Impl rule__ImplementationDescriptionSet__Group__1 ;
     public final void rule__ImplementationDescriptionSet__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:1624:1: ( rule__ImplementationDescriptionSet__Group__0__Impl rule__ImplementationDescriptionSet__Group__1 )
@@ -5055,7 +5055,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -5067,7 +5067,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:1632:1: rule__ImplementationDescriptionSet__Group__0__Impl : ( ( rule__ImplementationDescriptionSet__ImplementationsAssignment_0 ) ) ;
     public final void rule__ImplementationDescriptionSet__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:1636:1: ( ( ( rule__ImplementationDescriptionSet__ImplementationsAssignment_0 ) ) )
@@ -5102,7 +5102,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -5114,7 +5114,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:1647:1: rule__ImplementationDescriptionSet__Group__1 : rule__ImplementationDescriptionSet__Group__1__Impl ;
     public final void rule__ImplementationDescriptionSet__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:1651:1: ( rule__ImplementationDescriptionSet__Group__1__Impl )
@@ -5135,7 +5135,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -5147,7 +5147,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:1658:1: rule__ImplementationDescriptionSet__Group__1__Impl : ( ( rule__ImplementationDescriptionSet__Group_1__0 )* ) ;
     public final void rule__ImplementationDescriptionSet__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:1662:1: ( ( ( rule__ImplementationDescriptionSet__Group_1__0 )* ) )
@@ -5169,20 +5169,20 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
 
 
                 switch (alt12) {
-                case 1 :
-                    // InternalImplementationDescriptionParser.g:1665:3: rule__ImplementationDescriptionSet__Group_1__0
-                    {
-                    pushFollow(FOLLOW_4);
-                    rule__ImplementationDescriptionSet__Group_1__0();
+              case 1 :
+                  // InternalImplementationDescriptionParser.g:1665:3: rule__ImplementationDescriptionSet__Group_1__0
+                  {
+                  pushFollow(FOLLOW_4);
+                  rule__ImplementationDescriptionSet__Group_1__0();
 
-                    state._fsp--;
+                  state._fsp--;
 
 
-                    }
-                    break;
+                  }
+                  break;
 
-                default :
-                    break loop12;
+              default :
+                  break loop12;
                 }
             } while (true);
 
@@ -5200,7 +5200,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -5212,7 +5212,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:1674:1: rule__ImplementationDescriptionSet__Group_1__0 : rule__ImplementationDescriptionSet__Group_1__0__Impl rule__ImplementationDescriptionSet__Group_1__1 ;
     public final void rule__ImplementationDescriptionSet__Group_1__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:1678:1: ( rule__ImplementationDescriptionSet__Group_1__0__Impl rule__ImplementationDescriptionSet__Group_1__1 )
@@ -5238,7 +5238,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -5250,7 +5250,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:1686:1: rule__ImplementationDescriptionSet__Group_1__0__Impl : ( HyphenMinusHyphenMinusHyphenMinus ) ;
     public final void rule__ImplementationDescriptionSet__Group_1__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:1690:1: ( ( HyphenMinusHyphenMinusHyphenMinus ) )
@@ -5275,7 +5275,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -5287,7 +5287,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:1701:1: rule__ImplementationDescriptionSet__Group_1__1 : rule__ImplementationDescriptionSet__Group_1__1__Impl ;
     public final void rule__ImplementationDescriptionSet__Group_1__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:1705:1: ( rule__ImplementationDescriptionSet__Group_1__1__Impl )
@@ -5308,7 +5308,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -5320,7 +5320,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:1712:1: rule__ImplementationDescriptionSet__Group_1__1__Impl : ( ( rule__ImplementationDescriptionSet__ImplementationsAssignment_1_1 ) ) ;
     public final void rule__ImplementationDescriptionSet__Group_1__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:1716:1: ( ( ( rule__ImplementationDescriptionSet__ImplementationsAssignment_1_1 ) ) )
@@ -5355,7 +5355,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -5367,7 +5367,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:1728:1: rule__ImplementationDescription__Group__0 : rule__ImplementationDescription__Group__0__Impl rule__ImplementationDescription__Group__1 ;
     public final void rule__ImplementationDescription__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:1732:1: ( rule__ImplementationDescription__Group__0__Impl rule__ImplementationDescription__Group__1 )
@@ -5393,7 +5393,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -5405,7 +5405,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:1740:1: rule__ImplementationDescription__Group__0__Impl : ( ImplementationDescription ) ;
     public final void rule__ImplementationDescription__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:1744:1: ( ( ImplementationDescription ) )
@@ -5430,7 +5430,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -5442,7 +5442,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:1755:1: rule__ImplementationDescription__Group__1 : rule__ImplementationDescription__Group__1__Impl rule__ImplementationDescription__Group__2 ;
     public final void rule__ImplementationDescription__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:1759:1: ( rule__ImplementationDescription__Group__1__Impl rule__ImplementationDescription__Group__2 )
@@ -5468,7 +5468,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -5480,7 +5480,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:1767:1: rule__ImplementationDescription__Group__1__Impl : ( RULE_INDENT ) ;
     public final void rule__ImplementationDescription__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:1771:1: ( ( RULE_INDENT ) )
@@ -5505,7 +5505,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -5517,7 +5517,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:1782:1: rule__ImplementationDescription__Group__2 : rule__ImplementationDescription__Group__2__Impl rule__ImplementationDescription__Group__3 ;
     public final void rule__ImplementationDescription__Group__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:1786:1: ( rule__ImplementationDescription__Group__2__Impl rule__ImplementationDescription__Group__3 )
@@ -5543,7 +5543,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -5555,7 +5555,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:1794:1: rule__ImplementationDescription__Group__2__Impl : ( Name ) ;
     public final void rule__ImplementationDescription__Group__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:1798:1: ( ( Name ) )
@@ -5580,7 +5580,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -5592,7 +5592,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:1809:1: rule__ImplementationDescription__Group__3 : rule__ImplementationDescription__Group__3__Impl rule__ImplementationDescription__Group__4 ;
     public final void rule__ImplementationDescription__Group__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:1813:1: ( rule__ImplementationDescription__Group__3__Impl rule__ImplementationDescription__Group__4 )
@@ -5618,7 +5618,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -5630,7 +5630,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:1821:1: rule__ImplementationDescription__Group__3__Impl : ( ( rule__ImplementationDescription__NameAssignment_3 ) ) ;
     public final void rule__ImplementationDescription__Group__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:1825:1: ( ( ( rule__ImplementationDescription__NameAssignment_3 ) ) )
@@ -5665,7 +5665,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -5677,7 +5677,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:1836:1: rule__ImplementationDescription__Group__4 : rule__ImplementationDescription__Group__4__Impl rule__ImplementationDescription__Group__5 ;
     public final void rule__ImplementationDescription__Group__4() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:1840:1: ( rule__ImplementationDescription__Group__4__Impl rule__ImplementationDescription__Group__5 )
@@ -5703,7 +5703,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -5715,7 +5715,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:1848:1: rule__ImplementationDescription__Group__4__Impl : ( IncludeSoftwareComponent ) ;
     public final void rule__ImplementationDescription__Group__4__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:1852:1: ( ( IncludeSoftwareComponent ) )
@@ -5740,7 +5740,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -5752,7 +5752,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:1863:1: rule__ImplementationDescription__Group__5 : rule__ImplementationDescription__Group__5__Impl rule__ImplementationDescription__Group__6 ;
     public final void rule__ImplementationDescription__Group__5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:1867:1: ( rule__ImplementationDescription__Group__5__Impl rule__ImplementationDescription__Group__6 )
@@ -5778,7 +5778,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -5790,7 +5790,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:1875:1: rule__ImplementationDescription__Group__5__Impl : ( RULE_INDENT ) ;
     public final void rule__ImplementationDescription__Group__5__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:1879:1: ( ( RULE_INDENT ) )
@@ -5815,7 +5815,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -5827,7 +5827,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:1890:1: rule__ImplementationDescription__Group__6 : rule__ImplementationDescription__Group__6__Impl rule__ImplementationDescription__Group__7 ;
     public final void rule__ImplementationDescription__Group__6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:1894:1: ( rule__ImplementationDescription__Group__6__Impl rule__ImplementationDescription__Group__7 )
@@ -5853,7 +5853,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -5865,7 +5865,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:1902:1: rule__ImplementationDescription__Group__6__Impl : ( ( ( rule__ImplementationDescription__IncludeSoftwareComponentsAssignment_6 ) ) ( ( rule__ImplementationDescription__IncludeSoftwareComponentsAssignment_6 )* ) ) ;
     public final void rule__ImplementationDescription__Group__6__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:1906:1: ( ( ( ( rule__ImplementationDescription__IncludeSoftwareComponentsAssignment_6 ) ) ( ( rule__ImplementationDescription__IncludeSoftwareComponentsAssignment_6 )* ) ) )
@@ -5909,20 +5909,20 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
 
 
                 switch (alt13) {
-                case 1 :
-                    // InternalImplementationDescriptionParser.g:1915:4: rule__ImplementationDescription__IncludeSoftwareComponentsAssignment_6
-                    {
-                    pushFollow(FOLLOW_12);
-                    rule__ImplementationDescription__IncludeSoftwareComponentsAssignment_6();
+              case 1 :
+                  // InternalImplementationDescriptionParser.g:1915:4: rule__ImplementationDescription__IncludeSoftwareComponentsAssignment_6
+                  {
+                  pushFollow(FOLLOW_12);
+                  rule__ImplementationDescription__IncludeSoftwareComponentsAssignment_6();
 
-                    state._fsp--;
+                  state._fsp--;
 
 
-                    }
-                    break;
+                  }
+                  break;
 
-                default :
-                    break loop13;
+              default :
+                  break loop13;
                 }
             } while (true);
 
@@ -5943,7 +5943,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -5955,7 +5955,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:1924:1: rule__ImplementationDescription__Group__7 : rule__ImplementationDescription__Group__7__Impl rule__ImplementationDescription__Group__8 ;
     public final void rule__ImplementationDescription__Group__7() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:1928:1: ( rule__ImplementationDescription__Group__7__Impl rule__ImplementationDescription__Group__8 )
@@ -5981,7 +5981,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -5993,7 +5993,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:1936:1: rule__ImplementationDescription__Group__7__Impl : ( RULE_DEDENT ) ;
     public final void rule__ImplementationDescription__Group__7__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:1940:1: ( ( RULE_DEDENT ) )
@@ -6018,7 +6018,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -6030,7 +6030,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:1951:1: rule__ImplementationDescription__Group__8 : rule__ImplementationDescription__Group__8__Impl ;
     public final void rule__ImplementationDescription__Group__8() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:1955:1: ( rule__ImplementationDescription__Group__8__Impl )
@@ -6051,7 +6051,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -6063,7 +6063,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:1962:1: rule__ImplementationDescription__Group__8__Impl : ( RULE_DEDENT ) ;
     public final void rule__ImplementationDescription__Group__8__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:1966:1: ( ( RULE_DEDENT ) )
@@ -6088,7 +6088,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -6100,7 +6100,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:1978:1: rule__SoftwareComponent__Group__0 : rule__SoftwareComponent__Group__0__Impl rule__SoftwareComponent__Group__1 ;
     public final void rule__SoftwareComponent__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:1982:1: ( rule__SoftwareComponent__Group__0__Impl rule__SoftwareComponent__Group__1 )
@@ -6126,7 +6126,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -6138,7 +6138,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:1990:1: rule__SoftwareComponent__Group__0__Impl : ( () ) ;
     public final void rule__SoftwareComponent__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:1994:1: ( ( () ) )
@@ -6163,7 +6163,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -6175,7 +6175,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2005:1: rule__SoftwareComponent__Group__1 : rule__SoftwareComponent__Group__1__Impl rule__SoftwareComponent__Group__2 ;
     public final void rule__SoftwareComponent__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2009:1: ( rule__SoftwareComponent__Group__1__Impl rule__SoftwareComponent__Group__2 )
@@ -6201,7 +6201,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -6213,7 +6213,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2017:1: rule__SoftwareComponent__Group__1__Impl : ( rulePreListElement ) ;
     public final void rule__SoftwareComponent__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2021:1: ( ( rulePreListElement ) )
@@ -6242,7 +6242,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -6254,7 +6254,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2032:1: rule__SoftwareComponent__Group__2 : rule__SoftwareComponent__Group__2__Impl rule__SoftwareComponent__Group__3 ;
     public final void rule__SoftwareComponent__Group__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2036:1: ( rule__SoftwareComponent__Group__2__Impl rule__SoftwareComponent__Group__3 )
@@ -6280,7 +6280,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -6292,7 +6292,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2044:1: rule__SoftwareComponent__Group__2__Impl : ( Name ) ;
     public final void rule__SoftwareComponent__Group__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2048:1: ( ( Name ) )
@@ -6317,7 +6317,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -6329,7 +6329,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2059:1: rule__SoftwareComponent__Group__3 : rule__SoftwareComponent__Group__3__Impl rule__SoftwareComponent__Group__4 ;
     public final void rule__SoftwareComponent__Group__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2063:1: ( rule__SoftwareComponent__Group__3__Impl rule__SoftwareComponent__Group__4 )
@@ -6355,7 +6355,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -6367,7 +6367,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2071:1: rule__SoftwareComponent__Group__3__Impl : ( ( rule__SoftwareComponent__NameAssignment_3 ) ) ;
     public final void rule__SoftwareComponent__Group__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2075:1: ( ( ( rule__SoftwareComponent__NameAssignment_3 ) ) )
@@ -6402,7 +6402,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -6414,7 +6414,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2086:1: rule__SoftwareComponent__Group__4 : rule__SoftwareComponent__Group__4__Impl rule__SoftwareComponent__Group__5 ;
     public final void rule__SoftwareComponent__Group__4() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2090:1: ( rule__SoftwareComponent__Group__4__Impl rule__SoftwareComponent__Group__5 )
@@ -6440,7 +6440,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -6452,7 +6452,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2098:1: rule__SoftwareComponent__Group__4__Impl : ( RULE_INDENT ) ;
     public final void rule__SoftwareComponent__Group__4__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2102:1: ( ( RULE_INDENT ) )
@@ -6477,7 +6477,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -6489,7 +6489,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2113:1: rule__SoftwareComponent__Group__5 : rule__SoftwareComponent__Group__5__Impl rule__SoftwareComponent__Group__6 ;
     public final void rule__SoftwareComponent__Group__5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2117:1: ( rule__SoftwareComponent__Group__5__Impl rule__SoftwareComponent__Group__6 )
@@ -6515,7 +6515,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -6527,7 +6527,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2125:1: rule__SoftwareComponent__Group__5__Impl : ( Repository ) ;
     public final void rule__SoftwareComponent__Group__5__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2129:1: ( ( Repository ) )
@@ -6552,7 +6552,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -6564,7 +6564,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2140:1: rule__SoftwareComponent__Group__6 : rule__SoftwareComponent__Group__6__Impl rule__SoftwareComponent__Group__7 ;
     public final void rule__SoftwareComponent__Group__6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2144:1: ( rule__SoftwareComponent__Group__6__Impl rule__SoftwareComponent__Group__7 )
@@ -6590,7 +6590,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -6602,7 +6602,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2152:1: rule__SoftwareComponent__Group__6__Impl : ( RULE_INDENT ) ;
     public final void rule__SoftwareComponent__Group__6__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2156:1: ( ( RULE_INDENT ) )
@@ -6627,7 +6627,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -6639,7 +6639,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2167:1: rule__SoftwareComponent__Group__7 : rule__SoftwareComponent__Group__7__Impl rule__SoftwareComponent__Group__8 ;
     public final void rule__SoftwareComponent__Group__7() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2171:1: ( rule__SoftwareComponent__Group__7__Impl rule__SoftwareComponent__Group__8 )
@@ -6665,7 +6665,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -6677,7 +6677,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2179:1: rule__SoftwareComponent__Group__7__Impl : ( ( rule__SoftwareComponent__RepositoryAssignment_7 ) ) ;
     public final void rule__SoftwareComponent__Group__7__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2183:1: ( ( ( rule__SoftwareComponent__RepositoryAssignment_7 ) ) )
@@ -6712,7 +6712,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -6724,7 +6724,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2194:1: rule__SoftwareComponent__Group__8 : rule__SoftwareComponent__Group__8__Impl rule__SoftwareComponent__Group__9 ;
     public final void rule__SoftwareComponent__Group__8() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2198:1: ( rule__SoftwareComponent__Group__8__Impl rule__SoftwareComponent__Group__9 )
@@ -6750,7 +6750,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -6762,7 +6762,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2206:1: rule__SoftwareComponent__Group__8__Impl : ( RULE_DEDENT ) ;
     public final void rule__SoftwareComponent__Group__8__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2210:1: ( ( RULE_DEDENT ) )
@@ -6787,7 +6787,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -6799,7 +6799,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2221:1: rule__SoftwareComponent__Group__9 : rule__SoftwareComponent__Group__9__Impl rule__SoftwareComponent__Group__10 ;
     public final void rule__SoftwareComponent__Group__9() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2225:1: ( rule__SoftwareComponent__Group__9__Impl rule__SoftwareComponent__Group__10 )
@@ -6825,7 +6825,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -6837,7 +6837,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2233:1: rule__SoftwareComponent__Group__9__Impl : ( ( rule__SoftwareComponent__Group_9__0 )? ) ;
     public final void rule__SoftwareComponent__Group__9__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2237:1: ( ( ( rule__SoftwareComponent__Group_9__0 )? ) )
@@ -6883,7 +6883,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -6895,7 +6895,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2248:1: rule__SoftwareComponent__Group__10 : rule__SoftwareComponent__Group__10__Impl ;
     public final void rule__SoftwareComponent__Group__10() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2252:1: ( rule__SoftwareComponent__Group__10__Impl )
@@ -6916,7 +6916,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -6928,7 +6928,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2259:1: rule__SoftwareComponent__Group__10__Impl : ( RULE_DEDENT ) ;
     public final void rule__SoftwareComponent__Group__10__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2263:1: ( ( RULE_DEDENT ) )
@@ -6953,7 +6953,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -6965,7 +6965,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2275:1: rule__SoftwareComponent__Group_9__0 : rule__SoftwareComponent__Group_9__0__Impl rule__SoftwareComponent__Group_9__1 ;
     public final void rule__SoftwareComponent__Group_9__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2279:1: ( rule__SoftwareComponent__Group_9__0__Impl rule__SoftwareComponent__Group_9__1 )
@@ -6991,7 +6991,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -7003,7 +7003,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2287:1: rule__SoftwareComponent__Group_9__0__Impl : ( ExecutionRequirement ) ;
     public final void rule__SoftwareComponent__Group_9__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2291:1: ( ( ExecutionRequirement ) )
@@ -7028,7 +7028,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -7040,7 +7040,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2302:1: rule__SoftwareComponent__Group_9__1 : rule__SoftwareComponent__Group_9__1__Impl rule__SoftwareComponent__Group_9__2 ;
     public final void rule__SoftwareComponent__Group_9__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2306:1: ( rule__SoftwareComponent__Group_9__1__Impl rule__SoftwareComponent__Group_9__2 )
@@ -7066,7 +7066,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -7078,7 +7078,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2314:1: rule__SoftwareComponent__Group_9__1__Impl : ( RULE_INDENT ) ;
     public final void rule__SoftwareComponent__Group_9__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2318:1: ( ( RULE_INDENT ) )
@@ -7103,7 +7103,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -7115,7 +7115,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2329:1: rule__SoftwareComponent__Group_9__2 : rule__SoftwareComponent__Group_9__2__Impl rule__SoftwareComponent__Group_9__3 ;
     public final void rule__SoftwareComponent__Group_9__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2333:1: ( rule__SoftwareComponent__Group_9__2__Impl rule__SoftwareComponent__Group_9__3 )
@@ -7141,7 +7141,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -7153,7 +7153,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2341:1: rule__SoftwareComponent__Group_9__2__Impl : ( ( ( rule__SoftwareComponent__ExecutionRequirementAssignment_9_2 ) ) ( ( rule__SoftwareComponent__ExecutionRequirementAssignment_9_2 )* ) ) ;
     public final void rule__SoftwareComponent__Group_9__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2345:1: ( ( ( ( rule__SoftwareComponent__ExecutionRequirementAssignment_9_2 ) ) ( ( rule__SoftwareComponent__ExecutionRequirementAssignment_9_2 )* ) ) )
@@ -7197,20 +7197,20 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
 
 
                 switch (alt15) {
-                case 1 :
-                    // InternalImplementationDescriptionParser.g:2354:4: rule__SoftwareComponent__ExecutionRequirementAssignment_9_2
-                    {
-                    pushFollow(FOLLOW_17);
-                    rule__SoftwareComponent__ExecutionRequirementAssignment_9_2();
+              case 1 :
+                  // InternalImplementationDescriptionParser.g:2354:4: rule__SoftwareComponent__ExecutionRequirementAssignment_9_2
+                  {
+                  pushFollow(FOLLOW_17);
+                  rule__SoftwareComponent__ExecutionRequirementAssignment_9_2();
 
-                    state._fsp--;
+                  state._fsp--;
 
 
-                    }
-                    break;
+                  }
+                  break;
 
-                default :
-                    break loop15;
+              default :
+                  break loop15;
                 }
             } while (true);
 
@@ -7231,7 +7231,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -7243,7 +7243,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2363:1: rule__SoftwareComponent__Group_9__3 : rule__SoftwareComponent__Group_9__3__Impl ;
     public final void rule__SoftwareComponent__Group_9__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2367:1: ( rule__SoftwareComponent__Group_9__3__Impl )
@@ -7264,7 +7264,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -7276,7 +7276,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2374:1: rule__SoftwareComponent__Group_9__3__Impl : ( RULE_DEDENT ) ;
     public final void rule__SoftwareComponent__Group_9__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2378:1: ( ( RULE_DEDENT ) )
@@ -7301,7 +7301,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -7313,7 +7313,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2390:1: rule__Repository__Group__0 : rule__Repository__Group__0__Impl rule__Repository__Group__1 ;
     public final void rule__Repository__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2394:1: ( rule__Repository__Group__0__Impl rule__Repository__Group__1 )
@@ -7339,7 +7339,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -7351,7 +7351,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2402:1: rule__Repository__Group__0__Impl : ( Type ) ;
     public final void rule__Repository__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2406:1: ( ( Type ) )
@@ -7376,7 +7376,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -7388,7 +7388,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2417:1: rule__Repository__Group__1 : rule__Repository__Group__1__Impl rule__Repository__Group__2 ;
     public final void rule__Repository__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2421:1: ( rule__Repository__Group__1__Impl rule__Repository__Group__2 )
@@ -7414,7 +7414,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -7426,7 +7426,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2429:1: rule__Repository__Group__1__Impl : ( ( rule__Repository__TypeAssignment_1 ) ) ;
     public final void rule__Repository__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2433:1: ( ( ( rule__Repository__TypeAssignment_1 ) ) )
@@ -7461,7 +7461,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -7473,7 +7473,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2444:1: rule__Repository__Group__2 : rule__Repository__Group__2__Impl rule__Repository__Group__3 ;
     public final void rule__Repository__Group__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2448:1: ( rule__Repository__Group__2__Impl rule__Repository__Group__3 )
@@ -7499,7 +7499,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -7511,7 +7511,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2456:1: rule__Repository__Group__2__Impl : ( Url ) ;
     public final void rule__Repository__Group__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2460:1: ( ( Url ) )
@@ -7536,7 +7536,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -7548,7 +7548,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2471:1: rule__Repository__Group__3 : rule__Repository__Group__3__Impl rule__Repository__Group__4 ;
     public final void rule__Repository__Group__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2475:1: ( rule__Repository__Group__3__Impl rule__Repository__Group__4 )
@@ -7574,7 +7574,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -7586,7 +7586,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2483:1: rule__Repository__Group__3__Impl : ( ( rule__Repository__UrlAssignment_3 ) ) ;
     public final void rule__Repository__Group__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2487:1: ( ( ( rule__Repository__UrlAssignment_3 ) ) )
@@ -7621,7 +7621,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -7633,7 +7633,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2498:1: rule__Repository__Group__4 : rule__Repository__Group__4__Impl rule__Repository__Group__5 ;
     public final void rule__Repository__Group__4() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2502:1: ( rule__Repository__Group__4__Impl rule__Repository__Group__5 )
@@ -7659,7 +7659,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -7671,7 +7671,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2510:1: rule__Repository__Group__4__Impl : ( Version ) ;
     public final void rule__Repository__Group__4__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2514:1: ( ( Version ) )
@@ -7696,7 +7696,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -7708,7 +7708,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2525:1: rule__Repository__Group__5 : rule__Repository__Group__5__Impl ;
     public final void rule__Repository__Group__5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2529:1: ( rule__Repository__Group__5__Impl )
@@ -7729,7 +7729,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -7741,7 +7741,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2536:1: rule__Repository__Group__5__Impl : ( ( rule__Repository__VersionAssignment_5 ) ) ;
     public final void rule__Repository__Group__5__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2540:1: ( ( ( rule__Repository__VersionAssignment_5 ) ) )
@@ -7776,7 +7776,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -7788,7 +7788,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2552:1: rule__GitRepositoryType__Group__0 : rule__GitRepositoryType__Group__0__Impl rule__GitRepositoryType__Group__1 ;
     public final void rule__GitRepositoryType__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2556:1: ( rule__GitRepositoryType__Group__0__Impl rule__GitRepositoryType__Group__1 )
@@ -7814,7 +7814,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -7826,7 +7826,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2564:1: rule__GitRepositoryType__Group__0__Impl : ( () ) ;
     public final void rule__GitRepositoryType__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2568:1: ( ( () ) )
@@ -7851,7 +7851,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -7863,7 +7863,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2579:1: rule__GitRepositoryType__Group__1 : rule__GitRepositoryType__Group__1__Impl ;
     public final void rule__GitRepositoryType__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2583:1: ( rule__GitRepositoryType__Group__1__Impl )
@@ -7884,7 +7884,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -7896,7 +7896,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2590:1: rule__GitRepositoryType__Group__1__Impl : ( Git ) ;
     public final void rule__GitRepositoryType__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2594:1: ( ( Git ) )
@@ -7921,7 +7921,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -7933,7 +7933,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2606:1: rule__DeviceRequirement__Group__0 : rule__DeviceRequirement__Group__0__Impl rule__DeviceRequirement__Group__1 ;
     public final void rule__DeviceRequirement__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2610:1: ( rule__DeviceRequirement__Group__0__Impl rule__DeviceRequirement__Group__1 )
@@ -7959,7 +7959,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -7971,7 +7971,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2618:1: rule__DeviceRequirement__Group__0__Impl : ( DeviceRequirement ) ;
     public final void rule__DeviceRequirement__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2622:1: ( ( DeviceRequirement ) )
@@ -7996,7 +7996,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -8008,7 +8008,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2633:1: rule__DeviceRequirement__Group__1 : rule__DeviceRequirement__Group__1__Impl rule__DeviceRequirement__Group__2 ;
     public final void rule__DeviceRequirement__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2637:1: ( rule__DeviceRequirement__Group__1__Impl rule__DeviceRequirement__Group__2 )
@@ -8034,7 +8034,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -8046,7 +8046,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2645:1: rule__DeviceRequirement__Group__1__Impl : ( RULE_INDENT ) ;
     public final void rule__DeviceRequirement__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2649:1: ( ( RULE_INDENT ) )
@@ -8071,7 +8071,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -8083,7 +8083,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2660:1: rule__DeviceRequirement__Group__2 : rule__DeviceRequirement__Group__2__Impl rule__DeviceRequirement__Group__3 ;
     public final void rule__DeviceRequirement__Group__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2664:1: ( rule__DeviceRequirement__Group__2__Impl rule__DeviceRequirement__Group__3 )
@@ -8109,7 +8109,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -8121,7 +8121,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2672:1: rule__DeviceRequirement__Group__2__Impl : ( rulePreListElement ) ;
     public final void rule__DeviceRequirement__Group__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2676:1: ( ( rulePreListElement ) )
@@ -8150,7 +8150,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -8162,7 +8162,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2687:1: rule__DeviceRequirement__Group__3 : rule__DeviceRequirement__Group__3__Impl rule__DeviceRequirement__Group__4 ;
     public final void rule__DeviceRequirement__Group__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2691:1: ( rule__DeviceRequirement__Group__3__Impl rule__DeviceRequirement__Group__4 )
@@ -8188,7 +8188,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -8200,7 +8200,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2699:1: rule__DeviceRequirement__Group__3__Impl : ( Type ) ;
     public final void rule__DeviceRequirement__Group__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2703:1: ( ( Type ) )
@@ -8225,7 +8225,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -8237,7 +8237,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2714:1: rule__DeviceRequirement__Group__4 : rule__DeviceRequirement__Group__4__Impl rule__DeviceRequirement__Group__5 ;
     public final void rule__DeviceRequirement__Group__4() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2718:1: ( rule__DeviceRequirement__Group__4__Impl rule__DeviceRequirement__Group__5 )
@@ -8263,7 +8263,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -8275,7 +8275,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2726:1: rule__DeviceRequirement__Group__4__Impl : ( ( rule__DeviceRequirement__TypeAssignment_4 ) ) ;
     public final void rule__DeviceRequirement__Group__4__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2730:1: ( ( ( rule__DeviceRequirement__TypeAssignment_4 ) ) )
@@ -8310,7 +8310,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -8322,7 +8322,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2741:1: rule__DeviceRequirement__Group__5 : rule__DeviceRequirement__Group__5__Impl rule__DeviceRequirement__Group__6 ;
     public final void rule__DeviceRequirement__Group__5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2745:1: ( rule__DeviceRequirement__Group__5__Impl rule__DeviceRequirement__Group__6 )
@@ -8348,7 +8348,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -8360,7 +8360,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2753:1: rule__DeviceRequirement__Group__5__Impl : ( ( rule__DeviceRequirement__Group_5__0 )? ) ;
     public final void rule__DeviceRequirement__Group__5__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2757:1: ( ( ( rule__DeviceRequirement__Group_5__0 )? ) )
@@ -8406,7 +8406,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -8418,7 +8418,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2768:1: rule__DeviceRequirement__Group__6 : rule__DeviceRequirement__Group__6__Impl ;
     public final void rule__DeviceRequirement__Group__6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2772:1: ( rule__DeviceRequirement__Group__6__Impl )
@@ -8439,7 +8439,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -8451,7 +8451,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2779:1: rule__DeviceRequirement__Group__6__Impl : ( RULE_DEDENT ) ;
     public final void rule__DeviceRequirement__Group__6__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2783:1: ( ( RULE_DEDENT ) )
@@ -8476,7 +8476,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -8488,7 +8488,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2795:1: rule__DeviceRequirement__Group_5__0 : rule__DeviceRequirement__Group_5__0__Impl rule__DeviceRequirement__Group_5__1 ;
     public final void rule__DeviceRequirement__Group_5__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2799:1: ( rule__DeviceRequirement__Group_5__0__Impl rule__DeviceRequirement__Group_5__1 )
@@ -8514,7 +8514,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -8526,7 +8526,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2807:1: rule__DeviceRequirement__Group_5__0__Impl : ( RULE_INDENT ) ;
     public final void rule__DeviceRequirement__Group_5__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2811:1: ( ( RULE_INDENT ) )
@@ -8551,7 +8551,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -8563,7 +8563,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2822:1: rule__DeviceRequirement__Group_5__1 : rule__DeviceRequirement__Group_5__1__Impl rule__DeviceRequirement__Group_5__2 ;
     public final void rule__DeviceRequirement__Group_5__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2826:1: ( rule__DeviceRequirement__Group_5__1__Impl rule__DeviceRequirement__Group_5__2 )
@@ -8589,7 +8589,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -8601,7 +8601,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2834:1: rule__DeviceRequirement__Group_5__1__Impl : ( HWSWParemeter ) ;
     public final void rule__DeviceRequirement__Group_5__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2838:1: ( ( HWSWParemeter ) )
@@ -8626,7 +8626,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -8638,7 +8638,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2849:1: rule__DeviceRequirement__Group_5__2 : rule__DeviceRequirement__Group_5__2__Impl rule__DeviceRequirement__Group_5__3 ;
     public final void rule__DeviceRequirement__Group_5__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2853:1: ( rule__DeviceRequirement__Group_5__2__Impl rule__DeviceRequirement__Group_5__3 )
@@ -8664,7 +8664,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -8676,7 +8676,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2861:1: rule__DeviceRequirement__Group_5__2__Impl : ( RULE_INDENT ) ;
     public final void rule__DeviceRequirement__Group_5__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2865:1: ( ( RULE_INDENT ) )
@@ -8701,7 +8701,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -8713,7 +8713,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2876:1: rule__DeviceRequirement__Group_5__3 : rule__DeviceRequirement__Group_5__3__Impl rule__DeviceRequirement__Group_5__4 ;
     public final void rule__DeviceRequirement__Group_5__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2880:1: ( rule__DeviceRequirement__Group_5__3__Impl rule__DeviceRequirement__Group_5__4 )
@@ -8739,7 +8739,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -8751,7 +8751,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2888:1: rule__DeviceRequirement__Group_5__3__Impl : ( ( ( rule__DeviceRequirement__ParameterAssignment_5_3 ) ) ( ( rule__DeviceRequirement__ParameterAssignment_5_3 )* ) ) ;
     public final void rule__DeviceRequirement__Group_5__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2892:1: ( ( ( ( rule__DeviceRequirement__ParameterAssignment_5_3 ) ) ( ( rule__DeviceRequirement__ParameterAssignment_5_3 )* ) ) )
@@ -8795,20 +8795,20 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
 
 
                 switch (alt17) {
-                case 1 :
-                    // InternalImplementationDescriptionParser.g:2901:4: rule__DeviceRequirement__ParameterAssignment_5_3
-                    {
-                    pushFollow(FOLLOW_12);
-                    rule__DeviceRequirement__ParameterAssignment_5_3();
+              case 1 :
+                  // InternalImplementationDescriptionParser.g:2901:4: rule__DeviceRequirement__ParameterAssignment_5_3
+                  {
+                  pushFollow(FOLLOW_12);
+                  rule__DeviceRequirement__ParameterAssignment_5_3();
 
-                    state._fsp--;
+                  state._fsp--;
 
 
-                    }
-                    break;
+                  }
+                  break;
 
-                default :
-                    break loop17;
+              default :
+                  break loop17;
                 }
             } while (true);
 
@@ -8829,7 +8829,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -8841,7 +8841,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2910:1: rule__DeviceRequirement__Group_5__4 : rule__DeviceRequirement__Group_5__4__Impl rule__DeviceRequirement__Group_5__5 ;
     public final void rule__DeviceRequirement__Group_5__4() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2914:1: ( rule__DeviceRequirement__Group_5__4__Impl rule__DeviceRequirement__Group_5__5 )
@@ -8867,7 +8867,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -8879,7 +8879,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2922:1: rule__DeviceRequirement__Group_5__4__Impl : ( RULE_DEDENT ) ;
     public final void rule__DeviceRequirement__Group_5__4__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2926:1: ( ( RULE_DEDENT ) )
@@ -8904,7 +8904,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -8916,7 +8916,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2937:1: rule__DeviceRequirement__Group_5__5 : rule__DeviceRequirement__Group_5__5__Impl ;
     public final void rule__DeviceRequirement__Group_5__5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2941:1: ( rule__DeviceRequirement__Group_5__5__Impl )
@@ -8937,7 +8937,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -8949,7 +8949,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2948:1: rule__DeviceRequirement__Group_5__5__Impl : ( RULE_DEDENT ) ;
     public final void rule__DeviceRequirement__Group_5__5__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2952:1: ( ( RULE_DEDENT ) )
@@ -8974,7 +8974,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -8986,7 +8986,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2964:1: rule__SoftwareConfigurationRequirement__Group__0 : rule__SoftwareConfigurationRequirement__Group__0__Impl rule__SoftwareConfigurationRequirement__Group__1 ;
     public final void rule__SoftwareConfigurationRequirement__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2968:1: ( rule__SoftwareConfigurationRequirement__Group__0__Impl rule__SoftwareConfigurationRequirement__Group__1 )
@@ -9012,7 +9012,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -9024,7 +9024,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2976:1: rule__SoftwareConfigurationRequirement__Group__0__Impl : ( SoftwareConfigurationParameter ) ;
     public final void rule__SoftwareConfigurationRequirement__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2980:1: ( ( SoftwareConfigurationParameter ) )
@@ -9049,7 +9049,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -9061,7 +9061,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:2991:1: rule__SoftwareConfigurationRequirement__Group__1 : rule__SoftwareConfigurationRequirement__Group__1__Impl rule__SoftwareConfigurationRequirement__Group__2 ;
     public final void rule__SoftwareConfigurationRequirement__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:2995:1: ( rule__SoftwareConfigurationRequirement__Group__1__Impl rule__SoftwareConfigurationRequirement__Group__2 )
@@ -9087,7 +9087,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -9099,7 +9099,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3003:1: rule__SoftwareConfigurationRequirement__Group__1__Impl : ( RULE_INDENT ) ;
     public final void rule__SoftwareConfigurationRequirement__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3007:1: ( ( RULE_INDENT ) )
@@ -9124,7 +9124,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -9136,7 +9136,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3018:1: rule__SoftwareConfigurationRequirement__Group__2 : rule__SoftwareConfigurationRequirement__Group__2__Impl rule__SoftwareConfigurationRequirement__Group__3 ;
     public final void rule__SoftwareConfigurationRequirement__Group__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3022:1: ( rule__SoftwareConfigurationRequirement__Group__2__Impl rule__SoftwareConfigurationRequirement__Group__3 )
@@ -9162,7 +9162,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -9174,7 +9174,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3030:1: rule__SoftwareConfigurationRequirement__Group__2__Impl : ( ( ( rule__SoftwareConfigurationRequirement__ParameterAssignment_2 ) ) ( ( rule__SoftwareConfigurationRequirement__ParameterAssignment_2 )* ) ) ;
     public final void rule__SoftwareConfigurationRequirement__Group__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3034:1: ( ( ( ( rule__SoftwareConfigurationRequirement__ParameterAssignment_2 ) ) ( ( rule__SoftwareConfigurationRequirement__ParameterAssignment_2 )* ) ) )
@@ -9218,20 +9218,20 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
 
 
                 switch (alt18) {
-                case 1 :
-                    // InternalImplementationDescriptionParser.g:3043:4: rule__SoftwareConfigurationRequirement__ParameterAssignment_2
-                    {
-                    pushFollow(FOLLOW_12);
-                    rule__SoftwareConfigurationRequirement__ParameterAssignment_2();
+              case 1 :
+                  // InternalImplementationDescriptionParser.g:3043:4: rule__SoftwareConfigurationRequirement__ParameterAssignment_2
+                  {
+                  pushFollow(FOLLOW_12);
+                  rule__SoftwareConfigurationRequirement__ParameterAssignment_2();
 
-                    state._fsp--;
+                  state._fsp--;
 
 
-                    }
-                    break;
+                  }
+                  break;
 
-                default :
-                    break loop18;
+              default :
+                  break loop18;
                 }
             } while (true);
 
@@ -9252,7 +9252,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -9264,7 +9264,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3052:1: rule__SoftwareConfigurationRequirement__Group__3 : rule__SoftwareConfigurationRequirement__Group__3__Impl ;
     public final void rule__SoftwareConfigurationRequirement__Group__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3056:1: ( rule__SoftwareConfigurationRequirement__Group__3__Impl )
@@ -9285,7 +9285,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -9297,7 +9297,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3063:1: rule__SoftwareConfigurationRequirement__Group__3__Impl : ( RULE_DEDENT ) ;
     public final void rule__SoftwareConfigurationRequirement__Group__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3067:1: ( ( RULE_DEDENT ) )
@@ -9322,7 +9322,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -9334,7 +9334,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3079:1: rule__HWSWParemeter__Group__0 : rule__HWSWParemeter__Group__0__Impl rule__HWSWParemeter__Group__1 ;
     public final void rule__HWSWParemeter__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3083:1: ( rule__HWSWParemeter__Group__0__Impl rule__HWSWParemeter__Group__1 )
@@ -9360,7 +9360,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -9372,7 +9372,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3091:1: rule__HWSWParemeter__Group__0__Impl : ( () ) ;
     public final void rule__HWSWParemeter__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3095:1: ( ( () ) )
@@ -9397,7 +9397,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -9409,7 +9409,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3106:1: rule__HWSWParemeter__Group__1 : rule__HWSWParemeter__Group__1__Impl rule__HWSWParemeter__Group__2 ;
     public final void rule__HWSWParemeter__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3110:1: ( rule__HWSWParemeter__Group__1__Impl rule__HWSWParemeter__Group__2 )
@@ -9435,7 +9435,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -9447,7 +9447,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3118:1: rule__HWSWParemeter__Group__1__Impl : ( rulePreListElement ) ;
     public final void rule__HWSWParemeter__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3122:1: ( ( rulePreListElement ) )
@@ -9476,7 +9476,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -9488,7 +9488,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3133:1: rule__HWSWParemeter__Group__2 : rule__HWSWParemeter__Group__2__Impl rule__HWSWParemeter__Group__3 ;
     public final void rule__HWSWParemeter__Group__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3137:1: ( rule__HWSWParemeter__Group__2__Impl rule__HWSWParemeter__Group__3 )
@@ -9514,7 +9514,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -9526,7 +9526,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3145:1: rule__HWSWParemeter__Group__2__Impl : ( Name ) ;
     public final void rule__HWSWParemeter__Group__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3149:1: ( ( Name ) )
@@ -9551,7 +9551,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -9563,7 +9563,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3160:1: rule__HWSWParemeter__Group__3 : rule__HWSWParemeter__Group__3__Impl rule__HWSWParemeter__Group__4 ;
     public final void rule__HWSWParemeter__Group__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3164:1: ( rule__HWSWParemeter__Group__3__Impl rule__HWSWParemeter__Group__4 )
@@ -9589,7 +9589,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -9601,7 +9601,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3172:1: rule__HWSWParemeter__Group__3__Impl : ( ( rule__HWSWParemeter__NameAssignment_3 ) ) ;
     public final void rule__HWSWParemeter__Group__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3176:1: ( ( ( rule__HWSWParemeter__NameAssignment_3 ) ) )
@@ -9636,7 +9636,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -9648,7 +9648,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3187:1: rule__HWSWParemeter__Group__4 : rule__HWSWParemeter__Group__4__Impl rule__HWSWParemeter__Group__5 ;
     public final void rule__HWSWParemeter__Group__4() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3191:1: ( rule__HWSWParemeter__Group__4__Impl rule__HWSWParemeter__Group__5 )
@@ -9674,7 +9674,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -9686,7 +9686,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3199:1: rule__HWSWParemeter__Group__4__Impl : ( RULE_INDENT ) ;
     public final void rule__HWSWParemeter__Group__4__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3203:1: ( ( RULE_INDENT ) )
@@ -9711,7 +9711,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -9723,7 +9723,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3214:1: rule__HWSWParemeter__Group__5 : rule__HWSWParemeter__Group__5__Impl rule__HWSWParemeter__Group__6 ;
     public final void rule__HWSWParemeter__Group__5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3218:1: ( rule__HWSWParemeter__Group__5__Impl rule__HWSWParemeter__Group__6 )
@@ -9749,7 +9749,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -9761,7 +9761,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3226:1: rule__HWSWParemeter__Group__5__Impl : ( Kind ) ;
     public final void rule__HWSWParemeter__Group__5__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3230:1: ( ( Kind ) )
@@ -9786,7 +9786,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -9798,7 +9798,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3241:1: rule__HWSWParemeter__Group__6 : rule__HWSWParemeter__Group__6__Impl rule__HWSWParemeter__Group__7 ;
     public final void rule__HWSWParemeter__Group__6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3245:1: ( rule__HWSWParemeter__Group__6__Impl rule__HWSWParemeter__Group__7 )
@@ -9824,7 +9824,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -9836,7 +9836,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3253:1: rule__HWSWParemeter__Group__6__Impl : ( ( rule__HWSWParemeter__KindAssignment_6 ) ) ;
     public final void rule__HWSWParemeter__Group__6__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3257:1: ( ( ( rule__HWSWParemeter__KindAssignment_6 ) ) )
@@ -9871,7 +9871,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -9883,7 +9883,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3268:1: rule__HWSWParemeter__Group__7 : rule__HWSWParemeter__Group__7__Impl rule__HWSWParemeter__Group__8 ;
     public final void rule__HWSWParemeter__Group__7() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3272:1: ( rule__HWSWParemeter__Group__7__Impl rule__HWSWParemeter__Group__8 )
@@ -9909,7 +9909,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -9921,7 +9921,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3280:1: rule__HWSWParemeter__Group__7__Impl : ( ( rule__HWSWParemeter__Group_7__0 )? ) ;
     public final void rule__HWSWParemeter__Group__7__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3284:1: ( ( ( rule__HWSWParemeter__Group_7__0 )? ) )
@@ -9967,7 +9967,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -9979,7 +9979,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3295:1: rule__HWSWParemeter__Group__8 : rule__HWSWParemeter__Group__8__Impl rule__HWSWParemeter__Group__9 ;
     public final void rule__HWSWParemeter__Group__8() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3299:1: ( rule__HWSWParemeter__Group__8__Impl rule__HWSWParemeter__Group__9 )
@@ -10005,7 +10005,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -10017,7 +10017,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3307:1: rule__HWSWParemeter__Group__8__Impl : ( ( rule__HWSWParemeter__Group_8__0 )? ) ;
     public final void rule__HWSWParemeter__Group__8__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3311:1: ( ( ( rule__HWSWParemeter__Group_8__0 )? ) )
@@ -10063,7 +10063,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -10075,7 +10075,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3322:1: rule__HWSWParemeter__Group__9 : rule__HWSWParemeter__Group__9__Impl ;
     public final void rule__HWSWParemeter__Group__9() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3326:1: ( rule__HWSWParemeter__Group__9__Impl )
@@ -10096,7 +10096,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -10108,7 +10108,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3333:1: rule__HWSWParemeter__Group__9__Impl : ( RULE_DEDENT ) ;
     public final void rule__HWSWParemeter__Group__9__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3337:1: ( ( RULE_DEDENT ) )
@@ -10133,7 +10133,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -10145,7 +10145,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3349:1: rule__HWSWParemeter__Group_7__0 : rule__HWSWParemeter__Group_7__0__Impl rule__HWSWParemeter__Group_7__1 ;
     public final void rule__HWSWParemeter__Group_7__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3353:1: ( rule__HWSWParemeter__Group_7__0__Impl rule__HWSWParemeter__Group_7__1 )
@@ -10171,7 +10171,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -10183,7 +10183,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3361:1: rule__HWSWParemeter__Group_7__0__Impl : ( Description ) ;
     public final void rule__HWSWParemeter__Group_7__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3365:1: ( ( Description ) )
@@ -10208,7 +10208,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -10220,7 +10220,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3376:1: rule__HWSWParemeter__Group_7__1 : rule__HWSWParemeter__Group_7__1__Impl ;
     public final void rule__HWSWParemeter__Group_7__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3380:1: ( rule__HWSWParemeter__Group_7__1__Impl )
@@ -10241,7 +10241,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -10253,7 +10253,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3387:1: rule__HWSWParemeter__Group_7__1__Impl : ( ( rule__HWSWParemeter__DescriptionAssignment_7_1 ) ) ;
     public final void rule__HWSWParemeter__Group_7__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3391:1: ( ( ( rule__HWSWParemeter__DescriptionAssignment_7_1 ) ) )
@@ -10288,7 +10288,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -10300,7 +10300,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3403:1: rule__HWSWParemeter__Group_8__0 : rule__HWSWParemeter__Group_8__0__Impl rule__HWSWParemeter__Group_8__1 ;
     public final void rule__HWSWParemeter__Group_8__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3407:1: ( rule__HWSWParemeter__Group_8__0__Impl rule__HWSWParemeter__Group_8__1 )
@@ -10326,7 +10326,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -10338,7 +10338,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3415:1: rule__HWSWParemeter__Group_8__0__Impl : ( Value ) ;
     public final void rule__HWSWParemeter__Group_8__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3419:1: ( ( Value ) )
@@ -10363,7 +10363,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -10375,7 +10375,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3430:1: rule__HWSWParemeter__Group_8__1 : rule__HWSWParemeter__Group_8__1__Impl rule__HWSWParemeter__Group_8__2 ;
     public final void rule__HWSWParemeter__Group_8__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3434:1: ( rule__HWSWParemeter__Group_8__1__Impl rule__HWSWParemeter__Group_8__2 )
@@ -10401,7 +10401,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -10413,7 +10413,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3442:1: rule__HWSWParemeter__Group_8__1__Impl : ( RULE_INDENT ) ;
     public final void rule__HWSWParemeter__Group_8__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3446:1: ( ( RULE_INDENT ) )
@@ -10438,7 +10438,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -10450,7 +10450,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3457:1: rule__HWSWParemeter__Group_8__2 : rule__HWSWParemeter__Group_8__2__Impl rule__HWSWParemeter__Group_8__3 ;
     public final void rule__HWSWParemeter__Group_8__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3461:1: ( rule__HWSWParemeter__Group_8__2__Impl rule__HWSWParemeter__Group_8__3 )
@@ -10476,7 +10476,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -10488,7 +10488,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3469:1: rule__HWSWParemeter__Group_8__2__Impl : ( rulePreListElement ) ;
     public final void rule__HWSWParemeter__Group_8__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3473:1: ( ( rulePreListElement ) )
@@ -10517,7 +10517,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -10529,7 +10529,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3484:1: rule__HWSWParemeter__Group_8__3 : rule__HWSWParemeter__Group_8__3__Impl rule__HWSWParemeter__Group_8__4 ;
     public final void rule__HWSWParemeter__Group_8__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3488:1: ( rule__HWSWParemeter__Group_8__3__Impl rule__HWSWParemeter__Group_8__4 )
@@ -10555,7 +10555,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -10567,7 +10567,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3496:1: rule__HWSWParemeter__Group_8__3__Impl : ( ( rule__HWSWParemeter__ValueAssignment_8_3 ) ) ;
     public final void rule__HWSWParemeter__Group_8__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3500:1: ( ( ( rule__HWSWParemeter__ValueAssignment_8_3 ) ) )
@@ -10602,7 +10602,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -10614,7 +10614,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3511:1: rule__HWSWParemeter__Group_8__4 : rule__HWSWParemeter__Group_8__4__Impl rule__HWSWParemeter__Group_8__5 ;
     public final void rule__HWSWParemeter__Group_8__4() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3515:1: ( rule__HWSWParemeter__Group_8__4__Impl rule__HWSWParemeter__Group_8__5 )
@@ -10640,7 +10640,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -10652,7 +10652,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3523:1: rule__HWSWParemeter__Group_8__4__Impl : ( ( rule__HWSWParemeter__Group_8_4__0 )* ) ;
     public final void rule__HWSWParemeter__Group_8__4__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3527:1: ( ( ( rule__HWSWParemeter__Group_8_4__0 )* ) )
@@ -10674,20 +10674,20 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
 
 
                 switch (alt21) {
-                case 1 :
-                    // InternalImplementationDescriptionParser.g:3530:3: rule__HWSWParemeter__Group_8_4__0
-                    {
-                    pushFollow(FOLLOW_12);
-                    rule__HWSWParemeter__Group_8_4__0();
+              case 1 :
+                  // InternalImplementationDescriptionParser.g:3530:3: rule__HWSWParemeter__Group_8_4__0
+                  {
+                  pushFollow(FOLLOW_12);
+                  rule__HWSWParemeter__Group_8_4__0();
 
-                    state._fsp--;
+                  state._fsp--;
 
 
-                    }
-                    break;
+                  }
+                  break;
 
-                default :
-                    break loop21;
+              default :
+                  break loop21;
                 }
             } while (true);
 
@@ -10705,7 +10705,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -10717,7 +10717,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3538:1: rule__HWSWParemeter__Group_8__5 : rule__HWSWParemeter__Group_8__5__Impl ;
     public final void rule__HWSWParemeter__Group_8__5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3542:1: ( rule__HWSWParemeter__Group_8__5__Impl )
@@ -10738,7 +10738,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -10750,7 +10750,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3549:1: rule__HWSWParemeter__Group_8__5__Impl : ( RULE_DEDENT ) ;
     public final void rule__HWSWParemeter__Group_8__5__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3553:1: ( ( RULE_DEDENT ) )
@@ -10775,7 +10775,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -10787,7 +10787,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3565:1: rule__HWSWParemeter__Group_8_4__0 : rule__HWSWParemeter__Group_8_4__0__Impl rule__HWSWParemeter__Group_8_4__1 ;
     public final void rule__HWSWParemeter__Group_8_4__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3569:1: ( rule__HWSWParemeter__Group_8_4__0__Impl rule__HWSWParemeter__Group_8_4__1 )
@@ -10813,7 +10813,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -10825,7 +10825,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3577:1: rule__HWSWParemeter__Group_8_4__0__Impl : ( rulePreListElement ) ;
     public final void rule__HWSWParemeter__Group_8_4__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3581:1: ( ( rulePreListElement ) )
@@ -10854,7 +10854,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -10866,7 +10866,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3592:1: rule__HWSWParemeter__Group_8_4__1 : rule__HWSWParemeter__Group_8_4__1__Impl ;
     public final void rule__HWSWParemeter__Group_8_4__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3596:1: ( rule__HWSWParemeter__Group_8_4__1__Impl )
@@ -10887,7 +10887,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -10899,7 +10899,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3603:1: rule__HWSWParemeter__Group_8_4__1__Impl : ( ( rule__HWSWParemeter__ValueAssignment_8_4_1 ) ) ;
     public final void rule__HWSWParemeter__Group_8_4__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3607:1: ( ( ( rule__HWSWParemeter__ValueAssignment_8_4_1 ) ) )
@@ -10934,7 +10934,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -10946,7 +10946,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3619:1: rule__SoftwareExecutionParemeter__Group__0 : rule__SoftwareExecutionParemeter__Group__0__Impl rule__SoftwareExecutionParemeter__Group__1 ;
     public final void rule__SoftwareExecutionParemeter__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3623:1: ( rule__SoftwareExecutionParemeter__Group__0__Impl rule__SoftwareExecutionParemeter__Group__1 )
@@ -10972,7 +10972,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -10984,7 +10984,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3631:1: rule__SoftwareExecutionParemeter__Group__0__Impl : ( () ) ;
     public final void rule__SoftwareExecutionParemeter__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3635:1: ( ( () ) )
@@ -11009,7 +11009,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -11021,7 +11021,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3646:1: rule__SoftwareExecutionParemeter__Group__1 : rule__SoftwareExecutionParemeter__Group__1__Impl rule__SoftwareExecutionParemeter__Group__2 ;
     public final void rule__SoftwareExecutionParemeter__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3650:1: ( rule__SoftwareExecutionParemeter__Group__1__Impl rule__SoftwareExecutionParemeter__Group__2 )
@@ -11047,7 +11047,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -11059,7 +11059,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3658:1: rule__SoftwareExecutionParemeter__Group__1__Impl : ( rulePreListElement ) ;
     public final void rule__SoftwareExecutionParemeter__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3662:1: ( ( rulePreListElement ) )
@@ -11088,7 +11088,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -11100,7 +11100,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3673:1: rule__SoftwareExecutionParemeter__Group__2 : rule__SoftwareExecutionParemeter__Group__2__Impl rule__SoftwareExecutionParemeter__Group__3 ;
     public final void rule__SoftwareExecutionParemeter__Group__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3677:1: ( rule__SoftwareExecutionParemeter__Group__2__Impl rule__SoftwareExecutionParemeter__Group__3 )
@@ -11126,7 +11126,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -11138,7 +11138,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3685:1: rule__SoftwareExecutionParemeter__Group__2__Impl : ( Name ) ;
     public final void rule__SoftwareExecutionParemeter__Group__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3689:1: ( ( Name ) )
@@ -11163,7 +11163,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -11175,7 +11175,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3700:1: rule__SoftwareExecutionParemeter__Group__3 : rule__SoftwareExecutionParemeter__Group__3__Impl rule__SoftwareExecutionParemeter__Group__4 ;
     public final void rule__SoftwareExecutionParemeter__Group__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3704:1: ( rule__SoftwareExecutionParemeter__Group__3__Impl rule__SoftwareExecutionParemeter__Group__4 )
@@ -11201,7 +11201,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -11213,7 +11213,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3712:1: rule__SoftwareExecutionParemeter__Group__3__Impl : ( ( rule__SoftwareExecutionParemeter__NameAssignment_3 ) ) ;
     public final void rule__SoftwareExecutionParemeter__Group__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3716:1: ( ( ( rule__SoftwareExecutionParemeter__NameAssignment_3 ) ) )
@@ -11248,7 +11248,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -11260,7 +11260,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3727:1: rule__SoftwareExecutionParemeter__Group__4 : rule__SoftwareExecutionParemeter__Group__4__Impl rule__SoftwareExecutionParemeter__Group__5 ;
     public final void rule__SoftwareExecutionParemeter__Group__4() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3731:1: ( rule__SoftwareExecutionParemeter__Group__4__Impl rule__SoftwareExecutionParemeter__Group__5 )
@@ -11286,7 +11286,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -11298,7 +11298,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3739:1: rule__SoftwareExecutionParemeter__Group__4__Impl : ( RULE_INDENT ) ;
     public final void rule__SoftwareExecutionParemeter__Group__4__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3743:1: ( ( RULE_INDENT ) )
@@ -11323,7 +11323,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -11335,7 +11335,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3754:1: rule__SoftwareExecutionParemeter__Group__5 : rule__SoftwareExecutionParemeter__Group__5__Impl rule__SoftwareExecutionParemeter__Group__6 ;
     public final void rule__SoftwareExecutionParemeter__Group__5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3758:1: ( rule__SoftwareExecutionParemeter__Group__5__Impl rule__SoftwareExecutionParemeter__Group__6 )
@@ -11361,7 +11361,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -11373,7 +11373,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3766:1: rule__SoftwareExecutionParemeter__Group__5__Impl : ( Kind ) ;
     public final void rule__SoftwareExecutionParemeter__Group__5__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3770:1: ( ( Kind ) )
@@ -11398,7 +11398,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -11410,7 +11410,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3781:1: rule__SoftwareExecutionParemeter__Group__6 : rule__SoftwareExecutionParemeter__Group__6__Impl rule__SoftwareExecutionParemeter__Group__7 ;
     public final void rule__SoftwareExecutionParemeter__Group__6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3785:1: ( rule__SoftwareExecutionParemeter__Group__6__Impl rule__SoftwareExecutionParemeter__Group__7 )
@@ -11436,7 +11436,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -11448,7 +11448,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3793:1: rule__SoftwareExecutionParemeter__Group__6__Impl : ( ( rule__SoftwareExecutionParemeter__KindAssignment_6 ) ) ;
     public final void rule__SoftwareExecutionParemeter__Group__6__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3797:1: ( ( ( rule__SoftwareExecutionParemeter__KindAssignment_6 ) ) )
@@ -11483,7 +11483,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -11495,7 +11495,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3808:1: rule__SoftwareExecutionParemeter__Group__7 : rule__SoftwareExecutionParemeter__Group__7__Impl rule__SoftwareExecutionParemeter__Group__8 ;
     public final void rule__SoftwareExecutionParemeter__Group__7() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3812:1: ( rule__SoftwareExecutionParemeter__Group__7__Impl rule__SoftwareExecutionParemeter__Group__8 )
@@ -11521,7 +11521,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -11533,7 +11533,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3820:1: rule__SoftwareExecutionParemeter__Group__7__Impl : ( ( rule__SoftwareExecutionParemeter__Group_7__0 )? ) ;
     public final void rule__SoftwareExecutionParemeter__Group__7__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3824:1: ( ( ( rule__SoftwareExecutionParemeter__Group_7__0 )? ) )
@@ -11579,7 +11579,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -11591,7 +11591,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3835:1: rule__SoftwareExecutionParemeter__Group__8 : rule__SoftwareExecutionParemeter__Group__8__Impl rule__SoftwareExecutionParemeter__Group__9 ;
     public final void rule__SoftwareExecutionParemeter__Group__8() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3839:1: ( rule__SoftwareExecutionParemeter__Group__8__Impl rule__SoftwareExecutionParemeter__Group__9 )
@@ -11617,7 +11617,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -11629,7 +11629,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3847:1: rule__SoftwareExecutionParemeter__Group__8__Impl : ( ( rule__SoftwareExecutionParemeter__Group_8__0 )? ) ;
     public final void rule__SoftwareExecutionParemeter__Group__8__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3851:1: ( ( ( rule__SoftwareExecutionParemeter__Group_8__0 )? ) )
@@ -11675,7 +11675,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -11687,7 +11687,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3862:1: rule__SoftwareExecutionParemeter__Group__9 : rule__SoftwareExecutionParemeter__Group__9__Impl ;
     public final void rule__SoftwareExecutionParemeter__Group__9() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3866:1: ( rule__SoftwareExecutionParemeter__Group__9__Impl )
@@ -11708,7 +11708,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -11720,7 +11720,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3873:1: rule__SoftwareExecutionParemeter__Group__9__Impl : ( RULE_DEDENT ) ;
     public final void rule__SoftwareExecutionParemeter__Group__9__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3877:1: ( ( RULE_DEDENT ) )
@@ -11745,7 +11745,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -11757,7 +11757,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3889:1: rule__SoftwareExecutionParemeter__Group_7__0 : rule__SoftwareExecutionParemeter__Group_7__0__Impl rule__SoftwareExecutionParemeter__Group_7__1 ;
     public final void rule__SoftwareExecutionParemeter__Group_7__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3893:1: ( rule__SoftwareExecutionParemeter__Group_7__0__Impl rule__SoftwareExecutionParemeter__Group_7__1 )
@@ -11783,7 +11783,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -11795,7 +11795,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3901:1: rule__SoftwareExecutionParemeter__Group_7__0__Impl : ( Description ) ;
     public final void rule__SoftwareExecutionParemeter__Group_7__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3905:1: ( ( Description ) )
@@ -11820,7 +11820,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -11832,7 +11832,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3916:1: rule__SoftwareExecutionParemeter__Group_7__1 : rule__SoftwareExecutionParemeter__Group_7__1__Impl ;
     public final void rule__SoftwareExecutionParemeter__Group_7__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3920:1: ( rule__SoftwareExecutionParemeter__Group_7__1__Impl )
@@ -11853,7 +11853,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -11865,7 +11865,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3927:1: rule__SoftwareExecutionParemeter__Group_7__1__Impl : ( ( rule__SoftwareExecutionParemeter__DescriptionAssignment_7_1 ) ) ;
     public final void rule__SoftwareExecutionParemeter__Group_7__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3931:1: ( ( ( rule__SoftwareExecutionParemeter__DescriptionAssignment_7_1 ) ) )
@@ -11900,7 +11900,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -11912,7 +11912,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3943:1: rule__SoftwareExecutionParemeter__Group_8__0 : rule__SoftwareExecutionParemeter__Group_8__0__Impl rule__SoftwareExecutionParemeter__Group_8__1 ;
     public final void rule__SoftwareExecutionParemeter__Group_8__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3947:1: ( rule__SoftwareExecutionParemeter__Group_8__0__Impl rule__SoftwareExecutionParemeter__Group_8__1 )
@@ -11938,7 +11938,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -11950,7 +11950,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3955:1: rule__SoftwareExecutionParemeter__Group_8__0__Impl : ( Value ) ;
     public final void rule__SoftwareExecutionParemeter__Group_8__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3959:1: ( ( Value ) )
@@ -11975,7 +11975,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -11987,7 +11987,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3970:1: rule__SoftwareExecutionParemeter__Group_8__1 : rule__SoftwareExecutionParemeter__Group_8__1__Impl rule__SoftwareExecutionParemeter__Group_8__2 ;
     public final void rule__SoftwareExecutionParemeter__Group_8__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3974:1: ( rule__SoftwareExecutionParemeter__Group_8__1__Impl rule__SoftwareExecutionParemeter__Group_8__2 )
@@ -12013,7 +12013,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -12025,7 +12025,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3982:1: rule__SoftwareExecutionParemeter__Group_8__1__Impl : ( RULE_INDENT ) ;
     public final void rule__SoftwareExecutionParemeter__Group_8__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:3986:1: ( ( RULE_INDENT ) )
@@ -12050,7 +12050,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -12062,7 +12062,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:3997:1: rule__SoftwareExecutionParemeter__Group_8__2 : rule__SoftwareExecutionParemeter__Group_8__2__Impl rule__SoftwareExecutionParemeter__Group_8__3 ;
     public final void rule__SoftwareExecutionParemeter__Group_8__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4001:1: ( rule__SoftwareExecutionParemeter__Group_8__2__Impl rule__SoftwareExecutionParemeter__Group_8__3 )
@@ -12088,7 +12088,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -12100,7 +12100,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4009:1: rule__SoftwareExecutionParemeter__Group_8__2__Impl : ( rulePreListElement ) ;
     public final void rule__SoftwareExecutionParemeter__Group_8__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4013:1: ( ( rulePreListElement ) )
@@ -12129,7 +12129,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -12141,7 +12141,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4024:1: rule__SoftwareExecutionParemeter__Group_8__3 : rule__SoftwareExecutionParemeter__Group_8__3__Impl rule__SoftwareExecutionParemeter__Group_8__4 ;
     public final void rule__SoftwareExecutionParemeter__Group_8__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4028:1: ( rule__SoftwareExecutionParemeter__Group_8__3__Impl rule__SoftwareExecutionParemeter__Group_8__4 )
@@ -12167,7 +12167,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -12179,7 +12179,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4036:1: rule__SoftwareExecutionParemeter__Group_8__3__Impl : ( ( rule__SoftwareExecutionParemeter__ValueAssignment_8_3 ) ) ;
     public final void rule__SoftwareExecutionParemeter__Group_8__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4040:1: ( ( ( rule__SoftwareExecutionParemeter__ValueAssignment_8_3 ) ) )
@@ -12214,7 +12214,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -12226,7 +12226,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4051:1: rule__SoftwareExecutionParemeter__Group_8__4 : rule__SoftwareExecutionParemeter__Group_8__4__Impl rule__SoftwareExecutionParemeter__Group_8__5 ;
     public final void rule__SoftwareExecutionParemeter__Group_8__4() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4055:1: ( rule__SoftwareExecutionParemeter__Group_8__4__Impl rule__SoftwareExecutionParemeter__Group_8__5 )
@@ -12252,7 +12252,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -12264,7 +12264,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4063:1: rule__SoftwareExecutionParemeter__Group_8__4__Impl : ( ( rule__SoftwareExecutionParemeter__Group_8_4__0 )* ) ;
     public final void rule__SoftwareExecutionParemeter__Group_8__4__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4067:1: ( ( ( rule__SoftwareExecutionParemeter__Group_8_4__0 )* ) )
@@ -12286,20 +12286,20 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
 
 
                 switch (alt24) {
-                case 1 :
-                    // InternalImplementationDescriptionParser.g:4070:3: rule__SoftwareExecutionParemeter__Group_8_4__0
-                    {
-                    pushFollow(FOLLOW_12);
-                    rule__SoftwareExecutionParemeter__Group_8_4__0();
+              case 1 :
+                  // InternalImplementationDescriptionParser.g:4070:3: rule__SoftwareExecutionParemeter__Group_8_4__0
+                  {
+                  pushFollow(FOLLOW_12);
+                  rule__SoftwareExecutionParemeter__Group_8_4__0();
 
-                    state._fsp--;
+                  state._fsp--;
 
 
-                    }
-                    break;
+                  }
+                  break;
 
-                default :
-                    break loop24;
+              default :
+                  break loop24;
                 }
             } while (true);
 
@@ -12317,7 +12317,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -12329,7 +12329,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4078:1: rule__SoftwareExecutionParemeter__Group_8__5 : rule__SoftwareExecutionParemeter__Group_8__5__Impl ;
     public final void rule__SoftwareExecutionParemeter__Group_8__5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4082:1: ( rule__SoftwareExecutionParemeter__Group_8__5__Impl )
@@ -12350,7 +12350,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -12362,7 +12362,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4089:1: rule__SoftwareExecutionParemeter__Group_8__5__Impl : ( RULE_DEDENT ) ;
     public final void rule__SoftwareExecutionParemeter__Group_8__5__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4093:1: ( ( RULE_DEDENT ) )
@@ -12387,7 +12387,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -12399,7 +12399,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4105:1: rule__SoftwareExecutionParemeter__Group_8_4__0 : rule__SoftwareExecutionParemeter__Group_8_4__0__Impl rule__SoftwareExecutionParemeter__Group_8_4__1 ;
     public final void rule__SoftwareExecutionParemeter__Group_8_4__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4109:1: ( rule__SoftwareExecutionParemeter__Group_8_4__0__Impl rule__SoftwareExecutionParemeter__Group_8_4__1 )
@@ -12425,7 +12425,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -12437,7 +12437,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4117:1: rule__SoftwareExecutionParemeter__Group_8_4__0__Impl : ( rulePreListElement ) ;
     public final void rule__SoftwareExecutionParemeter__Group_8_4__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4121:1: ( ( rulePreListElement ) )
@@ -12466,7 +12466,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -12478,7 +12478,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4132:1: rule__SoftwareExecutionParemeter__Group_8_4__1 : rule__SoftwareExecutionParemeter__Group_8_4__1__Impl ;
     public final void rule__SoftwareExecutionParemeter__Group_8_4__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4136:1: ( rule__SoftwareExecutionParemeter__Group_8_4__1__Impl )
@@ -12499,7 +12499,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -12511,7 +12511,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4143:1: rule__SoftwareExecutionParemeter__Group_8_4__1__Impl : ( ( rule__SoftwareExecutionParemeter__ValueAssignment_8_4_1 ) ) ;
     public final void rule__SoftwareExecutionParemeter__Group_8_4__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4147:1: ( ( ( rule__SoftwareExecutionParemeter__ValueAssignment_8_4_1 ) ) )
@@ -12546,7 +12546,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -12558,7 +12558,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4159:1: rule__NameOperatingSystemProperty__Group__0 : rule__NameOperatingSystemProperty__Group__0__Impl rule__NameOperatingSystemProperty__Group__1 ;
     public final void rule__NameOperatingSystemProperty__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4163:1: ( rule__NameOperatingSystemProperty__Group__0__Impl rule__NameOperatingSystemProperty__Group__1 )
@@ -12584,7 +12584,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -12596,7 +12596,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4171:1: rule__NameOperatingSystemProperty__Group__0__Impl : ( () ) ;
     public final void rule__NameOperatingSystemProperty__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4175:1: ( ( () ) )
@@ -12621,7 +12621,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -12633,7 +12633,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4186:1: rule__NameOperatingSystemProperty__Group__1 : rule__NameOperatingSystemProperty__Group__1__Impl rule__NameOperatingSystemProperty__Group__2 ;
     public final void rule__NameOperatingSystemProperty__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4190:1: ( rule__NameOperatingSystemProperty__Group__1__Impl rule__NameOperatingSystemProperty__Group__2 )
@@ -12659,7 +12659,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -12671,7 +12671,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4198:1: rule__NameOperatingSystemProperty__Group__1__Impl : ( rulePreListElement ) ;
     public final void rule__NameOperatingSystemProperty__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4202:1: ( ( rulePreListElement ) )
@@ -12700,7 +12700,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -12712,7 +12712,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4213:1: rule__NameOperatingSystemProperty__Group__2 : rule__NameOperatingSystemProperty__Group__2__Impl rule__NameOperatingSystemProperty__Group__3 ;
     public final void rule__NameOperatingSystemProperty__Group__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4217:1: ( rule__NameOperatingSystemProperty__Group__2__Impl rule__NameOperatingSystemProperty__Group__3 )
@@ -12738,7 +12738,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -12750,7 +12750,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4225:1: rule__NameOperatingSystemProperty__Group__2__Impl : ( Name ) ;
     public final void rule__NameOperatingSystemProperty__Group__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4229:1: ( ( Name ) )
@@ -12775,7 +12775,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -12787,7 +12787,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4240:1: rule__NameOperatingSystemProperty__Group__3 : rule__NameOperatingSystemProperty__Group__3__Impl rule__NameOperatingSystemProperty__Group__4 ;
     public final void rule__NameOperatingSystemProperty__Group__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4244:1: ( rule__NameOperatingSystemProperty__Group__3__Impl rule__NameOperatingSystemProperty__Group__4 )
@@ -12813,7 +12813,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -12825,7 +12825,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4252:1: rule__NameOperatingSystemProperty__Group__3__Impl : ( ( rule__NameOperatingSystemProperty__NameAssignment_3 ) ) ;
     public final void rule__NameOperatingSystemProperty__Group__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4256:1: ( ( ( rule__NameOperatingSystemProperty__NameAssignment_3 ) ) )
@@ -12860,7 +12860,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -12872,7 +12872,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4267:1: rule__NameOperatingSystemProperty__Group__4 : rule__NameOperatingSystemProperty__Group__4__Impl rule__NameOperatingSystemProperty__Group__5 ;
     public final void rule__NameOperatingSystemProperty__Group__4() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4271:1: ( rule__NameOperatingSystemProperty__Group__4__Impl rule__NameOperatingSystemProperty__Group__5 )
@@ -12898,7 +12898,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -12910,7 +12910,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4279:1: rule__NameOperatingSystemProperty__Group__4__Impl : ( RULE_INDENT ) ;
     public final void rule__NameOperatingSystemProperty__Group__4__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4283:1: ( ( RULE_INDENT ) )
@@ -12935,7 +12935,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -12947,7 +12947,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4294:1: rule__NameOperatingSystemProperty__Group__5 : rule__NameOperatingSystemProperty__Group__5__Impl rule__NameOperatingSystemProperty__Group__6 ;
     public final void rule__NameOperatingSystemProperty__Group__5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4298:1: ( rule__NameOperatingSystemProperty__Group__5__Impl rule__NameOperatingSystemProperty__Group__6 )
@@ -12973,7 +12973,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -12985,7 +12985,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4306:1: rule__NameOperatingSystemProperty__Group__5__Impl : ( Kind ) ;
     public final void rule__NameOperatingSystemProperty__Group__5__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4310:1: ( ( Kind ) )
@@ -13010,7 +13010,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -13022,7 +13022,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4321:1: rule__NameOperatingSystemProperty__Group__6 : rule__NameOperatingSystemProperty__Group__6__Impl rule__NameOperatingSystemProperty__Group__7 ;
     public final void rule__NameOperatingSystemProperty__Group__6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4325:1: ( rule__NameOperatingSystemProperty__Group__6__Impl rule__NameOperatingSystemProperty__Group__7 )
@@ -13048,7 +13048,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -13060,7 +13060,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4333:1: rule__NameOperatingSystemProperty__Group__6__Impl : ( ( rule__NameOperatingSystemProperty__KindAssignment_6 ) ) ;
     public final void rule__NameOperatingSystemProperty__Group__6__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4337:1: ( ( ( rule__NameOperatingSystemProperty__KindAssignment_6 ) ) )
@@ -13095,7 +13095,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -13107,7 +13107,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4348:1: rule__NameOperatingSystemProperty__Group__7 : rule__NameOperatingSystemProperty__Group__7__Impl rule__NameOperatingSystemProperty__Group__8 ;
     public final void rule__NameOperatingSystemProperty__Group__7() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4352:1: ( rule__NameOperatingSystemProperty__Group__7__Impl rule__NameOperatingSystemProperty__Group__8 )
@@ -13133,7 +13133,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -13145,7 +13145,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4360:1: rule__NameOperatingSystemProperty__Group__7__Impl : ( ( rule__NameOperatingSystemProperty__Group_7__0 )? ) ;
     public final void rule__NameOperatingSystemProperty__Group__7__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4364:1: ( ( ( rule__NameOperatingSystemProperty__Group_7__0 )? ) )
@@ -13191,7 +13191,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -13203,7 +13203,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4375:1: rule__NameOperatingSystemProperty__Group__8 : rule__NameOperatingSystemProperty__Group__8__Impl rule__NameOperatingSystemProperty__Group__9 ;
     public final void rule__NameOperatingSystemProperty__Group__8() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4379:1: ( rule__NameOperatingSystemProperty__Group__8__Impl rule__NameOperatingSystemProperty__Group__9 )
@@ -13229,7 +13229,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -13241,7 +13241,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4387:1: rule__NameOperatingSystemProperty__Group__8__Impl : ( ( rule__NameOperatingSystemProperty__Group_8__0 )? ) ;
     public final void rule__NameOperatingSystemProperty__Group__8__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4391:1: ( ( ( rule__NameOperatingSystemProperty__Group_8__0 )? ) )
@@ -13287,7 +13287,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -13299,7 +13299,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4402:1: rule__NameOperatingSystemProperty__Group__9 : rule__NameOperatingSystemProperty__Group__9__Impl ;
     public final void rule__NameOperatingSystemProperty__Group__9() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4406:1: ( rule__NameOperatingSystemProperty__Group__9__Impl )
@@ -13320,7 +13320,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -13332,7 +13332,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4413:1: rule__NameOperatingSystemProperty__Group__9__Impl : ( RULE_DEDENT ) ;
     public final void rule__NameOperatingSystemProperty__Group__9__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4417:1: ( ( RULE_DEDENT ) )
@@ -13357,7 +13357,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -13369,7 +13369,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4429:1: rule__NameOperatingSystemProperty__Group_7__0 : rule__NameOperatingSystemProperty__Group_7__0__Impl rule__NameOperatingSystemProperty__Group_7__1 ;
     public final void rule__NameOperatingSystemProperty__Group_7__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4433:1: ( rule__NameOperatingSystemProperty__Group_7__0__Impl rule__NameOperatingSystemProperty__Group_7__1 )
@@ -13395,7 +13395,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -13407,7 +13407,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4441:1: rule__NameOperatingSystemProperty__Group_7__0__Impl : ( Description ) ;
     public final void rule__NameOperatingSystemProperty__Group_7__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4445:1: ( ( Description ) )
@@ -13432,7 +13432,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -13444,7 +13444,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4456:1: rule__NameOperatingSystemProperty__Group_7__1 : rule__NameOperatingSystemProperty__Group_7__1__Impl ;
     public final void rule__NameOperatingSystemProperty__Group_7__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4460:1: ( rule__NameOperatingSystemProperty__Group_7__1__Impl )
@@ -13465,7 +13465,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -13477,7 +13477,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4467:1: rule__NameOperatingSystemProperty__Group_7__1__Impl : ( ( rule__NameOperatingSystemProperty__DescriptionAssignment_7_1 ) ) ;
     public final void rule__NameOperatingSystemProperty__Group_7__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4471:1: ( ( ( rule__NameOperatingSystemProperty__DescriptionAssignment_7_1 ) ) )
@@ -13512,7 +13512,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -13524,7 +13524,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4483:1: rule__NameOperatingSystemProperty__Group_8__0 : rule__NameOperatingSystemProperty__Group_8__0__Impl rule__NameOperatingSystemProperty__Group_8__1 ;
     public final void rule__NameOperatingSystemProperty__Group_8__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4487:1: ( rule__NameOperatingSystemProperty__Group_8__0__Impl rule__NameOperatingSystemProperty__Group_8__1 )
@@ -13550,7 +13550,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -13562,7 +13562,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4495:1: rule__NameOperatingSystemProperty__Group_8__0__Impl : ( Value ) ;
     public final void rule__NameOperatingSystemProperty__Group_8__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4499:1: ( ( Value ) )
@@ -13587,7 +13587,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -13599,7 +13599,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4510:1: rule__NameOperatingSystemProperty__Group_8__1 : rule__NameOperatingSystemProperty__Group_8__1__Impl ;
     public final void rule__NameOperatingSystemProperty__Group_8__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4514:1: ( rule__NameOperatingSystemProperty__Group_8__1__Impl )
@@ -13620,7 +13620,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -13632,7 +13632,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4521:1: rule__NameOperatingSystemProperty__Group_8__1__Impl : ( ( rule__NameOperatingSystemProperty__ValueAssignment_8_1 ) ) ;
     public final void rule__NameOperatingSystemProperty__Group_8__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4525:1: ( ( ( rule__NameOperatingSystemProperty__ValueAssignment_8_1 ) ) )
@@ -13667,7 +13667,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -13679,7 +13679,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4537:1: rule__VersionOperatingSystemProperty__Group__0 : rule__VersionOperatingSystemProperty__Group__0__Impl rule__VersionOperatingSystemProperty__Group__1 ;
     public final void rule__VersionOperatingSystemProperty__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4541:1: ( rule__VersionOperatingSystemProperty__Group__0__Impl rule__VersionOperatingSystemProperty__Group__1 )
@@ -13705,7 +13705,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -13717,7 +13717,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4549:1: rule__VersionOperatingSystemProperty__Group__0__Impl : ( () ) ;
     public final void rule__VersionOperatingSystemProperty__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4553:1: ( ( () ) )
@@ -13742,7 +13742,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -13754,7 +13754,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4564:1: rule__VersionOperatingSystemProperty__Group__1 : rule__VersionOperatingSystemProperty__Group__1__Impl rule__VersionOperatingSystemProperty__Group__2 ;
     public final void rule__VersionOperatingSystemProperty__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4568:1: ( rule__VersionOperatingSystemProperty__Group__1__Impl rule__VersionOperatingSystemProperty__Group__2 )
@@ -13780,7 +13780,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -13792,7 +13792,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4576:1: rule__VersionOperatingSystemProperty__Group__1__Impl : ( rulePreListElement ) ;
     public final void rule__VersionOperatingSystemProperty__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4580:1: ( ( rulePreListElement ) )
@@ -13821,7 +13821,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -13833,7 +13833,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4591:1: rule__VersionOperatingSystemProperty__Group__2 : rule__VersionOperatingSystemProperty__Group__2__Impl rule__VersionOperatingSystemProperty__Group__3 ;
     public final void rule__VersionOperatingSystemProperty__Group__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4595:1: ( rule__VersionOperatingSystemProperty__Group__2__Impl rule__VersionOperatingSystemProperty__Group__3 )
@@ -13859,7 +13859,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -13871,7 +13871,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4603:1: rule__VersionOperatingSystemProperty__Group__2__Impl : ( Name ) ;
     public final void rule__VersionOperatingSystemProperty__Group__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4607:1: ( ( Name ) )
@@ -13896,7 +13896,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -13908,7 +13908,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4618:1: rule__VersionOperatingSystemProperty__Group__3 : rule__VersionOperatingSystemProperty__Group__3__Impl rule__VersionOperatingSystemProperty__Group__4 ;
     public final void rule__VersionOperatingSystemProperty__Group__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4622:1: ( rule__VersionOperatingSystemProperty__Group__3__Impl rule__VersionOperatingSystemProperty__Group__4 )
@@ -13934,7 +13934,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -13946,7 +13946,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4630:1: rule__VersionOperatingSystemProperty__Group__3__Impl : ( ( rule__VersionOperatingSystemProperty__NameAssignment_3 ) ) ;
     public final void rule__VersionOperatingSystemProperty__Group__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4634:1: ( ( ( rule__VersionOperatingSystemProperty__NameAssignment_3 ) ) )
@@ -13981,7 +13981,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -13993,7 +13993,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4645:1: rule__VersionOperatingSystemProperty__Group__4 : rule__VersionOperatingSystemProperty__Group__4__Impl rule__VersionOperatingSystemProperty__Group__5 ;
     public final void rule__VersionOperatingSystemProperty__Group__4() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4649:1: ( rule__VersionOperatingSystemProperty__Group__4__Impl rule__VersionOperatingSystemProperty__Group__5 )
@@ -14019,7 +14019,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -14031,7 +14031,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4657:1: rule__VersionOperatingSystemProperty__Group__4__Impl : ( RULE_INDENT ) ;
     public final void rule__VersionOperatingSystemProperty__Group__4__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4661:1: ( ( RULE_INDENT ) )
@@ -14056,7 +14056,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -14068,7 +14068,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4672:1: rule__VersionOperatingSystemProperty__Group__5 : rule__VersionOperatingSystemProperty__Group__5__Impl rule__VersionOperatingSystemProperty__Group__6 ;
     public final void rule__VersionOperatingSystemProperty__Group__5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4676:1: ( rule__VersionOperatingSystemProperty__Group__5__Impl rule__VersionOperatingSystemProperty__Group__6 )
@@ -14094,7 +14094,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -14106,7 +14106,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4684:1: rule__VersionOperatingSystemProperty__Group__5__Impl : ( Kind ) ;
     public final void rule__VersionOperatingSystemProperty__Group__5__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4688:1: ( ( Kind ) )
@@ -14131,7 +14131,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -14143,7 +14143,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4699:1: rule__VersionOperatingSystemProperty__Group__6 : rule__VersionOperatingSystemProperty__Group__6__Impl rule__VersionOperatingSystemProperty__Group__7 ;
     public final void rule__VersionOperatingSystemProperty__Group__6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4703:1: ( rule__VersionOperatingSystemProperty__Group__6__Impl rule__VersionOperatingSystemProperty__Group__7 )
@@ -14169,7 +14169,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -14181,7 +14181,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4711:1: rule__VersionOperatingSystemProperty__Group__6__Impl : ( ( rule__VersionOperatingSystemProperty__KindAssignment_6 ) ) ;
     public final void rule__VersionOperatingSystemProperty__Group__6__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4715:1: ( ( ( rule__VersionOperatingSystemProperty__KindAssignment_6 ) ) )
@@ -14216,7 +14216,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -14228,7 +14228,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4726:1: rule__VersionOperatingSystemProperty__Group__7 : rule__VersionOperatingSystemProperty__Group__7__Impl rule__VersionOperatingSystemProperty__Group__8 ;
     public final void rule__VersionOperatingSystemProperty__Group__7() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4730:1: ( rule__VersionOperatingSystemProperty__Group__7__Impl rule__VersionOperatingSystemProperty__Group__8 )
@@ -14254,7 +14254,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -14266,7 +14266,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4738:1: rule__VersionOperatingSystemProperty__Group__7__Impl : ( ( rule__VersionOperatingSystemProperty__Group_7__0 )? ) ;
     public final void rule__VersionOperatingSystemProperty__Group__7__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4742:1: ( ( ( rule__VersionOperatingSystemProperty__Group_7__0 )? ) )
@@ -14312,7 +14312,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -14324,7 +14324,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4753:1: rule__VersionOperatingSystemProperty__Group__8 : rule__VersionOperatingSystemProperty__Group__8__Impl rule__VersionOperatingSystemProperty__Group__9 ;
     public final void rule__VersionOperatingSystemProperty__Group__8() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4757:1: ( rule__VersionOperatingSystemProperty__Group__8__Impl rule__VersionOperatingSystemProperty__Group__9 )
@@ -14350,7 +14350,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -14362,7 +14362,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4765:1: rule__VersionOperatingSystemProperty__Group__8__Impl : ( ( rule__VersionOperatingSystemProperty__Group_8__0 )? ) ;
     public final void rule__VersionOperatingSystemProperty__Group__8__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4769:1: ( ( ( rule__VersionOperatingSystemProperty__Group_8__0 )? ) )
@@ -14408,7 +14408,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -14420,7 +14420,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4780:1: rule__VersionOperatingSystemProperty__Group__9 : rule__VersionOperatingSystemProperty__Group__9__Impl ;
     public final void rule__VersionOperatingSystemProperty__Group__9() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4784:1: ( rule__VersionOperatingSystemProperty__Group__9__Impl )
@@ -14441,7 +14441,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -14453,7 +14453,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4791:1: rule__VersionOperatingSystemProperty__Group__9__Impl : ( RULE_DEDENT ) ;
     public final void rule__VersionOperatingSystemProperty__Group__9__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4795:1: ( ( RULE_DEDENT ) )
@@ -14478,7 +14478,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -14490,7 +14490,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4807:1: rule__VersionOperatingSystemProperty__Group_7__0 : rule__VersionOperatingSystemProperty__Group_7__0__Impl rule__VersionOperatingSystemProperty__Group_7__1 ;
     public final void rule__VersionOperatingSystemProperty__Group_7__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4811:1: ( rule__VersionOperatingSystemProperty__Group_7__0__Impl rule__VersionOperatingSystemProperty__Group_7__1 )
@@ -14516,7 +14516,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -14528,7 +14528,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4819:1: rule__VersionOperatingSystemProperty__Group_7__0__Impl : ( Description ) ;
     public final void rule__VersionOperatingSystemProperty__Group_7__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4823:1: ( ( Description ) )
@@ -14553,7 +14553,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -14565,7 +14565,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4834:1: rule__VersionOperatingSystemProperty__Group_7__1 : rule__VersionOperatingSystemProperty__Group_7__1__Impl ;
     public final void rule__VersionOperatingSystemProperty__Group_7__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4838:1: ( rule__VersionOperatingSystemProperty__Group_7__1__Impl )
@@ -14586,7 +14586,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -14598,7 +14598,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4845:1: rule__VersionOperatingSystemProperty__Group_7__1__Impl : ( ( rule__VersionOperatingSystemProperty__DescriptionAssignment_7_1 ) ) ;
     public final void rule__VersionOperatingSystemProperty__Group_7__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4849:1: ( ( ( rule__VersionOperatingSystemProperty__DescriptionAssignment_7_1 ) ) )
@@ -14633,7 +14633,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -14645,7 +14645,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4861:1: rule__VersionOperatingSystemProperty__Group_8__0 : rule__VersionOperatingSystemProperty__Group_8__0__Impl rule__VersionOperatingSystemProperty__Group_8__1 ;
     public final void rule__VersionOperatingSystemProperty__Group_8__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4865:1: ( rule__VersionOperatingSystemProperty__Group_8__0__Impl rule__VersionOperatingSystemProperty__Group_8__1 )
@@ -14671,7 +14671,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -14683,7 +14683,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4873:1: rule__VersionOperatingSystemProperty__Group_8__0__Impl : ( Value ) ;
     public final void rule__VersionOperatingSystemProperty__Group_8__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4877:1: ( ( Value ) )
@@ -14708,7 +14708,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -14720,7 +14720,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4888:1: rule__VersionOperatingSystemProperty__Group_8__1 : rule__VersionOperatingSystemProperty__Group_8__1__Impl ;
     public final void rule__VersionOperatingSystemProperty__Group_8__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4892:1: ( rule__VersionOperatingSystemProperty__Group_8__1__Impl )
@@ -14741,7 +14741,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -14753,7 +14753,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4899:1: rule__VersionOperatingSystemProperty__Group_8__1__Impl : ( ( rule__VersionOperatingSystemProperty__ValueAssignment_8_1 ) ) ;
     public final void rule__VersionOperatingSystemProperty__Group_8__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4903:1: ( ( ( rule__VersionOperatingSystemProperty__ValueAssignment_8_1 ) ) )
@@ -14788,7 +14788,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -14800,7 +14800,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4915:1: rule__PropertyAttribute__Group__0 : rule__PropertyAttribute__Group__0__Impl rule__PropertyAttribute__Group__1 ;
     public final void rule__PropertyAttribute__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4919:1: ( rule__PropertyAttribute__Group__0__Impl rule__PropertyAttribute__Group__1 )
@@ -14826,7 +14826,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -14838,7 +14838,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4927:1: rule__PropertyAttribute__Group__0__Impl : ( rulePreListElement ) ;
     public final void rule__PropertyAttribute__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4931:1: ( ( rulePreListElement ) )
@@ -14867,7 +14867,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -14879,7 +14879,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4942:1: rule__PropertyAttribute__Group__1 : rule__PropertyAttribute__Group__1__Impl rule__PropertyAttribute__Group__2 ;
     public final void rule__PropertyAttribute__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4946:1: ( rule__PropertyAttribute__Group__1__Impl rule__PropertyAttribute__Group__2 )
@@ -14905,7 +14905,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -14917,7 +14917,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4954:1: rule__PropertyAttribute__Group__1__Impl : ( Name ) ;
     public final void rule__PropertyAttribute__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4958:1: ( ( Name ) )
@@ -14942,7 +14942,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -14954,7 +14954,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4969:1: rule__PropertyAttribute__Group__2 : rule__PropertyAttribute__Group__2__Impl rule__PropertyAttribute__Group__3 ;
     public final void rule__PropertyAttribute__Group__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4973:1: ( rule__PropertyAttribute__Group__2__Impl rule__PropertyAttribute__Group__3 )
@@ -14980,7 +14980,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -14992,7 +14992,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4981:1: rule__PropertyAttribute__Group__2__Impl : ( ( rule__PropertyAttribute__NameAssignment_2 ) ) ;
     public final void rule__PropertyAttribute__Group__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:4985:1: ( ( ( rule__PropertyAttribute__NameAssignment_2 ) ) )
@@ -15027,7 +15027,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -15039,7 +15039,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:4996:1: rule__PropertyAttribute__Group__3 : rule__PropertyAttribute__Group__3__Impl rule__PropertyAttribute__Group__4 ;
     public final void rule__PropertyAttribute__Group__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5000:1: ( rule__PropertyAttribute__Group__3__Impl rule__PropertyAttribute__Group__4 )
@@ -15065,7 +15065,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -15077,7 +15077,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5008:1: rule__PropertyAttribute__Group__3__Impl : ( RULE_INDENT ) ;
     public final void rule__PropertyAttribute__Group__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5012:1: ( ( RULE_INDENT ) )
@@ -15102,7 +15102,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -15114,7 +15114,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5023:1: rule__PropertyAttribute__Group__4 : rule__PropertyAttribute__Group__4__Impl rule__PropertyAttribute__Group__5 ;
     public final void rule__PropertyAttribute__Group__4() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5027:1: ( rule__PropertyAttribute__Group__4__Impl rule__PropertyAttribute__Group__5 )
@@ -15140,7 +15140,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -15152,7 +15152,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5035:1: rule__PropertyAttribute__Group__4__Impl : ( Kind ) ;
     public final void rule__PropertyAttribute__Group__4__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5039:1: ( ( Kind ) )
@@ -15177,7 +15177,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -15189,7 +15189,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5050:1: rule__PropertyAttribute__Group__5 : rule__PropertyAttribute__Group__5__Impl rule__PropertyAttribute__Group__6 ;
     public final void rule__PropertyAttribute__Group__5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5054:1: ( rule__PropertyAttribute__Group__5__Impl rule__PropertyAttribute__Group__6 )
@@ -15215,7 +15215,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -15227,7 +15227,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5062:1: rule__PropertyAttribute__Group__5__Impl : ( ( rule__PropertyAttribute__KindAssignment_5 ) ) ;
     public final void rule__PropertyAttribute__Group__5__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5066:1: ( ( ( rule__PropertyAttribute__KindAssignment_5 ) ) )
@@ -15262,7 +15262,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -15274,7 +15274,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5077:1: rule__PropertyAttribute__Group__6 : rule__PropertyAttribute__Group__6__Impl rule__PropertyAttribute__Group__7 ;
     public final void rule__PropertyAttribute__Group__6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5081:1: ( rule__PropertyAttribute__Group__6__Impl rule__PropertyAttribute__Group__7 )
@@ -15300,7 +15300,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -15312,7 +15312,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5089:1: rule__PropertyAttribute__Group__6__Impl : ( ( rule__PropertyAttribute__Group_6__0 )? ) ;
     public final void rule__PropertyAttribute__Group__6__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5093:1: ( ( ( rule__PropertyAttribute__Group_6__0 )? ) )
@@ -15358,7 +15358,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -15370,7 +15370,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5104:1: rule__PropertyAttribute__Group__7 : rule__PropertyAttribute__Group__7__Impl rule__PropertyAttribute__Group__8 ;
     public final void rule__PropertyAttribute__Group__7() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5108:1: ( rule__PropertyAttribute__Group__7__Impl rule__PropertyAttribute__Group__8 )
@@ -15396,7 +15396,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -15408,7 +15408,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5116:1: rule__PropertyAttribute__Group__7__Impl : ( ( rule__PropertyAttribute__Group_7__0 )? ) ;
     public final void rule__PropertyAttribute__Group__7__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5120:1: ( ( ( rule__PropertyAttribute__Group_7__0 )? ) )
@@ -15454,7 +15454,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -15466,7 +15466,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5131:1: rule__PropertyAttribute__Group__8 : rule__PropertyAttribute__Group__8__Impl ;
     public final void rule__PropertyAttribute__Group__8() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5135:1: ( rule__PropertyAttribute__Group__8__Impl )
@@ -15487,7 +15487,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -15499,7 +15499,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5142:1: rule__PropertyAttribute__Group__8__Impl : ( ( RULE_DEDENT )? ) ;
     public final void rule__PropertyAttribute__Group__8__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5146:1: ( ( ( RULE_DEDENT )? ) )
@@ -15541,7 +15541,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -15553,7 +15553,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5158:1: rule__PropertyAttribute__Group_6__0 : rule__PropertyAttribute__Group_6__0__Impl rule__PropertyAttribute__Group_6__1 ;
     public final void rule__PropertyAttribute__Group_6__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5162:1: ( rule__PropertyAttribute__Group_6__0__Impl rule__PropertyAttribute__Group_6__1 )
@@ -15579,7 +15579,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -15591,7 +15591,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5170:1: rule__PropertyAttribute__Group_6__0__Impl : ( Description ) ;
     public final void rule__PropertyAttribute__Group_6__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5174:1: ( ( Description ) )
@@ -15616,7 +15616,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -15628,7 +15628,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5185:1: rule__PropertyAttribute__Group_6__1 : rule__PropertyAttribute__Group_6__1__Impl ;
     public final void rule__PropertyAttribute__Group_6__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5189:1: ( rule__PropertyAttribute__Group_6__1__Impl )
@@ -15649,7 +15649,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -15661,7 +15661,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5196:1: rule__PropertyAttribute__Group_6__1__Impl : ( ( rule__PropertyAttribute__DescriptionAssignment_6_1 ) ) ;
     public final void rule__PropertyAttribute__Group_6__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5200:1: ( ( ( rule__PropertyAttribute__DescriptionAssignment_6_1 ) ) )
@@ -15696,7 +15696,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -15708,7 +15708,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5212:1: rule__PropertyAttribute__Group_7__0 : rule__PropertyAttribute__Group_7__0__Impl rule__PropertyAttribute__Group_7__1 ;
     public final void rule__PropertyAttribute__Group_7__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5216:1: ( rule__PropertyAttribute__Group_7__0__Impl rule__PropertyAttribute__Group_7__1 )
@@ -15734,7 +15734,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -15746,7 +15746,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5224:1: rule__PropertyAttribute__Group_7__0__Impl : ( Value ) ;
     public final void rule__PropertyAttribute__Group_7__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5228:1: ( ( Value ) )
@@ -15771,7 +15771,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -15783,7 +15783,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5239:1: rule__PropertyAttribute__Group_7__1 : rule__PropertyAttribute__Group_7__1__Impl ;
     public final void rule__PropertyAttribute__Group_7__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5243:1: ( rule__PropertyAttribute__Group_7__1__Impl )
@@ -15804,7 +15804,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -15816,7 +15816,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5250:1: rule__PropertyAttribute__Group_7__1__Impl : ( ( rule__PropertyAttribute__ValueAssignment_7_1 ) ) ;
     public final void rule__PropertyAttribute__Group_7__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5254:1: ( ( ( rule__PropertyAttribute__ValueAssignment_7_1 ) ) )
@@ -15851,7 +15851,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -15863,7 +15863,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5266:1: rule__PropertyMaximun__Group__0 : rule__PropertyMaximun__Group__0__Impl rule__PropertyMaximun__Group__1 ;
     public final void rule__PropertyMaximun__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5270:1: ( rule__PropertyMaximun__Group__0__Impl rule__PropertyMaximun__Group__1 )
@@ -15889,7 +15889,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -15901,7 +15901,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5278:1: rule__PropertyMaximun__Group__0__Impl : ( rulePreListElement ) ;
     public final void rule__PropertyMaximun__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5282:1: ( ( rulePreListElement ) )
@@ -15930,7 +15930,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -15942,7 +15942,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5293:1: rule__PropertyMaximun__Group__1 : rule__PropertyMaximun__Group__1__Impl rule__PropertyMaximun__Group__2 ;
     public final void rule__PropertyMaximun__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5297:1: ( rule__PropertyMaximun__Group__1__Impl rule__PropertyMaximun__Group__2 )
@@ -15968,7 +15968,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -15980,7 +15980,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5305:1: rule__PropertyMaximun__Group__1__Impl : ( Name ) ;
     public final void rule__PropertyMaximun__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5309:1: ( ( Name ) )
@@ -16005,7 +16005,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -16017,7 +16017,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5320:1: rule__PropertyMaximun__Group__2 : rule__PropertyMaximun__Group__2__Impl rule__PropertyMaximun__Group__3 ;
     public final void rule__PropertyMaximun__Group__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5324:1: ( rule__PropertyMaximun__Group__2__Impl rule__PropertyMaximun__Group__3 )
@@ -16043,7 +16043,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -16055,7 +16055,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5332:1: rule__PropertyMaximun__Group__2__Impl : ( ( rule__PropertyMaximun__NameAssignment_2 ) ) ;
     public final void rule__PropertyMaximun__Group__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5336:1: ( ( ( rule__PropertyMaximun__NameAssignment_2 ) ) )
@@ -16090,7 +16090,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -16102,7 +16102,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5347:1: rule__PropertyMaximun__Group__3 : rule__PropertyMaximun__Group__3__Impl rule__PropertyMaximun__Group__4 ;
     public final void rule__PropertyMaximun__Group__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5351:1: ( rule__PropertyMaximun__Group__3__Impl rule__PropertyMaximun__Group__4 )
@@ -16128,7 +16128,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -16140,7 +16140,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5359:1: rule__PropertyMaximun__Group__3__Impl : ( RULE_INDENT ) ;
     public final void rule__PropertyMaximun__Group__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5363:1: ( ( RULE_INDENT ) )
@@ -16165,7 +16165,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -16177,7 +16177,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5374:1: rule__PropertyMaximun__Group__4 : rule__PropertyMaximun__Group__4__Impl rule__PropertyMaximun__Group__5 ;
     public final void rule__PropertyMaximun__Group__4() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5378:1: ( rule__PropertyMaximun__Group__4__Impl rule__PropertyMaximun__Group__5 )
@@ -16203,7 +16203,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -16215,7 +16215,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5386:1: rule__PropertyMaximun__Group__4__Impl : ( Kind ) ;
     public final void rule__PropertyMaximun__Group__4__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5390:1: ( ( Kind ) )
@@ -16240,7 +16240,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -16252,7 +16252,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5401:1: rule__PropertyMaximun__Group__5 : rule__PropertyMaximun__Group__5__Impl rule__PropertyMaximun__Group__6 ;
     public final void rule__PropertyMaximun__Group__5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5405:1: ( rule__PropertyMaximun__Group__5__Impl rule__PropertyMaximun__Group__6 )
@@ -16278,7 +16278,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -16290,7 +16290,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5413:1: rule__PropertyMaximun__Group__5__Impl : ( ( rule__PropertyMaximun__KindAssignment_5 ) ) ;
     public final void rule__PropertyMaximun__Group__5__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5417:1: ( ( ( rule__PropertyMaximun__KindAssignment_5 ) ) )
@@ -16325,7 +16325,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -16337,7 +16337,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5428:1: rule__PropertyMaximun__Group__6 : rule__PropertyMaximun__Group__6__Impl rule__PropertyMaximun__Group__7 ;
     public final void rule__PropertyMaximun__Group__6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5432:1: ( rule__PropertyMaximun__Group__6__Impl rule__PropertyMaximun__Group__7 )
@@ -16363,7 +16363,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -16375,7 +16375,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5440:1: rule__PropertyMaximun__Group__6__Impl : ( ( rule__PropertyMaximun__Group_6__0 )? ) ;
     public final void rule__PropertyMaximun__Group__6__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5444:1: ( ( ( rule__PropertyMaximun__Group_6__0 )? ) )
@@ -16421,7 +16421,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -16433,7 +16433,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5455:1: rule__PropertyMaximun__Group__7 : rule__PropertyMaximun__Group__7__Impl rule__PropertyMaximun__Group__8 ;
     public final void rule__PropertyMaximun__Group__7() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5459:1: ( rule__PropertyMaximun__Group__7__Impl rule__PropertyMaximun__Group__8 )
@@ -16459,7 +16459,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -16471,7 +16471,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5467:1: rule__PropertyMaximun__Group__7__Impl : ( ( rule__PropertyMaximun__Group_7__0 )? ) ;
     public final void rule__PropertyMaximun__Group__7__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5471:1: ( ( ( rule__PropertyMaximun__Group_7__0 )? ) )
@@ -16517,7 +16517,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -16529,7 +16529,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5482:1: rule__PropertyMaximun__Group__8 : rule__PropertyMaximun__Group__8__Impl ;
     public final void rule__PropertyMaximun__Group__8() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5486:1: ( rule__PropertyMaximun__Group__8__Impl )
@@ -16550,7 +16550,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -16562,7 +16562,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5493:1: rule__PropertyMaximun__Group__8__Impl : ( ( RULE_DEDENT )? ) ;
     public final void rule__PropertyMaximun__Group__8__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5497:1: ( ( ( RULE_DEDENT )? ) )
@@ -16604,7 +16604,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -16616,7 +16616,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5509:1: rule__PropertyMaximun__Group_6__0 : rule__PropertyMaximun__Group_6__0__Impl rule__PropertyMaximun__Group_6__1 ;
     public final void rule__PropertyMaximun__Group_6__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5513:1: ( rule__PropertyMaximun__Group_6__0__Impl rule__PropertyMaximun__Group_6__1 )
@@ -16642,7 +16642,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -16654,7 +16654,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5521:1: rule__PropertyMaximun__Group_6__0__Impl : ( Description ) ;
     public final void rule__PropertyMaximun__Group_6__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5525:1: ( ( Description ) )
@@ -16679,7 +16679,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -16691,7 +16691,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5536:1: rule__PropertyMaximun__Group_6__1 : rule__PropertyMaximun__Group_6__1__Impl ;
     public final void rule__PropertyMaximun__Group_6__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5540:1: ( rule__PropertyMaximun__Group_6__1__Impl )
@@ -16712,7 +16712,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -16724,7 +16724,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5547:1: rule__PropertyMaximun__Group_6__1__Impl : ( ( rule__PropertyMaximun__DescriptionAssignment_6_1 ) ) ;
     public final void rule__PropertyMaximun__Group_6__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5551:1: ( ( ( rule__PropertyMaximun__DescriptionAssignment_6_1 ) ) )
@@ -16759,7 +16759,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -16771,7 +16771,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5563:1: rule__PropertyMaximun__Group_7__0 : rule__PropertyMaximun__Group_7__0__Impl rule__PropertyMaximun__Group_7__1 ;
     public final void rule__PropertyMaximun__Group_7__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5567:1: ( rule__PropertyMaximun__Group_7__0__Impl rule__PropertyMaximun__Group_7__1 )
@@ -16797,7 +16797,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -16809,7 +16809,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5575:1: rule__PropertyMaximun__Group_7__0__Impl : ( Value ) ;
     public final void rule__PropertyMaximun__Group_7__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5579:1: ( ( Value ) )
@@ -16834,7 +16834,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -16846,7 +16846,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5590:1: rule__PropertyMaximun__Group_7__1 : rule__PropertyMaximun__Group_7__1__Impl ;
     public final void rule__PropertyMaximun__Group_7__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5594:1: ( rule__PropertyMaximun__Group_7__1__Impl )
@@ -16867,7 +16867,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -16879,7 +16879,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5601:1: rule__PropertyMaximun__Group_7__1__Impl : ( ( rule__PropertyMaximun__ValueAssignment_7_1 ) ) ;
     public final void rule__PropertyMaximun__Group_7__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5605:1: ( ( ( rule__PropertyMaximun__ValueAssignment_7_1 ) ) )
@@ -16914,7 +16914,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -16926,7 +16926,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5617:1: rule__PropertyMinimum__Group__0 : rule__PropertyMinimum__Group__0__Impl rule__PropertyMinimum__Group__1 ;
     public final void rule__PropertyMinimum__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5621:1: ( rule__PropertyMinimum__Group__0__Impl rule__PropertyMinimum__Group__1 )
@@ -16952,7 +16952,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -16964,7 +16964,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5629:1: rule__PropertyMinimum__Group__0__Impl : ( rulePreListElement ) ;
     public final void rule__PropertyMinimum__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5633:1: ( ( rulePreListElement ) )
@@ -16993,7 +16993,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -17005,7 +17005,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5644:1: rule__PropertyMinimum__Group__1 : rule__PropertyMinimum__Group__1__Impl rule__PropertyMinimum__Group__2 ;
     public final void rule__PropertyMinimum__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5648:1: ( rule__PropertyMinimum__Group__1__Impl rule__PropertyMinimum__Group__2 )
@@ -17031,7 +17031,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -17043,7 +17043,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5656:1: rule__PropertyMinimum__Group__1__Impl : ( Name ) ;
     public final void rule__PropertyMinimum__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5660:1: ( ( Name ) )
@@ -17068,7 +17068,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -17080,7 +17080,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5671:1: rule__PropertyMinimum__Group__2 : rule__PropertyMinimum__Group__2__Impl rule__PropertyMinimum__Group__3 ;
     public final void rule__PropertyMinimum__Group__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5675:1: ( rule__PropertyMinimum__Group__2__Impl rule__PropertyMinimum__Group__3 )
@@ -17106,7 +17106,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -17118,7 +17118,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5683:1: rule__PropertyMinimum__Group__2__Impl : ( ( rule__PropertyMinimum__NameAssignment_2 ) ) ;
     public final void rule__PropertyMinimum__Group__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5687:1: ( ( ( rule__PropertyMinimum__NameAssignment_2 ) ) )
@@ -17153,7 +17153,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -17165,7 +17165,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5698:1: rule__PropertyMinimum__Group__3 : rule__PropertyMinimum__Group__3__Impl rule__PropertyMinimum__Group__4 ;
     public final void rule__PropertyMinimum__Group__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5702:1: ( rule__PropertyMinimum__Group__3__Impl rule__PropertyMinimum__Group__4 )
@@ -17191,7 +17191,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -17203,7 +17203,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5710:1: rule__PropertyMinimum__Group__3__Impl : ( RULE_INDENT ) ;
     public final void rule__PropertyMinimum__Group__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5714:1: ( ( RULE_INDENT ) )
@@ -17228,7 +17228,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -17240,7 +17240,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5725:1: rule__PropertyMinimum__Group__4 : rule__PropertyMinimum__Group__4__Impl rule__PropertyMinimum__Group__5 ;
     public final void rule__PropertyMinimum__Group__4() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5729:1: ( rule__PropertyMinimum__Group__4__Impl rule__PropertyMinimum__Group__5 )
@@ -17266,7 +17266,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -17278,7 +17278,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5737:1: rule__PropertyMinimum__Group__4__Impl : ( Kind ) ;
     public final void rule__PropertyMinimum__Group__4__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5741:1: ( ( Kind ) )
@@ -17303,7 +17303,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -17315,7 +17315,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5752:1: rule__PropertyMinimum__Group__5 : rule__PropertyMinimum__Group__5__Impl rule__PropertyMinimum__Group__6 ;
     public final void rule__PropertyMinimum__Group__5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5756:1: ( rule__PropertyMinimum__Group__5__Impl rule__PropertyMinimum__Group__6 )
@@ -17341,7 +17341,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -17353,7 +17353,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5764:1: rule__PropertyMinimum__Group__5__Impl : ( ( rule__PropertyMinimum__KindAssignment_5 ) ) ;
     public final void rule__PropertyMinimum__Group__5__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5768:1: ( ( ( rule__PropertyMinimum__KindAssignment_5 ) ) )
@@ -17388,7 +17388,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -17400,7 +17400,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5779:1: rule__PropertyMinimum__Group__6 : rule__PropertyMinimum__Group__6__Impl rule__PropertyMinimum__Group__7 ;
     public final void rule__PropertyMinimum__Group__6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5783:1: ( rule__PropertyMinimum__Group__6__Impl rule__PropertyMinimum__Group__7 )
@@ -17426,7 +17426,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -17438,7 +17438,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5791:1: rule__PropertyMinimum__Group__6__Impl : ( ( rule__PropertyMinimum__Group_6__0 )? ) ;
     public final void rule__PropertyMinimum__Group__6__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5795:1: ( ( ( rule__PropertyMinimum__Group_6__0 )? ) )
@@ -17484,7 +17484,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -17496,7 +17496,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5806:1: rule__PropertyMinimum__Group__7 : rule__PropertyMinimum__Group__7__Impl rule__PropertyMinimum__Group__8 ;
     public final void rule__PropertyMinimum__Group__7() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5810:1: ( rule__PropertyMinimum__Group__7__Impl rule__PropertyMinimum__Group__8 )
@@ -17522,7 +17522,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -17534,7 +17534,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5818:1: rule__PropertyMinimum__Group__7__Impl : ( ( rule__PropertyMinimum__Group_7__0 )? ) ;
     public final void rule__PropertyMinimum__Group__7__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5822:1: ( ( ( rule__PropertyMinimum__Group_7__0 )? ) )
@@ -17580,7 +17580,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -17592,7 +17592,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5833:1: rule__PropertyMinimum__Group__8 : rule__PropertyMinimum__Group__8__Impl ;
     public final void rule__PropertyMinimum__Group__8() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5837:1: ( rule__PropertyMinimum__Group__8__Impl )
@@ -17613,7 +17613,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -17625,7 +17625,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5844:1: rule__PropertyMinimum__Group__8__Impl : ( ( RULE_DEDENT )? ) ;
     public final void rule__PropertyMinimum__Group__8__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5848:1: ( ( ( RULE_DEDENT )? ) )
@@ -17667,7 +17667,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -17679,7 +17679,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5860:1: rule__PropertyMinimum__Group_6__0 : rule__PropertyMinimum__Group_6__0__Impl rule__PropertyMinimum__Group_6__1 ;
     public final void rule__PropertyMinimum__Group_6__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5864:1: ( rule__PropertyMinimum__Group_6__0__Impl rule__PropertyMinimum__Group_6__1 )
@@ -17705,7 +17705,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -17717,7 +17717,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5872:1: rule__PropertyMinimum__Group_6__0__Impl : ( Description ) ;
     public final void rule__PropertyMinimum__Group_6__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5876:1: ( ( Description ) )
@@ -17742,7 +17742,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -17754,7 +17754,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5887:1: rule__PropertyMinimum__Group_6__1 : rule__PropertyMinimum__Group_6__1__Impl ;
     public final void rule__PropertyMinimum__Group_6__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5891:1: ( rule__PropertyMinimum__Group_6__1__Impl )
@@ -17775,7 +17775,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -17787,7 +17787,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5898:1: rule__PropertyMinimum__Group_6__1__Impl : ( ( rule__PropertyMinimum__DescriptionAssignment_6_1 ) ) ;
     public final void rule__PropertyMinimum__Group_6__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5902:1: ( ( ( rule__PropertyMinimum__DescriptionAssignment_6_1 ) ) )
@@ -17822,7 +17822,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -17834,7 +17834,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5914:1: rule__PropertyMinimum__Group_7__0 : rule__PropertyMinimum__Group_7__0__Impl rule__PropertyMinimum__Group_7__1 ;
     public final void rule__PropertyMinimum__Group_7__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5918:1: ( rule__PropertyMinimum__Group_7__0__Impl rule__PropertyMinimum__Group_7__1 )
@@ -17860,7 +17860,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -17872,7 +17872,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5926:1: rule__PropertyMinimum__Group_7__0__Impl : ( Value ) ;
     public final void rule__PropertyMinimum__Group_7__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5930:1: ( ( Value ) )
@@ -17897,7 +17897,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -17909,7 +17909,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5941:1: rule__PropertyMinimum__Group_7__1 : rule__PropertyMinimum__Group_7__1__Impl ;
     public final void rule__PropertyMinimum__Group_7__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5945:1: ( rule__PropertyMinimum__Group_7__1__Impl )
@@ -17930,7 +17930,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -17942,7 +17942,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5952:1: rule__PropertyMinimum__Group_7__1__Impl : ( ( rule__PropertyMinimum__ValueAssignment_7_1 ) ) ;
     public final void rule__PropertyMinimum__Group_7__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5956:1: ( ( ( rule__PropertyMinimum__ValueAssignment_7_1 ) ) )
@@ -17977,7 +17977,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -17989,7 +17989,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5968:1: rule__PropertySelection__Group__0 : rule__PropertySelection__Group__0__Impl rule__PropertySelection__Group__1 ;
     public final void rule__PropertySelection__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5972:1: ( rule__PropertySelection__Group__0__Impl rule__PropertySelection__Group__1 )
@@ -18015,7 +18015,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -18027,7 +18027,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5980:1: rule__PropertySelection__Group__0__Impl : ( rulePreListElement ) ;
     public final void rule__PropertySelection__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5984:1: ( ( rulePreListElement ) )
@@ -18056,7 +18056,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -18068,7 +18068,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:5995:1: rule__PropertySelection__Group__1 : rule__PropertySelection__Group__1__Impl rule__PropertySelection__Group__2 ;
     public final void rule__PropertySelection__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:5999:1: ( rule__PropertySelection__Group__1__Impl rule__PropertySelection__Group__2 )
@@ -18094,7 +18094,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -18106,7 +18106,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6007:1: rule__PropertySelection__Group__1__Impl : ( Name ) ;
     public final void rule__PropertySelection__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6011:1: ( ( Name ) )
@@ -18131,7 +18131,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -18143,7 +18143,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6022:1: rule__PropertySelection__Group__2 : rule__PropertySelection__Group__2__Impl rule__PropertySelection__Group__3 ;
     public final void rule__PropertySelection__Group__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6026:1: ( rule__PropertySelection__Group__2__Impl rule__PropertySelection__Group__3 )
@@ -18169,7 +18169,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -18181,7 +18181,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6034:1: rule__PropertySelection__Group__2__Impl : ( ( rule__PropertySelection__NameAssignment_2 ) ) ;
     public final void rule__PropertySelection__Group__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6038:1: ( ( ( rule__PropertySelection__NameAssignment_2 ) ) )
@@ -18216,7 +18216,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -18228,7 +18228,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6049:1: rule__PropertySelection__Group__3 : rule__PropertySelection__Group__3__Impl rule__PropertySelection__Group__4 ;
     public final void rule__PropertySelection__Group__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6053:1: ( rule__PropertySelection__Group__3__Impl rule__PropertySelection__Group__4 )
@@ -18254,7 +18254,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -18266,7 +18266,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6061:1: rule__PropertySelection__Group__3__Impl : ( RULE_INDENT ) ;
     public final void rule__PropertySelection__Group__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6065:1: ( ( RULE_INDENT ) )
@@ -18291,7 +18291,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -18303,7 +18303,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6076:1: rule__PropertySelection__Group__4 : rule__PropertySelection__Group__4__Impl rule__PropertySelection__Group__5 ;
     public final void rule__PropertySelection__Group__4() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6080:1: ( rule__PropertySelection__Group__4__Impl rule__PropertySelection__Group__5 )
@@ -18329,7 +18329,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -18341,7 +18341,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6088:1: rule__PropertySelection__Group__4__Impl : ( Kind ) ;
     public final void rule__PropertySelection__Group__4__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6092:1: ( ( Kind ) )
@@ -18366,7 +18366,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -18378,7 +18378,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6103:1: rule__PropertySelection__Group__5 : rule__PropertySelection__Group__5__Impl rule__PropertySelection__Group__6 ;
     public final void rule__PropertySelection__Group__5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6107:1: ( rule__PropertySelection__Group__5__Impl rule__PropertySelection__Group__6 )
@@ -18404,7 +18404,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -18416,7 +18416,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6115:1: rule__PropertySelection__Group__5__Impl : ( ( rule__PropertySelection__KindAssignment_5 ) ) ;
     public final void rule__PropertySelection__Group__5__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6119:1: ( ( ( rule__PropertySelection__KindAssignment_5 ) ) )
@@ -18451,7 +18451,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -18463,7 +18463,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6130:1: rule__PropertySelection__Group__6 : rule__PropertySelection__Group__6__Impl rule__PropertySelection__Group__7 ;
     public final void rule__PropertySelection__Group__6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6134:1: ( rule__PropertySelection__Group__6__Impl rule__PropertySelection__Group__7 )
@@ -18489,7 +18489,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -18501,7 +18501,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6142:1: rule__PropertySelection__Group__6__Impl : ( ( rule__PropertySelection__Group_6__0 )? ) ;
     public final void rule__PropertySelection__Group__6__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6146:1: ( ( ( rule__PropertySelection__Group_6__0 )? ) )
@@ -18547,7 +18547,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -18559,7 +18559,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6157:1: rule__PropertySelection__Group__7 : rule__PropertySelection__Group__7__Impl rule__PropertySelection__Group__8 ;
     public final void rule__PropertySelection__Group__7() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6161:1: ( rule__PropertySelection__Group__7__Impl rule__PropertySelection__Group__8 )
@@ -18585,7 +18585,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -18597,7 +18597,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6169:1: rule__PropertySelection__Group__7__Impl : ( ( rule__PropertySelection__Group_7__0 )? ) ;
     public final void rule__PropertySelection__Group__7__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6173:1: ( ( ( rule__PropertySelection__Group_7__0 )? ) )
@@ -18643,7 +18643,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -18655,7 +18655,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6184:1: rule__PropertySelection__Group__8 : rule__PropertySelection__Group__8__Impl ;
     public final void rule__PropertySelection__Group__8() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6188:1: ( rule__PropertySelection__Group__8__Impl )
@@ -18676,7 +18676,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -18688,7 +18688,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6195:1: rule__PropertySelection__Group__8__Impl : ( ( RULE_DEDENT )? ) ;
     public final void rule__PropertySelection__Group__8__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6199:1: ( ( ( RULE_DEDENT )? ) )
@@ -18730,7 +18730,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -18742,7 +18742,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6211:1: rule__PropertySelection__Group_6__0 : rule__PropertySelection__Group_6__0__Impl rule__PropertySelection__Group_6__1 ;
     public final void rule__PropertySelection__Group_6__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6215:1: ( rule__PropertySelection__Group_6__0__Impl rule__PropertySelection__Group_6__1 )
@@ -18768,7 +18768,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -18780,7 +18780,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6223:1: rule__PropertySelection__Group_6__0__Impl : ( Description ) ;
     public final void rule__PropertySelection__Group_6__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6227:1: ( ( Description ) )
@@ -18805,7 +18805,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -18817,7 +18817,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6238:1: rule__PropertySelection__Group_6__1 : rule__PropertySelection__Group_6__1__Impl ;
     public final void rule__PropertySelection__Group_6__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6242:1: ( rule__PropertySelection__Group_6__1__Impl )
@@ -18838,7 +18838,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -18850,7 +18850,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6249:1: rule__PropertySelection__Group_6__1__Impl : ( ( rule__PropertySelection__DescriptionAssignment_6_1 ) ) ;
     public final void rule__PropertySelection__Group_6__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6253:1: ( ( ( rule__PropertySelection__DescriptionAssignment_6_1 ) ) )
@@ -18885,7 +18885,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -18897,7 +18897,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6265:1: rule__PropertySelection__Group_7__0 : rule__PropertySelection__Group_7__0__Impl rule__PropertySelection__Group_7__1 ;
     public final void rule__PropertySelection__Group_7__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6269:1: ( rule__PropertySelection__Group_7__0__Impl rule__PropertySelection__Group_7__1 )
@@ -18923,7 +18923,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -18935,7 +18935,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6277:1: rule__PropertySelection__Group_7__0__Impl : ( Value ) ;
     public final void rule__PropertySelection__Group_7__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6281:1: ( ( Value ) )
@@ -18960,7 +18960,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -18972,7 +18972,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6292:1: rule__PropertySelection__Group_7__1 : rule__PropertySelection__Group_7__1__Impl rule__PropertySelection__Group_7__2 ;
     public final void rule__PropertySelection__Group_7__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6296:1: ( rule__PropertySelection__Group_7__1__Impl rule__PropertySelection__Group_7__2 )
@@ -18998,7 +18998,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -19010,7 +19010,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6304:1: rule__PropertySelection__Group_7__1__Impl : ( RULE_INDENT ) ;
     public final void rule__PropertySelection__Group_7__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6308:1: ( ( RULE_INDENT ) )
@@ -19035,7 +19035,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -19047,7 +19047,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6319:1: rule__PropertySelection__Group_7__2 : rule__PropertySelection__Group_7__2__Impl rule__PropertySelection__Group_7__3 ;
     public final void rule__PropertySelection__Group_7__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6323:1: ( rule__PropertySelection__Group_7__2__Impl rule__PropertySelection__Group_7__3 )
@@ -19073,7 +19073,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -19085,7 +19085,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6331:1: rule__PropertySelection__Group_7__2__Impl : ( rulePreListElement ) ;
     public final void rule__PropertySelection__Group_7__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6335:1: ( ( rulePreListElement ) )
@@ -19114,7 +19114,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -19126,7 +19126,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6346:1: rule__PropertySelection__Group_7__3 : rule__PropertySelection__Group_7__3__Impl rule__PropertySelection__Group_7__4 ;
     public final void rule__PropertySelection__Group_7__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6350:1: ( rule__PropertySelection__Group_7__3__Impl rule__PropertySelection__Group_7__4 )
@@ -19152,7 +19152,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -19164,7 +19164,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6358:1: rule__PropertySelection__Group_7__3__Impl : ( ( rule__PropertySelection__ValueAssignment_7_3 ) ) ;
     public final void rule__PropertySelection__Group_7__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6362:1: ( ( ( rule__PropertySelection__ValueAssignment_7_3 ) ) )
@@ -19199,7 +19199,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -19211,7 +19211,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6373:1: rule__PropertySelection__Group_7__4 : rule__PropertySelection__Group_7__4__Impl rule__PropertySelection__Group_7__5 ;
     public final void rule__PropertySelection__Group_7__4() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6377:1: ( rule__PropertySelection__Group_7__4__Impl rule__PropertySelection__Group_7__5 )
@@ -19237,7 +19237,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -19249,7 +19249,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6385:1: rule__PropertySelection__Group_7__4__Impl : ( ( rule__PropertySelection__Group_7_4__0 )* ) ;
     public final void rule__PropertySelection__Group_7__4__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6389:1: ( ( ( rule__PropertySelection__Group_7_4__0 )* ) )
@@ -19271,20 +19271,20 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
 
 
                 switch (alt41) {
-                case 1 :
-                    // InternalImplementationDescriptionParser.g:6392:3: rule__PropertySelection__Group_7_4__0
-                    {
-                    pushFollow(FOLLOW_12);
-                    rule__PropertySelection__Group_7_4__0();
+              case 1 :
+                  // InternalImplementationDescriptionParser.g:6392:3: rule__PropertySelection__Group_7_4__0
+                  {
+                  pushFollow(FOLLOW_12);
+                  rule__PropertySelection__Group_7_4__0();
 
-                    state._fsp--;
+                  state._fsp--;
 
 
-                    }
-                    break;
+                  }
+                  break;
 
-                default :
-                    break loop41;
+              default :
+                  break loop41;
                 }
             } while (true);
 
@@ -19302,7 +19302,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -19314,7 +19314,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6400:1: rule__PropertySelection__Group_7__5 : rule__PropertySelection__Group_7__5__Impl ;
     public final void rule__PropertySelection__Group_7__5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6404:1: ( rule__PropertySelection__Group_7__5__Impl )
@@ -19335,7 +19335,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -19347,7 +19347,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6411:1: rule__PropertySelection__Group_7__5__Impl : ( RULE_DEDENT ) ;
     public final void rule__PropertySelection__Group_7__5__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6415:1: ( ( RULE_DEDENT ) )
@@ -19372,7 +19372,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -19384,7 +19384,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6427:1: rule__PropertySelection__Group_7_4__0 : rule__PropertySelection__Group_7_4__0__Impl rule__PropertySelection__Group_7_4__1 ;
     public final void rule__PropertySelection__Group_7_4__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6431:1: ( rule__PropertySelection__Group_7_4__0__Impl rule__PropertySelection__Group_7_4__1 )
@@ -19410,7 +19410,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -19422,7 +19422,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6439:1: rule__PropertySelection__Group_7_4__0__Impl : ( rulePreListElement ) ;
     public final void rule__PropertySelection__Group_7_4__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6443:1: ( ( rulePreListElement ) )
@@ -19451,7 +19451,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -19463,7 +19463,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6454:1: rule__PropertySelection__Group_7_4__1 : rule__PropertySelection__Group_7_4__1__Impl ;
     public final void rule__PropertySelection__Group_7_4__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6458:1: ( rule__PropertySelection__Group_7_4__1__Impl )
@@ -19484,7 +19484,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -19496,7 +19496,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6465:1: rule__PropertySelection__Group_7_4__1__Impl : ( ( rule__PropertySelection__ValueAssignment_7_4_1 ) ) ;
     public final void rule__PropertySelection__Group_7_4__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6469:1: ( ( ( rule__PropertySelection__ValueAssignment_7_4_1 ) ) )
@@ -19531,7 +19531,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -19543,7 +19543,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6481:1: rule__PropertyRange__Group__0 : rule__PropertyRange__Group__0__Impl rule__PropertyRange__Group__1 ;
     public final void rule__PropertyRange__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6485:1: ( rule__PropertyRange__Group__0__Impl rule__PropertyRange__Group__1 )
@@ -19569,7 +19569,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -19581,7 +19581,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6493:1: rule__PropertyRange__Group__0__Impl : ( rulePreListElement ) ;
     public final void rule__PropertyRange__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6497:1: ( ( rulePreListElement ) )
@@ -19610,7 +19610,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -19622,7 +19622,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6508:1: rule__PropertyRange__Group__1 : rule__PropertyRange__Group__1__Impl rule__PropertyRange__Group__2 ;
     public final void rule__PropertyRange__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6512:1: ( rule__PropertyRange__Group__1__Impl rule__PropertyRange__Group__2 )
@@ -19648,7 +19648,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -19660,7 +19660,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6520:1: rule__PropertyRange__Group__1__Impl : ( Name ) ;
     public final void rule__PropertyRange__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6524:1: ( ( Name ) )
@@ -19685,7 +19685,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -19697,7 +19697,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6535:1: rule__PropertyRange__Group__2 : rule__PropertyRange__Group__2__Impl rule__PropertyRange__Group__3 ;
     public final void rule__PropertyRange__Group__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6539:1: ( rule__PropertyRange__Group__2__Impl rule__PropertyRange__Group__3 )
@@ -19723,7 +19723,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -19735,7 +19735,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6547:1: rule__PropertyRange__Group__2__Impl : ( ( rule__PropertyRange__NameAssignment_2 ) ) ;
     public final void rule__PropertyRange__Group__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6551:1: ( ( ( rule__PropertyRange__NameAssignment_2 ) ) )
@@ -19770,7 +19770,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -19782,7 +19782,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6562:1: rule__PropertyRange__Group__3 : rule__PropertyRange__Group__3__Impl rule__PropertyRange__Group__4 ;
     public final void rule__PropertyRange__Group__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6566:1: ( rule__PropertyRange__Group__3__Impl rule__PropertyRange__Group__4 )
@@ -19808,7 +19808,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -19820,7 +19820,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6574:1: rule__PropertyRange__Group__3__Impl : ( RULE_INDENT ) ;
     public final void rule__PropertyRange__Group__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6578:1: ( ( RULE_INDENT ) )
@@ -19845,7 +19845,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -19857,7 +19857,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6589:1: rule__PropertyRange__Group__4 : rule__PropertyRange__Group__4__Impl rule__PropertyRange__Group__5 ;
     public final void rule__PropertyRange__Group__4() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6593:1: ( rule__PropertyRange__Group__4__Impl rule__PropertyRange__Group__5 )
@@ -19883,7 +19883,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -19895,7 +19895,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6601:1: rule__PropertyRange__Group__4__Impl : ( Kind ) ;
     public final void rule__PropertyRange__Group__4__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6605:1: ( ( Kind ) )
@@ -19920,7 +19920,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -19932,7 +19932,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6616:1: rule__PropertyRange__Group__5 : rule__PropertyRange__Group__5__Impl rule__PropertyRange__Group__6 ;
     public final void rule__PropertyRange__Group__5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6620:1: ( rule__PropertyRange__Group__5__Impl rule__PropertyRange__Group__6 )
@@ -19958,7 +19958,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -19970,7 +19970,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6628:1: rule__PropertyRange__Group__5__Impl : ( ( rule__PropertyRange__KindAssignment_5 ) ) ;
     public final void rule__PropertyRange__Group__5__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6632:1: ( ( ( rule__PropertyRange__KindAssignment_5 ) ) )
@@ -20005,7 +20005,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -20017,7 +20017,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6643:1: rule__PropertyRange__Group__6 : rule__PropertyRange__Group__6__Impl rule__PropertyRange__Group__7 ;
     public final void rule__PropertyRange__Group__6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6647:1: ( rule__PropertyRange__Group__6__Impl rule__PropertyRange__Group__7 )
@@ -20043,7 +20043,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -20055,7 +20055,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6655:1: rule__PropertyRange__Group__6__Impl : ( ( rule__PropertyRange__Group_6__0 )? ) ;
     public final void rule__PropertyRange__Group__6__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6659:1: ( ( ( rule__PropertyRange__Group_6__0 )? ) )
@@ -20101,7 +20101,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -20113,7 +20113,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6670:1: rule__PropertyRange__Group__7 : rule__PropertyRange__Group__7__Impl rule__PropertyRange__Group__8 ;
     public final void rule__PropertyRange__Group__7() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6674:1: ( rule__PropertyRange__Group__7__Impl rule__PropertyRange__Group__8 )
@@ -20139,7 +20139,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -20151,7 +20151,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6682:1: rule__PropertyRange__Group__7__Impl : ( ( rule__PropertyRange__Group_7__0 )? ) ;
     public final void rule__PropertyRange__Group__7__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6686:1: ( ( ( rule__PropertyRange__Group_7__0 )? ) )
@@ -20197,7 +20197,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -20209,7 +20209,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6697:1: rule__PropertyRange__Group__8 : rule__PropertyRange__Group__8__Impl ;
     public final void rule__PropertyRange__Group__8() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6701:1: ( rule__PropertyRange__Group__8__Impl )
@@ -20230,7 +20230,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -20242,7 +20242,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6708:1: rule__PropertyRange__Group__8__Impl : ( ( RULE_DEDENT )? ) ;
     public final void rule__PropertyRange__Group__8__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6712:1: ( ( ( RULE_DEDENT )? ) )
@@ -20284,7 +20284,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -20296,7 +20296,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6724:1: rule__PropertyRange__Group_6__0 : rule__PropertyRange__Group_6__0__Impl rule__PropertyRange__Group_6__1 ;
     public final void rule__PropertyRange__Group_6__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6728:1: ( rule__PropertyRange__Group_6__0__Impl rule__PropertyRange__Group_6__1 )
@@ -20322,7 +20322,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -20334,7 +20334,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6736:1: rule__PropertyRange__Group_6__0__Impl : ( Description ) ;
     public final void rule__PropertyRange__Group_6__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6740:1: ( ( Description ) )
@@ -20359,7 +20359,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -20371,7 +20371,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6751:1: rule__PropertyRange__Group_6__1 : rule__PropertyRange__Group_6__1__Impl ;
     public final void rule__PropertyRange__Group_6__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6755:1: ( rule__PropertyRange__Group_6__1__Impl )
@@ -20392,7 +20392,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -20404,7 +20404,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6762:1: rule__PropertyRange__Group_6__1__Impl : ( ( rule__PropertyRange__DescriptionAssignment_6_1 ) ) ;
     public final void rule__PropertyRange__Group_6__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6766:1: ( ( ( rule__PropertyRange__DescriptionAssignment_6_1 ) ) )
@@ -20439,7 +20439,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -20451,7 +20451,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6778:1: rule__PropertyRange__Group_7__0 : rule__PropertyRange__Group_7__0__Impl rule__PropertyRange__Group_7__1 ;
     public final void rule__PropertyRange__Group_7__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6782:1: ( rule__PropertyRange__Group_7__0__Impl rule__PropertyRange__Group_7__1 )
@@ -20477,7 +20477,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -20489,7 +20489,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6790:1: rule__PropertyRange__Group_7__0__Impl : ( Value ) ;
     public final void rule__PropertyRange__Group_7__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6794:1: ( ( Value ) )
@@ -20514,7 +20514,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -20526,7 +20526,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6805:1: rule__PropertyRange__Group_7__1 : rule__PropertyRange__Group_7__1__Impl rule__PropertyRange__Group_7__2 ;
     public final void rule__PropertyRange__Group_7__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6809:1: ( rule__PropertyRange__Group_7__1__Impl rule__PropertyRange__Group_7__2 )
@@ -20552,7 +20552,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -20564,7 +20564,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6817:1: rule__PropertyRange__Group_7__1__Impl : ( RULE_INDENT ) ;
     public final void rule__PropertyRange__Group_7__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6821:1: ( ( RULE_INDENT ) )
@@ -20589,7 +20589,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -20601,7 +20601,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6832:1: rule__PropertyRange__Group_7__2 : rule__PropertyRange__Group_7__2__Impl rule__PropertyRange__Group_7__3 ;
     public final void rule__PropertyRange__Group_7__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6836:1: ( rule__PropertyRange__Group_7__2__Impl rule__PropertyRange__Group_7__3 )
@@ -20627,7 +20627,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -20639,7 +20639,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6844:1: rule__PropertyRange__Group_7__2__Impl : ( rulePreListElement ) ;
     public final void rule__PropertyRange__Group_7__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6848:1: ( ( rulePreListElement ) )
@@ -20668,7 +20668,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -20680,7 +20680,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6859:1: rule__PropertyRange__Group_7__3 : rule__PropertyRange__Group_7__3__Impl rule__PropertyRange__Group_7__4 ;
     public final void rule__PropertyRange__Group_7__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6863:1: ( rule__PropertyRange__Group_7__3__Impl rule__PropertyRange__Group_7__4 )
@@ -20706,7 +20706,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -20718,7 +20718,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6871:1: rule__PropertyRange__Group_7__3__Impl : ( ( rule__PropertyRange__ValueAssignment_7_3 ) ) ;
     public final void rule__PropertyRange__Group_7__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6875:1: ( ( ( rule__PropertyRange__ValueAssignment_7_3 ) ) )
@@ -20753,7 +20753,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -20765,7 +20765,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6886:1: rule__PropertyRange__Group_7__4 : rule__PropertyRange__Group_7__4__Impl rule__PropertyRange__Group_7__5 ;
     public final void rule__PropertyRange__Group_7__4() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6890:1: ( rule__PropertyRange__Group_7__4__Impl rule__PropertyRange__Group_7__5 )
@@ -20791,7 +20791,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -20803,7 +20803,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6898:1: rule__PropertyRange__Group_7__4__Impl : ( rulePreListElement ) ;
     public final void rule__PropertyRange__Group_7__4__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6902:1: ( ( rulePreListElement ) )
@@ -20832,7 +20832,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -20844,7 +20844,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6913:1: rule__PropertyRange__Group_7__5 : rule__PropertyRange__Group_7__5__Impl rule__PropertyRange__Group_7__6 ;
     public final void rule__PropertyRange__Group_7__5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6917:1: ( rule__PropertyRange__Group_7__5__Impl rule__PropertyRange__Group_7__6 )
@@ -20870,7 +20870,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -20882,7 +20882,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6925:1: rule__PropertyRange__Group_7__5__Impl : ( ( rule__PropertyRange__ValueAssignment_7_5 ) ) ;
     public final void rule__PropertyRange__Group_7__5__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6929:1: ( ( ( rule__PropertyRange__ValueAssignment_7_5 ) ) )
@@ -20917,7 +20917,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -20929,7 +20929,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6940:1: rule__PropertyRange__Group_7__6 : rule__PropertyRange__Group_7__6__Impl ;
     public final void rule__PropertyRange__Group_7__6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6944:1: ( rule__PropertyRange__Group_7__6__Impl )
@@ -20950,7 +20950,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -20962,7 +20962,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6951:1: rule__PropertyRange__Group_7__6__Impl : ( RULE_DEDENT ) ;
     public final void rule__PropertyRange__Group_7__6__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6955:1: ( ( RULE_DEDENT ) )
@@ -20987,7 +20987,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -20999,7 +20999,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6967:1: rule__PropertyValueList__Group__0 : rule__PropertyValueList__Group__0__Impl rule__PropertyValueList__Group__1 ;
     public final void rule__PropertyValueList__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6971:1: ( rule__PropertyValueList__Group__0__Impl rule__PropertyValueList__Group__1 )
@@ -21025,7 +21025,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -21037,7 +21037,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6979:1: rule__PropertyValueList__Group__0__Impl : ( RULE_INDENT ) ;
     public final void rule__PropertyValueList__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6983:1: ( ( RULE_INDENT ) )
@@ -21062,7 +21062,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -21074,7 +21074,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:6994:1: rule__PropertyValueList__Group__1 : rule__PropertyValueList__Group__1__Impl rule__PropertyValueList__Group__2 ;
     public final void rule__PropertyValueList__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:6998:1: ( rule__PropertyValueList__Group__1__Impl rule__PropertyValueList__Group__2 )
@@ -21100,7 +21100,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -21112,7 +21112,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7006:1: rule__PropertyValueList__Group__1__Impl : ( rulePreListElement ) ;
     public final void rule__PropertyValueList__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7010:1: ( ( rulePreListElement ) )
@@ -21141,7 +21141,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -21153,7 +21153,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7021:1: rule__PropertyValueList__Group__2 : rule__PropertyValueList__Group__2__Impl rule__PropertyValueList__Group__3 ;
     public final void rule__PropertyValueList__Group__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7025:1: ( rule__PropertyValueList__Group__2__Impl rule__PropertyValueList__Group__3 )
@@ -21179,7 +21179,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -21191,7 +21191,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7033:1: rule__PropertyValueList__Group__2__Impl : ( ( rule__PropertyValueList__ValueAssignment_2 ) ) ;
     public final void rule__PropertyValueList__Group__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7037:1: ( ( ( rule__PropertyValueList__ValueAssignment_2 ) ) )
@@ -21226,7 +21226,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -21238,7 +21238,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7048:1: rule__PropertyValueList__Group__3 : rule__PropertyValueList__Group__3__Impl rule__PropertyValueList__Group__4 ;
     public final void rule__PropertyValueList__Group__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7052:1: ( rule__PropertyValueList__Group__3__Impl rule__PropertyValueList__Group__4 )
@@ -21264,7 +21264,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -21276,7 +21276,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7060:1: rule__PropertyValueList__Group__3__Impl : ( ( rule__PropertyValueList__Group_3__0 )* ) ;
     public final void rule__PropertyValueList__Group__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7064:1: ( ( ( rule__PropertyValueList__Group_3__0 )* ) )
@@ -21298,20 +21298,20 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
 
 
                 switch (alt45) {
-                case 1 :
-                    // InternalImplementationDescriptionParser.g:7067:3: rule__PropertyValueList__Group_3__0
-                    {
-                    pushFollow(FOLLOW_12);
-                    rule__PropertyValueList__Group_3__0();
+              case 1 :
+                  // InternalImplementationDescriptionParser.g:7067:3: rule__PropertyValueList__Group_3__0
+                  {
+                  pushFollow(FOLLOW_12);
+                  rule__PropertyValueList__Group_3__0();
 
-                    state._fsp--;
+                  state._fsp--;
 
 
-                    }
-                    break;
+                  }
+                  break;
 
-                default :
-                    break loop45;
+              default :
+                  break loop45;
                 }
             } while (true);
 
@@ -21329,7 +21329,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -21341,7 +21341,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7075:1: rule__PropertyValueList__Group__4 : rule__PropertyValueList__Group__4__Impl ;
     public final void rule__PropertyValueList__Group__4() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7079:1: ( rule__PropertyValueList__Group__4__Impl )
@@ -21362,7 +21362,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -21374,7 +21374,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7086:1: rule__PropertyValueList__Group__4__Impl : ( RULE_DEDENT ) ;
     public final void rule__PropertyValueList__Group__4__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7090:1: ( ( RULE_DEDENT ) )
@@ -21399,7 +21399,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -21411,7 +21411,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7102:1: rule__PropertyValueList__Group_3__0 : rule__PropertyValueList__Group_3__0__Impl rule__PropertyValueList__Group_3__1 ;
     public final void rule__PropertyValueList__Group_3__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7106:1: ( rule__PropertyValueList__Group_3__0__Impl rule__PropertyValueList__Group_3__1 )
@@ -21437,7 +21437,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -21449,7 +21449,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7114:1: rule__PropertyValueList__Group_3__0__Impl : ( rulePreListElement ) ;
     public final void rule__PropertyValueList__Group_3__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7118:1: ( ( rulePreListElement ) )
@@ -21478,7 +21478,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -21490,7 +21490,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7129:1: rule__PropertyValueList__Group_3__1 : rule__PropertyValueList__Group_3__1__Impl ;
     public final void rule__PropertyValueList__Group_3__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7133:1: ( rule__PropertyValueList__Group_3__1__Impl )
@@ -21511,7 +21511,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -21523,7 +21523,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7140:1: rule__PropertyValueList__Group_3__1__Impl : ( ( rule__PropertyValueList__ValueAssignment_3_1 ) ) ;
     public final void rule__PropertyValueList__Group_3__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7144:1: ( ( ( rule__PropertyValueList__ValueAssignment_3_1 ) ) )
@@ -21558,7 +21558,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -21570,7 +21570,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7156:1: rule__ResourceType__Group__0 : rule__ResourceType__Group__0__Impl rule__ResourceType__Group__1 ;
     public final void rule__ResourceType__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7160:1: ( rule__ResourceType__Group__0__Impl rule__ResourceType__Group__1 )
@@ -21596,7 +21596,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -21608,7 +21608,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7168:1: rule__ResourceType__Group__0__Impl : ( () ) ;
     public final void rule__ResourceType__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7172:1: ( ( () ) )
@@ -21633,7 +21633,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -21645,7 +21645,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7183:1: rule__ResourceType__Group__1 : rule__ResourceType__Group__1__Impl ;
     public final void rule__ResourceType__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7187:1: ( rule__ResourceType__Group__1__Impl )
@@ -21666,7 +21666,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -21678,7 +21678,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7194:1: rule__ResourceType__Group__1__Impl : ( ( rule__ResourceType__NameAssignment_1 ) ) ;
     public final void rule__ResourceType__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7198:1: ( ( ( rule__ResourceType__NameAssignment_1 ) ) )
@@ -21713,7 +21713,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -21725,7 +21725,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7210:1: rule__LinuxOpertingSystem__Group__0 : rule__LinuxOpertingSystem__Group__0__Impl rule__LinuxOpertingSystem__Group__1 ;
     public final void rule__LinuxOpertingSystem__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7214:1: ( rule__LinuxOpertingSystem__Group__0__Impl rule__LinuxOpertingSystem__Group__1 )
@@ -21751,7 +21751,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -21763,7 +21763,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7222:1: rule__LinuxOpertingSystem__Group__0__Impl : ( () ) ;
     public final void rule__LinuxOpertingSystem__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7226:1: ( ( () ) )
@@ -21788,7 +21788,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -21800,7 +21800,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7237:1: rule__LinuxOpertingSystem__Group__1 : rule__LinuxOpertingSystem__Group__1__Impl ;
     public final void rule__LinuxOpertingSystem__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7241:1: ( rule__LinuxOpertingSystem__Group__1__Impl )
@@ -21821,7 +21821,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -21833,7 +21833,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7248:1: rule__LinuxOpertingSystem__Group__1__Impl : ( LinuxOpertingSystem ) ;
     public final void rule__LinuxOpertingSystem__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7252:1: ( ( LinuxOpertingSystem ) )
@@ -21858,7 +21858,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -21870,7 +21870,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7264:1: rule__MacOSOpertingSystem__Group__0 : rule__MacOSOpertingSystem__Group__0__Impl rule__MacOSOpertingSystem__Group__1 ;
     public final void rule__MacOSOpertingSystem__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7268:1: ( rule__MacOSOpertingSystem__Group__0__Impl rule__MacOSOpertingSystem__Group__1 )
@@ -21896,7 +21896,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -21908,7 +21908,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7276:1: rule__MacOSOpertingSystem__Group__0__Impl : ( () ) ;
     public final void rule__MacOSOpertingSystem__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7280:1: ( ( () ) )
@@ -21933,7 +21933,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -21945,7 +21945,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7291:1: rule__MacOSOpertingSystem__Group__1 : rule__MacOSOpertingSystem__Group__1__Impl ;
     public final void rule__MacOSOpertingSystem__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7295:1: ( rule__MacOSOpertingSystem__Group__1__Impl )
@@ -21966,7 +21966,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -21978,7 +21978,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7302:1: rule__MacOSOpertingSystem__Group__1__Impl : ( MacOSOpertingSystem ) ;
     public final void rule__MacOSOpertingSystem__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7306:1: ( ( MacOSOpertingSystem ) )
@@ -22003,7 +22003,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -22015,7 +22015,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7318:1: rule__CommunicationType__Group__0 : rule__CommunicationType__Group__0__Impl rule__CommunicationType__Group__1 ;
     public final void rule__CommunicationType__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7322:1: ( rule__CommunicationType__Group__0__Impl rule__CommunicationType__Group__1 )
@@ -22041,7 +22041,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -22053,7 +22053,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7330:1: rule__CommunicationType__Group__0__Impl : ( () ) ;
     public final void rule__CommunicationType__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7334:1: ( ( () ) )
@@ -22078,7 +22078,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -22090,7 +22090,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7345:1: rule__CommunicationType__Group__1 : rule__CommunicationType__Group__1__Impl ;
     public final void rule__CommunicationType__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7349:1: ( rule__CommunicationType__Group__1__Impl )
@@ -22111,7 +22111,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -22123,7 +22123,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7356:1: rule__CommunicationType__Group__1__Impl : ( ( rule__CommunicationType__NameAssignment_1 ) ) ;
     public final void rule__CommunicationType__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7360:1: ( ( ( rule__CommunicationType__NameAssignment_1 ) ) )
@@ -22158,7 +22158,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -22170,7 +22170,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7372:1: rule__EthernetCommunicationType__Group__0 : rule__EthernetCommunicationType__Group__0__Impl rule__EthernetCommunicationType__Group__1 ;
     public final void rule__EthernetCommunicationType__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7376:1: ( rule__EthernetCommunicationType__Group__0__Impl rule__EthernetCommunicationType__Group__1 )
@@ -22196,7 +22196,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -22208,7 +22208,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7384:1: rule__EthernetCommunicationType__Group__0__Impl : ( () ) ;
     public final void rule__EthernetCommunicationType__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7388:1: ( ( () ) )
@@ -22233,7 +22233,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -22245,7 +22245,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7399:1: rule__EthernetCommunicationType__Group__1 : rule__EthernetCommunicationType__Group__1__Impl ;
     public final void rule__EthernetCommunicationType__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7403:1: ( rule__EthernetCommunicationType__Group__1__Impl )
@@ -22266,7 +22266,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -22278,7 +22278,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7410:1: rule__EthernetCommunicationType__Group__1__Impl : ( Ethernet ) ;
     public final void rule__EthernetCommunicationType__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7414:1: ( ( Ethernet ) )
@@ -22303,7 +22303,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -22315,7 +22315,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7426:1: rule__WlanCommunicationType__Group__0 : rule__WlanCommunicationType__Group__0__Impl rule__WlanCommunicationType__Group__1 ;
     public final void rule__WlanCommunicationType__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7430:1: ( rule__WlanCommunicationType__Group__0__Impl rule__WlanCommunicationType__Group__1 )
@@ -22341,7 +22341,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -22353,7 +22353,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7438:1: rule__WlanCommunicationType__Group__0__Impl : ( () ) ;
     public final void rule__WlanCommunicationType__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7442:1: ( ( () ) )
@@ -22378,7 +22378,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -22390,7 +22390,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7453:1: rule__WlanCommunicationType__Group__1 : rule__WlanCommunicationType__Group__1__Impl ;
     public final void rule__WlanCommunicationType__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7457:1: ( rule__WlanCommunicationType__Group__1__Impl )
@@ -22411,7 +22411,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -22423,7 +22423,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7464:1: rule__WlanCommunicationType__Group__1__Impl : ( Wlan ) ;
     public final void rule__WlanCommunicationType__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7468:1: ( ( Wlan ) )
@@ -22448,7 +22448,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -22460,7 +22460,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7480:1: rule__AttributeKind__Group__0 : rule__AttributeKind__Group__0__Impl rule__AttributeKind__Group__1 ;
     public final void rule__AttributeKind__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7484:1: ( rule__AttributeKind__Group__0__Impl rule__AttributeKind__Group__1 )
@@ -22486,7 +22486,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -22498,7 +22498,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7492:1: rule__AttributeKind__Group__0__Impl : ( () ) ;
     public final void rule__AttributeKind__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7496:1: ( ( () ) )
@@ -22523,7 +22523,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -22535,7 +22535,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7507:1: rule__AttributeKind__Group__1 : rule__AttributeKind__Group__1__Impl ;
     public final void rule__AttributeKind__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7511:1: ( rule__AttributeKind__Group__1__Impl )
@@ -22556,7 +22556,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -22568,7 +22568,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7518:1: rule__AttributeKind__Group__1__Impl : ( AttributeKind ) ;
     public final void rule__AttributeKind__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7522:1: ( ( AttributeKind ) )
@@ -22593,7 +22593,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -22605,7 +22605,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7534:1: rule__MaximumKind__Group__0 : rule__MaximumKind__Group__0__Impl rule__MaximumKind__Group__1 ;
     public final void rule__MaximumKind__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7538:1: ( rule__MaximumKind__Group__0__Impl rule__MaximumKind__Group__1 )
@@ -22631,7 +22631,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -22643,7 +22643,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7546:1: rule__MaximumKind__Group__0__Impl : ( () ) ;
     public final void rule__MaximumKind__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7550:1: ( ( () ) )
@@ -22668,7 +22668,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -22680,7 +22680,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7561:1: rule__MaximumKind__Group__1 : rule__MaximumKind__Group__1__Impl ;
     public final void rule__MaximumKind__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7565:1: ( rule__MaximumKind__Group__1__Impl )
@@ -22701,7 +22701,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -22713,7 +22713,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7572:1: rule__MaximumKind__Group__1__Impl : ( MaximumKind ) ;
     public final void rule__MaximumKind__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7576:1: ( ( MaximumKind ) )
@@ -22738,7 +22738,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -22750,7 +22750,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7588:1: rule__MinimumKind__Group__0 : rule__MinimumKind__Group__0__Impl rule__MinimumKind__Group__1 ;
     public final void rule__MinimumKind__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7592:1: ( rule__MinimumKind__Group__0__Impl rule__MinimumKind__Group__1 )
@@ -22776,7 +22776,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -22788,7 +22788,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7600:1: rule__MinimumKind__Group__0__Impl : ( () ) ;
     public final void rule__MinimumKind__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7604:1: ( ( () ) )
@@ -22813,7 +22813,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -22825,7 +22825,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7615:1: rule__MinimumKind__Group__1 : rule__MinimumKind__Group__1__Impl ;
     public final void rule__MinimumKind__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7619:1: ( rule__MinimumKind__Group__1__Impl )
@@ -22846,7 +22846,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -22858,7 +22858,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7626:1: rule__MinimumKind__Group__1__Impl : ( MinimumKind ) ;
     public final void rule__MinimumKind__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7630:1: ( ( MinimumKind ) )
@@ -22883,7 +22883,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -22895,7 +22895,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7642:1: rule__SelectionKind__Group__0 : rule__SelectionKind__Group__0__Impl rule__SelectionKind__Group__1 ;
     public final void rule__SelectionKind__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7646:1: ( rule__SelectionKind__Group__0__Impl rule__SelectionKind__Group__1 )
@@ -22921,7 +22921,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -22933,7 +22933,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7654:1: rule__SelectionKind__Group__0__Impl : ( () ) ;
     public final void rule__SelectionKind__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7658:1: ( ( () ) )
@@ -22958,7 +22958,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -22970,7 +22970,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7669:1: rule__SelectionKind__Group__1 : rule__SelectionKind__Group__1__Impl ;
     public final void rule__SelectionKind__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7673:1: ( rule__SelectionKind__Group__1__Impl )
@@ -22991,7 +22991,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -23003,7 +23003,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7680:1: rule__SelectionKind__Group__1__Impl : ( SelectionKind ) ;
     public final void rule__SelectionKind__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7684:1: ( ( SelectionKind ) )
@@ -23028,7 +23028,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -23040,7 +23040,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7696:1: rule__RangeKind__Group__0 : rule__RangeKind__Group__0__Impl rule__RangeKind__Group__1 ;
     public final void rule__RangeKind__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7700:1: ( rule__RangeKind__Group__0__Impl rule__RangeKind__Group__1 )
@@ -23066,7 +23066,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -23078,7 +23078,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7708:1: rule__RangeKind__Group__0__Impl : ( () ) ;
     public final void rule__RangeKind__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7712:1: ( ( () ) )
@@ -23103,7 +23103,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -23115,7 +23115,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7723:1: rule__RangeKind__Group__1 : rule__RangeKind__Group__1__Impl ;
     public final void rule__RangeKind__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7727:1: ( rule__RangeKind__Group__1__Impl )
@@ -23136,7 +23136,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -23148,7 +23148,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7734:1: rule__RangeKind__Group__1__Impl : ( RangeKind ) ;
     public final void rule__RangeKind__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7738:1: ( ( RangeKind ) )
@@ -23173,7 +23173,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -23185,7 +23185,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7750:1: rule__LinuxDistributionValue__Group__0 : rule__LinuxDistributionValue__Group__0__Impl rule__LinuxDistributionValue__Group__1 ;
     public final void rule__LinuxDistributionValue__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7754:1: ( rule__LinuxDistributionValue__Group__0__Impl rule__LinuxDistributionValue__Group__1 )
@@ -23211,7 +23211,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -23223,7 +23223,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7762:1: rule__LinuxDistributionValue__Group__0__Impl : ( () ) ;
     public final void rule__LinuxDistributionValue__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7766:1: ( ( () ) )
@@ -23248,7 +23248,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -23260,7 +23260,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7777:1: rule__LinuxDistributionValue__Group__1 : rule__LinuxDistributionValue__Group__1__Impl ;
     public final void rule__LinuxDistributionValue__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7781:1: ( rule__LinuxDistributionValue__Group__1__Impl )
@@ -23281,7 +23281,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -23293,7 +23293,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7788:1: rule__LinuxDistributionValue__Group__1__Impl : ( ( rule__LinuxDistributionValue__ValueAssignment_1 ) ) ;
     public final void rule__LinuxDistributionValue__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7792:1: ( ( ( rule__LinuxDistributionValue__ValueAssignment_1 ) ) )
@@ -23328,7 +23328,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -23340,7 +23340,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7804:1: rule__UbuntuVersionValue__Group__0 : rule__UbuntuVersionValue__Group__0__Impl rule__UbuntuVersionValue__Group__1 ;
     public final void rule__UbuntuVersionValue__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7808:1: ( rule__UbuntuVersionValue__Group__0__Impl rule__UbuntuVersionValue__Group__1 )
@@ -23366,7 +23366,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -23378,7 +23378,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7816:1: rule__UbuntuVersionValue__Group__0__Impl : ( () ) ;
     public final void rule__UbuntuVersionValue__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7820:1: ( ( () ) )
@@ -23403,7 +23403,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -23415,7 +23415,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7831:1: rule__UbuntuVersionValue__Group__1 : rule__UbuntuVersionValue__Group__1__Impl ;
     public final void rule__UbuntuVersionValue__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7835:1: ( rule__UbuntuVersionValue__Group__1__Impl )
@@ -23436,7 +23436,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -23448,7 +23448,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7842:1: rule__UbuntuVersionValue__Group__1__Impl : ( ( rule__UbuntuVersionValue__ValueAssignment_1 ) ) ;
     public final void rule__UbuntuVersionValue__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7846:1: ( ( ( rule__UbuntuVersionValue__ValueAssignment_1 ) ) )
@@ -23483,7 +23483,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -23495,7 +23495,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7858:1: rule__ImplementationDescriptionSet__ImplementationsAssignment_0 : ( ruleImplementationDescription ) ;
     public final void rule__ImplementationDescriptionSet__ImplementationsAssignment_0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7862:1: ( ( ruleImplementationDescription ) )
@@ -23524,7 +23524,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -23536,7 +23536,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7873:1: rule__ImplementationDescriptionSet__ImplementationsAssignment_1_1 : ( ruleImplementationDescription ) ;
     public final void rule__ImplementationDescriptionSet__ImplementationsAssignment_1_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7877:1: ( ( ruleImplementationDescription ) )
@@ -23565,7 +23565,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -23577,7 +23577,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7888:1: rule__ImplementationDescription__NameAssignment_3 : ( ruleEString ) ;
     public final void rule__ImplementationDescription__NameAssignment_3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7892:1: ( ( ruleEString ) )
@@ -23606,7 +23606,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -23618,7 +23618,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7903:1: rule__ImplementationDescription__IncludeSoftwareComponentsAssignment_6 : ( ruleSoftwareComponent ) ;
     public final void rule__ImplementationDescription__IncludeSoftwareComponentsAssignment_6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7907:1: ( ( ruleSoftwareComponent ) )
@@ -23647,7 +23647,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -23659,7 +23659,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7918:1: rule__SoftwareComponent__NameAssignment_3 : ( ruleEString ) ;
     public final void rule__SoftwareComponent__NameAssignment_3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7922:1: ( ( ruleEString ) )
@@ -23688,7 +23688,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -23700,7 +23700,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7933:1: rule__SoftwareComponent__RepositoryAssignment_7 : ( ruleRepository ) ;
     public final void rule__SoftwareComponent__RepositoryAssignment_7() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7937:1: ( ( ruleRepository ) )
@@ -23729,7 +23729,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -23741,7 +23741,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7948:1: rule__SoftwareComponent__ExecutionRequirementAssignment_9_2 : ( ruleExecutionRequirement ) ;
     public final void rule__SoftwareComponent__ExecutionRequirementAssignment_9_2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7952:1: ( ( ruleExecutionRequirement ) )
@@ -23770,7 +23770,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -23782,7 +23782,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7963:1: rule__Repository__TypeAssignment_1 : ( ruleRepositoryType ) ;
     public final void rule__Repository__TypeAssignment_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7967:1: ( ( ruleRepositoryType ) )
@@ -23811,7 +23811,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -23823,7 +23823,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7978:1: rule__Repository__UrlAssignment_3 : ( ruleEString ) ;
     public final void rule__Repository__UrlAssignment_3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7982:1: ( ( ruleEString ) )
@@ -23852,7 +23852,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -23864,7 +23864,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:7993:1: rule__Repository__VersionAssignment_5 : ( ruleEString ) ;
     public final void rule__Repository__VersionAssignment_5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:7997:1: ( ( ruleEString ) )
@@ -23893,7 +23893,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -23905,7 +23905,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:8008:1: rule__DeviceRequirement__TypeAssignment_4 : ( ruleEString ) ;
     public final void rule__DeviceRequirement__TypeAssignment_4() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:8012:1: ( ( ruleEString ) )
@@ -23934,7 +23934,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -23946,7 +23946,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:8023:1: rule__DeviceRequirement__ParameterAssignment_5_3 : ( ruleHWSWParemeter ) ;
     public final void rule__DeviceRequirement__ParameterAssignment_5_3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:8027:1: ( ( ruleHWSWParemeter ) )
@@ -23975,7 +23975,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -23987,7 +23987,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:8038:1: rule__SoftwareConfigurationRequirement__ParameterAssignment_2 : ( ruleSoftwareExecutionParemeter ) ;
     public final void rule__SoftwareConfigurationRequirement__ParameterAssignment_2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:8042:1: ( ( ruleSoftwareExecutionParemeter ) )
@@ -24016,7 +24016,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -24028,7 +24028,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:8053:1: rule__HWSWParemeter__NameAssignment_3 : ( ruleEString ) ;
     public final void rule__HWSWParemeter__NameAssignment_3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:8057:1: ( ( ruleEString ) )
@@ -24057,7 +24057,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -24069,7 +24069,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:8068:1: rule__HWSWParemeter__KindAssignment_6 : ( ruleAttributeKind ) ;
     public final void rule__HWSWParemeter__KindAssignment_6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:8072:1: ( ( ruleAttributeKind ) )
@@ -24098,7 +24098,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -24110,7 +24110,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:8083:1: rule__HWSWParemeter__DescriptionAssignment_7_1 : ( ruleEString ) ;
     public final void rule__HWSWParemeter__DescriptionAssignment_7_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:8087:1: ( ( ruleEString ) )
@@ -24139,7 +24139,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -24151,7 +24151,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:8098:1: rule__HWSWParemeter__ValueAssignment_8_3 : ( rulePropertyValue ) ;
     public final void rule__HWSWParemeter__ValueAssignment_8_3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:8102:1: ( ( rulePropertyValue ) )
@@ -24180,7 +24180,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -24192,7 +24192,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:8113:1: rule__HWSWParemeter__ValueAssignment_8_4_1 : ( rulePropertyValue ) ;
     public final void rule__HWSWParemeter__ValueAssignment_8_4_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:8117:1: ( ( rulePropertyValue ) )
@@ -24221,7 +24221,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -24233,7 +24233,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:8128:1: rule__SoftwareExecutionParemeter__NameAssignment_3 : ( ruleEString ) ;
     public final void rule__SoftwareExecutionParemeter__NameAssignment_3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:8132:1: ( ( ruleEString ) )
@@ -24262,7 +24262,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -24274,7 +24274,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:8143:1: rule__SoftwareExecutionParemeter__KindAssignment_6 : ( ruleAttributeKind ) ;
     public final void rule__SoftwareExecutionParemeter__KindAssignment_6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:8147:1: ( ( ruleAttributeKind ) )
@@ -24303,7 +24303,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -24315,7 +24315,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:8158:1: rule__SoftwareExecutionParemeter__DescriptionAssignment_7_1 : ( ruleEString ) ;
     public final void rule__SoftwareExecutionParemeter__DescriptionAssignment_7_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:8162:1: ( ( ruleEString ) )
@@ -24344,7 +24344,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -24356,7 +24356,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:8173:1: rule__SoftwareExecutionParemeter__ValueAssignment_8_3 : ( rulePropertyValue ) ;
     public final void rule__SoftwareExecutionParemeter__ValueAssignment_8_3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:8177:1: ( ( rulePropertyValue ) )
@@ -24385,7 +24385,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -24397,7 +24397,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:8188:1: rule__SoftwareExecutionParemeter__ValueAssignment_8_4_1 : ( rulePropertyValue ) ;
     public final void rule__SoftwareExecutionParemeter__ValueAssignment_8_4_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:8192:1: ( ( rulePropertyValue ) )
@@ -24426,7 +24426,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -24438,7 +24438,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:8203:1: rule__NameOperatingSystemProperty__NameAssignment_3 : ( ( Os_name ) ) ;
     public final void rule__NameOperatingSystemProperty__NameAssignment_3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:8207:1: ( ( ( Os_name ) ) )
@@ -24471,7 +24471,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -24483,7 +24483,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:8222:1: rule__NameOperatingSystemProperty__KindAssignment_6 : ( ruleAttributeKind ) ;
     public final void rule__NameOperatingSystemProperty__KindAssignment_6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:8226:1: ( ( ruleAttributeKind ) )
@@ -24512,7 +24512,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -24524,7 +24524,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:8237:1: rule__NameOperatingSystemProperty__DescriptionAssignment_7_1 : ( ruleEString ) ;
     public final void rule__NameOperatingSystemProperty__DescriptionAssignment_7_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:8241:1: ( ( ruleEString ) )
@@ -24553,7 +24553,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -24565,7 +24565,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:8252:1: rule__NameOperatingSystemProperty__ValueAssignment_8_1 : ( rulePropertyValue ) ;
     public final void rule__NameOperatingSystemProperty__ValueAssignment_8_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:8256:1: ( ( rulePropertyValue ) )
@@ -24594,7 +24594,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -24606,7 +24606,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:8267:1: rule__VersionOperatingSystemProperty__NameAssignment_3 : ( ( Os_version ) ) ;
     public final void rule__VersionOperatingSystemProperty__NameAssignment_3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:8271:1: ( ( ( Os_version ) ) )
@@ -24639,7 +24639,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -24651,7 +24651,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:8286:1: rule__VersionOperatingSystemProperty__KindAssignment_6 : ( ruleAttributeKind ) ;
     public final void rule__VersionOperatingSystemProperty__KindAssignment_6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:8290:1: ( ( ruleAttributeKind ) )
@@ -24680,7 +24680,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -24692,7 +24692,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:8301:1: rule__VersionOperatingSystemProperty__DescriptionAssignment_7_1 : ( ruleEString ) ;
     public final void rule__VersionOperatingSystemProperty__DescriptionAssignment_7_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:8305:1: ( ( ruleEString ) )
@@ -24721,7 +24721,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -24733,7 +24733,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:8316:1: rule__VersionOperatingSystemProperty__ValueAssignment_8_1 : ( rulePropertyValue ) ;
     public final void rule__VersionOperatingSystemProperty__ValueAssignment_8_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:8320:1: ( ( rulePropertyValue ) )
@@ -24762,7 +24762,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -24774,7 +24774,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:8331:1: rule__PropertyAttribute__NameAssignment_2 : ( ruleEString ) ;
     public final void rule__PropertyAttribute__NameAssignment_2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:8335:1: ( ( ruleEString ) )
@@ -24803,7 +24803,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -24815,7 +24815,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:8346:1: rule__PropertyAttribute__KindAssignment_5 : ( ruleAttributeKind ) ;
     public final void rule__PropertyAttribute__KindAssignment_5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:8350:1: ( ( ruleAttributeKind ) )
@@ -24844,7 +24844,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -24856,7 +24856,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:8361:1: rule__PropertyAttribute__DescriptionAssignment_6_1 : ( ruleEString ) ;
     public final void rule__PropertyAttribute__DescriptionAssignment_6_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:8365:1: ( ( ruleEString ) )
@@ -24885,7 +24885,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -24897,7 +24897,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:8376:1: rule__PropertyAttribute__ValueAssignment_7_1 : ( rulePropertyValue ) ;
     public final void rule__PropertyAttribute__ValueAssignment_7_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:8380:1: ( ( rulePropertyValue ) )
@@ -24926,7 +24926,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -24938,7 +24938,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:8391:1: rule__PropertyMaximun__NameAssignment_2 : ( ruleEString ) ;
     public final void rule__PropertyMaximun__NameAssignment_2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:8395:1: ( ( ruleEString ) )
@@ -24967,7 +24967,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -24979,7 +24979,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:8406:1: rule__PropertyMaximun__KindAssignment_5 : ( ruleMaximumKind ) ;
     public final void rule__PropertyMaximun__KindAssignment_5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:8410:1: ( ( ruleMaximumKind ) )
@@ -25008,7 +25008,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -25020,7 +25020,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:8421:1: rule__PropertyMaximun__DescriptionAssignment_6_1 : ( ruleEString ) ;
     public final void rule__PropertyMaximun__DescriptionAssignment_6_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:8425:1: ( ( ruleEString ) )
@@ -25049,7 +25049,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -25061,7 +25061,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:8436:1: rule__PropertyMaximun__ValueAssignment_7_1 : ( rulePropertyValue ) ;
     public final void rule__PropertyMaximun__ValueAssignment_7_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:8440:1: ( ( rulePropertyValue ) )
@@ -25090,7 +25090,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -25102,7 +25102,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:8451:1: rule__PropertyMinimum__NameAssignment_2 : ( ruleEString ) ;
     public final void rule__PropertyMinimum__NameAssignment_2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:8455:1: ( ( ruleEString ) )
@@ -25131,7 +25131,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -25143,7 +25143,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:8466:1: rule__PropertyMinimum__KindAssignment_5 : ( ruleMinimumKind ) ;
     public final void rule__PropertyMinimum__KindAssignment_5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:8470:1: ( ( ruleMinimumKind ) )
@@ -25172,7 +25172,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -25184,7 +25184,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:8481:1: rule__PropertyMinimum__DescriptionAssignment_6_1 : ( ruleEString ) ;
     public final void rule__PropertyMinimum__DescriptionAssignment_6_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:8485:1: ( ( ruleEString ) )
@@ -25213,7 +25213,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -25225,7 +25225,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:8496:1: rule__PropertyMinimum__ValueAssignment_7_1 : ( rulePropertyValue ) ;
     public final void rule__PropertyMinimum__ValueAssignment_7_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:8500:1: ( ( rulePropertyValue ) )
@@ -25254,7 +25254,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -25266,7 +25266,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:8511:1: rule__PropertySelection__NameAssignment_2 : ( ruleEString ) ;
     public final void rule__PropertySelection__NameAssignment_2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:8515:1: ( ( ruleEString ) )
@@ -25295,7 +25295,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -25307,7 +25307,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:8526:1: rule__PropertySelection__KindAssignment_5 : ( ruleSelectionKind ) ;
     public final void rule__PropertySelection__KindAssignment_5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:8530:1: ( ( ruleSelectionKind ) )
@@ -25336,7 +25336,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -25348,7 +25348,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:8541:1: rule__PropertySelection__DescriptionAssignment_6_1 : ( ruleEString ) ;
     public final void rule__PropertySelection__DescriptionAssignment_6_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:8545:1: ( ( ruleEString ) )
@@ -25377,7 +25377,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -25389,7 +25389,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:8556:1: rule__PropertySelection__ValueAssignment_7_3 : ( rulePropertyValue ) ;
     public final void rule__PropertySelection__ValueAssignment_7_3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:8560:1: ( ( rulePropertyValue ) )
@@ -25418,7 +25418,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -25430,7 +25430,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:8571:1: rule__PropertySelection__ValueAssignment_7_4_1 : ( rulePropertyValue ) ;
     public final void rule__PropertySelection__ValueAssignment_7_4_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:8575:1: ( ( rulePropertyValue ) )
@@ -25459,7 +25459,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -25471,7 +25471,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:8586:1: rule__PropertyRange__NameAssignment_2 : ( ruleEString ) ;
     public final void rule__PropertyRange__NameAssignment_2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:8590:1: ( ( ruleEString ) )
@@ -25500,7 +25500,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -25512,7 +25512,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:8601:1: rule__PropertyRange__KindAssignment_5 : ( ruleRangeKind ) ;
     public final void rule__PropertyRange__KindAssignment_5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:8605:1: ( ( ruleRangeKind ) )
@@ -25541,7 +25541,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -25553,7 +25553,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:8616:1: rule__PropertyRange__DescriptionAssignment_6_1 : ( ruleEString ) ;
     public final void rule__PropertyRange__DescriptionAssignment_6_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:8620:1: ( ( ruleEString ) )
@@ -25582,7 +25582,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -25594,7 +25594,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:8631:1: rule__PropertyRange__ValueAssignment_7_3 : ( rulePropertyValue ) ;
     public final void rule__PropertyRange__ValueAssignment_7_3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:8635:1: ( ( rulePropertyValue ) )
@@ -25623,7 +25623,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -25635,7 +25635,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:8646:1: rule__PropertyRange__ValueAssignment_7_5 : ( rulePropertyValue ) ;
     public final void rule__PropertyRange__ValueAssignment_7_5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:8650:1: ( ( rulePropertyValue ) )
@@ -25664,7 +25664,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -25676,7 +25676,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:8661:1: rule__PropertyValueInt__ValueAssignment : ( ruleInteger0 ) ;
     public final void rule__PropertyValueInt__ValueAssignment() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:8665:1: ( ( ruleInteger0 ) )
@@ -25705,7 +25705,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -25717,7 +25717,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:8676:1: rule__PropertyValueDouble__ValueAssignment : ( ruleDouble0 ) ;
     public final void rule__PropertyValueDouble__ValueAssignment() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:8680:1: ( ( ruleDouble0 ) )
@@ -25746,7 +25746,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -25758,7 +25758,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:8691:1: rule__PropertyValueString__ValueAssignment : ( ruleEString ) ;
     public final void rule__PropertyValueString__ValueAssignment() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:8695:1: ( ( ruleEString ) )
@@ -25787,7 +25787,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -25799,7 +25799,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:8706:1: rule__PropertyValueList__ValueAssignment_2 : ( rulePropertyValue ) ;
     public final void rule__PropertyValueList__ValueAssignment_2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:8710:1: ( ( rulePropertyValue ) )
@@ -25828,7 +25828,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -25840,7 +25840,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:8721:1: rule__PropertyValueList__ValueAssignment_3_1 : ( rulePropertyValue ) ;
     public final void rule__PropertyValueList__ValueAssignment_3_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:8725:1: ( ( rulePropertyValue ) )
@@ -25869,7 +25869,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -25881,7 +25881,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:8736:1: rule__ProcessorArchitectureValue__ValueAssignment : ( ruleProcessorArchitectureType ) ;
     public final void rule__ProcessorArchitectureValue__ValueAssignment() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:8740:1: ( ( ruleProcessorArchitectureType ) )
@@ -25910,7 +25910,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -25922,7 +25922,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:8751:1: rule__ResourceType__NameAssignment_1 : ( ruleEString ) ;
     public final void rule__ResourceType__NameAssignment_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:8755:1: ( ( ruleEString ) )
@@ -25951,7 +25951,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -25963,7 +25963,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:8766:1: rule__CommunicationType__NameAssignment_1 : ( ruleEString ) ;
     public final void rule__CommunicationType__NameAssignment_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:8770:1: ( ( ruleEString ) )
@@ -25992,7 +25992,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -26004,7 +26004,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:8781:1: rule__LinuxDistributionValue__ValueAssignment_1 : ( ruleLinuxDistribution ) ;
     public final void rule__LinuxDistributionValue__ValueAssignment_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:8785:1: ( ( ruleLinuxDistribution ) )
@@ -26033,7 +26033,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -26045,7 +26045,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
     // InternalImplementationDescriptionParser.g:8796:1: rule__UbuntuVersionValue__ValueAssignment_1 : ( ruleUbuntuVersion ) ;
     public final void rule__UbuntuVersionValue__ValueAssignment_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalImplementationDescriptionParser.g:8800:1: ( ( ruleUbuntuVersion ) )
@@ -26074,7 +26074,7 @@ public class InternalImplementationDescriptionParser extends AbstractInternalCon
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
