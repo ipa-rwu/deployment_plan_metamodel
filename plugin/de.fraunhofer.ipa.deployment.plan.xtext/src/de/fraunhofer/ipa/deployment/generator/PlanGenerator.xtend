@@ -53,7 +53,7 @@ class PlanGenerator extends AbstractGenerator {
     @Inject
     extension DocMakefileCompiler docMakefileCompiler
 
-    public var NamingHelper namingHelper = new NamingHelper
+    public var NamingHelper naming = new NamingHelper
 
     def DockerfilePath(String assignmentFolderPath){
         return String.format("%s/Dockerfile", assignmentFolderPath)
@@ -62,47 +62,31 @@ class PlanGenerator extends AbstractGenerator {
     override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
         val plans = resource.allContents.toIterable.filter(AbstractDeploymentPlan)
         generateFiles(plans.toList, fsa)
-//        for(plan: plans){
-//                System.out.println(plan.name)
-//            var assignments = plan.realize.realization
-//            for (assignment : assignments){
-//                System.out.println(assignment.executedBy.name)
-//                var configSoftwareComponents =  (assignment as ImplementationAssignment).softwareComponent
-//                var impls = configSoftwareComponents.stream.map[component].collect(Collectors.toList())
-//                System.out.println(impls)
-//                if(plan instanceof DeploymentPlan){
-//                    fsa.generateFile(String.format("%s/%s_%s.repos", plan.getName(),plan.getName(), assignment.executedBy.name),
-//                                            plan.RepoInstallCompiler(impls))
-//                }
-//
-//
-//                var exec = configSoftwareComponents.stream.map[executionConfiguration].collect(Collectors.toList)
-//                System.out.println(exec)
-//            }
-//        }
 
     }
 
     def generateFiles(List<AbstractDeploymentPlan> plans, IFileSystemAccess2 fsa){
       for(plan: plans){
-        namingHelper.relativePlanFolderPath = plan.name
-        generateWorkflow(plan, fsa)
-        generateAnsible(plan, fsa)
+        naming.relativePlanFolderPath = plan.name
+        generateWorkflow(plan, fsa, naming)
+        generateAnsible(plan, fsa, naming)
         var assignments = plan.realize.realizations
         for (assignment : assignments){
             System.out.println(String.format("generate dockerfile:%s", assignment.name))
-            generateDockerFile(assignment, plan, fsa)
-            generateRosInstall(assignment, plan, fsa)
+            generateDockerFile(assignment, plan, fsa, naming)
+            generateRosInstall(assignment, plan, fsa, naming)
         }
-        generateDockerComposeFile(assignments, fsa)
+        generateDockerComposeFile(assignments, fsa, naming)
         generateDocuments(plan, fsa)
       }
     }
 
 
-      def generateRosInstall(AbstractComputationAssignment assignment, AbstractDeploymentPlan plan, IFileSystemAccess2 fsa) {
+      def generateRosInstall(AbstractComputationAssignment assignment, AbstractDeploymentPlan plan, IFileSystemAccess2 fsa, NamingHelper namingHelper) {
         if(assignment instanceof ImplementationAssignment)
         {
+            System.out.println("generateRosInstall")
+
             var scs = assignment.softwareComponents
             var impls = scs.map[it as ConfigSoftwareComponent].stream.map[component].collect(Collectors.toList())
             fsa.generateFile(
@@ -112,16 +96,15 @@ class PlanGenerator extends AbstractGenerator {
         }
       }
 
-        def generateDockerFile(AbstractComputationAssignment assignment, AbstractDeploymentPlan plan, IFileSystemAccess2 fsa) {
-            if(assignment.runtimeType.type == RunTimeType.CONTAINER && assignment instanceof ImplementationAssignment){
-            var impls = (assignment as ImplementationAssignment).softwareComponents.map[it as ConfigSoftwareComponent].stream.map[component].collect(Collectors.toList())
+        def generateDockerFile(AbstractComputationAssignment assignment, AbstractDeploymentPlan plan, IFileSystemAccess2 fsa, NamingHelper namingHelper) {
+            if(assignment.runtimeType.type == RunTimeType.CONTAINER){
             fsa.generateFile(namingHelper.getRelativeDockerfilePath(assignment.name),
                 assignment.dockerFileCompiler
                 )
             }
         }
 
-        def generateWorkflow(AbstractDeploymentPlan plan, IFileSystemAccess2 fsa) {
+        def generateWorkflow(AbstractDeploymentPlan plan, IFileSystemAccess2 fsa, NamingHelper namingHelper) {
             fsa.generateFile(
                 namingHelper.getGithubReuseableWorkflowPath,
                 ReusableWorkflow)
@@ -132,8 +115,7 @@ class PlanGenerator extends AbstractGenerator {
             )
         }
 
-        def generateDockerComposeFile(List<AbstractComputationAssignment> assignments, IFileSystemAccess2 fsa){
-
+        def generateDockerComposeFile(List<AbstractComputationAssignment> assignments, IFileSystemAccess2 fsa, NamingHelper namingHelper) {
           var assPerExecutors = collectAssignmentPerExecutor(assignments)
             assPerExecutors.forEach[compDev, assignmentList|
                 fsa.generateFile(
@@ -145,7 +127,7 @@ class PlanGenerator extends AbstractGenerator {
         }
 
 
-        def generateAnsible(AbstractDeploymentPlan plan, IFileSystemAccess2 fsa) {
+        def generateAnsible(AbstractDeploymentPlan plan, IFileSystemAccess2 fsa, NamingHelper namingHelper) {
             var ansibleNaming = new AnsibleNamingHelper
             ansibleNaming.relativeAnsibleFolderPath = plan.name
             fsa.generateFile(
@@ -182,10 +164,10 @@ class PlanGenerator extends AbstractGenerator {
                 )
         }
 
-            def generateDocuments(AbstractDeploymentPlan plan, IFileSystemAccess2 fsa) {
-                var docNaming = new DocumentNamingHelper
-              docNaming.relativeDocumentFolderPath = plan.name
-              docNaming.docFiles
+      def generateDocuments(AbstractDeploymentPlan plan, IFileSystemAccess2 fsa) {
+        var docNaming = new DocumentNamingHelper
+        docNaming.relativeDocumentFolderPath = plan.name
+        docNaming.docFiles
                 fsa.generateFile(
             docNaming.makeBatPath,
             docCompiler.makeBat
@@ -229,10 +211,10 @@ class PlanGenerator extends AbstractGenerator {
           runSubprocess(new ArrayList<String>(Arrays.asList("chmod", "777", docNaming.localBuildScriptPath)));
             }
 
-            def generateOverviewDocum(AbstractDeploymentPlan plan, IFileSystemAccess2 fsa, DocumentNamingHelper docNaming){
-                    fsa.generateFile(
-                docNaming.overviewFilePath,
-                docCompiler.deploymentIntroduction(plan, docNaming.overviewFileName, null)
-          )
-            }
+        def generateOverviewDocum(AbstractDeploymentPlan plan, IFileSystemAccess2 fsa, DocumentNamingHelper docNaming){
+            fsa.generateFile(
+            docNaming.overviewFilePath,
+            docCompiler.deploymentIntroduction(plan, docNaming.overviewFileName, null)
+      )
+  }
 }

@@ -35,19 +35,12 @@ import java.util.ArrayList
 import java.util.Arrays
 import java.util.HashMap
 import java.util.HashSet
-import java.util.LinkedHashSet
 import java.util.List
 import java.util.Map
 import java.util.Set
-import java.util.TreeMap
 import java.util.function.Function
 import java.util.stream.Collectors
 import org.eclipse.emf.ecore.EObject
-import ros.Node
-import ros.impl.PackageImpl
-import system.InterfaceReference
-import system.RosNode
-import system.impl.RosPublisherReferenceImpl
 import targetEnvironment.AbstractDeviceInstance
 import targetEnvironment.ComputationDeviceInstance
 import targetEnvironment.ConfigConnection
@@ -197,41 +190,10 @@ class NetworkInfo {
 
 class DeploymentHelper {
 
-    def getRosPackagesFromSystem(system.System rossystem){
-        var pkgsList = new LinkedHashSet
-        var rosnodes = rossystem.components.stream.map[it as RosNode].collect(Collectors.toList())
-        for(rosnode : rosnodes){
-            pkgsList.addAll(getPacakgeFromRosNode(rosnode))
-        }
-        return pkgsList
-    }
 
-    def getRosPackagesFromSystemWithoutDuplicate(system.System rossystem){
-        var pkgsList = getRosPackagesFromSystem(rossystem)
-        var Map<String, PackageImpl> map = new TreeMap
-        for (pkgimpl : pkgsList) {
-             if (!map.containsKey(pkgimpl.name)) {
-                  map.put(pkgimpl.name, pkgimpl);
-             }
-        }
-        return map.values().toList
-    }
 
-    def getPacakgeFromRosNode (RosNode object){
-        var pkgsList = new ArrayList()
-        var fromNode = object.from
-        pkgsList.add(getPacakge(fromNode))
-        return pkgsList
-    }
 
-    def getPacakge(Node object){
-        return object.eContainer.eContainer as PackageImpl
-    }
 
-    def getPacakge(InterfaceReference object){
-        if(object instanceof RosPublisherReferenceImpl)
-        return (object as RosPublisherReferenceImpl).from.eContainer.eContainer.eContainer as PackageImpl
-    }
 
     def <T> List<T> getListWithoutDuplicates(List<T> list, Function<T, ?>... keyFunctions) {
     var List<T> result = new ArrayList
@@ -290,7 +252,7 @@ class DeploymentHelper {
     }
 
     def runSubprocess(String[] commands){
-        runSubprocess(commands, false)
+        return runSubprocess(commands, false)
     }
 
     def OSInfo getOS(AbstractComputationAssignment cas){
@@ -345,7 +307,26 @@ class DeploymentHelper {
             info.name = LinuxDistribution.UBUNTU.getName
             info.version = getUbuntuVersionFromRosDistro(rosdistro)
          }
+         else if(osNme === null){
+          info.name = LinuxDistribution.UBUNTU.getName
+          info.version = getUbuntuVersionFromRosDistro(rosdistro)
+         }
          return info;
+    }
+
+    def String getRosVersionFromDistro(String distro){
+         var String version
+         switch (distro) {
+             case ROSDistro.ROLLING.getName,
+             case ROSDistro.HUMBLE.getName,
+             case ROSDistro.GALACTIC.getName:
+                  version = "ros2"
+             case ROSDistro.NOETIC.getName:
+                  version = "ros"
+             default:
+                 throw new IllegalArgumentException("Invalid ROS Distro: " + distro)
+         }
+         return version;
     }
 
 def parserNetworkInfo(ConnectedDevice connectDev){
@@ -466,7 +447,7 @@ def getRepoInfo(String repoInRosModel){
         repo_info.updateInfo(
             url.substring(url.lastIndexOf("/") + 1).replace(".git",""),
             'git',
-            url.replace(".git",""),
+            url,
             repoInRosModel.substring(repoInRosModel.lastIndexOf(':')+ 1)
         )
     }
@@ -501,13 +482,14 @@ def getReleaseInfo(String[] packNames, String rosdistro) {
     var List<String> commands = new ArrayList<String>(Arrays.asList("dhelp", "repo", "-pkg"))
     commands.addAll(packNames)
     commands.addAll(#["-d", rosdistro])
+    System.out.printf("run dhelp commands: %s", commands.toString)
     var List<RepoInfo> repo_infos = new ArrayList
     for(res: runSubprocess(commands, true).output){
         var temp = res.split(" ")
         System.out.println(String.format("result from runSubprocess: %s, version: %s", temp.toList.toString, temp.get(2)))
         val repo_info = new RepoInfo
         var url = temp.get(1)
-        repo_info.updateInfo(temp.get(0), 'git', url.replace(".git",""), temp.get(2))
+        repo_info.updateInfo(temp.get(0), 'git', url.replace(".git",""), temp.get(2), true)
         repo_infos.add(repo_info)
     }
     return repo_infos
@@ -515,58 +497,15 @@ def getReleaseInfo(String[] packNames, String rosdistro) {
 
 def checkIfPackageRelease(String packName, String rosdistro, String osName, String osVersion){
     var Runtime rt = Runtime.getRuntime()
-    var String[] commands = #["rosdep", "resolve", packName, "--rosdistro", rosdistro, String.format("--os=%s:%s", osName, osVersion)]
-        return runSubprocess(commands)
-}
-
-def compareWithRelease(List<RepoInfo> repoInfos, PackageImpl pkg){
-    var same = false
-    var pkgRepoInfo = getRepoInfo(pkg.fromGitRepo)
-    for(repoInfo: repoInfos){
-        if(repoInfo.name == pkg.name){
-            if(repoInfo.url == pkgRepoInfo.url){
-                if(pkgRepoInfo.version === null || repoInfo.version == pkgRepoInfo.version){
-                    same = true
-                    return same
-                }
-            }
-
-        }
+    var String[] commands = #["rosdep", "resolve", packName, "--rosdistro", rosdistro]
+    if(osName !=null && osVersion!= null){
+      commands = #["rosdep", "resolve", packName, "--rosdistro", rosdistro, String.format("--os=%s:%s", osName, osVersion)]
     }
-    return same
+    var res = runSubprocess(commands, true)
+
+    return res
 }
 
-def getRepoinfosFromRossystem(system.System sys, OSInfo os, String rosdistro){
-        var List<RepoInfo> repos =  new ArrayList
-    var pkgLists = getRosPackagesFromSystemWithoutDuplicate(sys)
-    var repoInfos = getReleaseInfo(pkgLists.map[name].toList, rosdistro)
-    for(pkg: pkgLists){
-        if (pkg.fromGitRepo!==null){
-            var repo_info = getRepoInfo(pkg.fromGitRepo)
-            if(repo_info!==null){
-//              check if Package already released
-                if(!checkIfPackageRelease(pkg.name, rosdistro, os.name, os.version).booleanResult){
-                    repos.add(repo_info)
-                }
-//             check if repo info defined in .ros matches released info
-                else if(!compareWithRelease(repoInfos, pkg)){
-                        repos.add(repo_info)
-                    }
-                    else{
-                        repo_info.released = pkg.name
-                        repo_info = repoInfos.stream.filter[it.name == pkg.name].collect(Collectors.toList).get(0)
-                        repos.add(repo_info)
-                    }
-            }
-            else{
-                repo_info.released = pkg.name
-                repo_info = repoInfos.stream.filter[it.name == pkg.name].collect(Collectors.toList).get(0)
-                repos.add(repo_info)
-            }
-        }
-    }
-    return repos
-}
 
 def getDeviceVolumes(ConnectedDevice connectedComputationDevice){
     for(property : connectedComputationDevice.properties){

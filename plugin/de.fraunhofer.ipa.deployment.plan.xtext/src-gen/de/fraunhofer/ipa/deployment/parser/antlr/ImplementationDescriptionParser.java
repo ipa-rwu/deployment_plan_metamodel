@@ -13,43 +13,43 @@ import org.eclipse.xtext.parser.antlr.XtextTokenStream;
 
 public class ImplementationDescriptionParser extends AbstractAntlrParser {
 
-    @Inject
-    private ImplementationDescriptionGrammarAccess grammarAccess;
+  @Inject
+  private ImplementationDescriptionGrammarAccess grammarAccess;
 
-    @Override
-    protected void setInitialHiddenTokens(XtextTokenStream tokenStream) {
-        tokenStream.setInitialHiddenTokens("RULE_WS", "RULE_ML_COMMENT", "RULE_SL_COMMENT");
-    }
+  @Override
+  protected void setInitialHiddenTokens(XtextTokenStream tokenStream) {
+    tokenStream.setInitialHiddenTokens("RULE_WS", "RULE_ML_COMMENT", "RULE_SL_COMMENT");
+  }
 
-    @Override
-    protected TokenSource createLexer(CharStream stream) {
-        return new ImplementationDescriptionTokenSource(super.createLexer(stream));
-    }
+  @Override
+  protected TokenSource createLexer(CharStream stream) {
+    return new ImplementationDescriptionTokenSource(super.createLexer(stream));
+  }
 
-    /**
-     * Indentation aware languages do not support partial parsing since the lexer is inherently stateful.
-     * Override and return {@code true} if your terminal splitting is stateless.
-     */
-    @Override
-    protected boolean isReparseSupported() {
-        return false;
-    }
+  /**
+   * Indentation aware languages do not support partial parsing since the lexer is inherently stateful.
+   * Override and return {@code true} if your terminal splitting is stateless.
+   */
+  @Override
+  protected boolean isReparseSupported() {
+    return false;
+  }
 
-    @Override
-    protected InternalImplementationDescriptionParser createParser(XtextTokenStream stream) {
-        return new InternalImplementationDescriptionParser(stream, getGrammarAccess());
-    }
+  @Override
+  protected InternalImplementationDescriptionParser createParser(XtextTokenStream stream) {
+    return new InternalImplementationDescriptionParser(stream, getGrammarAccess());
+  }
 
-    @Override
-    protected String getDefaultRuleName() {
-        return "ImplementationDescriptionSet";
-    }
+  @Override
+  protected String getDefaultRuleName() {
+    return "ImplementationDescriptionSet";
+  }
 
-    public ImplementationDescriptionGrammarAccess getGrammarAccess() {
-        return this.grammarAccess;
-    }
+  public ImplementationDescriptionGrammarAccess getGrammarAccess() {
+    return this.grammarAccess;
+  }
 
-    public void setGrammarAccess(ImplementationDescriptionGrammarAccess grammarAccess) {
-        this.grammarAccess = grammarAccess;
-    }
+  public void setGrammarAccess(ImplementationDescriptionGrammarAccess grammarAccess) {
+    this.grammarAccess = grammarAccess;
+  }
 }

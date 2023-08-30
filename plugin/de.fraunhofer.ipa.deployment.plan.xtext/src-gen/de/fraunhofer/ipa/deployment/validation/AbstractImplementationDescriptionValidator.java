@@ -9,11 +9,11 @@ import org.eclipse.emf.ecore.EPackage;
 
 public abstract class AbstractImplementationDescriptionValidator extends UtilValidator {
 
-    @Override
-    protected List<EPackage> getEPackages() {
-        List<EPackage> result = new ArrayList<EPackage>(super.getEPackages());
-        result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.ipa.fraunhofer.de/ImplementationDescription"));
-        result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.ipa.fraunhofer.de/Util"));
-        return result;
-    }
+  @Override
+  protected List<EPackage> getEPackages() {
+    List<EPackage> result = new ArrayList<EPackage>(super.getEPackages());
+    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.ipa.fraunhofer.de/ImplementationDescription"));
+    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.ipa.fraunhofer.de/Util"));
+    return result;
+  }
 }

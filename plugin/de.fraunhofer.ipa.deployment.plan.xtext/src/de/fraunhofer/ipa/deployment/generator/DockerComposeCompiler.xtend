@@ -183,16 +183,6 @@ def collectExecutionEnv(AbstarctConfigSoftwareComponent software){
                 }
             ]
         }
-        else if(p instanceof ConfigRosParameter){
-            res.computeIfAbsent((p as ConfigRosParameter).from)
-            [
-                if ((p as ConfigRosParameter).value !== null){
-                    (p as ConfigRosParameter).value
-                }else{
-                    getValueFromTargetEnv((p as ConfigRosParameter).to)
-                    }
-            ]
-        }
     }
     return res
 }
@@ -211,16 +201,6 @@ def collectExecutionEnv(AbstractComputationAssignment assignment){
                 }else{
                     getValueFromTargetEnv((p as ConfigExecutionParameter).to)
                 }
-            ]
-        }
-        else if(p instanceof ConfigRosParameter){
-            res.computeIfAbsent((p as ConfigRosParameter).from)
-            [
-                if ((p as ConfigRosParameter).value !== null){
-                    (p as ConfigRosParameter).value
-                }else{
-                    getValueFromTargetEnv((p as ConfigRosParameter).to)
-                    }
             ]
         }
     }
