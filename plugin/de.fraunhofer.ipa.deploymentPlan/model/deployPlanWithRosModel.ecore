@@ -7,7 +7,8 @@
         upperBound="-1" eType="#//ConfigRosSoftwareComponent" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ConfigRosParameter" eSuperTypes="deploymentPlan.ecore#//AbstractConfigExecutionParameter">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="from" lowerBound="1" eType="ecore:EClass ../../de.fraunhofer.ipa.rossystem/model/rossystem.ecore#//RosParameter"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refNodeParam" eType="ecore:EClass ../../de.fraunhofer.ipa.rossystem/model/rossystem.ecore#//RosParameter"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refSysParam" eType="ecore:EClass ../../de.fraunhofer.ipa.ros/model/ros.ecore#//Parameter"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="to" eType="ecore:EClass ../../de.fraunhofer.ipa.targetEnvironment/model/targetEnvironment.ecore#//AbstractConfigProperty"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="ecore:EClass ../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//PropertyValue"
         containment="true"/>
@@ -15,5 +16,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="ConfigRosSoftwareComponent" eSuperTypes="deploymentPlan.ecore#//AbstarctConfigSoftwareComponent">
     <eStructuralFeatures xsi:type="ecore:EReference" name="component" lowerBound="1"
         eType="ecore:EClass ../../de.fraunhofer.ipa.rossystem/model/rossystem.ecore#//System"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DeployRossystemPlan" eSuperTypes="deploymentPlan.ecore#//AbstractDeploymentPlan">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetRossystem" eType="ecore:EClass ../../de.fraunhofer.ipa.rossystem/model/rossystem.ecore#//System"/>
   </eClassifiers>
 </ecore:EPackage>

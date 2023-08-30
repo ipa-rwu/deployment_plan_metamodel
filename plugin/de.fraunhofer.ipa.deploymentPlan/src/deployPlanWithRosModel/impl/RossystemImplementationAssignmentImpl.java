@@ -35,118 +35,118 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class RossystemImplementationAssignmentImpl extends AbstractComputationAssignmentImpl implements RossystemImplementationAssignment {
     /**
-     * The cached value of the '{@link #getSoftwareComponents() <em>Software Components</em>}' containment reference list.
-     * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getSoftwareComponents() <em>Software Components</em>}' containment reference list.
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getSoftwareComponents()
-     * @generated
-     * @ordered
-     */
+   * @see #getSoftwareComponents()
+   * @generated
+   * @ordered
+   */
     protected EList<ConfigRosSoftwareComponent> softwareComponents;
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     protected RossystemImplementationAssignmentImpl() {
-        super();
-    }
+    super();
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     protected EClass eStaticClass() {
-        return DeployPlanWithRosModelPackage.Literals.ROSSYSTEM_IMPLEMENTATION_ASSIGNMENT;
-    }
+    return DeployPlanWithRosModelPackage.Literals.ROSSYSTEM_IMPLEMENTATION_ASSIGNMENT;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public EList<ConfigRosSoftwareComponent> getSoftwareComponents() {
-        if (softwareComponents == null) {
-            softwareComponents = new EObjectContainmentEList<ConfigRosSoftwareComponent>(ConfigRosSoftwareComponent.class, this, DeployPlanWithRosModelPackage.ROSSYSTEM_IMPLEMENTATION_ASSIGNMENT__SOFTWARE_COMPONENTS);
-        }
-        return softwareComponents;
+    if (softwareComponents == null) {
+      softwareComponents = new EObjectContainmentEList<ConfigRosSoftwareComponent>(ConfigRosSoftwareComponent.class, this, DeployPlanWithRosModelPackage.ROSSYSTEM_IMPLEMENTATION_ASSIGNMENT__SOFTWARE_COMPONENTS);
     }
+    return softwareComponents;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-        switch (featureID) {
-            case DeployPlanWithRosModelPackage.ROSSYSTEM_IMPLEMENTATION_ASSIGNMENT__SOFTWARE_COMPONENTS:
-                return ((InternalEList<?>)getSoftwareComponents()).basicRemove(otherEnd, msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+    switch (featureID) {
+      case DeployPlanWithRosModelPackage.ROSSYSTEM_IMPLEMENTATION_ASSIGNMENT__SOFTWARE_COMPONENTS:
+        return ((InternalEList<?>)getSoftwareComponents()).basicRemove(otherEnd, msgs);
     }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case DeployPlanWithRosModelPackage.ROSSYSTEM_IMPLEMENTATION_ASSIGNMENT__SOFTWARE_COMPONENTS:
-                return getSoftwareComponents();
-        }
-        return super.eGet(featureID, resolve, coreType);
+    switch (featureID) {
+      case DeployPlanWithRosModelPackage.ROSSYSTEM_IMPLEMENTATION_ASSIGNMENT__SOFTWARE_COMPONENTS:
+        return getSoftwareComponents();
     }
+    return super.eGet(featureID, resolve, coreType);
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @SuppressWarnings("unchecked")
     @Override
     public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case DeployPlanWithRosModelPackage.ROSSYSTEM_IMPLEMENTATION_ASSIGNMENT__SOFTWARE_COMPONENTS:
-                getSoftwareComponents().clear();
-                getSoftwareComponents().addAll((Collection<? extends ConfigRosSoftwareComponent>)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
+    switch (featureID) {
+      case DeployPlanWithRosModelPackage.ROSSYSTEM_IMPLEMENTATION_ASSIGNMENT__SOFTWARE_COMPONENTS:
+        getSoftwareComponents().clear();
+        getSoftwareComponents().addAll((Collection<? extends ConfigRosSoftwareComponent>)newValue);
+        return;
     }
+    super.eSet(featureID, newValue);
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     public void eUnset(int featureID) {
-        switch (featureID) {
-            case DeployPlanWithRosModelPackage.ROSSYSTEM_IMPLEMENTATION_ASSIGNMENT__SOFTWARE_COMPONENTS:
-                getSoftwareComponents().clear();
-                return;
-        }
-        super.eUnset(featureID);
+    switch (featureID) {
+      case DeployPlanWithRosModelPackage.ROSSYSTEM_IMPLEMENTATION_ASSIGNMENT__SOFTWARE_COMPONENTS:
+        getSoftwareComponents().clear();
+        return;
     }
+    super.eUnset(featureID);
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case DeployPlanWithRosModelPackage.ROSSYSTEM_IMPLEMENTATION_ASSIGNMENT__SOFTWARE_COMPONENTS:
-                return softwareComponents != null && !softwareComponents.isEmpty();
-        }
-        return super.eIsSet(featureID);
+    switch (featureID) {
+      case DeployPlanWithRosModelPackage.ROSSYSTEM_IMPLEMENTATION_ASSIGNMENT__SOFTWARE_COMPONENTS:
+        return softwareComponents != null && !softwareComponents.isEmpty();
     }
+    return super.eIsSet(featureID);
+  }
 
 } //RossystemImplementationAssignmentImpl
