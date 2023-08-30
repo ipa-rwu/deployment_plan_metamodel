@@ -29,129 +29,129 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class ConfigRosSoftwareComponentImpl extends AbstarctConfigSoftwareComponentImpl implements ConfigRosSoftwareComponent {
     /**
-     * The cached value of the '{@link #getComponent() <em>Component</em>}' reference.
-     * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getComponent() <em>Component</em>}' reference.
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getComponent()
-     * @generated
-     * @ordered
-     */
+   * @see #getComponent()
+   * @generated
+   * @ordered
+   */
     protected system.System component;
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     protected ConfigRosSoftwareComponentImpl() {
-        super();
-    }
+    super();
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     protected EClass eStaticClass() {
-        return DeployPlanWithRosModelPackage.Literals.CONFIG_ROS_SOFTWARE_COMPONENT;
-    }
+    return DeployPlanWithRosModelPackage.Literals.CONFIG_ROS_SOFTWARE_COMPONENT;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public system.System getComponent() {
-        if (component != null && component.eIsProxy()) {
-            InternalEObject oldComponent = (InternalEObject)component;
-            component = (system.System)eResolveProxy(oldComponent);
-            if (component != oldComponent) {
-                if (eNotificationRequired())
-                    eNotify(new ENotificationImpl(this, Notification.RESOLVE, DeployPlanWithRosModelPackage.CONFIG_ROS_SOFTWARE_COMPONENT__COMPONENT, oldComponent, component));
-            }
-        }
-        return component;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public system.System basicGetComponent() {
-        return component;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public void setComponent(system.System newComponent) {
-        system.System oldComponent = component;
-        component = newComponent;
+    if (component != null && component.eIsProxy()) {
+      InternalEObject oldComponent = (InternalEObject)component;
+      component = (system.System)eResolveProxy(oldComponent);
+      if (component != oldComponent) {
         if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, DeployPlanWithRosModelPackage.CONFIG_ROS_SOFTWARE_COMPONENT__COMPONENT, oldComponent, component));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, DeployPlanWithRosModelPackage.CONFIG_ROS_SOFTWARE_COMPONENT__COMPONENT, oldComponent, component));
+      }
     }
+    return component;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
+    public system.System basicGetComponent() {
+    return component;
+  }
+
+    /**
+   * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+   * @generated
+   */
+    public void setComponent(system.System newComponent) {
+    system.System oldComponent = component;
+    component = newComponent;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DeployPlanWithRosModelPackage.CONFIG_ROS_SOFTWARE_COMPONENT__COMPONENT, oldComponent, component));
+  }
+
+    /**
+   * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+   * @generated
+   */
     @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case DeployPlanWithRosModelPackage.CONFIG_ROS_SOFTWARE_COMPONENT__COMPONENT:
-                if (resolve) return getComponent();
-                return basicGetComponent();
-        }
-        return super.eGet(featureID, resolve, coreType);
+    switch (featureID) {
+      case DeployPlanWithRosModelPackage.CONFIG_ROS_SOFTWARE_COMPONENT__COMPONENT:
+        if (resolve) return getComponent();
+        return basicGetComponent();
     }
+    return super.eGet(featureID, resolve, coreType);
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case DeployPlanWithRosModelPackage.CONFIG_ROS_SOFTWARE_COMPONENT__COMPONENT:
-                setComponent((system.System)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
+    switch (featureID) {
+      case DeployPlanWithRosModelPackage.CONFIG_ROS_SOFTWARE_COMPONENT__COMPONENT:
+        setComponent((system.System)newValue);
+        return;
     }
+    super.eSet(featureID, newValue);
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     public void eUnset(int featureID) {
-        switch (featureID) {
-            case DeployPlanWithRosModelPackage.CONFIG_ROS_SOFTWARE_COMPONENT__COMPONENT:
-                setComponent((system.System)null);
-                return;
-        }
-        super.eUnset(featureID);
+    switch (featureID) {
+      case DeployPlanWithRosModelPackage.CONFIG_ROS_SOFTWARE_COMPONENT__COMPONENT:
+        setComponent((system.System)null);
+        return;
     }
+    super.eUnset(featureID);
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case DeployPlanWithRosModelPackage.CONFIG_ROS_SOFTWARE_COMPONENT__COMPONENT:
-                return component != null;
-        }
-        return super.eIsSet(featureID);
+    switch (featureID) {
+      case DeployPlanWithRosModelPackage.CONFIG_ROS_SOFTWARE_COMPONENT__COMPONENT:
+        return component != null;
     }
+    return super.eIsSet(featureID);
+  }
 
 } //ConfigRosSoftwareComponentImpl

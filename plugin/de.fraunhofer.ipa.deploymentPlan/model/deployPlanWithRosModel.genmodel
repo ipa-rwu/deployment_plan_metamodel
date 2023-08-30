@@ -3,7 +3,7 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.fraunhofer.ipa.deploymentPlan/src" modelPluginID="de.fraunhofer.ipa.deploymentPlan"
     modelName="DeployPlanWithRosModel" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
-    usedGenPackages="deploymentPlan.genmodel#//deploymentPlan ../../de.fraunhofer.ipa.targetEnvironment/model/device.genmodel#//device ImplementationDescription.genmodel#//implementationDescription ../../de.fraunhofer.ipa.ros/model/ros.genmodel#//ros ../../de.fraunhofer.ipa.ros/model/ros.genmodel#//primitives ../../de.fraunhofer.ipa.rossystem/model/rossystem.genmodel#//system ../../de.fraunhofer.ipa.targetEnvironment/model/targetEnvironment.genmodel#//targetEnvironment ../../de.fraunhofer.ipa.deployment.util/model/util.genmodel#//util"
+    usedGenPackages="deploymentPlan.genmodel#//deploymentPlan ../../de.fraunhofer.ipa.targetEnvironment/model/device.genmodel#//device ImplementationDescription.genmodel#//implementationDescription ../../de.fraunhofer.ipa.ros/model/ros.genmodel#//ros ../../de.fraunhofer.ipa.ros/model/ros.genmodel#//primitives ../../de.fraunhofer.ipa.rossystem/model/rossystem.genmodel#//system ../../de.fraunhofer.ipa.targetEnvironment/model/targetEnvironment.genmodel#//targetEnvironment ../../de.fraunhofer.ipa.deployment.util/model/util.genmodel#//util ../../org.eclipse.emf.ecore/model/XMLType.genmodel#//type"
     operationReflection="true" importOrganizing="true">
   <foreignModel>deployPlanWithRosModel.ecore</foreignModel>
   <genPackages prefix="DeployPlanWithRosModel" disposableProviderFactory="true" ecorePackage="deployPlanWithRosModel.ecore#/">
