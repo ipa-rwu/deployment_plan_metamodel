@@ -20,6 +20,14 @@ class RepoInfo{
     String version
     Boolean released
 
+    def updateInfo(String name, String type, String url, String version, Boolean released){
+        this.name = name
+        this.url = url
+        this.type = type
+        this.version = version
+        this.released = released
+    }
+
     def updateInfo(String name, String type, String url, String version){
         this.name = name
         this.url = url
@@ -52,6 +60,11 @@ class RepoInfo{
         this.released = true
         this.name = name
     }
+
+    def print(){
+      return String.format("RepoInfo: name: %s, url: %s, version: %s, released: %b\n",
+        this.name, this.url, version, released)
+    }
 }
 
 
@@ -71,17 +84,17 @@ repositories:
 «ENDFOR»
 '''
 
-        def collectSoftwareComponents(List<AbstractComputationAssignmentTarget> targets){
-            var List<SoftwareComponent> all = new ArrayList
-            for(target: targets){
-                if(target instanceof ImplementationDescription){
-                all.addAll((target as ImplementationDescription).includeSoftwareComponents)
-                }else if(target instanceof SoftwareComponent){
-                    all.add(target as SoftwareComponent)
-                }
+    def collectSoftwareComponents(List<AbstractComputationAssignmentTarget> targets){
+        var List<SoftwareComponent> all = new ArrayList
+        for(target: targets){
+            if(target instanceof ImplementationDescription){
+            all.addAll((target as ImplementationDescription).includeSoftwareComponents)
+            }else if(target instanceof SoftwareComponent){
+                all.add(target as SoftwareComponent)
             }
-            return all
         }
+        return all
+    }
 
     def RepoInstallCompiler(List<RepoInfo> repos) '''
     «var newRepos = repos.filter[it.checkIfReleased==false]»
