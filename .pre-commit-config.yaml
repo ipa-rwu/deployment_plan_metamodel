@@ -22,10 +22,10 @@ repos:
       - id: forbid-crlf
       - id: remove-crlf
       - id: forbid-tabs
-        exclude: "Makefile$|DocMakefileCompiler.xtend"
+        exclude: "Makefile$|DocMakefileCompiler.xtend|^.java"
       - id: remove-tabs
         args: [--whitespaces-count, "2"]
-        exclude: "Makefile$|DocMakefileCompiler.xtend"
+        exclude: "Makefile$|DocMakefileCompiler.xtend|^.java"
 
   - repo: https://github.com/pre-commit/mirrors-autopep8
     rev: "v2.0.2"
@@ -37,3 +37,9 @@ repos:
     hooks:
       - id: isort
         name: isort (python)
+
+  - repo: https://github.com/ejba/pre-commit-maven
+    rev: v0.3.3
+    hooks:
+      - id: maven
+        args: ["checkstyle:checkstyle -f plugin/de.fraunhofer.ipa.deployment.parent/"]

@@ -83,7 +83,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
 
 
 
-        private UtilGrammarAccess grammarAccess;
+      private UtilGrammarAccess grammarAccess;
 
         public InternalUtilParser(TokenStream input, UtilGrammarAccess grammarAccess) {
             this(input);
@@ -93,12 +93,12 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
 
         @Override
         protected String getFirstRuleName() {
-            return "Description";
+          return "Description";
         }
 
         @Override
         protected UtilGrammarAccess getGrammarAccess() {
-            return grammarAccess;
+          return grammarAccess;
         }
 
 
@@ -146,7 +146,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
         EObject current = null;
 
 
-            enterRule();
+          enterRule();
 
         try {
             // InternalUtilParser.g:71:2: ( () )
@@ -156,9 +156,9 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             // InternalUtilParser.g:73:3:
             {
 
-                        current = forceCreateModelElement(
-                            grammarAccess.getDescriptionAccess().getDescriptionAction(),
-                            current);
+                  current = forceCreateModelElement(
+                    grammarAccess.getDescriptionAccess().getDescriptionAction(),
+                    current);
 
 
             }
@@ -167,7 +167,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             }
 
 
-                leaveRule();
+              leaveRule();
 
         }
         finally {
@@ -224,7 +224,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
 
 
 
-            enterRule();
+          enterRule();
 
         try {
             // InternalUtilParser.g:95:2: ( (this_NameOperatingSystemProperty_0= ruleNameOperatingSystemProperty | this_VersionOperatingSystemProperty_1= ruleVersionOperatingSystemProperty ) )
@@ -271,7 +271,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     // InternalUtilParser.g:97:3: this_NameOperatingSystemProperty_0= ruleNameOperatingSystemProperty
                     {
 
-                                newCompositeNode(grammarAccess.getAbstractOperatingSystemPropertyAccess().getNameOperatingSystemPropertyParserRuleCall_0());
+                          newCompositeNode(grammarAccess.getAbstractOperatingSystemPropertyAccess().getNameOperatingSystemPropertyParserRuleCall_0());
 
                     pushFollow(FOLLOW_2);
                     this_NameOperatingSystemProperty_0=ruleNameOperatingSystemProperty();
@@ -279,8 +279,8 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     state._fsp--;
 
 
-                                current = this_NameOperatingSystemProperty_0;
-                                afterParserOrEnumRuleCall();
+                          current = this_NameOperatingSystemProperty_0;
+                          afterParserOrEnumRuleCall();
 
 
                     }
@@ -289,7 +289,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     // InternalUtilParser.g:106:3: this_VersionOperatingSystemProperty_1= ruleVersionOperatingSystemProperty
                     {
 
-                                newCompositeNode(grammarAccess.getAbstractOperatingSystemPropertyAccess().getVersionOperatingSystemPropertyParserRuleCall_1());
+                          newCompositeNode(grammarAccess.getAbstractOperatingSystemPropertyAccess().getVersionOperatingSystemPropertyParserRuleCall_1());
 
                     pushFollow(FOLLOW_2);
                     this_VersionOperatingSystemProperty_1=ruleVersionOperatingSystemProperty();
@@ -297,8 +297,8 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     state._fsp--;
 
 
-                                current = this_VersionOperatingSystemProperty_1;
-                                afterParserOrEnumRuleCall();
+                          current = this_VersionOperatingSystemProperty_1;
+                          afterParserOrEnumRuleCall();
 
 
                     }
@@ -310,7 +310,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             }
 
 
-                leaveRule();
+              leaveRule();
 
         }
 
@@ -381,7 +381,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
 
 
 
-            enterRule();
+          enterRule();
 
         try {
             // InternalUtilParser.g:131:2: ( ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= Os_name ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT ) )
@@ -394,15 +394,15 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             // InternalUtilParser.g:134:4:
             {
 
-                            current = forceCreateModelElement(
-                                grammarAccess.getNameOperatingSystemPropertyAccess().getNameOperatingSystemPropertyAction_0(),
-                                current);
+                    current = forceCreateModelElement(
+                      grammarAccess.getNameOperatingSystemPropertyAccess().getNameOperatingSystemPropertyAction_0(),
+                      current);
 
 
             }
 
 
-                        newCompositeNode(grammarAccess.getNameOperatingSystemPropertyAccess().getPreListElementParserRuleCall_1());
+                  newCompositeNode(grammarAccess.getNameOperatingSystemPropertyAccess().getPreListElementParserRuleCall_1());
 
             pushFollow(FOLLOW_3);
             rulePreListElement();
@@ -410,11 +410,11 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             state._fsp--;
 
 
-                        afterParserOrEnumRuleCall();
+                  afterParserOrEnumRuleCall();
 
             otherlv_2=(Token)match(input,Name,FOLLOW_4);
 
-                        newLeafNode(otherlv_2, grammarAccess.getNameOperatingSystemPropertyAccess().getNameKeyword_2());
+                  newLeafNode(otherlv_2, grammarAccess.getNameOperatingSystemPropertyAccess().getNameKeyword_2());
 
             // InternalUtilParser.g:151:3: ( (lv_name_3_0= Os_name ) )
             // InternalUtilParser.g:152:4: (lv_name_3_0= Os_name )
@@ -424,13 +424,13 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             {
             lv_name_3_0=(Token)match(input,Os_name,FOLLOW_5);
 
-                                newLeafNode(lv_name_3_0, grammarAccess.getNameOperatingSystemPropertyAccess().getNameOs_nameKeyword_3_0());
+                      newLeafNode(lv_name_3_0, grammarAccess.getNameOperatingSystemPropertyAccess().getNameOs_nameKeyword_3_0());
 
 
-                                if (current==null) {
-                                    current = createModelElement(grammarAccess.getNameOperatingSystemPropertyRule());
-                                }
-                                setWithLastConsumed(current, "name", lv_name_3_0, "os_name");
+                      if (current==null) {
+                        current = createModelElement(grammarAccess.getNameOperatingSystemPropertyRule());
+                      }
+                      setWithLastConsumed(current, "name", lv_name_3_0, "os_name");
 
 
             }
@@ -440,11 +440,11 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
 
             this_INDENT_4=(Token)match(input,RULE_INDENT,FOLLOW_6);
 
-                        newLeafNode(this_INDENT_4, grammarAccess.getNameOperatingSystemPropertyAccess().getINDENTTerminalRuleCall_4());
+                  newLeafNode(this_INDENT_4, grammarAccess.getNameOperatingSystemPropertyAccess().getINDENTTerminalRuleCall_4());
 
             otherlv_5=(Token)match(input,Kind,FOLLOW_7);
 
-                        newLeafNode(otherlv_5, grammarAccess.getNameOperatingSystemPropertyAccess().getKindKeyword_5());
+                  newLeafNode(otherlv_5, grammarAccess.getNameOperatingSystemPropertyAccess().getKindKeyword_5());
 
             // InternalUtilParser.g:173:3: ( (lv_kind_6_0= ruleAttributeKind ) )
             // InternalUtilParser.g:174:4: (lv_kind_6_0= ruleAttributeKind )
@@ -453,7 +453,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             // InternalUtilParser.g:175:5: lv_kind_6_0= ruleAttributeKind
             {
 
-                                newCompositeNode(grammarAccess.getNameOperatingSystemPropertyAccess().getKindAttributeKindParserRuleCall_6_0());
+                      newCompositeNode(grammarAccess.getNameOperatingSystemPropertyAccess().getKindAttributeKindParserRuleCall_6_0());
 
             pushFollow(FOLLOW_8);
             lv_kind_6_0=ruleAttributeKind();
@@ -461,15 +461,15 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             state._fsp--;
 
 
-                                if (current==null) {
-                                    current = createModelElementForParent(grammarAccess.getNameOperatingSystemPropertyRule());
-                                }
-                                set(
-                                    current,
-                                    "kind",
-                                    lv_kind_6_0,
-                                    "de.fraunhofer.ipa.deployment.Util.AttributeKind");
-                                afterParserOrEnumRuleCall();
+                      if (current==null) {
+                        current = createModelElementForParent(grammarAccess.getNameOperatingSystemPropertyRule());
+                      }
+                      set(
+                        current,
+                        "kind",
+                        lv_kind_6_0,
+                        "de.fraunhofer.ipa.deployment.Util.AttributeKind");
+                      afterParserOrEnumRuleCall();
 
 
             }
@@ -490,7 +490,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     {
                     otherlv_7=(Token)match(input,Description,FOLLOW_9);
 
-                                    newLeafNode(otherlv_7, grammarAccess.getNameOperatingSystemPropertyAccess().getDescriptionKeyword_7_0());
+                            newLeafNode(otherlv_7, grammarAccess.getNameOperatingSystemPropertyAccess().getDescriptionKeyword_7_0());
 
                     // InternalUtilParser.g:197:4: ( (lv_description_8_0= ruleEString ) )
                     // InternalUtilParser.g:198:5: (lv_description_8_0= ruleEString )
@@ -499,7 +499,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     // InternalUtilParser.g:199:6: lv_description_8_0= ruleEString
                     {
 
-                                            newCompositeNode(grammarAccess.getNameOperatingSystemPropertyAccess().getDescriptionEStringParserRuleCall_7_1_0());
+                                newCompositeNode(grammarAccess.getNameOperatingSystemPropertyAccess().getDescriptionEStringParserRuleCall_7_1_0());
 
                     pushFollow(FOLLOW_10);
                     lv_description_8_0=ruleEString();
@@ -507,15 +507,15 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     state._fsp--;
 
 
-                                            if (current==null) {
-                                                current = createModelElementForParent(grammarAccess.getNameOperatingSystemPropertyRule());
-                                            }
-                                            set(
-                                                current,
-                                                "description",
-                                                lv_description_8_0,
-                                                "de.fraunhofer.ipa.deployment.Util.EString");
-                                            afterParserOrEnumRuleCall();
+                                if (current==null) {
+                                  current = createModelElementForParent(grammarAccess.getNameOperatingSystemPropertyRule());
+                                }
+                                set(
+                                  current,
+                                  "description",
+                                  lv_description_8_0,
+                                  "de.fraunhofer.ipa.deployment.Util.EString");
+                                afterParserOrEnumRuleCall();
 
 
                     }
@@ -542,7 +542,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     {
                     otherlv_9=(Token)match(input,Value,FOLLOW_11);
 
-                                    newLeafNode(otherlv_9, grammarAccess.getNameOperatingSystemPropertyAccess().getValueKeyword_8_0());
+                            newLeafNode(otherlv_9, grammarAccess.getNameOperatingSystemPropertyAccess().getValueKeyword_8_0());
 
                     // InternalUtilParser.g:222:4: ( (lv_value_10_0= rulePropertyValue ) )
                     // InternalUtilParser.g:223:5: (lv_value_10_0= rulePropertyValue )
@@ -551,7 +551,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     // InternalUtilParser.g:224:6: lv_value_10_0= rulePropertyValue
                     {
 
-                                            newCompositeNode(grammarAccess.getNameOperatingSystemPropertyAccess().getValuePropertyValueParserRuleCall_8_1_0());
+                                newCompositeNode(grammarAccess.getNameOperatingSystemPropertyAccess().getValuePropertyValueParserRuleCall_8_1_0());
 
                     pushFollow(FOLLOW_12);
                     lv_value_10_0=rulePropertyValue();
@@ -559,15 +559,15 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     state._fsp--;
 
 
-                                            if (current==null) {
-                                                current = createModelElementForParent(grammarAccess.getNameOperatingSystemPropertyRule());
-                                            }
-                                            set(
-                                                current,
-                                                "value",
-                                                lv_value_10_0,
-                                                "de.fraunhofer.ipa.deployment.Util.PropertyValue");
-                                            afterParserOrEnumRuleCall();
+                                if (current==null) {
+                                  current = createModelElementForParent(grammarAccess.getNameOperatingSystemPropertyRule());
+                                }
+                                set(
+                                  current,
+                                  "value",
+                                  lv_value_10_0,
+                                  "de.fraunhofer.ipa.deployment.Util.PropertyValue");
+                                afterParserOrEnumRuleCall();
 
 
                     }
@@ -583,7 +583,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
 
             this_DEDENT_11=(Token)match(input,RULE_DEDENT,FOLLOW_2);
 
-                        newLeafNode(this_DEDENT_11, grammarAccess.getNameOperatingSystemPropertyAccess().getDEDENTTerminalRuleCall_9());
+                  newLeafNode(this_DEDENT_11, grammarAccess.getNameOperatingSystemPropertyAccess().getDEDENTTerminalRuleCall_9());
 
 
             }
@@ -592,7 +592,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             }
 
 
-                leaveRule();
+              leaveRule();
 
         }
 
@@ -663,7 +663,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
 
 
 
-            enterRule();
+          enterRule();
 
         try {
             // InternalUtilParser.g:263:2: ( ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= Os_version ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT ) )
@@ -676,15 +676,15 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             // InternalUtilParser.g:266:4:
             {
 
-                            current = forceCreateModelElement(
-                                grammarAccess.getVersionOperatingSystemPropertyAccess().getVersionOperatingSystemPropertyAction_0(),
-                                current);
+                    current = forceCreateModelElement(
+                      grammarAccess.getVersionOperatingSystemPropertyAccess().getVersionOperatingSystemPropertyAction_0(),
+                      current);
 
 
             }
 
 
-                        newCompositeNode(grammarAccess.getVersionOperatingSystemPropertyAccess().getPreListElementParserRuleCall_1());
+                  newCompositeNode(grammarAccess.getVersionOperatingSystemPropertyAccess().getPreListElementParserRuleCall_1());
 
             pushFollow(FOLLOW_3);
             rulePreListElement();
@@ -692,11 +692,11 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             state._fsp--;
 
 
-                        afterParserOrEnumRuleCall();
+                  afterParserOrEnumRuleCall();
 
             otherlv_2=(Token)match(input,Name,FOLLOW_13);
 
-                        newLeafNode(otherlv_2, grammarAccess.getVersionOperatingSystemPropertyAccess().getNameKeyword_2());
+                  newLeafNode(otherlv_2, grammarAccess.getVersionOperatingSystemPropertyAccess().getNameKeyword_2());
 
             // InternalUtilParser.g:283:3: ( (lv_name_3_0= Os_version ) )
             // InternalUtilParser.g:284:4: (lv_name_3_0= Os_version )
@@ -706,13 +706,13 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             {
             lv_name_3_0=(Token)match(input,Os_version,FOLLOW_5);
 
-                                newLeafNode(lv_name_3_0, grammarAccess.getVersionOperatingSystemPropertyAccess().getNameOs_versionKeyword_3_0());
+                      newLeafNode(lv_name_3_0, grammarAccess.getVersionOperatingSystemPropertyAccess().getNameOs_versionKeyword_3_0());
 
 
-                                if (current==null) {
-                                    current = createModelElement(grammarAccess.getVersionOperatingSystemPropertyRule());
-                                }
-                                setWithLastConsumed(current, "name", lv_name_3_0, "os_version");
+                      if (current==null) {
+                        current = createModelElement(grammarAccess.getVersionOperatingSystemPropertyRule());
+                      }
+                      setWithLastConsumed(current, "name", lv_name_3_0, "os_version");
 
 
             }
@@ -722,11 +722,11 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
 
             this_INDENT_4=(Token)match(input,RULE_INDENT,FOLLOW_6);
 
-                        newLeafNode(this_INDENT_4, grammarAccess.getVersionOperatingSystemPropertyAccess().getINDENTTerminalRuleCall_4());
+                  newLeafNode(this_INDENT_4, grammarAccess.getVersionOperatingSystemPropertyAccess().getINDENTTerminalRuleCall_4());
 
             otherlv_5=(Token)match(input,Kind,FOLLOW_7);
 
-                        newLeafNode(otherlv_5, grammarAccess.getVersionOperatingSystemPropertyAccess().getKindKeyword_5());
+                  newLeafNode(otherlv_5, grammarAccess.getVersionOperatingSystemPropertyAccess().getKindKeyword_5());
 
             // InternalUtilParser.g:305:3: ( (lv_kind_6_0= ruleAttributeKind ) )
             // InternalUtilParser.g:306:4: (lv_kind_6_0= ruleAttributeKind )
@@ -735,7 +735,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             // InternalUtilParser.g:307:5: lv_kind_6_0= ruleAttributeKind
             {
 
-                                newCompositeNode(grammarAccess.getVersionOperatingSystemPropertyAccess().getKindAttributeKindParserRuleCall_6_0());
+                      newCompositeNode(grammarAccess.getVersionOperatingSystemPropertyAccess().getKindAttributeKindParserRuleCall_6_0());
 
             pushFollow(FOLLOW_8);
             lv_kind_6_0=ruleAttributeKind();
@@ -743,15 +743,15 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             state._fsp--;
 
 
-                                if (current==null) {
-                                    current = createModelElementForParent(grammarAccess.getVersionOperatingSystemPropertyRule());
-                                }
-                                set(
-                                    current,
-                                    "kind",
-                                    lv_kind_6_0,
-                                    "de.fraunhofer.ipa.deployment.Util.AttributeKind");
-                                afterParserOrEnumRuleCall();
+                      if (current==null) {
+                        current = createModelElementForParent(grammarAccess.getVersionOperatingSystemPropertyRule());
+                      }
+                      set(
+                        current,
+                        "kind",
+                        lv_kind_6_0,
+                        "de.fraunhofer.ipa.deployment.Util.AttributeKind");
+                      afterParserOrEnumRuleCall();
 
 
             }
@@ -772,7 +772,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     {
                     otherlv_7=(Token)match(input,Description,FOLLOW_9);
 
-                                    newLeafNode(otherlv_7, grammarAccess.getVersionOperatingSystemPropertyAccess().getDescriptionKeyword_7_0());
+                            newLeafNode(otherlv_7, grammarAccess.getVersionOperatingSystemPropertyAccess().getDescriptionKeyword_7_0());
 
                     // InternalUtilParser.g:329:4: ( (lv_description_8_0= ruleEString ) )
                     // InternalUtilParser.g:330:5: (lv_description_8_0= ruleEString )
@@ -781,7 +781,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     // InternalUtilParser.g:331:6: lv_description_8_0= ruleEString
                     {
 
-                                            newCompositeNode(grammarAccess.getVersionOperatingSystemPropertyAccess().getDescriptionEStringParserRuleCall_7_1_0());
+                                newCompositeNode(grammarAccess.getVersionOperatingSystemPropertyAccess().getDescriptionEStringParserRuleCall_7_1_0());
 
                     pushFollow(FOLLOW_10);
                     lv_description_8_0=ruleEString();
@@ -789,15 +789,15 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     state._fsp--;
 
 
-                                            if (current==null) {
-                                                current = createModelElementForParent(grammarAccess.getVersionOperatingSystemPropertyRule());
-                                            }
-                                            set(
-                                                current,
-                                                "description",
-                                                lv_description_8_0,
-                                                "de.fraunhofer.ipa.deployment.Util.EString");
-                                            afterParserOrEnumRuleCall();
+                                if (current==null) {
+                                  current = createModelElementForParent(grammarAccess.getVersionOperatingSystemPropertyRule());
+                                }
+                                set(
+                                  current,
+                                  "description",
+                                  lv_description_8_0,
+                                  "de.fraunhofer.ipa.deployment.Util.EString");
+                                afterParserOrEnumRuleCall();
 
 
                     }
@@ -824,7 +824,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     {
                     otherlv_9=(Token)match(input,Value,FOLLOW_11);
 
-                                    newLeafNode(otherlv_9, grammarAccess.getVersionOperatingSystemPropertyAccess().getValueKeyword_8_0());
+                            newLeafNode(otherlv_9, grammarAccess.getVersionOperatingSystemPropertyAccess().getValueKeyword_8_0());
 
                     // InternalUtilParser.g:354:4: ( (lv_value_10_0= rulePropertyValue ) )
                     // InternalUtilParser.g:355:5: (lv_value_10_0= rulePropertyValue )
@@ -833,7 +833,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     // InternalUtilParser.g:356:6: lv_value_10_0= rulePropertyValue
                     {
 
-                                            newCompositeNode(grammarAccess.getVersionOperatingSystemPropertyAccess().getValuePropertyValueParserRuleCall_8_1_0());
+                                newCompositeNode(grammarAccess.getVersionOperatingSystemPropertyAccess().getValuePropertyValueParserRuleCall_8_1_0());
 
                     pushFollow(FOLLOW_12);
                     lv_value_10_0=rulePropertyValue();
@@ -841,15 +841,15 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     state._fsp--;
 
 
-                                            if (current==null) {
-                                                current = createModelElementForParent(grammarAccess.getVersionOperatingSystemPropertyRule());
-                                            }
-                                            set(
-                                                current,
-                                                "value",
-                                                lv_value_10_0,
-                                                "de.fraunhofer.ipa.deployment.Util.PropertyValue");
-                                            afterParserOrEnumRuleCall();
+                                if (current==null) {
+                                  current = createModelElementForParent(grammarAccess.getVersionOperatingSystemPropertyRule());
+                                }
+                                set(
+                                  current,
+                                  "value",
+                                  lv_value_10_0,
+                                  "de.fraunhofer.ipa.deployment.Util.PropertyValue");
+                                afterParserOrEnumRuleCall();
 
 
                     }
@@ -865,7 +865,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
 
             this_DEDENT_11=(Token)match(input,RULE_DEDENT,FOLLOW_2);
 
-                        newLeafNode(this_DEDENT_11, grammarAccess.getVersionOperatingSystemPropertyAccess().getDEDENTTerminalRuleCall_9());
+                  newLeafNode(this_DEDENT_11, grammarAccess.getVersionOperatingSystemPropertyAccess().getDEDENTTerminalRuleCall_9());
 
 
             }
@@ -874,7 +874,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             }
 
 
-                leaveRule();
+              leaveRule();
 
         }
 
@@ -942,7 +942,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
 
 
 
-            enterRule();
+          enterRule();
 
         try {
             // InternalUtilParser.g:395:2: ( (this_PropertyAttribute_0= rulePropertyAttribute | this_PropertyMaximun_1= rulePropertyMaximun | this_PropertyMinimum_2= rulePropertyMinimum | this_PropertySelection_3= rulePropertySelection | this_PropertyRange_4= rulePropertyRange ) )
@@ -956,7 +956,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     // InternalUtilParser.g:397:3: this_PropertyAttribute_0= rulePropertyAttribute
                     {
 
-                                newCompositeNode(grammarAccess.getAbstractPropertyAccess().getPropertyAttributeParserRuleCall_0());
+                          newCompositeNode(grammarAccess.getAbstractPropertyAccess().getPropertyAttributeParserRuleCall_0());
 
                     pushFollow(FOLLOW_2);
                     this_PropertyAttribute_0=rulePropertyAttribute();
@@ -964,8 +964,8 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     state._fsp--;
 
 
-                                current = this_PropertyAttribute_0;
-                                afterParserOrEnumRuleCall();
+                          current = this_PropertyAttribute_0;
+                          afterParserOrEnumRuleCall();
 
 
                     }
@@ -974,7 +974,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     // InternalUtilParser.g:406:3: this_PropertyMaximun_1= rulePropertyMaximun
                     {
 
-                                newCompositeNode(grammarAccess.getAbstractPropertyAccess().getPropertyMaximunParserRuleCall_1());
+                          newCompositeNode(grammarAccess.getAbstractPropertyAccess().getPropertyMaximunParserRuleCall_1());
 
                     pushFollow(FOLLOW_2);
                     this_PropertyMaximun_1=rulePropertyMaximun();
@@ -982,8 +982,8 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     state._fsp--;
 
 
-                                current = this_PropertyMaximun_1;
-                                afterParserOrEnumRuleCall();
+                          current = this_PropertyMaximun_1;
+                          afterParserOrEnumRuleCall();
 
 
                     }
@@ -992,7 +992,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     // InternalUtilParser.g:415:3: this_PropertyMinimum_2= rulePropertyMinimum
                     {
 
-                                newCompositeNode(grammarAccess.getAbstractPropertyAccess().getPropertyMinimumParserRuleCall_2());
+                          newCompositeNode(grammarAccess.getAbstractPropertyAccess().getPropertyMinimumParserRuleCall_2());
 
                     pushFollow(FOLLOW_2);
                     this_PropertyMinimum_2=rulePropertyMinimum();
@@ -1000,8 +1000,8 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     state._fsp--;
 
 
-                                current = this_PropertyMinimum_2;
-                                afterParserOrEnumRuleCall();
+                          current = this_PropertyMinimum_2;
+                          afterParserOrEnumRuleCall();
 
 
                     }
@@ -1010,7 +1010,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     // InternalUtilParser.g:424:3: this_PropertySelection_3= rulePropertySelection
                     {
 
-                                newCompositeNode(grammarAccess.getAbstractPropertyAccess().getPropertySelectionParserRuleCall_3());
+                          newCompositeNode(grammarAccess.getAbstractPropertyAccess().getPropertySelectionParserRuleCall_3());
 
                     pushFollow(FOLLOW_2);
                     this_PropertySelection_3=rulePropertySelection();
@@ -1018,8 +1018,8 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     state._fsp--;
 
 
-                                current = this_PropertySelection_3;
-                                afterParserOrEnumRuleCall();
+                          current = this_PropertySelection_3;
+                          afterParserOrEnumRuleCall();
 
 
                     }
@@ -1028,7 +1028,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     // InternalUtilParser.g:433:3: this_PropertyRange_4= rulePropertyRange
                     {
 
-                                newCompositeNode(grammarAccess.getAbstractPropertyAccess().getPropertyRangeParserRuleCall_4());
+                          newCompositeNode(grammarAccess.getAbstractPropertyAccess().getPropertyRangeParserRuleCall_4());
 
                     pushFollow(FOLLOW_2);
                     this_PropertyRange_4=rulePropertyRange();
@@ -1036,8 +1036,8 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     state._fsp--;
 
 
-                                current = this_PropertyRange_4;
-                                afterParserOrEnumRuleCall();
+                          current = this_PropertyRange_4;
+                          afterParserOrEnumRuleCall();
 
 
                     }
@@ -1049,7 +1049,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             }
 
 
-                leaveRule();
+              leaveRule();
 
         }
 
@@ -1117,7 +1117,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
 
 
 
-            enterRule();
+          enterRule();
 
         try {
             // InternalUtilParser.g:458:2: ( (this_AttributeKind_0= ruleAttributeKind | this_MaximumKind_1= ruleMaximumKind | this_MinimumKind_2= ruleMinimumKind | this_RangeKind_3= ruleRangeKind | this_SelectionKind_4= ruleSelectionKind ) )
@@ -1163,7 +1163,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     // InternalUtilParser.g:460:3: this_AttributeKind_0= ruleAttributeKind
                     {
 
-                                newCompositeNode(grammarAccess.getPropertyKindAccess().getAttributeKindParserRuleCall_0());
+                          newCompositeNode(grammarAccess.getPropertyKindAccess().getAttributeKindParserRuleCall_0());
 
                     pushFollow(FOLLOW_2);
                     this_AttributeKind_0=ruleAttributeKind();
@@ -1171,8 +1171,8 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     state._fsp--;
 
 
-                                current = this_AttributeKind_0;
-                                afterParserOrEnumRuleCall();
+                          current = this_AttributeKind_0;
+                          afterParserOrEnumRuleCall();
 
 
                     }
@@ -1181,7 +1181,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     // InternalUtilParser.g:469:3: this_MaximumKind_1= ruleMaximumKind
                     {
 
-                                newCompositeNode(grammarAccess.getPropertyKindAccess().getMaximumKindParserRuleCall_1());
+                          newCompositeNode(grammarAccess.getPropertyKindAccess().getMaximumKindParserRuleCall_1());
 
                     pushFollow(FOLLOW_2);
                     this_MaximumKind_1=ruleMaximumKind();
@@ -1189,8 +1189,8 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     state._fsp--;
 
 
-                                current = this_MaximumKind_1;
-                                afterParserOrEnumRuleCall();
+                          current = this_MaximumKind_1;
+                          afterParserOrEnumRuleCall();
 
 
                     }
@@ -1199,7 +1199,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     // InternalUtilParser.g:478:3: this_MinimumKind_2= ruleMinimumKind
                     {
 
-                                newCompositeNode(grammarAccess.getPropertyKindAccess().getMinimumKindParserRuleCall_2());
+                          newCompositeNode(grammarAccess.getPropertyKindAccess().getMinimumKindParserRuleCall_2());
 
                     pushFollow(FOLLOW_2);
                     this_MinimumKind_2=ruleMinimumKind();
@@ -1207,8 +1207,8 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     state._fsp--;
 
 
-                                current = this_MinimumKind_2;
-                                afterParserOrEnumRuleCall();
+                          current = this_MinimumKind_2;
+                          afterParserOrEnumRuleCall();
 
 
                     }
@@ -1217,7 +1217,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     // InternalUtilParser.g:487:3: this_RangeKind_3= ruleRangeKind
                     {
 
-                                newCompositeNode(grammarAccess.getPropertyKindAccess().getRangeKindParserRuleCall_3());
+                          newCompositeNode(grammarAccess.getPropertyKindAccess().getRangeKindParserRuleCall_3());
 
                     pushFollow(FOLLOW_2);
                     this_RangeKind_3=ruleRangeKind();
@@ -1225,8 +1225,8 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     state._fsp--;
 
 
-                                current = this_RangeKind_3;
-                                afterParserOrEnumRuleCall();
+                          current = this_RangeKind_3;
+                          afterParserOrEnumRuleCall();
 
 
                     }
@@ -1235,7 +1235,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     // InternalUtilParser.g:496:3: this_SelectionKind_4= ruleSelectionKind
                     {
 
-                                newCompositeNode(grammarAccess.getPropertyKindAccess().getSelectionKindParserRuleCall_4());
+                          newCompositeNode(grammarAccess.getPropertyKindAccess().getSelectionKindParserRuleCall_4());
 
                     pushFollow(FOLLOW_2);
                     this_SelectionKind_4=ruleSelectionKind();
@@ -1243,8 +1243,8 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     state._fsp--;
 
 
-                                current = this_SelectionKind_4;
-                                afterParserOrEnumRuleCall();
+                          current = this_SelectionKind_4;
+                          afterParserOrEnumRuleCall();
 
 
                     }
@@ -1256,7 +1256,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             }
 
 
-                leaveRule();
+              leaveRule();
 
         }
 
@@ -1328,7 +1328,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
 
 
 
-            enterRule();
+          enterRule();
 
         try {
             // InternalUtilParser.g:521:2: ( ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleAttributeKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )? ) )
@@ -1338,7 +1338,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             // InternalUtilParser.g:523:3: rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleAttributeKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )?
             {
 
-                        newCompositeNode(grammarAccess.getPropertyAttributeAccess().getPreListElementParserRuleCall_0());
+                  newCompositeNode(grammarAccess.getPropertyAttributeAccess().getPreListElementParserRuleCall_0());
 
             pushFollow(FOLLOW_3);
             rulePreListElement();
@@ -1346,11 +1346,11 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             state._fsp--;
 
 
-                        afterParserOrEnumRuleCall();
+                  afterParserOrEnumRuleCall();
 
             otherlv_1=(Token)match(input,Name,FOLLOW_9);
 
-                        newLeafNode(otherlv_1, grammarAccess.getPropertyAttributeAccess().getNameKeyword_1());
+                  newLeafNode(otherlv_1, grammarAccess.getPropertyAttributeAccess().getNameKeyword_1());
 
             // InternalUtilParser.g:534:3: ( (lv_name_2_0= ruleEString ) )
             // InternalUtilParser.g:535:4: (lv_name_2_0= ruleEString )
@@ -1359,7 +1359,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             // InternalUtilParser.g:536:5: lv_name_2_0= ruleEString
             {
 
-                                newCompositeNode(grammarAccess.getPropertyAttributeAccess().getNameEStringParserRuleCall_2_0());
+                      newCompositeNode(grammarAccess.getPropertyAttributeAccess().getNameEStringParserRuleCall_2_0());
 
             pushFollow(FOLLOW_5);
             lv_name_2_0=ruleEString();
@@ -1367,15 +1367,15 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             state._fsp--;
 
 
-                                if (current==null) {
-                                    current = createModelElementForParent(grammarAccess.getPropertyAttributeRule());
-                                }
-                                set(
-                                    current,
-                                    "name",
-                                    lv_name_2_0,
-                                    "de.fraunhofer.ipa.deployment.Util.EString");
-                                afterParserOrEnumRuleCall();
+                      if (current==null) {
+                        current = createModelElementForParent(grammarAccess.getPropertyAttributeRule());
+                      }
+                      set(
+                        current,
+                        "name",
+                        lv_name_2_0,
+                        "de.fraunhofer.ipa.deployment.Util.EString");
+                      afterParserOrEnumRuleCall();
 
 
             }
@@ -1385,11 +1385,11 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
 
             this_INDENT_3=(Token)match(input,RULE_INDENT,FOLLOW_6);
 
-                        newLeafNode(this_INDENT_3, grammarAccess.getPropertyAttributeAccess().getINDENTTerminalRuleCall_3());
+                  newLeafNode(this_INDENT_3, grammarAccess.getPropertyAttributeAccess().getINDENTTerminalRuleCall_3());
 
             otherlv_4=(Token)match(input,Kind,FOLLOW_7);
 
-                        newLeafNode(otherlv_4, grammarAccess.getPropertyAttributeAccess().getKindKeyword_4());
+                  newLeafNode(otherlv_4, grammarAccess.getPropertyAttributeAccess().getKindKeyword_4());
 
             // InternalUtilParser.g:561:3: ( (lv_kind_5_0= ruleAttributeKind ) )
             // InternalUtilParser.g:562:4: (lv_kind_5_0= ruleAttributeKind )
@@ -1398,7 +1398,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             // InternalUtilParser.g:563:5: lv_kind_5_0= ruleAttributeKind
             {
 
-                                newCompositeNode(grammarAccess.getPropertyAttributeAccess().getKindAttributeKindParserRuleCall_5_0());
+                      newCompositeNode(grammarAccess.getPropertyAttributeAccess().getKindAttributeKindParserRuleCall_5_0());
 
             pushFollow(FOLLOW_14);
             lv_kind_5_0=ruleAttributeKind();
@@ -1406,15 +1406,15 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             state._fsp--;
 
 
-                                if (current==null) {
-                                    current = createModelElementForParent(grammarAccess.getPropertyAttributeRule());
-                                }
-                                set(
-                                    current,
-                                    "kind",
-                                    lv_kind_5_0,
-                                    "de.fraunhofer.ipa.deployment.Util.AttributeKind");
-                                afterParserOrEnumRuleCall();
+                      if (current==null) {
+                        current = createModelElementForParent(grammarAccess.getPropertyAttributeRule());
+                      }
+                      set(
+                        current,
+                        "kind",
+                        lv_kind_5_0,
+                        "de.fraunhofer.ipa.deployment.Util.AttributeKind");
+                      afterParserOrEnumRuleCall();
 
 
             }
@@ -1435,7 +1435,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     {
                     otherlv_6=(Token)match(input,Description,FOLLOW_9);
 
-                                    newLeafNode(otherlv_6, grammarAccess.getPropertyAttributeAccess().getDescriptionKeyword_6_0());
+                            newLeafNode(otherlv_6, grammarAccess.getPropertyAttributeAccess().getDescriptionKeyword_6_0());
 
                     // InternalUtilParser.g:585:4: ( (lv_description_7_0= ruleEString ) )
                     // InternalUtilParser.g:586:5: (lv_description_7_0= ruleEString )
@@ -1444,7 +1444,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     // InternalUtilParser.g:587:6: lv_description_7_0= ruleEString
                     {
 
-                                            newCompositeNode(grammarAccess.getPropertyAttributeAccess().getDescriptionEStringParserRuleCall_6_1_0());
+                                newCompositeNode(grammarAccess.getPropertyAttributeAccess().getDescriptionEStringParserRuleCall_6_1_0());
 
                     pushFollow(FOLLOW_15);
                     lv_description_7_0=ruleEString();
@@ -1452,15 +1452,15 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     state._fsp--;
 
 
-                                            if (current==null) {
-                                                current = createModelElementForParent(grammarAccess.getPropertyAttributeRule());
-                                            }
-                                            set(
-                                                current,
-                                                "description",
-                                                lv_description_7_0,
-                                                "de.fraunhofer.ipa.deployment.Util.EString");
-                                            afterParserOrEnumRuleCall();
+                                if (current==null) {
+                                  current = createModelElementForParent(grammarAccess.getPropertyAttributeRule());
+                                }
+                                set(
+                                  current,
+                                  "description",
+                                  lv_description_7_0,
+                                  "de.fraunhofer.ipa.deployment.Util.EString");
+                                afterParserOrEnumRuleCall();
 
 
                     }
@@ -1487,7 +1487,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     {
                     otherlv_8=(Token)match(input,Value,FOLLOW_11);
 
-                                    newLeafNode(otherlv_8, grammarAccess.getPropertyAttributeAccess().getValueKeyword_7_0());
+                            newLeafNode(otherlv_8, grammarAccess.getPropertyAttributeAccess().getValueKeyword_7_0());
 
                     // InternalUtilParser.g:610:4: ( (lv_value_9_0= rulePropertyValue ) )
                     // InternalUtilParser.g:611:5: (lv_value_9_0= rulePropertyValue )
@@ -1496,7 +1496,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     // InternalUtilParser.g:612:6: lv_value_9_0= rulePropertyValue
                     {
 
-                                            newCompositeNode(grammarAccess.getPropertyAttributeAccess().getValuePropertyValueParserRuleCall_7_1_0());
+                                newCompositeNode(grammarAccess.getPropertyAttributeAccess().getValuePropertyValueParserRuleCall_7_1_0());
 
                     pushFollow(FOLLOW_16);
                     lv_value_9_0=rulePropertyValue();
@@ -1504,15 +1504,15 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     state._fsp--;
 
 
-                                            if (current==null) {
-                                                current = createModelElementForParent(grammarAccess.getPropertyAttributeRule());
-                                            }
-                                            set(
-                                                current,
-                                                "value",
-                                                lv_value_9_0,
-                                                "de.fraunhofer.ipa.deployment.Util.PropertyValue");
-                                            afterParserOrEnumRuleCall();
+                                if (current==null) {
+                                  current = createModelElementForParent(grammarAccess.getPropertyAttributeRule());
+                                }
+                                set(
+                                  current,
+                                  "value",
+                                  lv_value_9_0,
+                                  "de.fraunhofer.ipa.deployment.Util.PropertyValue");
+                                afterParserOrEnumRuleCall();
 
 
                     }
@@ -1539,7 +1539,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     {
                     this_DEDENT_10=(Token)match(input,RULE_DEDENT,FOLLOW_2);
 
-                                    newLeafNode(this_DEDENT_10, grammarAccess.getPropertyAttributeAccess().getDEDENTTerminalRuleCall_8());
+                            newLeafNode(this_DEDENT_10, grammarAccess.getPropertyAttributeAccess().getDEDENTTerminalRuleCall_8());
 
 
                     }
@@ -1554,7 +1554,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             }
 
 
-                leaveRule();
+              leaveRule();
 
         }
 
@@ -1626,7 +1626,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
 
 
 
-            enterRule();
+          enterRule();
 
         try {
             // InternalUtilParser.g:653:2: ( ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleMaximumKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )? ) )
@@ -1636,7 +1636,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             // InternalUtilParser.g:655:3: rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleMaximumKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )?
             {
 
-                        newCompositeNode(grammarAccess.getPropertyMaximunAccess().getPreListElementParserRuleCall_0());
+                  newCompositeNode(grammarAccess.getPropertyMaximunAccess().getPreListElementParserRuleCall_0());
 
             pushFollow(FOLLOW_3);
             rulePreListElement();
@@ -1644,11 +1644,11 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             state._fsp--;
 
 
-                        afterParserOrEnumRuleCall();
+                  afterParserOrEnumRuleCall();
 
             otherlv_1=(Token)match(input,Name,FOLLOW_9);
 
-                        newLeafNode(otherlv_1, grammarAccess.getPropertyMaximunAccess().getNameKeyword_1());
+                  newLeafNode(otherlv_1, grammarAccess.getPropertyMaximunAccess().getNameKeyword_1());
 
             // InternalUtilParser.g:666:3: ( (lv_name_2_0= ruleEString ) )
             // InternalUtilParser.g:667:4: (lv_name_2_0= ruleEString )
@@ -1657,7 +1657,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             // InternalUtilParser.g:668:5: lv_name_2_0= ruleEString
             {
 
-                                newCompositeNode(grammarAccess.getPropertyMaximunAccess().getNameEStringParserRuleCall_2_0());
+                      newCompositeNode(grammarAccess.getPropertyMaximunAccess().getNameEStringParserRuleCall_2_0());
 
             pushFollow(FOLLOW_5);
             lv_name_2_0=ruleEString();
@@ -1665,15 +1665,15 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             state._fsp--;
 
 
-                                if (current==null) {
-                                    current = createModelElementForParent(grammarAccess.getPropertyMaximunRule());
-                                }
-                                set(
-                                    current,
-                                    "name",
-                                    lv_name_2_0,
-                                    "de.fraunhofer.ipa.deployment.Util.EString");
-                                afterParserOrEnumRuleCall();
+                      if (current==null) {
+                        current = createModelElementForParent(grammarAccess.getPropertyMaximunRule());
+                      }
+                      set(
+                        current,
+                        "name",
+                        lv_name_2_0,
+                        "de.fraunhofer.ipa.deployment.Util.EString");
+                      afterParserOrEnumRuleCall();
 
 
             }
@@ -1683,11 +1683,11 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
 
             this_INDENT_3=(Token)match(input,RULE_INDENT,FOLLOW_6);
 
-                        newLeafNode(this_INDENT_3, grammarAccess.getPropertyMaximunAccess().getINDENTTerminalRuleCall_3());
+                  newLeafNode(this_INDENT_3, grammarAccess.getPropertyMaximunAccess().getINDENTTerminalRuleCall_3());
 
             otherlv_4=(Token)match(input,Kind,FOLLOW_17);
 
-                        newLeafNode(otherlv_4, grammarAccess.getPropertyMaximunAccess().getKindKeyword_4());
+                  newLeafNode(otherlv_4, grammarAccess.getPropertyMaximunAccess().getKindKeyword_4());
 
             // InternalUtilParser.g:693:3: ( (lv_kind_5_0= ruleMaximumKind ) )
             // InternalUtilParser.g:694:4: (lv_kind_5_0= ruleMaximumKind )
@@ -1696,7 +1696,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             // InternalUtilParser.g:695:5: lv_kind_5_0= ruleMaximumKind
             {
 
-                                newCompositeNode(grammarAccess.getPropertyMaximunAccess().getKindMaximumKindParserRuleCall_5_0());
+                      newCompositeNode(grammarAccess.getPropertyMaximunAccess().getKindMaximumKindParserRuleCall_5_0());
 
             pushFollow(FOLLOW_14);
             lv_kind_5_0=ruleMaximumKind();
@@ -1704,15 +1704,15 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             state._fsp--;
 
 
-                                if (current==null) {
-                                    current = createModelElementForParent(grammarAccess.getPropertyMaximunRule());
-                                }
-                                set(
-                                    current,
-                                    "kind",
-                                    lv_kind_5_0,
-                                    "de.fraunhofer.ipa.deployment.Util.MaximumKind");
-                                afterParserOrEnumRuleCall();
+                      if (current==null) {
+                        current = createModelElementForParent(grammarAccess.getPropertyMaximunRule());
+                      }
+                      set(
+                        current,
+                        "kind",
+                        lv_kind_5_0,
+                        "de.fraunhofer.ipa.deployment.Util.MaximumKind");
+                      afterParserOrEnumRuleCall();
 
 
             }
@@ -1733,7 +1733,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     {
                     otherlv_6=(Token)match(input,Description,FOLLOW_9);
 
-                                    newLeafNode(otherlv_6, grammarAccess.getPropertyMaximunAccess().getDescriptionKeyword_6_0());
+                            newLeafNode(otherlv_6, grammarAccess.getPropertyMaximunAccess().getDescriptionKeyword_6_0());
 
                     // InternalUtilParser.g:717:4: ( (lv_description_7_0= ruleEString ) )
                     // InternalUtilParser.g:718:5: (lv_description_7_0= ruleEString )
@@ -1742,7 +1742,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     // InternalUtilParser.g:719:6: lv_description_7_0= ruleEString
                     {
 
-                                            newCompositeNode(grammarAccess.getPropertyMaximunAccess().getDescriptionEStringParserRuleCall_6_1_0());
+                                newCompositeNode(grammarAccess.getPropertyMaximunAccess().getDescriptionEStringParserRuleCall_6_1_0());
 
                     pushFollow(FOLLOW_15);
                     lv_description_7_0=ruleEString();
@@ -1750,15 +1750,15 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     state._fsp--;
 
 
-                                            if (current==null) {
-                                                current = createModelElementForParent(grammarAccess.getPropertyMaximunRule());
-                                            }
-                                            set(
-                                                current,
-                                                "description",
-                                                lv_description_7_0,
-                                                "de.fraunhofer.ipa.deployment.Util.EString");
-                                            afterParserOrEnumRuleCall();
+                                if (current==null) {
+                                  current = createModelElementForParent(grammarAccess.getPropertyMaximunRule());
+                                }
+                                set(
+                                  current,
+                                  "description",
+                                  lv_description_7_0,
+                                  "de.fraunhofer.ipa.deployment.Util.EString");
+                                afterParserOrEnumRuleCall();
 
 
                     }
@@ -1785,7 +1785,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     {
                     otherlv_8=(Token)match(input,Value,FOLLOW_11);
 
-                                    newLeafNode(otherlv_8, grammarAccess.getPropertyMaximunAccess().getValueKeyword_7_0());
+                            newLeafNode(otherlv_8, grammarAccess.getPropertyMaximunAccess().getValueKeyword_7_0());
 
                     // InternalUtilParser.g:742:4: ( (lv_value_9_0= rulePropertyValue ) )
                     // InternalUtilParser.g:743:5: (lv_value_9_0= rulePropertyValue )
@@ -1794,7 +1794,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     // InternalUtilParser.g:744:6: lv_value_9_0= rulePropertyValue
                     {
 
-                                            newCompositeNode(grammarAccess.getPropertyMaximunAccess().getValuePropertyValueParserRuleCall_7_1_0());
+                                newCompositeNode(grammarAccess.getPropertyMaximunAccess().getValuePropertyValueParserRuleCall_7_1_0());
 
                     pushFollow(FOLLOW_16);
                     lv_value_9_0=rulePropertyValue();
@@ -1802,15 +1802,15 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     state._fsp--;
 
 
-                                            if (current==null) {
-                                                current = createModelElementForParent(grammarAccess.getPropertyMaximunRule());
-                                            }
-                                            set(
-                                                current,
-                                                "value",
-                                                lv_value_9_0,
-                                                "de.fraunhofer.ipa.deployment.Util.PropertyValue");
-                                            afterParserOrEnumRuleCall();
+                                if (current==null) {
+                                  current = createModelElementForParent(grammarAccess.getPropertyMaximunRule());
+                                }
+                                set(
+                                  current,
+                                  "value",
+                                  lv_value_9_0,
+                                  "de.fraunhofer.ipa.deployment.Util.PropertyValue");
+                                afterParserOrEnumRuleCall();
 
 
                     }
@@ -1837,7 +1837,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     {
                     this_DEDENT_10=(Token)match(input,RULE_DEDENT,FOLLOW_2);
 
-                                    newLeafNode(this_DEDENT_10, grammarAccess.getPropertyMaximunAccess().getDEDENTTerminalRuleCall_8());
+                            newLeafNode(this_DEDENT_10, grammarAccess.getPropertyMaximunAccess().getDEDENTTerminalRuleCall_8());
 
 
                     }
@@ -1852,7 +1852,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             }
 
 
-                leaveRule();
+              leaveRule();
 
         }
 
@@ -1924,7 +1924,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
 
 
 
-            enterRule();
+          enterRule();
 
         try {
             // InternalUtilParser.g:785:2: ( ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleMinimumKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )? ) )
@@ -1934,7 +1934,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             // InternalUtilParser.g:787:3: rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleMinimumKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )?
             {
 
-                        newCompositeNode(grammarAccess.getPropertyMinimumAccess().getPreListElementParserRuleCall_0());
+                  newCompositeNode(grammarAccess.getPropertyMinimumAccess().getPreListElementParserRuleCall_0());
 
             pushFollow(FOLLOW_3);
             rulePreListElement();
@@ -1942,11 +1942,11 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             state._fsp--;
 
 
-                        afterParserOrEnumRuleCall();
+                  afterParserOrEnumRuleCall();
 
             otherlv_1=(Token)match(input,Name,FOLLOW_9);
 
-                        newLeafNode(otherlv_1, grammarAccess.getPropertyMinimumAccess().getNameKeyword_1());
+                  newLeafNode(otherlv_1, grammarAccess.getPropertyMinimumAccess().getNameKeyword_1());
 
             // InternalUtilParser.g:798:3: ( (lv_name_2_0= ruleEString ) )
             // InternalUtilParser.g:799:4: (lv_name_2_0= ruleEString )
@@ -1955,7 +1955,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             // InternalUtilParser.g:800:5: lv_name_2_0= ruleEString
             {
 
-                                newCompositeNode(grammarAccess.getPropertyMinimumAccess().getNameEStringParserRuleCall_2_0());
+                      newCompositeNode(grammarAccess.getPropertyMinimumAccess().getNameEStringParserRuleCall_2_0());
 
             pushFollow(FOLLOW_5);
             lv_name_2_0=ruleEString();
@@ -1963,15 +1963,15 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             state._fsp--;
 
 
-                                if (current==null) {
-                                    current = createModelElementForParent(grammarAccess.getPropertyMinimumRule());
-                                }
-                                set(
-                                    current,
-                                    "name",
-                                    lv_name_2_0,
-                                    "de.fraunhofer.ipa.deployment.Util.EString");
-                                afterParserOrEnumRuleCall();
+                      if (current==null) {
+                        current = createModelElementForParent(grammarAccess.getPropertyMinimumRule());
+                      }
+                      set(
+                        current,
+                        "name",
+                        lv_name_2_0,
+                        "de.fraunhofer.ipa.deployment.Util.EString");
+                      afterParserOrEnumRuleCall();
 
 
             }
@@ -1981,11 +1981,11 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
 
             this_INDENT_3=(Token)match(input,RULE_INDENT,FOLLOW_6);
 
-                        newLeafNode(this_INDENT_3, grammarAccess.getPropertyMinimumAccess().getINDENTTerminalRuleCall_3());
+                  newLeafNode(this_INDENT_3, grammarAccess.getPropertyMinimumAccess().getINDENTTerminalRuleCall_3());
 
             otherlv_4=(Token)match(input,Kind,FOLLOW_18);
 
-                        newLeafNode(otherlv_4, grammarAccess.getPropertyMinimumAccess().getKindKeyword_4());
+                  newLeafNode(otherlv_4, grammarAccess.getPropertyMinimumAccess().getKindKeyword_4());
 
             // InternalUtilParser.g:825:3: ( (lv_kind_5_0= ruleMinimumKind ) )
             // InternalUtilParser.g:826:4: (lv_kind_5_0= ruleMinimumKind )
@@ -1994,7 +1994,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             // InternalUtilParser.g:827:5: lv_kind_5_0= ruleMinimumKind
             {
 
-                                newCompositeNode(grammarAccess.getPropertyMinimumAccess().getKindMinimumKindParserRuleCall_5_0());
+                      newCompositeNode(grammarAccess.getPropertyMinimumAccess().getKindMinimumKindParserRuleCall_5_0());
 
             pushFollow(FOLLOW_14);
             lv_kind_5_0=ruleMinimumKind();
@@ -2002,15 +2002,15 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             state._fsp--;
 
 
-                                if (current==null) {
-                                    current = createModelElementForParent(grammarAccess.getPropertyMinimumRule());
-                                }
-                                set(
-                                    current,
-                                    "kind",
-                                    lv_kind_5_0,
-                                    "de.fraunhofer.ipa.deployment.Util.MinimumKind");
-                                afterParserOrEnumRuleCall();
+                      if (current==null) {
+                        current = createModelElementForParent(grammarAccess.getPropertyMinimumRule());
+                      }
+                      set(
+                        current,
+                        "kind",
+                        lv_kind_5_0,
+                        "de.fraunhofer.ipa.deployment.Util.MinimumKind");
+                      afterParserOrEnumRuleCall();
 
 
             }
@@ -2031,7 +2031,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     {
                     otherlv_6=(Token)match(input,Description,FOLLOW_9);
 
-                                    newLeafNode(otherlv_6, grammarAccess.getPropertyMinimumAccess().getDescriptionKeyword_6_0());
+                            newLeafNode(otherlv_6, grammarAccess.getPropertyMinimumAccess().getDescriptionKeyword_6_0());
 
                     // InternalUtilParser.g:849:4: ( (lv_description_7_0= ruleEString ) )
                     // InternalUtilParser.g:850:5: (lv_description_7_0= ruleEString )
@@ -2040,7 +2040,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     // InternalUtilParser.g:851:6: lv_description_7_0= ruleEString
                     {
 
-                                            newCompositeNode(grammarAccess.getPropertyMinimumAccess().getDescriptionEStringParserRuleCall_6_1_0());
+                                newCompositeNode(grammarAccess.getPropertyMinimumAccess().getDescriptionEStringParserRuleCall_6_1_0());
 
                     pushFollow(FOLLOW_15);
                     lv_description_7_0=ruleEString();
@@ -2048,15 +2048,15 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     state._fsp--;
 
 
-                                            if (current==null) {
-                                                current = createModelElementForParent(grammarAccess.getPropertyMinimumRule());
-                                            }
-                                            set(
-                                                current,
-                                                "description",
-                                                lv_description_7_0,
-                                                "de.fraunhofer.ipa.deployment.Util.EString");
-                                            afterParserOrEnumRuleCall();
+                                if (current==null) {
+                                  current = createModelElementForParent(grammarAccess.getPropertyMinimumRule());
+                                }
+                                set(
+                                  current,
+                                  "description",
+                                  lv_description_7_0,
+                                  "de.fraunhofer.ipa.deployment.Util.EString");
+                                afterParserOrEnumRuleCall();
 
 
                     }
@@ -2083,7 +2083,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     {
                     otherlv_8=(Token)match(input,Value,FOLLOW_11);
 
-                                    newLeafNode(otherlv_8, grammarAccess.getPropertyMinimumAccess().getValueKeyword_7_0());
+                            newLeafNode(otherlv_8, grammarAccess.getPropertyMinimumAccess().getValueKeyword_7_0());
 
                     // InternalUtilParser.g:874:4: ( (lv_value_9_0= rulePropertyValue ) )
                     // InternalUtilParser.g:875:5: (lv_value_9_0= rulePropertyValue )
@@ -2092,7 +2092,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     // InternalUtilParser.g:876:6: lv_value_9_0= rulePropertyValue
                     {
 
-                                            newCompositeNode(grammarAccess.getPropertyMinimumAccess().getValuePropertyValueParserRuleCall_7_1_0());
+                                newCompositeNode(grammarAccess.getPropertyMinimumAccess().getValuePropertyValueParserRuleCall_7_1_0());
 
                     pushFollow(FOLLOW_16);
                     lv_value_9_0=rulePropertyValue();
@@ -2100,15 +2100,15 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     state._fsp--;
 
 
-                                            if (current==null) {
-                                                current = createModelElementForParent(grammarAccess.getPropertyMinimumRule());
-                                            }
-                                            set(
-                                                current,
-                                                "value",
-                                                lv_value_9_0,
-                                                "de.fraunhofer.ipa.deployment.Util.PropertyValue");
-                                            afterParserOrEnumRuleCall();
+                                if (current==null) {
+                                  current = createModelElementForParent(grammarAccess.getPropertyMinimumRule());
+                                }
+                                set(
+                                  current,
+                                  "value",
+                                  lv_value_9_0,
+                                  "de.fraunhofer.ipa.deployment.Util.PropertyValue");
+                                afterParserOrEnumRuleCall();
 
 
                     }
@@ -2135,7 +2135,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     {
                     this_DEDENT_10=(Token)match(input,RULE_DEDENT,FOLLOW_2);
 
-                                    newLeafNode(this_DEDENT_10, grammarAccess.getPropertyMinimumAccess().getDEDENTTerminalRuleCall_8());
+                            newLeafNode(this_DEDENT_10, grammarAccess.getPropertyMinimumAccess().getDEDENTTerminalRuleCall_8());
 
 
                     }
@@ -2150,7 +2150,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             }
 
 
-                leaveRule();
+              leaveRule();
 
         }
 
@@ -2226,7 +2226,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
 
 
 
-            enterRule();
+          enterRule();
 
         try {
             // InternalUtilParser.g:917:2: ( ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleSelectionKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_value_11_0= rulePropertyValue ) ) ( rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) )* this_DEDENT_14= RULE_DEDENT )? (this_DEDENT_15= RULE_DEDENT )? ) )
@@ -2236,7 +2236,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             // InternalUtilParser.g:919:3: rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleSelectionKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_value_11_0= rulePropertyValue ) ) ( rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) )* this_DEDENT_14= RULE_DEDENT )? (this_DEDENT_15= RULE_DEDENT )?
             {
 
-                        newCompositeNode(grammarAccess.getPropertySelectionAccess().getPreListElementParserRuleCall_0());
+                  newCompositeNode(grammarAccess.getPropertySelectionAccess().getPreListElementParserRuleCall_0());
 
             pushFollow(FOLLOW_3);
             rulePreListElement();
@@ -2244,11 +2244,11 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             state._fsp--;
 
 
-                        afterParserOrEnumRuleCall();
+                  afterParserOrEnumRuleCall();
 
             otherlv_1=(Token)match(input,Name,FOLLOW_9);
 
-                        newLeafNode(otherlv_1, grammarAccess.getPropertySelectionAccess().getNameKeyword_1());
+                  newLeafNode(otherlv_1, grammarAccess.getPropertySelectionAccess().getNameKeyword_1());
 
             // InternalUtilParser.g:930:3: ( (lv_name_2_0= ruleEString ) )
             // InternalUtilParser.g:931:4: (lv_name_2_0= ruleEString )
@@ -2257,7 +2257,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             // InternalUtilParser.g:932:5: lv_name_2_0= ruleEString
             {
 
-                                newCompositeNode(grammarAccess.getPropertySelectionAccess().getNameEStringParserRuleCall_2_0());
+                      newCompositeNode(grammarAccess.getPropertySelectionAccess().getNameEStringParserRuleCall_2_0());
 
             pushFollow(FOLLOW_5);
             lv_name_2_0=ruleEString();
@@ -2265,15 +2265,15 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             state._fsp--;
 
 
-                                if (current==null) {
-                                    current = createModelElementForParent(grammarAccess.getPropertySelectionRule());
-                                }
-                                set(
-                                    current,
-                                    "name",
-                                    lv_name_2_0,
-                                    "de.fraunhofer.ipa.deployment.Util.EString");
-                                afterParserOrEnumRuleCall();
+                      if (current==null) {
+                        current = createModelElementForParent(grammarAccess.getPropertySelectionRule());
+                      }
+                      set(
+                        current,
+                        "name",
+                        lv_name_2_0,
+                        "de.fraunhofer.ipa.deployment.Util.EString");
+                      afterParserOrEnumRuleCall();
 
 
             }
@@ -2283,11 +2283,11 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
 
             this_INDENT_3=(Token)match(input,RULE_INDENT,FOLLOW_6);
 
-                        newLeafNode(this_INDENT_3, grammarAccess.getPropertySelectionAccess().getINDENTTerminalRuleCall_3());
+                  newLeafNode(this_INDENT_3, grammarAccess.getPropertySelectionAccess().getINDENTTerminalRuleCall_3());
 
             otherlv_4=(Token)match(input,Kind,FOLLOW_19);
 
-                        newLeafNode(otherlv_4, grammarAccess.getPropertySelectionAccess().getKindKeyword_4());
+                  newLeafNode(otherlv_4, grammarAccess.getPropertySelectionAccess().getKindKeyword_4());
 
             // InternalUtilParser.g:957:3: ( (lv_kind_5_0= ruleSelectionKind ) )
             // InternalUtilParser.g:958:4: (lv_kind_5_0= ruleSelectionKind )
@@ -2296,7 +2296,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             // InternalUtilParser.g:959:5: lv_kind_5_0= ruleSelectionKind
             {
 
-                                newCompositeNode(grammarAccess.getPropertySelectionAccess().getKindSelectionKindParserRuleCall_5_0());
+                      newCompositeNode(grammarAccess.getPropertySelectionAccess().getKindSelectionKindParserRuleCall_5_0());
 
             pushFollow(FOLLOW_14);
             lv_kind_5_0=ruleSelectionKind();
@@ -2304,15 +2304,15 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             state._fsp--;
 
 
-                                if (current==null) {
-                                    current = createModelElementForParent(grammarAccess.getPropertySelectionRule());
-                                }
-                                set(
-                                    current,
-                                    "kind",
-                                    lv_kind_5_0,
-                                    "de.fraunhofer.ipa.deployment.Util.SelectionKind");
-                                afterParserOrEnumRuleCall();
+                      if (current==null) {
+                        current = createModelElementForParent(grammarAccess.getPropertySelectionRule());
+                      }
+                      set(
+                        current,
+                        "kind",
+                        lv_kind_5_0,
+                        "de.fraunhofer.ipa.deployment.Util.SelectionKind");
+                      afterParserOrEnumRuleCall();
 
 
             }
@@ -2333,7 +2333,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     {
                     otherlv_6=(Token)match(input,Description,FOLLOW_9);
 
-                                    newLeafNode(otherlv_6, grammarAccess.getPropertySelectionAccess().getDescriptionKeyword_6_0());
+                            newLeafNode(otherlv_6, grammarAccess.getPropertySelectionAccess().getDescriptionKeyword_6_0());
 
                     // InternalUtilParser.g:981:4: ( (lv_description_7_0= ruleEString ) )
                     // InternalUtilParser.g:982:5: (lv_description_7_0= ruleEString )
@@ -2342,7 +2342,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     // InternalUtilParser.g:983:6: lv_description_7_0= ruleEString
                     {
 
-                                            newCompositeNode(grammarAccess.getPropertySelectionAccess().getDescriptionEStringParserRuleCall_6_1_0());
+                                newCompositeNode(grammarAccess.getPropertySelectionAccess().getDescriptionEStringParserRuleCall_6_1_0());
 
                     pushFollow(FOLLOW_15);
                     lv_description_7_0=ruleEString();
@@ -2350,15 +2350,15 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     state._fsp--;
 
 
-                                            if (current==null) {
-                                                current = createModelElementForParent(grammarAccess.getPropertySelectionRule());
-                                            }
-                                            set(
-                                                current,
-                                                "description",
-                                                lv_description_7_0,
-                                                "de.fraunhofer.ipa.deployment.Util.EString");
-                                            afterParserOrEnumRuleCall();
+                                if (current==null) {
+                                  current = createModelElementForParent(grammarAccess.getPropertySelectionRule());
+                                }
+                                set(
+                                  current,
+                                  "description",
+                                  lv_description_7_0,
+                                  "de.fraunhofer.ipa.deployment.Util.EString");
+                                afterParserOrEnumRuleCall();
 
 
                     }
@@ -2385,14 +2385,14 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     {
                     otherlv_8=(Token)match(input,Value,FOLLOW_5);
 
-                                    newLeafNode(otherlv_8, grammarAccess.getPropertySelectionAccess().getValueKeyword_7_0());
+                            newLeafNode(otherlv_8, grammarAccess.getPropertySelectionAccess().getValueKeyword_7_0());
 
                     this_INDENT_9=(Token)match(input,RULE_INDENT,FOLLOW_20);
 
-                                    newLeafNode(this_INDENT_9, grammarAccess.getPropertySelectionAccess().getINDENTTerminalRuleCall_7_1());
+                            newLeafNode(this_INDENT_9, grammarAccess.getPropertySelectionAccess().getINDENTTerminalRuleCall_7_1());
 
 
-                                    newCompositeNode(grammarAccess.getPropertySelectionAccess().getPreListElementParserRuleCall_7_2());
+                            newCompositeNode(grammarAccess.getPropertySelectionAccess().getPreListElementParserRuleCall_7_2());
 
                     pushFollow(FOLLOW_11);
                     rulePreListElement();
@@ -2400,7 +2400,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     state._fsp--;
 
 
-                                    afterParserOrEnumRuleCall();
+                            afterParserOrEnumRuleCall();
 
                     // InternalUtilParser.g:1017:4: ( (lv_value_11_0= rulePropertyValue ) )
                     // InternalUtilParser.g:1018:5: (lv_value_11_0= rulePropertyValue )
@@ -2409,7 +2409,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     // InternalUtilParser.g:1019:6: lv_value_11_0= rulePropertyValue
                     {
 
-                                            newCompositeNode(grammarAccess.getPropertySelectionAccess().getValuePropertyValueParserRuleCall_7_3_0());
+                                newCompositeNode(grammarAccess.getPropertySelectionAccess().getValuePropertyValueParserRuleCall_7_3_0());
 
                     pushFollow(FOLLOW_21);
                     lv_value_11_0=rulePropertyValue();
@@ -2417,15 +2417,15 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     state._fsp--;
 
 
-                                            if (current==null) {
-                                                current = createModelElementForParent(grammarAccess.getPropertySelectionRule());
-                                            }
-                                            add(
-                                                current,
-                                                "value",
-                                                lv_value_11_0,
-                                                "de.fraunhofer.ipa.deployment.Util.PropertyValue");
-                                            afterParserOrEnumRuleCall();
+                                if (current==null) {
+                                  current = createModelElementForParent(grammarAccess.getPropertySelectionRule());
+                                }
+                                add(
+                                  current,
+                                  "value",
+                                  lv_value_11_0,
+                                  "de.fraunhofer.ipa.deployment.Util.PropertyValue");
+                                afterParserOrEnumRuleCall();
 
 
                     }
@@ -2445,63 +2445,63 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
 
 
                         switch (alt18) {
-                        case 1 :
-                            // InternalUtilParser.g:1037:5: rulePreListElement ( (lv_value_13_0= rulePropertyValue ) )
-                            {
+                      case 1 :
+                          // InternalUtilParser.g:1037:5: rulePreListElement ( (lv_value_13_0= rulePropertyValue ) )
+                          {
 
-                                                newCompositeNode(grammarAccess.getPropertySelectionAccess().getPreListElementParserRuleCall_7_4_0());
+                                    newCompositeNode(grammarAccess.getPropertySelectionAccess().getPreListElementParserRuleCall_7_4_0());
 
-                            pushFollow(FOLLOW_11);
-                            rulePreListElement();
+                          pushFollow(FOLLOW_11);
+                          rulePreListElement();
 
-                            state._fsp--;
-
-
-                                                afterParserOrEnumRuleCall();
-
-                            // InternalUtilParser.g:1044:5: ( (lv_value_13_0= rulePropertyValue ) )
-                            // InternalUtilParser.g:1045:6: (lv_value_13_0= rulePropertyValue )
-                            {
-                            // InternalUtilParser.g:1045:6: (lv_value_13_0= rulePropertyValue )
-                            // InternalUtilParser.g:1046:7: lv_value_13_0= rulePropertyValue
-                            {
-
-                                                        newCompositeNode(grammarAccess.getPropertySelectionAccess().getValuePropertyValueParserRuleCall_7_4_1_0());
-
-                            pushFollow(FOLLOW_21);
-                            lv_value_13_0=rulePropertyValue();
-
-                            state._fsp--;
+                          state._fsp--;
 
 
-                                                        if (current==null) {
-                                                            current = createModelElementForParent(grammarAccess.getPropertySelectionRule());
-                                                        }
-                                                        add(
-                                                            current,
-                                                            "value",
-                                                            lv_value_13_0,
-                                                            "de.fraunhofer.ipa.deployment.Util.PropertyValue");
-                                                        afterParserOrEnumRuleCall();
+                                    afterParserOrEnumRuleCall();
+
+                          // InternalUtilParser.g:1044:5: ( (lv_value_13_0= rulePropertyValue ) )
+                          // InternalUtilParser.g:1045:6: (lv_value_13_0= rulePropertyValue )
+                          {
+                          // InternalUtilParser.g:1045:6: (lv_value_13_0= rulePropertyValue )
+                          // InternalUtilParser.g:1046:7: lv_value_13_0= rulePropertyValue
+                          {
+
+                                        newCompositeNode(grammarAccess.getPropertySelectionAccess().getValuePropertyValueParserRuleCall_7_4_1_0());
+
+                          pushFollow(FOLLOW_21);
+                          lv_value_13_0=rulePropertyValue();
+
+                          state._fsp--;
 
 
-                            }
+                                        if (current==null) {
+                                          current = createModelElementForParent(grammarAccess.getPropertySelectionRule());
+                                        }
+                                        add(
+                                          current,
+                                          "value",
+                                          lv_value_13_0,
+                                          "de.fraunhofer.ipa.deployment.Util.PropertyValue");
+                                        afterParserOrEnumRuleCall();
 
 
-                            }
+                          }
 
 
-                            }
-                            break;
+                          }
 
-                        default :
-                            break loop18;
+
+                          }
+                          break;
+
+                      default :
+                          break loop18;
                         }
                     } while (true);
 
                     this_DEDENT_14=(Token)match(input,RULE_DEDENT,FOLLOW_16);
 
-                                    newLeafNode(this_DEDENT_14, grammarAccess.getPropertySelectionAccess().getDEDENTTerminalRuleCall_7_5());
+                            newLeafNode(this_DEDENT_14, grammarAccess.getPropertySelectionAccess().getDEDENTTerminalRuleCall_7_5());
 
 
                     }
@@ -2522,7 +2522,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     {
                     this_DEDENT_15=(Token)match(input,RULE_DEDENT,FOLLOW_2);
 
-                                    newLeafNode(this_DEDENT_15, grammarAccess.getPropertySelectionAccess().getDEDENTTerminalRuleCall_8());
+                            newLeafNode(this_DEDENT_15, grammarAccess.getPropertySelectionAccess().getDEDENTTerminalRuleCall_8());
 
 
                     }
@@ -2537,7 +2537,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             }
 
 
-                leaveRule();
+              leaveRule();
 
         }
 
@@ -2613,7 +2613,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
 
 
 
-            enterRule();
+          enterRule();
 
         try {
             // InternalUtilParser.g:1092:2: ( ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleRangeKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_value_11_0= rulePropertyValue ) ) rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) this_DEDENT_14= RULE_DEDENT )? (this_DEDENT_15= RULE_DEDENT )? ) )
@@ -2623,7 +2623,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             // InternalUtilParser.g:1094:3: rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleRangeKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_value_11_0= rulePropertyValue ) ) rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) this_DEDENT_14= RULE_DEDENT )? (this_DEDENT_15= RULE_DEDENT )?
             {
 
-                        newCompositeNode(grammarAccess.getPropertyRangeAccess().getPreListElementParserRuleCall_0());
+                  newCompositeNode(grammarAccess.getPropertyRangeAccess().getPreListElementParserRuleCall_0());
 
             pushFollow(FOLLOW_3);
             rulePreListElement();
@@ -2631,11 +2631,11 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             state._fsp--;
 
 
-                        afterParserOrEnumRuleCall();
+                  afterParserOrEnumRuleCall();
 
             otherlv_1=(Token)match(input,Name,FOLLOW_9);
 
-                        newLeafNode(otherlv_1, grammarAccess.getPropertyRangeAccess().getNameKeyword_1());
+                  newLeafNode(otherlv_1, grammarAccess.getPropertyRangeAccess().getNameKeyword_1());
 
             // InternalUtilParser.g:1105:3: ( (lv_name_2_0= ruleEString ) )
             // InternalUtilParser.g:1106:4: (lv_name_2_0= ruleEString )
@@ -2644,7 +2644,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             // InternalUtilParser.g:1107:5: lv_name_2_0= ruleEString
             {
 
-                                newCompositeNode(grammarAccess.getPropertyRangeAccess().getNameEStringParserRuleCall_2_0());
+                      newCompositeNode(grammarAccess.getPropertyRangeAccess().getNameEStringParserRuleCall_2_0());
 
             pushFollow(FOLLOW_5);
             lv_name_2_0=ruleEString();
@@ -2652,15 +2652,15 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             state._fsp--;
 
 
-                                if (current==null) {
-                                    current = createModelElementForParent(grammarAccess.getPropertyRangeRule());
-                                }
-                                set(
-                                    current,
-                                    "name",
-                                    lv_name_2_0,
-                                    "de.fraunhofer.ipa.deployment.Util.EString");
-                                afterParserOrEnumRuleCall();
+                      if (current==null) {
+                        current = createModelElementForParent(grammarAccess.getPropertyRangeRule());
+                      }
+                      set(
+                        current,
+                        "name",
+                        lv_name_2_0,
+                        "de.fraunhofer.ipa.deployment.Util.EString");
+                      afterParserOrEnumRuleCall();
 
 
             }
@@ -2670,11 +2670,11 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
 
             this_INDENT_3=(Token)match(input,RULE_INDENT,FOLLOW_6);
 
-                        newLeafNode(this_INDENT_3, grammarAccess.getPropertyRangeAccess().getINDENTTerminalRuleCall_3());
+                  newLeafNode(this_INDENT_3, grammarAccess.getPropertyRangeAccess().getINDENTTerminalRuleCall_3());
 
             otherlv_4=(Token)match(input,Kind,FOLLOW_22);
 
-                        newLeafNode(otherlv_4, grammarAccess.getPropertyRangeAccess().getKindKeyword_4());
+                  newLeafNode(otherlv_4, grammarAccess.getPropertyRangeAccess().getKindKeyword_4());
 
             // InternalUtilParser.g:1132:3: ( (lv_kind_5_0= ruleRangeKind ) )
             // InternalUtilParser.g:1133:4: (lv_kind_5_0= ruleRangeKind )
@@ -2683,7 +2683,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             // InternalUtilParser.g:1134:5: lv_kind_5_0= ruleRangeKind
             {
 
-                                newCompositeNode(grammarAccess.getPropertyRangeAccess().getKindRangeKindParserRuleCall_5_0());
+                      newCompositeNode(grammarAccess.getPropertyRangeAccess().getKindRangeKindParserRuleCall_5_0());
 
             pushFollow(FOLLOW_14);
             lv_kind_5_0=ruleRangeKind();
@@ -2691,15 +2691,15 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             state._fsp--;
 
 
-                                if (current==null) {
-                                    current = createModelElementForParent(grammarAccess.getPropertyRangeRule());
-                                }
-                                set(
-                                    current,
-                                    "kind",
-                                    lv_kind_5_0,
-                                    "de.fraunhofer.ipa.deployment.Util.RangeKind");
-                                afterParserOrEnumRuleCall();
+                      if (current==null) {
+                        current = createModelElementForParent(grammarAccess.getPropertyRangeRule());
+                      }
+                      set(
+                        current,
+                        "kind",
+                        lv_kind_5_0,
+                        "de.fraunhofer.ipa.deployment.Util.RangeKind");
+                      afterParserOrEnumRuleCall();
 
 
             }
@@ -2720,7 +2720,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     {
                     otherlv_6=(Token)match(input,Description,FOLLOW_9);
 
-                                    newLeafNode(otherlv_6, grammarAccess.getPropertyRangeAccess().getDescriptionKeyword_6_0());
+                            newLeafNode(otherlv_6, grammarAccess.getPropertyRangeAccess().getDescriptionKeyword_6_0());
 
                     // InternalUtilParser.g:1156:4: ( (lv_description_7_0= ruleEString ) )
                     // InternalUtilParser.g:1157:5: (lv_description_7_0= ruleEString )
@@ -2729,7 +2729,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     // InternalUtilParser.g:1158:6: lv_description_7_0= ruleEString
                     {
 
-                                            newCompositeNode(grammarAccess.getPropertyRangeAccess().getDescriptionEStringParserRuleCall_6_1_0());
+                                newCompositeNode(grammarAccess.getPropertyRangeAccess().getDescriptionEStringParserRuleCall_6_1_0());
 
                     pushFollow(FOLLOW_15);
                     lv_description_7_0=ruleEString();
@@ -2737,15 +2737,15 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     state._fsp--;
 
 
-                                            if (current==null) {
-                                                current = createModelElementForParent(grammarAccess.getPropertyRangeRule());
-                                            }
-                                            set(
-                                                current,
-                                                "description",
-                                                lv_description_7_0,
-                                                "de.fraunhofer.ipa.deployment.Util.EString");
-                                            afterParserOrEnumRuleCall();
+                                if (current==null) {
+                                  current = createModelElementForParent(grammarAccess.getPropertyRangeRule());
+                                }
+                                set(
+                                  current,
+                                  "description",
+                                  lv_description_7_0,
+                                  "de.fraunhofer.ipa.deployment.Util.EString");
+                                afterParserOrEnumRuleCall();
 
 
                     }
@@ -2772,14 +2772,14 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     {
                     otherlv_8=(Token)match(input,Value,FOLLOW_5);
 
-                                    newLeafNode(otherlv_8, grammarAccess.getPropertyRangeAccess().getValueKeyword_7_0());
+                            newLeafNode(otherlv_8, grammarAccess.getPropertyRangeAccess().getValueKeyword_7_0());
 
                     this_INDENT_9=(Token)match(input,RULE_INDENT,FOLLOW_20);
 
-                                    newLeafNode(this_INDENT_9, grammarAccess.getPropertyRangeAccess().getINDENTTerminalRuleCall_7_1());
+                            newLeafNode(this_INDENT_9, grammarAccess.getPropertyRangeAccess().getINDENTTerminalRuleCall_7_1());
 
 
-                                    newCompositeNode(grammarAccess.getPropertyRangeAccess().getPreListElementParserRuleCall_7_2());
+                            newCompositeNode(grammarAccess.getPropertyRangeAccess().getPreListElementParserRuleCall_7_2());
 
                     pushFollow(FOLLOW_11);
                     rulePreListElement();
@@ -2787,7 +2787,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     state._fsp--;
 
 
-                                    afterParserOrEnumRuleCall();
+                            afterParserOrEnumRuleCall();
 
                     // InternalUtilParser.g:1192:4: ( (lv_value_11_0= rulePropertyValue ) )
                     // InternalUtilParser.g:1193:5: (lv_value_11_0= rulePropertyValue )
@@ -2796,7 +2796,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     // InternalUtilParser.g:1194:6: lv_value_11_0= rulePropertyValue
                     {
 
-                                            newCompositeNode(grammarAccess.getPropertyRangeAccess().getValuePropertyValueParserRuleCall_7_3_0());
+                                newCompositeNode(grammarAccess.getPropertyRangeAccess().getValuePropertyValueParserRuleCall_7_3_0());
 
                     pushFollow(FOLLOW_20);
                     lv_value_11_0=rulePropertyValue();
@@ -2804,15 +2804,15 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     state._fsp--;
 
 
-                                            if (current==null) {
-                                                current = createModelElementForParent(grammarAccess.getPropertyRangeRule());
-                                            }
-                                            add(
-                                                current,
-                                                "value",
-                                                lv_value_11_0,
-                                                "de.fraunhofer.ipa.deployment.Util.PropertyValue");
-                                            afterParserOrEnumRuleCall();
+                                if (current==null) {
+                                  current = createModelElementForParent(grammarAccess.getPropertyRangeRule());
+                                }
+                                add(
+                                  current,
+                                  "value",
+                                  lv_value_11_0,
+                                  "de.fraunhofer.ipa.deployment.Util.PropertyValue");
+                                afterParserOrEnumRuleCall();
 
 
                     }
@@ -2821,7 +2821,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     }
 
 
-                                    newCompositeNode(grammarAccess.getPropertyRangeAccess().getPreListElementParserRuleCall_7_4());
+                            newCompositeNode(grammarAccess.getPropertyRangeAccess().getPreListElementParserRuleCall_7_4());
 
                     pushFollow(FOLLOW_11);
                     rulePreListElement();
@@ -2829,7 +2829,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     state._fsp--;
 
 
-                                    afterParserOrEnumRuleCall();
+                            afterParserOrEnumRuleCall();
 
                     // InternalUtilParser.g:1218:4: ( (lv_value_13_0= rulePropertyValue ) )
                     // InternalUtilParser.g:1219:5: (lv_value_13_0= rulePropertyValue )
@@ -2838,7 +2838,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     // InternalUtilParser.g:1220:6: lv_value_13_0= rulePropertyValue
                     {
 
-                                            newCompositeNode(grammarAccess.getPropertyRangeAccess().getValuePropertyValueParserRuleCall_7_5_0());
+                                newCompositeNode(grammarAccess.getPropertyRangeAccess().getValuePropertyValueParserRuleCall_7_5_0());
 
                     pushFollow(FOLLOW_12);
                     lv_value_13_0=rulePropertyValue();
@@ -2846,15 +2846,15 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     state._fsp--;
 
 
-                                            if (current==null) {
-                                                current = createModelElementForParent(grammarAccess.getPropertyRangeRule());
-                                            }
-                                            add(
-                                                current,
-                                                "value",
-                                                lv_value_13_0,
-                                                "de.fraunhofer.ipa.deployment.Util.PropertyValue");
-                                            afterParserOrEnumRuleCall();
+                                if (current==null) {
+                                  current = createModelElementForParent(grammarAccess.getPropertyRangeRule());
+                                }
+                                add(
+                                  current,
+                                  "value",
+                                  lv_value_13_0,
+                                  "de.fraunhofer.ipa.deployment.Util.PropertyValue");
+                                afterParserOrEnumRuleCall();
 
 
                     }
@@ -2864,7 +2864,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
 
                     this_DEDENT_14=(Token)match(input,RULE_DEDENT,FOLLOW_16);
 
-                                    newLeafNode(this_DEDENT_14, grammarAccess.getPropertyRangeAccess().getDEDENTTerminalRuleCall_7_6());
+                            newLeafNode(this_DEDENT_14, grammarAccess.getPropertyRangeAccess().getDEDENTTerminalRuleCall_7_6());
 
 
                     }
@@ -2885,7 +2885,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     {
                     this_DEDENT_15=(Token)match(input,RULE_DEDENT,FOLLOW_2);
 
-                                    newLeafNode(this_DEDENT_15, grammarAccess.getPropertyRangeAccess().getDEDENTTerminalRuleCall_8());
+                            newLeafNode(this_DEDENT_15, grammarAccess.getPropertyRangeAccess().getDEDENTTerminalRuleCall_8());
 
 
                     }
@@ -2900,7 +2900,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             }
 
 
-                leaveRule();
+              leaveRule();
 
         }
 
@@ -2972,7 +2972,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
 
 
 
-            enterRule();
+          enterRule();
 
         try {
             // InternalUtilParser.g:1265:2: ( (this_PropertyValueInt_0= rulePropertyValueInt | this_PropertyValueDouble_1= rulePropertyValueDouble | this_PropertyValueString_2= rulePropertyValueString | this_ProcessorArchitectureValue_3= ruleProcessorArchitectureValue | this_LinuxDistributionValue_4= ruleLinuxDistributionValue | this_UbuntuVersionValue_5= ruleUbuntuVersionValue | this_PropertyValueList_6= rulePropertyValueList ) )
@@ -3032,7 +3032,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     // InternalUtilParser.g:1267:3: this_PropertyValueInt_0= rulePropertyValueInt
                     {
 
-                                newCompositeNode(grammarAccess.getPropertyValueAccess().getPropertyValueIntParserRuleCall_0());
+                          newCompositeNode(grammarAccess.getPropertyValueAccess().getPropertyValueIntParserRuleCall_0());
 
                     pushFollow(FOLLOW_2);
                     this_PropertyValueInt_0=rulePropertyValueInt();
@@ -3040,8 +3040,8 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     state._fsp--;
 
 
-                                current = this_PropertyValueInt_0;
-                                afterParserOrEnumRuleCall();
+                          current = this_PropertyValueInt_0;
+                          afterParserOrEnumRuleCall();
 
 
                     }
@@ -3050,7 +3050,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     // InternalUtilParser.g:1276:3: this_PropertyValueDouble_1= rulePropertyValueDouble
                     {
 
-                                newCompositeNode(grammarAccess.getPropertyValueAccess().getPropertyValueDoubleParserRuleCall_1());
+                          newCompositeNode(grammarAccess.getPropertyValueAccess().getPropertyValueDoubleParserRuleCall_1());
 
                     pushFollow(FOLLOW_2);
                     this_PropertyValueDouble_1=rulePropertyValueDouble();
@@ -3058,8 +3058,8 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     state._fsp--;
 
 
-                                current = this_PropertyValueDouble_1;
-                                afterParserOrEnumRuleCall();
+                          current = this_PropertyValueDouble_1;
+                          afterParserOrEnumRuleCall();
 
 
                     }
@@ -3068,7 +3068,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     // InternalUtilParser.g:1285:3: this_PropertyValueString_2= rulePropertyValueString
                     {
 
-                                newCompositeNode(grammarAccess.getPropertyValueAccess().getPropertyValueStringParserRuleCall_2());
+                          newCompositeNode(grammarAccess.getPropertyValueAccess().getPropertyValueStringParserRuleCall_2());
 
                     pushFollow(FOLLOW_2);
                     this_PropertyValueString_2=rulePropertyValueString();
@@ -3076,8 +3076,8 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     state._fsp--;
 
 
-                                current = this_PropertyValueString_2;
-                                afterParserOrEnumRuleCall();
+                          current = this_PropertyValueString_2;
+                          afterParserOrEnumRuleCall();
 
 
                     }
@@ -3086,7 +3086,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     // InternalUtilParser.g:1294:3: this_ProcessorArchitectureValue_3= ruleProcessorArchitectureValue
                     {
 
-                                newCompositeNode(grammarAccess.getPropertyValueAccess().getProcessorArchitectureValueParserRuleCall_3());
+                          newCompositeNode(grammarAccess.getPropertyValueAccess().getProcessorArchitectureValueParserRuleCall_3());
 
                     pushFollow(FOLLOW_2);
                     this_ProcessorArchitectureValue_3=ruleProcessorArchitectureValue();
@@ -3094,8 +3094,8 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     state._fsp--;
 
 
-                                current = this_ProcessorArchitectureValue_3;
-                                afterParserOrEnumRuleCall();
+                          current = this_ProcessorArchitectureValue_3;
+                          afterParserOrEnumRuleCall();
 
 
                     }
@@ -3104,7 +3104,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     // InternalUtilParser.g:1303:3: this_LinuxDistributionValue_4= ruleLinuxDistributionValue
                     {
 
-                                newCompositeNode(grammarAccess.getPropertyValueAccess().getLinuxDistributionValueParserRuleCall_4());
+                          newCompositeNode(grammarAccess.getPropertyValueAccess().getLinuxDistributionValueParserRuleCall_4());
 
                     pushFollow(FOLLOW_2);
                     this_LinuxDistributionValue_4=ruleLinuxDistributionValue();
@@ -3112,8 +3112,8 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     state._fsp--;
 
 
-                                current = this_LinuxDistributionValue_4;
-                                afterParserOrEnumRuleCall();
+                          current = this_LinuxDistributionValue_4;
+                          afterParserOrEnumRuleCall();
 
 
                     }
@@ -3122,7 +3122,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     // InternalUtilParser.g:1312:3: this_UbuntuVersionValue_5= ruleUbuntuVersionValue
                     {
 
-                                newCompositeNode(grammarAccess.getPropertyValueAccess().getUbuntuVersionValueParserRuleCall_5());
+                          newCompositeNode(grammarAccess.getPropertyValueAccess().getUbuntuVersionValueParserRuleCall_5());
 
                     pushFollow(FOLLOW_2);
                     this_UbuntuVersionValue_5=ruleUbuntuVersionValue();
@@ -3130,8 +3130,8 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     state._fsp--;
 
 
-                                current = this_UbuntuVersionValue_5;
-                                afterParserOrEnumRuleCall();
+                          current = this_UbuntuVersionValue_5;
+                          afterParserOrEnumRuleCall();
 
 
                     }
@@ -3140,7 +3140,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     // InternalUtilParser.g:1321:3: this_PropertyValueList_6= rulePropertyValueList
                     {
 
-                                newCompositeNode(grammarAccess.getPropertyValueAccess().getPropertyValueListParserRuleCall_6());
+                          newCompositeNode(grammarAccess.getPropertyValueAccess().getPropertyValueListParserRuleCall_6());
 
                     pushFollow(FOLLOW_2);
                     this_PropertyValueList_6=rulePropertyValueList();
@@ -3148,8 +3148,8 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     state._fsp--;
 
 
-                                current = this_PropertyValueList_6;
-                                afterParserOrEnumRuleCall();
+                          current = this_PropertyValueList_6;
+                          afterParserOrEnumRuleCall();
 
 
                     }
@@ -3161,7 +3161,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             }
 
 
-                leaveRule();
+              leaveRule();
 
         }
 
@@ -3221,7 +3221,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
 
 
 
-            enterRule();
+          enterRule();
 
         try {
             // InternalUtilParser.g:1346:2: ( ( (lv_value_0_0= ruleInteger0 ) ) )
@@ -3234,7 +3234,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             // InternalUtilParser.g:1349:4: lv_value_0_0= ruleInteger0
             {
 
-                            newCompositeNode(grammarAccess.getPropertyValueIntAccess().getValueInteger0ParserRuleCall_0());
+                    newCompositeNode(grammarAccess.getPropertyValueIntAccess().getValueInteger0ParserRuleCall_0());
 
             pushFollow(FOLLOW_2);
             lv_value_0_0=ruleInteger0();
@@ -3242,15 +3242,15 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             state._fsp--;
 
 
-                            if (current==null) {
-                                current = createModelElementForParent(grammarAccess.getPropertyValueIntRule());
-                            }
-                            set(
-                                current,
-                                "value",
-                                lv_value_0_0,
-                                "de.fraunhofer.ipa.deployment.Util.Integer0");
-                            afterParserOrEnumRuleCall();
+                    if (current==null) {
+                      current = createModelElementForParent(grammarAccess.getPropertyValueIntRule());
+                    }
+                    set(
+                      current,
+                      "value",
+                      lv_value_0_0,
+                      "de.fraunhofer.ipa.deployment.Util.Integer0");
+                    afterParserOrEnumRuleCall();
 
 
             }
@@ -3262,7 +3262,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             }
 
 
-                leaveRule();
+              leaveRule();
 
         }
 
@@ -3322,7 +3322,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
 
 
 
-            enterRule();
+          enterRule();
 
         try {
             // InternalUtilParser.g:1382:2: ( ( (lv_value_0_0= ruleDouble0 ) ) )
@@ -3335,7 +3335,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             // InternalUtilParser.g:1385:4: lv_value_0_0= ruleDouble0
             {
 
-                            newCompositeNode(grammarAccess.getPropertyValueDoubleAccess().getValueDouble0ParserRuleCall_0());
+                    newCompositeNode(grammarAccess.getPropertyValueDoubleAccess().getValueDouble0ParserRuleCall_0());
 
             pushFollow(FOLLOW_2);
             lv_value_0_0=ruleDouble0();
@@ -3343,15 +3343,15 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             state._fsp--;
 
 
-                            if (current==null) {
-                                current = createModelElementForParent(grammarAccess.getPropertyValueDoubleRule());
-                            }
-                            set(
-                                current,
-                                "value",
-                                lv_value_0_0,
-                                "de.fraunhofer.ipa.deployment.Util.Double0");
-                            afterParserOrEnumRuleCall();
+                    if (current==null) {
+                      current = createModelElementForParent(grammarAccess.getPropertyValueDoubleRule());
+                    }
+                    set(
+                      current,
+                      "value",
+                      lv_value_0_0,
+                      "de.fraunhofer.ipa.deployment.Util.Double0");
+                    afterParserOrEnumRuleCall();
 
 
             }
@@ -3363,7 +3363,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             }
 
 
-                leaveRule();
+              leaveRule();
 
         }
 
@@ -3423,7 +3423,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
 
 
 
-            enterRule();
+          enterRule();
 
         try {
             // InternalUtilParser.g:1418:2: ( ( (lv_value_0_0= ruleEString ) ) )
@@ -3436,7 +3436,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             // InternalUtilParser.g:1421:4: lv_value_0_0= ruleEString
             {
 
-                            newCompositeNode(grammarAccess.getPropertyValueStringAccess().getValueEStringParserRuleCall_0());
+                    newCompositeNode(grammarAccess.getPropertyValueStringAccess().getValueEStringParserRuleCall_0());
 
             pushFollow(FOLLOW_2);
             lv_value_0_0=ruleEString();
@@ -3444,15 +3444,15 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             state._fsp--;
 
 
-                            if (current==null) {
-                                current = createModelElementForParent(grammarAccess.getPropertyValueStringRule());
-                            }
-                            set(
-                                current,
-                                "value",
-                                lv_value_0_0,
-                                "de.fraunhofer.ipa.deployment.Util.EString");
-                            afterParserOrEnumRuleCall();
+                    if (current==null) {
+                      current = createModelElementForParent(grammarAccess.getPropertyValueStringRule());
+                    }
+                    set(
+                      current,
+                      "value",
+                      lv_value_0_0,
+                      "de.fraunhofer.ipa.deployment.Util.EString");
+                    afterParserOrEnumRuleCall();
 
 
             }
@@ -3464,7 +3464,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             }
 
 
-                leaveRule();
+              leaveRule();
 
         }
 
@@ -3528,7 +3528,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
 
 
 
-            enterRule();
+          enterRule();
 
         try {
             // InternalUtilParser.g:1454:2: ( (this_INDENT_0= RULE_INDENT rulePreListElement ( (lv_value_2_0= rulePropertyValue ) ) ( rulePreListElement ( (lv_value_4_0= rulePropertyValue ) ) )* this_DEDENT_5= RULE_DEDENT ) )
@@ -3539,10 +3539,10 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             {
             this_INDENT_0=(Token)match(input,RULE_INDENT,FOLLOW_20);
 
-                        newLeafNode(this_INDENT_0, grammarAccess.getPropertyValueListAccess().getINDENTTerminalRuleCall_0());
+                  newLeafNode(this_INDENT_0, grammarAccess.getPropertyValueListAccess().getINDENTTerminalRuleCall_0());
 
 
-                        newCompositeNode(grammarAccess.getPropertyValueListAccess().getPreListElementParserRuleCall_1());
+                  newCompositeNode(grammarAccess.getPropertyValueListAccess().getPreListElementParserRuleCall_1());
 
             pushFollow(FOLLOW_11);
             rulePreListElement();
@@ -3550,7 +3550,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             state._fsp--;
 
 
-                        afterParserOrEnumRuleCall();
+                  afterParserOrEnumRuleCall();
 
             // InternalUtilParser.g:1467:3: ( (lv_value_2_0= rulePropertyValue ) )
             // InternalUtilParser.g:1468:4: (lv_value_2_0= rulePropertyValue )
@@ -3559,7 +3559,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             // InternalUtilParser.g:1469:5: lv_value_2_0= rulePropertyValue
             {
 
-                                newCompositeNode(grammarAccess.getPropertyValueListAccess().getValuePropertyValueParserRuleCall_2_0());
+                      newCompositeNode(grammarAccess.getPropertyValueListAccess().getValuePropertyValueParserRuleCall_2_0());
 
             pushFollow(FOLLOW_21);
             lv_value_2_0=rulePropertyValue();
@@ -3567,15 +3567,15 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             state._fsp--;
 
 
-                                if (current==null) {
-                                    current = createModelElementForParent(grammarAccess.getPropertyValueListRule());
-                                }
-                                add(
-                                    current,
-                                    "value",
-                                    lv_value_2_0,
-                                    "de.fraunhofer.ipa.deployment.Util.PropertyValue");
-                                afterParserOrEnumRuleCall();
+                      if (current==null) {
+                        current = createModelElementForParent(grammarAccess.getPropertyValueListRule());
+                      }
+                      add(
+                        current,
+                        "value",
+                        lv_value_2_0,
+                        "de.fraunhofer.ipa.deployment.Util.PropertyValue");
+                      afterParserOrEnumRuleCall();
 
 
             }
@@ -3595,63 +3595,63 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
 
 
                 switch (alt25) {
-                case 1 :
-                    // InternalUtilParser.g:1487:4: rulePreListElement ( (lv_value_4_0= rulePropertyValue ) )
-                    {
+              case 1 :
+                  // InternalUtilParser.g:1487:4: rulePreListElement ( (lv_value_4_0= rulePropertyValue ) )
+                  {
 
-                                    newCompositeNode(grammarAccess.getPropertyValueListAccess().getPreListElementParserRuleCall_3_0());
+                          newCompositeNode(grammarAccess.getPropertyValueListAccess().getPreListElementParserRuleCall_3_0());
 
-                    pushFollow(FOLLOW_11);
-                    rulePreListElement();
+                  pushFollow(FOLLOW_11);
+                  rulePreListElement();
 
-                    state._fsp--;
-
-
-                                    afterParserOrEnumRuleCall();
-
-                    // InternalUtilParser.g:1494:4: ( (lv_value_4_0= rulePropertyValue ) )
-                    // InternalUtilParser.g:1495:5: (lv_value_4_0= rulePropertyValue )
-                    {
-                    // InternalUtilParser.g:1495:5: (lv_value_4_0= rulePropertyValue )
-                    // InternalUtilParser.g:1496:6: lv_value_4_0= rulePropertyValue
-                    {
-
-                                            newCompositeNode(grammarAccess.getPropertyValueListAccess().getValuePropertyValueParserRuleCall_3_1_0());
-
-                    pushFollow(FOLLOW_21);
-                    lv_value_4_0=rulePropertyValue();
-
-                    state._fsp--;
+                  state._fsp--;
 
 
-                                            if (current==null) {
-                                                current = createModelElementForParent(grammarAccess.getPropertyValueListRule());
-                                            }
-                                            add(
-                                                current,
-                                                "value",
-                                                lv_value_4_0,
-                                                "de.fraunhofer.ipa.deployment.Util.PropertyValue");
-                                            afterParserOrEnumRuleCall();
+                          afterParserOrEnumRuleCall();
+
+                  // InternalUtilParser.g:1494:4: ( (lv_value_4_0= rulePropertyValue ) )
+                  // InternalUtilParser.g:1495:5: (lv_value_4_0= rulePropertyValue )
+                  {
+                  // InternalUtilParser.g:1495:5: (lv_value_4_0= rulePropertyValue )
+                  // InternalUtilParser.g:1496:6: lv_value_4_0= rulePropertyValue
+                  {
+
+                              newCompositeNode(grammarAccess.getPropertyValueListAccess().getValuePropertyValueParserRuleCall_3_1_0());
+
+                  pushFollow(FOLLOW_21);
+                  lv_value_4_0=rulePropertyValue();
+
+                  state._fsp--;
 
 
-                    }
+                              if (current==null) {
+                                current = createModelElementForParent(grammarAccess.getPropertyValueListRule());
+                              }
+                              add(
+                                current,
+                                "value",
+                                lv_value_4_0,
+                                "de.fraunhofer.ipa.deployment.Util.PropertyValue");
+                              afterParserOrEnumRuleCall();
 
 
-                    }
+                  }
 
 
-                    }
-                    break;
+                  }
 
-                default :
-                    break loop25;
+
+                  }
+                  break;
+
+              default :
+                  break loop25;
                 }
             } while (true);
 
             this_DEDENT_5=(Token)match(input,RULE_DEDENT,FOLLOW_2);
 
-                        newLeafNode(this_DEDENT_5, grammarAccess.getPropertyValueListAccess().getDEDENTTerminalRuleCall_4());
+                  newLeafNode(this_DEDENT_5, grammarAccess.getPropertyValueListAccess().getDEDENTTerminalRuleCall_4());
 
 
             }
@@ -3660,7 +3660,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             }
 
 
-                leaveRule();
+              leaveRule();
 
         }
 
@@ -3720,7 +3720,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
 
 
 
-            enterRule();
+          enterRule();
 
         try {
             // InternalUtilParser.g:1535:2: ( ( (lv_value_0_0= ruleProcessorArchitectureType ) ) )
@@ -3733,7 +3733,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             // InternalUtilParser.g:1538:4: lv_value_0_0= ruleProcessorArchitectureType
             {
 
-                            newCompositeNode(grammarAccess.getProcessorArchitectureValueAccess().getValueProcessorArchitectureTypeEnumRuleCall_0());
+                    newCompositeNode(grammarAccess.getProcessorArchitectureValueAccess().getValueProcessorArchitectureTypeEnumRuleCall_0());
 
             pushFollow(FOLLOW_2);
             lv_value_0_0=ruleProcessorArchitectureType();
@@ -3741,15 +3741,15 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             state._fsp--;
 
 
-                            if (current==null) {
-                                current = createModelElementForParent(grammarAccess.getProcessorArchitectureValueRule());
-                            }
-                            set(
-                                current,
-                                "value",
-                                lv_value_0_0,
-                                "de.fraunhofer.ipa.deployment.Util.ProcessorArchitectureType");
-                            afterParserOrEnumRuleCall();
+                    if (current==null) {
+                      current = createModelElementForParent(grammarAccess.getProcessorArchitectureValueRule());
+                    }
+                    set(
+                      current,
+                      "value",
+                      lv_value_0_0,
+                      "de.fraunhofer.ipa.deployment.Util.ProcessorArchitectureType");
+                    afterParserOrEnumRuleCall();
 
 
             }
@@ -3761,7 +3761,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             }
 
 
-                leaveRule();
+              leaveRule();
 
         }
 
@@ -3821,14 +3821,14 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
 
 
 
-            enterRule();
+          enterRule();
 
         try {
             // InternalUtilParser.g:1571:2: (this_ResourceType_0= ruleResourceType )
             // InternalUtilParser.g:1572:2: this_ResourceType_0= ruleResourceType
             {
 
-                    newCompositeNode(grammarAccess.getAbstractResouceTypeAccess().getResourceTypeParserRuleCall());
+                newCompositeNode(grammarAccess.getAbstractResouceTypeAccess().getResourceTypeParserRuleCall());
 
             pushFollow(FOLLOW_2);
             this_ResourceType_0=ruleResourceType();
@@ -3836,14 +3836,14 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             state._fsp--;
 
 
-                    current = this_ResourceType_0;
-                    afterParserOrEnumRuleCall();
+                current = this_ResourceType_0;
+                afterParserOrEnumRuleCall();
 
 
             }
 
 
-                leaveRule();
+              leaveRule();
 
         }
 
@@ -3905,7 +3905,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
 
 
 
-            enterRule();
+          enterRule();
 
         try {
             // InternalUtilParser.g:1596:2: ( (this_LinuxOpertingSystem_0= ruleLinuxOpertingSystem | this_MacOSOpertingSystem_1= ruleMacOSOpertingSystem ) )
@@ -3932,7 +3932,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     // InternalUtilParser.g:1598:3: this_LinuxOpertingSystem_0= ruleLinuxOpertingSystem
                     {
 
-                                newCompositeNode(grammarAccess.getOpertingSystemResouceTypeAccess().getLinuxOpertingSystemParserRuleCall_0());
+                          newCompositeNode(grammarAccess.getOpertingSystemResouceTypeAccess().getLinuxOpertingSystemParserRuleCall_0());
 
                     pushFollow(FOLLOW_2);
                     this_LinuxOpertingSystem_0=ruleLinuxOpertingSystem();
@@ -3940,8 +3940,8 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     state._fsp--;
 
 
-                                current = this_LinuxOpertingSystem_0;
-                                afterParserOrEnumRuleCall();
+                          current = this_LinuxOpertingSystem_0;
+                          afterParserOrEnumRuleCall();
 
 
                     }
@@ -3950,7 +3950,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     // InternalUtilParser.g:1607:3: this_MacOSOpertingSystem_1= ruleMacOSOpertingSystem
                     {
 
-                                newCompositeNode(grammarAccess.getOpertingSystemResouceTypeAccess().getMacOSOpertingSystemParserRuleCall_1());
+                          newCompositeNode(grammarAccess.getOpertingSystemResouceTypeAccess().getMacOSOpertingSystemParserRuleCall_1());
 
                     pushFollow(FOLLOW_2);
                     this_MacOSOpertingSystem_1=ruleMacOSOpertingSystem();
@@ -3958,8 +3958,8 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     state._fsp--;
 
 
-                                current = this_MacOSOpertingSystem_1;
-                                afterParserOrEnumRuleCall();
+                          current = this_MacOSOpertingSystem_1;
+                          afterParserOrEnumRuleCall();
 
 
                     }
@@ -3971,7 +3971,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             }
 
 
-                leaveRule();
+              leaveRule();
 
         }
 
@@ -4031,7 +4031,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
 
 
 
-            enterRule();
+          enterRule();
 
         try {
             // InternalUtilParser.g:1632:2: ( ( () ( (lv_name_1_0= ruleEString ) ) ) )
@@ -4044,9 +4044,9 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             // InternalUtilParser.g:1635:4:
             {
 
-                            current = forceCreateModelElement(
-                                grammarAccess.getResourceTypeAccess().getResourceTypeAction_0(),
-                                current);
+                    current = forceCreateModelElement(
+                      grammarAccess.getResourceTypeAccess().getResourceTypeAction_0(),
+                      current);
 
 
             }
@@ -4058,7 +4058,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             // InternalUtilParser.g:1643:5: lv_name_1_0= ruleEString
             {
 
-                                newCompositeNode(grammarAccess.getResourceTypeAccess().getNameEStringParserRuleCall_1_0());
+                      newCompositeNode(grammarAccess.getResourceTypeAccess().getNameEStringParserRuleCall_1_0());
 
             pushFollow(FOLLOW_2);
             lv_name_1_0=ruleEString();
@@ -4066,15 +4066,15 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             state._fsp--;
 
 
-                                if (current==null) {
-                                    current = createModelElementForParent(grammarAccess.getResourceTypeRule());
-                                }
-                                set(
-                                    current,
-                                    "name",
-                                    lv_name_1_0,
-                                    "de.fraunhofer.ipa.deployment.Util.EString");
-                                afterParserOrEnumRuleCall();
+                      if (current==null) {
+                        current = createModelElementForParent(grammarAccess.getResourceTypeRule());
+                      }
+                      set(
+                        current,
+                        "name",
+                        lv_name_1_0,
+                        "de.fraunhofer.ipa.deployment.Util.EString");
+                      afterParserOrEnumRuleCall();
 
 
             }
@@ -4089,7 +4089,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             }
 
 
-                leaveRule();
+              leaveRule();
 
         }
 
@@ -4148,7 +4148,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
         Token otherlv_1=null;
 
 
-            enterRule();
+          enterRule();
 
         try {
             // InternalUtilParser.g:1677:2: ( ( () otherlv_1= LinuxOpertingSystem ) )
@@ -4161,16 +4161,16 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             // InternalUtilParser.g:1680:4:
             {
 
-                            current = forceCreateModelElement(
-                                grammarAccess.getLinuxOpertingSystemAccess().getLinuxOpertingSystemAction_0(),
-                                current);
+                    current = forceCreateModelElement(
+                      grammarAccess.getLinuxOpertingSystemAccess().getLinuxOpertingSystemAction_0(),
+                      current);
 
 
             }
 
             otherlv_1=(Token)match(input,LinuxOpertingSystem,FOLLOW_2);
 
-                        newLeafNode(otherlv_1, grammarAccess.getLinuxOpertingSystemAccess().getLinuxOpertingSystemKeyword_1());
+                  newLeafNode(otherlv_1, grammarAccess.getLinuxOpertingSystemAccess().getLinuxOpertingSystemKeyword_1());
 
 
             }
@@ -4179,7 +4179,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             }
 
 
-                leaveRule();
+              leaveRule();
 
         }
 
@@ -4238,7 +4238,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
         Token otherlv_1=null;
 
 
-            enterRule();
+          enterRule();
 
         try {
             // InternalUtilParser.g:1707:2: ( ( () otherlv_1= MacOSOpertingSystem ) )
@@ -4251,16 +4251,16 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             // InternalUtilParser.g:1710:4:
             {
 
-                            current = forceCreateModelElement(
-                                grammarAccess.getMacOSOpertingSystemAccess().getMacOSOpertingSystemAction_0(),
-                                current);
+                    current = forceCreateModelElement(
+                      grammarAccess.getMacOSOpertingSystemAccess().getMacOSOpertingSystemAction_0(),
+                      current);
 
 
             }
 
             otherlv_1=(Token)match(input,MacOSOpertingSystem,FOLLOW_2);
 
-                        newLeafNode(otherlv_1, grammarAccess.getMacOSOpertingSystemAccess().getMacOSOpertingSystemKeyword_1());
+                  newLeafNode(otherlv_1, grammarAccess.getMacOSOpertingSystemAccess().getMacOSOpertingSystemKeyword_1());
 
 
             }
@@ -4269,7 +4269,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             }
 
 
-                leaveRule();
+              leaveRule();
 
         }
 
@@ -4329,7 +4329,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
 
 
 
-            enterRule();
+          enterRule();
 
         try {
             // InternalUtilParser.g:1737:2: ( ( () ( (lv_name_1_0= ruleEString ) ) ) )
@@ -4342,9 +4342,9 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             // InternalUtilParser.g:1740:4:
             {
 
-                            current = forceCreateModelElement(
-                                grammarAccess.getCommunicationTypeAccess().getCommunicationTypeAction_0(),
-                                current);
+                    current = forceCreateModelElement(
+                      grammarAccess.getCommunicationTypeAccess().getCommunicationTypeAction_0(),
+                      current);
 
 
             }
@@ -4356,7 +4356,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             // InternalUtilParser.g:1748:5: lv_name_1_0= ruleEString
             {
 
-                                newCompositeNode(grammarAccess.getCommunicationTypeAccess().getNameEStringParserRuleCall_1_0());
+                      newCompositeNode(grammarAccess.getCommunicationTypeAccess().getNameEStringParserRuleCall_1_0());
 
             pushFollow(FOLLOW_2);
             lv_name_1_0=ruleEString();
@@ -4364,15 +4364,15 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             state._fsp--;
 
 
-                                if (current==null) {
-                                    current = createModelElementForParent(grammarAccess.getCommunicationTypeRule());
-                                }
-                                set(
-                                    current,
-                                    "name",
-                                    lv_name_1_0,
-                                    "de.fraunhofer.ipa.deployment.Util.EString");
-                                afterParserOrEnumRuleCall();
+                      if (current==null) {
+                        current = createModelElementForParent(grammarAccess.getCommunicationTypeRule());
+                      }
+                      set(
+                        current,
+                        "name",
+                        lv_name_1_0,
+                        "de.fraunhofer.ipa.deployment.Util.EString");
+                      afterParserOrEnumRuleCall();
 
 
             }
@@ -4387,7 +4387,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             }
 
 
-                leaveRule();
+              leaveRule();
 
         }
 
@@ -4449,7 +4449,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
 
 
 
-            enterRule();
+          enterRule();
 
         try {
             // InternalUtilParser.g:1782:2: ( (this_EthernetCommunicationType_0= ruleEthernetCommunicationType | this_WlanCommunicationType_1= ruleWlanCommunicationType ) )
@@ -4476,7 +4476,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     // InternalUtilParser.g:1784:3: this_EthernetCommunicationType_0= ruleEthernetCommunicationType
                     {
 
-                                newCompositeNode(grammarAccess.getNetworkCommunicationTypeAccess().getEthernetCommunicationTypeParserRuleCall_0());
+                          newCompositeNode(grammarAccess.getNetworkCommunicationTypeAccess().getEthernetCommunicationTypeParserRuleCall_0());
 
                     pushFollow(FOLLOW_2);
                     this_EthernetCommunicationType_0=ruleEthernetCommunicationType();
@@ -4484,8 +4484,8 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     state._fsp--;
 
 
-                                current = this_EthernetCommunicationType_0;
-                                afterParserOrEnumRuleCall();
+                          current = this_EthernetCommunicationType_0;
+                          afterParserOrEnumRuleCall();
 
 
                     }
@@ -4494,7 +4494,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     // InternalUtilParser.g:1793:3: this_WlanCommunicationType_1= ruleWlanCommunicationType
                     {
 
-                                newCompositeNode(grammarAccess.getNetworkCommunicationTypeAccess().getWlanCommunicationTypeParserRuleCall_1());
+                          newCompositeNode(grammarAccess.getNetworkCommunicationTypeAccess().getWlanCommunicationTypeParserRuleCall_1());
 
                     pushFollow(FOLLOW_2);
                     this_WlanCommunicationType_1=ruleWlanCommunicationType();
@@ -4502,8 +4502,8 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     state._fsp--;
 
 
-                                current = this_WlanCommunicationType_1;
-                                afterParserOrEnumRuleCall();
+                          current = this_WlanCommunicationType_1;
+                          afterParserOrEnumRuleCall();
 
 
                     }
@@ -4515,7 +4515,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             }
 
 
-                leaveRule();
+              leaveRule();
 
         }
 
@@ -4574,7 +4574,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
         Token otherlv_1=null;
 
 
-            enterRule();
+          enterRule();
 
         try {
             // InternalUtilParser.g:1818:2: ( ( () otherlv_1= Ethernet ) )
@@ -4587,16 +4587,16 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             // InternalUtilParser.g:1821:4:
             {
 
-                            current = forceCreateModelElement(
-                                grammarAccess.getEthernetCommunicationTypeAccess().getEthernetCommunicationTypeAction_0(),
-                                current);
+                    current = forceCreateModelElement(
+                      grammarAccess.getEthernetCommunicationTypeAccess().getEthernetCommunicationTypeAction_0(),
+                      current);
 
 
             }
 
             otherlv_1=(Token)match(input,Ethernet,FOLLOW_2);
 
-                        newLeafNode(otherlv_1, grammarAccess.getEthernetCommunicationTypeAccess().getEthernetKeyword_1());
+                  newLeafNode(otherlv_1, grammarAccess.getEthernetCommunicationTypeAccess().getEthernetKeyword_1());
 
 
             }
@@ -4605,7 +4605,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             }
 
 
-                leaveRule();
+              leaveRule();
 
         }
 
@@ -4664,7 +4664,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
         Token otherlv_1=null;
 
 
-            enterRule();
+          enterRule();
 
         try {
             // InternalUtilParser.g:1848:2: ( ( () otherlv_1= Wlan ) )
@@ -4677,16 +4677,16 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             // InternalUtilParser.g:1851:4:
             {
 
-                            current = forceCreateModelElement(
-                                grammarAccess.getWlanCommunicationTypeAccess().getWlanCommunicationTypeAction_0(),
-                                current);
+                    current = forceCreateModelElement(
+                      grammarAccess.getWlanCommunicationTypeAccess().getWlanCommunicationTypeAction_0(),
+                      current);
 
 
             }
 
             otherlv_1=(Token)match(input,Wlan,FOLLOW_2);
 
-                        newLeafNode(otherlv_1, grammarAccess.getWlanCommunicationTypeAccess().getWlanKeyword_1());
+                  newLeafNode(otherlv_1, grammarAccess.getWlanCommunicationTypeAccess().getWlanKeyword_1());
 
 
             }
@@ -4695,7 +4695,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             }
 
 
-                leaveRule();
+              leaveRule();
 
         }
 
@@ -4754,7 +4754,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
         Token otherlv_1=null;
 
 
-            enterRule();
+          enterRule();
 
         try {
             // InternalUtilParser.g:1878:2: ( ( () otherlv_1= AttributeKind ) )
@@ -4767,16 +4767,16 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             // InternalUtilParser.g:1881:4:
             {
 
-                            current = forceCreateModelElement(
-                                grammarAccess.getAttributeKindAccess().getAttributeKindAction_0(),
-                                current);
+                    current = forceCreateModelElement(
+                      grammarAccess.getAttributeKindAccess().getAttributeKindAction_0(),
+                      current);
 
 
             }
 
             otherlv_1=(Token)match(input,AttributeKind,FOLLOW_2);
 
-                        newLeafNode(otherlv_1, grammarAccess.getAttributeKindAccess().getAttributeKindKeyword_1());
+                  newLeafNode(otherlv_1, grammarAccess.getAttributeKindAccess().getAttributeKindKeyword_1());
 
 
             }
@@ -4785,7 +4785,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             }
 
 
-                leaveRule();
+              leaveRule();
 
         }
 
@@ -4844,7 +4844,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
         Token otherlv_1=null;
 
 
-            enterRule();
+          enterRule();
 
         try {
             // InternalUtilParser.g:1908:2: ( ( () otherlv_1= MaximumKind ) )
@@ -4857,16 +4857,16 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             // InternalUtilParser.g:1911:4:
             {
 
-                            current = forceCreateModelElement(
-                                grammarAccess.getMaximumKindAccess().getMaximumKindAction_0(),
-                                current);
+                    current = forceCreateModelElement(
+                      grammarAccess.getMaximumKindAccess().getMaximumKindAction_0(),
+                      current);
 
 
             }
 
             otherlv_1=(Token)match(input,MaximumKind,FOLLOW_2);
 
-                        newLeafNode(otherlv_1, grammarAccess.getMaximumKindAccess().getMaximumKindKeyword_1());
+                  newLeafNode(otherlv_1, grammarAccess.getMaximumKindAccess().getMaximumKindKeyword_1());
 
 
             }
@@ -4875,7 +4875,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             }
 
 
-                leaveRule();
+              leaveRule();
 
         }
 
@@ -4934,7 +4934,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
         Token otherlv_1=null;
 
 
-            enterRule();
+          enterRule();
 
         try {
             // InternalUtilParser.g:1938:2: ( ( () otherlv_1= MinimumKind ) )
@@ -4947,16 +4947,16 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             // InternalUtilParser.g:1941:4:
             {
 
-                            current = forceCreateModelElement(
-                                grammarAccess.getMinimumKindAccess().getMinimumKindAction_0(),
-                                current);
+                    current = forceCreateModelElement(
+                      grammarAccess.getMinimumKindAccess().getMinimumKindAction_0(),
+                      current);
 
 
             }
 
             otherlv_1=(Token)match(input,MinimumKind,FOLLOW_2);
 
-                        newLeafNode(otherlv_1, grammarAccess.getMinimumKindAccess().getMinimumKindKeyword_1());
+                  newLeafNode(otherlv_1, grammarAccess.getMinimumKindAccess().getMinimumKindKeyword_1());
 
 
             }
@@ -4965,7 +4965,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             }
 
 
-                leaveRule();
+              leaveRule();
 
         }
 
@@ -5024,7 +5024,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
         Token otherlv_1=null;
 
 
-            enterRule();
+          enterRule();
 
         try {
             // InternalUtilParser.g:1968:2: ( ( () otherlv_1= SelectionKind ) )
@@ -5037,16 +5037,16 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             // InternalUtilParser.g:1971:4:
             {
 
-                            current = forceCreateModelElement(
-                                grammarAccess.getSelectionKindAccess().getSelectionKindAction_0(),
-                                current);
+                    current = forceCreateModelElement(
+                      grammarAccess.getSelectionKindAccess().getSelectionKindAction_0(),
+                      current);
 
 
             }
 
             otherlv_1=(Token)match(input,SelectionKind,FOLLOW_2);
 
-                        newLeafNode(otherlv_1, grammarAccess.getSelectionKindAccess().getSelectionKindKeyword_1());
+                  newLeafNode(otherlv_1, grammarAccess.getSelectionKindAccess().getSelectionKindKeyword_1());
 
 
             }
@@ -5055,7 +5055,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             }
 
 
-                leaveRule();
+              leaveRule();
 
         }
 
@@ -5114,7 +5114,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
         Token otherlv_1=null;
 
 
-            enterRule();
+          enterRule();
 
         try {
             // InternalUtilParser.g:1998:2: ( ( () otherlv_1= RangeKind ) )
@@ -5127,16 +5127,16 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             // InternalUtilParser.g:2001:4:
             {
 
-                            current = forceCreateModelElement(
-                                grammarAccess.getRangeKindAccess().getRangeKindAction_0(),
-                                current);
+                    current = forceCreateModelElement(
+                      grammarAccess.getRangeKindAccess().getRangeKindAction_0(),
+                      current);
 
 
             }
 
             otherlv_1=(Token)match(input,RangeKind,FOLLOW_2);
 
-                        newLeafNode(otherlv_1, grammarAccess.getRangeKindAccess().getRangeKindKeyword_1());
+                  newLeafNode(otherlv_1, grammarAccess.getRangeKindAccess().getRangeKindKeyword_1());
 
 
             }
@@ -5145,7 +5145,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             }
 
 
-                leaveRule();
+              leaveRule();
 
         }
 
@@ -5205,7 +5205,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
 
 
 
-            enterRule();
+          enterRule();
 
         try {
             // InternalUtilParser.g:2028:2: ( ( () ( (lv_value_1_0= ruleLinuxDistribution ) ) ) )
@@ -5218,9 +5218,9 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             // InternalUtilParser.g:2031:4:
             {
 
-                            current = forceCreateModelElement(
-                                grammarAccess.getLinuxDistributionValueAccess().getLinuxDistributionValueAction_0(),
-                                current);
+                    current = forceCreateModelElement(
+                      grammarAccess.getLinuxDistributionValueAccess().getLinuxDistributionValueAction_0(),
+                      current);
 
 
             }
@@ -5232,7 +5232,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             // InternalUtilParser.g:2039:5: lv_value_1_0= ruleLinuxDistribution
             {
 
-                                newCompositeNode(grammarAccess.getLinuxDistributionValueAccess().getValueLinuxDistributionEnumRuleCall_1_0());
+                      newCompositeNode(grammarAccess.getLinuxDistributionValueAccess().getValueLinuxDistributionEnumRuleCall_1_0());
 
             pushFollow(FOLLOW_2);
             lv_value_1_0=ruleLinuxDistribution();
@@ -5240,15 +5240,15 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             state._fsp--;
 
 
-                                if (current==null) {
-                                    current = createModelElementForParent(grammarAccess.getLinuxDistributionValueRule());
-                                }
-                                set(
-                                    current,
-                                    "value",
-                                    lv_value_1_0,
-                                    "de.fraunhofer.ipa.deployment.Util.LinuxDistribution");
-                                afterParserOrEnumRuleCall();
+                      if (current==null) {
+                        current = createModelElementForParent(grammarAccess.getLinuxDistributionValueRule());
+                      }
+                      set(
+                        current,
+                        "value",
+                        lv_value_1_0,
+                        "de.fraunhofer.ipa.deployment.Util.LinuxDistribution");
+                      afterParserOrEnumRuleCall();
 
 
             }
@@ -5263,7 +5263,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             }
 
 
-                leaveRule();
+              leaveRule();
 
         }
 
@@ -5323,7 +5323,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
 
 
 
-            enterRule();
+          enterRule();
 
         try {
             // InternalUtilParser.g:2073:2: ( ( () ( (lv_value_1_0= ruleUbuntuVersion ) ) ) )
@@ -5336,9 +5336,9 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             // InternalUtilParser.g:2076:4:
             {
 
-                            current = forceCreateModelElement(
-                                grammarAccess.getUbuntuVersionValueAccess().getUbuntuVersionValueAction_0(),
-                                current);
+                    current = forceCreateModelElement(
+                      grammarAccess.getUbuntuVersionValueAccess().getUbuntuVersionValueAction_0(),
+                      current);
 
 
             }
@@ -5350,7 +5350,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             // InternalUtilParser.g:2084:5: lv_value_1_0= ruleUbuntuVersion
             {
 
-                                newCompositeNode(grammarAccess.getUbuntuVersionValueAccess().getValueUbuntuVersionEnumRuleCall_1_0());
+                      newCompositeNode(grammarAccess.getUbuntuVersionValueAccess().getValueUbuntuVersionEnumRuleCall_1_0());
 
             pushFollow(FOLLOW_2);
             lv_value_1_0=ruleUbuntuVersion();
@@ -5358,15 +5358,15 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             state._fsp--;
 
 
-                                if (current==null) {
-                                    current = createModelElementForParent(grammarAccess.getUbuntuVersionValueRule());
-                                }
-                                set(
-                                    current,
-                                    "value",
-                                    lv_value_1_0,
-                                    "de.fraunhofer.ipa.deployment.Util.UbuntuVersion");
-                                afterParserOrEnumRuleCall();
+                      if (current==null) {
+                        current = createModelElementForParent(grammarAccess.getUbuntuVersionValueRule());
+                      }
+                      set(
+                        current,
+                        "value",
+                        lv_value_1_0,
+                        "de.fraunhofer.ipa.deployment.Util.UbuntuVersion");
+                      afterParserOrEnumRuleCall();
 
 
             }
@@ -5381,7 +5381,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             }
 
 
-                leaveRule();
+              leaveRule();
 
         }
 
@@ -5440,7 +5440,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
         Token this_DOUBLE_0=null;
 
 
-            enterRule();
+          enterRule();
 
         try {
             // InternalUtilParser.g:2118:2: (this_DOUBLE_0= RULE_DOUBLE )
@@ -5448,16 +5448,16 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             {
             this_DOUBLE_0=(Token)match(input,RULE_DOUBLE,FOLLOW_2);
 
-                    current.merge(this_DOUBLE_0);
+                current.merge(this_DOUBLE_0);
 
 
-                    newLeafNode(this_DOUBLE_0, grammarAccess.getDouble0Access().getDOUBLETerminalRuleCall());
+                newLeafNode(this_DOUBLE_0, grammarAccess.getDouble0Access().getDOUBLETerminalRuleCall());
 
 
             }
 
 
-                leaveRule();
+              leaveRule();
 
         }
 
@@ -5516,7 +5516,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
         Token this_DECINT_0=null;
 
 
-            enterRule();
+          enterRule();
 
         try {
             // InternalUtilParser.g:2142:2: (this_DECINT_0= RULE_DECINT )
@@ -5524,16 +5524,16 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             {
             this_DECINT_0=(Token)match(input,RULE_DECINT,FOLLOW_2);
 
-                    current.merge(this_DECINT_0);
+                current.merge(this_DECINT_0);
 
 
-                    newLeafNode(this_DECINT_0, grammarAccess.getInteger0Access().getDECINTTerminalRuleCall());
+                newLeafNode(this_DECINT_0, grammarAccess.getInteger0Access().getDECINTTerminalRuleCall());
 
 
             }
 
 
-                leaveRule();
+              leaveRule();
 
         }
 
@@ -5593,7 +5593,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
         Token this_ID_1=null;
 
 
-            enterRule();
+          enterRule();
 
         try {
             // InternalUtilParser.g:2166:2: ( (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) )
@@ -5621,10 +5621,10 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     {
                     this_STRING_0=(Token)match(input,RULE_STRING,FOLLOW_2);
 
-                                current.merge(this_STRING_0);
+                          current.merge(this_STRING_0);
 
 
-                                newLeafNode(this_STRING_0, grammarAccess.getEStringAccess().getSTRINGTerminalRuleCall_0());
+                          newLeafNode(this_STRING_0, grammarAccess.getEStringAccess().getSTRINGTerminalRuleCall_0());
 
 
                     }
@@ -5634,10 +5634,10 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     {
                     this_ID_1=(Token)match(input,RULE_ID,FOLLOW_2);
 
-                                current.merge(this_ID_1);
+                          current.merge(this_ID_1);
 
 
-                                newLeafNode(this_ID_1, grammarAccess.getEStringAccess().getIDTerminalRuleCall_1());
+                          newLeafNode(this_ID_1, grammarAccess.getEStringAccess().getIDTerminalRuleCall_1());
 
 
                     }
@@ -5649,7 +5649,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             }
 
 
-                leaveRule();
+              leaveRule();
 
         }
 
@@ -5673,7 +5673,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
 
 
 
-            HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_SL_COMMENT");
+          HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_SL_COMMENT");
 
         try {
             // InternalUtilParser.g:2189:2: (iv_rulePreListElement= rulePreListElement EOF )
@@ -5698,7 +5698,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             }
         finally {
 
-                myHiddenTokenState.restore();
+              myHiddenTokenState.restore();
 
         }
         return current;
@@ -5714,8 +5714,8 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
         Token kw=null;
 
 
-            enterRule();
-            HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_SL_COMMENT");
+          enterRule();
+          HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_SL_COMMENT");
 
         try {
             // InternalUtilParser.g:2206:2: (kw= HyphenMinus )
@@ -5723,14 +5723,14 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             {
             kw=(Token)match(input,HyphenMinus,FOLLOW_2);
 
-                    current.merge(kw);
-                    newLeafNode(kw, grammarAccess.getPreListElementAccess().getHyphenMinusKeyword());
+                current.merge(kw);
+                newLeafNode(kw, grammarAccess.getPreListElementAccess().getHyphenMinusKeyword());
 
 
             }
 
 
-                leaveRule();
+              leaveRule();
 
         }
 
@@ -5740,7 +5740,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             }
         finally {
 
-                myHiddenTokenState.restore();
+              myHiddenTokenState.restore();
 
         }
         return current;
@@ -5757,7 +5757,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
         Token enumLiteral_1=null;
 
 
-            enterRule();
+          enterRule();
 
         try {
             // InternalUtilParser.g:2224:2: ( ( (enumLiteral_0= X86 ) | (enumLiteral_1= Arm64 ) ) )
@@ -5788,8 +5788,8 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     {
                     enumLiteral_0=(Token)match(input,X86,FOLLOW_2);
 
-                                    current = grammarAccess.getProcessorArchitectureTypeAccess().getX86EnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-                                    newLeafNode(enumLiteral_0, grammarAccess.getProcessorArchitectureTypeAccess().getX86EnumLiteralDeclaration_0());
+                            current = grammarAccess.getProcessorArchitectureTypeAccess().getX86EnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+                            newLeafNode(enumLiteral_0, grammarAccess.getProcessorArchitectureTypeAccess().getX86EnumLiteralDeclaration_0());
 
 
                     }
@@ -5805,8 +5805,8 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     {
                     enumLiteral_1=(Token)match(input,Arm64,FOLLOW_2);
 
-                                    current = grammarAccess.getProcessorArchitectureTypeAccess().getArm64EnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-                                    newLeafNode(enumLiteral_1, grammarAccess.getProcessorArchitectureTypeAccess().getArm64EnumLiteralDeclaration_1());
+                            current = grammarAccess.getProcessorArchitectureTypeAccess().getArm64EnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+                            newLeafNode(enumLiteral_1, grammarAccess.getProcessorArchitectureTypeAccess().getArm64EnumLiteralDeclaration_1());
 
 
                     }
@@ -5821,7 +5821,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             }
 
 
-                leaveRule();
+              leaveRule();
 
         }
 
@@ -5845,7 +5845,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
         Token enumLiteral_1=null;
 
 
-            enterRule();
+          enterRule();
 
         try {
             // InternalUtilParser.g:2251:2: ( ( (enumLiteral_0= Ubuntu ) | (enumLiteral_1= Debian ) ) )
@@ -5876,8 +5876,8 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     {
                     enumLiteral_0=(Token)match(input,Ubuntu,FOLLOW_2);
 
-                                    current = grammarAccess.getLinuxDistributionAccess().getUbuntuEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-                                    newLeafNode(enumLiteral_0, grammarAccess.getLinuxDistributionAccess().getUbuntuEnumLiteralDeclaration_0());
+                            current = grammarAccess.getLinuxDistributionAccess().getUbuntuEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+                            newLeafNode(enumLiteral_0, grammarAccess.getLinuxDistributionAccess().getUbuntuEnumLiteralDeclaration_0());
 
 
                     }
@@ -5893,8 +5893,8 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     {
                     enumLiteral_1=(Token)match(input,Debian,FOLLOW_2);
 
-                                    current = grammarAccess.getLinuxDistributionAccess().getDebianEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-                                    newLeafNode(enumLiteral_1, grammarAccess.getLinuxDistributionAccess().getDebianEnumLiteralDeclaration_1());
+                            current = grammarAccess.getLinuxDistributionAccess().getDebianEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+                            newLeafNode(enumLiteral_1, grammarAccess.getLinuxDistributionAccess().getDebianEnumLiteralDeclaration_1());
 
 
                     }
@@ -5909,7 +5909,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             }
 
 
-                leaveRule();
+              leaveRule();
 
         }
 
@@ -5933,7 +5933,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
         Token enumLiteral_1=null;
 
 
-            enterRule();
+          enterRule();
 
         try {
             // InternalUtilParser.g:2278:2: ( ( (enumLiteral_0= Focal ) | (enumLiteral_1= Jammy ) ) )
@@ -5964,8 +5964,8 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     {
                     enumLiteral_0=(Token)match(input,Focal,FOLLOW_2);
 
-                                    current = grammarAccess.getUbuntuVersionAccess().getFocalEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-                                    newLeafNode(enumLiteral_0, grammarAccess.getUbuntuVersionAccess().getFocalEnumLiteralDeclaration_0());
+                            current = grammarAccess.getUbuntuVersionAccess().getFocalEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+                            newLeafNode(enumLiteral_0, grammarAccess.getUbuntuVersionAccess().getFocalEnumLiteralDeclaration_0());
 
 
                     }
@@ -5981,8 +5981,8 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
                     {
                     enumLiteral_1=(Token)match(input,Jammy,FOLLOW_2);
 
-                                    current = grammarAccess.getUbuntuVersionAccess().getJammyEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-                                    newLeafNode(enumLiteral_1, grammarAccess.getUbuntuVersionAccess().getJammyEnumLiteralDeclaration_1());
+                            current = grammarAccess.getUbuntuVersionAccess().getJammyEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+                            newLeafNode(enumLiteral_1, grammarAccess.getUbuntuVersionAccess().getJammyEnumLiteralDeclaration_1());
 
 
                     }
@@ -5997,7 +5997,7 @@ public class InternalUtilParser extends AbstractInternalAntlrParser {
             }
 
 
-                leaveRule();
+              leaveRule();
 
         }
 

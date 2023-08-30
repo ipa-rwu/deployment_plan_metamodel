@@ -8,9 +8,9 @@ import org.eclipse.xtext.parser.antlr.IAntlrTokenFileProvider;
 
 public class UtilAntlrTokenFileProvider implements IAntlrTokenFileProvider {
 
-    @Override
-    public InputStream getAntlrTokenFile() {
-        ClassLoader classLoader = getClass().getClassLoader();
-        return classLoader.getResourceAsStream("de/fraunhofer/ipa/deployment/parser/antlr/internal/InternalUtilParser.tokens");
-    }
+  @Override
+  public InputStream getAntlrTokenFile() {
+    ClassLoader classLoader = getClass().getClassLoader();
+    return classLoader.getResourceAsStream("de/fraunhofer/ipa/deployment/parser/antlr/internal/InternalUtilParser.tokens");
+  }
 }

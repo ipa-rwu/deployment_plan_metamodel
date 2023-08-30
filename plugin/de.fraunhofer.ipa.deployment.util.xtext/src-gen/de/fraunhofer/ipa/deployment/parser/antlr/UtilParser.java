@@ -13,43 +13,43 @@ import org.eclipse.xtext.parser.antlr.XtextTokenStream;
 
 public class UtilParser extends AbstractAntlrParser {
 
-    @Inject
-    private UtilGrammarAccess grammarAccess;
+  @Inject
+  private UtilGrammarAccess grammarAccess;
 
-    @Override
-    protected void setInitialHiddenTokens(XtextTokenStream tokenStream) {
-        tokenStream.setInitialHiddenTokens("RULE_WS", "RULE_ML_COMMENT", "RULE_SL_COMMENT");
-    }
+  @Override
+  protected void setInitialHiddenTokens(XtextTokenStream tokenStream) {
+    tokenStream.setInitialHiddenTokens("RULE_WS", "RULE_ML_COMMENT", "RULE_SL_COMMENT");
+  }
 
-    @Override
-    protected TokenSource createLexer(CharStream stream) {
-        return new UtilTokenSource(super.createLexer(stream));
-    }
+  @Override
+  protected TokenSource createLexer(CharStream stream) {
+    return new UtilTokenSource(super.createLexer(stream));
+  }
 
-    /**
-     * Indentation aware languages do not support partial parsing since the lexer is inherently stateful.
-     * Override and return {@code true} if your terminal splitting is stateless.
-     */
-    @Override
-    protected boolean isReparseSupported() {
-        return false;
-    }
+  /**
+   * Indentation aware languages do not support partial parsing since the lexer is inherently stateful.
+   * Override and return {@code true} if your terminal splitting is stateless.
+   */
+  @Override
+  protected boolean isReparseSupported() {
+    return false;
+  }
 
-    @Override
-    protected InternalUtilParser createParser(XtextTokenStream stream) {
-        return new InternalUtilParser(stream, getGrammarAccess());
-    }
+  @Override
+  protected InternalUtilParser createParser(XtextTokenStream stream) {
+    return new InternalUtilParser(stream, getGrammarAccess());
+  }
 
-    @Override
-    protected String getDefaultRuleName() {
-        return "Description";
-    }
+  @Override
+  protected String getDefaultRuleName() {
+    return "Description";
+  }
 
-    public UtilGrammarAccess getGrammarAccess() {
-        return this.grammarAccess;
-    }
+  public UtilGrammarAccess getGrammarAccess() {
+    return this.grammarAccess;
+  }
 
-    public void setGrammarAccess(UtilGrammarAccess grammarAccess) {
-        this.grammarAccess = grammarAccess;
-    }
+  public void setGrammarAccess(UtilGrammarAccess grammarAccess) {
+    this.grammarAccess = grammarAccess;
+  }
 }
