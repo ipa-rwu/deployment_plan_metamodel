@@ -11,12 +11,16 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference deployPlanWithRosModel.ecore#//RossystemImplementationAssignment/softwareComponents"/>
     </genClasses>
     <genClasses ecoreClass="deployPlanWithRosModel.ecore#//ConfigRosParameter">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference deployPlanWithRosModel.ecore#//ConfigRosParameter/from"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference deployPlanWithRosModel.ecore#//ConfigRosParameter/refNodeParam"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference deployPlanWithRosModel.ecore#//ConfigRosParameter/refSysParam"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference deployPlanWithRosModel.ecore#//ConfigRosParameter/to"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference deployPlanWithRosModel.ecore#//ConfigRosParameter/value"/>
     </genClasses>
     <genClasses ecoreClass="deployPlanWithRosModel.ecore#//ConfigRosSoftwareComponent">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference deployPlanWithRosModel.ecore#//ConfigRosSoftwareComponent/component"/>
+    </genClasses>
+    <genClasses ecoreClass="deployPlanWithRosModel.ecore#//DeployRossystemPlan">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference deployPlanWithRosModel.ecore#//DeployRossystemPlan/targetRossystem"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
