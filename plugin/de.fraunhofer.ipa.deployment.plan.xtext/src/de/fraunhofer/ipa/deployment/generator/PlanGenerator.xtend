@@ -53,6 +53,9 @@ class PlanGenerator extends AbstractGenerator {
     @Inject
     extension DocMakefileCompiler docMakefileCompiler
 
+    @Inject
+    extension GitLabCICompiler
+
     public var NamingHelper naming = new NamingHelper
 
     def DockerfilePath(String assignmentFolderPath){
@@ -97,9 +100,9 @@ class PlanGenerator extends AbstractGenerator {
       }
 
         def generateDockerFile(AbstractComputationAssignment assignment, AbstractDeploymentPlan plan, IFileSystemAccess2 fsa, NamingHelper namingHelper) {
-            if(assignment.runtimeType.type == RunTimeType.CONTAINER){
+            if(assignment.runtimeType === null || assignment.runtimeType.type == RunTimeType.CONTAINER){
             fsa.generateFile(namingHelper.getRelativeDockerfilePath(assignment.name),
-                assignment.dockerFileCompiler
+                assignment.dockerFileCompiler(namingHelper)
                 )
             }
         }
@@ -112,6 +115,19 @@ class PlanGenerator extends AbstractGenerator {
                 namingHelper.getGithubWorkflowPath(plan.name),
                 plan.gitHubWorkflowCompiler(
                     namingHelper.absoluteDefaultGithubReuseableWorkflowPath, namingHelper)
+            )
+        }
+
+        def generateGitlabCI(AbstractDeploymentPlan plan, IFileSystemAccess2 fsa, NamingHelper namingHelper) {
+            fsa.generateFile(
+                namingHelper.gitlabRuleTemplatePath,
+                gitlabRuleTemplate)
+            fsa.generateFile(
+                namingHelper.gitlabJobTemplatePath,
+                gitlabJobTemplate)
+            fsa.generateFile(
+                namingHelper.getGitlabCI,
+                plan.gitlabCICompiler(namingHelper)
             )
         }
 
