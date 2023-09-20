@@ -5,11 +5,12 @@ import java.util.Set
 
 class NamingHelper {
     String RelativeRootFolderPath = null
-    String AbsoluteRootPrefix = "example/src-gen"
+    String AbsoluteRootPrefix = "src-gen"
     String AbsoluteDefaultGithubWorkflowPath = "./.github/workflows"
-    String AbsoluteDefaultGitlabTemplateFolderPath = "./ci/gitlab_templates/"
+    String DefaultGitlabTemplateFolderPath = "ci/gitlab_templates"
     String GitlabRuleTemplate = "RULES.yml"
     String GitlabJobTemplate = "JOB_TEMPLATE.yml"
+    String GitlabCI = "gitlab-ci.yml"
     String ReuseableTestBuildWorkflowName = "test_code_build_image_workflow_reuse.yaml"
     String AbsoluteDefaultGithubReuseableWorkflowPath = String.format("%s/%s", AbsoluteDefaultGithubWorkflowPath, ReuseableTestBuildWorkflowName)
     String DefaultRegistry = "ghcr.io"
@@ -17,6 +18,8 @@ class NamingHelper {
     String DockerComposePath
     String CyclonConfigFileName = "cyclonedds.xml"
     String DockerComposeFileName = "docker-compose.yaml"
+    String RelativeGitLabFolderPath = null
+    String AbsoluteRootGitLabFolderPath= null
 
 
     def setRelativePlanFolderPath(String planName){
@@ -62,6 +65,14 @@ class NamingHelper {
         return String.format("%s/%s_%s.repos", getRelativeAssignmentFolderPath(assignmentName), assignmentName, executedBy)
     }
 
+    def getAptInstallFile(String assignmentName){
+        return String.format("%s.sh", assignmentName)
+    }
+
+    def getAptInstallFilePath(String assignmentName){
+        return String.format("%s/%s", getRelativeAssignmentFolderPath(assignmentName), getAptInstallFile(assignmentName))
+    }
+
     def getGithubFolderPath(){
         return String.format("%s/github", getRelativePlanFolderPath)
     }
@@ -92,16 +103,29 @@ class NamingHelper {
         return this.DockerComposeFileName
     }
 
-    def getAbsoluteDefaultGitlabTemplateFolderPath(){
-      return this.AbsoluteDefaultGitlabTemplateFolderPath
+    def getRelativeGitLabFolderPath(){
+      this.RelativeGitLabFolderPath = String.format("%s/gitlab", getRelativePlanFolderPath)
+      return this.RelativeGitLabFolderPath
     }
 
     def getGitlabRuleTemplatePath(){
-      return String.format("%s/%s", getAbsoluteDefaultGitlabTemplateFolderPath, this.GitlabRuleTemplate)
+      return String.format("%s/%s/%s", getRelativeGitLabFolderPath, this.DefaultGitlabTemplateFolderPath, this.GitlabRuleTemplate)
     }
 
     def getGitlabJobTemplatePath(){
-      return String.format("%s/%s", getAbsoluteDefaultGitlabTemplateFolderPath, this.GitlabJobTemplate)
+      return String.format("%s/%s/%s", getRelativeGitLabFolderPath, this.DefaultGitlabTemplateFolderPath, this.GitlabJobTemplate)
+    }
+
+    def getGitlabCI(){
+      return String.format("%s/%s", getRelativeGitLabFolderPath, this.GitlabCI)
+    }
+
+    def getAbsoluteRootGitLabFolderPath(){
+      if(this.RelativeGitLabFolderPath === null){
+        getRelativeGitLabFolderPath()
+      }
+      this.AbsoluteRootGitLabFolderPath = String.format("%s/%s", this.AbsoluteRootPrefix, this.RelativeGitLabFolderPath)
+      return this.AbsoluteRootGitLabFolderPath
     }
 }
 
@@ -125,10 +149,10 @@ class AnsibleNamingHelper extends NamingHelper {
     String TaskDeploySoftwareFolderName = "deploy_software/tasks"
     String TaskDeploySoftwareFolderPath
     String TaskMainFilePath
-        String TaskCheckSudoFileName = "check_become_permission.yaml"
-        String TaskCheckSudoFilePath
-        String GitignoreName = ".gitignore"
-        String GitignoreFilePath
+    String TaskCheckSudoFileName = "check_become_permission.yaml"
+    String TaskCheckSudoFilePath
+    String GitignoreName = ".gitignore"
+    String GitignoreFilePath
 
 
     def setRelativeAnsibleFolderPath(String planName){
@@ -228,6 +252,7 @@ class AnsibleNamingHelper extends NamingHelper {
         this.GitignoreFilePath = String.format("%s/%s", this.RelativeAnsibleFolderPath, this.GitignoreName)
         return this.GitignoreFilePath
     }
+
 }
 
 class DocumentNamingHelper extends NamingHelper {

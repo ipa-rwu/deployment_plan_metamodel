@@ -1,23 +1,19 @@
 package de.fraunhofer.ipa.deployment.generator
 
-import de.fraunhofer.ipa.deployment.util.ProcessorArchitectureType
-import de.fraunhofer.ipa.deployment.util.ProcessorArchitectureValue
 import deploymentPlan.AbstractComputationAssignment
-import device.ArchitectureProcessorProperty
-import targetEnvironment.ComputationDeviceInstance
 
 class DockerFileCompiler {
 
 
- def dockerFileCompiler(AbstractComputationAssignment assignment, Boolean ifRunBash)'''
+ def dockerFileCompiler(AbstractComputationAssignment assignment, NamingHelper naminghepler, Boolean ifRunBash)'''
 # syntax=docker/dockerfile:1
 ARG BUILDER_SUFFIX=
 ARG BUILDER_PREFIX=
-ARG ROS_DISTRO=
-FROM «chooseBaseImage(getProcessorArchitecture(assignment).getName)» as base
+ARG BASE_IMAGE
+FROM ${BASE_IMAGE} as base
 FROM ${BUILDER_PREFIX}builder${BUILDER_SUFFIX} as builder
 
-«stagePrebuild(ifRunBash, String.format("%s_%s.sh", assignment.name, assignment.executedBy.name))»
+«stagePrebuild(ifRunBash, naminghepler.getAptInstallFile(assignment.name))»
 
 FROM pre_build as build
 ARG CMAKE_ARGS=
@@ -40,14 +36,18 @@ FROM base as deploy
 COPY --from=install /root/ws/DEPENDS /root/ws/DEPENDS
 COPY --from=install /ros_entrypoint.sh /ros_entrypoint.sh
 COPY --from=builder workspace.bash /builder/workspace.bash
-RUN apt-get update -qq && \
-    /builder/workspace.bash install_depends /root/ws && \
-    rm -rf /var/lib/apt/lists/*
+RUN apt-get update -qq
+«IF ifRunBash»
+COPY --from=install /root/ws/src/«naminghepler.getAptInstallFile(assignment.name)» /root/ws/src/«naminghepler.getAptInstallFile(assignment.name)»
+RUN /builder/workspace.bash run_sh_files /root/ws «naminghepler.getAptInstallFile(assignment.name)»
+«ENDIF»
+RUN /builder/workspace.bash install_depends /root/ws
+RUN rm -rf /var/lib/apt/lists/*
 COPY --from=install /root/ws/install /root/ws/install
  '''
 
- def dockerFileCompiler(AbstractComputationAssignment assignment)'''
- «dockerFileCompiler(assignment, false)»
+ def dockerFileCompiler(AbstractComputationAssignment assignment, NamingHelper naminghepler)'''
+ «dockerFileCompiler(assignment, naminghepler, false)»
  '''
 
  def stagePrebuild(Boolean ifRunBash, String bashName)'''
@@ -70,38 +70,4 @@ COPY --from=install /root/ws/install /root/ws/install
  def stagePrebuild()'''
  «stagePrebuild(false, null)»
  '''
-
- def getProcessorArchitecture(AbstractComputationAssignment cas){
-    for(cp : (cas.executedBy as ComputationDeviceInstance).configDeviceProperty){
-        if(cp.refProperty instanceof ArchitectureProcessorProperty){
-            if(cp.value instanceof ProcessorArchitectureValue){
-            var architecture = (cp.value as ProcessorArchitectureValue).value
-            System.out.println(String.format("getProcessorArchitecture:%s", architecture.getName))
-            return architecture
-            }
-        }
-
-    }
-
- }
-
- def chooseBaseImage(String arch){
-    switch (arch) {
-        case ProcessorArchitectureType.X86.getName: {
-            "public.ecr.aws/docker/library/ros:${ROS_DISTRO}-ros-core"
-        }
-        case ProcessorArchitectureType.ARM64V8.getName: {
-            "arm64v8/ros:${ROS_DISTRO}-ros-core"
-        }
-        case ProcessorArchitectureType.ARM64.getName: {
-            "arm64/ros:${ROS_DISTRO}-ros-core"
-        }
-                case ProcessorArchitectureType.ARM32.getName: {
-            "arm32/ros:${ROS_DISTRO}-ros-core"
-        }
-        default: {
-            throw new IllegalArgumentException("Undefined Processor Architecture: " + arch)
-        }
-    }
- }
 }
