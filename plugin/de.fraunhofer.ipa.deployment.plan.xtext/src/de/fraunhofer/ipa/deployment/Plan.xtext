@@ -98,6 +98,7 @@ ContainerRuntime returns ContainerRuntime:
     {ContainerRuntime}
     INDENT
     'type:' type=RunTimeType
+    ('registry:' registry=EString)?
     ('resource:'
      INDENT
         PreListElement opertingSystemResource+=OperatingSystemResouce
