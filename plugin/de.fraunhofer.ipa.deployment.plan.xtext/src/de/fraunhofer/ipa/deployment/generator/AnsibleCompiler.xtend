@@ -37,14 +37,14 @@ def playbook(AbstractDeploymentPlan plan, AnsibleNamingHelper ansibleNaming)'''
 - name: «plan.name»_«compDev.name»
   hosts: «compDev.name»
   vars:
-      docker_compose_dir: «compDev.name»
-      ori_docker_compose_dir_path: "../{{ docker_compose_dir }}"
-      «{ansibleNaming.setDestDeployFolderPath("{{ ansible_user }}", plan.name); ""}»
-      dest_docker_compose_dir_path: "«ansibleNaming.destDeployFolderPath»/{{ docker_compose_dir }}"
-      ansible_become_pass: "{{ «compDev.name»_sudo }}"
+    docker_compose_dir: «compDev.name»
+    ori_docker_compose_dir_path: "../{{ docker_compose_dir }}"
+    «{ansibleNaming.setDestDeployFolderPath("{{ ansible_user }}", plan.name); ""}»
+    dest_docker_compose_dir_path: "«ansibleNaming.destDeployFolderPath»/{{ docker_compose_dir }}"
+    ansible_become_pass: "{{ «compDev.name»_sudo }}"
   roles:
-      - common
-      - «ansibleNaming.appicationRoleName»
+    - common
+    - «ansibleNaming.appicationRoleName»
 «ENDFOR»
 '''
 
@@ -52,45 +52,54 @@ def taskDeploySoftware(NamingHelper naming)'''
 - name: Make sure docker-compose file is present
   become: true
   file:
-      path: "{{ ori_docker_compose_dir_path }}/{{ item }}"
-      state: directory
-      mode: "0755"
+    path: "{{ ori_docker_compose_dir_path }}/{{ item }}"
+    state: directory
+    mode: "0755"
   loop:
-      - «naming.cyclonConfigFileName»
-      - «naming.dockerComposeFileName»
+    - «naming.cyclonConfigFileName»
+    - «naming.dockerComposeFileName»
 
 - name: Make sure destination dir exists
   become: true
   file:
-      path: "{{ dest_docker_compose_dir_path }}"
-      state: directory
-      owner: "{{ ansible_user }}"
-      group: "{{ ansible_user }}"
+    path: "{{ dest_docker_compose_dir_path }}"
+    state: directory
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
 
 - name: Copy compose files
   ansible.builtin.copy:
-      src: "{{ ori_docker_compose_dir_path }}/{{ item }}"
-      dest: "{{ dest_docker_compose_dir_path }}/{{ item }}"
-      owner: "{{ ansible_user }}"
-      group: "{{ ansible_user }}"
-      mode: "0644"
+    src: "{{ ori_docker_compose_dir_path }}/{{ item }}"
+    dest: "{{ dest_docker_compose_dir_path }}/{{ item }}"
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    mode: "0644"
   loop:
-      - cyclonedds.xml
-      - docker-compose.yaml
+    - cyclonedds.xml
+    - docker-compose.yaml
 
 - name: Tear down existing services
   community.general.docker_compose:
-      project_src: "{{ dest_docker_compose_dir_path }}"
-      state: absent
+    project_src: "{{ dest_docker_compose_dir_path }}"
+    state: absent
+
+- name: touch .docker.xauth only when it does not exists
+  file:
+    path: /tmp/.docker.xauth
+    state: touch
+    mode: u+rw,g-rw,o-rw
+    modification_time: preserve
+    access_time: preserve
 
 - name: Create and start services
   community.general.docker_compose:
-      project_src: "{{ dest_docker_compose_dir_path }}"
+    project_src: "{{ dest_docker_compose_dir_path }}"
+    pull: true
   register: output
 
 - name: Debug output
   ansible.builtin.debug:
-      var: output
+    var: output
 '''
 
 def taskCheckSudo()'''
@@ -114,73 +123,85 @@ def taskCheckInstallDocker()'''
 - name: Remove files
   become: true
   ansible.builtin.file:
-      state: absent
-      path: "{{ item }}"
+    state: absent
+    path: "{{ item }}"
   with_items:
-      - /etc/apt/keyrings/docker.gpg
-      - /etc/apt/sources.list.d/docker.list
-      - /etc/apt/sources.list.d/download_docker_com_linux_ubuntu.list
+    - /etc/apt/keyrings/docker.gpg
+    - /etc/apt/sources.list.d/docker.list
+    - /etc/apt/sources.list.d/download_docker_com_linux_ubuntu.list
   when: docker_valid.failed
 
 - name: Install dependencies
   apt:
-      name: "{{ packages }}"
-      state: present
-      update_cache: yes
+    name: "{{ packages }}"
+    state: present
+    update_cache: yes
   vars:
-      packages:
-          - apt-transport-https
-          - ca-certificates
-          - curl
-          - software-properties-common
-          - gnupg-agent
+    packages:
+      - apt-transport-https
+      - ca-certificates
+      - curl
+      - software-properties-common
+      - gnupg-agent
   become: true
   when: docker_valid.failed
 
 - name: Import PGP key
   become: true
   apt_key:
-      url: "https://download.docker.com/linux/{{ ansible_distribution | lower }}/gpg"
-      state: present
+    url: "https://download.docker.com/linux/{{ ansible_distribution | lower }}/gpg"
+    state: present
   when: docker_valid.failed
 
 - name: Add Docker repository
   become: true
   apt_repository:
-      repo: "deb [arch=amd64] https://download.docker.com/{{ ansible_system | lower }}/{{ ansible_distribution | lower }} {{ ansible_distribution_release }} stable"
-      state: present
-      update_cache: yes
-      mode: 0644
-      validate_certs: yes
+    repo: "deb [arch=amd64] https://download.docker.com/{{ ansible_system | lower }}/{{ ansible_distribution | lower }} {{ ansible_distribution_release }} stable"
+    state: present
+    update_cache: yes
+    mode: 0644
+    validate_certs: yes
   when: docker_valid.failed
 
 - name: Install Docker-CE
   become: true
   apt:
-      name: "{{ item }}"
-      state: latest
-      autoclean: yes
-      cache_valid_time: 86400
+    name: "{{ item }}"
+    state: latest
+    autoclean: yes
+    cache_valid_time: 86400
   loop:
-      - docker-ce
-      - docker-ce-cli
-      - containerd.io
+    - docker-ce
+    - docker-ce-cli
+    - containerd.io
   when: docker_valid.failed
 
 - name: Ensure user is in Docker group
   become: true
   user:
-      name: "{{ ansible_user }}"
-      groups: docker
-      append: yes
+    name: "{{ ansible_user }}"
+    groups: docker
+    append: yes
   when: docker_valid.failed
 
 - name: Ensure Docker dependensies are installed
   ansible.builtin.pip:
-      name:
-          - docker
-          - docker-compose
+    name:
+      - docker
+      - docker-compose
   when: docker_valid.failed
+
+- name: Install python3-docker
+  ansible.builtin.apt:
+    name: python3-docker
+    state: present
+
+- name: Ensure docker-compose are installed
+  ansible.builtin.pip:
+    name:
+      - docker-compose
+    state: present
+«""»
 '''
 
     def gitignore()'''
