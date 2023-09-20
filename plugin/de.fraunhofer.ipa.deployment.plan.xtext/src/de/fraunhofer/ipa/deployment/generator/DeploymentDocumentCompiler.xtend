@@ -207,6 +207,10 @@ If you did not install Ansible yet, you can install it as follows:
 #. Fill an inventory by adding the IP address, username (default ``anisble``) and also add IP address in ``/etc/ansible/hosts``.
    The following example adds the IP addresses of three virtual machines in KVM:
 
+   .. code-block:: bash
+
+   192.168.1.11 ansible_user=user_name
+
 #. Verify the hosts in your inventory.
 
    .. code-block:: bash
