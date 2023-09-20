@@ -3,19 +3,18 @@
  */
 package de.fraunhofer.ipa.deployment.generator
 
+import deployPlanWithRosModel.RossystemImplementationAssignment
+import deploymentPlan.AbstractComputationAssignment
+import deploymentPlan.AbstractDeploymentPlan
+import java.util.ArrayList
+import java.util.Arrays
+import java.util.List
+import javax.inject.Inject
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
-import deploymentPlan.AbstractDeploymentPlan
-import de.fraunhofer.ipa.deployment.generator.PlanGenerator
-import javax.inject.Inject
-import deploymentPlan.AbstractComputationAssignment
-import java.util.List
-import deployPlanWithRosModel.RossystemImplementationAssignment
-import deployPlanWithRosModel.ConfigRosSoftwareComponent
-import java.util.stream.Collectors
-import deployPlanWithRosModel.DeploymentPlanWithRosModel
+import de.fraunhofer.ipa.deployment.util.RunTimeType
 
 /**
  * Generates code from your model files on save.
@@ -36,6 +35,9 @@ class PlanWithRosmodelGenerator extends AbstractGenerator {
     @Inject
     extension RepoInstallCompilerWithRosmodel
 
+    @Inject
+    extension DockerFileCompiler
+
   var NamingHelperWithRosmodel extendedNamingHelper = new NamingHelperWithRosmodel
 
 
@@ -50,12 +52,13 @@ class PlanWithRosmodelGenerator extends AbstractGenerator {
         System.out.printf("plan: %s\n", plan.toString)
         extendedNamingHelper.origionNamingHelper.relativePlanFolderPath = plan.name
         extendedNamingHelper.assignmentRossystemRepoInfoMap = plan
+        planGen.generateGitlabCI(plan, fsa, extendedNamingHelper.origionNamingHelper)
         planGen.generateWorkflow(plan, fsa, extendedNamingHelper.origionNamingHelper)
         planGen.generateAnsible(plan, fsa, extendedNamingHelper.origionNamingHelper)
         var assignments = plan.realize.realizations
         for (assignment : assignments){
           System.out.printf("assignment: %s\n", assignment.name)
-           planGen.generateDockerFile(assignment, plan, fsa, extendedNamingHelper.origionNamingHelper)
+           generateDockerFile(assignment, plan, fsa, extendedNamingHelper)
            generateRosInstall(assignment, plan, fsa, extendedNamingHelper)
         }
         generateDockerComposeFile(assignments, fsa, extendedNamingHelper.origionNamingHelper)
@@ -63,6 +66,22 @@ class PlanWithRosmodelGenerator extends AbstractGenerator {
 
       }
     }
+
+ def generateDockerFile(AbstractComputationAssignment assignment, AbstractDeploymentPlan plan, IFileSystemAccess2 fsa, NamingHelperWithRosmodel namingHelper) {
+          if(assignment.runtimeType === null || assignment.runtimeType.type == RunTimeType.CONTAINER){
+            if(namingHelper.assignmentRossystemRepoInfoMap.get(assignment).filter[it.checkIfReleased == true].size() > 0){
+               fsa.generateFile(namingHelper.origionNamingHelper.getRelativeDockerfilePath(assignment.name),
+                assignment.dockerFileCompiler(namingHelper.origionNamingHelper, true)
+              )
+            }
+            else{
+              fsa.generateFile(namingHelper.origionNamingHelper.getRelativeDockerfilePath(assignment.name),
+              assignment.dockerFileCompiler(namingHelper.origionNamingHelper)
+              )
+            }
+
+          }
+      }
 
   def generateDockerComposeFile(List<AbstractComputationAssignment> assignments, IFileSystemAccess2 fsa, NamingHelper namingHelper) {
     var assPerExecutors = collectAssignmentPerExecutor(assignments)
@@ -77,15 +96,20 @@ class PlanWithRosmodelGenerator extends AbstractGenerator {
 
   def generateRosInstall(AbstractComputationAssignment assignment, AbstractDeploymentPlan plan, IFileSystemAccess2 fsa, NamingHelperWithRosmodel namingHelper) {
     if(assignment instanceof RossystemImplementationAssignment){
-        System.out.println("generateRosInstall")
-
-        var scs = assignment.softwareComponents
-        var systems = scs.map[it as ConfigRosSoftwareComponent].stream.map[component].collect(Collectors.toList())
-        fsa.generateFile(
-                namingHelper.origionNamingHelper.getReposFile(assignment.name, assignment.executedBy.name),
+        if(namingHelper.assignmentRossystemRepoInfoMap.get(assignment).filter[it.checkIfReleased == false].size() > 0){
+          fsa.generateFile(
+            namingHelper.origionNamingHelper.getReposFile(assignment.name, assignment.executedBy.name),
             assignment.RepoInstallCompiler(namingHelper)
-        )
-      }
-    }
+          )
+        }
+        if(namingHelper.assignmentRossystemRepoInfoMap.get(assignment).filter[it.checkIfReleased == true].size() > 0){
+          fsa.generateFile(
+            namingHelper.origionNamingHelper.getAptInstallFilePath(assignment.name),
+            assignment.AptInstallCompiler(namingHelper)
+          )
+          runSubprocess(new ArrayList<String>(Arrays.asList("chmod", "777", namingHelper.origionNamingHelper.getAptInstallFilePath(assignment.name))));
+        }
+              }
 
+    }
 }
