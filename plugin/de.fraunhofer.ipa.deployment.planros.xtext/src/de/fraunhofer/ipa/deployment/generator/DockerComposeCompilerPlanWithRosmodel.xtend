@@ -11,6 +11,8 @@ import deployPlanWithRosModel.ConfigRosParameter
 import deploymentPlan.AbstractComputationAssignment
 import java.util.List
 import targetEnvironment.ComputationDeviceInstance
+import deploymentPlan.ContainerRuntime
+import deploymentPlan.RosMiddleware
 
 class DockerComposeCompilerPlanWithRosmodel extends DockerComposeCompiler{
 
@@ -29,7 +31,11 @@ services:
 «var connectedCommunicatedComputationDevices = getCommunicationConnectionPerAssignment(assignment, compDev)»
   «var paramList = covertCollectExecutionEnvtoString(collectExecutionEnv(assignment))»
   «assignment.name»:
+    «IF  assignment.runtimeType !== null && (assignment.runtimeType as ContainerRuntime).registry !== null»
+    image: «(assignment.runtimeType as ContainerRuntime).registry»/«assignment.name»_«(assignment.middleware as RosMiddleware).value.getName»:«assignment.version»
+    «ELSE»
     image: ${Registry}/«assignment.name»:«assignment.version»
+    «ENDIF»
     volumes:
       - ./cyclonedds.xml:/cyclonedds.xml
     networks:
@@ -39,6 +45,7 @@ services:
     «connectedCommunicatedComputationDevices.addDevice»
     environment:
       - NETINTERFACE=eth0
+      # for application
       «FOR param : paramList»
       - «param.key»=«param.value»
       «ENDFOR»
