@@ -12,6 +12,7 @@ import implementationDescription.SoftwareComponent
 import java.util.ArrayList
 import java.util.List
 import javax.inject.Inject
+import javax.sound.sampled.BooleanControl.Type
 
 class RepoInfo{
     String name
@@ -19,6 +20,16 @@ class RepoInfo{
     String type
     String version
     Boolean released
+    Boolean accessible
+
+    def updateInfo(String name, String type, String url, String version, Boolean released, Boolean accessible){
+        this.name = name
+        this.url = url
+        this.type = type
+        this.version = version
+        this.released = released
+        this.accessible = accessible
+    }
 
     def updateInfo(String name, String type, String url, String version, Boolean released){
         this.name = name
@@ -26,6 +37,7 @@ class RepoInfo{
         this.type = type
         this.version = version
         this.released = released
+        this.accessible = false
     }
 
     def updateInfo(String name, String type, String url, String version){
@@ -34,6 +46,7 @@ class RepoInfo{
         this.type = type
         this.version = version
         this.released = false
+        this.accessible = false
     }
 
     def getName(){
@@ -61,9 +74,17 @@ class RepoInfo{
         this.name = name
     }
 
+    def getAccessible(){
+      return this.accessible
+    }
+
+    def setAccessible(Boolean accessible){
+      this.accessible = accessible
+    }
+
     def print(){
-      return String.format("RepoInfo: name: %s, url: %s, version: %s, released: %b\n",
-        this.name, this.url, version, released)
+      return String.format("RepoInfo: name: %s, url: %s, version: %s, released: %b, accessible: %b",
+        this.name, this.url, version, released, accessible)
     }
 }
 
@@ -80,7 +101,7 @@ repositories:
 «FOR target: targets.collectSoftwareComponents»
 «var imp = target as SoftwareComponent»
 «var repo_info = getRepoInfo(imp)»
-  «createRepo(repo_info.name, repo_info.type, repo_info.url, repo_info.version)»
+  «createRepo(repo_info.name, repo_info.type, repo_info.url, repo_info.version, repo_info.accessible)»
 «ENDFOR»
 '''
 
@@ -100,17 +121,13 @@ repositories:
     «var newRepos = repos.filter[it.checkIfReleased==false]»
     repositories:
       «FOR repo_info : newRepos»
-      «createRepo(repo_info.name, "git", repo_info.url, repo_info.version)»
+      «createRepo(repo_info.name, "git", repo_info.url, repo_info.version, repo_info.accessible)»
     «ENDFOR»
     '''
 
-    def AptInstallScriptCompiler(List<RepoInfo> repos, AbstractComputationAssignment assignment) '''
-    «var rosdistro= (assignment.middleware as RosMiddleware).value.getName»
-    «var os = getOSFromRosDistro(getOS(assignment).name, rosdistro)»
+    def AptInstallScriptCompiler(List<RepoInfo> repos, String rosdistro, OSInfo os) '''
     «FOR repo_info : repos»
-    «IF repo_info.checkIfReleased»
-    «getInstallTool(os)» install ros-«rosdistro»-«CaseFormat.LOWER_UNDERSCORE.to(CaseFormat.LOWER_HYPHEN, repo_info.name)» -qq -y
-    «ENDIF»
+    «getInstallTool(os)» install ros-«rosdistro»-«CaseFormat.LOWER_UNDERSCORE.to(CaseFormat.LOWER_HYPHEN, repo_info.name)» --no-install-recommends -qq -y
     «ENDFOR»
     '''
 
@@ -132,10 +149,14 @@ repositories:
         «ENDFOR»
         '''
 
-     def createRepo (String repoName, String type, String url, String version)'''
+     def createRepo (String repoName, String type, String url, String version, Boolean accessible)'''
 «repoName»:
   type: «type»
+  «IF !accessible && url.contains("gitlab")»
+  url: https://gitlab-ci-token:${CI_JOB_TOKEN}@«url.replace("https://", "")»
+  «ELSE»
   url: «url»
+  «ENDIF»
   «IF version!==null»
   version: «version»
 

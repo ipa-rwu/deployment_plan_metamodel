@@ -48,6 +48,19 @@ import targetEnvironment.ConfigConnectionProperty
 import targetEnvironment.ConnectedDevice
 import targetEnvironment.DeviceInstance
 import targetEnvironment.TargetDeployEnviroment
+import java.net.URI
+import java.net.http.HttpRequest
+import java.net.http.HttpClient
+import java.net.http.HttpResponse
+import com.google.gson.Gson
+import com.google.gson.GsonBuilder
+import com.google.gson.JsonArray
+import com.google.gson.annotations.SerializedName
+import com.google.gson.reflect.TypeToken
+import javax.management.RuntimeErrorException
+import java.util.stream.Collector
+import device.ArchitectureProcessorProperty
+import de.fraunhofer.ipa.deployment.util.ProcessorArchitectureType
 
 class OSInfo{
     String name
@@ -187,14 +200,40 @@ class NetworkInfo {
     }
 }
 
+class GithubResponse {
+    int id
+    String name
+    String full_name
+
+    @SerializedName("private")
+    Boolean if_private
+
+    override toString() {
+      super.toString()
+      return String.format("id: %d, name: %s, full_name: %s, private: %b", id, name, full_name, if_private)
+    }
+
+    def get_if_private(){
+      return this.if_private
+    }
+}
+
+class GitlabResponse {
+    int id
+    String path_with_namespace
+
+    override toString() {
+      super.toString()
+      return String.format("id: %d, path_with_namespace: %s", id, path_with_namespace)
+    }
+
+    def get_path_with_namespace(){
+      return this.path_with_namespace
+    }
+
+}
 
 class DeploymentHelper {
-
-
-
-
-
-
     def <T> List<T> getListWithoutDuplicates(List<T> list, Function<T, ?>... keyFunctions) {
     var List<T> result = new ArrayList
     var Set<List<?>> set = new HashSet
@@ -231,7 +270,7 @@ class DeploymentHelper {
 
         if(output.size>0){
             if(debug){
-                    System.out.println(output.toList.toString)
+                    System.out.printf("runSubprocess: get success output: %s\n", output.toList.toString)
                 }
             res.addResult(true, output.toList)
             return res
@@ -244,7 +283,7 @@ class DeploymentHelper {
         }
         if(output.size>0){
             if(debug){
-                    System.out.println(output.toList.toString)
+                    System.out.printf("runSubprocess: get error output: %s\n",output.toList.toString)
                 }
             res.addResult(false, output.toList)
             return res
@@ -359,8 +398,6 @@ def parserNetworkInfo(ConnectedDevice connectDev){
             }
             if(property.refConnectionProperty instanceof GatewayNetworkProperty){
                 netInfo.gateway = property.value.valueFromPropertyValue
-//                System.out.println(String.format("property: %s", property.value))
-
             }
         }
         netInfo.networkType = networkConn.type
@@ -439,24 +476,6 @@ def getAbstractDeviceInstanceType(AbstractDeviceInstance dev){
     }
 }
 
-def getRepoInfo(String repoInRosModel){
-    val repo_info = new RepoInfo
-
-    if(repoInRosModel.indexOf(":", repoInRosModel.indexOf(":") + 1) > 1) {
-        val url = repoInRosModel.substring(0,repoInRosModel.lastIndexOf(':'))
-        repo_info.updateInfo(
-            url.substring(url.lastIndexOf("/") + 1).replace(".git",""),
-            'git',
-            url,
-            repoInRosModel.substring(repoInRosModel.lastIndexOf(':')+ 1)
-        )
-    }
-    else {
-        repo_info.updateInfo(repoInRosModel.substring(repoInRosModel.lastIndexOf("/") + 1).replace(".git",""), 'git', repoInRosModel.replace(".git",""), null)
-    }
-    return repo_info
-}
-
 def getRepostioryTypeName(EObject repoType){
     if(repoType instanceof GitRepositoryTypeImpl){
         return "git"
@@ -469,10 +488,17 @@ def getRepoNameFromUrl(String url){
 
 def getRepoInfo(SoftwareComponent imp){
     val repo_info = new RepoInfo
+    var url = imp.repository.url
+    if(imp.repository.type instanceof GitRepositoryTypeImpl){
+      if(!url.substring(url.length -4).equals(".git")){
+        url = String.format("%s.git", url)
+      }
+    }
+
     repo_info.updateInfo(
         getRepoNameFromUrl(imp.repository.url),
         getRepostioryTypeName(imp.repository.type),
-        imp.repository.url,
+        url,
         imp.repository.version
     )
     return repo_info
@@ -482,16 +508,20 @@ def getReleaseInfo(String[] packNames, String rosdistro) {
     var List<String> commands = new ArrayList<String>(Arrays.asList("dhelp", "repo", "-pkg"))
     commands.addAll(packNames)
     commands.addAll(#["-d", rosdistro])
-    System.out.printf("run dhelp commands: %s", commands.toString)
+    System.out.printf("run dhelp commands: %s\n", commands.toString)
     var List<RepoInfo> repo_infos = new ArrayList
-    for(res: runSubprocess(commands, true).output){
+    var process_res = runSubprocess(commands, true)
+    if(process_res.booleanResult){
+      for(res: process_res.output){
         var temp = res.split(" ")
-        System.out.println(String.format("result from runSubprocess: %s, version: %s", temp.toList.toString, temp.get(2)))
         val repo_info = new RepoInfo
-        var url = temp.get(1)
-        repo_info.updateInfo(temp.get(0), 'git', url.replace(".git",""), temp.get(2), true)
-        repo_infos.add(repo_info)
-    }
+          var url = temp.get(1)
+          repo_info.updateInfo(temp.get(0), 'git', url, temp.get(2), true, true)
+          repo_infos.add(repo_info)
+        }
+      }
+    System.out.println("Finishing dhelp commands")
+
     return repo_infos
 }
 
@@ -515,4 +545,123 @@ def getDeviceVolumes(ConnectedDevice connectedComputationDevice){
     }
 }
 
+def determinIfGitlab(String repo_url){
+  if(repo_url.toLowerCase.contains("gitlab")){
+    return true
+  }
+  return false
+}
+
+def determinIfGithub(String repo_url){
+  if(repo_url.toLowerCase.contains("github")){
+    return true
+  }
+  return false
+}
+
+
+ def checkRepoAccessible(String repo_url) {
+    var tmp_repo_url = repo_url.replace(".git", "")
+    var target_uri = new URI("")
+    if(!repo_url.determinIfGithub && !repo_url.determinIfGitlab){
+      throw new RuntimeException(String.format("%s is not either gitlab repo or github repo", repo_url))
+    }
+    else if(repo_url.determinIfGithub){
+      var tmp =  tmp_repo_url.split("https://github.com/")
+      if(tmp.length < 2){
+        throw new RuntimeException(String.format("%s did't start with 'https://github.com/'", repo_url))
+      }
+      var uri = String.format("https://api.github.com/repos/%s", tmp.get(tmp.length-1))
+//      System.out.printf("Github uri: %s\n", uri)
+      target_uri = new URI(uri)
+    }
+    else if(repo_url.determinIfGitlab){
+      tmp_repo_url = repo_url.replace("https://", "")
+      var tmp =  tmp_repo_url.split("/", 2)
+//      System.out.printf("Gitlab repo_url: %s\n", tmp_repo_url)
+      var uri = String.format("https://%s/api/v4/projects", tmp.get(0))
+      target_uri = new URI(uri)
+    }
+    else{
+      throw new RuntimeException(String.format("%s is not either gitlab repo or github repo", repo_url))
+    }
+
+    var httpRequest = HttpRequest.newBuilder()
+            .uri(target_uri)
+            .GET()
+            .build();
+    var httpClient = HttpClient.newHttpClient();
+    var response = httpClient.send(httpRequest, HttpResponse.BodyHandlers.ofString());
+//    System.out.println(response.body)
+
+    var gson = new GsonBuilder()
+                .setPrettyPrinting()
+                .create()
+    if(repo_url.determinIfGithub){
+      var response_in_json = gson.fromJson(
+        response.body,
+        GithubResponse)
+//      System.out.printf("response for github: %s\n",response_in_json.toString)
+
+      if(response_in_json.get_if_private === null){
+        System.out.printf(String.format("Github API rate limit exceeded now, assume it is private repository"))
+        return false
+      }
+      if(response_in_json.get_if_private){
+        return false
+      }
+      else{
+        return true
+      }
+    }
+    else if(repo_url.determinIfGitlab){
+      var GitlabResponseListType = new TypeToken<ArrayList<GitlabResponse>>(){}.getType();
+      var List<GitlabResponse> response_in_json = gson.fromJson(response.body, GitlabResponseListType)
+//      System.out.printf("response for gitlab: %s\n",response_in_json.toString)
+
+      tmp_repo_url = repo_url.replace("https://", "")
+      val tmp =  tmp_repo_url.split("/", 2)
+
+      if(response_in_json
+      .filter[it.get_path_with_namespace.equals(tmp.get(1))]
+      .length > 0){
+        return true
+      }
+      else{
+        return false
+      }
+    }
+  }
+
+  def getProcessorArchitecture(AbstractComputationAssignment cas){
+    for(cp : (cas.executedBy as ComputationDeviceInstance).configDeviceProperty){
+        if(cp.refProperty instanceof ArchitectureProcessorProperty){
+            if(cp.value instanceof ProcessorArchitectureValue){
+            var architecture = (cp.value as ProcessorArchitectureValue).value
+            return architecture
+            }
+        }
+
+    }
+ }
+
+  def chooseBaseImage(String arch){
+    switch (arch) {
+        case ProcessorArchitectureType.X86.getName: {
+            "public.ecr.aws/docker/library/ros"
+        }
+        case ProcessorArchitectureType.ARM64V8.getName: {
+            "arm64v8/ros"
+        }
+        case ProcessorArchitectureType.ARM64.getName: {
+            "arm64/ros"
+        }
+                case ProcessorArchitectureType.ARM32.getName: {
+            "arm32/ros"
+        }
+        default: {
+            throw new IllegalArgumentException("Undefined Processor Architecture: " + arch)
+        }
+    }
+ }
 }

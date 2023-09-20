@@ -41,11 +41,12 @@ class NamingHelperWithRosmodel {
           var List<RepoInfo> RossystemRepoInfosPerAssignment =  new ArrayList
           if(assignment instanceof RossystemImplementationAssignment){
           for(sys: assignment.softwareComponents.map[it as ConfigRosSoftwareComponent].map[component]){
-              var repos = extendedDeployHelper.getRepoinfosFromRossystem(sys, os, rosdistro)
+              // from launch file also define repo
+              var repos = extendedDeployHelper.getRepoinfosFromRossystemIncludeLaunchFile(sys, os, rosdistro)
               RossystemRepoInfosPerAssignment.addAll(repos)
             }
             this.AssignmentRossystemRepoInfoMap.put(assignment, RossystemRepoInfosPerAssignment)
-            RossystemRepoInfosPerAssignment.stream.forEach[System.out.printf("Finial results: %s", it.print)]
+//            RossystemRepoInfosPerAssignment.stream.forEach[System.out.printf("Finial results: %s", it.print)]
           }
 
         }
