@@ -33,6 +33,9 @@ import targetEnvironment.ConfigDeviceProperty
 import targetEnvironment.ConnectedDevice
 import targetEnvironment.DeviceInstance
 import targetEnvironment.TargetDeployEnviroment
+import deploymentPlan.ContainerRuntime
+import deploymentPlan.RosMiddleware
+import ros.Parameter
 
 class DockerComposeCompiler {
 
@@ -54,7 +57,11 @@ services:
 «var connectedCommunicatedComputationDevices = getCommunicationConnectionPerAssignment(assignment, compDev)»
   «var paramList = covertCollectExecutionEnvtoString(collectExecutionEnv(assignment))»
   «assignment.name»:
+    «IF  assignment.runtimeType !== null && (assignment.runtimeType as ContainerRuntime).registry !== null»
+    image: «(assignment.runtimeType as ContainerRuntime).registry»/«assignment.name»_«(assignment.middleware as RosMiddleware).value.getName»:«assignment.version»
+    «ELSE»
     image: ${Registry}/«assignment.name»:«assignment.version»
+    «ENDIF»
     volumes:
       - ./cyclonedds.xml:/cyclonedds.xml
     networks:
@@ -64,6 +71,7 @@ services:
     «connectedCommunicatedComputationDevices.addDevice»
     environment:
       - NETINTERFACE=eth0
+      # for application
       «FOR param : paramList»
       - «param.key»=«param.value»
       «ENDFOR»
@@ -212,6 +220,9 @@ def covertCollectExecutionEnvtoString(Map<EObject, PropertyValue> res){
   for(Map.Entry<EObject, PropertyValue> entry : res.entrySet()){
     if(entry.key instanceof RosParameterImpl){
         converted.add(new Pair((entry.key as RosParameter).name, getValueFromPropertyValue(entry.value)))
+    }
+    else if(entry.key instanceof Parameter){
+      converted.add(new Pair((entry.key as Parameter).name, getValueFromPropertyValue(entry.value)))
     }
     else if(entry.key instanceof ExecutionParameter){
             converted.add(new Pair((entry.key as ExecutionParameter).name, getValueFromPropertyValue(entry.value)))
