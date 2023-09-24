@@ -64,6 +64,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="ecore:EEnum ../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//RunTimeType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ContainerRuntime" eSuperTypes="#//AbstractRuntime">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="registry" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="opertingSystemResource"
         upperBound="2" eType="ecore:EClass ../../de.fraunhofer.ipa.deployment.util/model/util.ecore#//OperatingSystemResouce"
         containment="true"/>

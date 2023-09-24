@@ -14,7 +14,8 @@ Require-Bundle: de.fraunhofer.ipa.targetEnvironment,
  de.fraunhofer.ipa.deployment.util.xtext,
  org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
  org.eclipse.xtext.util,
- org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)",
+ com.google.gson;bundle-version="2.9.1"
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: de.fraunhofer.ipa.deployment.generator,
  de.fraunhofer.ipa.deployment.parser.antlr.lexer,
@@ -26,4 +27,5 @@ Export-Package: de.fraunhofer.ipa.deployment.generator,
  de.fraunhofer.ipa.deployment.parser.antlr.internal,
  de.fraunhofer.ipa.deployment.scoping,
  de.fraunhofer.ipa.deployment.formatting2
-Import-Package: org.apache.log4j
+Import-Package: com.google.gson;version="2.9.1",
+ org.apache.log4j

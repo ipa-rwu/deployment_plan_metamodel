@@ -1,0 +1,39 @@
+ImplementationDescription:
+  name: ur5e_robot_driver
+  includeSoftwareComponent:
+    - name: ur_robot_driver
+      repository:
+        type: git
+        url: "https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver.git"
+        version: humble
+      executionRequirement:
+        deviceRequirement:
+          - type: UR5E
+            HWSWParemeter:
+              - name: robot_ip
+                kind: AttributeKind
+              - name: ur_type
+                kind: AttributeKind
+        softwareConfigurationParameter:
+          - name: launch_rviz
+            kind: AttributeKind
+---
+ImplementationDescription:
+  name: realsense_driver
+  includeSoftwareComponent:
+    - name: realsense2_camera_driver
+      repository:
+        type: git
+        url: "https://github.com/IntelRealSense/realsense-ros"
+        version: "ros2-development"
+      executionRequirement:
+        deviceRequirement:
+          - type: Realsense_camera
+            HWSWParemeter:
+              - name: camera_name
+                kind: AttributeKind
+              - name: device_type
+                kind: AttributeKind
+        softwareConfigurationParameter:
+          - name: publish_tf
+            kind: AttributeKind

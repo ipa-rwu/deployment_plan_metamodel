@@ -53,6 +53,8 @@ Container : 'container';
 
 DeployTo : 'deployTo:';
 
+Registry : 'registry:';
+
 Resource : 'resource:';
 
 Ethernet : 'Ethernet';

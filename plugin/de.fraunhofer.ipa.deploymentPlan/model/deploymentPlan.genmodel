@@ -57,6 +57,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute deploymentPlan.ecore#//AbstractRuntime/type"/>
     </genClasses>
     <genClasses ecoreClass="deploymentPlan.ecore#//ContainerRuntime">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute deploymentPlan.ecore#//ContainerRuntime/registry"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference deploymentPlan.ecore#//ContainerRuntime/opertingSystemResource"/>
     </genClasses>
   </genPackages>

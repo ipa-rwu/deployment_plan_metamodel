@@ -1,0 +1,101 @@
+TargetDeployEnviroment:
+  name: ur5e_cell_with_realsense
+  includeDevice:
+    computationDevice:
+      - name: rwu_laptop
+        refDeviceType: PC
+        configDeviceProperty:
+          - name: "os_name"
+            from: "PC.operting_system.os_name"
+            value: ubuntu
+          - name: "os_version"
+            from: "PC.operting_system.os_version"
+            value: focal
+          - name: "processor_architecture"
+            from: "PC.processor.processor_architecture"
+            value: x86
+    device:
+      - name: arm
+        refDeviceType: UR5E
+        configDeviceProperty:
+          - name: "device_type"
+            from: "UR5E.device_info.type"
+            value: UR5E
+      - name: gripper
+        refDeviceType: EGP50
+      - name: camera_realsense
+        refDeviceType: Realsense_camera
+        configDeviceProperty:
+          - name: device_type
+            from: "Realsense_camera.camera_info.device_type"
+            value: D435
+  configConnection:
+    - name: connect_gripper_arm
+      connectDevice:
+        - refDevice: arm
+          refConnection: "UR5E.io_tip"
+          configuration:
+            - name: close_gripper
+              refConnectionProperty: "UR5E.io_tip.pin_dio_0"
+              value: 0
+        - refDevice: gripper
+          refConnection: "EGP50.io"
+    - name: connect_arm_pc
+      connectDevice:
+        - refDevice: arm
+          refConnection: "UR5E.ethernet"
+          configuration:
+            - name: robot_ip
+              refConnectionProperty: "UR5E.ethernet.ip_address"
+              value: "192.168.56.2"
+            - name: default_gateway
+              refConnectionProperty: "UR5E.ethernet.gateway"
+              value: "192.168.56.1"
+            - name: subnet_mask_address
+              refConnectionProperty: "UR5E.ethernet.subnet_mask"
+              value: "255.255.255.0"
+            - name: "dns_server"
+              refConnectionProperty: "UR5E.ethernet.dns_server"
+              value:
+                - "0.0.0.0"
+        - refDevice: rwu_laptop
+          refConnection: "PC.ethernet"
+          configuration:
+            - name: pc_ip
+              refConnectionProperty: "PC.ethernet.identity_name"
+              value: ur5e
+            - name: pc_ip
+              refConnectionProperty: "PC.ethernet.ip_address"
+              value: "192.168.56.1"
+            - name: "interface_name"
+              refConnectionProperty: "PC.ethernet.interface_name"
+              value: enp0s31f6
+            - name: "port"
+              refConnectionProperty: "PC.ethernet.port"
+              value: 50002
+            - name: "dns_server"
+              refConnectionProperty: "PC.ethernet.dns_server"
+              value:
+                - "0.0.0.0"
+            - name: "gateway"
+              refConnectionProperty: "PC.ethernet.gateway"
+              value: "192.168.56.1"
+            - name: "mask_address"
+              refConnectionProperty: "PC.ethernet.subnet_mask"
+              value: "255.255.255.0"
+    - name: connect_pc_camera
+      connectDevice:
+        - refDevice: rwu_laptop
+          refConnection: "PC.usb_01"
+          configuration:
+            - name: "camera_realsense_device_volume"
+              refConnectionProperty: "PC.usb_01.device_volume"
+              value:
+                - "/dev/video2"
+                - "/dev/video3"
+                - "/dev/video4"
+                - "/dev/video5"
+                - "/dev/video6"
+                - "/dev/video7"
+        - refDevice: camera_realsense
+          refConnection: "Realsense_camera.usb"

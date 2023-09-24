@@ -784,16 +784,41 @@ ruleContainerRuntime returns [EObject current=null]
       )
     )
     (
-      otherlv_4=Resource
+      otherlv_4=Registry
       {
-        newLeafNode(otherlv_4, grammarAccess.getContainerRuntimeAccess().getResourceKeyword_4_0());
+        newLeafNode(otherlv_4, grammarAccess.getContainerRuntimeAccess().getRegistryKeyword_4_0());
       }
-      this_INDENT_5=RULE_INDENT
+      (
+        (
+          {
+            newCompositeNode(grammarAccess.getContainerRuntimeAccess().getRegistryEStringParserRuleCall_4_1_0());
+          }
+          lv_registry_5_0=ruleEString
+          {
+            if ($current==null) {
+              $current = createModelElementForParent(grammarAccess.getContainerRuntimeRule());
+            }
+            set(
+              $current,
+              "registry",
+              lv_registry_5_0,
+              "de.fraunhofer.ipa.deployment.Util.EString");
+            afterParserOrEnumRuleCall();
+          }
+        )
+      )
+    )?
+    (
+      otherlv_6=Resource
       {
-        newLeafNode(this_INDENT_5, grammarAccess.getContainerRuntimeAccess().getINDENTTerminalRuleCall_4_1());
+        newLeafNode(otherlv_6, grammarAccess.getContainerRuntimeAccess().getResourceKeyword_5_0());
+      }
+      this_INDENT_7=RULE_INDENT
+      {
+        newLeafNode(this_INDENT_7, grammarAccess.getContainerRuntimeAccess().getINDENTTerminalRuleCall_5_1());
       }
       {
-        newCompositeNode(grammarAccess.getContainerRuntimeAccess().getPreListElementParserRuleCall_4_2());
+        newCompositeNode(grammarAccess.getContainerRuntimeAccess().getPreListElementParserRuleCall_5_2());
       }
       rulePreListElement
       {
@@ -802,9 +827,9 @@ ruleContainerRuntime returns [EObject current=null]
       (
         (
           {
-            newCompositeNode(grammarAccess.getContainerRuntimeAccess().getOpertingSystemResourceOperatingSystemResouceParserRuleCall_4_3_0());
+            newCompositeNode(grammarAccess.getContainerRuntimeAccess().getOpertingSystemResourceOperatingSystemResouceParserRuleCall_5_3_0());
           }
-          lv_opertingSystemResource_7_0=ruleOperatingSystemResouce
+          lv_opertingSystemResource_9_0=ruleOperatingSystemResouce
           {
             if ($current==null) {
               $current = createModelElementForParent(grammarAccess.getContainerRuntimeRule());
@@ -812,7 +837,7 @@ ruleContainerRuntime returns [EObject current=null]
             add(
               $current,
               "opertingSystemResource",
-              lv_opertingSystemResource_7_0,
+              lv_opertingSystemResource_9_0,
               "de.fraunhofer.ipa.deployment.Util.OperatingSystemResouce");
             afterParserOrEnumRuleCall();
           }
@@ -820,7 +845,7 @@ ruleContainerRuntime returns [EObject current=null]
       )
       (
         {
-          newCompositeNode(grammarAccess.getContainerRuntimeAccess().getPreListElementParserRuleCall_4_4_0());
+          newCompositeNode(grammarAccess.getContainerRuntimeAccess().getPreListElementParserRuleCall_5_4_0());
         }
         rulePreListElement
         {
@@ -829,9 +854,9 @@ ruleContainerRuntime returns [EObject current=null]
         (
           (
             {
-              newCompositeNode(grammarAccess.getContainerRuntimeAccess().getOpertingSystemResourceOperatingSystemResouceParserRuleCall_4_4_1_0());
+              newCompositeNode(grammarAccess.getContainerRuntimeAccess().getOpertingSystemResourceOperatingSystemResouceParserRuleCall_5_4_1_0());
             }
-            lv_opertingSystemResource_9_0=ruleOperatingSystemResouce
+            lv_opertingSystemResource_11_0=ruleOperatingSystemResouce
             {
               if ($current==null) {
                 $current = createModelElementForParent(grammarAccess.getContainerRuntimeRule());
@@ -839,21 +864,21 @@ ruleContainerRuntime returns [EObject current=null]
               add(
                 $current,
                 "opertingSystemResource",
-                lv_opertingSystemResource_9_0,
+                lv_opertingSystemResource_11_0,
                 "de.fraunhofer.ipa.deployment.Util.OperatingSystemResouce");
               afterParserOrEnumRuleCall();
             }
           )
         )+
       )?
-      this_DEDENT_10=RULE_DEDENT
+      this_DEDENT_12=RULE_DEDENT
       {
-        newLeafNode(this_DEDENT_10, grammarAccess.getContainerRuntimeAccess().getDEDENTTerminalRuleCall_4_5());
+        newLeafNode(this_DEDENT_12, grammarAccess.getContainerRuntimeAccess().getDEDENTTerminalRuleCall_5_5());
       }
     )?
-    this_DEDENT_11=RULE_DEDENT
+    this_DEDENT_13=RULE_DEDENT
     {
-      newLeafNode(this_DEDENT_11, grammarAccess.getContainerRuntimeAccess().getDEDENTTerminalRuleCall_5());
+      newLeafNode(this_DEDENT_13, grammarAccess.getContainerRuntimeAccess().getDEDENTTerminalRuleCall_6());
     }
   )
 ;
