@@ -159,6 +159,14 @@ class PlanGenerator extends AbstractGenerator {
                 ansibleCompiler.playbook(plan, ansibleNaming)
                 )
             fsa.generateFile(
+                ansibleNaming.playbookDeployFilesPath,
+                ansibleCompiler.playbook_deploy_files(plan, ansibleNaming)
+                )
+            fsa.generateFile(
+                ansibleNaming.playbookStartComponentsFilePath,
+                ansibleCompiler.playbook_start_components(plan, ansibleNaming)
+                )
+            fsa.generateFile(
                 ansibleNaming.getTaskMainFilePath(ansibleNaming.taskCommonFolderPath),
                 ansibleCompiler.taskRunCommonTasks(ansibleNaming)
                 )
@@ -167,8 +175,8 @@ class PlanGenerator extends AbstractGenerator {
               ansibleCompiler.taskCheckInstallDocker
                 )
             fsa.generateFile(
-                ansibleNaming.getTaskMainFilePath(ansibleNaming.taskDeploySoftwareFolderPath),
-                ansibleCompiler.taskDeploySoftware(namingHelper)
+                ansibleNaming.getTaskMainFilePath(ansibleNaming.gettaskDeployFilesFolderPath),
+                ansibleCompiler.taskDeployFiles(namingHelper)
                 )
             fsa.generateFile(
                 ansibleNaming.taskCheckSudoFilePath,
@@ -177,6 +185,14 @@ class PlanGenerator extends AbstractGenerator {
             fsa.generateFile(
                 ansibleNaming.gitignorePath,
                 ansibleCompiler.gitignore
+                )
+            fsa.generateFile(
+                ansibleNaming.getTaskMainFilePath(ansibleNaming.taskStartApplicationFolderPath),
+                ansibleCompiler.taskStartApplication(namingHelper)
+                )
+            fsa.generateFile(
+                ansibleNaming.getTaskMainFilePath(ansibleNaming.taskStartComponentFolderPath),
+                ansibleCompiler.taskStartComponents(plan, namingHelper)
                 )
         }
 

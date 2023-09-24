@@ -131,11 +131,9 @@ def collectConfigNetwork(ComputationDeviceInstance compDev){
 
 def createNetworkConfig(NetworkInfo netInfo)'''
 «netInfo.identityName»:
-  driver: macvlan
+  driver: bridge
   driver_opts:
     parent: «netInfo.interfaceName»
-  ipam:
-    driver: default
 '''
 
 def addNetworks(Set<ConnectedDevice> connectedComputationDevices)'''

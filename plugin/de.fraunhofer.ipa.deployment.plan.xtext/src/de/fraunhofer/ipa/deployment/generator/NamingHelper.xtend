@@ -139,21 +139,28 @@ class AnsibleNamingHelper extends NamingHelper {
     String PlaybookName = "playbook.yaml"
     String PlaybookFilePath
     String DestDeployFolderPath
-    String AppicationRoleName = "deploy_software"
+    String AppicationRoleName = "start_application"
     String RoleFolderName = "roles"
     String RoleFolderPath
     String TaskCommonFolderName = "common/tasks"
     String TaskCommonFolderPath
     String TaskInstallDockerFileName = "install_docker.yaml"
     String TaskInstallDockerFilePath
-    String TaskDeploySoftwareFolderName = "deploy_software/tasks"
-    String TaskDeploySoftwareFolderPath
+    String taskDeployFilesFolderName = "deploy_files/tasks"
+    String taskDeployFilesFolderPath
     String TaskMainFilePath
     String TaskCheckSudoFileName = "check_become_permission.yaml"
     String TaskCheckSudoFilePath
     String GitignoreName = ".gitignore"
     String GitignoreFilePath
-
+    String taskStartApplicationFolderName = "start_application/tasks"
+    String taskStartApplicationFolderPath
+    String taskStartComponentFolderPath
+    String taskStartComponentFolderName = "start_components/tasks"
+    String PlaybookDeployFilesName = "playbook_deploy_files.yaml"
+    String playbookDeployFilesFilePath
+    String PlaybookStartComponentsFileName = "playbook_start_components.yaml"
+    String playbookStartComponentsFilePath
 
     def setRelativeAnsibleFolderPath(String planName){
         this.relativePlanFolderPath = planName
@@ -182,8 +189,20 @@ class AnsibleNamingHelper extends NamingHelper {
         this.PlaybookFilePath = String.format("%s/%s", this.RelativeAnsibleFolderPath, this.PlaybookName)
      return this.PlaybookFilePath
     }
+
+    def getPlaybookDeployFilesPath(){
+        this.playbookDeployFilesFilePath = String.format("%s/%s", this.RelativeAnsibleFolderPath, this.PlaybookDeployFilesName)
+     return this.playbookDeployFilesFilePath
+    }
+
+    def getPlaybookStartComponentsFilePath(){
+        this.playbookStartComponentsFilePath = String.format("%s/%s", this.RelativeAnsibleFolderPath, this.PlaybookStartComponentsFileName)
+     return this.playbookStartComponentsFilePath
+    }
+
+
     def setDestDeployFolderPath(String userName, String planName){
-        this.DestDeployFolderPath = String.format("home/%s/AutoDeployment/%s", userName, planName)
+        this.DestDeployFolderPath = String.format("/home/%s/AutoDeployment/%s", userName, planName)
     }
 
     def getDestDeployFolderPath(){
@@ -224,12 +243,28 @@ class AnsibleNamingHelper extends NamingHelper {
         return this.TaskMainFilePath
     }
 
-    def getTaskDeploySoftwareFolderPath(){
+    def gettaskDeployFilesFolderPath(){
         if(this.RoleFolderPath === null){
             getRoleFolderPath()
         }
-        this.TaskDeploySoftwareFolderPath = String.format("%s/%s", this.RoleFolderPath, this.TaskDeploySoftwareFolderName)
-        return this.TaskDeploySoftwareFolderPath
+        this.taskDeployFilesFolderPath = String.format("%s/%s", this.RoleFolderPath, this.taskDeployFilesFolderName)
+        return this.taskDeployFilesFolderPath
+    }
+
+    def getTaskStartApplicationFolderPath(){
+        if(this.RoleFolderPath === null){
+            getRoleFolderPath()
+        }
+        this.taskStartApplicationFolderPath = String.format("%s/%s", this.RoleFolderPath, this.taskStartApplicationFolderName)
+        return this.taskStartApplicationFolderPath
+    }
+
+    def getTaskStartComponentFolderPath(){
+        if(this.RoleFolderPath === null){
+            getRoleFolderPath()
+        }
+        this.taskStartComponentFolderPath = String.format("%s/%s", this.RoleFolderPath, this.taskStartComponentFolderName)
+        return this.taskStartComponentFolderPath
     }
 
     def getTaskCheckSudoFileName(){

@@ -62,7 +62,37 @@ class GitLabCICompiler {
     variables:
       DOC_PATH: "«namingHelper.absoluteRootPrefix»/«namingHelper.relativePlanFolderPath»/doc/source"
 
+  «var assPerExecutors = collectAssignmentPerExecutor(plan.realize.realizations)»
+  «FOR entryset: assPerExecutors.entrySet()»
+  «var compDev = entryset.key»
+  ansible_deploy:
+    tags:
+      - «compDev.name»
+    stage: ansible_deploy
+    before_script:
+      - "command -v ssh-agent >/dev/null || ( apt-get update -y && apt-get install openssh-client -y )"
+      - eval $(ssh-agent -s)
+      - chmod 400 "$SSH_PRIVATE_KEY_«compDev.name.toUpperCase»"
+      - ssh-add "$SSH_PRIVATE_KEY_«compDev.name.toUpperCase»"
+
+      - mkdir -p ~/.ssh
+      - chmod 700 ~/.ssh
+
+      - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+
+      - apk add ansible -v
+    script:
+      - cd src-gen/deploy_ur_applications/ansible
+      - ansible-playbook -i inventory_ci.yaml --private-key "$SSH_PRIVATE_KEY_«compDev.name.toUpperCase»" playbook_deploy_files.yaml
+    variables:
+      ANSIBLE_HOST_KEY_CHECKING: "False"
+    extends:
+      - .on_merge_tag
+    when: manual
+  «ENDFOR»
+
   stages:
+    - ansible_deploy
     - build
     - publish
     - doc
@@ -72,7 +102,9 @@ class GitLabCICompiler {
   def gitlabRuleTemplate()'''
   .on_always:
     rules:
+      - if: $CI_PIPELINE_SOURCE == "parent_pipeline"
       - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+      - if: $CI_MERGE_REQUEST_ID
       - if: $CI_COMMIT_BRANCH && $CI_OPEN_MERGE_REQUESTS
         when: never
       - if: $CI_COMMIT_BRANCH
@@ -85,10 +117,12 @@ class GitLabCICompiler {
   .on_merge_event:
     rules:
       - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+      - if: $CI_MERGE_REQUEST_ID
 
   .on_merge_tag:
     rules:
       - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+      - if: $CI_MERGE_REQUEST_ID
       - if: $CI_COMMIT_BRANCH && $CI_OPEN_MERGE_REQUESTS
         when: never
       - if: $CI_COMMIT_TAG != null

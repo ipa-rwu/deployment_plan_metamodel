@@ -48,13 +48,119 @@ def playbook(AbstractDeploymentPlan plan, AnsibleNamingHelper ansibleNaming)'''
 «ENDFOR»
 '''
 
-def taskDeploySoftware(NamingHelper naming)'''
+def playbook_deploy_files(AbstractDeploymentPlan plan, AnsibleNamingHelper ansibleNaming)'''
+«{ansibleNaming.relativeAnsibleFolderPath = plan.name; ""}»
+«var assPerExecutors = collectAssignmentPerExecutor(plan.realize.realizations)»
+«FOR entryset: assPerExecutors.entrySet()»
+«var compDev = entryset.key»
+- name: «plan.name»_«compDev.name»
+  hosts: «compDev.name»
+  vars:
+    docker_compose_dir: «compDev.name»
+    ori_docker_compose_dir_path: "../{{ docker_compose_dir }}"
+    «{ansibleNaming.setDestDeployFolderPath("{{ ansible_user }}", plan.name); ""}»
+    dest_docker_compose_dir_path: "«ansibleNaming.destDeployFolderPath»/{{ docker_compose_dir }}"
+  roles:
+    - deploy_files
+«ENDFOR»
+'''
+
+def playbook_start_components(AbstractDeploymentPlan plan, AnsibleNamingHelper ansibleNaming)'''
+«{ansibleNaming.relativeAnsibleFolderPath = plan.name; ""}»
+«var assPerExecutors = collectAssignmentPerExecutor(plan.realize.realizations)»
+«FOR entryset: assPerExecutors.entrySet()»
+«var compDev = entryset.key»
+- name: «plan.name»_«compDev.name»
+  hosts: «compDev.name»
+  vars:
+    docker_compose_dir: «compDev.name»
+    ori_docker_compose_dir_path: "../{{ docker_compose_dir }}"
+    «{ansibleNaming.setDestDeployFolderPath("{{ ansible_user }}", plan.name); ""}»
+    dest_docker_compose_dir_path: "«ansibleNaming.destDeployFolderPath»/{{ docker_compose_dir }}"
+«««    ansible_become_pass: "{{ «compDev.name»_sudo }}"
+  roles:
+    - common
+    - start_components
+«ENDFOR»
+'''
+
+
+def taskDeployFiles(NamingHelper naming)'''
 - name: Make sure docker-compose file is present
-  become: true
-  file:
+  ansible.builtin.stat:
     path: "{{ ori_docker_compose_dir_path }}/{{ item }}"
+  loop:
+    - «naming.cyclonConfigFileName»
+    - «naming.dockerComposeFileName»
+
+- name: Make sure destination dir exists
+  ansible.builtin.stat:
+    path: "{{ dest_docker_compose_dir_path }}"
+
+- name: Copy compose files
+  ansible.builtin.copy:
+    src: "{{ ori_docker_compose_dir_path }}/{{ item }}"
+    dest: "{{ dest_docker_compose_dir_path }}/{{ item }}"
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    mode: "0644"
+  loop:
+    - «naming.cyclonConfigFileName»
+    - «naming.dockerComposeFileName»
+
+- name: Debug output
+  ansible.builtin.debug:
+    var: output
+'''
+
+def taskStartApplication(NamingHelper naming)'''
+- name: Make sure docker-compose file is present
+  ansible.builtin.stat:
+    path: "{{ ori_docker_compose_dir_path }}/{{ item }}"
+  loop:
+    - «naming.cyclonConfigFileName»
+    - «naming.dockerComposeFileName»
+
+- name: Make sure destination dir exists
+«««  become: true
+  file:
+    path: "{{ dest_docker_compose_dir_path }}"
     state: directory
-    mode: "0755"
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+
+- name: Copy compose files
+  ansible.builtin.copy:
+    src: "{{ ori_docker_compose_dir_path }}/{{ item }}"
+    dest: "{{ dest_docker_compose_dir_path }}/{{ item }}"
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    mode: "0644"
+  loop:
+    - cyclonedds.xml
+    - docker-compose.yaml
+
+- name: Tear down existing services
+  community.general.docker_compose:
+    project_src: "{{ dest_docker_compose_dir_path }}"
+    stopped: true
+    state: present
+
+- name: Create and start services
+  community.general.docker_compose:
+    project_src: "{{ dest_docker_compose_dir_path }}"
+    pull: true
+  register: output
+
+- name: Debug output
+  ansible.builtin.debug:
+    var: output
+'''
+
+def taskStartComponents(AbstractDeploymentPlan plan, NamingHelper naming)'''
+- name: Make sure docker-compose file is present
+  ansible.builtin.stat:
+    path: "{{ ori_docker_compose_dir_path }}/{{ item }}"
   loop:
     - «naming.cyclonConfigFileName»
     - «naming.dockerComposeFileName»
@@ -78,28 +184,41 @@ def taskDeploySoftware(NamingHelper naming)'''
     - cyclonedds.xml
     - docker-compose.yaml
 
-- name: Tear down existing services
+«var assPerExecutors = collectAssignmentPerExecutor(plan.realize.realizations)»
+«FOR entryset: assPerExecutors.entrySet()»
+«var compDev = entryset.key»
+«var ass_list = entryset.value»
+«FOR ass: ass_list»
+- name: Tear down existing "«ass.name»" service
   community.general.docker_compose:
     project_src: "{{ dest_docker_compose_dir_path }}"
     state: absent
+    services:
+      - «ass.name»
+  tags:
+    - stop_service
+    - «ass.name»
+    - «compDev.name»
+  register: output
 
-- name: touch .docker.xauth only when it does not exists
-  file:
-    path: /tmp/.docker.xauth
-    state: touch
-    mode: u+rw,g-rw,o-rw
-    modification_time: preserve
-    access_time: preserve
-
-- name: Create and start services
+- name: Create and start "«ass.name»" service
   community.general.docker_compose:
     project_src: "{{ dest_docker_compose_dir_path }}"
     pull: true
+    services:
+      - «ass.name»
+  tags:
+    - start_service
+    - «ass.name»
+    - «compDev.name»
   register: output
 
+«ENDFOR»
+«ENDFOR»
 - name: Debug output
   ansible.builtin.debug:
     var: output
+«" "»
 '''
 
 def taskCheckSudo()'''
