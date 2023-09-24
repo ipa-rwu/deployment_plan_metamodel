@@ -22,65 +22,66 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalPlanParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "ExecutionConfiguration", "LinuxOpertingSystem", "MacOSOpertingSystem", "SoftwareComponents", "DeploymentPlan", "AttributeKind", "SelectionKind", "StartCommand", "Description", "RuntimeType", "MaximumKind", "MinimumKind", "Assignment", "ExecutedBy", "Middleware", "Properties", "Os_version", "Processor", "RangeKind", "Container", "DeployTo", "Resource", "Ethernet", "Version", "Os_name", "Rolling", "Debian", "Humble", "Noetic", "Ubuntu", "Value", "Arm64", "Focal", "From", "Jammy", "Kind", "Name", "Type", "Wlan", "Usb", "To", "X86", "HyphenMinus", "Colon", "RULE_DIGIT", "RULE_DECINT", "RULE_DOUBLE", "RULE_SL_COMMENT", "RULE_INDENT", "RULE_DEDENT", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_WS", "RULE_ANY_OTHER"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "ExecutionConfiguration", "LinuxOpertingSystem", "MacOSOpertingSystem", "SoftwareComponents", "DeploymentPlan", "AttributeKind", "SelectionKind", "StartCommand", "Description", "RuntimeType", "MaximumKind", "MinimumKind", "Assignment", "ExecutedBy", "Middleware", "Properties", "Os_version", "Processor", "RangeKind", "Container", "DeployTo", "Registry", "Resource", "Ethernet", "Version", "Os_name", "Rolling", "Debian", "Humble", "Noetic", "Ubuntu", "Value", "Arm64", "Focal", "From", "Jammy", "Kind", "Name", "Type", "Wlan", "Usb", "To", "X86", "HyphenMinus", "Colon", "RULE_DIGIT", "RULE_DECINT", "RULE_DOUBLE", "RULE_SL_COMMENT", "RULE_INDENT", "RULE_DEDENT", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_WS", "RULE_ANY_OTHER"
     };
     public static final int SoftwareComponents=7;
     public static final int DeployTo=24;
     public static final int AttributeKind=9;
-    public static final int Noetic=32;
-    public static final int Name=40;
+    public static final int Noetic=33;
+    public static final int Name=41;
     public static final int Assignment=16;
     public static final int Container=23;
-    public static final int Debian=30;
-    public static final int Version=27;
-    public static final int Kind=39;
-    public static final int To=44;
+    public static final int Debian=31;
+    public static final int Version=28;
+    public static final int Kind=40;
+    public static final int To=45;
     public static final int ExecutedBy=17;
-    public static final int Ubuntu=33;
-    public static final int RULE_DEDENT=53;
+    public static final int Ubuntu=34;
+    public static final int RULE_DEDENT=54;
     public static final int LinuxOpertingSystem=5;
-    public static final int RULE_ID=54;
-    public static final int Resource=25;
-    public static final int RULE_DIGIT=48;
+    public static final int RULE_ID=55;
+    public static final int Resource=26;
+    public static final int RULE_DIGIT=49;
     public static final int Middleware=18;
     public static final int SelectionKind=10;
-    public static final int Arm64=35;
-    public static final int RULE_INT=55;
-    public static final int Ethernet=26;
-    public static final int Value=34;
-    public static final int RULE_ML_COMMENT=57;
+    public static final int Arm64=36;
+    public static final int RULE_INT=56;
+    public static final int Ethernet=27;
+    public static final int Value=35;
+    public static final int RULE_ML_COMMENT=58;
     public static final int Description=12;
     public static final int Processor=21;
     public static final int StartCommand=11;
-    public static final int RULE_STRING=56;
-    public static final int Focal=36;
-    public static final int Wlan=42;
+    public static final int RULE_STRING=57;
+    public static final int Focal=37;
+    public static final int Wlan=43;
     public static final int Properties=19;
-    public static final int RULE_SL_COMMENT=51;
-    public static final int Os_name=28;
-    public static final int HyphenMinus=46;
-    public static final int RULE_DOUBLE=50;
-    public static final int X86=45;
-    public static final int Colon=47;
-    public static final int RULE_DECINT=49;
+    public static final int RULE_SL_COMMENT=52;
+    public static final int Os_name=29;
+    public static final int HyphenMinus=47;
+    public static final int RULE_DOUBLE=51;
+    public static final int X86=46;
+    public static final int Colon=48;
+    public static final int RULE_DECINT=50;
     public static final int DeploymentPlan=8;
     public static final int MinimumKind=15;
     public static final int EOF=-1;
-    public static final int RULE_INDENT=52;
-    public static final int Jammy=38;
-    public static final int Usb=43;
-    public static final int RULE_WS=58;
-    public static final int Rolling=29;
+    public static final int RULE_INDENT=53;
+    public static final int Jammy=39;
+    public static final int Usb=44;
+    public static final int RULE_WS=59;
+    public static final int Rolling=30;
     public static final int ExecutionConfiguration=4;
     public static final int MaximumKind=14;
-    public static final int From=37;
-    public static final int RULE_ANY_OTHER=59;
+    public static final int Registry=25;
+    public static final int From=38;
+    public static final int RULE_ANY_OTHER=60;
     public static final int RangeKind=22;
     public static final int Os_version=20;
-    public static final int Type=41;
+    public static final int Type=42;
     public static final int MacOSOpertingSystem=6;
     public static final int RuntimeType=13;
-    public static final int Humble=31;
+    public static final int Humble=32;
 
     // delegates
     // delegators
@@ -1853,32 +1854,35 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleContainerRuntime"
-    // InternalPlanParser.g:744:1: ruleContainerRuntime returns [EObject current=null] : ( () this_INDENT_1= RULE_INDENT otherlv_2= Type ( (lv_type_3_0= ruleRunTimeType ) ) (otherlv_4= Resource this_INDENT_5= RULE_INDENT rulePreListElement ( (lv_opertingSystemResource_7_0= ruleOperatingSystemResouce ) ) ( rulePreListElement ( (lv_opertingSystemResource_9_0= ruleOperatingSystemResouce ) )+ )? this_DEDENT_10= RULE_DEDENT )? this_DEDENT_11= RULE_DEDENT ) ;
+    // InternalPlanParser.g:744:1: ruleContainerRuntime returns [EObject current=null] : ( () this_INDENT_1= RULE_INDENT otherlv_2= Type ( (lv_type_3_0= ruleRunTimeType ) ) (otherlv_4= Registry ( (lv_registry_5_0= ruleEString ) ) )? (otherlv_6= Resource this_INDENT_7= RULE_INDENT rulePreListElement ( (lv_opertingSystemResource_9_0= ruleOperatingSystemResouce ) ) ( rulePreListElement ( (lv_opertingSystemResource_11_0= ruleOperatingSystemResouce ) )+ )? this_DEDENT_12= RULE_DEDENT )? this_DEDENT_13= RULE_DEDENT ) ;
     public final EObject ruleContainerRuntime() throws RecognitionException {
         EObject current = null;
 
         Token this_INDENT_1=null;
         Token otherlv_2=null;
         Token otherlv_4=null;
-        Token this_INDENT_5=null;
-        Token this_DEDENT_10=null;
-        Token this_DEDENT_11=null;
+        Token otherlv_6=null;
+        Token this_INDENT_7=null;
+        Token this_DEDENT_12=null;
+        Token this_DEDENT_13=null;
         Enumerator lv_type_3_0 = null;
 
-        EObject lv_opertingSystemResource_7_0 = null;
+        AntlrDatatypeRuleToken lv_registry_5_0 = null;
 
         EObject lv_opertingSystemResource_9_0 = null;
+
+        EObject lv_opertingSystemResource_11_0 = null;
 
 
 
           enterRule();
 
         try {
-            // InternalPlanParser.g:750:2: ( ( () this_INDENT_1= RULE_INDENT otherlv_2= Type ( (lv_type_3_0= ruleRunTimeType ) ) (otherlv_4= Resource this_INDENT_5= RULE_INDENT rulePreListElement ( (lv_opertingSystemResource_7_0= ruleOperatingSystemResouce ) ) ( rulePreListElement ( (lv_opertingSystemResource_9_0= ruleOperatingSystemResouce ) )+ )? this_DEDENT_10= RULE_DEDENT )? this_DEDENT_11= RULE_DEDENT ) )
-            // InternalPlanParser.g:751:2: ( () this_INDENT_1= RULE_INDENT otherlv_2= Type ( (lv_type_3_0= ruleRunTimeType ) ) (otherlv_4= Resource this_INDENT_5= RULE_INDENT rulePreListElement ( (lv_opertingSystemResource_7_0= ruleOperatingSystemResouce ) ) ( rulePreListElement ( (lv_opertingSystemResource_9_0= ruleOperatingSystemResouce ) )+ )? this_DEDENT_10= RULE_DEDENT )? this_DEDENT_11= RULE_DEDENT )
+            // InternalPlanParser.g:750:2: ( ( () this_INDENT_1= RULE_INDENT otherlv_2= Type ( (lv_type_3_0= ruleRunTimeType ) ) (otherlv_4= Registry ( (lv_registry_5_0= ruleEString ) ) )? (otherlv_6= Resource this_INDENT_7= RULE_INDENT rulePreListElement ( (lv_opertingSystemResource_9_0= ruleOperatingSystemResouce ) ) ( rulePreListElement ( (lv_opertingSystemResource_11_0= ruleOperatingSystemResouce ) )+ )? this_DEDENT_12= RULE_DEDENT )? this_DEDENT_13= RULE_DEDENT ) )
+            // InternalPlanParser.g:751:2: ( () this_INDENT_1= RULE_INDENT otherlv_2= Type ( (lv_type_3_0= ruleRunTimeType ) ) (otherlv_4= Registry ( (lv_registry_5_0= ruleEString ) ) )? (otherlv_6= Resource this_INDENT_7= RULE_INDENT rulePreListElement ( (lv_opertingSystemResource_9_0= ruleOperatingSystemResouce ) ) ( rulePreListElement ( (lv_opertingSystemResource_11_0= ruleOperatingSystemResouce ) )+ )? this_DEDENT_12= RULE_DEDENT )? this_DEDENT_13= RULE_DEDENT )
             {
-            // InternalPlanParser.g:751:2: ( () this_INDENT_1= RULE_INDENT otherlv_2= Type ( (lv_type_3_0= ruleRunTimeType ) ) (otherlv_4= Resource this_INDENT_5= RULE_INDENT rulePreListElement ( (lv_opertingSystemResource_7_0= ruleOperatingSystemResouce ) ) ( rulePreListElement ( (lv_opertingSystemResource_9_0= ruleOperatingSystemResouce ) )+ )? this_DEDENT_10= RULE_DEDENT )? this_DEDENT_11= RULE_DEDENT )
-            // InternalPlanParser.g:752:3: () this_INDENT_1= RULE_INDENT otherlv_2= Type ( (lv_type_3_0= ruleRunTimeType ) ) (otherlv_4= Resource this_INDENT_5= RULE_INDENT rulePreListElement ( (lv_opertingSystemResource_7_0= ruleOperatingSystemResouce ) ) ( rulePreListElement ( (lv_opertingSystemResource_9_0= ruleOperatingSystemResouce ) )+ )? this_DEDENT_10= RULE_DEDENT )? this_DEDENT_11= RULE_DEDENT
+            // InternalPlanParser.g:751:2: ( () this_INDENT_1= RULE_INDENT otherlv_2= Type ( (lv_type_3_0= ruleRunTimeType ) ) (otherlv_4= Registry ( (lv_registry_5_0= ruleEString ) ) )? (otherlv_6= Resource this_INDENT_7= RULE_INDENT rulePreListElement ( (lv_opertingSystemResource_9_0= ruleOperatingSystemResouce ) ) ( rulePreListElement ( (lv_opertingSystemResource_11_0= ruleOperatingSystemResouce ) )+ )? this_DEDENT_12= RULE_DEDENT )? this_DEDENT_13= RULE_DEDENT )
+            // InternalPlanParser.g:752:3: () this_INDENT_1= RULE_INDENT otherlv_2= Type ( (lv_type_3_0= ruleRunTimeType ) ) (otherlv_4= Registry ( (lv_registry_5_0= ruleEString ) ) )? (otherlv_6= Resource this_INDENT_7= RULE_INDENT rulePreListElement ( (lv_opertingSystemResource_9_0= ruleOperatingSystemResouce ) ) ( rulePreListElement ( (lv_opertingSystemResource_11_0= ruleOperatingSystemResouce ) )+ )? this_DEDENT_12= RULE_DEDENT )? this_DEDENT_13= RULE_DEDENT
             {
             // InternalPlanParser.g:752:3: ()
             // InternalPlanParser.g:753:4:
@@ -1930,27 +1934,79 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalPlanParser.g:786:3: (otherlv_4= Resource this_INDENT_5= RULE_INDENT rulePreListElement ( (lv_opertingSystemResource_7_0= ruleOperatingSystemResouce ) ) ( rulePreListElement ( (lv_opertingSystemResource_9_0= ruleOperatingSystemResouce ) )+ )? this_DEDENT_10= RULE_DEDENT )?
-            int alt14=2;
-            int LA14_0 = input.LA(1);
+            // InternalPlanParser.g:786:3: (otherlv_4= Registry ( (lv_registry_5_0= ruleEString ) ) )?
+            int alt12=2;
+            int LA12_0 = input.LA(1);
 
-            if ( (LA14_0==Resource) ) {
-                alt14=1;
+            if ( (LA12_0==Registry) ) {
+                alt12=1;
             }
-            switch (alt14) {
+            switch (alt12) {
                 case 1 :
-                    // InternalPlanParser.g:787:4: otherlv_4= Resource this_INDENT_5= RULE_INDENT rulePreListElement ( (lv_opertingSystemResource_7_0= ruleOperatingSystemResouce ) ) ( rulePreListElement ( (lv_opertingSystemResource_9_0= ruleOperatingSystemResouce ) )+ )? this_DEDENT_10= RULE_DEDENT
+                    // InternalPlanParser.g:787:4: otherlv_4= Registry ( (lv_registry_5_0= ruleEString ) )
                     {
-                    otherlv_4=(Token)match(input,Resource,FOLLOW_3);
+                    otherlv_4=(Token)match(input,Registry,FOLLOW_5);
 
-                            newLeafNode(otherlv_4, grammarAccess.getContainerRuntimeAccess().getResourceKeyword_4_0());
+                            newLeafNode(otherlv_4, grammarAccess.getContainerRuntimeAccess().getRegistryKeyword_4_0());
 
-                    this_INDENT_5=(Token)match(input,RULE_INDENT,FOLLOW_9);
+                    // InternalPlanParser.g:791:4: ( (lv_registry_5_0= ruleEString ) )
+                    // InternalPlanParser.g:792:5: (lv_registry_5_0= ruleEString )
+                    {
+                    // InternalPlanParser.g:792:5: (lv_registry_5_0= ruleEString )
+                    // InternalPlanParser.g:793:6: lv_registry_5_0= ruleEString
+                    {
 
-                            newLeafNode(this_INDENT_5, grammarAccess.getContainerRuntimeAccess().getINDENTTerminalRuleCall_4_1());
+                                newCompositeNode(grammarAccess.getContainerRuntimeAccess().getRegistryEStringParserRuleCall_4_1_0());
+
+                    pushFollow(FOLLOW_25);
+                    lv_registry_5_0=ruleEString();
+
+                    state._fsp--;
 
 
-                            newCompositeNode(grammarAccess.getContainerRuntimeAccess().getPreListElementParserRuleCall_4_2());
+                                if (current==null) {
+                                  current = createModelElementForParent(grammarAccess.getContainerRuntimeRule());
+                                }
+                                set(
+                                  current,
+                                  "registry",
+                                  lv_registry_5_0,
+                                  "de.fraunhofer.ipa.deployment.Util.EString");
+                                afterParserOrEnumRuleCall();
+
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+            // InternalPlanParser.g:811:3: (otherlv_6= Resource this_INDENT_7= RULE_INDENT rulePreListElement ( (lv_opertingSystemResource_9_0= ruleOperatingSystemResouce ) ) ( rulePreListElement ( (lv_opertingSystemResource_11_0= ruleOperatingSystemResouce ) )+ )? this_DEDENT_12= RULE_DEDENT )?
+            int alt15=2;
+            int LA15_0 = input.LA(1);
+
+            if ( (LA15_0==Resource) ) {
+                alt15=1;
+            }
+            switch (alt15) {
+                case 1 :
+                    // InternalPlanParser.g:812:4: otherlv_6= Resource this_INDENT_7= RULE_INDENT rulePreListElement ( (lv_opertingSystemResource_9_0= ruleOperatingSystemResouce ) ) ( rulePreListElement ( (lv_opertingSystemResource_11_0= ruleOperatingSystemResouce ) )+ )? this_DEDENT_12= RULE_DEDENT
+                    {
+                    otherlv_6=(Token)match(input,Resource,FOLLOW_3);
+
+                            newLeafNode(otherlv_6, grammarAccess.getContainerRuntimeAccess().getResourceKeyword_5_0());
+
+                    this_INDENT_7=(Token)match(input,RULE_INDENT,FOLLOW_9);
+
+                            newLeafNode(this_INDENT_7, grammarAccess.getContainerRuntimeAccess().getINDENTTerminalRuleCall_5_1());
+
+
+                            newCompositeNode(grammarAccess.getContainerRuntimeAccess().getPreListElementParserRuleCall_5_2());
 
                     pushFollow(FOLLOW_4);
                     rulePreListElement();
@@ -1960,17 +2016,17 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
                             afterParserOrEnumRuleCall();
 
-                    // InternalPlanParser.g:802:4: ( (lv_opertingSystemResource_7_0= ruleOperatingSystemResouce ) )
-                    // InternalPlanParser.g:803:5: (lv_opertingSystemResource_7_0= ruleOperatingSystemResouce )
+                    // InternalPlanParser.g:827:4: ( (lv_opertingSystemResource_9_0= ruleOperatingSystemResouce ) )
+                    // InternalPlanParser.g:828:5: (lv_opertingSystemResource_9_0= ruleOperatingSystemResouce )
                     {
-                    // InternalPlanParser.g:803:5: (lv_opertingSystemResource_7_0= ruleOperatingSystemResouce )
-                    // InternalPlanParser.g:804:6: lv_opertingSystemResource_7_0= ruleOperatingSystemResouce
+                    // InternalPlanParser.g:828:5: (lv_opertingSystemResource_9_0= ruleOperatingSystemResouce )
+                    // InternalPlanParser.g:829:6: lv_opertingSystemResource_9_0= ruleOperatingSystemResouce
                     {
 
-                                newCompositeNode(grammarAccess.getContainerRuntimeAccess().getOpertingSystemResourceOperatingSystemResouceParserRuleCall_4_3_0());
+                                newCompositeNode(grammarAccess.getContainerRuntimeAccess().getOpertingSystemResourceOperatingSystemResouceParserRuleCall_5_3_0());
 
                     pushFollow(FOLLOW_10);
-                    lv_opertingSystemResource_7_0=ruleOperatingSystemResouce();
+                    lv_opertingSystemResource_9_0=ruleOperatingSystemResouce();
 
                     state._fsp--;
 
@@ -1981,7 +2037,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
                                 add(
                                   current,
                                   "opertingSystemResource",
-                                  lv_opertingSystemResource_7_0,
+                                  lv_opertingSystemResource_9_0,
                                   "de.fraunhofer.ipa.deployment.Util.OperatingSystemResouce");
                                 afterParserOrEnumRuleCall();
 
@@ -1991,19 +2047,19 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalPlanParser.g:821:4: ( rulePreListElement ( (lv_opertingSystemResource_9_0= ruleOperatingSystemResouce ) )+ )?
-                    int alt13=2;
-                    int LA13_0 = input.LA(1);
+                    // InternalPlanParser.g:846:4: ( rulePreListElement ( (lv_opertingSystemResource_11_0= ruleOperatingSystemResouce ) )+ )?
+                    int alt14=2;
+                    int LA14_0 = input.LA(1);
 
-                    if ( (LA13_0==HyphenMinus) ) {
-                        alt13=1;
+                    if ( (LA14_0==HyphenMinus) ) {
+                        alt14=1;
                     }
-                    switch (alt13) {
+                    switch (alt14) {
                         case 1 :
-                            // InternalPlanParser.g:822:5: rulePreListElement ( (lv_opertingSystemResource_9_0= ruleOperatingSystemResouce ) )+
+                            // InternalPlanParser.g:847:5: rulePreListElement ( (lv_opertingSystemResource_11_0= ruleOperatingSystemResouce ) )+
                             {
 
-                                      newCompositeNode(grammarAccess.getContainerRuntimeAccess().getPreListElementParserRuleCall_4_4_0());
+                                      newCompositeNode(grammarAccess.getContainerRuntimeAccess().getPreListElementParserRuleCall_5_4_0());
 
                             pushFollow(FOLLOW_4);
                             rulePreListElement();
@@ -2013,30 +2069,30 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
                                       afterParserOrEnumRuleCall();
 
-                            // InternalPlanParser.g:829:5: ( (lv_opertingSystemResource_9_0= ruleOperatingSystemResouce ) )+
-                            int cnt12=0;
-                            loop12:
+                            // InternalPlanParser.g:854:5: ( (lv_opertingSystemResource_11_0= ruleOperatingSystemResouce ) )+
+                            int cnt13=0;
+                            loop13:
                             do {
-                                int alt12=2;
-                                int LA12_0 = input.LA(1);
+                                int alt13=2;
+                                int LA13_0 = input.LA(1);
 
-                                if ( (LA12_0==Name) ) {
-                                    alt12=1;
+                                if ( (LA13_0==Name) ) {
+                                    alt13=1;
                                 }
 
 
-                                switch (alt12) {
+                                switch (alt13) {
                               case 1 :
-                                  // InternalPlanParser.g:830:6: (lv_opertingSystemResource_9_0= ruleOperatingSystemResouce )
+                                  // InternalPlanParser.g:855:6: (lv_opertingSystemResource_11_0= ruleOperatingSystemResouce )
                                   {
-                                  // InternalPlanParser.g:830:6: (lv_opertingSystemResource_9_0= ruleOperatingSystemResouce )
-                                  // InternalPlanParser.g:831:7: lv_opertingSystemResource_9_0= ruleOperatingSystemResouce
+                                  // InternalPlanParser.g:855:6: (lv_opertingSystemResource_11_0= ruleOperatingSystemResouce )
+                                  // InternalPlanParser.g:856:7: lv_opertingSystemResource_11_0= ruleOperatingSystemResouce
                                   {
 
-                                                newCompositeNode(grammarAccess.getContainerRuntimeAccess().getOpertingSystemResourceOperatingSystemResouceParserRuleCall_4_4_1_0());
+                                                newCompositeNode(grammarAccess.getContainerRuntimeAccess().getOpertingSystemResourceOperatingSystemResouceParserRuleCall_5_4_1_0());
 
-                                  pushFollow(FOLLOW_25);
-                                  lv_opertingSystemResource_9_0=ruleOperatingSystemResouce();
+                                  pushFollow(FOLLOW_26);
+                                  lv_opertingSystemResource_11_0=ruleOperatingSystemResouce();
 
                                   state._fsp--;
 
@@ -2047,7 +2103,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
                                                 add(
                                                   current,
                                                   "opertingSystemResource",
-                                                  lv_opertingSystemResource_9_0,
+                                                  lv_opertingSystemResource_11_0,
                                                   "de.fraunhofer.ipa.deployment.Util.OperatingSystemResouce");
                                                 afterParserOrEnumRuleCall();
 
@@ -2059,12 +2115,12 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
                                   break;
 
                               default :
-                                  if ( cnt12 >= 1 ) break loop12;
+                                  if ( cnt13 >= 1 ) break loop13;
                                         EarlyExitException eee =
-                                            new EarlyExitException(12, input);
+                                            new EarlyExitException(13, input);
                                         throw eee;
                                 }
-                                cnt12++;
+                                cnt13++;
                             } while (true);
 
 
@@ -2073,9 +2129,9 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    this_DEDENT_10=(Token)match(input,RULE_DEDENT,FOLLOW_8);
+                    this_DEDENT_12=(Token)match(input,RULE_DEDENT,FOLLOW_8);
 
-                            newLeafNode(this_DEDENT_10, grammarAccess.getContainerRuntimeAccess().getDEDENTTerminalRuleCall_4_5());
+                            newLeafNode(this_DEDENT_12, grammarAccess.getContainerRuntimeAccess().getDEDENTTerminalRuleCall_5_5());
 
 
                     }
@@ -2083,9 +2139,9 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
             }
 
-            this_DEDENT_11=(Token)match(input,RULE_DEDENT,FOLLOW_2);
+            this_DEDENT_13=(Token)match(input,RULE_DEDENT,FOLLOW_2);
 
-                  newLeafNode(this_DEDENT_11, grammarAccess.getContainerRuntimeAccess().getDEDENTTerminalRuleCall_5());
+                  newLeafNode(this_DEDENT_13, grammarAccess.getContainerRuntimeAccess().getDEDENTTerminalRuleCall_6());
 
 
             }
@@ -2110,7 +2166,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleConfigExecutionParameter"
-    // InternalPlanParser.g:862:1: entryRuleConfigExecutionParameter returns [EObject current=null] : iv_ruleConfigExecutionParameter= ruleConfigExecutionParameter EOF ;
+    // InternalPlanParser.g:887:1: entryRuleConfigExecutionParameter returns [EObject current=null] : iv_ruleConfigExecutionParameter= ruleConfigExecutionParameter EOF ;
     public final EObject entryRuleConfigExecutionParameter() throws RecognitionException {
         EObject current = null;
 
@@ -2118,8 +2174,8 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPlanParser.g:862:65: (iv_ruleConfigExecutionParameter= ruleConfigExecutionParameter EOF )
-            // InternalPlanParser.g:863:2: iv_ruleConfigExecutionParameter= ruleConfigExecutionParameter EOF
+            // InternalPlanParser.g:887:65: (iv_ruleConfigExecutionParameter= ruleConfigExecutionParameter EOF )
+            // InternalPlanParser.g:888:2: iv_ruleConfigExecutionParameter= ruleConfigExecutionParameter EOF
             {
              newCompositeNode(grammarAccess.getConfigExecutionParameterRule());
             pushFollow(FOLLOW_1);
@@ -2146,7 +2202,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleConfigExecutionParameter"
-    // InternalPlanParser.g:869:1: ruleConfigExecutionParameter returns [EObject current=null] : ( () rulePreListElement otherlv_2= From ( ( ruleEString ) ) this_INDENT_4= RULE_INDENT (otherlv_5= To ( ( ruleEString ) ) )? (otherlv_7= Value ( (lv_value_8_0= rulePropertyValue ) ) )? this_DEDENT_9= RULE_DEDENT ) ;
+    // InternalPlanParser.g:894:1: ruleConfigExecutionParameter returns [EObject current=null] : ( () rulePreListElement otherlv_2= From ( ( ruleEString ) ) this_INDENT_4= RULE_INDENT (otherlv_5= To ( ( ruleEString ) ) )? (otherlv_7= Value ( (lv_value_8_0= rulePropertyValue ) ) )? this_DEDENT_9= RULE_DEDENT ) ;
     public final EObject ruleConfigExecutionParameter() throws RecognitionException {
         EObject current = null;
 
@@ -2162,14 +2218,14 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
           enterRule();
 
         try {
-            // InternalPlanParser.g:875:2: ( ( () rulePreListElement otherlv_2= From ( ( ruleEString ) ) this_INDENT_4= RULE_INDENT (otherlv_5= To ( ( ruleEString ) ) )? (otherlv_7= Value ( (lv_value_8_0= rulePropertyValue ) ) )? this_DEDENT_9= RULE_DEDENT ) )
-            // InternalPlanParser.g:876:2: ( () rulePreListElement otherlv_2= From ( ( ruleEString ) ) this_INDENT_4= RULE_INDENT (otherlv_5= To ( ( ruleEString ) ) )? (otherlv_7= Value ( (lv_value_8_0= rulePropertyValue ) ) )? this_DEDENT_9= RULE_DEDENT )
+            // InternalPlanParser.g:900:2: ( ( () rulePreListElement otherlv_2= From ( ( ruleEString ) ) this_INDENT_4= RULE_INDENT (otherlv_5= To ( ( ruleEString ) ) )? (otherlv_7= Value ( (lv_value_8_0= rulePropertyValue ) ) )? this_DEDENT_9= RULE_DEDENT ) )
+            // InternalPlanParser.g:901:2: ( () rulePreListElement otherlv_2= From ( ( ruleEString ) ) this_INDENT_4= RULE_INDENT (otherlv_5= To ( ( ruleEString ) ) )? (otherlv_7= Value ( (lv_value_8_0= rulePropertyValue ) ) )? this_DEDENT_9= RULE_DEDENT )
             {
-            // InternalPlanParser.g:876:2: ( () rulePreListElement otherlv_2= From ( ( ruleEString ) ) this_INDENT_4= RULE_INDENT (otherlv_5= To ( ( ruleEString ) ) )? (otherlv_7= Value ( (lv_value_8_0= rulePropertyValue ) ) )? this_DEDENT_9= RULE_DEDENT )
-            // InternalPlanParser.g:877:3: () rulePreListElement otherlv_2= From ( ( ruleEString ) ) this_INDENT_4= RULE_INDENT (otherlv_5= To ( ( ruleEString ) ) )? (otherlv_7= Value ( (lv_value_8_0= rulePropertyValue ) ) )? this_DEDENT_9= RULE_DEDENT
+            // InternalPlanParser.g:901:2: ( () rulePreListElement otherlv_2= From ( ( ruleEString ) ) this_INDENT_4= RULE_INDENT (otherlv_5= To ( ( ruleEString ) ) )? (otherlv_7= Value ( (lv_value_8_0= rulePropertyValue ) ) )? this_DEDENT_9= RULE_DEDENT )
+            // InternalPlanParser.g:902:3: () rulePreListElement otherlv_2= From ( ( ruleEString ) ) this_INDENT_4= RULE_INDENT (otherlv_5= To ( ( ruleEString ) ) )? (otherlv_7= Value ( (lv_value_8_0= rulePropertyValue ) ) )? this_DEDENT_9= RULE_DEDENT
             {
-            // InternalPlanParser.g:877:3: ()
-            // InternalPlanParser.g:878:4:
+            // InternalPlanParser.g:902:3: ()
+            // InternalPlanParser.g:903:4:
             {
 
                     current = forceCreateModelElement(
@@ -2182,7 +2238,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
                   newCompositeNode(grammarAccess.getConfigExecutionParameterAccess().getPreListElementParserRuleCall_1());
 
-            pushFollow(FOLLOW_26);
+            pushFollow(FOLLOW_27);
             rulePreListElement();
 
             state._fsp--;
@@ -2194,11 +2250,11 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
                   newLeafNode(otherlv_2, grammarAccess.getConfigExecutionParameterAccess().getFromKeyword_2());
 
-            // InternalPlanParser.g:895:3: ( ( ruleEString ) )
-            // InternalPlanParser.g:896:4: ( ruleEString )
+            // InternalPlanParser.g:920:3: ( ( ruleEString ) )
+            // InternalPlanParser.g:921:4: ( ruleEString )
             {
-            // InternalPlanParser.g:896:4: ( ruleEString )
-            // InternalPlanParser.g:897:5: ruleEString
+            // InternalPlanParser.g:921:4: ( ruleEString )
+            // InternalPlanParser.g:922:5: ruleEString
             {
 
                       if (current==null) {
@@ -2222,30 +2278,30 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
             }
 
-            this_INDENT_4=(Token)match(input,RULE_INDENT,FOLLOW_27);
+            this_INDENT_4=(Token)match(input,RULE_INDENT,FOLLOW_28);
 
                   newLeafNode(this_INDENT_4, grammarAccess.getConfigExecutionParameterAccess().getINDENTTerminalRuleCall_4());
 
-            // InternalPlanParser.g:915:3: (otherlv_5= To ( ( ruleEString ) ) )?
-            int alt15=2;
-            int LA15_0 = input.LA(1);
+            // InternalPlanParser.g:940:3: (otherlv_5= To ( ( ruleEString ) ) )?
+            int alt16=2;
+            int LA16_0 = input.LA(1);
 
-            if ( (LA15_0==To) ) {
-                alt15=1;
+            if ( (LA16_0==To) ) {
+                alt16=1;
             }
-            switch (alt15) {
+            switch (alt16) {
                 case 1 :
-                    // InternalPlanParser.g:916:4: otherlv_5= To ( ( ruleEString ) )
+                    // InternalPlanParser.g:941:4: otherlv_5= To ( ( ruleEString ) )
                     {
                     otherlv_5=(Token)match(input,To,FOLLOW_5);
 
                             newLeafNode(otherlv_5, grammarAccess.getConfigExecutionParameterAccess().getToKeyword_5_0());
 
-                    // InternalPlanParser.g:920:4: ( ( ruleEString ) )
-                    // InternalPlanParser.g:921:5: ( ruleEString )
+                    // InternalPlanParser.g:945:4: ( ( ruleEString ) )
+                    // InternalPlanParser.g:946:5: ( ruleEString )
                     {
-                    // InternalPlanParser.g:921:5: ( ruleEString )
-                    // InternalPlanParser.g:922:6: ruleEString
+                    // InternalPlanParser.g:946:5: ( ruleEString )
+                    // InternalPlanParser.g:947:6: ruleEString
                     {
 
                                 if (current==null) {
@@ -2255,7 +2311,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
                                 newCompositeNode(grammarAccess.getConfigExecutionParameterAccess().getToAbstractConfigPropertyCrossReference_5_1_0());
 
-                    pushFollow(FOLLOW_28);
+                    pushFollow(FOLLOW_29);
                     ruleEString();
 
                     state._fsp--;
@@ -2275,26 +2331,26 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalPlanParser.g:937:3: (otherlv_7= Value ( (lv_value_8_0= rulePropertyValue ) ) )?
-            int alt16=2;
-            int LA16_0 = input.LA(1);
+            // InternalPlanParser.g:962:3: (otherlv_7= Value ( (lv_value_8_0= rulePropertyValue ) ) )?
+            int alt17=2;
+            int LA17_0 = input.LA(1);
 
-            if ( (LA16_0==Value) ) {
-                alt16=1;
+            if ( (LA17_0==Value) ) {
+                alt17=1;
             }
-            switch (alt16) {
+            switch (alt17) {
                 case 1 :
-                    // InternalPlanParser.g:938:4: otherlv_7= Value ( (lv_value_8_0= rulePropertyValue ) )
+                    // InternalPlanParser.g:963:4: otherlv_7= Value ( (lv_value_8_0= rulePropertyValue ) )
                     {
-                    otherlv_7=(Token)match(input,Value,FOLLOW_29);
+                    otherlv_7=(Token)match(input,Value,FOLLOW_30);
 
                             newLeafNode(otherlv_7, grammarAccess.getConfigExecutionParameterAccess().getValueKeyword_6_0());
 
-                    // InternalPlanParser.g:942:4: ( (lv_value_8_0= rulePropertyValue ) )
-                    // InternalPlanParser.g:943:5: (lv_value_8_0= rulePropertyValue )
+                    // InternalPlanParser.g:967:4: ( (lv_value_8_0= rulePropertyValue ) )
+                    // InternalPlanParser.g:968:5: (lv_value_8_0= rulePropertyValue )
                     {
-                    // InternalPlanParser.g:943:5: (lv_value_8_0= rulePropertyValue )
-                    // InternalPlanParser.g:944:6: lv_value_8_0= rulePropertyValue
+                    // InternalPlanParser.g:968:5: (lv_value_8_0= rulePropertyValue )
+                    // InternalPlanParser.g:969:6: lv_value_8_0= rulePropertyValue
                     {
 
                                 newCompositeNode(grammarAccess.getConfigExecutionParameterAccess().getValuePropertyValueParserRuleCall_6_1_0());
@@ -2354,7 +2410,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleOperatingSystemResouce"
-    // InternalPlanParser.g:970:1: entryRuleOperatingSystemResouce returns [EObject current=null] : iv_ruleOperatingSystemResouce= ruleOperatingSystemResouce EOF ;
+    // InternalPlanParser.g:995:1: entryRuleOperatingSystemResouce returns [EObject current=null] : iv_ruleOperatingSystemResouce= ruleOperatingSystemResouce EOF ;
     public final EObject entryRuleOperatingSystemResouce() throws RecognitionException {
         EObject current = null;
 
@@ -2362,8 +2418,8 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPlanParser.g:970:63: (iv_ruleOperatingSystemResouce= ruleOperatingSystemResouce EOF )
-            // InternalPlanParser.g:971:2: iv_ruleOperatingSystemResouce= ruleOperatingSystemResouce EOF
+            // InternalPlanParser.g:995:63: (iv_ruleOperatingSystemResouce= ruleOperatingSystemResouce EOF )
+            // InternalPlanParser.g:996:2: iv_ruleOperatingSystemResouce= ruleOperatingSystemResouce EOF
             {
              newCompositeNode(grammarAccess.getOperatingSystemResouceRule());
             pushFollow(FOLLOW_1);
@@ -2390,7 +2446,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleOperatingSystemResouce"
-    // InternalPlanParser.g:977:1: ruleOperatingSystemResouce returns [EObject current=null] : ( () otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Type ( (lv_type_5_0= ruleOpertingSystemResouceType ) ) (otherlv_6= Properties this_INDENT_7= RULE_INDENT ( (lv_properties_8_0= ruleAbstractOperatingSystemProperty ) )+ this_DEDENT_9= RULE_DEDENT )? this_DEDENT_10= RULE_DEDENT ) ;
+    // InternalPlanParser.g:1002:1: ruleOperatingSystemResouce returns [EObject current=null] : ( () otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Type ( (lv_type_5_0= ruleOpertingSystemResouceType ) ) (otherlv_6= Properties this_INDENT_7= RULE_INDENT ( (lv_properties_8_0= ruleAbstractOperatingSystemProperty ) )+ this_DEDENT_9= RULE_DEDENT )? this_DEDENT_10= RULE_DEDENT ) ;
     public final EObject ruleOperatingSystemResouce() throws RecognitionException {
         EObject current = null;
 
@@ -2412,14 +2468,14 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
           enterRule();
 
         try {
-            // InternalPlanParser.g:983:2: ( ( () otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Type ( (lv_type_5_0= ruleOpertingSystemResouceType ) ) (otherlv_6= Properties this_INDENT_7= RULE_INDENT ( (lv_properties_8_0= ruleAbstractOperatingSystemProperty ) )+ this_DEDENT_9= RULE_DEDENT )? this_DEDENT_10= RULE_DEDENT ) )
-            // InternalPlanParser.g:984:2: ( () otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Type ( (lv_type_5_0= ruleOpertingSystemResouceType ) ) (otherlv_6= Properties this_INDENT_7= RULE_INDENT ( (lv_properties_8_0= ruleAbstractOperatingSystemProperty ) )+ this_DEDENT_9= RULE_DEDENT )? this_DEDENT_10= RULE_DEDENT )
+            // InternalPlanParser.g:1008:2: ( ( () otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Type ( (lv_type_5_0= ruleOpertingSystemResouceType ) ) (otherlv_6= Properties this_INDENT_7= RULE_INDENT ( (lv_properties_8_0= ruleAbstractOperatingSystemProperty ) )+ this_DEDENT_9= RULE_DEDENT )? this_DEDENT_10= RULE_DEDENT ) )
+            // InternalPlanParser.g:1009:2: ( () otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Type ( (lv_type_5_0= ruleOpertingSystemResouceType ) ) (otherlv_6= Properties this_INDENT_7= RULE_INDENT ( (lv_properties_8_0= ruleAbstractOperatingSystemProperty ) )+ this_DEDENT_9= RULE_DEDENT )? this_DEDENT_10= RULE_DEDENT )
             {
-            // InternalPlanParser.g:984:2: ( () otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Type ( (lv_type_5_0= ruleOpertingSystemResouceType ) ) (otherlv_6= Properties this_INDENT_7= RULE_INDENT ( (lv_properties_8_0= ruleAbstractOperatingSystemProperty ) )+ this_DEDENT_9= RULE_DEDENT )? this_DEDENT_10= RULE_DEDENT )
-            // InternalPlanParser.g:985:3: () otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Type ( (lv_type_5_0= ruleOpertingSystemResouceType ) ) (otherlv_6= Properties this_INDENT_7= RULE_INDENT ( (lv_properties_8_0= ruleAbstractOperatingSystemProperty ) )+ this_DEDENT_9= RULE_DEDENT )? this_DEDENT_10= RULE_DEDENT
+            // InternalPlanParser.g:1009:2: ( () otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Type ( (lv_type_5_0= ruleOpertingSystemResouceType ) ) (otherlv_6= Properties this_INDENT_7= RULE_INDENT ( (lv_properties_8_0= ruleAbstractOperatingSystemProperty ) )+ this_DEDENT_9= RULE_DEDENT )? this_DEDENT_10= RULE_DEDENT )
+            // InternalPlanParser.g:1010:3: () otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Type ( (lv_type_5_0= ruleOpertingSystemResouceType ) ) (otherlv_6= Properties this_INDENT_7= RULE_INDENT ( (lv_properties_8_0= ruleAbstractOperatingSystemProperty ) )+ this_DEDENT_9= RULE_DEDENT )? this_DEDENT_10= RULE_DEDENT
             {
-            // InternalPlanParser.g:985:3: ()
-            // InternalPlanParser.g:986:4:
+            // InternalPlanParser.g:1010:3: ()
+            // InternalPlanParser.g:1011:4:
             {
 
                     current = forceCreateModelElement(
@@ -2433,11 +2489,11 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
                   newLeafNode(otherlv_1, grammarAccess.getOperatingSystemResouceAccess().getNameKeyword_1());
 
-            // InternalPlanParser.g:996:3: ( (lv_name_2_0= ruleEString ) )
-            // InternalPlanParser.g:997:4: (lv_name_2_0= ruleEString )
+            // InternalPlanParser.g:1021:3: ( (lv_name_2_0= ruleEString ) )
+            // InternalPlanParser.g:1022:4: (lv_name_2_0= ruleEString )
             {
-            // InternalPlanParser.g:997:4: (lv_name_2_0= ruleEString )
-            // InternalPlanParser.g:998:5: lv_name_2_0= ruleEString
+            // InternalPlanParser.g:1022:4: (lv_name_2_0= ruleEString )
+            // InternalPlanParser.g:1023:5: lv_name_2_0= ruleEString
             {
 
                       newCompositeNode(grammarAccess.getOperatingSystemResouceAccess().getNameEStringParserRuleCall_2_0());
@@ -2468,20 +2524,20 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
                   newLeafNode(this_INDENT_3, grammarAccess.getOperatingSystemResouceAccess().getINDENTTerminalRuleCall_3());
 
-            otherlv_4=(Token)match(input,Type,FOLLOW_30);
+            otherlv_4=(Token)match(input,Type,FOLLOW_31);
 
                   newLeafNode(otherlv_4, grammarAccess.getOperatingSystemResouceAccess().getTypeKeyword_4());
 
-            // InternalPlanParser.g:1023:3: ( (lv_type_5_0= ruleOpertingSystemResouceType ) )
-            // InternalPlanParser.g:1024:4: (lv_type_5_0= ruleOpertingSystemResouceType )
+            // InternalPlanParser.g:1048:3: ( (lv_type_5_0= ruleOpertingSystemResouceType ) )
+            // InternalPlanParser.g:1049:4: (lv_type_5_0= ruleOpertingSystemResouceType )
             {
-            // InternalPlanParser.g:1024:4: (lv_type_5_0= ruleOpertingSystemResouceType )
-            // InternalPlanParser.g:1025:5: lv_type_5_0= ruleOpertingSystemResouceType
+            // InternalPlanParser.g:1049:4: (lv_type_5_0= ruleOpertingSystemResouceType )
+            // InternalPlanParser.g:1050:5: lv_type_5_0= ruleOpertingSystemResouceType
             {
 
                       newCompositeNode(grammarAccess.getOperatingSystemResouceAccess().getTypeOpertingSystemResouceTypeParserRuleCall_5_0());
 
-            pushFollow(FOLLOW_31);
+            pushFollow(FOLLOW_32);
             lv_type_5_0=ruleOpertingSystemResouceType();
 
             state._fsp--;
@@ -2503,16 +2559,16 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalPlanParser.g:1042:3: (otherlv_6= Properties this_INDENT_7= RULE_INDENT ( (lv_properties_8_0= ruleAbstractOperatingSystemProperty ) )+ this_DEDENT_9= RULE_DEDENT )?
-            int alt18=2;
-            int LA18_0 = input.LA(1);
+            // InternalPlanParser.g:1067:3: (otherlv_6= Properties this_INDENT_7= RULE_INDENT ( (lv_properties_8_0= ruleAbstractOperatingSystemProperty ) )+ this_DEDENT_9= RULE_DEDENT )?
+            int alt19=2;
+            int LA19_0 = input.LA(1);
 
-            if ( (LA18_0==Properties) ) {
-                alt18=1;
+            if ( (LA19_0==Properties) ) {
+                alt19=1;
             }
-            switch (alt18) {
+            switch (alt19) {
                 case 1 :
-                    // InternalPlanParser.g:1043:4: otherlv_6= Properties this_INDENT_7= RULE_INDENT ( (lv_properties_8_0= ruleAbstractOperatingSystemProperty ) )+ this_DEDENT_9= RULE_DEDENT
+                    // InternalPlanParser.g:1068:4: otherlv_6= Properties this_INDENT_7= RULE_INDENT ( (lv_properties_8_0= ruleAbstractOperatingSystemProperty ) )+ this_DEDENT_9= RULE_DEDENT
                     {
                     otherlv_6=(Token)match(input,Properties,FOLLOW_3);
 
@@ -2522,24 +2578,24 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
                             newLeafNode(this_INDENT_7, grammarAccess.getOperatingSystemResouceAccess().getINDENTTerminalRuleCall_6_1());
 
-                    // InternalPlanParser.g:1051:4: ( (lv_properties_8_0= ruleAbstractOperatingSystemProperty ) )+
-                    int cnt17=0;
-                    loop17:
+                    // InternalPlanParser.g:1076:4: ( (lv_properties_8_0= ruleAbstractOperatingSystemProperty ) )+
+                    int cnt18=0;
+                    loop18:
                     do {
-                        int alt17=2;
-                        int LA17_0 = input.LA(1);
+                        int alt18=2;
+                        int LA18_0 = input.LA(1);
 
-                        if ( (LA17_0==HyphenMinus) ) {
-                            alt17=1;
+                        if ( (LA18_0==HyphenMinus) ) {
+                            alt18=1;
                         }
 
 
-                        switch (alt17) {
+                        switch (alt18) {
                       case 1 :
-                          // InternalPlanParser.g:1052:5: (lv_properties_8_0= ruleAbstractOperatingSystemProperty )
+                          // InternalPlanParser.g:1077:5: (lv_properties_8_0= ruleAbstractOperatingSystemProperty )
                           {
-                          // InternalPlanParser.g:1052:5: (lv_properties_8_0= ruleAbstractOperatingSystemProperty )
-                          // InternalPlanParser.g:1053:6: lv_properties_8_0= ruleAbstractOperatingSystemProperty
+                          // InternalPlanParser.g:1077:5: (lv_properties_8_0= ruleAbstractOperatingSystemProperty )
+                          // InternalPlanParser.g:1078:6: lv_properties_8_0= ruleAbstractOperatingSystemProperty
                           {
 
                                       newCompositeNode(grammarAccess.getOperatingSystemResouceAccess().getPropertiesAbstractOperatingSystemPropertyParserRuleCall_6_2_0());
@@ -2568,12 +2624,12 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
                           break;
 
                       default :
-                          if ( cnt17 >= 1 ) break loop17;
+                          if ( cnt18 >= 1 ) break loop18;
                                 EarlyExitException eee =
-                                    new EarlyExitException(17, input);
+                                    new EarlyExitException(18, input);
                                 throw eee;
                         }
-                        cnt17++;
+                        cnt18++;
                     } while (true);
 
                     this_DEDENT_9=(Token)match(input,RULE_DEDENT,FOLLOW_8);
@@ -2613,7 +2669,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAbstractOperatingSystemProperty"
-    // InternalPlanParser.g:1083:1: entryRuleAbstractOperatingSystemProperty returns [EObject current=null] : iv_ruleAbstractOperatingSystemProperty= ruleAbstractOperatingSystemProperty EOF ;
+    // InternalPlanParser.g:1108:1: entryRuleAbstractOperatingSystemProperty returns [EObject current=null] : iv_ruleAbstractOperatingSystemProperty= ruleAbstractOperatingSystemProperty EOF ;
     public final EObject entryRuleAbstractOperatingSystemProperty() throws RecognitionException {
         EObject current = null;
 
@@ -2621,8 +2677,8 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPlanParser.g:1083:72: (iv_ruleAbstractOperatingSystemProperty= ruleAbstractOperatingSystemProperty EOF )
-            // InternalPlanParser.g:1084:2: iv_ruleAbstractOperatingSystemProperty= ruleAbstractOperatingSystemProperty EOF
+            // InternalPlanParser.g:1108:72: (iv_ruleAbstractOperatingSystemProperty= ruleAbstractOperatingSystemProperty EOF )
+            // InternalPlanParser.g:1109:2: iv_ruleAbstractOperatingSystemProperty= ruleAbstractOperatingSystemProperty EOF
             {
              newCompositeNode(grammarAccess.getAbstractOperatingSystemPropertyRule());
             pushFollow(FOLLOW_1);
@@ -2649,7 +2705,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAbstractOperatingSystemProperty"
-    // InternalPlanParser.g:1090:1: ruleAbstractOperatingSystemProperty returns [EObject current=null] : (this_NameOperatingSystemProperty_0= ruleNameOperatingSystemProperty | this_VersionOperatingSystemProperty_1= ruleVersionOperatingSystemProperty ) ;
+    // InternalPlanParser.g:1115:1: ruleAbstractOperatingSystemProperty returns [EObject current=null] : (this_NameOperatingSystemProperty_0= ruleNameOperatingSystemProperty | this_VersionOperatingSystemProperty_1= ruleVersionOperatingSystemProperty ) ;
     public final EObject ruleAbstractOperatingSystemProperty() throws RecognitionException {
         EObject current = null;
 
@@ -2662,48 +2718,48 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
           enterRule();
 
         try {
-            // InternalPlanParser.g:1096:2: ( (this_NameOperatingSystemProperty_0= ruleNameOperatingSystemProperty | this_VersionOperatingSystemProperty_1= ruleVersionOperatingSystemProperty ) )
-            // InternalPlanParser.g:1097:2: (this_NameOperatingSystemProperty_0= ruleNameOperatingSystemProperty | this_VersionOperatingSystemProperty_1= ruleVersionOperatingSystemProperty )
+            // InternalPlanParser.g:1121:2: ( (this_NameOperatingSystemProperty_0= ruleNameOperatingSystemProperty | this_VersionOperatingSystemProperty_1= ruleVersionOperatingSystemProperty ) )
+            // InternalPlanParser.g:1122:2: (this_NameOperatingSystemProperty_0= ruleNameOperatingSystemProperty | this_VersionOperatingSystemProperty_1= ruleVersionOperatingSystemProperty )
             {
-            // InternalPlanParser.g:1097:2: (this_NameOperatingSystemProperty_0= ruleNameOperatingSystemProperty | this_VersionOperatingSystemProperty_1= ruleVersionOperatingSystemProperty )
-            int alt19=2;
-            int LA19_0 = input.LA(1);
+            // InternalPlanParser.g:1122:2: (this_NameOperatingSystemProperty_0= ruleNameOperatingSystemProperty | this_VersionOperatingSystemProperty_1= ruleVersionOperatingSystemProperty )
+            int alt20=2;
+            int LA20_0 = input.LA(1);
 
-            if ( (LA19_0==HyphenMinus) ) {
-                int LA19_1 = input.LA(2);
+            if ( (LA20_0==HyphenMinus) ) {
+                int LA20_1 = input.LA(2);
 
-                if ( (LA19_1==Name) ) {
-                    int LA19_2 = input.LA(3);
+                if ( (LA20_1==Name) ) {
+                    int LA20_2 = input.LA(3);
 
-                    if ( (LA19_2==Os_version) ) {
-                        alt19=2;
+                    if ( (LA20_2==Os_version) ) {
+                        alt20=2;
                     }
-                    else if ( (LA19_2==Os_name) ) {
-                        alt19=1;
+                    else if ( (LA20_2==Os_name) ) {
+                        alt20=1;
                     }
                     else {
                         NoViableAltException nvae =
-                            new NoViableAltException("", 19, 2, input);
+                            new NoViableAltException("", 20, 2, input);
 
                         throw nvae;
                     }
                 }
                 else {
                     NoViableAltException nvae =
-                        new NoViableAltException("", 19, 1, input);
+                        new NoViableAltException("", 20, 1, input);
 
                     throw nvae;
                 }
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 19, 0, input);
+                    new NoViableAltException("", 20, 0, input);
 
                 throw nvae;
             }
-            switch (alt19) {
+            switch (alt20) {
                 case 1 :
-                    // InternalPlanParser.g:1098:3: this_NameOperatingSystemProperty_0= ruleNameOperatingSystemProperty
+                    // InternalPlanParser.g:1123:3: this_NameOperatingSystemProperty_0= ruleNameOperatingSystemProperty
                     {
 
                           newCompositeNode(grammarAccess.getAbstractOperatingSystemPropertyAccess().getNameOperatingSystemPropertyParserRuleCall_0());
@@ -2721,7 +2777,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalPlanParser.g:1107:3: this_VersionOperatingSystemProperty_1= ruleVersionOperatingSystemProperty
+                    // InternalPlanParser.g:1132:3: this_VersionOperatingSystemProperty_1= ruleVersionOperatingSystemProperty
                     {
 
                           newCompositeNode(grammarAccess.getAbstractOperatingSystemPropertyAccess().getVersionOperatingSystemPropertyParserRuleCall_1());
@@ -2761,7 +2817,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNameOperatingSystemProperty"
-    // InternalPlanParser.g:1119:1: entryRuleNameOperatingSystemProperty returns [EObject current=null] : iv_ruleNameOperatingSystemProperty= ruleNameOperatingSystemProperty EOF ;
+    // InternalPlanParser.g:1144:1: entryRuleNameOperatingSystemProperty returns [EObject current=null] : iv_ruleNameOperatingSystemProperty= ruleNameOperatingSystemProperty EOF ;
     public final EObject entryRuleNameOperatingSystemProperty() throws RecognitionException {
         EObject current = null;
 
@@ -2769,8 +2825,8 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPlanParser.g:1119:68: (iv_ruleNameOperatingSystemProperty= ruleNameOperatingSystemProperty EOF )
-            // InternalPlanParser.g:1120:2: iv_ruleNameOperatingSystemProperty= ruleNameOperatingSystemProperty EOF
+            // InternalPlanParser.g:1144:68: (iv_ruleNameOperatingSystemProperty= ruleNameOperatingSystemProperty EOF )
+            // InternalPlanParser.g:1145:2: iv_ruleNameOperatingSystemProperty= ruleNameOperatingSystemProperty EOF
             {
              newCompositeNode(grammarAccess.getNameOperatingSystemPropertyRule());
             pushFollow(FOLLOW_1);
@@ -2797,7 +2853,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNameOperatingSystemProperty"
-    // InternalPlanParser.g:1126:1: ruleNameOperatingSystemProperty returns [EObject current=null] : ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= Os_name ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT ) ;
+    // InternalPlanParser.g:1151:1: ruleNameOperatingSystemProperty returns [EObject current=null] : ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= Os_name ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT ) ;
     public final EObject ruleNameOperatingSystemProperty() throws RecognitionException {
         EObject current = null;
 
@@ -2819,14 +2875,14 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
           enterRule();
 
         try {
-            // InternalPlanParser.g:1132:2: ( ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= Os_name ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT ) )
-            // InternalPlanParser.g:1133:2: ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= Os_name ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT )
+            // InternalPlanParser.g:1157:2: ( ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= Os_name ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT ) )
+            // InternalPlanParser.g:1158:2: ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= Os_name ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT )
             {
-            // InternalPlanParser.g:1133:2: ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= Os_name ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT )
-            // InternalPlanParser.g:1134:3: () rulePreListElement otherlv_2= Name ( (lv_name_3_0= Os_name ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT
+            // InternalPlanParser.g:1158:2: ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= Os_name ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT )
+            // InternalPlanParser.g:1159:3: () rulePreListElement otherlv_2= Name ( (lv_name_3_0= Os_name ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT
             {
-            // InternalPlanParser.g:1134:3: ()
-            // InternalPlanParser.g:1135:4:
+            // InternalPlanParser.g:1159:3: ()
+            // InternalPlanParser.g:1160:4:
             {
 
                     current = forceCreateModelElement(
@@ -2847,15 +2903,15 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
                   afterParserOrEnumRuleCall();
 
-            otherlv_2=(Token)match(input,Name,FOLLOW_32);
+            otherlv_2=(Token)match(input,Name,FOLLOW_33);
 
                   newLeafNode(otherlv_2, grammarAccess.getNameOperatingSystemPropertyAccess().getNameKeyword_2());
 
-            // InternalPlanParser.g:1152:3: ( (lv_name_3_0= Os_name ) )
-            // InternalPlanParser.g:1153:4: (lv_name_3_0= Os_name )
+            // InternalPlanParser.g:1177:3: ( (lv_name_3_0= Os_name ) )
+            // InternalPlanParser.g:1178:4: (lv_name_3_0= Os_name )
             {
-            // InternalPlanParser.g:1153:4: (lv_name_3_0= Os_name )
-            // InternalPlanParser.g:1154:5: lv_name_3_0= Os_name
+            // InternalPlanParser.g:1178:4: (lv_name_3_0= Os_name )
+            // InternalPlanParser.g:1179:5: lv_name_3_0= Os_name
             {
             lv_name_3_0=(Token)match(input,Os_name,FOLLOW_3);
 
@@ -2873,24 +2929,24 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
             }
 
-            this_INDENT_4=(Token)match(input,RULE_INDENT,FOLLOW_33);
+            this_INDENT_4=(Token)match(input,RULE_INDENT,FOLLOW_34);
 
                   newLeafNode(this_INDENT_4, grammarAccess.getNameOperatingSystemPropertyAccess().getINDENTTerminalRuleCall_4());
 
-            otherlv_5=(Token)match(input,Kind,FOLLOW_34);
+            otherlv_5=(Token)match(input,Kind,FOLLOW_35);
 
                   newLeafNode(otherlv_5, grammarAccess.getNameOperatingSystemPropertyAccess().getKindKeyword_5());
 
-            // InternalPlanParser.g:1174:3: ( (lv_kind_6_0= ruleAttributeKind ) )
-            // InternalPlanParser.g:1175:4: (lv_kind_6_0= ruleAttributeKind )
+            // InternalPlanParser.g:1199:3: ( (lv_kind_6_0= ruleAttributeKind ) )
+            // InternalPlanParser.g:1200:4: (lv_kind_6_0= ruleAttributeKind )
             {
-            // InternalPlanParser.g:1175:4: (lv_kind_6_0= ruleAttributeKind )
-            // InternalPlanParser.g:1176:5: lv_kind_6_0= ruleAttributeKind
+            // InternalPlanParser.g:1200:4: (lv_kind_6_0= ruleAttributeKind )
+            // InternalPlanParser.g:1201:5: lv_kind_6_0= ruleAttributeKind
             {
 
                       newCompositeNode(grammarAccess.getNameOperatingSystemPropertyAccess().getKindAttributeKindParserRuleCall_6_0());
 
-            pushFollow(FOLLOW_35);
+            pushFollow(FOLLOW_36);
             lv_kind_6_0=ruleAttributeKind();
 
             state._fsp--;
@@ -2912,31 +2968,31 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalPlanParser.g:1193:3: (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )?
-            int alt20=2;
-            int LA20_0 = input.LA(1);
+            // InternalPlanParser.g:1218:3: (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )?
+            int alt21=2;
+            int LA21_0 = input.LA(1);
 
-            if ( (LA20_0==Description) ) {
-                alt20=1;
+            if ( (LA21_0==Description) ) {
+                alt21=1;
             }
-            switch (alt20) {
+            switch (alt21) {
                 case 1 :
-                    // InternalPlanParser.g:1194:4: otherlv_7= Description ( (lv_description_8_0= ruleEString ) )
+                    // InternalPlanParser.g:1219:4: otherlv_7= Description ( (lv_description_8_0= ruleEString ) )
                     {
                     otherlv_7=(Token)match(input,Description,FOLLOW_5);
 
                             newLeafNode(otherlv_7, grammarAccess.getNameOperatingSystemPropertyAccess().getDescriptionKeyword_7_0());
 
-                    // InternalPlanParser.g:1198:4: ( (lv_description_8_0= ruleEString ) )
-                    // InternalPlanParser.g:1199:5: (lv_description_8_0= ruleEString )
+                    // InternalPlanParser.g:1223:4: ( (lv_description_8_0= ruleEString ) )
+                    // InternalPlanParser.g:1224:5: (lv_description_8_0= ruleEString )
                     {
-                    // InternalPlanParser.g:1199:5: (lv_description_8_0= ruleEString )
-                    // InternalPlanParser.g:1200:6: lv_description_8_0= ruleEString
+                    // InternalPlanParser.g:1224:5: (lv_description_8_0= ruleEString )
+                    // InternalPlanParser.g:1225:6: lv_description_8_0= ruleEString
                     {
 
                                 newCompositeNode(grammarAccess.getNameOperatingSystemPropertyAccess().getDescriptionEStringParserRuleCall_7_1_0());
 
-                    pushFollow(FOLLOW_28);
+                    pushFollow(FOLLOW_29);
                     lv_description_8_0=ruleEString();
 
                     state._fsp--;
@@ -2964,26 +3020,26 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalPlanParser.g:1218:3: (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )?
-            int alt21=2;
-            int LA21_0 = input.LA(1);
+            // InternalPlanParser.g:1243:3: (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )?
+            int alt22=2;
+            int LA22_0 = input.LA(1);
 
-            if ( (LA21_0==Value) ) {
-                alt21=1;
+            if ( (LA22_0==Value) ) {
+                alt22=1;
             }
-            switch (alt21) {
+            switch (alt22) {
                 case 1 :
-                    // InternalPlanParser.g:1219:4: otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) )
+                    // InternalPlanParser.g:1244:4: otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) )
                     {
-                    otherlv_9=(Token)match(input,Value,FOLLOW_29);
+                    otherlv_9=(Token)match(input,Value,FOLLOW_30);
 
                             newLeafNode(otherlv_9, grammarAccess.getNameOperatingSystemPropertyAccess().getValueKeyword_8_0());
 
-                    // InternalPlanParser.g:1223:4: ( (lv_value_10_0= rulePropertyValue ) )
-                    // InternalPlanParser.g:1224:5: (lv_value_10_0= rulePropertyValue )
+                    // InternalPlanParser.g:1248:4: ( (lv_value_10_0= rulePropertyValue ) )
+                    // InternalPlanParser.g:1249:5: (lv_value_10_0= rulePropertyValue )
                     {
-                    // InternalPlanParser.g:1224:5: (lv_value_10_0= rulePropertyValue )
-                    // InternalPlanParser.g:1225:6: lv_value_10_0= rulePropertyValue
+                    // InternalPlanParser.g:1249:5: (lv_value_10_0= rulePropertyValue )
+                    // InternalPlanParser.g:1250:6: lv_value_10_0= rulePropertyValue
                     {
 
                                 newCompositeNode(grammarAccess.getNameOperatingSystemPropertyAccess().getValuePropertyValueParserRuleCall_8_1_0());
@@ -3043,7 +3099,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleVersionOperatingSystemProperty"
-    // InternalPlanParser.g:1251:1: entryRuleVersionOperatingSystemProperty returns [EObject current=null] : iv_ruleVersionOperatingSystemProperty= ruleVersionOperatingSystemProperty EOF ;
+    // InternalPlanParser.g:1276:1: entryRuleVersionOperatingSystemProperty returns [EObject current=null] : iv_ruleVersionOperatingSystemProperty= ruleVersionOperatingSystemProperty EOF ;
     public final EObject entryRuleVersionOperatingSystemProperty() throws RecognitionException {
         EObject current = null;
 
@@ -3051,8 +3107,8 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPlanParser.g:1251:71: (iv_ruleVersionOperatingSystemProperty= ruleVersionOperatingSystemProperty EOF )
-            // InternalPlanParser.g:1252:2: iv_ruleVersionOperatingSystemProperty= ruleVersionOperatingSystemProperty EOF
+            // InternalPlanParser.g:1276:71: (iv_ruleVersionOperatingSystemProperty= ruleVersionOperatingSystemProperty EOF )
+            // InternalPlanParser.g:1277:2: iv_ruleVersionOperatingSystemProperty= ruleVersionOperatingSystemProperty EOF
             {
              newCompositeNode(grammarAccess.getVersionOperatingSystemPropertyRule());
             pushFollow(FOLLOW_1);
@@ -3079,7 +3135,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleVersionOperatingSystemProperty"
-    // InternalPlanParser.g:1258:1: ruleVersionOperatingSystemProperty returns [EObject current=null] : ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= Os_version ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT ) ;
+    // InternalPlanParser.g:1283:1: ruleVersionOperatingSystemProperty returns [EObject current=null] : ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= Os_version ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT ) ;
     public final EObject ruleVersionOperatingSystemProperty() throws RecognitionException {
         EObject current = null;
 
@@ -3101,14 +3157,14 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
           enterRule();
 
         try {
-            // InternalPlanParser.g:1264:2: ( ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= Os_version ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT ) )
-            // InternalPlanParser.g:1265:2: ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= Os_version ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT )
+            // InternalPlanParser.g:1289:2: ( ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= Os_version ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT ) )
+            // InternalPlanParser.g:1290:2: ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= Os_version ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT )
             {
-            // InternalPlanParser.g:1265:2: ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= Os_version ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT )
-            // InternalPlanParser.g:1266:3: () rulePreListElement otherlv_2= Name ( (lv_name_3_0= Os_version ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT
+            // InternalPlanParser.g:1290:2: ( () rulePreListElement otherlv_2= Name ( (lv_name_3_0= Os_version ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT )
+            // InternalPlanParser.g:1291:3: () rulePreListElement otherlv_2= Name ( (lv_name_3_0= Os_version ) ) this_INDENT_4= RULE_INDENT otherlv_5= Kind ( (lv_kind_6_0= ruleAttributeKind ) ) (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )? (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )? this_DEDENT_11= RULE_DEDENT
             {
-            // InternalPlanParser.g:1266:3: ()
-            // InternalPlanParser.g:1267:4:
+            // InternalPlanParser.g:1291:3: ()
+            // InternalPlanParser.g:1292:4:
             {
 
                     current = forceCreateModelElement(
@@ -3129,15 +3185,15 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
                   afterParserOrEnumRuleCall();
 
-            otherlv_2=(Token)match(input,Name,FOLLOW_36);
+            otherlv_2=(Token)match(input,Name,FOLLOW_37);
 
                   newLeafNode(otherlv_2, grammarAccess.getVersionOperatingSystemPropertyAccess().getNameKeyword_2());
 
-            // InternalPlanParser.g:1284:3: ( (lv_name_3_0= Os_version ) )
-            // InternalPlanParser.g:1285:4: (lv_name_3_0= Os_version )
+            // InternalPlanParser.g:1309:3: ( (lv_name_3_0= Os_version ) )
+            // InternalPlanParser.g:1310:4: (lv_name_3_0= Os_version )
             {
-            // InternalPlanParser.g:1285:4: (lv_name_3_0= Os_version )
-            // InternalPlanParser.g:1286:5: lv_name_3_0= Os_version
+            // InternalPlanParser.g:1310:4: (lv_name_3_0= Os_version )
+            // InternalPlanParser.g:1311:5: lv_name_3_0= Os_version
             {
             lv_name_3_0=(Token)match(input,Os_version,FOLLOW_3);
 
@@ -3155,24 +3211,24 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
             }
 
-            this_INDENT_4=(Token)match(input,RULE_INDENT,FOLLOW_33);
+            this_INDENT_4=(Token)match(input,RULE_INDENT,FOLLOW_34);
 
                   newLeafNode(this_INDENT_4, grammarAccess.getVersionOperatingSystemPropertyAccess().getINDENTTerminalRuleCall_4());
 
-            otherlv_5=(Token)match(input,Kind,FOLLOW_34);
+            otherlv_5=(Token)match(input,Kind,FOLLOW_35);
 
                   newLeafNode(otherlv_5, grammarAccess.getVersionOperatingSystemPropertyAccess().getKindKeyword_5());
 
-            // InternalPlanParser.g:1306:3: ( (lv_kind_6_0= ruleAttributeKind ) )
-            // InternalPlanParser.g:1307:4: (lv_kind_6_0= ruleAttributeKind )
+            // InternalPlanParser.g:1331:3: ( (lv_kind_6_0= ruleAttributeKind ) )
+            // InternalPlanParser.g:1332:4: (lv_kind_6_0= ruleAttributeKind )
             {
-            // InternalPlanParser.g:1307:4: (lv_kind_6_0= ruleAttributeKind )
-            // InternalPlanParser.g:1308:5: lv_kind_6_0= ruleAttributeKind
+            // InternalPlanParser.g:1332:4: (lv_kind_6_0= ruleAttributeKind )
+            // InternalPlanParser.g:1333:5: lv_kind_6_0= ruleAttributeKind
             {
 
                       newCompositeNode(grammarAccess.getVersionOperatingSystemPropertyAccess().getKindAttributeKindParserRuleCall_6_0());
 
-            pushFollow(FOLLOW_35);
+            pushFollow(FOLLOW_36);
             lv_kind_6_0=ruleAttributeKind();
 
             state._fsp--;
@@ -3194,31 +3250,31 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalPlanParser.g:1325:3: (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )?
-            int alt22=2;
-            int LA22_0 = input.LA(1);
+            // InternalPlanParser.g:1350:3: (otherlv_7= Description ( (lv_description_8_0= ruleEString ) ) )?
+            int alt23=2;
+            int LA23_0 = input.LA(1);
 
-            if ( (LA22_0==Description) ) {
-                alt22=1;
+            if ( (LA23_0==Description) ) {
+                alt23=1;
             }
-            switch (alt22) {
+            switch (alt23) {
                 case 1 :
-                    // InternalPlanParser.g:1326:4: otherlv_7= Description ( (lv_description_8_0= ruleEString ) )
+                    // InternalPlanParser.g:1351:4: otherlv_7= Description ( (lv_description_8_0= ruleEString ) )
                     {
                     otherlv_7=(Token)match(input,Description,FOLLOW_5);
 
                             newLeafNode(otherlv_7, grammarAccess.getVersionOperatingSystemPropertyAccess().getDescriptionKeyword_7_0());
 
-                    // InternalPlanParser.g:1330:4: ( (lv_description_8_0= ruleEString ) )
-                    // InternalPlanParser.g:1331:5: (lv_description_8_0= ruleEString )
+                    // InternalPlanParser.g:1355:4: ( (lv_description_8_0= ruleEString ) )
+                    // InternalPlanParser.g:1356:5: (lv_description_8_0= ruleEString )
                     {
-                    // InternalPlanParser.g:1331:5: (lv_description_8_0= ruleEString )
-                    // InternalPlanParser.g:1332:6: lv_description_8_0= ruleEString
+                    // InternalPlanParser.g:1356:5: (lv_description_8_0= ruleEString )
+                    // InternalPlanParser.g:1357:6: lv_description_8_0= ruleEString
                     {
 
                                 newCompositeNode(grammarAccess.getVersionOperatingSystemPropertyAccess().getDescriptionEStringParserRuleCall_7_1_0());
 
-                    pushFollow(FOLLOW_28);
+                    pushFollow(FOLLOW_29);
                     lv_description_8_0=ruleEString();
 
                     state._fsp--;
@@ -3246,26 +3302,26 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalPlanParser.g:1350:3: (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )?
-            int alt23=2;
-            int LA23_0 = input.LA(1);
+            // InternalPlanParser.g:1375:3: (otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) ) )?
+            int alt24=2;
+            int LA24_0 = input.LA(1);
 
-            if ( (LA23_0==Value) ) {
-                alt23=1;
+            if ( (LA24_0==Value) ) {
+                alt24=1;
             }
-            switch (alt23) {
+            switch (alt24) {
                 case 1 :
-                    // InternalPlanParser.g:1351:4: otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) )
+                    // InternalPlanParser.g:1376:4: otherlv_9= Value ( (lv_value_10_0= rulePropertyValue ) )
                     {
-                    otherlv_9=(Token)match(input,Value,FOLLOW_29);
+                    otherlv_9=(Token)match(input,Value,FOLLOW_30);
 
                             newLeafNode(otherlv_9, grammarAccess.getVersionOperatingSystemPropertyAccess().getValueKeyword_8_0());
 
-                    // InternalPlanParser.g:1355:4: ( (lv_value_10_0= rulePropertyValue ) )
-                    // InternalPlanParser.g:1356:5: (lv_value_10_0= rulePropertyValue )
+                    // InternalPlanParser.g:1380:4: ( (lv_value_10_0= rulePropertyValue ) )
+                    // InternalPlanParser.g:1381:5: (lv_value_10_0= rulePropertyValue )
                     {
-                    // InternalPlanParser.g:1356:5: (lv_value_10_0= rulePropertyValue )
-                    // InternalPlanParser.g:1357:6: lv_value_10_0= rulePropertyValue
+                    // InternalPlanParser.g:1381:5: (lv_value_10_0= rulePropertyValue )
+                    // InternalPlanParser.g:1382:6: lv_value_10_0= rulePropertyValue
                     {
 
                                 newCompositeNode(grammarAccess.getVersionOperatingSystemPropertyAccess().getValuePropertyValueParserRuleCall_8_1_0());
@@ -3325,7 +3381,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAbstractProperty"
-    // InternalPlanParser.g:1383:1: entryRuleAbstractProperty returns [EObject current=null] : iv_ruleAbstractProperty= ruleAbstractProperty EOF ;
+    // InternalPlanParser.g:1408:1: entryRuleAbstractProperty returns [EObject current=null] : iv_ruleAbstractProperty= ruleAbstractProperty EOF ;
     public final EObject entryRuleAbstractProperty() throws RecognitionException {
         EObject current = null;
 
@@ -3333,8 +3389,8 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPlanParser.g:1383:57: (iv_ruleAbstractProperty= ruleAbstractProperty EOF )
-            // InternalPlanParser.g:1384:2: iv_ruleAbstractProperty= ruleAbstractProperty EOF
+            // InternalPlanParser.g:1408:57: (iv_ruleAbstractProperty= ruleAbstractProperty EOF )
+            // InternalPlanParser.g:1409:2: iv_ruleAbstractProperty= ruleAbstractProperty EOF
             {
              newCompositeNode(grammarAccess.getAbstractPropertyRule());
             pushFollow(FOLLOW_1);
@@ -3361,7 +3417,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAbstractProperty"
-    // InternalPlanParser.g:1390:1: ruleAbstractProperty returns [EObject current=null] : (this_PropertyAttribute_0= rulePropertyAttribute | this_PropertyMaximun_1= rulePropertyMaximun | this_PropertyMinimum_2= rulePropertyMinimum | this_PropertySelection_3= rulePropertySelection | this_PropertyRange_4= rulePropertyRange ) ;
+    // InternalPlanParser.g:1415:1: ruleAbstractProperty returns [EObject current=null] : (this_PropertyAttribute_0= rulePropertyAttribute | this_PropertyMaximun_1= rulePropertyMaximun | this_PropertyMinimum_2= rulePropertyMinimum | this_PropertySelection_3= rulePropertySelection | this_PropertyRange_4= rulePropertyRange ) ;
     public final EObject ruleAbstractProperty() throws RecognitionException {
         EObject current = null;
 
@@ -3380,15 +3436,15 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
           enterRule();
 
         try {
-            // InternalPlanParser.g:1396:2: ( (this_PropertyAttribute_0= rulePropertyAttribute | this_PropertyMaximun_1= rulePropertyMaximun | this_PropertyMinimum_2= rulePropertyMinimum | this_PropertySelection_3= rulePropertySelection | this_PropertyRange_4= rulePropertyRange ) )
-            // InternalPlanParser.g:1397:2: (this_PropertyAttribute_0= rulePropertyAttribute | this_PropertyMaximun_1= rulePropertyMaximun | this_PropertyMinimum_2= rulePropertyMinimum | this_PropertySelection_3= rulePropertySelection | this_PropertyRange_4= rulePropertyRange )
+            // InternalPlanParser.g:1421:2: ( (this_PropertyAttribute_0= rulePropertyAttribute | this_PropertyMaximun_1= rulePropertyMaximun | this_PropertyMinimum_2= rulePropertyMinimum | this_PropertySelection_3= rulePropertySelection | this_PropertyRange_4= rulePropertyRange ) )
+            // InternalPlanParser.g:1422:2: (this_PropertyAttribute_0= rulePropertyAttribute | this_PropertyMaximun_1= rulePropertyMaximun | this_PropertyMinimum_2= rulePropertyMinimum | this_PropertySelection_3= rulePropertySelection | this_PropertyRange_4= rulePropertyRange )
             {
-            // InternalPlanParser.g:1397:2: (this_PropertyAttribute_0= rulePropertyAttribute | this_PropertyMaximun_1= rulePropertyMaximun | this_PropertyMinimum_2= rulePropertyMinimum | this_PropertySelection_3= rulePropertySelection | this_PropertyRange_4= rulePropertyRange )
-            int alt24=5;
-            alt24 = dfa24.predict(input);
-            switch (alt24) {
+            // InternalPlanParser.g:1422:2: (this_PropertyAttribute_0= rulePropertyAttribute | this_PropertyMaximun_1= rulePropertyMaximun | this_PropertyMinimum_2= rulePropertyMinimum | this_PropertySelection_3= rulePropertySelection | this_PropertyRange_4= rulePropertyRange )
+            int alt25=5;
+            alt25 = dfa25.predict(input);
+            switch (alt25) {
                 case 1 :
-                    // InternalPlanParser.g:1398:3: this_PropertyAttribute_0= rulePropertyAttribute
+                    // InternalPlanParser.g:1423:3: this_PropertyAttribute_0= rulePropertyAttribute
                     {
 
                           newCompositeNode(grammarAccess.getAbstractPropertyAccess().getPropertyAttributeParserRuleCall_0());
@@ -3406,7 +3462,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalPlanParser.g:1407:3: this_PropertyMaximun_1= rulePropertyMaximun
+                    // InternalPlanParser.g:1432:3: this_PropertyMaximun_1= rulePropertyMaximun
                     {
 
                           newCompositeNode(grammarAccess.getAbstractPropertyAccess().getPropertyMaximunParserRuleCall_1());
@@ -3424,7 +3480,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalPlanParser.g:1416:3: this_PropertyMinimum_2= rulePropertyMinimum
+                    // InternalPlanParser.g:1441:3: this_PropertyMinimum_2= rulePropertyMinimum
                     {
 
                           newCompositeNode(grammarAccess.getAbstractPropertyAccess().getPropertyMinimumParserRuleCall_2());
@@ -3442,7 +3498,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalPlanParser.g:1425:3: this_PropertySelection_3= rulePropertySelection
+                    // InternalPlanParser.g:1450:3: this_PropertySelection_3= rulePropertySelection
                     {
 
                           newCompositeNode(grammarAccess.getAbstractPropertyAccess().getPropertySelectionParserRuleCall_3());
@@ -3460,7 +3516,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalPlanParser.g:1434:3: this_PropertyRange_4= rulePropertyRange
+                    // InternalPlanParser.g:1459:3: this_PropertyRange_4= rulePropertyRange
                     {
 
                           newCompositeNode(grammarAccess.getAbstractPropertyAccess().getPropertyRangeParserRuleCall_4());
@@ -3500,7 +3556,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePropertyKind"
-    // InternalPlanParser.g:1446:1: entryRulePropertyKind returns [EObject current=null] : iv_rulePropertyKind= rulePropertyKind EOF ;
+    // InternalPlanParser.g:1471:1: entryRulePropertyKind returns [EObject current=null] : iv_rulePropertyKind= rulePropertyKind EOF ;
     public final EObject entryRulePropertyKind() throws RecognitionException {
         EObject current = null;
 
@@ -3508,8 +3564,8 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPlanParser.g:1446:53: (iv_rulePropertyKind= rulePropertyKind EOF )
-            // InternalPlanParser.g:1447:2: iv_rulePropertyKind= rulePropertyKind EOF
+            // InternalPlanParser.g:1471:53: (iv_rulePropertyKind= rulePropertyKind EOF )
+            // InternalPlanParser.g:1472:2: iv_rulePropertyKind= rulePropertyKind EOF
             {
              newCompositeNode(grammarAccess.getPropertyKindRule());
             pushFollow(FOLLOW_1);
@@ -3536,7 +3592,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePropertyKind"
-    // InternalPlanParser.g:1453:1: rulePropertyKind returns [EObject current=null] : (this_AttributeKind_0= ruleAttributeKind | this_MaximumKind_1= ruleMaximumKind | this_MinimumKind_2= ruleMinimumKind | this_RangeKind_3= ruleRangeKind | this_SelectionKind_4= ruleSelectionKind ) ;
+    // InternalPlanParser.g:1478:1: rulePropertyKind returns [EObject current=null] : (this_AttributeKind_0= ruleAttributeKind | this_MaximumKind_1= ruleMaximumKind | this_MinimumKind_2= ruleMinimumKind | this_RangeKind_3= ruleRangeKind | this_SelectionKind_4= ruleSelectionKind ) ;
     public final EObject rulePropertyKind() throws RecognitionException {
         EObject current = null;
 
@@ -3555,47 +3611,47 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
           enterRule();
 
         try {
-            // InternalPlanParser.g:1459:2: ( (this_AttributeKind_0= ruleAttributeKind | this_MaximumKind_1= ruleMaximumKind | this_MinimumKind_2= ruleMinimumKind | this_RangeKind_3= ruleRangeKind | this_SelectionKind_4= ruleSelectionKind ) )
-            // InternalPlanParser.g:1460:2: (this_AttributeKind_0= ruleAttributeKind | this_MaximumKind_1= ruleMaximumKind | this_MinimumKind_2= ruleMinimumKind | this_RangeKind_3= ruleRangeKind | this_SelectionKind_4= ruleSelectionKind )
+            // InternalPlanParser.g:1484:2: ( (this_AttributeKind_0= ruleAttributeKind | this_MaximumKind_1= ruleMaximumKind | this_MinimumKind_2= ruleMinimumKind | this_RangeKind_3= ruleRangeKind | this_SelectionKind_4= ruleSelectionKind ) )
+            // InternalPlanParser.g:1485:2: (this_AttributeKind_0= ruleAttributeKind | this_MaximumKind_1= ruleMaximumKind | this_MinimumKind_2= ruleMinimumKind | this_RangeKind_3= ruleRangeKind | this_SelectionKind_4= ruleSelectionKind )
             {
-            // InternalPlanParser.g:1460:2: (this_AttributeKind_0= ruleAttributeKind | this_MaximumKind_1= ruleMaximumKind | this_MinimumKind_2= ruleMinimumKind | this_RangeKind_3= ruleRangeKind | this_SelectionKind_4= ruleSelectionKind )
-            int alt25=5;
+            // InternalPlanParser.g:1485:2: (this_AttributeKind_0= ruleAttributeKind | this_MaximumKind_1= ruleMaximumKind | this_MinimumKind_2= ruleMinimumKind | this_RangeKind_3= ruleRangeKind | this_SelectionKind_4= ruleSelectionKind )
+            int alt26=5;
             switch ( input.LA(1) ) {
             case AttributeKind:
                 {
-                alt25=1;
+                alt26=1;
                 }
                 break;
             case MaximumKind:
                 {
-                alt25=2;
+                alt26=2;
                 }
                 break;
             case MinimumKind:
                 {
-                alt25=3;
+                alt26=3;
                 }
                 break;
             case RangeKind:
                 {
-                alt25=4;
+                alt26=4;
                 }
                 break;
             case SelectionKind:
                 {
-                alt25=5;
+                alt26=5;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 25, 0, input);
+                    new NoViableAltException("", 26, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt25) {
+            switch (alt26) {
                 case 1 :
-                    // InternalPlanParser.g:1461:3: this_AttributeKind_0= ruleAttributeKind
+                    // InternalPlanParser.g:1486:3: this_AttributeKind_0= ruleAttributeKind
                     {
 
                           newCompositeNode(grammarAccess.getPropertyKindAccess().getAttributeKindParserRuleCall_0());
@@ -3613,7 +3669,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalPlanParser.g:1470:3: this_MaximumKind_1= ruleMaximumKind
+                    // InternalPlanParser.g:1495:3: this_MaximumKind_1= ruleMaximumKind
                     {
 
                           newCompositeNode(grammarAccess.getPropertyKindAccess().getMaximumKindParserRuleCall_1());
@@ -3631,7 +3687,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalPlanParser.g:1479:3: this_MinimumKind_2= ruleMinimumKind
+                    // InternalPlanParser.g:1504:3: this_MinimumKind_2= ruleMinimumKind
                     {
 
                           newCompositeNode(grammarAccess.getPropertyKindAccess().getMinimumKindParserRuleCall_2());
@@ -3649,7 +3705,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalPlanParser.g:1488:3: this_RangeKind_3= ruleRangeKind
+                    // InternalPlanParser.g:1513:3: this_RangeKind_3= ruleRangeKind
                     {
 
                           newCompositeNode(grammarAccess.getPropertyKindAccess().getRangeKindParserRuleCall_3());
@@ -3667,7 +3723,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalPlanParser.g:1497:3: this_SelectionKind_4= ruleSelectionKind
+                    // InternalPlanParser.g:1522:3: this_SelectionKind_4= ruleSelectionKind
                     {
 
                           newCompositeNode(grammarAccess.getPropertyKindAccess().getSelectionKindParserRuleCall_4());
@@ -3707,7 +3763,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePropertyAttribute"
-    // InternalPlanParser.g:1509:1: entryRulePropertyAttribute returns [EObject current=null] : iv_rulePropertyAttribute= rulePropertyAttribute EOF ;
+    // InternalPlanParser.g:1534:1: entryRulePropertyAttribute returns [EObject current=null] : iv_rulePropertyAttribute= rulePropertyAttribute EOF ;
     public final EObject entryRulePropertyAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -3715,8 +3771,8 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPlanParser.g:1509:58: (iv_rulePropertyAttribute= rulePropertyAttribute EOF )
-            // InternalPlanParser.g:1510:2: iv_rulePropertyAttribute= rulePropertyAttribute EOF
+            // InternalPlanParser.g:1534:58: (iv_rulePropertyAttribute= rulePropertyAttribute EOF )
+            // InternalPlanParser.g:1535:2: iv_rulePropertyAttribute= rulePropertyAttribute EOF
             {
              newCompositeNode(grammarAccess.getPropertyAttributeRule());
             pushFollow(FOLLOW_1);
@@ -3743,7 +3799,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePropertyAttribute"
-    // InternalPlanParser.g:1516:1: rulePropertyAttribute returns [EObject current=null] : ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleAttributeKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )? ) ;
+    // InternalPlanParser.g:1541:1: rulePropertyAttribute returns [EObject current=null] : ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleAttributeKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )? ) ;
     public final EObject rulePropertyAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -3766,11 +3822,11 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
           enterRule();
 
         try {
-            // InternalPlanParser.g:1522:2: ( ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleAttributeKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )? ) )
-            // InternalPlanParser.g:1523:2: ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleAttributeKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )? )
+            // InternalPlanParser.g:1547:2: ( ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleAttributeKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )? ) )
+            // InternalPlanParser.g:1548:2: ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleAttributeKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )? )
             {
-            // InternalPlanParser.g:1523:2: ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleAttributeKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )? )
-            // InternalPlanParser.g:1524:3: rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleAttributeKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )?
+            // InternalPlanParser.g:1548:2: ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleAttributeKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )? )
+            // InternalPlanParser.g:1549:3: rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleAttributeKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )?
             {
 
                   newCompositeNode(grammarAccess.getPropertyAttributeAccess().getPreListElementParserRuleCall_0());
@@ -3787,11 +3843,11 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
                   newLeafNode(otherlv_1, grammarAccess.getPropertyAttributeAccess().getNameKeyword_1());
 
-            // InternalPlanParser.g:1535:3: ( (lv_name_2_0= ruleEString ) )
-            // InternalPlanParser.g:1536:4: (lv_name_2_0= ruleEString )
+            // InternalPlanParser.g:1560:3: ( (lv_name_2_0= ruleEString ) )
+            // InternalPlanParser.g:1561:4: (lv_name_2_0= ruleEString )
             {
-            // InternalPlanParser.g:1536:4: (lv_name_2_0= ruleEString )
-            // InternalPlanParser.g:1537:5: lv_name_2_0= ruleEString
+            // InternalPlanParser.g:1561:4: (lv_name_2_0= ruleEString )
+            // InternalPlanParser.g:1562:5: lv_name_2_0= ruleEString
             {
 
                       newCompositeNode(grammarAccess.getPropertyAttributeAccess().getNameEStringParserRuleCall_2_0());
@@ -3818,24 +3874,24 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
             }
 
-            this_INDENT_3=(Token)match(input,RULE_INDENT,FOLLOW_33);
+            this_INDENT_3=(Token)match(input,RULE_INDENT,FOLLOW_34);
 
                   newLeafNode(this_INDENT_3, grammarAccess.getPropertyAttributeAccess().getINDENTTerminalRuleCall_3());
 
-            otherlv_4=(Token)match(input,Kind,FOLLOW_34);
+            otherlv_4=(Token)match(input,Kind,FOLLOW_35);
 
                   newLeafNode(otherlv_4, grammarAccess.getPropertyAttributeAccess().getKindKeyword_4());
 
-            // InternalPlanParser.g:1562:3: ( (lv_kind_5_0= ruleAttributeKind ) )
-            // InternalPlanParser.g:1563:4: (lv_kind_5_0= ruleAttributeKind )
+            // InternalPlanParser.g:1587:3: ( (lv_kind_5_0= ruleAttributeKind ) )
+            // InternalPlanParser.g:1588:4: (lv_kind_5_0= ruleAttributeKind )
             {
-            // InternalPlanParser.g:1563:4: (lv_kind_5_0= ruleAttributeKind )
-            // InternalPlanParser.g:1564:5: lv_kind_5_0= ruleAttributeKind
+            // InternalPlanParser.g:1588:4: (lv_kind_5_0= ruleAttributeKind )
+            // InternalPlanParser.g:1589:5: lv_kind_5_0= ruleAttributeKind
             {
 
                       newCompositeNode(grammarAccess.getPropertyAttributeAccess().getKindAttributeKindParserRuleCall_5_0());
 
-            pushFollow(FOLLOW_37);
+            pushFollow(FOLLOW_38);
             lv_kind_5_0=ruleAttributeKind();
 
             state._fsp--;
@@ -3857,31 +3913,31 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalPlanParser.g:1581:3: (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )?
-            int alt26=2;
-            int LA26_0 = input.LA(1);
+            // InternalPlanParser.g:1606:3: (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )?
+            int alt27=2;
+            int LA27_0 = input.LA(1);
 
-            if ( (LA26_0==Description) ) {
-                alt26=1;
+            if ( (LA27_0==Description) ) {
+                alt27=1;
             }
-            switch (alt26) {
+            switch (alt27) {
                 case 1 :
-                    // InternalPlanParser.g:1582:4: otherlv_6= Description ( (lv_description_7_0= ruleEString ) )
+                    // InternalPlanParser.g:1607:4: otherlv_6= Description ( (lv_description_7_0= ruleEString ) )
                     {
                     otherlv_6=(Token)match(input,Description,FOLLOW_5);
 
                             newLeafNode(otherlv_6, grammarAccess.getPropertyAttributeAccess().getDescriptionKeyword_6_0());
 
-                    // InternalPlanParser.g:1586:4: ( (lv_description_7_0= ruleEString ) )
-                    // InternalPlanParser.g:1587:5: (lv_description_7_0= ruleEString )
+                    // InternalPlanParser.g:1611:4: ( (lv_description_7_0= ruleEString ) )
+                    // InternalPlanParser.g:1612:5: (lv_description_7_0= ruleEString )
                     {
-                    // InternalPlanParser.g:1587:5: (lv_description_7_0= ruleEString )
-                    // InternalPlanParser.g:1588:6: lv_description_7_0= ruleEString
+                    // InternalPlanParser.g:1612:5: (lv_description_7_0= ruleEString )
+                    // InternalPlanParser.g:1613:6: lv_description_7_0= ruleEString
                     {
 
                                 newCompositeNode(grammarAccess.getPropertyAttributeAccess().getDescriptionEStringParserRuleCall_6_1_0());
 
-                    pushFollow(FOLLOW_38);
+                    pushFollow(FOLLOW_39);
                     lv_description_7_0=ruleEString();
 
                     state._fsp--;
@@ -3909,31 +3965,31 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalPlanParser.g:1606:3: (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )?
-            int alt27=2;
-            int LA27_0 = input.LA(1);
+            // InternalPlanParser.g:1631:3: (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )?
+            int alt28=2;
+            int LA28_0 = input.LA(1);
 
-            if ( (LA27_0==Value) ) {
-                alt27=1;
+            if ( (LA28_0==Value) ) {
+                alt28=1;
             }
-            switch (alt27) {
+            switch (alt28) {
                 case 1 :
-                    // InternalPlanParser.g:1607:4: otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) )
+                    // InternalPlanParser.g:1632:4: otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) )
                     {
-                    otherlv_8=(Token)match(input,Value,FOLLOW_29);
+                    otherlv_8=(Token)match(input,Value,FOLLOW_30);
 
                             newLeafNode(otherlv_8, grammarAccess.getPropertyAttributeAccess().getValueKeyword_7_0());
 
-                    // InternalPlanParser.g:1611:4: ( (lv_value_9_0= rulePropertyValue ) )
-                    // InternalPlanParser.g:1612:5: (lv_value_9_0= rulePropertyValue )
+                    // InternalPlanParser.g:1636:4: ( (lv_value_9_0= rulePropertyValue ) )
+                    // InternalPlanParser.g:1637:5: (lv_value_9_0= rulePropertyValue )
                     {
-                    // InternalPlanParser.g:1612:5: (lv_value_9_0= rulePropertyValue )
-                    // InternalPlanParser.g:1613:6: lv_value_9_0= rulePropertyValue
+                    // InternalPlanParser.g:1637:5: (lv_value_9_0= rulePropertyValue )
+                    // InternalPlanParser.g:1638:6: lv_value_9_0= rulePropertyValue
                     {
 
                                 newCompositeNode(grammarAccess.getPropertyAttributeAccess().getValuePropertyValueParserRuleCall_7_1_0());
 
-                    pushFollow(FOLLOW_39);
+                    pushFollow(FOLLOW_40);
                     lv_value_9_0=rulePropertyValue();
 
                     state._fsp--;
@@ -3961,16 +4017,16 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalPlanParser.g:1631:3: (this_DEDENT_10= RULE_DEDENT )?
-            int alt28=2;
-            int LA28_0 = input.LA(1);
+            // InternalPlanParser.g:1656:3: (this_DEDENT_10= RULE_DEDENT )?
+            int alt29=2;
+            int LA29_0 = input.LA(1);
 
-            if ( (LA28_0==RULE_DEDENT) ) {
-                alt28=1;
+            if ( (LA29_0==RULE_DEDENT) ) {
+                alt29=1;
             }
-            switch (alt28) {
+            switch (alt29) {
                 case 1 :
-                    // InternalPlanParser.g:1632:4: this_DEDENT_10= RULE_DEDENT
+                    // InternalPlanParser.g:1657:4: this_DEDENT_10= RULE_DEDENT
                     {
                     this_DEDENT_10=(Token)match(input,RULE_DEDENT,FOLLOW_2);
 
@@ -4005,7 +4061,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePropertyMaximun"
-    // InternalPlanParser.g:1641:1: entryRulePropertyMaximun returns [EObject current=null] : iv_rulePropertyMaximun= rulePropertyMaximun EOF ;
+    // InternalPlanParser.g:1666:1: entryRulePropertyMaximun returns [EObject current=null] : iv_rulePropertyMaximun= rulePropertyMaximun EOF ;
     public final EObject entryRulePropertyMaximun() throws RecognitionException {
         EObject current = null;
 
@@ -4013,8 +4069,8 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPlanParser.g:1641:56: (iv_rulePropertyMaximun= rulePropertyMaximun EOF )
-            // InternalPlanParser.g:1642:2: iv_rulePropertyMaximun= rulePropertyMaximun EOF
+            // InternalPlanParser.g:1666:56: (iv_rulePropertyMaximun= rulePropertyMaximun EOF )
+            // InternalPlanParser.g:1667:2: iv_rulePropertyMaximun= rulePropertyMaximun EOF
             {
              newCompositeNode(grammarAccess.getPropertyMaximunRule());
             pushFollow(FOLLOW_1);
@@ -4041,7 +4097,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePropertyMaximun"
-    // InternalPlanParser.g:1648:1: rulePropertyMaximun returns [EObject current=null] : ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleMaximumKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )? ) ;
+    // InternalPlanParser.g:1673:1: rulePropertyMaximun returns [EObject current=null] : ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleMaximumKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )? ) ;
     public final EObject rulePropertyMaximun() throws RecognitionException {
         EObject current = null;
 
@@ -4064,11 +4120,11 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
           enterRule();
 
         try {
-            // InternalPlanParser.g:1654:2: ( ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleMaximumKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )? ) )
-            // InternalPlanParser.g:1655:2: ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleMaximumKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )? )
+            // InternalPlanParser.g:1679:2: ( ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleMaximumKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )? ) )
+            // InternalPlanParser.g:1680:2: ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleMaximumKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )? )
             {
-            // InternalPlanParser.g:1655:2: ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleMaximumKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )? )
-            // InternalPlanParser.g:1656:3: rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleMaximumKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )?
+            // InternalPlanParser.g:1680:2: ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleMaximumKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )? )
+            // InternalPlanParser.g:1681:3: rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleMaximumKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )?
             {
 
                   newCompositeNode(grammarAccess.getPropertyMaximunAccess().getPreListElementParserRuleCall_0());
@@ -4085,11 +4141,11 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
                   newLeafNode(otherlv_1, grammarAccess.getPropertyMaximunAccess().getNameKeyword_1());
 
-            // InternalPlanParser.g:1667:3: ( (lv_name_2_0= ruleEString ) )
-            // InternalPlanParser.g:1668:4: (lv_name_2_0= ruleEString )
+            // InternalPlanParser.g:1692:3: ( (lv_name_2_0= ruleEString ) )
+            // InternalPlanParser.g:1693:4: (lv_name_2_0= ruleEString )
             {
-            // InternalPlanParser.g:1668:4: (lv_name_2_0= ruleEString )
-            // InternalPlanParser.g:1669:5: lv_name_2_0= ruleEString
+            // InternalPlanParser.g:1693:4: (lv_name_2_0= ruleEString )
+            // InternalPlanParser.g:1694:5: lv_name_2_0= ruleEString
             {
 
                       newCompositeNode(grammarAccess.getPropertyMaximunAccess().getNameEStringParserRuleCall_2_0());
@@ -4116,24 +4172,24 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
             }
 
-            this_INDENT_3=(Token)match(input,RULE_INDENT,FOLLOW_33);
+            this_INDENT_3=(Token)match(input,RULE_INDENT,FOLLOW_34);
 
                   newLeafNode(this_INDENT_3, grammarAccess.getPropertyMaximunAccess().getINDENTTerminalRuleCall_3());
 
-            otherlv_4=(Token)match(input,Kind,FOLLOW_40);
+            otherlv_4=(Token)match(input,Kind,FOLLOW_41);
 
                   newLeafNode(otherlv_4, grammarAccess.getPropertyMaximunAccess().getKindKeyword_4());
 
-            // InternalPlanParser.g:1694:3: ( (lv_kind_5_0= ruleMaximumKind ) )
-            // InternalPlanParser.g:1695:4: (lv_kind_5_0= ruleMaximumKind )
+            // InternalPlanParser.g:1719:3: ( (lv_kind_5_0= ruleMaximumKind ) )
+            // InternalPlanParser.g:1720:4: (lv_kind_5_0= ruleMaximumKind )
             {
-            // InternalPlanParser.g:1695:4: (lv_kind_5_0= ruleMaximumKind )
-            // InternalPlanParser.g:1696:5: lv_kind_5_0= ruleMaximumKind
+            // InternalPlanParser.g:1720:4: (lv_kind_5_0= ruleMaximumKind )
+            // InternalPlanParser.g:1721:5: lv_kind_5_0= ruleMaximumKind
             {
 
                       newCompositeNode(grammarAccess.getPropertyMaximunAccess().getKindMaximumKindParserRuleCall_5_0());
 
-            pushFollow(FOLLOW_37);
+            pushFollow(FOLLOW_38);
             lv_kind_5_0=ruleMaximumKind();
 
             state._fsp--;
@@ -4155,31 +4211,31 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalPlanParser.g:1713:3: (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )?
-            int alt29=2;
-            int LA29_0 = input.LA(1);
+            // InternalPlanParser.g:1738:3: (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )?
+            int alt30=2;
+            int LA30_0 = input.LA(1);
 
-            if ( (LA29_0==Description) ) {
-                alt29=1;
+            if ( (LA30_0==Description) ) {
+                alt30=1;
             }
-            switch (alt29) {
+            switch (alt30) {
                 case 1 :
-                    // InternalPlanParser.g:1714:4: otherlv_6= Description ( (lv_description_7_0= ruleEString ) )
+                    // InternalPlanParser.g:1739:4: otherlv_6= Description ( (lv_description_7_0= ruleEString ) )
                     {
                     otherlv_6=(Token)match(input,Description,FOLLOW_5);
 
                             newLeafNode(otherlv_6, grammarAccess.getPropertyMaximunAccess().getDescriptionKeyword_6_0());
 
-                    // InternalPlanParser.g:1718:4: ( (lv_description_7_0= ruleEString ) )
-                    // InternalPlanParser.g:1719:5: (lv_description_7_0= ruleEString )
+                    // InternalPlanParser.g:1743:4: ( (lv_description_7_0= ruleEString ) )
+                    // InternalPlanParser.g:1744:5: (lv_description_7_0= ruleEString )
                     {
-                    // InternalPlanParser.g:1719:5: (lv_description_7_0= ruleEString )
-                    // InternalPlanParser.g:1720:6: lv_description_7_0= ruleEString
+                    // InternalPlanParser.g:1744:5: (lv_description_7_0= ruleEString )
+                    // InternalPlanParser.g:1745:6: lv_description_7_0= ruleEString
                     {
 
                                 newCompositeNode(grammarAccess.getPropertyMaximunAccess().getDescriptionEStringParserRuleCall_6_1_0());
 
-                    pushFollow(FOLLOW_38);
+                    pushFollow(FOLLOW_39);
                     lv_description_7_0=ruleEString();
 
                     state._fsp--;
@@ -4207,31 +4263,31 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalPlanParser.g:1738:3: (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )?
-            int alt30=2;
-            int LA30_0 = input.LA(1);
+            // InternalPlanParser.g:1763:3: (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )?
+            int alt31=2;
+            int LA31_0 = input.LA(1);
 
-            if ( (LA30_0==Value) ) {
-                alt30=1;
+            if ( (LA31_0==Value) ) {
+                alt31=1;
             }
-            switch (alt30) {
+            switch (alt31) {
                 case 1 :
-                    // InternalPlanParser.g:1739:4: otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) )
+                    // InternalPlanParser.g:1764:4: otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) )
                     {
-                    otherlv_8=(Token)match(input,Value,FOLLOW_29);
+                    otherlv_8=(Token)match(input,Value,FOLLOW_30);
 
                             newLeafNode(otherlv_8, grammarAccess.getPropertyMaximunAccess().getValueKeyword_7_0());
 
-                    // InternalPlanParser.g:1743:4: ( (lv_value_9_0= rulePropertyValue ) )
-                    // InternalPlanParser.g:1744:5: (lv_value_9_0= rulePropertyValue )
+                    // InternalPlanParser.g:1768:4: ( (lv_value_9_0= rulePropertyValue ) )
+                    // InternalPlanParser.g:1769:5: (lv_value_9_0= rulePropertyValue )
                     {
-                    // InternalPlanParser.g:1744:5: (lv_value_9_0= rulePropertyValue )
-                    // InternalPlanParser.g:1745:6: lv_value_9_0= rulePropertyValue
+                    // InternalPlanParser.g:1769:5: (lv_value_9_0= rulePropertyValue )
+                    // InternalPlanParser.g:1770:6: lv_value_9_0= rulePropertyValue
                     {
 
                                 newCompositeNode(grammarAccess.getPropertyMaximunAccess().getValuePropertyValueParserRuleCall_7_1_0());
 
-                    pushFollow(FOLLOW_39);
+                    pushFollow(FOLLOW_40);
                     lv_value_9_0=rulePropertyValue();
 
                     state._fsp--;
@@ -4259,16 +4315,16 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalPlanParser.g:1763:3: (this_DEDENT_10= RULE_DEDENT )?
-            int alt31=2;
-            int LA31_0 = input.LA(1);
+            // InternalPlanParser.g:1788:3: (this_DEDENT_10= RULE_DEDENT )?
+            int alt32=2;
+            int LA32_0 = input.LA(1);
 
-            if ( (LA31_0==RULE_DEDENT) ) {
-                alt31=1;
+            if ( (LA32_0==RULE_DEDENT) ) {
+                alt32=1;
             }
-            switch (alt31) {
+            switch (alt32) {
                 case 1 :
-                    // InternalPlanParser.g:1764:4: this_DEDENT_10= RULE_DEDENT
+                    // InternalPlanParser.g:1789:4: this_DEDENT_10= RULE_DEDENT
                     {
                     this_DEDENT_10=(Token)match(input,RULE_DEDENT,FOLLOW_2);
 
@@ -4303,7 +4359,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePropertyMinimum"
-    // InternalPlanParser.g:1773:1: entryRulePropertyMinimum returns [EObject current=null] : iv_rulePropertyMinimum= rulePropertyMinimum EOF ;
+    // InternalPlanParser.g:1798:1: entryRulePropertyMinimum returns [EObject current=null] : iv_rulePropertyMinimum= rulePropertyMinimum EOF ;
     public final EObject entryRulePropertyMinimum() throws RecognitionException {
         EObject current = null;
 
@@ -4311,8 +4367,8 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPlanParser.g:1773:56: (iv_rulePropertyMinimum= rulePropertyMinimum EOF )
-            // InternalPlanParser.g:1774:2: iv_rulePropertyMinimum= rulePropertyMinimum EOF
+            // InternalPlanParser.g:1798:56: (iv_rulePropertyMinimum= rulePropertyMinimum EOF )
+            // InternalPlanParser.g:1799:2: iv_rulePropertyMinimum= rulePropertyMinimum EOF
             {
              newCompositeNode(grammarAccess.getPropertyMinimumRule());
             pushFollow(FOLLOW_1);
@@ -4339,7 +4395,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePropertyMinimum"
-    // InternalPlanParser.g:1780:1: rulePropertyMinimum returns [EObject current=null] : ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleMinimumKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )? ) ;
+    // InternalPlanParser.g:1805:1: rulePropertyMinimum returns [EObject current=null] : ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleMinimumKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )? ) ;
     public final EObject rulePropertyMinimum() throws RecognitionException {
         EObject current = null;
 
@@ -4362,11 +4418,11 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
           enterRule();
 
         try {
-            // InternalPlanParser.g:1786:2: ( ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleMinimumKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )? ) )
-            // InternalPlanParser.g:1787:2: ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleMinimumKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )? )
+            // InternalPlanParser.g:1811:2: ( ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleMinimumKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )? ) )
+            // InternalPlanParser.g:1812:2: ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleMinimumKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )? )
             {
-            // InternalPlanParser.g:1787:2: ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleMinimumKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )? )
-            // InternalPlanParser.g:1788:3: rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleMinimumKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )?
+            // InternalPlanParser.g:1812:2: ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleMinimumKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )? )
+            // InternalPlanParser.g:1813:3: rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleMinimumKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )? (this_DEDENT_10= RULE_DEDENT )?
             {
 
                   newCompositeNode(grammarAccess.getPropertyMinimumAccess().getPreListElementParserRuleCall_0());
@@ -4383,11 +4439,11 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
                   newLeafNode(otherlv_1, grammarAccess.getPropertyMinimumAccess().getNameKeyword_1());
 
-            // InternalPlanParser.g:1799:3: ( (lv_name_2_0= ruleEString ) )
-            // InternalPlanParser.g:1800:4: (lv_name_2_0= ruleEString )
+            // InternalPlanParser.g:1824:3: ( (lv_name_2_0= ruleEString ) )
+            // InternalPlanParser.g:1825:4: (lv_name_2_0= ruleEString )
             {
-            // InternalPlanParser.g:1800:4: (lv_name_2_0= ruleEString )
-            // InternalPlanParser.g:1801:5: lv_name_2_0= ruleEString
+            // InternalPlanParser.g:1825:4: (lv_name_2_0= ruleEString )
+            // InternalPlanParser.g:1826:5: lv_name_2_0= ruleEString
             {
 
                       newCompositeNode(grammarAccess.getPropertyMinimumAccess().getNameEStringParserRuleCall_2_0());
@@ -4414,24 +4470,24 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
             }
 
-            this_INDENT_3=(Token)match(input,RULE_INDENT,FOLLOW_33);
+            this_INDENT_3=(Token)match(input,RULE_INDENT,FOLLOW_34);
 
                   newLeafNode(this_INDENT_3, grammarAccess.getPropertyMinimumAccess().getINDENTTerminalRuleCall_3());
 
-            otherlv_4=(Token)match(input,Kind,FOLLOW_41);
+            otherlv_4=(Token)match(input,Kind,FOLLOW_42);
 
                   newLeafNode(otherlv_4, grammarAccess.getPropertyMinimumAccess().getKindKeyword_4());
 
-            // InternalPlanParser.g:1826:3: ( (lv_kind_5_0= ruleMinimumKind ) )
-            // InternalPlanParser.g:1827:4: (lv_kind_5_0= ruleMinimumKind )
+            // InternalPlanParser.g:1851:3: ( (lv_kind_5_0= ruleMinimumKind ) )
+            // InternalPlanParser.g:1852:4: (lv_kind_5_0= ruleMinimumKind )
             {
-            // InternalPlanParser.g:1827:4: (lv_kind_5_0= ruleMinimumKind )
-            // InternalPlanParser.g:1828:5: lv_kind_5_0= ruleMinimumKind
+            // InternalPlanParser.g:1852:4: (lv_kind_5_0= ruleMinimumKind )
+            // InternalPlanParser.g:1853:5: lv_kind_5_0= ruleMinimumKind
             {
 
                       newCompositeNode(grammarAccess.getPropertyMinimumAccess().getKindMinimumKindParserRuleCall_5_0());
 
-            pushFollow(FOLLOW_37);
+            pushFollow(FOLLOW_38);
             lv_kind_5_0=ruleMinimumKind();
 
             state._fsp--;
@@ -4453,31 +4509,31 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalPlanParser.g:1845:3: (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )?
-            int alt32=2;
-            int LA32_0 = input.LA(1);
+            // InternalPlanParser.g:1870:3: (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )?
+            int alt33=2;
+            int LA33_0 = input.LA(1);
 
-            if ( (LA32_0==Description) ) {
-                alt32=1;
+            if ( (LA33_0==Description) ) {
+                alt33=1;
             }
-            switch (alt32) {
+            switch (alt33) {
                 case 1 :
-                    // InternalPlanParser.g:1846:4: otherlv_6= Description ( (lv_description_7_0= ruleEString ) )
+                    // InternalPlanParser.g:1871:4: otherlv_6= Description ( (lv_description_7_0= ruleEString ) )
                     {
                     otherlv_6=(Token)match(input,Description,FOLLOW_5);
 
                             newLeafNode(otherlv_6, grammarAccess.getPropertyMinimumAccess().getDescriptionKeyword_6_0());
 
-                    // InternalPlanParser.g:1850:4: ( (lv_description_7_0= ruleEString ) )
-                    // InternalPlanParser.g:1851:5: (lv_description_7_0= ruleEString )
+                    // InternalPlanParser.g:1875:4: ( (lv_description_7_0= ruleEString ) )
+                    // InternalPlanParser.g:1876:5: (lv_description_7_0= ruleEString )
                     {
-                    // InternalPlanParser.g:1851:5: (lv_description_7_0= ruleEString )
-                    // InternalPlanParser.g:1852:6: lv_description_7_0= ruleEString
+                    // InternalPlanParser.g:1876:5: (lv_description_7_0= ruleEString )
+                    // InternalPlanParser.g:1877:6: lv_description_7_0= ruleEString
                     {
 
                                 newCompositeNode(grammarAccess.getPropertyMinimumAccess().getDescriptionEStringParserRuleCall_6_1_0());
 
-                    pushFollow(FOLLOW_38);
+                    pushFollow(FOLLOW_39);
                     lv_description_7_0=ruleEString();
 
                     state._fsp--;
@@ -4505,31 +4561,31 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalPlanParser.g:1870:3: (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )?
-            int alt33=2;
-            int LA33_0 = input.LA(1);
+            // InternalPlanParser.g:1895:3: (otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) ) )?
+            int alt34=2;
+            int LA34_0 = input.LA(1);
 
-            if ( (LA33_0==Value) ) {
-                alt33=1;
+            if ( (LA34_0==Value) ) {
+                alt34=1;
             }
-            switch (alt33) {
+            switch (alt34) {
                 case 1 :
-                    // InternalPlanParser.g:1871:4: otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) )
+                    // InternalPlanParser.g:1896:4: otherlv_8= Value ( (lv_value_9_0= rulePropertyValue ) )
                     {
-                    otherlv_8=(Token)match(input,Value,FOLLOW_29);
+                    otherlv_8=(Token)match(input,Value,FOLLOW_30);
 
                             newLeafNode(otherlv_8, grammarAccess.getPropertyMinimumAccess().getValueKeyword_7_0());
 
-                    // InternalPlanParser.g:1875:4: ( (lv_value_9_0= rulePropertyValue ) )
-                    // InternalPlanParser.g:1876:5: (lv_value_9_0= rulePropertyValue )
+                    // InternalPlanParser.g:1900:4: ( (lv_value_9_0= rulePropertyValue ) )
+                    // InternalPlanParser.g:1901:5: (lv_value_9_0= rulePropertyValue )
                     {
-                    // InternalPlanParser.g:1876:5: (lv_value_9_0= rulePropertyValue )
-                    // InternalPlanParser.g:1877:6: lv_value_9_0= rulePropertyValue
+                    // InternalPlanParser.g:1901:5: (lv_value_9_0= rulePropertyValue )
+                    // InternalPlanParser.g:1902:6: lv_value_9_0= rulePropertyValue
                     {
 
                                 newCompositeNode(grammarAccess.getPropertyMinimumAccess().getValuePropertyValueParserRuleCall_7_1_0());
 
-                    pushFollow(FOLLOW_39);
+                    pushFollow(FOLLOW_40);
                     lv_value_9_0=rulePropertyValue();
 
                     state._fsp--;
@@ -4557,16 +4613,16 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalPlanParser.g:1895:3: (this_DEDENT_10= RULE_DEDENT )?
-            int alt34=2;
-            int LA34_0 = input.LA(1);
+            // InternalPlanParser.g:1920:3: (this_DEDENT_10= RULE_DEDENT )?
+            int alt35=2;
+            int LA35_0 = input.LA(1);
 
-            if ( (LA34_0==RULE_DEDENT) ) {
-                alt34=1;
+            if ( (LA35_0==RULE_DEDENT) ) {
+                alt35=1;
             }
-            switch (alt34) {
+            switch (alt35) {
                 case 1 :
-                    // InternalPlanParser.g:1896:4: this_DEDENT_10= RULE_DEDENT
+                    // InternalPlanParser.g:1921:4: this_DEDENT_10= RULE_DEDENT
                     {
                     this_DEDENT_10=(Token)match(input,RULE_DEDENT,FOLLOW_2);
 
@@ -4601,7 +4657,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePropertySelection"
-    // InternalPlanParser.g:1905:1: entryRulePropertySelection returns [EObject current=null] : iv_rulePropertySelection= rulePropertySelection EOF ;
+    // InternalPlanParser.g:1930:1: entryRulePropertySelection returns [EObject current=null] : iv_rulePropertySelection= rulePropertySelection EOF ;
     public final EObject entryRulePropertySelection() throws RecognitionException {
         EObject current = null;
 
@@ -4609,8 +4665,8 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPlanParser.g:1905:58: (iv_rulePropertySelection= rulePropertySelection EOF )
-            // InternalPlanParser.g:1906:2: iv_rulePropertySelection= rulePropertySelection EOF
+            // InternalPlanParser.g:1930:58: (iv_rulePropertySelection= rulePropertySelection EOF )
+            // InternalPlanParser.g:1931:2: iv_rulePropertySelection= rulePropertySelection EOF
             {
              newCompositeNode(grammarAccess.getPropertySelectionRule());
             pushFollow(FOLLOW_1);
@@ -4637,7 +4693,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePropertySelection"
-    // InternalPlanParser.g:1912:1: rulePropertySelection returns [EObject current=null] : ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleSelectionKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_value_11_0= rulePropertyValue ) ) ( rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) )* this_DEDENT_14= RULE_DEDENT )? (this_DEDENT_15= RULE_DEDENT )? ) ;
+    // InternalPlanParser.g:1937:1: rulePropertySelection returns [EObject current=null] : ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleSelectionKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_value_11_0= rulePropertyValue ) ) ( rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) )* this_DEDENT_14= RULE_DEDENT )? (this_DEDENT_15= RULE_DEDENT )? ) ;
     public final EObject rulePropertySelection() throws RecognitionException {
         EObject current = null;
 
@@ -4664,11 +4720,11 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
           enterRule();
 
         try {
-            // InternalPlanParser.g:1918:2: ( ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleSelectionKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_value_11_0= rulePropertyValue ) ) ( rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) )* this_DEDENT_14= RULE_DEDENT )? (this_DEDENT_15= RULE_DEDENT )? ) )
-            // InternalPlanParser.g:1919:2: ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleSelectionKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_value_11_0= rulePropertyValue ) ) ( rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) )* this_DEDENT_14= RULE_DEDENT )? (this_DEDENT_15= RULE_DEDENT )? )
+            // InternalPlanParser.g:1943:2: ( ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleSelectionKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_value_11_0= rulePropertyValue ) ) ( rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) )* this_DEDENT_14= RULE_DEDENT )? (this_DEDENT_15= RULE_DEDENT )? ) )
+            // InternalPlanParser.g:1944:2: ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleSelectionKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_value_11_0= rulePropertyValue ) ) ( rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) )* this_DEDENT_14= RULE_DEDENT )? (this_DEDENT_15= RULE_DEDENT )? )
             {
-            // InternalPlanParser.g:1919:2: ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleSelectionKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_value_11_0= rulePropertyValue ) ) ( rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) )* this_DEDENT_14= RULE_DEDENT )? (this_DEDENT_15= RULE_DEDENT )? )
-            // InternalPlanParser.g:1920:3: rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleSelectionKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_value_11_0= rulePropertyValue ) ) ( rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) )* this_DEDENT_14= RULE_DEDENT )? (this_DEDENT_15= RULE_DEDENT )?
+            // InternalPlanParser.g:1944:2: ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleSelectionKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_value_11_0= rulePropertyValue ) ) ( rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) )* this_DEDENT_14= RULE_DEDENT )? (this_DEDENT_15= RULE_DEDENT )? )
+            // InternalPlanParser.g:1945:3: rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleSelectionKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_value_11_0= rulePropertyValue ) ) ( rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) )* this_DEDENT_14= RULE_DEDENT )? (this_DEDENT_15= RULE_DEDENT )?
             {
 
                   newCompositeNode(grammarAccess.getPropertySelectionAccess().getPreListElementParserRuleCall_0());
@@ -4685,11 +4741,11 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
                   newLeafNode(otherlv_1, grammarAccess.getPropertySelectionAccess().getNameKeyword_1());
 
-            // InternalPlanParser.g:1931:3: ( (lv_name_2_0= ruleEString ) )
-            // InternalPlanParser.g:1932:4: (lv_name_2_0= ruleEString )
+            // InternalPlanParser.g:1956:3: ( (lv_name_2_0= ruleEString ) )
+            // InternalPlanParser.g:1957:4: (lv_name_2_0= ruleEString )
             {
-            // InternalPlanParser.g:1932:4: (lv_name_2_0= ruleEString )
-            // InternalPlanParser.g:1933:5: lv_name_2_0= ruleEString
+            // InternalPlanParser.g:1957:4: (lv_name_2_0= ruleEString )
+            // InternalPlanParser.g:1958:5: lv_name_2_0= ruleEString
             {
 
                       newCompositeNode(grammarAccess.getPropertySelectionAccess().getNameEStringParserRuleCall_2_0());
@@ -4716,24 +4772,24 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
             }
 
-            this_INDENT_3=(Token)match(input,RULE_INDENT,FOLLOW_33);
+            this_INDENT_3=(Token)match(input,RULE_INDENT,FOLLOW_34);
 
                   newLeafNode(this_INDENT_3, grammarAccess.getPropertySelectionAccess().getINDENTTerminalRuleCall_3());
 
-            otherlv_4=(Token)match(input,Kind,FOLLOW_42);
+            otherlv_4=(Token)match(input,Kind,FOLLOW_43);
 
                   newLeafNode(otherlv_4, grammarAccess.getPropertySelectionAccess().getKindKeyword_4());
 
-            // InternalPlanParser.g:1958:3: ( (lv_kind_5_0= ruleSelectionKind ) )
-            // InternalPlanParser.g:1959:4: (lv_kind_5_0= ruleSelectionKind )
+            // InternalPlanParser.g:1983:3: ( (lv_kind_5_0= ruleSelectionKind ) )
+            // InternalPlanParser.g:1984:4: (lv_kind_5_0= ruleSelectionKind )
             {
-            // InternalPlanParser.g:1959:4: (lv_kind_5_0= ruleSelectionKind )
-            // InternalPlanParser.g:1960:5: lv_kind_5_0= ruleSelectionKind
+            // InternalPlanParser.g:1984:4: (lv_kind_5_0= ruleSelectionKind )
+            // InternalPlanParser.g:1985:5: lv_kind_5_0= ruleSelectionKind
             {
 
                       newCompositeNode(grammarAccess.getPropertySelectionAccess().getKindSelectionKindParserRuleCall_5_0());
 
-            pushFollow(FOLLOW_37);
+            pushFollow(FOLLOW_38);
             lv_kind_5_0=ruleSelectionKind();
 
             state._fsp--;
@@ -4755,31 +4811,31 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalPlanParser.g:1977:3: (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )?
-            int alt35=2;
-            int LA35_0 = input.LA(1);
+            // InternalPlanParser.g:2002:3: (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )?
+            int alt36=2;
+            int LA36_0 = input.LA(1);
 
-            if ( (LA35_0==Description) ) {
-                alt35=1;
+            if ( (LA36_0==Description) ) {
+                alt36=1;
             }
-            switch (alt35) {
+            switch (alt36) {
                 case 1 :
-                    // InternalPlanParser.g:1978:4: otherlv_6= Description ( (lv_description_7_0= ruleEString ) )
+                    // InternalPlanParser.g:2003:4: otherlv_6= Description ( (lv_description_7_0= ruleEString ) )
                     {
                     otherlv_6=(Token)match(input,Description,FOLLOW_5);
 
                             newLeafNode(otherlv_6, grammarAccess.getPropertySelectionAccess().getDescriptionKeyword_6_0());
 
-                    // InternalPlanParser.g:1982:4: ( (lv_description_7_0= ruleEString ) )
-                    // InternalPlanParser.g:1983:5: (lv_description_7_0= ruleEString )
+                    // InternalPlanParser.g:2007:4: ( (lv_description_7_0= ruleEString ) )
+                    // InternalPlanParser.g:2008:5: (lv_description_7_0= ruleEString )
                     {
-                    // InternalPlanParser.g:1983:5: (lv_description_7_0= ruleEString )
-                    // InternalPlanParser.g:1984:6: lv_description_7_0= ruleEString
+                    // InternalPlanParser.g:2008:5: (lv_description_7_0= ruleEString )
+                    // InternalPlanParser.g:2009:6: lv_description_7_0= ruleEString
                     {
 
                                 newCompositeNode(grammarAccess.getPropertySelectionAccess().getDescriptionEStringParserRuleCall_6_1_0());
 
-                    pushFollow(FOLLOW_38);
+                    pushFollow(FOLLOW_39);
                     lv_description_7_0=ruleEString();
 
                     state._fsp--;
@@ -4807,16 +4863,16 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalPlanParser.g:2002:3: (otherlv_8= Value this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_value_11_0= rulePropertyValue ) ) ( rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) )* this_DEDENT_14= RULE_DEDENT )?
-            int alt37=2;
-            int LA37_0 = input.LA(1);
+            // InternalPlanParser.g:2027:3: (otherlv_8= Value this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_value_11_0= rulePropertyValue ) ) ( rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) )* this_DEDENT_14= RULE_DEDENT )?
+            int alt38=2;
+            int LA38_0 = input.LA(1);
 
-            if ( (LA37_0==Value) ) {
-                alt37=1;
+            if ( (LA38_0==Value) ) {
+                alt38=1;
             }
-            switch (alt37) {
+            switch (alt38) {
                 case 1 :
-                    // InternalPlanParser.g:2003:4: otherlv_8= Value this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_value_11_0= rulePropertyValue ) ) ( rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) )* this_DEDENT_14= RULE_DEDENT
+                    // InternalPlanParser.g:2028:4: otherlv_8= Value this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_value_11_0= rulePropertyValue ) ) ( rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) )* this_DEDENT_14= RULE_DEDENT
                     {
                     otherlv_8=(Token)match(input,Value,FOLLOW_3);
 
@@ -4829,7 +4885,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
                             newCompositeNode(grammarAccess.getPropertySelectionAccess().getPreListElementParserRuleCall_7_2());
 
-                    pushFollow(FOLLOW_29);
+                    pushFollow(FOLLOW_30);
                     rulePreListElement();
 
                     state._fsp--;
@@ -4837,11 +4893,11 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
                             afterParserOrEnumRuleCall();
 
-                    // InternalPlanParser.g:2018:4: ( (lv_value_11_0= rulePropertyValue ) )
-                    // InternalPlanParser.g:2019:5: (lv_value_11_0= rulePropertyValue )
+                    // InternalPlanParser.g:2043:4: ( (lv_value_11_0= rulePropertyValue ) )
+                    // InternalPlanParser.g:2044:5: (lv_value_11_0= rulePropertyValue )
                     {
-                    // InternalPlanParser.g:2019:5: (lv_value_11_0= rulePropertyValue )
-                    // InternalPlanParser.g:2020:6: lv_value_11_0= rulePropertyValue
+                    // InternalPlanParser.g:2044:5: (lv_value_11_0= rulePropertyValue )
+                    // InternalPlanParser.g:2045:6: lv_value_11_0= rulePropertyValue
                     {
 
                                 newCompositeNode(grammarAccess.getPropertySelectionAccess().getValuePropertyValueParserRuleCall_7_3_0());
@@ -4868,25 +4924,25 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalPlanParser.g:2037:4: ( rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) )*
-                    loop36:
+                    // InternalPlanParser.g:2062:4: ( rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) )*
+                    loop37:
                     do {
-                        int alt36=2;
-                        int LA36_0 = input.LA(1);
+                        int alt37=2;
+                        int LA37_0 = input.LA(1);
 
-                        if ( (LA36_0==HyphenMinus) ) {
-                            alt36=1;
+                        if ( (LA37_0==HyphenMinus) ) {
+                            alt37=1;
                         }
 
 
-                        switch (alt36) {
+                        switch (alt37) {
                       case 1 :
-                          // InternalPlanParser.g:2038:5: rulePreListElement ( (lv_value_13_0= rulePropertyValue ) )
+                          // InternalPlanParser.g:2063:5: rulePreListElement ( (lv_value_13_0= rulePropertyValue ) )
                           {
 
                                     newCompositeNode(grammarAccess.getPropertySelectionAccess().getPreListElementParserRuleCall_7_4_0());
 
-                          pushFollow(FOLLOW_29);
+                          pushFollow(FOLLOW_30);
                           rulePreListElement();
 
                           state._fsp--;
@@ -4894,11 +4950,11 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
                                     afterParserOrEnumRuleCall();
 
-                          // InternalPlanParser.g:2045:5: ( (lv_value_13_0= rulePropertyValue ) )
-                          // InternalPlanParser.g:2046:6: (lv_value_13_0= rulePropertyValue )
+                          // InternalPlanParser.g:2070:5: ( (lv_value_13_0= rulePropertyValue ) )
+                          // InternalPlanParser.g:2071:6: (lv_value_13_0= rulePropertyValue )
                           {
-                          // InternalPlanParser.g:2046:6: (lv_value_13_0= rulePropertyValue )
-                          // InternalPlanParser.g:2047:7: lv_value_13_0= rulePropertyValue
+                          // InternalPlanParser.g:2071:6: (lv_value_13_0= rulePropertyValue )
+                          // InternalPlanParser.g:2072:7: lv_value_13_0= rulePropertyValue
                           {
 
                                         newCompositeNode(grammarAccess.getPropertySelectionAccess().getValuePropertyValueParserRuleCall_7_4_1_0());
@@ -4930,11 +4986,11 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
                           break;
 
                       default :
-                          break loop36;
+                          break loop37;
                         }
                     } while (true);
 
-                    this_DEDENT_14=(Token)match(input,RULE_DEDENT,FOLLOW_39);
+                    this_DEDENT_14=(Token)match(input,RULE_DEDENT,FOLLOW_40);
 
                             newLeafNode(this_DEDENT_14, grammarAccess.getPropertySelectionAccess().getDEDENTTerminalRuleCall_7_5());
 
@@ -4944,16 +5000,16 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalPlanParser.g:2070:3: (this_DEDENT_15= RULE_DEDENT )?
-            int alt38=2;
-            int LA38_0 = input.LA(1);
+            // InternalPlanParser.g:2095:3: (this_DEDENT_15= RULE_DEDENT )?
+            int alt39=2;
+            int LA39_0 = input.LA(1);
 
-            if ( (LA38_0==RULE_DEDENT) ) {
-                alt38=1;
+            if ( (LA39_0==RULE_DEDENT) ) {
+                alt39=1;
             }
-            switch (alt38) {
+            switch (alt39) {
                 case 1 :
-                    // InternalPlanParser.g:2071:4: this_DEDENT_15= RULE_DEDENT
+                    // InternalPlanParser.g:2096:4: this_DEDENT_15= RULE_DEDENT
                     {
                     this_DEDENT_15=(Token)match(input,RULE_DEDENT,FOLLOW_2);
 
@@ -4988,7 +5044,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePropertyRange"
-    // InternalPlanParser.g:2080:1: entryRulePropertyRange returns [EObject current=null] : iv_rulePropertyRange= rulePropertyRange EOF ;
+    // InternalPlanParser.g:2105:1: entryRulePropertyRange returns [EObject current=null] : iv_rulePropertyRange= rulePropertyRange EOF ;
     public final EObject entryRulePropertyRange() throws RecognitionException {
         EObject current = null;
 
@@ -4996,8 +5052,8 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPlanParser.g:2080:54: (iv_rulePropertyRange= rulePropertyRange EOF )
-            // InternalPlanParser.g:2081:2: iv_rulePropertyRange= rulePropertyRange EOF
+            // InternalPlanParser.g:2105:54: (iv_rulePropertyRange= rulePropertyRange EOF )
+            // InternalPlanParser.g:2106:2: iv_rulePropertyRange= rulePropertyRange EOF
             {
              newCompositeNode(grammarAccess.getPropertyRangeRule());
             pushFollow(FOLLOW_1);
@@ -5024,7 +5080,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePropertyRange"
-    // InternalPlanParser.g:2087:1: rulePropertyRange returns [EObject current=null] : ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleRangeKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_value_11_0= rulePropertyValue ) ) rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) this_DEDENT_14= RULE_DEDENT )? (this_DEDENT_15= RULE_DEDENT )? ) ;
+    // InternalPlanParser.g:2112:1: rulePropertyRange returns [EObject current=null] : ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleRangeKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_value_11_0= rulePropertyValue ) ) rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) this_DEDENT_14= RULE_DEDENT )? (this_DEDENT_15= RULE_DEDENT )? ) ;
     public final EObject rulePropertyRange() throws RecognitionException {
         EObject current = null;
 
@@ -5051,11 +5107,11 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
           enterRule();
 
         try {
-            // InternalPlanParser.g:2093:2: ( ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleRangeKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_value_11_0= rulePropertyValue ) ) rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) this_DEDENT_14= RULE_DEDENT )? (this_DEDENT_15= RULE_DEDENT )? ) )
-            // InternalPlanParser.g:2094:2: ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleRangeKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_value_11_0= rulePropertyValue ) ) rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) this_DEDENT_14= RULE_DEDENT )? (this_DEDENT_15= RULE_DEDENT )? )
+            // InternalPlanParser.g:2118:2: ( ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleRangeKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_value_11_0= rulePropertyValue ) ) rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) this_DEDENT_14= RULE_DEDENT )? (this_DEDENT_15= RULE_DEDENT )? ) )
+            // InternalPlanParser.g:2119:2: ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleRangeKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_value_11_0= rulePropertyValue ) ) rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) this_DEDENT_14= RULE_DEDENT )? (this_DEDENT_15= RULE_DEDENT )? )
             {
-            // InternalPlanParser.g:2094:2: ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleRangeKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_value_11_0= rulePropertyValue ) ) rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) this_DEDENT_14= RULE_DEDENT )? (this_DEDENT_15= RULE_DEDENT )? )
-            // InternalPlanParser.g:2095:3: rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleRangeKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_value_11_0= rulePropertyValue ) ) rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) this_DEDENT_14= RULE_DEDENT )? (this_DEDENT_15= RULE_DEDENT )?
+            // InternalPlanParser.g:2119:2: ( rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleRangeKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_value_11_0= rulePropertyValue ) ) rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) this_DEDENT_14= RULE_DEDENT )? (this_DEDENT_15= RULE_DEDENT )? )
+            // InternalPlanParser.g:2120:3: rulePreListElement otherlv_1= Name ( (lv_name_2_0= ruleEString ) ) this_INDENT_3= RULE_INDENT otherlv_4= Kind ( (lv_kind_5_0= ruleRangeKind ) ) (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= Value this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_value_11_0= rulePropertyValue ) ) rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) this_DEDENT_14= RULE_DEDENT )? (this_DEDENT_15= RULE_DEDENT )?
             {
 
                   newCompositeNode(grammarAccess.getPropertyRangeAccess().getPreListElementParserRuleCall_0());
@@ -5072,11 +5128,11 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
                   newLeafNode(otherlv_1, grammarAccess.getPropertyRangeAccess().getNameKeyword_1());
 
-            // InternalPlanParser.g:2106:3: ( (lv_name_2_0= ruleEString ) )
-            // InternalPlanParser.g:2107:4: (lv_name_2_0= ruleEString )
+            // InternalPlanParser.g:2131:3: ( (lv_name_2_0= ruleEString ) )
+            // InternalPlanParser.g:2132:4: (lv_name_2_0= ruleEString )
             {
-            // InternalPlanParser.g:2107:4: (lv_name_2_0= ruleEString )
-            // InternalPlanParser.g:2108:5: lv_name_2_0= ruleEString
+            // InternalPlanParser.g:2132:4: (lv_name_2_0= ruleEString )
+            // InternalPlanParser.g:2133:5: lv_name_2_0= ruleEString
             {
 
                       newCompositeNode(grammarAccess.getPropertyRangeAccess().getNameEStringParserRuleCall_2_0());
@@ -5103,24 +5159,24 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
             }
 
-            this_INDENT_3=(Token)match(input,RULE_INDENT,FOLLOW_33);
+            this_INDENT_3=(Token)match(input,RULE_INDENT,FOLLOW_34);
 
                   newLeafNode(this_INDENT_3, grammarAccess.getPropertyRangeAccess().getINDENTTerminalRuleCall_3());
 
-            otherlv_4=(Token)match(input,Kind,FOLLOW_43);
+            otherlv_4=(Token)match(input,Kind,FOLLOW_44);
 
                   newLeafNode(otherlv_4, grammarAccess.getPropertyRangeAccess().getKindKeyword_4());
 
-            // InternalPlanParser.g:2133:3: ( (lv_kind_5_0= ruleRangeKind ) )
-            // InternalPlanParser.g:2134:4: (lv_kind_5_0= ruleRangeKind )
+            // InternalPlanParser.g:2158:3: ( (lv_kind_5_0= ruleRangeKind ) )
+            // InternalPlanParser.g:2159:4: (lv_kind_5_0= ruleRangeKind )
             {
-            // InternalPlanParser.g:2134:4: (lv_kind_5_0= ruleRangeKind )
-            // InternalPlanParser.g:2135:5: lv_kind_5_0= ruleRangeKind
+            // InternalPlanParser.g:2159:4: (lv_kind_5_0= ruleRangeKind )
+            // InternalPlanParser.g:2160:5: lv_kind_5_0= ruleRangeKind
             {
 
                       newCompositeNode(grammarAccess.getPropertyRangeAccess().getKindRangeKindParserRuleCall_5_0());
 
-            pushFollow(FOLLOW_37);
+            pushFollow(FOLLOW_38);
             lv_kind_5_0=ruleRangeKind();
 
             state._fsp--;
@@ -5142,31 +5198,31 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalPlanParser.g:2152:3: (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )?
-            int alt39=2;
-            int LA39_0 = input.LA(1);
+            // InternalPlanParser.g:2177:3: (otherlv_6= Description ( (lv_description_7_0= ruleEString ) ) )?
+            int alt40=2;
+            int LA40_0 = input.LA(1);
 
-            if ( (LA39_0==Description) ) {
-                alt39=1;
+            if ( (LA40_0==Description) ) {
+                alt40=1;
             }
-            switch (alt39) {
+            switch (alt40) {
                 case 1 :
-                    // InternalPlanParser.g:2153:4: otherlv_6= Description ( (lv_description_7_0= ruleEString ) )
+                    // InternalPlanParser.g:2178:4: otherlv_6= Description ( (lv_description_7_0= ruleEString ) )
                     {
                     otherlv_6=(Token)match(input,Description,FOLLOW_5);
 
                             newLeafNode(otherlv_6, grammarAccess.getPropertyRangeAccess().getDescriptionKeyword_6_0());
 
-                    // InternalPlanParser.g:2157:4: ( (lv_description_7_0= ruleEString ) )
-                    // InternalPlanParser.g:2158:5: (lv_description_7_0= ruleEString )
+                    // InternalPlanParser.g:2182:4: ( (lv_description_7_0= ruleEString ) )
+                    // InternalPlanParser.g:2183:5: (lv_description_7_0= ruleEString )
                     {
-                    // InternalPlanParser.g:2158:5: (lv_description_7_0= ruleEString )
-                    // InternalPlanParser.g:2159:6: lv_description_7_0= ruleEString
+                    // InternalPlanParser.g:2183:5: (lv_description_7_0= ruleEString )
+                    // InternalPlanParser.g:2184:6: lv_description_7_0= ruleEString
                     {
 
                                 newCompositeNode(grammarAccess.getPropertyRangeAccess().getDescriptionEStringParserRuleCall_6_1_0());
 
-                    pushFollow(FOLLOW_38);
+                    pushFollow(FOLLOW_39);
                     lv_description_7_0=ruleEString();
 
                     state._fsp--;
@@ -5194,16 +5250,16 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalPlanParser.g:2177:3: (otherlv_8= Value this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_value_11_0= rulePropertyValue ) ) rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) this_DEDENT_14= RULE_DEDENT )?
-            int alt40=2;
-            int LA40_0 = input.LA(1);
+            // InternalPlanParser.g:2202:3: (otherlv_8= Value this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_value_11_0= rulePropertyValue ) ) rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) this_DEDENT_14= RULE_DEDENT )?
+            int alt41=2;
+            int LA41_0 = input.LA(1);
 
-            if ( (LA40_0==Value) ) {
-                alt40=1;
+            if ( (LA41_0==Value) ) {
+                alt41=1;
             }
-            switch (alt40) {
+            switch (alt41) {
                 case 1 :
-                    // InternalPlanParser.g:2178:4: otherlv_8= Value this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_value_11_0= rulePropertyValue ) ) rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) this_DEDENT_14= RULE_DEDENT
+                    // InternalPlanParser.g:2203:4: otherlv_8= Value this_INDENT_9= RULE_INDENT rulePreListElement ( (lv_value_11_0= rulePropertyValue ) ) rulePreListElement ( (lv_value_13_0= rulePropertyValue ) ) this_DEDENT_14= RULE_DEDENT
                     {
                     otherlv_8=(Token)match(input,Value,FOLLOW_3);
 
@@ -5216,7 +5272,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
                             newCompositeNode(grammarAccess.getPropertyRangeAccess().getPreListElementParserRuleCall_7_2());
 
-                    pushFollow(FOLLOW_29);
+                    pushFollow(FOLLOW_30);
                     rulePreListElement();
 
                     state._fsp--;
@@ -5224,11 +5280,11 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
                             afterParserOrEnumRuleCall();
 
-                    // InternalPlanParser.g:2193:4: ( (lv_value_11_0= rulePropertyValue ) )
-                    // InternalPlanParser.g:2194:5: (lv_value_11_0= rulePropertyValue )
+                    // InternalPlanParser.g:2218:4: ( (lv_value_11_0= rulePropertyValue ) )
+                    // InternalPlanParser.g:2219:5: (lv_value_11_0= rulePropertyValue )
                     {
-                    // InternalPlanParser.g:2194:5: (lv_value_11_0= rulePropertyValue )
-                    // InternalPlanParser.g:2195:6: lv_value_11_0= rulePropertyValue
+                    // InternalPlanParser.g:2219:5: (lv_value_11_0= rulePropertyValue )
+                    // InternalPlanParser.g:2220:6: lv_value_11_0= rulePropertyValue
                     {
 
                                 newCompositeNode(grammarAccess.getPropertyRangeAccess().getValuePropertyValueParserRuleCall_7_3_0());
@@ -5258,7 +5314,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
                             newCompositeNode(grammarAccess.getPropertyRangeAccess().getPreListElementParserRuleCall_7_4());
 
-                    pushFollow(FOLLOW_29);
+                    pushFollow(FOLLOW_30);
                     rulePreListElement();
 
                     state._fsp--;
@@ -5266,11 +5322,11 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
                             afterParserOrEnumRuleCall();
 
-                    // InternalPlanParser.g:2219:4: ( (lv_value_13_0= rulePropertyValue ) )
-                    // InternalPlanParser.g:2220:5: (lv_value_13_0= rulePropertyValue )
+                    // InternalPlanParser.g:2244:4: ( (lv_value_13_0= rulePropertyValue ) )
+                    // InternalPlanParser.g:2245:5: (lv_value_13_0= rulePropertyValue )
                     {
-                    // InternalPlanParser.g:2220:5: (lv_value_13_0= rulePropertyValue )
-                    // InternalPlanParser.g:2221:6: lv_value_13_0= rulePropertyValue
+                    // InternalPlanParser.g:2245:5: (lv_value_13_0= rulePropertyValue )
+                    // InternalPlanParser.g:2246:6: lv_value_13_0= rulePropertyValue
                     {
 
                                 newCompositeNode(grammarAccess.getPropertyRangeAccess().getValuePropertyValueParserRuleCall_7_5_0());
@@ -5297,7 +5353,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    this_DEDENT_14=(Token)match(input,RULE_DEDENT,FOLLOW_39);
+                    this_DEDENT_14=(Token)match(input,RULE_DEDENT,FOLLOW_40);
 
                             newLeafNode(this_DEDENT_14, grammarAccess.getPropertyRangeAccess().getDEDENTTerminalRuleCall_7_6());
 
@@ -5307,16 +5363,16 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalPlanParser.g:2243:3: (this_DEDENT_15= RULE_DEDENT )?
-            int alt41=2;
-            int LA41_0 = input.LA(1);
+            // InternalPlanParser.g:2268:3: (this_DEDENT_15= RULE_DEDENT )?
+            int alt42=2;
+            int LA42_0 = input.LA(1);
 
-            if ( (LA41_0==RULE_DEDENT) ) {
-                alt41=1;
+            if ( (LA42_0==RULE_DEDENT) ) {
+                alt42=1;
             }
-            switch (alt41) {
+            switch (alt42) {
                 case 1 :
-                    // InternalPlanParser.g:2244:4: this_DEDENT_15= RULE_DEDENT
+                    // InternalPlanParser.g:2269:4: this_DEDENT_15= RULE_DEDENT
                     {
                     this_DEDENT_15=(Token)match(input,RULE_DEDENT,FOLLOW_2);
 
@@ -5351,7 +5407,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePropertyValue"
-    // InternalPlanParser.g:2253:1: entryRulePropertyValue returns [EObject current=null] : iv_rulePropertyValue= rulePropertyValue EOF ;
+    // InternalPlanParser.g:2278:1: entryRulePropertyValue returns [EObject current=null] : iv_rulePropertyValue= rulePropertyValue EOF ;
     public final EObject entryRulePropertyValue() throws RecognitionException {
         EObject current = null;
 
@@ -5359,8 +5415,8 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPlanParser.g:2253:54: (iv_rulePropertyValue= rulePropertyValue EOF )
-            // InternalPlanParser.g:2254:2: iv_rulePropertyValue= rulePropertyValue EOF
+            // InternalPlanParser.g:2278:54: (iv_rulePropertyValue= rulePropertyValue EOF )
+            // InternalPlanParser.g:2279:2: iv_rulePropertyValue= rulePropertyValue EOF
             {
              newCompositeNode(grammarAccess.getPropertyValueRule());
             pushFollow(FOLLOW_1);
@@ -5387,7 +5443,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePropertyValue"
-    // InternalPlanParser.g:2260:1: rulePropertyValue returns [EObject current=null] : (this_PropertyValueInt_0= rulePropertyValueInt | this_PropertyValueDouble_1= rulePropertyValueDouble | this_PropertyValueString_2= rulePropertyValueString | this_ProcessorArchitectureValue_3= ruleProcessorArchitectureValue | this_LinuxDistributionValue_4= ruleLinuxDistributionValue | this_UbuntuVersionValue_5= ruleUbuntuVersionValue | this_PropertyValueList_6= rulePropertyValueList ) ;
+    // InternalPlanParser.g:2285:1: rulePropertyValue returns [EObject current=null] : (this_PropertyValueInt_0= rulePropertyValueInt | this_PropertyValueDouble_1= rulePropertyValueDouble | this_PropertyValueString_2= rulePropertyValueString | this_ProcessorArchitectureValue_3= ruleProcessorArchitectureValue | this_LinuxDistributionValue_4= ruleLinuxDistributionValue | this_UbuntuVersionValue_5= ruleUbuntuVersionValue | this_PropertyValueList_6= rulePropertyValueList ) ;
     public final EObject rulePropertyValue() throws RecognitionException {
         EObject current = null;
 
@@ -5410,61 +5466,61 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
           enterRule();
 
         try {
-            // InternalPlanParser.g:2266:2: ( (this_PropertyValueInt_0= rulePropertyValueInt | this_PropertyValueDouble_1= rulePropertyValueDouble | this_PropertyValueString_2= rulePropertyValueString | this_ProcessorArchitectureValue_3= ruleProcessorArchitectureValue | this_LinuxDistributionValue_4= ruleLinuxDistributionValue | this_UbuntuVersionValue_5= ruleUbuntuVersionValue | this_PropertyValueList_6= rulePropertyValueList ) )
-            // InternalPlanParser.g:2267:2: (this_PropertyValueInt_0= rulePropertyValueInt | this_PropertyValueDouble_1= rulePropertyValueDouble | this_PropertyValueString_2= rulePropertyValueString | this_ProcessorArchitectureValue_3= ruleProcessorArchitectureValue | this_LinuxDistributionValue_4= ruleLinuxDistributionValue | this_UbuntuVersionValue_5= ruleUbuntuVersionValue | this_PropertyValueList_6= rulePropertyValueList )
+            // InternalPlanParser.g:2291:2: ( (this_PropertyValueInt_0= rulePropertyValueInt | this_PropertyValueDouble_1= rulePropertyValueDouble | this_PropertyValueString_2= rulePropertyValueString | this_ProcessorArchitectureValue_3= ruleProcessorArchitectureValue | this_LinuxDistributionValue_4= ruleLinuxDistributionValue | this_UbuntuVersionValue_5= ruleUbuntuVersionValue | this_PropertyValueList_6= rulePropertyValueList ) )
+            // InternalPlanParser.g:2292:2: (this_PropertyValueInt_0= rulePropertyValueInt | this_PropertyValueDouble_1= rulePropertyValueDouble | this_PropertyValueString_2= rulePropertyValueString | this_ProcessorArchitectureValue_3= ruleProcessorArchitectureValue | this_LinuxDistributionValue_4= ruleLinuxDistributionValue | this_UbuntuVersionValue_5= ruleUbuntuVersionValue | this_PropertyValueList_6= rulePropertyValueList )
             {
-            // InternalPlanParser.g:2267:2: (this_PropertyValueInt_0= rulePropertyValueInt | this_PropertyValueDouble_1= rulePropertyValueDouble | this_PropertyValueString_2= rulePropertyValueString | this_ProcessorArchitectureValue_3= ruleProcessorArchitectureValue | this_LinuxDistributionValue_4= ruleLinuxDistributionValue | this_UbuntuVersionValue_5= ruleUbuntuVersionValue | this_PropertyValueList_6= rulePropertyValueList )
-            int alt42=7;
+            // InternalPlanParser.g:2292:2: (this_PropertyValueInt_0= rulePropertyValueInt | this_PropertyValueDouble_1= rulePropertyValueDouble | this_PropertyValueString_2= rulePropertyValueString | this_ProcessorArchitectureValue_3= ruleProcessorArchitectureValue | this_LinuxDistributionValue_4= ruleLinuxDistributionValue | this_UbuntuVersionValue_5= ruleUbuntuVersionValue | this_PropertyValueList_6= rulePropertyValueList )
+            int alt43=7;
             switch ( input.LA(1) ) {
             case RULE_DECINT:
                 {
-                alt42=1;
+                alt43=1;
                 }
                 break;
             case RULE_DOUBLE:
                 {
-                alt42=2;
+                alt43=2;
                 }
                 break;
             case RULE_ID:
             case RULE_STRING:
                 {
-                alt42=3;
+                alt43=3;
                 }
                 break;
             case Arm64:
             case X86:
                 {
-                alt42=4;
+                alt43=4;
                 }
                 break;
             case Debian:
             case Ubuntu:
                 {
-                alt42=5;
+                alt43=5;
                 }
                 break;
             case Focal:
             case Jammy:
                 {
-                alt42=6;
+                alt43=6;
                 }
                 break;
             case RULE_INDENT:
                 {
-                alt42=7;
+                alt43=7;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 42, 0, input);
+                    new NoViableAltException("", 43, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt42) {
+            switch (alt43) {
                 case 1 :
-                    // InternalPlanParser.g:2268:3: this_PropertyValueInt_0= rulePropertyValueInt
+                    // InternalPlanParser.g:2293:3: this_PropertyValueInt_0= rulePropertyValueInt
                     {
 
                           newCompositeNode(grammarAccess.getPropertyValueAccess().getPropertyValueIntParserRuleCall_0());
@@ -5482,7 +5538,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalPlanParser.g:2277:3: this_PropertyValueDouble_1= rulePropertyValueDouble
+                    // InternalPlanParser.g:2302:3: this_PropertyValueDouble_1= rulePropertyValueDouble
                     {
 
                           newCompositeNode(grammarAccess.getPropertyValueAccess().getPropertyValueDoubleParserRuleCall_1());
@@ -5500,7 +5556,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalPlanParser.g:2286:3: this_PropertyValueString_2= rulePropertyValueString
+                    // InternalPlanParser.g:2311:3: this_PropertyValueString_2= rulePropertyValueString
                     {
 
                           newCompositeNode(grammarAccess.getPropertyValueAccess().getPropertyValueStringParserRuleCall_2());
@@ -5518,7 +5574,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalPlanParser.g:2295:3: this_ProcessorArchitectureValue_3= ruleProcessorArchitectureValue
+                    // InternalPlanParser.g:2320:3: this_ProcessorArchitectureValue_3= ruleProcessorArchitectureValue
                     {
 
                           newCompositeNode(grammarAccess.getPropertyValueAccess().getProcessorArchitectureValueParserRuleCall_3());
@@ -5536,7 +5592,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalPlanParser.g:2304:3: this_LinuxDistributionValue_4= ruleLinuxDistributionValue
+                    // InternalPlanParser.g:2329:3: this_LinuxDistributionValue_4= ruleLinuxDistributionValue
                     {
 
                           newCompositeNode(grammarAccess.getPropertyValueAccess().getLinuxDistributionValueParserRuleCall_4());
@@ -5554,7 +5610,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalPlanParser.g:2313:3: this_UbuntuVersionValue_5= ruleUbuntuVersionValue
+                    // InternalPlanParser.g:2338:3: this_UbuntuVersionValue_5= ruleUbuntuVersionValue
                     {
 
                           newCompositeNode(grammarAccess.getPropertyValueAccess().getUbuntuVersionValueParserRuleCall_5());
@@ -5572,7 +5628,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalPlanParser.g:2322:3: this_PropertyValueList_6= rulePropertyValueList
+                    // InternalPlanParser.g:2347:3: this_PropertyValueList_6= rulePropertyValueList
                     {
 
                           newCompositeNode(grammarAccess.getPropertyValueAccess().getPropertyValueListParserRuleCall_6());
@@ -5612,7 +5668,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePropertyValueInt"
-    // InternalPlanParser.g:2334:1: entryRulePropertyValueInt returns [EObject current=null] : iv_rulePropertyValueInt= rulePropertyValueInt EOF ;
+    // InternalPlanParser.g:2359:1: entryRulePropertyValueInt returns [EObject current=null] : iv_rulePropertyValueInt= rulePropertyValueInt EOF ;
     public final EObject entryRulePropertyValueInt() throws RecognitionException {
         EObject current = null;
 
@@ -5620,8 +5676,8 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPlanParser.g:2334:57: (iv_rulePropertyValueInt= rulePropertyValueInt EOF )
-            // InternalPlanParser.g:2335:2: iv_rulePropertyValueInt= rulePropertyValueInt EOF
+            // InternalPlanParser.g:2359:57: (iv_rulePropertyValueInt= rulePropertyValueInt EOF )
+            // InternalPlanParser.g:2360:2: iv_rulePropertyValueInt= rulePropertyValueInt EOF
             {
              newCompositeNode(grammarAccess.getPropertyValueIntRule());
             pushFollow(FOLLOW_1);
@@ -5648,7 +5704,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePropertyValueInt"
-    // InternalPlanParser.g:2341:1: rulePropertyValueInt returns [EObject current=null] : ( (lv_value_0_0= ruleInteger0 ) ) ;
+    // InternalPlanParser.g:2366:1: rulePropertyValueInt returns [EObject current=null] : ( (lv_value_0_0= ruleInteger0 ) ) ;
     public final EObject rulePropertyValueInt() throws RecognitionException {
         EObject current = null;
 
@@ -5659,14 +5715,14 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
           enterRule();
 
         try {
-            // InternalPlanParser.g:2347:2: ( ( (lv_value_0_0= ruleInteger0 ) ) )
-            // InternalPlanParser.g:2348:2: ( (lv_value_0_0= ruleInteger0 ) )
+            // InternalPlanParser.g:2372:2: ( ( (lv_value_0_0= ruleInteger0 ) ) )
+            // InternalPlanParser.g:2373:2: ( (lv_value_0_0= ruleInteger0 ) )
             {
-            // InternalPlanParser.g:2348:2: ( (lv_value_0_0= ruleInteger0 ) )
-            // InternalPlanParser.g:2349:3: (lv_value_0_0= ruleInteger0 )
+            // InternalPlanParser.g:2373:2: ( (lv_value_0_0= ruleInteger0 ) )
+            // InternalPlanParser.g:2374:3: (lv_value_0_0= ruleInteger0 )
             {
-            // InternalPlanParser.g:2349:3: (lv_value_0_0= ruleInteger0 )
-            // InternalPlanParser.g:2350:4: lv_value_0_0= ruleInteger0
+            // InternalPlanParser.g:2374:3: (lv_value_0_0= ruleInteger0 )
+            // InternalPlanParser.g:2375:4: lv_value_0_0= ruleInteger0
             {
 
                     newCompositeNode(grammarAccess.getPropertyValueIntAccess().getValueInteger0ParserRuleCall_0());
@@ -5713,7 +5769,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePropertyValueDouble"
-    // InternalPlanParser.g:2370:1: entryRulePropertyValueDouble returns [EObject current=null] : iv_rulePropertyValueDouble= rulePropertyValueDouble EOF ;
+    // InternalPlanParser.g:2395:1: entryRulePropertyValueDouble returns [EObject current=null] : iv_rulePropertyValueDouble= rulePropertyValueDouble EOF ;
     public final EObject entryRulePropertyValueDouble() throws RecognitionException {
         EObject current = null;
 
@@ -5721,8 +5777,8 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPlanParser.g:2370:60: (iv_rulePropertyValueDouble= rulePropertyValueDouble EOF )
-            // InternalPlanParser.g:2371:2: iv_rulePropertyValueDouble= rulePropertyValueDouble EOF
+            // InternalPlanParser.g:2395:60: (iv_rulePropertyValueDouble= rulePropertyValueDouble EOF )
+            // InternalPlanParser.g:2396:2: iv_rulePropertyValueDouble= rulePropertyValueDouble EOF
             {
              newCompositeNode(grammarAccess.getPropertyValueDoubleRule());
             pushFollow(FOLLOW_1);
@@ -5749,7 +5805,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePropertyValueDouble"
-    // InternalPlanParser.g:2377:1: rulePropertyValueDouble returns [EObject current=null] : ( (lv_value_0_0= ruleDouble0 ) ) ;
+    // InternalPlanParser.g:2402:1: rulePropertyValueDouble returns [EObject current=null] : ( (lv_value_0_0= ruleDouble0 ) ) ;
     public final EObject rulePropertyValueDouble() throws RecognitionException {
         EObject current = null;
 
@@ -5760,14 +5816,14 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
           enterRule();
 
         try {
-            // InternalPlanParser.g:2383:2: ( ( (lv_value_0_0= ruleDouble0 ) ) )
-            // InternalPlanParser.g:2384:2: ( (lv_value_0_0= ruleDouble0 ) )
+            // InternalPlanParser.g:2408:2: ( ( (lv_value_0_0= ruleDouble0 ) ) )
+            // InternalPlanParser.g:2409:2: ( (lv_value_0_0= ruleDouble0 ) )
             {
-            // InternalPlanParser.g:2384:2: ( (lv_value_0_0= ruleDouble0 ) )
-            // InternalPlanParser.g:2385:3: (lv_value_0_0= ruleDouble0 )
+            // InternalPlanParser.g:2409:2: ( (lv_value_0_0= ruleDouble0 ) )
+            // InternalPlanParser.g:2410:3: (lv_value_0_0= ruleDouble0 )
             {
-            // InternalPlanParser.g:2385:3: (lv_value_0_0= ruleDouble0 )
-            // InternalPlanParser.g:2386:4: lv_value_0_0= ruleDouble0
+            // InternalPlanParser.g:2410:3: (lv_value_0_0= ruleDouble0 )
+            // InternalPlanParser.g:2411:4: lv_value_0_0= ruleDouble0
             {
 
                     newCompositeNode(grammarAccess.getPropertyValueDoubleAccess().getValueDouble0ParserRuleCall_0());
@@ -5814,7 +5870,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePropertyValueString"
-    // InternalPlanParser.g:2406:1: entryRulePropertyValueString returns [EObject current=null] : iv_rulePropertyValueString= rulePropertyValueString EOF ;
+    // InternalPlanParser.g:2431:1: entryRulePropertyValueString returns [EObject current=null] : iv_rulePropertyValueString= rulePropertyValueString EOF ;
     public final EObject entryRulePropertyValueString() throws RecognitionException {
         EObject current = null;
 
@@ -5822,8 +5878,8 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPlanParser.g:2406:60: (iv_rulePropertyValueString= rulePropertyValueString EOF )
-            // InternalPlanParser.g:2407:2: iv_rulePropertyValueString= rulePropertyValueString EOF
+            // InternalPlanParser.g:2431:60: (iv_rulePropertyValueString= rulePropertyValueString EOF )
+            // InternalPlanParser.g:2432:2: iv_rulePropertyValueString= rulePropertyValueString EOF
             {
              newCompositeNode(grammarAccess.getPropertyValueStringRule());
             pushFollow(FOLLOW_1);
@@ -5850,7 +5906,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePropertyValueString"
-    // InternalPlanParser.g:2413:1: rulePropertyValueString returns [EObject current=null] : ( (lv_value_0_0= ruleEString ) ) ;
+    // InternalPlanParser.g:2438:1: rulePropertyValueString returns [EObject current=null] : ( (lv_value_0_0= ruleEString ) ) ;
     public final EObject rulePropertyValueString() throws RecognitionException {
         EObject current = null;
 
@@ -5861,14 +5917,14 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
           enterRule();
 
         try {
-            // InternalPlanParser.g:2419:2: ( ( (lv_value_0_0= ruleEString ) ) )
-            // InternalPlanParser.g:2420:2: ( (lv_value_0_0= ruleEString ) )
+            // InternalPlanParser.g:2444:2: ( ( (lv_value_0_0= ruleEString ) ) )
+            // InternalPlanParser.g:2445:2: ( (lv_value_0_0= ruleEString ) )
             {
-            // InternalPlanParser.g:2420:2: ( (lv_value_0_0= ruleEString ) )
-            // InternalPlanParser.g:2421:3: (lv_value_0_0= ruleEString )
+            // InternalPlanParser.g:2445:2: ( (lv_value_0_0= ruleEString ) )
+            // InternalPlanParser.g:2446:3: (lv_value_0_0= ruleEString )
             {
-            // InternalPlanParser.g:2421:3: (lv_value_0_0= ruleEString )
-            // InternalPlanParser.g:2422:4: lv_value_0_0= ruleEString
+            // InternalPlanParser.g:2446:3: (lv_value_0_0= ruleEString )
+            // InternalPlanParser.g:2447:4: lv_value_0_0= ruleEString
             {
 
                     newCompositeNode(grammarAccess.getPropertyValueStringAccess().getValueEStringParserRuleCall_0());
@@ -5915,7 +5971,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePropertyValueList"
-    // InternalPlanParser.g:2442:1: entryRulePropertyValueList returns [EObject current=null] : iv_rulePropertyValueList= rulePropertyValueList EOF ;
+    // InternalPlanParser.g:2467:1: entryRulePropertyValueList returns [EObject current=null] : iv_rulePropertyValueList= rulePropertyValueList EOF ;
     public final EObject entryRulePropertyValueList() throws RecognitionException {
         EObject current = null;
 
@@ -5923,8 +5979,8 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPlanParser.g:2442:58: (iv_rulePropertyValueList= rulePropertyValueList EOF )
-            // InternalPlanParser.g:2443:2: iv_rulePropertyValueList= rulePropertyValueList EOF
+            // InternalPlanParser.g:2467:58: (iv_rulePropertyValueList= rulePropertyValueList EOF )
+            // InternalPlanParser.g:2468:2: iv_rulePropertyValueList= rulePropertyValueList EOF
             {
              newCompositeNode(grammarAccess.getPropertyValueListRule());
             pushFollow(FOLLOW_1);
@@ -5951,7 +6007,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePropertyValueList"
-    // InternalPlanParser.g:2449:1: rulePropertyValueList returns [EObject current=null] : (this_INDENT_0= RULE_INDENT rulePreListElement ( (lv_value_2_0= rulePropertyValue ) ) ( rulePreListElement ( (lv_value_4_0= rulePropertyValue ) ) )* this_DEDENT_5= RULE_DEDENT ) ;
+    // InternalPlanParser.g:2474:1: rulePropertyValueList returns [EObject current=null] : (this_INDENT_0= RULE_INDENT rulePreListElement ( (lv_value_2_0= rulePropertyValue ) ) ( rulePreListElement ( (lv_value_4_0= rulePropertyValue ) ) )* this_DEDENT_5= RULE_DEDENT ) ;
     public final EObject rulePropertyValueList() throws RecognitionException {
         EObject current = null;
 
@@ -5966,11 +6022,11 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
           enterRule();
 
         try {
-            // InternalPlanParser.g:2455:2: ( (this_INDENT_0= RULE_INDENT rulePreListElement ( (lv_value_2_0= rulePropertyValue ) ) ( rulePreListElement ( (lv_value_4_0= rulePropertyValue ) ) )* this_DEDENT_5= RULE_DEDENT ) )
-            // InternalPlanParser.g:2456:2: (this_INDENT_0= RULE_INDENT rulePreListElement ( (lv_value_2_0= rulePropertyValue ) ) ( rulePreListElement ( (lv_value_4_0= rulePropertyValue ) ) )* this_DEDENT_5= RULE_DEDENT )
+            // InternalPlanParser.g:2480:2: ( (this_INDENT_0= RULE_INDENT rulePreListElement ( (lv_value_2_0= rulePropertyValue ) ) ( rulePreListElement ( (lv_value_4_0= rulePropertyValue ) ) )* this_DEDENT_5= RULE_DEDENT ) )
+            // InternalPlanParser.g:2481:2: (this_INDENT_0= RULE_INDENT rulePreListElement ( (lv_value_2_0= rulePropertyValue ) ) ( rulePreListElement ( (lv_value_4_0= rulePropertyValue ) ) )* this_DEDENT_5= RULE_DEDENT )
             {
-            // InternalPlanParser.g:2456:2: (this_INDENT_0= RULE_INDENT rulePreListElement ( (lv_value_2_0= rulePropertyValue ) ) ( rulePreListElement ( (lv_value_4_0= rulePropertyValue ) ) )* this_DEDENT_5= RULE_DEDENT )
-            // InternalPlanParser.g:2457:3: this_INDENT_0= RULE_INDENT rulePreListElement ( (lv_value_2_0= rulePropertyValue ) ) ( rulePreListElement ( (lv_value_4_0= rulePropertyValue ) ) )* this_DEDENT_5= RULE_DEDENT
+            // InternalPlanParser.g:2481:2: (this_INDENT_0= RULE_INDENT rulePreListElement ( (lv_value_2_0= rulePropertyValue ) ) ( rulePreListElement ( (lv_value_4_0= rulePropertyValue ) ) )* this_DEDENT_5= RULE_DEDENT )
+            // InternalPlanParser.g:2482:3: this_INDENT_0= RULE_INDENT rulePreListElement ( (lv_value_2_0= rulePropertyValue ) ) ( rulePreListElement ( (lv_value_4_0= rulePropertyValue ) ) )* this_DEDENT_5= RULE_DEDENT
             {
             this_INDENT_0=(Token)match(input,RULE_INDENT,FOLLOW_9);
 
@@ -5979,7 +6035,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
                   newCompositeNode(grammarAccess.getPropertyValueListAccess().getPreListElementParserRuleCall_1());
 
-            pushFollow(FOLLOW_29);
+            pushFollow(FOLLOW_30);
             rulePreListElement();
 
             state._fsp--;
@@ -5987,11 +6043,11 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
                   afterParserOrEnumRuleCall();
 
-            // InternalPlanParser.g:2468:3: ( (lv_value_2_0= rulePropertyValue ) )
-            // InternalPlanParser.g:2469:4: (lv_value_2_0= rulePropertyValue )
+            // InternalPlanParser.g:2493:3: ( (lv_value_2_0= rulePropertyValue ) )
+            // InternalPlanParser.g:2494:4: (lv_value_2_0= rulePropertyValue )
             {
-            // InternalPlanParser.g:2469:4: (lv_value_2_0= rulePropertyValue )
-            // InternalPlanParser.g:2470:5: lv_value_2_0= rulePropertyValue
+            // InternalPlanParser.g:2494:4: (lv_value_2_0= rulePropertyValue )
+            // InternalPlanParser.g:2495:5: lv_value_2_0= rulePropertyValue
             {
 
                       newCompositeNode(grammarAccess.getPropertyValueListAccess().getValuePropertyValueParserRuleCall_2_0());
@@ -6018,25 +6074,25 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalPlanParser.g:2487:3: ( rulePreListElement ( (lv_value_4_0= rulePropertyValue ) ) )*
-            loop43:
+            // InternalPlanParser.g:2512:3: ( rulePreListElement ( (lv_value_4_0= rulePropertyValue ) ) )*
+            loop44:
             do {
-                int alt43=2;
-                int LA43_0 = input.LA(1);
+                int alt44=2;
+                int LA44_0 = input.LA(1);
 
-                if ( (LA43_0==HyphenMinus) ) {
-                    alt43=1;
+                if ( (LA44_0==HyphenMinus) ) {
+                    alt44=1;
                 }
 
 
-                switch (alt43) {
+                switch (alt44) {
               case 1 :
-                  // InternalPlanParser.g:2488:4: rulePreListElement ( (lv_value_4_0= rulePropertyValue ) )
+                  // InternalPlanParser.g:2513:4: rulePreListElement ( (lv_value_4_0= rulePropertyValue ) )
                   {
 
                           newCompositeNode(grammarAccess.getPropertyValueListAccess().getPreListElementParserRuleCall_3_0());
 
-                  pushFollow(FOLLOW_29);
+                  pushFollow(FOLLOW_30);
                   rulePreListElement();
 
                   state._fsp--;
@@ -6044,11 +6100,11 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
                           afterParserOrEnumRuleCall();
 
-                  // InternalPlanParser.g:2495:4: ( (lv_value_4_0= rulePropertyValue ) )
-                  // InternalPlanParser.g:2496:5: (lv_value_4_0= rulePropertyValue )
+                  // InternalPlanParser.g:2520:4: ( (lv_value_4_0= rulePropertyValue ) )
+                  // InternalPlanParser.g:2521:5: (lv_value_4_0= rulePropertyValue )
                   {
-                  // InternalPlanParser.g:2496:5: (lv_value_4_0= rulePropertyValue )
-                  // InternalPlanParser.g:2497:6: lv_value_4_0= rulePropertyValue
+                  // InternalPlanParser.g:2521:5: (lv_value_4_0= rulePropertyValue )
+                  // InternalPlanParser.g:2522:6: lv_value_4_0= rulePropertyValue
                   {
 
                               newCompositeNode(grammarAccess.getPropertyValueListAccess().getValuePropertyValueParserRuleCall_3_1_0());
@@ -6080,7 +6136,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
                   break;
 
               default :
-                  break loop43;
+                  break loop44;
                 }
             } while (true);
 
@@ -6111,7 +6167,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleProcessorArchitectureValue"
-    // InternalPlanParser.g:2523:1: entryRuleProcessorArchitectureValue returns [EObject current=null] : iv_ruleProcessorArchitectureValue= ruleProcessorArchitectureValue EOF ;
+    // InternalPlanParser.g:2548:1: entryRuleProcessorArchitectureValue returns [EObject current=null] : iv_ruleProcessorArchitectureValue= ruleProcessorArchitectureValue EOF ;
     public final EObject entryRuleProcessorArchitectureValue() throws RecognitionException {
         EObject current = null;
 
@@ -6119,8 +6175,8 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPlanParser.g:2523:67: (iv_ruleProcessorArchitectureValue= ruleProcessorArchitectureValue EOF )
-            // InternalPlanParser.g:2524:2: iv_ruleProcessorArchitectureValue= ruleProcessorArchitectureValue EOF
+            // InternalPlanParser.g:2548:67: (iv_ruleProcessorArchitectureValue= ruleProcessorArchitectureValue EOF )
+            // InternalPlanParser.g:2549:2: iv_ruleProcessorArchitectureValue= ruleProcessorArchitectureValue EOF
             {
              newCompositeNode(grammarAccess.getProcessorArchitectureValueRule());
             pushFollow(FOLLOW_1);
@@ -6147,7 +6203,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleProcessorArchitectureValue"
-    // InternalPlanParser.g:2530:1: ruleProcessorArchitectureValue returns [EObject current=null] : ( (lv_value_0_0= ruleProcessorArchitectureType ) ) ;
+    // InternalPlanParser.g:2555:1: ruleProcessorArchitectureValue returns [EObject current=null] : ( (lv_value_0_0= ruleProcessorArchitectureType ) ) ;
     public final EObject ruleProcessorArchitectureValue() throws RecognitionException {
         EObject current = null;
 
@@ -6158,14 +6214,14 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
           enterRule();
 
         try {
-            // InternalPlanParser.g:2536:2: ( ( (lv_value_0_0= ruleProcessorArchitectureType ) ) )
-            // InternalPlanParser.g:2537:2: ( (lv_value_0_0= ruleProcessorArchitectureType ) )
+            // InternalPlanParser.g:2561:2: ( ( (lv_value_0_0= ruleProcessorArchitectureType ) ) )
+            // InternalPlanParser.g:2562:2: ( (lv_value_0_0= ruleProcessorArchitectureType ) )
             {
-            // InternalPlanParser.g:2537:2: ( (lv_value_0_0= ruleProcessorArchitectureType ) )
-            // InternalPlanParser.g:2538:3: (lv_value_0_0= ruleProcessorArchitectureType )
+            // InternalPlanParser.g:2562:2: ( (lv_value_0_0= ruleProcessorArchitectureType ) )
+            // InternalPlanParser.g:2563:3: (lv_value_0_0= ruleProcessorArchitectureType )
             {
-            // InternalPlanParser.g:2538:3: (lv_value_0_0= ruleProcessorArchitectureType )
-            // InternalPlanParser.g:2539:4: lv_value_0_0= ruleProcessorArchitectureType
+            // InternalPlanParser.g:2563:3: (lv_value_0_0= ruleProcessorArchitectureType )
+            // InternalPlanParser.g:2564:4: lv_value_0_0= ruleProcessorArchitectureType
             {
 
                     newCompositeNode(grammarAccess.getProcessorArchitectureValueAccess().getValueProcessorArchitectureTypeEnumRuleCall_0());
@@ -6212,7 +6268,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAbstractResouceType"
-    // InternalPlanParser.g:2559:1: entryRuleAbstractResouceType returns [EObject current=null] : iv_ruleAbstractResouceType= ruleAbstractResouceType EOF ;
+    // InternalPlanParser.g:2584:1: entryRuleAbstractResouceType returns [EObject current=null] : iv_ruleAbstractResouceType= ruleAbstractResouceType EOF ;
     public final EObject entryRuleAbstractResouceType() throws RecognitionException {
         EObject current = null;
 
@@ -6220,8 +6276,8 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPlanParser.g:2559:60: (iv_ruleAbstractResouceType= ruleAbstractResouceType EOF )
-            // InternalPlanParser.g:2560:2: iv_ruleAbstractResouceType= ruleAbstractResouceType EOF
+            // InternalPlanParser.g:2584:60: (iv_ruleAbstractResouceType= ruleAbstractResouceType EOF )
+            // InternalPlanParser.g:2585:2: iv_ruleAbstractResouceType= ruleAbstractResouceType EOF
             {
              newCompositeNode(grammarAccess.getAbstractResouceTypeRule());
             pushFollow(FOLLOW_1);
@@ -6248,7 +6304,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAbstractResouceType"
-    // InternalPlanParser.g:2566:1: ruleAbstractResouceType returns [EObject current=null] : this_ResourceType_0= ruleResourceType ;
+    // InternalPlanParser.g:2591:1: ruleAbstractResouceType returns [EObject current=null] : this_ResourceType_0= ruleResourceType ;
     public final EObject ruleAbstractResouceType() throws RecognitionException {
         EObject current = null;
 
@@ -6259,8 +6315,8 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
           enterRule();
 
         try {
-            // InternalPlanParser.g:2572:2: (this_ResourceType_0= ruleResourceType )
-            // InternalPlanParser.g:2573:2: this_ResourceType_0= ruleResourceType
+            // InternalPlanParser.g:2597:2: (this_ResourceType_0= ruleResourceType )
+            // InternalPlanParser.g:2598:2: this_ResourceType_0= ruleResourceType
             {
 
                 newCompositeNode(grammarAccess.getAbstractResouceTypeAccess().getResourceTypeParserRuleCall());
@@ -6294,7 +6350,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleOpertingSystemResouceType"
-    // InternalPlanParser.g:2584:1: entryRuleOpertingSystemResouceType returns [EObject current=null] : iv_ruleOpertingSystemResouceType= ruleOpertingSystemResouceType EOF ;
+    // InternalPlanParser.g:2609:1: entryRuleOpertingSystemResouceType returns [EObject current=null] : iv_ruleOpertingSystemResouceType= ruleOpertingSystemResouceType EOF ;
     public final EObject entryRuleOpertingSystemResouceType() throws RecognitionException {
         EObject current = null;
 
@@ -6302,8 +6358,8 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPlanParser.g:2584:66: (iv_ruleOpertingSystemResouceType= ruleOpertingSystemResouceType EOF )
-            // InternalPlanParser.g:2585:2: iv_ruleOpertingSystemResouceType= ruleOpertingSystemResouceType EOF
+            // InternalPlanParser.g:2609:66: (iv_ruleOpertingSystemResouceType= ruleOpertingSystemResouceType EOF )
+            // InternalPlanParser.g:2610:2: iv_ruleOpertingSystemResouceType= ruleOpertingSystemResouceType EOF
             {
              newCompositeNode(grammarAccess.getOpertingSystemResouceTypeRule());
             pushFollow(FOLLOW_1);
@@ -6330,7 +6386,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleOpertingSystemResouceType"
-    // InternalPlanParser.g:2591:1: ruleOpertingSystemResouceType returns [EObject current=null] : (this_LinuxOpertingSystem_0= ruleLinuxOpertingSystem | this_MacOSOpertingSystem_1= ruleMacOSOpertingSystem ) ;
+    // InternalPlanParser.g:2616:1: ruleOpertingSystemResouceType returns [EObject current=null] : (this_LinuxOpertingSystem_0= ruleLinuxOpertingSystem | this_MacOSOpertingSystem_1= ruleMacOSOpertingSystem ) ;
     public final EObject ruleOpertingSystemResouceType() throws RecognitionException {
         EObject current = null;
 
@@ -6343,28 +6399,28 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
           enterRule();
 
         try {
-            // InternalPlanParser.g:2597:2: ( (this_LinuxOpertingSystem_0= ruleLinuxOpertingSystem | this_MacOSOpertingSystem_1= ruleMacOSOpertingSystem ) )
-            // InternalPlanParser.g:2598:2: (this_LinuxOpertingSystem_0= ruleLinuxOpertingSystem | this_MacOSOpertingSystem_1= ruleMacOSOpertingSystem )
+            // InternalPlanParser.g:2622:2: ( (this_LinuxOpertingSystem_0= ruleLinuxOpertingSystem | this_MacOSOpertingSystem_1= ruleMacOSOpertingSystem ) )
+            // InternalPlanParser.g:2623:2: (this_LinuxOpertingSystem_0= ruleLinuxOpertingSystem | this_MacOSOpertingSystem_1= ruleMacOSOpertingSystem )
             {
-            // InternalPlanParser.g:2598:2: (this_LinuxOpertingSystem_0= ruleLinuxOpertingSystem | this_MacOSOpertingSystem_1= ruleMacOSOpertingSystem )
-            int alt44=2;
-            int LA44_0 = input.LA(1);
+            // InternalPlanParser.g:2623:2: (this_LinuxOpertingSystem_0= ruleLinuxOpertingSystem | this_MacOSOpertingSystem_1= ruleMacOSOpertingSystem )
+            int alt45=2;
+            int LA45_0 = input.LA(1);
 
-            if ( (LA44_0==LinuxOpertingSystem) ) {
-                alt44=1;
+            if ( (LA45_0==LinuxOpertingSystem) ) {
+                alt45=1;
             }
-            else if ( (LA44_0==MacOSOpertingSystem) ) {
-                alt44=2;
+            else if ( (LA45_0==MacOSOpertingSystem) ) {
+                alt45=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 44, 0, input);
+                    new NoViableAltException("", 45, 0, input);
 
                 throw nvae;
             }
-            switch (alt44) {
+            switch (alt45) {
                 case 1 :
-                    // InternalPlanParser.g:2599:3: this_LinuxOpertingSystem_0= ruleLinuxOpertingSystem
+                    // InternalPlanParser.g:2624:3: this_LinuxOpertingSystem_0= ruleLinuxOpertingSystem
                     {
 
                           newCompositeNode(grammarAccess.getOpertingSystemResouceTypeAccess().getLinuxOpertingSystemParserRuleCall_0());
@@ -6382,7 +6438,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalPlanParser.g:2608:3: this_MacOSOpertingSystem_1= ruleMacOSOpertingSystem
+                    // InternalPlanParser.g:2633:3: this_MacOSOpertingSystem_1= ruleMacOSOpertingSystem
                     {
 
                           newCompositeNode(grammarAccess.getOpertingSystemResouceTypeAccess().getMacOSOpertingSystemParserRuleCall_1());
@@ -6422,7 +6478,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleResourceType"
-    // InternalPlanParser.g:2620:1: entryRuleResourceType returns [EObject current=null] : iv_ruleResourceType= ruleResourceType EOF ;
+    // InternalPlanParser.g:2645:1: entryRuleResourceType returns [EObject current=null] : iv_ruleResourceType= ruleResourceType EOF ;
     public final EObject entryRuleResourceType() throws RecognitionException {
         EObject current = null;
 
@@ -6430,8 +6486,8 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPlanParser.g:2620:53: (iv_ruleResourceType= ruleResourceType EOF )
-            // InternalPlanParser.g:2621:2: iv_ruleResourceType= ruleResourceType EOF
+            // InternalPlanParser.g:2645:53: (iv_ruleResourceType= ruleResourceType EOF )
+            // InternalPlanParser.g:2646:2: iv_ruleResourceType= ruleResourceType EOF
             {
              newCompositeNode(grammarAccess.getResourceTypeRule());
             pushFollow(FOLLOW_1);
@@ -6458,7 +6514,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleResourceType"
-    // InternalPlanParser.g:2627:1: ruleResourceType returns [EObject current=null] : ( () ( (lv_name_1_0= ruleEString ) ) ) ;
+    // InternalPlanParser.g:2652:1: ruleResourceType returns [EObject current=null] : ( () ( (lv_name_1_0= ruleEString ) ) ) ;
     public final EObject ruleResourceType() throws RecognitionException {
         EObject current = null;
 
@@ -6469,14 +6525,14 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
           enterRule();
 
         try {
-            // InternalPlanParser.g:2633:2: ( ( () ( (lv_name_1_0= ruleEString ) ) ) )
-            // InternalPlanParser.g:2634:2: ( () ( (lv_name_1_0= ruleEString ) ) )
+            // InternalPlanParser.g:2658:2: ( ( () ( (lv_name_1_0= ruleEString ) ) ) )
+            // InternalPlanParser.g:2659:2: ( () ( (lv_name_1_0= ruleEString ) ) )
             {
-            // InternalPlanParser.g:2634:2: ( () ( (lv_name_1_0= ruleEString ) ) )
-            // InternalPlanParser.g:2635:3: () ( (lv_name_1_0= ruleEString ) )
+            // InternalPlanParser.g:2659:2: ( () ( (lv_name_1_0= ruleEString ) ) )
+            // InternalPlanParser.g:2660:3: () ( (lv_name_1_0= ruleEString ) )
             {
-            // InternalPlanParser.g:2635:3: ()
-            // InternalPlanParser.g:2636:4:
+            // InternalPlanParser.g:2660:3: ()
+            // InternalPlanParser.g:2661:4:
             {
 
                     current = forceCreateModelElement(
@@ -6486,11 +6542,11 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalPlanParser.g:2642:3: ( (lv_name_1_0= ruleEString ) )
-            // InternalPlanParser.g:2643:4: (lv_name_1_0= ruleEString )
+            // InternalPlanParser.g:2667:3: ( (lv_name_1_0= ruleEString ) )
+            // InternalPlanParser.g:2668:4: (lv_name_1_0= ruleEString )
             {
-            // InternalPlanParser.g:2643:4: (lv_name_1_0= ruleEString )
-            // InternalPlanParser.g:2644:5: lv_name_1_0= ruleEString
+            // InternalPlanParser.g:2668:4: (lv_name_1_0= ruleEString )
+            // InternalPlanParser.g:2669:5: lv_name_1_0= ruleEString
             {
 
                       newCompositeNode(grammarAccess.getResourceTypeAccess().getNameEStringParserRuleCall_1_0());
@@ -6540,7 +6596,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleLinuxOpertingSystem"
-    // InternalPlanParser.g:2665:1: entryRuleLinuxOpertingSystem returns [EObject current=null] : iv_ruleLinuxOpertingSystem= ruleLinuxOpertingSystem EOF ;
+    // InternalPlanParser.g:2690:1: entryRuleLinuxOpertingSystem returns [EObject current=null] : iv_ruleLinuxOpertingSystem= ruleLinuxOpertingSystem EOF ;
     public final EObject entryRuleLinuxOpertingSystem() throws RecognitionException {
         EObject current = null;
 
@@ -6548,8 +6604,8 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPlanParser.g:2665:60: (iv_ruleLinuxOpertingSystem= ruleLinuxOpertingSystem EOF )
-            // InternalPlanParser.g:2666:2: iv_ruleLinuxOpertingSystem= ruleLinuxOpertingSystem EOF
+            // InternalPlanParser.g:2690:60: (iv_ruleLinuxOpertingSystem= ruleLinuxOpertingSystem EOF )
+            // InternalPlanParser.g:2691:2: iv_ruleLinuxOpertingSystem= ruleLinuxOpertingSystem EOF
             {
              newCompositeNode(grammarAccess.getLinuxOpertingSystemRule());
             pushFollow(FOLLOW_1);
@@ -6576,7 +6632,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLinuxOpertingSystem"
-    // InternalPlanParser.g:2672:1: ruleLinuxOpertingSystem returns [EObject current=null] : ( () otherlv_1= LinuxOpertingSystem ) ;
+    // InternalPlanParser.g:2697:1: ruleLinuxOpertingSystem returns [EObject current=null] : ( () otherlv_1= LinuxOpertingSystem ) ;
     public final EObject ruleLinuxOpertingSystem() throws RecognitionException {
         EObject current = null;
 
@@ -6586,14 +6642,14 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
           enterRule();
 
         try {
-            // InternalPlanParser.g:2678:2: ( ( () otherlv_1= LinuxOpertingSystem ) )
-            // InternalPlanParser.g:2679:2: ( () otherlv_1= LinuxOpertingSystem )
+            // InternalPlanParser.g:2703:2: ( ( () otherlv_1= LinuxOpertingSystem ) )
+            // InternalPlanParser.g:2704:2: ( () otherlv_1= LinuxOpertingSystem )
             {
-            // InternalPlanParser.g:2679:2: ( () otherlv_1= LinuxOpertingSystem )
-            // InternalPlanParser.g:2680:3: () otherlv_1= LinuxOpertingSystem
+            // InternalPlanParser.g:2704:2: ( () otherlv_1= LinuxOpertingSystem )
+            // InternalPlanParser.g:2705:3: () otherlv_1= LinuxOpertingSystem
             {
-            // InternalPlanParser.g:2680:3: ()
-            // InternalPlanParser.g:2681:4:
+            // InternalPlanParser.g:2705:3: ()
+            // InternalPlanParser.g:2706:4:
             {
 
                     current = forceCreateModelElement(
@@ -6630,7 +6686,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleMacOSOpertingSystem"
-    // InternalPlanParser.g:2695:1: entryRuleMacOSOpertingSystem returns [EObject current=null] : iv_ruleMacOSOpertingSystem= ruleMacOSOpertingSystem EOF ;
+    // InternalPlanParser.g:2720:1: entryRuleMacOSOpertingSystem returns [EObject current=null] : iv_ruleMacOSOpertingSystem= ruleMacOSOpertingSystem EOF ;
     public final EObject entryRuleMacOSOpertingSystem() throws RecognitionException {
         EObject current = null;
 
@@ -6638,8 +6694,8 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPlanParser.g:2695:60: (iv_ruleMacOSOpertingSystem= ruleMacOSOpertingSystem EOF )
-            // InternalPlanParser.g:2696:2: iv_ruleMacOSOpertingSystem= ruleMacOSOpertingSystem EOF
+            // InternalPlanParser.g:2720:60: (iv_ruleMacOSOpertingSystem= ruleMacOSOpertingSystem EOF )
+            // InternalPlanParser.g:2721:2: iv_ruleMacOSOpertingSystem= ruleMacOSOpertingSystem EOF
             {
              newCompositeNode(grammarAccess.getMacOSOpertingSystemRule());
             pushFollow(FOLLOW_1);
@@ -6666,7 +6722,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMacOSOpertingSystem"
-    // InternalPlanParser.g:2702:1: ruleMacOSOpertingSystem returns [EObject current=null] : ( () otherlv_1= MacOSOpertingSystem ) ;
+    // InternalPlanParser.g:2727:1: ruleMacOSOpertingSystem returns [EObject current=null] : ( () otherlv_1= MacOSOpertingSystem ) ;
     public final EObject ruleMacOSOpertingSystem() throws RecognitionException {
         EObject current = null;
 
@@ -6676,14 +6732,14 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
           enterRule();
 
         try {
-            // InternalPlanParser.g:2708:2: ( ( () otherlv_1= MacOSOpertingSystem ) )
-            // InternalPlanParser.g:2709:2: ( () otherlv_1= MacOSOpertingSystem )
+            // InternalPlanParser.g:2733:2: ( ( () otherlv_1= MacOSOpertingSystem ) )
+            // InternalPlanParser.g:2734:2: ( () otherlv_1= MacOSOpertingSystem )
             {
-            // InternalPlanParser.g:2709:2: ( () otherlv_1= MacOSOpertingSystem )
-            // InternalPlanParser.g:2710:3: () otherlv_1= MacOSOpertingSystem
+            // InternalPlanParser.g:2734:2: ( () otherlv_1= MacOSOpertingSystem )
+            // InternalPlanParser.g:2735:3: () otherlv_1= MacOSOpertingSystem
             {
-            // InternalPlanParser.g:2710:3: ()
-            // InternalPlanParser.g:2711:4:
+            // InternalPlanParser.g:2735:3: ()
+            // InternalPlanParser.g:2736:4:
             {
 
                     current = forceCreateModelElement(
@@ -6720,7 +6776,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCommunicationType"
-    // InternalPlanParser.g:2725:1: entryRuleCommunicationType returns [EObject current=null] : iv_ruleCommunicationType= ruleCommunicationType EOF ;
+    // InternalPlanParser.g:2750:1: entryRuleCommunicationType returns [EObject current=null] : iv_ruleCommunicationType= ruleCommunicationType EOF ;
     public final EObject entryRuleCommunicationType() throws RecognitionException {
         EObject current = null;
 
@@ -6728,8 +6784,8 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPlanParser.g:2725:58: (iv_ruleCommunicationType= ruleCommunicationType EOF )
-            // InternalPlanParser.g:2726:2: iv_ruleCommunicationType= ruleCommunicationType EOF
+            // InternalPlanParser.g:2750:58: (iv_ruleCommunicationType= ruleCommunicationType EOF )
+            // InternalPlanParser.g:2751:2: iv_ruleCommunicationType= ruleCommunicationType EOF
             {
              newCompositeNode(grammarAccess.getCommunicationTypeRule());
             pushFollow(FOLLOW_1);
@@ -6756,7 +6812,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCommunicationType"
-    // InternalPlanParser.g:2732:1: ruleCommunicationType returns [EObject current=null] : ( () ( (lv_name_1_0= ruleEString ) ) ) ;
+    // InternalPlanParser.g:2757:1: ruleCommunicationType returns [EObject current=null] : ( () ( (lv_name_1_0= ruleEString ) ) ) ;
     public final EObject ruleCommunicationType() throws RecognitionException {
         EObject current = null;
 
@@ -6767,14 +6823,14 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
           enterRule();
 
         try {
-            // InternalPlanParser.g:2738:2: ( ( () ( (lv_name_1_0= ruleEString ) ) ) )
-            // InternalPlanParser.g:2739:2: ( () ( (lv_name_1_0= ruleEString ) ) )
+            // InternalPlanParser.g:2763:2: ( ( () ( (lv_name_1_0= ruleEString ) ) ) )
+            // InternalPlanParser.g:2764:2: ( () ( (lv_name_1_0= ruleEString ) ) )
             {
-            // InternalPlanParser.g:2739:2: ( () ( (lv_name_1_0= ruleEString ) ) )
-            // InternalPlanParser.g:2740:3: () ( (lv_name_1_0= ruleEString ) )
+            // InternalPlanParser.g:2764:2: ( () ( (lv_name_1_0= ruleEString ) ) )
+            // InternalPlanParser.g:2765:3: () ( (lv_name_1_0= ruleEString ) )
             {
-            // InternalPlanParser.g:2740:3: ()
-            // InternalPlanParser.g:2741:4:
+            // InternalPlanParser.g:2765:3: ()
+            // InternalPlanParser.g:2766:4:
             {
 
                     current = forceCreateModelElement(
@@ -6784,11 +6840,11 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalPlanParser.g:2747:3: ( (lv_name_1_0= ruleEString ) )
-            // InternalPlanParser.g:2748:4: (lv_name_1_0= ruleEString )
+            // InternalPlanParser.g:2772:3: ( (lv_name_1_0= ruleEString ) )
+            // InternalPlanParser.g:2773:4: (lv_name_1_0= ruleEString )
             {
-            // InternalPlanParser.g:2748:4: (lv_name_1_0= ruleEString )
-            // InternalPlanParser.g:2749:5: lv_name_1_0= ruleEString
+            // InternalPlanParser.g:2773:4: (lv_name_1_0= ruleEString )
+            // InternalPlanParser.g:2774:5: lv_name_1_0= ruleEString
             {
 
                       newCompositeNode(grammarAccess.getCommunicationTypeAccess().getNameEStringParserRuleCall_1_0());
@@ -6838,7 +6894,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNetworkCommunicationType"
-    // InternalPlanParser.g:2770:1: entryRuleNetworkCommunicationType returns [EObject current=null] : iv_ruleNetworkCommunicationType= ruleNetworkCommunicationType EOF ;
+    // InternalPlanParser.g:2795:1: entryRuleNetworkCommunicationType returns [EObject current=null] : iv_ruleNetworkCommunicationType= ruleNetworkCommunicationType EOF ;
     public final EObject entryRuleNetworkCommunicationType() throws RecognitionException {
         EObject current = null;
 
@@ -6846,8 +6902,8 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPlanParser.g:2770:65: (iv_ruleNetworkCommunicationType= ruleNetworkCommunicationType EOF )
-            // InternalPlanParser.g:2771:2: iv_ruleNetworkCommunicationType= ruleNetworkCommunicationType EOF
+            // InternalPlanParser.g:2795:65: (iv_ruleNetworkCommunicationType= ruleNetworkCommunicationType EOF )
+            // InternalPlanParser.g:2796:2: iv_ruleNetworkCommunicationType= ruleNetworkCommunicationType EOF
             {
              newCompositeNode(grammarAccess.getNetworkCommunicationTypeRule());
             pushFollow(FOLLOW_1);
@@ -6874,7 +6930,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNetworkCommunicationType"
-    // InternalPlanParser.g:2777:1: ruleNetworkCommunicationType returns [EObject current=null] : (this_EthernetCommunicationType_0= ruleEthernetCommunicationType | this_WlanCommunicationType_1= ruleWlanCommunicationType ) ;
+    // InternalPlanParser.g:2802:1: ruleNetworkCommunicationType returns [EObject current=null] : (this_EthernetCommunicationType_0= ruleEthernetCommunicationType | this_WlanCommunicationType_1= ruleWlanCommunicationType ) ;
     public final EObject ruleNetworkCommunicationType() throws RecognitionException {
         EObject current = null;
 
@@ -6887,28 +6943,28 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
           enterRule();
 
         try {
-            // InternalPlanParser.g:2783:2: ( (this_EthernetCommunicationType_0= ruleEthernetCommunicationType | this_WlanCommunicationType_1= ruleWlanCommunicationType ) )
-            // InternalPlanParser.g:2784:2: (this_EthernetCommunicationType_0= ruleEthernetCommunicationType | this_WlanCommunicationType_1= ruleWlanCommunicationType )
+            // InternalPlanParser.g:2808:2: ( (this_EthernetCommunicationType_0= ruleEthernetCommunicationType | this_WlanCommunicationType_1= ruleWlanCommunicationType ) )
+            // InternalPlanParser.g:2809:2: (this_EthernetCommunicationType_0= ruleEthernetCommunicationType | this_WlanCommunicationType_1= ruleWlanCommunicationType )
             {
-            // InternalPlanParser.g:2784:2: (this_EthernetCommunicationType_0= ruleEthernetCommunicationType | this_WlanCommunicationType_1= ruleWlanCommunicationType )
-            int alt45=2;
-            int LA45_0 = input.LA(1);
+            // InternalPlanParser.g:2809:2: (this_EthernetCommunicationType_0= ruleEthernetCommunicationType | this_WlanCommunicationType_1= ruleWlanCommunicationType )
+            int alt46=2;
+            int LA46_0 = input.LA(1);
 
-            if ( (LA45_0==Ethernet) ) {
-                alt45=1;
+            if ( (LA46_0==Ethernet) ) {
+                alt46=1;
             }
-            else if ( (LA45_0==Wlan) ) {
-                alt45=2;
+            else if ( (LA46_0==Wlan) ) {
+                alt46=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 45, 0, input);
+                    new NoViableAltException("", 46, 0, input);
 
                 throw nvae;
             }
-            switch (alt45) {
+            switch (alt46) {
                 case 1 :
-                    // InternalPlanParser.g:2785:3: this_EthernetCommunicationType_0= ruleEthernetCommunicationType
+                    // InternalPlanParser.g:2810:3: this_EthernetCommunicationType_0= ruleEthernetCommunicationType
                     {
 
                           newCompositeNode(grammarAccess.getNetworkCommunicationTypeAccess().getEthernetCommunicationTypeParserRuleCall_0());
@@ -6926,7 +6982,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalPlanParser.g:2794:3: this_WlanCommunicationType_1= ruleWlanCommunicationType
+                    // InternalPlanParser.g:2819:3: this_WlanCommunicationType_1= ruleWlanCommunicationType
                     {
 
                           newCompositeNode(grammarAccess.getNetworkCommunicationTypeAccess().getWlanCommunicationTypeParserRuleCall_1());
@@ -6966,7 +7022,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEthernetCommunicationType"
-    // InternalPlanParser.g:2806:1: entryRuleEthernetCommunicationType returns [EObject current=null] : iv_ruleEthernetCommunicationType= ruleEthernetCommunicationType EOF ;
+    // InternalPlanParser.g:2831:1: entryRuleEthernetCommunicationType returns [EObject current=null] : iv_ruleEthernetCommunicationType= ruleEthernetCommunicationType EOF ;
     public final EObject entryRuleEthernetCommunicationType() throws RecognitionException {
         EObject current = null;
 
@@ -6974,8 +7030,8 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPlanParser.g:2806:66: (iv_ruleEthernetCommunicationType= ruleEthernetCommunicationType EOF )
-            // InternalPlanParser.g:2807:2: iv_ruleEthernetCommunicationType= ruleEthernetCommunicationType EOF
+            // InternalPlanParser.g:2831:66: (iv_ruleEthernetCommunicationType= ruleEthernetCommunicationType EOF )
+            // InternalPlanParser.g:2832:2: iv_ruleEthernetCommunicationType= ruleEthernetCommunicationType EOF
             {
              newCompositeNode(grammarAccess.getEthernetCommunicationTypeRule());
             pushFollow(FOLLOW_1);
@@ -7002,7 +7058,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEthernetCommunicationType"
-    // InternalPlanParser.g:2813:1: ruleEthernetCommunicationType returns [EObject current=null] : ( () otherlv_1= Ethernet ) ;
+    // InternalPlanParser.g:2838:1: ruleEthernetCommunicationType returns [EObject current=null] : ( () otherlv_1= Ethernet ) ;
     public final EObject ruleEthernetCommunicationType() throws RecognitionException {
         EObject current = null;
 
@@ -7012,14 +7068,14 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
           enterRule();
 
         try {
-            // InternalPlanParser.g:2819:2: ( ( () otherlv_1= Ethernet ) )
-            // InternalPlanParser.g:2820:2: ( () otherlv_1= Ethernet )
+            // InternalPlanParser.g:2844:2: ( ( () otherlv_1= Ethernet ) )
+            // InternalPlanParser.g:2845:2: ( () otherlv_1= Ethernet )
             {
-            // InternalPlanParser.g:2820:2: ( () otherlv_1= Ethernet )
-            // InternalPlanParser.g:2821:3: () otherlv_1= Ethernet
+            // InternalPlanParser.g:2845:2: ( () otherlv_1= Ethernet )
+            // InternalPlanParser.g:2846:3: () otherlv_1= Ethernet
             {
-            // InternalPlanParser.g:2821:3: ()
-            // InternalPlanParser.g:2822:4:
+            // InternalPlanParser.g:2846:3: ()
+            // InternalPlanParser.g:2847:4:
             {
 
                     current = forceCreateModelElement(
@@ -7056,7 +7112,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleWlanCommunicationType"
-    // InternalPlanParser.g:2836:1: entryRuleWlanCommunicationType returns [EObject current=null] : iv_ruleWlanCommunicationType= ruleWlanCommunicationType EOF ;
+    // InternalPlanParser.g:2861:1: entryRuleWlanCommunicationType returns [EObject current=null] : iv_ruleWlanCommunicationType= ruleWlanCommunicationType EOF ;
     public final EObject entryRuleWlanCommunicationType() throws RecognitionException {
         EObject current = null;
 
@@ -7064,8 +7120,8 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPlanParser.g:2836:62: (iv_ruleWlanCommunicationType= ruleWlanCommunicationType EOF )
-            // InternalPlanParser.g:2837:2: iv_ruleWlanCommunicationType= ruleWlanCommunicationType EOF
+            // InternalPlanParser.g:2861:62: (iv_ruleWlanCommunicationType= ruleWlanCommunicationType EOF )
+            // InternalPlanParser.g:2862:2: iv_ruleWlanCommunicationType= ruleWlanCommunicationType EOF
             {
              newCompositeNode(grammarAccess.getWlanCommunicationTypeRule());
             pushFollow(FOLLOW_1);
@@ -7092,7 +7148,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleWlanCommunicationType"
-    // InternalPlanParser.g:2843:1: ruleWlanCommunicationType returns [EObject current=null] : ( () otherlv_1= Wlan ) ;
+    // InternalPlanParser.g:2868:1: ruleWlanCommunicationType returns [EObject current=null] : ( () otherlv_1= Wlan ) ;
     public final EObject ruleWlanCommunicationType() throws RecognitionException {
         EObject current = null;
 
@@ -7102,14 +7158,14 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
           enterRule();
 
         try {
-            // InternalPlanParser.g:2849:2: ( ( () otherlv_1= Wlan ) )
-            // InternalPlanParser.g:2850:2: ( () otherlv_1= Wlan )
+            // InternalPlanParser.g:2874:2: ( ( () otherlv_1= Wlan ) )
+            // InternalPlanParser.g:2875:2: ( () otherlv_1= Wlan )
             {
-            // InternalPlanParser.g:2850:2: ( () otherlv_1= Wlan )
-            // InternalPlanParser.g:2851:3: () otherlv_1= Wlan
+            // InternalPlanParser.g:2875:2: ( () otherlv_1= Wlan )
+            // InternalPlanParser.g:2876:3: () otherlv_1= Wlan
             {
-            // InternalPlanParser.g:2851:3: ()
-            // InternalPlanParser.g:2852:4:
+            // InternalPlanParser.g:2876:3: ()
+            // InternalPlanParser.g:2877:4:
             {
 
                     current = forceCreateModelElement(
@@ -7146,7 +7202,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAttributeKind"
-    // InternalPlanParser.g:2866:1: entryRuleAttributeKind returns [EObject current=null] : iv_ruleAttributeKind= ruleAttributeKind EOF ;
+    // InternalPlanParser.g:2891:1: entryRuleAttributeKind returns [EObject current=null] : iv_ruleAttributeKind= ruleAttributeKind EOF ;
     public final EObject entryRuleAttributeKind() throws RecognitionException {
         EObject current = null;
 
@@ -7154,8 +7210,8 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPlanParser.g:2866:54: (iv_ruleAttributeKind= ruleAttributeKind EOF )
-            // InternalPlanParser.g:2867:2: iv_ruleAttributeKind= ruleAttributeKind EOF
+            // InternalPlanParser.g:2891:54: (iv_ruleAttributeKind= ruleAttributeKind EOF )
+            // InternalPlanParser.g:2892:2: iv_ruleAttributeKind= ruleAttributeKind EOF
             {
              newCompositeNode(grammarAccess.getAttributeKindRule());
             pushFollow(FOLLOW_1);
@@ -7182,7 +7238,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAttributeKind"
-    // InternalPlanParser.g:2873:1: ruleAttributeKind returns [EObject current=null] : ( () otherlv_1= AttributeKind ) ;
+    // InternalPlanParser.g:2898:1: ruleAttributeKind returns [EObject current=null] : ( () otherlv_1= AttributeKind ) ;
     public final EObject ruleAttributeKind() throws RecognitionException {
         EObject current = null;
 
@@ -7192,14 +7248,14 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
           enterRule();
 
         try {
-            // InternalPlanParser.g:2879:2: ( ( () otherlv_1= AttributeKind ) )
-            // InternalPlanParser.g:2880:2: ( () otherlv_1= AttributeKind )
+            // InternalPlanParser.g:2904:2: ( ( () otherlv_1= AttributeKind ) )
+            // InternalPlanParser.g:2905:2: ( () otherlv_1= AttributeKind )
             {
-            // InternalPlanParser.g:2880:2: ( () otherlv_1= AttributeKind )
-            // InternalPlanParser.g:2881:3: () otherlv_1= AttributeKind
+            // InternalPlanParser.g:2905:2: ( () otherlv_1= AttributeKind )
+            // InternalPlanParser.g:2906:3: () otherlv_1= AttributeKind
             {
-            // InternalPlanParser.g:2881:3: ()
-            // InternalPlanParser.g:2882:4:
+            // InternalPlanParser.g:2906:3: ()
+            // InternalPlanParser.g:2907:4:
             {
 
                     current = forceCreateModelElement(
@@ -7236,7 +7292,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleMaximumKind"
-    // InternalPlanParser.g:2896:1: entryRuleMaximumKind returns [EObject current=null] : iv_ruleMaximumKind= ruleMaximumKind EOF ;
+    // InternalPlanParser.g:2921:1: entryRuleMaximumKind returns [EObject current=null] : iv_ruleMaximumKind= ruleMaximumKind EOF ;
     public final EObject entryRuleMaximumKind() throws RecognitionException {
         EObject current = null;
 
@@ -7244,8 +7300,8 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPlanParser.g:2896:52: (iv_ruleMaximumKind= ruleMaximumKind EOF )
-            // InternalPlanParser.g:2897:2: iv_ruleMaximumKind= ruleMaximumKind EOF
+            // InternalPlanParser.g:2921:52: (iv_ruleMaximumKind= ruleMaximumKind EOF )
+            // InternalPlanParser.g:2922:2: iv_ruleMaximumKind= ruleMaximumKind EOF
             {
              newCompositeNode(grammarAccess.getMaximumKindRule());
             pushFollow(FOLLOW_1);
@@ -7272,7 +7328,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMaximumKind"
-    // InternalPlanParser.g:2903:1: ruleMaximumKind returns [EObject current=null] : ( () otherlv_1= MaximumKind ) ;
+    // InternalPlanParser.g:2928:1: ruleMaximumKind returns [EObject current=null] : ( () otherlv_1= MaximumKind ) ;
     public final EObject ruleMaximumKind() throws RecognitionException {
         EObject current = null;
 
@@ -7282,14 +7338,14 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
           enterRule();
 
         try {
-            // InternalPlanParser.g:2909:2: ( ( () otherlv_1= MaximumKind ) )
-            // InternalPlanParser.g:2910:2: ( () otherlv_1= MaximumKind )
+            // InternalPlanParser.g:2934:2: ( ( () otherlv_1= MaximumKind ) )
+            // InternalPlanParser.g:2935:2: ( () otherlv_1= MaximumKind )
             {
-            // InternalPlanParser.g:2910:2: ( () otherlv_1= MaximumKind )
-            // InternalPlanParser.g:2911:3: () otherlv_1= MaximumKind
+            // InternalPlanParser.g:2935:2: ( () otherlv_1= MaximumKind )
+            // InternalPlanParser.g:2936:3: () otherlv_1= MaximumKind
             {
-            // InternalPlanParser.g:2911:3: ()
-            // InternalPlanParser.g:2912:4:
+            // InternalPlanParser.g:2936:3: ()
+            // InternalPlanParser.g:2937:4:
             {
 
                     current = forceCreateModelElement(
@@ -7326,7 +7382,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleMinimumKind"
-    // InternalPlanParser.g:2926:1: entryRuleMinimumKind returns [EObject current=null] : iv_ruleMinimumKind= ruleMinimumKind EOF ;
+    // InternalPlanParser.g:2951:1: entryRuleMinimumKind returns [EObject current=null] : iv_ruleMinimumKind= ruleMinimumKind EOF ;
     public final EObject entryRuleMinimumKind() throws RecognitionException {
         EObject current = null;
 
@@ -7334,8 +7390,8 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPlanParser.g:2926:52: (iv_ruleMinimumKind= ruleMinimumKind EOF )
-            // InternalPlanParser.g:2927:2: iv_ruleMinimumKind= ruleMinimumKind EOF
+            // InternalPlanParser.g:2951:52: (iv_ruleMinimumKind= ruleMinimumKind EOF )
+            // InternalPlanParser.g:2952:2: iv_ruleMinimumKind= ruleMinimumKind EOF
             {
              newCompositeNode(grammarAccess.getMinimumKindRule());
             pushFollow(FOLLOW_1);
@@ -7362,7 +7418,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMinimumKind"
-    // InternalPlanParser.g:2933:1: ruleMinimumKind returns [EObject current=null] : ( () otherlv_1= MinimumKind ) ;
+    // InternalPlanParser.g:2958:1: ruleMinimumKind returns [EObject current=null] : ( () otherlv_1= MinimumKind ) ;
     public final EObject ruleMinimumKind() throws RecognitionException {
         EObject current = null;
 
@@ -7372,14 +7428,14 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
           enterRule();
 
         try {
-            // InternalPlanParser.g:2939:2: ( ( () otherlv_1= MinimumKind ) )
-            // InternalPlanParser.g:2940:2: ( () otherlv_1= MinimumKind )
+            // InternalPlanParser.g:2964:2: ( ( () otherlv_1= MinimumKind ) )
+            // InternalPlanParser.g:2965:2: ( () otherlv_1= MinimumKind )
             {
-            // InternalPlanParser.g:2940:2: ( () otherlv_1= MinimumKind )
-            // InternalPlanParser.g:2941:3: () otherlv_1= MinimumKind
+            // InternalPlanParser.g:2965:2: ( () otherlv_1= MinimumKind )
+            // InternalPlanParser.g:2966:3: () otherlv_1= MinimumKind
             {
-            // InternalPlanParser.g:2941:3: ()
-            // InternalPlanParser.g:2942:4:
+            // InternalPlanParser.g:2966:3: ()
+            // InternalPlanParser.g:2967:4:
             {
 
                     current = forceCreateModelElement(
@@ -7416,7 +7472,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSelectionKind"
-    // InternalPlanParser.g:2956:1: entryRuleSelectionKind returns [EObject current=null] : iv_ruleSelectionKind= ruleSelectionKind EOF ;
+    // InternalPlanParser.g:2981:1: entryRuleSelectionKind returns [EObject current=null] : iv_ruleSelectionKind= ruleSelectionKind EOF ;
     public final EObject entryRuleSelectionKind() throws RecognitionException {
         EObject current = null;
 
@@ -7424,8 +7480,8 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPlanParser.g:2956:54: (iv_ruleSelectionKind= ruleSelectionKind EOF )
-            // InternalPlanParser.g:2957:2: iv_ruleSelectionKind= ruleSelectionKind EOF
+            // InternalPlanParser.g:2981:54: (iv_ruleSelectionKind= ruleSelectionKind EOF )
+            // InternalPlanParser.g:2982:2: iv_ruleSelectionKind= ruleSelectionKind EOF
             {
              newCompositeNode(grammarAccess.getSelectionKindRule());
             pushFollow(FOLLOW_1);
@@ -7452,7 +7508,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSelectionKind"
-    // InternalPlanParser.g:2963:1: ruleSelectionKind returns [EObject current=null] : ( () otherlv_1= SelectionKind ) ;
+    // InternalPlanParser.g:2988:1: ruleSelectionKind returns [EObject current=null] : ( () otherlv_1= SelectionKind ) ;
     public final EObject ruleSelectionKind() throws RecognitionException {
         EObject current = null;
 
@@ -7462,14 +7518,14 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
           enterRule();
 
         try {
-            // InternalPlanParser.g:2969:2: ( ( () otherlv_1= SelectionKind ) )
-            // InternalPlanParser.g:2970:2: ( () otherlv_1= SelectionKind )
+            // InternalPlanParser.g:2994:2: ( ( () otherlv_1= SelectionKind ) )
+            // InternalPlanParser.g:2995:2: ( () otherlv_1= SelectionKind )
             {
-            // InternalPlanParser.g:2970:2: ( () otherlv_1= SelectionKind )
-            // InternalPlanParser.g:2971:3: () otherlv_1= SelectionKind
+            // InternalPlanParser.g:2995:2: ( () otherlv_1= SelectionKind )
+            // InternalPlanParser.g:2996:3: () otherlv_1= SelectionKind
             {
-            // InternalPlanParser.g:2971:3: ()
-            // InternalPlanParser.g:2972:4:
+            // InternalPlanParser.g:2996:3: ()
+            // InternalPlanParser.g:2997:4:
             {
 
                     current = forceCreateModelElement(
@@ -7506,7 +7562,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRangeKind"
-    // InternalPlanParser.g:2986:1: entryRuleRangeKind returns [EObject current=null] : iv_ruleRangeKind= ruleRangeKind EOF ;
+    // InternalPlanParser.g:3011:1: entryRuleRangeKind returns [EObject current=null] : iv_ruleRangeKind= ruleRangeKind EOF ;
     public final EObject entryRuleRangeKind() throws RecognitionException {
         EObject current = null;
 
@@ -7514,8 +7570,8 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPlanParser.g:2986:50: (iv_ruleRangeKind= ruleRangeKind EOF )
-            // InternalPlanParser.g:2987:2: iv_ruleRangeKind= ruleRangeKind EOF
+            // InternalPlanParser.g:3011:50: (iv_ruleRangeKind= ruleRangeKind EOF )
+            // InternalPlanParser.g:3012:2: iv_ruleRangeKind= ruleRangeKind EOF
             {
              newCompositeNode(grammarAccess.getRangeKindRule());
             pushFollow(FOLLOW_1);
@@ -7542,7 +7598,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRangeKind"
-    // InternalPlanParser.g:2993:1: ruleRangeKind returns [EObject current=null] : ( () otherlv_1= RangeKind ) ;
+    // InternalPlanParser.g:3018:1: ruleRangeKind returns [EObject current=null] : ( () otherlv_1= RangeKind ) ;
     public final EObject ruleRangeKind() throws RecognitionException {
         EObject current = null;
 
@@ -7552,14 +7608,14 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
           enterRule();
 
         try {
-            // InternalPlanParser.g:2999:2: ( ( () otherlv_1= RangeKind ) )
-            // InternalPlanParser.g:3000:2: ( () otherlv_1= RangeKind )
+            // InternalPlanParser.g:3024:2: ( ( () otherlv_1= RangeKind ) )
+            // InternalPlanParser.g:3025:2: ( () otherlv_1= RangeKind )
             {
-            // InternalPlanParser.g:3000:2: ( () otherlv_1= RangeKind )
-            // InternalPlanParser.g:3001:3: () otherlv_1= RangeKind
+            // InternalPlanParser.g:3025:2: ( () otherlv_1= RangeKind )
+            // InternalPlanParser.g:3026:3: () otherlv_1= RangeKind
             {
-            // InternalPlanParser.g:3001:3: ()
-            // InternalPlanParser.g:3002:4:
+            // InternalPlanParser.g:3026:3: ()
+            // InternalPlanParser.g:3027:4:
             {
 
                     current = forceCreateModelElement(
@@ -7596,7 +7652,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleLinuxDistributionValue"
-    // InternalPlanParser.g:3016:1: entryRuleLinuxDistributionValue returns [EObject current=null] : iv_ruleLinuxDistributionValue= ruleLinuxDistributionValue EOF ;
+    // InternalPlanParser.g:3041:1: entryRuleLinuxDistributionValue returns [EObject current=null] : iv_ruleLinuxDistributionValue= ruleLinuxDistributionValue EOF ;
     public final EObject entryRuleLinuxDistributionValue() throws RecognitionException {
         EObject current = null;
 
@@ -7604,8 +7660,8 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPlanParser.g:3016:63: (iv_ruleLinuxDistributionValue= ruleLinuxDistributionValue EOF )
-            // InternalPlanParser.g:3017:2: iv_ruleLinuxDistributionValue= ruleLinuxDistributionValue EOF
+            // InternalPlanParser.g:3041:63: (iv_ruleLinuxDistributionValue= ruleLinuxDistributionValue EOF )
+            // InternalPlanParser.g:3042:2: iv_ruleLinuxDistributionValue= ruleLinuxDistributionValue EOF
             {
              newCompositeNode(grammarAccess.getLinuxDistributionValueRule());
             pushFollow(FOLLOW_1);
@@ -7632,7 +7688,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLinuxDistributionValue"
-    // InternalPlanParser.g:3023:1: ruleLinuxDistributionValue returns [EObject current=null] : ( () ( (lv_value_1_0= ruleLinuxDistribution ) ) ) ;
+    // InternalPlanParser.g:3048:1: ruleLinuxDistributionValue returns [EObject current=null] : ( () ( (lv_value_1_0= ruleLinuxDistribution ) ) ) ;
     public final EObject ruleLinuxDistributionValue() throws RecognitionException {
         EObject current = null;
 
@@ -7643,14 +7699,14 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
           enterRule();
 
         try {
-            // InternalPlanParser.g:3029:2: ( ( () ( (lv_value_1_0= ruleLinuxDistribution ) ) ) )
-            // InternalPlanParser.g:3030:2: ( () ( (lv_value_1_0= ruleLinuxDistribution ) ) )
+            // InternalPlanParser.g:3054:2: ( ( () ( (lv_value_1_0= ruleLinuxDistribution ) ) ) )
+            // InternalPlanParser.g:3055:2: ( () ( (lv_value_1_0= ruleLinuxDistribution ) ) )
             {
-            // InternalPlanParser.g:3030:2: ( () ( (lv_value_1_0= ruleLinuxDistribution ) ) )
-            // InternalPlanParser.g:3031:3: () ( (lv_value_1_0= ruleLinuxDistribution ) )
+            // InternalPlanParser.g:3055:2: ( () ( (lv_value_1_0= ruleLinuxDistribution ) ) )
+            // InternalPlanParser.g:3056:3: () ( (lv_value_1_0= ruleLinuxDistribution ) )
             {
-            // InternalPlanParser.g:3031:3: ()
-            // InternalPlanParser.g:3032:4:
+            // InternalPlanParser.g:3056:3: ()
+            // InternalPlanParser.g:3057:4:
             {
 
                     current = forceCreateModelElement(
@@ -7660,11 +7716,11 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalPlanParser.g:3038:3: ( (lv_value_1_0= ruleLinuxDistribution ) )
-            // InternalPlanParser.g:3039:4: (lv_value_1_0= ruleLinuxDistribution )
+            // InternalPlanParser.g:3063:3: ( (lv_value_1_0= ruleLinuxDistribution ) )
+            // InternalPlanParser.g:3064:4: (lv_value_1_0= ruleLinuxDistribution )
             {
-            // InternalPlanParser.g:3039:4: (lv_value_1_0= ruleLinuxDistribution )
-            // InternalPlanParser.g:3040:5: lv_value_1_0= ruleLinuxDistribution
+            // InternalPlanParser.g:3064:4: (lv_value_1_0= ruleLinuxDistribution )
+            // InternalPlanParser.g:3065:5: lv_value_1_0= ruleLinuxDistribution
             {
 
                       newCompositeNode(grammarAccess.getLinuxDistributionValueAccess().getValueLinuxDistributionEnumRuleCall_1_0());
@@ -7714,7 +7770,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleUbuntuVersionValue"
-    // InternalPlanParser.g:3061:1: entryRuleUbuntuVersionValue returns [EObject current=null] : iv_ruleUbuntuVersionValue= ruleUbuntuVersionValue EOF ;
+    // InternalPlanParser.g:3086:1: entryRuleUbuntuVersionValue returns [EObject current=null] : iv_ruleUbuntuVersionValue= ruleUbuntuVersionValue EOF ;
     public final EObject entryRuleUbuntuVersionValue() throws RecognitionException {
         EObject current = null;
 
@@ -7722,8 +7778,8 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPlanParser.g:3061:59: (iv_ruleUbuntuVersionValue= ruleUbuntuVersionValue EOF )
-            // InternalPlanParser.g:3062:2: iv_ruleUbuntuVersionValue= ruleUbuntuVersionValue EOF
+            // InternalPlanParser.g:3086:59: (iv_ruleUbuntuVersionValue= ruleUbuntuVersionValue EOF )
+            // InternalPlanParser.g:3087:2: iv_ruleUbuntuVersionValue= ruleUbuntuVersionValue EOF
             {
              newCompositeNode(grammarAccess.getUbuntuVersionValueRule());
             pushFollow(FOLLOW_1);
@@ -7750,7 +7806,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleUbuntuVersionValue"
-    // InternalPlanParser.g:3068:1: ruleUbuntuVersionValue returns [EObject current=null] : ( () ( (lv_value_1_0= ruleUbuntuVersion ) ) ) ;
+    // InternalPlanParser.g:3093:1: ruleUbuntuVersionValue returns [EObject current=null] : ( () ( (lv_value_1_0= ruleUbuntuVersion ) ) ) ;
     public final EObject ruleUbuntuVersionValue() throws RecognitionException {
         EObject current = null;
 
@@ -7761,14 +7817,14 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
           enterRule();
 
         try {
-            // InternalPlanParser.g:3074:2: ( ( () ( (lv_value_1_0= ruleUbuntuVersion ) ) ) )
-            // InternalPlanParser.g:3075:2: ( () ( (lv_value_1_0= ruleUbuntuVersion ) ) )
+            // InternalPlanParser.g:3099:2: ( ( () ( (lv_value_1_0= ruleUbuntuVersion ) ) ) )
+            // InternalPlanParser.g:3100:2: ( () ( (lv_value_1_0= ruleUbuntuVersion ) ) )
             {
-            // InternalPlanParser.g:3075:2: ( () ( (lv_value_1_0= ruleUbuntuVersion ) ) )
-            // InternalPlanParser.g:3076:3: () ( (lv_value_1_0= ruleUbuntuVersion ) )
+            // InternalPlanParser.g:3100:2: ( () ( (lv_value_1_0= ruleUbuntuVersion ) ) )
+            // InternalPlanParser.g:3101:3: () ( (lv_value_1_0= ruleUbuntuVersion ) )
             {
-            // InternalPlanParser.g:3076:3: ()
-            // InternalPlanParser.g:3077:4:
+            // InternalPlanParser.g:3101:3: ()
+            // InternalPlanParser.g:3102:4:
             {
 
                     current = forceCreateModelElement(
@@ -7778,11 +7834,11 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalPlanParser.g:3083:3: ( (lv_value_1_0= ruleUbuntuVersion ) )
-            // InternalPlanParser.g:3084:4: (lv_value_1_0= ruleUbuntuVersion )
+            // InternalPlanParser.g:3108:3: ( (lv_value_1_0= ruleUbuntuVersion ) )
+            // InternalPlanParser.g:3109:4: (lv_value_1_0= ruleUbuntuVersion )
             {
-            // InternalPlanParser.g:3084:4: (lv_value_1_0= ruleUbuntuVersion )
-            // InternalPlanParser.g:3085:5: lv_value_1_0= ruleUbuntuVersion
+            // InternalPlanParser.g:3109:4: (lv_value_1_0= ruleUbuntuVersion )
+            // InternalPlanParser.g:3110:5: lv_value_1_0= ruleUbuntuVersion
             {
 
                       newCompositeNode(grammarAccess.getUbuntuVersionValueAccess().getValueUbuntuVersionEnumRuleCall_1_0());
@@ -7832,7 +7888,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDouble0"
-    // InternalPlanParser.g:3106:1: entryRuleDouble0 returns [String current=null] : iv_ruleDouble0= ruleDouble0 EOF ;
+    // InternalPlanParser.g:3131:1: entryRuleDouble0 returns [String current=null] : iv_ruleDouble0= ruleDouble0 EOF ;
     public final String entryRuleDouble0() throws RecognitionException {
         String current = null;
 
@@ -7840,8 +7896,8 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPlanParser.g:3106:47: (iv_ruleDouble0= ruleDouble0 EOF )
-            // InternalPlanParser.g:3107:2: iv_ruleDouble0= ruleDouble0 EOF
+            // InternalPlanParser.g:3131:47: (iv_ruleDouble0= ruleDouble0 EOF )
+            // InternalPlanParser.g:3132:2: iv_ruleDouble0= ruleDouble0 EOF
             {
              newCompositeNode(grammarAccess.getDouble0Rule());
             pushFollow(FOLLOW_1);
@@ -7868,7 +7924,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDouble0"
-    // InternalPlanParser.g:3113:1: ruleDouble0 returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_DOUBLE_0= RULE_DOUBLE ;
+    // InternalPlanParser.g:3138:1: ruleDouble0 returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_DOUBLE_0= RULE_DOUBLE ;
     public final AntlrDatatypeRuleToken ruleDouble0() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -7878,8 +7934,8 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
           enterRule();
 
         try {
-            // InternalPlanParser.g:3119:2: (this_DOUBLE_0= RULE_DOUBLE )
-            // InternalPlanParser.g:3120:2: this_DOUBLE_0= RULE_DOUBLE
+            // InternalPlanParser.g:3144:2: (this_DOUBLE_0= RULE_DOUBLE )
+            // InternalPlanParser.g:3145:2: this_DOUBLE_0= RULE_DOUBLE
             {
             this_DOUBLE_0=(Token)match(input,RULE_DOUBLE,FOLLOW_2);
 
@@ -7908,7 +7964,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleInteger0"
-    // InternalPlanParser.g:3130:1: entryRuleInteger0 returns [String current=null] : iv_ruleInteger0= ruleInteger0 EOF ;
+    // InternalPlanParser.g:3155:1: entryRuleInteger0 returns [String current=null] : iv_ruleInteger0= ruleInteger0 EOF ;
     public final String entryRuleInteger0() throws RecognitionException {
         String current = null;
 
@@ -7916,8 +7972,8 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPlanParser.g:3130:48: (iv_ruleInteger0= ruleInteger0 EOF )
-            // InternalPlanParser.g:3131:2: iv_ruleInteger0= ruleInteger0 EOF
+            // InternalPlanParser.g:3155:48: (iv_ruleInteger0= ruleInteger0 EOF )
+            // InternalPlanParser.g:3156:2: iv_ruleInteger0= ruleInteger0 EOF
             {
              newCompositeNode(grammarAccess.getInteger0Rule());
             pushFollow(FOLLOW_1);
@@ -7944,7 +8000,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleInteger0"
-    // InternalPlanParser.g:3137:1: ruleInteger0 returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_DECINT_0= RULE_DECINT ;
+    // InternalPlanParser.g:3162:1: ruleInteger0 returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_DECINT_0= RULE_DECINT ;
     public final AntlrDatatypeRuleToken ruleInteger0() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -7954,8 +8010,8 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
           enterRule();
 
         try {
-            // InternalPlanParser.g:3143:2: (this_DECINT_0= RULE_DECINT )
-            // InternalPlanParser.g:3144:2: this_DECINT_0= RULE_DECINT
+            // InternalPlanParser.g:3168:2: (this_DECINT_0= RULE_DECINT )
+            // InternalPlanParser.g:3169:2: this_DECINT_0= RULE_DECINT
             {
             this_DECINT_0=(Token)match(input,RULE_DECINT,FOLLOW_2);
 
@@ -7984,7 +8040,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEString"
-    // InternalPlanParser.g:3154:1: entryRuleEString returns [String current=null] : iv_ruleEString= ruleEString EOF ;
+    // InternalPlanParser.g:3179:1: entryRuleEString returns [String current=null] : iv_ruleEString= ruleEString EOF ;
     public final String entryRuleEString() throws RecognitionException {
         String current = null;
 
@@ -7992,8 +8048,8 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPlanParser.g:3154:47: (iv_ruleEString= ruleEString EOF )
-            // InternalPlanParser.g:3155:2: iv_ruleEString= ruleEString EOF
+            // InternalPlanParser.g:3179:47: (iv_ruleEString= ruleEString EOF )
+            // InternalPlanParser.g:3180:2: iv_ruleEString= ruleEString EOF
             {
              newCompositeNode(grammarAccess.getEStringRule());
             pushFollow(FOLLOW_1);
@@ -8020,7 +8076,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEString"
-    // InternalPlanParser.g:3161:1: ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) ;
+    // InternalPlanParser.g:3186:1: ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) ;
     public final AntlrDatatypeRuleToken ruleEString() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -8031,28 +8087,28 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
           enterRule();
 
         try {
-            // InternalPlanParser.g:3167:2: ( (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) )
-            // InternalPlanParser.g:3168:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
+            // InternalPlanParser.g:3192:2: ( (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) )
+            // InternalPlanParser.g:3193:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
             {
-            // InternalPlanParser.g:3168:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
-            int alt46=2;
-            int LA46_0 = input.LA(1);
+            // InternalPlanParser.g:3193:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
+            int alt47=2;
+            int LA47_0 = input.LA(1);
 
-            if ( (LA46_0==RULE_STRING) ) {
-                alt46=1;
+            if ( (LA47_0==RULE_STRING) ) {
+                alt47=1;
             }
-            else if ( (LA46_0==RULE_ID) ) {
-                alt46=2;
+            else if ( (LA47_0==RULE_ID) ) {
+                alt47=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 46, 0, input);
+                    new NoViableAltException("", 47, 0, input);
 
                 throw nvae;
             }
-            switch (alt46) {
+            switch (alt47) {
                 case 1 :
-                    // InternalPlanParser.g:3169:3: this_STRING_0= RULE_STRING
+                    // InternalPlanParser.g:3194:3: this_STRING_0= RULE_STRING
                     {
                     this_STRING_0=(Token)match(input,RULE_STRING,FOLLOW_2);
 
@@ -8065,7 +8121,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalPlanParser.g:3177:3: this_ID_1= RULE_ID
+                    // InternalPlanParser.g:3202:3: this_ID_1= RULE_ID
                     {
                     this_ID_1=(Token)match(input,RULE_ID,FOLLOW_2);
 
@@ -8100,7 +8156,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePreListElement"
-    // InternalPlanParser.g:3188:1: entryRulePreListElement returns [String current=null] : iv_rulePreListElement= rulePreListElement EOF ;
+    // InternalPlanParser.g:3213:1: entryRulePreListElement returns [String current=null] : iv_rulePreListElement= rulePreListElement EOF ;
     public final String entryRulePreListElement() throws RecognitionException {
         String current = null;
 
@@ -8111,8 +8167,8 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
           HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_SL_COMMENT");
 
         try {
-            // InternalPlanParser.g:3190:2: (iv_rulePreListElement= rulePreListElement EOF )
-            // InternalPlanParser.g:3191:2: iv_rulePreListElement= rulePreListElement EOF
+            // InternalPlanParser.g:3215:2: (iv_rulePreListElement= rulePreListElement EOF )
+            // InternalPlanParser.g:3216:2: iv_rulePreListElement= rulePreListElement EOF
             {
              newCompositeNode(grammarAccess.getPreListElementRule());
             pushFollow(FOLLOW_1);
@@ -8142,7 +8198,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePreListElement"
-    // InternalPlanParser.g:3200:1: rulePreListElement returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= HyphenMinus ;
+    // InternalPlanParser.g:3225:1: rulePreListElement returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= HyphenMinus ;
     public final AntlrDatatypeRuleToken rulePreListElement() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -8153,8 +8209,8 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
           HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_SL_COMMENT");
 
         try {
-            // InternalPlanParser.g:3207:2: (kw= HyphenMinus )
-            // InternalPlanParser.g:3208:2: kw= HyphenMinus
+            // InternalPlanParser.g:3232:2: (kw= HyphenMinus )
+            // InternalPlanParser.g:3233:2: kw= HyphenMinus
             {
             kw=(Token)match(input,HyphenMinus,FOLLOW_2);
 
@@ -8184,7 +8240,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleROSDistro"
-    // InternalPlanParser.g:3219:1: ruleROSDistro returns [Enumerator current=null] : ( (enumLiteral_0= Noetic ) | (enumLiteral_1= Humble ) | (enumLiteral_2= Rolling ) ) ;
+    // InternalPlanParser.g:3244:1: ruleROSDistro returns [Enumerator current=null] : ( (enumLiteral_0= Noetic ) | (enumLiteral_1= Humble ) | (enumLiteral_2= Rolling ) ) ;
     public final Enumerator ruleROSDistro() throws RecognitionException {
         Enumerator current = null;
 
@@ -8196,40 +8252,40 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
           enterRule();
 
         try {
-            // InternalPlanParser.g:3225:2: ( ( (enumLiteral_0= Noetic ) | (enumLiteral_1= Humble ) | (enumLiteral_2= Rolling ) ) )
-            // InternalPlanParser.g:3226:2: ( (enumLiteral_0= Noetic ) | (enumLiteral_1= Humble ) | (enumLiteral_2= Rolling ) )
+            // InternalPlanParser.g:3250:2: ( ( (enumLiteral_0= Noetic ) | (enumLiteral_1= Humble ) | (enumLiteral_2= Rolling ) ) )
+            // InternalPlanParser.g:3251:2: ( (enumLiteral_0= Noetic ) | (enumLiteral_1= Humble ) | (enumLiteral_2= Rolling ) )
             {
-            // InternalPlanParser.g:3226:2: ( (enumLiteral_0= Noetic ) | (enumLiteral_1= Humble ) | (enumLiteral_2= Rolling ) )
-            int alt47=3;
+            // InternalPlanParser.g:3251:2: ( (enumLiteral_0= Noetic ) | (enumLiteral_1= Humble ) | (enumLiteral_2= Rolling ) )
+            int alt48=3;
             switch ( input.LA(1) ) {
             case Noetic:
                 {
-                alt47=1;
+                alt48=1;
                 }
                 break;
             case Humble:
                 {
-                alt47=2;
+                alt48=2;
                 }
                 break;
             case Rolling:
                 {
-                alt47=3;
+                alt48=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 47, 0, input);
+                    new NoViableAltException("", 48, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt47) {
+            switch (alt48) {
                 case 1 :
-                    // InternalPlanParser.g:3227:3: (enumLiteral_0= Noetic )
+                    // InternalPlanParser.g:3252:3: (enumLiteral_0= Noetic )
                     {
-                    // InternalPlanParser.g:3227:3: (enumLiteral_0= Noetic )
-                    // InternalPlanParser.g:3228:4: enumLiteral_0= Noetic
+                    // InternalPlanParser.g:3252:3: (enumLiteral_0= Noetic )
+                    // InternalPlanParser.g:3253:4: enumLiteral_0= Noetic
                     {
                     enumLiteral_0=(Token)match(input,Noetic,FOLLOW_2);
 
@@ -8243,10 +8299,10 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalPlanParser.g:3235:3: (enumLiteral_1= Humble )
+                    // InternalPlanParser.g:3260:3: (enumLiteral_1= Humble )
                     {
-                    // InternalPlanParser.g:3235:3: (enumLiteral_1= Humble )
-                    // InternalPlanParser.g:3236:4: enumLiteral_1= Humble
+                    // InternalPlanParser.g:3260:3: (enumLiteral_1= Humble )
+                    // InternalPlanParser.g:3261:4: enumLiteral_1= Humble
                     {
                     enumLiteral_1=(Token)match(input,Humble,FOLLOW_2);
 
@@ -8260,10 +8316,10 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalPlanParser.g:3243:3: (enumLiteral_2= Rolling )
+                    // InternalPlanParser.g:3268:3: (enumLiteral_2= Rolling )
                     {
-                    // InternalPlanParser.g:3243:3: (enumLiteral_2= Rolling )
-                    // InternalPlanParser.g:3244:4: enumLiteral_2= Rolling
+                    // InternalPlanParser.g:3268:3: (enumLiteral_2= Rolling )
+                    // InternalPlanParser.g:3269:4: enumLiteral_2= Rolling
                     {
                     enumLiteral_2=(Token)match(input,Rolling,FOLLOW_2);
 
@@ -8299,7 +8355,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRunTimeType"
-    // InternalPlanParser.g:3254:1: ruleRunTimeType returns [Enumerator current=null] : (enumLiteral_0= Container ) ;
+    // InternalPlanParser.g:3279:1: ruleRunTimeType returns [Enumerator current=null] : (enumLiteral_0= Container ) ;
     public final Enumerator ruleRunTimeType() throws RecognitionException {
         Enumerator current = null;
 
@@ -8309,11 +8365,11 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
           enterRule();
 
         try {
-            // InternalPlanParser.g:3260:2: ( (enumLiteral_0= Container ) )
-            // InternalPlanParser.g:3261:2: (enumLiteral_0= Container )
+            // InternalPlanParser.g:3285:2: ( (enumLiteral_0= Container ) )
+            // InternalPlanParser.g:3286:2: (enumLiteral_0= Container )
             {
-            // InternalPlanParser.g:3261:2: (enumLiteral_0= Container )
-            // InternalPlanParser.g:3262:3: enumLiteral_0= Container
+            // InternalPlanParser.g:3286:2: (enumLiteral_0= Container )
+            // InternalPlanParser.g:3287:3: enumLiteral_0= Container
             {
             enumLiteral_0=(Token)match(input,Container,FOLLOW_2);
 
@@ -8343,7 +8399,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleProcessorArchitectureType"
-    // InternalPlanParser.g:3271:1: ruleProcessorArchitectureType returns [Enumerator current=null] : ( (enumLiteral_0= X86 ) | (enumLiteral_1= Arm64 ) ) ;
+    // InternalPlanParser.g:3296:1: ruleProcessorArchitectureType returns [Enumerator current=null] : ( (enumLiteral_0= X86 ) | (enumLiteral_1= Arm64 ) ) ;
     public final Enumerator ruleProcessorArchitectureType() throws RecognitionException {
         Enumerator current = null;
 
@@ -8354,31 +8410,31 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
           enterRule();
 
         try {
-            // InternalPlanParser.g:3277:2: ( ( (enumLiteral_0= X86 ) | (enumLiteral_1= Arm64 ) ) )
-            // InternalPlanParser.g:3278:2: ( (enumLiteral_0= X86 ) | (enumLiteral_1= Arm64 ) )
+            // InternalPlanParser.g:3302:2: ( ( (enumLiteral_0= X86 ) | (enumLiteral_1= Arm64 ) ) )
+            // InternalPlanParser.g:3303:2: ( (enumLiteral_0= X86 ) | (enumLiteral_1= Arm64 ) )
             {
-            // InternalPlanParser.g:3278:2: ( (enumLiteral_0= X86 ) | (enumLiteral_1= Arm64 ) )
-            int alt48=2;
-            int LA48_0 = input.LA(1);
+            // InternalPlanParser.g:3303:2: ( (enumLiteral_0= X86 ) | (enumLiteral_1= Arm64 ) )
+            int alt49=2;
+            int LA49_0 = input.LA(1);
 
-            if ( (LA48_0==X86) ) {
-                alt48=1;
+            if ( (LA49_0==X86) ) {
+                alt49=1;
             }
-            else if ( (LA48_0==Arm64) ) {
-                alt48=2;
+            else if ( (LA49_0==Arm64) ) {
+                alt49=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 48, 0, input);
+                    new NoViableAltException("", 49, 0, input);
 
                 throw nvae;
             }
-            switch (alt48) {
+            switch (alt49) {
                 case 1 :
-                    // InternalPlanParser.g:3279:3: (enumLiteral_0= X86 )
+                    // InternalPlanParser.g:3304:3: (enumLiteral_0= X86 )
                     {
-                    // InternalPlanParser.g:3279:3: (enumLiteral_0= X86 )
-                    // InternalPlanParser.g:3280:4: enumLiteral_0= X86
+                    // InternalPlanParser.g:3304:3: (enumLiteral_0= X86 )
+                    // InternalPlanParser.g:3305:4: enumLiteral_0= X86
                     {
                     enumLiteral_0=(Token)match(input,X86,FOLLOW_2);
 
@@ -8392,10 +8448,10 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalPlanParser.g:3287:3: (enumLiteral_1= Arm64 )
+                    // InternalPlanParser.g:3312:3: (enumLiteral_1= Arm64 )
                     {
-                    // InternalPlanParser.g:3287:3: (enumLiteral_1= Arm64 )
-                    // InternalPlanParser.g:3288:4: enumLiteral_1= Arm64
+                    // InternalPlanParser.g:3312:3: (enumLiteral_1= Arm64 )
+                    // InternalPlanParser.g:3313:4: enumLiteral_1= Arm64
                     {
                     enumLiteral_1=(Token)match(input,Arm64,FOLLOW_2);
 
@@ -8431,7 +8487,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLinuxDistribution"
-    // InternalPlanParser.g:3298:1: ruleLinuxDistribution returns [Enumerator current=null] : ( (enumLiteral_0= Ubuntu ) | (enumLiteral_1= Debian ) ) ;
+    // InternalPlanParser.g:3323:1: ruleLinuxDistribution returns [Enumerator current=null] : ( (enumLiteral_0= Ubuntu ) | (enumLiteral_1= Debian ) ) ;
     public final Enumerator ruleLinuxDistribution() throws RecognitionException {
         Enumerator current = null;
 
@@ -8442,31 +8498,31 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
           enterRule();
 
         try {
-            // InternalPlanParser.g:3304:2: ( ( (enumLiteral_0= Ubuntu ) | (enumLiteral_1= Debian ) ) )
-            // InternalPlanParser.g:3305:2: ( (enumLiteral_0= Ubuntu ) | (enumLiteral_1= Debian ) )
+            // InternalPlanParser.g:3329:2: ( ( (enumLiteral_0= Ubuntu ) | (enumLiteral_1= Debian ) ) )
+            // InternalPlanParser.g:3330:2: ( (enumLiteral_0= Ubuntu ) | (enumLiteral_1= Debian ) )
             {
-            // InternalPlanParser.g:3305:2: ( (enumLiteral_0= Ubuntu ) | (enumLiteral_1= Debian ) )
-            int alt49=2;
-            int LA49_0 = input.LA(1);
+            // InternalPlanParser.g:3330:2: ( (enumLiteral_0= Ubuntu ) | (enumLiteral_1= Debian ) )
+            int alt50=2;
+            int LA50_0 = input.LA(1);
 
-            if ( (LA49_0==Ubuntu) ) {
-                alt49=1;
+            if ( (LA50_0==Ubuntu) ) {
+                alt50=1;
             }
-            else if ( (LA49_0==Debian) ) {
-                alt49=2;
+            else if ( (LA50_0==Debian) ) {
+                alt50=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 49, 0, input);
+                    new NoViableAltException("", 50, 0, input);
 
                 throw nvae;
             }
-            switch (alt49) {
+            switch (alt50) {
                 case 1 :
-                    // InternalPlanParser.g:3306:3: (enumLiteral_0= Ubuntu )
+                    // InternalPlanParser.g:3331:3: (enumLiteral_0= Ubuntu )
                     {
-                    // InternalPlanParser.g:3306:3: (enumLiteral_0= Ubuntu )
-                    // InternalPlanParser.g:3307:4: enumLiteral_0= Ubuntu
+                    // InternalPlanParser.g:3331:3: (enumLiteral_0= Ubuntu )
+                    // InternalPlanParser.g:3332:4: enumLiteral_0= Ubuntu
                     {
                     enumLiteral_0=(Token)match(input,Ubuntu,FOLLOW_2);
 
@@ -8480,10 +8536,10 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalPlanParser.g:3314:3: (enumLiteral_1= Debian )
+                    // InternalPlanParser.g:3339:3: (enumLiteral_1= Debian )
                     {
-                    // InternalPlanParser.g:3314:3: (enumLiteral_1= Debian )
-                    // InternalPlanParser.g:3315:4: enumLiteral_1= Debian
+                    // InternalPlanParser.g:3339:3: (enumLiteral_1= Debian )
+                    // InternalPlanParser.g:3340:4: enumLiteral_1= Debian
                     {
                     enumLiteral_1=(Token)match(input,Debian,FOLLOW_2);
 
@@ -8519,7 +8575,7 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleUbuntuVersion"
-    // InternalPlanParser.g:3325:1: ruleUbuntuVersion returns [Enumerator current=null] : ( (enumLiteral_0= Focal ) | (enumLiteral_1= Jammy ) ) ;
+    // InternalPlanParser.g:3350:1: ruleUbuntuVersion returns [Enumerator current=null] : ( (enumLiteral_0= Focal ) | (enumLiteral_1= Jammy ) ) ;
     public final Enumerator ruleUbuntuVersion() throws RecognitionException {
         Enumerator current = null;
 
@@ -8530,31 +8586,31 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
           enterRule();
 
         try {
-            // InternalPlanParser.g:3331:2: ( ( (enumLiteral_0= Focal ) | (enumLiteral_1= Jammy ) ) )
-            // InternalPlanParser.g:3332:2: ( (enumLiteral_0= Focal ) | (enumLiteral_1= Jammy ) )
+            // InternalPlanParser.g:3356:2: ( ( (enumLiteral_0= Focal ) | (enumLiteral_1= Jammy ) ) )
+            // InternalPlanParser.g:3357:2: ( (enumLiteral_0= Focal ) | (enumLiteral_1= Jammy ) )
             {
-            // InternalPlanParser.g:3332:2: ( (enumLiteral_0= Focal ) | (enumLiteral_1= Jammy ) )
-            int alt50=2;
-            int LA50_0 = input.LA(1);
+            // InternalPlanParser.g:3357:2: ( (enumLiteral_0= Focal ) | (enumLiteral_1= Jammy ) )
+            int alt51=2;
+            int LA51_0 = input.LA(1);
 
-            if ( (LA50_0==Focal) ) {
-                alt50=1;
+            if ( (LA51_0==Focal) ) {
+                alt51=1;
             }
-            else if ( (LA50_0==Jammy) ) {
-                alt50=2;
+            else if ( (LA51_0==Jammy) ) {
+                alt51=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 50, 0, input);
+                    new NoViableAltException("", 51, 0, input);
 
                 throw nvae;
             }
-            switch (alt50) {
+            switch (alt51) {
                 case 1 :
-                    // InternalPlanParser.g:3333:3: (enumLiteral_0= Focal )
+                    // InternalPlanParser.g:3358:3: (enumLiteral_0= Focal )
                     {
-                    // InternalPlanParser.g:3333:3: (enumLiteral_0= Focal )
-                    // InternalPlanParser.g:3334:4: enumLiteral_0= Focal
+                    // InternalPlanParser.g:3358:3: (enumLiteral_0= Focal )
+                    // InternalPlanParser.g:3359:4: enumLiteral_0= Focal
                     {
                     enumLiteral_0=(Token)match(input,Focal,FOLLOW_2);
 
@@ -8568,10 +8624,10 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalPlanParser.g:3341:3: (enumLiteral_1= Jammy )
+                    // InternalPlanParser.g:3366:3: (enumLiteral_1= Jammy )
                     {
-                    // InternalPlanParser.g:3341:3: (enumLiteral_1= Jammy )
-                    // InternalPlanParser.g:3342:4: enumLiteral_1= Jammy
+                    // InternalPlanParser.g:3366:3: (enumLiteral_1= Jammy )
+                    // InternalPlanParser.g:3367:4: enumLiteral_1= Jammy
                     {
                     enumLiteral_1=(Token)match(input,Jammy,FOLLOW_2);
 
@@ -8608,10 +8664,10 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
     // Delegated rules
 
 
-    protected DFA24 dfa24 = new DFA24(this);
+    protected DFA25 dfa25 = new DFA25(this);
     static final String dfa_1s = "\14\uffff";
-    static final String dfa_2s = "\1\56\1\50\1\66\2\64\1\47\1\11\5\uffff";
-    static final String dfa_3s = "\1\56\1\50\1\70\2\64\1\47\1\26\5\uffff";
+    static final String dfa_2s = "\1\57\1\51\1\67\2\65\1\50\1\11\5\uffff";
+    static final String dfa_3s = "\1\57\1\51\1\71\2\65\1\50\1\26\5\uffff";
     static final String dfa_4s = "\7\uffff\1\4\1\3\1\2\1\5\1\1";
     static final String dfa_5s = "\14\uffff}>";
     static final String[] dfa_6s = {
@@ -8636,11 +8692,11 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
     static final short[] dfa_5 = DFA.unpackEncodedString(dfa_5s);
     static final short[][] dfa_6 = unpackEncodedStringArray(dfa_6s);
 
-    class DFA24 extends DFA {
+    class DFA25 extends DFA {
 
-        public DFA24(BaseRecognizer recognizer) {
+        public DFA25(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 24;
+            this.decisionNumber = 25;
             this.eot = dfa_1;
             this.eof = dfa_1;
             this.min = dfa_2;
@@ -8650,53 +8706,54 @@ public class InternalPlanParser extends AbstractInternalAntlrParser {
             this.transition = dfa_6;
         }
         public String getDescription() {
-            return "1397:2: (this_PropertyAttribute_0= rulePropertyAttribute | this_PropertyMaximun_1= rulePropertyMaximun | this_PropertyMinimum_2= rulePropertyMinimum | this_PropertySelection_3= rulePropertySelection | this_PropertyRange_4= rulePropertyRange )";
+            return "1422:2: (this_PropertyAttribute_0= rulePropertyAttribute | this_PropertyMaximun_1= rulePropertyMaximun | this_PropertyMinimum_2= rulePropertyMinimum | this_PropertySelection_3= rulePropertySelection | this_PropertyRange_4= rulePropertyRange )";
         }
     }
 
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0010000000000000L});
-    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000010000000000L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0140000000000000L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0020000000000000L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000020000000000L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0280000000000000L});
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000001000000L});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0020000000000000L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000400000000000L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0020400000000000L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000800000000002L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0030000000000800L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0040000000000000L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000800000000000L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0040800000000000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0001000000000002L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0060000000000800L});
     public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0020000000000800L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0160000000000000L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0040000000000800L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x02C0000000000000L});
     public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000010000000L});
     public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0020000000042000L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x00000001A0000000L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0020000000002000L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000020000000000L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0040000000042000L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000340000000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0040000000002000L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000040000000000L});
     public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000000800000L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0020000002000000L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0020010000000000L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0020100400000000L});
-    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0020000400000000L});
-    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0156205A40000000L});
-    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000000000060L});
-    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0020000000080000L});
-    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000008000000000L});
-    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000000000000200L});
-    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0020000400001000L});
-    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0020000400001002L});
-    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0020000400000002L});
-    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0020000000000002L});
-    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0000000000000400L});
-    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0040000006000000L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0040000004000000L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0040020000000000L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000004000000000L});
+    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0040200800000000L});
+    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0040000800000000L});
+    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x02AC40B480000000L});
+    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000000000000060L});
+    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0040000000080000L});
+    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000010000000000L});
+    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000000000000200L});
+    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0040000800001000L});
+    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0040000800001002L});
+    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0040000800000002L});
+    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0040000000000002L});
+    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x0000000000000400L});
+    public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x0000000000400000L});
 
 }

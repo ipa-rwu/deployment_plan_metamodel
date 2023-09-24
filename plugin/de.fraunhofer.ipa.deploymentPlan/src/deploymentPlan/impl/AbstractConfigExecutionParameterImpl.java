@@ -18,22 +18,22 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public abstract class AbstractConfigExecutionParameterImpl extends MinimalEObjectImpl.Container implements AbstractConfigExecutionParameter {
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     protected AbstractConfigExecutionParameterImpl() {
-        super();
-    }
+    super();
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     protected EClass eStaticClass() {
-        return DeploymentPlanPackage.Literals.ABSTRACT_CONFIG_EXECUTION_PARAMETER;
-    }
+    return DeploymentPlanPackage.Literals.ABSTRACT_CONFIG_EXECUTION_PARAMETER;
+  }
 
 } //AbstractConfigExecutionParameterImpl

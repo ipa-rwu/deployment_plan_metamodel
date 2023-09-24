@@ -30,147 +30,147 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class PlanImpl extends MinimalEObjectImpl.Container implements Plan {
     /**
-     * The cached value of the '{@link #getPlan() <em>Plan</em>}' containment reference.
-     * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getPlan() <em>Plan</em>}' containment reference.
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getPlan()
-     * @generated
-     * @ordered
-     */
+   * @see #getPlan()
+   * @generated
+   * @ordered
+   */
     protected AbstractDeploymentPlan plan;
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     protected PlanImpl() {
-        super();
-    }
+    super();
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     protected EClass eStaticClass() {
-        return DeploymentPlanPackage.Literals.PLAN;
-    }
+    return DeploymentPlanPackage.Literals.PLAN;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public AbstractDeploymentPlan getPlan() {
-        return plan;
-    }
+    return plan;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public NotificationChain basicSetPlan(AbstractDeploymentPlan newPlan, NotificationChain msgs) {
-        AbstractDeploymentPlan oldPlan = plan;
-        plan = newPlan;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DeploymentPlanPackage.PLAN__PLAN, oldPlan, newPlan);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
+    AbstractDeploymentPlan oldPlan = plan;
+    plan = newPlan;
+    if (eNotificationRequired()) {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DeploymentPlanPackage.PLAN__PLAN, oldPlan, newPlan);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
+    return msgs;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public void setPlan(AbstractDeploymentPlan newPlan) {
-        if (newPlan != plan) {
-            NotificationChain msgs = null;
-            if (plan != null)
-                msgs = ((InternalEObject)plan).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DeploymentPlanPackage.PLAN__PLAN, null, msgs);
-            if (newPlan != null)
-                msgs = ((InternalEObject)newPlan).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DeploymentPlanPackage.PLAN__PLAN, null, msgs);
-            msgs = basicSetPlan(newPlan, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, DeploymentPlanPackage.PLAN__PLAN, newPlan, newPlan));
+    if (newPlan != plan) {
+      NotificationChain msgs = null;
+      if (plan != null)
+        msgs = ((InternalEObject)plan).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DeploymentPlanPackage.PLAN__PLAN, null, msgs);
+      if (newPlan != null)
+        msgs = ((InternalEObject)newPlan).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DeploymentPlanPackage.PLAN__PLAN, null, msgs);
+      msgs = basicSetPlan(newPlan, msgs);
+      if (msgs != null) msgs.dispatch();
     }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DeploymentPlanPackage.PLAN__PLAN, newPlan, newPlan));
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-        switch (featureID) {
-            case DeploymentPlanPackage.PLAN__PLAN:
-                return basicSetPlan(null, msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+    switch (featureID) {
+      case DeploymentPlanPackage.PLAN__PLAN:
+        return basicSetPlan(null, msgs);
     }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case DeploymentPlanPackage.PLAN__PLAN:
-                return getPlan();
-        }
-        return super.eGet(featureID, resolve, coreType);
+    switch (featureID) {
+      case DeploymentPlanPackage.PLAN__PLAN:
+        return getPlan();
     }
+    return super.eGet(featureID, resolve, coreType);
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case DeploymentPlanPackage.PLAN__PLAN:
-                setPlan((AbstractDeploymentPlan)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
+    switch (featureID) {
+      case DeploymentPlanPackage.PLAN__PLAN:
+        setPlan((AbstractDeploymentPlan)newValue);
+        return;
     }
+    super.eSet(featureID, newValue);
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     public void eUnset(int featureID) {
-        switch (featureID) {
-            case DeploymentPlanPackage.PLAN__PLAN:
-                setPlan((AbstractDeploymentPlan)null);
-                return;
-        }
-        super.eUnset(featureID);
+    switch (featureID) {
+      case DeploymentPlanPackage.PLAN__PLAN:
+        setPlan((AbstractDeploymentPlan)null);
+        return;
     }
+    super.eUnset(featureID);
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case DeploymentPlanPackage.PLAN__PLAN:
-                return plan != null;
-        }
-        return super.eIsSet(featureID);
+    switch (featureID) {
+      case DeploymentPlanPackage.PLAN__PLAN:
+        return plan != null;
     }
+    return super.eIsSet(featureID);
+  }
 
 } //PlanImpl

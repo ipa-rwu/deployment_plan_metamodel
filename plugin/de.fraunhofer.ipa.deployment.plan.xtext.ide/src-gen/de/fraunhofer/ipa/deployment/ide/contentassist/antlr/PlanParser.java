@@ -59,7 +59,8 @@ public class PlanParser extends AbstractContentAssistParser {
       builder.put(grammarAccess.getImplementationAssignmentAccess().getGroup_15(), "rule__ImplementationAssignment__Group_15__0");
       builder.put(grammarAccess.getContainerRuntimeAccess().getGroup(), "rule__ContainerRuntime__Group__0");
       builder.put(grammarAccess.getContainerRuntimeAccess().getGroup_4(), "rule__ContainerRuntime__Group_4__0");
-      builder.put(grammarAccess.getContainerRuntimeAccess().getGroup_4_4(), "rule__ContainerRuntime__Group_4_4__0");
+      builder.put(grammarAccess.getContainerRuntimeAccess().getGroup_5(), "rule__ContainerRuntime__Group_5__0");
+      builder.put(grammarAccess.getContainerRuntimeAccess().getGroup_5_4(), "rule__ContainerRuntime__Group_5_4__0");
       builder.put(grammarAccess.getConfigExecutionParameterAccess().getGroup(), "rule__ConfigExecutionParameter__Group__0");
       builder.put(grammarAccess.getConfigExecutionParameterAccess().getGroup_5(), "rule__ConfigExecutionParameter__Group_5__0");
       builder.put(grammarAccess.getConfigExecutionParameterAccess().getGroup_6(), "rule__ConfigExecutionParameter__Group_6__0");
@@ -127,8 +128,9 @@ public class PlanParser extends AbstractContentAssistParser {
       builder.put(grammarAccess.getImplementationAssignmentAccess().getRuntimeTypeAssignment_15_1(), "rule__ImplementationAssignment__RuntimeTypeAssignment_15_1");
       builder.put(grammarAccess.getRosMiddlewareAccess().getValueAssignment(), "rule__RosMiddleware__ValueAssignment");
       builder.put(grammarAccess.getContainerRuntimeAccess().getTypeAssignment_3(), "rule__ContainerRuntime__TypeAssignment_3");
-      builder.put(grammarAccess.getContainerRuntimeAccess().getOpertingSystemResourceAssignment_4_3(), "rule__ContainerRuntime__OpertingSystemResourceAssignment_4_3");
-      builder.put(grammarAccess.getContainerRuntimeAccess().getOpertingSystemResourceAssignment_4_4_1(), "rule__ContainerRuntime__OpertingSystemResourceAssignment_4_4_1");
+      builder.put(grammarAccess.getContainerRuntimeAccess().getRegistryAssignment_4_1(), "rule__ContainerRuntime__RegistryAssignment_4_1");
+      builder.put(grammarAccess.getContainerRuntimeAccess().getOpertingSystemResourceAssignment_5_3(), "rule__ContainerRuntime__OpertingSystemResourceAssignment_5_3");
+      builder.put(grammarAccess.getContainerRuntimeAccess().getOpertingSystemResourceAssignment_5_4_1(), "rule__ContainerRuntime__OpertingSystemResourceAssignment_5_4_1");
       builder.put(grammarAccess.getConfigExecutionParameterAccess().getFromAssignment_3(), "rule__ConfigExecutionParameter__FromAssignment_3");
       builder.put(grammarAccess.getConfigExecutionParameterAccess().getToAssignment_5_1(), "rule__ConfigExecutionParameter__ToAssignment_5_1");
       builder.put(grammarAccess.getConfigExecutionParameterAccess().getValueAssignment_6_1(), "rule__ConfigExecutionParameter__ValueAssignment_6_1");

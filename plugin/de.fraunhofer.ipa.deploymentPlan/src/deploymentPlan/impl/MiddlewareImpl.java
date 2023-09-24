@@ -18,22 +18,22 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public abstract class MiddlewareImpl extends MinimalEObjectImpl.Container implements Middleware {
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     protected MiddlewareImpl() {
-        super();
-    }
+    super();
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     protected EClass eStaticClass() {
-        return DeploymentPlanPackage.Literals.MIDDLEWARE;
-    }
+    return DeploymentPlanPackage.Literals.MIDDLEWARE;
+  }
 
 } //MiddlewareImpl

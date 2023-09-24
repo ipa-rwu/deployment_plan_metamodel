@@ -16,22 +16,22 @@ import org.eclipse.emf.ecore.EClass;
  */
 public class RealizationImpl extends AbstractRealizationImpl implements Realization {
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     protected RealizationImpl() {
-        super();
-    }
+    super();
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     protected EClass eStaticClass() {
-        return DeploymentPlanPackage.Literals.REALIZATION;
-    }
+    return DeploymentPlanPackage.Literals.REALIZATION;
+  }
 
 } //RealizationImpl

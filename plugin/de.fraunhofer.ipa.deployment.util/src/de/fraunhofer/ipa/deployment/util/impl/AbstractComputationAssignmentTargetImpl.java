@@ -17,24 +17,24 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * @generated
  */
 public abstract class AbstractComputationAssignmentTargetImpl extends MinimalEObjectImpl.Container
-        implements AbstractComputationAssignmentTarget {
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    protected AbstractComputationAssignmentTargetImpl() {
-        super();
-    }
+    implements AbstractComputationAssignmentTarget {
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected AbstractComputationAssignmentTargetImpl() {
+    super();
+  }
 
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    protected EClass eStaticClass() {
-        return UtilPackage.Literals.ABSTRACT_COMPUTATION_ASSIGNMENT_TARGET;
-    }
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  protected EClass eStaticClass() {
+    return UtilPackage.Literals.ABSTRACT_COMPUTATION_ASSIGNMENT_TARGET;
+  }
 
 } //AbstractComputationAssignmentTargetImpl

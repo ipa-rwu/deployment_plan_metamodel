@@ -27,137 +27,137 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class RosMiddlewareImpl extends MiddlewareImpl implements RosMiddleware {
     /**
-     * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
-     * <!-- begin-user-doc -->
+   * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getValue()
-     * @generated
-     * @ordered
-     */
+   * @see #getValue()
+   * @generated
+   * @ordered
+   */
     protected static final ROSDistro VALUE_EDEFAULT = ROSDistro.HUMBLE;
 
     /**
-     * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
-     * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getValue()
-     * @generated
-     * @ordered
-     */
+   * @see #getValue()
+   * @generated
+   * @ordered
+   */
     protected ROSDistro value = VALUE_EDEFAULT;
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     protected RosMiddlewareImpl() {
-        super();
-    }
+    super();
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     protected EClass eStaticClass() {
-        return DeploymentPlanPackage.Literals.ROS_MIDDLEWARE;
-    }
+    return DeploymentPlanPackage.Literals.ROS_MIDDLEWARE;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public ROSDistro getValue() {
-        return value;
-    }
+    return value;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public void setValue(ROSDistro newValue) {
-        ROSDistro oldValue = value;
-        value = newValue == null ? VALUE_EDEFAULT : newValue;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, DeploymentPlanPackage.ROS_MIDDLEWARE__VALUE, oldValue, value));
-    }
+    ROSDistro oldValue = value;
+    value = newValue == null ? VALUE_EDEFAULT : newValue;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DeploymentPlanPackage.ROS_MIDDLEWARE__VALUE, oldValue, value));
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case DeploymentPlanPackage.ROS_MIDDLEWARE__VALUE:
-                return getValue();
-        }
-        return super.eGet(featureID, resolve, coreType);
+    switch (featureID) {
+      case DeploymentPlanPackage.ROS_MIDDLEWARE__VALUE:
+        return getValue();
     }
+    return super.eGet(featureID, resolve, coreType);
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case DeploymentPlanPackage.ROS_MIDDLEWARE__VALUE:
-                setValue((ROSDistro)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
+    switch (featureID) {
+      case DeploymentPlanPackage.ROS_MIDDLEWARE__VALUE:
+        setValue((ROSDistro)newValue);
+        return;
     }
+    super.eSet(featureID, newValue);
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     public void eUnset(int featureID) {
-        switch (featureID) {
-            case DeploymentPlanPackage.ROS_MIDDLEWARE__VALUE:
-                setValue(VALUE_EDEFAULT);
-                return;
-        }
-        super.eUnset(featureID);
+    switch (featureID) {
+      case DeploymentPlanPackage.ROS_MIDDLEWARE__VALUE:
+        setValue(VALUE_EDEFAULT);
+        return;
     }
+    super.eUnset(featureID);
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case DeploymentPlanPackage.ROS_MIDDLEWARE__VALUE:
-                return value != VALUE_EDEFAULT;
-        }
-        return super.eIsSet(featureID);
+    switch (featureID) {
+      case DeploymentPlanPackage.ROS_MIDDLEWARE__VALUE:
+        return value != VALUE_EDEFAULT;
     }
+    return super.eIsSet(featureID);
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+    if (eIsProxy()) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (value: ");
-        result.append(value);
-        result.append(')');
-        return result.toString();
-    }
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (value: ");
+    result.append(value);
+    result.append(')');
+    return result.toString();
+  }
 
 } //RosMiddlewareImpl

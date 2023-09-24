@@ -582,22 +582,27 @@ public class PlanGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
     private final Assignment cTypeAssignment_3 = (Assignment)cGroup.eContents().get(3);
     private final RuleCall cTypeRunTimeTypeEnumRuleCall_3_0 = (RuleCall)cTypeAssignment_3.eContents().get(0);
     private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-    private final Keyword cResourceKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-    private final RuleCall cINDENTTerminalRuleCall_4_1 = (RuleCall)cGroup_4.eContents().get(1);
-    private final RuleCall cPreListElementParserRuleCall_4_2 = (RuleCall)cGroup_4.eContents().get(2);
-    private final Assignment cOpertingSystemResourceAssignment_4_3 = (Assignment)cGroup_4.eContents().get(3);
-    private final RuleCall cOpertingSystemResourceOperatingSystemResouceParserRuleCall_4_3_0 = (RuleCall)cOpertingSystemResourceAssignment_4_3.eContents().get(0);
-    private final Group cGroup_4_4 = (Group)cGroup_4.eContents().get(4);
-    private final RuleCall cPreListElementParserRuleCall_4_4_0 = (RuleCall)cGroup_4_4.eContents().get(0);
-    private final Assignment cOpertingSystemResourceAssignment_4_4_1 = (Assignment)cGroup_4_4.eContents().get(1);
-    private final RuleCall cOpertingSystemResourceOperatingSystemResouceParserRuleCall_4_4_1_0 = (RuleCall)cOpertingSystemResourceAssignment_4_4_1.eContents().get(0);
-    private final RuleCall cDEDENTTerminalRuleCall_4_5 = (RuleCall)cGroup_4.eContents().get(5);
-    private final RuleCall cDEDENTTerminalRuleCall_5 = (RuleCall)cGroup.eContents().get(5);
+    private final Keyword cRegistryKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+    private final Assignment cRegistryAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+    private final RuleCall cRegistryEStringParserRuleCall_4_1_0 = (RuleCall)cRegistryAssignment_4_1.eContents().get(0);
+    private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+    private final Keyword cResourceKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+    private final RuleCall cINDENTTerminalRuleCall_5_1 = (RuleCall)cGroup_5.eContents().get(1);
+    private final RuleCall cPreListElementParserRuleCall_5_2 = (RuleCall)cGroup_5.eContents().get(2);
+    private final Assignment cOpertingSystemResourceAssignment_5_3 = (Assignment)cGroup_5.eContents().get(3);
+    private final RuleCall cOpertingSystemResourceOperatingSystemResouceParserRuleCall_5_3_0 = (RuleCall)cOpertingSystemResourceAssignment_5_3.eContents().get(0);
+    private final Group cGroup_5_4 = (Group)cGroup_5.eContents().get(4);
+    private final RuleCall cPreListElementParserRuleCall_5_4_0 = (RuleCall)cGroup_5_4.eContents().get(0);
+    private final Assignment cOpertingSystemResourceAssignment_5_4_1 = (Assignment)cGroup_5_4.eContents().get(1);
+    private final RuleCall cOpertingSystemResourceOperatingSystemResouceParserRuleCall_5_4_1_0 = (RuleCall)cOpertingSystemResourceAssignment_5_4_1.eContents().get(0);
+    private final RuleCall cDEDENTTerminalRuleCall_5_5 = (RuleCall)cGroup_5.eContents().get(5);
+    private final RuleCall cDEDENTTerminalRuleCall_6 = (RuleCall)cGroup.eContents().get(6);
 
     //ContainerRuntime returns ContainerRuntime:
     //    {ContainerRuntime}
     //    INDENT
     //    'type:' type=RunTimeType
+    //    ('registry:' registry=EString)?
     //    ('resource:'
     //     INDENT
     //        PreListElement opertingSystemResource+=OperatingSystemResouce
@@ -611,6 +616,7 @@ public class PlanGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
     //{ContainerRuntime}
     //INDENT
     //'type:' type=RunTimeType
+    //('registry:' registry=EString)?
     //('resource:'
     // INDENT
     //    PreListElement opertingSystemResource+=OperatingSystemResouce
@@ -635,46 +641,58 @@ public class PlanGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
     //RunTimeType
     public RuleCall getTypeRunTimeTypeEnumRuleCall_3_0() { return cTypeRunTimeTypeEnumRuleCall_3_0; }
 
+    //('registry:' registry=EString)?
+    public Group getGroup_4() { return cGroup_4; }
+
+    //'registry:'
+    public Keyword getRegistryKeyword_4_0() { return cRegistryKeyword_4_0; }
+
+    //registry=EString
+    public Assignment getRegistryAssignment_4_1() { return cRegistryAssignment_4_1; }
+
+    //EString
+    public RuleCall getRegistryEStringParserRuleCall_4_1_0() { return cRegistryEStringParserRuleCall_4_1_0; }
+
     //('resource:'
     // INDENT
     //    PreListElement opertingSystemResource+=OperatingSystemResouce
     //    (PreListElement opertingSystemResource+=OperatingSystemResouce+)?
     // DEDENT
     // )?
-    public Group getGroup_4() { return cGroup_4; }
+    public Group getGroup_5() { return cGroup_5; }
 
     //'resource:'
-    public Keyword getResourceKeyword_4_0() { return cResourceKeyword_4_0; }
+    public Keyword getResourceKeyword_5_0() { return cResourceKeyword_5_0; }
 
     //INDENT
-    public RuleCall getINDENTTerminalRuleCall_4_1() { return cINDENTTerminalRuleCall_4_1; }
+    public RuleCall getINDENTTerminalRuleCall_5_1() { return cINDENTTerminalRuleCall_5_1; }
 
     //PreListElement
-    public RuleCall getPreListElementParserRuleCall_4_2() { return cPreListElementParserRuleCall_4_2; }
+    public RuleCall getPreListElementParserRuleCall_5_2() { return cPreListElementParserRuleCall_5_2; }
 
     //opertingSystemResource+=OperatingSystemResouce
-    public Assignment getOpertingSystemResourceAssignment_4_3() { return cOpertingSystemResourceAssignment_4_3; }
+    public Assignment getOpertingSystemResourceAssignment_5_3() { return cOpertingSystemResourceAssignment_5_3; }
 
     //OperatingSystemResouce
-    public RuleCall getOpertingSystemResourceOperatingSystemResouceParserRuleCall_4_3_0() { return cOpertingSystemResourceOperatingSystemResouceParserRuleCall_4_3_0; }
+    public RuleCall getOpertingSystemResourceOperatingSystemResouceParserRuleCall_5_3_0() { return cOpertingSystemResourceOperatingSystemResouceParserRuleCall_5_3_0; }
 
     //(PreListElement opertingSystemResource+=OperatingSystemResouce+)?
-    public Group getGroup_4_4() { return cGroup_4_4; }
+    public Group getGroup_5_4() { return cGroup_5_4; }
 
     //PreListElement
-    public RuleCall getPreListElementParserRuleCall_4_4_0() { return cPreListElementParserRuleCall_4_4_0; }
+    public RuleCall getPreListElementParserRuleCall_5_4_0() { return cPreListElementParserRuleCall_5_4_0; }
 
     //opertingSystemResource+=OperatingSystemResouce+
-    public Assignment getOpertingSystemResourceAssignment_4_4_1() { return cOpertingSystemResourceAssignment_4_4_1; }
+    public Assignment getOpertingSystemResourceAssignment_5_4_1() { return cOpertingSystemResourceAssignment_5_4_1; }
 
     //OperatingSystemResouce
-    public RuleCall getOpertingSystemResourceOperatingSystemResouceParserRuleCall_4_4_1_0() { return cOpertingSystemResourceOperatingSystemResouceParserRuleCall_4_4_1_0; }
+    public RuleCall getOpertingSystemResourceOperatingSystemResouceParserRuleCall_5_4_1_0() { return cOpertingSystemResourceOperatingSystemResouceParserRuleCall_5_4_1_0; }
 
     //DEDENT
-    public RuleCall getDEDENTTerminalRuleCall_4_5() { return cDEDENTTerminalRuleCall_4_5; }
+    public RuleCall getDEDENTTerminalRuleCall_5_5() { return cDEDENTTerminalRuleCall_5_5; }
 
     //DEDENT
-    public RuleCall getDEDENTTerminalRuleCall_5() { return cDEDENTTerminalRuleCall_5; }
+    public RuleCall getDEDENTTerminalRuleCall_6() { return cDEDENTTerminalRuleCall_6; }
   }
   public class ConfigExecutionParameterElements extends AbstractParserRuleElementFinder {
     private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.fraunhofer.ipa.deployment.Plan.ConfigExecutionParameter");
@@ -1054,6 +1072,7 @@ public class PlanGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
   //    {ContainerRuntime}
   //    INDENT
   //    'type:' type=RunTimeType
+  //    ('registry:' registry=EString)?
   //    ('resource:'
   //     INDENT
   //        PreListElement opertingSystemResource+=OperatingSystemResouce

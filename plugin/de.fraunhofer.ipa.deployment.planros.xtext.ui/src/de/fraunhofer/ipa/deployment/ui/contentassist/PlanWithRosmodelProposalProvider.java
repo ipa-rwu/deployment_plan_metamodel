@@ -226,10 +226,11 @@ public class PlanWithRosmodelProposalProvider extends AbstractPlanWithRosmodelPr
 
   @Override
   public void completeConfigRosSoftwareComponent_StartCommand(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+    java.lang.System.out.println("completeConfigRosSoftwareComponent_StartCommand");
     ConfigRosSoftwareComponent real_model = (ConfigRosSoftwareComponent) model;
     System sys = real_model.getComponent();
     if(sys.getFromFile() != null) {
-      var ss = sys.getFromFile().split("/", -1);
+      var ss = sys.getFromFile().getName().split("/", -1);
       var pkg = ss[0];
       var launch_file = ss[2];
       RossystemImplementationAssignment impl_assignment = (RossystemImplementationAssignment) real_model.eContainer();
@@ -239,6 +240,5 @@ public class PlanWithRosmodelProposalProvider extends AbstractPlanWithRosmodelPr
       }
     }
   }
-
 
 }

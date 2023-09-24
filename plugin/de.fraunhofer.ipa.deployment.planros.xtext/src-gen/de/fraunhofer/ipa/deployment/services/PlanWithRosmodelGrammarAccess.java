@@ -935,6 +935,7 @@ public class PlanWithRosmodelGrammarAccess extends AbstractElementFinder.Abstrac
   //    {ContainerRuntime}
   //    INDENT
   //    'type:' type=RunTimeType
+  //    ('registry:' registry=EString)?
   //    ('resource:'
   //     INDENT
   //        PreListElement opertingSystemResource+=OperatingSystemResouce

@@ -15,64 +15,65 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
     public static final int SoftwareComponents=8;
     public static final int DeployTo=28;
     public static final int AttributeKind=11;
-    public static final int Noetic=36;
-    public static final int Name=44;
+    public static final int Noetic=37;
+    public static final int Name=45;
     public static final int Assignment=20;
     public static final int Container=27;
-    public static final int Debian=34;
-    public static final int Version=31;
-    public static final int Kind=43;
-    public static final int To=48;
+    public static final int Debian=35;
+    public static final int Version=32;
+    public static final int Kind=44;
+    public static final int To=49;
     public static final int ExecutedBy=21;
-    public static final int Ubuntu=37;
-    public static final int RULE_DEDENT=57;
+    public static final int Ubuntu=38;
+    public static final int RULE_DEDENT=58;
     public static final int DeploymentPlanWithRos=5;
     public static final int LinuxOpertingSystem=6;
-    public static final int RULE_ID=58;
+    public static final int RULE_ID=59;
     public static final int TargetRossystem=9;
-    public static final int Resource=29;
-    public static final int RULE_DIGIT=52;
+    public static final int Resource=30;
+    public static final int RULE_DIGIT=53;
     public static final int Middleware=22;
     public static final int SelectionKind=12;
-    public static final int Arm64=39;
-    public static final int RULE_INT=59;
-    public static final int Ethernet=30;
-    public static final int Value=38;
-    public static final int RULE_ML_COMMENT=61;
+    public static final int Arm64=40;
+    public static final int RULE_INT=60;
+    public static final int Ethernet=31;
+    public static final int Value=39;
+    public static final int RULE_ML_COMMENT=62;
     public static final int Description=15;
     public static final int Processor=25;
     public static final int StartCommand=14;
     public static final int RefNodeParam=13;
-    public static final int RULE_STRING=60;
-    public static final int Focal=40;
-    public static final int Wlan=46;
+    public static final int RULE_STRING=61;
+    public static final int Focal=41;
+    public static final int Wlan=47;
     public static final int Properties=23;
-    public static final int RULE_SL_COMMENT=55;
-    public static final int Os_name=32;
-    public static final int HyphenMinus=50;
-    public static final int RULE_DOUBLE=54;
-    public static final int X86=49;
-    public static final int Colon=51;
-    public static final int RULE_DECINT=53;
+    public static final int RULE_SL_COMMENT=56;
+    public static final int Os_name=33;
+    public static final int HyphenMinus=51;
+    public static final int RULE_DOUBLE=55;
+    public static final int X86=50;
+    public static final int Colon=52;
+    public static final int RULE_DECINT=54;
     public static final int DeploymentPlan=10;
     public static final int MinimumKind=19;
     public static final int EOF=-1;
-    public static final int RULE_INDENT=56;
-    public static final int Jammy=42;
-    public static final int Usb=47;
-    public static final int RULE_WS=62;
-    public static final int Rolling=33;
+    public static final int RULE_INDENT=57;
+    public static final int Jammy=43;
+    public static final int Usb=48;
+    public static final int RULE_WS=63;
+    public static final int Rolling=34;
     public static final int ExecutionConfiguration=4;
     public static final int MaximumKind=18;
-    public static final int From=41;
-    public static final int RULE_ANY_OTHER=63;
+    public static final int Registry=29;
+    public static final int From=42;
+    public static final int RULE_ANY_OTHER=64;
     public static final int RangeKind=26;
     public static final int Os_version=24;
-    public static final int Type=45;
+    public static final int Type=46;
     public static final int MacOSOpertingSystem=7;
     public static final int RuntimeType=17;
     public static final int RefSysParam=16;
-    public static final int Humble=35;
+    public static final int Humble=36;
 
     // delegates
     // delegators
@@ -612,13 +613,34 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
     }
     // $ANTLR end "DeployTo"
 
+    // $ANTLR start "Registry"
+    public final void mRegistry() throws RecognitionException {
+        try {
+            int _type = Registry;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalPlanWithRosmodelLexer.g:64:10: ( 'registry:' )
+            // InternalPlanWithRosmodelLexer.g:64:12: 'registry:'
+            {
+            match("registry:");
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "Registry"
+
     // $ANTLR start "Resource"
     public final void mResource() throws RecognitionException {
         try {
             int _type = Resource;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPlanWithRosmodelLexer.g:64:10: ( 'resource:' )
-            // InternalPlanWithRosmodelLexer.g:64:12: 'resource:'
+            // InternalPlanWithRosmodelLexer.g:66:10: ( 'resource:' )
+            // InternalPlanWithRosmodelLexer.g:66:12: 'resource:'
             {
             match("resource:");
 
@@ -638,8 +660,8 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
         try {
             int _type = Ethernet;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPlanWithRosmodelLexer.g:66:10: ( 'Ethernet' )
-            // InternalPlanWithRosmodelLexer.g:66:12: 'Ethernet'
+            // InternalPlanWithRosmodelLexer.g:68:10: ( 'Ethernet' )
+            // InternalPlanWithRosmodelLexer.g:68:12: 'Ethernet'
             {
             match("Ethernet");
 
@@ -659,8 +681,8 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
         try {
             int _type = Version;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPlanWithRosmodelLexer.g:68:9: ( 'version:' )
-            // InternalPlanWithRosmodelLexer.g:68:11: 'version:'
+            // InternalPlanWithRosmodelLexer.g:70:9: ( 'version:' )
+            // InternalPlanWithRosmodelLexer.g:70:11: 'version:'
             {
             match("version:");
 
@@ -680,8 +702,8 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
         try {
             int _type = Os_name;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPlanWithRosmodelLexer.g:70:9: ( 'os_name' )
-            // InternalPlanWithRosmodelLexer.g:70:11: 'os_name'
+            // InternalPlanWithRosmodelLexer.g:72:9: ( 'os_name' )
+            // InternalPlanWithRosmodelLexer.g:72:11: 'os_name'
             {
             match("os_name");
 
@@ -701,8 +723,8 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
         try {
             int _type = Rolling;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPlanWithRosmodelLexer.g:72:9: ( 'rolling' )
-            // InternalPlanWithRosmodelLexer.g:72:11: 'rolling'
+            // InternalPlanWithRosmodelLexer.g:74:9: ( 'rolling' )
+            // InternalPlanWithRosmodelLexer.g:74:11: 'rolling'
             {
             match("rolling");
 
@@ -722,8 +744,8 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
         try {
             int _type = Debian;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPlanWithRosmodelLexer.g:74:8: ( 'debian' )
-            // InternalPlanWithRosmodelLexer.g:74:10: 'debian'
+            // InternalPlanWithRosmodelLexer.g:76:8: ( 'debian' )
+            // InternalPlanWithRosmodelLexer.g:76:10: 'debian'
             {
             match("debian");
 
@@ -743,8 +765,8 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
         try {
             int _type = Humble;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPlanWithRosmodelLexer.g:76:8: ( 'humble' )
-            // InternalPlanWithRosmodelLexer.g:76:10: 'humble'
+            // InternalPlanWithRosmodelLexer.g:78:8: ( 'humble' )
+            // InternalPlanWithRosmodelLexer.g:78:10: 'humble'
             {
             match("humble");
 
@@ -764,8 +786,8 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
         try {
             int _type = Noetic;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPlanWithRosmodelLexer.g:78:8: ( 'noetic' )
-            // InternalPlanWithRosmodelLexer.g:78:10: 'noetic'
+            // InternalPlanWithRosmodelLexer.g:80:8: ( 'noetic' )
+            // InternalPlanWithRosmodelLexer.g:80:10: 'noetic'
             {
             match("noetic");
 
@@ -785,8 +807,8 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
         try {
             int _type = Ubuntu;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPlanWithRosmodelLexer.g:80:8: ( 'ubuntu' )
-            // InternalPlanWithRosmodelLexer.g:80:10: 'ubuntu'
+            // InternalPlanWithRosmodelLexer.g:82:8: ( 'ubuntu' )
+            // InternalPlanWithRosmodelLexer.g:82:10: 'ubuntu'
             {
             match("ubuntu");
 
@@ -806,8 +828,8 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
         try {
             int _type = Value;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPlanWithRosmodelLexer.g:82:7: ( 'value:' )
-            // InternalPlanWithRosmodelLexer.g:82:9: 'value:'
+            // InternalPlanWithRosmodelLexer.g:84:7: ( 'value:' )
+            // InternalPlanWithRosmodelLexer.g:84:9: 'value:'
             {
             match("value:");
 
@@ -827,8 +849,8 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
         try {
             int _type = Arm64;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPlanWithRosmodelLexer.g:84:7: ( 'arm64' )
-            // InternalPlanWithRosmodelLexer.g:84:9: 'arm64'
+            // InternalPlanWithRosmodelLexer.g:86:7: ( 'arm64' )
+            // InternalPlanWithRosmodelLexer.g:86:9: 'arm64'
             {
             match("arm64");
 
@@ -848,8 +870,8 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
         try {
             int _type = Focal;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPlanWithRosmodelLexer.g:86:7: ( 'focal' )
-            // InternalPlanWithRosmodelLexer.g:86:9: 'focal'
+            // InternalPlanWithRosmodelLexer.g:88:7: ( 'focal' )
+            // InternalPlanWithRosmodelLexer.g:88:9: 'focal'
             {
             match("focal");
 
@@ -869,8 +891,8 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
         try {
             int _type = From;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPlanWithRosmodelLexer.g:88:6: ( 'from:' )
-            // InternalPlanWithRosmodelLexer.g:88:8: 'from:'
+            // InternalPlanWithRosmodelLexer.g:90:6: ( 'from:' )
+            // InternalPlanWithRosmodelLexer.g:90:8: 'from:'
             {
             match("from:");
 
@@ -890,8 +912,8 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
         try {
             int _type = Jammy;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPlanWithRosmodelLexer.g:90:7: ( 'jammy' )
-            // InternalPlanWithRosmodelLexer.g:90:9: 'jammy'
+            // InternalPlanWithRosmodelLexer.g:92:7: ( 'jammy' )
+            // InternalPlanWithRosmodelLexer.g:92:9: 'jammy'
             {
             match("jammy");
 
@@ -911,8 +933,8 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
         try {
             int _type = Kind;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPlanWithRosmodelLexer.g:92:6: ( 'kind:' )
-            // InternalPlanWithRosmodelLexer.g:92:8: 'kind:'
+            // InternalPlanWithRosmodelLexer.g:94:6: ( 'kind:' )
+            // InternalPlanWithRosmodelLexer.g:94:8: 'kind:'
             {
             match("kind:");
 
@@ -932,8 +954,8 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
         try {
             int _type = Name;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPlanWithRosmodelLexer.g:94:6: ( 'name:' )
-            // InternalPlanWithRosmodelLexer.g:94:8: 'name:'
+            // InternalPlanWithRosmodelLexer.g:96:6: ( 'name:' )
+            // InternalPlanWithRosmodelLexer.g:96:8: 'name:'
             {
             match("name:");
 
@@ -953,8 +975,8 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
         try {
             int _type = Type;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPlanWithRosmodelLexer.g:96:6: ( 'type:' )
-            // InternalPlanWithRosmodelLexer.g:96:8: 'type:'
+            // InternalPlanWithRosmodelLexer.g:98:6: ( 'type:' )
+            // InternalPlanWithRosmodelLexer.g:98:8: 'type:'
             {
             match("type:");
 
@@ -974,8 +996,8 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
         try {
             int _type = Wlan;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPlanWithRosmodelLexer.g:98:6: ( 'Wlan' )
-            // InternalPlanWithRosmodelLexer.g:98:8: 'Wlan'
+            // InternalPlanWithRosmodelLexer.g:100:6: ( 'Wlan' )
+            // InternalPlanWithRosmodelLexer.g:100:8: 'Wlan'
             {
             match("Wlan");
 
@@ -995,8 +1017,8 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
         try {
             int _type = Usb;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPlanWithRosmodelLexer.g:100:5: ( 'Usb' )
-            // InternalPlanWithRosmodelLexer.g:100:7: 'Usb'
+            // InternalPlanWithRosmodelLexer.g:102:5: ( 'Usb' )
+            // InternalPlanWithRosmodelLexer.g:102:7: 'Usb'
             {
             match("Usb");
 
@@ -1016,8 +1038,8 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
         try {
             int _type = To;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPlanWithRosmodelLexer.g:102:4: ( 'to:' )
-            // InternalPlanWithRosmodelLexer.g:102:6: 'to:'
+            // InternalPlanWithRosmodelLexer.g:104:4: ( 'to:' )
+            // InternalPlanWithRosmodelLexer.g:104:6: 'to:'
             {
             match("to:");
 
@@ -1037,8 +1059,8 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
         try {
             int _type = X86;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPlanWithRosmodelLexer.g:104:5: ( 'x86' )
-            // InternalPlanWithRosmodelLexer.g:104:7: 'x86'
+            // InternalPlanWithRosmodelLexer.g:106:5: ( 'x86' )
+            // InternalPlanWithRosmodelLexer.g:106:7: 'x86'
             {
             match("x86");
 
@@ -1058,8 +1080,8 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
         try {
             int _type = HyphenMinus;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPlanWithRosmodelLexer.g:106:13: ( '-' )
-            // InternalPlanWithRosmodelLexer.g:106:15: '-'
+            // InternalPlanWithRosmodelLexer.g:108:13: ( '-' )
+            // InternalPlanWithRosmodelLexer.g:108:15: '-'
             {
             match('-');
 
@@ -1078,8 +1100,8 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
         try {
             int _type = Colon;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPlanWithRosmodelLexer.g:108:7: ( ':' )
-            // InternalPlanWithRosmodelLexer.g:108:9: ':'
+            // InternalPlanWithRosmodelLexer.g:110:7: ( ':' )
+            // InternalPlanWithRosmodelLexer.g:110:9: ':'
             {
             match(':');
 
@@ -1096,8 +1118,8 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
     // $ANTLR start "RULE_DIGIT"
     public final void mRULE_DIGIT() throws RecognitionException {
         try {
-            // InternalPlanWithRosmodelLexer.g:110:21: ( '0' .. '9' )
-            // InternalPlanWithRosmodelLexer.g:110:23: '0' .. '9'
+            // InternalPlanWithRosmodelLexer.g:112:21: ( '0' .. '9' )
+            // InternalPlanWithRosmodelLexer.g:112:23: '0' .. '9'
             {
             matchRange('0','9');
 
@@ -1114,10 +1136,10 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
         try {
             int _type = RULE_DOUBLE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPlanWithRosmodelLexer.g:112:13: ( ( ( RULE_DIGIT )* | '-' ( RULE_DIGIT )* ) ( '.' ( RULE_DECINT )* | ( '.' ( RULE_DIGIT )* )? ( 'E' | 'e' ) ( '-' | '+' )? ( RULE_DIGIT )* ) )
-            // InternalPlanWithRosmodelLexer.g:112:15: ( ( RULE_DIGIT )* | '-' ( RULE_DIGIT )* ) ( '.' ( RULE_DECINT )* | ( '.' ( RULE_DIGIT )* )? ( 'E' | 'e' ) ( '-' | '+' )? ( RULE_DIGIT )* )
+            // InternalPlanWithRosmodelLexer.g:114:13: ( ( ( RULE_DIGIT )* | '-' ( RULE_DIGIT )* ) ( '.' ( RULE_DECINT )* | ( '.' ( RULE_DIGIT )* )? ( 'E' | 'e' ) ( '-' | '+' )? ( RULE_DIGIT )* ) )
+            // InternalPlanWithRosmodelLexer.g:114:15: ( ( RULE_DIGIT )* | '-' ( RULE_DIGIT )* ) ( '.' ( RULE_DECINT )* | ( '.' ( RULE_DIGIT )* )? ( 'E' | 'e' ) ( '-' | '+' )? ( RULE_DIGIT )* )
             {
-            // InternalPlanWithRosmodelLexer.g:112:15: ( ( RULE_DIGIT )* | '-' ( RULE_DIGIT )* )
+            // InternalPlanWithRosmodelLexer.g:114:15: ( ( RULE_DIGIT )* | '-' ( RULE_DIGIT )* )
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -1135,9 +1157,9 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
             }
             switch (alt3) {
                 case 1 :
-                    // InternalPlanWithRosmodelLexer.g:112:16: ( RULE_DIGIT )*
+                    // InternalPlanWithRosmodelLexer.g:114:16: ( RULE_DIGIT )*
                     {
-                    // InternalPlanWithRosmodelLexer.g:112:16: ( RULE_DIGIT )*
+                    // InternalPlanWithRosmodelLexer.g:114:16: ( RULE_DIGIT )*
                     loop1:
                     do {
                         int alt1=2;
@@ -1150,7 +1172,7 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
 
                         switch (alt1) {
                       case 1 :
-                          // InternalPlanWithRosmodelLexer.g:112:16: RULE_DIGIT
+                          // InternalPlanWithRosmodelLexer.g:114:16: RULE_DIGIT
                           {
                           mRULE_DIGIT();
 
@@ -1166,10 +1188,10 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalPlanWithRosmodelLexer.g:112:28: '-' ( RULE_DIGIT )*
+                    // InternalPlanWithRosmodelLexer.g:114:28: '-' ( RULE_DIGIT )*
                     {
                     match('-');
-                    // InternalPlanWithRosmodelLexer.g:112:32: ( RULE_DIGIT )*
+                    // InternalPlanWithRosmodelLexer.g:114:32: ( RULE_DIGIT )*
                     loop2:
                     do {
                         int alt2=2;
@@ -1182,7 +1204,7 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
 
                         switch (alt2) {
                       case 1 :
-                          // InternalPlanWithRosmodelLexer.g:112:32: RULE_DIGIT
+                          // InternalPlanWithRosmodelLexer.g:114:32: RULE_DIGIT
                           {
                           mRULE_DIGIT();
 
@@ -1200,15 +1222,15 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
 
             }
 
-            // InternalPlanWithRosmodelLexer.g:112:45: ( '.' ( RULE_DECINT )* | ( '.' ( RULE_DIGIT )* )? ( 'E' | 'e' ) ( '-' | '+' )? ( RULE_DIGIT )* )
+            // InternalPlanWithRosmodelLexer.g:114:45: ( '.' ( RULE_DECINT )* | ( '.' ( RULE_DIGIT )* )? ( 'E' | 'e' ) ( '-' | '+' )? ( RULE_DIGIT )* )
             int alt9=2;
             alt9 = dfa9.predict(input);
             switch (alt9) {
                 case 1 :
-                    // InternalPlanWithRosmodelLexer.g:112:46: '.' ( RULE_DECINT )*
+                    // InternalPlanWithRosmodelLexer.g:114:46: '.' ( RULE_DECINT )*
                     {
                     match('.');
-                    // InternalPlanWithRosmodelLexer.g:112:50: ( RULE_DECINT )*
+                    // InternalPlanWithRosmodelLexer.g:114:50: ( RULE_DECINT )*
                     loop4:
                     do {
                         int alt4=2;
@@ -1221,7 +1243,7 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
 
                         switch (alt4) {
                       case 1 :
-                          // InternalPlanWithRosmodelLexer.g:112:50: RULE_DECINT
+                          // InternalPlanWithRosmodelLexer.g:114:50: RULE_DECINT
                           {
                           mRULE_DECINT();
 
@@ -1237,9 +1259,9 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalPlanWithRosmodelLexer.g:112:63: ( '.' ( RULE_DIGIT )* )? ( 'E' | 'e' ) ( '-' | '+' )? ( RULE_DIGIT )*
+                    // InternalPlanWithRosmodelLexer.g:114:63: ( '.' ( RULE_DIGIT )* )? ( 'E' | 'e' ) ( '-' | '+' )? ( RULE_DIGIT )*
                     {
-                    // InternalPlanWithRosmodelLexer.g:112:63: ( '.' ( RULE_DIGIT )* )?
+                    // InternalPlanWithRosmodelLexer.g:114:63: ( '.' ( RULE_DIGIT )* )?
                     int alt6=2;
                     int LA6_0 = input.LA(1);
 
@@ -1248,10 +1270,10 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
                     }
                     switch (alt6) {
                         case 1 :
-                            // InternalPlanWithRosmodelLexer.g:112:64: '.' ( RULE_DIGIT )*
+                            // InternalPlanWithRosmodelLexer.g:114:64: '.' ( RULE_DIGIT )*
                             {
                             match('.');
-                            // InternalPlanWithRosmodelLexer.g:112:68: ( RULE_DIGIT )*
+                            // InternalPlanWithRosmodelLexer.g:114:68: ( RULE_DIGIT )*
                             loop5:
                             do {
                                 int alt5=2;
@@ -1264,7 +1286,7 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
 
                                 switch (alt5) {
                               case 1 :
-                                  // InternalPlanWithRosmodelLexer.g:112:68: RULE_DIGIT
+                                  // InternalPlanWithRosmodelLexer.g:114:68: RULE_DIGIT
                                   {
                                   mRULE_DIGIT();
 
@@ -1291,7 +1313,7 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
                         recover(mse);
                         throw mse;}
 
-                    // InternalPlanWithRosmodelLexer.g:112:92: ( '-' | '+' )?
+                    // InternalPlanWithRosmodelLexer.g:114:92: ( '-' | '+' )?
                     int alt7=2;
                     int LA7_0 = input.LA(1);
 
@@ -1317,7 +1339,7 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
 
                     }
 
-                    // InternalPlanWithRosmodelLexer.g:112:103: ( RULE_DIGIT )*
+                    // InternalPlanWithRosmodelLexer.g:114:103: ( RULE_DIGIT )*
                     loop8:
                     do {
                         int alt8=2;
@@ -1330,7 +1352,7 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
 
                         switch (alt8) {
                       case 1 :
-                          // InternalPlanWithRosmodelLexer.g:112:103: RULE_DIGIT
+                          // InternalPlanWithRosmodelLexer.g:114:103: RULE_DIGIT
                           {
                           mRULE_DIGIT();
 
@@ -1364,10 +1386,10 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
         try {
             int _type = RULE_DECINT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPlanWithRosmodelLexer.g:114:13: ( ( '0' | '1' .. '9' ( RULE_DIGIT )* | '-' '0' .. '9' ( RULE_DIGIT )* ) )
-            // InternalPlanWithRosmodelLexer.g:114:15: ( '0' | '1' .. '9' ( RULE_DIGIT )* | '-' '0' .. '9' ( RULE_DIGIT )* )
+            // InternalPlanWithRosmodelLexer.g:116:13: ( ( '0' | '1' .. '9' ( RULE_DIGIT )* | '-' '0' .. '9' ( RULE_DIGIT )* ) )
+            // InternalPlanWithRosmodelLexer.g:116:15: ( '0' | '1' .. '9' ( RULE_DIGIT )* | '-' '0' .. '9' ( RULE_DIGIT )* )
             {
-            // InternalPlanWithRosmodelLexer.g:114:15: ( '0' | '1' .. '9' ( RULE_DIGIT )* | '-' '0' .. '9' ( RULE_DIGIT )* )
+            // InternalPlanWithRosmodelLexer.g:116:15: ( '0' | '1' .. '9' ( RULE_DIGIT )* | '-' '0' .. '9' ( RULE_DIGIT )* )
             int alt12=3;
             switch ( input.LA(1) ) {
             case '0':
@@ -1402,17 +1424,17 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
 
             switch (alt12) {
                 case 1 :
-                    // InternalPlanWithRosmodelLexer.g:114:16: '0'
+                    // InternalPlanWithRosmodelLexer.g:116:16: '0'
                     {
                     match('0');
 
                     }
                     break;
                 case 2 :
-                    // InternalPlanWithRosmodelLexer.g:114:20: '1' .. '9' ( RULE_DIGIT )*
+                    // InternalPlanWithRosmodelLexer.g:116:20: '1' .. '9' ( RULE_DIGIT )*
                     {
                     matchRange('1','9');
-                    // InternalPlanWithRosmodelLexer.g:114:29: ( RULE_DIGIT )*
+                    // InternalPlanWithRosmodelLexer.g:116:29: ( RULE_DIGIT )*
                     loop10:
                     do {
                         int alt10=2;
@@ -1425,7 +1447,7 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
 
                         switch (alt10) {
                       case 1 :
-                          // InternalPlanWithRosmodelLexer.g:114:29: RULE_DIGIT
+                          // InternalPlanWithRosmodelLexer.g:116:29: RULE_DIGIT
                           {
                           mRULE_DIGIT();
 
@@ -1441,11 +1463,11 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // InternalPlanWithRosmodelLexer.g:114:41: '-' '0' .. '9' ( RULE_DIGIT )*
+                    // InternalPlanWithRosmodelLexer.g:116:41: '-' '0' .. '9' ( RULE_DIGIT )*
                     {
                     match('-');
                     matchRange('0','9');
-                    // InternalPlanWithRosmodelLexer.g:114:54: ( RULE_DIGIT )*
+                    // InternalPlanWithRosmodelLexer.g:116:54: ( RULE_DIGIT )*
                     loop11:
                     do {
                         int alt11=2;
@@ -1458,7 +1480,7 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
 
                         switch (alt11) {
                       case 1 :
-                          // InternalPlanWithRosmodelLexer.g:114:54: RULE_DIGIT
+                          // InternalPlanWithRosmodelLexer.g:116:54: RULE_DIGIT
                           {
                           mRULE_DIGIT();
 
@@ -1492,11 +1514,11 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPlanWithRosmodelLexer.g:116:17: ( '#' (~ ( ( '\\n' | '\\r' ) ) )* )
-            // InternalPlanWithRosmodelLexer.g:116:19: '#' (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalPlanWithRosmodelLexer.g:118:17: ( '#' (~ ( ( '\\n' | '\\r' ) ) )* )
+            // InternalPlanWithRosmodelLexer.g:118:19: '#' (~ ( ( '\\n' | '\\r' ) ) )*
             {
             match('#');
-            // InternalPlanWithRosmodelLexer.g:116:23: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalPlanWithRosmodelLexer.g:118:23: (~ ( ( '\\n' | '\\r' ) ) )*
             loop13:
             do {
                 int alt13=2;
@@ -1509,7 +1531,7 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
 
                 switch (alt13) {
               case 1 :
-                  // InternalPlanWithRosmodelLexer.g:116:23: ~ ( ( '\\n' | '\\r' ) )
+                  // InternalPlanWithRosmodelLexer.g:118:23: ~ ( ( '\\n' | '\\r' ) )
                   {
                   if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
                       input.consume();
@@ -1543,8 +1565,8 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
     // $ANTLR start "RULE_INDENT"
     public final void mRULE_INDENT() throws RecognitionException {
         try {
-            // InternalPlanWithRosmodelLexer.g:118:22: ()
-            // InternalPlanWithRosmodelLexer.g:118:24:
+            // InternalPlanWithRosmodelLexer.g:120:22: ()
+            // InternalPlanWithRosmodelLexer.g:120:24:
             {
             }
 
@@ -1557,8 +1579,8 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
     // $ANTLR start "RULE_DEDENT"
     public final void mRULE_DEDENT() throws RecognitionException {
         try {
-            // InternalPlanWithRosmodelLexer.g:120:22: ()
-            // InternalPlanWithRosmodelLexer.g:120:24:
+            // InternalPlanWithRosmodelLexer.g:122:22: ()
+            // InternalPlanWithRosmodelLexer.g:122:24:
             {
             }
 
@@ -1573,10 +1595,10 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPlanWithRosmodelLexer.g:122:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalPlanWithRosmodelLexer.g:122:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalPlanWithRosmodelLexer.g:124:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalPlanWithRosmodelLexer.g:124:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // InternalPlanWithRosmodelLexer.g:122:11: ( '^' )?
+            // InternalPlanWithRosmodelLexer.g:124:11: ( '^' )?
             int alt14=2;
             int LA14_0 = input.LA(1);
 
@@ -1585,7 +1607,7 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
             }
             switch (alt14) {
                 case 1 :
-                    // InternalPlanWithRosmodelLexer.g:122:11: '^'
+                    // InternalPlanWithRosmodelLexer.g:124:11: '^'
                     {
                     match('^');
 
@@ -1603,7 +1625,7 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalPlanWithRosmodelLexer.g:122:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalPlanWithRosmodelLexer.g:124:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop15:
             do {
                 int alt15=2;
@@ -1652,10 +1674,10 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPlanWithRosmodelLexer.g:124:10: ( ( '0' .. '9' )+ )
-            // InternalPlanWithRosmodelLexer.g:124:12: ( '0' .. '9' )+
+            // InternalPlanWithRosmodelLexer.g:126:10: ( ( '0' .. '9' )+ )
+            // InternalPlanWithRosmodelLexer.g:126:12: ( '0' .. '9' )+
             {
-            // InternalPlanWithRosmodelLexer.g:124:12: ( '0' .. '9' )+
+            // InternalPlanWithRosmodelLexer.g:126:12: ( '0' .. '9' )+
             int cnt16=0;
             loop16:
             do {
@@ -1669,7 +1691,7 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
 
                 switch (alt16) {
               case 1 :
-                  // InternalPlanWithRosmodelLexer.g:124:13: '0' .. '9'
+                  // InternalPlanWithRosmodelLexer.g:126:13: '0' .. '9'
                   {
                   matchRange('0','9');
 
@@ -1701,10 +1723,10 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPlanWithRosmodelLexer.g:126:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // InternalPlanWithRosmodelLexer.g:126:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalPlanWithRosmodelLexer.g:128:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalPlanWithRosmodelLexer.g:128:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // InternalPlanWithRosmodelLexer.g:126:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalPlanWithRosmodelLexer.g:128:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt19=2;
             int LA19_0 = input.LA(1);
 
@@ -1722,10 +1744,10 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
             }
             switch (alt19) {
                 case 1 :
-                    // InternalPlanWithRosmodelLexer.g:126:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalPlanWithRosmodelLexer.g:128:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"');
-                    // InternalPlanWithRosmodelLexer.g:126:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalPlanWithRosmodelLexer.g:128:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop17:
                     do {
                         int alt17=3;
@@ -1741,7 +1763,7 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
 
                         switch (alt17) {
                       case 1 :
-                          // InternalPlanWithRosmodelLexer.g:126:21: '\\\\' .
+                          // InternalPlanWithRosmodelLexer.g:128:21: '\\\\' .
                           {
                           match('\\');
                           matchAny();
@@ -1749,7 +1771,7 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
                           }
                           break;
                       case 2 :
-                          // InternalPlanWithRosmodelLexer.g:126:28: ~ ( ( '\\\\' | '\"' ) )
+                          // InternalPlanWithRosmodelLexer.g:128:28: ~ ( ( '\\\\' | '\"' ) )
                           {
                           if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                               input.consume();
@@ -1774,10 +1796,10 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalPlanWithRosmodelLexer.g:126:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalPlanWithRosmodelLexer.g:128:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\'');
-                    // InternalPlanWithRosmodelLexer.g:126:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalPlanWithRosmodelLexer.g:128:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop18:
                     do {
                         int alt18=3;
@@ -1793,7 +1815,7 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
 
                         switch (alt18) {
                       case 1 :
-                          // InternalPlanWithRosmodelLexer.g:126:54: '\\\\' .
+                          // InternalPlanWithRosmodelLexer.g:128:54: '\\\\' .
                           {
                           match('\\');
                           matchAny();
@@ -1801,7 +1823,7 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
                           }
                           break;
                       case 2 :
-                          // InternalPlanWithRosmodelLexer.g:126:61: ~ ( ( '\\\\' | '\\'' ) )
+                          // InternalPlanWithRosmodelLexer.g:128:61: ~ ( ( '\\\\' | '\\'' ) )
                           {
                           if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                               input.consume();
@@ -1844,12 +1866,12 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPlanWithRosmodelLexer.g:128:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalPlanWithRosmodelLexer.g:128:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalPlanWithRosmodelLexer.g:130:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalPlanWithRosmodelLexer.g:130:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*");
 
-            // InternalPlanWithRosmodelLexer.g:128:24: ( options {greedy=false; } : . )*
+            // InternalPlanWithRosmodelLexer.g:130:24: ( options {greedy=false; } : . )*
             loop20:
             do {
                 int alt20=2;
@@ -1874,7 +1896,7 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
 
                 switch (alt20) {
               case 1 :
-                  // InternalPlanWithRosmodelLexer.g:128:52: .
+                  // InternalPlanWithRosmodelLexer.g:130:52: .
                   {
                   matchAny();
 
@@ -1904,10 +1926,10 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPlanWithRosmodelLexer.g:130:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalPlanWithRosmodelLexer.g:130:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalPlanWithRosmodelLexer.g:132:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalPlanWithRosmodelLexer.g:132:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalPlanWithRosmodelLexer.g:130:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalPlanWithRosmodelLexer.g:132:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt21=0;
             loop21:
             do {
@@ -1961,8 +1983,8 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPlanWithRosmodelLexer.g:132:16: ( . )
-            // InternalPlanWithRosmodelLexer.g:132:18: .
+            // InternalPlanWithRosmodelLexer.g:134:16: ( . )
+            // InternalPlanWithRosmodelLexer.g:134:18: .
             {
             matchAny();
 
@@ -1977,8 +1999,8 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // InternalPlanWithRosmodelLexer.g:1:8: ( ExecutionConfiguration | DeploymentPlanWithRos | LinuxOpertingSystem | MacOSOpertingSystem | SoftwareComponents | TargetRossystem | DeploymentPlan | AttributeKind | SelectionKind | RefNodeParam | StartCommand | Description | RefSysParam | RuntimeType | MaximumKind | MinimumKind | Assignment | ExecutedBy | Middleware | Properties | Os_version | Processor | RangeKind | Container | DeployTo | Resource | Ethernet | Version | Os_name | Rolling | Debian | Humble | Noetic | Ubuntu | Value | Arm64 | Focal | From | Jammy | Kind | Name | Type | Wlan | Usb | To | X86 | HyphenMinus | Colon | RULE_DOUBLE | RULE_DECINT | RULE_SL_COMMENT | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt22=57;
+        // InternalPlanWithRosmodelLexer.g:1:8: ( ExecutionConfiguration | DeploymentPlanWithRos | LinuxOpertingSystem | MacOSOpertingSystem | SoftwareComponents | TargetRossystem | DeploymentPlan | AttributeKind | SelectionKind | RefNodeParam | StartCommand | Description | RefSysParam | RuntimeType | MaximumKind | MinimumKind | Assignment | ExecutedBy | Middleware | Properties | Os_version | Processor | RangeKind | Container | DeployTo | Registry | Resource | Ethernet | Version | Os_name | Rolling | Debian | Humble | Noetic | Ubuntu | Value | Arm64 | Focal | From | Jammy | Kind | Name | Type | Wlan | Usb | To | X86 | HyphenMinus | Colon | RULE_DOUBLE | RULE_DECINT | RULE_SL_COMMENT | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt22=58;
         alt22 = dfa22.predict(input);
         switch (alt22) {
             case 1 :
@@ -2157,224 +2179,231 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
                 }
                 break;
             case 26 :
-                // InternalPlanWithRosmodelLexer.g:1:353: Resource
+                // InternalPlanWithRosmodelLexer.g:1:353: Registry
+                {
+                mRegistry();
+
+                }
+                break;
+            case 27 :
+                // InternalPlanWithRosmodelLexer.g:1:362: Resource
                 {
                 mResource();
 
                 }
                 break;
-            case 27 :
-                // InternalPlanWithRosmodelLexer.g:1:362: Ethernet
+            case 28 :
+                // InternalPlanWithRosmodelLexer.g:1:371: Ethernet
                 {
                 mEthernet();
 
                 }
                 break;
-            case 28 :
-                // InternalPlanWithRosmodelLexer.g:1:371: Version
+            case 29 :
+                // InternalPlanWithRosmodelLexer.g:1:380: Version
                 {
                 mVersion();
 
                 }
                 break;
-            case 29 :
-                // InternalPlanWithRosmodelLexer.g:1:379: Os_name
+            case 30 :
+                // InternalPlanWithRosmodelLexer.g:1:388: Os_name
                 {
                 mOs_name();
 
                 }
                 break;
-            case 30 :
-                // InternalPlanWithRosmodelLexer.g:1:387: Rolling
+            case 31 :
+                // InternalPlanWithRosmodelLexer.g:1:396: Rolling
                 {
                 mRolling();
 
                 }
                 break;
-            case 31 :
-                // InternalPlanWithRosmodelLexer.g:1:395: Debian
+            case 32 :
+                // InternalPlanWithRosmodelLexer.g:1:404: Debian
                 {
                 mDebian();
 
                 }
                 break;
-            case 32 :
-                // InternalPlanWithRosmodelLexer.g:1:402: Humble
+            case 33 :
+                // InternalPlanWithRosmodelLexer.g:1:411: Humble
                 {
                 mHumble();
 
                 }
                 break;
-            case 33 :
-                // InternalPlanWithRosmodelLexer.g:1:409: Noetic
+            case 34 :
+                // InternalPlanWithRosmodelLexer.g:1:418: Noetic
                 {
                 mNoetic();
 
                 }
                 break;
-            case 34 :
-                // InternalPlanWithRosmodelLexer.g:1:416: Ubuntu
+            case 35 :
+                // InternalPlanWithRosmodelLexer.g:1:425: Ubuntu
                 {
                 mUbuntu();
 
                 }
                 break;
-            case 35 :
-                // InternalPlanWithRosmodelLexer.g:1:423: Value
+            case 36 :
+                // InternalPlanWithRosmodelLexer.g:1:432: Value
                 {
                 mValue();
 
                 }
                 break;
-            case 36 :
-                // InternalPlanWithRosmodelLexer.g:1:429: Arm64
+            case 37 :
+                // InternalPlanWithRosmodelLexer.g:1:438: Arm64
                 {
                 mArm64();
 
                 }
                 break;
-            case 37 :
-                // InternalPlanWithRosmodelLexer.g:1:435: Focal
+            case 38 :
+                // InternalPlanWithRosmodelLexer.g:1:444: Focal
                 {
                 mFocal();
 
                 }
                 break;
-            case 38 :
-                // InternalPlanWithRosmodelLexer.g:1:441: From
+            case 39 :
+                // InternalPlanWithRosmodelLexer.g:1:450: From
                 {
                 mFrom();
 
                 }
                 break;
-            case 39 :
-                // InternalPlanWithRosmodelLexer.g:1:446: Jammy
+            case 40 :
+                // InternalPlanWithRosmodelLexer.g:1:455: Jammy
                 {
                 mJammy();
 
                 }
                 break;
-            case 40 :
-                // InternalPlanWithRosmodelLexer.g:1:452: Kind
+            case 41 :
+                // InternalPlanWithRosmodelLexer.g:1:461: Kind
                 {
                 mKind();
 
                 }
                 break;
-            case 41 :
-                // InternalPlanWithRosmodelLexer.g:1:457: Name
+            case 42 :
+                // InternalPlanWithRosmodelLexer.g:1:466: Name
                 {
                 mName();
 
                 }
                 break;
-            case 42 :
-                // InternalPlanWithRosmodelLexer.g:1:462: Type
+            case 43 :
+                // InternalPlanWithRosmodelLexer.g:1:471: Type
                 {
                 mType();
 
                 }
                 break;
-            case 43 :
-                // InternalPlanWithRosmodelLexer.g:1:467: Wlan
+            case 44 :
+                // InternalPlanWithRosmodelLexer.g:1:476: Wlan
                 {
                 mWlan();
 
                 }
                 break;
-            case 44 :
-                // InternalPlanWithRosmodelLexer.g:1:472: Usb
+            case 45 :
+                // InternalPlanWithRosmodelLexer.g:1:481: Usb
                 {
                 mUsb();
 
                 }
                 break;
-            case 45 :
-                // InternalPlanWithRosmodelLexer.g:1:476: To
+            case 46 :
+                // InternalPlanWithRosmodelLexer.g:1:485: To
                 {
                 mTo();
 
                 }
                 break;
-            case 46 :
-                // InternalPlanWithRosmodelLexer.g:1:479: X86
+            case 47 :
+                // InternalPlanWithRosmodelLexer.g:1:488: X86
                 {
                 mX86();
 
                 }
                 break;
-            case 47 :
-                // InternalPlanWithRosmodelLexer.g:1:483: HyphenMinus
+            case 48 :
+                // InternalPlanWithRosmodelLexer.g:1:492: HyphenMinus
                 {
                 mHyphenMinus();
 
                 }
                 break;
-            case 48 :
-                // InternalPlanWithRosmodelLexer.g:1:495: Colon
+            case 49 :
+                // InternalPlanWithRosmodelLexer.g:1:504: Colon
                 {
                 mColon();
 
                 }
                 break;
-            case 49 :
-                // InternalPlanWithRosmodelLexer.g:1:501: RULE_DOUBLE
+            case 50 :
+                // InternalPlanWithRosmodelLexer.g:1:510: RULE_DOUBLE
                 {
                 mRULE_DOUBLE();
 
                 }
                 break;
-            case 50 :
-                // InternalPlanWithRosmodelLexer.g:1:513: RULE_DECINT
+            case 51 :
+                // InternalPlanWithRosmodelLexer.g:1:522: RULE_DECINT
                 {
                 mRULE_DECINT();
 
                 }
                 break;
-            case 51 :
-                // InternalPlanWithRosmodelLexer.g:1:525: RULE_SL_COMMENT
+            case 52 :
+                // InternalPlanWithRosmodelLexer.g:1:534: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT();
 
                 }
                 break;
-            case 52 :
-                // InternalPlanWithRosmodelLexer.g:1:541: RULE_ID
+            case 53 :
+                // InternalPlanWithRosmodelLexer.g:1:550: RULE_ID
                 {
                 mRULE_ID();
 
                 }
                 break;
-            case 53 :
-                // InternalPlanWithRosmodelLexer.g:1:549: RULE_INT
+            case 54 :
+                // InternalPlanWithRosmodelLexer.g:1:558: RULE_INT
                 {
                 mRULE_INT();
 
                 }
                 break;
-            case 54 :
-                // InternalPlanWithRosmodelLexer.g:1:558: RULE_STRING
+            case 55 :
+                // InternalPlanWithRosmodelLexer.g:1:567: RULE_STRING
                 {
                 mRULE_STRING();
 
                 }
                 break;
-            case 55 :
-                // InternalPlanWithRosmodelLexer.g:1:570: RULE_ML_COMMENT
+            case 56 :
+                // InternalPlanWithRosmodelLexer.g:1:579: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT();
 
                 }
                 break;
-            case 56 :
-                // InternalPlanWithRosmodelLexer.g:1:586: RULE_WS
+            case 57 :
+                // InternalPlanWithRosmodelLexer.g:1:595: RULE_WS
                 {
                 mRULE_WS();
 
                 }
                 break;
-            case 57 :
-                // InternalPlanWithRosmodelLexer.g:1:594: RULE_ANY_OTHER
+            case 58 :
+                // InternalPlanWithRosmodelLexer.g:1:603: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER();
 
@@ -2441,21 +2470,21 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
             this.transition = DFA9_transition;
         }
         public String getDescription() {
-            return "112:45: ( '.' ( RULE_DECINT )* | ( '.' ( RULE_DIGIT )* )? ( 'E' | 'e' ) ( '-' | '+' )? ( RULE_DIGIT )* )";
+            return "114:45: ( '.' ( RULE_DECINT )* | ( '.' ( RULE_DIGIT )* )? ( 'E' | 'e' ) ( '-' | '+' )? ( RULE_DIGIT )* )";
         }
     }
     static final String DFA22_eotS =
-        "\1\uffff\1\53\20\55\1\53\12\55\1\124\1\uffff\1\126\1\uffff\1\126\1\uffff\1\51\1\uffff\3\51\2\uffff\1\55\1\uffff\1\53\1\uffff\45\55\1\126\3\uffff\1\u0088\1\126\4\uffff\12\55\1\uffff\35\55\1\u00b2\1\u00b3\1\126\1\uffff\50\55\1\u00dc\2\uffff\11\55\1\uffff\13\55\1\u00f1\14\55\1\uffff\1\55\1\u00ff\1\uffff\1\u0100\2\uffff\22\55\1\u0114\1\55\1\uffff\11\55\1\uffff\1\u011f\1\u0120\1\u0121\2\uffff\20\55\1\u0132\2\55\1\uffff\4\55\1\u0139\5\55\3\uffff\20\55\1\uffff\6\55\1\uffff\3\55\1\u0158\1\uffff\16\55\1\uffff\2\55\1\uffff\4\55\1\u016d\1\u016e\1\u016f\1\uffff\23\55\1\u0183\3\uffff\1\55\1\uffff\3\55\1\u0188\1\u0189\11\55\4\uffff\4\55\2\uffff\6\55\3\uffff\5\55\1\uffff\1\55\1\u01a3\1\u01a4\1\uffff\6\55\2\uffff\2\55\1\uffff\11\55\1\uffff\14\55\1\u01c3\1\u01c4\1\uffff\2\55\2\uffff\3\55\2\uffff";
+        "\1\uffff\1\53\20\55\1\53\12\55\1\124\1\uffff\1\126\1\uffff\1\126\1\uffff\1\51\1\uffff\3\51\2\uffff\1\55\1\uffff\1\53\1\uffff\45\55\1\126\3\uffff\1\u0089\1\126\4\uffff\12\55\1\uffff\36\55\1\u00b4\1\u00b5\1\126\1\uffff\51\55\1\u00df\2\uffff\11\55\1\uffff\14\55\1\u00f5\14\55\1\uffff\1\55\1\u0103\1\uffff\1\u0104\2\uffff\23\55\1\u0119\1\55\1\uffff\11\55\1\uffff\1\u0124\1\u0125\1\u0126\2\uffff\21\55\1\u0138\2\55\1\uffff\4\55\1\u013f\5\55\3\uffff\21\55\1\uffff\6\55\1\uffff\3\55\1\u015f\1\uffff\16\55\2\uffff\2\55\1\uffff\4\55\1\u0174\1\u0175\1\u0176\1\uffff\23\55\1\u018a\3\uffff\1\55\1\uffff\3\55\1\u018f\1\u0190\11\55\4\uffff\4\55\2\uffff\6\55\3\uffff\5\55\1\uffff\1\55\1\u01aa\1\u01ab\1\uffff\6\55\2\uffff\2\55\1\uffff\11\55\1\uffff\14\55\1\u01ca\1\u01cb\1\uffff\2\55\2\uffff\3\55\2\uffff";
     static final String DFA22_eofS =
-        "\u01ca\uffff";
+        "\u01d1\uffff";
     static final String DFA22_minS =
-        "\1\0\1\60\1\145\1\151\1\141\1\157\1\141\1\164\3\145\1\162\1\151\1\162\1\163\1\162\1\141\1\157\1\60\1\141\1\165\1\141\1\142\1\157\1\141\1\151\1\154\1\163\1\70\1\56\1\uffff\1\56\1\uffff\1\56\1\uffff\1\101\1\uffff\2\0\1\52\2\uffff\1\145\1\uffff\1\60\1\uffff\1\160\1\156\1\143\1\156\1\146\1\141\1\162\1\160\1\72\1\164\1\154\1\146\1\156\1\154\1\142\1\163\1\155\1\144\1\157\1\137\1\157\2\156\1\150\1\162\1\154\1\155\1\145\1\155\1\165\1\143\1\157\1\155\1\156\1\141\1\142\1\66\1\56\3\uffff\2\56\4\uffff\1\143\1\154\1\165\1\117\2\151\1\164\1\162\1\147\1\145\1\uffff\1\162\1\145\1\116\1\157\1\164\1\154\1\143\1\154\2\151\1\66\1\144\1\160\1\156\1\143\1\147\1\164\1\145\1\163\1\165\1\142\1\164\1\145\1\156\1\141\2\155\1\144\1\156\2\60\1\56\1\uffff\1\165\1\157\1\170\1\123\2\155\1\167\1\164\1\145\1\72\1\151\1\143\1\157\1\171\1\165\2\151\1\162\1\157\1\141\1\147\1\64\1\154\2\145\1\141\2\145\1\141\1\162\1\151\1\145\1\154\1\151\1\72\1\164\1\154\1\72\1\171\1\72\1\60\2\uffff\1\164\1\171\2\117\2\165\1\141\1\103\1\164\1\uffff\1\142\1\164\1\144\1\163\1\162\1\155\1\156\1\151\1\171\2\156\1\60\1\145\2\162\1\155\1\163\1\113\1\151\1\156\1\157\1\72\1\145\1\143\1\uffff\1\165\1\60\1\uffff\1\60\2\uffff\1\145\1\155\2\160\2\155\1\162\1\157\1\122\1\165\1\151\1\145\1\120\1\143\1\145\1\147\1\160\1\124\1\60\1\155\1\uffff\1\167\1\164\1\163\1\145\1\163\1\151\1\156\1\145\1\156\1\uffff\3\60\2\uffff\1\157\1\144\3\145\2\113\1\145\1\155\1\157\1\164\1\157\1\120\1\141\1\145\1\124\1\60\1\164\1\157\1\uffff\1\145\1\141\2\151\1\60\1\157\1\156\1\145\1\164\1\72\3\uffff\1\156\1\102\1\156\2\162\2\151\1\103\1\155\1\163\1\145\1\156\1\141\1\162\1\72\1\171\1\uffff\1\151\1\72\1\156\1\162\1\145\1\157\1\uffff\1\162\1\144\1\162\1\60\1\uffff\1\103\1\171\3\164\2\156\1\157\1\141\1\163\2\113\1\162\1\141\1\uffff\1\160\1\157\1\uffff\1\164\1\145\1\163\1\156\3\60\1\uffff\1\157\1\72\1\120\2\151\2\144\1\155\1\156\1\171\2\151\1\141\1\155\1\145\1\156\3\72\1\60\3\uffff\1\156\1\uffff\1\154\2\156\2\60\1\160\1\144\1\163\2\156\1\155\3\72\4\uffff\1\146\1\141\2\147\2\uffff\1\157\1\72\1\164\2\144\1\72\3\uffff\1\151\1\156\2\123\1\156\1\uffff\1\145\2\60\1\uffff\1\147\1\72\2\171\1\145\1\155\2\uffff\1\165\1\151\1\uffff\2\163\1\156\1\72\1\162\4\164\1\uffff\1\141\1\150\2\145\1\163\1\164\1\122\2\155\1\72\1\151\1\157\2\60\1\uffff\1\157\1\163\2\uffff\1\156\2\72\2\uffff";
+        "\1\0\1\60\1\145\1\151\1\141\1\157\1\141\1\164\3\145\1\162\1\151\1\162\1\163\1\162\1\141\1\157\1\60\1\141\1\165\1\141\1\142\1\157\1\141\1\151\1\154\1\163\1\70\1\56\1\uffff\1\56\1\uffff\1\56\1\uffff\1\101\1\uffff\2\0\1\52\2\uffff\1\145\1\uffff\1\60\1\uffff\1\160\1\156\1\143\1\156\1\146\1\141\1\162\1\160\1\72\1\164\1\154\1\146\1\156\1\154\1\142\1\163\1\155\1\144\1\157\1\137\1\157\2\156\1\150\1\162\1\154\1\155\1\145\1\155\1\165\1\143\1\157\1\155\1\156\1\141\1\142\1\66\1\56\3\uffff\2\56\4\uffff\1\143\1\154\1\165\1\117\2\151\1\164\1\162\1\147\1\145\1\uffff\1\162\1\145\1\116\1\151\1\157\1\164\1\154\1\143\1\154\2\151\1\66\1\144\1\160\1\156\1\143\1\147\1\164\1\145\1\163\1\165\1\142\1\164\1\145\1\156\1\141\2\155\1\144\1\156\2\60\1\56\1\uffff\1\165\1\157\1\170\1\123\2\155\1\167\1\164\1\145\1\72\1\151\1\143\1\157\1\171\1\163\1\165\2\151\1\162\1\157\1\141\1\147\1\64\1\154\2\145\1\141\2\145\1\141\1\162\1\151\1\145\1\154\1\151\1\72\1\164\1\154\1\72\1\171\1\72\1\60\2\uffff\1\164\1\171\2\117\2\165\1\141\1\103\1\164\1\uffff\1\142\1\164\1\144\1\163\1\164\1\162\1\155\1\156\1\151\1\171\2\156\1\60\1\145\2\162\1\155\1\163\1\113\1\151\1\156\1\157\1\72\1\145\1\143\1\uffff\1\165\1\60\1\uffff\1\60\2\uffff\1\145\1\155\2\160\2\155\1\162\1\157\1\122\1\165\1\151\1\145\1\120\1\162\1\143\1\145\1\147\1\160\1\124\1\60\1\155\1\uffff\1\167\1\164\1\163\1\145\1\163\1\151\1\156\1\145\1\156\1\uffff\3\60\2\uffff\1\157\1\144\3\145\2\113\1\145\1\155\1\157\1\164\1\157\1\120\1\141\1\171\1\145\1\124\1\60\1\164\1\157\1\uffff\1\145\1\141\2\151\1\60\1\157\1\156\1\145\1\164\1\72\3\uffff\1\156\1\102\1\156\2\162\2\151\1\103\1\155\1\163\1\145\1\156\1\141\1\162\2\72\1\171\1\uffff\1\151\1\72\1\156\1\162\1\145\1\157\1\uffff\1\162\1\144\1\162\1\60\1\uffff\1\103\1\171\3\164\2\156\1\157\1\141\1\163\2\113\1\162\1\141\2\uffff\1\160\1\157\1\uffff\1\164\1\145\1\163\1\156\3\60\1\uffff\1\157\1\72\1\120\2\151\2\144\1\155\1\156\1\171\2\151\1\141\1\155\1\145\1\156\3\72\1\60\3\uffff\1\156\1\uffff\1\154\2\156\2\60\1\160\1\144\1\163\2\156\1\155\3\72\4\uffff\1\146\1\141\2\147\2\uffff\1\157\1\72\1\164\2\144\1\72\3\uffff\1\151\1\156\2\123\1\156\1\uffff\1\145\2\60\1\uffff\1\147\1\72\2\171\1\145\1\155\2\uffff\1\165\1\151\1\uffff\2\163\1\156\1\72\1\162\4\164\1\uffff\1\141\1\150\2\145\1\163\1\164\1\122\2\155\1\72\1\151\1\157\2\60\1\uffff\1\157\1\163\2\uffff\1\156\2\72\2\uffff";
     static final String DFA22_maxS =
-        "\1\uffff\1\172\1\145\2\151\1\164\1\171\1\164\1\145\1\165\1\145\1\163\1\151\1\162\1\163\1\162\1\141\1\157\1\172\1\145\1\165\1\157\1\142\1\162\1\141\1\151\1\154\1\163\1\70\1\145\1\uffff\1\145\1\uffff\1\145\1\uffff\1\172\1\uffff\2\uffff\1\52\2\uffff\1\145\1\uffff\1\172\1\uffff\1\160\1\156\1\170\1\156\1\146\1\141\1\162\1\160\1\72\1\164\1\154\1\163\1\156\1\154\2\163\1\155\1\144\1\157\1\137\1\157\2\156\1\150\1\162\1\154\1\155\1\145\1\155\1\165\1\143\1\157\1\155\1\156\1\141\1\142\1\66\1\145\3\uffff\2\145\4\uffff\1\143\1\154\1\165\1\117\2\151\1\164\1\162\1\147\1\145\1\uffff\1\162\1\145\1\123\1\157\1\164\1\154\1\143\1\154\2\151\1\66\1\144\1\160\1\166\1\143\1\147\1\164\1\145\1\163\1\165\1\142\1\164\1\145\1\156\1\141\2\155\1\144\1\156\2\172\1\145\1\uffff\1\165\1\157\1\170\1\123\2\155\1\167\1\164\1\145\1\72\1\151\1\143\1\157\1\171\1\165\2\151\1\162\1\157\1\141\1\147\1\64\1\154\2\145\1\141\2\145\1\141\1\162\1\151\1\145\1\154\1\151\1\72\1\164\1\154\1\72\1\171\1\72\1\172\2\uffff\1\164\1\171\2\117\2\165\1\141\1\103\1\164\1\uffff\1\142\1\164\1\144\1\163\1\162\1\155\1\156\1\151\1\171\2\156\1\172\1\145\2\162\1\155\1\163\1\113\1\151\1\156\1\157\1\72\1\145\1\143\1\uffff\1\165\1\172\1\uffff\1\172\2\uffff\1\151\1\155\2\160\2\155\1\162\1\157\1\122\1\165\1\151\1\145\1\120\1\143\1\145\1\147\1\160\1\124\1\172\1\155\1\uffff\1\167\1\164\1\163\1\145\1\163\1\151\1\156\1\145\1\156\1\uffff\3\172\2\uffff\1\157\1\144\3\145\2\113\1\145\1\155\1\157\1\164\1\157\1\120\1\141\1\145\1\124\1\172\1\164\1\157\1\uffff\1\145\1\141\2\151\1\172\1\157\1\156\1\145\1\164\1\72\3\uffff\1\156\1\102\1\156\2\162\2\151\1\103\1\155\1\163\1\145\1\156\1\141\1\162\1\72\1\171\1\uffff\1\151\1\72\1\156\1\162\1\145\1\157\1\uffff\1\162\1\144\1\162\1\172\1\uffff\1\103\1\171\3\164\2\156\1\157\1\141\1\163\2\113\1\162\1\141\1\uffff\1\160\1\157\1\uffff\1\164\1\145\1\163\1\156\3\172\1\uffff\1\157\1\72\1\120\2\151\2\144\1\155\1\156\1\171\2\151\1\141\1\155\1\145\1\156\3\72\1\172\3\uffff\1\156\1\uffff\1\154\2\156\2\172\1\160\1\144\1\163\2\156\1\155\3\72\4\uffff\1\146\1\141\2\147\2\uffff\1\157\1\72\1\164\2\144\1\72\3\uffff\1\151\1\156\2\123\1\156\1\uffff\1\145\2\172\1\uffff\1\147\1\127\2\171\1\145\1\155\2\uffff\1\165\1\151\1\uffff\2\163\1\156\1\72\1\162\4\164\1\uffff\1\141\1\150\2\145\1\163\1\164\1\122\2\155\1\72\1\151\1\157\2\172\1\uffff\1\157\1\163\2\uffff\1\156\2\72\2\uffff";
+        "\1\uffff\1\172\1\145\2\151\1\164\1\171\1\164\1\145\1\165\1\145\1\163\1\151\1\162\1\163\1\162\1\141\1\157\1\172\1\145\1\165\1\157\1\142\1\162\1\141\1\151\1\154\1\163\1\70\1\145\1\uffff\1\145\1\uffff\1\145\1\uffff\1\172\1\uffff\2\uffff\1\52\2\uffff\1\145\1\uffff\1\172\1\uffff\1\160\1\156\1\170\1\156\1\146\1\141\1\162\1\160\1\72\1\164\1\154\1\163\1\156\1\154\2\163\1\155\1\144\1\157\1\137\1\157\2\156\1\150\1\162\1\154\1\155\1\145\1\155\1\165\1\143\1\157\1\155\1\156\1\141\1\142\1\66\1\145\3\uffff\2\145\4\uffff\1\143\1\154\1\165\1\117\2\151\1\164\1\162\1\147\1\145\1\uffff\1\162\1\145\1\123\1\151\1\157\1\164\1\154\1\143\1\154\2\151\1\66\1\144\1\160\1\166\1\143\1\147\1\164\1\145\1\163\1\165\1\142\1\164\1\145\1\156\1\141\2\155\1\144\1\156\2\172\1\145\1\uffff\1\165\1\157\1\170\1\123\2\155\1\167\1\164\1\145\1\72\1\151\1\143\1\157\1\171\1\163\1\165\2\151\1\162\1\157\1\141\1\147\1\64\1\154\2\145\1\141\2\145\1\141\1\162\1\151\1\145\1\154\1\151\1\72\1\164\1\154\1\72\1\171\1\72\1\172\2\uffff\1\164\1\171\2\117\2\165\1\141\1\103\1\164\1\uffff\1\142\1\164\1\144\1\163\1\164\1\162\1\155\1\156\1\151\1\171\2\156\1\172\1\145\2\162\1\155\1\163\1\113\1\151\1\156\1\157\1\72\1\145\1\143\1\uffff\1\165\1\172\1\uffff\1\172\2\uffff\1\151\1\155\2\160\2\155\1\162\1\157\1\122\1\165\1\151\1\145\1\120\1\162\1\143\1\145\1\147\1\160\1\124\1\172\1\155\1\uffff\1\167\1\164\1\163\1\145\1\163\1\151\1\156\1\145\1\156\1\uffff\3\172\2\uffff\1\157\1\144\3\145\2\113\1\145\1\155\1\157\1\164\1\157\1\120\1\141\1\171\1\145\1\124\1\172\1\164\1\157\1\uffff\1\145\1\141\2\151\1\172\1\157\1\156\1\145\1\164\1\72\3\uffff\1\156\1\102\1\156\2\162\2\151\1\103\1\155\1\163\1\145\1\156\1\141\1\162\2\72\1\171\1\uffff\1\151\1\72\1\156\1\162\1\145\1\157\1\uffff\1\162\1\144\1\162\1\172\1\uffff\1\103\1\171\3\164\2\156\1\157\1\141\1\163\2\113\1\162\1\141\2\uffff\1\160\1\157\1\uffff\1\164\1\145\1\163\1\156\3\172\1\uffff\1\157\1\72\1\120\2\151\2\144\1\155\1\156\1\171\2\151\1\141\1\155\1\145\1\156\3\72\1\172\3\uffff\1\156\1\uffff\1\154\2\156\2\172\1\160\1\144\1\163\2\156\1\155\3\72\4\uffff\1\146\1\141\2\147\2\uffff\1\157\1\72\1\164\2\144\1\72\3\uffff\1\151\1\156\2\123\1\156\1\uffff\1\145\2\172\1\uffff\1\147\1\127\2\171\1\145\1\155\2\uffff\1\165\1\151\1\uffff\2\163\1\156\1\72\1\162\4\164\1\uffff\1\141\1\150\2\145\1\163\1\164\1\122\2\155\1\72\1\151\1\157\2\172\1\uffff\1\157\1\163\2\uffff\1\156\2\72\2\uffff";
     static final String DFA22_acceptS =
-        "\36\uffff\1\60\1\uffff\1\61\1\uffff\1\63\1\uffff\1\64\3\uffff\1\70\1\71\1\uffff\1\61\1\uffff\1\64\46\uffff\1\57\1\60\1\62\2\uffff\1\63\1\66\1\67\1\70\12\uffff\1\55\40\uffff\1\65\51\uffff\1\54\1\56\11\uffff\1\52\30\uffff\1\51\2\uffff\1\46\1\uffff\1\50\1\53\24\uffff\1\44\11\uffff\1\43\3\uffff\1\45\1\47\23\uffff\1\37\12\uffff\1\40\1\41\1\42\20\uffff\1\36\6\uffff\1\35\4\uffff\1\34\16\uffff\1\32\2\uffff\1\31\7\uffff\1\33\24\uffff\1\26\1\27\1\30\1\uffff\1\22\16\uffff\1\21\1\23\1\24\1\25\4\uffff\1\17\1\20\6\uffff\1\15\1\16\1\14\5\uffff\1\13\3\uffff\1\12\6\uffff\1\10\1\11\2\uffff\1\7\11\uffff\1\6\16\uffff\1\5\2\uffff\1\3\1\4\3\uffff\1\2\1\1";
+        "\36\uffff\1\61\1\uffff\1\62\1\uffff\1\64\1\uffff\1\65\3\uffff\1\71\1\72\1\uffff\1\62\1\uffff\1\65\46\uffff\1\60\1\61\1\63\2\uffff\1\64\1\67\1\70\1\71\12\uffff\1\56\41\uffff\1\66\52\uffff\1\55\1\57\11\uffff\1\53\31\uffff\1\52\2\uffff\1\47\1\uffff\1\51\1\54\25\uffff\1\45\11\uffff\1\44\3\uffff\1\46\1\50\24\uffff\1\40\12\uffff\1\41\1\42\1\43\21\uffff\1\37\6\uffff\1\36\4\uffff\1\35\16\uffff\1\32\1\33\2\uffff\1\31\7\uffff\1\34\24\uffff\1\26\1\27\1\30\1\uffff\1\22\16\uffff\1\21\1\23\1\24\1\25\4\uffff\1\17\1\20\6\uffff\1\15\1\16\1\14\5\uffff\1\13\3\uffff\1\12\6\uffff\1\10\1\11\2\uffff\1\7\11\uffff\1\6\16\uffff\1\5\2\uffff\1\3\1\4\3\uffff\1\2\1\1";
     static final String DFA22_specialS =
-        "\1\1\44\uffff\1\2\1\0\u01a3\uffff}>";
+        "\1\2\44\uffff\1\0\1\1\u01aa\uffff}>";
     static final String[] DFA22_transitionS = {
             "\11\51\2\50\2\51\1\50\22\51\1\50\1\51\1\45\1\42\3\51\1\46\5\51\1\35\1\40\1\47\1\37\11\41\1\36\6\51\1\7\2\44\1\2\1\22\6\44\1\3\1\4\2\44\1\17\1\44\1\20\1\10\1\44\1\33\1\44\1\32\3\44\3\51\1\43\1\44\1\51\1\13\1\44\1\21\1\12\1\1\1\27\1\44\1\24\1\44\1\30\1\31\1\44\1\14\1\25\1\16\1\15\1\44\1\11\1\5\1\6\1\26\1\23\1\44\1\34\2\44\uff85\51",
             "\12\54\7\uffff\32\55\4\uffff\1\55\1\uffff\27\55\1\52\2\55",
@@ -2514,11 +2543,10 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
             "\1\147",
             "\1\150",
             "\1\151",
-            "\1\152\14\uffff\1\153",
-            "\1\154",
+            "\1\152\1\153\13\uffff\1\154",
             "\1\155",
-            "\1\160\15\uffff\1\157\2\uffff\1\156",
-            "\1\161",
+            "\1\156",
+            "\1\161\15\uffff\1\160\2\uffff\1\157",
             "\1\162",
             "\1\163",
             "\1\164",
@@ -2540,7 +2568,8 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
             "\1\u0084",
             "\1\u0085",
             "\1\u0086",
-            "\1\53\1\uffff\12\u0087\13\uffff\1\53\37\uffff\1\53",
+            "\1\u0087",
+            "\1\53\1\uffff\12\u0088\13\uffff\1\53\37\uffff\1\53",
             "",
             "",
             "",
@@ -2550,7 +2579,6 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
             "",
             "",
             "",
-            "\1\u0089",
             "\1\u008a",
             "\1\u008b",
             "\1\u008c",
@@ -2560,11 +2588,11 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
             "\1\u0090",
             "\1\u0091",
             "\1\u0092",
-            "",
             "\1\u0093",
+            "",
             "\1\u0094",
-            "\1\u0095\4\uffff\1\u0096",
-            "\1\u0097",
+            "\1\u0095",
+            "\1\u0096\4\uffff\1\u0097",
             "\1\u0098",
             "\1\u0099",
             "\1\u009a",
@@ -2574,9 +2602,9 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
             "\1\u009e",
             "\1\u009f",
             "\1\u00a0",
-            "\1\u00a2\7\uffff\1\u00a1",
-            "\1\u00a3",
-            "\1\u00a4",
+            "\1\u00a1",
+            "\1\u00a2",
+            "\1\u00a4\7\uffff\1\u00a3",
             "\1\u00a5",
             "\1\u00a6",
             "\1\u00a7",
@@ -2590,12 +2618,12 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
             "\1\u00af",
             "\1\u00b0",
             "\1\u00b1",
+            "\1\u00b2",
+            "\1\u00b3",
             "\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55",
             "\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55",
-            "\1\53\1\uffff\12\u0087\13\uffff\1\53\37\uffff\1\53",
+            "\1\53\1\uffff\12\u0088\13\uffff\1\53\37\uffff\1\53",
             "",
-            "\1\u00b4",
-            "\1\u00b5",
             "\1\u00b6",
             "\1\u00b7",
             "\1\u00b8",
@@ -2634,22 +2662,22 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
             "\1\u00d9",
             "\1\u00da",
             "\1\u00db",
+            "\1\u00dc",
+            "\1\u00dd",
+            "\1\u00de",
             "\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55",
             "",
             "",
-            "\1\u00dd",
-            "\1\u00de",
-            "\1\u00df",
             "\1\u00e0",
             "\1\u00e1",
             "\1\u00e2",
             "\1\u00e3",
             "\1\u00e4",
             "\1\u00e5",
-            "",
             "\1\u00e6",
             "\1\u00e7",
             "\1\u00e8",
+            "",
             "\1\u00e9",
             "\1\u00ea",
             "\1\u00eb",
@@ -2658,11 +2686,11 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
             "\1\u00ee",
             "\1\u00ef",
             "\1\u00f0",
-            "\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55",
+            "\1\u00f1",
             "\1\u00f2",
             "\1\u00f3",
             "\1\u00f4",
-            "\1\u00f5",
+            "\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55",
             "\1\u00f6",
             "\1\u00f7",
             "\1\u00f8",
@@ -2671,18 +2699,18 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
             "\1\u00fb",
             "\1\u00fc",
             "\1\u00fd",
-            "",
             "\1\u00fe",
+            "\1\u00ff",
+            "\1\u0100",
+            "\1\u0101",
+            "",
+            "\1\u0102",
             "\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55",
             "",
             "\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55",
             "",
             "",
-            "\1\u0102\3\uffff\1\u0101",
-            "\1\u0103",
-            "\1\u0104",
-            "\1\u0105",
-            "\1\u0106",
+            "\1\u0106\3\uffff\1\u0105",
             "\1\u0107",
             "\1\u0108",
             "\1\u0109",
@@ -2696,29 +2724,29 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
             "\1\u0111",
             "\1\u0112",
             "\1\u0113",
-            "\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55",
+            "\1\u0114",
             "\1\u0115",
-            "",
             "\1\u0116",
             "\1\u0117",
             "\1\u0118",
-            "\1\u0119",
+            "\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55",
             "\1\u011a",
+            "",
             "\1\u011b",
             "\1\u011c",
             "\1\u011d",
             "\1\u011e",
-            "",
-            "\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55",
-            "\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55",
-            "\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55",
-            "",
-            "",
+            "\1\u011f",
+            "\1\u0120",
+            "\1\u0121",
             "\1\u0122",
             "\1\u0123",
-            "\1\u0124",
-            "\1\u0125",
-            "\1\u0126",
+            "",
+            "\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55",
+            "\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55",
+            "\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55",
+            "",
+            "",
             "\1\u0127",
             "\1\u0128",
             "\1\u0129",
@@ -2730,29 +2758,29 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
             "\1\u012f",
             "\1\u0130",
             "\1\u0131",
-            "\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55",
+            "\1\u0132",
             "\1\u0133",
             "\1\u0134",
-            "",
             "\1\u0135",
             "\1\u0136",
             "\1\u0137",
-            "\1\u0138",
             "\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55",
+            "\1\u0139",
             "\1\u013a",
+            "",
             "\1\u013b",
             "\1\u013c",
             "\1\u013d",
             "\1\u013e",
-            "",
-            "",
-            "",
-            "\1\u013f",
+            "\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55",
             "\1\u0140",
             "\1\u0141",
             "\1\u0142",
             "\1\u0143",
             "\1\u0144",
+            "",
+            "",
+            "",
             "\1\u0145",
             "\1\u0146",
             "\1\u0147",
@@ -2763,26 +2791,26 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
             "\1\u014c",
             "\1\u014d",
             "\1\u014e",
-            "",
             "\1\u014f",
             "\1\u0150",
             "\1\u0151",
             "\1\u0152",
             "\1\u0153",
             "\1\u0154",
-            "",
             "\1\u0155",
+            "",
             "\1\u0156",
             "\1\u0157",
-            "\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55",
-            "",
+            "\1\u0158",
             "\1\u0159",
             "\1\u015a",
             "\1\u015b",
+            "",
             "\1\u015c",
             "\1\u015d",
             "\1\u015e",
-            "\1\u015f",
+            "\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55",
+            "",
             "\1\u0160",
             "\1\u0161",
             "\1\u0162",
@@ -2790,25 +2818,26 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
             "\1\u0164",
             "\1\u0165",
             "\1\u0166",
-            "",
             "\1\u0167",
             "\1\u0168",
-            "",
             "\1\u0169",
             "\1\u016a",
             "\1\u016b",
             "\1\u016c",
-            "\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55",
-            "\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55",
-            "\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55",
+            "\1\u016d",
+            "",
+            "",
+            "\1\u016e",
+            "\1\u016f",
             "",
             "\1\u0170",
             "\1\u0171",
             "\1\u0172",
             "\1\u0173",
-            "\1\u0174",
-            "\1\u0175",
-            "\1\u0176",
+            "\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55",
+            "\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55",
+            "\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55",
+            "",
             "\1\u0177",
             "\1\u0178",
             "\1\u0179",
@@ -2821,76 +2850,75 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
             "\1\u0180",
             "\1\u0181",
             "\1\u0182",
-            "\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55",
-            "",
-            "",
-            "",
+            "\1\u0183",
             "\1\u0184",
-            "",
             "\1\u0185",
             "\1\u0186",
             "\1\u0187",
+            "\1\u0188",
+            "\1\u0189",
             "\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55",
-            "\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55",
-            "\1\u018a",
+            "",
+            "",
+            "",
             "\1\u018b",
+            "",
             "\1\u018c",
             "\1\u018d",
             "\1\u018e",
-            "\1\u018f",
-            "\1\u0190",
+            "\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55",
+            "\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55",
             "\1\u0191",
             "\1\u0192",
-            "",
-            "",
-            "",
-            "",
             "\1\u0193",
             "\1\u0194",
             "\1\u0195",
             "\1\u0196",
-            "",
-            "",
             "\1\u0197",
             "\1\u0198",
             "\1\u0199",
+            "",
+            "",
+            "",
+            "",
             "\1\u019a",
             "\1\u019b",
             "\1\u019c",
-            "",
-            "",
-            "",
             "\1\u019d",
+            "",
+            "",
             "\1\u019e",
             "\1\u019f",
             "\1\u01a0",
             "\1\u01a1",
-            "",
             "\1\u01a2",
-            "\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55",
-            "\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55",
+            "\1\u01a3",
             "",
+            "",
+            "",
+            "\1\u01a4",
             "\1\u01a5",
-            "\1\u01a7\34\uffff\1\u01a6",
+            "\1\u01a6",
+            "\1\u01a7",
             "\1\u01a8",
-            "\1\u01a9",
-            "\1\u01aa",
-            "\1\u01ab",
             "",
+            "\1\u01a9",
+            "\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55",
+            "\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55",
             "",
             "\1\u01ac",
-            "\1\u01ad",
-            "",
-            "\1\u01ae",
+            "\1\u01ae\34\uffff\1\u01ad",
             "\1\u01af",
             "\1\u01b0",
             "\1\u01b1",
             "\1\u01b2",
+            "",
+            "",
             "\1\u01b3",
             "\1\u01b4",
+            "",
             "\1\u01b5",
             "\1\u01b6",
-            "",
             "\1\u01b7",
             "\1\u01b8",
             "\1\u01b9",
@@ -2898,21 +2926,29 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
             "\1\u01bb",
             "\1\u01bc",
             "\1\u01bd",
+            "",
             "\1\u01be",
             "\1\u01bf",
             "\1\u01c0",
             "\1\u01c1",
             "\1\u01c2",
-            "\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55",
-            "\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55",
-            "",
+            "\1\u01c3",
+            "\1\u01c4",
             "\1\u01c5",
             "\1\u01c6",
-            "",
-            "",
             "\1\u01c7",
             "\1\u01c8",
             "\1\u01c9",
+            "\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55",
+            "\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55",
+            "",
+            "\1\u01cc",
+            "\1\u01cd",
+            "",
+            "",
+            "\1\u01ce",
+            "\1\u01cf",
+            "\1\u01d0",
             "",
             ""
     };
@@ -2947,13 +2983,23 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
             this.transition = DFA22_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( ExecutionConfiguration | DeploymentPlanWithRos | LinuxOpertingSystem | MacOSOpertingSystem | SoftwareComponents | TargetRossystem | DeploymentPlan | AttributeKind | SelectionKind | RefNodeParam | StartCommand | Description | RefSysParam | RuntimeType | MaximumKind | MinimumKind | Assignment | ExecutedBy | Middleware | Properties | Os_version | Processor | RangeKind | Container | DeployTo | Resource | Ethernet | Version | Os_name | Rolling | Debian | Humble | Noetic | Ubuntu | Value | Arm64 | Focal | From | Jammy | Kind | Name | Type | Wlan | Usb | To | X86 | HyphenMinus | Colon | RULE_DOUBLE | RULE_DECINT | RULE_SL_COMMENT | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( ExecutionConfiguration | DeploymentPlanWithRos | LinuxOpertingSystem | MacOSOpertingSystem | SoftwareComponents | TargetRossystem | DeploymentPlan | AttributeKind | SelectionKind | RefNodeParam | StartCommand | Description | RefSysParam | RuntimeType | MaximumKind | MinimumKind | Assignment | ExecutedBy | Middleware | Properties | Os_version | Processor | RangeKind | Container | DeployTo | Registry | Resource | Ethernet | Version | Os_name | Rolling | Debian | Humble | Noetic | Ubuntu | Value | Arm64 | Focal | From | Jammy | Kind | Name | Type | Wlan | Usb | To | X86 | HyphenMinus | Colon | RULE_DOUBLE | RULE_DECINT | RULE_SL_COMMENT | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
           int _s = s;
             switch ( s ) {
                     case 0 :
+                        int LA22_37 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA22_37>='\u0000' && LA22_37<='\uFFFF')) ) {s = 90;}
+
+                        else s = 41;
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 1 :
                         int LA22_38 = input.LA(1);
 
                         s = -1;
@@ -2963,7 +3009,7 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
 
                         if ( s>=0 ) return s;
                         break;
-                    case 1 :
+                    case 2 :
                         int LA22_0 = input.LA(1);
 
                         s = -1;
@@ -3048,16 +3094,6 @@ public class InternalPlanWithRosmodelLexer extends Lexer {
                         else if ( ((LA22_0>='\t' && LA22_0<='\n')||LA22_0=='\r'||LA22_0==' ') ) {s = 40;}
 
                         else if ( ((LA22_0>='\u0000' && LA22_0<='\b')||(LA22_0>='\u000B' && LA22_0<='\f')||(LA22_0>='\u000E' && LA22_0<='\u001F')||LA22_0=='!'||(LA22_0>='$' && LA22_0<='&')||(LA22_0>='(' && LA22_0<=',')||(LA22_0>=';' && LA22_0<='@')||(LA22_0>='[' && LA22_0<=']')||LA22_0=='`'||(LA22_0>='{' && LA22_0<='\uFFFF')) ) {s = 41;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 :
-                        int LA22_37 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA22_37>='\u0000' && LA22_37<='\uFFFF')) ) {s = 90;}
-
-                        else s = 41;
 
                         if ( s>=0 ) return s;
                         break;

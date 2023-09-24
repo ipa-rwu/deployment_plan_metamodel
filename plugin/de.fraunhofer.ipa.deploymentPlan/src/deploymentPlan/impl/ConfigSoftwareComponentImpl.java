@@ -29,129 +29,129 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class ConfigSoftwareComponentImpl extends AbstarctConfigSoftwareComponentImpl implements ConfigSoftwareComponent {
     /**
-     * The cached value of the '{@link #getComponent() <em>Component</em>}' reference.
-     * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getComponent() <em>Component</em>}' reference.
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getComponent()
-     * @generated
-     * @ordered
-     */
+   * @see #getComponent()
+   * @generated
+   * @ordered
+   */
     protected AbstractComputationAssignmentTarget component;
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     protected ConfigSoftwareComponentImpl() {
-        super();
-    }
+    super();
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     protected EClass eStaticClass() {
-        return DeploymentPlanPackage.Literals.CONFIG_SOFTWARE_COMPONENT;
-    }
+    return DeploymentPlanPackage.Literals.CONFIG_SOFTWARE_COMPONENT;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public AbstractComputationAssignmentTarget getComponent() {
-        if (component != null && component.eIsProxy()) {
-            InternalEObject oldComponent = (InternalEObject)component;
-            component = (AbstractComputationAssignmentTarget)eResolveProxy(oldComponent);
-            if (component != oldComponent) {
-                if (eNotificationRequired())
-                    eNotify(new ENotificationImpl(this, Notification.RESOLVE, DeploymentPlanPackage.CONFIG_SOFTWARE_COMPONENT__COMPONENT, oldComponent, component));
-            }
-        }
-        return component;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public AbstractComputationAssignmentTarget basicGetComponent() {
-        return component;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public void setComponent(AbstractComputationAssignmentTarget newComponent) {
-        AbstractComputationAssignmentTarget oldComponent = component;
-        component = newComponent;
+    if (component != null && component.eIsProxy()) {
+      InternalEObject oldComponent = (InternalEObject)component;
+      component = (AbstractComputationAssignmentTarget)eResolveProxy(oldComponent);
+      if (component != oldComponent) {
         if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, DeploymentPlanPackage.CONFIG_SOFTWARE_COMPONENT__COMPONENT, oldComponent, component));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, DeploymentPlanPackage.CONFIG_SOFTWARE_COMPONENT__COMPONENT, oldComponent, component));
+      }
     }
+    return component;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
+    public AbstractComputationAssignmentTarget basicGetComponent() {
+    return component;
+  }
+
+    /**
+   * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+   * @generated
+   */
+    public void setComponent(AbstractComputationAssignmentTarget newComponent) {
+    AbstractComputationAssignmentTarget oldComponent = component;
+    component = newComponent;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DeploymentPlanPackage.CONFIG_SOFTWARE_COMPONENT__COMPONENT, oldComponent, component));
+  }
+
+    /**
+   * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+   * @generated
+   */
     @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case DeploymentPlanPackage.CONFIG_SOFTWARE_COMPONENT__COMPONENT:
-                if (resolve) return getComponent();
-                return basicGetComponent();
-        }
-        return super.eGet(featureID, resolve, coreType);
+    switch (featureID) {
+      case DeploymentPlanPackage.CONFIG_SOFTWARE_COMPONENT__COMPONENT:
+        if (resolve) return getComponent();
+        return basicGetComponent();
     }
+    return super.eGet(featureID, resolve, coreType);
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case DeploymentPlanPackage.CONFIG_SOFTWARE_COMPONENT__COMPONENT:
-                setComponent((AbstractComputationAssignmentTarget)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
+    switch (featureID) {
+      case DeploymentPlanPackage.CONFIG_SOFTWARE_COMPONENT__COMPONENT:
+        setComponent((AbstractComputationAssignmentTarget)newValue);
+        return;
     }
+    super.eSet(featureID, newValue);
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     public void eUnset(int featureID) {
-        switch (featureID) {
-            case DeploymentPlanPackage.CONFIG_SOFTWARE_COMPONENT__COMPONENT:
-                setComponent((AbstractComputationAssignmentTarget)null);
-                return;
-        }
-        super.eUnset(featureID);
+    switch (featureID) {
+      case DeploymentPlanPackage.CONFIG_SOFTWARE_COMPONENT__COMPONENT:
+        setComponent((AbstractComputationAssignmentTarget)null);
+        return;
     }
+    super.eUnset(featureID);
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case DeploymentPlanPackage.CONFIG_SOFTWARE_COMPONENT__COMPONENT:
-                return component != null;
-        }
-        return super.eIsSet(featureID);
+    switch (featureID) {
+      case DeploymentPlanPackage.CONFIG_SOFTWARE_COMPONENT__COMPONENT:
+        return component != null;
     }
+    return super.eIsSet(featureID);
+  }
 
 } //ConfigSoftwareComponentImpl

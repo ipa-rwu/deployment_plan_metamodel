@@ -15,24 +15,24 @@ import org.eclipse.emf.ecore.EClass;
  * @generated
  */
 public abstract class NetworkCommunicationTypeImpl extends AbstractCommunicationTypeImpl
-        implements NetworkCommunicationType {
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    protected NetworkCommunicationTypeImpl() {
-        super();
-    }
+    implements NetworkCommunicationType {
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected NetworkCommunicationTypeImpl() {
+    super();
+  }
 
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    protected EClass eStaticClass() {
-        return UtilPackage.Literals.NETWORK_COMMUNICATION_TYPE;
-    }
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  protected EClass eStaticClass() {
+    return UtilPackage.Literals.NETWORK_COMMUNICATION_TYPE;
+  }
 
 } //NetworkCommunicationTypeImpl
