@@ -17,24 +17,24 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * @generated
  */
 public abstract class OpertingSystemResouceTypeImpl extends MinimalEObjectImpl.Container
-        implements OpertingSystemResouceType {
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    protected OpertingSystemResouceTypeImpl() {
-        super();
-    }
+    implements OpertingSystemResouceType {
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected OpertingSystemResouceTypeImpl() {
+    super();
+  }
 
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    protected EClass eStaticClass() {
-        return UtilPackage.Literals.OPERTING_SYSTEM_RESOUCE_TYPE;
-    }
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  protected EClass eStaticClass() {
+    return UtilPackage.Literals.OPERTING_SYSTEM_RESOUCE_TYPE;
+  }
 
 } //OpertingSystemResouceTypeImpl

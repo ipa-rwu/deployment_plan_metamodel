@@ -15,23 +15,23 @@ import org.eclipse.emf.ecore.EClass;
  * @generated
  */
 public class MacOSOpertingSystemImpl extends OpertingSystemResouceTypeImpl implements MacOSOpertingSystem {
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    protected MacOSOpertingSystemImpl() {
-        super();
-    }
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected MacOSOpertingSystemImpl() {
+    super();
+  }
 
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    protected EClass eStaticClass() {
-        return UtilPackage.Literals.MAC_OS_OPERTING_SYSTEM;
-    }
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  protected EClass eStaticClass() {
+    return UtilPackage.Literals.MAC_OS_OPERTING_SYSTEM;
+  }
 
 } //MacOSOpertingSystemImpl

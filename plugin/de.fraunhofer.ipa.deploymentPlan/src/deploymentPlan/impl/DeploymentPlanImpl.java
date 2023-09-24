@@ -16,22 +16,22 @@ import org.eclipse.emf.ecore.EClass;
  */
 public class DeploymentPlanImpl extends AbstractDeploymentPlanImpl implements DeploymentPlan {
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     protected DeploymentPlanImpl() {
-        super();
-    }
+    super();
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     protected EClass eStaticClass() {
-        return DeploymentPlanPackage.Literals.DEPLOYMENT_PLAN;
-    }
+    return DeploymentPlanPackage.Literals.DEPLOYMENT_PLAN;
+  }
 
 } //DeploymentPlanImpl

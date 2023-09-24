@@ -17,24 +17,24 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * @generated
  */
 public abstract class AbstractOperatingSystemPropertyImpl extends MinimalEObjectImpl.Container
-        implements AbstractOperatingSystemProperty {
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    protected AbstractOperatingSystemPropertyImpl() {
-        super();
-    }
+    implements AbstractOperatingSystemProperty {
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected AbstractOperatingSystemPropertyImpl() {
+    super();
+  }
 
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    protected EClass eStaticClass() {
-        return UtilPackage.Literals.ABSTRACT_OPERATING_SYSTEM_PROPERTY;
-    }
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  protected EClass eStaticClass() {
+    return UtilPackage.Literals.ABSTRACT_OPERATING_SYSTEM_PROPERTY;
+  }
 
 } //AbstractOperatingSystemPropertyImpl

@@ -15,24 +15,24 @@ import org.eclipse.emf.ecore.EClass;
  * @generated
  */
 public abstract class AbstractComputationResourceImpl extends AbstractResourceImpl
-        implements AbstractComputationResource {
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    protected AbstractComputationResourceImpl() {
-        super();
-    }
+    implements AbstractComputationResource {
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected AbstractComputationResourceImpl() {
+    super();
+  }
 
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    protected EClass eStaticClass() {
-        return UtilPackage.Literals.ABSTRACT_COMPUTATION_RESOURCE;
-    }
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  protected EClass eStaticClass() {
+    return UtilPackage.Literals.ABSTRACT_COMPUTATION_RESOURCE;
+  }
 
 } //AbstractComputationResourceImpl

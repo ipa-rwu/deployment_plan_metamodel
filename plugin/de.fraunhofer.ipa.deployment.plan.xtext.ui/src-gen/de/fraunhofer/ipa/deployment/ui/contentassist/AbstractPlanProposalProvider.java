@@ -62,6 +62,9 @@ public abstract class AbstractPlanProposalProvider extends UtilProposalProvider 
   public void completeContainerRuntime_Type(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
     completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
   }
+  public void completeContainerRuntime_Registry(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+    completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
+  }
   public void completeContainerRuntime_OpertingSystemResource(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
     completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
   }

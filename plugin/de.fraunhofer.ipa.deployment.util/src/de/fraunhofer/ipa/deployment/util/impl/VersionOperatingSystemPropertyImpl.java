@@ -15,24 +15,24 @@ import org.eclipse.emf.ecore.EClass;
  * @generated
  */
 public class VersionOperatingSystemPropertyImpl extends PropertyAttributeImpl
-        implements VersionOperatingSystemProperty {
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    protected VersionOperatingSystemPropertyImpl() {
-        super();
-    }
+    implements VersionOperatingSystemProperty {
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected VersionOperatingSystemPropertyImpl() {
+    super();
+  }
 
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    protected EClass eStaticClass() {
-        return UtilPackage.Literals.VERSION_OPERATING_SYSTEM_PROPERTY;
-    }
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  protected EClass eStaticClass() {
+    return UtilPackage.Literals.VERSION_OPERATING_SYSTEM_PROPERTY;
+  }
 
 } //VersionOperatingSystemPropertyImpl

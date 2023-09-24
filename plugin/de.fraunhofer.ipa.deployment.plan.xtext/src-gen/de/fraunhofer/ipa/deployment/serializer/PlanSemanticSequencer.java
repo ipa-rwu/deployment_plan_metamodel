@@ -236,7 +236,7 @@ public class PlanSemanticSequencer extends UtilSemanticSequencer {
    *     ContainerRuntime returns ContainerRuntime
    *
    * Constraint:
-   *     (type=RunTimeType (opertingSystemResource+=OperatingSystemResouce opertingSystemResource+=OperatingSystemResouce*)?)
+   *     (type=RunTimeType registry=EString? (opertingSystemResource+=OperatingSystemResouce opertingSystemResource+=OperatingSystemResouce*)?)
    * </pre>
    */
   protected void sequence_ContainerRuntime(ISerializationContext context, ContainerRuntime semanticObject) {

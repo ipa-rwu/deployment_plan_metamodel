@@ -24,15 +24,15 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface AbstractRealization extends EObject {
     /**
-     * Returns the value of the '<em><b>Realizations</b></em>' containment reference list.
-     * The list contents are of type {@link deploymentPlan.AbstractComputationAssignment}.
-     * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Realizations</b></em>' containment reference list.
+   * The list contents are of type {@link deploymentPlan.AbstractComputationAssignment}.
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Realizations</em>' containment reference list.
-     * @see deploymentPlan.DeploymentPlanPackage#getAbstractRealization_Realizations()
-     * @model containment="true"
-     * @generated
-     */
+   * @return the value of the '<em>Realizations</em>' containment reference list.
+   * @see deploymentPlan.DeploymentPlanPackage#getAbstractRealization_Realizations()
+   * @model containment="true"
+   * @generated
+   */
     EList<AbstractComputationAssignment> getRealizations();
 
 } // AbstractRealization

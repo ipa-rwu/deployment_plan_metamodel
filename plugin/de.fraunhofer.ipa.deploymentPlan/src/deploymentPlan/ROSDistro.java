@@ -19,232 +19,232 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum ROSDistro implements Enumerator {
     /**
-     * The '<em><b>Humble</b></em>' literal object.
-     * <!-- begin-user-doc -->
+   * The '<em><b>Humble</b></em>' literal object.
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #HUMBLE_VALUE
-     * @generated
-     * @ordered
-     */
+   * @see #HUMBLE_VALUE
+   * @generated
+   * @ordered
+   */
     HUMBLE(2, "humble", "humble"),
 
     /**
-     * The '<em><b>Noetic</b></em>' literal object.
-     * <!-- begin-user-doc -->
+   * The '<em><b>Noetic</b></em>' literal object.
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #NOETIC_VALUE
-     * @generated
-     * @ordered
-     */
+   * @see #NOETIC_VALUE
+   * @generated
+   * @ordered
+   */
     NOETIC(1, "noetic", "noetic"),
 
     /**
-     * The '<em><b>Rolling</b></em>' literal object.
-     * <!-- begin-user-doc -->
+   * The '<em><b>Rolling</b></em>' literal object.
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #ROLLING_VALUE
-     * @generated
-     * @ordered
-     */
+   * @see #ROLLING_VALUE
+   * @generated
+   * @ordered
+   */
     ROLLING(2, "rolling", "rolling"),
 
     /**
-     * The '<em><b>Galactic</b></em>' literal object.
-     * <!-- begin-user-doc -->
+   * The '<em><b>Galactic</b></em>' literal object.
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #GALACTIC_VALUE
-     * @generated
-     * @ordered
-     */
+   * @see #GALACTIC_VALUE
+   * @generated
+   * @ordered
+   */
     GALACTIC(2, "galactic", "galactic");
 
     /**
-     * The '<em><b>Humble</b></em>' literal value.
-     * <!-- begin-user-doc -->
+   * The '<em><b>Humble</b></em>' literal value.
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #HUMBLE
-     * @model name="humble"
-     * @generated
-     * @ordered
-     */
+   * @see #HUMBLE
+   * @model name="humble"
+   * @generated
+   * @ordered
+   */
     public static final int HUMBLE_VALUE = 2;
 
     /**
-     * The '<em><b>Noetic</b></em>' literal value.
-     * <!-- begin-user-doc -->
+   * The '<em><b>Noetic</b></em>' literal value.
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #NOETIC
-     * @model name="noetic"
-     * @generated
-     * @ordered
-     */
+   * @see #NOETIC
+   * @model name="noetic"
+   * @generated
+   * @ordered
+   */
     public static final int NOETIC_VALUE = 1;
 
     /**
-     * The '<em><b>Rolling</b></em>' literal value.
-     * <!-- begin-user-doc -->
+   * The '<em><b>Rolling</b></em>' literal value.
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #ROLLING
-     * @model name="rolling"
-     * @generated
-     * @ordered
-     */
+   * @see #ROLLING
+   * @model name="rolling"
+   * @generated
+   * @ordered
+   */
     public static final int ROLLING_VALUE = 2;
 
     /**
-     * The '<em><b>Galactic</b></em>' literal value.
-     * <!-- begin-user-doc -->
+   * The '<em><b>Galactic</b></em>' literal value.
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #GALACTIC
-     * @model name="galactic"
-     * @generated
-     * @ordered
-     */
+   * @see #GALACTIC
+   * @model name="galactic"
+   * @generated
+   * @ordered
+   */
     public static final int GALACTIC_VALUE = 2;
 
     /**
-     * An array of all the '<em><b>ROS Distro</b></em>' enumerators.
-     * <!-- begin-user-doc -->
+   * An array of all the '<em><b>ROS Distro</b></em>' enumerators.
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     private static final ROSDistro[] VALUES_ARRAY =
         new ROSDistro[] {
-            HUMBLE,
-            NOETIC,
-            ROLLING,
-            GALACTIC,
-        };
+      HUMBLE,
+      NOETIC,
+      ROLLING,
+      GALACTIC,
+    };
 
     /**
-     * A public read-only list of all the '<em><b>ROS Distro</b></em>' enumerators.
-     * <!-- begin-user-doc -->
+   * A public read-only list of all the '<em><b>ROS Distro</b></em>' enumerators.
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public static final List<ROSDistro> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
     /**
-     * Returns the '<em><b>ROS Distro</b></em>' literal with the specified literal value.
-     * <!-- begin-user-doc -->
+   * Returns the '<em><b>ROS Distro</b></em>' literal with the specified literal value.
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param literal the literal.
-     * @return the matching enumerator or <code>null</code>.
-     * @generated
-     */
+   * @param literal the literal.
+   * @return the matching enumerator or <code>null</code>.
+   * @generated
+   */
     public static ROSDistro get(String literal) {
-        for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-            ROSDistro result = VALUES_ARRAY[i];
-            if (result.toString().equals(literal)) {
-                return result;
-            }
-        }
-        return null;
+    for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+      ROSDistro result = VALUES_ARRAY[i];
+      if (result.toString().equals(literal)) {
+        return result;
+      }
     }
+    return null;
+  }
 
     /**
-     * Returns the '<em><b>ROS Distro</b></em>' literal with the specified name.
-     * <!-- begin-user-doc -->
+   * Returns the '<em><b>ROS Distro</b></em>' literal with the specified name.
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param name the name.
-     * @return the matching enumerator or <code>null</code>.
-     * @generated
-     */
+   * @param name the name.
+   * @return the matching enumerator or <code>null</code>.
+   * @generated
+   */
     public static ROSDistro getByName(String name) {
-        for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-            ROSDistro result = VALUES_ARRAY[i];
-            if (result.getName().equals(name)) {
-                return result;
-            }
-        }
-        return null;
+    for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+      ROSDistro result = VALUES_ARRAY[i];
+      if (result.getName().equals(name)) {
+        return result;
+      }
     }
+    return null;
+  }
 
     /**
-     * Returns the '<em><b>ROS Distro</b></em>' literal with the specified integer value.
-     * <!-- begin-user-doc -->
+   * Returns the '<em><b>ROS Distro</b></em>' literal with the specified integer value.
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the integer value.
-     * @return the matching enumerator or <code>null</code>.
-     * @generated
-     */
+   * @param value the integer value.
+   * @return the matching enumerator or <code>null</code>.
+   * @generated
+   */
     public static ROSDistro get(int value) {
-        switch (value) {
-            case HUMBLE_VALUE: return HUMBLE;
-            case NOETIC_VALUE: return NOETIC;
-        }
-        return null;
+    switch (value) {
+      case HUMBLE_VALUE: return HUMBLE;
+      case NOETIC_VALUE: return NOETIC;
     }
+    return null;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     private final int value;
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     private final String name;
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     private final String literal;
 
     /**
-     * Only this class can construct instances.
-     * <!-- begin-user-doc -->
+   * Only this class can construct instances.
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     private ROSDistro(int value, String name, String literal) {
-        this.value = value;
-        this.name = name;
-        this.literal = literal;
-    }
+    this.value = value;
+    this.name = name;
+    this.literal = literal;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public int getValue() {
-      return value;
-    }
+    return value;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public String getName() {
-      return name;
-    }
+    return name;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public String getLiteral() {
-      return literal;
-    }
+    return literal;
+  }
 
     /**
-     * Returns the literal value of the enumerator, which is its string representation.
-     * <!-- begin-user-doc -->
+   * Returns the literal value of the enumerator, which is its string representation.
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     public String toString() {
-        return literal;
-    }
+    return literal;
+  }
 
 } //ROSDistro
