@@ -1,0 +1,12 @@
+ImplementationDescription:
+  name: bt_manipulation_framework
+  includeSoftwareComponent:
+    - name: bt_manipulation_framework
+      repository:
+        type: git
+        url: "https://github.com/ipa-rwu/bt_manipulation_framework.git"
+        version: ros2
+      executionRequirement:
+        softwareConfigurationParameter:
+          - name: use_sim_time
+            kind: AttributeKind
