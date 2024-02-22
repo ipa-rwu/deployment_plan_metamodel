@@ -34,118 +34,118 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class ComputationDeviceTypeImpl extends DeviceTypeImpl implements ComputationDeviceType {
     /**
-     * The cached value of the '{@link #getComputationResource() <em>Computation Resource</em>}' containment reference list.
-     * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getComputationResource() <em>Computation Resource</em>}' containment reference list.
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getComputationResource()
-     * @generated
-     * @ordered
-     */
+   * @see #getComputationResource()
+   * @generated
+   * @ordered
+   */
     protected EList<AbstractComputationResource> computationResource;
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     protected ComputationDeviceTypeImpl() {
-        super();
-    }
+    super();
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     protected EClass eStaticClass() {
-        return DevicePackage.Literals.COMPUTATION_DEVICE_TYPE;
-    }
+    return DevicePackage.Literals.COMPUTATION_DEVICE_TYPE;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public EList<AbstractComputationResource> getComputationResource() {
-        if (computationResource == null) {
-            computationResource = new EObjectContainmentEList<AbstractComputationResource>(AbstractComputationResource.class, this, DevicePackage.COMPUTATION_DEVICE_TYPE__COMPUTATION_RESOURCE);
-        }
-        return computationResource;
+    if (computationResource == null) {
+      computationResource = new EObjectContainmentEList<AbstractComputationResource>(AbstractComputationResource.class, this, DevicePackage.COMPUTATION_DEVICE_TYPE__COMPUTATION_RESOURCE);
     }
+    return computationResource;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-        switch (featureID) {
-            case DevicePackage.COMPUTATION_DEVICE_TYPE__COMPUTATION_RESOURCE:
-                return ((InternalEList<?>)getComputationResource()).basicRemove(otherEnd, msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+    switch (featureID) {
+      case DevicePackage.COMPUTATION_DEVICE_TYPE__COMPUTATION_RESOURCE:
+        return ((InternalEList<?>)getComputationResource()).basicRemove(otherEnd, msgs);
     }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case DevicePackage.COMPUTATION_DEVICE_TYPE__COMPUTATION_RESOURCE:
-                return getComputationResource();
-        }
-        return super.eGet(featureID, resolve, coreType);
+    switch (featureID) {
+      case DevicePackage.COMPUTATION_DEVICE_TYPE__COMPUTATION_RESOURCE:
+        return getComputationResource();
     }
+    return super.eGet(featureID, resolve, coreType);
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @SuppressWarnings("unchecked")
     @Override
     public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case DevicePackage.COMPUTATION_DEVICE_TYPE__COMPUTATION_RESOURCE:
-                getComputationResource().clear();
-                getComputationResource().addAll((Collection<? extends AbstractComputationResource>)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
+    switch (featureID) {
+      case DevicePackage.COMPUTATION_DEVICE_TYPE__COMPUTATION_RESOURCE:
+        getComputationResource().clear();
+        getComputationResource().addAll((Collection<? extends AbstractComputationResource>)newValue);
+        return;
     }
+    super.eSet(featureID, newValue);
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     public void eUnset(int featureID) {
-        switch (featureID) {
-            case DevicePackage.COMPUTATION_DEVICE_TYPE__COMPUTATION_RESOURCE:
-                getComputationResource().clear();
-                return;
-        }
-        super.eUnset(featureID);
+    switch (featureID) {
+      case DevicePackage.COMPUTATION_DEVICE_TYPE__COMPUTATION_RESOURCE:
+        getComputationResource().clear();
+        return;
     }
+    super.eUnset(featureID);
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case DevicePackage.COMPUTATION_DEVICE_TYPE__COMPUTATION_RESOURCE:
-                return computationResource != null && !computationResource.isEmpty();
-        }
-        return super.eIsSet(featureID);
+    switch (featureID) {
+      case DevicePackage.COMPUTATION_DEVICE_TYPE__COMPUTATION_RESOURCE:
+        return computationResource != null && !computationResource.isEmpty();
     }
+    return super.eIsSet(featureID);
+  }
 
 } //ComputationDeviceTypeImpl

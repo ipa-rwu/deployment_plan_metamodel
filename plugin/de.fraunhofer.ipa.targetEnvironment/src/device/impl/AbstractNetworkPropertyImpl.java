@@ -16,22 +16,22 @@ import org.eclipse.emf.ecore.EClass;
  */
 public abstract class AbstractNetworkPropertyImpl extends AbstractConnectionPropertyImpl implements AbstractNetworkProperty {
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     protected AbstractNetworkPropertyImpl() {
-        super();
-    }
+    super();
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     protected EClass eStaticClass() {
-        return DevicePackage.Literals.ABSTRACT_NETWORK_PROPERTY;
-    }
+    return DevicePackage.Literals.ABSTRACT_NETWORK_PROPERTY;
+  }
 
 } //AbstractNetworkPropertyImpl

@@ -18,22 +18,22 @@ import org.eclipse.emf.ecore.EClass;
  */
 public class DeviceResourceImpl extends ResourceImpl implements DeviceResource {
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     protected DeviceResourceImpl() {
-        super();
-    }
+    super();
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     protected EClass eStaticClass() {
-        return DevicePackage.Literals.DEVICE_RESOURCE;
-    }
+    return DevicePackage.Literals.DEVICE_RESOURCE;
+  }
 
 } //DeviceResourceImpl

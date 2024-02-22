@@ -9,12 +9,12 @@ import deploymentPlan.AbstractDeploymentPlan
 import java.util.ArrayList
 import java.util.Arrays
 import java.util.List
-import javax.inject.Inject
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
 import de.fraunhofer.ipa.deployment.util.RunTimeType
+import com.google.inject.Inject
 
 /**
  * Generates code from your model files on save.

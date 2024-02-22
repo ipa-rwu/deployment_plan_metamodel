@@ -18,22 +18,22 @@ import org.eclipse.emf.ecore.EClass;
  */
 public class DeviceVolumeUsbPropertyImpl extends PropertySelectionImpl implements DeviceVolumeUsbProperty {
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     protected DeviceVolumeUsbPropertyImpl() {
-        super();
-    }
+    super();
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     protected EClass eStaticClass() {
-        return DevicePackage.Literals.DEVICE_VOLUME_USB_PROPERTY;
-    }
+    return DevicePackage.Literals.DEVICE_VOLUME_USB_PROPERTY;
+  }
 
 } //DeviceVolumeUsbPropertyImpl

@@ -2,7 +2,7 @@ package de.fraunhofer.ipa.deployment.generator
 
 import deployPlanWithRosModel.RossystemImplementationAssignment
 import deploymentPlan.RosMiddleware
-import javax.inject.Inject
+import com.google.inject.Inject
 
 class RepoInstallCompilerWithRosmodel extends RepoInstallCompiler{
 

@@ -38,185 +38,185 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public abstract class AbstractDeviceTypeImpl extends MinimalEObjectImpl.Container implements AbstractDeviceType {
     /**
-     * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getName()
-     * @generated
-     * @ordered
-     */
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
     protected static final String NAME_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getName()
-     * @generated
-     * @ordered
-     */
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
     protected String name = NAME_EDEFAULT;
 
     /**
-     * The cached value of the '{@link #getCommunicationConnection() <em>Communication Connection</em>}' containment reference list.
-     * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getCommunicationConnection() <em>Communication Connection</em>}' containment reference list.
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getCommunicationConnection()
-     * @generated
-     * @ordered
-     */
+   * @see #getCommunicationConnection()
+   * @generated
+   * @ordered
+   */
     protected EList<AbstractCommunicationConnection> communicationConnection;
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     protected AbstractDeviceTypeImpl() {
-        super();
-    }
+    super();
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     protected EClass eStaticClass() {
-        return DevicePackage.Literals.ABSTRACT_DEVICE_TYPE;
-    }
+    return DevicePackage.Literals.ABSTRACT_DEVICE_TYPE;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public String getName() {
-        return name;
-    }
+    return name;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public void setName(String newName) {
-        String oldName = name;
-        name = newName;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, DevicePackage.ABSTRACT_DEVICE_TYPE__NAME, oldName, name));
-    }
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DevicePackage.ABSTRACT_DEVICE_TYPE__NAME, oldName, name));
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public EList<AbstractCommunicationConnection> getCommunicationConnection() {
-        if (communicationConnection == null) {
-            communicationConnection = new EObjectContainmentEList<AbstractCommunicationConnection>(AbstractCommunicationConnection.class, this, DevicePackage.ABSTRACT_DEVICE_TYPE__COMMUNICATION_CONNECTION);
-        }
-        return communicationConnection;
+    if (communicationConnection == null) {
+      communicationConnection = new EObjectContainmentEList<AbstractCommunicationConnection>(AbstractCommunicationConnection.class, this, DevicePackage.ABSTRACT_DEVICE_TYPE__COMMUNICATION_CONNECTION);
     }
+    return communicationConnection;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-        switch (featureID) {
-            case DevicePackage.ABSTRACT_DEVICE_TYPE__COMMUNICATION_CONNECTION:
-                return ((InternalEList<?>)getCommunicationConnection()).basicRemove(otherEnd, msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+    switch (featureID) {
+      case DevicePackage.ABSTRACT_DEVICE_TYPE__COMMUNICATION_CONNECTION:
+        return ((InternalEList<?>)getCommunicationConnection()).basicRemove(otherEnd, msgs);
     }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case DevicePackage.ABSTRACT_DEVICE_TYPE__NAME:
-                return getName();
-            case DevicePackage.ABSTRACT_DEVICE_TYPE__COMMUNICATION_CONNECTION:
-                return getCommunicationConnection();
-        }
-        return super.eGet(featureID, resolve, coreType);
+    switch (featureID) {
+      case DevicePackage.ABSTRACT_DEVICE_TYPE__NAME:
+        return getName();
+      case DevicePackage.ABSTRACT_DEVICE_TYPE__COMMUNICATION_CONNECTION:
+        return getCommunicationConnection();
     }
+    return super.eGet(featureID, resolve, coreType);
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @SuppressWarnings("unchecked")
     @Override
     public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case DevicePackage.ABSTRACT_DEVICE_TYPE__NAME:
-                setName((String)newValue);
-                return;
-            case DevicePackage.ABSTRACT_DEVICE_TYPE__COMMUNICATION_CONNECTION:
-                getCommunicationConnection().clear();
-                getCommunicationConnection().addAll((Collection<? extends AbstractCommunicationConnection>)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
+    switch (featureID) {
+      case DevicePackage.ABSTRACT_DEVICE_TYPE__NAME:
+        setName((String)newValue);
+        return;
+      case DevicePackage.ABSTRACT_DEVICE_TYPE__COMMUNICATION_CONNECTION:
+        getCommunicationConnection().clear();
+        getCommunicationConnection().addAll((Collection<? extends AbstractCommunicationConnection>)newValue);
+        return;
     }
+    super.eSet(featureID, newValue);
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     public void eUnset(int featureID) {
-        switch (featureID) {
-            case DevicePackage.ABSTRACT_DEVICE_TYPE__NAME:
-                setName(NAME_EDEFAULT);
-                return;
-            case DevicePackage.ABSTRACT_DEVICE_TYPE__COMMUNICATION_CONNECTION:
-                getCommunicationConnection().clear();
-                return;
-        }
-        super.eUnset(featureID);
+    switch (featureID) {
+      case DevicePackage.ABSTRACT_DEVICE_TYPE__NAME:
+        setName(NAME_EDEFAULT);
+        return;
+      case DevicePackage.ABSTRACT_DEVICE_TYPE__COMMUNICATION_CONNECTION:
+        getCommunicationConnection().clear();
+        return;
     }
+    super.eUnset(featureID);
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case DevicePackage.ABSTRACT_DEVICE_TYPE__NAME:
-                return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-            case DevicePackage.ABSTRACT_DEVICE_TYPE__COMMUNICATION_CONNECTION:
-                return communicationConnection != null && !communicationConnection.isEmpty();
-        }
-        return super.eIsSet(featureID);
+    switch (featureID) {
+      case DevicePackage.ABSTRACT_DEVICE_TYPE__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case DevicePackage.ABSTRACT_DEVICE_TYPE__COMMUNICATION_CONNECTION:
+        return communicationConnection != null && !communicationConnection.isEmpty();
     }
+    return super.eIsSet(featureID);
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+    if (eIsProxy()) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (name: ");
-        result.append(name);
-        result.append(')');
-        return result.toString();
-    }
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(')');
+    return result.toString();
+  }
 
 } //AbstractDeviceTypeImpl

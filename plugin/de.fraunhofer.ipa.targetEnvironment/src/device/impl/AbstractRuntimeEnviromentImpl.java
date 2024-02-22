@@ -18,22 +18,22 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public abstract class AbstractRuntimeEnviromentImpl extends MinimalEObjectImpl.Container implements AbstractRuntimeEnviroment {
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     protected AbstractRuntimeEnviromentImpl() {
-        super();
-    }
+    super();
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     protected EClass eStaticClass() {
-        return DevicePackage.Literals.ABSTRACT_RUNTIME_ENVIROMENT;
-    }
+    return DevicePackage.Literals.ABSTRACT_RUNTIME_ENVIROMENT;
+  }
 
 } //AbstractRuntimeEnviromentImpl

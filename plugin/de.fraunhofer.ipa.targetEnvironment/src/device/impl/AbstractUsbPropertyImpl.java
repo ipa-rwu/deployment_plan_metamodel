@@ -16,22 +16,22 @@ import org.eclipse.emf.ecore.EClass;
  */
 public abstract class AbstractUsbPropertyImpl extends AbstractConnectionPropertyImpl implements AbstractUsbProperty {
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     protected AbstractUsbPropertyImpl() {
-        super();
-    }
+    super();
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     protected EClass eStaticClass() {
-        return DevicePackage.Literals.ABSTRACT_USB_PROPERTY;
-    }
+    return DevicePackage.Literals.ABSTRACT_USB_PROPERTY;
+  }
 
 } //AbstractUsbPropertyImpl

@@ -3,13 +3,10 @@ package de.fraunhofer.ipa.deployment.utils;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import ros.ParameterBoolean;
-import ros.ParameterDouble;
 import ros.ParameterInteger;
 import ros.ParameterString;
 import ros.ParameterStruct;
 import ros.ParameterValue;
-import system.ReferenceSystem;
 import system.System;
 
 public class PlanWithRosmodelUtils {
@@ -21,9 +18,11 @@ public class PlanWithRosmodelUtils {
         .map(System.class::cast)
         .collect(Collectors.toList());
       children.addAll(sys.getComponents().stream()
-          .filter(it -> it instanceof ReferenceSystem)
-          .map(ReferenceSystem.class::cast)
-          .map(ReferenceSystem::getRef)
+          .filter(it -> it instanceof System)
+          .map(System.class::cast)
+          .map(System::getComponents)
+          .filter(it -> it instanceof System)
+          .map(System.class::cast)
           .collect(Collectors.toList()));
     if(children.size() == 0) {
       return;

@@ -20,307 +20,307 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
  */
 public class DeviceFactoryImpl extends EFactoryImpl implements DeviceFactory {
     /**
-     * Creates the default factory implementation.
-     * <!-- begin-user-doc -->
+   * Creates the default factory implementation.
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public static DeviceFactory init() {
-        try {
-            DeviceFactory theDeviceFactory = (DeviceFactory)EPackage.Registry.INSTANCE.getEFactory(DevicePackage.eNS_URI);
-            if (theDeviceFactory != null) {
-                return theDeviceFactory;
-            }
-        }
-        catch (Exception exception) {
-            EcorePlugin.INSTANCE.log(exception);
-        }
-        return new DeviceFactoryImpl();
+    try {
+      DeviceFactory theDeviceFactory = (DeviceFactory)EPackage.Registry.INSTANCE.getEFactory(DevicePackage.eNS_URI);
+      if (theDeviceFactory != null) {
+        return theDeviceFactory;
+      }
     }
+    catch (Exception exception) {
+      EcorePlugin.INSTANCE.log(exception);
+    }
+    return new DeviceFactoryImpl();
+  }
 
     /**
-     * Creates an instance of the factory.
-     * <!-- begin-user-doc -->
+   * Creates an instance of the factory.
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public DeviceFactoryImpl() {
-        super();
-    }
+    super();
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     public EObject create(EClass eClass) {
-        switch (eClass.getClassifierID()) {
-            case DevicePackage.DEVICE_SET: return createDeviceSet();
-            case DevicePackage.DEVICE_TYPE: return createDeviceType();
-            case DevicePackage.DEVICE_RESOURCE: return createDeviceResource();
-            case DevicePackage.COMMUNICATION_CONNECTION: return createCommunicationConnection();
-            case DevicePackage.CONNECTION_PROPERTY: return createConnectionProperty();
-            case DevicePackage.COMPUTATION_DEVICE_TYPE: return createComputationDeviceType();
-            case DevicePackage.NETWORK_CONNECTION: return createNetworkConnection();
-            case DevicePackage.INTERFACE_NETWORK_PROPERTY: return createInterfaceNetworkProperty();
-            case DevicePackage.ADDRESS_NETWORK_PROPERTY: return createAddressNetworkProperty();
-            case DevicePackage.MAC_ADDRESS_NETWORK_PROPERTY: return createMacAddressNetworkProperty();
-            case DevicePackage.PORT_NETWORK_PROPERTY: return createPortNetworkProperty();
-            case DevicePackage.IDENTITY_NAME_NETWORK_PROPERTY: return createIdentityNameNetworkProperty();
-            case DevicePackage.GATEWAY_NETWORK_PROPERTY: return createGatewayNetworkProperty();
-            case DevicePackage.SUBNET_MASK_NETWORK_PROPERTY: return createSubnetMaskNetworkProperty();
-            case DevicePackage.DNS_SERVER_NETWORK_PROPERTY: return createDNSServerNetworkProperty();
-            case DevicePackage.USB_CONNECTION: return createUsbConnection();
-            case DevicePackage.DEVICE_VOLUME_USB_PROPERTY: return createDeviceVolumeUsbProperty();
-            case DevicePackage.CONTAINER: return createContainer();
-            case DevicePackage.NAME_OPERATING_SYSTEM_PROPERTY: return createNameOperatingSystemProperty();
-            case DevicePackage.PROCESSOR_RESOUCE: return createProcessorResouce();
-            case DevicePackage.ARCHITECTURE_PROCESSOR_PROPERTY: return createArchitectureProcessorProperty();
-            case DevicePackage.CORE_PROCESSOR_PROPERTY: return createCoreProcessorProperty();
-            default:
-                throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
-        }
+    switch (eClass.getClassifierID()) {
+      case DevicePackage.DEVICE_SET: return createDeviceSet();
+      case DevicePackage.DEVICE_TYPE: return createDeviceType();
+      case DevicePackage.DEVICE_RESOURCE: return createDeviceResource();
+      case DevicePackage.COMMUNICATION_CONNECTION: return createCommunicationConnection();
+      case DevicePackage.CONNECTION_PROPERTY: return createConnectionProperty();
+      case DevicePackage.COMPUTATION_DEVICE_TYPE: return createComputationDeviceType();
+      case DevicePackage.NETWORK_CONNECTION: return createNetworkConnection();
+      case DevicePackage.INTERFACE_NETWORK_PROPERTY: return createInterfaceNetworkProperty();
+      case DevicePackage.ADDRESS_NETWORK_PROPERTY: return createAddressNetworkProperty();
+      case DevicePackage.MAC_ADDRESS_NETWORK_PROPERTY: return createMacAddressNetworkProperty();
+      case DevicePackage.PORT_NETWORK_PROPERTY: return createPortNetworkProperty();
+      case DevicePackage.IDENTITY_NAME_NETWORK_PROPERTY: return createIdentityNameNetworkProperty();
+      case DevicePackage.GATEWAY_NETWORK_PROPERTY: return createGatewayNetworkProperty();
+      case DevicePackage.SUBNET_MASK_NETWORK_PROPERTY: return createSubnetMaskNetworkProperty();
+      case DevicePackage.DNS_SERVER_NETWORK_PROPERTY: return createDNSServerNetworkProperty();
+      case DevicePackage.USB_CONNECTION: return createUsbConnection();
+      case DevicePackage.DEVICE_VOLUME_USB_PROPERTY: return createDeviceVolumeUsbProperty();
+      case DevicePackage.CONTAINER: return createContainer();
+      case DevicePackage.NAME_OPERATING_SYSTEM_PROPERTY: return createNameOperatingSystemProperty();
+      case DevicePackage.PROCESSOR_RESOUCE: return createProcessorResouce();
+      case DevicePackage.ARCHITECTURE_PROCESSOR_PROPERTY: return createArchitectureProcessorProperty();
+      case DevicePackage.CORE_PROCESSOR_PROPERTY: return createCoreProcessorProperty();
+      default:
+        throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public DeviceSet createDeviceSet() {
-        DeviceSetImpl deviceSet = new DeviceSetImpl();
-        return deviceSet;
-    }
+    DeviceSetImpl deviceSet = new DeviceSetImpl();
+    return deviceSet;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public DeviceType createDeviceType() {
-        DeviceTypeImpl deviceType = new DeviceTypeImpl();
-        return deviceType;
-    }
+    DeviceTypeImpl deviceType = new DeviceTypeImpl();
+    return deviceType;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public DeviceResource createDeviceResource() {
-        DeviceResourceImpl deviceResource = new DeviceResourceImpl();
-        return deviceResource;
-    }
+    DeviceResourceImpl deviceResource = new DeviceResourceImpl();
+    return deviceResource;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public CommunicationConnection createCommunicationConnection() {
-        CommunicationConnectionImpl communicationConnection = new CommunicationConnectionImpl();
-        return communicationConnection;
-    }
+    CommunicationConnectionImpl communicationConnection = new CommunicationConnectionImpl();
+    return communicationConnection;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public ConnectionProperty createConnectionProperty() {
-        ConnectionPropertyImpl connectionProperty = new ConnectionPropertyImpl();
-        return connectionProperty;
-    }
+    ConnectionPropertyImpl connectionProperty = new ConnectionPropertyImpl();
+    return connectionProperty;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public ComputationDeviceType createComputationDeviceType() {
-        ComputationDeviceTypeImpl computationDeviceType = new ComputationDeviceTypeImpl();
-        return computationDeviceType;
-    }
+    ComputationDeviceTypeImpl computationDeviceType = new ComputationDeviceTypeImpl();
+    return computationDeviceType;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public NetworkConnection createNetworkConnection() {
-        NetworkConnectionImpl networkConnection = new NetworkConnectionImpl();
-        return networkConnection;
-    }
+    NetworkConnectionImpl networkConnection = new NetworkConnectionImpl();
+    return networkConnection;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public InterfaceNetworkProperty createInterfaceNetworkProperty() {
-        InterfaceNetworkPropertyImpl interfaceNetworkProperty = new InterfaceNetworkPropertyImpl();
-        return interfaceNetworkProperty;
-    }
+    InterfaceNetworkPropertyImpl interfaceNetworkProperty = new InterfaceNetworkPropertyImpl();
+    return interfaceNetworkProperty;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public AddressNetworkProperty createAddressNetworkProperty() {
-        AddressNetworkPropertyImpl addressNetworkProperty = new AddressNetworkPropertyImpl();
-        return addressNetworkProperty;
-    }
+    AddressNetworkPropertyImpl addressNetworkProperty = new AddressNetworkPropertyImpl();
+    return addressNetworkProperty;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public MacAddressNetworkProperty createMacAddressNetworkProperty() {
-        MacAddressNetworkPropertyImpl macAddressNetworkProperty = new MacAddressNetworkPropertyImpl();
-        return macAddressNetworkProperty;
-    }
+    MacAddressNetworkPropertyImpl macAddressNetworkProperty = new MacAddressNetworkPropertyImpl();
+    return macAddressNetworkProperty;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public PortNetworkProperty createPortNetworkProperty() {
-        PortNetworkPropertyImpl portNetworkProperty = new PortNetworkPropertyImpl();
-        return portNetworkProperty;
-    }
+    PortNetworkPropertyImpl portNetworkProperty = new PortNetworkPropertyImpl();
+    return portNetworkProperty;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public IdentityNameNetworkProperty createIdentityNameNetworkProperty() {
-        IdentityNameNetworkPropertyImpl identityNameNetworkProperty = new IdentityNameNetworkPropertyImpl();
-        return identityNameNetworkProperty;
-    }
+    IdentityNameNetworkPropertyImpl identityNameNetworkProperty = new IdentityNameNetworkPropertyImpl();
+    return identityNameNetworkProperty;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public GatewayNetworkProperty createGatewayNetworkProperty() {
-        GatewayNetworkPropertyImpl gatewayNetworkProperty = new GatewayNetworkPropertyImpl();
-        return gatewayNetworkProperty;
-    }
+    GatewayNetworkPropertyImpl gatewayNetworkProperty = new GatewayNetworkPropertyImpl();
+    return gatewayNetworkProperty;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public SubnetMaskNetworkProperty createSubnetMaskNetworkProperty() {
-        SubnetMaskNetworkPropertyImpl subnetMaskNetworkProperty = new SubnetMaskNetworkPropertyImpl();
-        return subnetMaskNetworkProperty;
-    }
+    SubnetMaskNetworkPropertyImpl subnetMaskNetworkProperty = new SubnetMaskNetworkPropertyImpl();
+    return subnetMaskNetworkProperty;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public DNSServerNetworkProperty createDNSServerNetworkProperty() {
-        DNSServerNetworkPropertyImpl dnsServerNetworkProperty = new DNSServerNetworkPropertyImpl();
-        return dnsServerNetworkProperty;
-    }
+    DNSServerNetworkPropertyImpl dnsServerNetworkProperty = new DNSServerNetworkPropertyImpl();
+    return dnsServerNetworkProperty;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public UsbConnection createUsbConnection() {
-        UsbConnectionImpl usbConnection = new UsbConnectionImpl();
-        return usbConnection;
-    }
+    UsbConnectionImpl usbConnection = new UsbConnectionImpl();
+    return usbConnection;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public DeviceVolumeUsbProperty createDeviceVolumeUsbProperty() {
-        DeviceVolumeUsbPropertyImpl deviceVolumeUsbProperty = new DeviceVolumeUsbPropertyImpl();
-        return deviceVolumeUsbProperty;
-    }
+    DeviceVolumeUsbPropertyImpl deviceVolumeUsbProperty = new DeviceVolumeUsbPropertyImpl();
+    return deviceVolumeUsbProperty;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public device.Container createContainer() {
-        ContainerImpl container = new ContainerImpl();
-        return container;
-    }
+    ContainerImpl container = new ContainerImpl();
+    return container;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public NameOperatingSystemProperty createNameOperatingSystemProperty() {
-        NameOperatingSystemPropertyImpl nameOperatingSystemProperty = new NameOperatingSystemPropertyImpl();
-        return nameOperatingSystemProperty;
-    }
+    NameOperatingSystemPropertyImpl nameOperatingSystemProperty = new NameOperatingSystemPropertyImpl();
+    return nameOperatingSystemProperty;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public ProcessorResouce createProcessorResouce() {
-        ProcessorResouceImpl processorResouce = new ProcessorResouceImpl();
-        return processorResouce;
-    }
+    ProcessorResouceImpl processorResouce = new ProcessorResouceImpl();
+    return processorResouce;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public ArchitectureProcessorProperty createArchitectureProcessorProperty() {
-        ArchitectureProcessorPropertyImpl architectureProcessorProperty = new ArchitectureProcessorPropertyImpl();
-        return architectureProcessorProperty;
-    }
+    ArchitectureProcessorPropertyImpl architectureProcessorProperty = new ArchitectureProcessorPropertyImpl();
+    return architectureProcessorProperty;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public CoreProcessorProperty createCoreProcessorProperty() {
-        CoreProcessorPropertyImpl coreProcessorProperty = new CoreProcessorPropertyImpl();
-        return coreProcessorProperty;
-    }
+    CoreProcessorPropertyImpl coreProcessorProperty = new CoreProcessorPropertyImpl();
+    return coreProcessorProperty;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public DevicePackage getDevicePackage() {
-        return (DevicePackage)getEPackage();
-    }
+    return (DevicePackage)getEPackage();
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @deprecated
-     * @generated
-     */
+   * @deprecated
+   * @generated
+   */
     @Deprecated
     public static DevicePackage getPackage() {
-        return DevicePackage.eINSTANCE;
-    }
+    return DevicePackage.eINSTANCE;
+  }
 
 } //DeviceFactoryImpl

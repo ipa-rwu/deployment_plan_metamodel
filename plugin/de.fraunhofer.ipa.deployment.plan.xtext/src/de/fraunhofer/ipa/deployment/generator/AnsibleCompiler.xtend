@@ -4,7 +4,7 @@ import deploymentPlan.AbstractDeploymentPlan
 import targetEnvironment.TargetDeployEnviroment
 import targetEnvironment.ComputationDeviceInstance
 import java.util.stream.Collectors
-import javax.inject.Inject
+import jakarta.inject.Inject
 
 class AnsibleCompiler {
 
@@ -192,7 +192,8 @@ def taskStartComponents(AbstractDeploymentPlan plan, NamingHelper naming)'''
 - name: Tear down existing "«ass.name»" service
   community.general.docker_compose:
     project_src: "{{ dest_docker_compose_dir_path }}"
-    state: absent
+    stopped: true
+    state: present
     services:
       - «ass.name»
   tags:

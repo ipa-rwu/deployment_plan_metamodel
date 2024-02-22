@@ -18,22 +18,22 @@ import org.eclipse.emf.ecore.EClass;
  */
 public class GatewayNetworkPropertyImpl extends PropertyAttributeImpl implements GatewayNetworkProperty {
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     protected GatewayNetworkPropertyImpl() {
-        super();
-    }
+    super();
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     protected EClass eStaticClass() {
-        return DevicePackage.Literals.GATEWAY_NETWORK_PROPERTY;
-    }
+    return DevicePackage.Literals.GATEWAY_NETWORK_PROPERTY;
+  }
 
 } //GatewayNetworkPropertyImpl

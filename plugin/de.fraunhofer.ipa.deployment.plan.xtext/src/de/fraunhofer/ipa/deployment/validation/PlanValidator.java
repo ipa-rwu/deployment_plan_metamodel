@@ -3,7 +3,7 @@
  */
 package de.fraunhofer.ipa.deployment.validation;
 
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 
 import org.eclipse.xtext.validation.Check;
 import org.eclipse.xtext.xbase.lib.Extension;

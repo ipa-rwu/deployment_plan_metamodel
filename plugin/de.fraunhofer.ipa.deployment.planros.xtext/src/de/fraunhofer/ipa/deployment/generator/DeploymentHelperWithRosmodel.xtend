@@ -78,16 +78,16 @@ class DeploymentHelperWithRosmodel extends DeploymentHelper{
                 .map[fromFile]
                 .collect(Collectors.toList())
     java.lang.System.out.printf("System %s Get launches: %s\n", rossystem.name, launchs.toString)
-    for(launch : launchs){
-      val pkg = new PkgInfo =>[
-        name = launch.name.split("/").get(0)
-        if(launch.fromGitRepo !== null)
-          repo = getRepoInfo(launch.fromGitRepo)
-        else
-          repo = null
-      ]
-      packLists.add(pkg)
-    }
+//    for(launch : launchs){
+//      val pkg = new PkgInfo =>[
+//        name = launch.name.split("/").get(0)
+//        if(launch.fromGitRepo !== null)
+//          repo = getRepoInfo(launch.fromGitRepo)
+//        else
+//          repo = null
+//      ]
+//      packLists.add(pkg)
+//    }
     java.lang.System.out.println("launch files in")
     packLists.forEach[java.lang.System.out.printf("%s\n", it.toString)]
     return packLists
@@ -171,13 +171,13 @@ class DeploymentHelperWithRosmodel extends DeploymentHelper{
     // get all package from nodes
     var pkgLists = getPkgInfoFromSystemNodes(sys)
     // get all package from launch file
-    pkgLists.addAll(getPkgInfoFromSystemLaunfile(sys))
-    java.lang.System.out.printf("-----Repo info from rossystem: %s-----\n", sys.name)
-    java.lang.System.out.println("-----------------------------------")
-    java.lang.System.out.println("-----------------------------------")
-    java.lang.System.out.println("-----Repo info defined by user-----")
-    pkgLists.forEach[java.lang.System.out.println(it.toString)]
-    java.lang.System.out.println("-----------------------------------")
+//    pkgLists.addAll(getPkgInfoFromSystemLaunfile(sys))
+//    java.lang.System.out.printf("-----Repo info from rossystem: %s-----\n", sys.name)
+//    java.lang.System.out.println("-----------------------------------")
+//    java.lang.System.out.println("-----------------------------------")
+//    java.lang.System.out.println("-----Repo info defined by user-----")
+//    pkgLists.forEach[java.lang.System.out.println(it.toString)]
+//    java.lang.System.out.println("-----------------------------------")
 
     java.lang.System.out.println("-----Repo info from dhelp (released)-----")
     var released_repoInfos = getReleaseInfo(pkgLists.map[name].toList, rosdistro)

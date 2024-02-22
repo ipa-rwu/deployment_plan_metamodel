@@ -18,22 +18,22 @@ import org.eclipse.emf.ecore.EClass;
  */
 public class AddressNetworkPropertyImpl extends PropertyAttributeImpl implements AddressNetworkProperty {
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     protected AddressNetworkPropertyImpl() {
-        super();
-    }
+    super();
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     protected EClass eStaticClass() {
-        return DevicePackage.Literals.ADDRESS_NETWORK_PROPERTY;
-    }
+    return DevicePackage.Literals.ADDRESS_NETWORK_PROPERTY;
+  }
 
 } //AddressNetworkPropertyImpl

@@ -101,72 +101,72 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     public String getGrammarFileName() { return "InternalDeviceParser.g"; }
 
 
-        private DeviceGrammarAccess grammarAccess;
-        private final Map<String, String> tokenNameToValue = new HashMap<String, String>();
+      private DeviceGrammarAccess grammarAccess;
+      private final Map<String, String> tokenNameToValue = new HashMap<String, String>();
 
-        {
-            tokenNameToValue.put("HyphenMinus", "'-'");
-            tokenNameToValue.put("HyphenMinusHyphenMinusHyphenMinus", "'---'");
-            tokenNameToValue.put("Usb", "'Usb'");
-            tokenNameToValue.put("X86", "'x86'");
-            tokenNameToValue.put("Wlan", "'Wlan'");
-            tokenNameToValue.put("Port", "'port'");
-            tokenNameToValue.put("Arm64", "'arm64'");
-            tokenNameToValue.put("Focal", "'focal'");
-            tokenNameToValue.put("Jammy", "'jammy'");
-            tokenNameToValue.put("Kind", "'kind:'");
-            tokenNameToValue.put("Name", "'name:'");
-            tokenNameToValue.put("Type", "'type:'");
-            tokenNameToValue.put("Debian", "'debian'");
-            tokenNameToValue.put("Ubuntu", "'ubuntu'");
-            tokenNameToValue.put("Value", "'value:'");
-            tokenNameToValue.put("Gateway", "'gateway'");
-            tokenNameToValue.put("Os_name", "'os_name'");
-            tokenNameToValue.put("Ethernet", "'Ethernet'");
-            tokenNameToValue.put("Processor", "'Processor'");
-            tokenNameToValue.put("RangeKind", "'RangeKind'");
-            tokenNameToValue.put("Container", "'container'");
-            tokenNameToValue.put("Dns_server", "'dns_server'");
-            tokenNameToValue.put("Ip_address", "'ip_address'");
-            tokenNameToValue.put("Os_version", "'os_version'");
-            tokenNameToValue.put("DeviceType", "'DeviceType:'");
-            tokenNameToValue.put("MaximumKind", "'MaximumKind'");
-            tokenNameToValue.put("MinimumKind", "'MinimumKind'");
-            tokenNameToValue.put("Core_number", "'core_number'");
-            tokenNameToValue.put("Mac_address", "'mac_address'");
-            tokenNameToValue.put("Properties", "'properties:'");
-            tokenNameToValue.put("Subnet_mask", "'subnet_mask'");
-            tokenNameToValue.put("Description", "'description:'");
-            tokenNameToValue.put("AttributeKind", "'AttributeKind'");
-            tokenNameToValue.put("SelectionKind", "'SelectionKind'");
-            tokenNameToValue.put("Device_volume", "'device_volume'");
-            tokenNameToValue.put("Identity_name", "'identity_name'");
-            tokenNameToValue.put("DeviceResouce", "'deviceResouce:'");
-            tokenNameToValue.put("Interface_name", "'interface_name'");
-            tokenNameToValue.put("LinuxOpertingSystem", "'LinuxOpertingSystem'");
-            tokenNameToValue.put("MacOSOpertingSystem", "'MacOSOpertingSystem'");
-            tokenNameToValue.put("ComputationResouce", "'computationResouce:'");
-            tokenNameToValue.put("ComputationDeviceType", "'ComputationDeviceType:'");
-            tokenNameToValue.put("Processor_architecture", "'processor_architecture'");
-            tokenNameToValue.put("CommunicationConnection", "'communicationConnection:'");
-        }
+      {
+        tokenNameToValue.put("HyphenMinus", "'-'");
+        tokenNameToValue.put("HyphenMinusHyphenMinusHyphenMinus", "'---'");
+        tokenNameToValue.put("Usb", "'Usb'");
+        tokenNameToValue.put("X86", "'x86'");
+        tokenNameToValue.put("Wlan", "'Wlan'");
+        tokenNameToValue.put("Port", "'port'");
+        tokenNameToValue.put("Arm64", "'arm64'");
+        tokenNameToValue.put("Focal", "'focal'");
+        tokenNameToValue.put("Jammy", "'jammy'");
+        tokenNameToValue.put("Kind", "'kind:'");
+        tokenNameToValue.put("Name", "'name:'");
+        tokenNameToValue.put("Type", "'type:'");
+        tokenNameToValue.put("Debian", "'debian'");
+        tokenNameToValue.put("Ubuntu", "'ubuntu'");
+        tokenNameToValue.put("Value", "'value:'");
+        tokenNameToValue.put("Gateway", "'gateway'");
+        tokenNameToValue.put("Os_name", "'os_name'");
+        tokenNameToValue.put("Ethernet", "'Ethernet'");
+        tokenNameToValue.put("Processor", "'Processor'");
+        tokenNameToValue.put("RangeKind", "'RangeKind'");
+        tokenNameToValue.put("Container", "'container'");
+        tokenNameToValue.put("Dns_server", "'dns_server'");
+        tokenNameToValue.put("Ip_address", "'ip_address'");
+        tokenNameToValue.put("Os_version", "'os_version'");
+        tokenNameToValue.put("DeviceType", "'DeviceType:'");
+        tokenNameToValue.put("MaximumKind", "'MaximumKind'");
+        tokenNameToValue.put("MinimumKind", "'MinimumKind'");
+        tokenNameToValue.put("Core_number", "'core_number'");
+        tokenNameToValue.put("Mac_address", "'mac_address'");
+        tokenNameToValue.put("Properties", "'properties:'");
+        tokenNameToValue.put("Subnet_mask", "'subnet_mask'");
+        tokenNameToValue.put("Description", "'description:'");
+        tokenNameToValue.put("AttributeKind", "'AttributeKind'");
+        tokenNameToValue.put("SelectionKind", "'SelectionKind'");
+        tokenNameToValue.put("Device_volume", "'device_volume'");
+        tokenNameToValue.put("Identity_name", "'identity_name'");
+        tokenNameToValue.put("DeviceResouce", "'deviceResouce:'");
+        tokenNameToValue.put("Interface_name", "'interface_name'");
+        tokenNameToValue.put("LinuxOpertingSystem", "'LinuxOpertingSystem'");
+        tokenNameToValue.put("MacOSOpertingSystem", "'MacOSOpertingSystem'");
+        tokenNameToValue.put("ComputationResouce", "'computationResouce:'");
+        tokenNameToValue.put("ComputationDeviceType", "'ComputationDeviceType:'");
+        tokenNameToValue.put("Processor_architecture", "'processor_architecture'");
+        tokenNameToValue.put("CommunicationConnection", "'communicationConnection:'");
+      }
 
-        public void setGrammarAccess(DeviceGrammarAccess grammarAccess) {
-            this.grammarAccess = grammarAccess;
-        }
+      public void setGrammarAccess(DeviceGrammarAccess grammarAccess) {
+        this.grammarAccess = grammarAccess;
+      }
 
-        @Override
-        protected Grammar getGrammar() {
-            return grammarAccess.getGrammar();
-        }
+      @Override
+      protected Grammar getGrammar() {
+        return grammarAccess.getGrammar();
+      }
 
-        @Override
-        protected String getValueForTokenName(String tokenName) {
-            String result = tokenNameToValue.get(tokenName);
-            if (result == null)
-                result = tokenName;
-            return result;
-        }
+      @Override
+      protected String getValueForTokenName(String tokenName) {
+        String result = tokenNameToValue.get(tokenName);
+        if (result == null)
+          result = tokenName;
+        return result;
+      }
 
 
 
@@ -204,7 +204,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:108:1: ruleDeviceSet : ( ( rule__DeviceSet__Group__0 ) ) ;
     public final void ruleDeviceSet() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:112:2: ( ( ( rule__DeviceSet__Group__0 ) ) )
@@ -239,7 +239,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -281,7 +281,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:133:1: ruleDeviceType : ( ( rule__DeviceType__Alternatives ) ) ;
     public final void ruleDeviceType() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:137:2: ( ( ( rule__DeviceType__Alternatives ) ) )
@@ -316,7 +316,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -358,7 +358,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:158:1: ruleAbstractCommunicationConnection : ( ( rule__AbstractCommunicationConnection__Alternatives ) ) ;
     public final void ruleAbstractCommunicationConnection() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:162:2: ( ( ( rule__AbstractCommunicationConnection__Alternatives ) ) )
@@ -393,7 +393,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -435,7 +435,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:183:1: ruleAbstractNetworkProperty : ( ( rule__AbstractNetworkProperty__Alternatives ) ) ;
     public final void ruleAbstractNetworkProperty() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:187:2: ( ( ( rule__AbstractNetworkProperty__Alternatives ) ) )
@@ -470,7 +470,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -512,7 +512,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:208:1: ruleAbstractUsbProperty : ( ruleDeviceVolumeUsbProperty ) ;
     public final void ruleAbstractUsbProperty() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:212:2: ( ( ruleDeviceVolumeUsbProperty ) )
@@ -541,7 +541,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -583,7 +583,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:233:1: ruleInterfaceNetworkProperty : ( ( rule__InterfaceNetworkProperty__Group__0 ) ) ;
     public final void ruleInterfaceNetworkProperty() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:237:2: ( ( ( rule__InterfaceNetworkProperty__Group__0 ) ) )
@@ -618,7 +618,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -660,7 +660,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:258:1: ruleAddressNetworkProperty : ( ( rule__AddressNetworkProperty__Group__0 ) ) ;
     public final void ruleAddressNetworkProperty() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:262:2: ( ( ( rule__AddressNetworkProperty__Group__0 ) ) )
@@ -695,7 +695,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -737,7 +737,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:283:1: ruleIdentityNameNetworkProperty : ( ( rule__IdentityNameNetworkProperty__Group__0 ) ) ;
     public final void ruleIdentityNameNetworkProperty() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:287:2: ( ( ( rule__IdentityNameNetworkProperty__Group__0 ) ) )
@@ -772,7 +772,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -814,7 +814,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:308:1: ruleMacAddressNetworkProperty : ( ( rule__MacAddressNetworkProperty__Group__0 ) ) ;
     public final void ruleMacAddressNetworkProperty() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:312:2: ( ( ( rule__MacAddressNetworkProperty__Group__0 ) ) )
@@ -849,7 +849,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -891,7 +891,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:333:1: ruleGatewayNetworkProperty : ( ( rule__GatewayNetworkProperty__Group__0 ) ) ;
     public final void ruleGatewayNetworkProperty() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:337:2: ( ( ( rule__GatewayNetworkProperty__Group__0 ) ) )
@@ -926,7 +926,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -968,7 +968,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:358:1: ruleSubnetMaskNetworkProperty : ( ( rule__SubnetMaskNetworkProperty__Group__0 ) ) ;
     public final void ruleSubnetMaskNetworkProperty() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:362:2: ( ( ( rule__SubnetMaskNetworkProperty__Group__0 ) ) )
@@ -1003,7 +1003,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -1045,7 +1045,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:383:1: rulePortNetworkProperty : ( ( rule__PortNetworkProperty__Group__0 ) ) ;
     public final void rulePortNetworkProperty() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:387:2: ( ( ( rule__PortNetworkProperty__Group__0 ) ) )
@@ -1080,7 +1080,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -1122,7 +1122,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:408:1: ruleDNSServerNetworkProperty : ( ( rule__DNSServerNetworkProperty__Group__0 ) ) ;
     public final void ruleDNSServerNetworkProperty() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:412:2: ( ( ( rule__DNSServerNetworkProperty__Group__0 ) ) )
@@ -1157,7 +1157,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -1199,7 +1199,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:433:1: ruleDeviceVolumeUsbProperty : ( ( rule__DeviceVolumeUsbProperty__Group__0 ) ) ;
     public final void ruleDeviceVolumeUsbProperty() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:437:2: ( ( ( rule__DeviceVolumeUsbProperty__Group__0 ) ) )
@@ -1234,7 +1234,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -1276,7 +1276,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:458:1: ruleDeviceType_Impl : ( ( rule__DeviceType_Impl__Group__0 ) ) ;
     public final void ruleDeviceType_Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:462:2: ( ( ( rule__DeviceType_Impl__Group__0 ) ) )
@@ -1311,7 +1311,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -1353,7 +1353,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:483:1: ruleAbstractComputationResource : ( ( rule__AbstractComputationResource__Alternatives ) ) ;
     public final void ruleAbstractComputationResource() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:487:2: ( ( ( rule__AbstractComputationResource__Alternatives ) ) )
@@ -1388,7 +1388,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -1430,7 +1430,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:508:1: ruleDeviceResource : ( ( rule__DeviceResource__Group__0 ) ) ;
     public final void ruleDeviceResource() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:512:2: ( ( ( rule__DeviceResource__Group__0 ) ) )
@@ -1465,7 +1465,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -1507,7 +1507,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:533:1: ruleComputationDeviceType : ( ( rule__ComputationDeviceType__Group__0 ) ) ;
     public final void ruleComputationDeviceType() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:537:2: ( ( ( rule__ComputationDeviceType__Group__0 ) ) )
@@ -1542,7 +1542,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -1584,7 +1584,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:558:1: ruleConnectionProperty : ( ( rule__ConnectionProperty__Group__0 ) ) ;
     public final void ruleConnectionProperty() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:562:2: ( ( ( rule__ConnectionProperty__Group__0 ) ) )
@@ -1619,7 +1619,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -1661,7 +1661,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:583:1: ruleNetworkConnection : ( ( rule__NetworkConnection__Group__0 ) ) ;
     public final void ruleNetworkConnection() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:587:2: ( ( ( rule__NetworkConnection__Group__0 ) ) )
@@ -1696,7 +1696,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -1738,7 +1738,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:608:1: ruleCommunicationConnection : ( ( rule__CommunicationConnection__Group__0 ) ) ;
     public final void ruleCommunicationConnection() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:612:2: ( ( ( rule__CommunicationConnection__Group__0 ) ) )
@@ -1773,7 +1773,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -1815,7 +1815,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:633:1: ruleUsbConnection : ( ( rule__UsbConnection__Group__0 ) ) ;
     public final void ruleUsbConnection() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:637:2: ( ( ( rule__UsbConnection__Group__0 ) ) )
@@ -1850,7 +1850,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -1892,7 +1892,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:658:1: ruleProcessorResouce : ( ( rule__ProcessorResouce__Group__0 ) ) ;
     public final void ruleProcessorResouce() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:662:2: ( ( ( rule__ProcessorResouce__Group__0 ) ) )
@@ -1927,7 +1927,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -1969,7 +1969,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:683:1: ruleAbstracProcessorProperty : ( ( rule__AbstracProcessorProperty__Alternatives ) ) ;
     public final void ruleAbstracProcessorProperty() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:687:2: ( ( ( rule__AbstracProcessorProperty__Alternatives ) ) )
@@ -2004,7 +2004,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -2046,7 +2046,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:708:1: ruleArchitectureProcessorProperty : ( ( rule__ArchitectureProcessorProperty__Group__0 ) ) ;
     public final void ruleArchitectureProcessorProperty() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:712:2: ( ( ( rule__ArchitectureProcessorProperty__Group__0 ) ) )
@@ -2081,7 +2081,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -2123,7 +2123,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:733:1: ruleCoreProcessorProperty : ( ( rule__CoreProcessorProperty__Group__0 ) ) ;
     public final void ruleCoreProcessorProperty() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:737:2: ( ( ( rule__CoreProcessorProperty__Group__0 ) ) )
@@ -2158,7 +2158,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -2200,7 +2200,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:758:1: ruleOperatingSystemResouce : ( ( rule__OperatingSystemResouce__Group__0 ) ) ;
     public final void ruleOperatingSystemResouce() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:762:2: ( ( ( rule__OperatingSystemResouce__Group__0 ) ) )
@@ -2235,7 +2235,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -2277,7 +2277,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:783:1: ruleAbstractOperatingSystemProperty : ( ( rule__AbstractOperatingSystemProperty__Alternatives ) ) ;
     public final void ruleAbstractOperatingSystemProperty() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:787:2: ( ( ( rule__AbstractOperatingSystemProperty__Alternatives ) ) )
@@ -2312,7 +2312,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -2354,7 +2354,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:808:1: ruleNameOperatingSystemProperty : ( ( rule__NameOperatingSystemProperty__Group__0 ) ) ;
     public final void ruleNameOperatingSystemProperty() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:812:2: ( ( ( rule__NameOperatingSystemProperty__Group__0 ) ) )
@@ -2389,7 +2389,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -2431,7 +2431,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:833:1: ruleVersionOperatingSystemProperty : ( ( rule__VersionOperatingSystemProperty__Group__0 ) ) ;
     public final void ruleVersionOperatingSystemProperty() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:837:2: ( ( ( rule__VersionOperatingSystemProperty__Group__0 ) ) )
@@ -2466,7 +2466,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -2508,7 +2508,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:858:1: ruleAbstractProperty : ( ( rule__AbstractProperty__Alternatives ) ) ;
     public final void ruleAbstractProperty() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:862:2: ( ( ( rule__AbstractProperty__Alternatives ) ) )
@@ -2543,7 +2543,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -2585,7 +2585,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:883:1: rulePropertyKind : ( ( rule__PropertyKind__Alternatives ) ) ;
     public final void rulePropertyKind() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:887:2: ( ( ( rule__PropertyKind__Alternatives ) ) )
@@ -2620,7 +2620,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -2662,7 +2662,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:908:1: rulePropertyAttribute : ( ( rule__PropertyAttribute__Group__0 ) ) ;
     public final void rulePropertyAttribute() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:912:2: ( ( ( rule__PropertyAttribute__Group__0 ) ) )
@@ -2697,7 +2697,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -2739,7 +2739,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:933:1: rulePropertyMaximun : ( ( rule__PropertyMaximun__Group__0 ) ) ;
     public final void rulePropertyMaximun() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:937:2: ( ( ( rule__PropertyMaximun__Group__0 ) ) )
@@ -2774,7 +2774,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -2816,7 +2816,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:958:1: rulePropertyMinimum : ( ( rule__PropertyMinimum__Group__0 ) ) ;
     public final void rulePropertyMinimum() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:962:2: ( ( ( rule__PropertyMinimum__Group__0 ) ) )
@@ -2851,7 +2851,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -2893,7 +2893,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:983:1: rulePropertySelection : ( ( rule__PropertySelection__Group__0 ) ) ;
     public final void rulePropertySelection() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:987:2: ( ( ( rule__PropertySelection__Group__0 ) ) )
@@ -2928,7 +2928,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -2970,7 +2970,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:1008:1: rulePropertyRange : ( ( rule__PropertyRange__Group__0 ) ) ;
     public final void rulePropertyRange() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:1012:2: ( ( ( rule__PropertyRange__Group__0 ) ) )
@@ -3005,7 +3005,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -3047,7 +3047,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:1033:1: rulePropertyValue : ( ( rule__PropertyValue__Alternatives ) ) ;
     public final void rulePropertyValue() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:1037:2: ( ( ( rule__PropertyValue__Alternatives ) ) )
@@ -3082,7 +3082,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -3124,7 +3124,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:1058:1: rulePropertyValueInt : ( ( rule__PropertyValueInt__ValueAssignment ) ) ;
     public final void rulePropertyValueInt() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:1062:2: ( ( ( rule__PropertyValueInt__ValueAssignment ) ) )
@@ -3159,7 +3159,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -3201,7 +3201,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:1083:1: rulePropertyValueDouble : ( ( rule__PropertyValueDouble__ValueAssignment ) ) ;
     public final void rulePropertyValueDouble() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:1087:2: ( ( ( rule__PropertyValueDouble__ValueAssignment ) ) )
@@ -3236,7 +3236,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -3278,7 +3278,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:1108:1: rulePropertyValueString : ( ( rule__PropertyValueString__ValueAssignment ) ) ;
     public final void rulePropertyValueString() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:1112:2: ( ( ( rule__PropertyValueString__ValueAssignment ) ) )
@@ -3313,7 +3313,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -3355,7 +3355,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:1133:1: rulePropertyValueList : ( ( rule__PropertyValueList__Group__0 ) ) ;
     public final void rulePropertyValueList() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:1137:2: ( ( ( rule__PropertyValueList__Group__0 ) ) )
@@ -3390,7 +3390,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -3432,7 +3432,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:1158:1: ruleProcessorArchitectureValue : ( ( rule__ProcessorArchitectureValue__ValueAssignment ) ) ;
     public final void ruleProcessorArchitectureValue() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:1162:2: ( ( ( rule__ProcessorArchitectureValue__ValueAssignment ) ) )
@@ -3467,7 +3467,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -3509,7 +3509,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:1183:1: ruleAbstractResouceType : ( ruleResourceType ) ;
     public final void ruleAbstractResouceType() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:1187:2: ( ( ruleResourceType ) )
@@ -3538,7 +3538,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -3580,7 +3580,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:1208:1: ruleOpertingSystemResouceType : ( ( rule__OpertingSystemResouceType__Alternatives ) ) ;
     public final void ruleOpertingSystemResouceType() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:1212:2: ( ( ( rule__OpertingSystemResouceType__Alternatives ) ) )
@@ -3615,7 +3615,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -3657,7 +3657,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:1233:1: ruleResourceType : ( ( rule__ResourceType__Group__0 ) ) ;
     public final void ruleResourceType() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:1237:2: ( ( ( rule__ResourceType__Group__0 ) ) )
@@ -3692,7 +3692,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -3734,7 +3734,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:1258:1: ruleProcessorResouceType : ( ( rule__ProcessorResouceType__Group__0 ) ) ;
     public final void ruleProcessorResouceType() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:1262:2: ( ( ( rule__ProcessorResouceType__Group__0 ) ) )
@@ -3769,7 +3769,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -3811,7 +3811,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:1283:1: ruleLinuxOpertingSystem : ( ( rule__LinuxOpertingSystem__Group__0 ) ) ;
     public final void ruleLinuxOpertingSystem() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:1287:2: ( ( ( rule__LinuxOpertingSystem__Group__0 ) ) )
@@ -3846,7 +3846,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -3888,7 +3888,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:1308:1: ruleMacOSOpertingSystem : ( ( rule__MacOSOpertingSystem__Group__0 ) ) ;
     public final void ruleMacOSOpertingSystem() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:1312:2: ( ( ( rule__MacOSOpertingSystem__Group__0 ) ) )
@@ -3923,7 +3923,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -3965,7 +3965,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:1333:1: ruleCommunicationType : ( ( rule__CommunicationType__Group__0 ) ) ;
     public final void ruleCommunicationType() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:1337:2: ( ( ( rule__CommunicationType__Group__0 ) ) )
@@ -4000,7 +4000,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -4042,7 +4042,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:1358:1: ruleNetworkCommunicationType : ( ( rule__NetworkCommunicationType__Alternatives ) ) ;
     public final void ruleNetworkCommunicationType() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:1362:2: ( ( ( rule__NetworkCommunicationType__Alternatives ) ) )
@@ -4077,7 +4077,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -4119,7 +4119,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:1383:1: ruleEthernetCommunicationType : ( ( rule__EthernetCommunicationType__Group__0 ) ) ;
     public final void ruleEthernetCommunicationType() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:1387:2: ( ( ( rule__EthernetCommunicationType__Group__0 ) ) )
@@ -4154,7 +4154,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -4196,7 +4196,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:1408:1: ruleWlanCommunicationType : ( ( rule__WlanCommunicationType__Group__0 ) ) ;
     public final void ruleWlanCommunicationType() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:1412:2: ( ( ( rule__WlanCommunicationType__Group__0 ) ) )
@@ -4231,7 +4231,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -4273,7 +4273,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:1433:1: ruleUsbCommunicationType : ( ( rule__UsbCommunicationType__Group__0 ) ) ;
     public final void ruleUsbCommunicationType() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:1437:2: ( ( ( rule__UsbCommunicationType__Group__0 ) ) )
@@ -4308,7 +4308,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -4350,7 +4350,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:1458:1: ruleAttributeKind : ( ( rule__AttributeKind__Group__0 ) ) ;
     public final void ruleAttributeKind() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:1462:2: ( ( ( rule__AttributeKind__Group__0 ) ) )
@@ -4385,7 +4385,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -4427,7 +4427,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:1483:1: ruleMaximumKind : ( ( rule__MaximumKind__Group__0 ) ) ;
     public final void ruleMaximumKind() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:1487:2: ( ( ( rule__MaximumKind__Group__0 ) ) )
@@ -4462,7 +4462,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -4504,7 +4504,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:1508:1: ruleMinimumKind : ( ( rule__MinimumKind__Group__0 ) ) ;
     public final void ruleMinimumKind() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:1512:2: ( ( ( rule__MinimumKind__Group__0 ) ) )
@@ -4539,7 +4539,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -4581,7 +4581,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:1533:1: ruleSelectionKind : ( ( rule__SelectionKind__Group__0 ) ) ;
     public final void ruleSelectionKind() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:1537:2: ( ( ( rule__SelectionKind__Group__0 ) ) )
@@ -4616,7 +4616,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -4658,7 +4658,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:1558:1: ruleRangeKind : ( ( rule__RangeKind__Group__0 ) ) ;
     public final void ruleRangeKind() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:1562:2: ( ( ( rule__RangeKind__Group__0 ) ) )
@@ -4693,7 +4693,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -4735,7 +4735,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:1583:1: ruleLinuxDistributionValue : ( ( rule__LinuxDistributionValue__Group__0 ) ) ;
     public final void ruleLinuxDistributionValue() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:1587:2: ( ( ( rule__LinuxDistributionValue__Group__0 ) ) )
@@ -4770,7 +4770,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -4812,7 +4812,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:1608:1: ruleUbuntuVersionValue : ( ( rule__UbuntuVersionValue__Group__0 ) ) ;
     public final void ruleUbuntuVersionValue() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:1612:2: ( ( ( rule__UbuntuVersionValue__Group__0 ) ) )
@@ -4847,7 +4847,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -4889,7 +4889,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:1633:1: ruleDouble0 : ( RULE_DOUBLE ) ;
     public final void ruleDouble0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:1637:2: ( ( RULE_DOUBLE ) )
@@ -4914,7 +4914,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -4956,7 +4956,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:1658:1: ruleInteger0 : ( RULE_DECINT ) ;
     public final void ruleInteger0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:1662:2: ( ( RULE_DECINT ) )
@@ -4981,7 +4981,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -5023,7 +5023,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:1683:1: ruleEString : ( ( rule__EString__Alternatives ) ) ;
     public final void ruleEString() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:1687:2: ( ( ( rule__EString__Alternatives ) ) )
@@ -5058,7 +5058,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -5070,7 +5070,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:1699:1: entryRulePreListElement : rulePreListElement EOF ;
     public final void entryRulePreListElement() throws RecognitionException {
 
-            HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_SL_COMMENT");
+          HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_SL_COMMENT");
 
         try {
             // InternalDeviceParser.g:1703:1: ( rulePreListElement EOF )
@@ -5094,7 +5094,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                myHiddenTokenState.restore();
+              myHiddenTokenState.restore();
 
         }
         return ;
@@ -5106,8 +5106,8 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:1714:1: rulePreListElement : ( HyphenMinus ) ;
     public final void rulePreListElement() throws RecognitionException {
 
-                HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_SL_COMMENT");
-                int stackSize = keepStackSize();
+            HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_SL_COMMENT");
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:1719:2: ( ( HyphenMinus ) )
@@ -5132,8 +5132,8 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
-                myHiddenTokenState.restore();
+              restoreStackSize(stackSize);
+              myHiddenTokenState.restore();
 
         }
         return ;
@@ -5145,7 +5145,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:1732:1: ruleProcessorArchitectureType : ( ( rule__ProcessorArchitectureType__Alternatives ) ) ;
     public final void ruleProcessorArchitectureType() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:1736:1: ( ( ( rule__ProcessorArchitectureType__Alternatives ) ) )
@@ -5180,7 +5180,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -5192,7 +5192,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:1748:1: ruleLinuxDistribution : ( ( rule__LinuxDistribution__Alternatives ) ) ;
     public final void ruleLinuxDistribution() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:1752:1: ( ( ( rule__LinuxDistribution__Alternatives ) ) )
@@ -5227,7 +5227,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -5239,7 +5239,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:1764:1: ruleUbuntuVersion : ( ( rule__UbuntuVersion__Alternatives ) ) ;
     public final void ruleUbuntuVersion() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:1768:1: ( ( ( rule__UbuntuVersion__Alternatives ) ) )
@@ -5274,7 +5274,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -5286,7 +5286,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:1779:1: rule__DeviceType__Alternatives : ( ( ruleDeviceType_Impl ) | ( ruleComputationDeviceType ) );
     public final void rule__DeviceType__Alternatives() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:1783:1: ( ( ruleDeviceType_Impl ) | ( ruleComputationDeviceType ) )
@@ -5353,7 +5353,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -5365,7 +5365,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:1800:1: rule__AbstractCommunicationConnection__Alternatives : ( ( ruleCommunicationConnection ) | ( ruleNetworkConnection ) | ( ruleUsbConnection ) );
     public final void rule__AbstractCommunicationConnection__Alternatives() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:1804:1: ( ( ruleCommunicationConnection ) | ( ruleNetworkConnection ) | ( ruleUsbConnection ) )
@@ -5438,7 +5438,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -5450,7 +5450,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:1827:1: rule__AbstractNetworkProperty__Alternatives : ( ( ruleIdentityNameNetworkProperty ) | ( ruleInterfaceNetworkProperty ) | ( ruleAddressNetworkProperty ) | ( ruleMacAddressNetworkProperty ) | ( ruleGatewayNetworkProperty ) | ( ruleSubnetMaskNetworkProperty ) | ( ruleDNSServerNetworkProperty ) | ( rulePortNetworkProperty ) );
     public final void rule__AbstractNetworkProperty__Alternatives() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:1831:1: ( ( ruleIdentityNameNetworkProperty ) | ( ruleInterfaceNetworkProperty ) | ( ruleAddressNetworkProperty ) | ( ruleMacAddressNetworkProperty ) | ( ruleGatewayNetworkProperty ) | ( ruleSubnetMaskNetworkProperty ) | ( ruleDNSServerNetworkProperty ) | ( rulePortNetworkProperty ) )
@@ -5618,7 +5618,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -5630,7 +5630,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:1884:1: rule__AbstractComputationResource__Alternatives : ( ( ruleOperatingSystemResouce ) | ( ruleProcessorResouce ) );
     public final void rule__AbstractComputationResource__Alternatives() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:1888:1: ( ( ruleOperatingSystemResouce ) | ( ruleProcessorResouce ) )
@@ -5773,7 +5773,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -5785,7 +5785,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:1905:1: rule__AbstracProcessorProperty__Alternatives : ( ( ruleArchitectureProcessorProperty ) | ( ruleCoreProcessorProperty ) );
     public final void rule__AbstracProcessorProperty__Alternatives() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:1909:1: ( ( ruleArchitectureProcessorProperty ) | ( ruleCoreProcessorProperty ) )
@@ -5872,7 +5872,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -5884,7 +5884,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:1926:1: rule__AbstractOperatingSystemProperty__Alternatives : ( ( ruleNameOperatingSystemProperty ) | ( ruleVersionOperatingSystemProperty ) );
     public final void rule__AbstractOperatingSystemProperty__Alternatives() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:1930:1: ( ( ruleNameOperatingSystemProperty ) | ( ruleVersionOperatingSystemProperty ) )
@@ -5971,7 +5971,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -5983,7 +5983,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:1947:1: rule__AbstractProperty__Alternatives : ( ( rulePropertyAttribute ) | ( rulePropertyMaximun ) | ( rulePropertyMinimum ) | ( rulePropertySelection ) | ( rulePropertyRange ) );
     public final void rule__AbstractProperty__Alternatives() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:1951:1: ( ( rulePropertyAttribute ) | ( rulePropertyMaximun ) | ( rulePropertyMinimum ) | ( rulePropertySelection ) | ( rulePropertyRange ) )
@@ -6094,7 +6094,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -6106,7 +6106,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:1986:1: rule__PropertyKind__Alternatives : ( ( ruleAttributeKind ) | ( ruleMaximumKind ) | ( ruleMinimumKind ) | ( ruleRangeKind ) | ( ruleSelectionKind ) );
     public final void rule__PropertyKind__Alternatives() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:1990:1: ( ( ruleAttributeKind ) | ( ruleMaximumKind ) | ( ruleMinimumKind ) | ( ruleRangeKind ) | ( ruleSelectionKind ) )
@@ -6249,7 +6249,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -6261,7 +6261,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2025:1: rule__PropertyValue__Alternatives : ( ( rulePropertyValueInt ) | ( rulePropertyValueDouble ) | ( rulePropertyValueString ) | ( ruleProcessorArchitectureValue ) | ( ruleLinuxDistributionValue ) | ( ruleUbuntuVersionValue ) | ( rulePropertyValueList ) );
     public final void rule__PropertyValue__Alternatives() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2029:1: ( ( rulePropertyValueInt ) | ( rulePropertyValueDouble ) | ( rulePropertyValueString ) | ( ruleProcessorArchitectureValue ) | ( ruleLinuxDistributionValue ) | ( ruleUbuntuVersionValue ) | ( rulePropertyValueList ) )
@@ -6456,7 +6456,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -6468,7 +6468,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2076:1: rule__OpertingSystemResouceType__Alternatives : ( ( ruleLinuxOpertingSystem ) | ( ruleMacOSOpertingSystem ) );
     public final void rule__OpertingSystemResouceType__Alternatives() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2080:1: ( ( ruleLinuxOpertingSystem ) | ( ruleMacOSOpertingSystem ) )
@@ -6535,7 +6535,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -6547,7 +6547,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2097:1: rule__NetworkCommunicationType__Alternatives : ( ( ruleEthernetCommunicationType ) | ( ruleWlanCommunicationType ) );
     public final void rule__NetworkCommunicationType__Alternatives() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2101:1: ( ( ruleEthernetCommunicationType ) | ( ruleWlanCommunicationType ) )
@@ -6614,7 +6614,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -6626,7 +6626,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2118:1: rule__EString__Alternatives : ( ( RULE_STRING ) | ( RULE_ID ) );
     public final void rule__EString__Alternatives() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2122:1: ( ( RULE_STRING ) | ( RULE_ID ) )
@@ -6685,7 +6685,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -6697,7 +6697,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2139:1: rule__ProcessorArchitectureType__Alternatives : ( ( ( X86 ) ) | ( ( Arm64 ) ) );
     public final void rule__ProcessorArchitectureType__Alternatives() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2143:1: ( ( ( X86 ) ) | ( ( Arm64 ) ) )
@@ -6768,7 +6768,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -6780,7 +6780,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2160:1: rule__LinuxDistribution__Alternatives : ( ( ( Ubuntu ) ) | ( ( Debian ) ) );
     public final void rule__LinuxDistribution__Alternatives() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2164:1: ( ( ( Ubuntu ) ) | ( ( Debian ) ) )
@@ -6851,7 +6851,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -6863,7 +6863,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2181:1: rule__UbuntuVersion__Alternatives : ( ( ( Focal ) ) | ( ( Jammy ) ) );
     public final void rule__UbuntuVersion__Alternatives() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2185:1: ( ( ( Focal ) ) | ( ( Jammy ) ) )
@@ -6934,7 +6934,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -6946,7 +6946,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2202:1: rule__DeviceSet__Group__0 : rule__DeviceSet__Group__0__Impl rule__DeviceSet__Group__1 ;
     public final void rule__DeviceSet__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2206:1: ( rule__DeviceSet__Group__0__Impl rule__DeviceSet__Group__1 )
@@ -6972,7 +6972,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -6984,7 +6984,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2214:1: rule__DeviceSet__Group__0__Impl : ( ( rule__DeviceSet__DeviceAssignment_0 ) ) ;
     public final void rule__DeviceSet__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2218:1: ( ( ( rule__DeviceSet__DeviceAssignment_0 ) ) )
@@ -7019,7 +7019,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -7031,7 +7031,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2229:1: rule__DeviceSet__Group__1 : rule__DeviceSet__Group__1__Impl ;
     public final void rule__DeviceSet__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2233:1: ( rule__DeviceSet__Group__1__Impl )
@@ -7052,7 +7052,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -7064,7 +7064,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2240:1: rule__DeviceSet__Group__1__Impl : ( ( rule__DeviceSet__Group_1__0 )* ) ;
     public final void rule__DeviceSet__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2244:1: ( ( ( rule__DeviceSet__Group_1__0 )* ) )
@@ -7086,20 +7086,20 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
 
 
                 switch (alt16) {
-                case 1 :
-                    // InternalDeviceParser.g:2247:3: rule__DeviceSet__Group_1__0
-                    {
-                    pushFollow(FOLLOW_4);
-                    rule__DeviceSet__Group_1__0();
+              case 1 :
+                  // InternalDeviceParser.g:2247:3: rule__DeviceSet__Group_1__0
+                  {
+                  pushFollow(FOLLOW_4);
+                  rule__DeviceSet__Group_1__0();
 
-                    state._fsp--;
+                  state._fsp--;
 
 
-                    }
-                    break;
+                  }
+                  break;
 
-                default :
-                    break loop16;
+              default :
+                  break loop16;
                 }
             } while (true);
 
@@ -7117,7 +7117,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -7129,7 +7129,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2256:1: rule__DeviceSet__Group_1__0 : rule__DeviceSet__Group_1__0__Impl rule__DeviceSet__Group_1__1 ;
     public final void rule__DeviceSet__Group_1__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2260:1: ( rule__DeviceSet__Group_1__0__Impl rule__DeviceSet__Group_1__1 )
@@ -7155,7 +7155,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -7167,7 +7167,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2268:1: rule__DeviceSet__Group_1__0__Impl : ( HyphenMinusHyphenMinusHyphenMinus ) ;
     public final void rule__DeviceSet__Group_1__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2272:1: ( ( HyphenMinusHyphenMinusHyphenMinus ) )
@@ -7192,7 +7192,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -7204,7 +7204,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2283:1: rule__DeviceSet__Group_1__1 : rule__DeviceSet__Group_1__1__Impl ;
     public final void rule__DeviceSet__Group_1__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2287:1: ( rule__DeviceSet__Group_1__1__Impl )
@@ -7225,7 +7225,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -7237,7 +7237,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2294:1: rule__DeviceSet__Group_1__1__Impl : ( ( rule__DeviceSet__DeviceAssignment_1_1 ) ) ;
     public final void rule__DeviceSet__Group_1__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2298:1: ( ( ( rule__DeviceSet__DeviceAssignment_1_1 ) ) )
@@ -7272,7 +7272,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -7284,7 +7284,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2310:1: rule__InterfaceNetworkProperty__Group__0 : rule__InterfaceNetworkProperty__Group__0__Impl rule__InterfaceNetworkProperty__Group__1 ;
     public final void rule__InterfaceNetworkProperty__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2314:1: ( rule__InterfaceNetworkProperty__Group__0__Impl rule__InterfaceNetworkProperty__Group__1 )
@@ -7310,7 +7310,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -7322,7 +7322,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2322:1: rule__InterfaceNetworkProperty__Group__0__Impl : ( () ) ;
     public final void rule__InterfaceNetworkProperty__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2326:1: ( ( () ) )
@@ -7347,7 +7347,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -7359,7 +7359,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2337:1: rule__InterfaceNetworkProperty__Group__1 : rule__InterfaceNetworkProperty__Group__1__Impl rule__InterfaceNetworkProperty__Group__2 ;
     public final void rule__InterfaceNetworkProperty__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2341:1: ( rule__InterfaceNetworkProperty__Group__1__Impl rule__InterfaceNetworkProperty__Group__2 )
@@ -7385,7 +7385,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -7397,7 +7397,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2349:1: rule__InterfaceNetworkProperty__Group__1__Impl : ( rulePreListElement ) ;
     public final void rule__InterfaceNetworkProperty__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2353:1: ( ( rulePreListElement ) )
@@ -7426,7 +7426,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -7438,7 +7438,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2364:1: rule__InterfaceNetworkProperty__Group__2 : rule__InterfaceNetworkProperty__Group__2__Impl rule__InterfaceNetworkProperty__Group__3 ;
     public final void rule__InterfaceNetworkProperty__Group__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2368:1: ( rule__InterfaceNetworkProperty__Group__2__Impl rule__InterfaceNetworkProperty__Group__3 )
@@ -7464,7 +7464,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -7476,7 +7476,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2376:1: rule__InterfaceNetworkProperty__Group__2__Impl : ( Name ) ;
     public final void rule__InterfaceNetworkProperty__Group__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2380:1: ( ( Name ) )
@@ -7501,7 +7501,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -7513,7 +7513,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2391:1: rule__InterfaceNetworkProperty__Group__3 : rule__InterfaceNetworkProperty__Group__3__Impl rule__InterfaceNetworkProperty__Group__4 ;
     public final void rule__InterfaceNetworkProperty__Group__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2395:1: ( rule__InterfaceNetworkProperty__Group__3__Impl rule__InterfaceNetworkProperty__Group__4 )
@@ -7539,7 +7539,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -7551,7 +7551,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2403:1: rule__InterfaceNetworkProperty__Group__3__Impl : ( ( rule__InterfaceNetworkProperty__NameAssignment_3 ) ) ;
     public final void rule__InterfaceNetworkProperty__Group__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2407:1: ( ( ( rule__InterfaceNetworkProperty__NameAssignment_3 ) ) )
@@ -7586,7 +7586,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -7598,7 +7598,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2418:1: rule__InterfaceNetworkProperty__Group__4 : rule__InterfaceNetworkProperty__Group__4__Impl rule__InterfaceNetworkProperty__Group__5 ;
     public final void rule__InterfaceNetworkProperty__Group__4() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2422:1: ( rule__InterfaceNetworkProperty__Group__4__Impl rule__InterfaceNetworkProperty__Group__5 )
@@ -7624,7 +7624,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -7636,7 +7636,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2430:1: rule__InterfaceNetworkProperty__Group__4__Impl : ( RULE_INDENT ) ;
     public final void rule__InterfaceNetworkProperty__Group__4__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2434:1: ( ( RULE_INDENT ) )
@@ -7661,7 +7661,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -7673,7 +7673,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2445:1: rule__InterfaceNetworkProperty__Group__5 : rule__InterfaceNetworkProperty__Group__5__Impl rule__InterfaceNetworkProperty__Group__6 ;
     public final void rule__InterfaceNetworkProperty__Group__5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2449:1: ( rule__InterfaceNetworkProperty__Group__5__Impl rule__InterfaceNetworkProperty__Group__6 )
@@ -7699,7 +7699,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -7711,7 +7711,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2457:1: rule__InterfaceNetworkProperty__Group__5__Impl : ( Kind ) ;
     public final void rule__InterfaceNetworkProperty__Group__5__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2461:1: ( ( Kind ) )
@@ -7736,7 +7736,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -7748,7 +7748,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2472:1: rule__InterfaceNetworkProperty__Group__6 : rule__InterfaceNetworkProperty__Group__6__Impl rule__InterfaceNetworkProperty__Group__7 ;
     public final void rule__InterfaceNetworkProperty__Group__6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2476:1: ( rule__InterfaceNetworkProperty__Group__6__Impl rule__InterfaceNetworkProperty__Group__7 )
@@ -7774,7 +7774,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -7786,7 +7786,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2484:1: rule__InterfaceNetworkProperty__Group__6__Impl : ( ( rule__InterfaceNetworkProperty__KindAssignment_6 ) ) ;
     public final void rule__InterfaceNetworkProperty__Group__6__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2488:1: ( ( ( rule__InterfaceNetworkProperty__KindAssignment_6 ) ) )
@@ -7821,7 +7821,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -7833,7 +7833,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2499:1: rule__InterfaceNetworkProperty__Group__7 : rule__InterfaceNetworkProperty__Group__7__Impl rule__InterfaceNetworkProperty__Group__8 ;
     public final void rule__InterfaceNetworkProperty__Group__7() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2503:1: ( rule__InterfaceNetworkProperty__Group__7__Impl rule__InterfaceNetworkProperty__Group__8 )
@@ -7859,7 +7859,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -7871,7 +7871,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2511:1: rule__InterfaceNetworkProperty__Group__7__Impl : ( ( rule__InterfaceNetworkProperty__Group_7__0 )? ) ;
     public final void rule__InterfaceNetworkProperty__Group__7__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2515:1: ( ( ( rule__InterfaceNetworkProperty__Group_7__0 )? ) )
@@ -7917,7 +7917,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -7929,7 +7929,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2526:1: rule__InterfaceNetworkProperty__Group__8 : rule__InterfaceNetworkProperty__Group__8__Impl rule__InterfaceNetworkProperty__Group__9 ;
     public final void rule__InterfaceNetworkProperty__Group__8() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2530:1: ( rule__InterfaceNetworkProperty__Group__8__Impl rule__InterfaceNetworkProperty__Group__9 )
@@ -7955,7 +7955,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -7967,7 +7967,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2538:1: rule__InterfaceNetworkProperty__Group__8__Impl : ( ( rule__InterfaceNetworkProperty__Group_8__0 )? ) ;
     public final void rule__InterfaceNetworkProperty__Group__8__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2542:1: ( ( ( rule__InterfaceNetworkProperty__Group_8__0 )? ) )
@@ -8013,7 +8013,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -8025,7 +8025,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2553:1: rule__InterfaceNetworkProperty__Group__9 : rule__InterfaceNetworkProperty__Group__9__Impl ;
     public final void rule__InterfaceNetworkProperty__Group__9() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2557:1: ( rule__InterfaceNetworkProperty__Group__9__Impl )
@@ -8046,7 +8046,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -8058,7 +8058,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2564:1: rule__InterfaceNetworkProperty__Group__9__Impl : ( RULE_DEDENT ) ;
     public final void rule__InterfaceNetworkProperty__Group__9__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2568:1: ( ( RULE_DEDENT ) )
@@ -8083,7 +8083,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -8095,7 +8095,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2580:1: rule__InterfaceNetworkProperty__Group_7__0 : rule__InterfaceNetworkProperty__Group_7__0__Impl rule__InterfaceNetworkProperty__Group_7__1 ;
     public final void rule__InterfaceNetworkProperty__Group_7__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2584:1: ( rule__InterfaceNetworkProperty__Group_7__0__Impl rule__InterfaceNetworkProperty__Group_7__1 )
@@ -8121,7 +8121,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -8133,7 +8133,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2592:1: rule__InterfaceNetworkProperty__Group_7__0__Impl : ( Description ) ;
     public final void rule__InterfaceNetworkProperty__Group_7__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2596:1: ( ( Description ) )
@@ -8158,7 +8158,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -8170,7 +8170,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2607:1: rule__InterfaceNetworkProperty__Group_7__1 : rule__InterfaceNetworkProperty__Group_7__1__Impl ;
     public final void rule__InterfaceNetworkProperty__Group_7__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2611:1: ( rule__InterfaceNetworkProperty__Group_7__1__Impl )
@@ -8191,7 +8191,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -8203,7 +8203,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2618:1: rule__InterfaceNetworkProperty__Group_7__1__Impl : ( ( rule__InterfaceNetworkProperty__DescriptionAssignment_7_1 ) ) ;
     public final void rule__InterfaceNetworkProperty__Group_7__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2622:1: ( ( ( rule__InterfaceNetworkProperty__DescriptionAssignment_7_1 ) ) )
@@ -8238,7 +8238,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -8250,7 +8250,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2634:1: rule__InterfaceNetworkProperty__Group_8__0 : rule__InterfaceNetworkProperty__Group_8__0__Impl rule__InterfaceNetworkProperty__Group_8__1 ;
     public final void rule__InterfaceNetworkProperty__Group_8__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2638:1: ( rule__InterfaceNetworkProperty__Group_8__0__Impl rule__InterfaceNetworkProperty__Group_8__1 )
@@ -8276,7 +8276,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -8288,7 +8288,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2646:1: rule__InterfaceNetworkProperty__Group_8__0__Impl : ( Value ) ;
     public final void rule__InterfaceNetworkProperty__Group_8__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2650:1: ( ( Value ) )
@@ -8313,7 +8313,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -8325,7 +8325,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2661:1: rule__InterfaceNetworkProperty__Group_8__1 : rule__InterfaceNetworkProperty__Group_8__1__Impl ;
     public final void rule__InterfaceNetworkProperty__Group_8__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2665:1: ( rule__InterfaceNetworkProperty__Group_8__1__Impl )
@@ -8346,7 +8346,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -8358,7 +8358,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2672:1: rule__InterfaceNetworkProperty__Group_8__1__Impl : ( ( rule__InterfaceNetworkProperty__ValueAssignment_8_1 ) ) ;
     public final void rule__InterfaceNetworkProperty__Group_8__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2676:1: ( ( ( rule__InterfaceNetworkProperty__ValueAssignment_8_1 ) ) )
@@ -8393,7 +8393,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -8405,7 +8405,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2688:1: rule__AddressNetworkProperty__Group__0 : rule__AddressNetworkProperty__Group__0__Impl rule__AddressNetworkProperty__Group__1 ;
     public final void rule__AddressNetworkProperty__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2692:1: ( rule__AddressNetworkProperty__Group__0__Impl rule__AddressNetworkProperty__Group__1 )
@@ -8431,7 +8431,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -8443,7 +8443,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2700:1: rule__AddressNetworkProperty__Group__0__Impl : ( () ) ;
     public final void rule__AddressNetworkProperty__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2704:1: ( ( () ) )
@@ -8468,7 +8468,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -8480,7 +8480,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2715:1: rule__AddressNetworkProperty__Group__1 : rule__AddressNetworkProperty__Group__1__Impl rule__AddressNetworkProperty__Group__2 ;
     public final void rule__AddressNetworkProperty__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2719:1: ( rule__AddressNetworkProperty__Group__1__Impl rule__AddressNetworkProperty__Group__2 )
@@ -8506,7 +8506,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -8518,7 +8518,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2727:1: rule__AddressNetworkProperty__Group__1__Impl : ( rulePreListElement ) ;
     public final void rule__AddressNetworkProperty__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2731:1: ( ( rulePreListElement ) )
@@ -8547,7 +8547,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -8559,7 +8559,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2742:1: rule__AddressNetworkProperty__Group__2 : rule__AddressNetworkProperty__Group__2__Impl rule__AddressNetworkProperty__Group__3 ;
     public final void rule__AddressNetworkProperty__Group__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2746:1: ( rule__AddressNetworkProperty__Group__2__Impl rule__AddressNetworkProperty__Group__3 )
@@ -8585,7 +8585,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -8597,7 +8597,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2754:1: rule__AddressNetworkProperty__Group__2__Impl : ( Name ) ;
     public final void rule__AddressNetworkProperty__Group__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2758:1: ( ( Name ) )
@@ -8622,7 +8622,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -8634,7 +8634,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2769:1: rule__AddressNetworkProperty__Group__3 : rule__AddressNetworkProperty__Group__3__Impl rule__AddressNetworkProperty__Group__4 ;
     public final void rule__AddressNetworkProperty__Group__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2773:1: ( rule__AddressNetworkProperty__Group__3__Impl rule__AddressNetworkProperty__Group__4 )
@@ -8660,7 +8660,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -8672,7 +8672,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2781:1: rule__AddressNetworkProperty__Group__3__Impl : ( ( rule__AddressNetworkProperty__NameAssignment_3 ) ) ;
     public final void rule__AddressNetworkProperty__Group__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2785:1: ( ( ( rule__AddressNetworkProperty__NameAssignment_3 ) ) )
@@ -8707,7 +8707,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -8719,7 +8719,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2796:1: rule__AddressNetworkProperty__Group__4 : rule__AddressNetworkProperty__Group__4__Impl rule__AddressNetworkProperty__Group__5 ;
     public final void rule__AddressNetworkProperty__Group__4() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2800:1: ( rule__AddressNetworkProperty__Group__4__Impl rule__AddressNetworkProperty__Group__5 )
@@ -8745,7 +8745,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -8757,7 +8757,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2808:1: rule__AddressNetworkProperty__Group__4__Impl : ( RULE_INDENT ) ;
     public final void rule__AddressNetworkProperty__Group__4__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2812:1: ( ( RULE_INDENT ) )
@@ -8782,7 +8782,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -8794,7 +8794,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2823:1: rule__AddressNetworkProperty__Group__5 : rule__AddressNetworkProperty__Group__5__Impl rule__AddressNetworkProperty__Group__6 ;
     public final void rule__AddressNetworkProperty__Group__5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2827:1: ( rule__AddressNetworkProperty__Group__5__Impl rule__AddressNetworkProperty__Group__6 )
@@ -8820,7 +8820,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -8832,7 +8832,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2835:1: rule__AddressNetworkProperty__Group__5__Impl : ( Kind ) ;
     public final void rule__AddressNetworkProperty__Group__5__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2839:1: ( ( Kind ) )
@@ -8857,7 +8857,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -8869,7 +8869,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2850:1: rule__AddressNetworkProperty__Group__6 : rule__AddressNetworkProperty__Group__6__Impl rule__AddressNetworkProperty__Group__7 ;
     public final void rule__AddressNetworkProperty__Group__6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2854:1: ( rule__AddressNetworkProperty__Group__6__Impl rule__AddressNetworkProperty__Group__7 )
@@ -8895,7 +8895,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -8907,7 +8907,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2862:1: rule__AddressNetworkProperty__Group__6__Impl : ( ( rule__AddressNetworkProperty__KindAssignment_6 ) ) ;
     public final void rule__AddressNetworkProperty__Group__6__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2866:1: ( ( ( rule__AddressNetworkProperty__KindAssignment_6 ) ) )
@@ -8942,7 +8942,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -8954,7 +8954,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2877:1: rule__AddressNetworkProperty__Group__7 : rule__AddressNetworkProperty__Group__7__Impl rule__AddressNetworkProperty__Group__8 ;
     public final void rule__AddressNetworkProperty__Group__7() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2881:1: ( rule__AddressNetworkProperty__Group__7__Impl rule__AddressNetworkProperty__Group__8 )
@@ -8980,7 +8980,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -8992,7 +8992,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2889:1: rule__AddressNetworkProperty__Group__7__Impl : ( ( rule__AddressNetworkProperty__Group_7__0 )? ) ;
     public final void rule__AddressNetworkProperty__Group__7__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2893:1: ( ( ( rule__AddressNetworkProperty__Group_7__0 )? ) )
@@ -9038,7 +9038,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -9050,7 +9050,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2904:1: rule__AddressNetworkProperty__Group__8 : rule__AddressNetworkProperty__Group__8__Impl rule__AddressNetworkProperty__Group__9 ;
     public final void rule__AddressNetworkProperty__Group__8() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2908:1: ( rule__AddressNetworkProperty__Group__8__Impl rule__AddressNetworkProperty__Group__9 )
@@ -9076,7 +9076,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -9088,7 +9088,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2916:1: rule__AddressNetworkProperty__Group__8__Impl : ( ( rule__AddressNetworkProperty__Group_8__0 )? ) ;
     public final void rule__AddressNetworkProperty__Group__8__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2920:1: ( ( ( rule__AddressNetworkProperty__Group_8__0 )? ) )
@@ -9134,7 +9134,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -9146,7 +9146,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2931:1: rule__AddressNetworkProperty__Group__9 : rule__AddressNetworkProperty__Group__9__Impl ;
     public final void rule__AddressNetworkProperty__Group__9() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2935:1: ( rule__AddressNetworkProperty__Group__9__Impl )
@@ -9167,7 +9167,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -9179,7 +9179,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2942:1: rule__AddressNetworkProperty__Group__9__Impl : ( RULE_DEDENT ) ;
     public final void rule__AddressNetworkProperty__Group__9__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2946:1: ( ( RULE_DEDENT ) )
@@ -9204,7 +9204,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -9216,7 +9216,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2958:1: rule__AddressNetworkProperty__Group_7__0 : rule__AddressNetworkProperty__Group_7__0__Impl rule__AddressNetworkProperty__Group_7__1 ;
     public final void rule__AddressNetworkProperty__Group_7__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2962:1: ( rule__AddressNetworkProperty__Group_7__0__Impl rule__AddressNetworkProperty__Group_7__1 )
@@ -9242,7 +9242,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -9254,7 +9254,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2970:1: rule__AddressNetworkProperty__Group_7__0__Impl : ( Description ) ;
     public final void rule__AddressNetworkProperty__Group_7__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2974:1: ( ( Description ) )
@@ -9279,7 +9279,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -9291,7 +9291,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2985:1: rule__AddressNetworkProperty__Group_7__1 : rule__AddressNetworkProperty__Group_7__1__Impl ;
     public final void rule__AddressNetworkProperty__Group_7__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:2989:1: ( rule__AddressNetworkProperty__Group_7__1__Impl )
@@ -9312,7 +9312,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -9324,7 +9324,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:2996:1: rule__AddressNetworkProperty__Group_7__1__Impl : ( ( rule__AddressNetworkProperty__DescriptionAssignment_7_1 ) ) ;
     public final void rule__AddressNetworkProperty__Group_7__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3000:1: ( ( ( rule__AddressNetworkProperty__DescriptionAssignment_7_1 ) ) )
@@ -9359,7 +9359,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -9371,7 +9371,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3012:1: rule__AddressNetworkProperty__Group_8__0 : rule__AddressNetworkProperty__Group_8__0__Impl rule__AddressNetworkProperty__Group_8__1 ;
     public final void rule__AddressNetworkProperty__Group_8__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3016:1: ( rule__AddressNetworkProperty__Group_8__0__Impl rule__AddressNetworkProperty__Group_8__1 )
@@ -9397,7 +9397,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -9409,7 +9409,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3024:1: rule__AddressNetworkProperty__Group_8__0__Impl : ( Value ) ;
     public final void rule__AddressNetworkProperty__Group_8__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3028:1: ( ( Value ) )
@@ -9434,7 +9434,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -9446,7 +9446,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3039:1: rule__AddressNetworkProperty__Group_8__1 : rule__AddressNetworkProperty__Group_8__1__Impl ;
     public final void rule__AddressNetworkProperty__Group_8__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3043:1: ( rule__AddressNetworkProperty__Group_8__1__Impl )
@@ -9467,7 +9467,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -9479,7 +9479,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3050:1: rule__AddressNetworkProperty__Group_8__1__Impl : ( ( rule__AddressNetworkProperty__ValueAssignment_8_1 ) ) ;
     public final void rule__AddressNetworkProperty__Group_8__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3054:1: ( ( ( rule__AddressNetworkProperty__ValueAssignment_8_1 ) ) )
@@ -9514,7 +9514,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -9526,7 +9526,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3066:1: rule__IdentityNameNetworkProperty__Group__0 : rule__IdentityNameNetworkProperty__Group__0__Impl rule__IdentityNameNetworkProperty__Group__1 ;
     public final void rule__IdentityNameNetworkProperty__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3070:1: ( rule__IdentityNameNetworkProperty__Group__0__Impl rule__IdentityNameNetworkProperty__Group__1 )
@@ -9552,7 +9552,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -9564,7 +9564,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3078:1: rule__IdentityNameNetworkProperty__Group__0__Impl : ( () ) ;
     public final void rule__IdentityNameNetworkProperty__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3082:1: ( ( () ) )
@@ -9589,7 +9589,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -9601,7 +9601,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3093:1: rule__IdentityNameNetworkProperty__Group__1 : rule__IdentityNameNetworkProperty__Group__1__Impl rule__IdentityNameNetworkProperty__Group__2 ;
     public final void rule__IdentityNameNetworkProperty__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3097:1: ( rule__IdentityNameNetworkProperty__Group__1__Impl rule__IdentityNameNetworkProperty__Group__2 )
@@ -9627,7 +9627,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -9639,7 +9639,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3105:1: rule__IdentityNameNetworkProperty__Group__1__Impl : ( rulePreListElement ) ;
     public final void rule__IdentityNameNetworkProperty__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3109:1: ( ( rulePreListElement ) )
@@ -9668,7 +9668,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -9680,7 +9680,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3120:1: rule__IdentityNameNetworkProperty__Group__2 : rule__IdentityNameNetworkProperty__Group__2__Impl rule__IdentityNameNetworkProperty__Group__3 ;
     public final void rule__IdentityNameNetworkProperty__Group__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3124:1: ( rule__IdentityNameNetworkProperty__Group__2__Impl rule__IdentityNameNetworkProperty__Group__3 )
@@ -9706,7 +9706,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -9718,7 +9718,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3132:1: rule__IdentityNameNetworkProperty__Group__2__Impl : ( Name ) ;
     public final void rule__IdentityNameNetworkProperty__Group__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3136:1: ( ( Name ) )
@@ -9743,7 +9743,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -9755,7 +9755,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3147:1: rule__IdentityNameNetworkProperty__Group__3 : rule__IdentityNameNetworkProperty__Group__3__Impl rule__IdentityNameNetworkProperty__Group__4 ;
     public final void rule__IdentityNameNetworkProperty__Group__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3151:1: ( rule__IdentityNameNetworkProperty__Group__3__Impl rule__IdentityNameNetworkProperty__Group__4 )
@@ -9781,7 +9781,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -9793,7 +9793,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3159:1: rule__IdentityNameNetworkProperty__Group__3__Impl : ( ( rule__IdentityNameNetworkProperty__NameAssignment_3 ) ) ;
     public final void rule__IdentityNameNetworkProperty__Group__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3163:1: ( ( ( rule__IdentityNameNetworkProperty__NameAssignment_3 ) ) )
@@ -9828,7 +9828,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -9840,7 +9840,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3174:1: rule__IdentityNameNetworkProperty__Group__4 : rule__IdentityNameNetworkProperty__Group__4__Impl rule__IdentityNameNetworkProperty__Group__5 ;
     public final void rule__IdentityNameNetworkProperty__Group__4() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3178:1: ( rule__IdentityNameNetworkProperty__Group__4__Impl rule__IdentityNameNetworkProperty__Group__5 )
@@ -9866,7 +9866,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -9878,7 +9878,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3186:1: rule__IdentityNameNetworkProperty__Group__4__Impl : ( RULE_INDENT ) ;
     public final void rule__IdentityNameNetworkProperty__Group__4__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3190:1: ( ( RULE_INDENT ) )
@@ -9903,7 +9903,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -9915,7 +9915,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3201:1: rule__IdentityNameNetworkProperty__Group__5 : rule__IdentityNameNetworkProperty__Group__5__Impl rule__IdentityNameNetworkProperty__Group__6 ;
     public final void rule__IdentityNameNetworkProperty__Group__5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3205:1: ( rule__IdentityNameNetworkProperty__Group__5__Impl rule__IdentityNameNetworkProperty__Group__6 )
@@ -9941,7 +9941,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -9953,7 +9953,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3213:1: rule__IdentityNameNetworkProperty__Group__5__Impl : ( Kind ) ;
     public final void rule__IdentityNameNetworkProperty__Group__5__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3217:1: ( ( Kind ) )
@@ -9978,7 +9978,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -9990,7 +9990,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3228:1: rule__IdentityNameNetworkProperty__Group__6 : rule__IdentityNameNetworkProperty__Group__6__Impl rule__IdentityNameNetworkProperty__Group__7 ;
     public final void rule__IdentityNameNetworkProperty__Group__6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3232:1: ( rule__IdentityNameNetworkProperty__Group__6__Impl rule__IdentityNameNetworkProperty__Group__7 )
@@ -10016,7 +10016,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -10028,7 +10028,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3240:1: rule__IdentityNameNetworkProperty__Group__6__Impl : ( ( rule__IdentityNameNetworkProperty__KindAssignment_6 ) ) ;
     public final void rule__IdentityNameNetworkProperty__Group__6__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3244:1: ( ( ( rule__IdentityNameNetworkProperty__KindAssignment_6 ) ) )
@@ -10063,7 +10063,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -10075,7 +10075,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3255:1: rule__IdentityNameNetworkProperty__Group__7 : rule__IdentityNameNetworkProperty__Group__7__Impl rule__IdentityNameNetworkProperty__Group__8 ;
     public final void rule__IdentityNameNetworkProperty__Group__7() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3259:1: ( rule__IdentityNameNetworkProperty__Group__7__Impl rule__IdentityNameNetworkProperty__Group__8 )
@@ -10101,7 +10101,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -10113,7 +10113,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3267:1: rule__IdentityNameNetworkProperty__Group__7__Impl : ( ( rule__IdentityNameNetworkProperty__Group_7__0 )? ) ;
     public final void rule__IdentityNameNetworkProperty__Group__7__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3271:1: ( ( ( rule__IdentityNameNetworkProperty__Group_7__0 )? ) )
@@ -10159,7 +10159,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -10171,7 +10171,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3282:1: rule__IdentityNameNetworkProperty__Group__8 : rule__IdentityNameNetworkProperty__Group__8__Impl ;
     public final void rule__IdentityNameNetworkProperty__Group__8() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3286:1: ( rule__IdentityNameNetworkProperty__Group__8__Impl )
@@ -10192,7 +10192,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -10204,7 +10204,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3293:1: rule__IdentityNameNetworkProperty__Group__8__Impl : ( RULE_DEDENT ) ;
     public final void rule__IdentityNameNetworkProperty__Group__8__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3297:1: ( ( RULE_DEDENT ) )
@@ -10229,7 +10229,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -10241,7 +10241,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3309:1: rule__IdentityNameNetworkProperty__Group_7__0 : rule__IdentityNameNetworkProperty__Group_7__0__Impl rule__IdentityNameNetworkProperty__Group_7__1 ;
     public final void rule__IdentityNameNetworkProperty__Group_7__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3313:1: ( rule__IdentityNameNetworkProperty__Group_7__0__Impl rule__IdentityNameNetworkProperty__Group_7__1 )
@@ -10267,7 +10267,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -10279,7 +10279,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3321:1: rule__IdentityNameNetworkProperty__Group_7__0__Impl : ( Description ) ;
     public final void rule__IdentityNameNetworkProperty__Group_7__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3325:1: ( ( Description ) )
@@ -10304,7 +10304,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -10316,7 +10316,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3336:1: rule__IdentityNameNetworkProperty__Group_7__1 : rule__IdentityNameNetworkProperty__Group_7__1__Impl ;
     public final void rule__IdentityNameNetworkProperty__Group_7__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3340:1: ( rule__IdentityNameNetworkProperty__Group_7__1__Impl )
@@ -10337,7 +10337,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -10349,7 +10349,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3347:1: rule__IdentityNameNetworkProperty__Group_7__1__Impl : ( ( rule__IdentityNameNetworkProperty__DescriptionAssignment_7_1 ) ) ;
     public final void rule__IdentityNameNetworkProperty__Group_7__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3351:1: ( ( ( rule__IdentityNameNetworkProperty__DescriptionAssignment_7_1 ) ) )
@@ -10384,7 +10384,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -10396,7 +10396,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3363:1: rule__MacAddressNetworkProperty__Group__0 : rule__MacAddressNetworkProperty__Group__0__Impl rule__MacAddressNetworkProperty__Group__1 ;
     public final void rule__MacAddressNetworkProperty__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3367:1: ( rule__MacAddressNetworkProperty__Group__0__Impl rule__MacAddressNetworkProperty__Group__1 )
@@ -10422,7 +10422,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -10434,7 +10434,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3375:1: rule__MacAddressNetworkProperty__Group__0__Impl : ( () ) ;
     public final void rule__MacAddressNetworkProperty__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3379:1: ( ( () ) )
@@ -10459,7 +10459,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -10471,7 +10471,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3390:1: rule__MacAddressNetworkProperty__Group__1 : rule__MacAddressNetworkProperty__Group__1__Impl rule__MacAddressNetworkProperty__Group__2 ;
     public final void rule__MacAddressNetworkProperty__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3394:1: ( rule__MacAddressNetworkProperty__Group__1__Impl rule__MacAddressNetworkProperty__Group__2 )
@@ -10497,7 +10497,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -10509,7 +10509,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3402:1: rule__MacAddressNetworkProperty__Group__1__Impl : ( rulePreListElement ) ;
     public final void rule__MacAddressNetworkProperty__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3406:1: ( ( rulePreListElement ) )
@@ -10538,7 +10538,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -10550,7 +10550,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3417:1: rule__MacAddressNetworkProperty__Group__2 : rule__MacAddressNetworkProperty__Group__2__Impl rule__MacAddressNetworkProperty__Group__3 ;
     public final void rule__MacAddressNetworkProperty__Group__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3421:1: ( rule__MacAddressNetworkProperty__Group__2__Impl rule__MacAddressNetworkProperty__Group__3 )
@@ -10576,7 +10576,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -10588,7 +10588,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3429:1: rule__MacAddressNetworkProperty__Group__2__Impl : ( Name ) ;
     public final void rule__MacAddressNetworkProperty__Group__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3433:1: ( ( Name ) )
@@ -10613,7 +10613,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -10625,7 +10625,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3444:1: rule__MacAddressNetworkProperty__Group__3 : rule__MacAddressNetworkProperty__Group__3__Impl rule__MacAddressNetworkProperty__Group__4 ;
     public final void rule__MacAddressNetworkProperty__Group__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3448:1: ( rule__MacAddressNetworkProperty__Group__3__Impl rule__MacAddressNetworkProperty__Group__4 )
@@ -10651,7 +10651,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -10663,7 +10663,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3456:1: rule__MacAddressNetworkProperty__Group__3__Impl : ( ( rule__MacAddressNetworkProperty__NameAssignment_3 ) ) ;
     public final void rule__MacAddressNetworkProperty__Group__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3460:1: ( ( ( rule__MacAddressNetworkProperty__NameAssignment_3 ) ) )
@@ -10698,7 +10698,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -10710,7 +10710,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3471:1: rule__MacAddressNetworkProperty__Group__4 : rule__MacAddressNetworkProperty__Group__4__Impl rule__MacAddressNetworkProperty__Group__5 ;
     public final void rule__MacAddressNetworkProperty__Group__4() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3475:1: ( rule__MacAddressNetworkProperty__Group__4__Impl rule__MacAddressNetworkProperty__Group__5 )
@@ -10736,7 +10736,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -10748,7 +10748,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3483:1: rule__MacAddressNetworkProperty__Group__4__Impl : ( RULE_INDENT ) ;
     public final void rule__MacAddressNetworkProperty__Group__4__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3487:1: ( ( RULE_INDENT ) )
@@ -10773,7 +10773,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -10785,7 +10785,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3498:1: rule__MacAddressNetworkProperty__Group__5 : rule__MacAddressNetworkProperty__Group__5__Impl rule__MacAddressNetworkProperty__Group__6 ;
     public final void rule__MacAddressNetworkProperty__Group__5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3502:1: ( rule__MacAddressNetworkProperty__Group__5__Impl rule__MacAddressNetworkProperty__Group__6 )
@@ -10811,7 +10811,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -10823,7 +10823,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3510:1: rule__MacAddressNetworkProperty__Group__5__Impl : ( Kind ) ;
     public final void rule__MacAddressNetworkProperty__Group__5__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3514:1: ( ( Kind ) )
@@ -10848,7 +10848,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -10860,7 +10860,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3525:1: rule__MacAddressNetworkProperty__Group__6 : rule__MacAddressNetworkProperty__Group__6__Impl rule__MacAddressNetworkProperty__Group__7 ;
     public final void rule__MacAddressNetworkProperty__Group__6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3529:1: ( rule__MacAddressNetworkProperty__Group__6__Impl rule__MacAddressNetworkProperty__Group__7 )
@@ -10886,7 +10886,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -10898,7 +10898,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3537:1: rule__MacAddressNetworkProperty__Group__6__Impl : ( ( rule__MacAddressNetworkProperty__KindAssignment_6 ) ) ;
     public final void rule__MacAddressNetworkProperty__Group__6__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3541:1: ( ( ( rule__MacAddressNetworkProperty__KindAssignment_6 ) ) )
@@ -10933,7 +10933,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -10945,7 +10945,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3552:1: rule__MacAddressNetworkProperty__Group__7 : rule__MacAddressNetworkProperty__Group__7__Impl rule__MacAddressNetworkProperty__Group__8 ;
     public final void rule__MacAddressNetworkProperty__Group__7() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3556:1: ( rule__MacAddressNetworkProperty__Group__7__Impl rule__MacAddressNetworkProperty__Group__8 )
@@ -10971,7 +10971,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -10983,7 +10983,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3564:1: rule__MacAddressNetworkProperty__Group__7__Impl : ( ( rule__MacAddressNetworkProperty__Group_7__0 )? ) ;
     public final void rule__MacAddressNetworkProperty__Group__7__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3568:1: ( ( ( rule__MacAddressNetworkProperty__Group_7__0 )? ) )
@@ -11029,7 +11029,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -11041,7 +11041,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3579:1: rule__MacAddressNetworkProperty__Group__8 : rule__MacAddressNetworkProperty__Group__8__Impl ;
     public final void rule__MacAddressNetworkProperty__Group__8() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3583:1: ( rule__MacAddressNetworkProperty__Group__8__Impl )
@@ -11062,7 +11062,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -11074,7 +11074,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3590:1: rule__MacAddressNetworkProperty__Group__8__Impl : ( RULE_DEDENT ) ;
     public final void rule__MacAddressNetworkProperty__Group__8__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3594:1: ( ( RULE_DEDENT ) )
@@ -11099,7 +11099,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -11111,7 +11111,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3606:1: rule__MacAddressNetworkProperty__Group_7__0 : rule__MacAddressNetworkProperty__Group_7__0__Impl rule__MacAddressNetworkProperty__Group_7__1 ;
     public final void rule__MacAddressNetworkProperty__Group_7__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3610:1: ( rule__MacAddressNetworkProperty__Group_7__0__Impl rule__MacAddressNetworkProperty__Group_7__1 )
@@ -11137,7 +11137,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -11149,7 +11149,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3618:1: rule__MacAddressNetworkProperty__Group_7__0__Impl : ( Description ) ;
     public final void rule__MacAddressNetworkProperty__Group_7__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3622:1: ( ( Description ) )
@@ -11174,7 +11174,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -11186,7 +11186,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3633:1: rule__MacAddressNetworkProperty__Group_7__1 : rule__MacAddressNetworkProperty__Group_7__1__Impl ;
     public final void rule__MacAddressNetworkProperty__Group_7__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3637:1: ( rule__MacAddressNetworkProperty__Group_7__1__Impl )
@@ -11207,7 +11207,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -11219,7 +11219,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3644:1: rule__MacAddressNetworkProperty__Group_7__1__Impl : ( ( rule__MacAddressNetworkProperty__DescriptionAssignment_7_1 ) ) ;
     public final void rule__MacAddressNetworkProperty__Group_7__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3648:1: ( ( ( rule__MacAddressNetworkProperty__DescriptionAssignment_7_1 ) ) )
@@ -11254,7 +11254,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -11266,7 +11266,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3660:1: rule__GatewayNetworkProperty__Group__0 : rule__GatewayNetworkProperty__Group__0__Impl rule__GatewayNetworkProperty__Group__1 ;
     public final void rule__GatewayNetworkProperty__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3664:1: ( rule__GatewayNetworkProperty__Group__0__Impl rule__GatewayNetworkProperty__Group__1 )
@@ -11292,7 +11292,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -11304,7 +11304,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3672:1: rule__GatewayNetworkProperty__Group__0__Impl : ( () ) ;
     public final void rule__GatewayNetworkProperty__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3676:1: ( ( () ) )
@@ -11329,7 +11329,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -11341,7 +11341,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3687:1: rule__GatewayNetworkProperty__Group__1 : rule__GatewayNetworkProperty__Group__1__Impl rule__GatewayNetworkProperty__Group__2 ;
     public final void rule__GatewayNetworkProperty__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3691:1: ( rule__GatewayNetworkProperty__Group__1__Impl rule__GatewayNetworkProperty__Group__2 )
@@ -11367,7 +11367,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -11379,7 +11379,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3699:1: rule__GatewayNetworkProperty__Group__1__Impl : ( rulePreListElement ) ;
     public final void rule__GatewayNetworkProperty__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3703:1: ( ( rulePreListElement ) )
@@ -11408,7 +11408,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -11420,7 +11420,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3714:1: rule__GatewayNetworkProperty__Group__2 : rule__GatewayNetworkProperty__Group__2__Impl rule__GatewayNetworkProperty__Group__3 ;
     public final void rule__GatewayNetworkProperty__Group__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3718:1: ( rule__GatewayNetworkProperty__Group__2__Impl rule__GatewayNetworkProperty__Group__3 )
@@ -11446,7 +11446,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -11458,7 +11458,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3726:1: rule__GatewayNetworkProperty__Group__2__Impl : ( Name ) ;
     public final void rule__GatewayNetworkProperty__Group__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3730:1: ( ( Name ) )
@@ -11483,7 +11483,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -11495,7 +11495,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3741:1: rule__GatewayNetworkProperty__Group__3 : rule__GatewayNetworkProperty__Group__3__Impl rule__GatewayNetworkProperty__Group__4 ;
     public final void rule__GatewayNetworkProperty__Group__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3745:1: ( rule__GatewayNetworkProperty__Group__3__Impl rule__GatewayNetworkProperty__Group__4 )
@@ -11521,7 +11521,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -11533,7 +11533,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3753:1: rule__GatewayNetworkProperty__Group__3__Impl : ( ( rule__GatewayNetworkProperty__NameAssignment_3 ) ) ;
     public final void rule__GatewayNetworkProperty__Group__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3757:1: ( ( ( rule__GatewayNetworkProperty__NameAssignment_3 ) ) )
@@ -11568,7 +11568,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -11580,7 +11580,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3768:1: rule__GatewayNetworkProperty__Group__4 : rule__GatewayNetworkProperty__Group__4__Impl rule__GatewayNetworkProperty__Group__5 ;
     public final void rule__GatewayNetworkProperty__Group__4() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3772:1: ( rule__GatewayNetworkProperty__Group__4__Impl rule__GatewayNetworkProperty__Group__5 )
@@ -11606,7 +11606,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -11618,7 +11618,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3780:1: rule__GatewayNetworkProperty__Group__4__Impl : ( RULE_INDENT ) ;
     public final void rule__GatewayNetworkProperty__Group__4__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3784:1: ( ( RULE_INDENT ) )
@@ -11643,7 +11643,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -11655,7 +11655,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3795:1: rule__GatewayNetworkProperty__Group__5 : rule__GatewayNetworkProperty__Group__5__Impl rule__GatewayNetworkProperty__Group__6 ;
     public final void rule__GatewayNetworkProperty__Group__5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3799:1: ( rule__GatewayNetworkProperty__Group__5__Impl rule__GatewayNetworkProperty__Group__6 )
@@ -11681,7 +11681,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -11693,7 +11693,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3807:1: rule__GatewayNetworkProperty__Group__5__Impl : ( Kind ) ;
     public final void rule__GatewayNetworkProperty__Group__5__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3811:1: ( ( Kind ) )
@@ -11718,7 +11718,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -11730,7 +11730,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3822:1: rule__GatewayNetworkProperty__Group__6 : rule__GatewayNetworkProperty__Group__6__Impl rule__GatewayNetworkProperty__Group__7 ;
     public final void rule__GatewayNetworkProperty__Group__6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3826:1: ( rule__GatewayNetworkProperty__Group__6__Impl rule__GatewayNetworkProperty__Group__7 )
@@ -11756,7 +11756,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -11768,7 +11768,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3834:1: rule__GatewayNetworkProperty__Group__6__Impl : ( ( rule__GatewayNetworkProperty__KindAssignment_6 ) ) ;
     public final void rule__GatewayNetworkProperty__Group__6__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3838:1: ( ( ( rule__GatewayNetworkProperty__KindAssignment_6 ) ) )
@@ -11803,7 +11803,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -11815,7 +11815,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3849:1: rule__GatewayNetworkProperty__Group__7 : rule__GatewayNetworkProperty__Group__7__Impl rule__GatewayNetworkProperty__Group__8 ;
     public final void rule__GatewayNetworkProperty__Group__7() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3853:1: ( rule__GatewayNetworkProperty__Group__7__Impl rule__GatewayNetworkProperty__Group__8 )
@@ -11841,7 +11841,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -11853,7 +11853,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3861:1: rule__GatewayNetworkProperty__Group__7__Impl : ( ( rule__GatewayNetworkProperty__Group_7__0 )? ) ;
     public final void rule__GatewayNetworkProperty__Group__7__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3865:1: ( ( ( rule__GatewayNetworkProperty__Group_7__0 )? ) )
@@ -11899,7 +11899,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -11911,7 +11911,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3876:1: rule__GatewayNetworkProperty__Group__8 : rule__GatewayNetworkProperty__Group__8__Impl rule__GatewayNetworkProperty__Group__9 ;
     public final void rule__GatewayNetworkProperty__Group__8() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3880:1: ( rule__GatewayNetworkProperty__Group__8__Impl rule__GatewayNetworkProperty__Group__9 )
@@ -11937,7 +11937,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -11949,7 +11949,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3888:1: rule__GatewayNetworkProperty__Group__8__Impl : ( ( rule__GatewayNetworkProperty__Group_8__0 )? ) ;
     public final void rule__GatewayNetworkProperty__Group__8__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3892:1: ( ( ( rule__GatewayNetworkProperty__Group_8__0 )? ) )
@@ -11995,7 +11995,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -12007,7 +12007,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3903:1: rule__GatewayNetworkProperty__Group__9 : rule__GatewayNetworkProperty__Group__9__Impl ;
     public final void rule__GatewayNetworkProperty__Group__9() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3907:1: ( rule__GatewayNetworkProperty__Group__9__Impl )
@@ -12028,7 +12028,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -12040,7 +12040,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3914:1: rule__GatewayNetworkProperty__Group__9__Impl : ( RULE_DEDENT ) ;
     public final void rule__GatewayNetworkProperty__Group__9__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3918:1: ( ( RULE_DEDENT ) )
@@ -12065,7 +12065,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -12077,7 +12077,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3930:1: rule__GatewayNetworkProperty__Group_7__0 : rule__GatewayNetworkProperty__Group_7__0__Impl rule__GatewayNetworkProperty__Group_7__1 ;
     public final void rule__GatewayNetworkProperty__Group_7__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3934:1: ( rule__GatewayNetworkProperty__Group_7__0__Impl rule__GatewayNetworkProperty__Group_7__1 )
@@ -12103,7 +12103,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -12115,7 +12115,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3942:1: rule__GatewayNetworkProperty__Group_7__0__Impl : ( Description ) ;
     public final void rule__GatewayNetworkProperty__Group_7__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3946:1: ( ( Description ) )
@@ -12140,7 +12140,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -12152,7 +12152,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3957:1: rule__GatewayNetworkProperty__Group_7__1 : rule__GatewayNetworkProperty__Group_7__1__Impl ;
     public final void rule__GatewayNetworkProperty__Group_7__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3961:1: ( rule__GatewayNetworkProperty__Group_7__1__Impl )
@@ -12173,7 +12173,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -12185,7 +12185,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3968:1: rule__GatewayNetworkProperty__Group_7__1__Impl : ( ( rule__GatewayNetworkProperty__DescriptionAssignment_7_1 ) ) ;
     public final void rule__GatewayNetworkProperty__Group_7__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3972:1: ( ( ( rule__GatewayNetworkProperty__DescriptionAssignment_7_1 ) ) )
@@ -12220,7 +12220,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -12232,7 +12232,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3984:1: rule__GatewayNetworkProperty__Group_8__0 : rule__GatewayNetworkProperty__Group_8__0__Impl rule__GatewayNetworkProperty__Group_8__1 ;
     public final void rule__GatewayNetworkProperty__Group_8__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:3988:1: ( rule__GatewayNetworkProperty__Group_8__0__Impl rule__GatewayNetworkProperty__Group_8__1 )
@@ -12258,7 +12258,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -12270,7 +12270,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:3996:1: rule__GatewayNetworkProperty__Group_8__0__Impl : ( Value ) ;
     public final void rule__GatewayNetworkProperty__Group_8__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4000:1: ( ( Value ) )
@@ -12295,7 +12295,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -12307,7 +12307,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4011:1: rule__GatewayNetworkProperty__Group_8__1 : rule__GatewayNetworkProperty__Group_8__1__Impl ;
     public final void rule__GatewayNetworkProperty__Group_8__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4015:1: ( rule__GatewayNetworkProperty__Group_8__1__Impl )
@@ -12328,7 +12328,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -12340,7 +12340,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4022:1: rule__GatewayNetworkProperty__Group_8__1__Impl : ( ( rule__GatewayNetworkProperty__ValueAssignment_8_1 ) ) ;
     public final void rule__GatewayNetworkProperty__Group_8__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4026:1: ( ( ( rule__GatewayNetworkProperty__ValueAssignment_8_1 ) ) )
@@ -12375,7 +12375,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -12387,7 +12387,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4038:1: rule__SubnetMaskNetworkProperty__Group__0 : rule__SubnetMaskNetworkProperty__Group__0__Impl rule__SubnetMaskNetworkProperty__Group__1 ;
     public final void rule__SubnetMaskNetworkProperty__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4042:1: ( rule__SubnetMaskNetworkProperty__Group__0__Impl rule__SubnetMaskNetworkProperty__Group__1 )
@@ -12413,7 +12413,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -12425,7 +12425,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4050:1: rule__SubnetMaskNetworkProperty__Group__0__Impl : ( () ) ;
     public final void rule__SubnetMaskNetworkProperty__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4054:1: ( ( () ) )
@@ -12450,7 +12450,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -12462,7 +12462,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4065:1: rule__SubnetMaskNetworkProperty__Group__1 : rule__SubnetMaskNetworkProperty__Group__1__Impl rule__SubnetMaskNetworkProperty__Group__2 ;
     public final void rule__SubnetMaskNetworkProperty__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4069:1: ( rule__SubnetMaskNetworkProperty__Group__1__Impl rule__SubnetMaskNetworkProperty__Group__2 )
@@ -12488,7 +12488,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -12500,7 +12500,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4077:1: rule__SubnetMaskNetworkProperty__Group__1__Impl : ( rulePreListElement ) ;
     public final void rule__SubnetMaskNetworkProperty__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4081:1: ( ( rulePreListElement ) )
@@ -12529,7 +12529,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -12541,7 +12541,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4092:1: rule__SubnetMaskNetworkProperty__Group__2 : rule__SubnetMaskNetworkProperty__Group__2__Impl rule__SubnetMaskNetworkProperty__Group__3 ;
     public final void rule__SubnetMaskNetworkProperty__Group__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4096:1: ( rule__SubnetMaskNetworkProperty__Group__2__Impl rule__SubnetMaskNetworkProperty__Group__3 )
@@ -12567,7 +12567,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -12579,7 +12579,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4104:1: rule__SubnetMaskNetworkProperty__Group__2__Impl : ( Name ) ;
     public final void rule__SubnetMaskNetworkProperty__Group__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4108:1: ( ( Name ) )
@@ -12604,7 +12604,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -12616,7 +12616,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4119:1: rule__SubnetMaskNetworkProperty__Group__3 : rule__SubnetMaskNetworkProperty__Group__3__Impl rule__SubnetMaskNetworkProperty__Group__4 ;
     public final void rule__SubnetMaskNetworkProperty__Group__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4123:1: ( rule__SubnetMaskNetworkProperty__Group__3__Impl rule__SubnetMaskNetworkProperty__Group__4 )
@@ -12642,7 +12642,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -12654,7 +12654,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4131:1: rule__SubnetMaskNetworkProperty__Group__3__Impl : ( ( rule__SubnetMaskNetworkProperty__NameAssignment_3 ) ) ;
     public final void rule__SubnetMaskNetworkProperty__Group__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4135:1: ( ( ( rule__SubnetMaskNetworkProperty__NameAssignment_3 ) ) )
@@ -12689,7 +12689,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -12701,7 +12701,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4146:1: rule__SubnetMaskNetworkProperty__Group__4 : rule__SubnetMaskNetworkProperty__Group__4__Impl rule__SubnetMaskNetworkProperty__Group__5 ;
     public final void rule__SubnetMaskNetworkProperty__Group__4() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4150:1: ( rule__SubnetMaskNetworkProperty__Group__4__Impl rule__SubnetMaskNetworkProperty__Group__5 )
@@ -12727,7 +12727,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -12739,7 +12739,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4158:1: rule__SubnetMaskNetworkProperty__Group__4__Impl : ( RULE_INDENT ) ;
     public final void rule__SubnetMaskNetworkProperty__Group__4__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4162:1: ( ( RULE_INDENT ) )
@@ -12764,7 +12764,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -12776,7 +12776,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4173:1: rule__SubnetMaskNetworkProperty__Group__5 : rule__SubnetMaskNetworkProperty__Group__5__Impl rule__SubnetMaskNetworkProperty__Group__6 ;
     public final void rule__SubnetMaskNetworkProperty__Group__5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4177:1: ( rule__SubnetMaskNetworkProperty__Group__5__Impl rule__SubnetMaskNetworkProperty__Group__6 )
@@ -12802,7 +12802,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -12814,7 +12814,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4185:1: rule__SubnetMaskNetworkProperty__Group__5__Impl : ( Kind ) ;
     public final void rule__SubnetMaskNetworkProperty__Group__5__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4189:1: ( ( Kind ) )
@@ -12839,7 +12839,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -12851,7 +12851,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4200:1: rule__SubnetMaskNetworkProperty__Group__6 : rule__SubnetMaskNetworkProperty__Group__6__Impl rule__SubnetMaskNetworkProperty__Group__7 ;
     public final void rule__SubnetMaskNetworkProperty__Group__6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4204:1: ( rule__SubnetMaskNetworkProperty__Group__6__Impl rule__SubnetMaskNetworkProperty__Group__7 )
@@ -12877,7 +12877,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -12889,7 +12889,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4212:1: rule__SubnetMaskNetworkProperty__Group__6__Impl : ( ( rule__SubnetMaskNetworkProperty__KindAssignment_6 ) ) ;
     public final void rule__SubnetMaskNetworkProperty__Group__6__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4216:1: ( ( ( rule__SubnetMaskNetworkProperty__KindAssignment_6 ) ) )
@@ -12924,7 +12924,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -12936,7 +12936,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4227:1: rule__SubnetMaskNetworkProperty__Group__7 : rule__SubnetMaskNetworkProperty__Group__7__Impl rule__SubnetMaskNetworkProperty__Group__8 ;
     public final void rule__SubnetMaskNetworkProperty__Group__7() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4231:1: ( rule__SubnetMaskNetworkProperty__Group__7__Impl rule__SubnetMaskNetworkProperty__Group__8 )
@@ -12962,7 +12962,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -12974,7 +12974,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4239:1: rule__SubnetMaskNetworkProperty__Group__7__Impl : ( ( rule__SubnetMaskNetworkProperty__Group_7__0 )? ) ;
     public final void rule__SubnetMaskNetworkProperty__Group__7__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4243:1: ( ( ( rule__SubnetMaskNetworkProperty__Group_7__0 )? ) )
@@ -13020,7 +13020,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -13032,7 +13032,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4254:1: rule__SubnetMaskNetworkProperty__Group__8 : rule__SubnetMaskNetworkProperty__Group__8__Impl rule__SubnetMaskNetworkProperty__Group__9 ;
     public final void rule__SubnetMaskNetworkProperty__Group__8() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4258:1: ( rule__SubnetMaskNetworkProperty__Group__8__Impl rule__SubnetMaskNetworkProperty__Group__9 )
@@ -13058,7 +13058,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -13070,7 +13070,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4266:1: rule__SubnetMaskNetworkProperty__Group__8__Impl : ( ( rule__SubnetMaskNetworkProperty__Group_8__0 )? ) ;
     public final void rule__SubnetMaskNetworkProperty__Group__8__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4270:1: ( ( ( rule__SubnetMaskNetworkProperty__Group_8__0 )? ) )
@@ -13116,7 +13116,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -13128,7 +13128,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4281:1: rule__SubnetMaskNetworkProperty__Group__9 : rule__SubnetMaskNetworkProperty__Group__9__Impl ;
     public final void rule__SubnetMaskNetworkProperty__Group__9() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4285:1: ( rule__SubnetMaskNetworkProperty__Group__9__Impl )
@@ -13149,7 +13149,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -13161,7 +13161,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4292:1: rule__SubnetMaskNetworkProperty__Group__9__Impl : ( RULE_DEDENT ) ;
     public final void rule__SubnetMaskNetworkProperty__Group__9__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4296:1: ( ( RULE_DEDENT ) )
@@ -13186,7 +13186,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -13198,7 +13198,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4308:1: rule__SubnetMaskNetworkProperty__Group_7__0 : rule__SubnetMaskNetworkProperty__Group_7__0__Impl rule__SubnetMaskNetworkProperty__Group_7__1 ;
     public final void rule__SubnetMaskNetworkProperty__Group_7__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4312:1: ( rule__SubnetMaskNetworkProperty__Group_7__0__Impl rule__SubnetMaskNetworkProperty__Group_7__1 )
@@ -13224,7 +13224,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -13236,7 +13236,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4320:1: rule__SubnetMaskNetworkProperty__Group_7__0__Impl : ( Description ) ;
     public final void rule__SubnetMaskNetworkProperty__Group_7__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4324:1: ( ( Description ) )
@@ -13261,7 +13261,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -13273,7 +13273,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4335:1: rule__SubnetMaskNetworkProperty__Group_7__1 : rule__SubnetMaskNetworkProperty__Group_7__1__Impl ;
     public final void rule__SubnetMaskNetworkProperty__Group_7__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4339:1: ( rule__SubnetMaskNetworkProperty__Group_7__1__Impl )
@@ -13294,7 +13294,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -13306,7 +13306,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4346:1: rule__SubnetMaskNetworkProperty__Group_7__1__Impl : ( ( rule__SubnetMaskNetworkProperty__DescriptionAssignment_7_1 ) ) ;
     public final void rule__SubnetMaskNetworkProperty__Group_7__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4350:1: ( ( ( rule__SubnetMaskNetworkProperty__DescriptionAssignment_7_1 ) ) )
@@ -13341,7 +13341,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -13353,7 +13353,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4362:1: rule__SubnetMaskNetworkProperty__Group_8__0 : rule__SubnetMaskNetworkProperty__Group_8__0__Impl rule__SubnetMaskNetworkProperty__Group_8__1 ;
     public final void rule__SubnetMaskNetworkProperty__Group_8__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4366:1: ( rule__SubnetMaskNetworkProperty__Group_8__0__Impl rule__SubnetMaskNetworkProperty__Group_8__1 )
@@ -13379,7 +13379,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -13391,7 +13391,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4374:1: rule__SubnetMaskNetworkProperty__Group_8__0__Impl : ( Value ) ;
     public final void rule__SubnetMaskNetworkProperty__Group_8__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4378:1: ( ( Value ) )
@@ -13416,7 +13416,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -13428,7 +13428,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4389:1: rule__SubnetMaskNetworkProperty__Group_8__1 : rule__SubnetMaskNetworkProperty__Group_8__1__Impl ;
     public final void rule__SubnetMaskNetworkProperty__Group_8__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4393:1: ( rule__SubnetMaskNetworkProperty__Group_8__1__Impl )
@@ -13449,7 +13449,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -13461,7 +13461,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4400:1: rule__SubnetMaskNetworkProperty__Group_8__1__Impl : ( ( rule__SubnetMaskNetworkProperty__ValueAssignment_8_1 ) ) ;
     public final void rule__SubnetMaskNetworkProperty__Group_8__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4404:1: ( ( ( rule__SubnetMaskNetworkProperty__ValueAssignment_8_1 ) ) )
@@ -13496,7 +13496,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -13508,7 +13508,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4416:1: rule__PortNetworkProperty__Group__0 : rule__PortNetworkProperty__Group__0__Impl rule__PortNetworkProperty__Group__1 ;
     public final void rule__PortNetworkProperty__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4420:1: ( rule__PortNetworkProperty__Group__0__Impl rule__PortNetworkProperty__Group__1 )
@@ -13534,7 +13534,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -13546,7 +13546,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4428:1: rule__PortNetworkProperty__Group__0__Impl : ( () ) ;
     public final void rule__PortNetworkProperty__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4432:1: ( ( () ) )
@@ -13571,7 +13571,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -13583,7 +13583,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4443:1: rule__PortNetworkProperty__Group__1 : rule__PortNetworkProperty__Group__1__Impl rule__PortNetworkProperty__Group__2 ;
     public final void rule__PortNetworkProperty__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4447:1: ( rule__PortNetworkProperty__Group__1__Impl rule__PortNetworkProperty__Group__2 )
@@ -13609,7 +13609,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -13621,7 +13621,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4455:1: rule__PortNetworkProperty__Group__1__Impl : ( rulePreListElement ) ;
     public final void rule__PortNetworkProperty__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4459:1: ( ( rulePreListElement ) )
@@ -13650,7 +13650,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -13662,7 +13662,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4470:1: rule__PortNetworkProperty__Group__2 : rule__PortNetworkProperty__Group__2__Impl rule__PortNetworkProperty__Group__3 ;
     public final void rule__PortNetworkProperty__Group__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4474:1: ( rule__PortNetworkProperty__Group__2__Impl rule__PortNetworkProperty__Group__3 )
@@ -13688,7 +13688,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -13700,7 +13700,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4482:1: rule__PortNetworkProperty__Group__2__Impl : ( Name ) ;
     public final void rule__PortNetworkProperty__Group__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4486:1: ( ( Name ) )
@@ -13725,7 +13725,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -13737,7 +13737,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4497:1: rule__PortNetworkProperty__Group__3 : rule__PortNetworkProperty__Group__3__Impl rule__PortNetworkProperty__Group__4 ;
     public final void rule__PortNetworkProperty__Group__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4501:1: ( rule__PortNetworkProperty__Group__3__Impl rule__PortNetworkProperty__Group__4 )
@@ -13763,7 +13763,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -13775,7 +13775,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4509:1: rule__PortNetworkProperty__Group__3__Impl : ( ( rule__PortNetworkProperty__NameAssignment_3 ) ) ;
     public final void rule__PortNetworkProperty__Group__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4513:1: ( ( ( rule__PortNetworkProperty__NameAssignment_3 ) ) )
@@ -13810,7 +13810,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -13822,7 +13822,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4524:1: rule__PortNetworkProperty__Group__4 : rule__PortNetworkProperty__Group__4__Impl rule__PortNetworkProperty__Group__5 ;
     public final void rule__PortNetworkProperty__Group__4() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4528:1: ( rule__PortNetworkProperty__Group__4__Impl rule__PortNetworkProperty__Group__5 )
@@ -13848,7 +13848,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -13860,7 +13860,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4536:1: rule__PortNetworkProperty__Group__4__Impl : ( RULE_INDENT ) ;
     public final void rule__PortNetworkProperty__Group__4__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4540:1: ( ( RULE_INDENT ) )
@@ -13885,7 +13885,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -13897,7 +13897,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4551:1: rule__PortNetworkProperty__Group__5 : rule__PortNetworkProperty__Group__5__Impl rule__PortNetworkProperty__Group__6 ;
     public final void rule__PortNetworkProperty__Group__5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4555:1: ( rule__PortNetworkProperty__Group__5__Impl rule__PortNetworkProperty__Group__6 )
@@ -13923,7 +13923,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -13935,7 +13935,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4563:1: rule__PortNetworkProperty__Group__5__Impl : ( Kind ) ;
     public final void rule__PortNetworkProperty__Group__5__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4567:1: ( ( Kind ) )
@@ -13960,7 +13960,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -13972,7 +13972,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4578:1: rule__PortNetworkProperty__Group__6 : rule__PortNetworkProperty__Group__6__Impl rule__PortNetworkProperty__Group__7 ;
     public final void rule__PortNetworkProperty__Group__6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4582:1: ( rule__PortNetworkProperty__Group__6__Impl rule__PortNetworkProperty__Group__7 )
@@ -13998,7 +13998,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -14010,7 +14010,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4590:1: rule__PortNetworkProperty__Group__6__Impl : ( ( rule__PortNetworkProperty__KindAssignment_6 ) ) ;
     public final void rule__PortNetworkProperty__Group__6__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4594:1: ( ( ( rule__PortNetworkProperty__KindAssignment_6 ) ) )
@@ -14045,7 +14045,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -14057,7 +14057,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4605:1: rule__PortNetworkProperty__Group__7 : rule__PortNetworkProperty__Group__7__Impl rule__PortNetworkProperty__Group__8 ;
     public final void rule__PortNetworkProperty__Group__7() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4609:1: ( rule__PortNetworkProperty__Group__7__Impl rule__PortNetworkProperty__Group__8 )
@@ -14083,7 +14083,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -14095,7 +14095,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4617:1: rule__PortNetworkProperty__Group__7__Impl : ( ( rule__PortNetworkProperty__Group_7__0 )? ) ;
     public final void rule__PortNetworkProperty__Group__7__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4621:1: ( ( ( rule__PortNetworkProperty__Group_7__0 )? ) )
@@ -14141,7 +14141,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -14153,7 +14153,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4632:1: rule__PortNetworkProperty__Group__8 : rule__PortNetworkProperty__Group__8__Impl rule__PortNetworkProperty__Group__9 ;
     public final void rule__PortNetworkProperty__Group__8() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4636:1: ( rule__PortNetworkProperty__Group__8__Impl rule__PortNetworkProperty__Group__9 )
@@ -14179,7 +14179,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -14191,7 +14191,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4644:1: rule__PortNetworkProperty__Group__8__Impl : ( ( rule__PortNetworkProperty__Group_8__0 )? ) ;
     public final void rule__PortNetworkProperty__Group__8__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4648:1: ( ( ( rule__PortNetworkProperty__Group_8__0 )? ) )
@@ -14237,7 +14237,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -14249,7 +14249,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4659:1: rule__PortNetworkProperty__Group__9 : rule__PortNetworkProperty__Group__9__Impl ;
     public final void rule__PortNetworkProperty__Group__9() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4663:1: ( rule__PortNetworkProperty__Group__9__Impl )
@@ -14270,7 +14270,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -14282,7 +14282,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4670:1: rule__PortNetworkProperty__Group__9__Impl : ( RULE_DEDENT ) ;
     public final void rule__PortNetworkProperty__Group__9__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4674:1: ( ( RULE_DEDENT ) )
@@ -14307,7 +14307,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -14319,7 +14319,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4686:1: rule__PortNetworkProperty__Group_7__0 : rule__PortNetworkProperty__Group_7__0__Impl rule__PortNetworkProperty__Group_7__1 ;
     public final void rule__PortNetworkProperty__Group_7__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4690:1: ( rule__PortNetworkProperty__Group_7__0__Impl rule__PortNetworkProperty__Group_7__1 )
@@ -14345,7 +14345,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -14357,7 +14357,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4698:1: rule__PortNetworkProperty__Group_7__0__Impl : ( Description ) ;
     public final void rule__PortNetworkProperty__Group_7__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4702:1: ( ( Description ) )
@@ -14382,7 +14382,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -14394,7 +14394,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4713:1: rule__PortNetworkProperty__Group_7__1 : rule__PortNetworkProperty__Group_7__1__Impl ;
     public final void rule__PortNetworkProperty__Group_7__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4717:1: ( rule__PortNetworkProperty__Group_7__1__Impl )
@@ -14415,7 +14415,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -14427,7 +14427,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4724:1: rule__PortNetworkProperty__Group_7__1__Impl : ( ( rule__PortNetworkProperty__DescriptionAssignment_7_1 ) ) ;
     public final void rule__PortNetworkProperty__Group_7__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4728:1: ( ( ( rule__PortNetworkProperty__DescriptionAssignment_7_1 ) ) )
@@ -14462,7 +14462,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -14474,7 +14474,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4740:1: rule__PortNetworkProperty__Group_8__0 : rule__PortNetworkProperty__Group_8__0__Impl rule__PortNetworkProperty__Group_8__1 ;
     public final void rule__PortNetworkProperty__Group_8__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4744:1: ( rule__PortNetworkProperty__Group_8__0__Impl rule__PortNetworkProperty__Group_8__1 )
@@ -14500,7 +14500,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -14512,7 +14512,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4752:1: rule__PortNetworkProperty__Group_8__0__Impl : ( Value ) ;
     public final void rule__PortNetworkProperty__Group_8__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4756:1: ( ( Value ) )
@@ -14537,7 +14537,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -14549,7 +14549,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4767:1: rule__PortNetworkProperty__Group_8__1 : rule__PortNetworkProperty__Group_8__1__Impl ;
     public final void rule__PortNetworkProperty__Group_8__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4771:1: ( rule__PortNetworkProperty__Group_8__1__Impl )
@@ -14570,7 +14570,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -14582,7 +14582,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4778:1: rule__PortNetworkProperty__Group_8__1__Impl : ( ( rule__PortNetworkProperty__ValueAssignment_8_1 ) ) ;
     public final void rule__PortNetworkProperty__Group_8__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4782:1: ( ( ( rule__PortNetworkProperty__ValueAssignment_8_1 ) ) )
@@ -14617,7 +14617,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -14629,7 +14629,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4794:1: rule__DNSServerNetworkProperty__Group__0 : rule__DNSServerNetworkProperty__Group__0__Impl rule__DNSServerNetworkProperty__Group__1 ;
     public final void rule__DNSServerNetworkProperty__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4798:1: ( rule__DNSServerNetworkProperty__Group__0__Impl rule__DNSServerNetworkProperty__Group__1 )
@@ -14655,7 +14655,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -14667,7 +14667,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4806:1: rule__DNSServerNetworkProperty__Group__0__Impl : ( () ) ;
     public final void rule__DNSServerNetworkProperty__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4810:1: ( ( () ) )
@@ -14692,7 +14692,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -14704,7 +14704,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4821:1: rule__DNSServerNetworkProperty__Group__1 : rule__DNSServerNetworkProperty__Group__1__Impl rule__DNSServerNetworkProperty__Group__2 ;
     public final void rule__DNSServerNetworkProperty__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4825:1: ( rule__DNSServerNetworkProperty__Group__1__Impl rule__DNSServerNetworkProperty__Group__2 )
@@ -14730,7 +14730,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -14742,7 +14742,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4833:1: rule__DNSServerNetworkProperty__Group__1__Impl : ( rulePreListElement ) ;
     public final void rule__DNSServerNetworkProperty__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4837:1: ( ( rulePreListElement ) )
@@ -14771,7 +14771,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -14783,7 +14783,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4848:1: rule__DNSServerNetworkProperty__Group__2 : rule__DNSServerNetworkProperty__Group__2__Impl rule__DNSServerNetworkProperty__Group__3 ;
     public final void rule__DNSServerNetworkProperty__Group__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4852:1: ( rule__DNSServerNetworkProperty__Group__2__Impl rule__DNSServerNetworkProperty__Group__3 )
@@ -14809,7 +14809,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -14821,7 +14821,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4860:1: rule__DNSServerNetworkProperty__Group__2__Impl : ( Name ) ;
     public final void rule__DNSServerNetworkProperty__Group__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4864:1: ( ( Name ) )
@@ -14846,7 +14846,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -14858,7 +14858,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4875:1: rule__DNSServerNetworkProperty__Group__3 : rule__DNSServerNetworkProperty__Group__3__Impl rule__DNSServerNetworkProperty__Group__4 ;
     public final void rule__DNSServerNetworkProperty__Group__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4879:1: ( rule__DNSServerNetworkProperty__Group__3__Impl rule__DNSServerNetworkProperty__Group__4 )
@@ -14884,7 +14884,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -14896,7 +14896,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4887:1: rule__DNSServerNetworkProperty__Group__3__Impl : ( ( rule__DNSServerNetworkProperty__NameAssignment_3 ) ) ;
     public final void rule__DNSServerNetworkProperty__Group__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4891:1: ( ( ( rule__DNSServerNetworkProperty__NameAssignment_3 ) ) )
@@ -14931,7 +14931,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -14943,7 +14943,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4902:1: rule__DNSServerNetworkProperty__Group__4 : rule__DNSServerNetworkProperty__Group__4__Impl rule__DNSServerNetworkProperty__Group__5 ;
     public final void rule__DNSServerNetworkProperty__Group__4() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4906:1: ( rule__DNSServerNetworkProperty__Group__4__Impl rule__DNSServerNetworkProperty__Group__5 )
@@ -14969,7 +14969,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -14981,7 +14981,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4914:1: rule__DNSServerNetworkProperty__Group__4__Impl : ( RULE_INDENT ) ;
     public final void rule__DNSServerNetworkProperty__Group__4__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4918:1: ( ( RULE_INDENT ) )
@@ -15006,7 +15006,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -15018,7 +15018,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4929:1: rule__DNSServerNetworkProperty__Group__5 : rule__DNSServerNetworkProperty__Group__5__Impl rule__DNSServerNetworkProperty__Group__6 ;
     public final void rule__DNSServerNetworkProperty__Group__5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4933:1: ( rule__DNSServerNetworkProperty__Group__5__Impl rule__DNSServerNetworkProperty__Group__6 )
@@ -15044,7 +15044,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -15056,7 +15056,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4941:1: rule__DNSServerNetworkProperty__Group__5__Impl : ( Kind ) ;
     public final void rule__DNSServerNetworkProperty__Group__5__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4945:1: ( ( Kind ) )
@@ -15081,7 +15081,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -15093,7 +15093,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4956:1: rule__DNSServerNetworkProperty__Group__6 : rule__DNSServerNetworkProperty__Group__6__Impl rule__DNSServerNetworkProperty__Group__7 ;
     public final void rule__DNSServerNetworkProperty__Group__6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4960:1: ( rule__DNSServerNetworkProperty__Group__6__Impl rule__DNSServerNetworkProperty__Group__7 )
@@ -15119,7 +15119,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -15131,7 +15131,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4968:1: rule__DNSServerNetworkProperty__Group__6__Impl : ( ( rule__DNSServerNetworkProperty__KindAssignment_6 ) ) ;
     public final void rule__DNSServerNetworkProperty__Group__6__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4972:1: ( ( ( rule__DNSServerNetworkProperty__KindAssignment_6 ) ) )
@@ -15166,7 +15166,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -15178,7 +15178,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4983:1: rule__DNSServerNetworkProperty__Group__7 : rule__DNSServerNetworkProperty__Group__7__Impl rule__DNSServerNetworkProperty__Group__8 ;
     public final void rule__DNSServerNetworkProperty__Group__7() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4987:1: ( rule__DNSServerNetworkProperty__Group__7__Impl rule__DNSServerNetworkProperty__Group__8 )
@@ -15204,7 +15204,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -15216,7 +15216,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:4995:1: rule__DNSServerNetworkProperty__Group__7__Impl : ( ( rule__DNSServerNetworkProperty__Group_7__0 )? ) ;
     public final void rule__DNSServerNetworkProperty__Group__7__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:4999:1: ( ( ( rule__DNSServerNetworkProperty__Group_7__0 )? ) )
@@ -15262,7 +15262,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -15274,7 +15274,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5010:1: rule__DNSServerNetworkProperty__Group__8 : rule__DNSServerNetworkProperty__Group__8__Impl rule__DNSServerNetworkProperty__Group__9 ;
     public final void rule__DNSServerNetworkProperty__Group__8() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5014:1: ( rule__DNSServerNetworkProperty__Group__8__Impl rule__DNSServerNetworkProperty__Group__9 )
@@ -15300,7 +15300,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -15312,7 +15312,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5022:1: rule__DNSServerNetworkProperty__Group__8__Impl : ( ( rule__DNSServerNetworkProperty__Group_8__0 )? ) ;
     public final void rule__DNSServerNetworkProperty__Group__8__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5026:1: ( ( ( rule__DNSServerNetworkProperty__Group_8__0 )? ) )
@@ -15358,7 +15358,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -15370,7 +15370,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5037:1: rule__DNSServerNetworkProperty__Group__9 : rule__DNSServerNetworkProperty__Group__9__Impl rule__DNSServerNetworkProperty__Group__10 ;
     public final void rule__DNSServerNetworkProperty__Group__9() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5041:1: ( rule__DNSServerNetworkProperty__Group__9__Impl rule__DNSServerNetworkProperty__Group__10 )
@@ -15396,7 +15396,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -15408,7 +15408,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5049:1: rule__DNSServerNetworkProperty__Group__9__Impl : ( ( RULE_DEDENT )? ) ;
     public final void rule__DNSServerNetworkProperty__Group__9__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5053:1: ( ( ( RULE_DEDENT )? ) )
@@ -15476,7 +15476,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -15488,7 +15488,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5064:1: rule__DNSServerNetworkProperty__Group__10 : rule__DNSServerNetworkProperty__Group__10__Impl ;
     public final void rule__DNSServerNetworkProperty__Group__10() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5068:1: ( rule__DNSServerNetworkProperty__Group__10__Impl )
@@ -15509,7 +15509,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -15521,7 +15521,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5075:1: rule__DNSServerNetworkProperty__Group__10__Impl : ( RULE_DEDENT ) ;
     public final void rule__DNSServerNetworkProperty__Group__10__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5079:1: ( ( RULE_DEDENT ) )
@@ -15546,7 +15546,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -15558,7 +15558,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5091:1: rule__DNSServerNetworkProperty__Group_7__0 : rule__DNSServerNetworkProperty__Group_7__0__Impl rule__DNSServerNetworkProperty__Group_7__1 ;
     public final void rule__DNSServerNetworkProperty__Group_7__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5095:1: ( rule__DNSServerNetworkProperty__Group_7__0__Impl rule__DNSServerNetworkProperty__Group_7__1 )
@@ -15584,7 +15584,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -15596,7 +15596,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5103:1: rule__DNSServerNetworkProperty__Group_7__0__Impl : ( Description ) ;
     public final void rule__DNSServerNetworkProperty__Group_7__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5107:1: ( ( Description ) )
@@ -15621,7 +15621,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -15633,7 +15633,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5118:1: rule__DNSServerNetworkProperty__Group_7__1 : rule__DNSServerNetworkProperty__Group_7__1__Impl ;
     public final void rule__DNSServerNetworkProperty__Group_7__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5122:1: ( rule__DNSServerNetworkProperty__Group_7__1__Impl )
@@ -15654,7 +15654,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -15666,7 +15666,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5129:1: rule__DNSServerNetworkProperty__Group_7__1__Impl : ( ( rule__DNSServerNetworkProperty__DescriptionAssignment_7_1 ) ) ;
     public final void rule__DNSServerNetworkProperty__Group_7__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5133:1: ( ( ( rule__DNSServerNetworkProperty__DescriptionAssignment_7_1 ) ) )
@@ -15701,7 +15701,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -15713,7 +15713,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5145:1: rule__DNSServerNetworkProperty__Group_8__0 : rule__DNSServerNetworkProperty__Group_8__0__Impl rule__DNSServerNetworkProperty__Group_8__1 ;
     public final void rule__DNSServerNetworkProperty__Group_8__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5149:1: ( rule__DNSServerNetworkProperty__Group_8__0__Impl rule__DNSServerNetworkProperty__Group_8__1 )
@@ -15739,7 +15739,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -15751,7 +15751,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5157:1: rule__DNSServerNetworkProperty__Group_8__0__Impl : ( Value ) ;
     public final void rule__DNSServerNetworkProperty__Group_8__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5161:1: ( ( Value ) )
@@ -15776,7 +15776,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -15788,7 +15788,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5172:1: rule__DNSServerNetworkProperty__Group_8__1 : rule__DNSServerNetworkProperty__Group_8__1__Impl rule__DNSServerNetworkProperty__Group_8__2 ;
     public final void rule__DNSServerNetworkProperty__Group_8__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5176:1: ( rule__DNSServerNetworkProperty__Group_8__1__Impl rule__DNSServerNetworkProperty__Group_8__2 )
@@ -15814,7 +15814,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -15826,7 +15826,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5184:1: rule__DNSServerNetworkProperty__Group_8__1__Impl : ( RULE_INDENT ) ;
     public final void rule__DNSServerNetworkProperty__Group_8__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5188:1: ( ( RULE_INDENT ) )
@@ -15851,7 +15851,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -15863,7 +15863,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5199:1: rule__DNSServerNetworkProperty__Group_8__2 : rule__DNSServerNetworkProperty__Group_8__2__Impl rule__DNSServerNetworkProperty__Group_8__3 ;
     public final void rule__DNSServerNetworkProperty__Group_8__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5203:1: ( rule__DNSServerNetworkProperty__Group_8__2__Impl rule__DNSServerNetworkProperty__Group_8__3 )
@@ -15889,7 +15889,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -15901,7 +15901,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5211:1: rule__DNSServerNetworkProperty__Group_8__2__Impl : ( rulePreListElement ) ;
     public final void rule__DNSServerNetworkProperty__Group_8__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5215:1: ( ( rulePreListElement ) )
@@ -15930,7 +15930,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -15942,7 +15942,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5226:1: rule__DNSServerNetworkProperty__Group_8__3 : rule__DNSServerNetworkProperty__Group_8__3__Impl rule__DNSServerNetworkProperty__Group_8__4 ;
     public final void rule__DNSServerNetworkProperty__Group_8__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5230:1: ( rule__DNSServerNetworkProperty__Group_8__3__Impl rule__DNSServerNetworkProperty__Group_8__4 )
@@ -15968,7 +15968,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -15980,7 +15980,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5238:1: rule__DNSServerNetworkProperty__Group_8__3__Impl : ( ( rule__DNSServerNetworkProperty__ValueAssignment_8_3 ) ) ;
     public final void rule__DNSServerNetworkProperty__Group_8__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5242:1: ( ( ( rule__DNSServerNetworkProperty__ValueAssignment_8_3 ) ) )
@@ -16015,7 +16015,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -16027,7 +16027,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5253:1: rule__DNSServerNetworkProperty__Group_8__4 : rule__DNSServerNetworkProperty__Group_8__4__Impl rule__DNSServerNetworkProperty__Group_8__5 ;
     public final void rule__DNSServerNetworkProperty__Group_8__4() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5257:1: ( rule__DNSServerNetworkProperty__Group_8__4__Impl rule__DNSServerNetworkProperty__Group_8__5 )
@@ -16053,7 +16053,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -16065,7 +16065,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5265:1: rule__DNSServerNetworkProperty__Group_8__4__Impl : ( ( rule__DNSServerNetworkProperty__Group_8_4__0 )* ) ;
     public final void rule__DNSServerNetworkProperty__Group_8__4__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5269:1: ( ( ( rule__DNSServerNetworkProperty__Group_8_4__0 )* ) )
@@ -16087,20 +16087,20 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
 
 
                 switch (alt32) {
-                case 1 :
-                    // InternalDeviceParser.g:5272:3: rule__DNSServerNetworkProperty__Group_8_4__0
-                    {
-                    pushFollow(FOLLOW_26);
-                    rule__DNSServerNetworkProperty__Group_8_4__0();
+              case 1 :
+                  // InternalDeviceParser.g:5272:3: rule__DNSServerNetworkProperty__Group_8_4__0
+                  {
+                  pushFollow(FOLLOW_26);
+                  rule__DNSServerNetworkProperty__Group_8_4__0();
 
-                    state._fsp--;
+                  state._fsp--;
 
 
-                    }
-                    break;
+                  }
+                  break;
 
-                default :
-                    break loop32;
+              default :
+                  break loop32;
                 }
             } while (true);
 
@@ -16118,7 +16118,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -16130,7 +16130,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5280:1: rule__DNSServerNetworkProperty__Group_8__5 : rule__DNSServerNetworkProperty__Group_8__5__Impl ;
     public final void rule__DNSServerNetworkProperty__Group_8__5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5284:1: ( rule__DNSServerNetworkProperty__Group_8__5__Impl )
@@ -16151,7 +16151,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -16163,7 +16163,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5291:1: rule__DNSServerNetworkProperty__Group_8__5__Impl : ( RULE_DEDENT ) ;
     public final void rule__DNSServerNetworkProperty__Group_8__5__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5295:1: ( ( RULE_DEDENT ) )
@@ -16188,7 +16188,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -16200,7 +16200,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5307:1: rule__DNSServerNetworkProperty__Group_8_4__0 : rule__DNSServerNetworkProperty__Group_8_4__0__Impl rule__DNSServerNetworkProperty__Group_8_4__1 ;
     public final void rule__DNSServerNetworkProperty__Group_8_4__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5311:1: ( rule__DNSServerNetworkProperty__Group_8_4__0__Impl rule__DNSServerNetworkProperty__Group_8_4__1 )
@@ -16226,7 +16226,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -16238,7 +16238,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5319:1: rule__DNSServerNetworkProperty__Group_8_4__0__Impl : ( rulePreListElement ) ;
     public final void rule__DNSServerNetworkProperty__Group_8_4__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5323:1: ( ( rulePreListElement ) )
@@ -16267,7 +16267,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -16279,7 +16279,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5334:1: rule__DNSServerNetworkProperty__Group_8_4__1 : rule__DNSServerNetworkProperty__Group_8_4__1__Impl ;
     public final void rule__DNSServerNetworkProperty__Group_8_4__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5338:1: ( rule__DNSServerNetworkProperty__Group_8_4__1__Impl )
@@ -16300,7 +16300,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -16312,7 +16312,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5345:1: rule__DNSServerNetworkProperty__Group_8_4__1__Impl : ( ( rule__DNSServerNetworkProperty__ValueAssignment_8_4_1 ) ) ;
     public final void rule__DNSServerNetworkProperty__Group_8_4__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5349:1: ( ( ( rule__DNSServerNetworkProperty__ValueAssignment_8_4_1 ) ) )
@@ -16347,7 +16347,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -16359,7 +16359,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5361:1: rule__DeviceVolumeUsbProperty__Group__0 : rule__DeviceVolumeUsbProperty__Group__0__Impl rule__DeviceVolumeUsbProperty__Group__1 ;
     public final void rule__DeviceVolumeUsbProperty__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5365:1: ( rule__DeviceVolumeUsbProperty__Group__0__Impl rule__DeviceVolumeUsbProperty__Group__1 )
@@ -16385,7 +16385,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -16397,7 +16397,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5373:1: rule__DeviceVolumeUsbProperty__Group__0__Impl : ( () ) ;
     public final void rule__DeviceVolumeUsbProperty__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5377:1: ( ( () ) )
@@ -16422,7 +16422,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -16434,7 +16434,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5388:1: rule__DeviceVolumeUsbProperty__Group__1 : rule__DeviceVolumeUsbProperty__Group__1__Impl rule__DeviceVolumeUsbProperty__Group__2 ;
     public final void rule__DeviceVolumeUsbProperty__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5392:1: ( rule__DeviceVolumeUsbProperty__Group__1__Impl rule__DeviceVolumeUsbProperty__Group__2 )
@@ -16460,7 +16460,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -16472,7 +16472,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5400:1: rule__DeviceVolumeUsbProperty__Group__1__Impl : ( rulePreListElement ) ;
     public final void rule__DeviceVolumeUsbProperty__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5404:1: ( ( rulePreListElement ) )
@@ -16501,7 +16501,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -16513,7 +16513,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5415:1: rule__DeviceVolumeUsbProperty__Group__2 : rule__DeviceVolumeUsbProperty__Group__2__Impl rule__DeviceVolumeUsbProperty__Group__3 ;
     public final void rule__DeviceVolumeUsbProperty__Group__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5419:1: ( rule__DeviceVolumeUsbProperty__Group__2__Impl rule__DeviceVolumeUsbProperty__Group__3 )
@@ -16539,7 +16539,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -16551,7 +16551,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5427:1: rule__DeviceVolumeUsbProperty__Group__2__Impl : ( Name ) ;
     public final void rule__DeviceVolumeUsbProperty__Group__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5431:1: ( ( Name ) )
@@ -16576,7 +16576,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -16588,7 +16588,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5442:1: rule__DeviceVolumeUsbProperty__Group__3 : rule__DeviceVolumeUsbProperty__Group__3__Impl rule__DeviceVolumeUsbProperty__Group__4 ;
     public final void rule__DeviceVolumeUsbProperty__Group__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5446:1: ( rule__DeviceVolumeUsbProperty__Group__3__Impl rule__DeviceVolumeUsbProperty__Group__4 )
@@ -16614,7 +16614,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -16626,7 +16626,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5454:1: rule__DeviceVolumeUsbProperty__Group__3__Impl : ( ( rule__DeviceVolumeUsbProperty__NameAssignment_3 ) ) ;
     public final void rule__DeviceVolumeUsbProperty__Group__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5458:1: ( ( ( rule__DeviceVolumeUsbProperty__NameAssignment_3 ) ) )
@@ -16661,7 +16661,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -16673,7 +16673,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5469:1: rule__DeviceVolumeUsbProperty__Group__4 : rule__DeviceVolumeUsbProperty__Group__4__Impl rule__DeviceVolumeUsbProperty__Group__5 ;
     public final void rule__DeviceVolumeUsbProperty__Group__4() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5473:1: ( rule__DeviceVolumeUsbProperty__Group__4__Impl rule__DeviceVolumeUsbProperty__Group__5 )
@@ -16699,7 +16699,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -16711,7 +16711,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5481:1: rule__DeviceVolumeUsbProperty__Group__4__Impl : ( RULE_INDENT ) ;
     public final void rule__DeviceVolumeUsbProperty__Group__4__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5485:1: ( ( RULE_INDENT ) )
@@ -16736,7 +16736,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -16748,7 +16748,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5496:1: rule__DeviceVolumeUsbProperty__Group__5 : rule__DeviceVolumeUsbProperty__Group__5__Impl rule__DeviceVolumeUsbProperty__Group__6 ;
     public final void rule__DeviceVolumeUsbProperty__Group__5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5500:1: ( rule__DeviceVolumeUsbProperty__Group__5__Impl rule__DeviceVolumeUsbProperty__Group__6 )
@@ -16774,7 +16774,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -16786,7 +16786,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5508:1: rule__DeviceVolumeUsbProperty__Group__5__Impl : ( Kind ) ;
     public final void rule__DeviceVolumeUsbProperty__Group__5__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5512:1: ( ( Kind ) )
@@ -16811,7 +16811,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -16823,7 +16823,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5523:1: rule__DeviceVolumeUsbProperty__Group__6 : rule__DeviceVolumeUsbProperty__Group__6__Impl rule__DeviceVolumeUsbProperty__Group__7 ;
     public final void rule__DeviceVolumeUsbProperty__Group__6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5527:1: ( rule__DeviceVolumeUsbProperty__Group__6__Impl rule__DeviceVolumeUsbProperty__Group__7 )
@@ -16849,7 +16849,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -16861,7 +16861,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5535:1: rule__DeviceVolumeUsbProperty__Group__6__Impl : ( ( rule__DeviceVolumeUsbProperty__KindAssignment_6 ) ) ;
     public final void rule__DeviceVolumeUsbProperty__Group__6__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5539:1: ( ( ( rule__DeviceVolumeUsbProperty__KindAssignment_6 ) ) )
@@ -16896,7 +16896,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -16908,7 +16908,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5550:1: rule__DeviceVolumeUsbProperty__Group__7 : rule__DeviceVolumeUsbProperty__Group__7__Impl rule__DeviceVolumeUsbProperty__Group__8 ;
     public final void rule__DeviceVolumeUsbProperty__Group__7() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5554:1: ( rule__DeviceVolumeUsbProperty__Group__7__Impl rule__DeviceVolumeUsbProperty__Group__8 )
@@ -16934,7 +16934,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -16946,7 +16946,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5562:1: rule__DeviceVolumeUsbProperty__Group__7__Impl : ( ( rule__DeviceVolumeUsbProperty__Group_7__0 )? ) ;
     public final void rule__DeviceVolumeUsbProperty__Group__7__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5566:1: ( ( ( rule__DeviceVolumeUsbProperty__Group_7__0 )? ) )
@@ -16992,7 +16992,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -17004,7 +17004,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5577:1: rule__DeviceVolumeUsbProperty__Group__8 : rule__DeviceVolumeUsbProperty__Group__8__Impl rule__DeviceVolumeUsbProperty__Group__9 ;
     public final void rule__DeviceVolumeUsbProperty__Group__8() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5581:1: ( rule__DeviceVolumeUsbProperty__Group__8__Impl rule__DeviceVolumeUsbProperty__Group__9 )
@@ -17030,7 +17030,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -17042,7 +17042,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5589:1: rule__DeviceVolumeUsbProperty__Group__8__Impl : ( ( rule__DeviceVolumeUsbProperty__Group_8__0 )? ) ;
     public final void rule__DeviceVolumeUsbProperty__Group__8__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5593:1: ( ( ( rule__DeviceVolumeUsbProperty__Group_8__0 )? ) )
@@ -17088,7 +17088,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -17100,7 +17100,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5604:1: rule__DeviceVolumeUsbProperty__Group__9 : rule__DeviceVolumeUsbProperty__Group__9__Impl rule__DeviceVolumeUsbProperty__Group__10 ;
     public final void rule__DeviceVolumeUsbProperty__Group__9() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5608:1: ( rule__DeviceVolumeUsbProperty__Group__9__Impl rule__DeviceVolumeUsbProperty__Group__10 )
@@ -17126,7 +17126,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -17138,7 +17138,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5616:1: rule__DeviceVolumeUsbProperty__Group__9__Impl : ( ( RULE_DEDENT )? ) ;
     public final void rule__DeviceVolumeUsbProperty__Group__9__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5620:1: ( ( ( RULE_DEDENT )? ) )
@@ -17206,7 +17206,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -17218,7 +17218,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5631:1: rule__DeviceVolumeUsbProperty__Group__10 : rule__DeviceVolumeUsbProperty__Group__10__Impl ;
     public final void rule__DeviceVolumeUsbProperty__Group__10() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5635:1: ( rule__DeviceVolumeUsbProperty__Group__10__Impl )
@@ -17239,7 +17239,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -17251,7 +17251,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5642:1: rule__DeviceVolumeUsbProperty__Group__10__Impl : ( RULE_DEDENT ) ;
     public final void rule__DeviceVolumeUsbProperty__Group__10__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5646:1: ( ( RULE_DEDENT ) )
@@ -17276,7 +17276,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -17288,7 +17288,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5658:1: rule__DeviceVolumeUsbProperty__Group_7__0 : rule__DeviceVolumeUsbProperty__Group_7__0__Impl rule__DeviceVolumeUsbProperty__Group_7__1 ;
     public final void rule__DeviceVolumeUsbProperty__Group_7__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5662:1: ( rule__DeviceVolumeUsbProperty__Group_7__0__Impl rule__DeviceVolumeUsbProperty__Group_7__1 )
@@ -17314,7 +17314,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -17326,7 +17326,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5670:1: rule__DeviceVolumeUsbProperty__Group_7__0__Impl : ( Description ) ;
     public final void rule__DeviceVolumeUsbProperty__Group_7__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5674:1: ( ( Description ) )
@@ -17351,7 +17351,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -17363,7 +17363,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5685:1: rule__DeviceVolumeUsbProperty__Group_7__1 : rule__DeviceVolumeUsbProperty__Group_7__1__Impl ;
     public final void rule__DeviceVolumeUsbProperty__Group_7__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5689:1: ( rule__DeviceVolumeUsbProperty__Group_7__1__Impl )
@@ -17384,7 +17384,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -17396,7 +17396,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5696:1: rule__DeviceVolumeUsbProperty__Group_7__1__Impl : ( ( rule__DeviceVolumeUsbProperty__DescriptionAssignment_7_1 ) ) ;
     public final void rule__DeviceVolumeUsbProperty__Group_7__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5700:1: ( ( ( rule__DeviceVolumeUsbProperty__DescriptionAssignment_7_1 ) ) )
@@ -17431,7 +17431,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -17443,7 +17443,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5712:1: rule__DeviceVolumeUsbProperty__Group_8__0 : rule__DeviceVolumeUsbProperty__Group_8__0__Impl rule__DeviceVolumeUsbProperty__Group_8__1 ;
     public final void rule__DeviceVolumeUsbProperty__Group_8__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5716:1: ( rule__DeviceVolumeUsbProperty__Group_8__0__Impl rule__DeviceVolumeUsbProperty__Group_8__1 )
@@ -17469,7 +17469,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -17481,7 +17481,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5724:1: rule__DeviceVolumeUsbProperty__Group_8__0__Impl : ( Value ) ;
     public final void rule__DeviceVolumeUsbProperty__Group_8__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5728:1: ( ( Value ) )
@@ -17506,7 +17506,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -17518,7 +17518,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5739:1: rule__DeviceVolumeUsbProperty__Group_8__1 : rule__DeviceVolumeUsbProperty__Group_8__1__Impl rule__DeviceVolumeUsbProperty__Group_8__2 ;
     public final void rule__DeviceVolumeUsbProperty__Group_8__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5743:1: ( rule__DeviceVolumeUsbProperty__Group_8__1__Impl rule__DeviceVolumeUsbProperty__Group_8__2 )
@@ -17544,7 +17544,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -17556,7 +17556,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5751:1: rule__DeviceVolumeUsbProperty__Group_8__1__Impl : ( RULE_INDENT ) ;
     public final void rule__DeviceVolumeUsbProperty__Group_8__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5755:1: ( ( RULE_INDENT ) )
@@ -17581,7 +17581,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -17593,7 +17593,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5766:1: rule__DeviceVolumeUsbProperty__Group_8__2 : rule__DeviceVolumeUsbProperty__Group_8__2__Impl rule__DeviceVolumeUsbProperty__Group_8__3 ;
     public final void rule__DeviceVolumeUsbProperty__Group_8__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5770:1: ( rule__DeviceVolumeUsbProperty__Group_8__2__Impl rule__DeviceVolumeUsbProperty__Group_8__3 )
@@ -17619,7 +17619,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -17631,7 +17631,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5778:1: rule__DeviceVolumeUsbProperty__Group_8__2__Impl : ( rulePreListElement ) ;
     public final void rule__DeviceVolumeUsbProperty__Group_8__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5782:1: ( ( rulePreListElement ) )
@@ -17660,7 +17660,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -17672,7 +17672,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5793:1: rule__DeviceVolumeUsbProperty__Group_8__3 : rule__DeviceVolumeUsbProperty__Group_8__3__Impl rule__DeviceVolumeUsbProperty__Group_8__4 ;
     public final void rule__DeviceVolumeUsbProperty__Group_8__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5797:1: ( rule__DeviceVolumeUsbProperty__Group_8__3__Impl rule__DeviceVolumeUsbProperty__Group_8__4 )
@@ -17698,7 +17698,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -17710,7 +17710,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5805:1: rule__DeviceVolumeUsbProperty__Group_8__3__Impl : ( ( rule__DeviceVolumeUsbProperty__ValueAssignment_8_3 ) ) ;
     public final void rule__DeviceVolumeUsbProperty__Group_8__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5809:1: ( ( ( rule__DeviceVolumeUsbProperty__ValueAssignment_8_3 ) ) )
@@ -17745,7 +17745,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -17757,7 +17757,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5820:1: rule__DeviceVolumeUsbProperty__Group_8__4 : rule__DeviceVolumeUsbProperty__Group_8__4__Impl rule__DeviceVolumeUsbProperty__Group_8__5 ;
     public final void rule__DeviceVolumeUsbProperty__Group_8__4() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5824:1: ( rule__DeviceVolumeUsbProperty__Group_8__4__Impl rule__DeviceVolumeUsbProperty__Group_8__5 )
@@ -17783,7 +17783,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -17795,7 +17795,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5832:1: rule__DeviceVolumeUsbProperty__Group_8__4__Impl : ( ( rule__DeviceVolumeUsbProperty__Group_8_4__0 )* ) ;
     public final void rule__DeviceVolumeUsbProperty__Group_8__4__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5836:1: ( ( ( rule__DeviceVolumeUsbProperty__Group_8_4__0 )* ) )
@@ -17817,20 +17817,20 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
 
 
                 switch (alt36) {
-                case 1 :
-                    // InternalDeviceParser.g:5839:3: rule__DeviceVolumeUsbProperty__Group_8_4__0
-                    {
-                    pushFollow(FOLLOW_26);
-                    rule__DeviceVolumeUsbProperty__Group_8_4__0();
+              case 1 :
+                  // InternalDeviceParser.g:5839:3: rule__DeviceVolumeUsbProperty__Group_8_4__0
+                  {
+                  pushFollow(FOLLOW_26);
+                  rule__DeviceVolumeUsbProperty__Group_8_4__0();
 
-                    state._fsp--;
+                  state._fsp--;
 
 
-                    }
-                    break;
+                  }
+                  break;
 
-                default :
-                    break loop36;
+              default :
+                  break loop36;
                 }
             } while (true);
 
@@ -17848,7 +17848,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -17860,7 +17860,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5847:1: rule__DeviceVolumeUsbProperty__Group_8__5 : rule__DeviceVolumeUsbProperty__Group_8__5__Impl ;
     public final void rule__DeviceVolumeUsbProperty__Group_8__5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5851:1: ( rule__DeviceVolumeUsbProperty__Group_8__5__Impl )
@@ -17881,7 +17881,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -17893,7 +17893,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5858:1: rule__DeviceVolumeUsbProperty__Group_8__5__Impl : ( RULE_DEDENT ) ;
     public final void rule__DeviceVolumeUsbProperty__Group_8__5__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5862:1: ( ( RULE_DEDENT ) )
@@ -17918,7 +17918,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -17930,7 +17930,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5874:1: rule__DeviceVolumeUsbProperty__Group_8_4__0 : rule__DeviceVolumeUsbProperty__Group_8_4__0__Impl rule__DeviceVolumeUsbProperty__Group_8_4__1 ;
     public final void rule__DeviceVolumeUsbProperty__Group_8_4__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5878:1: ( rule__DeviceVolumeUsbProperty__Group_8_4__0__Impl rule__DeviceVolumeUsbProperty__Group_8_4__1 )
@@ -17956,7 +17956,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -17968,7 +17968,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5886:1: rule__DeviceVolumeUsbProperty__Group_8_4__0__Impl : ( rulePreListElement ) ;
     public final void rule__DeviceVolumeUsbProperty__Group_8_4__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5890:1: ( ( rulePreListElement ) )
@@ -17997,7 +17997,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -18009,7 +18009,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5901:1: rule__DeviceVolumeUsbProperty__Group_8_4__1 : rule__DeviceVolumeUsbProperty__Group_8_4__1__Impl ;
     public final void rule__DeviceVolumeUsbProperty__Group_8_4__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5905:1: ( rule__DeviceVolumeUsbProperty__Group_8_4__1__Impl )
@@ -18030,7 +18030,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -18042,7 +18042,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5912:1: rule__DeviceVolumeUsbProperty__Group_8_4__1__Impl : ( ( rule__DeviceVolumeUsbProperty__ValueAssignment_8_4_1 ) ) ;
     public final void rule__DeviceVolumeUsbProperty__Group_8_4__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5916:1: ( ( ( rule__DeviceVolumeUsbProperty__ValueAssignment_8_4_1 ) ) )
@@ -18077,7 +18077,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -18089,7 +18089,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5928:1: rule__DeviceType_Impl__Group__0 : rule__DeviceType_Impl__Group__0__Impl rule__DeviceType_Impl__Group__1 ;
     public final void rule__DeviceType_Impl__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5932:1: ( rule__DeviceType_Impl__Group__0__Impl rule__DeviceType_Impl__Group__1 )
@@ -18115,7 +18115,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -18127,7 +18127,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5940:1: rule__DeviceType_Impl__Group__0__Impl : ( () ) ;
     public final void rule__DeviceType_Impl__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5944:1: ( ( () ) )
@@ -18152,7 +18152,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -18164,7 +18164,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5955:1: rule__DeviceType_Impl__Group__1 : rule__DeviceType_Impl__Group__1__Impl rule__DeviceType_Impl__Group__2 ;
     public final void rule__DeviceType_Impl__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5959:1: ( rule__DeviceType_Impl__Group__1__Impl rule__DeviceType_Impl__Group__2 )
@@ -18190,7 +18190,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -18202,7 +18202,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5967:1: rule__DeviceType_Impl__Group__1__Impl : ( DeviceType ) ;
     public final void rule__DeviceType_Impl__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5971:1: ( ( DeviceType ) )
@@ -18227,7 +18227,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -18239,7 +18239,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5982:1: rule__DeviceType_Impl__Group__2 : rule__DeviceType_Impl__Group__2__Impl rule__DeviceType_Impl__Group__3 ;
     public final void rule__DeviceType_Impl__Group__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5986:1: ( rule__DeviceType_Impl__Group__2__Impl rule__DeviceType_Impl__Group__3 )
@@ -18265,7 +18265,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -18277,7 +18277,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:5994:1: rule__DeviceType_Impl__Group__2__Impl : ( RULE_INDENT ) ;
     public final void rule__DeviceType_Impl__Group__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:5998:1: ( ( RULE_INDENT ) )
@@ -18302,7 +18302,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -18314,7 +18314,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6009:1: rule__DeviceType_Impl__Group__3 : rule__DeviceType_Impl__Group__3__Impl rule__DeviceType_Impl__Group__4 ;
     public final void rule__DeviceType_Impl__Group__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6013:1: ( rule__DeviceType_Impl__Group__3__Impl rule__DeviceType_Impl__Group__4 )
@@ -18340,7 +18340,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -18352,7 +18352,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6021:1: rule__DeviceType_Impl__Group__3__Impl : ( Name ) ;
     public final void rule__DeviceType_Impl__Group__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6025:1: ( ( Name ) )
@@ -18377,7 +18377,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -18389,7 +18389,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6036:1: rule__DeviceType_Impl__Group__4 : rule__DeviceType_Impl__Group__4__Impl rule__DeviceType_Impl__Group__5 ;
     public final void rule__DeviceType_Impl__Group__4() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6040:1: ( rule__DeviceType_Impl__Group__4__Impl rule__DeviceType_Impl__Group__5 )
@@ -18415,7 +18415,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -18427,7 +18427,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6048:1: rule__DeviceType_Impl__Group__4__Impl : ( ( rule__DeviceType_Impl__NameAssignment_4 ) ) ;
     public final void rule__DeviceType_Impl__Group__4__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6052:1: ( ( ( rule__DeviceType_Impl__NameAssignment_4 ) ) )
@@ -18462,7 +18462,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -18474,7 +18474,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6063:1: rule__DeviceType_Impl__Group__5 : rule__DeviceType_Impl__Group__5__Impl rule__DeviceType_Impl__Group__6 ;
     public final void rule__DeviceType_Impl__Group__5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6067:1: ( rule__DeviceType_Impl__Group__5__Impl rule__DeviceType_Impl__Group__6 )
@@ -18500,7 +18500,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -18512,7 +18512,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6075:1: rule__DeviceType_Impl__Group__5__Impl : ( ( rule__DeviceType_Impl__Group_5__0 )? ) ;
     public final void rule__DeviceType_Impl__Group__5__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6079:1: ( ( ( rule__DeviceType_Impl__Group_5__0 )? ) )
@@ -18558,7 +18558,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -18570,7 +18570,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6090:1: rule__DeviceType_Impl__Group__6 : rule__DeviceType_Impl__Group__6__Impl rule__DeviceType_Impl__Group__7 ;
     public final void rule__DeviceType_Impl__Group__6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6094:1: ( rule__DeviceType_Impl__Group__6__Impl rule__DeviceType_Impl__Group__7 )
@@ -18596,7 +18596,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -18608,7 +18608,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6102:1: rule__DeviceType_Impl__Group__6__Impl : ( ( rule__DeviceType_Impl__Group_6__0 )? ) ;
     public final void rule__DeviceType_Impl__Group__6__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6106:1: ( ( ( rule__DeviceType_Impl__Group_6__0 )? ) )
@@ -18654,7 +18654,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -18666,7 +18666,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6117:1: rule__DeviceType_Impl__Group__7 : rule__DeviceType_Impl__Group__7__Impl ;
     public final void rule__DeviceType_Impl__Group__7() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6121:1: ( rule__DeviceType_Impl__Group__7__Impl )
@@ -18687,7 +18687,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -18699,7 +18699,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6128:1: rule__DeviceType_Impl__Group__7__Impl : ( RULE_DEDENT ) ;
     public final void rule__DeviceType_Impl__Group__7__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6132:1: ( ( RULE_DEDENT ) )
@@ -18724,7 +18724,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -18736,7 +18736,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6144:1: rule__DeviceType_Impl__Group_5__0 : rule__DeviceType_Impl__Group_5__0__Impl rule__DeviceType_Impl__Group_5__1 ;
     public final void rule__DeviceType_Impl__Group_5__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6148:1: ( rule__DeviceType_Impl__Group_5__0__Impl rule__DeviceType_Impl__Group_5__1 )
@@ -18762,7 +18762,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -18774,7 +18774,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6156:1: rule__DeviceType_Impl__Group_5__0__Impl : ( DeviceResouce ) ;
     public final void rule__DeviceType_Impl__Group_5__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6160:1: ( ( DeviceResouce ) )
@@ -18799,7 +18799,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -18811,7 +18811,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6171:1: rule__DeviceType_Impl__Group_5__1 : rule__DeviceType_Impl__Group_5__1__Impl rule__DeviceType_Impl__Group_5__2 ;
     public final void rule__DeviceType_Impl__Group_5__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6175:1: ( rule__DeviceType_Impl__Group_5__1__Impl rule__DeviceType_Impl__Group_5__2 )
@@ -18837,7 +18837,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -18849,7 +18849,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6183:1: rule__DeviceType_Impl__Group_5__1__Impl : ( RULE_INDENT ) ;
     public final void rule__DeviceType_Impl__Group_5__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6187:1: ( ( RULE_INDENT ) )
@@ -18874,7 +18874,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -18886,7 +18886,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6198:1: rule__DeviceType_Impl__Group_5__2 : rule__DeviceType_Impl__Group_5__2__Impl rule__DeviceType_Impl__Group_5__3 ;
     public final void rule__DeviceType_Impl__Group_5__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6202:1: ( rule__DeviceType_Impl__Group_5__2__Impl rule__DeviceType_Impl__Group_5__3 )
@@ -18912,7 +18912,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -18924,7 +18924,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6210:1: rule__DeviceType_Impl__Group_5__2__Impl : ( ( ( rule__DeviceType_Impl__DeviceResourceAssignment_5_2 ) ) ( ( rule__DeviceType_Impl__DeviceResourceAssignment_5_2 )* ) ) ;
     public final void rule__DeviceType_Impl__Group_5__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6214:1: ( ( ( ( rule__DeviceType_Impl__DeviceResourceAssignment_5_2 ) ) ( ( rule__DeviceType_Impl__DeviceResourceAssignment_5_2 )* ) ) )
@@ -18968,20 +18968,20 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
 
 
                 switch (alt39) {
-                case 1 :
-                    // InternalDeviceParser.g:6223:4: rule__DeviceType_Impl__DeviceResourceAssignment_5_2
-                    {
-                    pushFollow(FOLLOW_26);
-                    rule__DeviceType_Impl__DeviceResourceAssignment_5_2();
+              case 1 :
+                  // InternalDeviceParser.g:6223:4: rule__DeviceType_Impl__DeviceResourceAssignment_5_2
+                  {
+                  pushFollow(FOLLOW_26);
+                  rule__DeviceType_Impl__DeviceResourceAssignment_5_2();
 
-                    state._fsp--;
+                  state._fsp--;
 
 
-                    }
-                    break;
+                  }
+                  break;
 
-                default :
-                    break loop39;
+              default :
+                  break loop39;
                 }
             } while (true);
 
@@ -19002,7 +19002,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -19014,7 +19014,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6232:1: rule__DeviceType_Impl__Group_5__3 : rule__DeviceType_Impl__Group_5__3__Impl ;
     public final void rule__DeviceType_Impl__Group_5__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6236:1: ( rule__DeviceType_Impl__Group_5__3__Impl )
@@ -19035,7 +19035,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -19047,7 +19047,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6243:1: rule__DeviceType_Impl__Group_5__3__Impl : ( RULE_DEDENT ) ;
     public final void rule__DeviceType_Impl__Group_5__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6247:1: ( ( RULE_DEDENT ) )
@@ -19072,7 +19072,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -19084,7 +19084,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6259:1: rule__DeviceType_Impl__Group_6__0 : rule__DeviceType_Impl__Group_6__0__Impl rule__DeviceType_Impl__Group_6__1 ;
     public final void rule__DeviceType_Impl__Group_6__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6263:1: ( rule__DeviceType_Impl__Group_6__0__Impl rule__DeviceType_Impl__Group_6__1 )
@@ -19110,7 +19110,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -19122,7 +19122,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6271:1: rule__DeviceType_Impl__Group_6__0__Impl : ( CommunicationConnection ) ;
     public final void rule__DeviceType_Impl__Group_6__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6275:1: ( ( CommunicationConnection ) )
@@ -19147,7 +19147,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -19159,7 +19159,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6286:1: rule__DeviceType_Impl__Group_6__1 : rule__DeviceType_Impl__Group_6__1__Impl rule__DeviceType_Impl__Group_6__2 ;
     public final void rule__DeviceType_Impl__Group_6__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6290:1: ( rule__DeviceType_Impl__Group_6__1__Impl rule__DeviceType_Impl__Group_6__2 )
@@ -19185,7 +19185,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -19197,7 +19197,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6298:1: rule__DeviceType_Impl__Group_6__1__Impl : ( RULE_INDENT ) ;
     public final void rule__DeviceType_Impl__Group_6__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6302:1: ( ( RULE_INDENT ) )
@@ -19222,7 +19222,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -19234,7 +19234,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6313:1: rule__DeviceType_Impl__Group_6__2 : rule__DeviceType_Impl__Group_6__2__Impl rule__DeviceType_Impl__Group_6__3 ;
     public final void rule__DeviceType_Impl__Group_6__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6317:1: ( rule__DeviceType_Impl__Group_6__2__Impl rule__DeviceType_Impl__Group_6__3 )
@@ -19260,7 +19260,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -19272,7 +19272,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6325:1: rule__DeviceType_Impl__Group_6__2__Impl : ( ( ( rule__DeviceType_Impl__CommunicationConnectionAssignment_6_2 ) ) ( ( rule__DeviceType_Impl__CommunicationConnectionAssignment_6_2 )* ) ) ;
     public final void rule__DeviceType_Impl__Group_6__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6329:1: ( ( ( ( rule__DeviceType_Impl__CommunicationConnectionAssignment_6_2 ) ) ( ( rule__DeviceType_Impl__CommunicationConnectionAssignment_6_2 )* ) ) )
@@ -19316,20 +19316,20 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
 
 
                 switch (alt40) {
-                case 1 :
-                    // InternalDeviceParser.g:6338:4: rule__DeviceType_Impl__CommunicationConnectionAssignment_6_2
-                    {
-                    pushFollow(FOLLOW_26);
-                    rule__DeviceType_Impl__CommunicationConnectionAssignment_6_2();
+              case 1 :
+                  // InternalDeviceParser.g:6338:4: rule__DeviceType_Impl__CommunicationConnectionAssignment_6_2
+                  {
+                  pushFollow(FOLLOW_26);
+                  rule__DeviceType_Impl__CommunicationConnectionAssignment_6_2();
 
-                    state._fsp--;
+                  state._fsp--;
 
 
-                    }
-                    break;
+                  }
+                  break;
 
-                default :
-                    break loop40;
+              default :
+                  break loop40;
                 }
             } while (true);
 
@@ -19350,7 +19350,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -19362,7 +19362,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6347:1: rule__DeviceType_Impl__Group_6__3 : rule__DeviceType_Impl__Group_6__3__Impl ;
     public final void rule__DeviceType_Impl__Group_6__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6351:1: ( rule__DeviceType_Impl__Group_6__3__Impl )
@@ -19383,7 +19383,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -19395,7 +19395,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6358:1: rule__DeviceType_Impl__Group_6__3__Impl : ( RULE_DEDENT ) ;
     public final void rule__DeviceType_Impl__Group_6__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6362:1: ( ( RULE_DEDENT ) )
@@ -19420,7 +19420,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -19432,7 +19432,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6374:1: rule__DeviceResource__Group__0 : rule__DeviceResource__Group__0__Impl rule__DeviceResource__Group__1 ;
     public final void rule__DeviceResource__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6378:1: ( rule__DeviceResource__Group__0__Impl rule__DeviceResource__Group__1 )
@@ -19458,7 +19458,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -19470,7 +19470,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6386:1: rule__DeviceResource__Group__0__Impl : ( rulePreListElement ) ;
     public final void rule__DeviceResource__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6390:1: ( ( rulePreListElement ) )
@@ -19499,7 +19499,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -19511,7 +19511,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6401:1: rule__DeviceResource__Group__1 : rule__DeviceResource__Group__1__Impl rule__DeviceResource__Group__2 ;
     public final void rule__DeviceResource__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6405:1: ( rule__DeviceResource__Group__1__Impl rule__DeviceResource__Group__2 )
@@ -19537,7 +19537,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -19549,7 +19549,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6413:1: rule__DeviceResource__Group__1__Impl : ( Name ) ;
     public final void rule__DeviceResource__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6417:1: ( ( Name ) )
@@ -19574,7 +19574,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -19586,7 +19586,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6428:1: rule__DeviceResource__Group__2 : rule__DeviceResource__Group__2__Impl rule__DeviceResource__Group__3 ;
     public final void rule__DeviceResource__Group__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6432:1: ( rule__DeviceResource__Group__2__Impl rule__DeviceResource__Group__3 )
@@ -19612,7 +19612,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -19624,7 +19624,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6440:1: rule__DeviceResource__Group__2__Impl : ( ( rule__DeviceResource__NameAssignment_2 ) ) ;
     public final void rule__DeviceResource__Group__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6444:1: ( ( ( rule__DeviceResource__NameAssignment_2 ) ) )
@@ -19659,7 +19659,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -19671,7 +19671,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6455:1: rule__DeviceResource__Group__3 : rule__DeviceResource__Group__3__Impl rule__DeviceResource__Group__4 ;
     public final void rule__DeviceResource__Group__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6459:1: ( rule__DeviceResource__Group__3__Impl rule__DeviceResource__Group__4 )
@@ -19697,7 +19697,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -19709,7 +19709,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6467:1: rule__DeviceResource__Group__3__Impl : ( RULE_INDENT ) ;
     public final void rule__DeviceResource__Group__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6471:1: ( ( RULE_INDENT ) )
@@ -19734,7 +19734,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -19746,7 +19746,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6482:1: rule__DeviceResource__Group__4 : rule__DeviceResource__Group__4__Impl rule__DeviceResource__Group__5 ;
     public final void rule__DeviceResource__Group__4() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6486:1: ( rule__DeviceResource__Group__4__Impl rule__DeviceResource__Group__5 )
@@ -19772,7 +19772,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -19784,7 +19784,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6494:1: rule__DeviceResource__Group__4__Impl : ( Type ) ;
     public final void rule__DeviceResource__Group__4__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6498:1: ( ( Type ) )
@@ -19809,7 +19809,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -19821,7 +19821,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6509:1: rule__DeviceResource__Group__5 : rule__DeviceResource__Group__5__Impl rule__DeviceResource__Group__6 ;
     public final void rule__DeviceResource__Group__5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6513:1: ( rule__DeviceResource__Group__5__Impl rule__DeviceResource__Group__6 )
@@ -19847,7 +19847,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -19859,7 +19859,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6521:1: rule__DeviceResource__Group__5__Impl : ( ( rule__DeviceResource__TypeAssignment_5 ) ) ;
     public final void rule__DeviceResource__Group__5__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6525:1: ( ( ( rule__DeviceResource__TypeAssignment_5 ) ) )
@@ -19894,7 +19894,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -19906,7 +19906,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6536:1: rule__DeviceResource__Group__6 : rule__DeviceResource__Group__6__Impl rule__DeviceResource__Group__7 ;
     public final void rule__DeviceResource__Group__6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6540:1: ( rule__DeviceResource__Group__6__Impl rule__DeviceResource__Group__7 )
@@ -19932,7 +19932,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -19944,7 +19944,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6548:1: rule__DeviceResource__Group__6__Impl : ( ( rule__DeviceResource__Group_6__0 )? ) ;
     public final void rule__DeviceResource__Group__6__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6552:1: ( ( ( rule__DeviceResource__Group_6__0 )? ) )
@@ -19990,7 +19990,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -20002,7 +20002,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6563:1: rule__DeviceResource__Group__7 : rule__DeviceResource__Group__7__Impl ;
     public final void rule__DeviceResource__Group__7() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6567:1: ( rule__DeviceResource__Group__7__Impl )
@@ -20023,7 +20023,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -20035,7 +20035,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6574:1: rule__DeviceResource__Group__7__Impl : ( RULE_DEDENT ) ;
     public final void rule__DeviceResource__Group__7__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6578:1: ( ( RULE_DEDENT ) )
@@ -20060,7 +20060,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -20072,7 +20072,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6590:1: rule__DeviceResource__Group_6__0 : rule__DeviceResource__Group_6__0__Impl rule__DeviceResource__Group_6__1 ;
     public final void rule__DeviceResource__Group_6__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6594:1: ( rule__DeviceResource__Group_6__0__Impl rule__DeviceResource__Group_6__1 )
@@ -20098,7 +20098,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -20110,7 +20110,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6602:1: rule__DeviceResource__Group_6__0__Impl : ( Properties ) ;
     public final void rule__DeviceResource__Group_6__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6606:1: ( ( Properties ) )
@@ -20135,7 +20135,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -20147,7 +20147,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6617:1: rule__DeviceResource__Group_6__1 : rule__DeviceResource__Group_6__1__Impl rule__DeviceResource__Group_6__2 ;
     public final void rule__DeviceResource__Group_6__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6621:1: ( rule__DeviceResource__Group_6__1__Impl rule__DeviceResource__Group_6__2 )
@@ -20173,7 +20173,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -20185,7 +20185,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6629:1: rule__DeviceResource__Group_6__1__Impl : ( RULE_INDENT ) ;
     public final void rule__DeviceResource__Group_6__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6633:1: ( ( RULE_INDENT ) )
@@ -20210,7 +20210,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -20222,7 +20222,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6644:1: rule__DeviceResource__Group_6__2 : rule__DeviceResource__Group_6__2__Impl rule__DeviceResource__Group_6__3 ;
     public final void rule__DeviceResource__Group_6__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6648:1: ( rule__DeviceResource__Group_6__2__Impl rule__DeviceResource__Group_6__3 )
@@ -20248,7 +20248,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -20260,7 +20260,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6656:1: rule__DeviceResource__Group_6__2__Impl : ( ( rule__DeviceResource__PropertiesAssignment_6_2 ) ) ;
     public final void rule__DeviceResource__Group_6__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6660:1: ( ( ( rule__DeviceResource__PropertiesAssignment_6_2 ) ) )
@@ -20295,7 +20295,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -20307,7 +20307,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6671:1: rule__DeviceResource__Group_6__3 : rule__DeviceResource__Group_6__3__Impl rule__DeviceResource__Group_6__4 ;
     public final void rule__DeviceResource__Group_6__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6675:1: ( rule__DeviceResource__Group_6__3__Impl rule__DeviceResource__Group_6__4 )
@@ -20333,7 +20333,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -20345,7 +20345,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6683:1: rule__DeviceResource__Group_6__3__Impl : ( ( rule__DeviceResource__PropertiesAssignment_6_3 )* ) ;
     public final void rule__DeviceResource__Group_6__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6687:1: ( ( ( rule__DeviceResource__PropertiesAssignment_6_3 )* ) )
@@ -20367,20 +20367,20 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
 
 
                 switch (alt42) {
-                case 1 :
-                    // InternalDeviceParser.g:6690:3: rule__DeviceResource__PropertiesAssignment_6_3
-                    {
-                    pushFollow(FOLLOW_26);
-                    rule__DeviceResource__PropertiesAssignment_6_3();
+              case 1 :
+                  // InternalDeviceParser.g:6690:3: rule__DeviceResource__PropertiesAssignment_6_3
+                  {
+                  pushFollow(FOLLOW_26);
+                  rule__DeviceResource__PropertiesAssignment_6_3();
 
-                    state._fsp--;
+                  state._fsp--;
 
 
-                    }
-                    break;
+                  }
+                  break;
 
-                default :
-                    break loop42;
+              default :
+                  break loop42;
                 }
             } while (true);
 
@@ -20398,7 +20398,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -20410,7 +20410,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6698:1: rule__DeviceResource__Group_6__4 : rule__DeviceResource__Group_6__4__Impl ;
     public final void rule__DeviceResource__Group_6__4() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6702:1: ( rule__DeviceResource__Group_6__4__Impl )
@@ -20431,7 +20431,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -20443,7 +20443,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6709:1: rule__DeviceResource__Group_6__4__Impl : ( RULE_DEDENT ) ;
     public final void rule__DeviceResource__Group_6__4__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6713:1: ( ( RULE_DEDENT ) )
@@ -20468,7 +20468,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -20480,7 +20480,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6725:1: rule__ComputationDeviceType__Group__0 : rule__ComputationDeviceType__Group__0__Impl rule__ComputationDeviceType__Group__1 ;
     public final void rule__ComputationDeviceType__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6729:1: ( rule__ComputationDeviceType__Group__0__Impl rule__ComputationDeviceType__Group__1 )
@@ -20506,7 +20506,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -20518,7 +20518,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6737:1: rule__ComputationDeviceType__Group__0__Impl : ( ComputationDeviceType ) ;
     public final void rule__ComputationDeviceType__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6741:1: ( ( ComputationDeviceType ) )
@@ -20543,7 +20543,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -20555,7 +20555,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6752:1: rule__ComputationDeviceType__Group__1 : rule__ComputationDeviceType__Group__1__Impl rule__ComputationDeviceType__Group__2 ;
     public final void rule__ComputationDeviceType__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6756:1: ( rule__ComputationDeviceType__Group__1__Impl rule__ComputationDeviceType__Group__2 )
@@ -20581,7 +20581,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -20593,7 +20593,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6764:1: rule__ComputationDeviceType__Group__1__Impl : ( RULE_INDENT ) ;
     public final void rule__ComputationDeviceType__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6768:1: ( ( RULE_INDENT ) )
@@ -20618,7 +20618,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -20630,7 +20630,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6779:1: rule__ComputationDeviceType__Group__2 : rule__ComputationDeviceType__Group__2__Impl rule__ComputationDeviceType__Group__3 ;
     public final void rule__ComputationDeviceType__Group__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6783:1: ( rule__ComputationDeviceType__Group__2__Impl rule__ComputationDeviceType__Group__3 )
@@ -20656,7 +20656,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -20668,7 +20668,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6791:1: rule__ComputationDeviceType__Group__2__Impl : ( Name ) ;
     public final void rule__ComputationDeviceType__Group__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6795:1: ( ( Name ) )
@@ -20693,7 +20693,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -20705,7 +20705,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6806:1: rule__ComputationDeviceType__Group__3 : rule__ComputationDeviceType__Group__3__Impl rule__ComputationDeviceType__Group__4 ;
     public final void rule__ComputationDeviceType__Group__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6810:1: ( rule__ComputationDeviceType__Group__3__Impl rule__ComputationDeviceType__Group__4 )
@@ -20731,7 +20731,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -20743,7 +20743,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6818:1: rule__ComputationDeviceType__Group__3__Impl : ( ( rule__ComputationDeviceType__NameAssignment_3 ) ) ;
     public final void rule__ComputationDeviceType__Group__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6822:1: ( ( ( rule__ComputationDeviceType__NameAssignment_3 ) ) )
@@ -20778,7 +20778,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -20790,7 +20790,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6833:1: rule__ComputationDeviceType__Group__4 : rule__ComputationDeviceType__Group__4__Impl rule__ComputationDeviceType__Group__5 ;
     public final void rule__ComputationDeviceType__Group__4() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6837:1: ( rule__ComputationDeviceType__Group__4__Impl rule__ComputationDeviceType__Group__5 )
@@ -20816,7 +20816,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -20828,7 +20828,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6845:1: rule__ComputationDeviceType__Group__4__Impl : ( ( rule__ComputationDeviceType__Group_4__0 )? ) ;
     public final void rule__ComputationDeviceType__Group__4__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6849:1: ( ( ( rule__ComputationDeviceType__Group_4__0 )? ) )
@@ -20874,7 +20874,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -20886,7 +20886,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6860:1: rule__ComputationDeviceType__Group__5 : rule__ComputationDeviceType__Group__5__Impl rule__ComputationDeviceType__Group__6 ;
     public final void rule__ComputationDeviceType__Group__5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6864:1: ( rule__ComputationDeviceType__Group__5__Impl rule__ComputationDeviceType__Group__6 )
@@ -20912,7 +20912,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -20924,7 +20924,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6872:1: rule__ComputationDeviceType__Group__5__Impl : ( ( rule__ComputationDeviceType__Group_5__0 )? ) ;
     public final void rule__ComputationDeviceType__Group__5__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6876:1: ( ( ( rule__ComputationDeviceType__Group_5__0 )? ) )
@@ -20970,7 +20970,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -20982,7 +20982,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6887:1: rule__ComputationDeviceType__Group__6 : rule__ComputationDeviceType__Group__6__Impl rule__ComputationDeviceType__Group__7 ;
     public final void rule__ComputationDeviceType__Group__6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6891:1: ( rule__ComputationDeviceType__Group__6__Impl rule__ComputationDeviceType__Group__7 )
@@ -21008,7 +21008,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -21020,7 +21020,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6899:1: rule__ComputationDeviceType__Group__6__Impl : ( ( rule__ComputationDeviceType__Group_6__0 )? ) ;
     public final void rule__ComputationDeviceType__Group__6__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6903:1: ( ( ( rule__ComputationDeviceType__Group_6__0 )? ) )
@@ -21066,7 +21066,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -21078,7 +21078,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6914:1: rule__ComputationDeviceType__Group__7 : rule__ComputationDeviceType__Group__7__Impl ;
     public final void rule__ComputationDeviceType__Group__7() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6918:1: ( rule__ComputationDeviceType__Group__7__Impl )
@@ -21099,7 +21099,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -21111,7 +21111,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6925:1: rule__ComputationDeviceType__Group__7__Impl : ( RULE_DEDENT ) ;
     public final void rule__ComputationDeviceType__Group__7__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6929:1: ( ( RULE_DEDENT ) )
@@ -21136,7 +21136,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -21148,7 +21148,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6941:1: rule__ComputationDeviceType__Group_4__0 : rule__ComputationDeviceType__Group_4__0__Impl rule__ComputationDeviceType__Group_4__1 ;
     public final void rule__ComputationDeviceType__Group_4__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6945:1: ( rule__ComputationDeviceType__Group_4__0__Impl rule__ComputationDeviceType__Group_4__1 )
@@ -21174,7 +21174,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -21186,7 +21186,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6953:1: rule__ComputationDeviceType__Group_4__0__Impl : ( DeviceResouce ) ;
     public final void rule__ComputationDeviceType__Group_4__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6957:1: ( ( DeviceResouce ) )
@@ -21211,7 +21211,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -21223,7 +21223,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6968:1: rule__ComputationDeviceType__Group_4__1 : rule__ComputationDeviceType__Group_4__1__Impl rule__ComputationDeviceType__Group_4__2 ;
     public final void rule__ComputationDeviceType__Group_4__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6972:1: ( rule__ComputationDeviceType__Group_4__1__Impl rule__ComputationDeviceType__Group_4__2 )
@@ -21249,7 +21249,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -21261,7 +21261,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6980:1: rule__ComputationDeviceType__Group_4__1__Impl : ( RULE_INDENT ) ;
     public final void rule__ComputationDeviceType__Group_4__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6984:1: ( ( RULE_INDENT ) )
@@ -21286,7 +21286,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -21298,7 +21298,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:6995:1: rule__ComputationDeviceType__Group_4__2 : rule__ComputationDeviceType__Group_4__2__Impl rule__ComputationDeviceType__Group_4__3 ;
     public final void rule__ComputationDeviceType__Group_4__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:6999:1: ( rule__ComputationDeviceType__Group_4__2__Impl rule__ComputationDeviceType__Group_4__3 )
@@ -21324,7 +21324,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -21336,7 +21336,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7007:1: rule__ComputationDeviceType__Group_4__2__Impl : ( ( ( rule__ComputationDeviceType__DeviceResourceAssignment_4_2 ) ) ( ( rule__ComputationDeviceType__DeviceResourceAssignment_4_2 )* ) ) ;
     public final void rule__ComputationDeviceType__Group_4__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7011:1: ( ( ( ( rule__ComputationDeviceType__DeviceResourceAssignment_4_2 ) ) ( ( rule__ComputationDeviceType__DeviceResourceAssignment_4_2 )* ) ) )
@@ -21380,20 +21380,20 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
 
 
                 switch (alt46) {
-                case 1 :
-                    // InternalDeviceParser.g:7020:4: rule__ComputationDeviceType__DeviceResourceAssignment_4_2
-                    {
-                    pushFollow(FOLLOW_26);
-                    rule__ComputationDeviceType__DeviceResourceAssignment_4_2();
+              case 1 :
+                  // InternalDeviceParser.g:7020:4: rule__ComputationDeviceType__DeviceResourceAssignment_4_2
+                  {
+                  pushFollow(FOLLOW_26);
+                  rule__ComputationDeviceType__DeviceResourceAssignment_4_2();
 
-                    state._fsp--;
+                  state._fsp--;
 
 
-                    }
-                    break;
+                  }
+                  break;
 
-                default :
-                    break loop46;
+              default :
+                  break loop46;
                 }
             } while (true);
 
@@ -21414,7 +21414,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -21426,7 +21426,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7029:1: rule__ComputationDeviceType__Group_4__3 : rule__ComputationDeviceType__Group_4__3__Impl ;
     public final void rule__ComputationDeviceType__Group_4__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7033:1: ( rule__ComputationDeviceType__Group_4__3__Impl )
@@ -21447,7 +21447,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -21459,7 +21459,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7040:1: rule__ComputationDeviceType__Group_4__3__Impl : ( RULE_DEDENT ) ;
     public final void rule__ComputationDeviceType__Group_4__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7044:1: ( ( RULE_DEDENT ) )
@@ -21484,7 +21484,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -21496,7 +21496,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7056:1: rule__ComputationDeviceType__Group_5__0 : rule__ComputationDeviceType__Group_5__0__Impl rule__ComputationDeviceType__Group_5__1 ;
     public final void rule__ComputationDeviceType__Group_5__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7060:1: ( rule__ComputationDeviceType__Group_5__0__Impl rule__ComputationDeviceType__Group_5__1 )
@@ -21522,7 +21522,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -21534,7 +21534,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7068:1: rule__ComputationDeviceType__Group_5__0__Impl : ( ComputationResouce ) ;
     public final void rule__ComputationDeviceType__Group_5__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7072:1: ( ( ComputationResouce ) )
@@ -21559,7 +21559,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -21571,7 +21571,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7083:1: rule__ComputationDeviceType__Group_5__1 : rule__ComputationDeviceType__Group_5__1__Impl rule__ComputationDeviceType__Group_5__2 ;
     public final void rule__ComputationDeviceType__Group_5__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7087:1: ( rule__ComputationDeviceType__Group_5__1__Impl rule__ComputationDeviceType__Group_5__2 )
@@ -21597,7 +21597,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -21609,7 +21609,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7095:1: rule__ComputationDeviceType__Group_5__1__Impl : ( RULE_INDENT ) ;
     public final void rule__ComputationDeviceType__Group_5__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7099:1: ( ( RULE_INDENT ) )
@@ -21634,7 +21634,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -21646,7 +21646,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7110:1: rule__ComputationDeviceType__Group_5__2 : rule__ComputationDeviceType__Group_5__2__Impl rule__ComputationDeviceType__Group_5__3 ;
     public final void rule__ComputationDeviceType__Group_5__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7114:1: ( rule__ComputationDeviceType__Group_5__2__Impl rule__ComputationDeviceType__Group_5__3 )
@@ -21672,7 +21672,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -21684,7 +21684,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7122:1: rule__ComputationDeviceType__Group_5__2__Impl : ( rulePreListElement ) ;
     public final void rule__ComputationDeviceType__Group_5__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7126:1: ( ( rulePreListElement ) )
@@ -21713,7 +21713,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -21725,7 +21725,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7137:1: rule__ComputationDeviceType__Group_5__3 : rule__ComputationDeviceType__Group_5__3__Impl rule__ComputationDeviceType__Group_5__4 ;
     public final void rule__ComputationDeviceType__Group_5__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7141:1: ( rule__ComputationDeviceType__Group_5__3__Impl rule__ComputationDeviceType__Group_5__4 )
@@ -21751,7 +21751,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -21763,7 +21763,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7149:1: rule__ComputationDeviceType__Group_5__3__Impl : ( ( rule__ComputationDeviceType__ComputationResourceAssignment_5_3 ) ) ;
     public final void rule__ComputationDeviceType__Group_5__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7153:1: ( ( ( rule__ComputationDeviceType__ComputationResourceAssignment_5_3 ) ) )
@@ -21798,7 +21798,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -21810,7 +21810,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7164:1: rule__ComputationDeviceType__Group_5__4 : rule__ComputationDeviceType__Group_5__4__Impl rule__ComputationDeviceType__Group_5__5 ;
     public final void rule__ComputationDeviceType__Group_5__4() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7168:1: ( rule__ComputationDeviceType__Group_5__4__Impl rule__ComputationDeviceType__Group_5__5 )
@@ -21836,7 +21836,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -21848,7 +21848,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7176:1: rule__ComputationDeviceType__Group_5__4__Impl : ( ( rule__ComputationDeviceType__Group_5_4__0 )? ) ;
     public final void rule__ComputationDeviceType__Group_5__4__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7180:1: ( ( ( rule__ComputationDeviceType__Group_5_4__0 )? ) )
@@ -21894,7 +21894,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -21906,7 +21906,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7191:1: rule__ComputationDeviceType__Group_5__5 : rule__ComputationDeviceType__Group_5__5__Impl ;
     public final void rule__ComputationDeviceType__Group_5__5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7195:1: ( rule__ComputationDeviceType__Group_5__5__Impl )
@@ -21927,7 +21927,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -21939,7 +21939,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7202:1: rule__ComputationDeviceType__Group_5__5__Impl : ( RULE_DEDENT ) ;
     public final void rule__ComputationDeviceType__Group_5__5__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7206:1: ( ( RULE_DEDENT ) )
@@ -21964,7 +21964,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -21976,7 +21976,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7218:1: rule__ComputationDeviceType__Group_5_4__0 : rule__ComputationDeviceType__Group_5_4__0__Impl rule__ComputationDeviceType__Group_5_4__1 ;
     public final void rule__ComputationDeviceType__Group_5_4__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7222:1: ( rule__ComputationDeviceType__Group_5_4__0__Impl rule__ComputationDeviceType__Group_5_4__1 )
@@ -22002,7 +22002,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -22014,7 +22014,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7230:1: rule__ComputationDeviceType__Group_5_4__0__Impl : ( rulePreListElement ) ;
     public final void rule__ComputationDeviceType__Group_5_4__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7234:1: ( ( rulePreListElement ) )
@@ -22043,7 +22043,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -22055,7 +22055,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7245:1: rule__ComputationDeviceType__Group_5_4__1 : rule__ComputationDeviceType__Group_5_4__1__Impl ;
     public final void rule__ComputationDeviceType__Group_5_4__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7249:1: ( rule__ComputationDeviceType__Group_5_4__1__Impl )
@@ -22076,7 +22076,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -22088,7 +22088,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7256:1: rule__ComputationDeviceType__Group_5_4__1__Impl : ( ( ( rule__ComputationDeviceType__ComputationResourceAssignment_5_4_1 ) ) ( ( rule__ComputationDeviceType__ComputationResourceAssignment_5_4_1 )* ) ) ;
     public final void rule__ComputationDeviceType__Group_5_4__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7260:1: ( ( ( ( rule__ComputationDeviceType__ComputationResourceAssignment_5_4_1 ) ) ( ( rule__ComputationDeviceType__ComputationResourceAssignment_5_4_1 )* ) ) )
@@ -22132,20 +22132,20 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
 
 
                 switch (alt48) {
-                case 1 :
-                    // InternalDeviceParser.g:7269:4: rule__ComputationDeviceType__ComputationResourceAssignment_5_4_1
-                    {
-                    pushFollow(FOLLOW_34);
-                    rule__ComputationDeviceType__ComputationResourceAssignment_5_4_1();
+              case 1 :
+                  // InternalDeviceParser.g:7269:4: rule__ComputationDeviceType__ComputationResourceAssignment_5_4_1
+                  {
+                  pushFollow(FOLLOW_34);
+                  rule__ComputationDeviceType__ComputationResourceAssignment_5_4_1();
 
-                    state._fsp--;
+                  state._fsp--;
 
 
-                    }
-                    break;
+                  }
+                  break;
 
-                default :
-                    break loop48;
+              default :
+                  break loop48;
                 }
             } while (true);
 
@@ -22166,7 +22166,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -22178,7 +22178,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7279:1: rule__ComputationDeviceType__Group_6__0 : rule__ComputationDeviceType__Group_6__0__Impl rule__ComputationDeviceType__Group_6__1 ;
     public final void rule__ComputationDeviceType__Group_6__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7283:1: ( rule__ComputationDeviceType__Group_6__0__Impl rule__ComputationDeviceType__Group_6__1 )
@@ -22204,7 +22204,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -22216,7 +22216,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7291:1: rule__ComputationDeviceType__Group_6__0__Impl : ( CommunicationConnection ) ;
     public final void rule__ComputationDeviceType__Group_6__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7295:1: ( ( CommunicationConnection ) )
@@ -22241,7 +22241,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -22253,7 +22253,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7306:1: rule__ComputationDeviceType__Group_6__1 : rule__ComputationDeviceType__Group_6__1__Impl rule__ComputationDeviceType__Group_6__2 ;
     public final void rule__ComputationDeviceType__Group_6__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7310:1: ( rule__ComputationDeviceType__Group_6__1__Impl rule__ComputationDeviceType__Group_6__2 )
@@ -22279,7 +22279,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -22291,7 +22291,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7318:1: rule__ComputationDeviceType__Group_6__1__Impl : ( RULE_INDENT ) ;
     public final void rule__ComputationDeviceType__Group_6__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7322:1: ( ( RULE_INDENT ) )
@@ -22316,7 +22316,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -22328,7 +22328,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7333:1: rule__ComputationDeviceType__Group_6__2 : rule__ComputationDeviceType__Group_6__2__Impl rule__ComputationDeviceType__Group_6__3 ;
     public final void rule__ComputationDeviceType__Group_6__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7337:1: ( rule__ComputationDeviceType__Group_6__2__Impl rule__ComputationDeviceType__Group_6__3 )
@@ -22354,7 +22354,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -22366,7 +22366,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7345:1: rule__ComputationDeviceType__Group_6__2__Impl : ( ( ( rule__ComputationDeviceType__CommunicationConnectionAssignment_6_2 ) ) ( ( rule__ComputationDeviceType__CommunicationConnectionAssignment_6_2 )* ) ) ;
     public final void rule__ComputationDeviceType__Group_6__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7349:1: ( ( ( ( rule__ComputationDeviceType__CommunicationConnectionAssignment_6_2 ) ) ( ( rule__ComputationDeviceType__CommunicationConnectionAssignment_6_2 )* ) ) )
@@ -22410,20 +22410,20 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
 
 
                 switch (alt49) {
-                case 1 :
-                    // InternalDeviceParser.g:7358:4: rule__ComputationDeviceType__CommunicationConnectionAssignment_6_2
-                    {
-                    pushFollow(FOLLOW_26);
-                    rule__ComputationDeviceType__CommunicationConnectionAssignment_6_2();
+              case 1 :
+                  // InternalDeviceParser.g:7358:4: rule__ComputationDeviceType__CommunicationConnectionAssignment_6_2
+                  {
+                  pushFollow(FOLLOW_26);
+                  rule__ComputationDeviceType__CommunicationConnectionAssignment_6_2();
 
-                    state._fsp--;
+                  state._fsp--;
 
 
-                    }
-                    break;
+                  }
+                  break;
 
-                default :
-                    break loop49;
+              default :
+                  break loop49;
                 }
             } while (true);
 
@@ -22444,7 +22444,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -22456,7 +22456,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7367:1: rule__ComputationDeviceType__Group_6__3 : rule__ComputationDeviceType__Group_6__3__Impl ;
     public final void rule__ComputationDeviceType__Group_6__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7371:1: ( rule__ComputationDeviceType__Group_6__3__Impl )
@@ -22477,7 +22477,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -22489,7 +22489,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7378:1: rule__ComputationDeviceType__Group_6__3__Impl : ( RULE_DEDENT ) ;
     public final void rule__ComputationDeviceType__Group_6__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7382:1: ( ( RULE_DEDENT ) )
@@ -22514,7 +22514,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -22526,7 +22526,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7394:1: rule__ConnectionProperty__Group__0 : rule__ConnectionProperty__Group__0__Impl rule__ConnectionProperty__Group__1 ;
     public final void rule__ConnectionProperty__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7398:1: ( rule__ConnectionProperty__Group__0__Impl rule__ConnectionProperty__Group__1 )
@@ -22552,7 +22552,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -22564,7 +22564,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7406:1: rule__ConnectionProperty__Group__0__Impl : ( () ) ;
     public final void rule__ConnectionProperty__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7410:1: ( ( () ) )
@@ -22589,7 +22589,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -22601,7 +22601,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7421:1: rule__ConnectionProperty__Group__1 : rule__ConnectionProperty__Group__1__Impl rule__ConnectionProperty__Group__2 ;
     public final void rule__ConnectionProperty__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7425:1: ( rule__ConnectionProperty__Group__1__Impl rule__ConnectionProperty__Group__2 )
@@ -22627,7 +22627,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -22639,7 +22639,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7433:1: rule__ConnectionProperty__Group__1__Impl : ( rulePreListElement ) ;
     public final void rule__ConnectionProperty__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7437:1: ( ( rulePreListElement ) )
@@ -22668,7 +22668,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -22680,7 +22680,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7448:1: rule__ConnectionProperty__Group__2 : rule__ConnectionProperty__Group__2__Impl rule__ConnectionProperty__Group__3 ;
     public final void rule__ConnectionProperty__Group__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7452:1: ( rule__ConnectionProperty__Group__2__Impl rule__ConnectionProperty__Group__3 )
@@ -22706,7 +22706,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -22718,7 +22718,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7460:1: rule__ConnectionProperty__Group__2__Impl : ( Name ) ;
     public final void rule__ConnectionProperty__Group__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7464:1: ( ( Name ) )
@@ -22743,7 +22743,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -22755,7 +22755,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7475:1: rule__ConnectionProperty__Group__3 : rule__ConnectionProperty__Group__3__Impl rule__ConnectionProperty__Group__4 ;
     public final void rule__ConnectionProperty__Group__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7479:1: ( rule__ConnectionProperty__Group__3__Impl rule__ConnectionProperty__Group__4 )
@@ -22781,7 +22781,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -22793,7 +22793,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7487:1: rule__ConnectionProperty__Group__3__Impl : ( ( rule__ConnectionProperty__NameAssignment_3 ) ) ;
     public final void rule__ConnectionProperty__Group__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7491:1: ( ( ( rule__ConnectionProperty__NameAssignment_3 ) ) )
@@ -22828,7 +22828,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -22840,7 +22840,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7502:1: rule__ConnectionProperty__Group__4 : rule__ConnectionProperty__Group__4__Impl rule__ConnectionProperty__Group__5 ;
     public final void rule__ConnectionProperty__Group__4() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7506:1: ( rule__ConnectionProperty__Group__4__Impl rule__ConnectionProperty__Group__5 )
@@ -22866,7 +22866,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -22878,7 +22878,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7514:1: rule__ConnectionProperty__Group__4__Impl : ( RULE_INDENT ) ;
     public final void rule__ConnectionProperty__Group__4__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7518:1: ( ( RULE_INDENT ) )
@@ -22903,7 +22903,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -22915,7 +22915,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7529:1: rule__ConnectionProperty__Group__5 : rule__ConnectionProperty__Group__5__Impl rule__ConnectionProperty__Group__6 ;
     public final void rule__ConnectionProperty__Group__5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7533:1: ( rule__ConnectionProperty__Group__5__Impl rule__ConnectionProperty__Group__6 )
@@ -22941,7 +22941,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -22953,7 +22953,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7541:1: rule__ConnectionProperty__Group__5__Impl : ( Kind ) ;
     public final void rule__ConnectionProperty__Group__5__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7545:1: ( ( Kind ) )
@@ -22978,7 +22978,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -22990,7 +22990,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7556:1: rule__ConnectionProperty__Group__6 : rule__ConnectionProperty__Group__6__Impl rule__ConnectionProperty__Group__7 ;
     public final void rule__ConnectionProperty__Group__6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7560:1: ( rule__ConnectionProperty__Group__6__Impl rule__ConnectionProperty__Group__7 )
@@ -23016,7 +23016,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -23028,7 +23028,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7568:1: rule__ConnectionProperty__Group__6__Impl : ( ( rule__ConnectionProperty__KindAssignment_6 ) ) ;
     public final void rule__ConnectionProperty__Group__6__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7572:1: ( ( ( rule__ConnectionProperty__KindAssignment_6 ) ) )
@@ -23063,7 +23063,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -23075,7 +23075,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7583:1: rule__ConnectionProperty__Group__7 : rule__ConnectionProperty__Group__7__Impl rule__ConnectionProperty__Group__8 ;
     public final void rule__ConnectionProperty__Group__7() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7587:1: ( rule__ConnectionProperty__Group__7__Impl rule__ConnectionProperty__Group__8 )
@@ -23101,7 +23101,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -23113,7 +23113,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7595:1: rule__ConnectionProperty__Group__7__Impl : ( ( rule__ConnectionProperty__Group_7__0 )? ) ;
     public final void rule__ConnectionProperty__Group__7__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7599:1: ( ( ( rule__ConnectionProperty__Group_7__0 )? ) )
@@ -23159,7 +23159,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -23171,7 +23171,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7610:1: rule__ConnectionProperty__Group__8 : rule__ConnectionProperty__Group__8__Impl rule__ConnectionProperty__Group__9 ;
     public final void rule__ConnectionProperty__Group__8() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7614:1: ( rule__ConnectionProperty__Group__8__Impl rule__ConnectionProperty__Group__9 )
@@ -23197,7 +23197,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -23209,7 +23209,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7622:1: rule__ConnectionProperty__Group__8__Impl : ( ( rule__ConnectionProperty__Group_8__0 )? ) ;
     public final void rule__ConnectionProperty__Group__8__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7626:1: ( ( ( rule__ConnectionProperty__Group_8__0 )? ) )
@@ -23255,7 +23255,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -23267,7 +23267,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7637:1: rule__ConnectionProperty__Group__9 : rule__ConnectionProperty__Group__9__Impl ;
     public final void rule__ConnectionProperty__Group__9() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7641:1: ( rule__ConnectionProperty__Group__9__Impl )
@@ -23288,7 +23288,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -23300,7 +23300,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7648:1: rule__ConnectionProperty__Group__9__Impl : ( RULE_DEDENT ) ;
     public final void rule__ConnectionProperty__Group__9__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7652:1: ( ( RULE_DEDENT ) )
@@ -23325,7 +23325,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -23337,7 +23337,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7664:1: rule__ConnectionProperty__Group_7__0 : rule__ConnectionProperty__Group_7__0__Impl rule__ConnectionProperty__Group_7__1 ;
     public final void rule__ConnectionProperty__Group_7__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7668:1: ( rule__ConnectionProperty__Group_7__0__Impl rule__ConnectionProperty__Group_7__1 )
@@ -23363,7 +23363,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -23375,7 +23375,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7676:1: rule__ConnectionProperty__Group_7__0__Impl : ( Description ) ;
     public final void rule__ConnectionProperty__Group_7__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7680:1: ( ( Description ) )
@@ -23400,7 +23400,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -23412,7 +23412,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7691:1: rule__ConnectionProperty__Group_7__1 : rule__ConnectionProperty__Group_7__1__Impl ;
     public final void rule__ConnectionProperty__Group_7__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7695:1: ( rule__ConnectionProperty__Group_7__1__Impl )
@@ -23433,7 +23433,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -23445,7 +23445,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7702:1: rule__ConnectionProperty__Group_7__1__Impl : ( ( rule__ConnectionProperty__DescriptionAssignment_7_1 ) ) ;
     public final void rule__ConnectionProperty__Group_7__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7706:1: ( ( ( rule__ConnectionProperty__DescriptionAssignment_7_1 ) ) )
@@ -23480,7 +23480,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -23492,7 +23492,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7718:1: rule__ConnectionProperty__Group_8__0 : rule__ConnectionProperty__Group_8__0__Impl rule__ConnectionProperty__Group_8__1 ;
     public final void rule__ConnectionProperty__Group_8__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7722:1: ( rule__ConnectionProperty__Group_8__0__Impl rule__ConnectionProperty__Group_8__1 )
@@ -23518,7 +23518,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -23530,7 +23530,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7730:1: rule__ConnectionProperty__Group_8__0__Impl : ( Value ) ;
     public final void rule__ConnectionProperty__Group_8__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7734:1: ( ( Value ) )
@@ -23555,7 +23555,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -23567,7 +23567,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7745:1: rule__ConnectionProperty__Group_8__1 : rule__ConnectionProperty__Group_8__1__Impl ;
     public final void rule__ConnectionProperty__Group_8__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7749:1: ( rule__ConnectionProperty__Group_8__1__Impl )
@@ -23588,7 +23588,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -23600,7 +23600,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7756:1: rule__ConnectionProperty__Group_8__1__Impl : ( ( rule__ConnectionProperty__ValueAssignment_8_1 ) ) ;
     public final void rule__ConnectionProperty__Group_8__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7760:1: ( ( ( rule__ConnectionProperty__ValueAssignment_8_1 ) ) )
@@ -23635,7 +23635,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -23647,7 +23647,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7772:1: rule__NetworkConnection__Group__0 : rule__NetworkConnection__Group__0__Impl rule__NetworkConnection__Group__1 ;
     public final void rule__NetworkConnection__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7776:1: ( rule__NetworkConnection__Group__0__Impl rule__NetworkConnection__Group__1 )
@@ -23673,7 +23673,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -23685,7 +23685,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7784:1: rule__NetworkConnection__Group__0__Impl : ( () ) ;
     public final void rule__NetworkConnection__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7788:1: ( ( () ) )
@@ -23710,7 +23710,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -23722,7 +23722,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7799:1: rule__NetworkConnection__Group__1 : rule__NetworkConnection__Group__1__Impl rule__NetworkConnection__Group__2 ;
     public final void rule__NetworkConnection__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7803:1: ( rule__NetworkConnection__Group__1__Impl rule__NetworkConnection__Group__2 )
@@ -23748,7 +23748,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -23760,7 +23760,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7811:1: rule__NetworkConnection__Group__1__Impl : ( rulePreListElement ) ;
     public final void rule__NetworkConnection__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7815:1: ( ( rulePreListElement ) )
@@ -23789,7 +23789,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -23801,7 +23801,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7826:1: rule__NetworkConnection__Group__2 : rule__NetworkConnection__Group__2__Impl rule__NetworkConnection__Group__3 ;
     public final void rule__NetworkConnection__Group__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7830:1: ( rule__NetworkConnection__Group__2__Impl rule__NetworkConnection__Group__3 )
@@ -23827,7 +23827,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -23839,7 +23839,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7838:1: rule__NetworkConnection__Group__2__Impl : ( Name ) ;
     public final void rule__NetworkConnection__Group__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7842:1: ( ( Name ) )
@@ -23864,7 +23864,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -23876,7 +23876,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7853:1: rule__NetworkConnection__Group__3 : rule__NetworkConnection__Group__3__Impl rule__NetworkConnection__Group__4 ;
     public final void rule__NetworkConnection__Group__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7857:1: ( rule__NetworkConnection__Group__3__Impl rule__NetworkConnection__Group__4 )
@@ -23902,7 +23902,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -23914,7 +23914,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7865:1: rule__NetworkConnection__Group__3__Impl : ( ( rule__NetworkConnection__NameAssignment_3 ) ) ;
     public final void rule__NetworkConnection__Group__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7869:1: ( ( ( rule__NetworkConnection__NameAssignment_3 ) ) )
@@ -23949,7 +23949,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -23961,7 +23961,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7880:1: rule__NetworkConnection__Group__4 : rule__NetworkConnection__Group__4__Impl rule__NetworkConnection__Group__5 ;
     public final void rule__NetworkConnection__Group__4() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7884:1: ( rule__NetworkConnection__Group__4__Impl rule__NetworkConnection__Group__5 )
@@ -23987,7 +23987,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -23999,7 +23999,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7892:1: rule__NetworkConnection__Group__4__Impl : ( RULE_INDENT ) ;
     public final void rule__NetworkConnection__Group__4__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7896:1: ( ( RULE_INDENT ) )
@@ -24024,7 +24024,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -24036,7 +24036,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7907:1: rule__NetworkConnection__Group__5 : rule__NetworkConnection__Group__5__Impl rule__NetworkConnection__Group__6 ;
     public final void rule__NetworkConnection__Group__5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7911:1: ( rule__NetworkConnection__Group__5__Impl rule__NetworkConnection__Group__6 )
@@ -24062,7 +24062,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -24074,7 +24074,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7919:1: rule__NetworkConnection__Group__5__Impl : ( Type ) ;
     public final void rule__NetworkConnection__Group__5__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7923:1: ( ( Type ) )
@@ -24099,7 +24099,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -24111,7 +24111,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7934:1: rule__NetworkConnection__Group__6 : rule__NetworkConnection__Group__6__Impl rule__NetworkConnection__Group__7 ;
     public final void rule__NetworkConnection__Group__6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7938:1: ( rule__NetworkConnection__Group__6__Impl rule__NetworkConnection__Group__7 )
@@ -24137,7 +24137,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -24149,7 +24149,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7946:1: rule__NetworkConnection__Group__6__Impl : ( ( rule__NetworkConnection__TypeAssignment_6 ) ) ;
     public final void rule__NetworkConnection__Group__6__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7950:1: ( ( ( rule__NetworkConnection__TypeAssignment_6 ) ) )
@@ -24184,7 +24184,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -24196,7 +24196,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7961:1: rule__NetworkConnection__Group__7 : rule__NetworkConnection__Group__7__Impl rule__NetworkConnection__Group__8 ;
     public final void rule__NetworkConnection__Group__7() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7965:1: ( rule__NetworkConnection__Group__7__Impl rule__NetworkConnection__Group__8 )
@@ -24222,7 +24222,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -24234,7 +24234,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7973:1: rule__NetworkConnection__Group__7__Impl : ( ( rule__NetworkConnection__Group_7__0 )? ) ;
     public final void rule__NetworkConnection__Group__7__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7977:1: ( ( ( rule__NetworkConnection__Group_7__0 )? ) )
@@ -24280,7 +24280,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -24292,7 +24292,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7988:1: rule__NetworkConnection__Group__8 : rule__NetworkConnection__Group__8__Impl ;
     public final void rule__NetworkConnection__Group__8() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:7992:1: ( rule__NetworkConnection__Group__8__Impl )
@@ -24313,7 +24313,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -24325,7 +24325,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:7999:1: rule__NetworkConnection__Group__8__Impl : ( RULE_DEDENT ) ;
     public final void rule__NetworkConnection__Group__8__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8003:1: ( ( RULE_DEDENT ) )
@@ -24350,7 +24350,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -24362,7 +24362,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8015:1: rule__NetworkConnection__Group_7__0 : rule__NetworkConnection__Group_7__0__Impl rule__NetworkConnection__Group_7__1 ;
     public final void rule__NetworkConnection__Group_7__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8019:1: ( rule__NetworkConnection__Group_7__0__Impl rule__NetworkConnection__Group_7__1 )
@@ -24388,7 +24388,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -24400,7 +24400,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8027:1: rule__NetworkConnection__Group_7__0__Impl : ( Properties ) ;
     public final void rule__NetworkConnection__Group_7__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8031:1: ( ( Properties ) )
@@ -24425,7 +24425,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -24437,7 +24437,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8042:1: rule__NetworkConnection__Group_7__1 : rule__NetworkConnection__Group_7__1__Impl rule__NetworkConnection__Group_7__2 ;
     public final void rule__NetworkConnection__Group_7__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8046:1: ( rule__NetworkConnection__Group_7__1__Impl rule__NetworkConnection__Group_7__2 )
@@ -24463,7 +24463,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -24475,7 +24475,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8054:1: rule__NetworkConnection__Group_7__1__Impl : ( RULE_INDENT ) ;
     public final void rule__NetworkConnection__Group_7__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8058:1: ( ( RULE_INDENT ) )
@@ -24500,7 +24500,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -24512,7 +24512,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8069:1: rule__NetworkConnection__Group_7__2 : rule__NetworkConnection__Group_7__2__Impl rule__NetworkConnection__Group_7__3 ;
     public final void rule__NetworkConnection__Group_7__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8073:1: ( rule__NetworkConnection__Group_7__2__Impl rule__NetworkConnection__Group_7__3 )
@@ -24538,7 +24538,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -24550,7 +24550,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8081:1: rule__NetworkConnection__Group_7__2__Impl : ( ( ( rule__NetworkConnection__PropertiesAssignment_7_2 ) ) ( ( rule__NetworkConnection__PropertiesAssignment_7_2 )* ) ) ;
     public final void rule__NetworkConnection__Group_7__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8085:1: ( ( ( ( rule__NetworkConnection__PropertiesAssignment_7_2 ) ) ( ( rule__NetworkConnection__PropertiesAssignment_7_2 )* ) ) )
@@ -24594,20 +24594,20 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
 
 
                 switch (alt53) {
-                case 1 :
-                    // InternalDeviceParser.g:8094:4: rule__NetworkConnection__PropertiesAssignment_7_2
-                    {
-                    pushFollow(FOLLOW_26);
-                    rule__NetworkConnection__PropertiesAssignment_7_2();
+              case 1 :
+                  // InternalDeviceParser.g:8094:4: rule__NetworkConnection__PropertiesAssignment_7_2
+                  {
+                  pushFollow(FOLLOW_26);
+                  rule__NetworkConnection__PropertiesAssignment_7_2();
 
-                    state._fsp--;
+                  state._fsp--;
 
 
-                    }
-                    break;
+                  }
+                  break;
 
-                default :
-                    break loop53;
+              default :
+                  break loop53;
                 }
             } while (true);
 
@@ -24628,7 +24628,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -24640,7 +24640,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8103:1: rule__NetworkConnection__Group_7__3 : rule__NetworkConnection__Group_7__3__Impl ;
     public final void rule__NetworkConnection__Group_7__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8107:1: ( rule__NetworkConnection__Group_7__3__Impl )
@@ -24661,7 +24661,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -24673,7 +24673,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8114:1: rule__NetworkConnection__Group_7__3__Impl : ( RULE_DEDENT ) ;
     public final void rule__NetworkConnection__Group_7__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8118:1: ( ( RULE_DEDENT ) )
@@ -24698,7 +24698,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -24710,7 +24710,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8130:1: rule__CommunicationConnection__Group__0 : rule__CommunicationConnection__Group__0__Impl rule__CommunicationConnection__Group__1 ;
     public final void rule__CommunicationConnection__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8134:1: ( rule__CommunicationConnection__Group__0__Impl rule__CommunicationConnection__Group__1 )
@@ -24736,7 +24736,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -24748,7 +24748,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8142:1: rule__CommunicationConnection__Group__0__Impl : ( () ) ;
     public final void rule__CommunicationConnection__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8146:1: ( ( () ) )
@@ -24773,7 +24773,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -24785,7 +24785,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8157:1: rule__CommunicationConnection__Group__1 : rule__CommunicationConnection__Group__1__Impl rule__CommunicationConnection__Group__2 ;
     public final void rule__CommunicationConnection__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8161:1: ( rule__CommunicationConnection__Group__1__Impl rule__CommunicationConnection__Group__2 )
@@ -24811,7 +24811,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -24823,7 +24823,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8169:1: rule__CommunicationConnection__Group__1__Impl : ( rulePreListElement ) ;
     public final void rule__CommunicationConnection__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8173:1: ( ( rulePreListElement ) )
@@ -24852,7 +24852,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -24864,7 +24864,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8184:1: rule__CommunicationConnection__Group__2 : rule__CommunicationConnection__Group__2__Impl rule__CommunicationConnection__Group__3 ;
     public final void rule__CommunicationConnection__Group__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8188:1: ( rule__CommunicationConnection__Group__2__Impl rule__CommunicationConnection__Group__3 )
@@ -24890,7 +24890,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -24902,7 +24902,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8196:1: rule__CommunicationConnection__Group__2__Impl : ( Name ) ;
     public final void rule__CommunicationConnection__Group__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8200:1: ( ( Name ) )
@@ -24927,7 +24927,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -24939,7 +24939,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8211:1: rule__CommunicationConnection__Group__3 : rule__CommunicationConnection__Group__3__Impl rule__CommunicationConnection__Group__4 ;
     public final void rule__CommunicationConnection__Group__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8215:1: ( rule__CommunicationConnection__Group__3__Impl rule__CommunicationConnection__Group__4 )
@@ -24965,7 +24965,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -24977,7 +24977,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8223:1: rule__CommunicationConnection__Group__3__Impl : ( ( rule__CommunicationConnection__NameAssignment_3 ) ) ;
     public final void rule__CommunicationConnection__Group__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8227:1: ( ( ( rule__CommunicationConnection__NameAssignment_3 ) ) )
@@ -25012,7 +25012,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -25024,7 +25024,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8238:1: rule__CommunicationConnection__Group__4 : rule__CommunicationConnection__Group__4__Impl rule__CommunicationConnection__Group__5 ;
     public final void rule__CommunicationConnection__Group__4() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8242:1: ( rule__CommunicationConnection__Group__4__Impl rule__CommunicationConnection__Group__5 )
@@ -25050,7 +25050,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -25062,7 +25062,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8250:1: rule__CommunicationConnection__Group__4__Impl : ( RULE_INDENT ) ;
     public final void rule__CommunicationConnection__Group__4__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8254:1: ( ( RULE_INDENT ) )
@@ -25087,7 +25087,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -25099,7 +25099,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8265:1: rule__CommunicationConnection__Group__5 : rule__CommunicationConnection__Group__5__Impl rule__CommunicationConnection__Group__6 ;
     public final void rule__CommunicationConnection__Group__5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8269:1: ( rule__CommunicationConnection__Group__5__Impl rule__CommunicationConnection__Group__6 )
@@ -25125,7 +25125,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -25137,7 +25137,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8277:1: rule__CommunicationConnection__Group__5__Impl : ( Type ) ;
     public final void rule__CommunicationConnection__Group__5__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8281:1: ( ( Type ) )
@@ -25162,7 +25162,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -25174,7 +25174,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8292:1: rule__CommunicationConnection__Group__6 : rule__CommunicationConnection__Group__6__Impl rule__CommunicationConnection__Group__7 ;
     public final void rule__CommunicationConnection__Group__6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8296:1: ( rule__CommunicationConnection__Group__6__Impl rule__CommunicationConnection__Group__7 )
@@ -25200,7 +25200,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -25212,7 +25212,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8304:1: rule__CommunicationConnection__Group__6__Impl : ( ( rule__CommunicationConnection__TypeAssignment_6 ) ) ;
     public final void rule__CommunicationConnection__Group__6__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8308:1: ( ( ( rule__CommunicationConnection__TypeAssignment_6 ) ) )
@@ -25247,7 +25247,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -25259,7 +25259,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8319:1: rule__CommunicationConnection__Group__7 : rule__CommunicationConnection__Group__7__Impl rule__CommunicationConnection__Group__8 ;
     public final void rule__CommunicationConnection__Group__7() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8323:1: ( rule__CommunicationConnection__Group__7__Impl rule__CommunicationConnection__Group__8 )
@@ -25285,7 +25285,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -25297,7 +25297,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8331:1: rule__CommunicationConnection__Group__7__Impl : ( ( rule__CommunicationConnection__Group_7__0 )? ) ;
     public final void rule__CommunicationConnection__Group__7__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8335:1: ( ( ( rule__CommunicationConnection__Group_7__0 )? ) )
@@ -25343,7 +25343,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -25355,7 +25355,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8346:1: rule__CommunicationConnection__Group__8 : rule__CommunicationConnection__Group__8__Impl ;
     public final void rule__CommunicationConnection__Group__8() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8350:1: ( rule__CommunicationConnection__Group__8__Impl )
@@ -25376,7 +25376,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -25388,7 +25388,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8357:1: rule__CommunicationConnection__Group__8__Impl : ( RULE_DEDENT ) ;
     public final void rule__CommunicationConnection__Group__8__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8361:1: ( ( RULE_DEDENT ) )
@@ -25413,7 +25413,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -25425,7 +25425,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8373:1: rule__CommunicationConnection__Group_7__0 : rule__CommunicationConnection__Group_7__0__Impl rule__CommunicationConnection__Group_7__1 ;
     public final void rule__CommunicationConnection__Group_7__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8377:1: ( rule__CommunicationConnection__Group_7__0__Impl rule__CommunicationConnection__Group_7__1 )
@@ -25451,7 +25451,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -25463,7 +25463,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8385:1: rule__CommunicationConnection__Group_7__0__Impl : ( Properties ) ;
     public final void rule__CommunicationConnection__Group_7__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8389:1: ( ( Properties ) )
@@ -25488,7 +25488,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -25500,7 +25500,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8400:1: rule__CommunicationConnection__Group_7__1 : rule__CommunicationConnection__Group_7__1__Impl rule__CommunicationConnection__Group_7__2 ;
     public final void rule__CommunicationConnection__Group_7__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8404:1: ( rule__CommunicationConnection__Group_7__1__Impl rule__CommunicationConnection__Group_7__2 )
@@ -25526,7 +25526,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -25538,7 +25538,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8412:1: rule__CommunicationConnection__Group_7__1__Impl : ( RULE_INDENT ) ;
     public final void rule__CommunicationConnection__Group_7__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8416:1: ( ( RULE_INDENT ) )
@@ -25563,7 +25563,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -25575,7 +25575,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8427:1: rule__CommunicationConnection__Group_7__2 : rule__CommunicationConnection__Group_7__2__Impl rule__CommunicationConnection__Group_7__3 ;
     public final void rule__CommunicationConnection__Group_7__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8431:1: ( rule__CommunicationConnection__Group_7__2__Impl rule__CommunicationConnection__Group_7__3 )
@@ -25601,7 +25601,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -25613,7 +25613,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8439:1: rule__CommunicationConnection__Group_7__2__Impl : ( ( ( rule__CommunicationConnection__PropertiesAssignment_7_2 ) ) ( ( rule__CommunicationConnection__PropertiesAssignment_7_2 )* ) ) ;
     public final void rule__CommunicationConnection__Group_7__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8443:1: ( ( ( ( rule__CommunicationConnection__PropertiesAssignment_7_2 ) ) ( ( rule__CommunicationConnection__PropertiesAssignment_7_2 )* ) ) )
@@ -25657,20 +25657,20 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
 
 
                 switch (alt55) {
-                case 1 :
-                    // InternalDeviceParser.g:8452:4: rule__CommunicationConnection__PropertiesAssignment_7_2
-                    {
-                    pushFollow(FOLLOW_26);
-                    rule__CommunicationConnection__PropertiesAssignment_7_2();
+              case 1 :
+                  // InternalDeviceParser.g:8452:4: rule__CommunicationConnection__PropertiesAssignment_7_2
+                  {
+                  pushFollow(FOLLOW_26);
+                  rule__CommunicationConnection__PropertiesAssignment_7_2();
 
-                    state._fsp--;
+                  state._fsp--;
 
 
-                    }
-                    break;
+                  }
+                  break;
 
-                default :
-                    break loop55;
+              default :
+                  break loop55;
                 }
             } while (true);
 
@@ -25691,7 +25691,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -25703,7 +25703,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8461:1: rule__CommunicationConnection__Group_7__3 : rule__CommunicationConnection__Group_7__3__Impl ;
     public final void rule__CommunicationConnection__Group_7__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8465:1: ( rule__CommunicationConnection__Group_7__3__Impl )
@@ -25724,7 +25724,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -25736,7 +25736,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8472:1: rule__CommunicationConnection__Group_7__3__Impl : ( RULE_DEDENT ) ;
     public final void rule__CommunicationConnection__Group_7__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8476:1: ( ( RULE_DEDENT ) )
@@ -25761,7 +25761,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -25773,7 +25773,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8488:1: rule__UsbConnection__Group__0 : rule__UsbConnection__Group__0__Impl rule__UsbConnection__Group__1 ;
     public final void rule__UsbConnection__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8492:1: ( rule__UsbConnection__Group__0__Impl rule__UsbConnection__Group__1 )
@@ -25799,7 +25799,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -25811,7 +25811,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8500:1: rule__UsbConnection__Group__0__Impl : ( () ) ;
     public final void rule__UsbConnection__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8504:1: ( ( () ) )
@@ -25836,7 +25836,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -25848,7 +25848,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8515:1: rule__UsbConnection__Group__1 : rule__UsbConnection__Group__1__Impl rule__UsbConnection__Group__2 ;
     public final void rule__UsbConnection__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8519:1: ( rule__UsbConnection__Group__1__Impl rule__UsbConnection__Group__2 )
@@ -25874,7 +25874,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -25886,7 +25886,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8527:1: rule__UsbConnection__Group__1__Impl : ( rulePreListElement ) ;
     public final void rule__UsbConnection__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8531:1: ( ( rulePreListElement ) )
@@ -25915,7 +25915,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -25927,7 +25927,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8542:1: rule__UsbConnection__Group__2 : rule__UsbConnection__Group__2__Impl rule__UsbConnection__Group__3 ;
     public final void rule__UsbConnection__Group__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8546:1: ( rule__UsbConnection__Group__2__Impl rule__UsbConnection__Group__3 )
@@ -25953,7 +25953,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -25965,7 +25965,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8554:1: rule__UsbConnection__Group__2__Impl : ( Name ) ;
     public final void rule__UsbConnection__Group__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8558:1: ( ( Name ) )
@@ -25990,7 +25990,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -26002,7 +26002,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8569:1: rule__UsbConnection__Group__3 : rule__UsbConnection__Group__3__Impl rule__UsbConnection__Group__4 ;
     public final void rule__UsbConnection__Group__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8573:1: ( rule__UsbConnection__Group__3__Impl rule__UsbConnection__Group__4 )
@@ -26028,7 +26028,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -26040,7 +26040,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8581:1: rule__UsbConnection__Group__3__Impl : ( ( rule__UsbConnection__NameAssignment_3 ) ) ;
     public final void rule__UsbConnection__Group__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8585:1: ( ( ( rule__UsbConnection__NameAssignment_3 ) ) )
@@ -26075,7 +26075,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -26087,7 +26087,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8596:1: rule__UsbConnection__Group__4 : rule__UsbConnection__Group__4__Impl rule__UsbConnection__Group__5 ;
     public final void rule__UsbConnection__Group__4() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8600:1: ( rule__UsbConnection__Group__4__Impl rule__UsbConnection__Group__5 )
@@ -26113,7 +26113,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -26125,7 +26125,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8608:1: rule__UsbConnection__Group__4__Impl : ( RULE_INDENT ) ;
     public final void rule__UsbConnection__Group__4__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8612:1: ( ( RULE_INDENT ) )
@@ -26150,7 +26150,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -26162,7 +26162,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8623:1: rule__UsbConnection__Group__5 : rule__UsbConnection__Group__5__Impl rule__UsbConnection__Group__6 ;
     public final void rule__UsbConnection__Group__5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8627:1: ( rule__UsbConnection__Group__5__Impl rule__UsbConnection__Group__6 )
@@ -26188,7 +26188,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -26200,7 +26200,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8635:1: rule__UsbConnection__Group__5__Impl : ( Type ) ;
     public final void rule__UsbConnection__Group__5__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8639:1: ( ( Type ) )
@@ -26225,7 +26225,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -26237,7 +26237,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8650:1: rule__UsbConnection__Group__6 : rule__UsbConnection__Group__6__Impl rule__UsbConnection__Group__7 ;
     public final void rule__UsbConnection__Group__6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8654:1: ( rule__UsbConnection__Group__6__Impl rule__UsbConnection__Group__7 )
@@ -26263,7 +26263,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -26275,7 +26275,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8662:1: rule__UsbConnection__Group__6__Impl : ( ( rule__UsbConnection__TypeAssignment_6 ) ) ;
     public final void rule__UsbConnection__Group__6__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8666:1: ( ( ( rule__UsbConnection__TypeAssignment_6 ) ) )
@@ -26310,7 +26310,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -26322,7 +26322,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8677:1: rule__UsbConnection__Group__7 : rule__UsbConnection__Group__7__Impl rule__UsbConnection__Group__8 ;
     public final void rule__UsbConnection__Group__7() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8681:1: ( rule__UsbConnection__Group__7__Impl rule__UsbConnection__Group__8 )
@@ -26348,7 +26348,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -26360,7 +26360,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8689:1: rule__UsbConnection__Group__7__Impl : ( ( rule__UsbConnection__Group_7__0 )? ) ;
     public final void rule__UsbConnection__Group__7__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8693:1: ( ( ( rule__UsbConnection__Group_7__0 )? ) )
@@ -26406,7 +26406,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -26418,7 +26418,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8704:1: rule__UsbConnection__Group__8 : rule__UsbConnection__Group__8__Impl ;
     public final void rule__UsbConnection__Group__8() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8708:1: ( rule__UsbConnection__Group__8__Impl )
@@ -26439,7 +26439,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -26451,7 +26451,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8715:1: rule__UsbConnection__Group__8__Impl : ( RULE_DEDENT ) ;
     public final void rule__UsbConnection__Group__8__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8719:1: ( ( RULE_DEDENT ) )
@@ -26476,7 +26476,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -26488,7 +26488,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8731:1: rule__UsbConnection__Group_7__0 : rule__UsbConnection__Group_7__0__Impl rule__UsbConnection__Group_7__1 ;
     public final void rule__UsbConnection__Group_7__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8735:1: ( rule__UsbConnection__Group_7__0__Impl rule__UsbConnection__Group_7__1 )
@@ -26514,7 +26514,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -26526,7 +26526,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8743:1: rule__UsbConnection__Group_7__0__Impl : ( Properties ) ;
     public final void rule__UsbConnection__Group_7__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8747:1: ( ( Properties ) )
@@ -26551,7 +26551,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -26563,7 +26563,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8758:1: rule__UsbConnection__Group_7__1 : rule__UsbConnection__Group_7__1__Impl rule__UsbConnection__Group_7__2 ;
     public final void rule__UsbConnection__Group_7__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8762:1: ( rule__UsbConnection__Group_7__1__Impl rule__UsbConnection__Group_7__2 )
@@ -26589,7 +26589,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -26601,7 +26601,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8770:1: rule__UsbConnection__Group_7__1__Impl : ( RULE_INDENT ) ;
     public final void rule__UsbConnection__Group_7__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8774:1: ( ( RULE_INDENT ) )
@@ -26626,7 +26626,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -26638,7 +26638,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8785:1: rule__UsbConnection__Group_7__2 : rule__UsbConnection__Group_7__2__Impl rule__UsbConnection__Group_7__3 ;
     public final void rule__UsbConnection__Group_7__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8789:1: ( rule__UsbConnection__Group_7__2__Impl rule__UsbConnection__Group_7__3 )
@@ -26664,7 +26664,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -26676,7 +26676,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8797:1: rule__UsbConnection__Group_7__2__Impl : ( ( ( rule__UsbConnection__PropertiesAssignment_7_2 ) ) ( ( rule__UsbConnection__PropertiesAssignment_7_2 )* ) ) ;
     public final void rule__UsbConnection__Group_7__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8801:1: ( ( ( ( rule__UsbConnection__PropertiesAssignment_7_2 ) ) ( ( rule__UsbConnection__PropertiesAssignment_7_2 )* ) ) )
@@ -26720,20 +26720,20 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
 
 
                 switch (alt57) {
-                case 1 :
-                    // InternalDeviceParser.g:8810:4: rule__UsbConnection__PropertiesAssignment_7_2
-                    {
-                    pushFollow(FOLLOW_26);
-                    rule__UsbConnection__PropertiesAssignment_7_2();
+              case 1 :
+                  // InternalDeviceParser.g:8810:4: rule__UsbConnection__PropertiesAssignment_7_2
+                  {
+                  pushFollow(FOLLOW_26);
+                  rule__UsbConnection__PropertiesAssignment_7_2();
 
-                    state._fsp--;
+                  state._fsp--;
 
 
-                    }
-                    break;
+                  }
+                  break;
 
-                default :
-                    break loop57;
+              default :
+                  break loop57;
                 }
             } while (true);
 
@@ -26754,7 +26754,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -26766,7 +26766,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8819:1: rule__UsbConnection__Group_7__3 : rule__UsbConnection__Group_7__3__Impl ;
     public final void rule__UsbConnection__Group_7__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8823:1: ( rule__UsbConnection__Group_7__3__Impl )
@@ -26787,7 +26787,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -26799,7 +26799,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8830:1: rule__UsbConnection__Group_7__3__Impl : ( RULE_DEDENT ) ;
     public final void rule__UsbConnection__Group_7__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8834:1: ( ( RULE_DEDENT ) )
@@ -26824,7 +26824,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -26836,7 +26836,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8846:1: rule__ProcessorResouce__Group__0 : rule__ProcessorResouce__Group__0__Impl rule__ProcessorResouce__Group__1 ;
     public final void rule__ProcessorResouce__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8850:1: ( rule__ProcessorResouce__Group__0__Impl rule__ProcessorResouce__Group__1 )
@@ -26862,7 +26862,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -26874,7 +26874,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8858:1: rule__ProcessorResouce__Group__0__Impl : ( () ) ;
     public final void rule__ProcessorResouce__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8862:1: ( ( () ) )
@@ -26899,7 +26899,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -26911,7 +26911,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8873:1: rule__ProcessorResouce__Group__1 : rule__ProcessorResouce__Group__1__Impl rule__ProcessorResouce__Group__2 ;
     public final void rule__ProcessorResouce__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8877:1: ( rule__ProcessorResouce__Group__1__Impl rule__ProcessorResouce__Group__2 )
@@ -26937,7 +26937,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -26949,7 +26949,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8885:1: rule__ProcessorResouce__Group__1__Impl : ( Name ) ;
     public final void rule__ProcessorResouce__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8889:1: ( ( Name ) )
@@ -26974,7 +26974,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -26986,7 +26986,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8900:1: rule__ProcessorResouce__Group__2 : rule__ProcessorResouce__Group__2__Impl rule__ProcessorResouce__Group__3 ;
     public final void rule__ProcessorResouce__Group__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8904:1: ( rule__ProcessorResouce__Group__2__Impl rule__ProcessorResouce__Group__3 )
@@ -27012,7 +27012,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -27024,7 +27024,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8912:1: rule__ProcessorResouce__Group__2__Impl : ( ( rule__ProcessorResouce__NameAssignment_2 ) ) ;
     public final void rule__ProcessorResouce__Group__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8916:1: ( ( ( rule__ProcessorResouce__NameAssignment_2 ) ) )
@@ -27059,7 +27059,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -27071,7 +27071,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8927:1: rule__ProcessorResouce__Group__3 : rule__ProcessorResouce__Group__3__Impl rule__ProcessorResouce__Group__4 ;
     public final void rule__ProcessorResouce__Group__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8931:1: ( rule__ProcessorResouce__Group__3__Impl rule__ProcessorResouce__Group__4 )
@@ -27097,7 +27097,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -27109,7 +27109,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8939:1: rule__ProcessorResouce__Group__3__Impl : ( RULE_INDENT ) ;
     public final void rule__ProcessorResouce__Group__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8943:1: ( ( RULE_INDENT ) )
@@ -27134,7 +27134,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -27146,7 +27146,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8954:1: rule__ProcessorResouce__Group__4 : rule__ProcessorResouce__Group__4__Impl rule__ProcessorResouce__Group__5 ;
     public final void rule__ProcessorResouce__Group__4() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8958:1: ( rule__ProcessorResouce__Group__4__Impl rule__ProcessorResouce__Group__5 )
@@ -27172,7 +27172,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -27184,7 +27184,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8966:1: rule__ProcessorResouce__Group__4__Impl : ( Type ) ;
     public final void rule__ProcessorResouce__Group__4__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8970:1: ( ( Type ) )
@@ -27209,7 +27209,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -27221,7 +27221,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8981:1: rule__ProcessorResouce__Group__5 : rule__ProcessorResouce__Group__5__Impl rule__ProcessorResouce__Group__6 ;
     public final void rule__ProcessorResouce__Group__5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8985:1: ( rule__ProcessorResouce__Group__5__Impl rule__ProcessorResouce__Group__6 )
@@ -27247,7 +27247,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -27259,7 +27259,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:8993:1: rule__ProcessorResouce__Group__5__Impl : ( ( rule__ProcessorResouce__TypeAssignment_5 ) ) ;
     public final void rule__ProcessorResouce__Group__5__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:8997:1: ( ( ( rule__ProcessorResouce__TypeAssignment_5 ) ) )
@@ -27294,7 +27294,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -27306,7 +27306,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9008:1: rule__ProcessorResouce__Group__6 : rule__ProcessorResouce__Group__6__Impl rule__ProcessorResouce__Group__7 ;
     public final void rule__ProcessorResouce__Group__6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9012:1: ( rule__ProcessorResouce__Group__6__Impl rule__ProcessorResouce__Group__7 )
@@ -27332,7 +27332,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -27344,7 +27344,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9020:1: rule__ProcessorResouce__Group__6__Impl : ( ( rule__ProcessorResouce__Group_6__0 )? ) ;
     public final void rule__ProcessorResouce__Group__6__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9024:1: ( ( ( rule__ProcessorResouce__Group_6__0 )? ) )
@@ -27390,7 +27390,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -27402,7 +27402,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9035:1: rule__ProcessorResouce__Group__7 : rule__ProcessorResouce__Group__7__Impl ;
     public final void rule__ProcessorResouce__Group__7() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9039:1: ( rule__ProcessorResouce__Group__7__Impl )
@@ -27423,7 +27423,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -27435,7 +27435,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9046:1: rule__ProcessorResouce__Group__7__Impl : ( RULE_DEDENT ) ;
     public final void rule__ProcessorResouce__Group__7__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9050:1: ( ( RULE_DEDENT ) )
@@ -27460,7 +27460,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -27472,7 +27472,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9062:1: rule__ProcessorResouce__Group_6__0 : rule__ProcessorResouce__Group_6__0__Impl rule__ProcessorResouce__Group_6__1 ;
     public final void rule__ProcessorResouce__Group_6__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9066:1: ( rule__ProcessorResouce__Group_6__0__Impl rule__ProcessorResouce__Group_6__1 )
@@ -27498,7 +27498,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -27510,7 +27510,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9074:1: rule__ProcessorResouce__Group_6__0__Impl : ( Properties ) ;
     public final void rule__ProcessorResouce__Group_6__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9078:1: ( ( Properties ) )
@@ -27535,7 +27535,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -27547,7 +27547,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9089:1: rule__ProcessorResouce__Group_6__1 : rule__ProcessorResouce__Group_6__1__Impl rule__ProcessorResouce__Group_6__2 ;
     public final void rule__ProcessorResouce__Group_6__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9093:1: ( rule__ProcessorResouce__Group_6__1__Impl rule__ProcessorResouce__Group_6__2 )
@@ -27573,7 +27573,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -27585,7 +27585,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9101:1: rule__ProcessorResouce__Group_6__1__Impl : ( RULE_INDENT ) ;
     public final void rule__ProcessorResouce__Group_6__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9105:1: ( ( RULE_INDENT ) )
@@ -27610,7 +27610,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -27622,7 +27622,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9116:1: rule__ProcessorResouce__Group_6__2 : rule__ProcessorResouce__Group_6__2__Impl rule__ProcessorResouce__Group_6__3 ;
     public final void rule__ProcessorResouce__Group_6__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9120:1: ( rule__ProcessorResouce__Group_6__2__Impl rule__ProcessorResouce__Group_6__3 )
@@ -27648,7 +27648,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -27660,7 +27660,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9128:1: rule__ProcessorResouce__Group_6__2__Impl : ( ( ( rule__ProcessorResouce__PropertiesAssignment_6_2 ) ) ( ( rule__ProcessorResouce__PropertiesAssignment_6_2 )* ) ) ;
     public final void rule__ProcessorResouce__Group_6__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9132:1: ( ( ( ( rule__ProcessorResouce__PropertiesAssignment_6_2 ) ) ( ( rule__ProcessorResouce__PropertiesAssignment_6_2 )* ) ) )
@@ -27704,20 +27704,20 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
 
 
                 switch (alt59) {
-                case 1 :
-                    // InternalDeviceParser.g:9141:4: rule__ProcessorResouce__PropertiesAssignment_6_2
-                    {
-                    pushFollow(FOLLOW_26);
-                    rule__ProcessorResouce__PropertiesAssignment_6_2();
+              case 1 :
+                  // InternalDeviceParser.g:9141:4: rule__ProcessorResouce__PropertiesAssignment_6_2
+                  {
+                  pushFollow(FOLLOW_26);
+                  rule__ProcessorResouce__PropertiesAssignment_6_2();
 
-                    state._fsp--;
+                  state._fsp--;
 
 
-                    }
-                    break;
+                  }
+                  break;
 
-                default :
-                    break loop59;
+              default :
+                  break loop59;
                 }
             } while (true);
 
@@ -27738,7 +27738,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -27750,7 +27750,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9150:1: rule__ProcessorResouce__Group_6__3 : rule__ProcessorResouce__Group_6__3__Impl ;
     public final void rule__ProcessorResouce__Group_6__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9154:1: ( rule__ProcessorResouce__Group_6__3__Impl )
@@ -27771,7 +27771,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -27783,7 +27783,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9161:1: rule__ProcessorResouce__Group_6__3__Impl : ( RULE_DEDENT ) ;
     public final void rule__ProcessorResouce__Group_6__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9165:1: ( ( RULE_DEDENT ) )
@@ -27808,7 +27808,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -27820,7 +27820,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9177:1: rule__ArchitectureProcessorProperty__Group__0 : rule__ArchitectureProcessorProperty__Group__0__Impl rule__ArchitectureProcessorProperty__Group__1 ;
     public final void rule__ArchitectureProcessorProperty__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9181:1: ( rule__ArchitectureProcessorProperty__Group__0__Impl rule__ArchitectureProcessorProperty__Group__1 )
@@ -27846,7 +27846,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -27858,7 +27858,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9189:1: rule__ArchitectureProcessorProperty__Group__0__Impl : ( () ) ;
     public final void rule__ArchitectureProcessorProperty__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9193:1: ( ( () ) )
@@ -27883,7 +27883,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -27895,7 +27895,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9204:1: rule__ArchitectureProcessorProperty__Group__1 : rule__ArchitectureProcessorProperty__Group__1__Impl rule__ArchitectureProcessorProperty__Group__2 ;
     public final void rule__ArchitectureProcessorProperty__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9208:1: ( rule__ArchitectureProcessorProperty__Group__1__Impl rule__ArchitectureProcessorProperty__Group__2 )
@@ -27921,7 +27921,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -27933,7 +27933,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9216:1: rule__ArchitectureProcessorProperty__Group__1__Impl : ( rulePreListElement ) ;
     public final void rule__ArchitectureProcessorProperty__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9220:1: ( ( rulePreListElement ) )
@@ -27962,7 +27962,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -27974,7 +27974,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9231:1: rule__ArchitectureProcessorProperty__Group__2 : rule__ArchitectureProcessorProperty__Group__2__Impl rule__ArchitectureProcessorProperty__Group__3 ;
     public final void rule__ArchitectureProcessorProperty__Group__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9235:1: ( rule__ArchitectureProcessorProperty__Group__2__Impl rule__ArchitectureProcessorProperty__Group__3 )
@@ -28000,7 +28000,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -28012,7 +28012,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9243:1: rule__ArchitectureProcessorProperty__Group__2__Impl : ( Name ) ;
     public final void rule__ArchitectureProcessorProperty__Group__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9247:1: ( ( Name ) )
@@ -28037,7 +28037,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -28049,7 +28049,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9258:1: rule__ArchitectureProcessorProperty__Group__3 : rule__ArchitectureProcessorProperty__Group__3__Impl rule__ArchitectureProcessorProperty__Group__4 ;
     public final void rule__ArchitectureProcessorProperty__Group__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9262:1: ( rule__ArchitectureProcessorProperty__Group__3__Impl rule__ArchitectureProcessorProperty__Group__4 )
@@ -28075,7 +28075,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -28087,7 +28087,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9270:1: rule__ArchitectureProcessorProperty__Group__3__Impl : ( ( rule__ArchitectureProcessorProperty__NameAssignment_3 ) ) ;
     public final void rule__ArchitectureProcessorProperty__Group__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9274:1: ( ( ( rule__ArchitectureProcessorProperty__NameAssignment_3 ) ) )
@@ -28122,7 +28122,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -28134,7 +28134,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9285:1: rule__ArchitectureProcessorProperty__Group__4 : rule__ArchitectureProcessorProperty__Group__4__Impl rule__ArchitectureProcessorProperty__Group__5 ;
     public final void rule__ArchitectureProcessorProperty__Group__4() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9289:1: ( rule__ArchitectureProcessorProperty__Group__4__Impl rule__ArchitectureProcessorProperty__Group__5 )
@@ -28160,7 +28160,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -28172,7 +28172,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9297:1: rule__ArchitectureProcessorProperty__Group__4__Impl : ( RULE_INDENT ) ;
     public final void rule__ArchitectureProcessorProperty__Group__4__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9301:1: ( ( RULE_INDENT ) )
@@ -28197,7 +28197,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -28209,7 +28209,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9312:1: rule__ArchitectureProcessorProperty__Group__5 : rule__ArchitectureProcessorProperty__Group__5__Impl rule__ArchitectureProcessorProperty__Group__6 ;
     public final void rule__ArchitectureProcessorProperty__Group__5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9316:1: ( rule__ArchitectureProcessorProperty__Group__5__Impl rule__ArchitectureProcessorProperty__Group__6 )
@@ -28235,7 +28235,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -28247,7 +28247,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9324:1: rule__ArchitectureProcessorProperty__Group__5__Impl : ( Kind ) ;
     public final void rule__ArchitectureProcessorProperty__Group__5__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9328:1: ( ( Kind ) )
@@ -28272,7 +28272,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -28284,7 +28284,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9339:1: rule__ArchitectureProcessorProperty__Group__6 : rule__ArchitectureProcessorProperty__Group__6__Impl rule__ArchitectureProcessorProperty__Group__7 ;
     public final void rule__ArchitectureProcessorProperty__Group__6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9343:1: ( rule__ArchitectureProcessorProperty__Group__6__Impl rule__ArchitectureProcessorProperty__Group__7 )
@@ -28310,7 +28310,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -28322,7 +28322,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9351:1: rule__ArchitectureProcessorProperty__Group__6__Impl : ( ( rule__ArchitectureProcessorProperty__KindAssignment_6 ) ) ;
     public final void rule__ArchitectureProcessorProperty__Group__6__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9355:1: ( ( ( rule__ArchitectureProcessorProperty__KindAssignment_6 ) ) )
@@ -28357,7 +28357,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -28369,7 +28369,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9366:1: rule__ArchitectureProcessorProperty__Group__7 : rule__ArchitectureProcessorProperty__Group__7__Impl rule__ArchitectureProcessorProperty__Group__8 ;
     public final void rule__ArchitectureProcessorProperty__Group__7() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9370:1: ( rule__ArchitectureProcessorProperty__Group__7__Impl rule__ArchitectureProcessorProperty__Group__8 )
@@ -28395,7 +28395,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -28407,7 +28407,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9378:1: rule__ArchitectureProcessorProperty__Group__7__Impl : ( ( rule__ArchitectureProcessorProperty__Group_7__0 )? ) ;
     public final void rule__ArchitectureProcessorProperty__Group__7__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9382:1: ( ( ( rule__ArchitectureProcessorProperty__Group_7__0 )? ) )
@@ -28453,7 +28453,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -28465,7 +28465,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9393:1: rule__ArchitectureProcessorProperty__Group__8 : rule__ArchitectureProcessorProperty__Group__8__Impl rule__ArchitectureProcessorProperty__Group__9 ;
     public final void rule__ArchitectureProcessorProperty__Group__8() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9397:1: ( rule__ArchitectureProcessorProperty__Group__8__Impl rule__ArchitectureProcessorProperty__Group__9 )
@@ -28491,7 +28491,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -28503,7 +28503,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9405:1: rule__ArchitectureProcessorProperty__Group__8__Impl : ( ( rule__ArchitectureProcessorProperty__Group_8__0 )? ) ;
     public final void rule__ArchitectureProcessorProperty__Group__8__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9409:1: ( ( ( rule__ArchitectureProcessorProperty__Group_8__0 )? ) )
@@ -28549,7 +28549,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -28561,7 +28561,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9420:1: rule__ArchitectureProcessorProperty__Group__9 : rule__ArchitectureProcessorProperty__Group__9__Impl ;
     public final void rule__ArchitectureProcessorProperty__Group__9() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9424:1: ( rule__ArchitectureProcessorProperty__Group__9__Impl )
@@ -28582,7 +28582,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -28594,7 +28594,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9431:1: rule__ArchitectureProcessorProperty__Group__9__Impl : ( RULE_DEDENT ) ;
     public final void rule__ArchitectureProcessorProperty__Group__9__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9435:1: ( ( RULE_DEDENT ) )
@@ -28619,7 +28619,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -28631,7 +28631,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9447:1: rule__ArchitectureProcessorProperty__Group_7__0 : rule__ArchitectureProcessorProperty__Group_7__0__Impl rule__ArchitectureProcessorProperty__Group_7__1 ;
     public final void rule__ArchitectureProcessorProperty__Group_7__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9451:1: ( rule__ArchitectureProcessorProperty__Group_7__0__Impl rule__ArchitectureProcessorProperty__Group_7__1 )
@@ -28657,7 +28657,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -28669,7 +28669,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9459:1: rule__ArchitectureProcessorProperty__Group_7__0__Impl : ( Description ) ;
     public final void rule__ArchitectureProcessorProperty__Group_7__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9463:1: ( ( Description ) )
@@ -28694,7 +28694,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -28706,7 +28706,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9474:1: rule__ArchitectureProcessorProperty__Group_7__1 : rule__ArchitectureProcessorProperty__Group_7__1__Impl ;
     public final void rule__ArchitectureProcessorProperty__Group_7__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9478:1: ( rule__ArchitectureProcessorProperty__Group_7__1__Impl )
@@ -28727,7 +28727,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -28739,7 +28739,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9485:1: rule__ArchitectureProcessorProperty__Group_7__1__Impl : ( ( rule__ArchitectureProcessorProperty__DescriptionAssignment_7_1 ) ) ;
     public final void rule__ArchitectureProcessorProperty__Group_7__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9489:1: ( ( ( rule__ArchitectureProcessorProperty__DescriptionAssignment_7_1 ) ) )
@@ -28774,7 +28774,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -28786,7 +28786,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9501:1: rule__ArchitectureProcessorProperty__Group_8__0 : rule__ArchitectureProcessorProperty__Group_8__0__Impl rule__ArchitectureProcessorProperty__Group_8__1 ;
     public final void rule__ArchitectureProcessorProperty__Group_8__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9505:1: ( rule__ArchitectureProcessorProperty__Group_8__0__Impl rule__ArchitectureProcessorProperty__Group_8__1 )
@@ -28812,7 +28812,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -28824,7 +28824,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9513:1: rule__ArchitectureProcessorProperty__Group_8__0__Impl : ( Value ) ;
     public final void rule__ArchitectureProcessorProperty__Group_8__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9517:1: ( ( Value ) )
@@ -28849,7 +28849,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -28861,7 +28861,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9528:1: rule__ArchitectureProcessorProperty__Group_8__1 : rule__ArchitectureProcessorProperty__Group_8__1__Impl ;
     public final void rule__ArchitectureProcessorProperty__Group_8__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9532:1: ( rule__ArchitectureProcessorProperty__Group_8__1__Impl )
@@ -28882,7 +28882,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -28894,7 +28894,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9539:1: rule__ArchitectureProcessorProperty__Group_8__1__Impl : ( ( rule__ArchitectureProcessorProperty__ValueAssignment_8_1 ) ) ;
     public final void rule__ArchitectureProcessorProperty__Group_8__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9543:1: ( ( ( rule__ArchitectureProcessorProperty__ValueAssignment_8_1 ) ) )
@@ -28929,7 +28929,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -28941,7 +28941,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9555:1: rule__CoreProcessorProperty__Group__0 : rule__CoreProcessorProperty__Group__0__Impl rule__CoreProcessorProperty__Group__1 ;
     public final void rule__CoreProcessorProperty__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9559:1: ( rule__CoreProcessorProperty__Group__0__Impl rule__CoreProcessorProperty__Group__1 )
@@ -28967,7 +28967,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -28979,7 +28979,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9567:1: rule__CoreProcessorProperty__Group__0__Impl : ( () ) ;
     public final void rule__CoreProcessorProperty__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9571:1: ( ( () ) )
@@ -29004,7 +29004,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -29016,7 +29016,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9582:1: rule__CoreProcessorProperty__Group__1 : rule__CoreProcessorProperty__Group__1__Impl rule__CoreProcessorProperty__Group__2 ;
     public final void rule__CoreProcessorProperty__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9586:1: ( rule__CoreProcessorProperty__Group__1__Impl rule__CoreProcessorProperty__Group__2 )
@@ -29042,7 +29042,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -29054,7 +29054,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9594:1: rule__CoreProcessorProperty__Group__1__Impl : ( rulePreListElement ) ;
     public final void rule__CoreProcessorProperty__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9598:1: ( ( rulePreListElement ) )
@@ -29083,7 +29083,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -29095,7 +29095,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9609:1: rule__CoreProcessorProperty__Group__2 : rule__CoreProcessorProperty__Group__2__Impl rule__CoreProcessorProperty__Group__3 ;
     public final void rule__CoreProcessorProperty__Group__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9613:1: ( rule__CoreProcessorProperty__Group__2__Impl rule__CoreProcessorProperty__Group__3 )
@@ -29121,7 +29121,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -29133,7 +29133,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9621:1: rule__CoreProcessorProperty__Group__2__Impl : ( Name ) ;
     public final void rule__CoreProcessorProperty__Group__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9625:1: ( ( Name ) )
@@ -29158,7 +29158,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -29170,7 +29170,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9636:1: rule__CoreProcessorProperty__Group__3 : rule__CoreProcessorProperty__Group__3__Impl rule__CoreProcessorProperty__Group__4 ;
     public final void rule__CoreProcessorProperty__Group__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9640:1: ( rule__CoreProcessorProperty__Group__3__Impl rule__CoreProcessorProperty__Group__4 )
@@ -29196,7 +29196,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -29208,7 +29208,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9648:1: rule__CoreProcessorProperty__Group__3__Impl : ( ( rule__CoreProcessorProperty__NameAssignment_3 ) ) ;
     public final void rule__CoreProcessorProperty__Group__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9652:1: ( ( ( rule__CoreProcessorProperty__NameAssignment_3 ) ) )
@@ -29243,7 +29243,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -29255,7 +29255,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9663:1: rule__CoreProcessorProperty__Group__4 : rule__CoreProcessorProperty__Group__4__Impl rule__CoreProcessorProperty__Group__5 ;
     public final void rule__CoreProcessorProperty__Group__4() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9667:1: ( rule__CoreProcessorProperty__Group__4__Impl rule__CoreProcessorProperty__Group__5 )
@@ -29281,7 +29281,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -29293,7 +29293,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9675:1: rule__CoreProcessorProperty__Group__4__Impl : ( RULE_INDENT ) ;
     public final void rule__CoreProcessorProperty__Group__4__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9679:1: ( ( RULE_INDENT ) )
@@ -29318,7 +29318,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -29330,7 +29330,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9690:1: rule__CoreProcessorProperty__Group__5 : rule__CoreProcessorProperty__Group__5__Impl rule__CoreProcessorProperty__Group__6 ;
     public final void rule__CoreProcessorProperty__Group__5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9694:1: ( rule__CoreProcessorProperty__Group__5__Impl rule__CoreProcessorProperty__Group__6 )
@@ -29356,7 +29356,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -29368,7 +29368,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9702:1: rule__CoreProcessorProperty__Group__5__Impl : ( Kind ) ;
     public final void rule__CoreProcessorProperty__Group__5__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9706:1: ( ( Kind ) )
@@ -29393,7 +29393,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -29405,7 +29405,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9717:1: rule__CoreProcessorProperty__Group__6 : rule__CoreProcessorProperty__Group__6__Impl rule__CoreProcessorProperty__Group__7 ;
     public final void rule__CoreProcessorProperty__Group__6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9721:1: ( rule__CoreProcessorProperty__Group__6__Impl rule__CoreProcessorProperty__Group__7 )
@@ -29431,7 +29431,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -29443,7 +29443,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9729:1: rule__CoreProcessorProperty__Group__6__Impl : ( ( rule__CoreProcessorProperty__KindAssignment_6 ) ) ;
     public final void rule__CoreProcessorProperty__Group__6__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9733:1: ( ( ( rule__CoreProcessorProperty__KindAssignment_6 ) ) )
@@ -29478,7 +29478,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -29490,7 +29490,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9744:1: rule__CoreProcessorProperty__Group__7 : rule__CoreProcessorProperty__Group__7__Impl rule__CoreProcessorProperty__Group__8 ;
     public final void rule__CoreProcessorProperty__Group__7() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9748:1: ( rule__CoreProcessorProperty__Group__7__Impl rule__CoreProcessorProperty__Group__8 )
@@ -29516,7 +29516,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -29528,7 +29528,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9756:1: rule__CoreProcessorProperty__Group__7__Impl : ( ( rule__CoreProcessorProperty__Group_7__0 )? ) ;
     public final void rule__CoreProcessorProperty__Group__7__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9760:1: ( ( ( rule__CoreProcessorProperty__Group_7__0 )? ) )
@@ -29574,7 +29574,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -29586,7 +29586,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9771:1: rule__CoreProcessorProperty__Group__8 : rule__CoreProcessorProperty__Group__8__Impl rule__CoreProcessorProperty__Group__9 ;
     public final void rule__CoreProcessorProperty__Group__8() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9775:1: ( rule__CoreProcessorProperty__Group__8__Impl rule__CoreProcessorProperty__Group__9 )
@@ -29612,7 +29612,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -29624,7 +29624,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9783:1: rule__CoreProcessorProperty__Group__8__Impl : ( ( rule__CoreProcessorProperty__Group_8__0 )? ) ;
     public final void rule__CoreProcessorProperty__Group__8__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9787:1: ( ( ( rule__CoreProcessorProperty__Group_8__0 )? ) )
@@ -29670,7 +29670,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -29682,7 +29682,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9798:1: rule__CoreProcessorProperty__Group__9 : rule__CoreProcessorProperty__Group__9__Impl ;
     public final void rule__CoreProcessorProperty__Group__9() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9802:1: ( rule__CoreProcessorProperty__Group__9__Impl )
@@ -29703,7 +29703,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -29715,7 +29715,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9809:1: rule__CoreProcessorProperty__Group__9__Impl : ( RULE_DEDENT ) ;
     public final void rule__CoreProcessorProperty__Group__9__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9813:1: ( ( RULE_DEDENT ) )
@@ -29740,7 +29740,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -29752,7 +29752,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9825:1: rule__CoreProcessorProperty__Group_7__0 : rule__CoreProcessorProperty__Group_7__0__Impl rule__CoreProcessorProperty__Group_7__1 ;
     public final void rule__CoreProcessorProperty__Group_7__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9829:1: ( rule__CoreProcessorProperty__Group_7__0__Impl rule__CoreProcessorProperty__Group_7__1 )
@@ -29778,7 +29778,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -29790,7 +29790,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9837:1: rule__CoreProcessorProperty__Group_7__0__Impl : ( Description ) ;
     public final void rule__CoreProcessorProperty__Group_7__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9841:1: ( ( Description ) )
@@ -29815,7 +29815,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -29827,7 +29827,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9852:1: rule__CoreProcessorProperty__Group_7__1 : rule__CoreProcessorProperty__Group_7__1__Impl ;
     public final void rule__CoreProcessorProperty__Group_7__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9856:1: ( rule__CoreProcessorProperty__Group_7__1__Impl )
@@ -29848,7 +29848,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -29860,7 +29860,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9863:1: rule__CoreProcessorProperty__Group_7__1__Impl : ( ( rule__CoreProcessorProperty__DescriptionAssignment_7_1 ) ) ;
     public final void rule__CoreProcessorProperty__Group_7__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9867:1: ( ( ( rule__CoreProcessorProperty__DescriptionAssignment_7_1 ) ) )
@@ -29895,7 +29895,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -29907,7 +29907,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9879:1: rule__CoreProcessorProperty__Group_8__0 : rule__CoreProcessorProperty__Group_8__0__Impl rule__CoreProcessorProperty__Group_8__1 ;
     public final void rule__CoreProcessorProperty__Group_8__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9883:1: ( rule__CoreProcessorProperty__Group_8__0__Impl rule__CoreProcessorProperty__Group_8__1 )
@@ -29933,7 +29933,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -29945,7 +29945,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9891:1: rule__CoreProcessorProperty__Group_8__0__Impl : ( Value ) ;
     public final void rule__CoreProcessorProperty__Group_8__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9895:1: ( ( Value ) )
@@ -29970,7 +29970,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -29982,7 +29982,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9906:1: rule__CoreProcessorProperty__Group_8__1 : rule__CoreProcessorProperty__Group_8__1__Impl ;
     public final void rule__CoreProcessorProperty__Group_8__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9910:1: ( rule__CoreProcessorProperty__Group_8__1__Impl )
@@ -30003,7 +30003,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -30015,7 +30015,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9917:1: rule__CoreProcessorProperty__Group_8__1__Impl : ( ( rule__CoreProcessorProperty__ValueAssignment_8_1 ) ) ;
     public final void rule__CoreProcessorProperty__Group_8__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9921:1: ( ( ( rule__CoreProcessorProperty__ValueAssignment_8_1 ) ) )
@@ -30050,7 +30050,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -30062,7 +30062,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9933:1: rule__OperatingSystemResouce__Group__0 : rule__OperatingSystemResouce__Group__0__Impl rule__OperatingSystemResouce__Group__1 ;
     public final void rule__OperatingSystemResouce__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9937:1: ( rule__OperatingSystemResouce__Group__0__Impl rule__OperatingSystemResouce__Group__1 )
@@ -30088,7 +30088,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -30100,7 +30100,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9945:1: rule__OperatingSystemResouce__Group__0__Impl : ( () ) ;
     public final void rule__OperatingSystemResouce__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9949:1: ( ( () ) )
@@ -30125,7 +30125,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -30137,7 +30137,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9960:1: rule__OperatingSystemResouce__Group__1 : rule__OperatingSystemResouce__Group__1__Impl rule__OperatingSystemResouce__Group__2 ;
     public final void rule__OperatingSystemResouce__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9964:1: ( rule__OperatingSystemResouce__Group__1__Impl rule__OperatingSystemResouce__Group__2 )
@@ -30163,7 +30163,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -30175,7 +30175,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9972:1: rule__OperatingSystemResouce__Group__1__Impl : ( Name ) ;
     public final void rule__OperatingSystemResouce__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9976:1: ( ( Name ) )
@@ -30200,7 +30200,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -30212,7 +30212,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9987:1: rule__OperatingSystemResouce__Group__2 : rule__OperatingSystemResouce__Group__2__Impl rule__OperatingSystemResouce__Group__3 ;
     public final void rule__OperatingSystemResouce__Group__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:9991:1: ( rule__OperatingSystemResouce__Group__2__Impl rule__OperatingSystemResouce__Group__3 )
@@ -30238,7 +30238,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -30250,7 +30250,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:9999:1: rule__OperatingSystemResouce__Group__2__Impl : ( ( rule__OperatingSystemResouce__NameAssignment_2 ) ) ;
     public final void rule__OperatingSystemResouce__Group__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10003:1: ( ( ( rule__OperatingSystemResouce__NameAssignment_2 ) ) )
@@ -30285,7 +30285,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -30297,7 +30297,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10014:1: rule__OperatingSystemResouce__Group__3 : rule__OperatingSystemResouce__Group__3__Impl rule__OperatingSystemResouce__Group__4 ;
     public final void rule__OperatingSystemResouce__Group__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10018:1: ( rule__OperatingSystemResouce__Group__3__Impl rule__OperatingSystemResouce__Group__4 )
@@ -30323,7 +30323,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -30335,7 +30335,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10026:1: rule__OperatingSystemResouce__Group__3__Impl : ( RULE_INDENT ) ;
     public final void rule__OperatingSystemResouce__Group__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10030:1: ( ( RULE_INDENT ) )
@@ -30360,7 +30360,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -30372,7 +30372,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10041:1: rule__OperatingSystemResouce__Group__4 : rule__OperatingSystemResouce__Group__4__Impl rule__OperatingSystemResouce__Group__5 ;
     public final void rule__OperatingSystemResouce__Group__4() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10045:1: ( rule__OperatingSystemResouce__Group__4__Impl rule__OperatingSystemResouce__Group__5 )
@@ -30398,7 +30398,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -30410,7 +30410,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10053:1: rule__OperatingSystemResouce__Group__4__Impl : ( Type ) ;
     public final void rule__OperatingSystemResouce__Group__4__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10057:1: ( ( Type ) )
@@ -30435,7 +30435,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -30447,7 +30447,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10068:1: rule__OperatingSystemResouce__Group__5 : rule__OperatingSystemResouce__Group__5__Impl rule__OperatingSystemResouce__Group__6 ;
     public final void rule__OperatingSystemResouce__Group__5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10072:1: ( rule__OperatingSystemResouce__Group__5__Impl rule__OperatingSystemResouce__Group__6 )
@@ -30473,7 +30473,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -30485,7 +30485,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10080:1: rule__OperatingSystemResouce__Group__5__Impl : ( ( rule__OperatingSystemResouce__TypeAssignment_5 ) ) ;
     public final void rule__OperatingSystemResouce__Group__5__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10084:1: ( ( ( rule__OperatingSystemResouce__TypeAssignment_5 ) ) )
@@ -30520,7 +30520,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -30532,7 +30532,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10095:1: rule__OperatingSystemResouce__Group__6 : rule__OperatingSystemResouce__Group__6__Impl rule__OperatingSystemResouce__Group__7 ;
     public final void rule__OperatingSystemResouce__Group__6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10099:1: ( rule__OperatingSystemResouce__Group__6__Impl rule__OperatingSystemResouce__Group__7 )
@@ -30558,7 +30558,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -30570,7 +30570,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10107:1: rule__OperatingSystemResouce__Group__6__Impl : ( ( rule__OperatingSystemResouce__Group_6__0 )? ) ;
     public final void rule__OperatingSystemResouce__Group__6__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10111:1: ( ( ( rule__OperatingSystemResouce__Group_6__0 )? ) )
@@ -30616,7 +30616,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -30628,7 +30628,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10122:1: rule__OperatingSystemResouce__Group__7 : rule__OperatingSystemResouce__Group__7__Impl ;
     public final void rule__OperatingSystemResouce__Group__7() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10126:1: ( rule__OperatingSystemResouce__Group__7__Impl )
@@ -30649,7 +30649,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -30661,7 +30661,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10133:1: rule__OperatingSystemResouce__Group__7__Impl : ( RULE_DEDENT ) ;
     public final void rule__OperatingSystemResouce__Group__7__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10137:1: ( ( RULE_DEDENT ) )
@@ -30686,7 +30686,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -30698,7 +30698,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10149:1: rule__OperatingSystemResouce__Group_6__0 : rule__OperatingSystemResouce__Group_6__0__Impl rule__OperatingSystemResouce__Group_6__1 ;
     public final void rule__OperatingSystemResouce__Group_6__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10153:1: ( rule__OperatingSystemResouce__Group_6__0__Impl rule__OperatingSystemResouce__Group_6__1 )
@@ -30724,7 +30724,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -30736,7 +30736,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10161:1: rule__OperatingSystemResouce__Group_6__0__Impl : ( Properties ) ;
     public final void rule__OperatingSystemResouce__Group_6__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10165:1: ( ( Properties ) )
@@ -30761,7 +30761,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -30773,7 +30773,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10176:1: rule__OperatingSystemResouce__Group_6__1 : rule__OperatingSystemResouce__Group_6__1__Impl rule__OperatingSystemResouce__Group_6__2 ;
     public final void rule__OperatingSystemResouce__Group_6__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10180:1: ( rule__OperatingSystemResouce__Group_6__1__Impl rule__OperatingSystemResouce__Group_6__2 )
@@ -30799,7 +30799,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -30811,7 +30811,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10188:1: rule__OperatingSystemResouce__Group_6__1__Impl : ( RULE_INDENT ) ;
     public final void rule__OperatingSystemResouce__Group_6__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10192:1: ( ( RULE_INDENT ) )
@@ -30836,7 +30836,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -30848,7 +30848,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10203:1: rule__OperatingSystemResouce__Group_6__2 : rule__OperatingSystemResouce__Group_6__2__Impl rule__OperatingSystemResouce__Group_6__3 ;
     public final void rule__OperatingSystemResouce__Group_6__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10207:1: ( rule__OperatingSystemResouce__Group_6__2__Impl rule__OperatingSystemResouce__Group_6__3 )
@@ -30874,7 +30874,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -30886,7 +30886,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10215:1: rule__OperatingSystemResouce__Group_6__2__Impl : ( ( ( rule__OperatingSystemResouce__PropertiesAssignment_6_2 ) ) ( ( rule__OperatingSystemResouce__PropertiesAssignment_6_2 )* ) ) ;
     public final void rule__OperatingSystemResouce__Group_6__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10219:1: ( ( ( ( rule__OperatingSystemResouce__PropertiesAssignment_6_2 ) ) ( ( rule__OperatingSystemResouce__PropertiesAssignment_6_2 )* ) ) )
@@ -30930,20 +30930,20 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
 
 
                 switch (alt65) {
-                case 1 :
-                    // InternalDeviceParser.g:10228:4: rule__OperatingSystemResouce__PropertiesAssignment_6_2
-                    {
-                    pushFollow(FOLLOW_26);
-                    rule__OperatingSystemResouce__PropertiesAssignment_6_2();
+              case 1 :
+                  // InternalDeviceParser.g:10228:4: rule__OperatingSystemResouce__PropertiesAssignment_6_2
+                  {
+                  pushFollow(FOLLOW_26);
+                  rule__OperatingSystemResouce__PropertiesAssignment_6_2();
 
-                    state._fsp--;
+                  state._fsp--;
 
 
-                    }
-                    break;
+                  }
+                  break;
 
-                default :
-                    break loop65;
+              default :
+                  break loop65;
                 }
             } while (true);
 
@@ -30964,7 +30964,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -30976,7 +30976,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10237:1: rule__OperatingSystemResouce__Group_6__3 : rule__OperatingSystemResouce__Group_6__3__Impl ;
     public final void rule__OperatingSystemResouce__Group_6__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10241:1: ( rule__OperatingSystemResouce__Group_6__3__Impl )
@@ -30997,7 +30997,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -31009,7 +31009,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10248:1: rule__OperatingSystemResouce__Group_6__3__Impl : ( RULE_DEDENT ) ;
     public final void rule__OperatingSystemResouce__Group_6__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10252:1: ( ( RULE_DEDENT ) )
@@ -31034,7 +31034,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -31046,7 +31046,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10264:1: rule__NameOperatingSystemProperty__Group__0 : rule__NameOperatingSystemProperty__Group__0__Impl rule__NameOperatingSystemProperty__Group__1 ;
     public final void rule__NameOperatingSystemProperty__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10268:1: ( rule__NameOperatingSystemProperty__Group__0__Impl rule__NameOperatingSystemProperty__Group__1 )
@@ -31072,7 +31072,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -31084,7 +31084,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10276:1: rule__NameOperatingSystemProperty__Group__0__Impl : ( () ) ;
     public final void rule__NameOperatingSystemProperty__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10280:1: ( ( () ) )
@@ -31109,7 +31109,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -31121,7 +31121,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10291:1: rule__NameOperatingSystemProperty__Group__1 : rule__NameOperatingSystemProperty__Group__1__Impl rule__NameOperatingSystemProperty__Group__2 ;
     public final void rule__NameOperatingSystemProperty__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10295:1: ( rule__NameOperatingSystemProperty__Group__1__Impl rule__NameOperatingSystemProperty__Group__2 )
@@ -31147,7 +31147,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -31159,7 +31159,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10303:1: rule__NameOperatingSystemProperty__Group__1__Impl : ( rulePreListElement ) ;
     public final void rule__NameOperatingSystemProperty__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10307:1: ( ( rulePreListElement ) )
@@ -31188,7 +31188,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -31200,7 +31200,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10318:1: rule__NameOperatingSystemProperty__Group__2 : rule__NameOperatingSystemProperty__Group__2__Impl rule__NameOperatingSystemProperty__Group__3 ;
     public final void rule__NameOperatingSystemProperty__Group__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10322:1: ( rule__NameOperatingSystemProperty__Group__2__Impl rule__NameOperatingSystemProperty__Group__3 )
@@ -31226,7 +31226,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -31238,7 +31238,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10330:1: rule__NameOperatingSystemProperty__Group__2__Impl : ( Name ) ;
     public final void rule__NameOperatingSystemProperty__Group__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10334:1: ( ( Name ) )
@@ -31263,7 +31263,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -31275,7 +31275,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10345:1: rule__NameOperatingSystemProperty__Group__3 : rule__NameOperatingSystemProperty__Group__3__Impl rule__NameOperatingSystemProperty__Group__4 ;
     public final void rule__NameOperatingSystemProperty__Group__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10349:1: ( rule__NameOperatingSystemProperty__Group__3__Impl rule__NameOperatingSystemProperty__Group__4 )
@@ -31301,7 +31301,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -31313,7 +31313,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10357:1: rule__NameOperatingSystemProperty__Group__3__Impl : ( ( rule__NameOperatingSystemProperty__NameAssignment_3 ) ) ;
     public final void rule__NameOperatingSystemProperty__Group__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10361:1: ( ( ( rule__NameOperatingSystemProperty__NameAssignment_3 ) ) )
@@ -31348,7 +31348,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -31360,7 +31360,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10372:1: rule__NameOperatingSystemProperty__Group__4 : rule__NameOperatingSystemProperty__Group__4__Impl rule__NameOperatingSystemProperty__Group__5 ;
     public final void rule__NameOperatingSystemProperty__Group__4() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10376:1: ( rule__NameOperatingSystemProperty__Group__4__Impl rule__NameOperatingSystemProperty__Group__5 )
@@ -31386,7 +31386,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -31398,7 +31398,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10384:1: rule__NameOperatingSystemProperty__Group__4__Impl : ( RULE_INDENT ) ;
     public final void rule__NameOperatingSystemProperty__Group__4__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10388:1: ( ( RULE_INDENT ) )
@@ -31423,7 +31423,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -31435,7 +31435,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10399:1: rule__NameOperatingSystemProperty__Group__5 : rule__NameOperatingSystemProperty__Group__5__Impl rule__NameOperatingSystemProperty__Group__6 ;
     public final void rule__NameOperatingSystemProperty__Group__5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10403:1: ( rule__NameOperatingSystemProperty__Group__5__Impl rule__NameOperatingSystemProperty__Group__6 )
@@ -31461,7 +31461,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -31473,7 +31473,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10411:1: rule__NameOperatingSystemProperty__Group__5__Impl : ( Kind ) ;
     public final void rule__NameOperatingSystemProperty__Group__5__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10415:1: ( ( Kind ) )
@@ -31498,7 +31498,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -31510,7 +31510,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10426:1: rule__NameOperatingSystemProperty__Group__6 : rule__NameOperatingSystemProperty__Group__6__Impl rule__NameOperatingSystemProperty__Group__7 ;
     public final void rule__NameOperatingSystemProperty__Group__6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10430:1: ( rule__NameOperatingSystemProperty__Group__6__Impl rule__NameOperatingSystemProperty__Group__7 )
@@ -31536,7 +31536,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -31548,7 +31548,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10438:1: rule__NameOperatingSystemProperty__Group__6__Impl : ( ( rule__NameOperatingSystemProperty__KindAssignment_6 ) ) ;
     public final void rule__NameOperatingSystemProperty__Group__6__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10442:1: ( ( ( rule__NameOperatingSystemProperty__KindAssignment_6 ) ) )
@@ -31583,7 +31583,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -31595,7 +31595,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10453:1: rule__NameOperatingSystemProperty__Group__7 : rule__NameOperatingSystemProperty__Group__7__Impl rule__NameOperatingSystemProperty__Group__8 ;
     public final void rule__NameOperatingSystemProperty__Group__7() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10457:1: ( rule__NameOperatingSystemProperty__Group__7__Impl rule__NameOperatingSystemProperty__Group__8 )
@@ -31621,7 +31621,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -31633,7 +31633,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10465:1: rule__NameOperatingSystemProperty__Group__7__Impl : ( ( rule__NameOperatingSystemProperty__Group_7__0 )? ) ;
     public final void rule__NameOperatingSystemProperty__Group__7__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10469:1: ( ( ( rule__NameOperatingSystemProperty__Group_7__0 )? ) )
@@ -31679,7 +31679,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -31691,7 +31691,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10480:1: rule__NameOperatingSystemProperty__Group__8 : rule__NameOperatingSystemProperty__Group__8__Impl rule__NameOperatingSystemProperty__Group__9 ;
     public final void rule__NameOperatingSystemProperty__Group__8() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10484:1: ( rule__NameOperatingSystemProperty__Group__8__Impl rule__NameOperatingSystemProperty__Group__9 )
@@ -31717,7 +31717,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -31729,7 +31729,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10492:1: rule__NameOperatingSystemProperty__Group__8__Impl : ( ( rule__NameOperatingSystemProperty__Group_8__0 )? ) ;
     public final void rule__NameOperatingSystemProperty__Group__8__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10496:1: ( ( ( rule__NameOperatingSystemProperty__Group_8__0 )? ) )
@@ -31775,7 +31775,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -31787,7 +31787,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10507:1: rule__NameOperatingSystemProperty__Group__9 : rule__NameOperatingSystemProperty__Group__9__Impl ;
     public final void rule__NameOperatingSystemProperty__Group__9() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10511:1: ( rule__NameOperatingSystemProperty__Group__9__Impl )
@@ -31808,7 +31808,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -31820,7 +31820,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10518:1: rule__NameOperatingSystemProperty__Group__9__Impl : ( RULE_DEDENT ) ;
     public final void rule__NameOperatingSystemProperty__Group__9__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10522:1: ( ( RULE_DEDENT ) )
@@ -31845,7 +31845,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -31857,7 +31857,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10534:1: rule__NameOperatingSystemProperty__Group_7__0 : rule__NameOperatingSystemProperty__Group_7__0__Impl rule__NameOperatingSystemProperty__Group_7__1 ;
     public final void rule__NameOperatingSystemProperty__Group_7__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10538:1: ( rule__NameOperatingSystemProperty__Group_7__0__Impl rule__NameOperatingSystemProperty__Group_7__1 )
@@ -31883,7 +31883,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -31895,7 +31895,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10546:1: rule__NameOperatingSystemProperty__Group_7__0__Impl : ( Description ) ;
     public final void rule__NameOperatingSystemProperty__Group_7__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10550:1: ( ( Description ) )
@@ -31920,7 +31920,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -31932,7 +31932,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10561:1: rule__NameOperatingSystemProperty__Group_7__1 : rule__NameOperatingSystemProperty__Group_7__1__Impl ;
     public final void rule__NameOperatingSystemProperty__Group_7__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10565:1: ( rule__NameOperatingSystemProperty__Group_7__1__Impl )
@@ -31953,7 +31953,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -31965,7 +31965,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10572:1: rule__NameOperatingSystemProperty__Group_7__1__Impl : ( ( rule__NameOperatingSystemProperty__DescriptionAssignment_7_1 ) ) ;
     public final void rule__NameOperatingSystemProperty__Group_7__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10576:1: ( ( ( rule__NameOperatingSystemProperty__DescriptionAssignment_7_1 ) ) )
@@ -32000,7 +32000,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -32012,7 +32012,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10588:1: rule__NameOperatingSystemProperty__Group_8__0 : rule__NameOperatingSystemProperty__Group_8__0__Impl rule__NameOperatingSystemProperty__Group_8__1 ;
     public final void rule__NameOperatingSystemProperty__Group_8__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10592:1: ( rule__NameOperatingSystemProperty__Group_8__0__Impl rule__NameOperatingSystemProperty__Group_8__1 )
@@ -32038,7 +32038,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -32050,7 +32050,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10600:1: rule__NameOperatingSystemProperty__Group_8__0__Impl : ( Value ) ;
     public final void rule__NameOperatingSystemProperty__Group_8__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10604:1: ( ( Value ) )
@@ -32075,7 +32075,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -32087,7 +32087,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10615:1: rule__NameOperatingSystemProperty__Group_8__1 : rule__NameOperatingSystemProperty__Group_8__1__Impl ;
     public final void rule__NameOperatingSystemProperty__Group_8__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10619:1: ( rule__NameOperatingSystemProperty__Group_8__1__Impl )
@@ -32108,7 +32108,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -32120,7 +32120,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10626:1: rule__NameOperatingSystemProperty__Group_8__1__Impl : ( ( rule__NameOperatingSystemProperty__ValueAssignment_8_1 ) ) ;
     public final void rule__NameOperatingSystemProperty__Group_8__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10630:1: ( ( ( rule__NameOperatingSystemProperty__ValueAssignment_8_1 ) ) )
@@ -32155,7 +32155,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -32167,7 +32167,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10642:1: rule__VersionOperatingSystemProperty__Group__0 : rule__VersionOperatingSystemProperty__Group__0__Impl rule__VersionOperatingSystemProperty__Group__1 ;
     public final void rule__VersionOperatingSystemProperty__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10646:1: ( rule__VersionOperatingSystemProperty__Group__0__Impl rule__VersionOperatingSystemProperty__Group__1 )
@@ -32193,7 +32193,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -32205,7 +32205,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10654:1: rule__VersionOperatingSystemProperty__Group__0__Impl : ( () ) ;
     public final void rule__VersionOperatingSystemProperty__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10658:1: ( ( () ) )
@@ -32230,7 +32230,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -32242,7 +32242,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10669:1: rule__VersionOperatingSystemProperty__Group__1 : rule__VersionOperatingSystemProperty__Group__1__Impl rule__VersionOperatingSystemProperty__Group__2 ;
     public final void rule__VersionOperatingSystemProperty__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10673:1: ( rule__VersionOperatingSystemProperty__Group__1__Impl rule__VersionOperatingSystemProperty__Group__2 )
@@ -32268,7 +32268,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -32280,7 +32280,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10681:1: rule__VersionOperatingSystemProperty__Group__1__Impl : ( rulePreListElement ) ;
     public final void rule__VersionOperatingSystemProperty__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10685:1: ( ( rulePreListElement ) )
@@ -32309,7 +32309,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -32321,7 +32321,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10696:1: rule__VersionOperatingSystemProperty__Group__2 : rule__VersionOperatingSystemProperty__Group__2__Impl rule__VersionOperatingSystemProperty__Group__3 ;
     public final void rule__VersionOperatingSystemProperty__Group__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10700:1: ( rule__VersionOperatingSystemProperty__Group__2__Impl rule__VersionOperatingSystemProperty__Group__3 )
@@ -32347,7 +32347,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -32359,7 +32359,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10708:1: rule__VersionOperatingSystemProperty__Group__2__Impl : ( Name ) ;
     public final void rule__VersionOperatingSystemProperty__Group__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10712:1: ( ( Name ) )
@@ -32384,7 +32384,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -32396,7 +32396,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10723:1: rule__VersionOperatingSystemProperty__Group__3 : rule__VersionOperatingSystemProperty__Group__3__Impl rule__VersionOperatingSystemProperty__Group__4 ;
     public final void rule__VersionOperatingSystemProperty__Group__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10727:1: ( rule__VersionOperatingSystemProperty__Group__3__Impl rule__VersionOperatingSystemProperty__Group__4 )
@@ -32422,7 +32422,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -32434,7 +32434,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10735:1: rule__VersionOperatingSystemProperty__Group__3__Impl : ( ( rule__VersionOperatingSystemProperty__NameAssignment_3 ) ) ;
     public final void rule__VersionOperatingSystemProperty__Group__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10739:1: ( ( ( rule__VersionOperatingSystemProperty__NameAssignment_3 ) ) )
@@ -32469,7 +32469,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -32481,7 +32481,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10750:1: rule__VersionOperatingSystemProperty__Group__4 : rule__VersionOperatingSystemProperty__Group__4__Impl rule__VersionOperatingSystemProperty__Group__5 ;
     public final void rule__VersionOperatingSystemProperty__Group__4() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10754:1: ( rule__VersionOperatingSystemProperty__Group__4__Impl rule__VersionOperatingSystemProperty__Group__5 )
@@ -32507,7 +32507,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -32519,7 +32519,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10762:1: rule__VersionOperatingSystemProperty__Group__4__Impl : ( RULE_INDENT ) ;
     public final void rule__VersionOperatingSystemProperty__Group__4__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10766:1: ( ( RULE_INDENT ) )
@@ -32544,7 +32544,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -32556,7 +32556,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10777:1: rule__VersionOperatingSystemProperty__Group__5 : rule__VersionOperatingSystemProperty__Group__5__Impl rule__VersionOperatingSystemProperty__Group__6 ;
     public final void rule__VersionOperatingSystemProperty__Group__5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10781:1: ( rule__VersionOperatingSystemProperty__Group__5__Impl rule__VersionOperatingSystemProperty__Group__6 )
@@ -32582,7 +32582,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -32594,7 +32594,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10789:1: rule__VersionOperatingSystemProperty__Group__5__Impl : ( Kind ) ;
     public final void rule__VersionOperatingSystemProperty__Group__5__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10793:1: ( ( Kind ) )
@@ -32619,7 +32619,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -32631,7 +32631,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10804:1: rule__VersionOperatingSystemProperty__Group__6 : rule__VersionOperatingSystemProperty__Group__6__Impl rule__VersionOperatingSystemProperty__Group__7 ;
     public final void rule__VersionOperatingSystemProperty__Group__6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10808:1: ( rule__VersionOperatingSystemProperty__Group__6__Impl rule__VersionOperatingSystemProperty__Group__7 )
@@ -32657,7 +32657,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -32669,7 +32669,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10816:1: rule__VersionOperatingSystemProperty__Group__6__Impl : ( ( rule__VersionOperatingSystemProperty__KindAssignment_6 ) ) ;
     public final void rule__VersionOperatingSystemProperty__Group__6__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10820:1: ( ( ( rule__VersionOperatingSystemProperty__KindAssignment_6 ) ) )
@@ -32704,7 +32704,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -32716,7 +32716,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10831:1: rule__VersionOperatingSystemProperty__Group__7 : rule__VersionOperatingSystemProperty__Group__7__Impl rule__VersionOperatingSystemProperty__Group__8 ;
     public final void rule__VersionOperatingSystemProperty__Group__7() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10835:1: ( rule__VersionOperatingSystemProperty__Group__7__Impl rule__VersionOperatingSystemProperty__Group__8 )
@@ -32742,7 +32742,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -32754,7 +32754,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10843:1: rule__VersionOperatingSystemProperty__Group__7__Impl : ( ( rule__VersionOperatingSystemProperty__Group_7__0 )? ) ;
     public final void rule__VersionOperatingSystemProperty__Group__7__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10847:1: ( ( ( rule__VersionOperatingSystemProperty__Group_7__0 )? ) )
@@ -32800,7 +32800,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -32812,7 +32812,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10858:1: rule__VersionOperatingSystemProperty__Group__8 : rule__VersionOperatingSystemProperty__Group__8__Impl rule__VersionOperatingSystemProperty__Group__9 ;
     public final void rule__VersionOperatingSystemProperty__Group__8() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10862:1: ( rule__VersionOperatingSystemProperty__Group__8__Impl rule__VersionOperatingSystemProperty__Group__9 )
@@ -32838,7 +32838,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -32850,7 +32850,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10870:1: rule__VersionOperatingSystemProperty__Group__8__Impl : ( ( rule__VersionOperatingSystemProperty__Group_8__0 )? ) ;
     public final void rule__VersionOperatingSystemProperty__Group__8__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10874:1: ( ( ( rule__VersionOperatingSystemProperty__Group_8__0 )? ) )
@@ -32896,7 +32896,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -32908,7 +32908,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10885:1: rule__VersionOperatingSystemProperty__Group__9 : rule__VersionOperatingSystemProperty__Group__9__Impl ;
     public final void rule__VersionOperatingSystemProperty__Group__9() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10889:1: ( rule__VersionOperatingSystemProperty__Group__9__Impl )
@@ -32929,7 +32929,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -32941,7 +32941,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10896:1: rule__VersionOperatingSystemProperty__Group__9__Impl : ( RULE_DEDENT ) ;
     public final void rule__VersionOperatingSystemProperty__Group__9__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10900:1: ( ( RULE_DEDENT ) )
@@ -32966,7 +32966,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -32978,7 +32978,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10912:1: rule__VersionOperatingSystemProperty__Group_7__0 : rule__VersionOperatingSystemProperty__Group_7__0__Impl rule__VersionOperatingSystemProperty__Group_7__1 ;
     public final void rule__VersionOperatingSystemProperty__Group_7__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10916:1: ( rule__VersionOperatingSystemProperty__Group_7__0__Impl rule__VersionOperatingSystemProperty__Group_7__1 )
@@ -33004,7 +33004,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -33016,7 +33016,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10924:1: rule__VersionOperatingSystemProperty__Group_7__0__Impl : ( Description ) ;
     public final void rule__VersionOperatingSystemProperty__Group_7__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10928:1: ( ( Description ) )
@@ -33041,7 +33041,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -33053,7 +33053,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10939:1: rule__VersionOperatingSystemProperty__Group_7__1 : rule__VersionOperatingSystemProperty__Group_7__1__Impl ;
     public final void rule__VersionOperatingSystemProperty__Group_7__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10943:1: ( rule__VersionOperatingSystemProperty__Group_7__1__Impl )
@@ -33074,7 +33074,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -33086,7 +33086,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10950:1: rule__VersionOperatingSystemProperty__Group_7__1__Impl : ( ( rule__VersionOperatingSystemProperty__DescriptionAssignment_7_1 ) ) ;
     public final void rule__VersionOperatingSystemProperty__Group_7__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10954:1: ( ( ( rule__VersionOperatingSystemProperty__DescriptionAssignment_7_1 ) ) )
@@ -33121,7 +33121,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -33133,7 +33133,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10966:1: rule__VersionOperatingSystemProperty__Group_8__0 : rule__VersionOperatingSystemProperty__Group_8__0__Impl rule__VersionOperatingSystemProperty__Group_8__1 ;
     public final void rule__VersionOperatingSystemProperty__Group_8__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10970:1: ( rule__VersionOperatingSystemProperty__Group_8__0__Impl rule__VersionOperatingSystemProperty__Group_8__1 )
@@ -33159,7 +33159,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -33171,7 +33171,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10978:1: rule__VersionOperatingSystemProperty__Group_8__0__Impl : ( Value ) ;
     public final void rule__VersionOperatingSystemProperty__Group_8__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10982:1: ( ( Value ) )
@@ -33196,7 +33196,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -33208,7 +33208,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:10993:1: rule__VersionOperatingSystemProperty__Group_8__1 : rule__VersionOperatingSystemProperty__Group_8__1__Impl ;
     public final void rule__VersionOperatingSystemProperty__Group_8__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:10997:1: ( rule__VersionOperatingSystemProperty__Group_8__1__Impl )
@@ -33229,7 +33229,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -33241,7 +33241,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11004:1: rule__VersionOperatingSystemProperty__Group_8__1__Impl : ( ( rule__VersionOperatingSystemProperty__ValueAssignment_8_1 ) ) ;
     public final void rule__VersionOperatingSystemProperty__Group_8__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11008:1: ( ( ( rule__VersionOperatingSystemProperty__ValueAssignment_8_1 ) ) )
@@ -33276,7 +33276,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -33288,7 +33288,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11020:1: rule__PropertyAttribute__Group__0 : rule__PropertyAttribute__Group__0__Impl rule__PropertyAttribute__Group__1 ;
     public final void rule__PropertyAttribute__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11024:1: ( rule__PropertyAttribute__Group__0__Impl rule__PropertyAttribute__Group__1 )
@@ -33314,7 +33314,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -33326,7 +33326,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11032:1: rule__PropertyAttribute__Group__0__Impl : ( rulePreListElement ) ;
     public final void rule__PropertyAttribute__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11036:1: ( ( rulePreListElement ) )
@@ -33355,7 +33355,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -33367,7 +33367,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11047:1: rule__PropertyAttribute__Group__1 : rule__PropertyAttribute__Group__1__Impl rule__PropertyAttribute__Group__2 ;
     public final void rule__PropertyAttribute__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11051:1: ( rule__PropertyAttribute__Group__1__Impl rule__PropertyAttribute__Group__2 )
@@ -33393,7 +33393,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -33405,7 +33405,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11059:1: rule__PropertyAttribute__Group__1__Impl : ( Name ) ;
     public final void rule__PropertyAttribute__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11063:1: ( ( Name ) )
@@ -33430,7 +33430,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -33442,7 +33442,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11074:1: rule__PropertyAttribute__Group__2 : rule__PropertyAttribute__Group__2__Impl rule__PropertyAttribute__Group__3 ;
     public final void rule__PropertyAttribute__Group__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11078:1: ( rule__PropertyAttribute__Group__2__Impl rule__PropertyAttribute__Group__3 )
@@ -33468,7 +33468,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -33480,7 +33480,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11086:1: rule__PropertyAttribute__Group__2__Impl : ( ( rule__PropertyAttribute__NameAssignment_2 ) ) ;
     public final void rule__PropertyAttribute__Group__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11090:1: ( ( ( rule__PropertyAttribute__NameAssignment_2 ) ) )
@@ -33515,7 +33515,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -33527,7 +33527,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11101:1: rule__PropertyAttribute__Group__3 : rule__PropertyAttribute__Group__3__Impl rule__PropertyAttribute__Group__4 ;
     public final void rule__PropertyAttribute__Group__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11105:1: ( rule__PropertyAttribute__Group__3__Impl rule__PropertyAttribute__Group__4 )
@@ -33553,7 +33553,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -33565,7 +33565,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11113:1: rule__PropertyAttribute__Group__3__Impl : ( RULE_INDENT ) ;
     public final void rule__PropertyAttribute__Group__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11117:1: ( ( RULE_INDENT ) )
@@ -33590,7 +33590,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -33602,7 +33602,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11128:1: rule__PropertyAttribute__Group__4 : rule__PropertyAttribute__Group__4__Impl rule__PropertyAttribute__Group__5 ;
     public final void rule__PropertyAttribute__Group__4() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11132:1: ( rule__PropertyAttribute__Group__4__Impl rule__PropertyAttribute__Group__5 )
@@ -33628,7 +33628,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -33640,7 +33640,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11140:1: rule__PropertyAttribute__Group__4__Impl : ( Kind ) ;
     public final void rule__PropertyAttribute__Group__4__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11144:1: ( ( Kind ) )
@@ -33665,7 +33665,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -33677,7 +33677,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11155:1: rule__PropertyAttribute__Group__5 : rule__PropertyAttribute__Group__5__Impl rule__PropertyAttribute__Group__6 ;
     public final void rule__PropertyAttribute__Group__5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11159:1: ( rule__PropertyAttribute__Group__5__Impl rule__PropertyAttribute__Group__6 )
@@ -33703,7 +33703,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -33715,7 +33715,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11167:1: rule__PropertyAttribute__Group__5__Impl : ( ( rule__PropertyAttribute__KindAssignment_5 ) ) ;
     public final void rule__PropertyAttribute__Group__5__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11171:1: ( ( ( rule__PropertyAttribute__KindAssignment_5 ) ) )
@@ -33750,7 +33750,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -33762,7 +33762,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11182:1: rule__PropertyAttribute__Group__6 : rule__PropertyAttribute__Group__6__Impl rule__PropertyAttribute__Group__7 ;
     public final void rule__PropertyAttribute__Group__6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11186:1: ( rule__PropertyAttribute__Group__6__Impl rule__PropertyAttribute__Group__7 )
@@ -33788,7 +33788,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -33800,7 +33800,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11194:1: rule__PropertyAttribute__Group__6__Impl : ( ( rule__PropertyAttribute__Group_6__0 )? ) ;
     public final void rule__PropertyAttribute__Group__6__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11198:1: ( ( ( rule__PropertyAttribute__Group_6__0 )? ) )
@@ -33846,7 +33846,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -33858,7 +33858,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11209:1: rule__PropertyAttribute__Group__7 : rule__PropertyAttribute__Group__7__Impl rule__PropertyAttribute__Group__8 ;
     public final void rule__PropertyAttribute__Group__7() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11213:1: ( rule__PropertyAttribute__Group__7__Impl rule__PropertyAttribute__Group__8 )
@@ -33884,7 +33884,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -33896,7 +33896,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11221:1: rule__PropertyAttribute__Group__7__Impl : ( ( rule__PropertyAttribute__Group_7__0 )? ) ;
     public final void rule__PropertyAttribute__Group__7__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11225:1: ( ( ( rule__PropertyAttribute__Group_7__0 )? ) )
@@ -33942,7 +33942,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -33954,7 +33954,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11236:1: rule__PropertyAttribute__Group__8 : rule__PropertyAttribute__Group__8__Impl ;
     public final void rule__PropertyAttribute__Group__8() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11240:1: ( rule__PropertyAttribute__Group__8__Impl )
@@ -33975,7 +33975,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -33987,7 +33987,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11247:1: rule__PropertyAttribute__Group__8__Impl : ( ( RULE_DEDENT )? ) ;
     public final void rule__PropertyAttribute__Group__8__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11251:1: ( ( ( RULE_DEDENT )? ) )
@@ -34051,7 +34051,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -34063,7 +34063,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11263:1: rule__PropertyAttribute__Group_6__0 : rule__PropertyAttribute__Group_6__0__Impl rule__PropertyAttribute__Group_6__1 ;
     public final void rule__PropertyAttribute__Group_6__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11267:1: ( rule__PropertyAttribute__Group_6__0__Impl rule__PropertyAttribute__Group_6__1 )
@@ -34089,7 +34089,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -34101,7 +34101,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11275:1: rule__PropertyAttribute__Group_6__0__Impl : ( Description ) ;
     public final void rule__PropertyAttribute__Group_6__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11279:1: ( ( Description ) )
@@ -34126,7 +34126,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -34138,7 +34138,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11290:1: rule__PropertyAttribute__Group_6__1 : rule__PropertyAttribute__Group_6__1__Impl ;
     public final void rule__PropertyAttribute__Group_6__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11294:1: ( rule__PropertyAttribute__Group_6__1__Impl )
@@ -34159,7 +34159,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -34171,7 +34171,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11301:1: rule__PropertyAttribute__Group_6__1__Impl : ( ( rule__PropertyAttribute__DescriptionAssignment_6_1 ) ) ;
     public final void rule__PropertyAttribute__Group_6__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11305:1: ( ( ( rule__PropertyAttribute__DescriptionAssignment_6_1 ) ) )
@@ -34206,7 +34206,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -34218,7 +34218,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11317:1: rule__PropertyAttribute__Group_7__0 : rule__PropertyAttribute__Group_7__0__Impl rule__PropertyAttribute__Group_7__1 ;
     public final void rule__PropertyAttribute__Group_7__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11321:1: ( rule__PropertyAttribute__Group_7__0__Impl rule__PropertyAttribute__Group_7__1 )
@@ -34244,7 +34244,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -34256,7 +34256,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11329:1: rule__PropertyAttribute__Group_7__0__Impl : ( Value ) ;
     public final void rule__PropertyAttribute__Group_7__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11333:1: ( ( Value ) )
@@ -34281,7 +34281,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -34293,7 +34293,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11344:1: rule__PropertyAttribute__Group_7__1 : rule__PropertyAttribute__Group_7__1__Impl ;
     public final void rule__PropertyAttribute__Group_7__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11348:1: ( rule__PropertyAttribute__Group_7__1__Impl )
@@ -34314,7 +34314,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -34326,7 +34326,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11355:1: rule__PropertyAttribute__Group_7__1__Impl : ( ( rule__PropertyAttribute__ValueAssignment_7_1 ) ) ;
     public final void rule__PropertyAttribute__Group_7__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11359:1: ( ( ( rule__PropertyAttribute__ValueAssignment_7_1 ) ) )
@@ -34361,7 +34361,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -34373,7 +34373,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11371:1: rule__PropertyMaximun__Group__0 : rule__PropertyMaximun__Group__0__Impl rule__PropertyMaximun__Group__1 ;
     public final void rule__PropertyMaximun__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11375:1: ( rule__PropertyMaximun__Group__0__Impl rule__PropertyMaximun__Group__1 )
@@ -34399,7 +34399,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -34411,7 +34411,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11383:1: rule__PropertyMaximun__Group__0__Impl : ( rulePreListElement ) ;
     public final void rule__PropertyMaximun__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11387:1: ( ( rulePreListElement ) )
@@ -34440,7 +34440,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -34452,7 +34452,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11398:1: rule__PropertyMaximun__Group__1 : rule__PropertyMaximun__Group__1__Impl rule__PropertyMaximun__Group__2 ;
     public final void rule__PropertyMaximun__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11402:1: ( rule__PropertyMaximun__Group__1__Impl rule__PropertyMaximun__Group__2 )
@@ -34478,7 +34478,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -34490,7 +34490,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11410:1: rule__PropertyMaximun__Group__1__Impl : ( Name ) ;
     public final void rule__PropertyMaximun__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11414:1: ( ( Name ) )
@@ -34515,7 +34515,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -34527,7 +34527,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11425:1: rule__PropertyMaximun__Group__2 : rule__PropertyMaximun__Group__2__Impl rule__PropertyMaximun__Group__3 ;
     public final void rule__PropertyMaximun__Group__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11429:1: ( rule__PropertyMaximun__Group__2__Impl rule__PropertyMaximun__Group__3 )
@@ -34553,7 +34553,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -34565,7 +34565,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11437:1: rule__PropertyMaximun__Group__2__Impl : ( ( rule__PropertyMaximun__NameAssignment_2 ) ) ;
     public final void rule__PropertyMaximun__Group__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11441:1: ( ( ( rule__PropertyMaximun__NameAssignment_2 ) ) )
@@ -34600,7 +34600,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -34612,7 +34612,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11452:1: rule__PropertyMaximun__Group__3 : rule__PropertyMaximun__Group__3__Impl rule__PropertyMaximun__Group__4 ;
     public final void rule__PropertyMaximun__Group__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11456:1: ( rule__PropertyMaximun__Group__3__Impl rule__PropertyMaximun__Group__4 )
@@ -34638,7 +34638,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -34650,7 +34650,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11464:1: rule__PropertyMaximun__Group__3__Impl : ( RULE_INDENT ) ;
     public final void rule__PropertyMaximun__Group__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11468:1: ( ( RULE_INDENT ) )
@@ -34675,7 +34675,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -34687,7 +34687,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11479:1: rule__PropertyMaximun__Group__4 : rule__PropertyMaximun__Group__4__Impl rule__PropertyMaximun__Group__5 ;
     public final void rule__PropertyMaximun__Group__4() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11483:1: ( rule__PropertyMaximun__Group__4__Impl rule__PropertyMaximun__Group__5 )
@@ -34713,7 +34713,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -34725,7 +34725,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11491:1: rule__PropertyMaximun__Group__4__Impl : ( Kind ) ;
     public final void rule__PropertyMaximun__Group__4__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11495:1: ( ( Kind ) )
@@ -34750,7 +34750,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -34762,7 +34762,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11506:1: rule__PropertyMaximun__Group__5 : rule__PropertyMaximun__Group__5__Impl rule__PropertyMaximun__Group__6 ;
     public final void rule__PropertyMaximun__Group__5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11510:1: ( rule__PropertyMaximun__Group__5__Impl rule__PropertyMaximun__Group__6 )
@@ -34788,7 +34788,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -34800,7 +34800,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11518:1: rule__PropertyMaximun__Group__5__Impl : ( ( rule__PropertyMaximun__KindAssignment_5 ) ) ;
     public final void rule__PropertyMaximun__Group__5__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11522:1: ( ( ( rule__PropertyMaximun__KindAssignment_5 ) ) )
@@ -34835,7 +34835,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -34847,7 +34847,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11533:1: rule__PropertyMaximun__Group__6 : rule__PropertyMaximun__Group__6__Impl rule__PropertyMaximun__Group__7 ;
     public final void rule__PropertyMaximun__Group__6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11537:1: ( rule__PropertyMaximun__Group__6__Impl rule__PropertyMaximun__Group__7 )
@@ -34873,7 +34873,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -34885,7 +34885,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11545:1: rule__PropertyMaximun__Group__6__Impl : ( ( rule__PropertyMaximun__Group_6__0 )? ) ;
     public final void rule__PropertyMaximun__Group__6__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11549:1: ( ( ( rule__PropertyMaximun__Group_6__0 )? ) )
@@ -34931,7 +34931,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -34943,7 +34943,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11560:1: rule__PropertyMaximun__Group__7 : rule__PropertyMaximun__Group__7__Impl rule__PropertyMaximun__Group__8 ;
     public final void rule__PropertyMaximun__Group__7() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11564:1: ( rule__PropertyMaximun__Group__7__Impl rule__PropertyMaximun__Group__8 )
@@ -34969,7 +34969,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -34981,7 +34981,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11572:1: rule__PropertyMaximun__Group__7__Impl : ( ( rule__PropertyMaximun__Group_7__0 )? ) ;
     public final void rule__PropertyMaximun__Group__7__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11576:1: ( ( ( rule__PropertyMaximun__Group_7__0 )? ) )
@@ -35027,7 +35027,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -35039,7 +35039,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11587:1: rule__PropertyMaximun__Group__8 : rule__PropertyMaximun__Group__8__Impl ;
     public final void rule__PropertyMaximun__Group__8() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11591:1: ( rule__PropertyMaximun__Group__8__Impl )
@@ -35060,7 +35060,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -35072,7 +35072,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11598:1: rule__PropertyMaximun__Group__8__Impl : ( ( RULE_DEDENT )? ) ;
     public final void rule__PropertyMaximun__Group__8__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11602:1: ( ( ( RULE_DEDENT )? ) )
@@ -35136,7 +35136,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -35148,7 +35148,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11614:1: rule__PropertyMaximun__Group_6__0 : rule__PropertyMaximun__Group_6__0__Impl rule__PropertyMaximun__Group_6__1 ;
     public final void rule__PropertyMaximun__Group_6__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11618:1: ( rule__PropertyMaximun__Group_6__0__Impl rule__PropertyMaximun__Group_6__1 )
@@ -35174,7 +35174,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -35186,7 +35186,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11626:1: rule__PropertyMaximun__Group_6__0__Impl : ( Description ) ;
     public final void rule__PropertyMaximun__Group_6__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11630:1: ( ( Description ) )
@@ -35211,7 +35211,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -35223,7 +35223,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11641:1: rule__PropertyMaximun__Group_6__1 : rule__PropertyMaximun__Group_6__1__Impl ;
     public final void rule__PropertyMaximun__Group_6__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11645:1: ( rule__PropertyMaximun__Group_6__1__Impl )
@@ -35244,7 +35244,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -35256,7 +35256,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11652:1: rule__PropertyMaximun__Group_6__1__Impl : ( ( rule__PropertyMaximun__DescriptionAssignment_6_1 ) ) ;
     public final void rule__PropertyMaximun__Group_6__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11656:1: ( ( ( rule__PropertyMaximun__DescriptionAssignment_6_1 ) ) )
@@ -35291,7 +35291,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -35303,7 +35303,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11668:1: rule__PropertyMaximun__Group_7__0 : rule__PropertyMaximun__Group_7__0__Impl rule__PropertyMaximun__Group_7__1 ;
     public final void rule__PropertyMaximun__Group_7__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11672:1: ( rule__PropertyMaximun__Group_7__0__Impl rule__PropertyMaximun__Group_7__1 )
@@ -35329,7 +35329,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -35341,7 +35341,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11680:1: rule__PropertyMaximun__Group_7__0__Impl : ( Value ) ;
     public final void rule__PropertyMaximun__Group_7__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11684:1: ( ( Value ) )
@@ -35366,7 +35366,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -35378,7 +35378,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11695:1: rule__PropertyMaximun__Group_7__1 : rule__PropertyMaximun__Group_7__1__Impl ;
     public final void rule__PropertyMaximun__Group_7__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11699:1: ( rule__PropertyMaximun__Group_7__1__Impl )
@@ -35399,7 +35399,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -35411,7 +35411,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11706:1: rule__PropertyMaximun__Group_7__1__Impl : ( ( rule__PropertyMaximun__ValueAssignment_7_1 ) ) ;
     public final void rule__PropertyMaximun__Group_7__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11710:1: ( ( ( rule__PropertyMaximun__ValueAssignment_7_1 ) ) )
@@ -35446,7 +35446,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -35458,7 +35458,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11722:1: rule__PropertyMinimum__Group__0 : rule__PropertyMinimum__Group__0__Impl rule__PropertyMinimum__Group__1 ;
     public final void rule__PropertyMinimum__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11726:1: ( rule__PropertyMinimum__Group__0__Impl rule__PropertyMinimum__Group__1 )
@@ -35484,7 +35484,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -35496,7 +35496,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11734:1: rule__PropertyMinimum__Group__0__Impl : ( rulePreListElement ) ;
     public final void rule__PropertyMinimum__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11738:1: ( ( rulePreListElement ) )
@@ -35525,7 +35525,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -35537,7 +35537,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11749:1: rule__PropertyMinimum__Group__1 : rule__PropertyMinimum__Group__1__Impl rule__PropertyMinimum__Group__2 ;
     public final void rule__PropertyMinimum__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11753:1: ( rule__PropertyMinimum__Group__1__Impl rule__PropertyMinimum__Group__2 )
@@ -35563,7 +35563,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -35575,7 +35575,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11761:1: rule__PropertyMinimum__Group__1__Impl : ( Name ) ;
     public final void rule__PropertyMinimum__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11765:1: ( ( Name ) )
@@ -35600,7 +35600,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -35612,7 +35612,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11776:1: rule__PropertyMinimum__Group__2 : rule__PropertyMinimum__Group__2__Impl rule__PropertyMinimum__Group__3 ;
     public final void rule__PropertyMinimum__Group__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11780:1: ( rule__PropertyMinimum__Group__2__Impl rule__PropertyMinimum__Group__3 )
@@ -35638,7 +35638,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -35650,7 +35650,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11788:1: rule__PropertyMinimum__Group__2__Impl : ( ( rule__PropertyMinimum__NameAssignment_2 ) ) ;
     public final void rule__PropertyMinimum__Group__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11792:1: ( ( ( rule__PropertyMinimum__NameAssignment_2 ) ) )
@@ -35685,7 +35685,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -35697,7 +35697,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11803:1: rule__PropertyMinimum__Group__3 : rule__PropertyMinimum__Group__3__Impl rule__PropertyMinimum__Group__4 ;
     public final void rule__PropertyMinimum__Group__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11807:1: ( rule__PropertyMinimum__Group__3__Impl rule__PropertyMinimum__Group__4 )
@@ -35723,7 +35723,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -35735,7 +35735,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11815:1: rule__PropertyMinimum__Group__3__Impl : ( RULE_INDENT ) ;
     public final void rule__PropertyMinimum__Group__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11819:1: ( ( RULE_INDENT ) )
@@ -35760,7 +35760,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -35772,7 +35772,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11830:1: rule__PropertyMinimum__Group__4 : rule__PropertyMinimum__Group__4__Impl rule__PropertyMinimum__Group__5 ;
     public final void rule__PropertyMinimum__Group__4() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11834:1: ( rule__PropertyMinimum__Group__4__Impl rule__PropertyMinimum__Group__5 )
@@ -35798,7 +35798,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -35810,7 +35810,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11842:1: rule__PropertyMinimum__Group__4__Impl : ( Kind ) ;
     public final void rule__PropertyMinimum__Group__4__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11846:1: ( ( Kind ) )
@@ -35835,7 +35835,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -35847,7 +35847,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11857:1: rule__PropertyMinimum__Group__5 : rule__PropertyMinimum__Group__5__Impl rule__PropertyMinimum__Group__6 ;
     public final void rule__PropertyMinimum__Group__5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11861:1: ( rule__PropertyMinimum__Group__5__Impl rule__PropertyMinimum__Group__6 )
@@ -35873,7 +35873,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -35885,7 +35885,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11869:1: rule__PropertyMinimum__Group__5__Impl : ( ( rule__PropertyMinimum__KindAssignment_5 ) ) ;
     public final void rule__PropertyMinimum__Group__5__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11873:1: ( ( ( rule__PropertyMinimum__KindAssignment_5 ) ) )
@@ -35920,7 +35920,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -35932,7 +35932,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11884:1: rule__PropertyMinimum__Group__6 : rule__PropertyMinimum__Group__6__Impl rule__PropertyMinimum__Group__7 ;
     public final void rule__PropertyMinimum__Group__6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11888:1: ( rule__PropertyMinimum__Group__6__Impl rule__PropertyMinimum__Group__7 )
@@ -35958,7 +35958,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -35970,7 +35970,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11896:1: rule__PropertyMinimum__Group__6__Impl : ( ( rule__PropertyMinimum__Group_6__0 )? ) ;
     public final void rule__PropertyMinimum__Group__6__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11900:1: ( ( ( rule__PropertyMinimum__Group_6__0 )? ) )
@@ -36016,7 +36016,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -36028,7 +36028,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11911:1: rule__PropertyMinimum__Group__7 : rule__PropertyMinimum__Group__7__Impl rule__PropertyMinimum__Group__8 ;
     public final void rule__PropertyMinimum__Group__7() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11915:1: ( rule__PropertyMinimum__Group__7__Impl rule__PropertyMinimum__Group__8 )
@@ -36054,7 +36054,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -36066,7 +36066,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11923:1: rule__PropertyMinimum__Group__7__Impl : ( ( rule__PropertyMinimum__Group_7__0 )? ) ;
     public final void rule__PropertyMinimum__Group__7__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11927:1: ( ( ( rule__PropertyMinimum__Group_7__0 )? ) )
@@ -36112,7 +36112,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -36124,7 +36124,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11938:1: rule__PropertyMinimum__Group__8 : rule__PropertyMinimum__Group__8__Impl ;
     public final void rule__PropertyMinimum__Group__8() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11942:1: ( rule__PropertyMinimum__Group__8__Impl )
@@ -36145,7 +36145,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -36157,7 +36157,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11949:1: rule__PropertyMinimum__Group__8__Impl : ( ( RULE_DEDENT )? ) ;
     public final void rule__PropertyMinimum__Group__8__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11953:1: ( ( ( RULE_DEDENT )? ) )
@@ -36221,7 +36221,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -36233,7 +36233,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11965:1: rule__PropertyMinimum__Group_6__0 : rule__PropertyMinimum__Group_6__0__Impl rule__PropertyMinimum__Group_6__1 ;
     public final void rule__PropertyMinimum__Group_6__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11969:1: ( rule__PropertyMinimum__Group_6__0__Impl rule__PropertyMinimum__Group_6__1 )
@@ -36259,7 +36259,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -36271,7 +36271,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11977:1: rule__PropertyMinimum__Group_6__0__Impl : ( Description ) ;
     public final void rule__PropertyMinimum__Group_6__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11981:1: ( ( Description ) )
@@ -36296,7 +36296,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -36308,7 +36308,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:11992:1: rule__PropertyMinimum__Group_6__1 : rule__PropertyMinimum__Group_6__1__Impl ;
     public final void rule__PropertyMinimum__Group_6__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:11996:1: ( rule__PropertyMinimum__Group_6__1__Impl )
@@ -36329,7 +36329,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -36341,7 +36341,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12003:1: rule__PropertyMinimum__Group_6__1__Impl : ( ( rule__PropertyMinimum__DescriptionAssignment_6_1 ) ) ;
     public final void rule__PropertyMinimum__Group_6__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12007:1: ( ( ( rule__PropertyMinimum__DescriptionAssignment_6_1 ) ) )
@@ -36376,7 +36376,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -36388,7 +36388,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12019:1: rule__PropertyMinimum__Group_7__0 : rule__PropertyMinimum__Group_7__0__Impl rule__PropertyMinimum__Group_7__1 ;
     public final void rule__PropertyMinimum__Group_7__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12023:1: ( rule__PropertyMinimum__Group_7__0__Impl rule__PropertyMinimum__Group_7__1 )
@@ -36414,7 +36414,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -36426,7 +36426,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12031:1: rule__PropertyMinimum__Group_7__0__Impl : ( Value ) ;
     public final void rule__PropertyMinimum__Group_7__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12035:1: ( ( Value ) )
@@ -36451,7 +36451,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -36463,7 +36463,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12046:1: rule__PropertyMinimum__Group_7__1 : rule__PropertyMinimum__Group_7__1__Impl ;
     public final void rule__PropertyMinimum__Group_7__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12050:1: ( rule__PropertyMinimum__Group_7__1__Impl )
@@ -36484,7 +36484,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -36496,7 +36496,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12057:1: rule__PropertyMinimum__Group_7__1__Impl : ( ( rule__PropertyMinimum__ValueAssignment_7_1 ) ) ;
     public final void rule__PropertyMinimum__Group_7__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12061:1: ( ( ( rule__PropertyMinimum__ValueAssignment_7_1 ) ) )
@@ -36531,7 +36531,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -36543,7 +36543,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12073:1: rule__PropertySelection__Group__0 : rule__PropertySelection__Group__0__Impl rule__PropertySelection__Group__1 ;
     public final void rule__PropertySelection__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12077:1: ( rule__PropertySelection__Group__0__Impl rule__PropertySelection__Group__1 )
@@ -36569,7 +36569,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -36581,7 +36581,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12085:1: rule__PropertySelection__Group__0__Impl : ( rulePreListElement ) ;
     public final void rule__PropertySelection__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12089:1: ( ( rulePreListElement ) )
@@ -36610,7 +36610,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -36622,7 +36622,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12100:1: rule__PropertySelection__Group__1 : rule__PropertySelection__Group__1__Impl rule__PropertySelection__Group__2 ;
     public final void rule__PropertySelection__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12104:1: ( rule__PropertySelection__Group__1__Impl rule__PropertySelection__Group__2 )
@@ -36648,7 +36648,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -36660,7 +36660,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12112:1: rule__PropertySelection__Group__1__Impl : ( Name ) ;
     public final void rule__PropertySelection__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12116:1: ( ( Name ) )
@@ -36685,7 +36685,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -36697,7 +36697,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12127:1: rule__PropertySelection__Group__2 : rule__PropertySelection__Group__2__Impl rule__PropertySelection__Group__3 ;
     public final void rule__PropertySelection__Group__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12131:1: ( rule__PropertySelection__Group__2__Impl rule__PropertySelection__Group__3 )
@@ -36723,7 +36723,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -36735,7 +36735,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12139:1: rule__PropertySelection__Group__2__Impl : ( ( rule__PropertySelection__NameAssignment_2 ) ) ;
     public final void rule__PropertySelection__Group__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12143:1: ( ( ( rule__PropertySelection__NameAssignment_2 ) ) )
@@ -36770,7 +36770,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -36782,7 +36782,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12154:1: rule__PropertySelection__Group__3 : rule__PropertySelection__Group__3__Impl rule__PropertySelection__Group__4 ;
     public final void rule__PropertySelection__Group__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12158:1: ( rule__PropertySelection__Group__3__Impl rule__PropertySelection__Group__4 )
@@ -36808,7 +36808,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -36820,7 +36820,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12166:1: rule__PropertySelection__Group__3__Impl : ( RULE_INDENT ) ;
     public final void rule__PropertySelection__Group__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12170:1: ( ( RULE_INDENT ) )
@@ -36845,7 +36845,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -36857,7 +36857,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12181:1: rule__PropertySelection__Group__4 : rule__PropertySelection__Group__4__Impl rule__PropertySelection__Group__5 ;
     public final void rule__PropertySelection__Group__4() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12185:1: ( rule__PropertySelection__Group__4__Impl rule__PropertySelection__Group__5 )
@@ -36883,7 +36883,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -36895,7 +36895,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12193:1: rule__PropertySelection__Group__4__Impl : ( Kind ) ;
     public final void rule__PropertySelection__Group__4__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12197:1: ( ( Kind ) )
@@ -36920,7 +36920,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -36932,7 +36932,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12208:1: rule__PropertySelection__Group__5 : rule__PropertySelection__Group__5__Impl rule__PropertySelection__Group__6 ;
     public final void rule__PropertySelection__Group__5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12212:1: ( rule__PropertySelection__Group__5__Impl rule__PropertySelection__Group__6 )
@@ -36958,7 +36958,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -36970,7 +36970,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12220:1: rule__PropertySelection__Group__5__Impl : ( ( rule__PropertySelection__KindAssignment_5 ) ) ;
     public final void rule__PropertySelection__Group__5__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12224:1: ( ( ( rule__PropertySelection__KindAssignment_5 ) ) )
@@ -37005,7 +37005,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -37017,7 +37017,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12235:1: rule__PropertySelection__Group__6 : rule__PropertySelection__Group__6__Impl rule__PropertySelection__Group__7 ;
     public final void rule__PropertySelection__Group__6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12239:1: ( rule__PropertySelection__Group__6__Impl rule__PropertySelection__Group__7 )
@@ -37043,7 +37043,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -37055,7 +37055,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12247:1: rule__PropertySelection__Group__6__Impl : ( ( rule__PropertySelection__Group_6__0 )? ) ;
     public final void rule__PropertySelection__Group__6__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12251:1: ( ( ( rule__PropertySelection__Group_6__0 )? ) )
@@ -37101,7 +37101,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -37113,7 +37113,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12262:1: rule__PropertySelection__Group__7 : rule__PropertySelection__Group__7__Impl rule__PropertySelection__Group__8 ;
     public final void rule__PropertySelection__Group__7() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12266:1: ( rule__PropertySelection__Group__7__Impl rule__PropertySelection__Group__8 )
@@ -37139,7 +37139,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -37151,7 +37151,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12274:1: rule__PropertySelection__Group__7__Impl : ( ( rule__PropertySelection__Group_7__0 )? ) ;
     public final void rule__PropertySelection__Group__7__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12278:1: ( ( ( rule__PropertySelection__Group_7__0 )? ) )
@@ -37197,7 +37197,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -37209,7 +37209,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12289:1: rule__PropertySelection__Group__8 : rule__PropertySelection__Group__8__Impl ;
     public final void rule__PropertySelection__Group__8() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12293:1: ( rule__PropertySelection__Group__8__Impl )
@@ -37230,7 +37230,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -37242,7 +37242,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12300:1: rule__PropertySelection__Group__8__Impl : ( ( RULE_DEDENT )? ) ;
     public final void rule__PropertySelection__Group__8__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12304:1: ( ( ( RULE_DEDENT )? ) )
@@ -37306,7 +37306,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -37318,7 +37318,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12316:1: rule__PropertySelection__Group_6__0 : rule__PropertySelection__Group_6__0__Impl rule__PropertySelection__Group_6__1 ;
     public final void rule__PropertySelection__Group_6__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12320:1: ( rule__PropertySelection__Group_6__0__Impl rule__PropertySelection__Group_6__1 )
@@ -37344,7 +37344,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -37356,7 +37356,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12328:1: rule__PropertySelection__Group_6__0__Impl : ( Description ) ;
     public final void rule__PropertySelection__Group_6__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12332:1: ( ( Description ) )
@@ -37381,7 +37381,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -37393,7 +37393,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12343:1: rule__PropertySelection__Group_6__1 : rule__PropertySelection__Group_6__1__Impl ;
     public final void rule__PropertySelection__Group_6__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12347:1: ( rule__PropertySelection__Group_6__1__Impl )
@@ -37414,7 +37414,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -37426,7 +37426,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12354:1: rule__PropertySelection__Group_6__1__Impl : ( ( rule__PropertySelection__DescriptionAssignment_6_1 ) ) ;
     public final void rule__PropertySelection__Group_6__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12358:1: ( ( ( rule__PropertySelection__DescriptionAssignment_6_1 ) ) )
@@ -37461,7 +37461,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -37473,7 +37473,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12370:1: rule__PropertySelection__Group_7__0 : rule__PropertySelection__Group_7__0__Impl rule__PropertySelection__Group_7__1 ;
     public final void rule__PropertySelection__Group_7__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12374:1: ( rule__PropertySelection__Group_7__0__Impl rule__PropertySelection__Group_7__1 )
@@ -37499,7 +37499,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -37511,7 +37511,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12382:1: rule__PropertySelection__Group_7__0__Impl : ( Value ) ;
     public final void rule__PropertySelection__Group_7__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12386:1: ( ( Value ) )
@@ -37536,7 +37536,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -37548,7 +37548,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12397:1: rule__PropertySelection__Group_7__1 : rule__PropertySelection__Group_7__1__Impl rule__PropertySelection__Group_7__2 ;
     public final void rule__PropertySelection__Group_7__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12401:1: ( rule__PropertySelection__Group_7__1__Impl rule__PropertySelection__Group_7__2 )
@@ -37574,7 +37574,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -37586,7 +37586,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12409:1: rule__PropertySelection__Group_7__1__Impl : ( RULE_INDENT ) ;
     public final void rule__PropertySelection__Group_7__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12413:1: ( ( RULE_INDENT ) )
@@ -37611,7 +37611,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -37623,7 +37623,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12424:1: rule__PropertySelection__Group_7__2 : rule__PropertySelection__Group_7__2__Impl rule__PropertySelection__Group_7__3 ;
     public final void rule__PropertySelection__Group_7__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12428:1: ( rule__PropertySelection__Group_7__2__Impl rule__PropertySelection__Group_7__3 )
@@ -37649,7 +37649,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -37661,7 +37661,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12436:1: rule__PropertySelection__Group_7__2__Impl : ( rulePreListElement ) ;
     public final void rule__PropertySelection__Group_7__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12440:1: ( ( rulePreListElement ) )
@@ -37690,7 +37690,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -37702,7 +37702,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12451:1: rule__PropertySelection__Group_7__3 : rule__PropertySelection__Group_7__3__Impl rule__PropertySelection__Group_7__4 ;
     public final void rule__PropertySelection__Group_7__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12455:1: ( rule__PropertySelection__Group_7__3__Impl rule__PropertySelection__Group_7__4 )
@@ -37728,7 +37728,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -37740,7 +37740,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12463:1: rule__PropertySelection__Group_7__3__Impl : ( ( rule__PropertySelection__ValueAssignment_7_3 ) ) ;
     public final void rule__PropertySelection__Group_7__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12467:1: ( ( ( rule__PropertySelection__ValueAssignment_7_3 ) ) )
@@ -37775,7 +37775,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -37787,7 +37787,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12478:1: rule__PropertySelection__Group_7__4 : rule__PropertySelection__Group_7__4__Impl rule__PropertySelection__Group_7__5 ;
     public final void rule__PropertySelection__Group_7__4() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12482:1: ( rule__PropertySelection__Group_7__4__Impl rule__PropertySelection__Group_7__5 )
@@ -37813,7 +37813,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -37825,7 +37825,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12490:1: rule__PropertySelection__Group_7__4__Impl : ( ( rule__PropertySelection__Group_7_4__0 )* ) ;
     public final void rule__PropertySelection__Group_7__4__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12494:1: ( ( ( rule__PropertySelection__Group_7_4__0 )* ) )
@@ -37847,20 +37847,20 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
 
 
                 switch (alt82) {
-                case 1 :
-                    // InternalDeviceParser.g:12497:3: rule__PropertySelection__Group_7_4__0
-                    {
-                    pushFollow(FOLLOW_26);
-                    rule__PropertySelection__Group_7_4__0();
+              case 1 :
+                  // InternalDeviceParser.g:12497:3: rule__PropertySelection__Group_7_4__0
+                  {
+                  pushFollow(FOLLOW_26);
+                  rule__PropertySelection__Group_7_4__0();
 
-                    state._fsp--;
+                  state._fsp--;
 
 
-                    }
-                    break;
+                  }
+                  break;
 
-                default :
-                    break loop82;
+              default :
+                  break loop82;
                 }
             } while (true);
 
@@ -37878,7 +37878,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -37890,7 +37890,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12505:1: rule__PropertySelection__Group_7__5 : rule__PropertySelection__Group_7__5__Impl ;
     public final void rule__PropertySelection__Group_7__5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12509:1: ( rule__PropertySelection__Group_7__5__Impl )
@@ -37911,7 +37911,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -37923,7 +37923,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12516:1: rule__PropertySelection__Group_7__5__Impl : ( RULE_DEDENT ) ;
     public final void rule__PropertySelection__Group_7__5__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12520:1: ( ( RULE_DEDENT ) )
@@ -37948,7 +37948,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -37960,7 +37960,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12532:1: rule__PropertySelection__Group_7_4__0 : rule__PropertySelection__Group_7_4__0__Impl rule__PropertySelection__Group_7_4__1 ;
     public final void rule__PropertySelection__Group_7_4__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12536:1: ( rule__PropertySelection__Group_7_4__0__Impl rule__PropertySelection__Group_7_4__1 )
@@ -37986,7 +37986,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -37998,7 +37998,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12544:1: rule__PropertySelection__Group_7_4__0__Impl : ( rulePreListElement ) ;
     public final void rule__PropertySelection__Group_7_4__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12548:1: ( ( rulePreListElement ) )
@@ -38027,7 +38027,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -38039,7 +38039,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12559:1: rule__PropertySelection__Group_7_4__1 : rule__PropertySelection__Group_7_4__1__Impl ;
     public final void rule__PropertySelection__Group_7_4__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12563:1: ( rule__PropertySelection__Group_7_4__1__Impl )
@@ -38060,7 +38060,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -38072,7 +38072,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12570:1: rule__PropertySelection__Group_7_4__1__Impl : ( ( rule__PropertySelection__ValueAssignment_7_4_1 ) ) ;
     public final void rule__PropertySelection__Group_7_4__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12574:1: ( ( ( rule__PropertySelection__ValueAssignment_7_4_1 ) ) )
@@ -38107,7 +38107,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -38119,7 +38119,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12586:1: rule__PropertyRange__Group__0 : rule__PropertyRange__Group__0__Impl rule__PropertyRange__Group__1 ;
     public final void rule__PropertyRange__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12590:1: ( rule__PropertyRange__Group__0__Impl rule__PropertyRange__Group__1 )
@@ -38145,7 +38145,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -38157,7 +38157,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12598:1: rule__PropertyRange__Group__0__Impl : ( rulePreListElement ) ;
     public final void rule__PropertyRange__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12602:1: ( ( rulePreListElement ) )
@@ -38186,7 +38186,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -38198,7 +38198,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12613:1: rule__PropertyRange__Group__1 : rule__PropertyRange__Group__1__Impl rule__PropertyRange__Group__2 ;
     public final void rule__PropertyRange__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12617:1: ( rule__PropertyRange__Group__1__Impl rule__PropertyRange__Group__2 )
@@ -38224,7 +38224,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -38236,7 +38236,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12625:1: rule__PropertyRange__Group__1__Impl : ( Name ) ;
     public final void rule__PropertyRange__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12629:1: ( ( Name ) )
@@ -38261,7 +38261,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -38273,7 +38273,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12640:1: rule__PropertyRange__Group__2 : rule__PropertyRange__Group__2__Impl rule__PropertyRange__Group__3 ;
     public final void rule__PropertyRange__Group__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12644:1: ( rule__PropertyRange__Group__2__Impl rule__PropertyRange__Group__3 )
@@ -38299,7 +38299,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -38311,7 +38311,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12652:1: rule__PropertyRange__Group__2__Impl : ( ( rule__PropertyRange__NameAssignment_2 ) ) ;
     public final void rule__PropertyRange__Group__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12656:1: ( ( ( rule__PropertyRange__NameAssignment_2 ) ) )
@@ -38346,7 +38346,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -38358,7 +38358,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12667:1: rule__PropertyRange__Group__3 : rule__PropertyRange__Group__3__Impl rule__PropertyRange__Group__4 ;
     public final void rule__PropertyRange__Group__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12671:1: ( rule__PropertyRange__Group__3__Impl rule__PropertyRange__Group__4 )
@@ -38384,7 +38384,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -38396,7 +38396,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12679:1: rule__PropertyRange__Group__3__Impl : ( RULE_INDENT ) ;
     public final void rule__PropertyRange__Group__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12683:1: ( ( RULE_INDENT ) )
@@ -38421,7 +38421,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -38433,7 +38433,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12694:1: rule__PropertyRange__Group__4 : rule__PropertyRange__Group__4__Impl rule__PropertyRange__Group__5 ;
     public final void rule__PropertyRange__Group__4() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12698:1: ( rule__PropertyRange__Group__4__Impl rule__PropertyRange__Group__5 )
@@ -38459,7 +38459,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -38471,7 +38471,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12706:1: rule__PropertyRange__Group__4__Impl : ( Kind ) ;
     public final void rule__PropertyRange__Group__4__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12710:1: ( ( Kind ) )
@@ -38496,7 +38496,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -38508,7 +38508,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12721:1: rule__PropertyRange__Group__5 : rule__PropertyRange__Group__5__Impl rule__PropertyRange__Group__6 ;
     public final void rule__PropertyRange__Group__5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12725:1: ( rule__PropertyRange__Group__5__Impl rule__PropertyRange__Group__6 )
@@ -38534,7 +38534,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -38546,7 +38546,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12733:1: rule__PropertyRange__Group__5__Impl : ( ( rule__PropertyRange__KindAssignment_5 ) ) ;
     public final void rule__PropertyRange__Group__5__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12737:1: ( ( ( rule__PropertyRange__KindAssignment_5 ) ) )
@@ -38581,7 +38581,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -38593,7 +38593,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12748:1: rule__PropertyRange__Group__6 : rule__PropertyRange__Group__6__Impl rule__PropertyRange__Group__7 ;
     public final void rule__PropertyRange__Group__6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12752:1: ( rule__PropertyRange__Group__6__Impl rule__PropertyRange__Group__7 )
@@ -38619,7 +38619,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -38631,7 +38631,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12760:1: rule__PropertyRange__Group__6__Impl : ( ( rule__PropertyRange__Group_6__0 )? ) ;
     public final void rule__PropertyRange__Group__6__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12764:1: ( ( ( rule__PropertyRange__Group_6__0 )? ) )
@@ -38677,7 +38677,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -38689,7 +38689,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12775:1: rule__PropertyRange__Group__7 : rule__PropertyRange__Group__7__Impl rule__PropertyRange__Group__8 ;
     public final void rule__PropertyRange__Group__7() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12779:1: ( rule__PropertyRange__Group__7__Impl rule__PropertyRange__Group__8 )
@@ -38715,7 +38715,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -38727,7 +38727,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12787:1: rule__PropertyRange__Group__7__Impl : ( ( rule__PropertyRange__Group_7__0 )? ) ;
     public final void rule__PropertyRange__Group__7__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12791:1: ( ( ( rule__PropertyRange__Group_7__0 )? ) )
@@ -38773,7 +38773,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -38785,7 +38785,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12802:1: rule__PropertyRange__Group__8 : rule__PropertyRange__Group__8__Impl ;
     public final void rule__PropertyRange__Group__8() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12806:1: ( rule__PropertyRange__Group__8__Impl )
@@ -38806,7 +38806,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -38818,7 +38818,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12813:1: rule__PropertyRange__Group__8__Impl : ( ( RULE_DEDENT )? ) ;
     public final void rule__PropertyRange__Group__8__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12817:1: ( ( ( RULE_DEDENT )? ) )
@@ -38882,7 +38882,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -38894,7 +38894,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12829:1: rule__PropertyRange__Group_6__0 : rule__PropertyRange__Group_6__0__Impl rule__PropertyRange__Group_6__1 ;
     public final void rule__PropertyRange__Group_6__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12833:1: ( rule__PropertyRange__Group_6__0__Impl rule__PropertyRange__Group_6__1 )
@@ -38920,7 +38920,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -38932,7 +38932,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12841:1: rule__PropertyRange__Group_6__0__Impl : ( Description ) ;
     public final void rule__PropertyRange__Group_6__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12845:1: ( ( Description ) )
@@ -38957,7 +38957,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -38969,7 +38969,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12856:1: rule__PropertyRange__Group_6__1 : rule__PropertyRange__Group_6__1__Impl ;
     public final void rule__PropertyRange__Group_6__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12860:1: ( rule__PropertyRange__Group_6__1__Impl )
@@ -38990,7 +38990,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -39002,7 +39002,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12867:1: rule__PropertyRange__Group_6__1__Impl : ( ( rule__PropertyRange__DescriptionAssignment_6_1 ) ) ;
     public final void rule__PropertyRange__Group_6__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12871:1: ( ( ( rule__PropertyRange__DescriptionAssignment_6_1 ) ) )
@@ -39037,7 +39037,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -39049,7 +39049,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12883:1: rule__PropertyRange__Group_7__0 : rule__PropertyRange__Group_7__0__Impl rule__PropertyRange__Group_7__1 ;
     public final void rule__PropertyRange__Group_7__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12887:1: ( rule__PropertyRange__Group_7__0__Impl rule__PropertyRange__Group_7__1 )
@@ -39075,7 +39075,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -39087,7 +39087,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12895:1: rule__PropertyRange__Group_7__0__Impl : ( Value ) ;
     public final void rule__PropertyRange__Group_7__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12899:1: ( ( Value ) )
@@ -39112,7 +39112,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -39124,7 +39124,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12910:1: rule__PropertyRange__Group_7__1 : rule__PropertyRange__Group_7__1__Impl rule__PropertyRange__Group_7__2 ;
     public final void rule__PropertyRange__Group_7__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12914:1: ( rule__PropertyRange__Group_7__1__Impl rule__PropertyRange__Group_7__2 )
@@ -39150,7 +39150,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -39162,7 +39162,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12922:1: rule__PropertyRange__Group_7__1__Impl : ( RULE_INDENT ) ;
     public final void rule__PropertyRange__Group_7__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12926:1: ( ( RULE_INDENT ) )
@@ -39187,7 +39187,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -39199,7 +39199,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12937:1: rule__PropertyRange__Group_7__2 : rule__PropertyRange__Group_7__2__Impl rule__PropertyRange__Group_7__3 ;
     public final void rule__PropertyRange__Group_7__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12941:1: ( rule__PropertyRange__Group_7__2__Impl rule__PropertyRange__Group_7__3 )
@@ -39225,7 +39225,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -39237,7 +39237,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12949:1: rule__PropertyRange__Group_7__2__Impl : ( rulePreListElement ) ;
     public final void rule__PropertyRange__Group_7__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12953:1: ( ( rulePreListElement ) )
@@ -39266,7 +39266,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -39278,7 +39278,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12964:1: rule__PropertyRange__Group_7__3 : rule__PropertyRange__Group_7__3__Impl rule__PropertyRange__Group_7__4 ;
     public final void rule__PropertyRange__Group_7__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12968:1: ( rule__PropertyRange__Group_7__3__Impl rule__PropertyRange__Group_7__4 )
@@ -39304,7 +39304,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -39316,7 +39316,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12976:1: rule__PropertyRange__Group_7__3__Impl : ( ( rule__PropertyRange__ValueAssignment_7_3 ) ) ;
     public final void rule__PropertyRange__Group_7__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12980:1: ( ( ( rule__PropertyRange__ValueAssignment_7_3 ) ) )
@@ -39351,7 +39351,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -39363,7 +39363,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:12991:1: rule__PropertyRange__Group_7__4 : rule__PropertyRange__Group_7__4__Impl rule__PropertyRange__Group_7__5 ;
     public final void rule__PropertyRange__Group_7__4() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:12995:1: ( rule__PropertyRange__Group_7__4__Impl rule__PropertyRange__Group_7__5 )
@@ -39389,7 +39389,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -39401,7 +39401,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13003:1: rule__PropertyRange__Group_7__4__Impl : ( rulePreListElement ) ;
     public final void rule__PropertyRange__Group_7__4__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13007:1: ( ( rulePreListElement ) )
@@ -39430,7 +39430,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -39442,7 +39442,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13018:1: rule__PropertyRange__Group_7__5 : rule__PropertyRange__Group_7__5__Impl rule__PropertyRange__Group_7__6 ;
     public final void rule__PropertyRange__Group_7__5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13022:1: ( rule__PropertyRange__Group_7__5__Impl rule__PropertyRange__Group_7__6 )
@@ -39468,7 +39468,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -39480,7 +39480,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13030:1: rule__PropertyRange__Group_7__5__Impl : ( ( rule__PropertyRange__ValueAssignment_7_5 ) ) ;
     public final void rule__PropertyRange__Group_7__5__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13034:1: ( ( ( rule__PropertyRange__ValueAssignment_7_5 ) ) )
@@ -39515,7 +39515,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -39527,7 +39527,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13045:1: rule__PropertyRange__Group_7__6 : rule__PropertyRange__Group_7__6__Impl ;
     public final void rule__PropertyRange__Group_7__6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13049:1: ( rule__PropertyRange__Group_7__6__Impl )
@@ -39548,7 +39548,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -39560,7 +39560,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13056:1: rule__PropertyRange__Group_7__6__Impl : ( RULE_DEDENT ) ;
     public final void rule__PropertyRange__Group_7__6__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13060:1: ( ( RULE_DEDENT ) )
@@ -39585,7 +39585,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -39597,7 +39597,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13072:1: rule__PropertyValueList__Group__0 : rule__PropertyValueList__Group__0__Impl rule__PropertyValueList__Group__1 ;
     public final void rule__PropertyValueList__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13076:1: ( rule__PropertyValueList__Group__0__Impl rule__PropertyValueList__Group__1 )
@@ -39623,7 +39623,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -39635,7 +39635,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13084:1: rule__PropertyValueList__Group__0__Impl : ( RULE_INDENT ) ;
     public final void rule__PropertyValueList__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13088:1: ( ( RULE_INDENT ) )
@@ -39660,7 +39660,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -39672,7 +39672,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13099:1: rule__PropertyValueList__Group__1 : rule__PropertyValueList__Group__1__Impl rule__PropertyValueList__Group__2 ;
     public final void rule__PropertyValueList__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13103:1: ( rule__PropertyValueList__Group__1__Impl rule__PropertyValueList__Group__2 )
@@ -39698,7 +39698,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -39710,7 +39710,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13111:1: rule__PropertyValueList__Group__1__Impl : ( rulePreListElement ) ;
     public final void rule__PropertyValueList__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13115:1: ( ( rulePreListElement ) )
@@ -39739,7 +39739,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -39751,7 +39751,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13126:1: rule__PropertyValueList__Group__2 : rule__PropertyValueList__Group__2__Impl rule__PropertyValueList__Group__3 ;
     public final void rule__PropertyValueList__Group__2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13130:1: ( rule__PropertyValueList__Group__2__Impl rule__PropertyValueList__Group__3 )
@@ -39777,7 +39777,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -39789,7 +39789,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13138:1: rule__PropertyValueList__Group__2__Impl : ( ( rule__PropertyValueList__ValueAssignment_2 ) ) ;
     public final void rule__PropertyValueList__Group__2__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13142:1: ( ( ( rule__PropertyValueList__ValueAssignment_2 ) ) )
@@ -39824,7 +39824,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -39836,7 +39836,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13153:1: rule__PropertyValueList__Group__3 : rule__PropertyValueList__Group__3__Impl rule__PropertyValueList__Group__4 ;
     public final void rule__PropertyValueList__Group__3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13157:1: ( rule__PropertyValueList__Group__3__Impl rule__PropertyValueList__Group__4 )
@@ -39862,7 +39862,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -39874,7 +39874,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13165:1: rule__PropertyValueList__Group__3__Impl : ( ( rule__PropertyValueList__Group_3__0 )* ) ;
     public final void rule__PropertyValueList__Group__3__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13169:1: ( ( ( rule__PropertyValueList__Group_3__0 )* ) )
@@ -39896,20 +39896,20 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
 
 
                 switch (alt86) {
-                case 1 :
-                    // InternalDeviceParser.g:13172:3: rule__PropertyValueList__Group_3__0
-                    {
-                    pushFollow(FOLLOW_26);
-                    rule__PropertyValueList__Group_3__0();
+              case 1 :
+                  // InternalDeviceParser.g:13172:3: rule__PropertyValueList__Group_3__0
+                  {
+                  pushFollow(FOLLOW_26);
+                  rule__PropertyValueList__Group_3__0();
 
-                    state._fsp--;
+                  state._fsp--;
 
 
-                    }
-                    break;
+                  }
+                  break;
 
-                default :
-                    break loop86;
+              default :
+                  break loop86;
                 }
             } while (true);
 
@@ -39927,7 +39927,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -39939,7 +39939,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13180:1: rule__PropertyValueList__Group__4 : rule__PropertyValueList__Group__4__Impl ;
     public final void rule__PropertyValueList__Group__4() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13184:1: ( rule__PropertyValueList__Group__4__Impl )
@@ -39960,7 +39960,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -39972,7 +39972,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13191:1: rule__PropertyValueList__Group__4__Impl : ( RULE_DEDENT ) ;
     public final void rule__PropertyValueList__Group__4__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13195:1: ( ( RULE_DEDENT ) )
@@ -39997,7 +39997,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -40009,7 +40009,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13207:1: rule__PropertyValueList__Group_3__0 : rule__PropertyValueList__Group_3__0__Impl rule__PropertyValueList__Group_3__1 ;
     public final void rule__PropertyValueList__Group_3__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13211:1: ( rule__PropertyValueList__Group_3__0__Impl rule__PropertyValueList__Group_3__1 )
@@ -40035,7 +40035,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -40047,7 +40047,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13219:1: rule__PropertyValueList__Group_3__0__Impl : ( rulePreListElement ) ;
     public final void rule__PropertyValueList__Group_3__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13223:1: ( ( rulePreListElement ) )
@@ -40076,7 +40076,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -40088,7 +40088,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13234:1: rule__PropertyValueList__Group_3__1 : rule__PropertyValueList__Group_3__1__Impl ;
     public final void rule__PropertyValueList__Group_3__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13238:1: ( rule__PropertyValueList__Group_3__1__Impl )
@@ -40109,7 +40109,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -40121,7 +40121,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13245:1: rule__PropertyValueList__Group_3__1__Impl : ( ( rule__PropertyValueList__ValueAssignment_3_1 ) ) ;
     public final void rule__PropertyValueList__Group_3__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13249:1: ( ( ( rule__PropertyValueList__ValueAssignment_3_1 ) ) )
@@ -40156,7 +40156,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -40168,7 +40168,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13261:1: rule__ResourceType__Group__0 : rule__ResourceType__Group__0__Impl rule__ResourceType__Group__1 ;
     public final void rule__ResourceType__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13265:1: ( rule__ResourceType__Group__0__Impl rule__ResourceType__Group__1 )
@@ -40194,7 +40194,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -40206,7 +40206,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13273:1: rule__ResourceType__Group__0__Impl : ( () ) ;
     public final void rule__ResourceType__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13277:1: ( ( () ) )
@@ -40231,7 +40231,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -40243,7 +40243,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13288:1: rule__ResourceType__Group__1 : rule__ResourceType__Group__1__Impl ;
     public final void rule__ResourceType__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13292:1: ( rule__ResourceType__Group__1__Impl )
@@ -40264,7 +40264,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -40276,7 +40276,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13299:1: rule__ResourceType__Group__1__Impl : ( ( rule__ResourceType__NameAssignment_1 ) ) ;
     public final void rule__ResourceType__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13303:1: ( ( ( rule__ResourceType__NameAssignment_1 ) ) )
@@ -40311,7 +40311,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -40323,7 +40323,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13315:1: rule__ProcessorResouceType__Group__0 : rule__ProcessorResouceType__Group__0__Impl rule__ProcessorResouceType__Group__1 ;
     public final void rule__ProcessorResouceType__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13319:1: ( rule__ProcessorResouceType__Group__0__Impl rule__ProcessorResouceType__Group__1 )
@@ -40349,7 +40349,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -40361,7 +40361,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13327:1: rule__ProcessorResouceType__Group__0__Impl : ( () ) ;
     public final void rule__ProcessorResouceType__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13331:1: ( ( () ) )
@@ -40386,7 +40386,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -40398,7 +40398,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13342:1: rule__ProcessorResouceType__Group__1 : rule__ProcessorResouceType__Group__1__Impl ;
     public final void rule__ProcessorResouceType__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13346:1: ( rule__ProcessorResouceType__Group__1__Impl )
@@ -40419,7 +40419,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -40431,7 +40431,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13353:1: rule__ProcessorResouceType__Group__1__Impl : ( Processor ) ;
     public final void rule__ProcessorResouceType__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13357:1: ( ( Processor ) )
@@ -40456,7 +40456,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -40468,7 +40468,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13369:1: rule__LinuxOpertingSystem__Group__0 : rule__LinuxOpertingSystem__Group__0__Impl rule__LinuxOpertingSystem__Group__1 ;
     public final void rule__LinuxOpertingSystem__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13373:1: ( rule__LinuxOpertingSystem__Group__0__Impl rule__LinuxOpertingSystem__Group__1 )
@@ -40494,7 +40494,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -40506,7 +40506,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13381:1: rule__LinuxOpertingSystem__Group__0__Impl : ( () ) ;
     public final void rule__LinuxOpertingSystem__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13385:1: ( ( () ) )
@@ -40531,7 +40531,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -40543,7 +40543,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13396:1: rule__LinuxOpertingSystem__Group__1 : rule__LinuxOpertingSystem__Group__1__Impl ;
     public final void rule__LinuxOpertingSystem__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13400:1: ( rule__LinuxOpertingSystem__Group__1__Impl )
@@ -40564,7 +40564,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -40576,7 +40576,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13407:1: rule__LinuxOpertingSystem__Group__1__Impl : ( LinuxOpertingSystem ) ;
     public final void rule__LinuxOpertingSystem__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13411:1: ( ( LinuxOpertingSystem ) )
@@ -40601,7 +40601,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -40613,7 +40613,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13423:1: rule__MacOSOpertingSystem__Group__0 : rule__MacOSOpertingSystem__Group__0__Impl rule__MacOSOpertingSystem__Group__1 ;
     public final void rule__MacOSOpertingSystem__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13427:1: ( rule__MacOSOpertingSystem__Group__0__Impl rule__MacOSOpertingSystem__Group__1 )
@@ -40639,7 +40639,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -40651,7 +40651,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13435:1: rule__MacOSOpertingSystem__Group__0__Impl : ( () ) ;
     public final void rule__MacOSOpertingSystem__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13439:1: ( ( () ) )
@@ -40676,7 +40676,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -40688,7 +40688,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13450:1: rule__MacOSOpertingSystem__Group__1 : rule__MacOSOpertingSystem__Group__1__Impl ;
     public final void rule__MacOSOpertingSystem__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13454:1: ( rule__MacOSOpertingSystem__Group__1__Impl )
@@ -40709,7 +40709,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -40721,7 +40721,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13461:1: rule__MacOSOpertingSystem__Group__1__Impl : ( MacOSOpertingSystem ) ;
     public final void rule__MacOSOpertingSystem__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13465:1: ( ( MacOSOpertingSystem ) )
@@ -40746,7 +40746,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -40758,7 +40758,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13477:1: rule__CommunicationType__Group__0 : rule__CommunicationType__Group__0__Impl rule__CommunicationType__Group__1 ;
     public final void rule__CommunicationType__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13481:1: ( rule__CommunicationType__Group__0__Impl rule__CommunicationType__Group__1 )
@@ -40784,7 +40784,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -40796,7 +40796,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13489:1: rule__CommunicationType__Group__0__Impl : ( () ) ;
     public final void rule__CommunicationType__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13493:1: ( ( () ) )
@@ -40821,7 +40821,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -40833,7 +40833,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13504:1: rule__CommunicationType__Group__1 : rule__CommunicationType__Group__1__Impl ;
     public final void rule__CommunicationType__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13508:1: ( rule__CommunicationType__Group__1__Impl )
@@ -40854,7 +40854,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -40866,7 +40866,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13515:1: rule__CommunicationType__Group__1__Impl : ( ( rule__CommunicationType__NameAssignment_1 ) ) ;
     public final void rule__CommunicationType__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13519:1: ( ( ( rule__CommunicationType__NameAssignment_1 ) ) )
@@ -40901,7 +40901,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -40913,7 +40913,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13531:1: rule__EthernetCommunicationType__Group__0 : rule__EthernetCommunicationType__Group__0__Impl rule__EthernetCommunicationType__Group__1 ;
     public final void rule__EthernetCommunicationType__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13535:1: ( rule__EthernetCommunicationType__Group__0__Impl rule__EthernetCommunicationType__Group__1 )
@@ -40939,7 +40939,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -40951,7 +40951,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13543:1: rule__EthernetCommunicationType__Group__0__Impl : ( () ) ;
     public final void rule__EthernetCommunicationType__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13547:1: ( ( () ) )
@@ -40976,7 +40976,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -40988,7 +40988,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13558:1: rule__EthernetCommunicationType__Group__1 : rule__EthernetCommunicationType__Group__1__Impl ;
     public final void rule__EthernetCommunicationType__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13562:1: ( rule__EthernetCommunicationType__Group__1__Impl )
@@ -41009,7 +41009,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -41021,7 +41021,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13569:1: rule__EthernetCommunicationType__Group__1__Impl : ( Ethernet ) ;
     public final void rule__EthernetCommunicationType__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13573:1: ( ( Ethernet ) )
@@ -41046,7 +41046,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -41058,7 +41058,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13585:1: rule__WlanCommunicationType__Group__0 : rule__WlanCommunicationType__Group__0__Impl rule__WlanCommunicationType__Group__1 ;
     public final void rule__WlanCommunicationType__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13589:1: ( rule__WlanCommunicationType__Group__0__Impl rule__WlanCommunicationType__Group__1 )
@@ -41084,7 +41084,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -41096,7 +41096,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13597:1: rule__WlanCommunicationType__Group__0__Impl : ( () ) ;
     public final void rule__WlanCommunicationType__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13601:1: ( ( () ) )
@@ -41121,7 +41121,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -41133,7 +41133,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13612:1: rule__WlanCommunicationType__Group__1 : rule__WlanCommunicationType__Group__1__Impl ;
     public final void rule__WlanCommunicationType__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13616:1: ( rule__WlanCommunicationType__Group__1__Impl )
@@ -41154,7 +41154,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -41166,7 +41166,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13623:1: rule__WlanCommunicationType__Group__1__Impl : ( Wlan ) ;
     public final void rule__WlanCommunicationType__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13627:1: ( ( Wlan ) )
@@ -41191,7 +41191,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -41203,7 +41203,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13639:1: rule__UsbCommunicationType__Group__0 : rule__UsbCommunicationType__Group__0__Impl rule__UsbCommunicationType__Group__1 ;
     public final void rule__UsbCommunicationType__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13643:1: ( rule__UsbCommunicationType__Group__0__Impl rule__UsbCommunicationType__Group__1 )
@@ -41229,7 +41229,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -41241,7 +41241,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13651:1: rule__UsbCommunicationType__Group__0__Impl : ( () ) ;
     public final void rule__UsbCommunicationType__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13655:1: ( ( () ) )
@@ -41266,7 +41266,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -41278,7 +41278,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13666:1: rule__UsbCommunicationType__Group__1 : rule__UsbCommunicationType__Group__1__Impl ;
     public final void rule__UsbCommunicationType__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13670:1: ( rule__UsbCommunicationType__Group__1__Impl )
@@ -41299,7 +41299,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -41311,7 +41311,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13677:1: rule__UsbCommunicationType__Group__1__Impl : ( Usb ) ;
     public final void rule__UsbCommunicationType__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13681:1: ( ( Usb ) )
@@ -41336,7 +41336,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -41348,7 +41348,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13693:1: rule__AttributeKind__Group__0 : rule__AttributeKind__Group__0__Impl rule__AttributeKind__Group__1 ;
     public final void rule__AttributeKind__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13697:1: ( rule__AttributeKind__Group__0__Impl rule__AttributeKind__Group__1 )
@@ -41374,7 +41374,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -41386,7 +41386,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13705:1: rule__AttributeKind__Group__0__Impl : ( () ) ;
     public final void rule__AttributeKind__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13709:1: ( ( () ) )
@@ -41411,7 +41411,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -41423,7 +41423,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13720:1: rule__AttributeKind__Group__1 : rule__AttributeKind__Group__1__Impl ;
     public final void rule__AttributeKind__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13724:1: ( rule__AttributeKind__Group__1__Impl )
@@ -41444,7 +41444,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -41456,7 +41456,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13731:1: rule__AttributeKind__Group__1__Impl : ( AttributeKind ) ;
     public final void rule__AttributeKind__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13735:1: ( ( AttributeKind ) )
@@ -41481,7 +41481,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -41493,7 +41493,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13747:1: rule__MaximumKind__Group__0 : rule__MaximumKind__Group__0__Impl rule__MaximumKind__Group__1 ;
     public final void rule__MaximumKind__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13751:1: ( rule__MaximumKind__Group__0__Impl rule__MaximumKind__Group__1 )
@@ -41519,7 +41519,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -41531,7 +41531,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13759:1: rule__MaximumKind__Group__0__Impl : ( () ) ;
     public final void rule__MaximumKind__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13763:1: ( ( () ) )
@@ -41556,7 +41556,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -41568,7 +41568,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13774:1: rule__MaximumKind__Group__1 : rule__MaximumKind__Group__1__Impl ;
     public final void rule__MaximumKind__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13778:1: ( rule__MaximumKind__Group__1__Impl )
@@ -41589,7 +41589,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -41601,7 +41601,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13785:1: rule__MaximumKind__Group__1__Impl : ( MaximumKind ) ;
     public final void rule__MaximumKind__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13789:1: ( ( MaximumKind ) )
@@ -41626,7 +41626,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -41638,7 +41638,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13801:1: rule__MinimumKind__Group__0 : rule__MinimumKind__Group__0__Impl rule__MinimumKind__Group__1 ;
     public final void rule__MinimumKind__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13805:1: ( rule__MinimumKind__Group__0__Impl rule__MinimumKind__Group__1 )
@@ -41664,7 +41664,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -41676,7 +41676,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13813:1: rule__MinimumKind__Group__0__Impl : ( () ) ;
     public final void rule__MinimumKind__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13817:1: ( ( () ) )
@@ -41701,7 +41701,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -41713,7 +41713,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13828:1: rule__MinimumKind__Group__1 : rule__MinimumKind__Group__1__Impl ;
     public final void rule__MinimumKind__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13832:1: ( rule__MinimumKind__Group__1__Impl )
@@ -41734,7 +41734,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -41746,7 +41746,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13839:1: rule__MinimumKind__Group__1__Impl : ( MinimumKind ) ;
     public final void rule__MinimumKind__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13843:1: ( ( MinimumKind ) )
@@ -41771,7 +41771,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -41783,7 +41783,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13855:1: rule__SelectionKind__Group__0 : rule__SelectionKind__Group__0__Impl rule__SelectionKind__Group__1 ;
     public final void rule__SelectionKind__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13859:1: ( rule__SelectionKind__Group__0__Impl rule__SelectionKind__Group__1 )
@@ -41809,7 +41809,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -41821,7 +41821,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13867:1: rule__SelectionKind__Group__0__Impl : ( () ) ;
     public final void rule__SelectionKind__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13871:1: ( ( () ) )
@@ -41846,7 +41846,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -41858,7 +41858,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13882:1: rule__SelectionKind__Group__1 : rule__SelectionKind__Group__1__Impl ;
     public final void rule__SelectionKind__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13886:1: ( rule__SelectionKind__Group__1__Impl )
@@ -41879,7 +41879,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -41891,7 +41891,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13893:1: rule__SelectionKind__Group__1__Impl : ( SelectionKind ) ;
     public final void rule__SelectionKind__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13897:1: ( ( SelectionKind ) )
@@ -41916,7 +41916,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -41928,7 +41928,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13909:1: rule__RangeKind__Group__0 : rule__RangeKind__Group__0__Impl rule__RangeKind__Group__1 ;
     public final void rule__RangeKind__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13913:1: ( rule__RangeKind__Group__0__Impl rule__RangeKind__Group__1 )
@@ -41954,7 +41954,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -41966,7 +41966,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13921:1: rule__RangeKind__Group__0__Impl : ( () ) ;
     public final void rule__RangeKind__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13925:1: ( ( () ) )
@@ -41991,7 +41991,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -42003,7 +42003,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13936:1: rule__RangeKind__Group__1 : rule__RangeKind__Group__1__Impl ;
     public final void rule__RangeKind__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13940:1: ( rule__RangeKind__Group__1__Impl )
@@ -42024,7 +42024,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -42036,7 +42036,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13947:1: rule__RangeKind__Group__1__Impl : ( RangeKind ) ;
     public final void rule__RangeKind__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13951:1: ( ( RangeKind ) )
@@ -42061,7 +42061,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -42073,7 +42073,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13963:1: rule__LinuxDistributionValue__Group__0 : rule__LinuxDistributionValue__Group__0__Impl rule__LinuxDistributionValue__Group__1 ;
     public final void rule__LinuxDistributionValue__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13967:1: ( rule__LinuxDistributionValue__Group__0__Impl rule__LinuxDistributionValue__Group__1 )
@@ -42099,7 +42099,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -42111,7 +42111,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13975:1: rule__LinuxDistributionValue__Group__0__Impl : ( () ) ;
     public final void rule__LinuxDistributionValue__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13979:1: ( ( () ) )
@@ -42136,7 +42136,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -42148,7 +42148,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:13990:1: rule__LinuxDistributionValue__Group__1 : rule__LinuxDistributionValue__Group__1__Impl ;
     public final void rule__LinuxDistributionValue__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:13994:1: ( rule__LinuxDistributionValue__Group__1__Impl )
@@ -42169,7 +42169,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -42181,7 +42181,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14001:1: rule__LinuxDistributionValue__Group__1__Impl : ( ( rule__LinuxDistributionValue__ValueAssignment_1 ) ) ;
     public final void rule__LinuxDistributionValue__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14005:1: ( ( ( rule__LinuxDistributionValue__ValueAssignment_1 ) ) )
@@ -42216,7 +42216,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -42228,7 +42228,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14017:1: rule__UbuntuVersionValue__Group__0 : rule__UbuntuVersionValue__Group__0__Impl rule__UbuntuVersionValue__Group__1 ;
     public final void rule__UbuntuVersionValue__Group__0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14021:1: ( rule__UbuntuVersionValue__Group__0__Impl rule__UbuntuVersionValue__Group__1 )
@@ -42254,7 +42254,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -42266,7 +42266,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14029:1: rule__UbuntuVersionValue__Group__0__Impl : ( () ) ;
     public final void rule__UbuntuVersionValue__Group__0__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14033:1: ( ( () ) )
@@ -42291,7 +42291,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -42303,7 +42303,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14044:1: rule__UbuntuVersionValue__Group__1 : rule__UbuntuVersionValue__Group__1__Impl ;
     public final void rule__UbuntuVersionValue__Group__1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14048:1: ( rule__UbuntuVersionValue__Group__1__Impl )
@@ -42324,7 +42324,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -42336,7 +42336,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14055:1: rule__UbuntuVersionValue__Group__1__Impl : ( ( rule__UbuntuVersionValue__ValueAssignment_1 ) ) ;
     public final void rule__UbuntuVersionValue__Group__1__Impl() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14059:1: ( ( ( rule__UbuntuVersionValue__ValueAssignment_1 ) ) )
@@ -42371,7 +42371,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -42383,7 +42383,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14071:1: rule__DeviceSet__DeviceAssignment_0 : ( ruleDeviceType ) ;
     public final void rule__DeviceSet__DeviceAssignment_0() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14075:1: ( ( ruleDeviceType ) )
@@ -42412,7 +42412,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -42424,7 +42424,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14086:1: rule__DeviceSet__DeviceAssignment_1_1 : ( ruleDeviceType ) ;
     public final void rule__DeviceSet__DeviceAssignment_1_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14090:1: ( ( ruleDeviceType ) )
@@ -42453,7 +42453,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -42465,7 +42465,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14101:1: rule__InterfaceNetworkProperty__NameAssignment_3 : ( ( Interface_name ) ) ;
     public final void rule__InterfaceNetworkProperty__NameAssignment_3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14105:1: ( ( ( Interface_name ) ) )
@@ -42498,7 +42498,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -42510,7 +42510,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14120:1: rule__InterfaceNetworkProperty__KindAssignment_6 : ( ruleAttributeKind ) ;
     public final void rule__InterfaceNetworkProperty__KindAssignment_6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14124:1: ( ( ruleAttributeKind ) )
@@ -42539,7 +42539,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -42551,7 +42551,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14135:1: rule__InterfaceNetworkProperty__DescriptionAssignment_7_1 : ( ruleEString ) ;
     public final void rule__InterfaceNetworkProperty__DescriptionAssignment_7_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14139:1: ( ( ruleEString ) )
@@ -42580,7 +42580,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -42592,7 +42592,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14150:1: rule__InterfaceNetworkProperty__ValueAssignment_8_1 : ( rulePropertyValue ) ;
     public final void rule__InterfaceNetworkProperty__ValueAssignment_8_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14154:1: ( ( rulePropertyValue ) )
@@ -42621,7 +42621,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -42633,7 +42633,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14165:1: rule__AddressNetworkProperty__NameAssignment_3 : ( ( Ip_address ) ) ;
     public final void rule__AddressNetworkProperty__NameAssignment_3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14169:1: ( ( ( Ip_address ) ) )
@@ -42666,7 +42666,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -42678,7 +42678,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14184:1: rule__AddressNetworkProperty__KindAssignment_6 : ( ruleAttributeKind ) ;
     public final void rule__AddressNetworkProperty__KindAssignment_6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14188:1: ( ( ruleAttributeKind ) )
@@ -42707,7 +42707,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -42719,7 +42719,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14199:1: rule__AddressNetworkProperty__DescriptionAssignment_7_1 : ( ruleEString ) ;
     public final void rule__AddressNetworkProperty__DescriptionAssignment_7_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14203:1: ( ( ruleEString ) )
@@ -42748,7 +42748,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -42760,7 +42760,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14214:1: rule__AddressNetworkProperty__ValueAssignment_8_1 : ( rulePropertyValue ) ;
     public final void rule__AddressNetworkProperty__ValueAssignment_8_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14218:1: ( ( rulePropertyValue ) )
@@ -42789,7 +42789,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -42801,7 +42801,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14229:1: rule__IdentityNameNetworkProperty__NameAssignment_3 : ( ( Identity_name ) ) ;
     public final void rule__IdentityNameNetworkProperty__NameAssignment_3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14233:1: ( ( ( Identity_name ) ) )
@@ -42834,7 +42834,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -42846,7 +42846,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14248:1: rule__IdentityNameNetworkProperty__KindAssignment_6 : ( ruleAttributeKind ) ;
     public final void rule__IdentityNameNetworkProperty__KindAssignment_6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14252:1: ( ( ruleAttributeKind ) )
@@ -42875,7 +42875,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -42887,7 +42887,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14263:1: rule__IdentityNameNetworkProperty__DescriptionAssignment_7_1 : ( ruleEString ) ;
     public final void rule__IdentityNameNetworkProperty__DescriptionAssignment_7_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14267:1: ( ( ruleEString ) )
@@ -42916,7 +42916,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -42928,7 +42928,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14278:1: rule__MacAddressNetworkProperty__NameAssignment_3 : ( ( Mac_address ) ) ;
     public final void rule__MacAddressNetworkProperty__NameAssignment_3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14282:1: ( ( ( Mac_address ) ) )
@@ -42961,7 +42961,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -42973,7 +42973,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14297:1: rule__MacAddressNetworkProperty__KindAssignment_6 : ( ruleAttributeKind ) ;
     public final void rule__MacAddressNetworkProperty__KindAssignment_6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14301:1: ( ( ruleAttributeKind ) )
@@ -43002,7 +43002,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -43014,7 +43014,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14312:1: rule__MacAddressNetworkProperty__DescriptionAssignment_7_1 : ( ruleEString ) ;
     public final void rule__MacAddressNetworkProperty__DescriptionAssignment_7_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14316:1: ( ( ruleEString ) )
@@ -43043,7 +43043,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -43055,7 +43055,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14327:1: rule__GatewayNetworkProperty__NameAssignment_3 : ( ( Gateway ) ) ;
     public final void rule__GatewayNetworkProperty__NameAssignment_3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14331:1: ( ( ( Gateway ) ) )
@@ -43088,7 +43088,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -43100,7 +43100,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14346:1: rule__GatewayNetworkProperty__KindAssignment_6 : ( ruleAttributeKind ) ;
     public final void rule__GatewayNetworkProperty__KindAssignment_6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14350:1: ( ( ruleAttributeKind ) )
@@ -43129,7 +43129,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -43141,7 +43141,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14361:1: rule__GatewayNetworkProperty__DescriptionAssignment_7_1 : ( ruleEString ) ;
     public final void rule__GatewayNetworkProperty__DescriptionAssignment_7_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14365:1: ( ( ruleEString ) )
@@ -43170,7 +43170,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -43182,7 +43182,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14376:1: rule__GatewayNetworkProperty__ValueAssignment_8_1 : ( rulePropertyValue ) ;
     public final void rule__GatewayNetworkProperty__ValueAssignment_8_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14380:1: ( ( rulePropertyValue ) )
@@ -43211,7 +43211,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -43223,7 +43223,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14391:1: rule__SubnetMaskNetworkProperty__NameAssignment_3 : ( ( Subnet_mask ) ) ;
     public final void rule__SubnetMaskNetworkProperty__NameAssignment_3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14395:1: ( ( ( Subnet_mask ) ) )
@@ -43256,7 +43256,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -43268,7 +43268,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14410:1: rule__SubnetMaskNetworkProperty__KindAssignment_6 : ( ruleAttributeKind ) ;
     public final void rule__SubnetMaskNetworkProperty__KindAssignment_6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14414:1: ( ( ruleAttributeKind ) )
@@ -43297,7 +43297,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -43309,7 +43309,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14425:1: rule__SubnetMaskNetworkProperty__DescriptionAssignment_7_1 : ( ruleEString ) ;
     public final void rule__SubnetMaskNetworkProperty__DescriptionAssignment_7_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14429:1: ( ( ruleEString ) )
@@ -43338,7 +43338,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -43350,7 +43350,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14440:1: rule__SubnetMaskNetworkProperty__ValueAssignment_8_1 : ( rulePropertyValue ) ;
     public final void rule__SubnetMaskNetworkProperty__ValueAssignment_8_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14444:1: ( ( rulePropertyValue ) )
@@ -43379,7 +43379,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -43391,7 +43391,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14455:1: rule__PortNetworkProperty__NameAssignment_3 : ( ( Port ) ) ;
     public final void rule__PortNetworkProperty__NameAssignment_3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14459:1: ( ( ( Port ) ) )
@@ -43424,7 +43424,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -43436,7 +43436,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14474:1: rule__PortNetworkProperty__KindAssignment_6 : ( ruleAttributeKind ) ;
     public final void rule__PortNetworkProperty__KindAssignment_6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14478:1: ( ( ruleAttributeKind ) )
@@ -43465,7 +43465,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -43477,7 +43477,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14489:1: rule__PortNetworkProperty__DescriptionAssignment_7_1 : ( ruleEString ) ;
     public final void rule__PortNetworkProperty__DescriptionAssignment_7_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14493:1: ( ( ruleEString ) )
@@ -43506,7 +43506,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -43518,7 +43518,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14504:1: rule__PortNetworkProperty__ValueAssignment_8_1 : ( rulePropertyValueInt ) ;
     public final void rule__PortNetworkProperty__ValueAssignment_8_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14508:1: ( ( rulePropertyValueInt ) )
@@ -43547,7 +43547,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -43559,7 +43559,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14519:1: rule__DNSServerNetworkProperty__NameAssignment_3 : ( ( Dns_server ) ) ;
     public final void rule__DNSServerNetworkProperty__NameAssignment_3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14523:1: ( ( ( Dns_server ) ) )
@@ -43592,7 +43592,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -43604,7 +43604,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14538:1: rule__DNSServerNetworkProperty__KindAssignment_6 : ( ruleSelectionKind ) ;
     public final void rule__DNSServerNetworkProperty__KindAssignment_6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14542:1: ( ( ruleSelectionKind ) )
@@ -43633,7 +43633,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -43645,7 +43645,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14553:1: rule__DNSServerNetworkProperty__DescriptionAssignment_7_1 : ( ruleEString ) ;
     public final void rule__DNSServerNetworkProperty__DescriptionAssignment_7_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14557:1: ( ( ruleEString ) )
@@ -43674,7 +43674,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -43686,7 +43686,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14568:1: rule__DNSServerNetworkProperty__ValueAssignment_8_3 : ( rulePropertyValue ) ;
     public final void rule__DNSServerNetworkProperty__ValueAssignment_8_3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14572:1: ( ( rulePropertyValue ) )
@@ -43715,7 +43715,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -43727,7 +43727,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14583:1: rule__DNSServerNetworkProperty__ValueAssignment_8_4_1 : ( rulePropertyValue ) ;
     public final void rule__DNSServerNetworkProperty__ValueAssignment_8_4_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14587:1: ( ( rulePropertyValue ) )
@@ -43756,7 +43756,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -43768,7 +43768,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14598:1: rule__DeviceVolumeUsbProperty__NameAssignment_3 : ( ( Device_volume ) ) ;
     public final void rule__DeviceVolumeUsbProperty__NameAssignment_3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14602:1: ( ( ( Device_volume ) ) )
@@ -43801,7 +43801,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -43813,7 +43813,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14617:1: rule__DeviceVolumeUsbProperty__KindAssignment_6 : ( ruleSelectionKind ) ;
     public final void rule__DeviceVolumeUsbProperty__KindAssignment_6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14621:1: ( ( ruleSelectionKind ) )
@@ -43842,7 +43842,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -43854,7 +43854,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14632:1: rule__DeviceVolumeUsbProperty__DescriptionAssignment_7_1 : ( ruleEString ) ;
     public final void rule__DeviceVolumeUsbProperty__DescriptionAssignment_7_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14636:1: ( ( ruleEString ) )
@@ -43883,7 +43883,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -43895,7 +43895,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14647:1: rule__DeviceVolumeUsbProperty__ValueAssignment_8_3 : ( rulePropertyValue ) ;
     public final void rule__DeviceVolumeUsbProperty__ValueAssignment_8_3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14651:1: ( ( rulePropertyValue ) )
@@ -43924,7 +43924,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -43936,7 +43936,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14662:1: rule__DeviceVolumeUsbProperty__ValueAssignment_8_4_1 : ( rulePropertyValue ) ;
     public final void rule__DeviceVolumeUsbProperty__ValueAssignment_8_4_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14666:1: ( ( rulePropertyValue ) )
@@ -43965,7 +43965,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -43977,7 +43977,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14677:1: rule__DeviceType_Impl__NameAssignment_4 : ( ruleEString ) ;
     public final void rule__DeviceType_Impl__NameAssignment_4() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14681:1: ( ( ruleEString ) )
@@ -44006,7 +44006,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -44018,7 +44018,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14692:1: rule__DeviceType_Impl__DeviceResourceAssignment_5_2 : ( ruleDeviceResource ) ;
     public final void rule__DeviceType_Impl__DeviceResourceAssignment_5_2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14696:1: ( ( ruleDeviceResource ) )
@@ -44047,7 +44047,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -44059,7 +44059,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14707:1: rule__DeviceType_Impl__CommunicationConnectionAssignment_6_2 : ( ruleAbstractCommunicationConnection ) ;
     public final void rule__DeviceType_Impl__CommunicationConnectionAssignment_6_2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14711:1: ( ( ruleAbstractCommunicationConnection ) )
@@ -44088,7 +44088,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -44100,7 +44100,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14722:1: rule__DeviceResource__NameAssignment_2 : ( ruleEString ) ;
     public final void rule__DeviceResource__NameAssignment_2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14726:1: ( ( ruleEString ) )
@@ -44129,7 +44129,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -44141,7 +44141,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14737:1: rule__DeviceResource__TypeAssignment_5 : ( ruleAbstractResouceType ) ;
     public final void rule__DeviceResource__TypeAssignment_5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14741:1: ( ( ruleAbstractResouceType ) )
@@ -44170,7 +44170,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -44182,7 +44182,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14752:1: rule__DeviceResource__PropertiesAssignment_6_2 : ( ruleAbstractProperty ) ;
     public final void rule__DeviceResource__PropertiesAssignment_6_2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14756:1: ( ( ruleAbstractProperty ) )
@@ -44211,7 +44211,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -44223,7 +44223,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14767:1: rule__DeviceResource__PropertiesAssignment_6_3 : ( ruleAbstractProperty ) ;
     public final void rule__DeviceResource__PropertiesAssignment_6_3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14771:1: ( ( ruleAbstractProperty ) )
@@ -44252,7 +44252,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -44264,7 +44264,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14782:1: rule__ComputationDeviceType__NameAssignment_3 : ( ruleEString ) ;
     public final void rule__ComputationDeviceType__NameAssignment_3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14786:1: ( ( ruleEString ) )
@@ -44293,7 +44293,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -44305,7 +44305,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14797:1: rule__ComputationDeviceType__DeviceResourceAssignment_4_2 : ( ruleDeviceResource ) ;
     public final void rule__ComputationDeviceType__DeviceResourceAssignment_4_2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14801:1: ( ( ruleDeviceResource ) )
@@ -44334,7 +44334,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -44346,7 +44346,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14812:1: rule__ComputationDeviceType__ComputationResourceAssignment_5_3 : ( ruleAbstractComputationResource ) ;
     public final void rule__ComputationDeviceType__ComputationResourceAssignment_5_3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14816:1: ( ( ruleAbstractComputationResource ) )
@@ -44375,7 +44375,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -44387,7 +44387,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14827:1: rule__ComputationDeviceType__ComputationResourceAssignment_5_4_1 : ( ruleAbstractComputationResource ) ;
     public final void rule__ComputationDeviceType__ComputationResourceAssignment_5_4_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14831:1: ( ( ruleAbstractComputationResource ) )
@@ -44416,7 +44416,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -44428,7 +44428,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14842:1: rule__ComputationDeviceType__CommunicationConnectionAssignment_6_2 : ( ruleAbstractCommunicationConnection ) ;
     public final void rule__ComputationDeviceType__CommunicationConnectionAssignment_6_2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14846:1: ( ( ruleAbstractCommunicationConnection ) )
@@ -44457,7 +44457,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -44469,7 +44469,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14857:1: rule__ConnectionProperty__NameAssignment_3 : ( ruleEString ) ;
     public final void rule__ConnectionProperty__NameAssignment_3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14861:1: ( ( ruleEString ) )
@@ -44498,7 +44498,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -44510,7 +44510,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14872:1: rule__ConnectionProperty__KindAssignment_6 : ( ruleAttributeKind ) ;
     public final void rule__ConnectionProperty__KindAssignment_6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14876:1: ( ( ruleAttributeKind ) )
@@ -44539,7 +44539,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -44551,7 +44551,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14887:1: rule__ConnectionProperty__DescriptionAssignment_7_1 : ( ruleEString ) ;
     public final void rule__ConnectionProperty__DescriptionAssignment_7_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14891:1: ( ( ruleEString ) )
@@ -44580,7 +44580,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -44592,7 +44592,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14902:1: rule__ConnectionProperty__ValueAssignment_8_1 : ( rulePropertyValue ) ;
     public final void rule__ConnectionProperty__ValueAssignment_8_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14906:1: ( ( rulePropertyValue ) )
@@ -44621,7 +44621,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -44633,7 +44633,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14917:1: rule__NetworkConnection__NameAssignment_3 : ( ruleEString ) ;
     public final void rule__NetworkConnection__NameAssignment_3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14921:1: ( ( ruleEString ) )
@@ -44662,7 +44662,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -44674,7 +44674,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14932:1: rule__NetworkConnection__TypeAssignment_6 : ( ruleNetworkCommunicationType ) ;
     public final void rule__NetworkConnection__TypeAssignment_6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14936:1: ( ( ruleNetworkCommunicationType ) )
@@ -44703,7 +44703,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -44715,7 +44715,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14947:1: rule__NetworkConnection__PropertiesAssignment_7_2 : ( ruleAbstractNetworkProperty ) ;
     public final void rule__NetworkConnection__PropertiesAssignment_7_2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14951:1: ( ( ruleAbstractNetworkProperty ) )
@@ -44744,7 +44744,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -44756,7 +44756,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14962:1: rule__CommunicationConnection__NameAssignment_3 : ( ruleEString ) ;
     public final void rule__CommunicationConnection__NameAssignment_3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14966:1: ( ( ruleEString ) )
@@ -44785,7 +44785,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -44797,7 +44797,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14977:1: rule__CommunicationConnection__TypeAssignment_6 : ( ruleCommunicationType ) ;
     public final void rule__CommunicationConnection__TypeAssignment_6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14981:1: ( ( ruleCommunicationType ) )
@@ -44826,7 +44826,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -44838,7 +44838,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:14992:1: rule__CommunicationConnection__PropertiesAssignment_7_2 : ( ruleConnectionProperty ) ;
     public final void rule__CommunicationConnection__PropertiesAssignment_7_2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:14996:1: ( ( ruleConnectionProperty ) )
@@ -44867,7 +44867,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -44879,7 +44879,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:15007:1: rule__UsbConnection__NameAssignment_3 : ( ruleEString ) ;
     public final void rule__UsbConnection__NameAssignment_3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:15011:1: ( ( ruleEString ) )
@@ -44908,7 +44908,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -44920,7 +44920,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:15022:1: rule__UsbConnection__TypeAssignment_6 : ( ruleUsbCommunicationType ) ;
     public final void rule__UsbConnection__TypeAssignment_6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:15026:1: ( ( ruleUsbCommunicationType ) )
@@ -44949,7 +44949,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -44961,7 +44961,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:15037:1: rule__UsbConnection__PropertiesAssignment_7_2 : ( ruleAbstractUsbProperty ) ;
     public final void rule__UsbConnection__PropertiesAssignment_7_2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:15041:1: ( ( ruleAbstractUsbProperty ) )
@@ -44990,7 +44990,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -45002,7 +45002,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:15052:1: rule__ProcessorResouce__NameAssignment_2 : ( ruleEString ) ;
     public final void rule__ProcessorResouce__NameAssignment_2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:15056:1: ( ( ruleEString ) )
@@ -45031,7 +45031,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -45043,7 +45043,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:15067:1: rule__ProcessorResouce__TypeAssignment_5 : ( ruleProcessorResouceType ) ;
     public final void rule__ProcessorResouce__TypeAssignment_5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:15071:1: ( ( ruleProcessorResouceType ) )
@@ -45072,7 +45072,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -45084,7 +45084,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:15082:1: rule__ProcessorResouce__PropertiesAssignment_6_2 : ( ruleAbstracProcessorProperty ) ;
     public final void rule__ProcessorResouce__PropertiesAssignment_6_2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:15086:1: ( ( ruleAbstracProcessorProperty ) )
@@ -45113,7 +45113,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -45125,7 +45125,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:15097:1: rule__ArchitectureProcessorProperty__NameAssignment_3 : ( ( Processor_architecture ) ) ;
     public final void rule__ArchitectureProcessorProperty__NameAssignment_3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:15101:1: ( ( ( Processor_architecture ) ) )
@@ -45158,7 +45158,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -45170,7 +45170,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:15116:1: rule__ArchitectureProcessorProperty__KindAssignment_6 : ( ruleAttributeKind ) ;
     public final void rule__ArchitectureProcessorProperty__KindAssignment_6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:15120:1: ( ( ruleAttributeKind ) )
@@ -45199,7 +45199,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -45211,7 +45211,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:15131:1: rule__ArchitectureProcessorProperty__DescriptionAssignment_7_1 : ( ruleEString ) ;
     public final void rule__ArchitectureProcessorProperty__DescriptionAssignment_7_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:15135:1: ( ( ruleEString ) )
@@ -45240,7 +45240,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -45252,7 +45252,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:15146:1: rule__ArchitectureProcessorProperty__ValueAssignment_8_1 : ( rulePropertyValue ) ;
     public final void rule__ArchitectureProcessorProperty__ValueAssignment_8_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:15150:1: ( ( rulePropertyValue ) )
@@ -45281,7 +45281,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -45293,7 +45293,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:15161:1: rule__CoreProcessorProperty__NameAssignment_3 : ( ( Core_number ) ) ;
     public final void rule__CoreProcessorProperty__NameAssignment_3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:15165:1: ( ( ( Core_number ) ) )
@@ -45326,7 +45326,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -45338,7 +45338,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:15180:1: rule__CoreProcessorProperty__KindAssignment_6 : ( ruleAttributeKind ) ;
     public final void rule__CoreProcessorProperty__KindAssignment_6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:15184:1: ( ( ruleAttributeKind ) )
@@ -45367,7 +45367,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -45379,7 +45379,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:15195:1: rule__CoreProcessorProperty__DescriptionAssignment_7_1 : ( ruleEString ) ;
     public final void rule__CoreProcessorProperty__DescriptionAssignment_7_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:15199:1: ( ( ruleEString ) )
@@ -45408,7 +45408,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -45420,7 +45420,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:15210:1: rule__CoreProcessorProperty__ValueAssignment_8_1 : ( rulePropertyValue ) ;
     public final void rule__CoreProcessorProperty__ValueAssignment_8_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:15214:1: ( ( rulePropertyValue ) )
@@ -45449,7 +45449,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -45461,7 +45461,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:15225:1: rule__OperatingSystemResouce__NameAssignment_2 : ( ruleEString ) ;
     public final void rule__OperatingSystemResouce__NameAssignment_2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:15229:1: ( ( ruleEString ) )
@@ -45490,7 +45490,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -45502,7 +45502,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:15240:1: rule__OperatingSystemResouce__TypeAssignment_5 : ( ruleOpertingSystemResouceType ) ;
     public final void rule__OperatingSystemResouce__TypeAssignment_5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:15244:1: ( ( ruleOpertingSystemResouceType ) )
@@ -45531,7 +45531,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -45543,7 +45543,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:15255:1: rule__OperatingSystemResouce__PropertiesAssignment_6_2 : ( ruleAbstractOperatingSystemProperty ) ;
     public final void rule__OperatingSystemResouce__PropertiesAssignment_6_2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:15259:1: ( ( ruleAbstractOperatingSystemProperty ) )
@@ -45572,7 +45572,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -45584,7 +45584,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:15270:1: rule__NameOperatingSystemProperty__NameAssignment_3 : ( ( Os_name ) ) ;
     public final void rule__NameOperatingSystemProperty__NameAssignment_3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:15274:1: ( ( ( Os_name ) ) )
@@ -45617,7 +45617,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -45629,7 +45629,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:15289:1: rule__NameOperatingSystemProperty__KindAssignment_6 : ( ruleAttributeKind ) ;
     public final void rule__NameOperatingSystemProperty__KindAssignment_6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:15293:1: ( ( ruleAttributeKind ) )
@@ -45658,7 +45658,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -45670,7 +45670,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:15304:1: rule__NameOperatingSystemProperty__DescriptionAssignment_7_1 : ( ruleEString ) ;
     public final void rule__NameOperatingSystemProperty__DescriptionAssignment_7_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:15308:1: ( ( ruleEString ) )
@@ -45699,7 +45699,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -45711,7 +45711,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:15319:1: rule__NameOperatingSystemProperty__ValueAssignment_8_1 : ( rulePropertyValue ) ;
     public final void rule__NameOperatingSystemProperty__ValueAssignment_8_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:15323:1: ( ( rulePropertyValue ) )
@@ -45740,7 +45740,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -45752,7 +45752,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:15334:1: rule__VersionOperatingSystemProperty__NameAssignment_3 : ( ( Os_version ) ) ;
     public final void rule__VersionOperatingSystemProperty__NameAssignment_3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:15338:1: ( ( ( Os_version ) ) )
@@ -45785,7 +45785,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -45797,7 +45797,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:15353:1: rule__VersionOperatingSystemProperty__KindAssignment_6 : ( ruleAttributeKind ) ;
     public final void rule__VersionOperatingSystemProperty__KindAssignment_6() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:15357:1: ( ( ruleAttributeKind ) )
@@ -45826,7 +45826,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -45838,7 +45838,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:15368:1: rule__VersionOperatingSystemProperty__DescriptionAssignment_7_1 : ( ruleEString ) ;
     public final void rule__VersionOperatingSystemProperty__DescriptionAssignment_7_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:15372:1: ( ( ruleEString ) )
@@ -45867,7 +45867,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -45879,7 +45879,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:15383:1: rule__VersionOperatingSystemProperty__ValueAssignment_8_1 : ( rulePropertyValue ) ;
     public final void rule__VersionOperatingSystemProperty__ValueAssignment_8_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:15387:1: ( ( rulePropertyValue ) )
@@ -45908,7 +45908,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -45920,7 +45920,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:15398:1: rule__PropertyAttribute__NameAssignment_2 : ( ruleEString ) ;
     public final void rule__PropertyAttribute__NameAssignment_2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:15402:1: ( ( ruleEString ) )
@@ -45949,7 +45949,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -45961,7 +45961,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:15413:1: rule__PropertyAttribute__KindAssignment_5 : ( ruleAttributeKind ) ;
     public final void rule__PropertyAttribute__KindAssignment_5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:15417:1: ( ( ruleAttributeKind ) )
@@ -45990,7 +45990,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -46002,7 +46002,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:15428:1: rule__PropertyAttribute__DescriptionAssignment_6_1 : ( ruleEString ) ;
     public final void rule__PropertyAttribute__DescriptionAssignment_6_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:15432:1: ( ( ruleEString ) )
@@ -46031,7 +46031,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -46043,7 +46043,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:15443:1: rule__PropertyAttribute__ValueAssignment_7_1 : ( rulePropertyValue ) ;
     public final void rule__PropertyAttribute__ValueAssignment_7_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:15447:1: ( ( rulePropertyValue ) )
@@ -46072,7 +46072,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -46084,7 +46084,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:15458:1: rule__PropertyMaximun__NameAssignment_2 : ( ruleEString ) ;
     public final void rule__PropertyMaximun__NameAssignment_2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:15462:1: ( ( ruleEString ) )
@@ -46113,7 +46113,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -46125,7 +46125,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:15473:1: rule__PropertyMaximun__KindAssignment_5 : ( ruleMaximumKind ) ;
     public final void rule__PropertyMaximun__KindAssignment_5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:15477:1: ( ( ruleMaximumKind ) )
@@ -46154,7 +46154,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -46166,7 +46166,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:15488:1: rule__PropertyMaximun__DescriptionAssignment_6_1 : ( ruleEString ) ;
     public final void rule__PropertyMaximun__DescriptionAssignment_6_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:15492:1: ( ( ruleEString ) )
@@ -46195,7 +46195,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -46207,7 +46207,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:15503:1: rule__PropertyMaximun__ValueAssignment_7_1 : ( rulePropertyValue ) ;
     public final void rule__PropertyMaximun__ValueAssignment_7_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:15507:1: ( ( rulePropertyValue ) )
@@ -46236,7 +46236,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -46248,7 +46248,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:15518:1: rule__PropertyMinimum__NameAssignment_2 : ( ruleEString ) ;
     public final void rule__PropertyMinimum__NameAssignment_2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:15522:1: ( ( ruleEString ) )
@@ -46277,7 +46277,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -46289,7 +46289,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:15533:1: rule__PropertyMinimum__KindAssignment_5 : ( ruleMinimumKind ) ;
     public final void rule__PropertyMinimum__KindAssignment_5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:15537:1: ( ( ruleMinimumKind ) )
@@ -46318,7 +46318,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -46330,7 +46330,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:15548:1: rule__PropertyMinimum__DescriptionAssignment_6_1 : ( ruleEString ) ;
     public final void rule__PropertyMinimum__DescriptionAssignment_6_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:15552:1: ( ( ruleEString ) )
@@ -46359,7 +46359,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -46371,7 +46371,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:15563:1: rule__PropertyMinimum__ValueAssignment_7_1 : ( rulePropertyValue ) ;
     public final void rule__PropertyMinimum__ValueAssignment_7_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:15567:1: ( ( rulePropertyValue ) )
@@ -46400,7 +46400,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -46412,7 +46412,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:15578:1: rule__PropertySelection__NameAssignment_2 : ( ruleEString ) ;
     public final void rule__PropertySelection__NameAssignment_2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:15582:1: ( ( ruleEString ) )
@@ -46441,7 +46441,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -46453,7 +46453,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:15593:1: rule__PropertySelection__KindAssignment_5 : ( ruleSelectionKind ) ;
     public final void rule__PropertySelection__KindAssignment_5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:15597:1: ( ( ruleSelectionKind ) )
@@ -46482,7 +46482,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -46494,7 +46494,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:15608:1: rule__PropertySelection__DescriptionAssignment_6_1 : ( ruleEString ) ;
     public final void rule__PropertySelection__DescriptionAssignment_6_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:15612:1: ( ( ruleEString ) )
@@ -46523,7 +46523,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -46535,7 +46535,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:15623:1: rule__PropertySelection__ValueAssignment_7_3 : ( rulePropertyValue ) ;
     public final void rule__PropertySelection__ValueAssignment_7_3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:15627:1: ( ( rulePropertyValue ) )
@@ -46564,7 +46564,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -46576,7 +46576,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:15638:1: rule__PropertySelection__ValueAssignment_7_4_1 : ( rulePropertyValue ) ;
     public final void rule__PropertySelection__ValueAssignment_7_4_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:15642:1: ( ( rulePropertyValue ) )
@@ -46605,7 +46605,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -46617,7 +46617,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:15653:1: rule__PropertyRange__NameAssignment_2 : ( ruleEString ) ;
     public final void rule__PropertyRange__NameAssignment_2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:15657:1: ( ( ruleEString ) )
@@ -46646,7 +46646,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -46658,7 +46658,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:15668:1: rule__PropertyRange__KindAssignment_5 : ( ruleRangeKind ) ;
     public final void rule__PropertyRange__KindAssignment_5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:15672:1: ( ( ruleRangeKind ) )
@@ -46687,7 +46687,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -46699,7 +46699,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:15683:1: rule__PropertyRange__DescriptionAssignment_6_1 : ( ruleEString ) ;
     public final void rule__PropertyRange__DescriptionAssignment_6_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:15687:1: ( ( ruleEString ) )
@@ -46728,7 +46728,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -46740,7 +46740,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:15698:1: rule__PropertyRange__ValueAssignment_7_3 : ( rulePropertyValue ) ;
     public final void rule__PropertyRange__ValueAssignment_7_3() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:15702:1: ( ( rulePropertyValue ) )
@@ -46769,7 +46769,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -46781,7 +46781,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:15713:1: rule__PropertyRange__ValueAssignment_7_5 : ( rulePropertyValue ) ;
     public final void rule__PropertyRange__ValueAssignment_7_5() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:15717:1: ( ( rulePropertyValue ) )
@@ -46810,7 +46810,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -46822,7 +46822,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:15728:1: rule__PropertyValueInt__ValueAssignment : ( ruleInteger0 ) ;
     public final void rule__PropertyValueInt__ValueAssignment() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:15732:1: ( ( ruleInteger0 ) )
@@ -46851,7 +46851,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -46863,7 +46863,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:15743:1: rule__PropertyValueDouble__ValueAssignment : ( ruleDouble0 ) ;
     public final void rule__PropertyValueDouble__ValueAssignment() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:15747:1: ( ( ruleDouble0 ) )
@@ -46892,7 +46892,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -46904,7 +46904,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:15758:1: rule__PropertyValueString__ValueAssignment : ( ruleEString ) ;
     public final void rule__PropertyValueString__ValueAssignment() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:15762:1: ( ( ruleEString ) )
@@ -46933,7 +46933,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -46945,7 +46945,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:15773:1: rule__PropertyValueList__ValueAssignment_2 : ( rulePropertyValue ) ;
     public final void rule__PropertyValueList__ValueAssignment_2() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:15777:1: ( ( rulePropertyValue ) )
@@ -46974,7 +46974,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -46986,7 +46986,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:15788:1: rule__PropertyValueList__ValueAssignment_3_1 : ( rulePropertyValue ) ;
     public final void rule__PropertyValueList__ValueAssignment_3_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:15792:1: ( ( rulePropertyValue ) )
@@ -47015,7 +47015,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -47027,7 +47027,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:15803:1: rule__ProcessorArchitectureValue__ValueAssignment : ( ruleProcessorArchitectureType ) ;
     public final void rule__ProcessorArchitectureValue__ValueAssignment() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:15807:1: ( ( ruleProcessorArchitectureType ) )
@@ -47056,7 +47056,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -47068,7 +47068,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:15818:1: rule__ResourceType__NameAssignment_1 : ( ruleEString ) ;
     public final void rule__ResourceType__NameAssignment_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:15822:1: ( ( ruleEString ) )
@@ -47097,7 +47097,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -47109,7 +47109,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:15833:1: rule__CommunicationType__NameAssignment_1 : ( ruleEString ) ;
     public final void rule__CommunicationType__NameAssignment_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:15837:1: ( ( ruleEString ) )
@@ -47138,7 +47138,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -47150,7 +47150,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:15848:1: rule__LinuxDistributionValue__ValueAssignment_1 : ( ruleLinuxDistribution ) ;
     public final void rule__LinuxDistributionValue__ValueAssignment_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:15852:1: ( ( ruleLinuxDistribution ) )
@@ -47179,7 +47179,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;
@@ -47191,7 +47191,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
     // InternalDeviceParser.g:15863:1: rule__UbuntuVersionValue__ValueAssignment_1 : ( ruleUbuntuVersion ) ;
     public final void rule__UbuntuVersionValue__ValueAssignment_1() throws RecognitionException {
 
-                int stackSize = keepStackSize();
+            int stackSize = keepStackSize();
 
         try {
             // InternalDeviceParser.g:15867:1: ( ( ruleUbuntuVersion ) )
@@ -47220,7 +47220,7 @@ public class InternalDeviceParser extends AbstractInternalContentAssistParser {
         }
         finally {
 
-                restoreStackSize(stackSize);
+              restoreStackSize(stackSize);
 
         }
         return ;

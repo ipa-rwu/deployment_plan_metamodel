@@ -18,22 +18,22 @@ import org.eclipse.emf.ecore.EClass;
  */
 public class InterfaceNetworkPropertyImpl extends PropertyAttributeImpl implements InterfaceNetworkProperty {
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     protected InterfaceNetworkPropertyImpl() {
-        super();
-    }
+    super();
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     protected EClass eStaticClass() {
-        return DevicePackage.Literals.INTERFACE_NETWORK_PROPERTY;
-    }
+    return DevicePackage.Literals.INTERFACE_NETWORK_PROPERTY;
+  }
 
 } //InterfaceNetworkPropertyImpl

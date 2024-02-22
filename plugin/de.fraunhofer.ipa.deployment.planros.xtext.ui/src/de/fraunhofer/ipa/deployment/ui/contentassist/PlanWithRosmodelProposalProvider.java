@@ -4,7 +4,6 @@
 package de.fraunhofer.ipa.deployment.ui.contentassist;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -13,42 +12,34 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.xtext.Assignment;
 import org.eclipse.xtext.CrossReference;
-import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.resource.IEObjectDescription;
 import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
 import org.eclipse.xtext.xbase.lib.Extension;
 
 import com.google.common.base.Predicate;
+import com.google.inject.Inject;
 
 import de.fraunhofer.ipa.deployment.generator.DeploymentHelper;
 import de.fraunhofer.ipa.deployment.utils.PlanWithRosmodelUtils;
 import deployPlanWithRosModel.ConfigRosParameter;
 import deployPlanWithRosModel.ConfigRosSoftwareComponent;
 import deployPlanWithRosModel.DeployRossystemPlan;
-import deployPlanWithRosModel.DeploymentPlanWithRosModel;
 import deployPlanWithRosModel.RossystemImplementationAssignment;
 import deployPlanWithRosModel.impl.ConfigRosParameterImpl;
 import deployPlanWithRosModel.impl.RossystemImplementationAssignmentImpl;
 import deploymentPlan.AbstractDeploymentPlan;
-import deploymentPlan.ImplementationAssignment;
 import deploymentPlan.RosMiddleware;
-import device.AbstracProcessorProperty;
-import device.impl.AbstracProcessorPropertyImpl;
-import implementationDescription.SoftwareComponent;
 import ros.impl.ParameterImpl;
 import system.Component;
-import system.ReferenceSystem;
 import system.RosNode;
 import system.RosParameter;
 import system.System;
 import system.impl.RosParameterImpl;
 import targetEnvironment.ComputationDeviceInstance;
-import targetEnvironment.impl.ConfigConnectionImpl;
 import targetEnvironment.impl.ConfigConnectionPropertyImpl;
 import targetEnvironment.impl.ConfigDevicePropertyImpl;
 
-import javax.inject.Inject;
 
 /**
  * See https://www.eclipse.org/Xtext/documentation/310_eclipse_support.html#content-assist
@@ -98,11 +89,11 @@ public class PlanWithRosmodelProposalProvider extends AbstractPlanWithRosmodelPr
               if(inputObj.eIsProxy()) {
                     EObject obj = EcoreUtil.resolve(inputObj, model);
                 if(plan.getTargetRossystem() != null) {
-                  List<ReferenceSystem>  refsystems = (List<ReferenceSystem>) plan.getTargetRossystem().getComponents().stream()
-                      .filter(it -> it instanceof ReferenceSystem)
-                      .map(ReferenceSystem.class::cast)
+                  List<System>  refsystems = (List<System>) plan.getTargetRossystem().getComponents().stream()
+                      .filter(it -> it instanceof System)
+                      .map(System.class::cast)
                       .collect(Collectors.toList());
-                  List<System>  systems = (List<System>) refsystems.stream().map(ReferenceSystem::getRef).collect(Collectors.toList());
+                  List<Component>  systems = (List<Component>) refsystems.stream().map(System::getComponents).flatMap(List::stream).toList();
                   if(systems.contains(obj)) {
                             return true;
                         }
@@ -230,7 +221,7 @@ public class PlanWithRosmodelProposalProvider extends AbstractPlanWithRosmodelPr
     ConfigRosSoftwareComponent real_model = (ConfigRosSoftwareComponent) model;
     System sys = real_model.getComponent();
     if(sys.getFromFile() != null) {
-      var ss = sys.getFromFile().getName().split("/", -1);
+      var ss = sys.getFromFile().split("/", -1);
       var pkg = ss[0];
       var launch_file = ss[2];
       RossystemImplementationAssignment impl_assignment = (RossystemImplementationAssignment) real_model.eContainer();

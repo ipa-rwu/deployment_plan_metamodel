@@ -18,22 +18,22 @@ import org.eclipse.emf.ecore.EClass;
  */
 public class NameOperatingSystemPropertyImpl extends PropertyAttributeImpl implements NameOperatingSystemProperty {
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     protected NameOperatingSystemPropertyImpl() {
-        super();
-    }
+    super();
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     protected EClass eStaticClass() {
-        return DevicePackage.Literals.NAME_OPERATING_SYSTEM_PROPERTY;
-    }
+    return DevicePackage.Literals.NAME_OPERATING_SYSTEM_PROPERTY;
+  }
 
 } //NameOperatingSystemPropertyImpl
