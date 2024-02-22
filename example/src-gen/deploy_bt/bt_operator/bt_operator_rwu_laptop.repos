@@ -1,5 +1,0 @@
-repositories:
-  bt_manipulation_framework:
-    type: git
-    url: https://github.com/ipa-rwu/bt_manipulation_framework.git
-    version: ros2

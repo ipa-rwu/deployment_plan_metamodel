@@ -1,0 +1,66 @@
+bt_manipulation_framwork:
+  nodes:
+    lifcyclenode_manager:
+      from: "nav2_lifecycle_manager.lifecycle_manager"
+      parameters:
+        - node_sequence: "lifecycle_manager::node_names"
+          value: ['bt_operator', 'detect_aruco_marker_action_server', 'moveit_skill_server', 'set_path_constrains_server']
+
+    bt_operator:
+       from: "man2_bt_operator.bt_operator"
+       interfaces:
+         - start_application: as-> "bt_operator::start_application"
+       parameters:
+         - load_bt_plugins: "bt_operator::customized_plugin_lib_names" # under this param, it also use keys to indicate ros package man2_bt_skill_clients
+           value: ['detect_aruco_marker_client',
+           'compute_path_to_state_client',
+           'compute_path_to_pose_client',
+           'compute_path_to_point_client',
+           'execute_trajectory_client',
+           'set_path_constraints_client',
+           'get_current_ik_frame_pose_client','print_value',
+           'update_pose']
+         - use_sim_time: "bt_operator::use_sim_time"
+           value: false
+
+    bt_skill_client_: #start within bt_operator
+      from: "man2_bt_skill_clients.any"
+      interfaces:
+        - detect_aruco_marker_client:  ac-> "bt_skill_client_::detect_aruco_marker"
+        - compute_path_to_state_client: ac-> "bt_skill_client_::compute_path_to_state"
+        - compute_path_to_pose_client: ac-> "bt_skill_client_::compute_path_to_pose"
+        - compute_path_to_point_client: ac-> "bt_skill_client_::compute_path_to_point"
+        - execute_trajectory_client: ac-> "bt_skill_client_::execute_trajectory"
+        - set_path_constraints_client: sc->"bt_skill_client_::set_path_constrains"
+        - get_current_ik_frame_pose_client: ac->"bt_skill_client_::get_current_ik_frame_pose"
+
+    detect_aruco_marker_action_server:
+       from: "detect_aruco_marker_skill.detect_aruco_marker_action_server"
+       interfaces:
+         - get_aruco_markers: sub-> "detect_aruco_marker_action_server::markers"
+         - detect_aruco_marker: as-> "detect_aruco_marker_action_server::detect_aruco_marker"
+
+    moveit_skill_server:
+      from: "moveit_skills.moveit_skill_server"
+      interfaces:
+        - compute_path_to_pose: as-> "moveit_skill_server_node::compute_path_to_pose"
+        - compute_path_to_point: as-> "moveit_skill_server_node::compute_path_to_point"
+        - compute_path_to_state: as-> "moveit_skill_server_node::compute_path_to_state"
+        - execute_trajectory: as-> "moveit_skill_server_node::execute_trajectory"
+        - get_current_ik_frame_pose: as-> "moveit_skill_server_node::get_current_ik_frame_pose"
+      parameters:
+        - use_sim_time: "moveit_skill_server_node::use_sim_time"
+          value: false
+
+    set_path_constraints_client:
+      from: "moveit_skills.moveit_skill_server"
+      interfaces:
+        - set_path_constrains_server: ss-> "set_path_constrains::set_path_constrains"
+
+#  parameters:
+#    "robot_name":
+#      type: String
+#    "robot_moveit_config_pkg":
+#      type: String
+#    "robot_description_file_path":
+#      type: String

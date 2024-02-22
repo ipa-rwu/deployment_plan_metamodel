@@ -1,0 +1,8 @@
+color_pose_estimation:
+  fromFile: "color_pose_estimation/launch/color_pose_estimation_scene.launch.py"
+  nodes:
+    color_pose_estimation:
+      from: "color_pose_estimation.color_pose_estimation"
+#  parameters:
+#    "camera_info_topic":
+#      type: String

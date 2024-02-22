@@ -1,0 +1,18 @@
+aruco_marker_detection:
+#  fromFile: "aruco_ros/launch/marker_publisher.launch.py"
+  nodes:
+    aruco_marker_publisher:
+      from: "aruco_ros.marker_publisher"
+      interfaces:
+        - camera_image_sub: sub-> "marker_publisher::image_raw"
+      parameters:
+        - camera_frame: "marker_publisher::camera_frame"
+          value: camera_color_optical_frame
+        - reference_frame: "marker_publisher::reference_frame"
+          value: tool0 #### important to know where the camera is mounted
+        - marker_size_arg: "marker_publisher::marker_size"
+          value: 0.02
+        - raw_image_topic: "marker_publisher::raw_image_topic"
+          value: "camera/color/image_raw"
+        - camera_info_topic: "marker_publisher::camera_info_topic"
+          value: "camera/color/camera_info"

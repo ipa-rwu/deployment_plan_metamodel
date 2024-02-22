@@ -1,0 +1,25 @@
+TargetDeployEnviroment:
+  name: ur5e_cell_sim
+  includeDevice:
+    computationDevice:
+      - name: rwu_laptop
+        refDeviceType: PC
+        configDeviceProperty:
+          - name: "os_name"
+            from: "PC.operting_system.os_name"
+            value: ubuntu
+          - name: "os_version"
+            from: "PC.operting_system.os_version"
+            value: focal
+          - name: "processor_architecture"
+            from: "PC.processor.processor_architecture"
+            value: x86
+    device:
+      - name: arm
+        refDeviceType: UR5E
+        configDeviceProperty:
+          - name: "device_type"
+            from: "UR5E.device_info.type"
+            value: ur5e
+      - name: gripper
+        refDeviceType: EGP50

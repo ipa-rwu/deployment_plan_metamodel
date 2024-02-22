@@ -1,0 +1,28 @@
+man2_bt_skill_clients:
+  fromGitRepo: "https://gitlab.cc-asp.fraunhofer.de/ipa326/demonstrator/bt_based_application_framework.git:v1.0.0"
+  artifacts:
+    bt_skill_client_: # start with bt_operator
+      node: any
+      serviceclients:
+        "set_path_constrains":
+          type: "moveit_skills/srv/SetPathConstrains"
+      actionclients:
+        "compute_path_to_pose":
+          type: "moveit_skills/action/ComputePathToPose"
+        "compute_path_to_state":
+          type: "moveit_skills/action/ComputePathToState"
+        "compute_path_to_point":
+          type: "moveit_skills/action/ComputePathToPoint"
+        "detect_aruco_marker":
+          type: "detect_aruco_marker_skill/action/ArucoMarkerDetection"
+        "execute_trajectory":
+          type: "moveit_skills/action/ExecuteTrajectory"
+        "get_current_ik_frame_pose":
+          type: "moveit_skills/action/GetCurrentIKFramePose"
+      parameters:
+        "robot_name":
+          type: String
+        "robot_moveit_config_pkg":
+          type: String
+        "robot_description_file_path":
+          type: String

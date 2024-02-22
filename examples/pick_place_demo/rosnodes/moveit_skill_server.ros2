@@ -1,0 +1,84 @@
+moveit_skills:
+  fromGitRepo: "https://gitlab.cc-asp.fraunhofer.de/ipa326/demonstrator/bt_based_application_framework.git"
+  artifacts:
+    moveit_skill_server_node:
+      node: moveit_skill_server
+      subscribers:
+        "bond":
+          type: "bond/msg/Status"
+      publishers:
+        "bond":
+          type: "bond/msg/Status"
+      actionclients:
+        "joint_trajectory_controller/follow_joint_trajectory":
+          type: "control_msgs/action/FollowJointTrajectory"
+      actionservers:
+        "compute_path_to_point":
+          type: "moveit_skills/action/ComputePathToPoint"
+        "compute_path_to_pose":
+          type: "moveit_skills/action/ComputePathToPose"
+        "compute_path_to_state":
+          type: "moveit_skills/action/ComputePathToState"
+        "execute_trajectory":
+          type: "moveit_skills/action/ExecuteTrajectory"
+        "get_current_ik_frame_pose":
+          type: "moveit_skills/action/GetCurrentIKFramePose"
+      parameters:
+        "bond_disable_heartbeat_timeout":
+          type: Boolean
+          value: None
+        "get_planning_scene_service_name":
+          type: String
+          value: "compute_path_moveitcpp_skill/get_planning_scene"
+        "goal_joint_tolerance":
+          type: Double
+          value: 0.0001
+        "goal_orientation_tolerance":
+          type: Double
+          value: 0.001
+        "goal_position_tolerance":
+          type: Double
+          value: 0.0001
+        "jump_threshold":
+          type: Double
+          value: 0.0
+        "max_acceleration_scaling_factor":
+          type: Double
+          value: 0.3
+        "max_velocity_scaling_factor":
+          type: Double
+          value: 0.1
+        "min_fraction":
+          type: Double
+          value: 0.5
+        "planner_id":
+          type: String
+          value: "RRTstarkConfigDefault"
+        "planning_attempts":
+          type: Integer
+          value: 10
+        "planning_pipeline":
+          type: String
+          value: "ompl"
+        "planning_time":
+          type: Double
+          value: 1.0
+        "step_size":
+          type: Double
+          value: 0.005
+        "use_sim_time":
+          type: Boolean
+          value: False
+
+    set_path_constrains: # change to executor name
+      node: set_path_constrains_server
+      serviceservers:
+        "set_path_constrains":
+          type: "moveit_skills/srv/SetPathConstrains"
+      parameters:
+        "bond_disable_heartbeat_timeout":
+          type: Boolean
+          value: True
+        "use_sim_time":
+          type: Boolean
+          value: False
