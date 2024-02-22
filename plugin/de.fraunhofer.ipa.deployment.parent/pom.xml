@@ -17,38 +17,13 @@
         <tycho.disableP2Mirrors>true</tycho.disableP2Mirrors>
         <mwe2Version>2.14.0</mwe2Version>
     </properties>
-    <modules>
-    <module>../de.fraunhofer.ipa.deployment.util</module>
-    <module>../de.fraunhofer.ipa.deployment.util.xtext</module>
-    <module>../de.fraunhofer.ipa.deployment.util.xtext.ide</module>
-    <module>../de.fraunhofer.ipa.deployment.util.xtext.tests</module>
-    <module>../de.fraunhofer.ipa.deployment.util.xtext.ui</module>
-    <module>../de.fraunhofer.ipa.deployment.util.xtext.ui.tests</module>
-
-    <module>../de.fraunhofer.ipa.targetEnvironment</module>
-    <module>../de.fraunhofer.ipa.targetEnvironment.xtext</module>
-    <module>../de.fraunhofer.ipa.targetEnvironment.xtext.ide</module>
-    <module>../de.fraunhofer.ipa.targetEnvironment.xtext.tests</module>
-    <module>../de.fraunhofer.ipa.targetEnvironment.xtext.ui</module>
-    <module>
-        ../de.fraunhofer.ipa.targetEnvironment.xtext.ui.tests
-    </module>
-    <module>../de.fraunhofer.ipa.deployment.plan.xtext</module>
-    <module>../de.fraunhofer.ipa.deployment.plan.xtext.ide</module>
-    <module>../de.fraunhofer.ipa.deployment.plan.xtext.tests</module>
-    <module>../de.fraunhofer.ipa.deployment.plan.xtext.ui</module>
-    <module>../de.fraunhofer.ipa.deploymentPlan</module>
-
-    <module>../de.fraunhofer.ipa.deployment.standalone</module>
-    <module>../de.fraunhofer.ipa.deployment.target</module>
-    </modules>
 
 
     <repositories>
         <repository>
             <id>eclipse</id>
             <layout>p2</layout>
-            <url>https://download.eclipse.org/releases/2022-12/</url>
+            <url>https://download.eclipse.org/releases/2023-12/</url>
         </repository>
         <repository>
             <id>Xtext Update Site</id>
@@ -188,4 +163,27 @@
             </plugin>
         </plugins>
     </build>
+    <modules>
+      <module>../de.fraunhofer.ipa.deployment.plan.xtext</module>
+      <module>../de.fraunhofer.ipa.deployment.plan.xtext.ide</module>
+      <module>../de.fraunhofer.ipa.deployment.plan.xtext.ui</module>
+      <module>../de.fraunhofer.ipa.deployment.planros.xtext</module>
+      <module>
+        ../de.fraunhofer.ipa.deployment.planros.xtext.ide
+      </module>
+      <module>
+        ../de.fraunhofer.ipa.deployment.planros.xtext.ui
+      </module>
+      <module>../de.fraunhofer.ipa.deployment.util</module>
+      <module>../de.fraunhofer.ipa.deployment.util.xtext</module>
+      <module>../de.fraunhofer.ipa.deployment.util.xtext.ide</module>
+      <module>../de.fraunhofer.ipa.deployment.util.xtext.ui</module>
+      <module>../de.fraunhofer.ipa.deploymentPlan</module>
+      <module>../de.fraunhofer.ipa.targetEnvironment</module>
+      <module>../de.fraunhofer.ipa.targetEnvironment.xtext</module>
+      <module>
+        ../de.fraunhofer.ipa.targetEnvironment.xtext.ide
+      </module>
+      <module>../de.fraunhofer.ipa.targetEnvironment.xtext.ui</module>
+    </modules>
 </project>
