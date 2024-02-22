@@ -2,7 +2,7 @@ package de.fraunhofer.ipa.deployment.generator
 
 import deploymentPlan.AbstractDeploymentPlan
 import deploymentPlan.RosMiddleware
-import javax.inject.Inject
+import jakarta.inject.Inject
 
 class GitLabCICompiler {
 
@@ -26,18 +26,30 @@ class GitLabCICompiler {
     tags: *kaniko_runner
     stage: build
     before_script:
-      - export BASE_IMAGE_PREFIX="«chooseBaseImage(getProcessorArchitecture(assignment).getName)»"
-      - export BASE_IMAGE_SUFFIX="«(assignment.middleware as RosMiddleware).value.getName»-ros-core"
+      # use "export" to overide global variables
+      # - export BASE_IMAGE_PREFIX="«chooseBaseImage(getProcessorArchitecture(assignment).getName)»"
+      # - export BASE_IMAGE_SUFFIX="«(assignment.middleware as RosMiddleware).value.getName»-ros-core"
+      - echo BASE_IMAGE_PREFIX=${BASE_IMAGE_PREFIX}
+      - echo BASE_IMAGE_SUFFIX=${BASE_IMAGE_SUFFIX}
       - echo "IMAGE_NAME=${IMAGE_NAME}"
-      - !reference [default, before_script]
+      - !reference [.common, setup_image_tag_script]
+      - !reference [.common, setup_base_image_script]
       - echo "DOCKERFILE_FOLDER=${DOCKERFILE_FOLDER}"
-      - echo "Dockerfile_path=${CI_PROJECT_DIR}/${DOCKERFILE_FOLDER}Dockerfile"
+      - echo "DOCKERFILE_NAME=${DOCKERFILE_NAME}"
+      - echo "SELECT_PKGS=${SELECT_PKGS}"
+      - echo "CMAKE_ARGS=${CMAKE_ARGS}"
+      - echo "TARGET=${TARGET}"
+      - export BUILDER_SUFFIX=$BUILDER_SUFFIX
     extends:
       - .build_with_kaniko
       - .on_always
     variables:
       IMAGE_NAME: "«assignment.name»_«(assignment.middleware as RosMiddleware).value.getName»"
       DOCKERFILE_FOLDER: "«namingHelper.getAbsoluteAssignmentFolderPath(assignment.name)»/"
+      BASE_IMAGE_PREFIX: "«chooseBaseImage(getProcessorArchitecture(assignment).getName)»"
+      BASE_IMAGE_SUFFIX: "«(assignment.middleware as RosMiddleware).value.getName»-ros-core"
+      SELECT_PKGS: ""
+      COLCON_OPTION: ""
 
   publish_«assignment.name»:
     tags: *kaniko_runner
@@ -82,7 +94,7 @@ class GitLabCICompiler {
 
       - apk add ansible -v
     script:
-      - cd src-gen/deploy_ur_applications/ansible
+      - cd «namingHelper.absoluteRootPrefix»/«namingHelper.relativePlanFolderPath»/ansible
       - ansible-playbook -i inventory_ci.yaml --private-key "$SSH_PRIVATE_KEY_«compDev.name.toUpperCase»" playbook_deploy_files.yaml
     variables:
       ANSIBLE_HOST_KEY_CHECKING: "False"
@@ -144,7 +156,7 @@ class GitLabCICompiler {
     BASE_IMAGE_SUFFIX: "TODO"
     BUILDER_PREFIX: "ghcr.io/ipa-rwu/"
     BUILDER_SUFFIX: ":latest"
-    CMAKE_ARGS: "-DCMAKE_BUILD_TYPE="
+    CMAKE_ARGS: "-DCMAKE_BUILD_TYPE=RELEASE"
     DOCKER_BUILDKIT: 1
     DOCKER_TLS_CERTDIR: ""
     PREFIX: "${CI_PIPELINE_ID}:"
@@ -154,13 +166,10 @@ class GitLabCICompiler {
     DOC_NAME: "TODO"
     ADOC_PATH: "TODO"
     DOC_IMAGE_PATH: "TODO"
-
-  default:
-    before_script:
-      - export BASE_IMAGE="$BASE_IMAGE_PREFIX:$BASE_IMAGE_SUFFIX"
-      - echo "BASE_IMAGE=${BASE_IMAGE}"
-      - export TARGET=${CI_REGISTRY_IMAGE}/${IMAGE_NAME}:${CI_COMMIT_REF_NAME//\//-}
-      - echo "TARGET=${TARGET}"
+    SELECT_PKGS: ""
+    COLCON_OPTION: ""
+    STAGE: deploy
+    DOCKERFILE_NAME: "Dockerfile"
 
   .common:
     create_release_tag_script:
@@ -184,15 +193,20 @@ class GitLabCICompiler {
             fi
           done;
         fi
+    setup_image_tag_script:
+      - export TARGET=${CI_REGISTRY_IMAGE}/${IMAGE_NAME}:${CI_COMMIT_REF_NAME//\//-}
+      - echo "TARGET=${TARGET}"
+    setup_base_image_script:
+      - export BASE_IMAGE="$BASE_IMAGE_PREFIX:$BASE_IMAGE_SUFFIX"
+      - echo "BASE_IMAGE=${BASE_IMAGE}"
 
   .precommit:
     image: python:3.12.0b4-slim
-    before_script:
+    script:
       - apt update && apt install -y --no-install-recommends git
       - pip install pre-commit
-      - apt install -y --no-install-recommends clang-format-14
-    script:
       - pre-commit run --all-files
+
 
   .build_with_kaniko:
     image:
@@ -213,12 +227,46 @@ class GitLabCICompiler {
         --build-arg CI_JOB_TOKEN
         --build-arg BUILDKIT_INLINE_CACHE=1
         --build-arg CMAKE_ARGS
-        --dockerfile "${CI_PROJECT_DIR}/${DOCKERFILE_FOLDER}Dockerfile"
+        --build-arg SELECT_PKGS
+        --build-arg COLCON_OPTION
+        --target ${STAGE}
+        --dockerfile "${CI_PROJECT_DIR}/${DOCKERFILE_FOLDER}${DOCKERFILE_NAME}"
         --no-push
         --destination "${TARGET}"
         --tar-path ${PREFIX//:/-}${IMAGE_NAME}${SUFFIX}.tar
     artifacts:
       name: ${CI_JOB_NAME}
+      paths:
+        - ${PREFIX//:/-}${IMAGE_NAME}${SUFFIX}.tar
+      expire_in: 10 minutes
+
+  .build_with_kaniko_push:
+    image:
+      name: gcr.io/kaniko-project/executor:debug
+      entrypoint: [""]
+    script:
+      - echo "commit=${CI_COMMIT_REF_NAME//\//-}"
+      - echo "Target=$TARGET"
+      - /kaniko/executor
+        --context "${CI_PROJECT_DIR}/${DOCKERFILE_FOLDER}"
+        --build-arg SUFFIX
+        --build-arg PREFIX
+        --build-arg BUILDER_PREFIX
+        --build-arg BUILDER_SUFFIX
+        --build-arg BASE_IMAGE
+        --build-arg ROS_DISTRO
+        --build-arg ROSINSTALL_CI_JOB_TOKEN
+        --build-arg CI_JOB_TOKEN
+        --build-arg BUILDKIT_INLINE_CACHE=1
+        --build-arg CMAKE_ARGS
+        --build-arg SELECT_PKGS
+        --build-arg COLCON_OPTION
+        --target ${STAGE}
+        --dockerfile "${CI_PROJECT_DIR}/${DOCKERFILE_FOLDER}${DOCKERFILE_NAME}"
+        --destination "${TARGET}"
+        --tar-path ${PREFIX//:/-}${IMAGE_NAME}${SUFFIX}.tar
+    artifacts:
+      name: ${IMAGE_NAME}
       paths:
         - ${PREFIX//:/-}${IMAGE_NAME}${SUFFIX}.tar
       expire_in: 10 minutes
@@ -231,8 +279,7 @@ class GitLabCICompiler {
       - !reference [.common, create_release_tag_script]
       - crane auth login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
       - crane push ${PREFIX//:/-}${IMAGE_NAME}${SUFFIX}.tar ${TARGET}
-    needs:
-      - build
+
 
   .doxygen-job:
     image: ubuntu:latest

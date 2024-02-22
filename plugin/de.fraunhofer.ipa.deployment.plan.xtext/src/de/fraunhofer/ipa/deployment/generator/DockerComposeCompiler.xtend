@@ -21,7 +21,7 @@ import java.util.List
 import java.util.Map
 import java.util.Set
 import java.util.stream.Collectors
-import javax.inject.Inject
+import jakarta.inject.Inject
 import org.eclipse.emf.ecore.EObject
 import system.RosParameter
 import system.impl.RosParameterImpl
@@ -281,11 +281,14 @@ def getConnectedComputaionDeviceFromExecParam(AbstractConfigExecutionParameter c
                 .collect(Collectors.toList()).get(0)
             }
             if(paramFromTarEnv instanceof ConfigDeviceProperty){
-                communicatedComputationDevice = getConnectionsIncludeDeviceInstanceFomTargetEnv(
+                var tmp = getConnectionsIncludeDeviceInstanceFomTargetEnv(
                     compDev.eContainer as TargetDeployEnviroment,
                     paramFromTarEnv.eContainer as DeviceInstance,
                     compDev
-                ).get(0)
+                )
+                if(tmp.size > 0){
+                  communicatedComputationDevice = tmp.get(0)
+                }
             }
         }
         return communicatedComputationDevice

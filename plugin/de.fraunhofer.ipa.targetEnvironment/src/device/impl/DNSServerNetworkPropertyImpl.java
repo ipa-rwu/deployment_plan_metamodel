@@ -18,22 +18,22 @@ import org.eclipse.emf.ecore.EClass;
  */
 public class DNSServerNetworkPropertyImpl extends PropertySelectionImpl implements DNSServerNetworkProperty {
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     protected DNSServerNetworkPropertyImpl() {
-        super();
-    }
+    super();
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     protected EClass eStaticClass() {
-        return DevicePackage.Literals.DNS_SERVER_NETWORK_PROPERTY;
-    }
+    return DevicePackage.Literals.DNS_SERVER_NETWORK_PROPERTY;
+  }
 
 } //DNSServerNetworkPropertyImpl

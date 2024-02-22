@@ -25,37 +25,37 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface AbstractDeviceType extends EObject {
     /**
-     * Returns the value of the '<em><b>Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Name</em>' attribute.
-     * @see #setName(String)
-     * @see device.DevicePackage#getAbstractDeviceType_Name()
-     * @model required="true"
-     * @generated
-     */
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see device.DevicePackage#getAbstractDeviceType_Name()
+   * @model required="true"
+   * @generated
+   */
     String getName();
 
     /**
-     * Sets the value of the '{@link device.AbstractDeviceType#getName <em>Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+   * Sets the value of the '{@link device.AbstractDeviceType#getName <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Name</em>' attribute.
-     * @see #getName()
-     * @generated
-     */
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
+   * @generated
+   */
     void setName(String value);
 
     /**
-     * Returns the value of the '<em><b>Communication Connection</b></em>' containment reference list.
-     * The list contents are of type {@link device.AbstractCommunicationConnection}.
-     * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Communication Connection</b></em>' containment reference list.
+   * The list contents are of type {@link device.AbstractCommunicationConnection}.
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Communication Connection</em>' containment reference list.
-     * @see device.DevicePackage#getAbstractDeviceType_CommunicationConnection()
-     * @model containment="true"
-     * @generated
-     */
+   * @return the value of the '<em>Communication Connection</em>' containment reference list.
+   * @see device.DevicePackage#getAbstractDeviceType_CommunicationConnection()
+   * @model containment="true"
+   * @generated
+   */
     EList<AbstractCommunicationConnection> getCommunicationConnection();
 
 } // AbstractDeviceType

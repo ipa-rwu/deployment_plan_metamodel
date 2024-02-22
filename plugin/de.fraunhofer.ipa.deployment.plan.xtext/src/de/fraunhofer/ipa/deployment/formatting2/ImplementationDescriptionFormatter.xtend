@@ -3,7 +3,7 @@
  */
 package de.fraunhofer.ipa.deployment.formatting2
 
-import com.google.inject.Inject
+import jakarta.inject.Inject
 import de.fraunhofer.ipa.deployment.services.ImplementationDescriptionGrammarAccess
 import implementationDescription.ImplementationDescription
 import implementationDescription.ImplementationDescriptionSet

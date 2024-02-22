@@ -18,22 +18,22 @@ import org.eclipse.emf.ecore.EClass;
  */
 public class PortNetworkPropertyImpl extends PropertyAttributeImpl implements PortNetworkProperty {
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     protected PortNetworkPropertyImpl() {
-        super();
-    }
+    super();
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     protected EClass eStaticClass() {
-        return DevicePackage.Literals.PORT_NETWORK_PROPERTY;
-    }
+    return DevicePackage.Literals.PORT_NETWORK_PROPERTY;
+  }
 
 } //PortNetworkPropertyImpl

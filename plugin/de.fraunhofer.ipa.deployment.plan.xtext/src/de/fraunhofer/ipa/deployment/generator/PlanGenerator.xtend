@@ -13,7 +13,7 @@ import java.util.ArrayList
 import java.util.Arrays
 import java.util.List
 import java.util.stream.Collectors
-import javax.inject.Inject
+import jakarta.inject.Inject
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2

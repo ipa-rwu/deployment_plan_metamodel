@@ -4,15 +4,12 @@ import com.google.common.base.CaseFormat
 import de.fraunhofer.ipa.deployment.util.AbstractComputationAssignmentTarget
 import de.fraunhofer.ipa.deployment.util.LinuxDistribution
 import de.fraunhofer.ipa.deployment.util.UbuntuVersion
-import deploymentPlan.AbstractComputationAssignment
 import deploymentPlan.DeploymentPlan
-import deploymentPlan.RosMiddleware
 import implementationDescription.ImplementationDescription
 import implementationDescription.SoftwareComponent
+import jakarta.inject.Inject
 import java.util.ArrayList
 import java.util.List
-import javax.inject.Inject
-import javax.sound.sampled.BooleanControl.Type
 
 class RepoInfo{
     String name

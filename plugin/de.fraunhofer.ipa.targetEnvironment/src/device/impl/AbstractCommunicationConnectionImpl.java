@@ -18,22 +18,22 @@ import org.eclipse.emf.ecore.EClass;
  */
 public abstract class AbstractCommunicationConnectionImpl extends AbstractResourceImpl implements AbstractCommunicationConnection {
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     protected AbstractCommunicationConnectionImpl() {
-        super();
-    }
+    super();
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     protected EClass eStaticClass() {
-        return DevicePackage.Literals.ABSTRACT_COMMUNICATION_CONNECTION;
-    }
+    return DevicePackage.Literals.ABSTRACT_COMMUNICATION_CONNECTION;
+  }
 
 } //AbstractCommunicationConnectionImpl

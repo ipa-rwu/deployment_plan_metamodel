@@ -18,22 +18,22 @@ import org.eclipse.emf.ecore.EClass;
  */
 public class IdentityNameNetworkPropertyImpl extends PropertyAttributeImpl implements IdentityNameNetworkProperty {
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     protected IdentityNameNetworkPropertyImpl() {
-        super();
-    }
+    super();
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     protected EClass eStaticClass() {
-        return DevicePackage.Literals.IDENTITY_NAME_NETWORK_PROPERTY;
-    }
+    return DevicePackage.Literals.IDENTITY_NAME_NETWORK_PROPERTY;
+  }
 
 } //IdentityNameNetworkPropertyImpl

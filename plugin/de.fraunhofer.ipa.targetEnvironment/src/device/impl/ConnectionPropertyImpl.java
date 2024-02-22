@@ -18,22 +18,22 @@ import org.eclipse.emf.ecore.EClass;
  */
 public class ConnectionPropertyImpl extends PropertyAttributeImpl implements ConnectionProperty {
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     protected ConnectionPropertyImpl() {
-        super();
-    }
+    super();
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     protected EClass eStaticClass() {
-        return DevicePackage.Literals.CONNECTION_PROPERTY;
-    }
+    return DevicePackage.Literals.CONNECTION_PROPERTY;
+  }
 
 } //ConnectionPropertyImpl

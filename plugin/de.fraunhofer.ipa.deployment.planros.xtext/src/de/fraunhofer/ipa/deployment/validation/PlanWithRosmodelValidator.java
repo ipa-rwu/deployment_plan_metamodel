@@ -8,20 +8,18 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
-import javax.inject.Inject;
 
 import org.eclipse.xtext.validation.Check;
 import org.eclipse.xtext.xbase.lib.Extension;
+
+import com.google.inject.Inject;
 
 import de.fraunhofer.ipa.deployment.utils.PlanWithRosmodelUtils;
 import deployPlanWithRosModel.ConfigRosParameter;
 import deployPlanWithRosModel.ConfigRosSoftwareComponent;
 import deployPlanWithRosModel.DeployPlanWithRosModelPackage;
-import deployPlanWithRosModel.DeployRossystemPlan;
-import deployPlanWithRosModel.RossystemImplementationAssignment;
 import deploymentPlan.AbstractDeploymentPlan;
 import ros.Parameter;
-import system.ReferenceSystem;
 import system.RosNode;
 import system.RosParameter;
 import system.System;
@@ -44,50 +42,50 @@ public class PlanWithRosmodelValidator extends AbstractPlanWithRosmodelValidator
 
 
 
-  @Check
-  public void checkLimitInDefinedTargetRossystem(ConfigRosSoftwareComponent comp) {
-    DeployRossystemPlan plan = (DeployRossystemPlan) comp.eContainer().eContainer().eContainer();
-    if(plan.getTargetRossystem() != null) {
-      var refsystems = plan.getTargetRossystem().getComponents().stream()
-          .filter(it -> it instanceof ReferenceSystem)
-          .map(ReferenceSystem.class::cast)
-          .collect(Collectors.toList());
-      var systems = refsystems.stream().
-          map(ReferenceSystem::getRef).collect(Collectors.toList());
-      if(!systems.contains(comp.getComponent())) {
-        var msg = String.format("%s doesn't belong to Rossystem: %s",
-            comp.getComponent().getName(), plan.getTargetRossystem().getName());
-        error(msg,
-          DeployPlanWithRosModelPackage.Literals.CONFIG_ROS_SOFTWARE_COMPONENT__COMPONENT,
-          INVALID_NAME);
-      }
-    }
-  }
+//  @Check
+//  public void checkLimitInDefinedTargetRossystem(ConfigRosSoftwareComponent comp) {
+//    DeployRossystemPlan plan = (DeployRossystemPlan) comp.eContainer().eContainer().eContainer();
+//    if(plan.getTargetRossystem() != null) {
+//      var refsystems = plan.getTargetRossystem().getComponents().stream()
+//          .filter(it -> it instanceof ReferenceSystem)
+//          .map(ReferenceSystem.class::cast)
+//          .collect(Collectors.toList());
+//      var systems = refsystems.stream().
+//          map(ReferenceSystem::getRef).collect(Collectors.toList());
+//      if(!systems.contains(comp.getComponent())) {
+//        var msg = String.format("%s doesn't belong to Rossystem: %s",
+//            comp.getComponent().getName(), plan.getTargetRossystem().getName());
+//        error(msg,
+//          DeployPlanWithRosModelPackage.Literals.CONFIG_ROS_SOFTWARE_COMPONENT__COMPONENT,
+//          INVALID_NAME);
+//      }
+//    }
+//  }
 
-  @Check
-  public void checkConfigAllComponentFromTopSystem(DeployRossystemPlan plan) {
-    if(plan.getTargetRossystem() != null) {
-      var defined_syses = plan.getRealize().getRealizations()
-      .stream()
-      .map(RossystemImplementationAssignment.class::cast)
-      .map(RossystemImplementationAssignment::getSoftwareComponents)
-      .flatMap(List::stream)
-      .map(ConfigRosSoftwareComponent::getComponent)
-      .collect(Collectors.toList());
-          List<System>  systems = (List<System>) plan.getTargetRossystem().getComponents().stream()
-              .filter(it -> it instanceof ReferenceSystem)
-              .map(ReferenceSystem.class::cast)
-              .map(ReferenceSystem::getRef)
-              .collect(Collectors.toList());
-          systems.removeAll(defined_syses);
-          if(systems.size() > 0) {
-            error(String.format("Please config referenced systems: %s", systems.toString()),
-                DeployPlanWithRosModelPackage.Literals.DEPLOY_ROSSYSTEM_PLAN__TARGET_ROSSYSTEM,
-                UNDEFINED_ELE);
-          }
-      }
-
-    }
+//  @Check
+//  public void checkConfigAllComponentFromTopSystem(DeployRossystemPlan plan) {
+//    if(plan.getTargetRossystem() != null) {
+//      var defined_syses = plan.getRealize().getRealizations()
+//      .stream()
+//      .map(RossystemImplementationAssignment.class::cast)
+//      .map(RossystemImplementationAssignment::getSoftwareComponents)
+//      .flatMap(List::stream)
+//      .map(ConfigRosSoftwareComponent::getComponent)
+//      .collect(Collectors.toList());
+//          List<System>  systems = (List<System>) plan.getTargetRossystem().getComponents().stream()
+//              .filter(it -> it instanceof ReferenceSystem)
+//              .map(ReferenceSystem.class::cast)
+//              .map(ReferenceSystem::getRef)
+//              .collect(Collectors.toList());
+//          systems.removeAll(defined_syses);
+//          if(systems.size() > 0) {
+//            error(String.format("Please config referenced systems: %s", systems.toString()),
+//                DeployPlanWithRosModelPackage.Literals.DEPLOY_ROSSYSTEM_PLAN__TARGET_ROSSYSTEM,
+//                UNDEFINED_ELE);
+//          }
+//      }
+//
+//    }
 
 
   @Check

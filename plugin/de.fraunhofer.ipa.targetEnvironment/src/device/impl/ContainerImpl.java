@@ -15,22 +15,22 @@ import org.eclipse.emf.ecore.EClass;
  */
 public class ContainerImpl extends AbstractRuntimeEnviromentImpl implements device.Container {
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     protected ContainerImpl() {
-        super();
-    }
+    super();
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     protected EClass eStaticClass() {
-        return DevicePackage.Literals.CONTAINER;
-    }
+    return DevicePackage.Literals.CONTAINER;
+  }
 
 } //ContainerImpl

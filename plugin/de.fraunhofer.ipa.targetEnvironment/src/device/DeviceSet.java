@@ -24,15 +24,15 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface DeviceSet extends Description {
     /**
-     * Returns the value of the '<em><b>Device</b></em>' containment reference list.
-     * The list contents are of type {@link device.DeviceType}.
-     * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Device</b></em>' containment reference list.
+   * The list contents are of type {@link device.DeviceType}.
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Device</em>' containment reference list.
-     * @see device.DevicePackage#getDeviceSet_Device()
-     * @model containment="true" required="true"
-     * @generated
-     */
+   * @return the value of the '<em>Device</em>' containment reference list.
+   * @see device.DevicePackage#getDeviceSet_Device()
+   * @model containment="true" required="true"
+   * @generated
+   */
     EList<DeviceType> getDevice();
 
 } // DeviceSet

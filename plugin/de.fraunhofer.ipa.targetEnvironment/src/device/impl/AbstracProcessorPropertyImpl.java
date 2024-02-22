@@ -18,22 +18,22 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public abstract class AbstracProcessorPropertyImpl extends MinimalEObjectImpl.Container implements AbstracProcessorProperty {
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     protected AbstracProcessorPropertyImpl() {
-        super();
-    }
+    super();
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     protected EClass eStaticClass() {
-        return DevicePackage.Literals.ABSTRAC_PROCESSOR_PROPERTY;
-    }
+    return DevicePackage.Literals.ABSTRAC_PROCESSOR_PROPERTY;
+  }
 
 } //AbstracProcessorPropertyImpl

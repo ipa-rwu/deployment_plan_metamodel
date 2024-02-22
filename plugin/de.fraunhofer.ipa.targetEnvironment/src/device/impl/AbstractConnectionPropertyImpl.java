@@ -18,22 +18,22 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public abstract class AbstractConnectionPropertyImpl extends MinimalEObjectImpl.Container implements AbstractConnectionProperty {
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     protected AbstractConnectionPropertyImpl() {
-        super();
-    }
+    super();
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     protected EClass eStaticClass() {
-        return DevicePackage.Literals.ABSTRACT_CONNECTION_PROPERTY;
-    }
+    return DevicePackage.Literals.ABSTRACT_CONNECTION_PROPERTY;
+  }
 
 } //AbstractConnectionPropertyImpl

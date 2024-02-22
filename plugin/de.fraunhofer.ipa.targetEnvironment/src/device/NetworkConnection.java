@@ -25,37 +25,37 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface NetworkConnection extends AbstractCommunicationConnection {
     /**
-     * Returns the value of the '<em><b>Type</b></em>' containment reference.
-     * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Type</em>' containment reference.
-     * @see #setType(NetworkCommunicationType)
-     * @see device.DevicePackage#getNetworkConnection_Type()
-     * @model containment="true" required="true"
-     * @generated
-     */
+   * @return the value of the '<em>Type</em>' containment reference.
+   * @see #setType(NetworkCommunicationType)
+   * @see device.DevicePackage#getNetworkConnection_Type()
+   * @model containment="true" required="true"
+   * @generated
+   */
     NetworkCommunicationType getType();
 
     /**
-     * Sets the value of the '{@link device.NetworkConnection#getType <em>Type</em>}' containment reference.
-     * <!-- begin-user-doc -->
+   * Sets the value of the '{@link device.NetworkConnection#getType <em>Type</em>}' containment reference.
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Type</em>' containment reference.
-     * @see #getType()
-     * @generated
-     */
+   * @param value the new value of the '<em>Type</em>' containment reference.
+   * @see #getType()
+   * @generated
+   */
     void setType(NetworkCommunicationType value);
 
     /**
-     * Returns the value of the '<em><b>Properties</b></em>' containment reference list.
-     * The list contents are of type {@link device.AbstractNetworkProperty}.
-     * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Properties</b></em>' containment reference list.
+   * The list contents are of type {@link device.AbstractNetworkProperty}.
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Properties</em>' containment reference list.
-     * @see device.DevicePackage#getNetworkConnection_Properties()
-     * @model containment="true"
-     * @generated
-     */
+   * @return the value of the '<em>Properties</em>' containment reference list.
+   * @see device.DevicePackage#getNetworkConnection_Properties()
+   * @model containment="true"
+   * @generated
+   */
     EList<AbstractNetworkProperty> getProperties();
 
 } // NetworkConnection

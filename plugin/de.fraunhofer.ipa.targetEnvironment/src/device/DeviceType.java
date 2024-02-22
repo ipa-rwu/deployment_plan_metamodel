@@ -22,15 +22,15 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface DeviceType extends AbstractDeviceType {
     /**
-     * Returns the value of the '<em><b>Device Resource</b></em>' containment reference list.
-     * The list contents are of type {@link device.DeviceResource}.
-     * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Device Resource</b></em>' containment reference list.
+   * The list contents are of type {@link device.DeviceResource}.
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Device Resource</em>' containment reference list.
-     * @see device.DevicePackage#getDeviceType_DeviceResource()
-     * @model containment="true"
-     * @generated
-     */
+   * @return the value of the '<em>Device Resource</em>' containment reference list.
+   * @see device.DevicePackage#getDeviceType_DeviceResource()
+   * @model containment="true"
+   * @generated
+   */
     EList<DeviceResource> getDeviceResource();
 
 } // DeviceType

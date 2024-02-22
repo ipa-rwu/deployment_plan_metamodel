@@ -18,22 +18,22 @@ import org.eclipse.emf.ecore.EClass;
  */
 public class CoreProcessorPropertyImpl extends PropertyAttributeImpl implements CoreProcessorProperty {
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     protected CoreProcessorPropertyImpl() {
-        super();
-    }
+    super();
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     protected EClass eStaticClass() {
-        return DevicePackage.Literals.CORE_PROCESSOR_PROPERTY;
-    }
+    return DevicePackage.Literals.CORE_PROCESSOR_PROPERTY;
+  }
 
 } //CoreProcessorPropertyImpl

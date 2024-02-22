@@ -1,7 +1,11 @@
 package de.fraunhofer.ipa.deployment.generator
 
+import com.google.gson.GsonBuilder
+import com.google.gson.annotations.SerializedName
+import com.google.gson.reflect.TypeToken
 import de.fraunhofer.ipa.deployment.util.LinuxDistribution
 import de.fraunhofer.ipa.deployment.util.LinuxDistributionValue
+import de.fraunhofer.ipa.deployment.util.ProcessorArchitectureType
 import de.fraunhofer.ipa.deployment.util.ProcessorArchitectureValue
 import de.fraunhofer.ipa.deployment.util.PropertyValue
 import de.fraunhofer.ipa.deployment.util.PropertyValueDouble
@@ -18,6 +22,7 @@ import deploymentPlan.ConfigSoftwareComponent
 import deploymentPlan.ContainerRuntime
 import deploymentPlan.ROSDistro
 import device.AddressNetworkProperty
+import device.ArchitectureProcessorProperty
 import device.DeviceVolumeUsbProperty
 import device.GatewayNetworkProperty
 import device.IdentityNameNetworkProperty
@@ -31,6 +36,10 @@ import implementationDescription.SoftwareComponent
 import implementationDescription.impl.GitRepositoryTypeImpl
 import java.io.BufferedReader
 import java.io.InputStreamReader
+import java.net.URI
+import java.net.http.HttpClient
+import java.net.http.HttpRequest
+import java.net.http.HttpResponse
 import java.util.ArrayList
 import java.util.Arrays
 import java.util.HashMap
@@ -48,19 +57,6 @@ import targetEnvironment.ConfigConnectionProperty
 import targetEnvironment.ConnectedDevice
 import targetEnvironment.DeviceInstance
 import targetEnvironment.TargetDeployEnviroment
-import java.net.URI
-import java.net.http.HttpRequest
-import java.net.http.HttpClient
-import java.net.http.HttpResponse
-import com.google.gson.Gson
-import com.google.gson.GsonBuilder
-import com.google.gson.JsonArray
-import com.google.gson.annotations.SerializedName
-import com.google.gson.reflect.TypeToken
-import javax.management.RuntimeErrorException
-import java.util.stream.Collector
-import device.ArchitectureProcessorProperty
-import de.fraunhofer.ipa.deployment.util.ProcessorArchitectureType
 
 class OSInfo{
     String name

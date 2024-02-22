@@ -24,15 +24,15 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface ComputationDeviceType extends DeviceType {
     /**
-     * Returns the value of the '<em><b>Computation Resource</b></em>' containment reference list.
-     * The list contents are of type {@link de.fraunhofer.ipa.deployment.util.AbstractComputationResource}.
-     * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Computation Resource</b></em>' containment reference list.
+   * The list contents are of type {@link de.fraunhofer.ipa.deployment.util.AbstractComputationResource}.
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Computation Resource</em>' containment reference list.
-     * @see device.DevicePackage#getComputationDeviceType_ComputationResource()
-     * @model containment="true" required="true"
-     * @generated
-     */
+   * @return the value of the '<em>Computation Resource</em>' containment reference list.
+   * @see device.DevicePackage#getComputationDeviceType_ComputationResource()
+   * @model containment="true" required="true"
+   * @generated
+   */
     EList<AbstractComputationResource> getComputationResource();
 
 } // ComputationDeviceType
