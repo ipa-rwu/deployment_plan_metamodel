@@ -1,0 +1,71 @@
+version: '3'
+networks:
+  ros-network:
+    external: false
+    driver: "bridge"
+  ur5e:
+    driver: bridge
+    driver_opts:
+      parent: eno1
+
+services:
+  bt_framework_ur5e:
+    image: registry.gitlab.cc-asp.fraunhofer.de/ipa326/demonstrator/50y-robotic-demo/bt_framework_ur5e_humble:50y_v1.0.1
+    volumes:
+      - ./cyclonedds.xml:/cyclonedds.xml
+    networks:
+      - ros-network
+    environment:
+      - NETINTERFACE=eth0
+      # for application
+    command:
+      - bash
+      - -c
+      - |
+        export CYCLONEDDS_URI=file:///cyclonedds.xml
+        source /ros_entrypoint.sh
+  launch_realsense:
+    image: registry.gitlab.cc-asp.fraunhofer.de/ipa326/demonstrator/50y-robotic-demo/launch_realsense_humble:50y_v1.0.1
+    volumes:
+      - ./cyclonedds.xml:/cyclonedds.xml
+    networks:
+      - ros-network
+    environment:
+      - NETINTERFACE=eth0
+      # for application
+    command:
+      - bash
+      - -c
+      - |
+        export CYCLONEDDS_URI=file:///cyclonedds.xml
+        source /ros_entrypoint.sh
+  color_marker_publish:
+    image: registry.gitlab.cc-asp.fraunhofer.de/ipa326/demonstrator/50y-robotic-demo/color_marker_publish_humble:50y_v1.0.1
+    volumes:
+      - ./cyclonedds.xml:/cyclonedds.xml
+    networks:
+      - ros-network
+    environment:
+      - NETINTERFACE=eth0
+      # for application
+    command:
+      - bash
+      - -c
+      - |
+        export CYCLONEDDS_URI=file:///cyclonedds.xml
+        source /ros_entrypoint.sh
+  ur_driver_with_moveit:
+    image: registry.gitlab.cc-asp.fraunhofer.de/ipa326/demonstrator/50y-robotic-demo/ur_driver_with_moveit_humble:50y_v1.0.1
+    volumes:
+      - ./cyclonedds.xml:/cyclonedds.xml
+    networks:
+      - ros-network
+    environment:
+      - NETINTERFACE=eth0
+      # for application
+    command:
+      - bash
+      - -c
+      - |
+        export CYCLONEDDS_URI=file:///cyclonedds.xml
+        source /ros_entrypoint.sh

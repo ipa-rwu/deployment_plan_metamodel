@@ -1,0 +1,16 @@
+detect_aruco_marker_skill:
+  fromGitRepo: "https://gitlab.cc-asp.fraunhofer.de/ipa326/demonstrator/bt_based_application_framework.git:v1.0.0"
+  artifacts:
+    detect_aruco_marker_action_server:
+      node: detect_aruco_marker_action_server
+      subscribers:
+        "bond":
+          type: "bond/msg/Status"
+        "markers":
+          type: "aruco_msgs/msg/MarkerArray"
+      publishers:
+        "bond":
+          type: "bond/msg/Status"
+      actionservers:
+        "detect_aruco_marker":
+          type: "detect_aruco_marker_skill/action/ArucoMarkerDetection"

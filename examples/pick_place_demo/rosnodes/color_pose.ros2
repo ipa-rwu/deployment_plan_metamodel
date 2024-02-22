@@ -1,0 +1,11 @@
+color_pose_estimation:
+  fromGitRepo: "https://github.com/ipa-rwu/color_pose.git:vsp/color_pose_testing_with_bt"
+  artifacts:
+    color_pose_estimation:
+      node: color_pose_estimation
+      subscribers:
+        "image_raw":
+          type: "sensor_msgs/msg/Image"
+      parameters:
+        "camera_info_topic":
+          type: String

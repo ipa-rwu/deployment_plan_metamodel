@@ -1,5 +1,0 @@
-ur5e_cell_with_realsense:
-  hosts:
-    rwu_laptop:
-      ansible_host: #TODO: IP
-      ansible_user: ansible #UserName

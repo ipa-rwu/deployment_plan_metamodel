@@ -1,0 +1,55 @@
+DeploymentPlanWithRos:
+  name: deploy_ur_applications_with_color_detection
+  targetRossystem: ur5e_cell_system
+  deployTo: ur5e_cell_with_realsense_camera
+  assignment:
+    - name: bt_framework_ur5e
+      executedBy: "ur5e_cell_with_realsense_camera.cmh_tower_400"
+      version: "50y_v1.0.1"
+      middleware: humble
+      softwareComponents:
+        - bt_manipulation_framwork
+        - ur5e_cell_moveit_config
+      runtimeType:
+        type: container
+        registry: "registry.gitlab.cc-asp.fraunhofer.de/ipa326/demonstrator/50y-robotic-demo"
+
+    - name: launch_realsense
+      executedBy: "ur5e_cell_with_realsense_camera.cmh_tower_400"
+      version: "50y_v1.0.1"
+      middleware: humble
+      softwareComponents:
+        - realsense_camera_calibrated
+      runtimeType:
+        type: container
+        registry: "registry.gitlab.cc-asp.fraunhofer.de/ipa326/demonstrator/50y-robotic-demo"
+
+    - name: color_marker_publish
+      executedBy: "ur5e_cell_with_realsense_camera.cmh_tower_400"
+      version: "50y_v1.0.1"
+      middleware: humble
+      softwareComponents:
+        - color_pose_estimation
+      runtimeType:
+        type: container
+        registry: "registry.gitlab.cc-asp.fraunhofer.de/ipa326/demonstrator/50y-robotic-demo"
+
+    - name: ur_driver_with_moveit
+      executedBy: "ur5e_cell_with_realsense_camera.cmh_tower_400"
+      version: "50y_v1.0.1"
+      middleware: humble
+      softwareComponents:
+        - ur5e_cell_moveit_config
+      runtimeType:
+        type: container
+        registry: "registry.gitlab.cc-asp.fraunhofer.de/ipa326/demonstrator/50y-robotic-demo"
+        resource:
+          - name: operting_system
+            type: LinuxOpertingSystem
+            properties:
+              - name: os_name
+                kind: AttributeKind
+                value: ubuntu
+              - name: os_version
+                    kind: AttributeKind
+                    value: jammy

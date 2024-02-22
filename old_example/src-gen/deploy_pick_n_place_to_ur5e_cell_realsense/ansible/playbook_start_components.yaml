@@ -1,0 +1,9 @@
+  - name: deploy_pick_n_place_to_ur5e_cell_realsense_rwu_laptop
+    hosts: rwu_laptop
+    vars:
+      docker_compose_dir: rwu_laptop
+      ori_docker_compose_dir_path: "../{{ docker_compose_dir }}"
+      dest_docker_compose_dir_path: "/home/{{ ansible_user }}/AutoDeployment/deploy_pick_n_place_to_ur5e_cell_realsense/{{ docker_compose_dir }}"
+    roles:
+      - common
+      - start_components

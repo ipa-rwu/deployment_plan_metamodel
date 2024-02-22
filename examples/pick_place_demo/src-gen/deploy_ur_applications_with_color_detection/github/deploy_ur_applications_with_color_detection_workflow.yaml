@@ -1,0 +1,72 @@
+name: deploy_ur_applications_with_color_detection
+on:
+  push:
+    paths:
+      - "src-gen/deploy_ur_applications_with_color_detection/**"
+env:
+  BUILDER_PREFIX: "ghcr.io/ipa-rwu/"
+  BUILDER_SUFFIX: ":latest"
+  CMAKE_ARGS: "-DCMAKE_BUILD_TYPE=Release"
+  REGISTRY: ghcr.io
+
+jobs:
+  EnvSetup:
+    runs-on: ubuntu-latest
+    name: Setup Dynamic Environment Variables
+    outputs:
+      registry: ${{ steps.set-output-defaults.outputs.registry }}
+      build-prefix: ${{ steps.set-output-defaults.outputs.build-prefix }}
+      build-suffix: ${{ steps.set-output-defaults.outputs.build-suffix }}
+      cmake-args: ${{ steps.set-output-defaults.outputs.cmake-args }}
+    steps:
+      - name: set outputs with default values
+        id: set-output-defaults
+        run: |
+          echo "registry=$REGISTRY" >> $GITHUB_OUTPUT
+          echo "build-prefix=$BUILDER_PREFIX" >> $GITHUB_OUTPUT
+          echo "build-suffix=$BUILDER_SUFFIX" >> $GITHUB_OUTPUT
+          echo "cmake-args=$CMAKE_ARGS" >> $GITHUB_OUTPUT
+  bt_framework_ur5e:
+    needs: [EnvSetup]
+    uses: ./.github/workflows/test_code_build_image_workflow_reuse.yaml
+    with:
+      context-path: src-gen/deploy_ur_applications_with_color_detection/bt_framework_ur5e
+      ros-distro: humble
+      registry: ${{needs.EnvSetup.outputs.registry}}
+      image-name: ${{ github.repository_owner }}/bt_framework_ur5e
+      build-prefix: ${{needs.EnvSetup.outputs.build-prefix}}
+      build-suffix: ${{needs.EnvSetup.outputs.build-suffix}}
+      cmake-args: ${{needs.EnvSetup.outputs.cmake-args}}
+  launch_realsense:
+    needs: [EnvSetup]
+    uses: ./.github/workflows/test_code_build_image_workflow_reuse.yaml
+    with:
+      context-path: src-gen/deploy_ur_applications_with_color_detection/launch_realsense
+      ros-distro: humble
+      registry: ${{needs.EnvSetup.outputs.registry}}
+      image-name: ${{ github.repository_owner }}/launch_realsense
+      build-prefix: ${{needs.EnvSetup.outputs.build-prefix}}
+      build-suffix: ${{needs.EnvSetup.outputs.build-suffix}}
+      cmake-args: ${{needs.EnvSetup.outputs.cmake-args}}
+  color_marker_publish:
+    needs: [EnvSetup]
+    uses: ./.github/workflows/test_code_build_image_workflow_reuse.yaml
+    with:
+      context-path: src-gen/deploy_ur_applications_with_color_detection/color_marker_publish
+      ros-distro: humble
+      registry: ${{needs.EnvSetup.outputs.registry}}
+      image-name: ${{ github.repository_owner }}/color_marker_publish
+      build-prefix: ${{needs.EnvSetup.outputs.build-prefix}}
+      build-suffix: ${{needs.EnvSetup.outputs.build-suffix}}
+      cmake-args: ${{needs.EnvSetup.outputs.cmake-args}}
+  ur_driver_with_moveit:
+    needs: [EnvSetup]
+    uses: ./.github/workflows/test_code_build_image_workflow_reuse.yaml
+    with:
+      context-path: src-gen/deploy_ur_applications_with_color_detection/ur_driver_with_moveit
+      ros-distro: humble
+      registry: ${{needs.EnvSetup.outputs.registry}}
+      image-name: ${{ github.repository_owner }}/ur_driver_with_moveit
+      build-prefix: ${{needs.EnvSetup.outputs.build-prefix}}
+      build-suffix: ${{needs.EnvSetup.outputs.build-suffix}}
+      cmake-args: ${{needs.EnvSetup.outputs.cmake-args}}

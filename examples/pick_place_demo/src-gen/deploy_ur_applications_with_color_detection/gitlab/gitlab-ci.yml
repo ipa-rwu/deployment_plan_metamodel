@@ -1,0 +1,208 @@
+include:
+  - local: src-gen/deploy_ur_applications_with_color_detection/gitlab/ci/gitlab_templates/JOB_TEMPLATE.yml
+  - local: src-gen/deploy_ur_applications_with_color_detection/gitlab/ci/gitlab_templates/RULES.yml
+
+variables:
+  ROSINSTALL_CI_JOB_TOKEN: "true"
+
+.common:
+  tags: &kaniko_runner
+    - todo
+
+bt_framework_ur5e:
+  tags: *kaniko_runner
+  stage: build
+  before_script:
+    # use "export" to overide global variables
+    # - export BASE_IMAGE_PREFIX="public.ecr.aws/docker/library/ros"
+    # - export BASE_IMAGE_SUFFIX="humble-ros-core"
+    - echo BASE_IMAGE_PREFIX=${BASE_IMAGE_PREFIX}
+    - echo BASE_IMAGE_SUFFIX=${BASE_IMAGE_SUFFIX}
+    - echo "IMAGE_NAME=${IMAGE_NAME}"
+    - !reference [.common, setup_image_tag_script]
+    - !reference [.common, setup_base_image_script]
+    - echo "DOCKERFILE_FOLDER=${DOCKERFILE_FOLDER}"
+    - echo "DOCKERFILE_NAME=${DOCKERFILE_NAME}"
+    - echo "SELECT_PKGS=${SELECT_PKGS}"
+    - echo "CMAKE_ARGS=${CMAKE_ARGS}"
+    - echo "TARGET=${TARGET}"
+    - export BUILDER_SUFFIX=$BUILDER_SUFFIX
+  extends:
+    - .build_with_kaniko
+    - .on_always
+  variables:
+    IMAGE_NAME: "bt_framework_ur5e_humble"
+    DOCKERFILE_FOLDER: "src-gen/deploy_ur_applications_with_color_detection/bt_framework_ur5e/"
+    BASE_IMAGE_PREFIX: "public.ecr.aws/docker/library/ros"
+    BASE_IMAGE_SUFFIX: "humble-ros-core"
+    SELECT_PKGS: ""
+    COLCON_OPTION: ""
+
+publish_bt_framework_ur5e:
+  tags: *kaniko_runner
+  stage: publish
+  extends:
+    - .publish
+    - .on_merge_tag
+  variables:
+    IMAGE_NAME: "bt_framework_ur5e_humble"
+  needs:
+    - bt_framework_ur5e
+launch_realsense:
+  tags: *kaniko_runner
+  stage: build
+  before_script:
+    # use "export" to overide global variables
+    # - export BASE_IMAGE_PREFIX="public.ecr.aws/docker/library/ros"
+    # - export BASE_IMAGE_SUFFIX="humble-ros-core"
+    - echo BASE_IMAGE_PREFIX=${BASE_IMAGE_PREFIX}
+    - echo BASE_IMAGE_SUFFIX=${BASE_IMAGE_SUFFIX}
+    - echo "IMAGE_NAME=${IMAGE_NAME}"
+    - !reference [.common, setup_image_tag_script]
+    - !reference [.common, setup_base_image_script]
+    - echo "DOCKERFILE_FOLDER=${DOCKERFILE_FOLDER}"
+    - echo "DOCKERFILE_NAME=${DOCKERFILE_NAME}"
+    - echo "SELECT_PKGS=${SELECT_PKGS}"
+    - echo "CMAKE_ARGS=${CMAKE_ARGS}"
+    - echo "TARGET=${TARGET}"
+    - export BUILDER_SUFFIX=$BUILDER_SUFFIX
+  extends:
+    - .build_with_kaniko
+    - .on_always
+  variables:
+    IMAGE_NAME: "launch_realsense_humble"
+    DOCKERFILE_FOLDER: "src-gen/deploy_ur_applications_with_color_detection/launch_realsense/"
+    BASE_IMAGE_PREFIX: "public.ecr.aws/docker/library/ros"
+    BASE_IMAGE_SUFFIX: "humble-ros-core"
+    SELECT_PKGS: ""
+    COLCON_OPTION: ""
+
+publish_launch_realsense:
+  tags: *kaniko_runner
+  stage: publish
+  extends:
+    - .publish
+    - .on_merge_tag
+  variables:
+    IMAGE_NAME: "launch_realsense_humble"
+  needs:
+    - launch_realsense
+color_marker_publish:
+  tags: *kaniko_runner
+  stage: build
+  before_script:
+    # use "export" to overide global variables
+    # - export BASE_IMAGE_PREFIX="public.ecr.aws/docker/library/ros"
+    # - export BASE_IMAGE_SUFFIX="humble-ros-core"
+    - echo BASE_IMAGE_PREFIX=${BASE_IMAGE_PREFIX}
+    - echo BASE_IMAGE_SUFFIX=${BASE_IMAGE_SUFFIX}
+    - echo "IMAGE_NAME=${IMAGE_NAME}"
+    - !reference [.common, setup_image_tag_script]
+    - !reference [.common, setup_base_image_script]
+    - echo "DOCKERFILE_FOLDER=${DOCKERFILE_FOLDER}"
+    - echo "DOCKERFILE_NAME=${DOCKERFILE_NAME}"
+    - echo "SELECT_PKGS=${SELECT_PKGS}"
+    - echo "CMAKE_ARGS=${CMAKE_ARGS}"
+    - echo "TARGET=${TARGET}"
+    - export BUILDER_SUFFIX=$BUILDER_SUFFIX
+  extends:
+    - .build_with_kaniko
+    - .on_always
+  variables:
+    IMAGE_NAME: "color_marker_publish_humble"
+    DOCKERFILE_FOLDER: "src-gen/deploy_ur_applications_with_color_detection/color_marker_publish/"
+    BASE_IMAGE_PREFIX: "public.ecr.aws/docker/library/ros"
+    BASE_IMAGE_SUFFIX: "humble-ros-core"
+    SELECT_PKGS: ""
+    COLCON_OPTION: ""
+
+publish_color_marker_publish:
+  tags: *kaniko_runner
+  stage: publish
+  extends:
+    - .publish
+    - .on_merge_tag
+  variables:
+    IMAGE_NAME: "color_marker_publish_humble"
+  needs:
+    - color_marker_publish
+ur_driver_with_moveit:
+  tags: *kaniko_runner
+  stage: build
+  before_script:
+    # use "export" to overide global variables
+    # - export BASE_IMAGE_PREFIX="public.ecr.aws/docker/library/ros"
+    # - export BASE_IMAGE_SUFFIX="humble-ros-core"
+    - echo BASE_IMAGE_PREFIX=${BASE_IMAGE_PREFIX}
+    - echo BASE_IMAGE_SUFFIX=${BASE_IMAGE_SUFFIX}
+    - echo "IMAGE_NAME=${IMAGE_NAME}"
+    - !reference [.common, setup_image_tag_script]
+    - !reference [.common, setup_base_image_script]
+    - echo "DOCKERFILE_FOLDER=${DOCKERFILE_FOLDER}"
+    - echo "DOCKERFILE_NAME=${DOCKERFILE_NAME}"
+    - echo "SELECT_PKGS=${SELECT_PKGS}"
+    - echo "CMAKE_ARGS=${CMAKE_ARGS}"
+    - echo "TARGET=${TARGET}"
+    - export BUILDER_SUFFIX=$BUILDER_SUFFIX
+  extends:
+    - .build_with_kaniko
+    - .on_always
+  variables:
+    IMAGE_NAME: "ur_driver_with_moveit_humble"
+    DOCKERFILE_FOLDER: "src-gen/deploy_ur_applications_with_color_detection/ur_driver_with_moveit/"
+    BASE_IMAGE_PREFIX: "public.ecr.aws/docker/library/ros"
+    BASE_IMAGE_SUFFIX: "humble-ros-core"
+    SELECT_PKGS: ""
+    COLCON_OPTION: ""
+
+publish_ur_driver_with_moveit:
+  tags: *kaniko_runner
+  stage: publish
+  extends:
+    - .publish
+    - .on_merge_tag
+  variables:
+    IMAGE_NAME: "ur_driver_with_moveit_humble"
+  needs:
+    - ur_driver_with_moveit
+
+doc:
+  tags: *kaniko_runner
+  stage: doc
+  extends:
+    - .sphinxdoc
+    - .on_doc_change
+    - .on_merge_tag
+  variables:
+    DOC_PATH: "src-gen/deploy_ur_applications_with_color_detection/doc/source"
+
+ansible_deploy:
+  tags:
+    - cmh_tower_400
+  stage: ansible_deploy
+  before_script:
+    - "command -v ssh-agent >/dev/null || ( apt-get update -y && apt-get install openssh-client -y )"
+    - eval $(ssh-agent -s)
+    - chmod 400 "$SSH_PRIVATE_KEY_CMH_TOWER_400"
+    - ssh-add "$SSH_PRIVATE_KEY_CMH_TOWER_400"
+
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+
+    - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+
+    - apk add ansible -v
+  script:
+    - cd src-gen/deploy_ur_applications_with_color_detection/ansible
+    - ansible-playbook -i inventory_ci.yaml --private-key "$SSH_PRIVATE_KEY_CMH_TOWER_400" playbook_deploy_files.yaml
+  variables:
+    ANSIBLE_HOST_KEY_CHECKING: "False"
+  extends:
+    - .on_merge_tag
+  when: manual
+
+stages:
+  - ansible_deploy
+  - build
+  - publish
+  - doc
