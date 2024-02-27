@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Automatic-Module-Name: de.fraunhofer.ipa.targetEnvironment.xtext
 Bundle-ManifestVersion: 2
 Bundle-Name: de.fraunhofer.ipa.targetEnvironment.xtext
-Bundle-Vendor: My Company
+Bundle-Vendor: Fraunhofer IPA
 Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: de.fraunhofer.ipa.targetEnvironment.xtext; singleton:=true
 Bundle-ActivationPolicy: lazy
@@ -15,7 +15,7 @@ Require-Bundle: de.fraunhofer.ipa.targetEnvironment,
  org.antlr.runtime;bundle-version="4.7.2",
  de.fraunhofer.ipa.deployment.util.xtext;bundle-version="1.0.0",
  org.eclipse.xtend.lib;bundle-version="2.14.0"
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-19
 Export-Package: de.fraunhofer.ipa.targetEnvironment,
  de.fraunhofer.ipa.targetEnvironment.serializer,
  de.fraunhofer.ipa.targetEnvironment.services,
