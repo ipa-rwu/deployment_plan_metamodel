@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Automatic-Module-Name: de.fraunhofer.ipa.targetEnvironment.xtext.ui
 Bundle-ManifestVersion: 2
 Bundle-Name: de.fraunhofer.ipa.targetEnvironment.xtext.ui
-Bundle-Vendor: My Company
+Bundle-Vendor: Fraunhofer IPA
 Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: de.fraunhofer.ipa.targetEnvironment.xtext.ui; singleton:=true
 Bundle-ActivationPolicy: lazy
@@ -22,7 +22,7 @@ Require-Bundle: de.fraunhofer.ipa.targetEnvironment.xtext,
  org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
  org.eclipse.xtend.lib;bundle-version="2.14.0";resolution:=optional
 Import-Package: org.apache.log4j
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-19
 Export-Package: de.fraunhofer.ipa.targetEnvironment.ui.contentassist,
  de.fraunhofer.ipa.targetEnvironment.ui.quickfix,
  de.fraunhofer.ipa.targetEnvironment.xtext.ui.internal

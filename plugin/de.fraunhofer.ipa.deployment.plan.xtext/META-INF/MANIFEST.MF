@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Automatic-Module-Name: de.fraunhofer.ipa.deployment.plan.xtext
 Bundle-ManifestVersion: 2
 Bundle-Name: de.fraunhofer.ipa.deployment.plan.xtext
-Bundle-Vendor: My Company
+Bundle-Vendor: Fraunhofer IPA
 Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: de.fraunhofer.ipa.deployment.plan.xtext; singleton:=true
 Bundle-ActivationPolicy: lazy
@@ -16,7 +16,7 @@ Require-Bundle: de.fraunhofer.ipa.targetEnvironment,
  org.eclipse.xtext.util,
  org.antlr.runtime;bundle-version="[3.2.0,3.2.1)",
  com.google.gson;bundle-version="2.9.1"
-Bundle-RequiredExecutionEnvironment: JavaSE-17
+Bundle-RequiredExecutionEnvironment: JavaSE-19
 Export-Package: de.fraunhofer.ipa.deployment.generator,
  de.fraunhofer.ipa.deployment.parser.antlr.lexer,
  de.fraunhofer.ipa.deployment.services,

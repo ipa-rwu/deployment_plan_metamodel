@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Automatic-Module-Name: de.fraunhofer.ipa.deployment.planros.xtext
 Bundle-ManifestVersion: 2
 Bundle-Name: de.fraunhofer.ipa.deployment.planros.xtext
-Bundle-Vendor: My Company
+Bundle-Vendor: Fraunhofer IPA
 Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: de.fraunhofer.ipa.deployment.planros.xtext; singleton:=true
 Bundle-ActivationPolicy: lazy
@@ -16,7 +16,7 @@ Require-Bundle: de.fraunhofer.ipa.deploymentPlan,
  org.antlr.runtime;bundle-version="[3.2.0,3.2.1)",
  de.fraunhofer.ipa.rossystem,
  de.fraunhofer.ipa.ros.xtext;bundle-version="2.0.0"
-Bundle-RequiredExecutionEnvironment: JavaSE-17
+Bundle-RequiredExecutionEnvironment: JavaSE-19
 Export-Package: de.fraunhofer.ipa.deployment,
  de.fraunhofer.ipa.deployment.formatting2,
  de.fraunhofer.ipa.deployment.generator,
