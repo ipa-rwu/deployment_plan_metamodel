@@ -57,6 +57,9 @@ import targetEnvironment.ConfigConnectionProperty
 import targetEnvironment.ConnectedDevice
 import targetEnvironment.DeviceInstance
 import targetEnvironment.TargetDeployEnviroment
+import system.Component
+import system.System
+import system.RosNode
 
 class OSInfo{
     String name
@@ -145,7 +148,7 @@ class NetworkInfo {
     }
 
     def getAddress(){
-        if(this.Address !== null)
+      if(this.Address !== null)
       return this.Address
     else
       throw new RuntimeException("Didn't set Address yet")
@@ -181,7 +184,7 @@ class NetworkInfo {
       if(this.Netmask !== null)
         return this.Netmask
         else
-        throw new RuntimeException("Didn't set Address yet")
+        throw new RuntimeException("Didn't set Netmask yet")
     }
 
     def setGateway(String address){
@@ -266,7 +269,7 @@ class DeploymentHelper {
 
         if(output.size>0){
             if(debug){
-                    System.out.printf("runSubprocess: get success output: %s\n", output.toList.toString)
+                    java.lang.System.out.printf("runSubprocess: get success output: %s\n", output.toList.toString)
                 }
             res.addResult(true, output.toList)
             return res
@@ -279,7 +282,7 @@ class DeploymentHelper {
         }
         if(output.size>0){
             if(debug){
-                    System.out.printf("runSubprocess: get error output: %s\n",output.toList.toString)
+                    java.lang.System.out.printf("runSubprocess: get error output: %s\n",output.toList.toString)
                 }
             res.addResult(false, output.toList)
             return res
@@ -459,7 +462,12 @@ def getAbstarctConfigSoftwareComponentName(AbstarctConfigSoftwareComponent compo
     }
     if(component instanceof ConfigRosSoftwareComponent){
         var comcomp = (component as ConfigRosSoftwareComponent).component
-        return comcomp.name
+        if(comcomp instanceof System){
+          return comcomp.name
+        }
+        if(comcomp instanceof RosNode){
+          return comcomp.name
+        }
     }
 }
 
@@ -504,7 +512,7 @@ def getReleaseInfo(String[] packNames, String rosdistro) {
     var List<String> commands = new ArrayList<String>(Arrays.asList("dhelp", "repo", "-pkg"))
     commands.addAll(packNames)
     commands.addAll(#["-d", rosdistro])
-    System.out.printf("run dhelp commands: %s\n", commands.toString)
+    java.lang.System.out.printf("run dhelp commands: %s\n", commands.toString)
     var List<RepoInfo> repo_infos = new ArrayList
     var process_res = runSubprocess(commands, true)
     if(process_res.booleanResult){
@@ -516,7 +524,7 @@ def getReleaseInfo(String[] packNames, String rosdistro) {
           repo_infos.add(repo_info)
         }
       }
-    System.out.println("Finishing dhelp commands")
+    java.lang.System.out.println("Finishing dhelp commands")
 
     return repo_infos
 }
@@ -600,7 +608,7 @@ def determinIfGithub(String repo_url){
 //      System.out.printf("response for github: %s\n",response_in_json.toString)
 
       if(response_in_json.get_if_private === null){
-        System.out.printf(String.format("Github API rate limit exceeded now, assume it is private repository"))
+        java.lang.System.out.printf(String.format("Github API rate limit exceeded now, assume it is private repository"))
         return false
       }
       if(response_in_json.get_if_private){
