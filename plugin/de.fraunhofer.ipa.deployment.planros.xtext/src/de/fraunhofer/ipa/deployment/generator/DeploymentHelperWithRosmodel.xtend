@@ -49,7 +49,10 @@ class DeploymentHelperWithRosmodel extends DeploymentHelper{
 
   var PlanWithRosmodelUtils utils = new PlanWithRosmodelUtils
 
-  def getRosPackagesFromSystem(System rossystem){
+  /*
+   * Collect all Packages from all RosNodes in a system
+   */
+  def getRosPackagesFromSystemNodes(System rossystem){
     var pkgsList = new LinkedHashSet
     var List<System> all_include_systems = new ArrayList
     utils.getAllSystem(rossystem, all_include_systems);
@@ -62,14 +65,30 @@ class DeploymentHelperWithRosmodel extends DeploymentHelper{
                     .filter[it instanceof RosNode]
                     .map[it as RosNode].collect(Collectors.toList())
     for(rosnode : rosnodes){
-        pkgsList.addAll(getPacakgeFromRosNode(rosnode))
+        pkgsList.add(getPacakgeFromRosNode(rosnode))
     }
     //todo: get pkg from fromfile in rossystem
     return pkgsList
   }
 
+
+  def getRosPackagesFromSystemWithoutDuplicate(System rossystem){
+    var pkgsList = getRosPackagesFromSystemNodes(rossystem)
+    return getRosPkgWithoutDuplicate(pkgsList)
+  }
+
+  def getRosPkgWithoutDuplicate(LinkedHashSet<PackageImpl> pkg_list){
+    var Map<String, PackageImpl> map = new TreeMap
+    for (pkgimpl : pkg_list) {
+         if (!map.containsKey(pkgimpl.name)) {
+              map.put(pkgimpl.name, pkgimpl)
+         }
+    }
+    return map.values().toList
+  }
+
   def getPkgInfoFromSystemLaunfile(System rossystem){
-    var packLists = new LinkedHashSet
+    var packLists = new LinkedHashSet<PkgInfo>
     var List<System> all_include_systems = new ArrayList
     utils.getAllSystem(rossystem, all_include_systems);
 
@@ -78,6 +97,7 @@ class DeploymentHelperWithRosmodel extends DeploymentHelper{
                 .map[fromFile]
                 .collect(Collectors.toList())
     java.lang.System.out.printf("System %s Get launches: %s\n", rossystem.name, launchs.toString)
+//    TODO: how to repo info from launch file
 //    for(launch : launchs){
 //      val pkg = new PkgInfo =>[
 //        name = launch.name.split("/").get(0)
@@ -93,28 +113,38 @@ class DeploymentHelperWithRosmodel extends DeploymentHelper{
     return packLists
   }
 
-  def getPkgInfoFromSystemNodes(System sys){
-    var rospkgs = getRosPackagesFromSystemWithoutDuplicate(sys)
+  def getPkgInfosFromPkgImpl(List<PackageImpl> rospkgs){
     var packLists = new LinkedHashSet
     for(pkg_impl : rospkgs){
-      val pkg = new PkgInfo =>[
-        name = pkg_impl.name
-        if(pkg_impl.fromGitRepo !== null)
-          repo = getRepoInfo(pkg_impl.fromGitRepo)
-        else
-          repo = null
-      ]
-      packLists.add(pkg)
+      var pkginfo = getPkgInfoFromPkgImpl(pkg_impl)
+      packLists.add(pkginfo)
     }
 
     return packLists
   }
 
+  def getPkgInfoFromPkgImpl(PackageImpl rospkg){
+      val pkg = new PkgInfo =>[
+        name = rospkg.name
+        if(rospkg.fromGitRepo !== null)
+          repo = getRepoInfo(rospkg.fromGitRepo)
+        else
+          repo = null
+      ]
+
+    return pkg
+  }
+
+  def getPkgInfoFromSystemNodesandLaunch(System sys){
+    var rospkgs = getRosPackagesFromSystemWithoutDuplicate(sys)
+//    var rospkgs_from_launchfiles = getPkgInfoFromSystemLaunfile(sys)
+
+    return getPkgInfosFromPkgImpl(rospkgs)
+  }
+
   def getPacakgeFromRosNode (RosNode object){
-    var pkgsList = new ArrayList()
     var fromNode = object.from
-    pkgsList.add(getPackakge(fromNode))
-    return pkgsList
+    return getPackakge(fromNode)
   }
 
   def getPackakge(Node object){
@@ -126,16 +156,6 @@ class DeploymentHelperWithRosmodel extends DeploymentHelper{
     return (object as RosPublisherReferenceImpl).from.eContainer.eContainer.eContainer as PackageImpl
   }
 
-  def getRosPackagesFromSystemWithoutDuplicate(System rossystem){
-    var pkgsList = getRosPackagesFromSystem(rossystem)
-    var Map<String, PackageImpl> map = new TreeMap
-    for (pkgimpl : pkgsList) {
-         if (!map.containsKey(pkgimpl.name)) {
-              map.put(pkgimpl.name, pkgimpl)
-         }
-    }
-    return map.values().toList
-  }
 
   def getRepoInfo(String fromGitRepo){
     val repo_info = new RepoInfo
@@ -167,9 +187,9 @@ class DeploymentHelperWithRosmodel extends DeploymentHelper{
     return repo_info
   }
 
-  def getRepoinfosFromRossystemIncludeLaunchFile(System sys, OSInfo os, String rosdistro){
+  def getRepoinfosFromPkgInfoList(LinkedHashSet<PkgInfo> pkgLists, OSInfo os, String rosdistro){
     // get all package from nodes
-    var pkgLists = getPkgInfoFromSystemNodes(sys)
+
     // get all package from launch file
 //    pkgLists.addAll(getPkgInfoFromSystemLaunfile(sys))
 //    java.lang.System.out.printf("-----Repo info from rossystem: %s-----\n", sys.name)

@@ -330,7 +330,7 @@ public class DeployPlanWithRosModelPackageImpl extends EPackageImpl implements D
     initEReference(getConfigRosParameter_Value(), theUtilPackage.getPropertyValue(), null, "value", null, 0, 1, ConfigRosParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(configRosSoftwareComponentEClass, ConfigRosSoftwareComponent.class, "ConfigRosSoftwareComponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getConfigRosSoftwareComponent_Component(), theRossystemPackage.getSystem(), null, "component", null, 1, 1, ConfigRosSoftwareComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getConfigRosSoftwareComponent_Component(), theRossystemPackage.getComponent(), null, "component", null, 1, 1, ConfigRosSoftwareComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(deployRossystemPlanEClass, DeployRossystemPlan.class, "DeployRossystemPlan", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getDeployRossystemPlan_TargetRossystem(), theRossystemPackage.getSystem(), null, "targetRossystem", null, 0, 1, DeployRossystemPlan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

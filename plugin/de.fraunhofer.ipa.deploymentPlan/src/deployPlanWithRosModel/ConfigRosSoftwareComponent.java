@@ -3,6 +3,7 @@
 package deployPlanWithRosModel;
 
 import deploymentPlan.AbstarctConfigSoftwareComponent;
+import system.Component;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,21 +27,21 @@ public interface ConfigRosSoftwareComponent extends AbstarctConfigSoftwareCompon
    * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
    * @return the value of the '<em>Component</em>' reference.
-   * @see #setComponent(system.System)
+   * @see #setComponent(Component)
    * @see deployPlanWithRosModel.DeployPlanWithRosModelPackage#getConfigRosSoftwareComponent_Component()
    * @model required="true"
    * @generated
    */
-    system.System getComponent();
+    Component getComponent();
 
     /**
    * Sets the value of the '{@link deployPlanWithRosModel.ConfigRosSoftwareComponent#getComponent <em>Component</em>}' reference.
    * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+   * <!-- end-user-doc -->
    * @param value the new value of the '<em>Component</em>' reference.
    * @see #getComponent()
    * @generated
    */
-    void setComponent(system.System value);
+  void setComponent(Component value);
 
 } // ConfigRosSoftwareComponent

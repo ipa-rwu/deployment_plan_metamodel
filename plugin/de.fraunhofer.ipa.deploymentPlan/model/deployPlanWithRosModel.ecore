@@ -15,7 +15,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ConfigRosSoftwareComponent" eSuperTypes="deploymentPlan.ecore#//AbstarctConfigSoftwareComponent">
     <eStructuralFeatures xsi:type="ecore:EReference" name="component" lowerBound="1"
-        eType="ecore:EClass ../../de.fraunhofer.ipa.rossystem/model/rossystem.ecore#//System"/>
+        eType="ecore:EClass ../../de.fraunhofer.ipa.rossystem/model/rossystem.ecore#//Component"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DeployRossystemPlan" eSuperTypes="deploymentPlan.ecore#//AbstractDeploymentPlan">
     <eStructuralFeatures xsi:type="ecore:EReference" name="targetRossystem" eType="ecore:EClass ../../de.fraunhofer.ipa.rossystem/model/rossystem.ecore#//System"/>

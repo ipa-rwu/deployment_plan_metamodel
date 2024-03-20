@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import system.Component;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,7 +37,7 @@ public class ConfigRosSoftwareComponentImpl extends AbstarctConfigSoftwareCompon
    * @generated
    * @ordered
    */
-    protected system.System component;
+    protected Component component;
 
     /**
    * <!-- begin-user-doc -->
@@ -62,10 +63,10 @@ public class ConfigRosSoftwareComponentImpl extends AbstarctConfigSoftwareCompon
      * <!-- end-user-doc -->
    * @generated
    */
-    public system.System getComponent() {
+    public Component getComponent() {
     if (component != null && component.eIsProxy()) {
       InternalEObject oldComponent = (InternalEObject)component;
-      component = (system.System)eResolveProxy(oldComponent);
+      component = (Component)eResolveProxy(oldComponent);
       if (component != oldComponent) {
         if (eNotificationRequired())
           eNotify(new ENotificationImpl(this, Notification.RESOLVE, DeployPlanWithRosModelPackage.CONFIG_ROS_SOFTWARE_COMPONENT__COMPONENT, oldComponent, component));
@@ -79,23 +80,23 @@ public class ConfigRosSoftwareComponentImpl extends AbstarctConfigSoftwareCompon
      * <!-- end-user-doc -->
    * @generated
    */
-    public system.System basicGetComponent() {
+    public Component basicGetComponent() {
     return component;
   }
 
     /**
    * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+   * <!-- end-user-doc -->
    * @generated
    */
-    public void setComponent(system.System newComponent) {
-    system.System oldComponent = component;
+  public void setComponent(Component newComponent) {
+    Component oldComponent = component;
     component = newComponent;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, DeployPlanWithRosModelPackage.CONFIG_ROS_SOFTWARE_COMPONENT__COMPONENT, oldComponent, component));
   }
 
-    /**
+        /**
    * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
    * @generated
@@ -119,7 +120,7 @@ public class ConfigRosSoftwareComponentImpl extends AbstarctConfigSoftwareCompon
     public void eSet(int featureID, Object newValue) {
     switch (featureID) {
       case DeployPlanWithRosModelPackage.CONFIG_ROS_SOFTWARE_COMPONENT__COMPONENT:
-        setComponent((system.System)newValue);
+        setComponent((Component)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -134,7 +135,7 @@ public class ConfigRosSoftwareComponentImpl extends AbstarctConfigSoftwareCompon
     public void eUnset(int featureID) {
     switch (featureID) {
       case DeployPlanWithRosModelPackage.CONFIG_ROS_SOFTWARE_COMPONENT__COMPONENT:
-        setComponent((system.System)null);
+        setComponent((Component)null);
         return;
     }
     super.eUnset(featureID);

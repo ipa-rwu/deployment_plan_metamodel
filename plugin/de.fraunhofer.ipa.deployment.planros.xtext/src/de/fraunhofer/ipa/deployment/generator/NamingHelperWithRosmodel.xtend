@@ -8,6 +8,9 @@ import java.util.ArrayList
 import java.util.HashMap
 import java.util.List
 import java.util.Map
+import system.SubSystem
+import system.RosNode
+import java.util.LinkedHashSet
 
 class NamingHelperWithRosmodel {
 
@@ -40,12 +43,19 @@ class NamingHelperWithRosmodel {
           var os = deployHelper.getOSFromRosDistro(deployHelper.getOS(assignment).name, rosdistro)
           var List<RepoInfo> RossystemRepoInfosPerAssignment =  new ArrayList
           if(assignment instanceof RossystemImplementationAssignment){
-          for(sys: assignment.softwareComponents.map[it as ConfigRosSoftwareComponent].map[component]){
+          var pkginfo_set = new LinkedHashSet<PkgInfo>
+          for(ros_component: assignment.softwareComponents.map[it as ConfigRosSoftwareComponent].map[component]){
               // from launch file also define repo
-              var repos = extendedDeployHelper.getRepoinfosFromRossystemIncludeLaunchFile(sys, os, rosdistro)
-              RossystemRepoInfosPerAssignment.addAll(repos)
-            }
-            this.AssignmentRossystemRepoInfoMap.put(assignment, RossystemRepoInfosPerAssignment)
+              if(ros_component instanceof SubSystem){
+                pkginfo_set.addAll(extendedDeployHelper.getPkgInfoFromSystemNodesandLaunch((ros_component as SubSystem).system))
+              }
+              else if(ros_component instanceof RosNode){
+                pkginfo_set.add(extendedDeployHelper.getPkgInfoFromPkgImpl(extendedDeployHelper.getPacakgeFromRosNode((ros_component as RosNode))))
+                }
+           }
+
+          RossystemRepoInfosPerAssignment.addAll(extendedDeployHelper.getRepoinfosFromPkgInfoList(pkginfo_set, os, rosdistro))
+          this.AssignmentRossystemRepoInfoMap.put(assignment, RossystemRepoInfosPerAssignment)
 //            RossystemRepoInfosPerAssignment.stream.forEach[System.out.printf("Finial results: %s", it.print)]
           }
 

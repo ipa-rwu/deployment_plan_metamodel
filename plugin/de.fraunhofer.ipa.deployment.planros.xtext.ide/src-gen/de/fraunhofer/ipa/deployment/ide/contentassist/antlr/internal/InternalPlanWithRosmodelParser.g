@@ -2521,7 +2521,7 @@ rule__ConfigRosSoftwareComponent__Group_2_3__4__Impl
 :
 (
   { before(grammarAccess.getConfigRosSoftwareComponentAccess().getGroup_2_3_4()); }
-  (rule__ConfigRosSoftwareComponent__Group_2_3_4__0)?
+  (rule__ConfigRosSoftwareComponent__Group_2_3_4__0)*
   { after(grammarAccess.getConfigRosSoftwareComponentAccess().getGroup_2_3_4()); }
 )
 ;
@@ -2601,7 +2601,7 @@ rule__ConfigRosSoftwareComponent__Group_2_3_4__1__Impl
 :
 (
   { before(grammarAccess.getConfigRosSoftwareComponentAccess().getStartCommandAssignment_2_3_4_1()); }
-  (rule__ConfigRosSoftwareComponent__StartCommandAssignment_2_3_4_1)*
+  (rule__ConfigRosSoftwareComponent__StartCommandAssignment_2_3_4_1)
   { after(grammarAccess.getConfigRosSoftwareComponentAccess().getStartCommandAssignment_2_3_4_1()); }
 )
 ;
@@ -9246,13 +9246,13 @@ rule__ConfigRosSoftwareComponent__ComponentAssignment_1
   }
 :
   (
-    { before(grammarAccess.getConfigRosSoftwareComponentAccess().getComponentSystemCrossReference_1_0()); }
+    { before(grammarAccess.getConfigRosSoftwareComponentAccess().getComponentComponentCrossReference_1_0()); }
     (
-      { before(grammarAccess.getConfigRosSoftwareComponentAccess().getComponentSystemEStringParserRuleCall_1_0_1()); }
+      { before(grammarAccess.getConfigRosSoftwareComponentAccess().getComponentComponentEStringParserRuleCall_1_0_1()); }
       ruleEString
-      { after(grammarAccess.getConfigRosSoftwareComponentAccess().getComponentSystemEStringParserRuleCall_1_0_1()); }
+      { after(grammarAccess.getConfigRosSoftwareComponentAccess().getComponentComponentEStringParserRuleCall_1_0_1()); }
     )
-    { after(grammarAccess.getConfigRosSoftwareComponentAccess().getComponentSystemCrossReference_1_0()); }
+    { after(grammarAccess.getConfigRosSoftwareComponentAccess().getComponentComponentCrossReference_1_0()); }
   )
 ;
 finally {

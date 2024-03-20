@@ -200,7 +200,7 @@ ruleConfigRosSoftwareComponent returns [EObject current=null]
           }
         }
         {
-          newCompositeNode(grammarAccess.getConfigRosSoftwareComponentAccess().getComponentSystemCrossReference_1_0());
+          newCompositeNode(grammarAccess.getConfigRosSoftwareComponentAccess().getComponentComponentCrossReference_1_0());
         }
         ruleEString
         {
@@ -311,8 +311,8 @@ ruleConfigRosSoftwareComponent returns [EObject current=null]
                 afterParserOrEnumRuleCall();
               }
             )
-          )*
-        )?
+          )
+        )*
         this_DEDENT_14=RULE_DEDENT
         {
           newLeafNode(this_DEDENT_14, grammarAccess.getConfigRosSoftwareComponentAccess().getDEDENTTerminalRuleCall_2_3_5());
