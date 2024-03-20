@@ -134,8 +134,8 @@ public class PlanWithRosmodelGrammarAccess extends AbstractElementFinder.Abstrac
     private final Group cGroup = (Group)rule.eContents().get(1);
     private final Action cConfigRosSoftwareComponentAction_0 = (Action)cGroup.eContents().get(0);
     private final Assignment cComponentAssignment_1 = (Assignment)cGroup.eContents().get(1);
-    private final CrossReference cComponentSystemCrossReference_1_0 = (CrossReference)cComponentAssignment_1.eContents().get(0);
-    private final RuleCall cComponentSystemEStringParserRuleCall_1_0_1 = (RuleCall)cComponentSystemCrossReference_1_0.eContents().get(1);
+    private final CrossReference cComponentComponentCrossReference_1_0 = (CrossReference)cComponentAssignment_1.eContents().get(0);
+    private final RuleCall cComponentComponentEStringParserRuleCall_1_0_1 = (RuleCall)cComponentComponentCrossReference_1_0.eContents().get(1);
     private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
     private final Keyword cColonKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
     private final RuleCall cINDENTTerminalRuleCall_2_1 = (RuleCall)cGroup_2.eContents().get(1);
@@ -160,7 +160,7 @@ public class PlanWithRosmodelGrammarAccess extends AbstractElementFinder.Abstrac
 
     //ConfigRosSoftwareComponent returns ConfigRosSoftwareComponent:
     //    {ConfigRosSoftwareComponent}
-    //    component=[rossystem::System|EString] (":"
+    //    component=[rossystem::Component|EString] (":"
     //    INDENT
     //        (
     //        'executionConfiguration:'
@@ -171,9 +171,7 @@ public class PlanWithRosmodelGrammarAccess extends AbstractElementFinder.Abstrac
     //            ('startCommand:'
     //                INDENT
     //                    PreListElement startCommand+=EString
-    //                (
-    //                    PreListElement (startCommand+=EString)*
-    //                )?
+    //                        (PreListElement startCommand+=EString)*
     //                DEDENT
     //            )?
     //     DEDENT
@@ -182,7 +180,7 @@ public class PlanWithRosmodelGrammarAccess extends AbstractElementFinder.Abstrac
     @Override public ParserRule getRule() { return rule; }
 
     //{ConfigRosSoftwareComponent}
-    //component=[rossystem::System|EString] (":"
+    //component=[rossystem::Component|EString] (":"
     //INDENT
     //    (
     //    'executionConfiguration:'
@@ -193,9 +191,7 @@ public class PlanWithRosmodelGrammarAccess extends AbstractElementFinder.Abstrac
     //        ('startCommand:'
     //            INDENT
     //                PreListElement startCommand+=EString
-    //            (
-    //                PreListElement (startCommand+=EString)*
-    //            )?
+    //                    (PreListElement startCommand+=EString)*
     //            DEDENT
     //        )?
     // DEDENT
@@ -205,14 +201,14 @@ public class PlanWithRosmodelGrammarAccess extends AbstractElementFinder.Abstrac
     //{ConfigRosSoftwareComponent}
     public Action getConfigRosSoftwareComponentAction_0() { return cConfigRosSoftwareComponentAction_0; }
 
-    //component=[rossystem::System|EString]
+    //component=[rossystem::Component|EString]
     public Assignment getComponentAssignment_1() { return cComponentAssignment_1; }
 
-    //[rossystem::System|EString]
-    public CrossReference getComponentSystemCrossReference_1_0() { return cComponentSystemCrossReference_1_0; }
+    //[rossystem::Component|EString]
+    public CrossReference getComponentComponentCrossReference_1_0() { return cComponentComponentCrossReference_1_0; }
 
     //EString
-    public RuleCall getComponentSystemEStringParserRuleCall_1_0_1() { return cComponentSystemEStringParserRuleCall_1_0_1; }
+    public RuleCall getComponentComponentEStringParserRuleCall_1_0_1() { return cComponentComponentEStringParserRuleCall_1_0_1; }
 
     //(":"
     //   INDENT
@@ -225,9 +221,7 @@ public class PlanWithRosmodelGrammarAccess extends AbstractElementFinder.Abstrac
     //           ('startCommand:'
     //               INDENT
     //                   PreListElement startCommand+=EString
-    //               (
-    //                   PreListElement (startCommand+=EString)*
-    //               )?
+    //                       (PreListElement startCommand+=EString)*
     //               DEDENT
     //           )?
     //    DEDENT
@@ -266,9 +260,7 @@ public class PlanWithRosmodelGrammarAccess extends AbstractElementFinder.Abstrac
     //('startCommand:'
     //    INDENT
     //        PreListElement startCommand+=EString
-    //    (
-    //        PreListElement (startCommand+=EString)*
-    //    )?
+    //            (PreListElement startCommand+=EString)*
     //    DEDENT
     //)?
     public Group getGroup_2_3() { return cGroup_2_3; }
@@ -288,15 +280,13 @@ public class PlanWithRosmodelGrammarAccess extends AbstractElementFinder.Abstrac
     //EString
     public RuleCall getStartCommandEStringParserRuleCall_2_3_3_0() { return cStartCommandEStringParserRuleCall_2_3_3_0; }
 
-    //(
-    //    PreListElement (startCommand+=EString)*
-    //)?
+    //(PreListElement startCommand+=EString)*
     public Group getGroup_2_3_4() { return cGroup_2_3_4; }
 
     //PreListElement
     public RuleCall getPreListElementParserRuleCall_2_3_4_0() { return cPreListElementParserRuleCall_2_3_4_0; }
 
-    //(startCommand+=EString)*
+    //startCommand+=EString
     public Assignment getStartCommandAssignment_2_3_4_1() { return cStartCommandAssignment_2_3_4_1; }
 
     //EString
@@ -711,7 +701,7 @@ public class PlanWithRosmodelGrammarAccess extends AbstractElementFinder.Abstrac
 
   //ConfigRosSoftwareComponent returns ConfigRosSoftwareComponent:
   //    {ConfigRosSoftwareComponent}
-  //    component=[rossystem::System|EString] (":"
+  //    component=[rossystem::Component|EString] (":"
   //    INDENT
   //        (
   //        'executionConfiguration:'
@@ -722,9 +712,7 @@ public class PlanWithRosmodelGrammarAccess extends AbstractElementFinder.Abstrac
   //            ('startCommand:'
   //                INDENT
   //                    PreListElement startCommand+=EString
-  //                (
-  //                    PreListElement (startCommand+=EString)*
-  //                )?
+  //                        (PreListElement startCommand+=EString)*
   //                DEDENT
   //            )?
   //     DEDENT

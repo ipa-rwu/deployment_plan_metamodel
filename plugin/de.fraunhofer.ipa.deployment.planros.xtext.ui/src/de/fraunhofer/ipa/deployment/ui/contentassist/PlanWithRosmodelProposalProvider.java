@@ -4,6 +4,7 @@
 package de.fraunhofer.ipa.deployment.ui.contentassist;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -30,10 +31,12 @@ import deployPlanWithRosModel.impl.ConfigRosParameterImpl;
 import deployPlanWithRosModel.impl.RossystemImplementationAssignmentImpl;
 import deploymentPlan.AbstractDeploymentPlan;
 import deploymentPlan.RosMiddleware;
+import ros.Parameter;
 import ros.impl.ParameterImpl;
 import system.Component;
 import system.RosNode;
 import system.RosParameter;
+import system.SubSystem;
 import system.System;
 import system.impl.RosParameterImpl;
 import targetEnvironment.ComputationDeviceInstance;
@@ -81,25 +84,58 @@ public class PlanWithRosmodelProposalProvider extends AbstractPlanWithRosmodelPr
   @Override
   public void completeConfigRosSoftwareComponent_Component(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
     RossystemImplementationAssignmentImpl impl_assignment = (RossystemImplementationAssignmentImpl) model;
+
     DeployRossystemPlan plan = (DeployRossystemPlan) impl_assignment.eContainer().eContainer();
+    List<Component> components = new ArrayList<Component>();
+  _utils.getAllComponentsFromSystem(plan.getTargetRossystem(), components);
+
     lookupCrossReference((CrossReference) assignment.getTerminal(),context, acceptor, new Predicate<IEObjectDescription>() {
             @Override
+            // input is any rossystem in the workspace
             public boolean apply(IEObjectDescription input) {
-              System inputObj = (System) input.getEObjectOrProxy();
+              Component inputObj = (Component) input.getEObjectOrProxy();
               if(inputObj.eIsProxy()) {
-                    EObject obj = EcoreUtil.resolve(inputObj, model);
+              // from rossystem proxy get possible Component
+                EObject obj = EcoreUtil.resolve(inputObj, model);
+                List<Component> pending_components = components;
+
                 if(plan.getTargetRossystem() != null) {
-                  List<System>  refsystems = (List<System>) plan.getTargetRossystem().getComponents().stream()
-                      .filter(it -> it instanceof System)
-                      .map(System.class::cast)
-                      .collect(Collectors.toList());
-                  List<Component>  systems = (List<Component>) refsystems.stream().map(System::getComponents).flatMap(List::stream).toList();
-                  if(systems.contains(obj)) {
-                            return true;
-                        }
+                  List<Component> defined_components = impl_assignment.getSoftwareComponents().stream().map(ConfigRosSoftwareComponent::getComponent).collect(Collectors.toList());
+
+                  if(defined_components.size()>0) {
+                    for (Component component : defined_components) {
+                      // Remove all component within defined subsystem
+              if(component instanceof System) {
+                List<Component> children = new ArrayList<Component>();
+                _utils.getAllComponentsFromSystem((System) component, children);
+                if(children.size()>0) {
+                  pending_components.removeAll(children);
+                }
+              }
+              // If a node is defined, user has to define all component in the system where the node belong
+              if(component instanceof RosNode) {
+                if (component.eContainer()  instanceof System) {
+                  pending_components.remove((System) component.eContainer());
+                }
+              }
+            }
+                  }
+                  pending_components.removeAll(defined_components);
+
+
+//                  List<SubSystem>  refsubsystems = (List<SubSystem>) plan.getTargetRossystem().getComponents().stream()
+//                      .filter(it -> it instanceof SubSystem)
+//                      .map(SubSystem.class::cast)
+//                      .collect(Collectors.toList());
+//                  java.lang.System.out.printf("refsubsystems: %s\n", refsubsystems);
+//                  List<Component>  components = (List<Component>) refsubsystems.stream().map(SubSystem::getSystem).map(System::getComponents).flatMap(List::stream).toList();
+
+                  if(pending_components.contains(obj)) {
+                    return true;
+                    }
                 }
                 else {
-                  return true;
+                  return false;
                 }
 
             }
@@ -145,9 +181,16 @@ public class PlanWithRosmodelProposalProvider extends AbstractPlanWithRosmodelPr
   public void completeConfigRosParameter_RefSysParam(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
     ConfigRosParameterImpl real_model = (ConfigRosParameterImpl) model;
     ConfigRosSoftwareComponent comp = (ConfigRosSoftwareComponent) real_model.eContainer();
-    System sys = comp.getComponent();
+    Component target_component = (Component) comp.getComponent();
     List<System> all_include_systems = new ArrayList<System>();
-    _utils.getAllSystem(sys, all_include_systems);
+    if(target_component instanceof System) {
+    _utils.getAllSystem((System) target_component, all_include_systems);
+    }
+    List<Parameter> params = all_include_systems.stream()
+            .map(System::getParameter)
+            .flatMap(List::stream)
+            .filter(p -> p.getValue() == null)
+            .collect(Collectors.toList());
 
     lookupCrossReference((CrossReference) assignment.getTerminal(),context, acceptor, new Predicate<IEObjectDescription>() {
             @Override
@@ -155,10 +198,7 @@ public class PlanWithRosmodelProposalProvider extends AbstractPlanWithRosmodelPr
               ParameterImpl inputObj = (ParameterImpl) input.getEObjectOrProxy();
               if(inputObj.eIsProxy()) {
                     EObject obj = EcoreUtil.resolve(inputObj, model);
-                    if(all_include_systems.stream()
-                        .map(System::getParameter)
-                        .flatMap(List::stream)
-                        .collect(Collectors.toList()).contains(obj)
+                    if(params.contains(obj)
                           && !comp.getExecutionConfiguration().stream()
                           .map(ConfigRosParameter.class::cast)
                           .map(ConfigRosParameter::getRefSysParam)
@@ -178,26 +218,42 @@ public class PlanWithRosmodelProposalProvider extends AbstractPlanWithRosmodelPr
   public void completeConfigRosParameter_RefNodeParam(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
     ConfigRosParameterImpl real_model = (ConfigRosParameterImpl) model;
     ConfigRosSoftwareComponent comp = (ConfigRosSoftwareComponent) real_model.eContainer();
-    System sys = comp.getComponent();
-    List<System> all_include_systems = new ArrayList<System>();
-    _utils.getAllSystem(sys, all_include_systems);
+    Component target_component = (Component) comp.getComponent();
+//    List<RosParameter> params = new ArrayList<RosParameter>();
+    List<RosParameter> params;
 
-    List<RosParameter> params = all_include_systems.stream()
-        .map(System::getComponents)
-        .flatMap(List::stream)
-        .filter(it -> it instanceof RosNode)
-        .map(RosNode.class::cast)
-        .map(RosNode::getRosparameters)
-        .flatMap(List::stream)
-        .collect(Collectors.toList());
+    if(target_component instanceof RosNode) {
+    params = ((RosNode) target_component).getRosparameters();
+    } else {
+     params = new ArrayList<>(); // Default value if target_component is not a RosNode
+  }
+
+    List<RosNode> all_include_nodes = new ArrayList<RosNode>();
+    if(target_component instanceof System) {
+      _utils.getAllNodesFromSystem((System) target_component, all_include_nodes);
+       params = all_include_nodes.
+           stream().map(RosNode::getRosparameters)
+           .flatMap(List::stream).
+           collect(Collectors.toList());
+
+      } else {
+       params = new ArrayList<>(); // Default value if target_component is not a RosNode
+    }
+
+
+    final List<RosParameter> finial_params = params;
+    java.lang.System.out.printf("list RefNodeParam: %s\n", finial_params.toString());
+
 
     lookupCrossReference((CrossReference) assignment.getTerminal(),context, acceptor, new Predicate<IEObjectDescription>() {
             @Override
             public boolean apply(IEObjectDescription input) {
+              java.lang.System.out.printf("RefNodeParam input: %s\n", input.toString());
               RosParameterImpl inputObj = (RosParameterImpl) input.getEObjectOrProxy();
               if(inputObj.eIsProxy()) {
                     EObject obj = EcoreUtil.resolve(inputObj, model);
-                    if(params.contains(obj)
+                    java.lang.System.out.printf("obj: %s\n", obj.toString());
+                    if(finial_params.contains(obj)
                 && !comp.getExecutionConfiguration().stream()
                   .map(ConfigRosParameter.class::cast)
                   .map(ConfigRosParameter::getRefNodeParam)
@@ -219,7 +275,7 @@ public class PlanWithRosmodelProposalProvider extends AbstractPlanWithRosmodelPr
   public void completeConfigRosSoftwareComponent_StartCommand(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
     java.lang.System.out.println("completeConfigRosSoftwareComponent_StartCommand");
     ConfigRosSoftwareComponent real_model = (ConfigRosSoftwareComponent) model;
-    System sys = real_model.getComponent();
+    System sys = (System) real_model.getComponent();
     if(sys.getFromFile() != null) {
       var ss = sys.getFromFile().split("/", -1);
       var pkg = ss[0];

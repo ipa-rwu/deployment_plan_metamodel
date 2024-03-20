@@ -234,7 +234,7 @@ public class PlanWithRosmodelSemanticSequencer extends PlanSemanticSequencer {
    *     ConfigRosSoftwareComponent returns ConfigRosSoftwareComponent
    *
    * Constraint:
-   *     (component=[System|EString] executionConfiguration+=ConfigRosParameter* (startCommand+=EString startCommand+=EString*)?)
+   *     (component=[Component|EString] executionConfiguration+=ConfigRosParameter* (startCommand+=EString startCommand+=EString*)?)
    * </pre>
    */
   protected void sequence_ConfigRosSoftwareComponent(ISerializationContext context, ConfigRosSoftwareComponent semanticObject) {

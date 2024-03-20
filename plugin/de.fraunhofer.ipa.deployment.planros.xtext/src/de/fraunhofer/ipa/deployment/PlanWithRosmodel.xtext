@@ -28,7 +28,7 @@ AbstarctConfigSoftwareComponent returns deploymentPlan::AbstarctConfigSoftwareCo
 
 ConfigRosSoftwareComponent returns ConfigRosSoftwareComponent:
     {ConfigRosSoftwareComponent}
-    component=[rossystem::System|EString] (":"
+    component=[rossystem::Component|EString] (":"
     INDENT
         (
         'executionConfiguration:'
@@ -39,9 +39,7 @@ ConfigRosSoftwareComponent returns ConfigRosSoftwareComponent:
             ('startCommand:'
                 INDENT
                     PreListElement startCommand+=EString
-                (
-                    PreListElement (startCommand+=EString)*
-                )?
+                    (PreListElement startCommand+=EString)*
                 DEDENT
             )?
      DEDENT

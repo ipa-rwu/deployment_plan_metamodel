@@ -4297,11 +4297,11 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
                 if ( (LA1_1==Name) ) {
                     int LA1_2 = input.LA(3);
 
-                    if ( (LA1_2==Os_version) ) {
-                        alt1=2;
-                    }
-                    else if ( (LA1_2==Os_name) ) {
+                    if ( (LA1_2==Os_name) ) {
                         alt1=1;
+                    }
+                    else if ( (LA1_2==Os_version) ) {
+                        alt1=2;
                     }
                     else {
                         NoViableAltException nvae =
@@ -7695,40 +7695,47 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ConfigRosSoftwareComponent__Group_2_3__4__Impl"
-    // InternalPlanWithRosmodelParser.g:2517:1: rule__ConfigRosSoftwareComponent__Group_2_3__4__Impl : ( ( rule__ConfigRosSoftwareComponent__Group_2_3_4__0 )? ) ;
+    // InternalPlanWithRosmodelParser.g:2517:1: rule__ConfigRosSoftwareComponent__Group_2_3__4__Impl : ( ( rule__ConfigRosSoftwareComponent__Group_2_3_4__0 )* ) ;
     public final void rule__ConfigRosSoftwareComponent__Group_2_3__4__Impl() throws RecognitionException {
 
             int stackSize = keepStackSize();
 
         try {
-            // InternalPlanWithRosmodelParser.g:2521:1: ( ( ( rule__ConfigRosSoftwareComponent__Group_2_3_4__0 )? ) )
-            // InternalPlanWithRosmodelParser.g:2522:1: ( ( rule__ConfigRosSoftwareComponent__Group_2_3_4__0 )? )
+            // InternalPlanWithRosmodelParser.g:2521:1: ( ( ( rule__ConfigRosSoftwareComponent__Group_2_3_4__0 )* ) )
+            // InternalPlanWithRosmodelParser.g:2522:1: ( ( rule__ConfigRosSoftwareComponent__Group_2_3_4__0 )* )
             {
-            // InternalPlanWithRosmodelParser.g:2522:1: ( ( rule__ConfigRosSoftwareComponent__Group_2_3_4__0 )? )
-            // InternalPlanWithRosmodelParser.g:2523:2: ( rule__ConfigRosSoftwareComponent__Group_2_3_4__0 )?
+            // InternalPlanWithRosmodelParser.g:2522:1: ( ( rule__ConfigRosSoftwareComponent__Group_2_3_4__0 )* )
+            // InternalPlanWithRosmodelParser.g:2523:2: ( rule__ConfigRosSoftwareComponent__Group_2_3_4__0 )*
             {
              before(grammarAccess.getConfigRosSoftwareComponentAccess().getGroup_2_3_4());
-            // InternalPlanWithRosmodelParser.g:2524:2: ( rule__ConfigRosSoftwareComponent__Group_2_3_4__0 )?
-            int alt17=2;
-            int LA17_0 = input.LA(1);
+            // InternalPlanWithRosmodelParser.g:2524:2: ( rule__ConfigRosSoftwareComponent__Group_2_3_4__0 )*
+            loop17:
+            do {
+                int alt17=2;
+                int LA17_0 = input.LA(1);
 
-            if ( (LA17_0==HyphenMinus) ) {
-                alt17=1;
-            }
-            switch (alt17) {
-                case 1 :
-                    // InternalPlanWithRosmodelParser.g:2524:3: rule__ConfigRosSoftwareComponent__Group_2_3_4__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__ConfigRosSoftwareComponent__Group_2_3_4__0();
-
-                    state._fsp--;
+                if ( (LA17_0==HyphenMinus) ) {
+                    alt17=1;
+                }
 
 
-                    }
-                    break;
+                switch (alt17) {
+              case 1 :
+                  // InternalPlanWithRosmodelParser.g:2524:3: rule__ConfigRosSoftwareComponent__Group_2_3_4__0
+                  {
+                  pushFollow(FOLLOW_12);
+                  rule__ConfigRosSoftwareComponent__Group_2_3_4__0();
 
-            }
+                  state._fsp--;
+
+
+                  }
+                  break;
+
+              default :
+                  break loop17;
+                }
+            } while (true);
 
              after(grammarAccess.getConfigRosSoftwareComponentAccess().getGroup_2_3_4());
 
@@ -7935,47 +7942,29 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ConfigRosSoftwareComponent__Group_2_3_4__1__Impl"
-    // InternalPlanWithRosmodelParser.g:2597:1: rule__ConfigRosSoftwareComponent__Group_2_3_4__1__Impl : ( ( rule__ConfigRosSoftwareComponent__StartCommandAssignment_2_3_4_1 )* ) ;
+    // InternalPlanWithRosmodelParser.g:2597:1: rule__ConfigRosSoftwareComponent__Group_2_3_4__1__Impl : ( ( rule__ConfigRosSoftwareComponent__StartCommandAssignment_2_3_4_1 ) ) ;
     public final void rule__ConfigRosSoftwareComponent__Group_2_3_4__1__Impl() throws RecognitionException {
 
             int stackSize = keepStackSize();
 
         try {
-            // InternalPlanWithRosmodelParser.g:2601:1: ( ( ( rule__ConfigRosSoftwareComponent__StartCommandAssignment_2_3_4_1 )* ) )
-            // InternalPlanWithRosmodelParser.g:2602:1: ( ( rule__ConfigRosSoftwareComponent__StartCommandAssignment_2_3_4_1 )* )
+            // InternalPlanWithRosmodelParser.g:2601:1: ( ( ( rule__ConfigRosSoftwareComponent__StartCommandAssignment_2_3_4_1 ) ) )
+            // InternalPlanWithRosmodelParser.g:2602:1: ( ( rule__ConfigRosSoftwareComponent__StartCommandAssignment_2_3_4_1 ) )
             {
-            // InternalPlanWithRosmodelParser.g:2602:1: ( ( rule__ConfigRosSoftwareComponent__StartCommandAssignment_2_3_4_1 )* )
-            // InternalPlanWithRosmodelParser.g:2603:2: ( rule__ConfigRosSoftwareComponent__StartCommandAssignment_2_3_4_1 )*
+            // InternalPlanWithRosmodelParser.g:2602:1: ( ( rule__ConfigRosSoftwareComponent__StartCommandAssignment_2_3_4_1 ) )
+            // InternalPlanWithRosmodelParser.g:2603:2: ( rule__ConfigRosSoftwareComponent__StartCommandAssignment_2_3_4_1 )
             {
              before(grammarAccess.getConfigRosSoftwareComponentAccess().getStartCommandAssignment_2_3_4_1());
-            // InternalPlanWithRosmodelParser.g:2604:2: ( rule__ConfigRosSoftwareComponent__StartCommandAssignment_2_3_4_1 )*
-            loop18:
-            do {
-                int alt18=2;
-                int LA18_0 = input.LA(1);
+            // InternalPlanWithRosmodelParser.g:2604:2: ( rule__ConfigRosSoftwareComponent__StartCommandAssignment_2_3_4_1 )
+            // InternalPlanWithRosmodelParser.g:2604:3: rule__ConfigRosSoftwareComponent__StartCommandAssignment_2_3_4_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__ConfigRosSoftwareComponent__StartCommandAssignment_2_3_4_1();
 
-                if ( (LA18_0==RULE_ID||LA18_0==RULE_STRING) ) {
-                    alt18=1;
-                }
+            state._fsp--;
 
 
-                switch (alt18) {
-              case 1 :
-                  // InternalPlanWithRosmodelParser.g:2604:3: rule__ConfigRosSoftwareComponent__StartCommandAssignment_2_3_4_1
-                  {
-                  pushFollow(FOLLOW_14);
-                  rule__ConfigRosSoftwareComponent__StartCommandAssignment_2_3_4_1();
-
-                  state._fsp--;
-
-
-                  }
-                  break;
-
-              default :
-                  break loop18;
-                }
-            } while (true);
+            }
 
              after(grammarAccess.getConfigRosSoftwareComponentAccess().getStartCommandAssignment_2_3_4_1());
 
@@ -8248,7 +8237,7 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             // InternalPlanWithRosmodelParser.g:2698:1: ( rule__RossystemImplementationAssignment__Group__3__Impl rule__RossystemImplementationAssignment__Group__4 )
             // InternalPlanWithRosmodelParser.g:2699:2: rule__RossystemImplementationAssignment__Group__3__Impl rule__RossystemImplementationAssignment__Group__4
             {
-            pushFollow(FOLLOW_15);
+            pushFollow(FOLLOW_14);
             rule__RossystemImplementationAssignment__Group__3__Impl();
 
             state._fsp--;
@@ -8398,7 +8387,7 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             // InternalPlanWithRosmodelParser.g:2752:1: ( rule__RossystemImplementationAssignment__Group__5__Impl rule__RossystemImplementationAssignment__Group__6 )
             // InternalPlanWithRosmodelParser.g:2753:2: rule__RossystemImplementationAssignment__Group__5__Impl rule__RossystemImplementationAssignment__Group__6
             {
-            pushFollow(FOLLOW_16);
+            pushFollow(FOLLOW_15);
             rule__RossystemImplementationAssignment__Group__5__Impl();
 
             state._fsp--;
@@ -8558,7 +8547,7 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             // InternalPlanWithRosmodelParser.g:2806:1: ( rule__RossystemImplementationAssignment__Group__7__Impl rule__RossystemImplementationAssignment__Group__8 )
             // InternalPlanWithRosmodelParser.g:2807:2: rule__RossystemImplementationAssignment__Group__7__Impl rule__RossystemImplementationAssignment__Group__8
             {
-            pushFollow(FOLLOW_17);
+            pushFollow(FOLLOW_16);
             rule__RossystemImplementationAssignment__Group__7__Impl();
 
             state._fsp--;
@@ -8643,7 +8632,7 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             // InternalPlanWithRosmodelParser.g:2833:1: ( rule__RossystemImplementationAssignment__Group__8__Impl rule__RossystemImplementationAssignment__Group__9 )
             // InternalPlanWithRosmodelParser.g:2834:2: rule__RossystemImplementationAssignment__Group__8__Impl rule__RossystemImplementationAssignment__Group__9
             {
-            pushFollow(FOLLOW_18);
+            pushFollow(FOLLOW_17);
             rule__RossystemImplementationAssignment__Group__8__Impl();
 
             state._fsp--;
@@ -8718,7 +8707,7 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             // InternalPlanWithRosmodelParser.g:2860:1: ( rule__RossystemImplementationAssignment__Group__9__Impl rule__RossystemImplementationAssignment__Group__10 )
             // InternalPlanWithRosmodelParser.g:2861:2: rule__RossystemImplementationAssignment__Group__9__Impl rule__RossystemImplementationAssignment__Group__10
             {
-            pushFollow(FOLLOW_19);
+            pushFollow(FOLLOW_18);
             rule__RossystemImplementationAssignment__Group__9__Impl();
 
             state._fsp--;
@@ -9160,17 +9149,17 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             {
              before(grammarAccess.getRossystemImplementationAssignmentAccess().getGroup_14());
             // InternalPlanWithRosmodelParser.g:3010:2: ( rule__RossystemImplementationAssignment__Group_14__0 )*
-            loop19:
+            loop18:
             do {
-                int alt19=2;
-                int LA19_0 = input.LA(1);
+                int alt18=2;
+                int LA18_0 = input.LA(1);
 
-                if ( (LA19_0==HyphenMinus) ) {
-                    alt19=1;
+                if ( (LA18_0==HyphenMinus) ) {
+                    alt18=1;
                 }
 
 
-                switch (alt19) {
+                switch (alt18) {
               case 1 :
                   // InternalPlanWithRosmodelParser.g:3010:3: rule__RossystemImplementationAssignment__Group_14__0
                   {
@@ -9184,7 +9173,7 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
                   break;
 
               default :
-                  break loop19;
+                  break loop18;
                 }
             } while (true);
 
@@ -9220,7 +9209,7 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             // InternalPlanWithRosmodelParser.g:3022:1: ( rule__RossystemImplementationAssignment__Group__15__Impl rule__RossystemImplementationAssignment__Group__16 )
             // InternalPlanWithRosmodelParser.g:3023:2: rule__RossystemImplementationAssignment__Group__15__Impl rule__RossystemImplementationAssignment__Group__16
             {
-            pushFollow(FOLLOW_20);
+            pushFollow(FOLLOW_19);
             rule__RossystemImplementationAssignment__Group__15__Impl();
 
             state._fsp--;
@@ -9295,7 +9284,7 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             // InternalPlanWithRosmodelParser.g:3049:1: ( rule__RossystemImplementationAssignment__Group__16__Impl rule__RossystemImplementationAssignment__Group__17 )
             // InternalPlanWithRosmodelParser.g:3050:2: rule__RossystemImplementationAssignment__Group__16__Impl rule__RossystemImplementationAssignment__Group__17
             {
-            pushFollow(FOLLOW_20);
+            pushFollow(FOLLOW_19);
             rule__RossystemImplementationAssignment__Group__16__Impl();
 
             state._fsp--;
@@ -9338,13 +9327,13 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             {
              before(grammarAccess.getRossystemImplementationAssignmentAccess().getGroup_16());
             // InternalPlanWithRosmodelParser.g:3064:2: ( rule__RossystemImplementationAssignment__Group_16__0 )?
-            int alt20=2;
-            int LA20_0 = input.LA(1);
+            int alt19=2;
+            int LA19_0 = input.LA(1);
 
-            if ( (LA20_0==RuntimeType) ) {
-                alt20=1;
+            if ( (LA19_0==RuntimeType) ) {
+                alt19=1;
             }
-            switch (alt20) {
+            switch (alt19) {
                 case 1 :
                     // InternalPlanWithRosmodelParser.g:3064:3: rule__RossystemImplementationAssignment__Group_16__0
                     {
@@ -9850,7 +9839,7 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             // InternalPlanWithRosmodelParser.g:3238:1: ( rule__ConfigRosParameter__Group__1__Impl rule__ConfigRosParameter__Group__2 )
             // InternalPlanWithRosmodelParser.g:3239:2: rule__ConfigRosParameter__Group__1__Impl rule__ConfigRosParameter__Group__2
             {
-            pushFollow(FOLLOW_21);
+            pushFollow(FOLLOW_20);
             rule__ConfigRosParameter__Group__1__Impl();
 
             state._fsp--;
@@ -9929,7 +9918,7 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             // InternalPlanWithRosmodelParser.g:3265:1: ( rule__ConfigRosParameter__Group__2__Impl rule__ConfigRosParameter__Group__3 )
             // InternalPlanWithRosmodelParser.g:3266:2: rule__ConfigRosParameter__Group__2__Impl rule__ConfigRosParameter__Group__3
             {
-            pushFollow(FOLLOW_21);
+            pushFollow(FOLLOW_20);
             rule__ConfigRosParameter__Group__2__Impl();
 
             state._fsp--;
@@ -9972,13 +9961,13 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             {
              before(grammarAccess.getConfigRosParameterAccess().getGroup_2());
             // InternalPlanWithRosmodelParser.g:3280:2: ( rule__ConfigRosParameter__Group_2__0 )?
-            int alt21=2;
-            int LA21_0 = input.LA(1);
+            int alt20=2;
+            int LA20_0 = input.LA(1);
 
-            if ( (LA21_0==RefSysParam) ) {
-                alt21=1;
+            if ( (LA20_0==RefSysParam) ) {
+                alt20=1;
             }
-            switch (alt21) {
+            switch (alt20) {
                 case 1 :
                     // InternalPlanWithRosmodelParser.g:3280:3: rule__ConfigRosParameter__Group_2__0
                     {
@@ -10025,7 +10014,7 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             // InternalPlanWithRosmodelParser.g:3292:1: ( rule__ConfigRosParameter__Group__3__Impl rule__ConfigRosParameter__Group__4 )
             // InternalPlanWithRosmodelParser.g:3293:2: rule__ConfigRosParameter__Group__3__Impl rule__ConfigRosParameter__Group__4
             {
-            pushFollow(FOLLOW_21);
+            pushFollow(FOLLOW_20);
             rule__ConfigRosParameter__Group__3__Impl();
 
             state._fsp--;
@@ -10068,13 +10057,13 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             {
              before(grammarAccess.getConfigRosParameterAccess().getGroup_3());
             // InternalPlanWithRosmodelParser.g:3307:2: ( rule__ConfigRosParameter__Group_3__0 )?
-            int alt22=2;
-            int LA22_0 = input.LA(1);
+            int alt21=2;
+            int LA21_0 = input.LA(1);
 
-            if ( (LA22_0==RefNodeParam) ) {
-                alt22=1;
+            if ( (LA21_0==RefNodeParam) ) {
+                alt21=1;
             }
-            switch (alt22) {
+            switch (alt21) {
                 case 1 :
                     // InternalPlanWithRosmodelParser.g:3307:3: rule__ConfigRosParameter__Group_3__0
                     {
@@ -10159,13 +10148,13 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             {
              before(grammarAccess.getConfigRosParameterAccess().getGroup_4());
             // InternalPlanWithRosmodelParser.g:3333:2: ( rule__ConfigRosParameter__Group_4__0 )?
-            int alt23=2;
-            int LA23_0 = input.LA(1);
+            int alt22=2;
+            int LA22_0 = input.LA(1);
 
-            if ( (LA23_0==RULE_INDENT) ) {
-                alt23=1;
+            if ( (LA22_0==RULE_INDENT) ) {
+                alt22=1;
             }
-            switch (alt23) {
+            switch (alt22) {
                 case 1 :
                     // InternalPlanWithRosmodelParser.g:3333:3: rule__ConfigRosParameter__Group_4__0
                     {
@@ -10522,7 +10511,7 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             // InternalPlanWithRosmodelParser.g:3454:1: ( rule__ConfigRosParameter__Group_4__0__Impl rule__ConfigRosParameter__Group_4__1 )
             // InternalPlanWithRosmodelParser.g:3455:2: rule__ConfigRosParameter__Group_4__0__Impl rule__ConfigRosParameter__Group_4__1
             {
-            pushFollow(FOLLOW_22);
+            pushFollow(FOLLOW_21);
             rule__ConfigRosParameter__Group_4__0__Impl();
 
             state._fsp--;
@@ -10597,7 +10586,7 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             // InternalPlanWithRosmodelParser.g:3481:1: ( rule__ConfigRosParameter__Group_4__1__Impl rule__ConfigRosParameter__Group_4__2 )
             // InternalPlanWithRosmodelParser.g:3482:2: rule__ConfigRosParameter__Group_4__1__Impl rule__ConfigRosParameter__Group_4__2
             {
-            pushFollow(FOLLOW_22);
+            pushFollow(FOLLOW_21);
             rule__ConfigRosParameter__Group_4__1__Impl();
 
             state._fsp--;
@@ -10640,13 +10629,13 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             {
              before(grammarAccess.getConfigRosParameterAccess().getGroup_4_1());
             // InternalPlanWithRosmodelParser.g:3496:2: ( rule__ConfigRosParameter__Group_4_1__0 )?
-            int alt24=2;
-            int LA24_0 = input.LA(1);
+            int alt23=2;
+            int LA23_0 = input.LA(1);
 
-            if ( (LA24_0==To) ) {
-                alt24=1;
+            if ( (LA23_0==To) ) {
+                alt23=1;
             }
-            switch (alt24) {
+            switch (alt23) {
                 case 1 :
                     // InternalPlanWithRosmodelParser.g:3496:3: rule__ConfigRosParameter__Group_4_1__0
                     {
@@ -10693,7 +10682,7 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             // InternalPlanWithRosmodelParser.g:3508:1: ( rule__ConfigRosParameter__Group_4__2__Impl rule__ConfigRosParameter__Group_4__3 )
             // InternalPlanWithRosmodelParser.g:3509:2: rule__ConfigRosParameter__Group_4__2__Impl rule__ConfigRosParameter__Group_4__3
             {
-            pushFollow(FOLLOW_22);
+            pushFollow(FOLLOW_21);
             rule__ConfigRosParameter__Group_4__2__Impl();
 
             state._fsp--;
@@ -10736,13 +10725,13 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             {
              before(grammarAccess.getConfigRosParameterAccess().getGroup_4_2());
             // InternalPlanWithRosmodelParser.g:3523:2: ( rule__ConfigRosParameter__Group_4_2__0 )?
-            int alt25=2;
-            int LA25_0 = input.LA(1);
+            int alt24=2;
+            int LA24_0 = input.LA(1);
 
-            if ( (LA25_0==Value) ) {
-                alt25=1;
+            if ( (LA24_0==Value) ) {
+                alt24=1;
             }
-            switch (alt25) {
+            switch (alt24) {
                 case 1 :
                     // InternalPlanWithRosmodelParser.g:3523:3: rule__ConfigRosParameter__Group_4_2__0
                     {
@@ -11014,7 +11003,7 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             // InternalPlanWithRosmodelParser.g:3616:1: ( rule__ConfigRosParameter__Group_4_2__0__Impl rule__ConfigRosParameter__Group_4_2__1 )
             // InternalPlanWithRosmodelParser.g:3617:2: rule__ConfigRosParameter__Group_4_2__0__Impl rule__ConfigRosParameter__Group_4_2__1
             {
-            pushFollow(FOLLOW_23);
+            pushFollow(FOLLOW_22);
             rule__ConfigRosParameter__Group_4_2__0__Impl();
 
             state._fsp--;
@@ -11282,13 +11271,13 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             {
              before(grammarAccess.getRealizationAccess().getGroup_1());
             // InternalPlanWithRosmodelParser.g:3711:2: ( rule__Realization__Group_1__0 )?
-            int alt26=2;
-            int LA26_0 = input.LA(1);
+            int alt25=2;
+            int LA25_0 = input.LA(1);
 
-            if ( (LA26_0==Assignment) ) {
-                alt26=1;
+            if ( (LA25_0==Assignment) ) {
+                alt25=1;
             }
-            switch (alt26) {
+            switch (alt25) {
                 case 1 :
                     // InternalPlanWithRosmodelParser.g:3711:3: rule__Realization__Group_1__0
                     {
@@ -11550,17 +11539,17 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             {
              before(grammarAccess.getRealizationAccess().getRealizationsAssignment_1_2());
             // InternalPlanWithRosmodelParser.g:3799:3: ( rule__Realization__RealizationsAssignment_1_2 )*
-            loop27:
+            loop26:
             do {
-                int alt27=2;
-                int LA27_0 = input.LA(1);
+                int alt26=2;
+                int LA26_0 = input.LA(1);
 
-                if ( (LA27_0==HyphenMinus) ) {
-                    alt27=1;
+                if ( (LA26_0==HyphenMinus) ) {
+                    alt26=1;
                 }
 
 
-                switch (alt27) {
+                switch (alt26) {
               case 1 :
                   // InternalPlanWithRosmodelParser.g:3799:4: rule__Realization__RealizationsAssignment_1_2
                   {
@@ -11574,7 +11563,7 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
                   break;
 
               default :
-                  break loop27;
+                  break loop26;
                 }
             } while (true);
 
@@ -11806,13 +11795,13 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             {
              before(grammarAccess.getConfigSoftwareComponentAccess().getGroup_1());
             // InternalPlanWithRosmodelParser.g:3880:2: ( rule__ConfigSoftwareComponent__Group_1__0 )?
-            int alt28=2;
-            int LA28_0 = input.LA(1);
+            int alt27=2;
+            int LA27_0 = input.LA(1);
 
-            if ( (LA28_0==Colon) ) {
-                alt28=1;
+            if ( (LA27_0==Colon) ) {
+                alt27=1;
             }
-            switch (alt28) {
+            switch (alt27) {
                 case 1 :
                     // InternalPlanWithRosmodelParser.g:3880:3: rule__ConfigSoftwareComponent__Group_1__0
                     {
@@ -11859,7 +11848,7 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             // InternalPlanWithRosmodelParser.g:3893:1: ( rule__ConfigSoftwareComponent__Group_1__0__Impl rule__ConfigSoftwareComponent__Group_1__1 )
             // InternalPlanWithRosmodelParser.g:3894:2: rule__ConfigSoftwareComponent__Group_1__0__Impl rule__ConfigSoftwareComponent__Group_1__1
             {
-            pushFollow(FOLLOW_24);
+            pushFollow(FOLLOW_23);
             rule__ConfigSoftwareComponent__Group_1__0__Impl();
 
             state._fsp--;
@@ -11934,7 +11923,7 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             // InternalPlanWithRosmodelParser.g:3920:1: ( rule__ConfigSoftwareComponent__Group_1__1__Impl rule__ConfigSoftwareComponent__Group_1__2 )
             // InternalPlanWithRosmodelParser.g:3921:2: rule__ConfigSoftwareComponent__Group_1__1__Impl rule__ConfigSoftwareComponent__Group_1__2
             {
-            pushFollow(FOLLOW_24);
+            pushFollow(FOLLOW_23);
             rule__ConfigSoftwareComponent__Group_1__1__Impl();
 
             state._fsp--;
@@ -11977,13 +11966,13 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             {
              before(grammarAccess.getConfigSoftwareComponentAccess().getGroup_1_1());
             // InternalPlanWithRosmodelParser.g:3935:2: ( rule__ConfigSoftwareComponent__Group_1_1__0 )?
-            int alt29=2;
-            int LA29_0 = input.LA(1);
+            int alt28=2;
+            int LA28_0 = input.LA(1);
 
-            if ( (LA29_0==RULE_INDENT) ) {
-                alt29=1;
+            if ( (LA28_0==RULE_INDENT) ) {
+                alt28=1;
             }
-            switch (alt29) {
+            switch (alt28) {
                 case 1 :
                     // InternalPlanWithRosmodelParser.g:3935:3: rule__ConfigSoftwareComponent__Group_1_1__0
                     {
@@ -12030,7 +12019,7 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             // InternalPlanWithRosmodelParser.g:3947:1: ( rule__ConfigSoftwareComponent__Group_1__2__Impl rule__ConfigSoftwareComponent__Group_1__3 )
             // InternalPlanWithRosmodelParser.g:3948:2: rule__ConfigSoftwareComponent__Group_1__2__Impl rule__ConfigSoftwareComponent__Group_1__3
             {
-            pushFollow(FOLLOW_24);
+            pushFollow(FOLLOW_23);
             rule__ConfigSoftwareComponent__Group_1__2__Impl();
 
             state._fsp--;
@@ -12073,13 +12062,13 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             {
              before(grammarAccess.getConfigSoftwareComponentAccess().getGroup_1_2());
             // InternalPlanWithRosmodelParser.g:3962:2: ( rule__ConfigSoftwareComponent__Group_1_2__0 )?
-            int alt30=2;
-            int LA30_0 = input.LA(1);
+            int alt29=2;
+            int LA29_0 = input.LA(1);
 
-            if ( (LA30_0==StartCommand) ) {
-                alt30=1;
+            if ( (LA29_0==StartCommand) ) {
+                alt29=1;
             }
-            switch (alt30) {
+            switch (alt29) {
                 case 1 :
                     // InternalPlanWithRosmodelParser.g:3962:3: rule__ConfigSoftwareComponent__Group_1_2__0
                     {
@@ -12196,7 +12185,7 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             // InternalPlanWithRosmodelParser.g:4001:1: ( rule__ConfigSoftwareComponent__Group_1_1__0__Impl rule__ConfigSoftwareComponent__Group_1_1__1 )
             // InternalPlanWithRosmodelParser.g:4002:2: rule__ConfigSoftwareComponent__Group_1_1__0__Impl rule__ConfigSoftwareComponent__Group_1_1__1
             {
-            pushFollow(FOLLOW_25);
+            pushFollow(FOLLOW_24);
             rule__ConfigSoftwareComponent__Group_1_1__0__Impl();
 
             state._fsp--;
@@ -12486,17 +12475,17 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             {
              before(grammarAccess.getConfigSoftwareComponentAccess().getExecutionConfigurationAssignment_1_1_3());
             // InternalPlanWithRosmodelParser.g:4103:3: ( rule__ConfigSoftwareComponent__ExecutionConfigurationAssignment_1_1_3 )*
-            loop31:
+            loop30:
             do {
-                int alt31=2;
-                int LA31_0 = input.LA(1);
+                int alt30=2;
+                int LA30_0 = input.LA(1);
 
-                if ( (LA31_0==HyphenMinus) ) {
-                    alt31=1;
+                if ( (LA30_0==HyphenMinus) ) {
+                    alt30=1;
                 }
 
 
-                switch (alt31) {
+                switch (alt30) {
               case 1 :
                   // InternalPlanWithRosmodelParser.g:4103:4: rule__ConfigSoftwareComponent__ExecutionConfigurationAssignment_1_1_3
                   {
@@ -12510,7 +12499,7 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
                   break;
 
               default :
-                  break loop31;
+                  break loop30;
                 }
             } while (true);
 
@@ -12976,13 +12965,13 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             {
              before(grammarAccess.getConfigSoftwareComponentAccess().getGroup_1_2_4());
             // InternalPlanWithRosmodelParser.g:4266:2: ( rule__ConfigSoftwareComponent__Group_1_2_4__0 )?
-            int alt32=2;
-            int LA32_0 = input.LA(1);
+            int alt31=2;
+            int LA31_0 = input.LA(1);
 
-            if ( (LA32_0==HyphenMinus) ) {
-                alt32=1;
+            if ( (LA31_0==HyphenMinus) ) {
+                alt31=1;
             }
-            switch (alt32) {
+            switch (alt31) {
                 case 1 :
                     // InternalPlanWithRosmodelParser.g:4266:3: rule__ConfigSoftwareComponent__Group_1_2_4__0
                     {
@@ -13216,21 +13205,21 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             {
              before(grammarAccess.getConfigSoftwareComponentAccess().getStartCommandAssignment_1_2_4_1());
             // InternalPlanWithRosmodelParser.g:4346:2: ( rule__ConfigSoftwareComponent__StartCommandAssignment_1_2_4_1 )*
-            loop33:
+            loop32:
             do {
-                int alt33=2;
-                int LA33_0 = input.LA(1);
+                int alt32=2;
+                int LA32_0 = input.LA(1);
 
-                if ( (LA33_0==RULE_ID||LA33_0==RULE_STRING) ) {
-                    alt33=1;
+                if ( (LA32_0==RULE_ID||LA32_0==RULE_STRING) ) {
+                    alt32=1;
                 }
 
 
-                switch (alt33) {
+                switch (alt32) {
               case 1 :
                   // InternalPlanWithRosmodelParser.g:4346:3: rule__ConfigSoftwareComponent__StartCommandAssignment_1_2_4_1
                   {
-                  pushFollow(FOLLOW_14);
+                  pushFollow(FOLLOW_25);
                   rule__ConfigSoftwareComponent__StartCommandAssignment_1_2_4_1();
 
                   state._fsp--;
@@ -13240,7 +13229,7 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
                   break;
 
               default :
-                  break loop33;
+                  break loop32;
                 }
             } while (true);
 
@@ -13629,13 +13618,13 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             {
              before(grammarAccess.getContainerRuntimeAccess().getGroup_4());
             // InternalPlanWithRosmodelParser.g:4482:2: ( rule__ContainerRuntime__Group_4__0 )?
-            int alt34=2;
-            int LA34_0 = input.LA(1);
+            int alt33=2;
+            int LA33_0 = input.LA(1);
 
-            if ( (LA34_0==Registry) ) {
-                alt34=1;
+            if ( (LA33_0==Registry) ) {
+                alt33=1;
             }
-            switch (alt34) {
+            switch (alt33) {
                 case 1 :
                     // InternalPlanWithRosmodelParser.g:4482:3: rule__ContainerRuntime__Group_4__0
                     {
@@ -13725,13 +13714,13 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             {
              before(grammarAccess.getContainerRuntimeAccess().getGroup_5());
             // InternalPlanWithRosmodelParser.g:4509:2: ( rule__ContainerRuntime__Group_5__0 )?
-            int alt35=2;
-            int LA35_0 = input.LA(1);
+            int alt34=2;
+            int LA34_0 = input.LA(1);
 
-            if ( (LA35_0==Resource) ) {
-                alt35=1;
+            if ( (LA34_0==Resource) ) {
+                alt34=1;
             }
-            switch (alt35) {
+            switch (alt34) {
                 case 1 :
                     // InternalPlanWithRosmodelParser.g:4509:3: rule__ContainerRuntime__Group_5__0
                     {
@@ -14360,13 +14349,13 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             {
              before(grammarAccess.getContainerRuntimeAccess().getGroup_5_4());
             // InternalPlanWithRosmodelParser.g:4725:2: ( rule__ContainerRuntime__Group_5_4__0 )?
-            int alt36=2;
-            int LA36_0 = input.LA(1);
+            int alt35=2;
+            int LA35_0 = input.LA(1);
 
-            if ( (LA36_0==HyphenMinus) ) {
-                alt36=1;
+            if ( (LA35_0==HyphenMinus) ) {
+                alt35=1;
             }
-            switch (alt36) {
+            switch (alt35) {
                 case 1 :
                     // InternalPlanWithRosmodelParser.g:4725:3: rule__ContainerRuntime__Group_5_4__0
                     {
@@ -14622,17 +14611,17 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             {
              before(grammarAccess.getContainerRuntimeAccess().getOpertingSystemResourceAssignment_5_4_1());
             // InternalPlanWithRosmodelParser.g:4811:3: ( rule__ContainerRuntime__OpertingSystemResourceAssignment_5_4_1 )*
-            loop37:
+            loop36:
             do {
-                int alt37=2;
-                int LA37_0 = input.LA(1);
+                int alt36=2;
+                int LA36_0 = input.LA(1);
 
-                if ( (LA37_0==Name) ) {
-                    alt37=1;
+                if ( (LA36_0==Name) ) {
+                    alt36=1;
                 }
 
 
-                switch (alt37) {
+                switch (alt36) {
               case 1 :
                   // InternalPlanWithRosmodelParser.g:4811:4: rule__ContainerRuntime__OpertingSystemResourceAssignment_5_4_1
                   {
@@ -14646,7 +14635,7 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
                   break;
 
               default :
-                  break loop37;
+                  break loop36;
                 }
             } while (true);
 
@@ -14999,7 +14988,7 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             // InternalPlanWithRosmodelParser.g:4933:1: ( rule__ConfigExecutionParameter__Group__4__Impl rule__ConfigExecutionParameter__Group__5 )
             // InternalPlanWithRosmodelParser.g:4934:2: rule__ConfigExecutionParameter__Group__4__Impl rule__ConfigExecutionParameter__Group__5
             {
-            pushFollow(FOLLOW_22);
+            pushFollow(FOLLOW_21);
             rule__ConfigExecutionParameter__Group__4__Impl();
 
             state._fsp--;
@@ -15074,7 +15063,7 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             // InternalPlanWithRosmodelParser.g:4960:1: ( rule__ConfigExecutionParameter__Group__5__Impl rule__ConfigExecutionParameter__Group__6 )
             // InternalPlanWithRosmodelParser.g:4961:2: rule__ConfigExecutionParameter__Group__5__Impl rule__ConfigExecutionParameter__Group__6
             {
-            pushFollow(FOLLOW_22);
+            pushFollow(FOLLOW_21);
             rule__ConfigExecutionParameter__Group__5__Impl();
 
             state._fsp--;
@@ -15117,13 +15106,13 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             {
              before(grammarAccess.getConfigExecutionParameterAccess().getGroup_5());
             // InternalPlanWithRosmodelParser.g:4975:2: ( rule__ConfigExecutionParameter__Group_5__0 )?
-            int alt38=2;
-            int LA38_0 = input.LA(1);
+            int alt37=2;
+            int LA37_0 = input.LA(1);
 
-            if ( (LA38_0==To) ) {
-                alt38=1;
+            if ( (LA37_0==To) ) {
+                alt37=1;
             }
-            switch (alt38) {
+            switch (alt37) {
                 case 1 :
                     // InternalPlanWithRosmodelParser.g:4975:3: rule__ConfigExecutionParameter__Group_5__0
                     {
@@ -15170,7 +15159,7 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             // InternalPlanWithRosmodelParser.g:4987:1: ( rule__ConfigExecutionParameter__Group__6__Impl rule__ConfigExecutionParameter__Group__7 )
             // InternalPlanWithRosmodelParser.g:4988:2: rule__ConfigExecutionParameter__Group__6__Impl rule__ConfigExecutionParameter__Group__7
             {
-            pushFollow(FOLLOW_22);
+            pushFollow(FOLLOW_21);
             rule__ConfigExecutionParameter__Group__6__Impl();
 
             state._fsp--;
@@ -15213,13 +15202,13 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             {
              before(grammarAccess.getConfigExecutionParameterAccess().getGroup_6());
             // InternalPlanWithRosmodelParser.g:5002:2: ( rule__ConfigExecutionParameter__Group_6__0 )?
-            int alt39=2;
-            int LA39_0 = input.LA(1);
+            int alt38=2;
+            int LA38_0 = input.LA(1);
 
-            if ( (LA39_0==Value) ) {
-                alt39=1;
+            if ( (LA38_0==Value) ) {
+                alt38=1;
             }
-            switch (alt39) {
+            switch (alt38) {
                 case 1 :
                     // InternalPlanWithRosmodelParser.g:5002:3: rule__ConfigExecutionParameter__Group_6__0
                     {
@@ -15491,7 +15480,7 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             // InternalPlanWithRosmodelParser.g:5095:1: ( rule__ConfigExecutionParameter__Group_6__0__Impl rule__ConfigExecutionParameter__Group_6__1 )
             // InternalPlanWithRosmodelParser.g:5096:2: rule__ConfigExecutionParameter__Group_6__0__Impl rule__ConfigExecutionParameter__Group_6__1
             {
-            pushFollow(FOLLOW_23);
+            pushFollow(FOLLOW_22);
             rule__ConfigExecutionParameter__Group_6__0__Impl();
 
             state._fsp--;
@@ -16159,13 +16148,13 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             {
              before(grammarAccess.getOperatingSystemResouceAccess().getGroup_6());
             // InternalPlanWithRosmodelParser.g:5326:2: ( rule__OperatingSystemResouce__Group_6__0 )?
-            int alt40=2;
-            int LA40_0 = input.LA(1);
+            int alt39=2;
+            int LA39_0 = input.LA(1);
 
-            if ( (LA40_0==Properties) ) {
-                alt40=1;
+            if ( (LA39_0==Properties) ) {
+                alt39=1;
             }
-            switch (alt40) {
+            switch (alt39) {
                 case 1 :
                     // InternalPlanWithRosmodelParser.g:5326:3: rule__OperatingSystemResouce__Group_6__0
                     {
@@ -16497,17 +16486,17 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             {
              before(grammarAccess.getOperatingSystemResouceAccess().getPropertiesAssignment_6_2());
             // InternalPlanWithRosmodelParser.g:5440:3: ( rule__OperatingSystemResouce__PropertiesAssignment_6_2 )*
-            loop41:
+            loop40:
             do {
-                int alt41=2;
-                int LA41_0 = input.LA(1);
+                int alt40=2;
+                int LA40_0 = input.LA(1);
 
-                if ( (LA41_0==HyphenMinus) ) {
-                    alt41=1;
+                if ( (LA40_0==HyphenMinus) ) {
+                    alt40=1;
                 }
 
 
-                switch (alt41) {
+                switch (alt40) {
               case 1 :
                   // InternalPlanWithRosmodelParser.g:5440:4: rule__OperatingSystemResouce__PropertiesAssignment_6_2
                   {
@@ -16521,7 +16510,7 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
                   break;
 
               default :
-                  break loop41;
+                  break loop40;
                 }
             } while (true);
 
@@ -17222,13 +17211,13 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             {
              before(grammarAccess.getNameOperatingSystemPropertyAccess().getGroup_7());
             // InternalPlanWithRosmodelParser.g:5684:2: ( rule__NameOperatingSystemProperty__Group_7__0 )?
-            int alt42=2;
-            int LA42_0 = input.LA(1);
+            int alt41=2;
+            int LA41_0 = input.LA(1);
 
-            if ( (LA42_0==Description) ) {
-                alt42=1;
+            if ( (LA41_0==Description) ) {
+                alt41=1;
             }
-            switch (alt42) {
+            switch (alt41) {
                 case 1 :
                     // InternalPlanWithRosmodelParser.g:5684:3: rule__NameOperatingSystemProperty__Group_7__0
                     {
@@ -17318,13 +17307,13 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             {
              before(grammarAccess.getNameOperatingSystemPropertyAccess().getGroup_8());
             // InternalPlanWithRosmodelParser.g:5711:2: ( rule__NameOperatingSystemProperty__Group_8__0 )?
-            int alt43=2;
-            int LA43_0 = input.LA(1);
+            int alt42=2;
+            int LA42_0 = input.LA(1);
 
-            if ( (LA43_0==Value) ) {
-                alt43=1;
+            if ( (LA42_0==Value) ) {
+                alt42=1;
             }
-            switch (alt43) {
+            switch (alt42) {
                 case 1 :
                     // InternalPlanWithRosmodelParser.g:5711:3: rule__NameOperatingSystemProperty__Group_8__0
                     {
@@ -17596,7 +17585,7 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             // InternalPlanWithRosmodelParser.g:5804:1: ( rule__NameOperatingSystemProperty__Group_8__0__Impl rule__NameOperatingSystemProperty__Group_8__1 )
             // InternalPlanWithRosmodelParser.g:5805:2: rule__NameOperatingSystemProperty__Group_8__0__Impl rule__NameOperatingSystemProperty__Group_8__1
             {
-            pushFollow(FOLLOW_23);
+            pushFollow(FOLLOW_22);
             rule__NameOperatingSystemProperty__Group_8__0__Impl();
 
             state._fsp--;
@@ -18343,13 +18332,13 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             {
              before(grammarAccess.getVersionOperatingSystemPropertyAccess().getGroup_7());
             // InternalPlanWithRosmodelParser.g:6062:2: ( rule__VersionOperatingSystemProperty__Group_7__0 )?
-            int alt44=2;
-            int LA44_0 = input.LA(1);
+            int alt43=2;
+            int LA43_0 = input.LA(1);
 
-            if ( (LA44_0==Description) ) {
-                alt44=1;
+            if ( (LA43_0==Description) ) {
+                alt43=1;
             }
-            switch (alt44) {
+            switch (alt43) {
                 case 1 :
                     // InternalPlanWithRosmodelParser.g:6062:3: rule__VersionOperatingSystemProperty__Group_7__0
                     {
@@ -18439,13 +18428,13 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             {
              before(grammarAccess.getVersionOperatingSystemPropertyAccess().getGroup_8());
             // InternalPlanWithRosmodelParser.g:6089:2: ( rule__VersionOperatingSystemProperty__Group_8__0 )?
-            int alt45=2;
-            int LA45_0 = input.LA(1);
+            int alt44=2;
+            int LA44_0 = input.LA(1);
 
-            if ( (LA45_0==Value) ) {
-                alt45=1;
+            if ( (LA44_0==Value) ) {
+                alt44=1;
             }
-            switch (alt45) {
+            switch (alt44) {
                 case 1 :
                     // InternalPlanWithRosmodelParser.g:6089:3: rule__VersionOperatingSystemProperty__Group_8__0
                     {
@@ -18717,7 +18706,7 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             // InternalPlanWithRosmodelParser.g:6182:1: ( rule__VersionOperatingSystemProperty__Group_8__0__Impl rule__VersionOperatingSystemProperty__Group_8__1 )
             // InternalPlanWithRosmodelParser.g:6183:2: rule__VersionOperatingSystemProperty__Group_8__0__Impl rule__VersionOperatingSystemProperty__Group_8__1
             {
-            pushFollow(FOLLOW_23);
+            pushFollow(FOLLOW_22);
             rule__VersionOperatingSystemProperty__Group_8__0__Impl();
 
             state._fsp--;
@@ -19389,13 +19378,13 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             {
              before(grammarAccess.getPropertyAttributeAccess().getGroup_6());
             // InternalPlanWithRosmodelParser.g:6413:2: ( rule__PropertyAttribute__Group_6__0 )?
-            int alt46=2;
-            int LA46_0 = input.LA(1);
+            int alt45=2;
+            int LA45_0 = input.LA(1);
 
-            if ( (LA46_0==Description) ) {
-                alt46=1;
+            if ( (LA45_0==Description) ) {
+                alt45=1;
             }
-            switch (alt46) {
+            switch (alt45) {
                 case 1 :
                     // InternalPlanWithRosmodelParser.g:6413:3: rule__PropertyAttribute__Group_6__0
                     {
@@ -19485,13 +19474,13 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             {
              before(grammarAccess.getPropertyAttributeAccess().getGroup_7());
             // InternalPlanWithRosmodelParser.g:6440:2: ( rule__PropertyAttribute__Group_7__0 )?
-            int alt47=2;
-            int LA47_0 = input.LA(1);
+            int alt46=2;
+            int LA46_0 = input.LA(1);
 
-            if ( (LA47_0==Value) ) {
-                alt47=1;
+            if ( (LA46_0==Value) ) {
+                alt46=1;
             }
-            switch (alt47) {
+            switch (alt46) {
                 case 1 :
                     // InternalPlanWithRosmodelParser.g:6440:3: rule__PropertyAttribute__Group_7__0
                     {
@@ -19576,13 +19565,13 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             {
              before(grammarAccess.getPropertyAttributeAccess().getDEDENTTerminalRuleCall_8());
             // InternalPlanWithRosmodelParser.g:6466:2: ( RULE_DEDENT )?
-            int alt48=2;
-            int LA48_0 = input.LA(1);
+            int alt47=2;
+            int LA47_0 = input.LA(1);
 
-            if ( (LA48_0==RULE_DEDENT) ) {
-                alt48=1;
+            if ( (LA47_0==RULE_DEDENT) ) {
+                alt47=1;
             }
-            switch (alt48) {
+            switch (alt47) {
                 case 1 :
                     // InternalPlanWithRosmodelParser.g:6466:3: RULE_DEDENT
                     {
@@ -19780,7 +19769,7 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             // InternalPlanWithRosmodelParser.g:6533:1: ( rule__PropertyAttribute__Group_7__0__Impl rule__PropertyAttribute__Group_7__1 )
             // InternalPlanWithRosmodelParser.g:6534:2: rule__PropertyAttribute__Group_7__0__Impl rule__PropertyAttribute__Group_7__1
             {
-            pushFollow(FOLLOW_23);
+            pushFollow(FOLLOW_22);
             rule__PropertyAttribute__Group_7__0__Impl();
 
             state._fsp--;
@@ -20452,13 +20441,13 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             {
              before(grammarAccess.getPropertyMaximunAccess().getGroup_6());
             // InternalPlanWithRosmodelParser.g:6764:2: ( rule__PropertyMaximun__Group_6__0 )?
-            int alt49=2;
-            int LA49_0 = input.LA(1);
+            int alt48=2;
+            int LA48_0 = input.LA(1);
 
-            if ( (LA49_0==Description) ) {
-                alt49=1;
+            if ( (LA48_0==Description) ) {
+                alt48=1;
             }
-            switch (alt49) {
+            switch (alt48) {
                 case 1 :
                     // InternalPlanWithRosmodelParser.g:6764:3: rule__PropertyMaximun__Group_6__0
                     {
@@ -20548,13 +20537,13 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             {
              before(grammarAccess.getPropertyMaximunAccess().getGroup_7());
             // InternalPlanWithRosmodelParser.g:6791:2: ( rule__PropertyMaximun__Group_7__0 )?
-            int alt50=2;
-            int LA50_0 = input.LA(1);
+            int alt49=2;
+            int LA49_0 = input.LA(1);
 
-            if ( (LA50_0==Value) ) {
-                alt50=1;
+            if ( (LA49_0==Value) ) {
+                alt49=1;
             }
-            switch (alt50) {
+            switch (alt49) {
                 case 1 :
                     // InternalPlanWithRosmodelParser.g:6791:3: rule__PropertyMaximun__Group_7__0
                     {
@@ -20639,13 +20628,13 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             {
              before(grammarAccess.getPropertyMaximunAccess().getDEDENTTerminalRuleCall_8());
             // InternalPlanWithRosmodelParser.g:6817:2: ( RULE_DEDENT )?
-            int alt51=2;
-            int LA51_0 = input.LA(1);
+            int alt50=2;
+            int LA50_0 = input.LA(1);
 
-            if ( (LA51_0==RULE_DEDENT) ) {
-                alt51=1;
+            if ( (LA50_0==RULE_DEDENT) ) {
+                alt50=1;
             }
-            switch (alt51) {
+            switch (alt50) {
                 case 1 :
                     // InternalPlanWithRosmodelParser.g:6817:3: RULE_DEDENT
                     {
@@ -20843,7 +20832,7 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             // InternalPlanWithRosmodelParser.g:6884:1: ( rule__PropertyMaximun__Group_7__0__Impl rule__PropertyMaximun__Group_7__1 )
             // InternalPlanWithRosmodelParser.g:6885:2: rule__PropertyMaximun__Group_7__0__Impl rule__PropertyMaximun__Group_7__1
             {
-            pushFollow(FOLLOW_23);
+            pushFollow(FOLLOW_22);
             rule__PropertyMaximun__Group_7__0__Impl();
 
             state._fsp--;
@@ -21515,13 +21504,13 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             {
              before(grammarAccess.getPropertyMinimumAccess().getGroup_6());
             // InternalPlanWithRosmodelParser.g:7115:2: ( rule__PropertyMinimum__Group_6__0 )?
-            int alt52=2;
-            int LA52_0 = input.LA(1);
+            int alt51=2;
+            int LA51_0 = input.LA(1);
 
-            if ( (LA52_0==Description) ) {
-                alt52=1;
+            if ( (LA51_0==Description) ) {
+                alt51=1;
             }
-            switch (alt52) {
+            switch (alt51) {
                 case 1 :
                     // InternalPlanWithRosmodelParser.g:7115:3: rule__PropertyMinimum__Group_6__0
                     {
@@ -21611,13 +21600,13 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             {
              before(grammarAccess.getPropertyMinimumAccess().getGroup_7());
             // InternalPlanWithRosmodelParser.g:7142:2: ( rule__PropertyMinimum__Group_7__0 )?
-            int alt53=2;
-            int LA53_0 = input.LA(1);
+            int alt52=2;
+            int LA52_0 = input.LA(1);
 
-            if ( (LA53_0==Value) ) {
-                alt53=1;
+            if ( (LA52_0==Value) ) {
+                alt52=1;
             }
-            switch (alt53) {
+            switch (alt52) {
                 case 1 :
                     // InternalPlanWithRosmodelParser.g:7142:3: rule__PropertyMinimum__Group_7__0
                     {
@@ -21702,13 +21691,13 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             {
              before(grammarAccess.getPropertyMinimumAccess().getDEDENTTerminalRuleCall_8());
             // InternalPlanWithRosmodelParser.g:7168:2: ( RULE_DEDENT )?
-            int alt54=2;
-            int LA54_0 = input.LA(1);
+            int alt53=2;
+            int LA53_0 = input.LA(1);
 
-            if ( (LA54_0==RULE_DEDENT) ) {
-                alt54=1;
+            if ( (LA53_0==RULE_DEDENT) ) {
+                alt53=1;
             }
-            switch (alt54) {
+            switch (alt53) {
                 case 1 :
                     // InternalPlanWithRosmodelParser.g:7168:3: RULE_DEDENT
                     {
@@ -21906,7 +21895,7 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             // InternalPlanWithRosmodelParser.g:7235:1: ( rule__PropertyMinimum__Group_7__0__Impl rule__PropertyMinimum__Group_7__1 )
             // InternalPlanWithRosmodelParser.g:7236:2: rule__PropertyMinimum__Group_7__0__Impl rule__PropertyMinimum__Group_7__1
             {
-            pushFollow(FOLLOW_23);
+            pushFollow(FOLLOW_22);
             rule__PropertyMinimum__Group_7__0__Impl();
 
             state._fsp--;
@@ -22578,13 +22567,13 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             {
              before(grammarAccess.getPropertySelectionAccess().getGroup_6());
             // InternalPlanWithRosmodelParser.g:7466:2: ( rule__PropertySelection__Group_6__0 )?
-            int alt55=2;
-            int LA55_0 = input.LA(1);
+            int alt54=2;
+            int LA54_0 = input.LA(1);
 
-            if ( (LA55_0==Description) ) {
-                alt55=1;
+            if ( (LA54_0==Description) ) {
+                alt54=1;
             }
-            switch (alt55) {
+            switch (alt54) {
                 case 1 :
                     // InternalPlanWithRosmodelParser.g:7466:3: rule__PropertySelection__Group_6__0
                     {
@@ -22674,13 +22663,13 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             {
              before(grammarAccess.getPropertySelectionAccess().getGroup_7());
             // InternalPlanWithRosmodelParser.g:7493:2: ( rule__PropertySelection__Group_7__0 )?
-            int alt56=2;
-            int LA56_0 = input.LA(1);
+            int alt55=2;
+            int LA55_0 = input.LA(1);
 
-            if ( (LA56_0==Value) ) {
-                alt56=1;
+            if ( (LA55_0==Value) ) {
+                alt55=1;
             }
-            switch (alt56) {
+            switch (alt55) {
                 case 1 :
                     // InternalPlanWithRosmodelParser.g:7493:3: rule__PropertySelection__Group_7__0
                     {
@@ -22765,13 +22754,13 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             {
              before(grammarAccess.getPropertySelectionAccess().getDEDENTTerminalRuleCall_8());
             // InternalPlanWithRosmodelParser.g:7519:2: ( RULE_DEDENT )?
-            int alt57=2;
-            int LA57_0 = input.LA(1);
+            int alt56=2;
+            int LA56_0 = input.LA(1);
 
-            if ( (LA57_0==RULE_DEDENT) ) {
-                alt57=1;
+            if ( (LA56_0==RULE_DEDENT) ) {
+                alt56=1;
             }
-            switch (alt57) {
+            switch (alt56) {
                 case 1 :
                     // InternalPlanWithRosmodelParser.g:7519:3: RULE_DEDENT
                     {
@@ -23119,7 +23108,7 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             // InternalPlanWithRosmodelParser.g:7640:1: ( rule__PropertySelection__Group_7__2__Impl rule__PropertySelection__Group_7__3 )
             // InternalPlanWithRosmodelParser.g:7641:2: rule__PropertySelection__Group_7__2__Impl rule__PropertySelection__Group_7__3
             {
-            pushFollow(FOLLOW_23);
+            pushFollow(FOLLOW_22);
             rule__PropertySelection__Group_7__2__Impl();
 
             state._fsp--;
@@ -23326,17 +23315,17 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             {
              before(grammarAccess.getPropertySelectionAccess().getGroup_7_4());
             // InternalPlanWithRosmodelParser.g:7709:2: ( rule__PropertySelection__Group_7_4__0 )*
-            loop58:
+            loop57:
             do {
-                int alt58=2;
-                int LA58_0 = input.LA(1);
+                int alt57=2;
+                int LA57_0 = input.LA(1);
 
-                if ( (LA58_0==HyphenMinus) ) {
-                    alt58=1;
+                if ( (LA57_0==HyphenMinus) ) {
+                    alt57=1;
                 }
 
 
-                switch (alt58) {
+                switch (alt57) {
               case 1 :
                   // InternalPlanWithRosmodelParser.g:7709:3: rule__PropertySelection__Group_7_4__0
                   {
@@ -23350,7 +23339,7 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
                   break;
 
               default :
-                  break loop58;
+                  break loop57;
                 }
             } while (true);
 
@@ -23456,7 +23445,7 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             // InternalPlanWithRosmodelParser.g:7748:1: ( rule__PropertySelection__Group_7_4__0__Impl rule__PropertySelection__Group_7_4__1 )
             // InternalPlanWithRosmodelParser.g:7749:2: rule__PropertySelection__Group_7_4__0__Impl rule__PropertySelection__Group_7_4__1
             {
-            pushFollow(FOLLOW_23);
+            pushFollow(FOLLOW_22);
             rule__PropertySelection__Group_7_4__0__Impl();
 
             state._fsp--;
@@ -24132,13 +24121,13 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             {
              before(grammarAccess.getPropertyRangeAccess().getGroup_6());
             // InternalPlanWithRosmodelParser.g:7979:2: ( rule__PropertyRange__Group_6__0 )?
-            int alt59=2;
-            int LA59_0 = input.LA(1);
+            int alt58=2;
+            int LA58_0 = input.LA(1);
 
-            if ( (LA59_0==Description) ) {
-                alt59=1;
+            if ( (LA58_0==Description) ) {
+                alt58=1;
             }
-            switch (alt59) {
+            switch (alt58) {
                 case 1 :
                     // InternalPlanWithRosmodelParser.g:7979:3: rule__PropertyRange__Group_6__0
                     {
@@ -24228,13 +24217,13 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             {
              before(grammarAccess.getPropertyRangeAccess().getGroup_7());
             // InternalPlanWithRosmodelParser.g:8006:2: ( rule__PropertyRange__Group_7__0 )?
-            int alt60=2;
-            int LA60_0 = input.LA(1);
+            int alt59=2;
+            int LA59_0 = input.LA(1);
 
-            if ( (LA60_0==Value) ) {
-                alt60=1;
+            if ( (LA59_0==Value) ) {
+                alt59=1;
             }
-            switch (alt60) {
+            switch (alt59) {
                 case 1 :
                     // InternalPlanWithRosmodelParser.g:8006:3: rule__PropertyRange__Group_7__0
                     {
@@ -24319,13 +24308,13 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             {
              before(grammarAccess.getPropertyRangeAccess().getDEDENTTerminalRuleCall_8());
             // InternalPlanWithRosmodelParser.g:8032:2: ( RULE_DEDENT )?
-            int alt61=2;
-            int LA61_0 = input.LA(1);
+            int alt60=2;
+            int LA60_0 = input.LA(1);
 
-            if ( (LA61_0==RULE_DEDENT) ) {
-                alt61=1;
+            if ( (LA60_0==RULE_DEDENT) ) {
+                alt60=1;
             }
-            switch (alt61) {
+            switch (alt60) {
                 case 1 :
                     // InternalPlanWithRosmodelParser.g:8032:3: RULE_DEDENT
                     {
@@ -24673,7 +24662,7 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             // InternalPlanWithRosmodelParser.g:8153:1: ( rule__PropertyRange__Group_7__2__Impl rule__PropertyRange__Group_7__3 )
             // InternalPlanWithRosmodelParser.g:8154:2: rule__PropertyRange__Group_7__2__Impl rule__PropertyRange__Group_7__3
             {
-            pushFollow(FOLLOW_23);
+            pushFollow(FOLLOW_22);
             rule__PropertyRange__Group_7__2__Impl();
 
             state._fsp--;
@@ -24837,7 +24826,7 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             // InternalPlanWithRosmodelParser.g:8207:1: ( rule__PropertyRange__Group_7__4__Impl rule__PropertyRange__Group_7__5 )
             // InternalPlanWithRosmodelParser.g:8208:2: rule__PropertyRange__Group_7__4__Impl rule__PropertyRange__Group_7__5
             {
-            pushFollow(FOLLOW_23);
+            pushFollow(FOLLOW_22);
             rule__PropertyRange__Group_7__4__Impl();
 
             state._fsp--;
@@ -25146,7 +25135,7 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             // InternalPlanWithRosmodelParser.g:8315:1: ( rule__PropertyValueList__Group__1__Impl rule__PropertyValueList__Group__2 )
             // InternalPlanWithRosmodelParser.g:8316:2: rule__PropertyValueList__Group__1__Impl rule__PropertyValueList__Group__2
             {
-            pushFollow(FOLLOW_23);
+            pushFollow(FOLLOW_22);
             rule__PropertyValueList__Group__1__Impl();
 
             state._fsp--;
@@ -25353,17 +25342,17 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             {
              before(grammarAccess.getPropertyValueListAccess().getGroup_3());
             // InternalPlanWithRosmodelParser.g:8384:2: ( rule__PropertyValueList__Group_3__0 )*
-            loop62:
+            loop61:
             do {
-                int alt62=2;
-                int LA62_0 = input.LA(1);
+                int alt61=2;
+                int LA61_0 = input.LA(1);
 
-                if ( (LA62_0==HyphenMinus) ) {
-                    alt62=1;
+                if ( (LA61_0==HyphenMinus) ) {
+                    alt61=1;
                 }
 
 
-                switch (alt62) {
+                switch (alt61) {
               case 1 :
                   // InternalPlanWithRosmodelParser.g:8384:3: rule__PropertyValueList__Group_3__0
                   {
@@ -25377,7 +25366,7 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
                   break;
 
               default :
-                  break loop62;
+                  break loop61;
                 }
             } while (true);
 
@@ -25483,7 +25472,7 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             // InternalPlanWithRosmodelParser.g:8423:1: ( rule__PropertyValueList__Group_3__0__Impl rule__PropertyValueList__Group_3__1 )
             // InternalPlanWithRosmodelParser.g:8424:2: rule__PropertyValueList__Group_3__0__Impl rule__PropertyValueList__Group_3__1
             {
-            pushFollow(FOLLOW_23);
+            pushFollow(FOLLOW_22);
             rule__PropertyValueList__Group_3__0__Impl();
 
             state._fsp--;
@@ -27750,21 +27739,21 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
             // InternalPlanWithRosmodelParser.g:9248:2: ( ( ruleEString ) )
             // InternalPlanWithRosmodelParser.g:9249:3: ( ruleEString )
             {
-             before(grammarAccess.getConfigRosSoftwareComponentAccess().getComponentSystemCrossReference_1_0());
+             before(grammarAccess.getConfigRosSoftwareComponentAccess().getComponentComponentCrossReference_1_0());
             // InternalPlanWithRosmodelParser.g:9250:3: ( ruleEString )
             // InternalPlanWithRosmodelParser.g:9251:4: ruleEString
             {
-             before(grammarAccess.getConfigRosSoftwareComponentAccess().getComponentSystemEStringParserRuleCall_1_0_1());
+             before(grammarAccess.getConfigRosSoftwareComponentAccess().getComponentComponentEStringParserRuleCall_1_0_1());
             pushFollow(FOLLOW_2);
             ruleEString();
 
             state._fsp--;
 
-             after(grammarAccess.getConfigRosSoftwareComponentAccess().getComponentSystemEStringParserRuleCall_1_0_1());
+             after(grammarAccess.getConfigRosSoftwareComponentAccess().getComponentComponentEStringParserRuleCall_1_0_1());
 
             }
 
-             after(grammarAccess.getConfigRosSoftwareComponentAccess().getComponentSystemCrossReference_1_0());
+             after(grammarAccess.getConfigRosSoftwareComponentAccess().getComponentComponentCrossReference_1_0());
 
             }
 
@@ -30782,18 +30771,18 @@ public class InternalPlanWithRosmodelParser extends AbstractInternalContentAssis
     public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0008000000000000L});
     public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0008000000000002L});
     public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0408000000000000L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x2800000000000002L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000003400000000L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000000100L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0400000000020000L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0200000000012000L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0402008000000000L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x2AC40B4800000000L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0600000000004000L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000003400000000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0400000000020000L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0200000000012000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0402008000000000L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x2AC40B4800000000L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0600000000004000L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x2800000000000002L});
     public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000400000000000L});
     public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000008000000L});
     public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0400000060000000L});

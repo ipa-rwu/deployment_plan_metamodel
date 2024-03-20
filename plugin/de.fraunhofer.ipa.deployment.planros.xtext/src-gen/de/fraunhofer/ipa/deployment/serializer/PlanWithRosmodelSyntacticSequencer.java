@@ -22,7 +22,6 @@ public class PlanWithRosmodelSyntacticSequencer extends AbstractSyntacticSequenc
 
   protected PlanWithRosmodelGrammarAccess grammarAccess;
   protected AbstractElementAlias match_ConfigRosParameter___INDENTTerminalRuleCall_4_0_DEDENTTerminalRuleCall_4_3__q;
-  protected AbstractElementAlias match_ConfigRosSoftwareComponent_PreListElementParserRuleCall_2_3_4_0_q;
   protected AbstractElementAlias match_ConfigRosSoftwareComponent___ColonKeyword_2_0_INDENTTerminalRuleCall_2_1_DEDENTTerminalRuleCall_2_4__q;
   protected AbstractElementAlias match_ConfigSoftwareComponent_PreListElementParserRuleCall_1_2_4_0_q;
   protected AbstractElementAlias match_ConfigSoftwareComponent___ColonKeyword_1_0_DEDENTTerminalRuleCall_1_3__q;
@@ -37,7 +36,6 @@ public class PlanWithRosmodelSyntacticSequencer extends AbstractSyntacticSequenc
   protected void init(IGrammarAccess access) {
     grammarAccess = (PlanWithRosmodelGrammarAccess) access;
     match_ConfigRosParameter___INDENTTerminalRuleCall_4_0_DEDENTTerminalRuleCall_4_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getConfigRosParameterAccess().getINDENTTerminalRuleCall_4_0()), new TokenAlias(false, false, grammarAccess.getConfigRosParameterAccess().getDEDENTTerminalRuleCall_4_3()));
-    match_ConfigRosSoftwareComponent_PreListElementParserRuleCall_2_3_4_0_q = new TokenAlias(false, true, grammarAccess.getConfigRosSoftwareComponentAccess().getPreListElementParserRuleCall_2_3_4_0());
     match_ConfigRosSoftwareComponent___ColonKeyword_2_0_INDENTTerminalRuleCall_2_1_DEDENTTerminalRuleCall_2_4__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getConfigRosSoftwareComponentAccess().getColonKeyword_2_0()), new TokenAlias(false, false, grammarAccess.getConfigRosSoftwareComponentAccess().getINDENTTerminalRuleCall_2_1()), new TokenAlias(false, false, grammarAccess.getConfigRosSoftwareComponentAccess().getDEDENTTerminalRuleCall_2_4()));
     match_ConfigSoftwareComponent_PreListElementParserRuleCall_1_2_4_0_q = new TokenAlias(false, true, grammarAccess.getConfigSoftwareComponentAccess().getPreListElementParserRuleCall_1_2_4_0());
     match_ConfigSoftwareComponent___ColonKeyword_1_0_DEDENTTerminalRuleCall_1_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getConfigSoftwareComponentAccess().getColonKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getConfigSoftwareComponentAccess().getDEDENTTerminalRuleCall_1_3()));
@@ -90,8 +88,6 @@ public class PlanWithRosmodelSyntacticSequencer extends AbstractSyntacticSequenc
       List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
       if (match_ConfigRosParameter___INDENTTerminalRuleCall_4_0_DEDENTTerminalRuleCall_4_3__q.equals(syntax))
         emit_ConfigRosParameter___INDENTTerminalRuleCall_4_0_DEDENTTerminalRuleCall_4_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
-      else if (match_ConfigRosSoftwareComponent_PreListElementParserRuleCall_2_3_4_0_q.equals(syntax))
-        emit_ConfigRosSoftwareComponent_PreListElementParserRuleCall_2_3_4_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
       else if (match_ConfigRosSoftwareComponent___ColonKeyword_2_0_INDENTTerminalRuleCall_2_1_DEDENTTerminalRuleCall_2_4__q.equals(syntax))
         emit_ConfigRosSoftwareComponent___ColonKeyword_2_0_INDENTTerminalRuleCall_2_1_DEDENTTerminalRuleCall_2_4__q(semanticObject, getLastNavigableState(), syntaxNodes);
       else if (match_ConfigSoftwareComponent_PreListElementParserRuleCall_1_2_4_0_q.equals(syntax))
@@ -133,24 +129,10 @@ public class PlanWithRosmodelSyntacticSequencer extends AbstractSyntacticSequenc
   /**
    * <pre>
    * Ambiguous syntax:
-   *     PreListElement?
-   *
-   * This ambiguous syntax occurs at:
-   *     startCommand+=EString (ambiguity) DEDENT DEDENT (rule end)
-
-   * </pre>
-   */
-  protected void emit_ConfigRosSoftwareComponent_PreListElementParserRuleCall_2_3_4_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-    acceptNodes(transition, nodes);
-  }
-
-  /**
-   * <pre>
-   * Ambiguous syntax:
    *     (':' INDENT DEDENT)?
    *
    * This ambiguous syntax occurs at:
-   *     component=[System|EString] (ambiguity) (rule end)
+   *     component=[Component|EString] (ambiguity) (rule end)
 
    * </pre>
    */
