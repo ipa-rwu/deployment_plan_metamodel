@@ -39,8 +39,8 @@ services:
       - |
         export CYCLONEDDS_URI=file:///cyclonedds.xml
         source /ros_entrypoint.sh
-  color_marker_publish:
-    image: registry.gitlab.cc-asp.fraunhofer.de/ipa326/demonstrator/50y-robotic-demo/color_marker_publish_humble:50y_v1.0.1
+  aruco_marker_detectionm:
+    image: registry.gitlab.cc-asp.fraunhofer.de/ipa326/demonstrator/50y-robotic-demo/aruco_marker_detectionm_humble:50y_v1.0.1
     volumes:
       - ./cyclonedds.xml:/cyclonedds.xml
     networks:

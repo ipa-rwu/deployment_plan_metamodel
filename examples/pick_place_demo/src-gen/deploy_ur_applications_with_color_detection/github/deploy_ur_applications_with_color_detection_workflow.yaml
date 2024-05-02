@@ -48,14 +48,14 @@ jobs:
       build-prefix: ${{needs.EnvSetup.outputs.build-prefix}}
       build-suffix: ${{needs.EnvSetup.outputs.build-suffix}}
       cmake-args: ${{needs.EnvSetup.outputs.cmake-args}}
-  color_marker_publish:
+  aruco_marker_detectionm:
     needs: [EnvSetup]
     uses: ./.github/workflows/test_code_build_image_workflow_reuse.yaml
     with:
-      context-path: src-gen/deploy_ur_applications_with_color_detection/color_marker_publish
+      context-path: src-gen/deploy_ur_applications_with_color_detection/aruco_marker_detectionm
       ros-distro: humble
       registry: ${{needs.EnvSetup.outputs.registry}}
-      image-name: ${{ github.repository_owner }}/color_marker_publish
+      image-name: ${{ github.repository_owner }}/aruco_marker_detectionm
       build-prefix: ${{needs.EnvSetup.outputs.build-prefix}}
       build-suffix: ${{needs.EnvSetup.outputs.build-suffix}}
       cmake-args: ${{needs.EnvSetup.outputs.cmake-args}}

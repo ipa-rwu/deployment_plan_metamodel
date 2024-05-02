@@ -24,12 +24,12 @@ DeploymentPlanWithRos:
         type: container
         registry: "registry.gitlab.cc-asp.fraunhofer.de/ipa326/demonstrator/50y-robotic-demo"
 
-    - name: color_marker_publish
+    - name: aruco_marker_detectionm
       executedBy: "ur5e_cell_with_realsense_camera.cmh_tower_400"
       version: "50y_v1.0.1"
       middleware: humble
       softwareComponents:
-        - color_pose_estimation
+        - aruco_marker_detection
       runtimeType:
         type: container
         registry: "registry.gitlab.cc-asp.fraunhofer.de/ipa326/demonstrator/50y-robotic-demo"

@@ -3,4 +3,4 @@ ur5e_cell_system:
     aruco_marker_detection
     bt_manipulation_framwork
     ur5e_cell_moveit_config
-    color_pose_estimation
+    realsense_camera_calibrated
