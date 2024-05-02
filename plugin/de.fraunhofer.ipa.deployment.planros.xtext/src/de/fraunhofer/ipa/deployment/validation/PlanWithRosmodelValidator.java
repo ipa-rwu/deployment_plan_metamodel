@@ -26,7 +26,6 @@ import ros.Parameter;
 import system.Component;
 import system.RosNode;
 import system.RosParameter;
-import system.SubSystem;
 import system.System;
 import targetEnvironment.impl.ConfigConnectionPropertyImpl;
 import targetEnvironment.impl.ConfigDevicePropertyImpl;

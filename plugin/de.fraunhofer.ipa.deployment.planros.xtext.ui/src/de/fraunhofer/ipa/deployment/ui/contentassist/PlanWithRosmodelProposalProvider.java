@@ -4,7 +4,6 @@
 package de.fraunhofer.ipa.deployment.ui.contentassist;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -36,7 +35,6 @@ import ros.impl.ParameterImpl;
 import system.Component;
 import system.RosNode;
 import system.RosParameter;
-import system.SubSystem;
 import system.System;
 import system.impl.RosParameterImpl;
 import targetEnvironment.ComputationDeviceInstance;
