@@ -56,6 +56,9 @@ class PlanGenerator extends AbstractGenerator {
     @Inject
     extension GitLabCICompiler
 
+    @Inject
+    extension LocalDockerBuilder
+
     public var NamingHelper naming = new NamingHelper
 
     def DockerfilePath(String assignmentFolderPath){
@@ -128,6 +131,13 @@ class PlanGenerator extends AbstractGenerator {
             fsa.generateFile(
                 namingHelper.getGitlabCI,
                 plan.gitlabCICompiler(namingHelper)
+            )
+        }
+
+        def generateLocalDockerBuilder(AbstractDeploymentPlan plan, IFileSystemAccess2 fsa, NamingHelper namingHelper) {
+            fsa.generateFile(
+                namingHelper.getLocalDockerBuilderFilePath,
+                plan.localDockerBuilder(namingHelper)
             )
         }
 
