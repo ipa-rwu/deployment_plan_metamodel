@@ -20,6 +20,7 @@ class NamingHelper {
     String DockerComposeFileName = "docker-compose.yaml"
     String RelativeGitLabFolderPath = null
     String AbsoluteRootGitLabFolderPath= null
+    String composeBuilder = "builder.docker-compose.yml"
 
 
     def setRelativePlanFolderPath(String planName){
@@ -118,6 +119,10 @@ class NamingHelper {
 
     def getGitlabCI(){
       return String.format("%s/%s", getRelativeGitLabFolderPath, this.GitlabCI)
+    }
+
+    def getLocalDockerBuilderFilePath(){
+      return String.format("%s/%s", getRelativePlanFolderPath, this.composeBuilder)
     }
 
     def getAbsoluteRootGitLabFolderPath(){

@@ -15,6 +15,7 @@ import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
 import de.fraunhofer.ipa.deployment.util.RunTimeType
 import com.google.inject.Inject
+import deployPlanWithRosModel.DeployRossystemPlan
 
 /**
  * Generates code from your model files on save.
@@ -38,6 +39,9 @@ class PlanWithRosmodelGenerator extends AbstractGenerator {
     @Inject
     extension DockerFileCompiler
 
+    @Inject
+    extension LocalDockerBuilderWithRossystem
+
   var NamingHelperWithRosmodel extendedNamingHelper = new NamingHelperWithRosmodel
 
 
@@ -54,6 +58,7 @@ class PlanWithRosmodelGenerator extends AbstractGenerator {
         extendedNamingHelper.assignmentRossystemRepoInfoMap = plan
         planGen.generateGitlabCI(plan, fsa, extendedNamingHelper.origionNamingHelper)
         planGen.generateWorkflow(plan, fsa, extendedNamingHelper.origionNamingHelper)
+        generateLocalDockerBuilder(plan, fsa, extendedNamingHelper)
         planGen.generateAnsible(plan, fsa, extendedNamingHelper.origionNamingHelper)
         var assignments = plan.realize.realizations
         for (assignment : assignments){
@@ -111,5 +116,12 @@ class PlanWithRosmodelGenerator extends AbstractGenerator {
         }
               }
 
+    }
+
+    def generateLocalDockerBuilder(AbstractDeploymentPlan plan, IFileSystemAccess2 fsa, NamingHelperWithRosmodel namingHelper) {
+        fsa.generateFile(
+            namingHelper.origionNamingHelper.getLocalDockerBuilderFilePath,
+            localDockerBuilder(plan as DeployRossystemPlan, namingHelper)
+        )
     }
 }

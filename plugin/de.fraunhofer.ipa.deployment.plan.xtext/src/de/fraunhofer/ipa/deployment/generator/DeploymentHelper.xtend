@@ -60,6 +60,8 @@ import targetEnvironment.TargetDeployEnviroment
 import system.Component
 import system.System
 import system.RosNode
+import de.fraunhofer.ipa.deployment.util.AbstractComputationAssignmentTarget
+import implementationDescription.ImplementationDescription
 
 class OSInfo{
     String name
@@ -491,7 +493,7 @@ def getRepoNameFromUrl(String url){
     }
 
 def getRepoInfo(SoftwareComponent imp){
-    val repo_info = new RepoInfo
+    val RepoInfo repo_info = new RepoInfo
     var url = imp.repository.url
     if(imp.repository.type instanceof GitRepositoryTypeImpl){
       if(!url.substring(url.length -4).equals(".git")){
@@ -668,4 +670,17 @@ def determinIfGithub(String repo_url){
         }
     }
  }
+
+  def collectSoftwareComponents(List<AbstractComputationAssignmentTarget> targets){
+        var List<SoftwareComponent> all = new ArrayList
+        for(target: targets){
+            if(target instanceof ImplementationDescription){
+            all.addAll((target as ImplementationDescription).includeSoftwareComponents)
+            }else if(target instanceof SoftwareComponent){
+                all.add(target as SoftwareComponent)
+            }
+        }
+        return all
+    }
+
 }
