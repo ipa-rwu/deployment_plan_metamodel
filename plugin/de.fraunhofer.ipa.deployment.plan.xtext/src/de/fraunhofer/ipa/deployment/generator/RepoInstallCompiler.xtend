@@ -95,24 +95,12 @@ class RepoInstallCompiler {
 
     def RepoInstallCompiler(DeploymentPlan plan, List<AbstractComputationAssignmentTarget> targets)'''
 repositories:
-«FOR target: targets.collectSoftwareComponents»
+«FOR target: collectSoftwareComponents(targets)»
 «var imp = target as SoftwareComponent»
 «var repo_info = getRepoInfo(imp)»
   «createRepo(repo_info.name, repo_info.type, repo_info.url, repo_info.version, repo_info.accessible)»
 «ENDFOR»
 '''
-
-    def collectSoftwareComponents(List<AbstractComputationAssignmentTarget> targets){
-        var List<SoftwareComponent> all = new ArrayList
-        for(target: targets){
-            if(target instanceof ImplementationDescription){
-            all.addAll((target as ImplementationDescription).includeSoftwareComponents)
-            }else if(target instanceof SoftwareComponent){
-                all.add(target as SoftwareComponent)
-            }
-        }
-        return all
-    }
 
     def RepoInstallCompiler(List<RepoInfo> repos) '''
     «var newRepos = repos.filter[it.checkIfReleased==false]»
