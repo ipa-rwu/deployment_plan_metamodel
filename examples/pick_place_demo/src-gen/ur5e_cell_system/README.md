@@ -11,9 +11,26 @@ It holds the launch file to run the following nodes:
 - detect_aruco_marker_action_server
 - moveit_skill_server
 - set_path_constraints_client
-- color_pose_estimation
+- realsence_tf_node
+- driver
 
 The listed nodes offer the following connections:
+- ActionServer: start_application [man2_msgs/RunApplication]
+- ActionClient: detect_aruco_marker_client [detect_aruco_marker_skill/ArucoMarkerDetection]
+- ActionClient: compute_path_to_state_client [moveit_skills/ComputePathToState]
+- ActionClient: compute_path_to_pose_client [moveit_skills/ComputePathToPose]
+- ActionClient: compute_path_to_point_client [moveit_skills/ComputePathToPoint]
+- ActionClient: execute_trajectory_client [moveit_skills/ExecuteTrajectory]
+- ServiceClient: set_path_constraints_client [moveit_skills/SetPathConstrains]
+- ActionClient: get_current_ik_frame_pose_client [moveit_skills/GetCurrentIKFramePose]
+- Subscriber: get_aruco_markers [aruco_msgs/MarkerArray]
+- ActionServer: detect_aruco_marker [detect_aruco_marker_skill/ArucoMarkerDetection]
+- ActionServer: compute_path_to_pose [moveit_skills/ComputePathToPose]
+- ActionServer: compute_path_to_point [moveit_skills/ComputePathToPoint]
+- ActionServer: compute_path_to_state [moveit_skills/ComputePathToState]
+- ActionServer: execute_trajectory [moveit_skills/ExecuteTrajectory]
+- ActionServer: get_current_ik_frame_pose [moveit_skills/GetCurrentIKFramePose]
+- ServiceServer: set_path_constrains_server [moveit_skills/SetPathConstrains]
 
 ## Installation
 
@@ -36,7 +53,7 @@ source install/setup.bash
 ```
 mkdir -p ros2_ws/src
 cd ros2_ws/
-git clone https://github.com/ipa-rwu/color_pose.git -b vsp/color_pose_testing_with_bt
+git clone https://github.com/ipa-rwu/realsense_camera_calibrated.git
 rosdep install --from-path src/ -i -y
 colcon build
 source install/setup.bash

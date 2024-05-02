@@ -74,28 +74,28 @@
       - cmh_tower_400
     register: output
 
-  - name: Tear down existing "color_marker_publish" service
+  - name: Tear down existing "aruco_marker_detectionm" service
     community.general.docker_compose:
       project_src: "{{ dest_docker_compose_dir_path }}"
       stopped: true
       state: present
       services:
-        - color_marker_publish
+        - aruco_marker_detectionm
     tags:
       - stop_service
-      - color_marker_publish
+      - aruco_marker_detectionm
       - cmh_tower_400
     register: output
 
-  - name: Create and start "color_marker_publish" service
+  - name: Create and start "aruco_marker_detectionm" service
     community.general.docker_compose:
       project_src: "{{ dest_docker_compose_dir_path }}"
       pull: true
       services:
-        - color_marker_publish
+        - aruco_marker_detectionm
     tags:
       - start_service
-      - color_marker_publish
+      - aruco_marker_detectionm
       - cmh_tower_400
     register: output
 

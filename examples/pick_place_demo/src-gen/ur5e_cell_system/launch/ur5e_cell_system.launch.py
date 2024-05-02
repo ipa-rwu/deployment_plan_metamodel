@@ -22,14 +22,14 @@ def generate_launch_description():
         PythonLaunchDescriptionSource([get_package_share_directory(
             'ur5e_cell_moveit_config') + '/launch/robot.launch.py'])
     )
-    include_color_pose_estimation = IncludeLaunchDescription(
+    include_realsense_camera_calibrated = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([get_package_share_directory(
-            'color_pose_estimation') + '/launch/color_pose_estimation_scene.launch.py'])
+            'realsense_camera_calibrated') + '/launch/realsense_camera_calibrated.py'])
     )
 
     ld.add_action(include_aruco_marker_detection)
     ld.add_action(include_bt_manipulation_framwork)
     ld.add_action(include_ur5e_cell_moveit_config)
-    ld.add_action(include_color_pose_estimation)
+    ld.add_action(include_realsense_camera_calibrated)
 
     return ld

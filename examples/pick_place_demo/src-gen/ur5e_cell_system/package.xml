@@ -17,7 +17,7 @@
   <exec_depend>aruco_marker_detection</exec_depend>
   <exec_depend>bt_manipulation_framwork</exec_depend>
   <exec_depend>ur5e_cell_moveit_config</exec_depend>
-  <exec_depend>color_pose_estimation</exec_depend>
+  <exec_depend>realsense_camera_calibrated</exec_depend>
 
   <!--test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>
