@@ -27,8 +27,8 @@ class GitLabCICompiler {
     stage: build
     before_script:
       # use "export" to overide global variables
-      # - export BASE_IMAGE_PREFIX="«chooseBaseImage(getProcessorArchitecture(assignment).getName)»"
-      # - export BASE_IMAGE_SUFFIX="«(assignment.middleware as RosMiddleware).value.getName»-ros-core"
+      - export BASE_IMAGE_PREFIX="«chooseBaseImage(getProcessorArchitecture(assignment).getName)»"
+      - export BASE_IMAGE_SUFFIX="«(assignment.middleware as RosMiddleware).value.getName»-ros-core"
       - echo BASE_IMAGE_PREFIX=${BASE_IMAGE_PREFIX}
       - echo BASE_IMAGE_SUFFIX=${BASE_IMAGE_SUFFIX}
       - echo "IMAGE_NAME=${IMAGE_NAME}"
@@ -38,8 +38,9 @@ class GitLabCICompiler {
       - echo "DOCKERFILE_NAME=${DOCKERFILE_NAME}"
       - echo "SELECT_PKGS=${SELECT_PKGS}"
       - echo "CMAKE_ARGS=${CMAKE_ARGS}"
-      - echo "TARGET=${TARGET}"
+      - echo "COLCON_OPTION=${COLCON_OPTION}"
       - export BUILDER_SUFFIX=$BUILDER_SUFFIX
+      - export STAGE=$STAGE
     extends:
       - .build_with_kaniko
       - .on_always
@@ -48,19 +49,27 @@ class GitLabCICompiler {
       DOCKERFILE_FOLDER: "«namingHelper.getAbsoluteAssignmentFolderPath(assignment.name)»/"
       BASE_IMAGE_PREFIX: "«chooseBaseImage(getProcessorArchitecture(assignment).getName)»"
       BASE_IMAGE_SUFFIX: "«(assignment.middleware as RosMiddleware).value.getName»-ros-core"
+      DOCKERFILE_NAME: Dockerfile
       SELECT_PKGS: ""
       COLCON_OPTION: ""
+      BUILDER_SUFFIX: ":0.0.3"
+    rules:
+      - !reference [.rules-map, on_commit_merge]
 
   publish_«assignment.name»:
     tags: *kaniko_runner
     stage: publish
+    before_script:
+        - !reference [.common, create_release_tag_script]
     extends:
       - .publish
-      - .on_merge_tag
+      # - .on_merge_tag
     variables:
       IMAGE_NAME: "«assignment.name»_«(assignment.middleware as RosMiddleware).value.getName»"
-    needs:
-      - «assignment.name»
+    rules:
+        - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH || $CI_COMMIT_TAG != null || $CI_COMMIT_BRANCH == $CUSTOME_DEFAULT_BRANCH
+          needs:
+            - «assignment.name»
   «""»
     «ENDFOR»
 
@@ -169,7 +178,6 @@ class GitLabCICompiler {
     SELECT_PKGS: ""
     COLCON_OPTION: ""
     STAGE: deploy
-    DOCKERFILE_NAME: "Dockerfile"
 
   .common:
     create_release_tag_script:
@@ -202,11 +210,12 @@ class GitLabCICompiler {
 
   .precommit:
     image: python:3.12.0b4-slim
+    # before_script:
+      # - apt install -y --no-install-recommends clang-format-14
     script:
       - apt update && apt install -y --no-install-recommends git
       - pip install pre-commit
       - pre-commit run --all-files
-
 
   .build_with_kaniko:
     image:
@@ -235,7 +244,7 @@ class GitLabCICompiler {
         --destination "${TARGET}"
         --tar-path ${PREFIX//:/-}${IMAGE_NAME}${SUFFIX}.tar
     artifacts:
-      name: ${CI_JOB_NAME}
+      name: ${IMAGE_NAME}
       paths:
         - ${PREFIX//:/-}${IMAGE_NAME}${SUFFIX}.tar
       expire_in: 10 minutes
@@ -276,10 +285,8 @@ class GitLabCICompiler {
       name: gcr.io/go-containerregistry/crane:debug
       entrypoint: [""]
     script:
-      - !reference [.common, create_release_tag_script]
       - crane auth login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
       - crane push ${PREFIX//:/-}${IMAGE_NAME}${SUFFIX}.tar ${TARGET}
-
 
   .doxygen-job:
     image: ubuntu:latest
@@ -291,9 +298,8 @@ class GitLabCICompiler {
       - mv doc/html/ public/
     artifacts:
       paths:
-      - public
+        - public
     when: always
-
 
   .adoc:
     image: "asciidoctor/docker-asciidoctor"
