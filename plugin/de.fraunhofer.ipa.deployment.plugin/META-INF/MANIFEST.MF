@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Plugin
+Bundle-SymbolicName: de.fraunhofer.ipa.deployment.plugin;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime;bundle-version="3.31.100",
+ org.eclipse.core.resources;bundle-version="3.20.200",
+ org.eclipse.jgit;bundle-version="6.10.0",
+ org.eclipse.ui.ide;bundle-version="3.22.200",
+ org.eclipse.core.commands,
+ org.apache.commons.commons-io;bundle-version="2.16.1"
+Automatic-Module-Name: de.fraunhofer.ipa.deployment.plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-19
