@@ -12,7 +12,4 @@
     <relativePath>../de.fraunhofer.ipa.deployment.parent</relativePath>
   </parent>
   <packaging>eclipse-plugin</packaging>
-  <properties>
-    <tycho-version>2.7.4</tycho-version>
-  </properties>
 </project>
