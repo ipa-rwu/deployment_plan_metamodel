@@ -18,22 +18,22 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public abstract class ExecutionRequirementImpl extends MinimalEObjectImpl.Container implements ExecutionRequirement {
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     protected ExecutionRequirementImpl() {
-        super();
-    }
+    super();
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     protected EClass eStaticClass() {
-        return ImplementationDescriptionPackage.Literals.EXECUTION_REQUIREMENT;
-    }
+    return ImplementationDescriptionPackage.Literals.EXECUTION_REQUIREMENT;
+  }
 
 } //ExecutionRequirementImpl

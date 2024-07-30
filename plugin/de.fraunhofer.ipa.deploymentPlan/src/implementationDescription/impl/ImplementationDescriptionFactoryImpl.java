@@ -20,186 +20,186 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
  */
 public class ImplementationDescriptionFactoryImpl extends EFactoryImpl implements ImplementationDescriptionFactory {
     /**
-     * Creates the default factory implementation.
-     * <!-- begin-user-doc -->
+   * Creates the default factory implementation.
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public static ImplementationDescriptionFactory init() {
-        try {
-            ImplementationDescriptionFactory theImplementationDescriptionFactory = (ImplementationDescriptionFactory)EPackage.Registry.INSTANCE.getEFactory(ImplementationDescriptionPackage.eNS_URI);
-            if (theImplementationDescriptionFactory != null) {
-                return theImplementationDescriptionFactory;
-            }
-        }
-        catch (Exception exception) {
-            EcorePlugin.INSTANCE.log(exception);
-        }
-        return new ImplementationDescriptionFactoryImpl();
+    try {
+      ImplementationDescriptionFactory theImplementationDescriptionFactory = (ImplementationDescriptionFactory)EPackage.Registry.INSTANCE.getEFactory(ImplementationDescriptionPackage.eNS_URI);
+      if (theImplementationDescriptionFactory != null) {
+        return theImplementationDescriptionFactory;
+      }
     }
+    catch (Exception exception) {
+      EcorePlugin.INSTANCE.log(exception);
+    }
+    return new ImplementationDescriptionFactoryImpl();
+  }
 
     /**
-     * Creates an instance of the factory.
-     * <!-- begin-user-doc -->
+   * Creates an instance of the factory.
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public ImplementationDescriptionFactoryImpl() {
-        super();
-    }
+    super();
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     public EObject create(EClass eClass) {
-        switch (eClass.getClassifierID()) {
-            case ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION_SET: return createImplementationDescriptionSet();
-            case ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION: return createImplementationDescription();
-            case ImplementationDescriptionPackage.SOFTWARE_COMPONENT: return createSoftwareComponent();
-            case ImplementationDescriptionPackage.DEVICE_REQUIREMENT: return createDeviceRequirement();
-            case ImplementationDescriptionPackage.SOFTWARE_CONFIGURATION_REQUIREMENT: return createSoftwareConfigurationRequirement();
-            case ImplementationDescriptionPackage.HWSW_PAREMETER: return createHWSWParemeter();
-            case ImplementationDescriptionPackage.SOFTWARE_EXECUTION_PAREMETER: return createSoftwareExecutionParemeter();
-            case ImplementationDescriptionPackage.EXECUTION_PARAMETER: return createExecutionParameter();
-            case ImplementationDescriptionPackage.REPOSITORY: return createRepository();
-            case ImplementationDescriptionPackage.GIT_REPOSITORY_TYPE: return createGitRepositoryType();
-            case ImplementationDescriptionPackage.APT_REPOSITORY_TYPE: return createAptRepositoryType();
-            default:
-                throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
-        }
+    switch (eClass.getClassifierID()) {
+      case ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION_SET: return createImplementationDescriptionSet();
+      case ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION: return createImplementationDescription();
+      case ImplementationDescriptionPackage.SOFTWARE_COMPONENT: return createSoftwareComponent();
+      case ImplementationDescriptionPackage.DEVICE_REQUIREMENT: return createDeviceRequirement();
+      case ImplementationDescriptionPackage.SOFTWARE_CONFIGURATION_REQUIREMENT: return createSoftwareConfigurationRequirement();
+      case ImplementationDescriptionPackage.HWSW_PAREMETER: return createHWSWParemeter();
+      case ImplementationDescriptionPackage.SOFTWARE_EXECUTION_PAREMETER: return createSoftwareExecutionParemeter();
+      case ImplementationDescriptionPackage.EXECUTION_PARAMETER: return createExecutionParameter();
+      case ImplementationDescriptionPackage.REPOSITORY: return createRepository();
+      case ImplementationDescriptionPackage.GIT_REPOSITORY_TYPE: return createGitRepositoryType();
+      case ImplementationDescriptionPackage.APT_REPOSITORY_TYPE: return createAptRepositoryType();
+      default:
+        throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public ImplementationDescriptionSet createImplementationDescriptionSet() {
-        ImplementationDescriptionSetImpl implementationDescriptionSet = new ImplementationDescriptionSetImpl();
-        return implementationDescriptionSet;
-    }
+    ImplementationDescriptionSetImpl implementationDescriptionSet = new ImplementationDescriptionSetImpl();
+    return implementationDescriptionSet;
+  }
 
                 /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public ImplementationDescription createImplementationDescription() {
-        ImplementationDescriptionImpl implementationDescription = new ImplementationDescriptionImpl();
-        return implementationDescription;
-    }
+    ImplementationDescriptionImpl implementationDescription = new ImplementationDescriptionImpl();
+    return implementationDescription;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public SoftwareComponent createSoftwareComponent() {
-        SoftwareComponentImpl softwareComponent = new SoftwareComponentImpl();
-        return softwareComponent;
-    }
+    SoftwareComponentImpl softwareComponent = new SoftwareComponentImpl();
+    return softwareComponent;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public DeviceRequirement createDeviceRequirement() {
-        DeviceRequirementImpl deviceRequirement = new DeviceRequirementImpl();
-        return deviceRequirement;
-    }
+    DeviceRequirementImpl deviceRequirement = new DeviceRequirementImpl();
+    return deviceRequirement;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public SoftwareConfigurationRequirement createSoftwareConfigurationRequirement() {
-        SoftwareConfigurationRequirementImpl softwareConfigurationRequirement = new SoftwareConfigurationRequirementImpl();
-        return softwareConfigurationRequirement;
-    }
+    SoftwareConfigurationRequirementImpl softwareConfigurationRequirement = new SoftwareConfigurationRequirementImpl();
+    return softwareConfigurationRequirement;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public HWSWParemeter createHWSWParemeter() {
-        HWSWParemeterImpl hwswParemeter = new HWSWParemeterImpl();
-        return hwswParemeter;
-    }
+    HWSWParemeterImpl hwswParemeter = new HWSWParemeterImpl();
+    return hwswParemeter;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public SoftwareExecutionParemeter createSoftwareExecutionParemeter() {
-        SoftwareExecutionParemeterImpl softwareExecutionParemeter = new SoftwareExecutionParemeterImpl();
-        return softwareExecutionParemeter;
-    }
+    SoftwareExecutionParemeterImpl softwareExecutionParemeter = new SoftwareExecutionParemeterImpl();
+    return softwareExecutionParemeter;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public ExecutionParameter createExecutionParameter() {
-        ExecutionParameterImpl executionParameter = new ExecutionParameterImpl();
-        return executionParameter;
-    }
+    ExecutionParameterImpl executionParameter = new ExecutionParameterImpl();
+    return executionParameter;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public Repository createRepository() {
-        RepositoryImpl repository = new RepositoryImpl();
-        return repository;
-    }
+    RepositoryImpl repository = new RepositoryImpl();
+    return repository;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public GitRepositoryType createGitRepositoryType() {
-        GitRepositoryTypeImpl gitRepositoryType = new GitRepositoryTypeImpl();
-        return gitRepositoryType;
-    }
+    GitRepositoryTypeImpl gitRepositoryType = new GitRepositoryTypeImpl();
+    return gitRepositoryType;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public AptRepositoryType createAptRepositoryType() {
-        AptRepositoryTypeImpl aptRepositoryType = new AptRepositoryTypeImpl();
-        return aptRepositoryType;
-    }
+    AptRepositoryTypeImpl aptRepositoryType = new AptRepositoryTypeImpl();
+    return aptRepositoryType;
+  }
 
                 /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public ImplementationDescriptionPackage getImplementationDescriptionPackage() {
-        return (ImplementationDescriptionPackage)getEPackage();
-    }
+    return (ImplementationDescriptionPackage)getEPackage();
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @deprecated
-     * @generated
-     */
+   * @deprecated
+   * @generated
+   */
     @Deprecated
     public static ImplementationDescriptionPackage getPackage() {
-        return ImplementationDescriptionPackage.eINSTANCE;
-    }
+    return ImplementationDescriptionPackage.eINSTANCE;
+  }
 
 } //ImplementationDescriptionFactoryImpl

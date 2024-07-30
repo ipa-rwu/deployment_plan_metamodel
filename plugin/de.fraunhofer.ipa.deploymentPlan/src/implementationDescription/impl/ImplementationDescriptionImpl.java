@@ -39,185 +39,185 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class ImplementationDescriptionImpl extends AbstractImplementationImpl implements ImplementationDescription {
     /**
-     * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getName()
-     * @generated
-     * @ordered
-     */
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
     protected static final String NAME_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getName()
-     * @generated
-     * @ordered
-     */
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
     protected String name = NAME_EDEFAULT;
 
     /**
-     * The cached value of the '{@link #getIncludeSoftwareComponents() <em>Include Software Components</em>}' containment reference list.
-     * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getIncludeSoftwareComponents() <em>Include Software Components</em>}' containment reference list.
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getIncludeSoftwareComponents()
-     * @generated
-     * @ordered
-     */
+   * @see #getIncludeSoftwareComponents()
+   * @generated
+   * @ordered
+   */
     protected EList<SoftwareComponent> includeSoftwareComponents;
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     protected ImplementationDescriptionImpl() {
-        super();
-    }
+    super();
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     protected EClass eStaticClass() {
-        return ImplementationDescriptionPackage.Literals.IMPLEMENTATION_DESCRIPTION;
-    }
+    return ImplementationDescriptionPackage.Literals.IMPLEMENTATION_DESCRIPTION;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public String getName() {
-        return name;
-    }
+    return name;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public void setName(String newName) {
-        String oldName = name;
-        name = newName;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION__NAME, oldName, name));
-    }
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION__NAME, oldName, name));
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public EList<SoftwareComponent> getIncludeSoftwareComponents() {
-        if (includeSoftwareComponents == null) {
-            includeSoftwareComponents = new EObjectContainmentEList<SoftwareComponent>(SoftwareComponent.class, this, ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION__INCLUDE_SOFTWARE_COMPONENTS);
-        }
-        return includeSoftwareComponents;
+    if (includeSoftwareComponents == null) {
+      includeSoftwareComponents = new EObjectContainmentEList<SoftwareComponent>(SoftwareComponent.class, this, ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION__INCLUDE_SOFTWARE_COMPONENTS);
     }
+    return includeSoftwareComponents;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-        switch (featureID) {
-            case ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION__INCLUDE_SOFTWARE_COMPONENTS:
-                return ((InternalEList<?>)getIncludeSoftwareComponents()).basicRemove(otherEnd, msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+    switch (featureID) {
+      case ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION__INCLUDE_SOFTWARE_COMPONENTS:
+        return ((InternalEList<?>)getIncludeSoftwareComponents()).basicRemove(otherEnd, msgs);
     }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION__NAME:
-                return getName();
-            case ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION__INCLUDE_SOFTWARE_COMPONENTS:
-                return getIncludeSoftwareComponents();
-        }
-        return super.eGet(featureID, resolve, coreType);
+    switch (featureID) {
+      case ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION__NAME:
+        return getName();
+      case ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION__INCLUDE_SOFTWARE_COMPONENTS:
+        return getIncludeSoftwareComponents();
     }
+    return super.eGet(featureID, resolve, coreType);
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @SuppressWarnings("unchecked")
     @Override
     public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION__NAME:
-                setName((String)newValue);
-                return;
-            case ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION__INCLUDE_SOFTWARE_COMPONENTS:
-                getIncludeSoftwareComponents().clear();
-                getIncludeSoftwareComponents().addAll((Collection<? extends SoftwareComponent>)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
+    switch (featureID) {
+      case ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION__NAME:
+        setName((String)newValue);
+        return;
+      case ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION__INCLUDE_SOFTWARE_COMPONENTS:
+        getIncludeSoftwareComponents().clear();
+        getIncludeSoftwareComponents().addAll((Collection<? extends SoftwareComponent>)newValue);
+        return;
     }
+    super.eSet(featureID, newValue);
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     public void eUnset(int featureID) {
-        switch (featureID) {
-            case ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION__NAME:
-                setName(NAME_EDEFAULT);
-                return;
-            case ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION__INCLUDE_SOFTWARE_COMPONENTS:
-                getIncludeSoftwareComponents().clear();
-                return;
-        }
-        super.eUnset(featureID);
+    switch (featureID) {
+      case ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION__NAME:
+        setName(NAME_EDEFAULT);
+        return;
+      case ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION__INCLUDE_SOFTWARE_COMPONENTS:
+        getIncludeSoftwareComponents().clear();
+        return;
     }
+    super.eUnset(featureID);
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION__NAME:
-                return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-            case ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION__INCLUDE_SOFTWARE_COMPONENTS:
-                return includeSoftwareComponents != null && !includeSoftwareComponents.isEmpty();
-        }
-        return super.eIsSet(featureID);
+    switch (featureID) {
+      case ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION__INCLUDE_SOFTWARE_COMPONENTS:
+        return includeSoftwareComponents != null && !includeSoftwareComponents.isEmpty();
     }
+    return super.eIsSet(featureID);
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+    if (eIsProxy()) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (name: ");
-        result.append(name);
-        result.append(')');
-        return result.toString();
-    }
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(')');
+    return result.toString();
+  }
 
 } //ImplementationDescriptionImpl

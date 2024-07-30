@@ -41,250 +41,250 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class SoftwareComponentImpl extends AbstractComputationAssignmentTargetImpl implements SoftwareComponent {
     /**
-     * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getName()
-     * @generated
-     * @ordered
-     */
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
     protected static final String NAME_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getName()
-     * @generated
-     * @ordered
-     */
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
     protected String name = NAME_EDEFAULT;
 
     /**
-     * The cached value of the '{@link #getRepository() <em>Repository</em>}' containment reference.
-     * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getRepository() <em>Repository</em>}' containment reference.
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getRepository()
-     * @generated
-     * @ordered
-     */
+   * @see #getRepository()
+   * @generated
+   * @ordered
+   */
     protected Repository repository;
 
     /**
-     * The cached value of the '{@link #getExecutionRequirement() <em>Execution Requirement</em>}' containment reference list.
-     * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getExecutionRequirement() <em>Execution Requirement</em>}' containment reference list.
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getExecutionRequirement()
-     * @generated
-     * @ordered
-     */
+   * @see #getExecutionRequirement()
+   * @generated
+   * @ordered
+   */
     protected EList<ExecutionRequirement> executionRequirement;
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     protected SoftwareComponentImpl() {
-        super();
-    }
+    super();
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     protected EClass eStaticClass() {
-        return ImplementationDescriptionPackage.Literals.SOFTWARE_COMPONENT;
-    }
+    return ImplementationDescriptionPackage.Literals.SOFTWARE_COMPONENT;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public String getName() {
-        return name;
-    }
+    return name;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public void setName(String newName) {
-        String oldName = name;
-        name = newName;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, ImplementationDescriptionPackage.SOFTWARE_COMPONENT__NAME, oldName, name));
-    }
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ImplementationDescriptionPackage.SOFTWARE_COMPONENT__NAME, oldName, name));
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public Repository getRepository() {
-        return repository;
-    }
+    return repository;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public NotificationChain basicSetRepository(Repository newRepository, NotificationChain msgs) {
-        Repository oldRepository = repository;
-        repository = newRepository;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ImplementationDescriptionPackage.SOFTWARE_COMPONENT__REPOSITORY, oldRepository, newRepository);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
+    Repository oldRepository = repository;
+    repository = newRepository;
+    if (eNotificationRequired()) {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ImplementationDescriptionPackage.SOFTWARE_COMPONENT__REPOSITORY, oldRepository, newRepository);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
+    return msgs;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public void setRepository(Repository newRepository) {
-        if (newRepository != repository) {
-            NotificationChain msgs = null;
-            if (repository != null)
-                msgs = ((InternalEObject)repository).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ImplementationDescriptionPackage.SOFTWARE_COMPONENT__REPOSITORY, null, msgs);
-            if (newRepository != null)
-                msgs = ((InternalEObject)newRepository).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ImplementationDescriptionPackage.SOFTWARE_COMPONENT__REPOSITORY, null, msgs);
-            msgs = basicSetRepository(newRepository, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, ImplementationDescriptionPackage.SOFTWARE_COMPONENT__REPOSITORY, newRepository, newRepository));
+    if (newRepository != repository) {
+      NotificationChain msgs = null;
+      if (repository != null)
+        msgs = ((InternalEObject)repository).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ImplementationDescriptionPackage.SOFTWARE_COMPONENT__REPOSITORY, null, msgs);
+      if (newRepository != null)
+        msgs = ((InternalEObject)newRepository).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ImplementationDescriptionPackage.SOFTWARE_COMPONENT__REPOSITORY, null, msgs);
+      msgs = basicSetRepository(newRepository, msgs);
+      if (msgs != null) msgs.dispatch();
     }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ImplementationDescriptionPackage.SOFTWARE_COMPONENT__REPOSITORY, newRepository, newRepository));
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public EList<ExecutionRequirement> getExecutionRequirement() {
-        if (executionRequirement == null) {
-            executionRequirement = new EObjectContainmentEList<ExecutionRequirement>(ExecutionRequirement.class, this, ImplementationDescriptionPackage.SOFTWARE_COMPONENT__EXECUTION_REQUIREMENT);
-        }
-        return executionRequirement;
+    if (executionRequirement == null) {
+      executionRequirement = new EObjectContainmentEList<ExecutionRequirement>(ExecutionRequirement.class, this, ImplementationDescriptionPackage.SOFTWARE_COMPONENT__EXECUTION_REQUIREMENT);
     }
+    return executionRequirement;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-        switch (featureID) {
-            case ImplementationDescriptionPackage.SOFTWARE_COMPONENT__REPOSITORY:
-                return basicSetRepository(null, msgs);
-            case ImplementationDescriptionPackage.SOFTWARE_COMPONENT__EXECUTION_REQUIREMENT:
-                return ((InternalEList<?>)getExecutionRequirement()).basicRemove(otherEnd, msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+    switch (featureID) {
+      case ImplementationDescriptionPackage.SOFTWARE_COMPONENT__REPOSITORY:
+        return basicSetRepository(null, msgs);
+      case ImplementationDescriptionPackage.SOFTWARE_COMPONENT__EXECUTION_REQUIREMENT:
+        return ((InternalEList<?>)getExecutionRequirement()).basicRemove(otherEnd, msgs);
     }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case ImplementationDescriptionPackage.SOFTWARE_COMPONENT__NAME:
-                return getName();
-            case ImplementationDescriptionPackage.SOFTWARE_COMPONENT__REPOSITORY:
-                return getRepository();
-            case ImplementationDescriptionPackage.SOFTWARE_COMPONENT__EXECUTION_REQUIREMENT:
-                return getExecutionRequirement();
-        }
-        return super.eGet(featureID, resolve, coreType);
+    switch (featureID) {
+      case ImplementationDescriptionPackage.SOFTWARE_COMPONENT__NAME:
+        return getName();
+      case ImplementationDescriptionPackage.SOFTWARE_COMPONENT__REPOSITORY:
+        return getRepository();
+      case ImplementationDescriptionPackage.SOFTWARE_COMPONENT__EXECUTION_REQUIREMENT:
+        return getExecutionRequirement();
     }
+    return super.eGet(featureID, resolve, coreType);
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @SuppressWarnings("unchecked")
     @Override
     public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case ImplementationDescriptionPackage.SOFTWARE_COMPONENT__NAME:
-                setName((String)newValue);
-                return;
-            case ImplementationDescriptionPackage.SOFTWARE_COMPONENT__REPOSITORY:
-                setRepository((Repository)newValue);
-                return;
-            case ImplementationDescriptionPackage.SOFTWARE_COMPONENT__EXECUTION_REQUIREMENT:
-                getExecutionRequirement().clear();
-                getExecutionRequirement().addAll((Collection<? extends ExecutionRequirement>)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
+    switch (featureID) {
+      case ImplementationDescriptionPackage.SOFTWARE_COMPONENT__NAME:
+        setName((String)newValue);
+        return;
+      case ImplementationDescriptionPackage.SOFTWARE_COMPONENT__REPOSITORY:
+        setRepository((Repository)newValue);
+        return;
+      case ImplementationDescriptionPackage.SOFTWARE_COMPONENT__EXECUTION_REQUIREMENT:
+        getExecutionRequirement().clear();
+        getExecutionRequirement().addAll((Collection<? extends ExecutionRequirement>)newValue);
+        return;
     }
+    super.eSet(featureID, newValue);
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     public void eUnset(int featureID) {
-        switch (featureID) {
-            case ImplementationDescriptionPackage.SOFTWARE_COMPONENT__NAME:
-                setName(NAME_EDEFAULT);
-                return;
-            case ImplementationDescriptionPackage.SOFTWARE_COMPONENT__REPOSITORY:
-                setRepository((Repository)null);
-                return;
-            case ImplementationDescriptionPackage.SOFTWARE_COMPONENT__EXECUTION_REQUIREMENT:
-                getExecutionRequirement().clear();
-                return;
-        }
-        super.eUnset(featureID);
+    switch (featureID) {
+      case ImplementationDescriptionPackage.SOFTWARE_COMPONENT__NAME:
+        setName(NAME_EDEFAULT);
+        return;
+      case ImplementationDescriptionPackage.SOFTWARE_COMPONENT__REPOSITORY:
+        setRepository((Repository)null);
+        return;
+      case ImplementationDescriptionPackage.SOFTWARE_COMPONENT__EXECUTION_REQUIREMENT:
+        getExecutionRequirement().clear();
+        return;
     }
+    super.eUnset(featureID);
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case ImplementationDescriptionPackage.SOFTWARE_COMPONENT__NAME:
-                return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-            case ImplementationDescriptionPackage.SOFTWARE_COMPONENT__REPOSITORY:
-                return repository != null;
-            case ImplementationDescriptionPackage.SOFTWARE_COMPONENT__EXECUTION_REQUIREMENT:
-                return executionRequirement != null && !executionRequirement.isEmpty();
-        }
-        return super.eIsSet(featureID);
+    switch (featureID) {
+      case ImplementationDescriptionPackage.SOFTWARE_COMPONENT__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case ImplementationDescriptionPackage.SOFTWARE_COMPONENT__REPOSITORY:
+        return repository != null;
+      case ImplementationDescriptionPackage.SOFTWARE_COMPONENT__EXECUTION_REQUIREMENT:
+        return executionRequirement != null && !executionRequirement.isEmpty();
     }
+    return super.eIsSet(featureID);
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+    if (eIsProxy()) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (name: ");
-        result.append(name);
-        result.append(')');
-        return result.toString();
-    }
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(')');
+    return result.toString();
+  }
 
 } //SoftwareComponentImpl

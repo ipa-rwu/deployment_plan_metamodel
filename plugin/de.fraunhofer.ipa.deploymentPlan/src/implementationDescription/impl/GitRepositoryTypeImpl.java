@@ -16,22 +16,22 @@ import org.eclipse.emf.ecore.EClass;
  */
 public class GitRepositoryTypeImpl extends RepositoryTypeImpl implements GitRepositoryType {
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     protected GitRepositoryTypeImpl() {
-        super();
-    }
+    super();
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     protected EClass eStaticClass() {
-        return ImplementationDescriptionPackage.Literals.GIT_REPOSITORY_TYPE;
-    }
+    return ImplementationDescriptionPackage.Literals.GIT_REPOSITORY_TYPE;
+  }
 
 } //GitRepositoryTypeImpl

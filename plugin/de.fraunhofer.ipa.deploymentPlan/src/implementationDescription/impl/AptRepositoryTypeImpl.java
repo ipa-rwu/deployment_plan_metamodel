@@ -16,22 +16,22 @@ import org.eclipse.emf.ecore.EClass;
  */
 public class AptRepositoryTypeImpl extends RepositoryTypeImpl implements AptRepositoryType {
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     protected AptRepositoryTypeImpl() {
-        super();
-    }
+    super();
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     protected EClass eStaticClass() {
-        return ImplementationDescriptionPackage.Literals.APT_REPOSITORY_TYPE;
-    }
+    return ImplementationDescriptionPackage.Literals.APT_REPOSITORY_TYPE;
+  }
 
 } //AptRepositoryTypeImpl

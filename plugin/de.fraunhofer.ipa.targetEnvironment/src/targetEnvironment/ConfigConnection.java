@@ -25,37 +25,37 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface ConfigConnection extends EObject {
     /**
-     * Returns the value of the '<em><b>Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Name</em>' attribute.
-     * @see #setName(String)
-     * @see targetEnvironment.TargetEnvironmentPackage#getConfigConnection_Name()
-     * @model required="true"
-     * @generated
-     */
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see targetEnvironment.TargetEnvironmentPackage#getConfigConnection_Name()
+   * @model required="true"
+   * @generated
+   */
     String getName();
 
     /**
-     * Sets the value of the '{@link targetEnvironment.ConfigConnection#getName <em>Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+   * Sets the value of the '{@link targetEnvironment.ConfigConnection#getName <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Name</em>' attribute.
-     * @see #getName()
-     * @generated
-     */
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
+   * @generated
+   */
     void setName(String value);
 
     /**
-     * Returns the value of the '<em><b>Connect Device</b></em>' containment reference list.
-     * The list contents are of type {@link targetEnvironment.ConnectedDevice}.
-     * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Connect Device</b></em>' containment reference list.
+   * The list contents are of type {@link targetEnvironment.ConnectedDevice}.
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Connect Device</em>' containment reference list.
-     * @see targetEnvironment.TargetEnvironmentPackage#getConfigConnection_ConnectDevice()
-     * @model containment="true" lower="2"
-     * @generated
-     */
+   * @return the value of the '<em>Connect Device</em>' containment reference list.
+   * @see targetEnvironment.TargetEnvironmentPackage#getConfigConnection_ConnectDevice()
+   * @model containment="true" lower="2"
+   * @generated
+   */
     EList<ConnectedDevice> getConnectDevice();
 
 } // ConfigConnection

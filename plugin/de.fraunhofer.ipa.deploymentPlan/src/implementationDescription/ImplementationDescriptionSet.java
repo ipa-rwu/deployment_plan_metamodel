@@ -24,15 +24,15 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface ImplementationDescriptionSet extends EObject {
     /**
-     * Returns the value of the '<em><b>Implementations</b></em>' containment reference list.
-     * The list contents are of type {@link implementationDescription.ImplementationDescription}.
-     * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Implementations</b></em>' containment reference list.
+   * The list contents are of type {@link implementationDescription.ImplementationDescription}.
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Implementations</em>' containment reference list.
-     * @see implementationDescription.ImplementationDescriptionPackage#getImplementationDescriptionSet_Implementations()
-     * @model containment="true" required="true"
-     * @generated
-     */
+   * @return the value of the '<em>Implementations</em>' containment reference list.
+   * @see implementationDescription.ImplementationDescriptionPackage#getImplementationDescriptionSet_Implementations()
+   * @model containment="true" required="true"
+   * @generated
+   */
     EList<ImplementationDescription> getImplementations();
 
 } // ImplementationDescriptionSet
