@@ -37,185 +37,185 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class DeviceRequirementImpl extends ExecutionRequirementImpl implements DeviceRequirement {
     /**
-     * The default value of the '{@link #getType() <em>Type</em>}' attribute.
-     * <!-- begin-user-doc -->
+   * The default value of the '{@link #getType() <em>Type</em>}' attribute.
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getType()
-     * @generated
-     * @ordered
-     */
+   * @see #getType()
+   * @generated
+   * @ordered
+   */
     protected static final String TYPE_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
-     * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getType()
-     * @generated
-     * @ordered
-     */
+   * @see #getType()
+   * @generated
+   * @ordered
+   */
     protected String type = TYPE_EDEFAULT;
 
     /**
-     * The cached value of the '{@link #getParameter() <em>Parameter</em>}' containment reference list.
-     * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getParameter() <em>Parameter</em>}' containment reference list.
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getParameter()
-     * @generated
-     * @ordered
-     */
+   * @see #getParameter()
+   * @generated
+   * @ordered
+   */
     protected EList<HWSWParemeter> parameter;
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     protected DeviceRequirementImpl() {
-        super();
-    }
+    super();
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     protected EClass eStaticClass() {
-        return ImplementationDescriptionPackage.Literals.DEVICE_REQUIREMENT;
-    }
+    return ImplementationDescriptionPackage.Literals.DEVICE_REQUIREMENT;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public String getType() {
-        return type;
-    }
+    return type;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public void setType(String newType) {
-        String oldType = type;
-        type = newType;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, ImplementationDescriptionPackage.DEVICE_REQUIREMENT__TYPE, oldType, type));
-    }
+    String oldType = type;
+    type = newType;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ImplementationDescriptionPackage.DEVICE_REQUIREMENT__TYPE, oldType, type));
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public EList<HWSWParemeter> getParameter() {
-        if (parameter == null) {
-            parameter = new EObjectContainmentEList<HWSWParemeter>(HWSWParemeter.class, this, ImplementationDescriptionPackage.DEVICE_REQUIREMENT__PARAMETER);
-        }
-        return parameter;
+    if (parameter == null) {
+      parameter = new EObjectContainmentEList<HWSWParemeter>(HWSWParemeter.class, this, ImplementationDescriptionPackage.DEVICE_REQUIREMENT__PARAMETER);
     }
+    return parameter;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-        switch (featureID) {
-            case ImplementationDescriptionPackage.DEVICE_REQUIREMENT__PARAMETER:
-                return ((InternalEList<?>)getParameter()).basicRemove(otherEnd, msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+    switch (featureID) {
+      case ImplementationDescriptionPackage.DEVICE_REQUIREMENT__PARAMETER:
+        return ((InternalEList<?>)getParameter()).basicRemove(otherEnd, msgs);
     }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case ImplementationDescriptionPackage.DEVICE_REQUIREMENT__TYPE:
-                return getType();
-            case ImplementationDescriptionPackage.DEVICE_REQUIREMENT__PARAMETER:
-                return getParameter();
-        }
-        return super.eGet(featureID, resolve, coreType);
+    switch (featureID) {
+      case ImplementationDescriptionPackage.DEVICE_REQUIREMENT__TYPE:
+        return getType();
+      case ImplementationDescriptionPackage.DEVICE_REQUIREMENT__PARAMETER:
+        return getParameter();
     }
+    return super.eGet(featureID, resolve, coreType);
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @SuppressWarnings("unchecked")
     @Override
     public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case ImplementationDescriptionPackage.DEVICE_REQUIREMENT__TYPE:
-                setType((String)newValue);
-                return;
-            case ImplementationDescriptionPackage.DEVICE_REQUIREMENT__PARAMETER:
-                getParameter().clear();
-                getParameter().addAll((Collection<? extends HWSWParemeter>)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
+    switch (featureID) {
+      case ImplementationDescriptionPackage.DEVICE_REQUIREMENT__TYPE:
+        setType((String)newValue);
+        return;
+      case ImplementationDescriptionPackage.DEVICE_REQUIREMENT__PARAMETER:
+        getParameter().clear();
+        getParameter().addAll((Collection<? extends HWSWParemeter>)newValue);
+        return;
     }
+    super.eSet(featureID, newValue);
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     public void eUnset(int featureID) {
-        switch (featureID) {
-            case ImplementationDescriptionPackage.DEVICE_REQUIREMENT__TYPE:
-                setType(TYPE_EDEFAULT);
-                return;
-            case ImplementationDescriptionPackage.DEVICE_REQUIREMENT__PARAMETER:
-                getParameter().clear();
-                return;
-        }
-        super.eUnset(featureID);
+    switch (featureID) {
+      case ImplementationDescriptionPackage.DEVICE_REQUIREMENT__TYPE:
+        setType(TYPE_EDEFAULT);
+        return;
+      case ImplementationDescriptionPackage.DEVICE_REQUIREMENT__PARAMETER:
+        getParameter().clear();
+        return;
     }
+    super.eUnset(featureID);
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case ImplementationDescriptionPackage.DEVICE_REQUIREMENT__TYPE:
-                return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
-            case ImplementationDescriptionPackage.DEVICE_REQUIREMENT__PARAMETER:
-                return parameter != null && !parameter.isEmpty();
-        }
-        return super.eIsSet(featureID);
+    switch (featureID) {
+      case ImplementationDescriptionPackage.DEVICE_REQUIREMENT__TYPE:
+        return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
+      case ImplementationDescriptionPackage.DEVICE_REQUIREMENT__PARAMETER:
+        return parameter != null && !parameter.isEmpty();
     }
+    return super.eIsSet(featureID);
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+    if (eIsProxy()) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (type: ");
-        result.append(type);
-        result.append(')');
-        return result.toString();
-    }
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (type: ");
+    result.append(type);
+    result.append(')');
+    return result.toString();
+  }
 
 } //DeviceRequirementImpl

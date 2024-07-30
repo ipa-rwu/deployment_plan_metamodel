@@ -17,22 +17,22 @@ import org.eclipse.emf.ecore.EClass;
  */
 public class ExecutionParameterImpl extends PropertyImpl implements ExecutionParameter {
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     protected ExecutionParameterImpl() {
-        super();
-    }
+    super();
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     protected EClass eStaticClass() {
-        return ImplementationDescriptionPackage.Literals.EXECUTION_PARAMETER;
-    }
+    return ImplementationDescriptionPackage.Literals.EXECUTION_PARAMETER;
+  }
 
 } //ExecutionParameterImpl

@@ -35,118 +35,118 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class ImplementationDescriptionSetImpl extends MinimalEObjectImpl.Container implements ImplementationDescriptionSet {
     /**
-     * The cached value of the '{@link #getImplementations() <em>Implementations</em>}' containment reference list.
-     * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getImplementations() <em>Implementations</em>}' containment reference list.
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getImplementations()
-     * @generated
-     * @ordered
-     */
+   * @see #getImplementations()
+   * @generated
+   * @ordered
+   */
     protected EList<ImplementationDescription> implementations;
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     protected ImplementationDescriptionSetImpl() {
-        super();
-    }
+    super();
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     protected EClass eStaticClass() {
-        return ImplementationDescriptionPackage.Literals.IMPLEMENTATION_DESCRIPTION_SET;
-    }
+    return ImplementationDescriptionPackage.Literals.IMPLEMENTATION_DESCRIPTION_SET;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public EList<ImplementationDescription> getImplementations() {
-        if (implementations == null) {
-            implementations = new EObjectContainmentEList<ImplementationDescription>(ImplementationDescription.class, this, ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION_SET__IMPLEMENTATIONS);
-        }
-        return implementations;
+    if (implementations == null) {
+      implementations = new EObjectContainmentEList<ImplementationDescription>(ImplementationDescription.class, this, ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION_SET__IMPLEMENTATIONS);
     }
+    return implementations;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-        switch (featureID) {
-            case ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION_SET__IMPLEMENTATIONS:
-                return ((InternalEList<?>)getImplementations()).basicRemove(otherEnd, msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+    switch (featureID) {
+      case ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION_SET__IMPLEMENTATIONS:
+        return ((InternalEList<?>)getImplementations()).basicRemove(otherEnd, msgs);
     }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION_SET__IMPLEMENTATIONS:
-                return getImplementations();
-        }
-        return super.eGet(featureID, resolve, coreType);
+    switch (featureID) {
+      case ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION_SET__IMPLEMENTATIONS:
+        return getImplementations();
     }
+    return super.eGet(featureID, resolve, coreType);
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @SuppressWarnings("unchecked")
     @Override
     public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION_SET__IMPLEMENTATIONS:
-                getImplementations().clear();
-                getImplementations().addAll((Collection<? extends ImplementationDescription>)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
+    switch (featureID) {
+      case ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION_SET__IMPLEMENTATIONS:
+        getImplementations().clear();
+        getImplementations().addAll((Collection<? extends ImplementationDescription>)newValue);
+        return;
     }
+    super.eSet(featureID, newValue);
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     public void eUnset(int featureID) {
-        switch (featureID) {
-            case ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION_SET__IMPLEMENTATIONS:
-                getImplementations().clear();
-                return;
-        }
-        super.eUnset(featureID);
+    switch (featureID) {
+      case ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION_SET__IMPLEMENTATIONS:
+        getImplementations().clear();
+        return;
     }
+    super.eUnset(featureID);
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION_SET__IMPLEMENTATIONS:
-                return implementations != null && !implementations.isEmpty();
-        }
-        return super.eIsSet(featureID);
+    switch (featureID) {
+      case ImplementationDescriptionPackage.IMPLEMENTATION_DESCRIPTION_SET__IMPLEMENTATIONS:
+        return implementations != null && !implementations.isEmpty();
     }
+    return super.eIsSet(featureID);
+  }
 
 } //ImplementationDescriptionSetImpl

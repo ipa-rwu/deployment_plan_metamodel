@@ -16,22 +16,22 @@ import org.eclipse.emf.ecore.EClass;
  */
 public class HWSWParemeterImpl extends ExecutionParameterImpl implements HWSWParemeter {
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     protected HWSWParemeterImpl() {
-        super();
-    }
+    super();
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     protected EClass eStaticClass() {
-        return ImplementationDescriptionPackage.Literals.HWSW_PAREMETER;
-    }
+    return ImplementationDescriptionPackage.Literals.HWSW_PAREMETER;
+  }
 
 } //HWSWParemeterImpl

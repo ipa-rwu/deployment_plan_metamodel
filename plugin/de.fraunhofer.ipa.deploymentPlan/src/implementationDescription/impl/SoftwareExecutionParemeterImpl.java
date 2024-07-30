@@ -16,22 +16,22 @@ import org.eclipse.emf.ecore.EClass;
  */
 public class SoftwareExecutionParemeterImpl extends ExecutionParameterImpl implements SoftwareExecutionParemeter {
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     protected SoftwareExecutionParemeterImpl() {
-        super();
-    }
+    super();
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     protected EClass eStaticClass() {
-        return ImplementationDescriptionPackage.Literals.SOFTWARE_EXECUTION_PAREMETER;
-    }
+    return ImplementationDescriptionPackage.Literals.SOFTWARE_EXECUTION_PAREMETER;
+  }
 
 } //SoftwareExecutionParemeterImpl

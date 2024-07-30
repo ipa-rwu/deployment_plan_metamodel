@@ -18,22 +18,22 @@ import targetEnvironment.TargetEnvironmentPackage;
  */
 public abstract class AbstractConfigPropertyImpl extends MinimalEObjectImpl.Container implements AbstractConfigProperty {
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     protected AbstractConfigPropertyImpl() {
-        super();
-    }
+    super();
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     protected EClass eStaticClass() {
-        return TargetEnvironmentPackage.Literals.ABSTRACT_CONFIG_PROPERTY;
-    }
+    return TargetEnvironmentPackage.Literals.ABSTRACT_CONFIG_PROPERTY;
+  }
 
 } //AbstractConfigPropertyImpl

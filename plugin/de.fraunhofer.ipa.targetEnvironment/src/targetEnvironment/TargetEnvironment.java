@@ -26,15 +26,15 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface TargetEnvironment extends EObject {
     /**
-     * Returns the value of the '<em><b>Type</b></em>' containment reference list.
-     * The list contents are of type {@link de.fraunhofer.ipa.deployment.util.Description}.
-     * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Type</b></em>' containment reference list.
+   * The list contents are of type {@link de.fraunhofer.ipa.deployment.util.Description}.
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Type</em>' containment reference list.
-     * @see targetEnvironment.TargetEnvironmentPackage#getTargetEnvironment_Type()
-     * @model containment="true" required="true"
-     * @generated
-     */
+   * @return the value of the '<em>Type</em>' containment reference list.
+   * @see targetEnvironment.TargetEnvironmentPackage#getTargetEnvironment_Type()
+   * @model containment="true" required="true"
+   * @generated
+   */
     EList<Description> getType();
 
 } // TargetEnvironment

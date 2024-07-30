@@ -33,118 +33,118 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class SoftwareConfigurationRequirementImpl extends ExecutionRequirementImpl implements SoftwareConfigurationRequirement {
     /**
-     * The cached value of the '{@link #getParameter() <em>Parameter</em>}' containment reference list.
-     * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getParameter() <em>Parameter</em>}' containment reference list.
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getParameter()
-     * @generated
-     * @ordered
-     */
+   * @see #getParameter()
+   * @generated
+   * @ordered
+   */
     protected EList<SoftwareExecutionParemeter> parameter;
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     protected SoftwareConfigurationRequirementImpl() {
-        super();
-    }
+    super();
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     protected EClass eStaticClass() {
-        return ImplementationDescriptionPackage.Literals.SOFTWARE_CONFIGURATION_REQUIREMENT;
-    }
+    return ImplementationDescriptionPackage.Literals.SOFTWARE_CONFIGURATION_REQUIREMENT;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     public EList<SoftwareExecutionParemeter> getParameter() {
-        if (parameter == null) {
-            parameter = new EObjectContainmentEList<SoftwareExecutionParemeter>(SoftwareExecutionParemeter.class, this, ImplementationDescriptionPackage.SOFTWARE_CONFIGURATION_REQUIREMENT__PARAMETER);
-        }
-        return parameter;
+    if (parameter == null) {
+      parameter = new EObjectContainmentEList<SoftwareExecutionParemeter>(SoftwareExecutionParemeter.class, this, ImplementationDescriptionPackage.SOFTWARE_CONFIGURATION_REQUIREMENT__PARAMETER);
     }
+    return parameter;
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-        switch (featureID) {
-            case ImplementationDescriptionPackage.SOFTWARE_CONFIGURATION_REQUIREMENT__PARAMETER:
-                return ((InternalEList<?>)getParameter()).basicRemove(otherEnd, msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+    switch (featureID) {
+      case ImplementationDescriptionPackage.SOFTWARE_CONFIGURATION_REQUIREMENT__PARAMETER:
+        return ((InternalEList<?>)getParameter()).basicRemove(otherEnd, msgs);
     }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case ImplementationDescriptionPackage.SOFTWARE_CONFIGURATION_REQUIREMENT__PARAMETER:
-                return getParameter();
-        }
-        return super.eGet(featureID, resolve, coreType);
+    switch (featureID) {
+      case ImplementationDescriptionPackage.SOFTWARE_CONFIGURATION_REQUIREMENT__PARAMETER:
+        return getParameter();
     }
+    return super.eGet(featureID, resolve, coreType);
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @SuppressWarnings("unchecked")
     @Override
     public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case ImplementationDescriptionPackage.SOFTWARE_CONFIGURATION_REQUIREMENT__PARAMETER:
-                getParameter().clear();
-                getParameter().addAll((Collection<? extends SoftwareExecutionParemeter>)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
+    switch (featureID) {
+      case ImplementationDescriptionPackage.SOFTWARE_CONFIGURATION_REQUIREMENT__PARAMETER:
+        getParameter().clear();
+        getParameter().addAll((Collection<? extends SoftwareExecutionParemeter>)newValue);
+        return;
     }
+    super.eSet(featureID, newValue);
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     public void eUnset(int featureID) {
-        switch (featureID) {
-            case ImplementationDescriptionPackage.SOFTWARE_CONFIGURATION_REQUIREMENT__PARAMETER:
-                getParameter().clear();
-                return;
-        }
-        super.eUnset(featureID);
+    switch (featureID) {
+      case ImplementationDescriptionPackage.SOFTWARE_CONFIGURATION_REQUIREMENT__PARAMETER:
+        getParameter().clear();
+        return;
     }
+    super.eUnset(featureID);
+  }
 
     /**
-     * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+   * @generated
+   */
     @Override
     public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case ImplementationDescriptionPackage.SOFTWARE_CONFIGURATION_REQUIREMENT__PARAMETER:
-                return parameter != null && !parameter.isEmpty();
-        }
-        return super.eIsSet(featureID);
+    switch (featureID) {
+      case ImplementationDescriptionPackage.SOFTWARE_CONFIGURATION_REQUIREMENT__PARAMETER:
+        return parameter != null && !parameter.isEmpty();
     }
+    return super.eIsSet(featureID);
+  }
 
 } //SoftwareConfigurationRequirementImpl
