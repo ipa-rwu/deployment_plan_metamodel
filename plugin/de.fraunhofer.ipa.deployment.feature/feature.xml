@@ -18,107 +18,62 @@
 
    <plugin
          id="de.fraunhofer.ipa.deployment.plan.xtext"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+         version="1.0.0.qualifier"/>
 
    <plugin
          id="de.fraunhofer.ipa.deployment.plan.xtext.ide"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+         version="1.0.0.qualifier"/>
 
    <plugin
          id="de.fraunhofer.ipa.deployment.plan.xtext.ui"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+         version="1.0.0.qualifier"/>
 
    <plugin
          id="de.fraunhofer.ipa.deployment.planros.xtext"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+         version="1.0.0.qualifier"/>
 
    <plugin
          id="de.fraunhofer.ipa.deployment.planros.xtext.ide"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+         version="1.0.0.qualifier"/>
 
    <plugin
          id="de.fraunhofer.ipa.deployment.planros.xtext.ui"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+         version="1.0.0.qualifier"/>
 
    <plugin
          id="de.fraunhofer.ipa.deployment.util"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+         version="1.0.0.qualifier"/>
 
    <plugin
          id="de.fraunhofer.ipa.deployment.util.xtext"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+         version="1.0.0.qualifier"/>
 
    <plugin
          id="de.fraunhofer.ipa.deployment.util.xtext.ide"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+         version="1.0.0.qualifier"/>
 
    <plugin
          id="de.fraunhofer.ipa.deployment.util.xtext.ui"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+         version="1.0.0.qualifier"/>
 
    <plugin
          id="de.fraunhofer.ipa.deploymentPlan"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+         version="1.0.0.qualifier"/>
 
    <plugin
          id="de.fraunhofer.ipa.targetEnvironment"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+         version="1.0.0.qualifier"/>
 
    <plugin
          id="de.fraunhofer.ipa.targetEnvironment.xtext"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+         version="1.0.0.qualifier"/>
 
    <plugin
          id="de.fraunhofer.ipa.targetEnvironment.xtext.ide"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+         version="1.0.0.qualifier"/>
 
    <plugin
          id="de.fraunhofer.ipa.targetEnvironment.xtext.ui"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+         version="1.0.0.qualifier"/>
 
 </feature>
