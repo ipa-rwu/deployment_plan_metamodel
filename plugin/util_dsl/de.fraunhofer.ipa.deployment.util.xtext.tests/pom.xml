@@ -9,13 +9,16 @@
     <artifactId>de.fraunhofer.ipa.deployment.util.xtext.tests</artifactId>
     <packaging>eclipse-test-plugin</packaging>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.eclipse.xtend</groupId>
-                <artifactId>xtend-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
-
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.eclipse.xtend</groupId>
+        <artifactId>xtend-maven-plugin</artifactId>
+        <configuration>
+          <javaSourceVersion>${xtextMavenJavaVersion}</javaSourceVersion> <!-- had error when using
+          19-->
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>
