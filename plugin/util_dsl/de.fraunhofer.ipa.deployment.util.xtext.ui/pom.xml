@@ -5,9 +5,9 @@
         <groupId>de.fraunhofer.ipa.deployment</groupId>
         <version>1.0.0-SNAPSHOT</version>
         <artifactId>de.fraunhofer.ipa.deployment.parent</artifactId>
-        <relativePath>../de.fraunhofer.ipa.deployment.parent</relativePath>
+        <relativePath>../../de.fraunhofer.ipa.deployment.parent</relativePath>
       </parent>
-    <artifactId>de.fraunhofer.ipa.deployment.util.xtext.ide</artifactId>
+    <artifactId>de.fraunhofer.ipa.deployment.util.xtext.ui</artifactId>
     <packaging>eclipse-plugin</packaging>
 
     <build>
@@ -15,17 +15,11 @@
             <plugin>
                 <groupId>org.eclipse.xtend</groupId>
                 <artifactId>xtend-maven-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-clean-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>xtend-gen-clean</id>
-                        <phase>clean</phase>
-                    </execution>
-                </executions>
-            </plugin>
+        <configuration>
+          <javaSourceVersion>${xtextMavenJavaVersion}</javaSourceVersion> <!-- had error when using
+          19-->
+        </configuration>
+        </plugin>
         </plugins>
     </build>
 
