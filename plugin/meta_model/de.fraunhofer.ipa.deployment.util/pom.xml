@@ -1,0 +1,31 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>de.fraunhofer.ipa.deployment.util</artifactId>
+  <parent>
+    <groupId>de.fraunhofer.ipa.deployment</groupId>
+    <artifactId>de.fraunhofer.ipa.deployment.parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <relativePath>../../de.fraunhofer.ipa.deployment.parent</relativePath>
+  </parent>
+  <packaging>eclipse-plugin</packaging>
+ <build>
+    <sourceDirectory>src</sourceDirectory>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+        <configuration>
+          <source>${maven.compiler.source}</source>
+          <target>${maven.compiler.source}</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  <dependencies>
+    <dependency>
+      <groupId>org.eclipse.emf</groupId>
+      <artifactId>org.eclipse.emf.ecore</artifactId>
+    </dependency>
+  </dependencies>
+</project>
