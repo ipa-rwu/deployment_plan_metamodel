@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: de.fraunhofer.ipa.targetEnvironment.xtext
+Bundle-ManifestVersion: 2
+Bundle-Name: de.fraunhofer.ipa.targetEnvironment.xtext
+Bundle-Vendor: Fraunhofer IPA
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: de.fraunhofer.ipa.targetEnvironment.xtext; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: de.fraunhofer.ipa.targetEnvironment,
+ org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.antlr.runtime;bundle-version="4.7.2",
+ de.fraunhofer.ipa.deployment.util.xtext;bundle-version="1.0.0",
+ org.eclipse.xtend.lib;bundle-version="2.14.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Export-Package: de.fraunhofer.ipa.targetEnvironment,
+ de.fraunhofer.ipa.targetEnvironment.serializer,
+ de.fraunhofer.ipa.targetEnvironment.services,
+ de.fraunhofer.ipa.targetEnvironment.generator,
+ de.fraunhofer.ipa.targetEnvironment.parser.antlr.internal,
+ de.fraunhofer.ipa.targetEnvironment.parser.antlr,
+ de.fraunhofer.ipa.targetEnvironment.formatting2,
+ de.fraunhofer.ipa.targetEnvironment.validation,
+ de.fraunhofer.ipa.targetEnvironment.scoping,
+ de.fraunhofer.ipa.targetEnvironment.parser.antlr.lexer
+Import-Package: org.apache.log4j
