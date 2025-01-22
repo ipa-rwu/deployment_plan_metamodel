@@ -1,0 +1,33 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: de.fraunhofer.ipa.deployment.planros.xtext
+Bundle-ManifestVersion: 2
+Bundle-Name: de.fraunhofer.ipa.deployment.planros.xtext
+Bundle-Vendor: Fraunhofer IPA
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: de.fraunhofer.ipa.deployment.planros.xtext; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: de.fraunhofer.ipa.deploymentPlan,
+ org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.16.0",
+ de.fraunhofer.ipa.deployment.plan.xtext,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)",
+ de.fraunhofer.ipa.rossystem;bundle-version="3.0.0",
+ de.fraunhofer.ipa.ros.xtext;bundle-version="3.0.0",
+ de.fraunhofer.ipa.rossystem.xtext;bundle-version="3.0.0",
+ de.fraunhofer.ipa.targetEnvironment.xtext;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Export-Package: de.fraunhofer.ipa.deployment,
+ de.fraunhofer.ipa.deployment.formatting2,
+ de.fraunhofer.ipa.deployment.generator,
+ de.fraunhofer.ipa.deployment.parser.antlr,
+ de.fraunhofer.ipa.deployment.parser.antlr.internal,
+ de.fraunhofer.ipa.deployment.parser.antlr.lexer,
+ de.fraunhofer.ipa.deployment.scoping,
+ de.fraunhofer.ipa.deployment.serializer,
+ de.fraunhofer.ipa.deployment.services,
+ de.fraunhofer.ipa.deployment.utils,
+ de.fraunhofer.ipa.deployment.validation
+Import-Package: org.apache.log4j
