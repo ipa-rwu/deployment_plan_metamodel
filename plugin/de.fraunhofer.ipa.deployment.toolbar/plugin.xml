@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            id="de.fraunhofer.ipa.deployment.toolbar.commands.category"
+            name="Deployment Category">
+      </category>
+      <command
+            categoryId="de.fraunhofer.ipa.deployment.toolbar.commands.category"
+            description="import deployment exmaple"
+            id="de.fraunhofer.ipa.deployment.toolbar.commands.importExample"
+            name="Import Example">
+      </command>
+      <command
+            categoryId="de.fraunhofer.ipa.deployment.toolbar.commands.category"
+            id="de.fraunhofer.ipa.deployment.toolbar.importDevices"
+            name="Import Devices">
+      </command>
+      <command
+            categoryId="de.fraunhofer.ipa.deployment.toolbar.commands.category"
+            id="de.fraunhofer.ipa.deployment.toolbar.createProject"
+            name="Create Deployment Project">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="de.fraunhofer.ipa.deployment.toolbar.handlers.ImportExampleHandler"
+            commandId="de.fraunhofer.ipa.deployment.toolbar.commands.importExample">
+      </handler>
+      <handler
+            class="de.fraunhofer.ipa.deployment.toolbar.handlers.ImportDeviceHandler"
+            commandId="de.fraunhofer.ipa.deployment.toolbar.importDevices">
+      </handler>
+      <handler
+            class="de.fraunhofer.ipa.deployment.toolbar.handlers.CreateDeploymentProject"
+            commandId="de.fraunhofer.ipa.deployment.toolbar.createProject">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            commandId="de.fraunhofer.ipa.deployment.toolbar.commands.importExample"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            contextId="org.eclipse.ui.contexts.window"
+            sequence="M1+6">
+      </key>
+      <key
+            commandId="de.fraunhofer.ipa.deployment.toolbar.importDevices"
+            contextId="org.eclipse.ui.contexts.window"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="M1+6">
+      </key>
+      <key
+            commandId="de.fraunhofer.ipa.deployment.toolbar.createProject"
+            contextId="org.eclipse.ui.contexts.window"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="M1+6">
+      </key>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+         <toolbar
+               id="de.fraunhofer.ipa.deployment.toolbar.toolbars.importExample"
+               label="importExample">
+            <command
+                  commandId="de.fraunhofer.ipa.deployment.toolbar.commands.importExample"
+                  icon="icons/deployment-icon.png"
+                  id="de.fraunhofer.ipa.deployment.toolbar.toolbars.importExample"
+                  style="push"
+                  tooltip="Import deployment example">
+               <visibleWhen
+                     checkEnabled="false">
+                  <or>
+                     <with
+                           variable="activeWorkbenchWindow.activePerspective">
+                        <equals
+                              value="de.fraunhofer.ipa.deployment.plugin.perspective">
+                        </equals>
+                     </with>
+                  </or>
+               </visibleWhen>
+            </command>
+         </toolbar>
+      </menuContribution>
+      <menuContribution
+            locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+         <toolbar
+               id="de.fraunhofer.ipa.deployment.toolbar.toolbars.importDevices"
+               label="importDevices">
+            <command
+                  commandId="de.fraunhofer.ipa.deployment.toolbar.importDevices"
+                  icon="icons/hw_small.png"
+                  id="de.fraunhofer.ipa.deployment.toolbar.toolbars.importDevices"
+                  style="push"
+                  tooltip="Import Device Models">
+               <visibleWhen
+                     checkEnabled="false">
+                  <or>
+                     <with
+                           variable="activeWorkbenchWindow.activePerspective">
+                        <equals
+                              value="de.fraunhofer.ipa.deployment.plugin.perspective">
+                        </equals>
+                     </with>
+                  </or>
+               </visibleWhen>
+            </command>
+         </toolbar>
+      </menuContribution>
+      <menuContribution
+            locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+         <toolbar
+               id="de.fraunhofer.ipa.deployment.toolbar.toolbars.createProject"
+               label="CreateDeploymentProject">
+            <command
+                  commandId="de.fraunhofer.ipa.deployment.toolbar.createProject"
+                  icon="icons/create_project.png"
+                  id="de.fraunhofer.ipa.deployment.toolbar.toolbars.createProject"
+                  style="push"
+                  tooltip="Create Deployment Project">
+               <visibleWhen
+                     checkEnabled="false">
+                  <or>
+                     <with
+                           variable="activeWorkbenchWindow.activePerspective">
+                        <equals
+                              value="de.fraunhofer.ipa.deployment.plugin.perspective">
+                        </equals>
+                     </with>
+                  </or>
+               </visibleWhen>
+            </command>
+         </toolbar>
+      </menuContribution>
+   </extension>
+
+</plugin>
