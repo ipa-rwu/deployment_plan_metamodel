@@ -1,79 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="de.fraunhofer.ipa.deployment.feature"
-      label="RosTooling deployment feature"
-      version="1.0.0.qualifier">
+      label="Deployment Tooling Feature"
+      version="1.0.0.qualifier"
+      provider-name="Fraunhofer IPA">
 
-   <description url="http://www.example.com/description">
-      [Enter Feature Description here.]
-   </description>
+      <description url="http://www.example.com/description">
+            [Enter Feature Description here.]
+      </description>
 
-   <copyright url="http://www.example.com/copyright">
-      [Enter Copyright Description here.]
-   </copyright>
+      <copyright url="http://www.example.com/copyright">
+            [Enter Copyright Description here.]
+      </copyright>
 
-   <license url="http://www.example.com/license">
-      [Enter License Description here.]
-   </license>
+      <license url="http://www.example.com/license">
+            [Enter License Description here.]
+      </license>
 
-   <plugin
-         id="de.fraunhofer.ipa.deployment.plan.xtext"
-         version="1.0.0.qualifier"/>
+      <requires>
+            <import feature="de.fraunhofer.ipa.ros.feature" version="3.0.1.qualifier" />
+            <import plugin="org.eclipse.xtext" />
+            <import plugin="org.eclipse.emf.ecore" />
+      </requires>
 
-   <plugin
-         id="de.fraunhofer.ipa.deployment.plan.xtext.ide"
-         version="1.0.0.qualifier"/>
+      <plugin
+            id="de.fraunhofer.ipa.deployment.planros.xtext.ui"
+            version="0.0.0" />
 
-   <plugin
-         id="de.fraunhofer.ipa.deployment.plan.xtext.ui"
-         version="1.0.0.qualifier"/>
+      <plugin
+            id="de.fraunhofer.ipa.targetEnvironment.xtext.ui"
+            version="0.0.0" />
 
-   <plugin
-         id="de.fraunhofer.ipa.deployment.planros.xtext"
-         version="1.0.0.qualifier"/>
+      <plugin
+            id="de.fraunhofer.ipa.deployment.plan.xtext"
+            version="0.0.0" />
 
-   <plugin
-         id="de.fraunhofer.ipa.deployment.planros.xtext.ide"
-         version="1.0.0.qualifier"/>
+      <plugin
+            id="de.fraunhofer.ipa.targetEnvironment.xtext.ide"
+            version="0.0.0" />
 
-   <plugin
-         id="de.fraunhofer.ipa.deployment.planros.xtext.ui"
-         version="1.0.0.qualifier"/>
+      <plugin
+            id="de.fraunhofer.ipa.deployment.util.xtext.ide"
+            version="0.0.0" />
 
-   <plugin
-         id="de.fraunhofer.ipa.deployment.util"
-         version="1.0.0.qualifier"/>
+      <plugin
+            id="de.fraunhofer.ipa.targetEnvironment"
+            version="0.0.0" />
 
-   <plugin
-         id="de.fraunhofer.ipa.deployment.util.xtext"
-         version="1.0.0.qualifier"/>
+      <plugin
+            id="de.fraunhofer.ipa.deployment.planros.xtext"
+            version="0.0.0" />
 
-   <plugin
-         id="de.fraunhofer.ipa.deployment.util.xtext.ide"
-         version="1.0.0.qualifier"/>
+      <plugin
+            id="de.fraunhofer.ipa.deploymentPlan"
+            version="0.0.0" />
 
-   <plugin
-         id="de.fraunhofer.ipa.deployment.util.xtext.ui"
-         version="1.0.0.qualifier"/>
+      <plugin
+            id="de.fraunhofer.ipa.targetEnvironment.xtext"
+            version="0.0.0" />
 
-   <plugin
-         id="de.fraunhofer.ipa.deploymentPlan"
-         version="1.0.0.qualifier"/>
+      <plugin
+            id="de.fraunhofer.ipa.deployment.util.xtext.ui"
+            version="0.0.0" />
 
-   <plugin
-         id="de.fraunhofer.ipa.targetEnvironment"
-         version="1.0.0.qualifier"/>
+      <plugin
+            id="de.fraunhofer.ipa.deployment.util.xtext"
+            version="0.0.0" />
 
-   <plugin
-         id="de.fraunhofer.ipa.targetEnvironment.xtext"
-         version="1.0.0.qualifier"/>
+      <plugin
+            id="de.fraunhofer.ipa.deployment.planros.xtext.ide"
+            version="0.0.0" />
 
-   <plugin
-         id="de.fraunhofer.ipa.targetEnvironment.xtext.ide"
-         version="1.0.0.qualifier"/>
+      <plugin
+            id="de.fraunhofer.ipa.deployment.util"
+            version="0.0.0" />
 
-   <plugin
-         id="de.fraunhofer.ipa.targetEnvironment.xtext.ui"
-         version="1.0.0.qualifier"/>
+      <plugin
+            id="de.fraunhofer.ipa.deployment.plan.xtext.ide"
+            version="0.0.0" />
+
+      <plugin
+            id="de.fraunhofer.ipa.deployment.plan.xtext.ui"
+            version="0.0.0" />
+
+      <plugin
+            id="de.fraunhofer.ipa.deployment.plugin"
+            version="0.0.0" />
+
+      <plugin
+            id="de.fraunhofer.ipa.deployment.toolbar"
+            version="0.0.0" />
+
+      <plugin
+            id="org.eclipse.xtext"
+            version="0.0.0" />
+
+      <plugin
+            id="org.eclipse.emf.ecore"
+            version="0.0.0" />
 
 </feature>
