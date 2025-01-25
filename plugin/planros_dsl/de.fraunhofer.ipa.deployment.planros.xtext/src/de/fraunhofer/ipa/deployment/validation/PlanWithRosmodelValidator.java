@@ -164,9 +164,9 @@ public class PlanWithRosmodelValidator extends AbstractPlanWithRosmodelValidator
              params.stream()
              .map(Parameter.class::cast)
              .map(Parameter::getName).collect(Collectors.toList()).toString());
-         error(msg,
-          DeployPlanWithRosModelPackage.Literals.CONFIG_ROS_SOFTWARE_COMPONENT__COMPONENT,
-          UNDEFINED_ELE);
+//         error(msg,
+//          DeployPlanWithRosModelPackage.Literals.CONFIG_ROS_SOFTWARE_COMPONENT__COMPONENT,
+//          UNDEFINED_ELE);
          }
         }
   }
