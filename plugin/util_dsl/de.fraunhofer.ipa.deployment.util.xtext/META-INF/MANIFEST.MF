@@ -12,7 +12,10 @@ Require-Bundle: de.fraunhofer.ipa.deployment.util,
  org.eclipse.equinox.common;bundle-version="3.17.0",
  org.eclipse.xtext.xbase.lib;bundle-version="2.30.0",
  org.eclipse.xtext.util,
- org.antlr.runtime;bundle-version="3.2.0"
+ org.antlr.runtime;bundle-version="3.2.0",
+ org.eclipse.e4.ui.css.swt;bundle-version="0.15.400",
+ org.eclipse.jface;bundle-version="3.35.0",
+ org.eclipse.xtext.ecore;bundle-version="2.36.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-21
 Export-Package: de.fraunhofer.ipa.deployment;uses:="com.google.inject,org.eclipse.xtext.service,org.eclipse.xtext",
  de.fraunhofer.ipa.deployment.formatting2;uses:="org.eclipse.xtext.formatting2",
@@ -21,7 +24,7 @@ Export-Package: de.fraunhofer.ipa.deployment;uses:="com.google.inject,org.eclips
   uses:="de.fraunhofer.ipa.deployment.services,
    org.eclipse.xtext.parser.antlr,
    org.antlr.runtime,
-   de.fraunhofer.ipa.deployment.parser.antlr.internal",
+ de.fraunhofer.ipa.deployment.parser.antlr.internal",
  de.fraunhofer.ipa.deployment.parser.antlr.internal;
   uses:="org.eclipse.emf.ecore,
    de.fraunhofer.ipa.deployment.services,
