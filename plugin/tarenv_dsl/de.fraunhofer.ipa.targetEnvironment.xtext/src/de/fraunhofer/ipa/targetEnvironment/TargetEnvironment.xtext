@@ -27,10 +27,10 @@ TargetDeployEnviroment returns TargetDeployEnviroment:
                 INDENT
                 includeDevice+=ComputationDeviceInstance+
                 DEDENT
-            'device:'
+            ('device:'
                 INDENT
                 includeDevice+=DeviceInstance+
-                DEDENT
+                DEDENT)?
             DEDENT
         )?
         ('configConnection:'
