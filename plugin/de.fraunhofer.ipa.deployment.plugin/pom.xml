@@ -1,0 +1,57 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>de.fraunhofer.ipa.deployment.plugin</artifactId>
+  <parent>
+    <groupId>de.fraunhofer.ipa.deployment</groupId>
+    <version>1.0.0-SNAPSHOT</version>
+    <artifactId>de.fraunhofer.ipa.deployment.parent</artifactId>
+    <relativePath>../de.fraunhofer.ipa.deployment.parent</relativePath>
+  </parent>
+  <build>
+    <sourceDirectory>src</sourceDirectory>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+        <configuration>
+          <release>19</release>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.eclipse.xtend</groupId>
+        <artifactId>xtend-maven-plugin</artifactId>
+        <configuration>
+          <javaSourceVersion>${xtextMavenJavaVersion}</javaSourceVersion> <!-- had error when using
+          19-->
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>target-platform-configuration</artifactId>
+        <configuration>
+          <pomDependencies>consider</pomDependencies>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  <dependencies>
+    <dependency>
+        <groupId>org.eclipse.platform</groupId>
+        <artifactId>org.eclipse.ui</artifactId>
+        <version>3.202.0</version>
+        <type>eclipse-plugin</type>
+    </dependency>
+    <dependency>
+        <groupId>org.eclipse.platform</groupId>
+        <artifactId>org.eclipse.core.runtime</artifactId>
+        <version>3.31.100</version> <!-- Replace with your required version -->
+        <type>eclipse-plugin</type>
+    </dependency>
+    <dependency>
+        <groupId>org.eclipse.platform</groupId>
+        <artifactId>org.eclipse.core.resources</artifactId>
+        <version>3.22.0</version>
+        <type>eclipse-plugin</type>
+    </dependency>
+  </dependencies>
+</project>
