@@ -12,7 +12,7 @@ Require-Bundle: de.fraunhofer.ipa.targetEnvironment,
  org.eclipse.equinox.common,
  org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
  org.eclipse.xtext.util,
- org.antlr.runtime;bundle-version="4.7.2",
+ org.antlr.runtime;bundle-version="3.2.0",
  de.fraunhofer.ipa.deployment.util.xtext;bundle-version="1.0.0",
  org.eclipse.xtend.lib;bundle-version="2.14.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-21

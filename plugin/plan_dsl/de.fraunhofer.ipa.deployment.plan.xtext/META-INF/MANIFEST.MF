@@ -15,7 +15,8 @@ Require-Bundle: de.fraunhofer.ipa.targetEnvironment;bundle-version="1.0.0",
  org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
  org.eclipse.xtext.util,
  org.antlr.runtime;bundle-version="[3.2.0,3.2.1)",
- com.google.gson;bundle-version="2.9.1"
+ com.google.gson;bundle-version="2.9.1",
+ org.apache.commons.logging;bundle-version="1.2.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-21
 Export-Package: de.fraunhofer.ipa.deployment.generator,
  de.fraunhofer.ipa.deployment.parser.antlr.lexer,
