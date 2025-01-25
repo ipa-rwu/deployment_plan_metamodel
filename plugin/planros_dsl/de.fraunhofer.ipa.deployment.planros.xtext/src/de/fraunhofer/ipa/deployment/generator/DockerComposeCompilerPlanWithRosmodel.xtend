@@ -13,6 +13,8 @@ import java.util.List
 import targetEnvironment.ComputationDeviceInstance
 import deploymentPlan.ContainerRuntime
 import deploymentPlan.RosMiddleware
+import deployPlanWithRosModel.ConfigRosSoftwareComponent
+import system.Component
 
 class DockerComposeCompilerPlanWithRosmodel extends DockerComposeCompiler{
 
@@ -57,11 +59,31 @@ services:
         source /ros_entrypoint.sh
         «FOR software: assignment.getSoftwareFromAssignemnt»
         «var paramPerSoftware = covertCollectExecutionEnvtoString(collectExecutionEnv(software))»
+        «IF software instanceof ConfigRosSoftwareComponent»
+        «IF software.component instanceof system.System»
+        «IF (software.component as system.System).fromFile !==null»
+        «String.join(" & \n", (software.component as system.System).fromFile.createLaunchCommand)» «
+        »«IF software.startCommand.size > 0»«FOR param : paramPerSoftware»«param.key»:=«param.value» «ENDFOR»«ENDIF»
+        «ELSE»
         «String.join(" & \n", software.startCommand)» «
         »«IF software.startCommand.size > 0»«FOR param : paramPerSoftware»«param.key»:=«param.value» «ENDFOR»«ENDIF»
+        «ENDIF»«ENDIF»«ENDIF»
         «ENDFOR»
 «ENDFOR»
 '''
+
+def static String createLaunchCommand(String fromfile){
+  val parts = fromfile.split('/')
+        if (parts.size >= 3 && parts.get(1) == "launch") {
+            // Extract pkg_name and launch file name
+            val pkgName = parts.get(0)
+            val launchFileName = parts.get(parts.size - 1)
+            // Construct the command
+            return "ros2 launch " + pkgName + " " + launchFileName
+        } else {
+            throw new IllegalArgumentException("Invalid input structure: " + fromfile)
+        }
+}
 
   override collectExecutionEnv(AbstarctConfigSoftwareComponent software){
     var raw = software.executionConfiguration
