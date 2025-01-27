@@ -123,7 +123,7 @@
                   icon="icons/create_project.png"
                   id="de.fraunhofer.ipa.deployment.toolbar.toolbars.createProject"
                   style="push"
-                  tooltip="Create Deployment Project">
+                  tooltip="Create New Deployment Project">
                <visibleWhen
                      checkEnabled="false">
                   <or>
