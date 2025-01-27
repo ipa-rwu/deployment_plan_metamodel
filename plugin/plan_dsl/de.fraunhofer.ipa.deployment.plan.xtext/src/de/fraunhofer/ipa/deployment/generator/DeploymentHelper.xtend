@@ -62,6 +62,8 @@ import system.System
 import system.RosNode
 import de.fraunhofer.ipa.deployment.util.AbstractComputationAssignmentTarget
 import implementationDescription.ImplementationDescription
+import java.io.File
+import java.io.IOException
 
 class OSInfo{
     String name
@@ -511,6 +513,14 @@ def RepoInfo getRepoInfo(SoftwareComponent imp){
 }
 
 def getReleaseInfo(String[] packNames, String rosdistro) {
+    var dhelpPath = findExecutableInPath("dhelp"); // Find dhelp in PATH
+    if (dhelpPath === null) {
+      throw new RuntimeException(
+            "'dhelp' module could not be found in any accessible Python environment. " +
+            "Please ensure it is installed and the Python environment is configured correctly."
+        );
+    }
+
     var List<String> commands = new ArrayList<String>(Arrays.asList("dhelp", "repo", "-pkg"))
     commands.addAll(packNames)
     commands.addAll(#["-d", rosdistro])
@@ -529,6 +539,54 @@ def getReleaseInfo(String[] packNames, String rosdistro) {
     java.lang.System.out.println("Finishing dhelp commands")
 
     return repo_infos
+}
+
+def String findExecutableInPath(String executable) {
+    var path = java.lang.System.getenv("PATH");
+    if (path === null || path.isEmpty()) {
+        return null;
+    }
+
+    var paths = path.split(java.lang.System.getProperty("path.separator"));
+    for (String dir : paths) {
+        var file = new File(dir, executable);
+        if (file.isFile() && file.canExecute()) {
+            return file.getAbsolutePath();
+        }
+    }
+    return null;
+}
+
+def String findPythonWithDhelp() {
+    var path = java.lang.System.getenv("PATH");
+    if (path === null || path.isEmpty()) {
+        return null;
+    }
+
+    var paths = path.split(java.lang.System.getProperty("path.separator"));
+    for (String dir : paths) {
+        var pythonFile = new File(dir, "python3");
+        if (pythonFile.isFile() && pythonFile.canExecute()) {
+            if (isDhelpAvailable(pythonFile.getAbsolutePath())) {
+                return pythonFile.getAbsolutePath();
+            }
+        }
+    }
+    return null;
+}
+
+def boolean isDhelpAvailable(String pythonPath) {
+    try {
+        var pb = new ProcessBuilder(
+            pythonPath, "-m", "dhelp", "--help"
+        );
+        pb.redirectErrorStream(true);
+        var process = pb.start();
+        var exitCode = process.waitFor();
+        return exitCode == 0;
+    } catch (IOException | InterruptedException e) {
+        return false;
+    }
 }
 
 def checkIfPackageRelease(String packName, String rosdistro, String osName, String osVersion){
