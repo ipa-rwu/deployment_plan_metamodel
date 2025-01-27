@@ -5,98 +5,129 @@
       version="1.0.0.qualifier"
       provider-name="Fraunhofer IPA">
 
-      <description url="http://www.example.com/description">
-            [Enter Feature Description here.]
-      </description>
+   <description url="https://github.com/ipa-rwu/deployment_plan_metamodel">
+      Deployment Tooling
+   </description>
 
-      <copyright url="http://www.example.com/copyright">
-            [Enter Copyright Description here.]
-      </copyright>
+   <copyright url="http://www.example.com/copyright">
+      [Enter Copyright Description here.]
+   </copyright>
 
-      <license url="http://www.example.com/license">
-            [Enter License Description here.]
-      </license>
+   <license url="http://www.example.com/license">
+      BSD 3-Clause License
 
-      <requires>
-            <import feature="de.fraunhofer.ipa.ros.feature" version="3.0.1.qualifier" />
-            <import plugin="org.eclipse.xtext" />
-            <import plugin="org.eclipse.emf.ecore" />
-      </requires>
+Copyright (c) 2024, Ruichao Wu, Fraunhofer IPA
 
-      <plugin
-            id="de.fraunhofer.ipa.deployment.planros.xtext.ui"
-            version="0.0.0" />
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
 
-      <plugin
-            id="de.fraunhofer.ipa.targetEnvironment.xtext.ui"
-            version="0.0.0" />
+1. Redistributions of source code must retain the above copyright notice, this
+   list of conditions and the following disclaimer.
 
-      <plugin
-            id="de.fraunhofer.ipa.deployment.plan.xtext"
-            version="0.0.0" />
+2. Redistributions in binary form must reproduce the above copyright notice,
+   this list of conditions and the following disclaimer in the documentation
+   and/or other materials provided with the distribution.
 
-      <plugin
-            id="de.fraunhofer.ipa.targetEnvironment.xtext.ide"
-            version="0.0.0" />
+3. Neither the name of the copyright holder nor the names of its
+   contributors may be used to endorse or promote products derived from
+   this software without specific prior written permission.
 
-      <plugin
-            id="de.fraunhofer.ipa.deployment.util.xtext.ide"
-            version="0.0.0" />
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot;
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+   </license>
 
-      <plugin
-            id="de.fraunhofer.ipa.targetEnvironment"
-            version="0.0.0" />
+   <url>
+      <discovery label="Source Code" url="https://github.com/ipa-rwu/deployment_plan_metamodel"/>
+   </url>
 
-      <plugin
-            id="de.fraunhofer.ipa.deployment.planros.xtext"
-            version="0.0.0" />
+   <requires>
+      <import feature="de.fraunhofer.ipa.ros.feature" version="3.0.1.qualifier"/>
+      <import plugin="org.eclipse.xtext"/>
+      <import plugin="org.eclipse.emf.ecore"/>
+   </requires>
 
-      <plugin
-            id="de.fraunhofer.ipa.deploymentPlan"
-            version="0.0.0" />
+   <plugin
+         id="de.fraunhofer.ipa.deployment.planros.xtext.ui"
+         version="0.0.0"/>
 
-      <plugin
-            id="de.fraunhofer.ipa.targetEnvironment.xtext"
-            version="0.0.0" />
+   <plugin
+         id="de.fraunhofer.ipa.targetEnvironment.xtext.ui"
+         version="0.0.0"/>
 
-      <plugin
-            id="de.fraunhofer.ipa.deployment.util.xtext.ui"
-            version="0.0.0" />
+   <plugin
+         id="de.fraunhofer.ipa.deployment.plan.xtext"
+         version="0.0.0"/>
 
-      <plugin
-            id="de.fraunhofer.ipa.deployment.util.xtext"
-            version="0.0.0" />
+   <plugin
+         id="de.fraunhofer.ipa.targetEnvironment.xtext.ide"
+         version="0.0.0"/>
 
-      <plugin
-            id="de.fraunhofer.ipa.deployment.planros.xtext.ide"
-            version="0.0.0" />
+   <plugin
+         id="de.fraunhofer.ipa.deployment.util.xtext.ide"
+         version="0.0.0"/>
 
-      <plugin
-            id="de.fraunhofer.ipa.deployment.util"
-            version="0.0.0" />
+   <plugin
+         id="de.fraunhofer.ipa.targetEnvironment"
+         version="0.0.0"/>
 
-      <plugin
-            id="de.fraunhofer.ipa.deployment.plan.xtext.ide"
-            version="0.0.0" />
+   <plugin
+         id="de.fraunhofer.ipa.deployment.planros.xtext"
+         version="0.0.0"/>
 
-      <plugin
-            id="de.fraunhofer.ipa.deployment.plan.xtext.ui"
-            version="0.0.0" />
+   <plugin
+         id="de.fraunhofer.ipa.deploymentPlan"
+         version="0.0.0"/>
 
-      <plugin
-            id="de.fraunhofer.ipa.deployment.plugin"
-            version="0.0.0" />
+   <plugin
+         id="de.fraunhofer.ipa.targetEnvironment.xtext"
+         version="0.0.0"/>
 
-      <plugin
-            id="de.fraunhofer.ipa.deployment.toolbar"
-            version="0.0.0" />
+   <plugin
+         id="de.fraunhofer.ipa.deployment.util.xtext.ui"
+         version="0.0.0"/>
 
-      <plugin
-            id="org.eclipse.xtext"
-            version="0.0.0" />
+   <plugin
+         id="de.fraunhofer.ipa.deployment.util.xtext"
+         version="0.0.0"/>
 
-      <plugin
-            id="org.eclipse.emf.ecore"
-            version="0.0.0" />
+   <plugin
+         id="de.fraunhofer.ipa.deployment.planros.xtext.ide"
+         version="0.0.0"/>
+
+   <plugin
+         id="de.fraunhofer.ipa.deployment.util"
+         version="0.0.0"/>
+
+   <plugin
+         id="de.fraunhofer.ipa.deployment.plan.xtext.ide"
+         version="0.0.0"/>
+
+   <plugin
+         id="de.fraunhofer.ipa.deployment.plan.xtext.ui"
+         version="0.0.0"/>
+
+   <plugin
+         id="de.fraunhofer.ipa.deployment.plugin"
+         version="0.0.0"/>
+
+   <plugin
+         id="de.fraunhofer.ipa.deployment.toolbar"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.eclipse.xtext"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.eclipse.emf.ecore"
+         version="0.0.0"/>
 
 </feature>
