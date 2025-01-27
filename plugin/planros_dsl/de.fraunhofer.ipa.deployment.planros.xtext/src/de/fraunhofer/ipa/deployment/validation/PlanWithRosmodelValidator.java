@@ -191,9 +191,9 @@ public class PlanWithRosmodelValidator extends AbstractPlanWithRosmodelValidator
              if(params.size() > 0) {
              var msg = String.format("Please define %s under \"executionConfiguration\" as refNodeParam:",
                  params.stream().map(RosParameter::getName).collect(Collectors.toList()).toString());
-             error(msg,
-              DeployPlanWithRosModelPackage.Literals.CONFIG_ROS_SOFTWARE_COMPONENT__COMPONENT,
-              UNDEFINED_ELE);
+//             error(msg,
+//              DeployPlanWithRosModelPackage.Literals.CONFIG_ROS_SOFTWARE_COMPONENT__COMPONENT,
+//              UNDEFINED_ELE);
              }
             }
     }
